@@ -69,8 +69,8 @@ For a declared date interval, `observable-complete` requires:
 
 1. every meeting link reachable from the official Council meeting index was
    enumerated;
-2. the official page and, where present, its source in `TEIC/Documentation` were
-   modeled as separate manifestations of the same meeting;
+2. the official page and every linked agenda, attachment, draft or report were
+   modeled as separate manifestations of the same meeting event;
 3. attachments and referenced working papers were inventoried;
 4. unreachable or rights-restricted items were retained as explicit gaps;
 5. the discovered meeting-date set was reconciled against the index at the end

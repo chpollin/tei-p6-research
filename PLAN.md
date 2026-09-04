@@ -15,6 +15,10 @@ Arbeitsrepository: `tei-p6` (lokal initialisiert; GitHub-Remote ausstehend)
 > umgehen. Bei einem Konflikt haben `knowledge/schema.md`, `knowledge/operations.md` und
 > `docs/tei-corpus-profile.md` Vorrang vor älteren Strukturbeispielen in diesem Plan.
 
+Der aktuelle ausführbare Beschaffungs- und Subagentenvertrag steht in
+`docs/multi-agent-acquisition-runbook.md`. Er ersetzt die älteren Pfadbeispiele
+in Abschnitt 15, soweit diese von der instanziierten Vault-Struktur abweichen.
+
 ## 1. Ziel
 
 Das Repository soll eine versionierte, agententaugliche und mit Obsidian nutzbare Wissensbasis über TEI P5 werden. Es soll nicht lediglich die TEI-Dokumentation kopieren, sondern Aussagen über P5 nachvollziehbar mit ihren Quellen, Versionen, Entscheidungswegen und Gegenbelegen verbinden.

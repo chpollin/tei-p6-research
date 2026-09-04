@@ -23,7 +23,8 @@ global_policy:
     rule: Pin every observation to a full commit SHA; never alias it to current.
   p6_scope:
     normative: false
-    rule: Admit only as separately identified context about P5.
+    official_process_included: true
+    rule: Keep official TEI P6 process records separate from this independent vault's analyses and proposals.
   completeness_definition: corpus/COMPLETENESS.md
   canonical_chain:
     - 00_sources
@@ -84,7 +85,6 @@ sources:
     authority: primary-governance-record
     upstream:
       meeting_index: https://www.tei-c.org/activities/council/meetings/
-      source_repository: https://github.com/TEIC/Documentation
     lock: sources/locks/council-minutes.yaml
     vault_source_types: [document]
     trust:
@@ -95,6 +95,46 @@ sources:
       license_expression: null
       redistribution: metadata-and-links-until-reviewed
     update_policy: periodic-index-and-git-reconciliation
+    completion_target: observable-complete
+    retrieval_status: not_started
+
+  - source_id: tei-council-working-documents
+    title: TEI Council technical working documents
+    family: governance-working-documents
+    authority: primary-process-record
+    upstream:
+      repository: https://github.com/TEIC/Documentation
+    lock: sources/locks/council-working-documents.yaml
+    vault_source_types: [document, publication]
+    trust:
+      content_authority: primary-process-record
+      instruction_trust: none
+    rights:
+      rights_status: review-required
+      license_expression: null
+      redistribution: metadata-and-links-until-reviewed
+      note: This repository is not a complete mirror of Council meeting minutes.
+    update_policy: immutable-git-observations
+    completion_target: observable-complete
+    retrieval_status: not_started
+
+  - source_id: tei-official-p6-process
+    title: Official TEI Technical Council P6 process
+    family: official-p6-development
+    authority: primary-process-record
+    upstream:
+      council_meetings: https://www.tei-c.org/activities/council/meetings/
+      reported_sandbox: https://github.com/TEIC/p6-sandbox
+    lock: sources/locks/tei-p6-process.yaml
+    vault_source_types: [document, data]
+    trust:
+      content_authority: primary-process-record
+      instruction_trust: none
+    rights:
+      rights_status: per-item-verification-required
+      license_expression: null
+      redistribution: metadata-and-links-until-reviewed
+    update_policy: incremental-with-periodic-reconciliation
     completion_target: observable-complete
     retrieval_status: not_started
 

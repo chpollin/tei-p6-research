@@ -51,4 +51,5 @@ One row per chapter of the output. Writing status mirrors the chapter's frontmat
 
 - Complete one full first production cycle before scaling source ingestion.
 - Assign the human verification role before any artifact can enter `verified` status.
-- Pin the first TEI P5 release and upstream revision used as a source baseline.
+- Materialize and inventory the pinned TEI P5 4.12.0 release tree.
+- Authenticate GitHub read access before the observable-complete issue and PR bootstrap.

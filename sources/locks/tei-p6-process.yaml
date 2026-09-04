@@ -1,0 +1,38 @@
+schema_version: 1
+lock_id: tei-official-p6-process
+source_id: tei-official-p6-process
+as_of: "2026-09-04"
+retrieval_status: not_started
+
+scope:
+  meeting_index: https://www.tei-c.org/activities/council/meetings/
+  date_start: "2025-01-01"
+  date_end: "2026-09-04"
+  discovery_terms:
+    - P6
+    - P5 to P6
+    - Reconsider for P6
+  rule: Enumerate official Council records and accessible artifacts explicitly concerning TEI P6; do not mix them with independent proposals from this vault.
+
+reported_repository:
+  canonical_url: https://github.com/TEIC/p6-sandbox
+  public_api_observation:
+    observed_at: "2026-09-04"
+    http_status: 404
+    interpretation: not-publicly-observable-or-not-found
+  access_required_if_private: true
+
+authority:
+  meeting_records: primary-process-record
+  repository_artifacts: primary-development-record-when-accessible
+  normative_release: false
+
+rights:
+  review_before_full_text_commit: true
+
+counts: {}
+gaps:
+  - code: reported-p6-sandbox-not-publicly-observable
+    status: open
+  - code: no-p6-process-snapshot-yet
+    status: expected-before-first-ingestion
