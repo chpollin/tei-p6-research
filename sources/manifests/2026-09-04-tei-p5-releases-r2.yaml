@@ -1,0 +1,193 @@
+schema_version: 1
+run_id: 2026-09-04-tei-p5-releases-r2
+source_id: tei-p5-release-history
+started_at: '2026-09-04T16:22:12Z'
+finished_at: '2026-09-04T16:23:31Z'
+status: partial
+adapter:
+  name: tools.corpus.web_census
+  version: 1
+requests:
+- root_url: https://www.tei-c.org/Vault/P5/
+  allow_prefixes:
+  - https://www.tei-c.org/Vault/P5/
+  depth: 1
+  max_pages: 300
+  include_binary: false
+objects:
+- kind: web-census
+  path: corpus/normalized/web/tei-p5-releases.jsonl
+  sha256: a11513e273adf65918ccfe4325aa87318e42a520f6e984b4afcb53deae6287f3
+counts:
+  responses: 53
+  successful_responses: 53
+  external_links_inventoried: 1
+  depth_boundary_links_inventoried: 158
+  binary_links_inventoried_not_fetched: 1
+  gaps: 1
+external_links:
+- https://www.tei-c.org/Vault/
+depth_boundary_links:
+- https://www.tei-c.org/Vault/P5/1.0.0/.svn/
+- https://www.tei-c.org/Vault/P5/1.0.0/doc/
+- https://www.tei-c.org/Vault/P5/1.0.0/xml/
+- https://www.tei-c.org/Vault/P5/1.0.1/.svn/
+- https://www.tei-c.org/Vault/P5/1.0.1/doc/
+- https://www.tei-c.org/Vault/P5/1.0.1/xml/
+- https://www.tei-c.org/Vault/P5/1.1.0/.svn/
+- https://www.tei-c.org/Vault/P5/1.1.0/doc/
+- https://www.tei-c.org/Vault/P5/1.1.0/tei/
+- https://www.tei-c.org/Vault/P5/1.1.0/xml/
+- https://www.tei-c.org/Vault/P5/1.2.0/.svn/
+- https://www.tei-c.org/Vault/P5/1.2.0/doc/
+- https://www.tei-c.org/Vault/P5/1.2.0/tei/
+- https://www.tei-c.org/Vault/P5/1.2.0/xml/
+- https://www.tei-c.org/Vault/P5/1.3.0/.svn/
+- https://www.tei-c.org/Vault/P5/1.3.0/doc/
+- https://www.tei-c.org/Vault/P5/1.3.0/tei/
+- https://www.tei-c.org/Vault/P5/1.3.0/xml/
+- https://www.tei-c.org/Vault/P5/1.4.0/.svn/
+- https://www.tei-c.org/Vault/P5/1.4.0/doc/
+- https://www.tei-c.org/Vault/P5/1.4.0/tei/
+- https://www.tei-c.org/Vault/P5/1.4.0/xml/
+- https://www.tei-c.org/Vault/P5/1.4.1/.svn/
+- https://www.tei-c.org/Vault/P5/1.4.1/doc/
+- https://www.tei-c.org/Vault/P5/1.4.1/tei/
+- https://www.tei-c.org/Vault/P5/1.4.1/xml/
+- https://www.tei-c.org/Vault/P5/1.5.0/.svn/
+- https://www.tei-c.org/Vault/P5/1.5.0/doc/
+- https://www.tei-c.org/Vault/P5/1.5.0/tei/
+- https://www.tei-c.org/Vault/P5/1.5.0/xml/
+- https://www.tei-c.org/Vault/P5/1.6.0/.svn/
+- https://www.tei-c.org/Vault/P5/1.6.0/doc/
+- https://www.tei-c.org/Vault/P5/1.6.0/tei/
+- https://www.tei-c.org/Vault/P5/1.6.0/xml/
+- https://www.tei-c.org/Vault/P5/1.7.0/.svn/
+- https://www.tei-c.org/Vault/P5/1.7.0/doc/
+- https://www.tei-c.org/Vault/P5/1.7.0/xml/
+- https://www.tei-c.org/Vault/P5/1.8.0/.svn/
+- https://www.tei-c.org/Vault/P5/1.8.0/doc/
+- https://www.tei-c.org/Vault/P5/1.8.0/xml/
+- https://www.tei-c.org/Vault/P5/1.9.0/.svn/
+- https://www.tei-c.org/Vault/P5/1.9.0/doc/
+- https://www.tei-c.org/Vault/P5/1.9.0/xml/
+- https://www.tei-c.org/Vault/P5/1.9.1/.svn/
+- https://www.tei-c.org/Vault/P5/1.9.1/doc/
+- https://www.tei-c.org/Vault/P5/1.9.1/xml/
+- https://www.tei-c.org/Vault/P5/2.0.0/doc/
+- https://www.tei-c.org/Vault/P5/2.0.0/xml/
+- https://www.tei-c.org/Vault/P5/2.0.1/doc/
+- https://www.tei-c.org/Vault/P5/2.0.1/xml/
+- https://www.tei-c.org/Vault/P5/2.0.2/doc/
+- https://www.tei-c.org/Vault/P5/2.0.2/xml/
+- https://www.tei-c.org/Vault/P5/2.1.0/doc/
+- https://www.tei-c.org/Vault/P5/2.1.0/xml/
+- https://www.tei-c.org/Vault/P5/2.2.0/doc/
+- https://www.tei-c.org/Vault/P5/2.2.0/xml/
+- https://www.tei-c.org/Vault/P5/2.3.0/doc/
+- https://www.tei-c.org/Vault/P5/2.3.0/oxygen/
+- https://www.tei-c.org/Vault/P5/2.3.0/xml/
+- https://www.tei-c.org/Vault/P5/2.4.0/doc/
+- https://www.tei-c.org/Vault/P5/2.4.0/oxygen/
+- https://www.tei-c.org/Vault/P5/2.4.0/xml/
+- https://www.tei-c.org/Vault/P5/2.5.0/doc/
+- https://www.tei-c.org/Vault/P5/2.5.0/oxygen/
+- https://www.tei-c.org/Vault/P5/2.5.0/xml/
+- https://www.tei-c.org/Vault/P5/2.6.0/doc/
+- https://www.tei-c.org/Vault/P5/2.6.0/oxygen/
+- https://www.tei-c.org/Vault/P5/2.6.0/xml/
+- https://www.tei-c.org/Vault/P5/2.7.0/doc/
+- https://www.tei-c.org/Vault/P5/2.7.0/oxygen/
+- https://www.tei-c.org/Vault/P5/2.7.0/xml/
+- https://www.tei-c.org/Vault/P5/2.8.0/doc/
+- https://www.tei-c.org/Vault/P5/2.8.0/oxygen/
+- https://www.tei-c.org/Vault/P5/2.8.0/xml/
+- https://www.tei-c.org/Vault/P5/2.9.0/doc/
+- https://www.tei-c.org/Vault/P5/2.9.0/oxygen/
+- https://www.tei-c.org/Vault/P5/2.9.0/xml/
+- https://www.tei-c.org/Vault/P5/2.9.1/doc/
+- https://www.tei-c.org/Vault/P5/2.9.1/oxygen/
+- https://www.tei-c.org/Vault/P5/2.9.1/xml/
+- https://www.tei-c.org/Vault/P5/3.0.0/doc/
+- https://www.tei-c.org/Vault/P5/3.0.0/oxygen/
+- https://www.tei-c.org/Vault/P5/3.0.0/xml/
+- https://www.tei-c.org/Vault/P5/3.1.0/doc/
+- https://www.tei-c.org/Vault/P5/3.1.0/oxygen/
+- https://www.tei-c.org/Vault/P5/3.1.0/xml/
+- https://www.tei-c.org/Vault/P5/3.2.0/doc/
+- https://www.tei-c.org/Vault/P5/3.2.0/oxygen/
+- https://www.tei-c.org/Vault/P5/3.2.0/xml/
+- https://www.tei-c.org/Vault/P5/3.3.0/doc/
+- https://www.tei-c.org/Vault/P5/3.3.0/oxygen/
+- https://www.tei-c.org/Vault/P5/3.3.0/xml/
+- https://www.tei-c.org/Vault/P5/3.4.0/doc/
+- https://www.tei-c.org/Vault/P5/3.4.0/oxygen/
+- https://www.tei-c.org/Vault/P5/3.4.0/xml/
+- https://www.tei-c.org/Vault/P5/3.5.0/doc/
+- https://www.tei-c.org/Vault/P5/3.5.0/oxygen/
+- https://www.tei-c.org/Vault/P5/3.5.0/xml/
+- https://www.tei-c.org/Vault/P5/3.6.0/doc/
+- https://www.tei-c.org/Vault/P5/3.6.0/oxygen/
+- https://www.tei-c.org/Vault/P5/3.6.0/xml/
+- https://www.tei-c.org/Vault/P5/4.0.0/doc/
+- https://www.tei-c.org/Vault/P5/4.0.0/oxygen/
+- https://www.tei-c.org/Vault/P5/4.0.0/xml/
+- https://www.tei-c.org/Vault/P5/4.1.0/doc/
+- https://www.tei-c.org/Vault/P5/4.1.0/oxygen/
+- https://www.tei-c.org/Vault/P5/4.1.0/xml/
+- https://www.tei-c.org/Vault/P5/4.10.0/doc/
+- https://www.tei-c.org/Vault/P5/4.10.0/oxygen/
+- https://www.tei-c.org/Vault/P5/4.10.0/xml/
+- https://www.tei-c.org/Vault/P5/4.10.1/doc/
+- https://www.tei-c.org/Vault/P5/4.10.1/oxygen/
+- https://www.tei-c.org/Vault/P5/4.10.1/xml/
+- https://www.tei-c.org/Vault/P5/4.10.2/doc/
+- https://www.tei-c.org/Vault/P5/4.10.2/oxygen/
+- https://www.tei-c.org/Vault/P5/4.10.2/xml/
+- https://www.tei-c.org/Vault/P5/4.11.0/doc/
+- https://www.tei-c.org/Vault/P5/4.11.0/oxygen/
+- https://www.tei-c.org/Vault/P5/4.11.0/xml/
+- https://www.tei-c.org/Vault/P5/4.12.0/doc/
+- https://www.tei-c.org/Vault/P5/4.12.0/oxygen/
+- https://www.tei-c.org/Vault/P5/4.12.0/xml/
+- https://www.tei-c.org/Vault/P5/4.2.0/doc/
+- https://www.tei-c.org/Vault/P5/4.2.0/oxygen/
+- https://www.tei-c.org/Vault/P5/4.2.0/xml/
+- https://www.tei-c.org/Vault/P5/4.2.1/doc/
+- https://www.tei-c.org/Vault/P5/4.2.1/oxygen/
+- https://www.tei-c.org/Vault/P5/4.2.1/xml/
+- https://www.tei-c.org/Vault/P5/4.2.2/doc/
+- https://www.tei-c.org/Vault/P5/4.2.2/oxygen/
+- https://www.tei-c.org/Vault/P5/4.2.2/xml/
+- https://www.tei-c.org/Vault/P5/4.3.0/doc/
+- https://www.tei-c.org/Vault/P5/4.3.0/oxygen/
+- https://www.tei-c.org/Vault/P5/4.3.0/xml/
+- https://www.tei-c.org/Vault/P5/4.4.0/doc/
+- https://www.tei-c.org/Vault/P5/4.4.0/oxygen/
+- https://www.tei-c.org/Vault/P5/4.4.0/xml/
+- https://www.tei-c.org/Vault/P5/4.5.0/doc/
+- https://www.tei-c.org/Vault/P5/4.5.0/oxygen/
+- https://www.tei-c.org/Vault/P5/4.5.0/xml/
+- https://www.tei-c.org/Vault/P5/4.6.0/doc/
+- https://www.tei-c.org/Vault/P5/4.6.0/oxygen/
+- https://www.tei-c.org/Vault/P5/4.6.0/xml/
+- https://www.tei-c.org/Vault/P5/4.7.0/doc/
+- https://www.tei-c.org/Vault/P5/4.7.0/oxygen/
+- https://www.tei-c.org/Vault/P5/4.7.0/xml/
+- https://www.tei-c.org/Vault/P5/4.8.0/doc/
+- https://www.tei-c.org/Vault/P5/4.8.0/oxygen/
+- https://www.tei-c.org/Vault/P5/4.8.0/xml/
+- https://www.tei-c.org/Vault/P5/4.8.1/doc/
+- https://www.tei-c.org/Vault/P5/4.8.1/oxygen/
+- https://www.tei-c.org/Vault/P5/4.8.1/xml/
+- https://www.tei-c.org/Vault/P5/4.9.0/doc/
+- https://www.tei-c.org/Vault/P5/4.9.0/oxygen/
+- https://www.tei-c.org/Vault/P5/4.9.0/xml/
+- https://www.tei-c.org/Vault/P5/current/doc/
+- https://www.tei-c.org/Vault/P5/current/oxygen/
+- https://www.tei-c.org/Vault/P5/current/xml/
+gaps:
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/P5/1.7.0/svn-commit.tmp~
+rights_exceptions:
+- Raw response bodies remain local until per-item redistribution rights are reviewed.

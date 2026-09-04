@@ -1,0 +1,99 @@
+schema_version: 1
+run_id: 2026-09-04-teic-public-git-repositories-teic-documentation
+source_id: teic-public-git-repositories
+started_at: '2026-09-04T16:36:21Z'
+finished_at: '2026-09-04T16:36:24Z'
+status: observable-complete
+adapter:
+  name: tools.corpus.git_snapshot
+  version: 1
+requests:
+- kind: git-mirror
+  repository: https://github.com/TEIC/Documentation.git
+  action: updated
+  requested_ref: HEAD
+  resolved_commit: 04207dd45740d999efa8eed2ac443315289a23a8
+objects:
+- kind: git-tree-inventory
+  path: corpus/normalized/git/org/teic-documentation.json
+  sha256: fe4a3abab4cd7141239aa1169735c970aee1b9c71f50c81cb9cd6daf64770119
+  root_tree: f2252f9ab63a828c119eecd7795fc57008351101
+counts:
+  commits_all_refs: 322
+  refs: 23
+  tree_entries: 16
+refs:
+- name: refs/heads/add-zenodo-tcw22
+  object_type: commit
+  object_id: 5c41672879d08e033e7be6bad847d4e2a93db28c
+- name: refs/heads/gh-pages
+  object_type: commit
+  object_id: e613605c89c51242eabfe575b913d93278a96ff2
+- name: refs/heads/master
+  object_type: commit
+  object_id: 04207dd45740d999efa8eed2ac443315289a23a8
+- name: refs/heads/sydb_replace_intro
+  object_type: commit
+  object_id: 9b358f7666539f0906dc2534f641992fa10c42e9
+- name: refs/heads/temp_for_patch_release_4.10.1
+  object_type: commit
+  object_id: 05620f202ab8baa764868ce75b486e673d6bebb4
+- name: refs/heads/trishaoconnor_tcw31update
+  object_type: commit
+  object_id: 93582cfc4a1c7b5f7044c2be5d63d7967d7edcb6
+- name: refs/heads/wiki-draft
+  object_type: commit
+  object_id: a4c18359c98b0cd8160089da64bed4874f73c589
+- name: refs/pull/11/head
+  object_type: commit
+  object_id: 0fdf2eec852771d894d1e3d3f90eb619cc65c8e5
+- name: refs/pull/15/head
+  object_type: commit
+  object_id: 5e3e4f236dfe32aeb1b6ccd2a86dc3f30d758471
+- name: refs/pull/17/head
+  object_type: commit
+  object_id: 6ff0ada99a20c868a6f4fa7099f7c731f193ce83
+- name: refs/pull/18/head
+  object_type: commit
+  object_id: 1d79d34d8926076201f38b82e946d801486c354f
+- name: refs/pull/19/head
+  object_type: commit
+  object_id: 93582cfc4a1c7b5f7044c2be5d63d7967d7edcb6
+- name: refs/pull/2/head
+  object_type: commit
+  object_id: d27e7234350b2db7eb05742eb893d317a5eba8ec
+- name: refs/pull/20/head
+  object_type: commit
+  object_id: 383c16625208ddc3e5ae6ba3740412a87f8e2bc9
+- name: refs/pull/21/head
+  object_type: commit
+  object_id: df1a69b7b15f014dba895f080ef921a30bd8174f
+- name: refs/pull/25/head
+  object_type: commit
+  object_id: d6714d141aba3a076d83290b298821ea9b0f29d1
+- name: refs/pull/28/head
+  object_type: commit
+  object_id: 9b358f7666539f0906dc2534f641992fa10c42e9
+- name: refs/pull/31/head
+  object_type: commit
+  object_id: 79ced0fd149c1d8a4f2248090f6ea40e320e3b84
+- name: refs/pull/32/head
+  object_type: commit
+  object_id: 5c41672879d08e033e7be6bad847d4e2a93db28c
+- name: refs/pull/32/merge
+  object_type: commit
+  object_id: 60716ae0ccf979c2e9b1a8f769c45594c02fd0f8
+- name: refs/tags/TCW_Release_1.0.0
+  object_type: tag
+  object_id: 4d241c5146713bb579f3804d896810845e8ac394
+- name: refs/tags/v1.0.0
+  object_type: commit
+  object_id: d098dd44920db74c7c0456569d1496458dae07ad
+- name: refs/tags/v1.1.0
+  object_type: commit
+  object_id: d098dd44920db74c7c0456569d1496458dae07ad
+gaps: []
+rights_exceptions:
+- The local mirror is not committed; redistribution follows the upstream repository
+  license.
+raw_materialization: corpus\raw\git\TEIC-Documentation.git

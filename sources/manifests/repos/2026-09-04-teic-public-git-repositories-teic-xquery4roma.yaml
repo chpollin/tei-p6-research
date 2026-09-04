@@ -1,0 +1,36 @@
+schema_version: 1
+run_id: 2026-09-04-teic-public-git-repositories-teic-xquery4roma
+source_id: teic-public-git-repositories
+started_at: '2026-09-04T16:40:14Z'
+finished_at: '2026-09-04T16:40:16Z'
+status: observable-complete
+adapter:
+  name: tools.corpus.git_snapshot
+  version: 1
+requests:
+- kind: git-mirror
+  repository: https://github.com/TEIC/xquery4roma.git
+  action: cloned
+  requested_ref: HEAD
+  resolved_commit: 6f1d1a914b6afc69665ca399fd3da91a3ef2c5c4
+objects:
+- kind: git-tree-inventory
+  path: corpus/normalized/git/org/teic-xquery4roma.json
+  sha256: 6019da3f2424a08dc74e0fcfae6bde08a9a7929a17c124e281bf6aae64de53e0
+  root_tree: 847db1ed23583065bb98347d0e461e99b303c9e0
+counts:
+  commits_all_refs: 20
+  refs: 2
+  tree_entries: 38
+refs:
+- name: refs/heads/dev
+  object_type: commit
+  object_id: 25ed5dc9340aa73a047f98b22b51bd004094a8ac
+- name: refs/heads/main
+  object_type: commit
+  object_id: 6f1d1a914b6afc69665ca399fd3da91a3ef2c5c4
+gaps: []
+rights_exceptions:
+- The local mirror is not committed; redistribution follows the upstream repository
+  license.
+raw_materialization: corpus\raw\git\TEIC-xquery4roma.git

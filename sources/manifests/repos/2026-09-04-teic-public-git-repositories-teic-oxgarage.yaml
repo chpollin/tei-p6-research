@@ -1,0 +1,75 @@
+schema_version: 1
+run_id: 2026-09-04-teic-public-git-repositories-teic-oxgarage
+source_id: teic-public-git-repositories
+started_at: '2026-09-04T16:36:44Z'
+finished_at: '2026-09-04T16:39:00Z'
+status: observable-complete
+adapter:
+  name: tools.corpus.git_snapshot
+  version: 1
+requests:
+- kind: git-mirror
+  repository: https://github.com/TEIC/oxgarage.git
+  action: cloned
+  requested_ref: HEAD
+  resolved_commit: 02173ed5d52d4c8618beb1387f58543bd298aa22
+objects:
+- kind: git-tree-inventory
+  path: corpus/normalized/git/org/teic-oxgarage.json
+  sha256: a6a58eb7d9ca3b0836d7cfc684a3e98fad9910541ab7c8ec28a6dc27f566bd02
+  root_tree: 149e17760faad5988c452e1ff069399e094d9d67
+counts:
+  commits_all_refs: 209
+  refs: 15
+  tree_entries: 424
+refs:
+- name: refs/heads/dev
+  object_type: commit
+  object_id: 02173ed5d52d4c8618beb1387f58543bd298aa22
+- name: refs/heads/hcayless_validation
+  object_type: commit
+  object_id: b9642261a745df4bc214a7e079b3041256b54519
+- name: refs/heads/main
+  object_type: commit
+  object_id: d417b6eed1fcc2dcb605e51aad288a9e908bed3d
+- name: refs/heads/master
+  object_type: commit
+  object_id: 43c5bf206fd006eab5fccfda29145b66d5114f42
+- name: refs/heads/minor-saxon-upgrade
+  object_type: commit
+  object_id: 53e60cbbfbdacf507ff5d41817421f61a64fbebc
+- name: refs/pull/15/head
+  object_type: commit
+  object_id: e52c313a9b41b2156cc3a71260e5efaa9088e61d
+- name: refs/pull/3/head
+  object_type: commit
+  object_id: 138eac4952050489c43b39448cd1c7b8a402aed1
+- name: refs/pull/31/head
+  object_type: commit
+  object_id: 311b11d7dd168d9131e110aafa92c030c628ab41
+- name: refs/pull/37/head
+  object_type: commit
+  object_id: d9a2ec60fedb39597e166bd67baec4b663cfebcb
+- name: refs/pull/39/head
+  object_type: commit
+  object_id: 53e60cbbfbdacf507ff5d41817421f61a64fbebc
+- name: refs/pull/6/head
+  object_type: commit
+  object_id: 8341ca6074492ba950faa82b7bc7efbf74086646
+- name: refs/pull/6/merge
+  object_type: commit
+  object_id: 8efed6154b0585bf82777fc577c613880072b208
+- name: refs/tags/v1.0.0
+  object_type: tag
+  object_id: 38aeab938b31271c1fce5fad87f550f36630c4bf
+- name: refs/tags/v3.0.0
+  object_type: tag
+  object_id: bc96a3b50220981a83409b44af4a60dcc7ebde0e
+- name: refs/tags/v3.1.0
+  object_type: tag
+  object_id: 6632bc6e694930fac2db68b3a3e6d10d195dbb88
+gaps: []
+rights_exceptions:
+- The local mirror is not committed; redistribution follows the upstream repository
+  license.
+raw_materialization: corpus\raw\git\TEIC-oxgarage.git

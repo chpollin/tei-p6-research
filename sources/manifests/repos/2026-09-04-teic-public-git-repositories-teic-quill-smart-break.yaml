@@ -1,0 +1,96 @@
+schema_version: 1
+run_id: 2026-09-04-teic-public-git-repositories-teic-quill-smart-break
+source_id: teic-public-git-repositories
+started_at: '2026-09-04T16:38:59Z'
+finished_at: '2026-09-04T16:39:01Z'
+status: observable-complete
+adapter:
+  name: tools.corpus.git_snapshot
+  version: 1
+requests:
+- kind: git-mirror
+  repository: https://github.com/TEIC/quill-smart-break.git
+  action: cloned
+  requested_ref: HEAD
+  resolved_commit: d778d0cf2a95742ad5e31f690aa3490773ed278c
+objects:
+- kind: git-tree-inventory
+  path: corpus/normalized/git/org/teic-quill-smart-break.json
+  sha256: b52daaeddb920d5aeb0e2865cb70911f14ec0f2703de00cefa86a0a951227ce9
+  root_tree: 29dfebf7b7196e96cbdec22bc1dc3c27b6735a8b
+counts:
+  commits_all_refs: 28
+  refs: 22
+  tree_entries: 10
+refs:
+- name: refs/heads/dependabot/npm_and_yarn/ajv-6.12.6
+  object_type: commit
+  object_id: ddf2d0e71e0fd02c3ef5d33cbbdc0d680c1025ff
+- name: refs/heads/dependabot/npm_and_yarn/async-2.6.4
+  object_type: commit
+  object_id: c2c520fda73a08919419a7596d018ccabea74446
+- name: refs/heads/dependabot/npm_and_yarn/browserslist-4.16.6
+  object_type: commit
+  object_id: 316f4ca190ffb6b53d5663ceeb000eec89d25051
+- name: refs/heads/dependabot/npm_and_yarn/dns-packet-1.3.4
+  object_type: commit
+  object_id: b7d9bd082034ab2d0bb64a4c3c51951a080d2959
+- name: refs/heads/dependabot/npm_and_yarn/elliptic-6.5.4
+  object_type: commit
+  object_id: 62a76a71b7f70010c4421d2d39833ea7aa925639
+- name: refs/heads/dependabot/npm_and_yarn/eventsource-1.1.1
+  object_type: commit
+  object_id: 7e161cc6daf53872c728623e282d16725b4b6465
+- name: refs/heads/dependabot/npm_and_yarn/follow-redirects-1.14.8
+  object_type: commit
+  object_id: d973deac389bd69ed2624b5718ab68a9671f939a
+- name: refs/heads/dependabot/npm_and_yarn/hosted-git-info-2.8.9
+  object_type: commit
+  object_id: 9957c47a63505e209edcccfdccb00eb318a3e2c7
+- name: refs/heads/dependabot/npm_and_yarn/http-proxy-1.18.1
+  object_type: commit
+  object_id: 34b8c9e288b018709efe7ab8dffdd815c9852b7b
+- name: refs/heads/dependabot/npm_and_yarn/ini-1.3.8
+  object_type: commit
+  object_id: 9fe4d6e9c8595cec71e2c4e6653ab29b95b20ad0
+- name: refs/heads/dependabot/npm_and_yarn/lodash-4.17.21
+  object_type: commit
+  object_id: b74987d8598508ff3642ac7beacf43f5dffb244f
+- name: refs/heads/dependabot/npm_and_yarn/minimist-1.2.6
+  object_type: commit
+  object_id: 94850c8468bc35785f1c1bd68ebbc8ca4dca8885
+- name: refs/heads/dependabot/npm_and_yarn/path-parse-1.0.7
+  object_type: commit
+  object_id: c5a80c159402f5021fec112d154cf22a15b868a0
+- name: refs/heads/dependabot/npm_and_yarn/ssri-6.0.2
+  object_type: commit
+  object_id: 56d2e58138b836289c5e14fe98e90f94e0fbafc2
+- name: refs/heads/dependabot/npm_and_yarn/url-parse-1.5.10
+  object_type: commit
+  object_id: 24e6047a58519363d0f6e1854368dfa61b9a849f
+- name: refs/heads/dependabot/npm_and_yarn/websocket-extensions-0.1.4
+  object_type: commit
+  object_id: c3ffd0e517d2faa754675551db7921c59560951d
+- name: refs/heads/dependabot/npm_and_yarn/ws-6.2.2
+  object_type: commit
+  object_id: 1a62ccd2d480cda77930784dc99f254844fb1147
+- name: refs/heads/dependabot/npm_and_yarn/y18n-4.0.1
+  object_type: commit
+  object_id: 9f263f074624b0182adffaaa0b6c3d849d377c51
+- name: refs/heads/master
+  object_type: commit
+  object_id: d778d0cf2a95742ad5e31f690aa3490773ed278c
+- name: refs/tags/0.1.0
+  object_type: commit
+  object_id: 0149dad6d9b92c1786525229fcb7c376c2027d4c
+- name: refs/tags/0.1.1
+  object_type: commit
+  object_id: 0b6f7135c171dfd8604c23fad596d29a4faecf31
+- name: refs/tags/0.2.0
+  object_type: commit
+  object_id: d2538f88601a47cedfc7dfaee8547401cea2c4f9
+gaps: []
+rights_exceptions:
+- The local mirror is not committed; redistribution follows the upstream repository
+  license.
+raw_materialization: corpus\raw\git\TEIC-quill-smart-break.git

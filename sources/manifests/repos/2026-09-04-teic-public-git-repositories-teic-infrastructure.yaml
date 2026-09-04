@@ -1,0 +1,39 @@
+schema_version: 1
+run_id: 2026-09-04-teic-public-git-repositories-teic-infrastructure
+source_id: teic-public-git-repositories
+started_at: '2026-09-04T16:36:29Z'
+finished_at: '2026-09-04T16:36:30Z'
+status: observable-complete
+adapter:
+  name: tools.corpus.git_snapshot
+  version: 1
+requests:
+- kind: git-mirror
+  repository: https://github.com/TEIC/infrastructure.git
+  action: cloned
+  requested_ref: HEAD
+  resolved_commit: 32264b3619d54b5ee0b8b46fb89d2f99bc5c64dc
+objects:
+- kind: git-tree-inventory
+  path: corpus/normalized/git/org/teic-infrastructure.json
+  sha256: 9cd5ecc4cacaa78f0670ea55fa14b076039847a9579947c7be756fe9b81c0237
+  root_tree: 3f61131edeb54309e2c22ab2013f49e4e46ced85
+counts:
+  commits_all_refs: 83
+  refs: 3
+  tree_entries: 15
+refs:
+- name: refs/heads/main
+  object_type: commit
+  object_id: 32264b3619d54b5ee0b8b46fb89d2f99bc5c64dc
+- name: refs/pull/3/head
+  object_type: commit
+  object_id: 4d6d5dd3afe1845ba57f2fbdbd75817fcaf2925f
+- name: refs/pull/4/head
+  object_type: commit
+  object_id: e6ce389bc934b9c6fbfc9ce62930f0ddfb8f95ca
+gaps: []
+rights_exceptions:
+- The local mirror is not committed; redistribution follows the upstream repository
+  license.
+raw_materialization: corpus\raw\git\TEIC-infrastructure.git

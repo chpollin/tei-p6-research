@@ -1,0 +1,604 @@
+{
+  "entries": [
+    {
+      "mode": "100644",
+      "object_id": "0b348c679ca4135f40b27af556768ef89852ecaf",
+      "object_type": "blob",
+      "path": ".github/dependabot.yml"
+    },
+    {
+      "mode": "100644",
+      "object_id": "a50f9a177dec24543bbb08bd31a9e86952e3660d",
+      "object_type": "blob",
+      "path": ".github/workflows/maven.yml"
+    },
+    {
+      "mode": "100644",
+      "object_id": "ab11c3566fdd27689da57197db2e2b8e2aa897d4",
+      "object_type": "blob",
+      "path": ".gitignore"
+    },
+    {
+      "mode": "100644",
+      "object_id": "9387f08a888bea1b616fb02f6af325f145f2c0e2",
+      "object_type": "blob",
+      "path": "LICENCE.txt"
+    },
+    {
+      "mode": "100644",
+      "object_id": "97eb7fc4f08a4c83f7e4bb7a5c8a2db0303cd477",
+      "object_type": "blob",
+      "path": "README.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "f35a251a40fb3f1cb70e4851a9e9b0b8ee80d9a2",
+      "object_type": "blob",
+      "path": "pom.xml"
+    },
+    {
+      "mode": "100644",
+      "object_id": "d10fa5c2fd934297fc807905767d3c2ca09eceda",
+      "object_type": "blob",
+      "path": "src/main/webapp/WEB-INF/web.xml"
+    },
+    {
+      "mode": "100644",
+      "object_id": "066a421542bef20ce2461c19840a6a9d9c7e7cdb",
+      "object_type": "blob",
+      "path": "src/main/webapp/helpFiles-en/convert.html"
+    },
+    {
+      "mode": "100644",
+      "object_id": "335477033f58780b852845aeaa0b184bf8a90763",
+      "object_type": "blob",
+      "path": "src/main/webapp/helpFiles-en/convertFrom.html"
+    },
+    {
+      "mode": "100644",
+      "object_id": "623ba4161daa348cad863b4867f5900bd63c2443",
+      "object_type": "blob",
+      "path": "src/main/webapp/helpFiles-en/convertTo.html"
+    },
+    {
+      "mode": "100644",
+      "object_id": "4bb14b92db9231abe74a4c6b6cf1e806348ce172",
+      "object_type": "blob",
+      "path": "src/main/webapp/helpFiles-en/errorHelp.html"
+    },
+    {
+      "mode": "100644",
+      "object_id": "239a976cb8c1207916c4a0d2b3c7b6809b44a894",
+      "object_type": "blob",
+      "path": "src/main/webapp/helpFiles-en/images.html"
+    },
+    {
+      "mode": "100644",
+      "object_id": "9bd3ae03857a8f90c5b6399e9917333260c929fd",
+      "object_type": "blob",
+      "path": "src/main/webapp/helpFiles-en/moreOptions.html"
+    },
+    {
+      "mode": "100644",
+      "object_id": "511ea61b4b19fc3425b7067f7aa8683a4a6410f3",
+      "object_type": "blob",
+      "path": "src/main/webapp/helpFiles-en/validationErrorHelp.html"
+    },
+    {
+      "mode": "100644",
+      "object_id": "0554a4cfa2509452225f3fcb36b2b51e354320e8",
+      "object_type": "blob",
+      "path": "src/main/webapp/helpFiles-fr/convert.html"
+    },
+    {
+      "mode": "100644",
+      "object_id": "52e89a2abbc7de2b29ca6a1e66c695359e193d83",
+      "object_type": "blob",
+      "path": "src/main/webapp/helpFiles-fr/convertFrom.html"
+    },
+    {
+      "mode": "100644",
+      "object_id": "fc1ddaf45bf347776bcf835c4b07e0b2e4abe09c",
+      "object_type": "blob",
+      "path": "src/main/webapp/helpFiles-fr/convertTo.html"
+    },
+    {
+      "mode": "100644",
+      "object_id": "ee8061d4a6907c3c35aec03c80dde1c615e8eea5",
+      "object_type": "blob",
+      "path": "src/main/webapp/helpFiles-fr/errorHelp.html"
+    },
+    {
+      "mode": "100644",
+      "object_id": "8f067af058547aefa963a8a351b279dc6083e288",
+      "object_type": "blob",
+      "path": "src/main/webapp/helpFiles-fr/images.html"
+    },
+    {
+      "mode": "100644",
+      "object_id": "bbc6f3c9d2562f6ae1fe2f8bbf9d9153ba743649",
+      "object_type": "blob",
+      "path": "src/main/webapp/helpFiles-fr/moreOptions.html"
+    },
+    {
+      "mode": "100644",
+      "object_id": "e629b4b73f74d16b2faa8560caa6292629c7d61e",
+      "object_type": "blob",
+      "path": "src/main/webapp/helpFiles-fr/validationErrorHelp.html"
+    },
+    {
+      "mode": "100644",
+      "object_id": "066a421542bef20ce2461c19840a6a9d9c7e7cdb",
+      "object_type": "blob",
+      "path": "src/main/webapp/helpFiles/convert.html"
+    },
+    {
+      "mode": "100644",
+      "object_id": "335477033f58780b852845aeaa0b184bf8a90763",
+      "object_type": "blob",
+      "path": "src/main/webapp/helpFiles/convertFrom.html"
+    },
+    {
+      "mode": "100644",
+      "object_id": "623ba4161daa348cad863b4867f5900bd63c2443",
+      "object_type": "blob",
+      "path": "src/main/webapp/helpFiles/convertTo.html"
+    },
+    {
+      "mode": "100644",
+      "object_id": "4bb14b92db9231abe74a4c6b6cf1e806348ce172",
+      "object_type": "blob",
+      "path": "src/main/webapp/helpFiles/errorHelp.html"
+    },
+    {
+      "mode": "100644",
+      "object_id": "239a976cb8c1207916c4a0d2b3c7b6809b44a894",
+      "object_type": "blob",
+      "path": "src/main/webapp/helpFiles/images.html"
+    },
+    {
+      "mode": "100644",
+      "object_id": "9bd3ae03857a8f90c5b6399e9917333260c929fd",
+      "object_type": "blob",
+      "path": "src/main/webapp/helpFiles/moreOptions.html"
+    },
+    {
+      "mode": "100644",
+      "object_id": "511ea61b4b19fc3425b7067f7aa8683a4a6410f3",
+      "object_type": "blob",
+      "path": "src/main/webapp/helpFiles/validationErrorHelp.html"
+    },
+    {
+      "mode": "100644",
+      "object_id": "46cf748ea8783e936e63ba6ce86e4ebe36649760",
+      "object_type": "blob",
+      "path": "src/main/webapp/i18n.xml"
+    },
+    {
+      "mode": "100644",
+      "object_id": "e6dcfa9ace3b15c0a9d4d126722ef93c53a44295",
+      "object_type": "blob",
+      "path": "src/main/webapp/images/banner.jpg"
+    },
+    {
+      "mode": "100644",
+      "object_id": "ebe2014a316c84a27ae89aed8c35393db9978b0b",
+      "object_type": "blob",
+      "path": "src/main/webapp/images/crest.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "19e491face0a7505cd741f8b82bea6f7f87d0359",
+      "object_type": "blob",
+      "path": "src/main/webapp/images/documents.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "6835a41b49180645b032a1801832711e00a5f2e6",
+      "object_type": "blob",
+      "path": "src/main/webapp/images/favicon.ico"
+    },
+    {
+      "mode": "100644",
+      "object_id": "9629c637370939efa8bb3a95379bb68d6fc5c278",
+      "object_type": "blob",
+      "path": "src/main/webapp/images/header-bg.jpg"
+    },
+    {
+      "mode": "100644",
+      "object_id": "ca28502e767991cbb6caa5f727d552c035973796",
+      "object_type": "blob",
+      "path": "src/main/webapp/images/presentation.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "ca28502e767991cbb6caa5f727d552c035973796",
+      "object_type": "blob",
+      "path": "src/main/webapp/images/presentations.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "79c7ace0cf8e734dc4096832b0a104396e6279f9",
+      "object_type": "blob",
+      "path": "src/main/webapp/images/servicename.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "6cb9eb811744964c656dbd90f695d2b1761a4b25",
+      "object_type": "blob",
+      "path": "src/main/webapp/images/spreadsheet.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "6cb9eb811744964c656dbd90f695d2b1761a4b25",
+      "object_type": "blob",
+      "path": "src/main/webapp/images/spreadsheets.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "19e491face0a7505cd741f8b82bea6f7f87d0359",
+      "object_type": "blob",
+      "path": "src/main/webapp/images/text.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "5f490485c9c2b2e0a2597a92b5550c64b905b2cd",
+      "object_type": "blob",
+      "path": "src/main/webapp/index.jsp"
+    },
+    {
+      "mode": "100644",
+      "object_id": "e1b8635dd04e8b3720e7981bcf03358cdeb3f6ee",
+      "object_type": "blob",
+      "path": "src/main/webapp/js/ege-js-client.js"
+    },
+    {
+      "mode": "100644",
+      "object_id": "6f4ade9e1d5774334e1444908b161b1cb50e19da",
+      "object_type": "blob",
+      "path": "src/main/webapp/js/ege-js-validation.js"
+    },
+    {
+      "mode": "100644",
+      "object_id": "6e42405ca235912503cd39d903b6779b36661cc1",
+      "object_type": "blob",
+      "path": "src/main/webapp/js/jquery.form.js"
+    },
+    {
+      "mode": "100644",
+      "object_id": "e8f73eb4785690f041efb57de310f2d0d6ab16a6",
+      "object_type": "blob",
+      "path": "src/main/webapp/js/jquery.geturlparam.js"
+    },
+    {
+      "mode": "100644",
+      "object_id": "7c243080233761859937d52195b670602731a379",
+      "object_type": "blob",
+      "path": "src/main/webapp/js/jquery.js"
+    },
+    {
+      "mode": "100644",
+      "object_id": "55719053cebe632db81faa0ce69c4da3a9db1b78",
+      "object_type": "blob",
+      "path": "src/main/webapp/js/themes/custom-theme/images/Thumbs.db"
+    },
+    {
+      "mode": "100644",
+      "object_id": "5b5dab2ab7b1c50dea9cfe73dc5a269a92d2d4b4",
+      "object_type": "blob",
+      "path": "src/main/webapp/js/themes/custom-theme/images/ui-bg_flat_0_aaaaaa_40x100.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "5ea0d817dd689a695775b99faabe44ef71bac87a",
+      "object_type": "blob",
+      "path": "src/main/webapp/js/themes/custom-theme/images/ui-bg_flat_75_e7e8e9_40x100.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "ad3d6346e00f246102f72f2e026ed0491988b394",
+      "object_type": "blob",
+      "path": "src/main/webapp/js/themes/custom-theme/images/ui-bg_glass_55_fbf9ee_1x400.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "42ccba269b6e91bef12ad0fa18be651b5ef0ee68",
+      "object_type": "blob",
+      "path": "src/main/webapp/js/themes/custom-theme/images/ui-bg_glass_65_ffffff_1x400.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "546536d4dd11126ea4f1143d11af99fa02ae7987",
+      "object_type": "blob",
+      "path": "src/main/webapp/js/themes/custom-theme/images/ui-bg_glass_75_cbcdd2_1x400.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "91b836c439557a949042c79e3cf8e3f1435fa06e",
+      "object_type": "blob",
+      "path": "src/main/webapp/js/themes/custom-theme/images/ui-bg_highlight-soft_75_83b3ec_1x100.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "ec17b66f67a1d9787813e9c75a34a1a8cc861a80",
+      "object_type": "blob",
+      "path": "src/main/webapp/js/themes/custom-theme/images/ui-bg_inset-hard_75_88b7f2_1x100.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "0e05810fffe0b6b8ac320e55d1eb4ba259b89d92",
+      "object_type": "blob",
+      "path": "src/main/webapp/js/themes/custom-theme/images/ui-bg_inset-soft_95_fef1ec_1x100.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "ee039dc096a38a3753f92519546eee94bcfbeffa",
+      "object_type": "blob",
+      "path": "src/main/webapp/js/themes/custom-theme/images/ui-icons_222222_256x240.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "45e8928e5284adacea3f9ec07b9b50667d2ac65f",
+      "object_type": "blob",
+      "path": "src/main/webapp/js/themes/custom-theme/images/ui-icons_2e83ff_256x240.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "7ec70d11bfb2f77374dfd00ef61ba0c3647b5a0c",
+      "object_type": "blob",
+      "path": "src/main/webapp/js/themes/custom-theme/images/ui-icons_454545_256x240.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "5ba708c39172a69e069136bd1309c4322c61f571",
+      "object_type": "blob",
+      "path": "src/main/webapp/js/themes/custom-theme/images/ui-icons_888888_256x240.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "7930a558099bc8d92b4264eb67a0f040460f4a4f",
+      "object_type": "blob",
+      "path": "src/main/webapp/js/themes/custom-theme/images/ui-icons_cd0a0a_256x240.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "ba28c41956cd698f99ae992bbd68e8e5052d12bf",
+      "object_type": "blob",
+      "path": "src/main/webapp/js/themes/custom-theme/jquery-ui-1.7.2.custom.css"
+    },
+    {
+      "mode": "100644",
+      "object_id": "ee1b1b640b1514f8e124f61d70edc1ccd4cc27d4",
+      "object_type": "blob",
+      "path": "src/main/webapp/js/themes/custom-theme/ui.accordion.css"
+    },
+    {
+      "mode": "100644",
+      "object_id": "543e4c3bc9b7f37542318e33fe40fa9fdcd00de7",
+      "object_type": "blob",
+      "path": "src/main/webapp/js/themes/custom-theme/ui.all.css"
+    },
+    {
+      "mode": "100644",
+      "object_id": "ba53841419d576e59259b22e3e944d30fd124360",
+      "object_type": "blob",
+      "path": "src/main/webapp/js/themes/custom-theme/ui.base.css"
+    },
+    {
+      "mode": "100644",
+      "object_id": "c2f18f2c08553b20771289cc660f46a69b20d783",
+      "object_type": "blob",
+      "path": "src/main/webapp/js/themes/custom-theme/ui.core.css"
+    },
+    {
+      "mode": "100644",
+      "object_id": "567f8c97b562d47a0998236c567a04802c7d69d7",
+      "object_type": "blob",
+      "path": "src/main/webapp/js/themes/custom-theme/ui.datepicker.css"
+    },
+    {
+      "mode": "100644",
+      "object_id": "2997595b7d276e06108270ee0ac45c608d260439",
+      "object_type": "blob",
+      "path": "src/main/webapp/js/themes/custom-theme/ui.dialog.css"
+    },
+    {
+      "mode": "100644",
+      "object_id": "bc0939ecfa10f135eb8cb7df856c62c39ece525f",
+      "object_type": "blob",
+      "path": "src/main/webapp/js/themes/custom-theme/ui.progressbar.css"
+    },
+    {
+      "mode": "100644",
+      "object_id": "44efeb2e86c70229e50d1ceb40555938965a8b55",
+      "object_type": "blob",
+      "path": "src/main/webapp/js/themes/custom-theme/ui.resizable.css"
+    },
+    {
+      "mode": "100644",
+      "object_id": "4c5621879e83dad5504319ca9003e9f6c418555c",
+      "object_type": "blob",
+      "path": "src/main/webapp/js/themes/custom-theme/ui.slider.css"
+    },
+    {
+      "mode": "100644",
+      "object_id": "3ca6b9a0a914bcab051b7801c59a4b7db427574d",
+      "object_type": "blob",
+      "path": "src/main/webapp/js/themes/custom-theme/ui.tabs.css"
+    },
+    {
+      "mode": "100644",
+      "object_id": "ce084a7c1591957e0a3216ab95971261bc826836",
+      "object_type": "blob",
+      "path": "src/main/webapp/js/themes/custom-theme/ui.theme.css"
+    },
+    {
+      "mode": "100644",
+      "object_id": "82290f48334c81272ff5991962951758137a08ba",
+      "object_type": "blob",
+      "path": "src/main/webapp/js/thickbox/loadingAnimation.gif"
+    },
+    {
+      "mode": "100644",
+      "object_id": "a3d16a3331e6f9601e1c79820cd60011976e0630",
+      "object_type": "blob",
+      "path": "src/main/webapp/js/thickbox/thickbox.css"
+    },
+    {
+      "mode": "100644",
+      "object_id": "30ea88f393a399b34c3d65d6d60b58f89189b91f",
+      "object_type": "blob",
+      "path": "src/main/webapp/js/thickbox/thickbox.js"
+    },
+    {
+      "mode": "100644",
+      "object_id": "5292d77bd0c4f8ddaf4242c6deb61e5a14cb3eab",
+      "object_type": "blob",
+      "path": "src/main/webapp/js/ui/jquery-ui-1.7.2.custom.js"
+    },
+    {
+      "mode": "100644",
+      "object_id": "5493e0aeb443bfd39dfcce0ae6a3087ee631cd7b",
+      "object_type": "blob",
+      "path": "src/main/webapp/js/ui/ui.core.js"
+    },
+    {
+      "mode": "100644",
+      "object_id": "d914b3e4f902dafb677ce5fcb58b00166f989783",
+      "object_type": "blob",
+      "path": "src/main/webapp/js/ui/ui.tabs.js"
+    },
+    {
+      "mode": "100644",
+      "object_id": "b92c6cd0e16430dedbef0ea832b9e1ddba1ad1f5",
+      "object_type": "blob",
+      "path": "src/main/webapp/style/cssp_print.css"
+    },
+    {
+      "mode": "100644",
+      "object_id": "138ff492fd467fe755d2b00fcd1a6c157a3390c3",
+      "object_type": "blob",
+      "path": "src/main/webapp/style/images/LowerCrest-000066.gif"
+    },
+    {
+      "mode": "100644",
+      "object_id": "4f5dedcf14bc2d1bcde0236f9c278393e2c6489e",
+      "object_type": "blob",
+      "path": "src/main/webapp/style/images/OUCSLogo-000066.gif"
+    },
+    {
+      "mode": "100644",
+      "object_id": "8c163a8fe095f4ed41bfe5a8972fd9a660c36e3e",
+      "object_type": "blob",
+      "path": "src/main/webapp/style/images/SearchCorner-000066.gif"
+    },
+    {
+      "mode": "100644",
+      "object_id": "51bda2e5c558ea328a663c34a8cea26eb3c0b23d",
+      "object_type": "blob",
+      "path": "src/main/webapp/style/images/UpperBar.jpg"
+    },
+    {
+      "mode": "100644",
+      "object_id": "ecdbcaabd4fbb39d09d45cdc04c2b4b11069d3cf",
+      "object_type": "blob",
+      "path": "src/main/webapp/style/img/Thumbs.db"
+    },
+    {
+      "mode": "100644",
+      "object_id": "0cd37f97d5bba66f7a82aad1804ea28f14d79da9",
+      "object_type": "blob",
+      "path": "src/main/webapp/style/img/ege.jpg"
+    },
+    {
+      "mode": "100644",
+      "object_id": "f1cb9614b254494a40f897cbce91d95d821d163f",
+      "object_type": "blob",
+      "path": "src/main/webapp/style/img/err.gif"
+    },
+    {
+      "mode": "100644",
+      "object_id": "0741de965002d5006b79249cf3d5383213f069ea",
+      "object_type": "blob",
+      "path": "src/main/webapp/style/img/help_sm.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "6931e44235ede16f6f0aae7ef434d47d72764b9e",
+      "object_type": "blob",
+      "path": "src/main/webapp/style/main.css"
+    },
+    {
+      "mode": "100644",
+      "object_id": "665e2daef948b93285c37227fda1415b4549c4bd",
+      "object_type": "blob",
+      "path": "src/main/webapp/style/oucs.css"
+    },
+    {
+      "mode": "100644",
+      "object_id": "fe948c1394ca414bfd6d5522764559bb9a0f75a4",
+      "object_type": "blob",
+      "path": "src/site/resources/images/Thumbs.db"
+    },
+    {
+      "mode": "100644",
+      "object_id": "070b7a15260277879cc68c9b43d7bc6de70bd006",
+      "object_type": "blob",
+      "path": "src/site/resources/images/ege-overview.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "061d8eb3fc84f3a1885a220d4e4d466be4a5dc9b",
+      "object_type": "blob",
+      "path": "src/site/resources/images/ege.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "6978d902ef1271d36c25f9df4322b3a933057201",
+      "object_type": "blob",
+      "path": "src/site/resources/images/enrich-logo.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "4a51578da48c44b0220be28da25ab245f309b818",
+      "object_type": "blob",
+      "path": "src/site/resources/images/graf.jpg"
+    },
+    {
+      "mode": "100644",
+      "object_id": "e742a1858c29ff17b45760c7690f96c81bad6807",
+      "object_type": "blob",
+      "path": "src/site/resources/images/tabela.jpg"
+    },
+    {
+      "mode": "100644",
+      "object_id": "5ceccb23ee3ad3c87f117fc2d59924635122e11c",
+      "object_type": "blob",
+      "path": "src/site/resources/images/uml.gif"
+    },
+    {
+      "mode": "100644",
+      "object_id": "e5b553d014d19b2625c1978d14a11ce1d4c7d66e",
+      "object_type": "blob",
+      "path": "src/site/site.xml"
+    },
+    {
+      "mode": "100644",
+      "object_id": "cd247f29e79039a03aaf8c0643e67dce46b7f7c4",
+      "object_type": "blob",
+      "path": "src/site/xdoc/download.xml"
+    },
+    {
+      "mode": "100644",
+      "object_id": "2902013a472b12030cff843ae022113e89d920ca",
+      "object_type": "blob",
+      "path": "src/site/xdoc/index.xml"
+    }
+  ],
+  "ref_requested": "HEAD",
+  "repository": "https://github.com/TEIC/ege-webclient.git",
+  "resolved_commit": "c8a2e7e7408c56eca6c349768f84c67d47eb5d3c",
+  "root_tree": "9c2aa5574ff849301c8aef9dccd7d2d088e9e7ce",
+  "schema_version": 1,
+  "source_id": "teic-public-git-repositories"
+}

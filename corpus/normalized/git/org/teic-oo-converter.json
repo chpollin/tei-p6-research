@@ -1,0 +1,130 @@
+{
+  "entries": [
+    {
+      "mode": "100644",
+      "object_id": "0b348c679ca4135f40b27af556768ef89852ecaf",
+      "object_type": "blob",
+      "path": ".github/dependabot.yml"
+    },
+    {
+      "mode": "100644",
+      "object_id": "1e63e9a3f641d08ce55afbc77d6be45626534378",
+      "object_type": "blob",
+      "path": ".github/workflows/maven.yml"
+    },
+    {
+      "mode": "100644",
+      "object_id": "5e8c6850e3c44bc15d0c5cf58c01fbe01587f389",
+      "object_type": "blob",
+      "path": ".gitignore"
+    },
+    {
+      "mode": "100644",
+      "object_id": "9387f08a888bea1b616fb02f6af325f145f2c0e2",
+      "object_type": "blob",
+      "path": "LICENCE.txt"
+    },
+    {
+      "mode": "100644",
+      "object_id": "69c732a2e0fd7dcb6ef3c12e7154c30d084439d6",
+      "object_type": "blob",
+      "path": "README.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "2cce32383725039c8d0fe3957b966b15d06fbfc1",
+      "object_type": "blob",
+      "path": "pom.xml"
+    },
+    {
+      "mode": "100644",
+      "object_id": "fdfa28a0051b0dc8ef60e219bd012883cdb12bed",
+      "object_type": "blob",
+      "path": "required.sh"
+    },
+    {
+      "mode": "100644",
+      "object_id": "f2f447e5ff31daafddf5e94807730fb3ea997272",
+      "object_type": "blob",
+      "path": "src/main/java/uk/ac/ox/oucs/oxgarage/oo/InputPresentationFormat.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "50d2c03e8ac4286ff55830f3f778e73a9a74e130",
+      "object_type": "blob",
+      "path": "src/main/java/uk/ac/ox/oucs/oxgarage/oo/InputSpreadsheetFormat.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "c073f8f9b2b951f174cf8e6a16037da7fd80f4d3",
+      "object_type": "blob",
+      "path": "src/main/java/uk/ac/ox/oucs/oxgarage/oo/InputTextFormat.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "8f33cccad93f7faaea8623741de20d63f34a006d",
+      "object_type": "blob",
+      "path": "src/main/java/uk/ac/ox/oucs/oxgarage/oo/OOConfiguration.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "e9355b33a0976b8d6a556045002ffc00570577c6",
+      "object_type": "blob",
+      "path": "src/main/java/uk/ac/ox/oucs/oxgarage/oo/OOConversionsFamily.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "f51a0b1138dd143c918dcf71526a7f07b620d248",
+      "object_type": "blob",
+      "path": "src/main/java/uk/ac/ox/oucs/oxgarage/oo/OOConverter.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "b72407cea379c6855ceb13747e25cb9253d1df95",
+      "object_type": "blob",
+      "path": "src/main/java/uk/ac/ox/oucs/oxgarage/oo/OutputPresentationFormat.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "e5c0a18a50cad53bc79fb815e4b4fb7bac599e66",
+      "object_type": "blob",
+      "path": "src/main/java/uk/ac/ox/oucs/oxgarage/oo/OutputSpreadsheetFormat.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "f920779e24896e1e1972979f8abf4d8cc676901f",
+      "object_type": "blob",
+      "path": "src/main/java/uk/ac/ox/oucs/oxgarage/oo/OutputTextFormat.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "46eedbd0857808af9cbfa18367cbbcf6cc41fff1",
+      "object_type": "blob",
+      "path": "src/main/resources/META-INF/plugin.xml"
+    },
+    {
+      "mode": "100644",
+      "object_id": "65d4c92fd6dd2819b97d3bca3060e0b003dad7d3",
+      "object_type": "blob",
+      "path": "src/test/java/uk/ac/ox/oucs/oxgarage/oo/OOConverterTest.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "62a6ea4a3b6fa53aa8bd172f46655e299d3d071f",
+      "object_type": "blob",
+      "path": "src/test/resources/test-input.docx.zip"
+    },
+    {
+      "mode": "100644",
+      "object_id": "65fb6df8ef13097eb1ccafd96a07c1451c049f70",
+      "object_type": "blob",
+      "path": "src/test/resources/test-input.txt.zip"
+    }
+  ],
+  "ref_requested": "HEAD",
+  "repository": "https://github.com/TEIC/oo-converter.git",
+  "resolved_commit": "752b83cbffb28551adf750f9d2acc1bd76f266fd",
+  "root_tree": "db792fd32e7c0a6801d025462f342adb268da32e",
+  "schema_version": 1,
+  "source_id": "teic-public-git-repositories"
+}

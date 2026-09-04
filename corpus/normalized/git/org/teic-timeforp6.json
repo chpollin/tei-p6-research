@@ -1,0 +1,136 @@
+{
+  "entries": [
+    {
+      "mode": "100644",
+      "object_id": "1534adf1b779c654aca507bb7f043a81f6030d05",
+      "object_type": "blob",
+      "path": ".gitignore"
+    },
+    {
+      "mode": "100644",
+      "object_id": "0ad25db4bd1d86c452db3f9602ccdbe172438f52",
+      "object_type": "blob",
+      "path": "LICENSE"
+    },
+    {
+      "mode": "100644",
+      "object_id": "bd4ad0759be99e8f8d8f8281ece6749c09dde9ab",
+      "object_type": "blob",
+      "path": "README.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "ca1443b381008c91f3e21169a2b5907812085486",
+      "object_type": "blob",
+      "path": "Time-for-P6_TEI2026Vancouver.pdf"
+    },
+    {
+      "mode": "100644",
+      "object_id": "668633db7a008616bc73acf417b8d89ccece0703",
+      "object_type": "blob",
+      "path": "assets/TEI_Logo.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "4b07e4ede229a772dc32f26e6ccd74e5f396bc08",
+      "object_type": "blob",
+      "path": "assets/TEI_Logo.svg"
+    },
+    {
+      "mode": "100644",
+      "object_id": "ed2158ca4803d0fcb43ccff89441b062a9f667be",
+      "object_type": "blob",
+      "path": "assets/TEI_Logo_Horizontal.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "699928488ea45cab5c0e25249943c8aaeb9f57a7",
+      "object_type": "blob",
+      "path": "assets/TEI_Logo_Horizontal.svg"
+    },
+    {
+      "mode": "100644",
+      "object_id": "5ed50fb05d8acdf6c0c01c6cd74666f9fbdfb16c",
+      "object_type": "blob",
+      "path": "assets/bibl-uml_uhk.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "b2e03618079ace548e28509793b851b7a47b2235",
+      "object_type": "blob",
+      "path": "assets/mentimeter_qr_code_p6.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "ffd32acb5522413c79b24f5a2dcf5dc8c8eb9ef0",
+      "object_type": "blob",
+      "path": "assets/miro.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "a3d6626c41204c2f1819ccf165ba034136c3d863",
+      "object_type": "blob",
+      "path": "assets/p6-diagram.svg"
+    },
+    {
+      "mode": "100644",
+      "object_id": "7685ffd77ba5b0e043750eecb4e23ad1f1a55014",
+      "object_type": "blob",
+      "path": "assets/schemaorg.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "9b75d370b36976d50ecde05f6b4d7df647cb4253",
+      "object_type": "blob",
+      "path": "assets/tdl.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "311ab501f095a3e720c0b0cb8fb7593b2def83fe",
+      "object_type": "blob",
+      "path": "footer-template.js"
+    },
+    {
+      "mode": "100644",
+      "object_id": "09dfa583120a80d5ccf071d75386cd437528ae44",
+      "object_type": "blob",
+      "path": "index.html"
+    },
+    {
+      "mode": "100644",
+      "object_id": "6eb3d53ba84a65a1bf7335581e1538dd79ba97c4",
+      "object_type": "blob",
+      "path": "localStyle.css"
+    },
+    {
+      "mode": "100644",
+      "object_id": "0528bb08929a5e55f13b469eb9e2cc1e88d7ebf9",
+      "object_type": "blob",
+      "path": "main.js"
+    },
+    {
+      "mode": "100644",
+      "object_id": "d3066ae668f5a243c25c6037da882ed7622e35ea",
+      "object_type": "blob",
+      "path": "package-lock.json"
+    },
+    {
+      "mode": "100644",
+      "object_id": "b2e261b05e125cf6580fa1979d2726b796d2e6a1",
+      "object_type": "blob",
+      "path": "package.json"
+    },
+    {
+      "mode": "100644",
+      "object_id": "03150691bdfaebd4bf5bbb8abad555320fe5b43b",
+      "object_type": "blob",
+      "path": "vite.config.js"
+    }
+  ],
+  "ref_requested": "HEAD",
+  "repository": "https://github.com/TEIC/timeForP6.git",
+  "resolved_commit": "eb924226d12d22599bae9dad4fc53bc748b3f121",
+  "root_tree": "69d333e13da7b641d1c38bdca10768d6c3f64c5f",
+  "schema_version": 1,
+  "source_id": "teic-public-git-repositories"
+}

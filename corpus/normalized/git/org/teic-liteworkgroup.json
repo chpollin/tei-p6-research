@@ -1,0 +1,64 @@
+{
+  "entries": [
+    {
+      "mode": "100644",
+      "object_id": "2d6d26f92e3c0c23e1ed39dd38cec1f1c934bca0",
+      "object_type": "blob",
+      "path": "README.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "object_type": "blob",
+      "path": "examples/ancillary/.keep"
+    },
+    {
+      "mode": "100644",
+      "object_id": "718da573c39cac77229e89898c588d4e91adb20f",
+      "object_type": "blob",
+      "path": "examples/ancillary/taxonomy.xml"
+    },
+    {
+      "mode": "100644",
+      "object_id": "b97316da7d18d4c14198586352a90a395eb0633d",
+      "object_type": "blob",
+      "path": "examples/main/inscription_la.xml"
+    },
+    {
+      "mode": "100644",
+      "object_id": "d14cd804c33a8a50e76b3205f6702b0701aea419",
+      "object_type": "blob",
+      "path": "examples/main/letter_de.xml"
+    },
+    {
+      "mode": "100644",
+      "object_id": "1367d8224398757bdc599aaa483a193819aac785",
+      "object_type": "blob",
+      "path": "examples/main/letter_ja.xml"
+    },
+    {
+      "mode": "100644",
+      "object_id": "3502dc67ac2b9b271e934d6f386f75a444d25f2f",
+      "object_type": "blob",
+      "path": "examples/main/letter_la-pl.xml"
+    },
+    {
+      "mode": "100644",
+      "object_id": "696f5284c22c26d18190675dc67da208d1f56bd1",
+      "object_type": "blob",
+      "path": "schema/lite.odd"
+    },
+    {
+      "mode": "100644",
+      "object_id": "993f6591df7540f051d8d9f59084b1f4cd504c7a",
+      "object_type": "blob",
+      "path": "schema/lite.rng"
+    }
+  ],
+  "ref_requested": "HEAD",
+  "repository": "https://github.com/TEIC/LiteWorkgroup.git",
+  "resolved_commit": "e6b0306a82172ecb9bf7bd55789a0815e951cb24",
+  "root_tree": "7a095de62585daf54a349f57b97554f1298e0f1c",
+  "schema_version": 1,
+  "source_id": "teic-public-git-repositories"
+}

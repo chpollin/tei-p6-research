@@ -3,6 +3,9 @@
 This directory declares what the TEI corpus may acquire and how a run is pinned,
 audited, and admitted to the Grounded Vault.
 
+The complete source-family rationale and acquisition tiers are defined in
+[`PRIMARY-SOURCES.md`](PRIMARY-SOURCES.md).
+
 ```text
 registry.yaml                 source families and policy
 locks/*.yaml                  immutable or to-be-resolved upstream boundaries
@@ -21,7 +24,6 @@ Every future ingestion manifest must include at least:
 schema_version: 1
 run_id: <stable-id>
 source_id: <registry-id>
-lock_file: <relative-path>
 started_at: <UTC timestamp>
 finished_at: <UTC timestamp or null>
 status: planned | partial | observable-complete | bounded-complete | failed
@@ -34,6 +36,9 @@ counts: {}
 gaps: []
 rights_exceptions: []
 ```
+
+`source_id` resolves the lock through the dated registry. A manifest may repeat
+`lock_file` for convenience, but the registry mapping remains authoritative.
 
 Counts belong only in manifests produced from observed data. Registry and lock
 files do not contain guessed issue, release, meeting, file, or literature counts.
@@ -63,3 +68,10 @@ therefore separates:
 
 Unknown or per-item rights permit metadata, hashes, local retrieval where lawful,
 and source links; they do not permit automatically committing full source text.
+
+Validate registry-to-lock identity, manifest source IDs, normalized object
+existence, and recorded SHA-256 values with:
+
+```powershell
+python -m tools.corpus.validate_control_plane .
+```

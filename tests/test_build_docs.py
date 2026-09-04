@@ -6,16 +6,16 @@ from pathlib import Path
 REPO = Path(__file__).parents[1]
 sys.path.insert(0, str(REPO / "tools"))
 
-from build_docs import REPOSITORY_URL, _inline  # noqa: E402
+from build_docs import PROJECT_TITLE, SECTIONS, _inline, build_page  # noqa: E402
 
 
 def test_relative_links_resolve_from_their_source_document() -> None:
     rendered = _inline(
-        "Read [the paper](../paper/README.md#scope).",
+        "Read [the specification](../knowledge/specification.md#scope).",
         Path("docs/concept.md"),
     )
 
-    assert f'href="{REPOSITORY_URL}/blob/main/paper/README.md#scope"' in rendered
+    assert 'href="../knowledge/specification.md#scope"' in rendered
 
 
 def test_external_and_fragment_links_remain_unchanged() -> None:
@@ -26,3 +26,13 @@ def test_external_and_fragment_links_remain_unchanged() -> None:
 
     assert 'href="https://example.org/a"' in rendered
     assert 'href="#part"' in rendered
+
+
+def test_project_page_contains_promptotyping_project_documents() -> None:
+    page = build_page(REPO, "2026-09-04")
+
+    assert f"<title>{PROJECT_TITLE}</title>" in page
+    assert len(SECTIONS) == 8
+    assert 'id="project"' in page
+    assert 'id="state"' in page
+    assert 'id="journal"' in page

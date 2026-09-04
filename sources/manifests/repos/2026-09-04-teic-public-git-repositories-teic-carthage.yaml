@@ -1,0 +1,33 @@
+schema_version: 1
+run_id: 2026-09-04-teic-public-git-repositories-teic-carthage
+source_id: teic-public-git-repositories
+started_at: '2026-09-04T16:36:06Z'
+finished_at: '2026-09-04T16:36:08Z'
+status: observable-complete
+adapter:
+  name: tools.corpus.git_snapshot
+  version: 1
+requests:
+- kind: git-mirror
+  repository: https://github.com/TEIC/Carthage.git
+  action: cloned
+  requested_ref: HEAD
+  resolved_commit: eaf0e323ff50d4b604bd16dc5f78183b326554f7
+objects:
+- kind: git-tree-inventory
+  path: corpus/normalized/git/org/teic-carthage.json
+  sha256: ad403b74cb4e087ac7ed175ae23d7b6e08c49da78282bf53438e0e86efd3373a
+  root_tree: 829e78c4001f8c2af7c789304dd48a138a358930
+counts:
+  commits_all_refs: 2
+  refs: 1
+  tree_entries: 59
+refs:
+- name: refs/heads/master
+  object_type: commit
+  object_id: eaf0e323ff50d4b604bd16dc5f78183b326554f7
+gaps: []
+rights_exceptions:
+- The local mirror is not committed; redistribution follows the upstream repository
+  license.
+raw_materialization: corpus\raw\git\TEIC-Carthage.git

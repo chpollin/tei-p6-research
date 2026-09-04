@@ -1,0 +1,226 @@
+{
+  "entries": [
+    {
+      "mode": "100644",
+      "object_id": "0b348c679ca4135f40b27af556768ef89852ecaf",
+      "object_type": "blob",
+      "path": ".github/dependabot.yml"
+    },
+    {
+      "mode": "100644",
+      "object_id": "753b6b00e865a7c281d023188c11d21343af6d33",
+      "object_type": "blob",
+      "path": ".github/workflows/maven.yml"
+    },
+    {
+      "mode": "100644",
+      "object_id": "d6a20725901967559095e0e0a58449bf80909cad",
+      "object_type": "blob",
+      "path": ".gitignore"
+    },
+    {
+      "mode": "100644",
+      "object_id": "9387f08a888bea1b616fb02f6af325f145f2c0e2",
+      "object_type": "blob",
+      "path": "LICENCE.txt"
+    },
+    {
+      "mode": "100644",
+      "object_id": "69c732a2e0fd7dcb6ef3c12e7154c30d084439d6",
+      "object_type": "blob",
+      "path": "README.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "325e36988fd40a919bae67a03b3888432bfb15cd",
+      "object_type": "blob",
+      "path": "build.xml"
+    },
+    {
+      "mode": "100644",
+      "object_id": "4a3eaa08ae7efcc04906197e95fe09fe7d9c3583",
+      "object_type": "blob",
+      "path": "pom.xml"
+    },
+    {
+      "mode": "100644",
+      "object_id": "5e9495128c0376427420c4189993b3851770b702",
+      "object_type": "blob",
+      "path": "src/main/java/META-INF/MANIFEST.MF"
+    },
+    {
+      "mode": "100644",
+      "object_id": "4f1c554e3f4ed05863290c74ab2a285b28ff1847",
+      "object_type": "blob",
+      "path": "src/main/java/pl/psnc/dl/ege/tei/ComplexConverter.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "abdae8a4e685118aac4cca6f8caf7fc713f323fb",
+      "object_type": "blob",
+      "path": "src/main/java/pl/psnc/dl/ege/tei/ConverterConfiguration.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "b0d7bf197defe8832c65d648aec499e553ac360b",
+      "object_type": "blob",
+      "path": "src/main/java/pl/psnc/dl/ege/tei/DocXConverter.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "aa55917c8069f2dde9ab2844ab3913e4078b9fee",
+      "object_type": "blob",
+      "path": "src/main/java/pl/psnc/dl/ege/tei/Format.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "59f59d13b37edf07c80c59fc92a1468ed7fa2b1e",
+      "object_type": "blob",
+      "path": "src/main/java/pl/psnc/dl/ege/tei/ImageFetcher.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "3c778f11479353d642973416dabd2ee612188dd0",
+      "object_type": "blob",
+      "path": "src/main/java/pl/psnc/dl/ege/tei/OdtConverter.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "b6d17d7067ced738b5b7a722d159844ebaa2ef86",
+      "object_type": "blob",
+      "path": "src/main/java/pl/psnc/dl/ege/tei/TEIConverter.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "03874258f8ff92b7fd12f79c3e91546f330dd53d",
+      "object_type": "blob",
+      "path": "src/main/java/pl/psnc/dl/ege/tei/TEIConverterURIResolver.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "a3f27ee5bf5fb78a786198f1b56b1397d5fb14bc",
+      "object_type": "blob",
+      "path": "src/main/java/pl/psnc/dl/ege/tei/XlsXConverter.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "4817c52df0908a731dcd95639c88fe13210bbd88",
+      "object_type": "blob",
+      "path": "src/main/resources/META-INF/plugin.xml"
+    },
+    {
+      "mode": "100644",
+      "object_id": "15a2c9aebbd87f6c1ddd282bee18b3301e93d7b0",
+      "object_type": "blob",
+      "path": "src/main/templates/tei-config/configuration/tei-config.xml"
+    },
+    {
+      "mode": "100644",
+      "object_id": "1bc3ea7b2c9fe667864ab4d96e665473e3d9dd4c",
+      "object_type": "blob",
+      "path": "src/main/templates/tei-config/images/TEI.icns"
+    },
+    {
+      "mode": "100644",
+      "object_id": "60a793a2708e7264c04a0e85b719549443a853c2",
+      "object_type": "blob",
+      "path": "src/main/templates/tei-config/images/TEI.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "070b7a15260277879cc68c9b43d7bc6de70bd006",
+      "object_type": "blob",
+      "path": "src/site/resources/images/ege-overview.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "061d8eb3fc84f3a1885a220d4e4d466be4a5dc9b",
+      "object_type": "blob",
+      "path": "src/site/resources/images/ege.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "6978d902ef1271d36c25f9df4322b3a933057201",
+      "object_type": "blob",
+      "path": "src/site/resources/images/enrich-logo.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "4a51578da48c44b0220be28da25ab245f309b818",
+      "object_type": "blob",
+      "path": "src/site/resources/images/graf.jpg"
+    },
+    {
+      "mode": "100644",
+      "object_id": "e742a1858c29ff17b45760c7690f96c81bad6807",
+      "object_type": "blob",
+      "path": "src/site/resources/images/tabela.jpg"
+    },
+    {
+      "mode": "100644",
+      "object_id": "5ceccb23ee3ad3c87f117fc2d59924635122e11c",
+      "object_type": "blob",
+      "path": "src/site/resources/images/uml.gif"
+    },
+    {
+      "mode": "100644",
+      "object_id": "e47bdc728f34eb19195cd17f56e5942c5d3ecf56",
+      "object_type": "blob",
+      "path": "src/site/site.xml"
+    },
+    {
+      "mode": "100644",
+      "object_id": "f894c44df9885902dc70f42bdb8ebcdbe5709078",
+      "object_type": "blob",
+      "path": "src/site/xdoc/download.xml"
+    },
+    {
+      "mode": "100644",
+      "object_id": "28d0f3c03cc8a8ec6f78278ecb774739e38dc812",
+      "object_type": "blob",
+      "path": "src/site/xdoc/index.xml"
+    },
+    {
+      "mode": "100644",
+      "object_id": "a96b684507f07bcee4fbbb7c581d1de83d446130",
+      "object_type": "blob",
+      "path": "src/test/java/pl/psnc/dl/ege/tei/TEIConverterTest.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "8a73f6dd2abd3996ecd3a4e77a857e7943db4059",
+      "object_type": "blob",
+      "path": "src/test/resources/expected-output.txt"
+    },
+    {
+      "mode": "100644",
+      "object_id": "0c11d0a086a0aef9353745b2b5988c8fd2671dc8",
+      "object_type": "blob",
+      "path": "src/test/resources/expected-output.xml"
+    },
+    {
+      "mode": "100644",
+      "object_id": "b87380097c998721e4501fb99903f3d6d94c02df",
+      "object_type": "blob",
+      "path": "src/test/resources/test-input.odd.zip"
+    },
+    {
+      "mode": "100644",
+      "object_id": "e13c65d811f3052bcad3d7a1126d0af0b9d073fb",
+      "object_type": "blob",
+      "path": "src/test/resources/test-input.xml"
+    },
+    {
+      "mode": "100644",
+      "object_id": "1d176de3597c08642530b23c600d286c208800fe",
+      "object_type": "blob",
+      "path": "src/test/resources/test-input.xml.zip"
+    }
+  ],
+  "ref_requested": "HEAD",
+  "repository": "https://github.com/TEIC/tei-converter.git",
+  "resolved_commit": "00abde4f30c73a437dd41653ca37ea2a7a4982ea",
+  "root_tree": "f91e54c3f20e6b5af5e006da1da86b6870312413",
+  "schema_version": 1,
+  "source_id": "teic-tooling"
+}

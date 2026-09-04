@@ -1,0 +1,44 @@
+schema_version: 1
+lock_id: tei-historical-archive-observable-corpus
+source_id: tei-historical-archive
+as_of: "2026-09-04"
+retrieval_status: partial
+
+scope:
+  roots:
+    - https://www.tei-c.org/Vault/
+    - https://www.tei-c.org/Vault/Vault-CD.html
+    - https://www.tei-c.org/Vault/Vault-GL.html
+  include:
+    - poughkeepsie-principles
+    - committee-documents-1987-1998
+    - p1-p2-p3-p4-guidelines-and-artifacts
+    - concluded-workgroups
+    - numbered-and-unnumbered-reports
+    - p5-release-archive
+  rule: Exhaust the official Archive indexes while retaining unreachable, external, and rights-restricted targets as explicit gaps.
+
+identity:
+  preferred: tei-document-number-or-canonical-archive-url
+  preserve_manifestations: true
+
+rights:
+  review_before_full_text_commit: true
+
+counts:
+  responses: 394
+  successful_responses: 394
+  external_links_inventoried: 221
+  depth_boundary_links_inventoried: 424
+  non_html_artifacts_inventoried: 363
+gaps:
+  - code: linked-non-html-artifacts-not-yet-reconciled
+    count: 363
+    status: open
+  - code: depth-boundary-links-require-deeper-census
+    count: 424
+    status: open
+  - code: archive-self-reports-historical-incompleteness
+    status: permanent-scope-limit
+
+manifest: sources/manifests/2026-09-04-tei-historical-archive-r2.yaml

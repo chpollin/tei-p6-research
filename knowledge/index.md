@@ -15,13 +15,30 @@ related: [specification, schema, operations, state, journal]
 
 # Index
 
-Navigation and terminology of the vault. Human readers start at [[HOME]]; agents start at `CLAUDE.md`, which routes onto these documents.
+Navigation and terminology of the vault. Human readers start at [[HOME]]. Codex
+starts at `AGENTS.md`; Claude Code starts at `CLAUDE.md`. Both action layers
+route into this same declarative knowledge system.
+
+Together, the six files in `knowledge/` are the Promptotyping document of the
+project: specification describes what is being attempted, schema defines the
+artifacts, operations defines the executable method, state records present
+reality, journal preserves decisions, and this index connects them. Research
+claims do not live here; they enter the Grounded Vault production layers.
 
 ## Reading paths
 
-- **Understand the project**: [[knowledge/specification]] for purpose and parameters, then [[knowledge/state]] for where work stands.
+- **Understand the project**: [[knowledge/specification]] for problem,
+  questions, scope, evaluation dimensions and success criteria, then
+  [[knowledge/state]] for where work stands.
 - **Produce or check content**: [[knowledge/schema]] for what a well-formed artifact is, [[knowledge/operations]] for the chain that produces it.
 - **Understand a past decision**: [[knowledge/journal]], append-only, newest last.
+- **Plan acquisition**: `sources/registry.yaml`, `corpus/COMPLETENESS.md`, and
+  `docs/multi-agent-acquisition-runbook.md` after the project contract.
+- **Understand the repository system**: `ARCHITECTURE.md` for planes, data
+  flows, authority, and trust boundaries.
+- **Develop or evaluate a P6 design**: `docs/p6/README.md` for the provisional
+  design dossier, then `workflows/evaluate-p6-proposal.md` for the grounded
+  comparison procedure.
 
 ## The six knowledge documents
 
@@ -35,6 +52,11 @@ Navigation and terminology of the vault. Human readers start at [[HOME]]; agents
 | [[knowledge/journal]] | decision history | append-only |
 
 A document is split only when its sections develop divergent update rhythms or divergent readers.
+
+The design documents under `docs/p6/` are outside these six control documents
+and outside the evidence chain. They organize provisional requirements,
+hypotheses, experiment contracts, and open research questions. They may not be
+used as evidence for P5 behavior or official TEI policy.
 
 ## Terminology
 
@@ -50,3 +72,16 @@ A document is split only when its sections develop divergent update rhythms or d
 - **Audit trail**: the principle that status fields record outcomes of checks that actually ran, each with its date on the checked document.
 - **Posit**: a conclusion in the output without source support, explicitly marked with its rationale and open evidence question.
 - **Validation / machine review / verification**: the three checking instances, deterministic, adversarial-probabilistic, human. Note that this assignment inverts the IEEE convention; here establishing truth is a human act.
+- **Finding / interpretation / proposal**: respectively a source-supported
+  observation, an explicitly reasoned reading of findings, and a design option.
+  One may motivate the next but never silently becomes it.
+- **Official P6 process**: TEI Council discussions, decisions, experiments and
+  artifacts explicitly concerning P6. These are primary process records but
+  are not identical with this independent vault's proposals and are not assumed
+  to constitute a released standard.
+- **Observable-complete**: every object publicly observable through the
+  registered finite interface during the declared snapshot interval was
+  retrieved or recorded as a gap. It does not mean everything that ever
+  existed.
+- **Bounded-complete**: every result of a declared finite search, index, or
+  bibliography protocol received a recorded disposition.

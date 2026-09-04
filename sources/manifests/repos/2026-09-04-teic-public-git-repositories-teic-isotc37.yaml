@@ -1,0 +1,33 @@
+schema_version: 1
+run_id: 2026-09-04-teic-public-git-repositories-teic-isotc37
+source_id: teic-public-git-repositories
+started_at: '2026-09-04T16:36:30Z'
+finished_at: '2026-09-04T16:36:36Z'
+status: observable-complete
+adapter:
+  name: tools.corpus.git_snapshot
+  version: 1
+requests:
+- kind: git-mirror
+  repository: https://github.com/TEIC/ISOTC37.git
+  action: cloned
+  requested_ref: HEAD
+  resolved_commit: 000adbd70b82e1b18bb1c51479ff00c5b40220c5
+objects:
+- kind: git-tree-inventory
+  path: corpus/normalized/git/org/teic-isotc37.json
+  sha256: 49ec46da911aceac2d66346a87d9b995cf53b1d27cbdbc1e93beb1e4a8a28ad7
+  root_tree: c6a784e028953b708fa6ce0a92b6fce60fcd4533
+counts:
+  commits_all_refs: 83
+  refs: 1
+  tree_entries: 38
+refs:
+- name: refs/heads/master
+  object_type: commit
+  object_id: 000adbd70b82e1b18bb1c51479ff00c5b40220c5
+gaps: []
+rights_exceptions:
+- The local mirror is not committed; redistribution follows the upstream repository
+  license.
+raw_materialization: corpus\raw\git\TEIC-ISOTC37.git

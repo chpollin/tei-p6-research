@@ -1,0 +1,1403 @@
+schema_version: 1
+run_id: 2026-09-04-tei-historical-archive-r2
+source_id: tei-historical-archive
+started_at: '2026-09-04T16:29:29Z'
+finished_at: '2026-09-04T16:50:09Z'
+status: partial
+adapter:
+  name: tools.corpus.web_census
+  version: 1
+requests:
+- root_url: https://www.tei-c.org/Vault/
+  allow_prefixes:
+  - https://www.tei-c.org/Vault/
+  depth: 2
+  max_pages: 2000
+  include_binary: false
+objects:
+- kind: web-census
+  path: corpus/normalized/web/tei-historical-archive.jsonl
+  sha256: 75252471c4b036088b64a62775f89ed293f2ce49e4e7011680c935559554a396
+counts:
+  responses: 394
+  successful_responses: 394
+  external_links_inventoried: 221
+  depth_boundary_links_inventoried: 424
+  binary_links_inventoried_not_fetched: 363
+  gaps: 363
+external_links:
+- http://adh.sc.edu/
+- http://adh.sc.edu/MepDTDs.html
+- http://adh.sc.edu/MepGuide.html
+- http://adh.sc.edu/meptsdv1.html
+- http://brie.prov.ingenta.com/~jphekman/exp-conv.tgz
+- http://candl.let.ruu.nl/Preprint/vgi/vgi.htm
+- http://chronicle.com/weekly/v48/i09/09a03501.htm
+- http://creativecommons.org/licenses/by/3.0/
+- http://curia.ucc.ie/curia/doc/newtei.html
+- http://db.uwaterloo.ca/~fwtompa/.papers/markup.ps
+- http://db.uwaterloo.ca/~fwtompa/.papers/sgml.ps
+- http://dc-mrg.english.ucsb.edu/conference/2000/PANELS/BEssick/jhmiller.html
+- http://dobc.unipv.it/dipslamm/pubtel/Atti2000/dino_buzzetti.htm
+- http://en.wikipedia.org/wiki/Schematron
+- http://etext.virginia.edu/TEI.html
+- http://etext.virginia.edu/bin/tei-tocs?amp%3Bid=GR&div=DIV1
+- http://etext.virginia.edu/bin/tei-tocs?amp%3Bid=GRLX&div=DIV2
+- http://etext.virginia.edu/eaf/
+- http://etext.virginia.edu/tei-tocs8.html
+- http://exist-db.org/
+- http://ftp.ics.uci.edu/pub/ietf/webdav/
+- http://grid.let.rug.nl/~galiard
+- http://grid.let.rug.nl/~sgml95/bertsum.html
+- http://grid.let.rug.nl/~sgml95/giordano.html
+- http://grid.let.rug.nl/~sgml95/steensum.html
+- http://ica.princeton.edu/
+- http://info.lib.uh.edu/pr/v7/n6/will7n6.html
+- http://info.lib.uh.edu/pr/v7/n6/willett.7n6
+- http://jefferson.village.virginia.edu/rossetti/
+- http://lcweb.loc.gov/catdir/semdigdocs/seminar.html
+- http://lists.village.virginia.edu/lists_archive/Humanist/v13/0374.html
+- http://listserv.brown.edu/archives/cgi-bin/wa?A2=ind0309&F=&L=tei-som&P=568&S=
+- http://listserv.brown.edu/archives/cgi-bin/wa?A2=ind0309&F=&L=tei-som&P=661&S=
+- http://listserv.brown.edu/archives/cgi-bin/wa?A2=ind0310&L=tei-som&P=R9947
+- http://lucas.ucs.ed.ac.uk/xml-schema
+- http://msdn.microsoft.com/downloads/default.asp?url=%2Fdownloads%2Fsample.asp%3Furl%3D%2Fmsdn-files%2F027%2F001%2F766%2Fmsdncompositedoc.xml
+- http://saxon.sourceforge.net/
+- http://shop.omnipress.com/index.asp?PageAction=VIEWPROD&ProdID=161
+- http://sunsite.berkeley.edu/MLA/guidelines.html
+- http://sunsite.berkeley.edu/MLA/principles.html
+- http://users.ox.ac.uk/~lou
+- http://users.ox.ac.uk/~lou/Belux/belux.sgm
+- http://users.ox.ac.uk/~lou/reports/9610brus.htm
+- http://users.ox.ac.uk/~lou/reports/9704forli.htm
+- http://users.ox.ac.uk/~lou/wip/Belux
+- http://users.ox.ac.uk/~lou/wip/XRtest.sgm
+- http://users.ox.ac.uk/~scat0385/electronicLB.html
+- http://wiki.tei-c.org/index.php/Ad-hoc_committee_on_encoding_of_bibliographic_citations
+- http://www-tei.uic.edu/orgs/tei
+- http://www-tei.uic.edu/orgs/tei/trc/nwi
+- http://www-tei.uic.edu/orgs/tei/trc/nwi/curia.html
+- http://www.amazon.com/Electronic-Textual-Editing-Katherine-OKeeffe/dp/0873529715/sr=8-1/qid=1159739499/ref=pd_bbs_1/102-1264861-1965706?ie=UTF8&s=books
+- http://www.antennahouse.com/
+- http://www.arbortext.com/
+- http://www.archive.org/
+- http://www.axkit.org/
+- http://www.blakearchive.org/
+- http://www.blakearchive.org/cgi-bin/nph-1996/dynaweb/collection_lists/@Generic__CollectionView
+- http://www.blakearchive.org/public/about/index.html
+- http://www.blakearchive.org/public/about/plan/index.html
+- http://www.blakearchive.org/public/about/principles/index.html
+- http://www.blakearchive.org/public/about/tech/index.html
+- http://www.blakearchive.org/public/institutions.html
+- http://www.brown.edu/Students/Ursa_Minors
+- http://www.copyright.gov/circs/circ22.html
+- http://www.cs.columbia.edu:80/~klavans/Activities/sigir95.html
+- http://www.cs.tut.fi/~jkorpela/chars.html
+- http://www.cs.vassar.edu/CES
+- http://www.cs.vassar.edu/~ide/DL96
+- http://www.csad.ox.ac.uk/varia/unicode/Dohnicht.pdf
+- http://www.cta.dmu.ac.uk/projects/ctp/
+- http://www.dlib.org/april03/staples/04staples.html
+- http://www.dlib.org/dlib/july00/staples/07staples.html
+- http://www.dlib.org/dlib/june03/paskin/06paskin.html
+- http://www.dlib.org/dlib/may99/payette/05payette.html
+- http://www.emn.fr/info/perso/fekete/TEI/eurotex2.ps.gz
+- http://www.gii.getty.edu/agenda/represen.html
+- http://www.gingerall.com/charlie/ga/xml/p_sab.xml
+- http://www.hb.se/bhs/ith/1-00/ev.htm
+- http://www.hb.se/bhs/ith/1-99/ev.htm
+- http://www.hcrc.ed.ac.uk/Site/ECI.html
+- http://www.hd.uib.no/allc-ach96.html
+- http://www.hd.uib.no/works-la.html
+- http://www.hit.uib.no/claus/mecs/
+- http://www.hull.ac.uk/hitm/
+- http://www.iath.virginia.edu/piers/
+- http://www.iath.virginia.edu/~jmu2m/Kings.5-00/primitives.html
+- http://www.iath.virginia.edu/~jmu2m/ach98.html
+- http://www.iath.virginia.edu/~jmu2m/cse/CSEguidelines.html
+- http://www.iconclass.nl/
+- http://www.iso.org/iso/catalogue_detail.htm?csnumber=37324
+- http://www.iupui.edu/~copyinfo/fuchecklist.html
+- http://www.jstor.org/
+- http://www.kantl.be/ctb/project/dalf/
+- http://www.kantl.be/ctb/project/dalf/dalfdoc/DTDfiles.html
+- http://www.kcl.ac.uk/humanities/cch/hcn/hcn-2001-02.html
+- http://www.lrec-conf.org/
+- http://www.ltg.hcrc.ed.ac.uk/~dmck/chum/thepaper.ps
+- http://www.microstar.com/products/main.html
+- http://www.mla.org/store/CID4/PID301
+- http://www.mulberrytech.com/songs.html
+- http://www.nic.surfnet.nl/surfnet/surfnet.eng/home.html
+- http://www.ninch.org/copyright/2002/Tadic_rev.doc
+- http://www.nyu.edu/its/humanities/ach_allc2001/papers/russom/index.html
+- http://www.onb.ac.at/sichtungen/berichte/smedt-m-1a.html
+- http://www.opensource.org/licenses/BSD-2-Clause
+- http://www.press.umich.edu/jep/03-02/blake.html
+- http://www.rc.umd.edu/
+- http://www.rc.umd.edu/dispatches/column7/
+- http://www.rc.umd.edu/editions/LB/index.html
+- http://www.rc.umd.edu/editions/contemps/barbauld/poems1773
+- http://www.rc.umd.edu/editions/contemps/lel/
+- http://www.rc.umd.edu/editions/shelley/devil/1dwcover.html
+- http://www.rc.umd.edu/editions/shelley/medusa/medcover.html
+- http://www.rc.umd.edu/praxis/blake/participants.html
+- http://www.rc.umd.edu:7000/705/
+- http://www.renderx.com/FO2PDF.html
+- http://www.rlg.org/events/pres-2000/brodie.html
+- http://www.rlg.org/preserv/diginews/diginews4-1.html
+- http://www.sciam.com/article.cfm?articleID=00048144-10D2-1C70-84A9809EC588EF21&sc=I100322
+- http://www.sq.com/products/authored
+- http://www.sq.com/products/explorer.html
+- http://www.sq.com/products/panorama
+- http://www.stg.brown.edu/conferences/tei10/
+- http://www.stg.brown.edu/staff/julia.html
+- http://www.stg.brown.edu/staff/syd.html
+- http://www.tei-c.org.uk/Master/Reference/
+- http://www.tei-c.org/
+- http://www.tei-c.org/About/history.xml
+- http://www.tei-c.org/Admin/RFP.xml
+- http://www.tei-c.org/Admin/RFP_Answers.xml
+- http://www.tei-c.org/Admin/Survey.pdf
+- http://www.tei-c.org/Admin/digitization@tei-c.org
+- http://www.tei-c.org/Guidelines/
+- http://www.tei-c.org/Guidelines/Customization/
+- http://www.tei-c.org/Guidelines/P5/
+- http://www.tei-c.org/Membership/current.xml
+- http://www.tei-c.org/P4X/
+- http://www.tei-c.org/P4X/CR.html
+- http://www.tei-c.org/P4X/HD.html
+- http://www.tei-c.org/P4X/SA.html
+- http://www.tei-c.org/P4X/index.html
+- http://www.tei-c.org/Sample_Manuals/leiden.html
+- http://www.tei-c.org/Software/passivetex/
+- http://www.tei-c.org/Vault/ED/edw25.sgm
+- http://www.tei-c.org/Vault/ED/edw48.htm
+- http://www.tei-c.org/Vault/ED/edw48.tei
+- http://www.tei-c.org/Vault/ED/edw53.htm
+- http://www.tei-c.org/Vault/ED/edw53.tei
+- http://www.tei-c.org/Vault/ED/edw54.htm
+- http://www.tei-c.org/Vault/ED/edw54.tei
+- http://www.tei-c.org/Vault/ED/edw55.htm
+- http://www.tei-c.org/Vault/ED/edw55.odd
+- http://www.tei-c.org/Vault/ED/edw55.tei
+- http://www.tei-c.org/Vault/ED/edw57.htm
+- http://www.tei-c.org/Vault/ED/edw57.tei
+- http://www.tei-c.org/Vault/ED/edw67.htm
+- http://www.tei-c.org/Vault/ED/edw67.tei
+- http://www.tei-c.org/index.xml
+- http://www.tei-c.org/release/doc/tei-p5-exemplars/html/tei_tite.doc.html
+- http://www.tei-c.org/release/xml/tei/custom/schema/dtd/tei_tite.dtd
+- http://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_tite.rng
+- http://www.tei-c.org/release/xml/tei/stylesheet/tei-print.css
+- http://www.tei-c.org/release/xml/tei/stylesheet/tei.css
+- http://www.tei-c.org/rss.xml?style=raw
+- http://www.uic.edu/cmsmcq-bin/ls.rexx?tei%2Ctrc%2Fcore=
+- http://www.uic.edu/orgs/tei
+- http://www.uic.edu/orgs/tei/
+- http://www.uic.edu/orgs/tei/intros/teiu5.html
+- http://www.uic.edu/orgs/tei/p3/doc/p3.html
+- http://www.uic.edu/orgs/tei/sgml/teip3sg/index.html
+- http://www.uic.edu/orgs/tei/update.html
+- http://www.ukoln.ac.uk/metadata/review.html
+- http://www.unc.edu/awmc/epidoc/
+- http://www.unicode.org/Public/UNIDATA/StandardizedVariants.html
+- http://www.unicode.org/Public/UNIDATA/UnicodeData.html
+- http://www.unicode.org/Public/UNIDATA/UnicodeData.txt
+- http://www.unicode.org/unicode/reports/tr11/
+- http://www.unicode.org/unicode/reports/tr15/
+- http://www.unicode.org/unicode/reports/tr23/index.html
+- http://www.unicode.org/unicode/reports/tr30/
+- http://www.utsystem.edu/OGC/IntellectualProperty/PERMISSN.htm
+- http://www.w3.org/DOM/
+- http://www.w3.org/DesignIssues/Architecture.html
+- http://www.w3.org/Protocols/rfc2068/rfc2068
+- http://www.w3.org/TR/1999/NOTE-schema-arch-19991007
+- http://www.w3.org/TR/MathML2/chapter3.html
+- http://www.w3.org/TR/REC-xml-names/
+- http://www.w3.org/TR/SOAP/
+- http://www.w3.org/TR/SVG/text.html
+- http://www.w3.org/TR/charmod/
+- http://www.w3.org/TR/unicode-xml/
+- http://www.w3.org/TR/xsl/
+- http://www.w3.org/TR/xslt
+- http://www.w3.org/pub/WWW/Consortium
+- http://www.wwp.brown.edu/texts/rwoentry.html
+- http://www.xaira.org/
+- http://www.xml.com/pub/a/w3j/s3.nelson.html
+- http://www.xmlrpc.com/
+- http://www.zen-cart.com/
+- http://xml.apache.org/cocoon/
+- http://xml.apache.org/fop/
+- http://xml.apache.org/xalan-j/
+- http://xml.apache.org/xindice/
+- http://xmldb-org.sourceforge.net/xupdate/
+- http://xmlsoft.org/XSLT/
+- https://www.tei-c.org/
+- https://www.tei-c.org/Activities/Council/Working/tcw04.xml
+- https://www.tei-c.org/Guidelines/P5/
+- https://www.tei-c.org/Guidelines/P5/p4top5.xsl
+- https://www.tei-c.org/Lite/
+- https://www.tei-c.org/Lite/teiu5.sgm
+- https://www.tei-c.org/P5/
+- https://www.tei-c.org/Papers/gentleguide.pdf
+- https://www.tei-c.org/Pix/9412_meta.jpg
+- https://www.tei-c.org/Pix/9412msm.jpg
+- https://www.tei-c.org/system/modules/org.tei.www/_common/css/tei.css
+- https://www.tei-c.org/system/modules/org.tei.www/_common/images/banner.jpg
+- https://www.tei-c.org/system/modules/org.tei.www/_common/images/favicon.ico
+- https://www.tei-c.org/system/modules/org.tei.www/_common/udm/udm-dom.js
+- https://www.tei-c.org/system/modules/org.tei.www/_common/udm/udm-mod-keyboard.js
+depth_boundary_links:
+- https://www.tei-c.org/Vault/ED/EDW25/W25B.htm
+- https://www.tei-c.org/Vault/ED/EDW25/W25C.htm
+- https://www.tei-c.org/Vault/ED/EDW25/W25D.htm
+- https://www.tei-c.org/Vault/ED/EDW25/W25E.htm
+- https://www.tei-c.org/Vault/ED/EDW25/W25F.htm
+- https://www.tei-c.org/Vault/ED/EDW25/W25G.htm
+- https://www.tei-c.org/Vault/ED/EDW25/W25H.htm
+- https://www.tei-c.org/Vault/ED/EDW25/notes.htm
+- https://www.tei-c.org/Vault/ED/edw48.htm
+- https://www.tei-c.org/Vault/ETE/Preview/ETEbib.htm
+- https://www.tei-c.org/Vault/ETE/Preview/case.html
+- https://www.tei-c.org/Vault/ETE/Preview/crane.html
+- https://www.tei-c.org/Vault/ETE/Preview/driscoll.html
+- https://www.tei-c.org/Vault/ETE/Preview/duggan.html
+- https://www.tei-c.org/Vault/ETE/Preview/durusau.html
+- https://www.tei-c.org/Vault/ETE/Preview/eaves.html
+- https://www.tei-c.org/Vault/ETE/Preview/eggert.html
+- https://www.tei-c.org/Vault/ETE/Preview/flanders.html
+- https://www.tei-c.org/Vault/ETE/Preview/fraistat.html
+- https://www.tei-c.org/Vault/ETE/Preview/gabler.html
+- https://www.tei-c.org/Vault/ETE/Preview/gants.html
+- https://www.tei-c.org/Vault/ETE/Preview/guidelines.html
+- https://www.tei-c.org/Vault/ETE/Preview/hirst.html
+- https://www.tei-c.org/Vault/ETE/Preview/huitfeldt.html
+- https://www.tei-c.org/Vault/ETE/Preview/intro.html
+- https://www.tei-c.org/Vault/ETE/Preview/kiernan.html
+- https://www.tei-c.org/Vault/ETE/Preview/lavagnino.html
+- https://www.tei-c.org/Vault/ETE/Preview/mahoney.html
+- https://www.tei-c.org/Vault/ETE/Preview/mcgann.html
+- https://www.tei-c.org/Vault/ETE/Preview/mcgovern.html
+- https://www.tei-c.org/Vault/ETE/Preview/parker.html
+- https://www.tei-c.org/Vault/ETE/Preview/principles.html
+- https://www.tei-c.org/Vault/ETE/Preview/rahtz.html
+- https://www.tei-c.org/Vault/ETE/Preview/robinson.html
+- https://www.tei-c.org/Vault/ETE/Preview/rosenberg.html
+- https://www.tei-c.org/Vault/ETE/Preview/tanselle.html
+- https://www.tei-c.org/Vault/ETE/Preview/vanh-bib.html
+- https://www.tei-c.org/Vault/ETE/Preview/vanhoutte.html
+- https://www.tei-c.org/Vault/ETE/Preview/vanhulle.html
+- https://www.tei-c.org/Vault/ETE/Preview/wittern.html
+- https://www.tei-c.org/Vault/GL/P3/AB.htm
+- https://www.tei-c.org/Vault/GL/P3/AI.htm
+- https://www.tei-c.org/Vault/GL/P3/CC.htm
+- https://www.tei-c.org/Vault/GL/P3/CE.htm
+- https://www.tei-c.org/Vault/GL/P3/CF.htm
+- https://www.tei-c.org/Vault/GL/P3/CH.htm
+- https://www.tei-c.org/Vault/GL/P3/CO.htm
+- https://www.tei-c.org/Vault/GL/P3/CR.htm
+- https://www.tei-c.org/Vault/GL/P3/CZNK31.htm
+- https://www.tei-c.org/Vault/GL/P3/CZNK8.htm
+- https://www.tei-c.org/Vault/GL/P3/DI.htm
+- https://www.tei-c.org/Vault/GL/P3/DR.htm
+- https://www.tei-c.org/Vault/GL/P3/DS.htm
+- https://www.tei-c.org/Vault/GL/P3/DT.htm
+- https://www.tei-c.org/Vault/GL/P3/FD.htm
+- https://www.tei-c.org/Vault/GL/P3/FS.htm
+- https://www.tei-c.org/Vault/GL/P3/FT.htm
+- https://www.tei-c.org/Vault/GL/P3/GD.htm
+- https://www.tei-c.org/Vault/GL/P3/GR.htm
+- https://www.tei-c.org/Vault/GL/P3/HD.htm
+- https://www.tei-c.org/Vault/GL/P3/IN.htm
+- https://www.tei-c.org/Vault/GL/P3/MD.htm
+- https://www.tei-c.org/Vault/GL/P3/ND.htm
+- https://www.tei-c.org/Vault/GL/P3/NH.htm
+- https://www.tei-c.org/Vault/GL/P3/PF.htm
+- https://www.tei-c.org/Vault/GL/P3/PH.htm
+- https://www.tei-c.org/Vault/GL/P3/PPF.htm
+- https://www.tei-c.org/Vault/GL/P3/PR.htm
+- https://www.tei-c.org/Vault/GL/P3/REFCLA.htm
+- https://www.tei-c.org/Vault/GL/P3/REFENT.htm
+- https://www.tei-c.org/Vault/GL/P3/REFTAG.htm
+- https://www.tei-c.org/Vault/GL/P3/SA.htm
+- https://www.tei-c.org/Vault/GL/P3/SG.htm
+- https://www.tei-c.org/Vault/GL/P3/SH.htm
+- https://www.tei-c.org/Vault/GL/P3/ST.htm
+- https://www.tei-c.org/Vault/GL/P3/TC.htm
+- https://www.tei-c.org/Vault/GL/P3/TD.htm
+- https://www.tei-c.org/Vault/GL/P3/TE.htm
+- https://www.tei-c.org/Vault/GL/P3/TS.htm
+- https://www.tei-c.org/Vault/GL/P3/VE.htm
+- https://www.tei-c.org/Vault/GL/P3/WD.htm
+- https://www.tei-c.org/Vault/GL/P3/WG.htm
+- https://www.tei-c.org/Vault/GL/P3/XT.htm
+- https://www.tei-c.org/Vault/GL/P3/XW.htm
+- https://www.tei-c.org/Vault/P4/
+- https://www.tei-c.org/Vault/P4/doc/html/
+- https://www.tei-c.org/Vault/P4/doc/p4dtd.html
+- https://www.tei-c.org/Vault/P4/doc/pdf/
+- https://www.tei-c.org/Vault/P4/migrate.html
+- https://www.tei-c.org/Vault/P5/1.0.0/.svn/
+- https://www.tei-c.org/Vault/P5/1.0.0/doc/
+- https://www.tei-c.org/Vault/P5/1.0.0/xml/
+- https://www.tei-c.org/Vault/P5/1.0.1/.svn/
+- https://www.tei-c.org/Vault/P5/1.0.1/doc/
+- https://www.tei-c.org/Vault/P5/1.0.1/xml/
+- https://www.tei-c.org/Vault/P5/1.1.0/.svn/
+- https://www.tei-c.org/Vault/P5/1.1.0/doc/
+- https://www.tei-c.org/Vault/P5/1.1.0/tei/
+- https://www.tei-c.org/Vault/P5/1.1.0/xml/
+- https://www.tei-c.org/Vault/P5/1.2.0/.svn/
+- https://www.tei-c.org/Vault/P5/1.2.0/doc/
+- https://www.tei-c.org/Vault/P5/1.2.0/tei/
+- https://www.tei-c.org/Vault/P5/1.2.0/xml/
+- https://www.tei-c.org/Vault/P5/1.3.0/.svn/
+- https://www.tei-c.org/Vault/P5/1.3.0/doc/
+- https://www.tei-c.org/Vault/P5/1.3.0/tei/
+- https://www.tei-c.org/Vault/P5/1.3.0/xml/
+- https://www.tei-c.org/Vault/P5/1.4.0/.svn/
+- https://www.tei-c.org/Vault/P5/1.4.0/doc/
+- https://www.tei-c.org/Vault/P5/1.4.0/tei/
+- https://www.tei-c.org/Vault/P5/1.4.0/xml/
+- https://www.tei-c.org/Vault/P5/1.4.1/.svn/
+- https://www.tei-c.org/Vault/P5/1.4.1/doc/
+- https://www.tei-c.org/Vault/P5/1.4.1/tei/
+- https://www.tei-c.org/Vault/P5/1.4.1/xml/
+- https://www.tei-c.org/Vault/P5/1.5.0/.svn/
+- https://www.tei-c.org/Vault/P5/1.5.0/doc/
+- https://www.tei-c.org/Vault/P5/1.5.0/tei/
+- https://www.tei-c.org/Vault/P5/1.5.0/xml/
+- https://www.tei-c.org/Vault/P5/1.6.0/.svn/
+- https://www.tei-c.org/Vault/P5/1.6.0/doc/
+- https://www.tei-c.org/Vault/P5/1.6.0/tei/
+- https://www.tei-c.org/Vault/P5/1.6.0/xml/
+- https://www.tei-c.org/Vault/P5/1.7.0/.svn/
+- https://www.tei-c.org/Vault/P5/1.7.0/doc/
+- https://www.tei-c.org/Vault/P5/1.7.0/xml/
+- https://www.tei-c.org/Vault/P5/1.8.0/.svn/
+- https://www.tei-c.org/Vault/P5/1.8.0/doc/
+- https://www.tei-c.org/Vault/P5/1.8.0/xml/
+- https://www.tei-c.org/Vault/P5/1.9.0/.svn/
+- https://www.tei-c.org/Vault/P5/1.9.0/doc/
+- https://www.tei-c.org/Vault/P5/1.9.0/xml/
+- https://www.tei-c.org/Vault/P5/1.9.1/.svn/
+- https://www.tei-c.org/Vault/P5/1.9.1/doc/
+- https://www.tei-c.org/Vault/P5/1.9.1/xml/
+- https://www.tei-c.org/Vault/P5/2.0.0/doc/
+- https://www.tei-c.org/Vault/P5/2.0.0/xml/
+- https://www.tei-c.org/Vault/P5/2.0.1/doc/
+- https://www.tei-c.org/Vault/P5/2.0.1/xml/
+- https://www.tei-c.org/Vault/P5/2.0.2/doc/
+- https://www.tei-c.org/Vault/P5/2.0.2/xml/
+- https://www.tei-c.org/Vault/P5/2.1.0/doc/
+- https://www.tei-c.org/Vault/P5/2.1.0/xml/
+- https://www.tei-c.org/Vault/P5/2.2.0/doc/
+- https://www.tei-c.org/Vault/P5/2.2.0/xml/
+- https://www.tei-c.org/Vault/P5/2.3.0/doc/
+- https://www.tei-c.org/Vault/P5/2.3.0/oxygen/
+- https://www.tei-c.org/Vault/P5/2.3.0/xml/
+- https://www.tei-c.org/Vault/P5/2.4.0/doc/
+- https://www.tei-c.org/Vault/P5/2.4.0/oxygen/
+- https://www.tei-c.org/Vault/P5/2.4.0/xml/
+- https://www.tei-c.org/Vault/P5/2.5.0/doc/
+- https://www.tei-c.org/Vault/P5/2.5.0/oxygen/
+- https://www.tei-c.org/Vault/P5/2.5.0/xml/
+- https://www.tei-c.org/Vault/P5/2.6.0/doc/
+- https://www.tei-c.org/Vault/P5/2.6.0/oxygen/
+- https://www.tei-c.org/Vault/P5/2.6.0/xml/
+- https://www.tei-c.org/Vault/P5/2.7.0/doc/
+- https://www.tei-c.org/Vault/P5/2.7.0/oxygen/
+- https://www.tei-c.org/Vault/P5/2.7.0/xml/
+- https://www.tei-c.org/Vault/P5/2.8.0/doc/
+- https://www.tei-c.org/Vault/P5/2.8.0/oxygen/
+- https://www.tei-c.org/Vault/P5/2.8.0/xml/
+- https://www.tei-c.org/Vault/P5/2.9.0/doc/
+- https://www.tei-c.org/Vault/P5/2.9.0/oxygen/
+- https://www.tei-c.org/Vault/P5/2.9.0/xml/
+- https://www.tei-c.org/Vault/P5/2.9.1/doc/
+- https://www.tei-c.org/Vault/P5/2.9.1/oxygen/
+- https://www.tei-c.org/Vault/P5/2.9.1/xml/
+- https://www.tei-c.org/Vault/P5/3.0.0/doc/
+- https://www.tei-c.org/Vault/P5/3.0.0/oxygen/
+- https://www.tei-c.org/Vault/P5/3.0.0/xml/
+- https://www.tei-c.org/Vault/P5/3.1.0/doc/
+- https://www.tei-c.org/Vault/P5/3.1.0/oxygen/
+- https://www.tei-c.org/Vault/P5/3.1.0/xml/
+- https://www.tei-c.org/Vault/P5/3.2.0/doc/
+- https://www.tei-c.org/Vault/P5/3.2.0/oxygen/
+- https://www.tei-c.org/Vault/P5/3.2.0/xml/
+- https://www.tei-c.org/Vault/P5/3.3.0/doc/
+- https://www.tei-c.org/Vault/P5/3.3.0/oxygen/
+- https://www.tei-c.org/Vault/P5/3.3.0/xml/
+- https://www.tei-c.org/Vault/P5/3.4.0/doc/
+- https://www.tei-c.org/Vault/P5/3.4.0/oxygen/
+- https://www.tei-c.org/Vault/P5/3.4.0/xml/
+- https://www.tei-c.org/Vault/P5/3.5.0/doc/
+- https://www.tei-c.org/Vault/P5/3.5.0/oxygen/
+- https://www.tei-c.org/Vault/P5/3.5.0/xml/
+- https://www.tei-c.org/Vault/P5/3.6.0/doc/
+- https://www.tei-c.org/Vault/P5/3.6.0/oxygen/
+- https://www.tei-c.org/Vault/P5/3.6.0/xml/
+- https://www.tei-c.org/Vault/P5/4.0.0/doc/
+- https://www.tei-c.org/Vault/P5/4.0.0/oxygen/
+- https://www.tei-c.org/Vault/P5/4.0.0/xml/
+- https://www.tei-c.org/Vault/P5/4.1.0/doc/
+- https://www.tei-c.org/Vault/P5/4.1.0/oxygen/
+- https://www.tei-c.org/Vault/P5/4.1.0/xml/
+- https://www.tei-c.org/Vault/P5/4.10.0/doc/
+- https://www.tei-c.org/Vault/P5/4.10.0/oxygen/
+- https://www.tei-c.org/Vault/P5/4.10.0/xml/
+- https://www.tei-c.org/Vault/P5/4.10.1/doc/
+- https://www.tei-c.org/Vault/P5/4.10.1/oxygen/
+- https://www.tei-c.org/Vault/P5/4.10.1/xml/
+- https://www.tei-c.org/Vault/P5/4.10.2/doc/
+- https://www.tei-c.org/Vault/P5/4.10.2/oxygen/
+- https://www.tei-c.org/Vault/P5/4.10.2/xml/
+- https://www.tei-c.org/Vault/P5/4.11.0/doc/
+- https://www.tei-c.org/Vault/P5/4.11.0/oxygen/
+- https://www.tei-c.org/Vault/P5/4.11.0/xml/
+- https://www.tei-c.org/Vault/P5/4.12.0/doc/
+- https://www.tei-c.org/Vault/P5/4.12.0/oxygen/
+- https://www.tei-c.org/Vault/P5/4.12.0/xml/
+- https://www.tei-c.org/Vault/P5/4.2.0/doc/
+- https://www.tei-c.org/Vault/P5/4.2.0/oxygen/
+- https://www.tei-c.org/Vault/P5/4.2.0/xml/
+- https://www.tei-c.org/Vault/P5/4.2.1/doc/
+- https://www.tei-c.org/Vault/P5/4.2.1/oxygen/
+- https://www.tei-c.org/Vault/P5/4.2.1/xml/
+- https://www.tei-c.org/Vault/P5/4.2.2/doc/
+- https://www.tei-c.org/Vault/P5/4.2.2/oxygen/
+- https://www.tei-c.org/Vault/P5/4.2.2/xml/
+- https://www.tei-c.org/Vault/P5/4.3.0/doc/
+- https://www.tei-c.org/Vault/P5/4.3.0/oxygen/
+- https://www.tei-c.org/Vault/P5/4.3.0/xml/
+- https://www.tei-c.org/Vault/P5/4.4.0/doc/
+- https://www.tei-c.org/Vault/P5/4.4.0/oxygen/
+- https://www.tei-c.org/Vault/P5/4.4.0/xml/
+- https://www.tei-c.org/Vault/P5/4.5.0/doc/
+- https://www.tei-c.org/Vault/P5/4.5.0/oxygen/
+- https://www.tei-c.org/Vault/P5/4.5.0/xml/
+- https://www.tei-c.org/Vault/P5/4.6.0/doc/
+- https://www.tei-c.org/Vault/P5/4.6.0/oxygen/
+- https://www.tei-c.org/Vault/P5/4.6.0/xml/
+- https://www.tei-c.org/Vault/P5/4.7.0/doc/
+- https://www.tei-c.org/Vault/P5/4.7.0/oxygen/
+- https://www.tei-c.org/Vault/P5/4.7.0/xml/
+- https://www.tei-c.org/Vault/P5/4.8.0/doc/
+- https://www.tei-c.org/Vault/P5/4.8.0/oxygen/
+- https://www.tei-c.org/Vault/P5/4.8.0/xml/
+- https://www.tei-c.org/Vault/P5/4.8.1/doc/
+- https://www.tei-c.org/Vault/P5/4.8.1/oxygen/
+- https://www.tei-c.org/Vault/P5/4.8.1/xml/
+- https://www.tei-c.org/Vault/P5/4.9.0/doc/
+- https://www.tei-c.org/Vault/P5/4.9.0/oxygen/
+- https://www.tei-c.org/Vault/P5/4.9.0/xml/
+- https://www.tei-c.org/Vault/P5/current/doc/
+- https://www.tei-c.org/Vault/P5/current/oxygen/
+- https://www.tei-c.org/Vault/P5/current/xml/
+- https://www.tei-c.org/Vault/Photos/.svn/
+- https://www.tei-c.org/Vault/SC/J31
+- https://www.tei-c.org/Vault/SC/J31/ADDS.htm
+- https://www.tei-c.org/Vault/SC/J31/BAS.htm
+- https://www.tei-c.org/Vault/SC/J31/CNCL.htm
+- https://www.tei-c.org/Vault/SC/J31/CORE.htm
+- https://www.tei-c.org/Vault/SC/J31/FGTS.htm
+- https://www.tei-c.org/Vault/SC/J31/ORGN.htm
+- https://www.tei-c.org/Vault/SC/J31/STAN.htm
+- https://www.tei-c.org/Vault/SC/J31/WHAT.htm
+- https://www.tei-c.org/Vault/Songs/song-lyrics.05.xml
+- https://www.tei-c.org/Vault/TRC/
+- https://www.tei-c.org/Vault/TRC/index.html
+- https://www.tei-c.org/Vault/TRC/tccom01.html
+- https://www.tei-c.org/Vault/TRC/tccom02.html
+- https://www.tei-c.org/Vault/TRC/tccom03.html
+- https://www.tei-c.org/Vault/TRC/tccom04.html
+- https://www.tei-c.org/Vault/TRC/tccom05lst.html
+- https://www.tei-c.org/Vault/TRC/tccom05tbl.html
+- https://www.tei-c.org/Vault/TRC/tccom06.html
+- https://www.tei-c.org/Vault/TRC/tccow01.html
+- https://www.tei-c.org/Vault/TRC/tccow02.html
+- https://www.tei-c.org/Vault/TRC/tccow03.html
+- https://www.tei-c.org/Vault/TRC/tccow04ve01.html
+- https://www.tei-c.org/Vault/Talks/2004/
+- https://www.tei-c.org/Vault/Talks/2005/
+- https://www.tei-c.org/Vault/Talks/2006/
+- https://www.tei-c.org/Vault/Talks/Berkeley/
+- https://www.tei-c.org/Vault/Talks/ESS2001/
+- https://www.tei-c.org/Vault/Talks/Forli/
+- https://www.tei-c.org/Vault/Talks/HCUSS2001/
+- https://www.tei-c.org/Vault/Talks/MITH/
+- https://www.tei-c.org/Vault/Talks/OUCS/
+- https://www.tei-c.org/Vault/Talks/Pizza/
+- https://www.tei-c.org/Vault/Talks/StMalo/
+- https://www.tei-c.org/Vault/Talks/UIUC/
+- https://www.tei-c.org/Vault/Talks/exercise-pizza.html
+- https://www.tei-c.org/Vault/Talks/extreme2004/
+- https://www.tei-c.org/Vault/Talks/handout-x.xsl
+- https://www.tei-c.org/Vault/Talks/handout.css
+- https://www.tei-c.org/Vault/Talks/handout.xsl
+- https://www.tei-c.org/Vault/Talks/index.xml
+- https://www.tei-c.org/Vault/Talks/marriage-print.xsl
+- https://www.tei-c.org/Vault/Talks/marriage.xml
+- https://www.tei-c.org/Vault/Talks/pizza-exercise.xml
+- https://www.tei-c.org/Vault/Talks/slides.css
+- https://www.tei-c.org/Vault/Talks/slides/
+- https://www.tei-c.org/Vault/Talks/slideshow.css
+- https://www.tei-c.org/Vault/Talks/slideshow.xsl
+- https://www.tei-c.org/Vault/Talks/xmleurope2002/
+- https://www.tei-c.org/Vault/Talks/xmleurope2003/
+- https://www.tei-c.org/Vault/Talks/xmleurope2004/
+- https://www.tei-c.org/Vault/Workgroups/CE/ce01.html
+- https://www.tei-c.org/Vault/Workgroups/CE/cem01.html
+- https://www.tei-c.org/Vault/Workgroups/CE/cem02.html
+- https://www.tei-c.org/Vault/Workgroups/CE/cer01.html
+- https://www.tei-c.org/Vault/Workgroups/CE/cew01.html
+- https://www.tei-c.org/Vault/Workgroups/CE/cew03.html
+- https://www.tei-c.org/Vault/Workgroups/CE/cew04-1.html
+- https://www.tei-c.org/Vault/Workgroups/CE/cew04.html
+- https://www.tei-c.org/Vault/Workgroups/CE/cew05.html
+- https://www.tei-c.org/Vault/Workgroups/CE/cew06.html
+- https://www.tei-c.org/Vault/Workgroups/CE/cew07.html
+- https://www.tei-c.org/Vault/Workgroups/CE/cew08.html
+- https://www.tei-c.org/Vault/Workgroups/CE/cew09.html
+- https://www.tei-c.org/Vault/Workgroups/CE/chibs-2002-paper.html
+- https://www.tei-c.org/Vault/Workgroups/FS/FS-examples.xml
+- https://www.tei-c.org/Vault/Workgroups/FS/FS-examples.xsl
+- https://www.tei-c.org/Vault/Workgroups/FS/N033-C-02.txt
+- https://www.tei-c.org/Vault/Workgroups/FS/N033-C-03.txt
+- https://www.tei-c.org/Vault/Workgroups/FS/N033-C-05.txt
+- https://www.tei-c.org/Vault/Workgroups/FS/N033-C-06.txt
+- https://www.tei-c.org/Vault/Workgroups/FS/fsm01.html
+- https://www.tei-c.org/Vault/Workgroups/FS/fsm02.html
+- https://www.tei-c.org/Vault/Workgroups/FS/fstest.xml
+- https://www.tei-c.org/Vault/Workgroups/FS/tcw01.html
+- https://www.tei-c.org/Vault/Workgroups/META/abbr.odd
+- https://www.tei-c.org/Vault/Workgroups/META/biblpart.odd
+- https://www.tei-c.org/Vault/Workgroups/META/div.odd
+- https://www.tei-c.org/Vault/Workgroups/META/mem03.html
+- https://www.tei-c.org/Vault/Workgroups/META/mew01.html
+- https://www.tei-c.org/Vault/Workgroups/META/mew02.html
+- https://www.tei-c.org/Vault/Workgroups/META/mew03.html
+- https://www.tei-c.org/Vault/Workgroups/META/mew04.html
+- https://www.tei-c.org/Vault/Workgroups/META/mew05.html
+- https://www.tei-c.org/Vault/Workgroups/META/mew06.html
+- https://www.tei-c.org/Vault/Workgroups/META/mew07.html
+- https://www.tei-c.org/Vault/Workgroups/META/mew08.html
+- https://www.tei-c.org/Vault/Workgroups/META/mew09.html
+- https://www.tei-c.org/Vault/Workgroups/META/mew10.html
+- https://www.tei-c.org/Vault/Workgroups/META/mew11.html
+- https://www.tei-c.org/Vault/Workgroups/META/mew12.html
+- https://www.tei-c.org/Vault/Workgroups/META/p5odds.rng
+- https://www.tei-c.org/Vault/Workgroups/META/phrseq.odd
+- https://www.tei-c.org/Vault/Workgroups/META/teilite.xml
+- https://www.tei-c.org/Vault/Workgroups/META/testext.xml
+- https://www.tei-c.org/Vault/Workgroups/META/textatts.xml
+- https://www.tei-c.org/Vault/Workgroups/MI/Samples/
+- https://www.tei-c.org/Vault/Workgroups/MI/Tools/
+- https://www.tei-c.org/Vault/Workgroups/MI/edw76.html
+- https://www.tei-c.org/Vault/Workgroups/MI/mim01.html
+- https://www.tei-c.org/Vault/Workgroups/MI/mim07.html
+- https://www.tei-c.org/Vault/Workgroups/MI/mim08.html
+- https://www.tei-c.org/Vault/Workgroups/MI/miw02.html
+- https://www.tei-c.org/Vault/Workgroups/MI/miw03.html
+- https://www.tei-c.org/Vault/Workgroups/MI/miw04.html
+- https://www.tei-c.org/Vault/Workgroups/MI/miw05.html
+- https://www.tei-c.org/Vault/Workgroups/MI/miw06.html
+- https://www.tei-c.org/Vault/Workgroups/MS/FASC-ms-Guidelines/MS.html
+- https://www.tei-c.org/Vault/Workgroups/MS/msm01.xml
+- https://www.tei-c.org/Vault/Workgroups/MS/msw03.html
+- https://www.tei-c.org/Vault/Workgroups/MS/msw04.txt
+- https://www.tei-c.org/Vault/Workgroups/MS/msw05.html
+- https://www.tei-c.org/Vault/Workgroups/PB/PB-draft.html
+- https://www.tei-c.org/Vault/Workgroups/PB/albertus-sample-1.xml
+- https://www.tei-c.org/Vault/Workgroups/PB/albertus-sample-2.xml
+- https://www.tei-c.org/Vault/Workgroups/PB/aphra-sample-1.xml
+- https://www.tei-c.org/Vault/Workgroups/PB/aphra-sample-2.xml
+- https://www.tei-c.org/Vault/Workgroups/PB/complex-cancels.xml
+- https://www.tei-c.org/Vault/Workgroups/PB/complex-codex.xml
+- https://www.tei-c.org/Vault/Workgroups/PB/edw82.html
+- https://www.tei-c.org/Vault/Workgroups/PB/harley-sample-1.xml
+- https://www.tei-c.org/Vault/Workgroups/PB/harley-sample-2.xml
+- https://www.tei-c.org/Vault/Workgroups/PB/octavo-1.xml
+- https://www.tei-c.org/Vault/Workgroups/PB/pba01.html
+- https://www.tei-c.org/Vault/Workgroups/PB/pbr01.html
+- https://www.tei-c.org/Vault/Workgroups/PERS/persw01.html
+- https://www.tei-c.org/Vault/Workgroups/PERS/persw02.html
+- https://www.tei-c.org/Vault/Workgroups/PERS/persw03.html
+- https://www.tei-c.org/Vault/Workgroups/PERS/persw04.txt
+- https://www.tei-c.org/Vault/Workgroups/PERS/persw05.xml
+- https://www.tei-c.org/Vault/Workgroups/PERS/persw06.xml
+- https://www.tei-c.org/Vault/Workgroups/PERS/placeMtg.html
+- https://www.tei-c.org/Vault/Workgroups/SO/edw74.html
+- https://www.tei-c.org/Vault/Workgroups/SO/som01.html
+- https://www.tei-c.org/Vault/Workgroups/SO/som02.html
+- https://www.tei-c.org/Vault/Workgroups/SO/som03.html
+- https://www.tei-c.org/Vault/Workgroups/SO/som04.html
+- https://www.tei-c.org/Vault/Workgroups/SO/som05.html
+- https://www.tei-c.org/Vault/Workgroups/SO/som06.html
+- https://www.tei-c.org/Vault/Workgroups/SO/som07.html
+- https://www.tei-c.org/Vault/Workgroups/SO/som08.html
+- https://www.tei-c.org/Vault/Workgroups/SO/som09.html
+- https://www.tei-c.org/Vault/Workgroups/SO/som10.html
+- https://www.tei-c.org/Vault/Workgroups/SO/som11.html
+- https://www.tei-c.org/Vault/Workgroups/SO/som12.html
+- https://www.tei-c.org/Vault/Workgroups/SO/som13.html
+- https://www.tei-c.org/Vault/Workgroups/SO/som14.html
+- https://www.tei-c.org/Vault/Workgroups/SO/som15.html
+- https://www.tei-c.org/Vault/Workgroups/SO/som16.html
+- https://www.tei-c.org/Vault/Workgroups/SO/som17.html
+- https://www.tei-c.org/Vault/Workgroups/SO/som18.html
+- https://www.tei-c.org/Vault/Workgroups/SO/som19.html
+- https://www.tei-c.org/Vault/Workgroups/SO/som20.html
+- https://www.tei-c.org/Vault/Workgroups/SO/som21.html
+- https://www.tei-c.org/Vault/Workgroups/SO/som22.html
+- https://www.tei-c.org/Vault/Workgroups/SO/som23.html
+- https://www.tei-c.org/Vault/Workgroups/SO/som24.html
+- https://www.tei-c.org/Vault/Workgroups/SO/som25.html
+- https://www.tei-c.org/Vault/Workgroups/SO/som26.html
+- https://www.tei-c.org/Vault/Workgroups/SO/som27.html
+- https://www.tei-c.org/Vault/Workgroups/SO/som28.html
+- https://www.tei-c.org/Vault/Workgroups/SO/som30.html
+- https://www.tei-c.org/Vault/Workgroups/SO/som31.html
+- https://www.tei-c.org/Vault/Workgroups/SO/som33.html
+- https://www.tei-c.org/Vault/Workgroups/SO/som35.html
+- https://www.tei-c.org/Vault/Workgroups/SO/sow02.html
+- https://www.tei-c.org/Vault/Workgroups/SO/sow04.html
+- https://www.tei-c.org/Vault/Workgroups/SO/sow05.html
+- https://www.tei-c.org/Vault/Workgroups/SO/sow06.html
+- https://www.tei-c.org/Vault/Workgroups/SO/sow07.html
+- https://www.tei-c.org/Vault/Workgroups/SO/sow08.html
+- https://www.tei-c.org/Vault/Workgroups/SO/sow09.html
+- https://www.tei-c.org/Vault/XX/Belux/cznk1.htm
+- https://www.tei-c.org/Vault/XX/Belux/cznk2.htm
+- https://www.tei-c.org/Vault/XX/Belux/cznk3.htm
+- https://www.tei-c.org/Vault/XX/Belux/cznk4.htm
+gaps:
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/AB/aba04.tex
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/AB/aba04a.tex
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/AB/aba05.gml
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/AB/abj02.gml
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/AB/abj02a.gml
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/AB/abm01.gml
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/AB/abp01.gml
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/AB/abp02.gml
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/AI/ai1m04.gml
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/AI/ai1p01.gml
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/AI/ai1p01.tei
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/AI/ai1t01.te1
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/AI/ai1t02.te1
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/AI/ai1t03.te1
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/AI/ai1t04.te1
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/AI/ai1w02.gml
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/AI/ai1w09.gml
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/AI/ai1w11.gml
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/AI/ai1w13.gml
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/AI/ai2p01.gml
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/AI/ai2p01.tei
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/AI/ai3m06.gml
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/AI/ai3p01.gml
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/AI/ai3p01.tei
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/AI/ai3w04.gml
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/AI/ai3w05.tei
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/AI/ai4p01.gml
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/AI/ai4p01.tei
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/AI/ai5m05.gml
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/AI/ai5p01.gml
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/AI/ai5p01.tei
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/AI/ai6p01.gml
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/AI/ai6p01.tei
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/AI/ai7d18.gml
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/AI/ai7p01.gml
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/AI/ai7p01.tei
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/AI/ai7w03c.gml
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/AI/aia01.gml
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/AI/aim01.dos
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/AI/aim01.gml
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/AI/aim02.gml
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/AI/aim03.gml
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/AI/air01.gml
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/AI/air01.tei
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/AI/air02.gml
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/AI/air03.gml
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/AI/aiw04.ps
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/AI/aiw04.tei
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/AI/aiw12.gml
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/AI/aiw13.gml
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/AI/aiw20.gml
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/AI/aiw20.sgm
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/AI/aiw21.gml
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/ED/eda04.gml
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/ED/eda05.gml
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/ED/eda05.ps
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/ED/eda16.gml
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/ED/eda16a.gml
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/ED/eda16b.gml
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/ED/eda17.gml
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/ED/eda18.gml
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/ED/eda34.gml
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/ED/eda41.tei
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/ED/eda83.tei
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/ED/edj01a.gml
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/ED/edj02.gml
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/ED/edj03.gml
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/ED/edj06.gml
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/ED/edj07.gml
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/ED/edj08.gml
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/ED/edj09.gml
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/ED/edp01.gml
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/ED/edp02.gml
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/ED/edr02.tei
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/ED/edr14.tei
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/ED/edw01.tei
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/ED/edw03.gml
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/ED/edw04.gml
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/ED/edw05.gml
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/ED/edw05img.bmp
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/ED/edw06.gml
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/ED/edw07.gml
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/ED/edw07a.gml
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/ED/edw08.gml
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/ED/edw09.gml
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/ED/edw10.gml
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/ED/edw10.sgm
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/ED/edw11.gml
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/ED/edw12.gml
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/ED/edw13.gml
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/ED/edw14.gml
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/ED/edw16.gml
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/ED/edw17.gml
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/ED/edw18.gml
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/ED/edw19.sgm
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/ED/edw19a.sgm
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/ED/edw20.gml
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/ED/edw21a.sgm
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/ED/edw22.gml
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/ED/edw22.tex
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/ED/edw23.gml
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/ED/edw23.sgm
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/ED/edw24.gml
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/ED/edw25.sgm
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/ED/edw25.tex
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/ED/edw26.tex
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/ED/edw27.gml
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/ED/edw28.sgm
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/ED/edw29.sgm
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/ED/edw29.tar
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/ED/edw30.sgm
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/ED/edw31.gml
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/ED/edw31.te1
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/ED/edw33.sgm
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/ED/edw35.gml
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/ED/edw35.sgm
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/ED/edw36.gml
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/ED/edw37.gml
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/ED/edw48.tei
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/ED/edw49.sgm
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/ED/edw50.sgm
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/ED/edw52.tei
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/ED/edw53.tei
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/ED/edw54.tei
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/ED/edw55.tei
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/ED/edw57.tei
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/ED/edw63.tei
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/ED/edw67.tei
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/ED/edw68.tei
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/ED/edw69.sgm
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/GL/P4/CanonizedOdds.zip
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/GL/p1dtd.tar.gz
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/GL/p2dtd.tar.gz
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/GL/p4beta.pdf
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/GL/teip1.tar.gz
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/GL/teip2.tar.gz
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/GL/teip2doc.tar.gz
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/GL/teip3doc.tar.gz
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/GL/teip3html.tar.gz
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/GL/teip3p3x.tar.gz
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/Leaflets/1990-TEI-leaflet-1.png
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/Leaflets/1990-TEI-leaflet-2.png
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/Leaflets/2000-TEI-leaflet-1.png
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/Leaflets/2000-TEI-leaflet-2.png
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/ML/mla08.tex
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/ML/mla19.gml
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/ML/mla21.tex
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/ML/mlm06.tex
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/ML/mlm10.sgm
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/ML/mlm11.gml
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/ML/mlm45.gml
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/ML/mlp01.tex
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/ML/mlp01a.tex
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/ML/mlw01.tei
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/ML/mlw01.tex
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/ML/mlw01a.tex
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/ML/mlw01b.tex
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/ML/mlw02.tei
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/ML/mlw03.tei
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/ML/mlw04.tei
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/ML/mlw04.tex
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/ML/mlw05.tei
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/ML/mlw11.tex
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/ML/mlw12.sgm
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/ML/mlw12.tei
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/ML/mlw13.gml
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/ML/mlw13.tei
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/ML/mlw18.ps
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/ML/mlw18a.gml
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/ML/mlw24.tex
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/ML/mlw26.gml
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/ML/mlw26.tei
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/ML/mlw31.gml
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/ML/mlw38.tei
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/ML/mlw47.gml
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/P4/teip4.tar.gz
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/P4/teip4.zip
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/P5/1.7.0/svn-commit.tmp~
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/PC/pcp1.tei
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/Photos/1987-11-vassar.jpg
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/Photos/1987_1111_00.jpg
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/Photos/1987_1111_01.jpg
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/Photos/1987_1111_02.jpg
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/Photos/1989_0217_00.jpg
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/Photos/1989_0217_01.jpg
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/Photos/1989_0217_02.jpg
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/Photos/1990_0312_01.jpg
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/Photos/1990_0322_00.jpg
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/Photos/1990_0516_04.jpg
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/Photos/1990_0919_00.jpg
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/Photos/1991_0315_00.jpg
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/Photos/1991_1115_00.jpg
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/Photos/1991_1115_01.jpg
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/Photos/1991_1118_01.jpg
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/Photos/1992_0525_00.jpg
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/Photos/1993_0218_00.jpg
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/Photos/1994-0031.jpg
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/Photos/1994_0516_01.jpg
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/Photos/1994_1210_02.jpg
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/Photos/2001-05-tingveken.jpg
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/SC/sca01.gml
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/SC/sca01a.gml
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/SC/sca07.gml
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/SC/sca08.gml
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/SC/sca10.gml
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/SC/sca13.gml
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/SC/scg09.gml
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/SC/scl02.gml
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/SC/scm01.gml
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/SC/scm02.gml
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/SC/scm03.gml
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/SC/scm04.gml
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/SC/scm05.gml
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/SC/scm06.gml
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/SC/scm07.gml
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/SC/scm08.gml
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/SC/scm09.gml
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/SC/scm10.gml
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/SC/scm11.gml
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/SC/scm11a.gml
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/SC/scm12.gml
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/SC/scm14.gml
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/SC/scm16.gml
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/SC/scm17.gml
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/SC/scm18.gml
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/SC/scm19.gml
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/SC/scm20.gml
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/SC/scm20.sgm
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/SC/scm22.gml
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/SC/scm22.sgm
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/SC/scm23.gml
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/SC/scm23.sgm
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/SC/scm24.gml
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/SC/scm24.sgm
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/SC/scm25.gml
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/SC/scm27.gml
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/SC/scm27.sgm
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/SC/scm28.gml
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/SC/scm28.sgm
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/SC/scm29.gml
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/SC/scm29.sgm
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/SC/scm30.gml
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/SC/scm30.sgm
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/SC/scm31.gml
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/SC/scm31.sgm
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/SC/scp01.gml
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/SC/scp01a.gml
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/SC/scp02.gml
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/SC/scr01.tex
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/SC/scr03.gml
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/SC/scr13.gml
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/SC/scr14.gml
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/SC/scr14a.gml
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/SC/scr16.gml
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/SC/teij16.gml
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/SC/teij17.gml
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/SC/teij17.tei
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/SC/teij31.sgm
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/SC/teij32.tei
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/SC/teipcp1.gml
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/SO/soa1.tei
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/SO/soa3.tei
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/Songs/bits.mp3
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/Songs/fave.mp3
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/Songs/servin.mp3
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/Songs/t-e-i.mp3
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/Songs/tei10.tgz
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/Songs/usep3.mp3
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/TD/tdm01.gml
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/TD/tdm02.sgm
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/TD/tdr01.gml
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/TD/tdr01.tei
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/TR/tr11p01.tei
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/TR/tr12m04.gml
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/TR/tr12p01.gml
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/TR/tr12p01.tei
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/TR/tr1p01.tei
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/TR/tr1w04.te1
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/TR/tr2m02.gml
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/TR/tr2p01.tei
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/TR/tr3p01.gml
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/TR/tr3w03.gml
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/TR/tr4r01.gml
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/TR/tr5p01.gml
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/TR/tr6m01.gml
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/TR/tr6p01.tei
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/TR/tr7p01.gml
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/TR/tr8p01.gml
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/TR/tr8p02.gml
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/TR/tr9m08.ps
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/TR/tr9m08.te1
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/TR/trm01.tex
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/TR/trm02.gml
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/TR/trm03.gml
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/TR/trr01.gml
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/TR/trr01.tei
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/TR/trr02.gml
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/TR/trr07.gml
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/TR/trw07.sgm
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/TRC/tccm01.tei
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/TRC/tccm02.tei
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/TRC/tccm03.tei
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/TRC/tccm04.tei
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/TRC/tccm05.tei
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/TRC/tccm06.tei
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/TRC/tccom01.tei
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/TRC/tccom02.tei
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/TRC/tccom03.tei
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/TRC/tccom04.tei
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/TRC/tccom05lst.tei
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/TRC/tccom05tbl.tei
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/TRC/tccom06.tei
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/TRC/tccow01.tei
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/TRC/tccow02.sgm
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/TRC/tccow03.sgm
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/TRC/tccow04ve01.sgm
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/TRC/tccw01.tei
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/TRC/tccw02.tei
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/TRC/tccw03.tei
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/TRC/tccw04a.tei
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/TRC/trcm01.tei
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/TRC/trcm01a.tei
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/TRC/trcr1.tei
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/Talks/edison.jpg
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/Talks/gravestones.pdf
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/Talks/index.bak
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/Talks/logo.png
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/Talks/lyon-3.ppt
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/Talks/marriage.pdf
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/Talks/teiprod.pdf
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/Tite/RFPdocuments/RFP_Round_2.zip
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/Tite/RFPdocuments/Survey.pdf
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/Tite/RFPdocuments/tite.samples.zip
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/Tite/proposaldocuments/benefits.pdf
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/Tite/proposaldocuments/draft-2009-01-06.pdf
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/Tite/proposaldocuments/mellonGrant.pdf
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/Tite/proposaldocuments/survey.pdf
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/Tite/proposaldocuments/surveyResults.pdf
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/Workgroups/CE/Design_of_an_Electronic.pdf
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/Workgroups/CE/FASC-ch.pdf
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/Workgroups/CE/FASC-wd.pdf
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/Workgroups/CE/cew12.pdf
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/Workgroups/FS/FASC-fs.pdf
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/Workgroups/FS/FS-examples.pdf
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/Workgroups/FS/N033-C-01.pdf
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/Workgroups/FS/N033-C-04.pdf
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/Workgroups/FS/N033-C-collated.pdf
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/Workgroups/FS/fstest.rnc
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/Workgroups/FS/iso-dis24610-1.pdf
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/Workgroups/FS/iso-form_08_0-cd_vote.rtf
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/Workgroups/FS/iso-n033-1.pdf
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/Workgroups/FS/iso-n033-11.pdf
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/Workgroups/FS/iso-n033-3.pdf
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/Workgroups/FS/overview_fsr_klee.ppt
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/Workgroups/META/FASC-td.pdf
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/Workgroups/META/p5odds.rnc
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/Workgroups/META/xmleurope2004.pdf
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/Workgroups/MI/lrec04-teimigr504.pdf
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/Workgroups/MS/tei-mss-doc.zip
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/Workgroups/MS/test.tar.gz
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/Workgroups/SO/exp-conv.tgz
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/XX/Belux/belux.sgm
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/Vault/XX/mla94.tei
+rights_exceptions:
+- Raw response bodies remain local until per-item redistribution rights are reviewed.

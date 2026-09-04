@@ -2,7 +2,7 @@ schema_version: 1
 lock_id: tei-official-p6-process
 source_id: tei-official-p6-process
 as_of: "2026-09-04"
-retrieval_status: not_started
+retrieval_status: partial
 
 scope:
   meeting_index: https://www.tei-c.org/activities/council/meetings/
@@ -14,13 +14,17 @@ scope:
     - Reconsider for P6
   rule: Enumerate official Council records and accessible artifacts explicitly concerning TEI P6; do not mix them with independent proposals from this vault.
 
-reported_repository:
-  canonical_url: https://github.com/TEIC/p6-sandbox
-  public_api_observation:
-    observed_at: "2026-09-04"
-    http_status: 404
-    interpretation: not-publicly-observable-or-not-found
-  access_required_if_private: true
+public_repositories:
+  - canonical_url: https://github.com/TEIC/timeForP6
+    role: official-conference-panel-preparation
+    observed_default_branch: main
+reported_repositories:
+  - canonical_url: https://github.com/TEIC/p6-sandbox
+    public_api_observation:
+      observed_at: "2026-09-04"
+      http_status: 404
+      interpretation: not-publicly-observable-or-not-found
+    access_required_if_private: true
 
 authority:
   meeting_records: primary-process-record
@@ -30,9 +34,16 @@ authority:
 rights:
   review_before_full_text_commit: true
 
-counts: {}
+counts:
+  time_for_p6_tree_entries: 21
+  time_for_p6_commits_all_observed_refs: 53
+  council_pages_in_shared_census: 206
 gaps:
   - code: reported-p6-sandbox-not-publicly-observable
     status: open
-  - code: no-p6-process-snapshot-yet
-    status: expected-before-first-ingestion
+  - code: p6-specific-council-records-not-yet-projected
+    status: open
+
+manifests:
+  - sources/manifests/2026-09-04-teic-time-for-p6.yaml
+  - sources/manifests/2026-09-04-tei-council-minutes-r2.yaml

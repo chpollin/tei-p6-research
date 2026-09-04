@@ -1,0 +1,71 @@
+schema_version: 1
+run_id: 2026-09-04-tei-p5-4.12.0-release-members
+source_id: teic-tei-p5-4.12.0
+started_at: '2026-09-04T16:50:05Z'
+finished_at: '2026-09-04T16:50:08Z'
+status: observable-complete
+adapter:
+  name: tools.corpus.zip_inventory
+  version: 1
+requests:
+- archive: corpus/raw/sha256/01/95baccee3b1e3e4f75b21fcf3c7c71cbcd75c796678b6f8c33229da13f66c5
+  sha256: 0195baccee3b1e3e4f75b21fcf3c7c71cbcd75c796678b6f8c33229da13f66c5
+objects:
+- kind: zip-member-inventory
+  path: corpus/normalized/assets/tei-p5-4.12.0-release-members.json
+  sha256: e059d2103ec2df2d8aa2dcd9cd1b7d8fa26ef420cbbed7c022e567485445ffce
+counts:
+  members: 15303
+  files: 15211
+  directories: 92
+  uncompressed_bytes: 974189181
+  suffixes:
+    .bat: 1
+    .cmd: 1
+    .css: 47
+    .dtd: 65
+    .epub: 6
+    .gif: 172
+    .htm: 1
+    .html: 11849
+    .isosch: 22
+    .jar: 39
+    .jpg: 400
+    .js: 19
+    .json: 9
+    .log: 3
+    .ltx: 9
+    .md: 1
+    .mod: 4
+    .model: 2
+    .nrl: 1
+    .nvdl: 17
+    .odd: 89
+    .pdf: 168
+    .pl: 6
+    .png: 393
+    .pptx: 9
+    .properties: 21
+    .py: 1
+    .rnc: 48
+    .rng: 95
+    .sh: 7
+    .svg: 46
+    .svrl: 23
+    .tei: 43
+    .template: 21
+    .tex: 1
+    .txt: 47
+    .xconf: 2
+    .xhtml: 5
+    .xmap: 1
+    .xml: 1219
+    .xql: 32
+    .xquery: 1
+    .xsd: 29
+    .xsl: 125
+    .xslt: 4
+    .zip: 81
+    '[none]': 26
+  gaps: 0
+gaps: []

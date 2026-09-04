@@ -1,0 +1,136 @@
+{
+  "entries": [
+    {
+      "mode": "100644",
+      "object_id": "e3cb8abd67dad016949dd747e8f482b274245381",
+      "object_type": "blob",
+      "path": ".github/workflows/maven.yml"
+    },
+    {
+      "mode": "100644",
+      "object_id": "31b151afc72c9f40d79dad5e43c70712e2e5a325",
+      "object_type": "blob",
+      "path": ".gitignore"
+    },
+    {
+      "mode": "100644",
+      "object_id": "69c732a2e0fd7dcb6ef3c12e7154c30d084439d6",
+      "object_type": "blob",
+      "path": "README.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "3bb17fae88eb3dae9632113e436015c3ca21b5f8",
+      "object_type": "blob",
+      "path": "build.xml"
+    },
+    {
+      "mode": "100644",
+      "object_id": "7f9cf880d90953af96face92cdd36ac240624110",
+      "object_type": "blob",
+      "path": "pom.xml"
+    },
+    {
+      "mode": "100644",
+      "object_id": "58ad0f6747b238e3789288332693c4bab834c99e",
+      "object_type": "blob",
+      "path": "src/main/java/org/tei/docx/DocX.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "3bce1343e667af6aac6762e26448a64d23104057",
+      "object_type": "blob",
+      "path": "src/main/java/org/tei/docx/DocXPropertiesProvider.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "350e703bb7e47976faca146cdfcf9e9f96f76650",
+      "object_type": "blob",
+      "path": "src/main/java/org/tei/exceptions/ConfigurationException.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "dfce96cc7ea122ac0456b2867fc217f3c1765d61",
+      "object_type": "blob",
+      "path": "src/main/java/org/tei/tei/DTDGenerationProperties.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "cd3480f0de7ee8ffcde784d9d3e1e91f14a00b87",
+      "object_type": "blob",
+      "path": "src/main/java/org/tei/tei/DocXTransformationProperties.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "f1ec171afb5000851c267511548926ddf2ebfe2f",
+      "object_type": "blob",
+      "path": "src/main/java/org/tei/tei/DocumentationGenerationProperties.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "1159d03b843ed1960f9d57afcb7dca5804dc0ccc",
+      "object_type": "blob",
+      "path": "src/main/java/org/tei/tei/ODDGenerationProperties.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "7c53d503fd6bdc4fec01eff8e93d8cdfbe6a5cf4",
+      "object_type": "blob",
+      "path": "src/main/java/org/tei/tei/RelaxGenerationProperties.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "1203de04ef345ce9ca681312a460ac091aa9972a",
+      "object_type": "blob",
+      "path": "src/main/java/org/tei/tei/TEI.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "0be28350aaab8043cc3fc0f52d7ea47d83b6fcec",
+      "object_type": "blob",
+      "path": "src/main/java/org/tei/tei/TEIArchive.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "b24c6a80239bda6923911612fe5d29e7f53eb250",
+      "object_type": "blob",
+      "path": "src/main/java/org/tei/tei/TEIArchivePropertiesProvider.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "2ec987b1936d7d87135e148f76bea3164a2ae4ce",
+      "object_type": "blob",
+      "path": "src/main/java/org/tei/tei/TEIPropertiesProvider.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "a715162e97de93b49b1ac3e5763e60d62d653f8e",
+      "object_type": "blob",
+      "path": "src/main/java/org/tei/tei/TransformationProperties.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "1fb78624d787aa69c3bbd7a0343cb1ac73b851c2",
+      "object_type": "blob",
+      "path": "src/main/java/org/tei/utils/FileUtils.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "f4d855f292da72bf23322c27e7e15faa55aba5d0",
+      "object_type": "blob",
+      "path": "src/main/java/org/tei/utils/SaxonProcFactory.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "5cb62faf45934f866eaa8d1fe0c08bf1b4f63f64",
+      "object_type": "blob",
+      "path": "src/main/java/org/tei/utils/XMLUtils.java"
+    }
+  ],
+  "ref_requested": "HEAD",
+  "repository": "https://github.com/TEIC/tei-javalib.git",
+  "resolved_commit": "d4d1a3950b4ba4168615224c8faa969b8ff0a5f7",
+  "root_tree": "245dfe2e74e116bf04830c2b67d9d15686926d35",
+  "schema_version": 1,
+  "source_id": "teic-public-git-repositories"
+}

@@ -3,8 +3,9 @@
 Data flow: README.md, docs/concept.md and the knowledge documents are read in a
 fixed order, their YAML frontmatter is stripped, their Markdown is converted to
 HTML and the sections are wrapped in one self-contained page with inline CSS.
-Repository-relative links are resolved against each source document and point
-to the canonical repository, so they remain valid wherever the page is served.
+Repository-relative links are resolved against each source document. Without a
+configured remote they point back into the local checkout; `--repository-url`
+turns them into canonical repository links for a deployed page.
 
 The Markdown subset covers what these documents actually use: headings,
 paragraphs, lists (nested, with block content in an item), tables, blockquotes,
@@ -15,7 +16,7 @@ syntax is the wrong input for this page.
 The generation date is a required argument rather than the system date, so that
 a rebuild of an older state stays reproducible.
 
-Usage: python tools/build_docs.py --date 2026-08-09
+Usage: python tools/build_docs.py --date 2026-09-04
 """
 
 from __future__ import annotations
@@ -28,15 +29,23 @@ import sys
 from pathlib import Path
 from urllib.parse import quote, urlsplit, urlunsplit
 
-REPOSITORY_URL = "https://github.com/DigitalHumanitiesCraft/grounded-vault"
+PROJECT_TITLE = "TEI P6 Research Vault"
+PROJECT_TAGLINE = (
+    "A grounded research environment for understanding TEI P5 and evaluating "
+    "next-generation TEI architectures."
+)
+REPOSITORY_URL: str | None = None
 
 # (anchor id, section title, source file relative to the vault root)
 SECTIONS = [
     ("start", "Start", "README.md"),
+    ("project", "Project", "knowledge/specification.md"),
     ("concept", "Concept", "docs/concept.md"),
     ("terminology", "Terminology", "knowledge/index.md"),
     ("schema", "Schema", "knowledge/schema.md"),
     ("operations", "Operations", "knowledge/operations.md"),
+    ("state", "State", "knowledge/state.md"),
+    ("journal", "Journal", "knowledge/journal.md"),
 ]
 
 CHAIN = [
@@ -65,7 +74,10 @@ def _repository_href(href: str, source: Path) -> str:
     if parsed.scheme or parsed.netloc or not parsed.path or parsed.path.startswith("/"):
         return href
     resolved = posixpath.normpath((source.parent / parsed.path).as_posix())
-    repository_path = f"{REPOSITORY_URL}/blob/main/{quote(resolved, safe='/')}"
+    if REPOSITORY_URL:
+        repository_path = f"{REPOSITORY_URL}/blob/main/{quote(resolved, safe='/')}"
+    else:
+        repository_path = f"../{quote(resolved, safe='/')}"
     return html.escape(
         urlunsplit(("", "", repository_path, parsed.query, parsed.fragment)),
         quote=True,
@@ -346,22 +358,29 @@ def build_page(root: Path, date: str) -> str:
         _render_section(anchor, title, root / relative, Path(relative))
         for anchor, title, relative in SECTIONS
     )
+    if REPOSITORY_URL:
+        source_label = (
+            f'<a href="{html.escape(REPOSITORY_URL, quote=True)}">'
+            "TEI P6 Research Vault repository</a>"
+        )
+    else:
+        source_label = "the local TEI P6 Research Vault documents"
     return f"""<!doctype html>
-<html lang="en">
+<html lang="de">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Grounded Vault</title>
-<meta name="description" content="A provenance-complete knowledge base architecture for humans and AI agents.">
+<title>{PROJECT_TITLE}</title>
+<meta name="description" content="{PROJECT_TAGLINE}">
 <style>{CSS}</style>
 </head>
 <body>
 <div class="wrap">
 <header class="page">
-<h1>Grounded Vault</h1>
-<p class="tagline">A provenance-complete knowledge base architecture for humans and AI agents.</p>
-<p class="generated">This page is generated from the documents of the
-<a href="{REPOSITORY_URL}">grounded-vault repository</a> and reflects their state of {html.escape(date)}.</p>
+<h1>{PROJECT_TITLE}</h1>
+<p class="tagline">{PROJECT_TAGLINE}</p>
+<p class="generated">This page is generated from {source_label} and reflects
+their state of {html.escape(date)}.</p>
 </header>
 <nav class="toc" aria-label="Sections"><ul>{nav}</ul></nav>
 {_render_chain()}
@@ -386,8 +405,15 @@ def main() -> int:
         default=None,
         help="target file (default: <root>/docs/index.html)",
     )
+    parser.add_argument(
+        "--repository-url",
+        default=None,
+        help="optional canonical repository URL used for source links",
+    )
     args = parser.parse_args()
 
+    global REPOSITORY_URL
+    REPOSITORY_URL = args.repository_url.rstrip("/") if args.repository_url else None
     root: Path = args.root.resolve()
     output: Path = args.output or root / "docs" / "index.html"
     try:

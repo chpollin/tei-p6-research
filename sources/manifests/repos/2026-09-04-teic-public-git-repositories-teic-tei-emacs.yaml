@@ -1,0 +1,33 @@
+schema_version: 1
+run_id: 2026-09-04-teic-public-git-repositories-teic-tei-emacs
+source_id: teic-public-git-repositories
+started_at: '2026-09-04T16:39:11Z'
+finished_at: '2026-09-04T16:39:13Z'
+status: observable-complete
+adapter:
+  name: tools.corpus.git_snapshot
+  version: 1
+requests:
+- kind: git-mirror
+  repository: https://github.com/TEIC/tei-emacs.git
+  action: cloned
+  requested_ref: HEAD
+  resolved_commit: 45bc05fbda4eb8edc7660fa8060fd42c80db2847
+objects:
+- kind: git-tree-inventory
+  path: corpus/normalized/git/org/teic-tei-emacs.json
+  sha256: 483a00c0732bcd2da884faa042fe7608efb391506bab9b6c836904e6dafe60c7
+  root_tree: 5bfe7600e9967b33cc2623f1aa113ac4d82a0d42
+counts:
+  commits_all_refs: 1
+  refs: 1
+  tree_entries: 203
+refs:
+- name: refs/heads/master
+  object_type: commit
+  object_id: 45bc05fbda4eb8edc7660fa8060fd42c80db2847
+gaps: []
+rights_exceptions:
+- The local mirror is not committed; redistribution follows the upstream repository
+  license.
+raw_materialization: corpus\raw\git\TEIC-tei-emacs.git

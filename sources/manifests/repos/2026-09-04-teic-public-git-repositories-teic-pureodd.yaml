@@ -1,0 +1,39 @@
+schema_version: 1
+run_id: 2026-09-04-teic-public-git-repositories-teic-pureodd
+source_id: teic-public-git-repositories
+started_at: '2026-09-04T16:38:53Z'
+finished_at: '2026-09-04T16:38:59Z'
+status: observable-complete
+adapter:
+  name: tools.corpus.git_snapshot
+  version: 1
+requests:
+- kind: git-mirror
+  repository: https://github.com/TEIC/pureodd.git
+  action: cloned
+  requested_ref: HEAD
+  resolved_commit: 504dba62c5837083f7f705a1ef7d3be442a8172a
+objects:
+- kind: git-tree-inventory
+  path: corpus/normalized/git/org/teic-pureodd.json
+  sha256: 0a15b0ce95799a4d1c81658026f48c60a5212dda10ac3afe2c648f0e70ad184f
+  root_tree: 99b760ca66a8a989297d052ef8254b14e0e48b02
+counts:
+  commits_all_refs: 11
+  refs: 3
+  tree_entries: 20
+refs:
+- name: refs/heads/master
+  object_type: commit
+  object_id: 504dba62c5837083f7f705a1ef7d3be442a8172a
+- name: refs/pull/1/head
+  object_type: commit
+  object_id: 3b205d90fab55c8990047f7b55b8eb3bbde94ae2
+- name: refs/pull/1/merge
+  object_type: commit
+  object_id: 91d0ae069b6b0fcbd52c7ee301cdeda24e4a92de
+gaps: []
+rights_exceptions:
+- The local mirror is not committed; redistribution follows the upstream repository
+  license.
+raw_materialization: corpus\raw\git\TEIC-pureodd.git

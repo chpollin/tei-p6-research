@@ -1,0 +1,1600 @@
+schema_version: 1
+run_id: 2026-09-04-tei-p5-4.12.0-published-html
+source_id: teic-tei-p5-4.12.0
+started_at: '2026-09-04T16:30:09Z'
+finished_at: '2026-09-04T16:43:09Z'
+status: partial
+adapter:
+  name: tools.corpus.web_census
+  version: 1
+requests:
+- root_url: https://www.tei-c.org/release/doc/tei-p5-doc/en/html/
+  allow_prefixes:
+  - https://www.tei-c.org/release/doc/tei-p5-doc/en/html/
+  depth: 1
+  max_pages: 500
+  include_binary: false
+objects:
+- kind: web-census
+  path: corpus/normalized/web/tei-p5-4.12.0-published-html.jsonl
+  sha256: 3d87ff9d2807301699c155d63b9964e7ba71c8cd6da522ba7e28c48b9c8b5899
+counts:
+  responses: 45
+  successful_responses: 45
+  external_links_inventoried: 590
+  depth_boundary_links_inventoried: 844
+  binary_links_inventoried_not_fetched: 67
+  gaps: 67
+external_links:
+- http://archive.is/gGzsZ
+- http://atilf.atilf.fr/tlf.htm
+- http://books.xmlschemata.org/relaxng/page2.html
+- http://ccfm.ens-lsh.fr/IMG/pdf/BFM-Mss_Encodage-XML.pdf
+- http://cdrh.unl.edu/book/export/html/2428
+- http://cds.library.brown.edu/resources/stg/monographs/ohco.html
+- http://chnm.gmu.edu/digitalhistory/links/pdf/chapter3/3.19a.pdf
+- http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.115.1525&rep=rep1&type=pdf
+- http://conferences.idealliance.org/extreme/html/2001/Piez01/EML2001Piez01.html
+- http://conferences.idealliance.org/extreme/html/2002/CMSMcQ01/EML2002CMSMcQ01.html
+- http://conferences.idealliance.org/extreme/html/2003/Lawton01/EML2003Lawton01.html
+- http://conferences.idealliance.org/extreme/html/2004/Bauman01/EML2004Bauman01.html
+- http://conferences.idealliance.org/extreme/html/2005/Bauman01/EML2005Bauman01.html
+- http://conferences.idealliance.org/extreme/html/2006/SperbergMcQueen01/EML2006SperbergMcQueen01.html
+- http://dh.obdurodon.org/introduction-xpath.xhtml
+- http://digitalcommons.calpoly.edu/cgi/viewcontent.cgi?article=1104&context=csse_fac
+- http://diglib.hab.de/edoc/ed000216/start.htm
+- http://discover.ukdataservice.ac.uk/catalogue?sn=3218
+- http://dl.acm.org/citation.cfm?id=1648954
+- http://dl.acm.org/citation.cfm?id=827192
+- http://dl.acm.org/citation.cfm?id=963653
+- http://earth-info.nga.mil/GandG/wgs84/index.html
+- http://elec.enc.sorbonne.fr/sanctoral/
+- http://en.wikisource.org/wiki/Kitzmiller_v._Dover_Area_School_District_et_al.
+- http://franglais.ini.hu/
+- http://hal.archives-ouvertes.fr/docs/00/11/09/71/PDF/etymology_final_bulag.pdf
+- http://hdl.handle.net/10932/00-03B0-14FA-A8D0-0F01-F
+- http://hdl.handle.net/11372/LRT-4806
+- http://hdl.handle.net/1956/1875
+- http://id.nii.ac.jp/1632/00015761/
+- http://journals.openedition.org/jtei/476
+- http://jubil.upmc.fr/sdx/pl/toc.xsp?base=fa&fmt=upmc&id=GH_000484_001&idtoc=GH_000484_001-pleadetoc
+- http://lalzimman.com/bio.html
+- http://library.brown.edu/cds/slaveryandjustice/
+- http://linguistics.berkeley.edu/sei/
+- http://link.springer.com/article/10.1023/A%3A1001800717376
+- http://mlcd.blackmesatech.com/mlcd/2003/Papers/texmecs.html
+- http://muse.jhu.edu/journals/new_literary_history/v033/33.1buzzetti.html
+- http://muse.jhu.edu/journals/portal_libraries_and_the_academy/v001/1.3nellhaus.html
+- http://music-encoding.org/
+- http://ncse.com/files/pub/legal/kitzmiller/highlights/2005-12-20_Kitzmiller_decision.pdf
+- http://nicole.dufournaud.net/these/adla/titresfamille/lebastard/2E3002/2E3002-0001.tei
+- http://nl.ijs.si/e-zrc/bib/eziss-Burnard.pdf
+- http://omdoc.org/
+- http://ota.ox.ac.uk/documents/creating/cdet/
+- http://people.brandeis.edu/~unsworth/KR/
+- http://people.brandeis.edu/~unsworth/Kings.5-00/primitives.html
+- http://physics.nist.gov/cuu/Units/binary.html
+- http://poinikastas.csad.ox.ac.uk/
+- http://relaxng.org/
+- http://research.microsoft.com/en-us/um/people/lamport/pubs/pubs.html
+- http://school.nijl.ac.jp/kindai/NIJL/NIJL-01116.html
+- http://sd-editions.com/AnaServer?teidoc+0+start.anv=
+- http://sites.radiofrance.fr/franceinter/em/labassijysuis
+- http://sites.radiofrance.fr/franceinter/em/letelephonesonne/contact.php
+- http://tools.ietf.org/html/rfc3986
+- http://ucrel.lancs.ac.uk/claws/
+- http://uhra.herts.ac.uk/bitstream/handle/2299/7302/904841.pdf?sequence=2
+- http://universaldependencies.org/u/feat/index.html
+- http://users.nyct.net/~aray/notes/igm.html
+- http://users.ox.ac.uk/~lou/Belux/
+- http://users.ox.ac.uk/~lou/papers/euro99.xml
+- http://users.ox.ac.uk/~lou/papers/glasgie.xml
+- http://users.ox.ac.uk/~lou/papers/sgml96.sgm
+- http://users.ox.ac.uk/~lou/wip/ELRA/WP3/
+- http://users.ox.ac.uk/~lou/wip/Soria/
+- http://users.ox.ac.uk/~lou/wip/herman.htm
+- http://users.ox.ac.uk/~lou/wip/metadata.html
+- http://users.ox.ac.uk/~lou/wip/twocults.html
+- http://web.archive.org/web/20150706093254/http://www2.research.att.com/~divesh/papers/jlssw2004-mct.pdf
+- http://www.abes.fr/abes/page%2C570%2Cmentions-legales.html
+- http://www.academie-francaise.fr/langue/orthographe/plan.html
+- http://www.ancientwisdoms.ac.uk/
+- http://www.ariadne.ac.uk/issue24/tei
+- http://www.artamene.org/projet.php
+- http://www.atilf.fr/
+- http://www.bvh.univ-tours.fr/Epistemon/
+- http://www.cirp.gal/palmed
+- http://www.cnrtl.fr/corpus/frantext/frantext.php
+- http://www.copyright.gov/title17/92chap1.html
+- http://www.cs.cmu.edu/~sef/Orig-Smiley.htm
+- http://www.csdl.tamu.edu/~shipman/papers/cscw.pdf
+- http://www.dicorevue.fr/bilingues/10-07_deca_5.html/
+- http://www.digitalhumanities.org/companion/
+- http://www.dlib.org/dlib/january02/sukovic/01sukovic.html
+- http://www.eki.ee/letter/
+- http://www.etudes-litteraires.com/figures-de-style/deictique.php
+- http://www.gutenberg.eu.org/publications/autres/TEILITE/
+- http://www.iath.virginia.edu/hcs/
+- http://www.iath.virginia.edu/hcs/burnard.html
+- http://www.ibm.com/developerworks/xml/library/x-matters30/index.html
+- http://www.ifla.org/VII/s13/pubs/isbd.htm
+- http://www.ims.uni-stuttgart.de/forschung/ressourcen/lexika/TagSets/stts-1999.pdf
+- http://www.interactivemusicnetwork.org/mpeg-ahg/
+- http://www.iso.org/iso/catalogue_detail?csnumber=37243
+- http://www.mediatheque-rueilmalmaison.fr/musique_cinema_arts_et_loisirs/arts_les_dossiers/la_renaissance_italienne_article1154.html?artsuite=5
+- http://www.mel.nist.gov/msidlibrary/doc/mlang/markuplang.htm
+- http://www.mulberrytech.com/Extreme/Proceedings/html/2004/Burnard01/EML2004Burnard01.pdf
+- http://www.mulberrytech.com/Extreme/Proceedings/html/2004/DeRose01/EML2004DeRose01.html
+- http://www.mulberrytech.com/Extreme/Proceedings/html/2005/Witt01/EML2005Witt01.xml
+- http://www.natcorp.ox.ac.uk/
+- http://www.persee.fr/web/revues/home/prescript/article/bec_0373-6237_1864_num_25_1_445928
+- http://www.pomegranate.com/
+- http://www.relaxng.org/
+- http://www.revue-texto.net/Corpus/Manufacture/standards/sommaire.html
+- http://www.rfc-editor.org/rfc/bcp/bcp47.txt
+- http://www.sciencedirect.com/science/article/pii/0920548996000335
+- http://www.sgmlsource.com/history/sgmlhist.htm
+- http://www.tei-c.org/
+- http://www.tei-c.org/About/consortium.html
+- http://www.tei-c.org/Activities/Workgroups/META/xmleurope2004.pdf
+- http://www.tei-c.org/Guidelines/P5/
+- http://www.tei-c.org/SIG/Libraries/teiinlibraries/main-driver.html
+- http://www.tei-c.org/Support/Learn/tei_bibliography.xml
+- http://www.tei-c.org/Vault/ED/EDW25/
+- http://www.tei-c.org/Vault/ED/edw69.htm
+- http://www.tei-c.org/Vault/ETE/
+- http://www.tei-c.org/Vault/ML/mlw18.ps
+- http://www.tug.org/TUGboat/Articles/tb09-1/tb20lamport.pdf
+- http://www.w3schools.com/xml/default.asp
+- http://www.w3schools.com/xml/xpath_intro.asp
+- http://www.whitmanarchive.org/resources/sleepers/duk.00258.001.jpg
+- http://www.wwp.brown.edu/about/history/archive/newsletter/vol02num03/nameKey-home.html
+- http://www.zvon.org/xxl/XPathTutorial/
+- http://www2.iath.virginia.edu/ach-allc.99/proceedings/hockey-renear2.html
+- http://xml.coverpages.org/Jelliffe-schema-family-tree3-20061130.jpg
+- http://xml.coverpages.org/Witt-allc2002.html
+- http://xml.coverpages.org/burnardw25-index.html
+- http://xml.coverpages.org/coombs-hallgren.html
+- http://xml.coverpages.org/coombs.html
+- http://xml.coverpages.org/deroseStructure.html
+- http://xml.coverpages.org/emt-ukc-index.html
+- http://xml.coverpages.org/hierarchies.html
+- https://archive.org/details/in.ernet.dli.2015.115852/page/n98/mode/1up
+- https://balisage.net/RememberingMSM.html
+- https://bcgenesis.uvic.ca/V55116.html
+- https://chise.org/
+- https://cs.uwaterloo.ca/~fwtompa/.papers/sgml.ps
+- https://dariah-eric.github.io/lexicalresources/pages/TEILex0/TEILex0.html
+- https://datatracker.ietf.org/doc/html/rfc6350
+- https://datatracker.ietf.org/doc/html/rfc7595
+- https://db.mocoda2.de/c/home
+- https://de.wikipedia.org/wiki/Diskussion:FKM-Richtlinie
+- https://developer.mozilla.org/en-US/docs/Web/HTML/Element/p
+- https://developers.google.com/kml/documentation/
+- https://docmh.com/adriaan-van-der-weel-digital-text-and-the-gutenberg-heritage-pdf
+- https://doi.org/10.1609/aimag.v15i1.1076
+- https://doi.org/10.4000/jtei.476
+- https://doi.org/10.5281/zenodo.5159020
+- https://dvpp.uvic.ca/poems/chambers_series/1840/pom_5242_song.html
+- https://dx.doi.org/10.1007/BF01830270
+- https://dx.doi.org/10.1007/BF01830314
+- https://dx.doi.org/10.1007/BF01830315
+- https://dx.doi.org/10.1007/BF01830617
+- https://dx.doi.org/10.1016/0920-5489(95)00035-6
+- https://dx.doi.org/10.1017/9781107705647.032
+- https://dx.doi.org/10.1023/A:1001710828622
+- https://dx.doi.org/10.1023/A:1001726011322
+- https://dx.doi.org/10.1023/A:1001765030032
+- https://dx.doi.org/10.1023/A:1001769103586
+- https://dx.doi.org/10.1023/A:1001795210724
+- https://dx.doi.org/10.1023/A:1001800717376
+- https://dx.doi.org/10.1023/A:1001832310939
+- https://dx.doi.org/10.1023/A:1008716330212
+- https://dx.doi.org/10.1023/A:1016178200469
+- https://dx.doi.org/10.1023/A:1021895322291
+- https://dx.doi.org/10.1080/09588221.2013.851702
+- https://dx.doi.org/10.1093/llc/14.1.29
+- https://dx.doi.org/10.1093/llc/17.1.77
+- https://dx.doi.org/10.1093/llc/19.1.9
+- https://dx.doi.org/10.1093/llc/6.1.34
+- https://dx.doi.org/10.1108/10650750110402585
+- https://dx.doi.org/10.1145/264842.264843
+- https://dx.doi.org/10.1145/32206.32209
+- https://dx.doi.org/10.1145/585058.585081
+- https://eadh.org/memorial-tribute
+- https://en.wikipedia.org/wiki/Bopomofo
+- https://en.wikipedia.org/wiki/Talk:Astronomical_object
+- https://en.wikipedia.org/wiki/Talk:Eiffel_(programming_language)/Archive_1
+- https://github.com/TEIC/TEI
+- https://github.com/TEIC/TEI/blob/dev/Documents/Git-README.md
+- https://github.com/TEIC/TEI/commit/113e933e2
+- https://github.com/TEIC/TEI/issues
+- https://iiif.dl.itc.u-tokyo.ac.jp/repo/s/ogai/document/49d0907b-d949-4d14-8aeb-bc1dea9a3ad1?fbclid=IwAR1UgB9NnSfO9AqkLbq-Ym4fsGj8fEIm9gZGt7AwHE65eE-Nq6Bcb78jcxQ
+- https://journals.openedition.org/corpus/4553
+- https://listserv.brown.edu/cgi-bin/wa?A2=TEI-L%3Bb092ac32.2101
+- https://nbn-resolving.org/urn:nbn:de:bsz:mh39-50650
+- https://nzetc.victoria.ac.nz/tei-source/NZPaV01NgaK.xml
+- https://openmath.org/
+- https://openmath.org/standard/
+- https://openmath.org/standard/om20-2004-06-30/
+- https://openmath.org/standard/om20-2004-06-30/omstd20html-2.xml
+- https://openmath.org/standard/om20-2004-06-30/omstd20html-3.xml
+- https://openmath.org/standard/om20-2004-06-30/omstd20html-4.xml
+- https://philpapers.org/archive/RUBtti.pdf
+- https://raw.githubusercontent.com/iljackb/Mixtepec_Mixtec/master/MIX-People.xml
+- https://scilogs.spektrum.de/wild-dueck-blog/
+- https://scilogs.spektrum.de/wild-dueck-blog/scheinzwerge-oder-viele-probleme-werden-groesser-wenn-man-sie-anpackt-griechenland/
+- https://tei-c.org/Vault/P4/Lite/
+- https://tei-c.org/guidelines/customization/
+- https://tei-c.org/js/main.js
+- https://teipublisher.com/exist/apps/serafin/letters/serafin02.xml
+- https://tools.ietf.org/html/bcp14
+- https://tools.ietf.org/html/bcp47
+- https://tools.ietf.org/html/rfc3986
+- https://twitter.com/SUEtheTrex
+- https://unicode.org/alloc/Pipeline.html
+- https://unicode.org/charts/unihan.html
+- https://unicode.org/pending/proposals.html
+- https://unicode.org/reports/tr15/
+- https://unicode.org/standard/where/
+- https://unicode.org/ucd/
+- https://unicode.org/versions/
+- https://web.archive.org/web/20140804000849/etext.lib.virginia.edu/standards/tei/uvatei.html
+- https://web.archive.org/web/20150706100318/http://tei.oucs.ox.ac.uk/Talks/2003-05-06-xmleurope2003/xmleurope2003.pdf
+- https://web.archive.org/web/20191023112411/http://ancilla.unice.fr/illustr.html
+- https://web.archive.org/web/20220307150159/https://www.ubs.com/global/en/ubs-society/philanthropy/optimus-foundation/ukrainerelief.html
+- https://web.archive.org/web/20220516140643/https://conferences.ncl.ac.uk/tei2022/cfp/
+- https://weblicht.sfs.uni-tuebingen.de/weblicht/
+- https://www.bipm.org/en/publications/si-brochure/
+- https://www.chise.org/
+- https://www.clarin.eu/content/clarin-concept-registry
+- https://www.deutschestextarchiv.de/book/download_xml/libelt_hs6623ii_1828
+- https://www.diamm.ac.uk/sources/522/
+- https://www.dublincore.org/specifications/dublin-core/dces/
+- https://www.gutenberg.org/files/1260/1260-h/1260-h.htm
+- https://www.holoweb.net/liam/papers/1996-sgml96-SuggestiveMarkup/
+- https://www.huma-num.fr/
+- https://www.iana.org/assignments/language-subtag-registry
+- https://www.iana.org/assignments/uri-schemes.html
+- https://www.ibm.com/developerworks/xml/tutorials/xmlintro/xmlintro.html
+- https://www.ietf.org/rfc/rfc3986.txt
+- https://www.ietf.org/rfc/rfc4151.txt
+- https://www.iso.org/obp/ui
+- https://www.iso.org/standard/52348.html
+- https://www.oasis-open.org/specs/tablemodels.php
+- https://www.rfc-editor.org/info/rfc6129
+- https://www.statista.com/chart/19708/known-occasions-where-people-survived-falls/
+- https://www.tei-c.org/
+- https://www.tei-c.org/about/code-of-conduct/
+- https://www.tei-c.org/about/contact/
+- https://www.tei-c.org/release/doc/tei-p5-doc/de/html/AB.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/de/html/AI.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/de/html/BIB.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/de/html/CC.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/de/html/CE.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/de/html/CH.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/de/html/CMC.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/de/html/CO.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/de/html/COL.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/de/html/DEPRECATIONS.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/de/html/DI.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/de/html/DR.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/de/html/DS.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/de/html/FM1.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/de/html/FS.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/de/html/FT.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/de/html/GD.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/de/html/HD.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/de/html/MS.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/de/html/ND.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/de/html/NH.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/de/html/PH.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/de/html/PREFS.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/de/html/REF-ATTS.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/de/html/REF-CLASSES-ATTS.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/de/html/REF-CLASSES-MODEL.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/de/html/REF-ELEMENTS.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/de/html/REF-MACROS.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/de/html/SA.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/de/html/SG.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/de/html/ST.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/de/html/TC.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/de/html/TD.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/de/html/TS.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/de/html/TitlePageVerso.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/de/html/USE.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/de/html/VE.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/de/html/WD.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/de/html/dedication.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/de/html/index.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/Guidelines.epub
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/Guidelines.pdf
+- https://www.tei-c.org/release/doc/tei-p5-doc/es/html/AB.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/es/html/AI.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/es/html/BIB.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/es/html/CC.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/es/html/CE.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/es/html/CH.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/es/html/CMC.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/es/html/CO.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/es/html/COL.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/es/html/DEPRECATIONS.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/es/html/DI.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/es/html/DR.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/es/html/DS.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/es/html/FM1.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/es/html/FS.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/es/html/FT.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/es/html/GD.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/es/html/HD.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/es/html/MS.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/es/html/ND.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/es/html/NH.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/es/html/PH.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/es/html/PREFS.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/es/html/REF-ATTS.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/es/html/REF-CLASSES-ATTS.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/es/html/REF-CLASSES-MODEL.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/es/html/REF-ELEMENTS.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/es/html/REF-MACROS.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/es/html/SA.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/es/html/SG.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/es/html/ST.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/es/html/TC.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/es/html/TD.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/es/html/TS.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/es/html/TitlePageVerso.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/es/html/USE.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/es/html/VE.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/es/html/WD.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/es/html/dedication.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/es/html/index.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/fr/html/AB.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/fr/html/AI.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/fr/html/BIB.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/fr/html/CC.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/fr/html/CE.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/fr/html/CH.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/fr/html/CMC.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/fr/html/CO.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/fr/html/COL.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/fr/html/DEPRECATIONS.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/fr/html/DI.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/fr/html/DR.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/fr/html/DS.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/fr/html/FM1.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/fr/html/FS.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/fr/html/FT.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/fr/html/GD.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/fr/html/HD.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/fr/html/MS.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/fr/html/ND.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/fr/html/NH.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/fr/html/PH.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/fr/html/PREFS.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/fr/html/REF-ATTS.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/fr/html/REF-CLASSES-ATTS.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/fr/html/REF-CLASSES-MODEL.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/fr/html/REF-ELEMENTS.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/fr/html/REF-MACROS.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/fr/html/SA.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/fr/html/SG.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/fr/html/ST.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/fr/html/TC.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/fr/html/TD.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/fr/html/TS.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/fr/html/TitlePageVerso.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/fr/html/USE.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/fr/html/VE.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/fr/html/WD.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/fr/html/dedication.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/fr/html/index.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/it/html/AB.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/it/html/AI.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/it/html/BIB.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/it/html/CC.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/it/html/CE.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/it/html/CH.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/it/html/CMC.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/it/html/CO.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/it/html/COL.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/it/html/DEPRECATIONS.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/it/html/DI.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/it/html/DR.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/it/html/DS.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/it/html/FM1.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/it/html/FS.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/it/html/FT.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/it/html/GD.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/it/html/HD.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/it/html/MS.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/it/html/ND.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/it/html/NH.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/it/html/PH.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/it/html/PREFS.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/it/html/REF-ATTS.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/it/html/REF-CLASSES-ATTS.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/it/html/REF-CLASSES-MODEL.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/it/html/REF-ELEMENTS.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/it/html/REF-MACROS.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/it/html/SA.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/it/html/SG.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/it/html/ST.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/it/html/TC.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/it/html/TD.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/it/html/TS.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/it/html/TitlePageVerso.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/it/html/USE.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/it/html/VE.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/it/html/WD.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/it/html/dedication.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/it/html/index.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/ja/html/AB.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/ja/html/AI.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/ja/html/BIB.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/ja/html/CC.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/ja/html/CE.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/ja/html/CH.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/ja/html/CMC.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/ja/html/CO.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/ja/html/COL.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/ja/html/DEPRECATIONS.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/ja/html/DI.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/ja/html/DR.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/ja/html/DS.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/ja/html/FM1.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/ja/html/FS.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/ja/html/FT.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/ja/html/GD.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/ja/html/HD.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/ja/html/MS.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/ja/html/ND.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/ja/html/NH.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/ja/html/PH.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/ja/html/PREFS.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/ja/html/REF-ATTS.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/ja/html/REF-CLASSES-ATTS.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/ja/html/REF-CLASSES-MODEL.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/ja/html/REF-ELEMENTS.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/ja/html/REF-MACROS.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/ja/html/SA.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/ja/html/SG.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/ja/html/ST.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/ja/html/TC.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/ja/html/TD.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/ja/html/TS.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/ja/html/TitlePageVerso.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/ja/html/USE.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/ja/html/VE.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/ja/html/WD.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/ja/html/dedication.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/ja/html/index.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/ko/html/AB.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/ko/html/AI.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/ko/html/BIB.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/ko/html/CC.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/ko/html/CE.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/ko/html/CH.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/ko/html/CMC.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/ko/html/CO.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/ko/html/COL.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/ko/html/DEPRECATIONS.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/ko/html/DI.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/ko/html/DR.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/ko/html/DS.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/ko/html/FM1.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/ko/html/FS.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/ko/html/FT.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/ko/html/GD.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/ko/html/HD.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/ko/html/MS.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/ko/html/ND.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/ko/html/NH.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/ko/html/PH.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/ko/html/PREFS.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/ko/html/REF-ATTS.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/ko/html/REF-CLASSES-ATTS.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/ko/html/REF-CLASSES-MODEL.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/ko/html/REF-ELEMENTS.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/ko/html/REF-MACROS.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/ko/html/SA.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/ko/html/SG.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/ko/html/ST.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/ko/html/TC.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/ko/html/TD.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/ko/html/TS.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/ko/html/TitlePageVerso.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/ko/html/USE.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/ko/html/VE.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/ko/html/WD.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/ko/html/dedication.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/ko/html/index.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/readme-4.12.0.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/zh-TW/html/AB.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/zh-TW/html/AI.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/zh-TW/html/BIB.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/zh-TW/html/CC.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/zh-TW/html/CE.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/zh-TW/html/CH.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/zh-TW/html/CMC.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/zh-TW/html/CO.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/zh-TW/html/COL.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/zh-TW/html/DEPRECATIONS.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/zh-TW/html/DI.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/zh-TW/html/DR.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/zh-TW/html/DS.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/zh-TW/html/FM1.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/zh-TW/html/FS.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/zh-TW/html/FT.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/zh-TW/html/GD.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/zh-TW/html/HD.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/zh-TW/html/MS.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/zh-TW/html/ND.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/zh-TW/html/NH.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/zh-TW/html/PH.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/zh-TW/html/PREFS.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/zh-TW/html/REF-ATTS.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/zh-TW/html/REF-CLASSES-ATTS.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/zh-TW/html/REF-CLASSES-MODEL.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/zh-TW/html/REF-ELEMENTS.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/zh-TW/html/REF-MACROS.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/zh-TW/html/SA.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/zh-TW/html/SG.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/zh-TW/html/ST.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/zh-TW/html/TC.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/zh-TW/html/TD.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/zh-TW/html/TS.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/zh-TW/html/TitlePageVerso.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/zh-TW/html/USE.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/zh-TW/html/VE.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/zh-TW/html/WD.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/zh-TW/html/dedication.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/zh-TW/html/index.html
+- https://www.tug.org/TUGboat/tb37-2/tb116rahtz-mitt.pdf
+- https://www.unicode.org/
+- https://www.unicode.org/Public/UNIDATA/UCD.html
+- https://www.unicode.org/charts/unihan.html
+- https://www.unicode.org/consortium/distlist.html
+- https://www.unicode.org/reports/tr15/
+- https://www.unicode.org/reports/tr17/
+- https://www.unicode.org/reports/tr23/
+- https://www.unicode.org/reports/tr44/
+- https://www.unicode.org/reports/tr9/
+- https://www.unicode.org/ucd/
+- https://www.unicode.org/versions/Unicode11.0.0/ch18.pdf
+- https://www.usenetarchives.com/view.php?id=comp.text.sgml&mid=PDI5MzIxLjkwMDkzMDEzMzBAbWFudXRpdXMuZWNzLnNvdG9uLmFjLnVrPg
+- https://www.w3.org/Graphics/SVG/
+- https://www.w3.org/International/articles/inline-bidi-markup/
+- https://www.w3.org/International/articles/language-tags/
+- https://www.w3.org/International/questions/qa-bidi-controls
+- https://www.w3.org/International/questions/qa-choosing-encodings
+- https://www.w3.org/International/questions/qa-choosing-language-tags.en.php
+- https://www.w3.org/TR/1999/REC-xml-names-19990114/
+- https://www.w3.org/TR/2001/REC-SVG-20010904/
+- https://www.w3.org/TR/2001/REC-smil20-20010807/
+- https://www.w3.org/TR/2004/REC-xinclude-20041220/
+- https://www.w3.org/TR/2004/REC-xmlschema-2-20041028/
+- https://www.w3.org/TR/2005/REC-SMIL2-20050107/smil-modules.html
+- https://www.w3.org/TR/2005/REC-SMIL2-20050107/smil20-profile.html
+- https://www.w3.org/TR/CSS2/
+- https://www.w3.org/TR/CSS2/visuren.html
+- https://www.w3.org/TR/MathML2/
+- https://www.w3.org/TR/REC-CSS1/
+- https://www.w3.org/TR/REC-smil/
+- https://www.w3.org/TR/REC-xml/
+- https://www.w3.org/TR/SVG/shapes.html
+- https://www.w3.org/TR/SVG11/
+- https://www.w3.org/TR/WCAG10-HTML-TECHS/
+- https://www.w3.org/TR/annotation-model/
+- https://www.w3.org/TR/annotation-vocab/
+- https://www.w3.org/TR/charmod/
+- https://www.w3.org/TR/css-lists-3/
+- https://www.w3.org/TR/css-transforms/
+- https://www.w3.org/TR/css-writing-modes-3/
+- https://www.w3.org/TR/html401/
+- https://www.w3.org/TR/rdf11-primer/
+- https://www.w3.org/TR/xhtml/
+- https://www.w3.org/TR/xinclude/
+- https://www.w3.org/TR/xml-model/
+- https://www.w3.org/TR/xml-names/
+- https://www.w3.org/TR/xml-stylesheet/
+- https://www.w3.org/TR/xml/
+- https://www.w3.org/TR/xmlbase/
+- https://www.w3.org/TR/xmlschema-2/
+- https://www.w3.org/TR/xpath-30/
+- https://www.w3.org/TR/xpath-31/
+- https://www.w3.org/TR/xpath-datamodel/
+- https://www.w3.org/TR/xpath-functions/
+- https://www.w3.org/TR/xpath/
+- https://www.w3.org/TR/xpath20/
+- https://www.w3.org/TR/xptr-element/
+- https://www.w3.org/TR/xptr-framework/
+- https://www.w3.org/TR/xptr-xmlns/
+- https://www.w3.org/TR/xptr-xpointer/
+- https://www.w3.org/TR/xsl11/
+- https://www.w3.org/TR/xslt-30/
+- https://www.w3.org/TR/xslt/
+- https://www.w3.org/TR/xslt20/
+- https://www.w3.org/XML/Schema
+depth_boundary_links:
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-TEI.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-ab.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-abbr.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-abstract.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-accMat.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-acquisition.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-activity.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-actor.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-add.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-addName.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-addSpan.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-additional.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-additions.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-addrLine.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-address.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-adminInfo.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-affiliation.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-age.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-alt.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-altGrp.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-altIdent.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-altIdentifier.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-alternate.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-am.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-analytic.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-anchor.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-annotation.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-annotationBlock.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-anyElement.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-app.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-appInfo.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-application.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-arc.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-argument.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-att.anchoring.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-att.ascribed.directed.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-att.ascribed.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-att.breaking.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-att.cReferencing.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-att.calendarSystem.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-att.canonical.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-att.citeStructurePart.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-att.citing.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-att.cmc.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-att.combinable.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-att.coordinated.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-att.damaged.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-att.datable.custom.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-att.datable.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-att.datable.iso.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-att.datable.w3c.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-att.datcat.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-att.declarable.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-att.declaring.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-att.deprecated.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-att.dimensions.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-att.divLike.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-att.docStatus.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-att.duration.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-att.duration.iso.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-att.duration.w3c.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-att.editLike.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-att.edition.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-att.enjamb.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-att.entryLike.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-att.formula.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-att.fragmentable.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-att.gaijiProp.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-att.global.analytic.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-att.global.change.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-att.global.facs.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-att.global.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-att.global.linking.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-att.global.rendition.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-att.global.responsibility.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-att.global.source.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-att.handFeatures.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-att.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-att.identified.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-att.indentation.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-att.internetMedia.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-att.interpLike.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-att.lexicographic.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-att.lexicographic.normalized.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-att.linguistic.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-att.locatable.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-att.measurement.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-att.media.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-att.metrical.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-att.milestoneUnit.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-att.msClass.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-att.msExcerpt.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-att.namespaceable.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-att.naming.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-att.notated.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-att.partials.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-att.patternReplacement.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-att.performed.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-att.personal.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-att.placement.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-att.pointing.group.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-att.pointing.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-att.predicate.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-att.ranging.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-att.rdgPart.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-att.repeatable.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-att.resourced.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-att.scope.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-att.scoping.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-att.segLike.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-att.sortable.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-att.spanning.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-att.styleDef.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-att.tableDecoration.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-att.textCritical.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-att.timed.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-att.transcriptional.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-att.translatable.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-att.typed.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-att.witnessed.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-att.written.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-attDef.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-attList.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-attRef.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-author.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-authority.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-availability.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-back.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-bibl.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-biblFull.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-biblScope.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-biblStruct.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-bicond.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-binary.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-binaryObject.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-binding.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-bindingDesc.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-birth.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-bloc.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-body.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-broadcast.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-byline.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-c.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-cRefPattern.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-caesura.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-calendar.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-calendarDesc.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-camera.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-caption.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-case.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-castGroup.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-castItem.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-castList.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-catDesc.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-catRef.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-catchwords.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-category.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-cb.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-cell.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-certainty.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-change.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-channel.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-char.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-charDecl.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-choice.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-cit.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-citeData.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-citeStructure.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-citedRange.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-cl.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-classCode.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-classDecl.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-classRef.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-classSpec.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-classes.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-climate.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-closer.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-code.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-collation.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-collection.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-colloc.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-colophon.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-cond.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-condition.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-constitution.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-constraint.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-constraintDecl.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-constraintSpec.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-content.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-conversion.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-corr.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-correction.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-correspAction.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-correspContext.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-correspDesc.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-country.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-creation.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-custEvent.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-custodialHist.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-damage.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-damageSpan.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-dataFacet.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-dataRef.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-dataSpec.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-datatype.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-date.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-dateline.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-death.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-decoDesc.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-decoNote.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-def.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-default.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-defaultVal.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-del.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-delSpan.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-depth.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-derivation.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-desc.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-dictScrap.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-dim.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-dimensions.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-distinct.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-distributor.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-district.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-div.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-div1.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-div2.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-div3.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-div4.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-div5.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-div6.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-div7.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-divGen.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-docAuthor.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-docDate.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-docEdition.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-docImprint.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-docTitle.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-domain.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-eLeaf.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-eTree.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-edition.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-editionStmt.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-editor.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-editorialDecl.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-education.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-eg.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-egXML.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-elementRef.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-elementSpec.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-ellipsis.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-email.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-emph.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-empty.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-encodingDesc.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-entry.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-entryFree.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-epigraph.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-epilogue.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-equipment.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-equiv.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-etym.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-event.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-eventName.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-ex.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-exemplum.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-expan.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-explicit.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-extent.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-f.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-fDecl.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-fDescr.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-fLib.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-facsimile.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-factuality.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-faith.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-figDesc.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-figure.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-fileDesc.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-filiation.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-finalRubric.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-floatingText.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-floruit.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-foliation.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-foreign.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-forename.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-forest.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-form.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-formula.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-front.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-fs.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-fsConstraints.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-fsDecl.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-fsDescr.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-fsdDecl.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-fsdLink.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-funder.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-fvLib.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-fw.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-g.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-gap.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-gb.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-gen.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-genName.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-gender.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-geo.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-geoDecl.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-geogFeat.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-geogName.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-gi.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-gloss.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-glyph.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-gram.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-gramGrp.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-graph.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-graphic.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-group.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-handDesc.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-handNote.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-handNotes.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-handShift.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-head.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-headItem.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-headLabel.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-height.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-heraldry.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-hi.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-history.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-hom.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-hyph.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-hyphenation.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-iNode.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-iType.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-ident.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-idno.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-if.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-iff.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-imprimatur.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-imprint.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-incident.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-incipit.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-index.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-institution.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-interaction.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-interleave.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-interp.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-interpGrp.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-interpretation.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-item.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-join.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-joinGrp.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-keywords.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-kinesic.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-l.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-label.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-lacunaEnd.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-lacunaStart.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-lang.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-langKnowledge.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-langKnown.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-langUsage.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-language.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-layout.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-layoutDesc.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-lb.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-lbl.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-leaf.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-lem.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-lg.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-licence.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-line.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-link.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-linkGrp.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-list.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-listAnnotation.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-listApp.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-listBibl.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-listChange.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-listEvent.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-listForest.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-listNym.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-listObject.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-listOrg.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-listPerson.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-listPlace.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-listPrefixDef.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-listRef.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-listRelation.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-listTranspose.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-listWit.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-localProp.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-locale.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-location.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-locus.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-locusGrp.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-m.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-macro.abContent.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-macro.limitedContent.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-macro.paraContent.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-macro.phraseSeq.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-macro.phraseSeq.limited.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-macro.specialPara.cmc.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-macro.specialPara.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-macro.xtext.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-macroRef.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-macroSpec.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-mapping.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-material.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-measure.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-measureGrp.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-media.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-meeting.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-memberOf.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-mentioned.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-metDecl.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-metSym.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-metamark.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-milestone.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-mod.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-model.addrPart.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-model.addressLike.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-model.annotationLike.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-model.annotationPart.body.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-model.applicationLike.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-model.attributable.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-model.availabilityPart.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-model.biblLike.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-model.biblPart.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-model.castItemPart.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-model.catDescPart.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-model.certLike.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-model.choicePart.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-model.cmc.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-model.common.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-model.contentPart.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-model.correspActionPart.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-model.correspContextPart.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-model.correspDescPart.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-model.dateLike.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-model.descLike.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-model.describedResource.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-model.dimLike.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-model.div1Like.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-model.div2Like.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-model.div3Like.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-model.div4Like.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-model.div5Like.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-model.div6Like.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-model.div7Like.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-model.divBottom.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-model.divBottomPart.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-model.divGenLike.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-model.divLike.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-model.divPart.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-model.divPart.spoken.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-model.divTop.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-model.divTopPart.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-model.divWrapper.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-model.editorialDeclPart.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-model.egLike.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-model.emphLike.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-model.encodingDescPart.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-model.entryLike.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-model.entryPart.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-model.entryPart.top.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-model.eventLike.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-model.featureVal.complex.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-model.featureVal.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-model.featureVal.single.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-model.formPart.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-model.frontPart.drama.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-model.frontPart.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-model.fsdDeclPart.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-model.gLike.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-model.global.edit.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-model.global.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-model.global.meta.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-model.global.spoken.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-model.gramPart.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-model.graphicLike.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-model.headLike.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-model.hiLike.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-model.highlighted.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-model.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-model.identEquiv.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-model.identSynonyms.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-model.imprintPart.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-model.inter.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-model.lLike.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-model.lPart.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-model.labelLike.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-model.lexicalRefinement.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-model.limitedPhrase.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-model.linePart.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-model.listLike.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-model.measureLike.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-model.milestoneLike.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-model.morphLike.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-model.msItemPart.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-model.msQuoteLike.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-model.nameLike.agent.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-model.nameLike.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-model.noteLike.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-model.objectLike.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-model.oddDecl.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-model.oddRef.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-model.offsetLike.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-model.orgPart.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-model.orgStateLike.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-model.pLike.front.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-model.pLike.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-model.pPart.data.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-model.pPart.edit.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-model.pPart.editorial.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-model.pPart.msdesc.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-model.pPart.transcriptional.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-model.paraPart.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-model.persNamePart.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-model.persStateLike.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-model.personLike.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-model.personPart.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-model.phrase.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-model.phrase.xml.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-model.physDescPart.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-model.placeLike.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-model.placeNamePart.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-model.placeStateLike.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-model.profileDescPart.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-model.ptrLike.form.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-model.ptrLike.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-model.publicationStmtPart.agency.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-model.publicationStmtPart.detail.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-model.quoteLike.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-model.rdgLike.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-model.rdgPart.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-model.recordingPart.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-model.resource.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-model.respLike.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-model.segLike.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-model.settingPart.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-model.sourceDescPart.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-model.specDescLike.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-model.stageLike.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-model.standOffPart.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-model.teiHeaderPart.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-model.textDescPart.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-model.titlepagePart.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-modelGrp.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-modelSequence.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-moduleRef.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-moduleSpec.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-monogr.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-mood.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-move.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-msContents.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-msDesc.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-msFrag.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-msIdentifier.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-msItem.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-msItemStruct.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-msName.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-msPart.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-musicNotation.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-name.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-nameLink.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-namespace.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-nationality.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-node.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-normalization.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-notatedMusic.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-note.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-noteGrp.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-notesStmt.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-num.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-number.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-numeric.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-nym.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-oRef.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-object.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-objectDesc.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-objectIdentifier.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-objectName.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-objectType.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-occupation.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-offset.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-opener.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-org.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-orgName.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-orig.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-origDate.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-origPlace.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-origin.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-orth.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-outputRendition.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-p.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-pRef.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-param.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-paramList.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-paramSpec.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-particDesc.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-path.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-pause.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-pb.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-pc.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-per.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-performance.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-persName.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-persPronouns.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-person.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-personGrp.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-persona.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-phr.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-physDesc.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-place.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-placeName.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-population.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-pos.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-post.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-postBox.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-postCode.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-postscript.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-precision.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-prefixDef.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-preparedness.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-principal.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-profileDesc.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-projectDesc.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-prologue.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-pron.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-provenance.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-ptr.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-pubPlace.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-publicationStmt.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-publisher.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-punctuation.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-purpose.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-q.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-quotation.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-quote.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-rb.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-rdg.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-rdgGrp.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-recordHist.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-recording.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-recordingStmt.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-redo.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-ref.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-refState.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-refsDecl.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-reg.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-region.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-relatedItem.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-relation.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-remarks.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-rendition.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-repository.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-residence.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-resp.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-respStmt.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-respons.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-restore.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-retrace.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-revisionDesc.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-rhyme.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-role.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-roleDesc.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-roleName.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-root.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-row.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-rs.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-rt.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-rubric.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-ruby.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-s.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-said.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-salute.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-samplingDecl.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-schemaRef.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-schemaSpec.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-scriptDesc.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-scriptNote.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-scriptStmt.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-seal.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-sealDesc.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-secFol.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-secl.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-seg.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-segmentation.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-sense.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-sequence.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-series.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-seriesStmt.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-set.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-setting.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-settingDesc.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-settlement.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-sex.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-shift.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-sic.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-signatures.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-signed.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-soCalled.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-socecStatus.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-sound.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-source.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-sourceDesc.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-sourceDoc.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-sp.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-spGrp.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-space.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-span.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-spanGrp.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-speaker.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-specDesc.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-specGrp.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-specGrpRef.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-specList.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-sponsor.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-stage.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-stamp.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-standOff.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-state.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-stdVals.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-street.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-stress.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-string.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-styleDefDecl.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-subc.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-subst.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-substJoin.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-summary.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-superEntry.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-supplied.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-support.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-supportDesc.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-surface.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-surfaceGrp.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-surname.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-surplus.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-surrogates.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-syll.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-symbol.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-table.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-tag.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-tagUsage.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-tagsDecl.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-taxonomy.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-tech.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-teiCorpus.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-teiHeader.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-teidata.authority.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-teidata.certainty.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-teidata.count.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-teidata.duration.iso.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-teidata.duration.w3c.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-teidata.enumerated.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-teidata.gender.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-teidata.interval.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-teidata.language.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-teidata.name.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-teidata.namespace.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-teidata.namespaceOrName.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-teidata.nullOrName.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-teidata.numeric.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-teidata.outputMeasurement.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-teidata.pattern.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-teidata.point.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-teidata.pointer.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-teidata.prefix.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-teidata.probCert.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-teidata.probability.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-teidata.replacement.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-teidata.sex.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-teidata.temporal.iso.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-teidata.temporal.w3c.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-teidata.temporal.working.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-teidata.text.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-teidata.truthValue.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-teidata.unboundedCount.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-teidata.version.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-teidata.versionNumber.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-teidata.word.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-teidata.xTruthValue.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-teidata.xmlName.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-teidata.xpath.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-term.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-terrain.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-text.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-textClass.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-textDesc.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-textLang.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-textNode.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-then.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-time.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-timeline.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-title.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-titlePage.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-titlePart.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-titleStmt.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-tns.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-trailer.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-trait.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-transcriptionDesc.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-transpose.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-tree.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-triangle.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-typeDesc.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-typeNote.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-u.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-unclear.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-undo.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-unicodeProp.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-unihanProp.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-unit.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-unitDecl.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-unitDef.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-usg.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-vAlt.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-vColl.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-vDefault.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-vLabel.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-vMerge.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-vNot.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-vRange.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-val.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-valDesc.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-valItem.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-valList.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-variantEncoding.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-view.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-vocal.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-w.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-watermark.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-when.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-width.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-wit.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-witDetail.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-witEnd.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-witStart.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-witness.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-writing.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-xenoData.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-xr.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-zone.html
+gaps:
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/release/doc/tei-p5-doc/en/html/Images/CHfig.png
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/release/doc/tei-p5-doc/en/html/Images/HDswinburne.jpg
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/release/doc/tei-p5-doc/en/html/Images/MSadda61.png
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/release/doc/tei-p5-doc/en/html/Images/PHgraves2.png
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/release/doc/tei-p5-doc/en/html/Images/PHowen.png
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/release/doc/tei-p5-doc/en/html/Images/basho_furu_ike_ya.png
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/release/doc/tei-p5-doc/en/html/Images/bcgenesis_co_305_06_00131v_table_extract.jpg
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/release/doc/tei-p5-doc/en/html/Images/billiardhall.jpg
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/release/doc/tei-p5-doc/en/html/Images/boustrophedon_small_J_NW_Epeiros_13_p03.jpg
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/release/doc/tei-p5-doc/en/html/Images/cmcunits-taxonomy.png
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/release/doc/tei-p5-doc/en/html/Images/cod-10991.jpg
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/release/doc/tei-p5-doc/en/html/Images/compic.png
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/release/doc/tei-p5-doc/en/html/Images/dunpic.png
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/release/doc/tei-p5-doc/en/html/Images/euerypersone.png
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/release/doc/tei-p5-doc/en/html/Images/facs-fig1.png
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/release/doc/tei-p5-doc/en/html/Images/facs-fig2.jpg
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/release/doc/tei-p5-doc/en/html/Images/facs-fig3.jpg
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/release/doc/tei-p5-doc/en/html/Images/graph1.jpg
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/release/doc/tei-p5-doc/en/html/Images/graph10.jpg
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/release/doc/tei-p5-doc/en/html/Images/graph11.jpg
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/release/doc/tei-p5-doc/en/html/Images/graph12.jpg
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/release/doc/tei-p5-doc/en/html/Images/graph13.jpg
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/release/doc/tei-p5-doc/en/html/Images/graph14.jpg
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/release/doc/tei-p5-doc/en/html/Images/graph2.jpg
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/release/doc/tei-p5-doc/en/html/Images/graph3.jpg
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/release/doc/tei-p5-doc/en/html/Images/graph4.jpg
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/release/doc/tei-p5-doc/en/html/Images/graph5.jpg
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/release/doc/tei-p5-doc/en/html/Images/graph6.jpg
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/release/doc/tei-p5-doc/en/html/Images/graph7.jpg
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/release/doc/tei-p5-doc/en/html/Images/graph8.jpg
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/release/doc/tei-p5-doc/en/html/Images/graph9.jpg
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/release/doc/tei-p5-doc/en/html/Images/herbert_church_p35_sm.jpg
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/release/doc/tei-p5-doc/en/html/Images/ibsen01.jpg
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/release/doc/tei-p5-doc/en/html/Images/ibsen04.jpg
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/release/doc/tei-p5-doc/en/html/Images/ja_vertical_indonesian_frag.jpg
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/release/doc/tei-p5-doc/en/html/Images/ja_vertical_indonesian_frag_rotated.jpg
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/release/doc/tei-p5-doc/en/html/Images/ka04_1v-dtl.jpg
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/release/doc/tei-p5-doc/en/html/Images/minus.gif
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/release/doc/tei-p5-doc/en/html/Images/moore04.png
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/release/doc/tei-p5-doc/en/html/Images/mould-stone.jpg
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/release/doc/tei-p5-doc/en/html/Images/munch01.jpg
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/release/doc/tei-p5-doc/en/html/Images/plus.gif
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/release/doc/tei-p5-doc/en/html/Images/proust-42v.png
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/release/doc/tei-p5-doc/en/html/Images/prout-ex1.jpg
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/release/doc/tei-p5-doc/en/html/Images/punctus.png
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/release/doc/tei-p5-doc/en/html/Images/rbHand.png
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/release/doc/tei-p5-doc/en/html/Images/rbNhkEasy.png
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/release/doc/tei-p5-doc/en/html/Images/rbTEI.png
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/release/doc/tei-p5-doc/en/html/Images/ref-faith.png
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/release/doc/tei-p5-doc/en/html/Images/rotation_on_y_axis.png
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/release/doc/tei-p5-doc/en/html/Images/rotation_on_z_axis.png
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/release/doc/tei-p5-doc/en/html/Images/skuldren.jpg
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/release/doc/tei-p5-doc/en/html/Images/stemma.png
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/release/doc/tei-p5-doc/en/html/Images/sterne.png
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/release/doc/tei-p5-doc/en/html/Images/tree1-2.jpg
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/release/doc/tei-p5-doc/en/html/Images/undoing1.jpg
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/release/doc/tei-p5-doc/en/html/Images/whitman-02.jpg
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/release/doc/tei-p5-doc/en/html/Images/whitman-03.jpg
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/release/doc/tei-p5-doc/en/html/Images/whitman01.jpg
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/release/doc/tei-p5-doc/en/html/Images/whitman03a.jpg
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/release/doc/tei-p5-doc/en/html/Images/xmlFlowChart.png
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/release/doc/tei-p5-doc/en/html/emblem_color_dark.png
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/release/doc/tei-p5-doc/en/html/icons/e-book-icons/mdh_epub_doc_32x32.png
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/release/doc/tei-p5-doc/en/html/icons/e-book-icons/mdh_pdf_doc_32x32.png
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/release/doc/tei-p5-doc/en/html/logo-petit-hn-rvb-1.png
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/release/doc/tei-p5-doc/en/html/menus.js
+- code: binary-link-inventoried-not-fetched
+  url: https://www.tei-c.org/release/doc/tei-p5-doc/en/html/popupFootnotes.js
+rights_exceptions:
+- Raw response bodies remain local until per-item redistribution rights are reviewed.

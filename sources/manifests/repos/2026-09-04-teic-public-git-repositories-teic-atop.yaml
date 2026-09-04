@@ -1,0 +1,156 @@
+schema_version: 1
+run_id: 2026-09-04-teic-public-git-repositories-teic-atop
+source_id: teic-public-git-repositories
+started_at: '2026-09-04T16:36:06Z'
+finished_at: '2026-09-04T16:38:50Z'
+status: observable-complete
+adapter:
+  name: tools.corpus.git_snapshot
+  version: 1
+requests:
+- kind: git-mirror
+  repository: https://github.com/TEIC/atop.git
+  action: cloned
+  requested_ref: HEAD
+  resolved_commit: ad35c0e40189d94c210ff4d8482ad3a72c832b90
+objects:
+- kind: git-tree-inventory
+  path: corpus/normalized/git/org/teic-atop.json
+  sha256: 1f3aa048b637334819e8b52ec34105d3fd7e6d4518902ae21af3be82c5328de3
+  root_tree: 188d4b8e50387f2160d47656b410b612d6035630
+counts:
+  commits_all_refs: 684
+  refs: 42
+  tree_entries: 1870
+refs:
+- name: refs/heads/ant-on-windows
+  object_type: commit
+  object_id: c7c51ea4eb9a1ab847356b04ba28d258e4888b5e
+- name: refs/heads/deriving
+  object_type: commit
+  object_id: d0e5a163a4e69d1f888a938a380d1a3c0a6cba3a
+- name: refs/heads/deriving-mdh
+  object_type: commit
+  object_id: 5cb7d3f72b7d530162383400139cfed17c12e0e4
+- name: refs/heads/deriving_bis
+  object_type: commit
+  object_id: d574e3fe0a97e37c1f4687fc63515d0bcfa72b41
+- name: refs/heads/dev
+  object_type: commit
+  object_id: ad35c0e40189d94c210ff4d8482ad3a72c832b90
+- name: refs/heads/dmaus/transpile-draft
+  object_type: commit
+  object_id: 8cfdd4b8007c5890a305751370d11fbe67b905f5
+- name: refs/heads/hbs/ant-xspec
+  object_type: commit
+  object_id: 90ba46823c7fa4094f7128dfa09a4ee385940e73
+- name: refs/heads/issue-41-retrieval
+  object_type: commit
+  object_id: 60784561cae858e1dbb717272e9a005870ac6b48
+- name: refs/heads/issue-50-assemble-testing
+  object_type: commit
+  object_id: 47f084c905ae41ba018e2a141641a994baaf9438
+- name: refs/heads/issue_30_test_the_Schematron
+  object_type: commit
+  object_id: 7e949f9882400bcea0681f1e23e749e03308919a
+- name: refs/heads/issue_38_uris
+  object_type: commit
+  object_id: dc8938649f86e5caea549b3aff2c97cea6037f86
+- name: refs/heads/main
+  object_type: commit
+  object_id: da7dc2c1a7608ca89a9bfbe224c2680fd4ec6b42
+- name: refs/heads/pipeline
+  object_type: commit
+  object_id: f8e3e1df51ebda608b633517eecc2a21a5dcd888
+- name: refs/heads/sydb_always_expand_text_in_functions
+  object_type: commit
+  object_id: 61be414224705966e648a3181495c5d311707a2d
+- name: refs/heads/t/dmj-assemble-and-derive
+  object_type: commit
+  object_id: 4c345bbab43cf87a41988e581009be0ed7de0e76
+- name: refs/pull/12/head
+  object_type: commit
+  object_id: 238370f3e2daa37315ff156211e931115f729d56
+- name: refs/pull/14/head
+  object_type: commit
+  object_id: 991222ef4efa5c18844955060c9e6b617bf8321f
+- name: refs/pull/15/head
+  object_type: commit
+  object_id: 991222ef4efa5c18844955060c9e6b617bf8321f
+- name: refs/pull/17/head
+  object_type: commit
+  object_id: 03772ea3bb62f20cc426bac00286889849aaf0f2
+- name: refs/pull/18/head
+  object_type: commit
+  object_id: f2c461d3f357b341666fa2aabad6eca94e98662a
+- name: refs/pull/19/head
+  object_type: commit
+  object_id: 3ec0c521cbf6c3c5d291f05d57c86efdd386504d
+- name: refs/pull/2/head
+  object_type: commit
+  object_id: 6c86df4059e2160e53cfa37768b1db557557ea5b
+- name: refs/pull/20/head
+  object_type: commit
+  object_id: 937637ff7c3f3cffad8b8dd4d1bf6542a830f60d
+- name: refs/pull/22/head
+  object_type: commit
+  object_id: 87ec5f0c8cdba084cf1f0294166f9e7398b5104f
+- name: refs/pull/23/head
+  object_type: commit
+  object_id: 41ba912b01f6779eca787cfcaa3a12dc97962ec3
+- name: refs/pull/24/head
+  object_type: commit
+  object_id: 35072df3abf81618d413538bc6944da68e1bd44e
+- name: refs/pull/28/head
+  object_type: commit
+  object_id: 52bb2f2d8f8f8e66fdb48e4cda2f0e5c41c0076a
+- name: refs/pull/3/head
+  object_type: commit
+  object_id: f7d100208f0280405a6cc163e6d2b6e8cbb18b73
+- name: refs/pull/35/head
+  object_type: commit
+  object_id: 569972539771b83956025ef82fcfac0a6473fced
+- name: refs/pull/36/head
+  object_type: commit
+  object_id: 36ea0b366f2dcf846f60f2a9b24adebd37306533
+- name: refs/pull/39/head
+  object_type: commit
+  object_id: dc8938649f86e5caea549b3aff2c97cea6037f86
+- name: refs/pull/4/head
+  object_type: commit
+  object_id: 44c1328a399cfd1fc2506f7071ba92544f3dc1fe
+- name: refs/pull/40/head
+  object_type: commit
+  object_id: 78172b6d634b50626fb05dd7e4f45e25ca92a53d
+- name: refs/pull/43/head
+  object_type: commit
+  object_id: 9720767817c2371cfcd708bcbe72ab621c91e0c8
+- name: refs/pull/44/head
+  object_type: commit
+  object_id: 0160dc5cb70b5cc44bea0cb3558698da4dd5f057
+- name: refs/pull/45/head
+  object_type: commit
+  object_id: d9700dad57e09ebd02fb10ddd8cd5ba9bb38beaa
+- name: refs/pull/48/head
+  object_type: commit
+  object_id: b0cfc1b9baf723ef49c646cdaf52c780b2e7e1aa
+- name: refs/pull/5/head
+  object_type: commit
+  object_id: 612fa9d9ad59eb51dbc18a7f0351ba6d59ecb1ce
+- name: refs/pull/53/head
+  object_type: commit
+  object_id: 60784561cae858e1dbb717272e9a005870ac6b48
+- name: refs/pull/57/head
+  object_type: commit
+  object_id: 61be414224705966e648a3181495c5d311707a2d
+- name: refs/pull/9/head
+  object_type: commit
+  object_id: f07f42853713733074aef9ce0b2bd2fabf2ac80d
+- name: refs/tags/v0.1.0a
+  object_type: commit
+  object_id: 29d9c33cedc98a374df4cc2c49e208ea521fbdca
+gaps: []
+rights_exceptions:
+- The local mirror is not committed; redistribution follows the upstream repository
+  license.
+raw_materialization: corpus\raw\git\TEIC-atop.git

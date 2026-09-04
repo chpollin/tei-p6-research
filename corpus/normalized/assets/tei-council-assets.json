@@ -1,0 +1,24 @@
+{
+  "assets": [
+    {
+      "byte_count": 18953,
+      "canonical_url": "https://www.tei-c.org/activities/council/meetings/img/letter-blueprint-plantUML-2026-03-12.png",
+      "final_url": "https://www.tei-c.org/activities/council/meetings/img/letter-blueprint-plantUML-2026-03-12.png",
+      "headers": {
+        "content-length": "18953",
+        "content-type": "image/png",
+        "date": "Fri, 04 Sep 2026 16:53:00 GMT",
+        "etag": "\"4a09-65a87b04a2d40\"",
+        "last-modified": "Wed, 02 Sep 2026 22:38:05 GMT"
+      },
+      "media_type": "image/png",
+      "observed_at": "2026-09-04T16:52:56Z",
+      "raw_path": "sha256/f8/48b5061e0d325e6b9a56c4ed49fa901fbcdb1df6bb5d11cce62227fe554205",
+      "requested_url": "https://www.tei-c.org/activities/council/meetings/img/letter-blueprint-plantUML-2026-03-12.png",
+      "sha256": "f848b5061e0d325e6b9a56c4ed49fa901fbcdb1df6bb5d11cce62227fe554205",
+      "status": 200
+    }
+  ],
+  "schema_version": 1,
+  "source_id": "tei-council-minutes"
+}

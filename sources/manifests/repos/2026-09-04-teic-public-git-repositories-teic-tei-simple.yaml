@@ -1,0 +1,45 @@
+schema_version: 1
+run_id: 2026-09-04-teic-public-git-repositories-teic-tei-simple
+source_id: teic-public-git-repositories
+started_at: '2026-09-04T16:39:13Z'
+finished_at: '2026-09-04T16:41:52Z'
+status: observable-complete
+adapter:
+  name: tools.corpus.git_snapshot
+  version: 1
+requests:
+- kind: git-mirror
+  repository: https://github.com/TEIC/TEI-Simple.git
+  action: cloned
+  requested_ref: HEAD
+  resolved_commit: 16095eb1b08ea0b640a960175c14589861d9107c
+objects:
+- kind: git-tree-inventory
+  path: corpus/normalized/git/org/teic-tei-simple.json
+  sha256: 244e7d577b096e05926de150f400d1e77feb11c80ec232759e5ea518bac9be2e
+  root_tree: b325815ea8de9f5a533d2a89c3454c62ce0e74ad
+counts:
+  commits_all_refs: 392
+  refs: 5
+  tree_entries: 186
+refs:
+- name: refs/heads/MDH_edits
+  object_type: commit
+  object_id: cb425fddb55372d8ecc3de6ea363370eeed71652
+- name: refs/heads/gh-pages
+  object_type: commit
+  object_id: 6a3fde8d70e113a972ce33f467c81a1e8fc043f0
+- name: refs/heads/master
+  object_type: commit
+  object_id: 16095eb1b08ea0b640a960175c14589861d9107c
+- name: refs/pull/14/head
+  object_type: commit
+  object_id: f11d7c339802336181ac192427bc47fb543213f6
+- name: refs/pull/15/head
+  object_type: commit
+  object_id: b84071a1f94dabb1b71e92d586ce8e283bd94333
+gaps: []
+rights_exceptions:
+- The local mirror is not committed; redistribution follows the upstream repository
+  license.
+raw_materialization: corpus\raw\git\TEIC-TEI-Simple.git

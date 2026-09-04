@@ -1,0 +1,486 @@
+schema_version: 1
+run_id: 2026-09-04-tei-board-records-r2
+source_id: tei-board-records
+started_at: '2026-09-04T16:17:45Z'
+finished_at: '2026-09-04T16:44:32Z'
+status: partial
+adapter:
+  name: tools.corpus.web_census
+  version: 1
+requests:
+- root_url: https://www.tei-c.org/activities/board/
+  allow_prefixes:
+  - https://www.tei-c.org/activities/board/
+  - https://www.tei-c.org/files/
+  - https://www.tei-c.org/wp-content/uploads/
+  - https://www.tei-c.org/Vault/MembersMeetings/
+  depth: 2
+  max_pages: 700
+  include_binary: true
+objects:
+- kind: web-census
+  path: corpus/normalized/web/tei-board-records.jsonl
+  sha256: cac6326f073186c4f17cd97367f82a1ec2044b859ba1718c56ede97d77b5f000
+counts:
+  responses: 225
+  successful_responses: 197
+  external_links_inventoried: 358
+  depth_boundary_links_inventoried: 9
+  binary_links_inventoried_not_fetched: 0
+  gaps: 28
+external_links:
+- http://ancient-worlds-symposium.eu/
+- http://biblicalhumanities.org/dashboard/
+- http://bit.ly/4nMtpp
+- http://blogs.it.ox.ac.uk/jamesc/category/selfstudy/
+- http://coe21.zinbun.kyoto-u.ac.jp/tei-day/tei-day2006.html.en
+- http://copenhagen-alliance.org/
+- http://creativecommons.org/licenses/by/3.0/
+- http://dev.stg.brown.edu/projects/Monarch/
+- http://digilab2.let.uniroma1.it/teiconf2013/
+- http://digilab2.let.uniroma1.it/teiconf2013/call-for-papers/
+- http://digitalmedievalist.org/
+- http://digitcert.com/
+- http://evt.labcd.unipi.it/
+- http://firstfolio.bodleian.ox.ac.uk/
+- http://force11.org/fsci
+- http://hcmc.uvic.ca/tei2017/workshops.php
+- http://jeffreycwitt.com/
+- http://jonathanrobie.biblicalhumanities.org/assets/greeksyntax-tutorial.html
+- http://jonathanrobie.biblicalhumanities.org/blog/2017/05/12/lowfat-treebanks-visualizing/
+- http://jtei.revues.org/210
+- http://lister.ei.virginia.edu/~drs2n/uri-proposal.html
+- http://lists.village.virginia.edu/lists_archive/tei-board/0570.html
+- http://lists.village.virginia.edu/mailman/listinfo/tei-board
+- http://lists.village.virginia.edu/mailman/private/tei-board/2009/006417.html
+- http://lists.village.virginia.edu/mailman/private/tei-board/2009/006633.html
+- http://lists.village.virginia.edu/mailman/private/tei-board/2009/006643.html
+- http://lists.village.virginia.edu/mailman/private/tei-board/2009/006654.html
+- http://lists.village.virginia.edu/mailman/private/tei-board/2009/006655.html
+- http://lists.village.virginia.edu/mailman/private/tei-board/2009/006675.html
+- http://lists.village.virginia.edu/mailman/private/tei-board/2009/006702.html
+- http://lists.village.virginia.edu/mailman/private/tei-board/2010/007050.html
+- http://lists.village.virginia.edu/mailman/private/tei-board/2010/007066.html
+- http://lists.village.virginia.edu/mailman/private/tei-board/2010/007071.html
+- http://lists.village.virginia.edu/mailman/private/tei-board/2010/007072.html
+- http://lists.village.virginia.edu/mailman/private/tei-board/2010/007074.html
+- http://lists.village.virginia.edu/mailman/private/tei-board/2010/007076.html
+- http://lists.village.virginia.edu/mailman/private/tei-board/2010/007077.html
+- http://lists.village.virginia.edu/mailman/private/tei-board/2010/007078.html
+- http://lists.village.virginia.edu/mailman/private/tei-board/attachments/20090209/16629803/attachment.eml
+- http://lists.village.virginia.edu/mailman/private/tei-board/attachments/20091130/25c5307a/attachment.doc
+- http://listserv.brown.edu/archives/cgi-bin/wa?A2=ind0910&L=TEI-L&O=D&P=9519&T=0
+- http://members.tei-c.org/hosting
+- http://mhdb.mh.sinica.edu.tw/
+- http://quartos.org/
+- http://revues.org/
+- http://rit.mellon.org/
+- http://scta.info/
+- http://tei.oucs.ox.ac.uk/Guidelines/Source/Guidelines/en/guidelines-en.xml.ID=USE
+- http://vbd.humnet.unipi.it/beta2/
+- http://web.archive.org/web/20181027022715/http://www.tei-c.org/release/doc/tei-p5-doc/en/html/index.html
+- http://web.archive.org/web/20181127111927/https://wiki.tei-c.org/index.php/Main_Page
+- http://wiki.tei-c.org/index.php/TEI-C_Board_Action_Items_for_2016
+- http://wiki.tei-c.org/index.php/TEI-C_Board_Decision_Tracking
+- http://wiki.tei-c.org/index.php/Website_Redesign_for_tei-c.org
+- http://www.ach.org/adhoc
+- http://www.ach.org/adhoc/
+- http://www.aiucd.it/
+- http://www.asia-europe.uni-heidelberg.de/en/hra-portal.html
+- http://www.asia-europe.uni-heidelberg.de/en/research/heidelberg-research-architecture/detail/m/wsc-database-modern-chinese-scientific-terminologies.html
+- http://www.atilf.fr/
+- http://www.dagstuhl.de/
+- http://www.dhoxss.net/
+- http://www.digicert.com/welcome/product-overview.htm
+- http://www.diglib.org/standards/tei.htm
+- http://www.duraspace.org/about_membership
+- http://www.flickr.com/photos/dokas/
+- http://www.flickr.com/photos/dokas/56395904/
+- http://www.flickr.com/photos/fabi_k/
+- http://www.flickr.com/photos/fabi_k/2992896740/
+- http://www.hathitrust.org/htrc
+- http://www.hit.uib.no/spraaktek02/
+- http://www.hit.uib.no/wab/alois/chicago/chicago.htm
+- http://www.iath.virginia.edu/tei_dev
+- http://www.loria.fr/
+- http://www.modjourn.brown.edu/
+- http://www.neh.gov/grants/guidelines/digitalhumanitiesstartup.html
+- http://www.oeaw.ac.at/acdh/en/tei2016
+- http://www.onb.ac.at/sichtungen/
+- http://www.opavote.org/
+- http://www.opensource.org/licenses/BSD-2-Clause
+- http://www.openstv.org/
+- http://www.optimalpayments.com/
+- http://www.oss-watch.ac.uk/
+- http://www.oucs.ox.ac.uk/
+- http://www.relaxng.org/
+- http://www.semanticaudio.ac.uk/
+- http://www.sociam.org/
+- http://www.sshrc.ca/web/apply/program_descriptions/itst/research_e.asp
+- http://www.tei-c.org/About/bylaws.xml
+- http://www.tei-c.org/Admin/nbl.xml
+- http://www.tei-c.org/Board/bm60.xml
+- http://www.tei-c.org/Software/teioo
+- http://www.tei-c.org/Vault/MembersMeetings/2009/program.html
+- http://www.tei-c.org/cms/Activities/Workgroups/META/
+- http://www.textcreationpartnership.org/
+- http://www.timeanddate.com/worldclock/meetingdetails.html?day=1&hour=14&min=0&month=02&p1=136&p2=179&p3=538&sec=0&year=2010
+- http://www.timeanddate.com/worldclock/meetingdetails.html?day=14&hour=14&min=0&month=7&p1=136&p2=179&p3=538&sec=0&year=2009
+- http://www.timeanddate.com/worldclock/meetingdetails.html?day=7&hour=13&min=0&month=05&p1=136&p2=179&p3=538&sec=0&year=2010
+- http://www.timeanddate.com/worldclock/meetingdetails.html?day=8&hour=14&min=0&month=10&p1=136&p2=179&p3=538&sec=0&year=2009
+- http://www.topologi.com/
+- http://www.virtualmgmt.com/
+- http://www.visionarycross.org/
+- http://www.zencart.org/
+- http://zencart2.kakelbont.homelinux.net/
+- https://aoprals.state.gov/web920/per_diem.asp
+- https://asana.com/pricing?missingtranslation=en
+- https://brill.com/view/title/34932?format=HC
+- https://doaj.org/
+- https://docs.google.com/Doc?id=dv3dx7h_12gtqzjxg5
+- https://docs.google.com/document/d/10w0VV0RKnfKT84ZLvcBfmjmyxOC2CVhzPku2HISUcl4/edit
+- https://docs.google.com/document/d/16aKvCcMhtDocwR69iHgei-UN-C7dOQHdSgq4MjdbITw/edit
+- https://docs.google.com/document/d/171Pd35bcy_13-4JOGRDgxTvJ1EvEv7WfDKoeLiInd8o/edit
+- https://docs.google.com/document/d/1C8jBHrQZ0LZCRyyyWmrCG1PDGCK1dLJZNoNhAYAI-E4/edit
+- https://docs.google.com/document/d/1J9JMX79-OaaVUSOA6fl1ih0miV92-9KYrFhuV5jc4iQ/edit
+- https://docs.google.com/document/d/1J9JMX79-OaaVUSOA6fl1ih0miV92-9KYrFhuV5jc4iQ/edit?usp=sharing
+- https://docs.google.com/document/d/1KkDeWsVIqxOT2oFPayYnvZKTDYSzHBsjLvBBWsPe9cE/edit
+- https://docs.google.com/document/d/1KksmnLcxoi4oG-xJDX6y5sRqvgQWGgiMXWwFa_uqU68/edit
+- https://docs.google.com/document/d/1Nq-c9lSE4XZiPJF7pqYx0dzLHdnMC4b_-YjzyU89I_4/edit?usp=sharing
+- https://docs.google.com/document/d/1P3G90h9nW5icN7jTPZ2Q0fmXyC8eTwexXh3ObqVyXWU/edit
+- https://docs.google.com/document/d/1WySLgPuU0OrcyModsjzDe8JGgMfyb6Iz1amKCC-e8I0/
+- https://docs.google.com/document/d/1Y9kU0oIuh3eb5WLqTykmqqNfI1_meUBVZDXWZ_KNrLI/edit?usp=sharing
+- https://docs.google.com/document/d/1_8rXRwbdYcIXltaNi0OuQnwXkc5TIiYu-AY8vYRzzeQ/edit
+- https://docs.google.com/document/d/1bW3aosLVF1MVfbIntvAjupxgBzLbIROJafLjC5zGHqE/edit
+- https://docs.google.com/document/d/1cqCIpuelv38q7Cj2r_Bw6o8DKYRnyrBWwh9rpzfNCLE/edit
+- https://docs.google.com/document/d/1dVRdO0xXfxorLNAhy9rw8-qA93sjKhNw0JNFLSJ0iuU
+- https://docs.google.com/document/d/1dVRdO0xXfxorLNAhy9rw8-qA93sjKhNw0JNFLSJ0iuU/
+- https://docs.google.com/document/d/1dVRdO0xXfxorLNAhy9rw8-qA93sjKhNw0JNFLSJ0iuU/edit
+- https://docs.google.com/document/d/1dVRdO0xXfxorLNAhy9rw8-qA93sjKhNw0JNFLSJ0iuU/edit?usp=sharing
+- https://docs.google.com/document/d/1eFPV1Dzy8nLtvicO66nJ67ytEcp0KVBFZBUelXBb0gc/edit
+- https://docs.google.com/document/d/1f49iSNQ3QTs23xRUQrtaNAWWH7hxTWsPhn3EETG3Fhg/edit?usp=sharing
+- https://docs.google.com/document/d/1mOk7shxlM5Ivn6S6cjtSXNid-_UY_HMY4kGUqHONLa8/edit?usp=sharing
+- https://docs.google.com/document/d/1t8DnPiIcHdNp1lgBz1LDvlcg6CHZ1PfK6TNiro4n_r8/edit?usp=sharing
+- https://docs.google.com/document/d/1tpLi6Q5vpCRr3rMaRFGFX7lPreP03EwQiPxWALIlJjA/edit
+- https://docs.google.com/document/d/1tpLi6Q5vpCRr3rMaRFGFX7lPreP03EwQiPxWALIlJjA/edit?usp=sharing
+- https://docs.google.com/document/d/1u2XCqA-vJccrwX8w8ufC7k8w9Xq4FAemcDEKrJ84bRk/edit?usp=sharing
+- https://docs.google.com/document/d/1u9GMYCGAAq5B0lpsPBNB9odu3MQTZLPlMoFLjvyV4_E/edit?ouid=104936754729048228814&usp=drive_web
+- https://docs.google.com/document/d/1wTIgKcCBQpaDBxAom0KIwPMjrVlVkXbSIPFqpKe1xxQ/edit
+- https://docs.google.com/presentation/d/1eh-25lZqBcxkhpTgY1RVka4zE2eGjPGa9kySjMijdS0/edit
+- https://drive.google.com/drive/folders/0BxFnLn8g8TOYV3J1Y3pKem5yaUU?usp=sharing
+- https://drive.google.com/drive/folders/1n_PSpDbQMkljiRKj7QhQL13URIsWrmiR
+- https://drive.google.com/open?id=1XA9CxWTUTLKoNa1JHya36Z3sF7-UyejpfTftYwMXQmw
+- https://ec.europa.eu/commission/priorities/justice-and-fundamental-rights/data-protection/2018-reform-eu-data-protection-rules_en
+- https://github.com/TEIC/CETEIcean/tree/master/tutorial_en
+- https://github.com/TEIC/CETEIcean/tree/master/tutorial_es
+- https://github.com/TEIC/Stylesheets
+- https://github.com/TEIC/TEI
+- https://github.com/TEIC/TEI/issues
+- https://github.com/TEIC/TEI/issues?q=is%3Aissue+state%3Aopen+label%3A%22TEI%3A+PM%22
+- https://github.com/TEIC/TEI/tree/dev/P5/Source/Specs
+- https://github.com/biblicalhumanities
+- https://github.com/duncdrum
+- https://github.com/eeditiones/tei-pm-landing
+- https://github.com/lombardpress/lombardpress-schema
+- https://graz-2019.tei-c.org/
+- https://graz-2019.tei-c.org/call-for-papers/
+- https://grobid.readthedocs.io/en/latest/Introduction/
+- https://hcayless.github.io/spec-translator-demo/app.html
+- https://jenkins.tei-c.org/job/TEIP5/lastSuccessfulBuild/artifact/P5/release/doc/tei-p5-doc/en/html/index.html
+- https://journals.openedition.org/jtei
+- https://journals.openedition.org/jtei/276
+- https://journals.openedition.org/jtei/305
+- https://kanbanize.com/en/
+- https://kanbantool.com/
+- https://lists.psu.edu/cgi-bin/wa?A1=ind1607&L=TEI-L
+- https://lists.psu.edu/cgi-bin/wa?A2=TEI-L%3B48887b02.1306
+- https://lists.psu.edu/cgi-bin/wa?A2=ind1512&L=TEI-L&P=R8125&X=5D1AAFF6A4CBAE0BCC&Y=mdalmau%40indiana.edu
+- https://lists.psu.edu/cgi-bin/wa?A2=ind1702&L=TEI-L&P=R11940&X=5D1AAFF6A4CBAE0BCC&Y=mdalmau%40indiana.edu
+- https://members.tei-c.org/
+- https://members.tei-c.org/Events
+- https://members.tei-c.org/Events/meetings
+- https://members.tei-c.org/Join
+- https://mith.umd.edu/minimaldigipub/es.html
+- https://poeticalessay.bodleian.ox.ac.uk/
+- https://roma.tei-c.org/
+- https://sites.google.com/site/teiconferenceplanning/conference-protocol-of-the-tei-consortium
+- https://sites.google.com/site/teiconferenceplanning/conference-protocol-of-the-tei-consortium?pli=1
+- https://stripe.com/
+- https://tei-c.org/Board/procedures.xml
+- https://tei-c.org/Vault/MembersMeetings/2018-info/mm79.html
+- https://tei-c.org/about/bylaws/
+- https://tei-c.org/activities/council/meetings/tei-technical-council-f2f-meeting-in-Krakow-14-16-sept-2025/
+- https://tei-c.org/board/board-tei-c-board-meeting-2019-01-17/
+- https://tei-c.org/board/board-tei-c-board-meeting-2019-02-14/
+- https://tei-c.org/board/board-tei-c-board-meeting-2019-03-14/
+- https://tei-c.org/board/board-tei-c-board-meeting-2019-04-11/
+- https://tei-c.org/board/board-tei-c-board-meeting-2019-05-09/
+- https://tei-c.org/board/board-tei-c-board-meeting-2019-06-13/
+- https://tei-c.org/board/board-tei-c-board-meeting-2019-10-10/
+- https://tei-c.org/board/board-tei-c-board-meeting-2019-12-12/
+- https://tei-c.org/board/board-tei-c-board-meeting-2020-04-16/
+- https://tei-c.org/board/board-tei-c-board-meeting-2020-05-21/
+- https://tei-c.org/board/board-tei-c-face-to-face-board-meeting-2019-09-20/
+- https://tei-c.org/board/tei-c-board-meeting-2018-12-18/
+- https://tei-c.org/board/tei-c-board-meeting-2019-07-04/
+- https://tei-c.org/board/tei-c-board-meeting-2020-01-16/
+- https://tei-c.org/board/tei-c-board-meeting-2020-02-20/
+- https://tei-c.org/board/tei-c-board-meeting-2020-03-19/
+- https://tei-c.org/board/tei-c-board-meeting-2020-06-18/
+- https://tei-c.org/board/tei-c-board-meeting-2020-07-16
+- https://tei-c.org/board/tei-c-board-meeting-2020-08-20/
+- https://tei-c.org/board/tei-c-board-meeting-2020-09-17/
+- https://tei-c.org/meetings/documentation
+- https://teigarage.tei-c.org/
+- https://teihub.netlify.app/
+- https://textencodinginitiativeconsortium.wildapricot.org/Events/
+- https://textencodinginitiativeconsortium.wildapricot.org/hosting/
+- https://trello.com/pricing
+- https://tthub.io/2018/11/11/taller-hackathon-buenos-aires/
+- https://tthub.io/tei-en-espanol/
+- https://twitter.com/dr_pda/status/1264704189843640320
+- https://web.archive.org/web/20180621204644/http://www.tei-c.org/Vault/
+- https://web.archive.org/web/20190127084533/https://wiki.tei-c.org/index.php/Main_Page
+- https://wiki.duraspace.org/display/hydra/Hydra+Community+Framework
+- https://wiki.tei-c.org/index.php/2018_Conference_and_Members%27_Meeting
+- https://wiki.tei-c.org/index.php/Bylaws_Amendments_for_2016
+- https://wiki.tei-c.org/index.php/Call_for_Hosts_Application_and_Guidelines
+- https://wiki.tei-c.org/index.php/Conference_Protocols_for_the_TEI-C
+- https://wiki.tei-c.org/index.php/Conference_Protocols_for_the_TEI-C_Conference_and_Members%27_Meeting
+- https://wiki.tei-c.org/index.php/Editor_for_teaching_TEI_-_features
+- https://wiki.tei-c.org/index.php/Procedural_Documentation_for_the_TEI-C_Board_of_Directors
+- https://wiki.tei-c.org/index.php/Quote_for_Outsourcing_TEI-C_Administrative_Duties
+- https://wiki.tei-c.org/index.php/Rahtz_Prize_Invitation_to_Apply
+- https://wiki.tei-c.org/index.php/Rahtz_Prize_for_TEI_Ingenuity
+- https://wiki.tei-c.org/index.php/TEI-C_Board_Action_Items_for_2016
+- https://wiki.tei-c.org/index.php/TEI-C_Board_Action_Items_for_2017
+- https://wiki.tei-c.org/index.php/TEI-C_Board_Decision_Tracking
+- https://wiki.tei-c.org/index.php/TEI-C_Free_One_Year_Workshop_Memberships
+- https://wiki.tei-c.org/index.php/TEI-C_List_of_Nominating_Committees
+- https://wiki.tei-c.org/index.php/TEI-C_and_TAPAS_Election_Process
+- https://wiki.tei-c.org/index.php/TEI-C_and_TAPAS_Election_Timeline
+- https://wiki.tei-c.org/index.php/TEI-Council-FAQ
+- https://wiki.tei-c.org/index.php/Travel_Reimbursement_Procedures_for_Council_and_Board_Members
+- https://wiki.tei-c.org/index.php/Voters_for_TEI-C_and_TAPAS_Elections
+- https://wiki.tei-c.org/index.php/Website_Redesign_for_tei-c.org
+- https://wiki.tei-c.org/index.php?title=Travel_Reimbursement_Procedures_for_Council_and_Board_Members
+- https://www.aacademica.org/congreso2020.aahd
+- https://www.conftool.net/tei2019/
+- https://www.diglib.org/members/join/
+- https://www.gsa.gov/travel/plan-book/per-diem-rates
+- https://www.huma-num.fr/
+- https://www.mediawiki.org/wiki/Extension:TEI
+- https://www.mindmeister.com/mt/signup?_ga=2.64852587.5358470.1582213275-967348873.1582213275
+- https://www.networksolutions.com/
+- https://www.openstreetmap.org/way/96784564
+- https://www.paypal.com/
+- https://www.sciencesconf.org/
+- https://www.tei-c.org.uk/Board/bonnard_contract.pdf
+- https://www.tei-c.org/
+- https://www.tei-c.org/2009memmeetreport/
+- https://www.tei-c.org/990financial2008/
+- https://www.tei-c.org/?page_id=31594&preview=true
+- https://www.tei-c.org/About/
+- https://www.tei-c.org/About/bylaws.xml
+- https://www.tei-c.org/About/mission.xml
+- https://www.tei-c.org/About/organization.xml
+- https://www.tei-c.org/Activities/Council/Meetings/tcm07.xml
+- https://www.tei-c.org/Activities/rahtz.xml
+- https://www.tei-c.org/Admin/TEI_travel_form.pdf
+- https://www.tei-c.org/Board/
+- https://www.tei-c.org/Board/2010BylawsProposal.xml
+- https://www.tei-c.org/Board/bm03a.xml
+- https://www.tei-c.org/Board/bm06.xml
+- https://www.tei-c.org/Board/bm08.xml
+- https://www.tei-c.org/Board/bm09.xml
+- https://www.tei-c.org/Board/bm10.xml
+- https://www.tei-c.org/Board/bm15.xml
+- https://www.tei-c.org/Board/bm15a.xml
+- https://www.tei-c.org/Board/bm17.xml
+- https://www.tei-c.org/Board/bm21.xml
+- https://www.tei-c.org/Board/bm23.xml
+- https://www.tei-c.org/Board/bm29.xml
+- https://www.tei-c.org/Board/bm30.xml
+- https://www.tei-c.org/Board/bm31.xml
+- https://www.tei-c.org/Board/bm31AppendixB_Flanders_COP.xml
+- https://www.tei-c.org/Board/bm31AppendixC_Flanders_COC.xml
+- https://www.tei-c.org/Board/bm31AppendixD_ODonnell_Credit_Cards.xml
+- https://www.tei-c.org/Board/bm31AppendixE_ODonnell_Admin_Assist.xml
+- https://www.tei-c.org/Board/bm31AppendixF_ODonnell_Strategic_Travel.xml
+- https://www.tei-c.org/Board/bm31AppendixH_Schreibman_MembersMeeting.xml
+- https://www.tei-c.org/Board/bm31AppendixI_Schreibman_SIG_Grants.xml
+- https://www.tei-c.org/Board/bm31AppendixJ_ODonnell_SubscriberFees.xml
+- https://www.tei-c.org/Board/bm31a.xml
+- https://www.tei-c.org/Board/bm32-chairsReport.xml
+- https://www.tei-c.org/Board/bm32.xml
+- https://www.tei-c.org/Board/bm32a.xml
+- https://www.tei-c.org/Board/bm33.xml
+- https://www.tei-c.org/Board/bm33a.xml
+- https://www.tei-c.org/Board/bm34a.xml
+- https://www.tei-c.org/Board/bm35.xml
+- https://www.tei-c.org/Board/bm38.xml
+- https://www.tei-c.org/Board/bm39.xml
+- https://www.tei-c.org/Board/bm44.xml
+- https://www.tei-c.org/Board/bm66.xml
+- https://www.tei-c.org/Board/bm76.xml
+- https://www.tei-c.org/Board/bw09.xml
+- https://www.tei-c.org/Board/bylaws2013.xml
+- https://www.tei-c.org/Board/private/TEITiteRFPDraft010609.pdf
+- https://www.tei-c.org/Board/procedures.xml
+- https://www.tei-c.org/I18N/
+- https://www.tei-c.org/Membership/Meetings/2008-London/2008MemMeetReport.pdf
+- https://www.tei-c.org/Membership/Meetings/2008-London/990FINANCIAL2007.pdf
+- https://www.tei-c.org/Membership/Meetings/2008-London/CouncilReportNov2008.ppt
+- https://www.tei-c.org/Membership/Meetings/2008-London/mm46.xml
+- https://www.tei-c.org/Membership/Meetings/2008/mm48.xml
+- https://www.tei-c.org/Membership/Meetings/2011/mm54.xml
+- https://www.tei-c.org/Membership/Meetings/2011/mm57.xml
+- https://www.tei-c.org/Membership/Meetings/2015/mm76.xml
+- https://www.tei-c.org/Membership/Meetings/2015/tei_c_TAPAS_Annual_Report_2015.pdf
+- https://www.tei-c.org/Membership/Meetings/2015/tei_c_jtei_report_2015.pdf
+- https://www.tei-c.org/Membership/current.xml
+- https://www.tei-c.org/Vault/
+- https://www.tei-c.org/Vault/Tite/
+- https://www.tei-c.org/Vault/Tite/proposaldocuments/benefits.pdf
+- https://www.tei-c.org/Vault/Tite/proposaldocuments/draft-2009-01-06.pdf
+- https://www.tei-c.org/about/
+- https://www.tei-c.org/about/board-of-directors/
+- https://www.tei-c.org/about/code-of-conduct/
+- https://www.tei-c.org/about/contact/
+- https://www.tei-c.org/about/frequently-asked-questions/
+- https://www.tei-c.org/about/history/
+- https://www.tei-c.org/about/mission/
+- https://www.tei-c.org/activities/
+- https://www.tei-c.org/activities/community/
+- https://www.tei-c.org/activities/council/
+- https://www.tei-c.org/activities/infrastructure-group/
+- https://www.tei-c.org/activities/rahtz-prize-for-tei-ingenuity
+- https://www.tei-c.org/activities/sig/
+- https://www.tei-c.org/activities/workgroups/
+- https://www.tei-c.org/board/agenda-for-tei-board-conference-call-wednesday-december-17-2008-2/
+- https://www.tei-c.org/board/agenda-for-the-tei-c-board-meeting-victoria-b-c-canada-29-october-2006/
+- https://www.tei-c.org/board/bm20.xml
+- https://www.tei-c.org/board/minutes-for-tei-board-conference-call-13-may-2008/
+- https://www.tei-c.org/board/minutes-ofthe-tei-c-board-meeting-may-9-10-2002/
+- https://www.tei-c.org/board/tei-board-meeting-12-oct-02-draft-agenda/
+- https://www.tei-c.org/board/tei-board-meeting-31-2008-board-meeting-addendum-community-outreach-program/
+- https://www.tei-c.org/board/tei-c-board-meeting-2018-02-08/
+- https://www.tei-c.org/board/tei-c-board-meeting-2018-03-08/
+- https://www.tei-c.org/board/text-encoding-intiative-consortium-minutes-of-the-board-of-directors-meeting-saturday-november-17-2001-grand-hotel-duomo-pisa-italy/
+- https://www.tei-c.org/css/teic.css
+- https://www.tei-c.org/guidelines/
+- https://www.tei-c.org/guidelines/customization/
+- https://www.tei-c.org/guidelines/licensing-and-citation/
+- https://www.tei-c.org/guidelines/p5/
+- https://www.tei-c.org/img/emblem_color_dark.png
+- https://www.tei-c.org/img/logo-petit-hn-rvb-1.png
+- https://www.tei-c.org/js/main.js
+- https://www.tei-c.org/news/
+- https://www.tei-c.org/participation/
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/index.html
+- https://www.tei-c.org/support/
+- https://www.tei-c.org/support/bids/
+- https://www.tei-c.org/support/learn/
+- https://www.tei-c.org/tools/
+- https://www.thebritishacademy.ac.uk/programmes/writing-workshops-2019
+- https://www.wildapricot.com/
+- https://zenodo.org/communities/tei2019?page=1&size=20
+- https://zenodo.org/record/1202468
+- https://zenodo.org/record/3455810
+depth_boundary_links:
+- https://www.tei-c.org/Vault/MembersMeetings/2009/about-tei.html
+- https://www.tei-c.org/Vault/MembersMeetings/2009/about-um.html
+- https://www.tei-c.org/Vault/MembersMeetings/2009/graphics/autumn_by_phil_dokas.jpg
+- https://www.tei-c.org/Vault/MembersMeetings/2009/graphics/hhgl_by_fabi_k.jpg
+- https://www.tei-c.org/Vault/MembersMeetings/2009/index-flyers.html
+- https://www.tei-c.org/Vault/MembersMeetings/2009/local-accommodation.html
+- https://www.tei-c.org/Vault/MembersMeetings/2009/local-todo.html
+- https://www.tei-c.org/Vault/MembersMeetings/2009/local-toeat.html
+- https://www.tei-c.org/Vault/MembersMeetings/2009/local-venue.html
+gaps:
+- code: http-error
+  url: https://www.tei-c.org/wp-content/uploads/2017/01/2005budget.pdf
+  status: 404
+- code: http-error
+  url: https://www.tei-c.org/wp-content/uploads/2017/01/2005budgetnarr.pdf
+  status: 404
+- code: http-error
+  url: https://www.tei-c.org/wp-content/uploads/2017/01/2006budgetproj.pdf
+  status: 404
+- code: http-error
+  url: https://www.tei-c.org/wp-content/uploads/2017/01/budget_2003.pdf
+  status: 404
+- code: http-error
+  url: https://www.tei-c.org/wp-content/uploads/2017/01/budget_2004.pdf
+  status: 404
+- code: http-error
+  url: https://www.tei-c.org/wp-content/uploads/2018/12/Finance-Report-2017_18.pdf
+  status: 404
+- code: http-error
+  url: https://www.tei-c.org/activities/board/board-meeting-in-nancy-agenda/Membership_overviewOct2003.xml
+  status: 404
+- code: http-error
+  url: https://www.tei-c.org/activities/board/Council/tcm07.html
+  status: 404
+- code: http-error
+  url: https://www.tei-c.org/activities/board/minutes-ofthe-tei-c-board-telephone-conference-held-19-june-2003/bm-eu.pdf
+  status: 404
+- code: http-error
+  url: https://www.tei-c.org/activities/board/minutes-ofthe-tei-c-board-telephone-conference-held-19-june-2003/bmr07.xml
+  status: 404
+- code: http-error
+  url: https://www.tei-c.org/activities/board/minutes-ofthe-tei-c-board-telephone-conference-held-19-june-2003/bw01.txt
+  status: 404
+- code: http-error
+  url: https://www.tei-c.org/activities/board/minutes-ofthe-tei-c-board-telephone-conference-held-19-june-2003/bw02.txt
+  status: 404
+- code: http-error
+  url: https://www.tei-c.org/activities/board/minutes-ofthe-tei-c-board-telephone-conference-held-19-june-2003/bw04.txt
+  status: 404
+- code: http-error
+  url: https://www.tei-c.org/activities/board/minutes-ofthe-tei-c-board-telephone-conference-held-19-june-2003/bw05.txt
+  status: 404
+- code: http-error
+  url: https://www.tei-c.org/activities/board/Drafts/edw74.html
+  status: 404
+- code: http-error
+  url: https://www.tei-c.org/activities/board/Drafts/edw75.html
+  status: 404
+- code: http-error
+  url: https://www.tei-c.org/activities/board/prague-board-meeting-agenda/bm04.txt
+  status: 404
+- code: http-error
+  url: https://www.tei-c.org/activities/board/prague-board-meeting-agenda/bmr01.html
+  status: 404
+- code: http-error
+  url: https://www.tei-c.org/activities/board/prague-board-meeting-agenda/bmr02.pdf
+  status: 404
+- code: http-error
+  url: https://www.tei-c.org/activities/board/prague-board-meeting-agenda/bmr03.pdf
+  status: 404
+- code: http-error
+  url: https://www.tei-c.org/activities/board/prague-board-meeting-agenda/bmr04.pdf
+  status: 404
+- code: http-error
+  url: https://www.tei-c.org/activities/board/prague-board-meeting-agenda/bmr05.txt
+  status: 404
+- code: http-error
+  url: https://www.tei-c.org/activities/board/prague-board-meeting-agenda/bmr06.pdf
+  status: 404
+- code: http-error
+  url: https://www.tei-c.org/wp-content/uploads/2018/04/bylaws2013-redlined.pdf
+  status: 404
+- code: http-error
+  url: https://www.tei-c.org/activities/board/tei-board-conference-call-24-january-2006/recruitingStrategyV3.html
+  status: 404
+- code: http-error
+  url: https://www.tei-c.org/activities/board/tei-board-conference-call-agenda-june-19-2003/TEI_CH_2003_rep_1a.htm
+  status: 404
+- code: http-error
+  url: https://www.tei-c.org/activities/board/tei-board-conference-call-agenda-june-19-2003/bm-eu.pdf
+  status: 404
+- code: http-error
+  url: https://www.tei-c.org/activities/board/Membership/Meetings/2002-Chicago/Finance-2002-a.pdf
+  status: 404
+rights_exceptions:
+- Raw response bodies remain local until per-item redistribution rights are reviewed.

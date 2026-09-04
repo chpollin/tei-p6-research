@@ -1,0 +1,135 @@
+schema_version: 1
+run_id: 2026-09-04-teic-romajs
+source_id: teic-tooling
+started_at: '2026-09-04T16:11:38Z'
+finished_at: '2026-09-04T16:11:42Z'
+status: observable-complete
+adapter:
+  name: tools.corpus.git_snapshot
+  version: 1
+requests:
+- kind: git-mirror
+  repository: https://github.com/TEIC/romajs.git
+  action: cloned
+  requested_ref: HEAD
+  resolved_commit: 2b2da4b4aa7ac774e55bcf9a234a87922d6755b2
+objects:
+- kind: git-tree-inventory
+  path: corpus/normalized/git/teic-romajs.json
+  sha256: e80480fd97dfc242d9a3b9167ec571405fe73cc66838c9f9bacf4ce122afc868
+  root_tree: c4fbe3b6d4c869d72a0fbb52093ab9a7256c6ca0
+counts:
+  commits_all_refs: 430
+  refs: 35
+  tree_entries: 155
+refs:
+- name: refs/heads/BWangy-dev
+  object_type: commit
+  object_id: 717fb854533c84db1d83a3ccf448c8b03796d141
+- name: refs/heads/dev
+  object_type: commit
+  object_id: 2b2da4b4aa7ac774e55bcf9a234a87922d6755b2
+- name: refs/heads/main
+  object_type: commit
+  object_id: 4245eb70ca9079eb05adbb441240f5d6924eaeac
+- name: refs/heads/mei
+  object_type: commit
+  object_id: 5a40d508192706cc7d592cf60998fbacfb1dd727
+- name: refs/pull/139/head
+  object_type: commit
+  object_id: c315c8b329bbd5f8cb28b23f94939627fc640794
+- name: refs/pull/140/head
+  object_type: commit
+  object_id: b19974483b11f066c6024e8597e931d1cb6a98dc
+- name: refs/pull/141/head
+  object_type: commit
+  object_id: 547d30c1703528d1500fadccd61c8737c86b4f2b
+- name: refs/pull/143/head
+  object_type: commit
+  object_id: af11626af6f0c08359b2ea83710b184d24e40053
+- name: refs/pull/145/head
+  object_type: commit
+  object_id: 0851b7879634ea7823a49f57c4c71d8e02bd57bd
+- name: refs/pull/146/head
+  object_type: commit
+  object_id: aea6de0ff53ae714ad6364252a66c98dc4268c0d
+- name: refs/pull/147/head
+  object_type: commit
+  object_id: e80b95cc1ca48136b5c4207f024498b617a59c59
+- name: refs/pull/169/head
+  object_type: commit
+  object_id: 391ae892b44c18ed83e2b4b2e0bc35ffdb96a601
+- name: refs/pull/173/head
+  object_type: commit
+  object_id: 33fdbf798dd3ea496bb921d387715731503618af
+- name: refs/pull/176/head
+  object_type: commit
+  object_id: b0dbbc57e6dbf1891968f5c45c1c0de6153a7115
+- name: refs/pull/176/merge
+  object_type: commit
+  object_id: 3229518ec894cc6d5273c987219bc9f59a3aa107
+- name: refs/pull/19/head
+  object_type: commit
+  object_id: cd2dc1057416d7068574ac8ee153fd35c06d65a0
+- name: refs/pull/40/head
+  object_type: commit
+  object_id: f04bcef108f94dd6e5ad1e991cca10fd2f95fc53
+- name: refs/pull/91/head
+  object_type: commit
+  object_id: 42e6098d97b9d3e95801a87dbd31e352f7c9ce6b
+- name: refs/pull/92/head
+  object_type: commit
+  object_id: 8025959ee8a8fa27d4875d00b9d2a6416cdd8bcc
+- name: refs/pull/93/head
+  object_type: commit
+  object_id: a1d81b74500237a8b5d06e1f6d0e8629dd8f5480
+- name: refs/tags/0.1.0
+  object_type: commit
+  object_id: 4cad5238f9587cef079a017cd1501adf4e0a3f9a
+- name: refs/tags/0.2.0
+  object_type: commit
+  object_id: 1b7a6212aee43b7bcdd6fc867a25e86f8a66437c
+- name: refs/tags/0.2.4
+  object_type: commit
+  object_id: f52b2efc474cc8d1b7ece172d81eefd64f63cd13
+- name: refs/tags/0.2.6
+  object_type: commit
+  object_id: b2b4ff12444383a9eaa88a8da832dcdd056954d3
+- name: refs/tags/0.2.7
+  object_type: commit
+  object_id: ae9f8b5db6ba589d641d645e75b565b4bd8e50f3
+- name: refs/tags/v0.2.8
+  object_type: commit
+  object_id: 773a52cf961ccc57c1a7a66070fc7c69139084db
+- name: refs/tags/v0.3.0
+  object_type: commit
+  object_id: fe8ce2d1c30fbc4d38e8a724522a07e586a25c24
+- name: refs/tags/v0.3.1
+  object_type: commit
+  object_id: e5f1b98983b03432fdc3a9a926822de7a2a69bb6
+- name: refs/tags/v1.0.0
+  object_type: commit
+  object_id: 8d324202480589c7abef27d1d8cb5e08f7a9d0c0
+- name: refs/tags/v1.1.0
+  object_type: commit
+  object_id: 382024bb4b93fa91ac7f72e01ffe6ee02db57469
+- name: refs/tags/v1.1.1
+  object_type: commit
+  object_id: 5c4dfd0b7a1fe025c4c2703b595bd8bb129042ce
+- name: refs/tags/v1.1.2
+  object_type: commit
+  object_id: 3f883b20ba6a005533b1cc039c1176111130467c
+- name: refs/tags/v1.3.0
+  object_type: commit
+  object_id: 15912cc5518aa76a194a30fcdb11d60244392176
+- name: refs/tags/v1.3.1
+  object_type: commit
+  object_id: 36bfc7d35a49337851d4fbf616553f8f053323e7
+- name: refs/tags/v1.3.2
+  object_type: commit
+  object_id: 4245eb70ca9079eb05adbb441240f5d6924eaeac
+gaps: []
+rights_exceptions:
+- The local mirror is not committed; redistribution follows the upstream repository
+  license.
+raw_materialization: corpus\raw\git\TEIC-romajs.git

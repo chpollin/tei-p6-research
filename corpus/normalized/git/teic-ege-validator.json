@@ -1,0 +1,310 @@
+{
+  "entries": [
+    {
+      "mode": "100644",
+      "object_id": "0b348c679ca4135f40b27af556768ef89852ecaf",
+      "object_type": "blob",
+      "path": ".github/dependabot.yml"
+    },
+    {
+      "mode": "100644",
+      "object_id": "03b459940dbb3210094a6919cee805d7ed6e9c41",
+      "object_type": "blob",
+      "path": ".github/workflows/maven.yml"
+    },
+    {
+      "mode": "100644",
+      "object_id": "a6f01bdd0a09417535ee206eb81a730e94d5ee8d",
+      "object_type": "blob",
+      "path": ".gitignore"
+    },
+    {
+      "mode": "100644",
+      "object_id": "9387f08a888bea1b616fb02f6af325f145f2c0e2",
+      "object_type": "blob",
+      "path": "LICENCE.txt"
+    },
+    {
+      "mode": "100644",
+      "object_id": "69c732a2e0fd7dcb6ef3c12e7154c30d084439d6",
+      "object_type": "blob",
+      "path": "README.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "5f7483866a9aa0828855bf42dccc746210d88142",
+      "object_type": "blob",
+      "path": "pom.xml"
+    },
+    {
+      "mode": "100644",
+      "object_id": "0865f5b7852cc6473b70ecd2d831b14cdcd50f71",
+      "object_type": "blob",
+      "path": "src/main/assembly/dist.xml"
+    },
+    {
+      "mode": "100644",
+      "object_id": "348ac546e393088a9643426fbfe7448ffa7901b0",
+      "object_type": "blob",
+      "path": "src/main/assembly/src.xml"
+    },
+    {
+      "mode": "100644",
+      "object_id": "84eab3d337aea77e2982c226d589c9b9d73bbe94",
+      "object_type": "blob",
+      "path": "src/main/java/pl/psnc/dl/ege/validator/EGEValidator.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "843dc8e746c50f5f94bf361001e653d56b5802d9",
+      "object_type": "blob",
+      "path": "src/main/java/pl/psnc/dl/ege/validator/StandardErrorHandler.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "cd56f4829aaa1553453ca1d2433e4c1ca9939adc",
+      "object_type": "blob",
+      "path": "src/main/java/pl/psnc/dl/ege/validator/XmlValidatorsProvider.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "e66e2bb4cee9de55dfe1029e889bae4081ce9b3d",
+      "object_type": "blob",
+      "path": "src/main/java/pl/psnc/dl/ege/validator/xml/DTDValidator.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "541662833c71c9ec81dbc6b9f9ec8bd959f54908",
+      "object_type": "blob",
+      "path": "src/main/java/pl/psnc/dl/ege/validator/xml/ExceptionListenerImpl.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "bf793c07e03675eec41307b1e70b196221d3784b",
+      "object_type": "blob",
+      "path": "src/main/java/pl/psnc/dl/ege/validator/xml/RNGValidator.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "fba08f08687c9ecda36c3846d9cecf1aaf2b2d60",
+      "object_type": "blob",
+      "path": "src/main/java/pl/psnc/dl/ege/validator/xml/SchemaValidator.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "06c18ba62cfb6355443bfe9f2898516ad5c09c64",
+      "object_type": "blob",
+      "path": "src/main/java/pl/psnc/dl/ege/validator/xml/XmlValidator.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "c35746485e5497cbd4c206276619bf2105e68a0c",
+      "object_type": "blob",
+      "path": "src/main/resources/META-INF/plugin.xml"
+    },
+    {
+      "mode": "100644",
+      "object_id": "b2b563f87aaafd10dd8c004dde6c0d0978d46e1b",
+      "object_type": "blob",
+      "path": "src/main/resources/ead-dtd/_ead.dtd"
+    },
+    {
+      "mode": "100644",
+      "object_id": "1e36b698cee98716e90b0fc99dbe3cd6ac138238",
+      "object_type": "blob",
+      "path": "src/main/resources/ead-dtd/ead.dtd"
+    },
+    {
+      "mode": "100644",
+      "object_id": "9ac85aac34c4673471636e7f2b2904c72e8a9d61",
+      "object_type": "blob",
+      "path": "src/main/resources/ead-dtd/eadbase.ent"
+    },
+    {
+      "mode": "100644",
+      "object_id": "8baaf9b1694839c2e31c4371682173bca2d0858c",
+      "object_type": "blob",
+      "path": "src/main/resources/ead-dtd/eadchars.ent"
+    },
+    {
+      "mode": "100644",
+      "object_id": "fe56d9916904fa0548a8d7c900fc131a85afc8c7",
+      "object_type": "blob",
+      "path": "src/main/resources/ead-dtd/eadgrp.dtd"
+    },
+    {
+      "mode": "100644",
+      "object_id": "dd7aef40df25a1d3b267d63b0cdde7224be18f6e",
+      "object_type": "blob",
+      "path": "src/main/resources/ead-dtd/eadnotat.ent"
+    },
+    {
+      "mode": "100644",
+      "object_id": "d9b4c5eef3dfaba596333c2f00e65f81a3ef8cd8",
+      "object_type": "blob",
+      "path": "src/main/resources/ead-dtd/eadsgml.dcl"
+    },
+    {
+      "mode": "100644",
+      "object_id": "b49c30947f6505e5dd83037e68182f26c992bf15",
+      "object_type": "blob",
+      "path": "src/main/resources/ead-dtd/isodia.ent"
+    },
+    {
+      "mode": "100644",
+      "object_id": "1ed96fad866b94adc208a6126344cb0678612f0e",
+      "object_type": "blob",
+      "path": "src/main/resources/ead-dtd/isogrk1.ent"
+    },
+    {
+      "mode": "100644",
+      "object_id": "726b7dd70592f2033aa7e2a22ec6f3487525319c",
+      "object_type": "blob",
+      "path": "src/main/resources/ead-dtd/isogrk2.ent"
+    },
+    {
+      "mode": "100644",
+      "object_id": "28b5c2766c523c401c9643887809ba37ab5639ed",
+      "object_type": "blob",
+      "path": "src/main/resources/ead-dtd/isogrk3.ent"
+    },
+    {
+      "mode": "100644",
+      "object_id": "e85b7d32ccc8d0761b8d0a7b5a670c7589ac7c9e",
+      "object_type": "blob",
+      "path": "src/main/resources/ead-dtd/isogrk4.ent"
+    },
+    {
+      "mode": "100644",
+      "object_id": "43ae7649d9b54aaf545d7b4db8ec310e337ccf4d",
+      "object_type": "blob",
+      "path": "src/main/resources/ead-dtd/isolat1.ent"
+    },
+    {
+      "mode": "100644",
+      "object_id": "c29b828f1b2a976863611703a387dc86a521dd52",
+      "object_type": "blob",
+      "path": "src/main/resources/ead-dtd/isolat2.ent"
+    },
+    {
+      "mode": "100644",
+      "object_id": "9c0cdd7dc9a702a0f6cee9dd8aa0faf71536ed72",
+      "object_type": "blob",
+      "path": "src/main/resources/ead-dtd/isonum.ent"
+    },
+    {
+      "mode": "100644",
+      "object_id": "a11787828a38f60b2716ef56ba4c108165af4c54",
+      "object_type": "blob",
+      "path": "src/main/resources/ead-dtd/isopub.ent"
+    },
+    {
+      "mode": "100644",
+      "object_id": "07e81008d2a0a719b28806d06aa488e2b36e956a",
+      "object_type": "blob",
+      "path": "src/main/resources/ead-dtd/isotech.ent"
+    },
+    {
+      "mode": "100644",
+      "object_id": "70a567a01996f1181b23628afb49efc89254327c",
+      "object_type": "blob",
+      "path": "src/main/resources/master-dtd/masterx.dtd"
+    },
+    {
+      "mode": "100644",
+      "object_id": "e3cbdd8b2145c557008e7363ba548fc9e726d705",
+      "object_type": "blob",
+      "path": "src/main/resources/tei-schema/XMLSchema.dtd"
+    },
+    {
+      "mode": "100644",
+      "object_id": "2516ce00db5e176d222f7bad48c1360f1243563b",
+      "object_type": "blob",
+      "path": "src/main/resources/tei-schema/datatypes.dtd"
+    },
+    {
+      "mode": "100644",
+      "object_id": "8cd485bbe558a79d82b2dc1e282af58d608cfb3e",
+      "object_type": "blob",
+      "path": "src/main/resources/tei-schema/enrich.xsd"
+    },
+    {
+      "mode": "100644",
+      "object_id": "75d273a6451073c02b231425a876ea08322e4ea4",
+      "object_type": "blob",
+      "path": "src/main/resources/tei-schema/xml.xsd"
+    },
+    {
+      "mode": "100644",
+      "object_id": "3ca43453af8c6fc9729e772f6b803f164a5910e3",
+      "object_type": "blob",
+      "path": "src/main/resources/validators.xml"
+    },
+    {
+      "mode": "100644",
+      "object_id": "c53471547040b6932ec00737c7b37841f0a80ecf",
+      "object_type": "blob",
+      "path": "src/site/resources/images/Thumbs.db"
+    },
+    {
+      "mode": "100644",
+      "object_id": "070b7a15260277879cc68c9b43d7bc6de70bd006",
+      "object_type": "blob",
+      "path": "src/site/resources/images/ege-overview.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "061d8eb3fc84f3a1885a220d4e4d466be4a5dc9b",
+      "object_type": "blob",
+      "path": "src/site/resources/images/ege.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "6978d902ef1271d36c25f9df4322b3a933057201",
+      "object_type": "blob",
+      "path": "src/site/resources/images/enrich-logo.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "4a51578da48c44b0220be28da25ab245f309b818",
+      "object_type": "blob",
+      "path": "src/site/resources/images/graf.jpg"
+    },
+    {
+      "mode": "100644",
+      "object_id": "e742a1858c29ff17b45760c7690f96c81bad6807",
+      "object_type": "blob",
+      "path": "src/site/resources/images/tabela.jpg"
+    },
+    {
+      "mode": "100644",
+      "object_id": "5ceccb23ee3ad3c87f117fc2d59924635122e11c",
+      "object_type": "blob",
+      "path": "src/site/resources/images/uml.gif"
+    },
+    {
+      "mode": "100644",
+      "object_id": "0a6a6140b7dca32b8a70c98dc66e352d37ed7edb",
+      "object_type": "blob",
+      "path": "src/site/site.xml"
+    },
+    {
+      "mode": "100644",
+      "object_id": "0565f2cbf581810e119aad1167aef520fb80d15c",
+      "object_type": "blob",
+      "path": "src/site/xdoc/download.xml"
+    },
+    {
+      "mode": "100644",
+      "object_id": "71c4c3ab8172e3828297f4231dd714f7d890511c",
+      "object_type": "blob",
+      "path": "src/site/xdoc/index.xml"
+    }
+  ],
+  "ref_requested": "HEAD",
+  "repository": "https://github.com/TEIC/ege-validator.git",
+  "resolved_commit": "4be9a5d1961401ce56ca82aee1a66d1aa0b7a25c",
+  "root_tree": "6c967c4827f4916590e7e63c755c923e5bf99aa4",
+  "schema_version": 1,
+  "source_id": "teic-tooling"
+}

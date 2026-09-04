@@ -1,0 +1,76 @@
+{
+  "entries": [
+    {
+      "mode": "100644",
+      "object_id": "cd81cc855c594ebd13031d763663a93178498cde",
+      "object_type": "blob",
+      "path": ".github/workflows/pages.yml"
+    },
+    {
+      "mode": "100644",
+      "object_id": "97c032e58524dabd82f0a119a393622c54e86c3d",
+      "object_type": "blob",
+      "path": "README.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "2a268a1ce0bd5446fcbb67c2e309f2d76cc090d7",
+      "object_type": "blob",
+      "path": "docs/Gemfile"
+    },
+    {
+      "mode": "100644",
+      "object_id": "7b46428118cb6658d4d9674840e35e51210837cb",
+      "object_type": "blob",
+      "path": "docs/Gemfile.lock"
+    },
+    {
+      "mode": "100644",
+      "object_id": "d93a68c8c2ec8be401d0b476538b60c7362e6b0c",
+      "object_type": "blob",
+      "path": "docs/_config.yml"
+    },
+    {
+      "mode": "100644",
+      "object_id": "6bcf4be0e2c59f25a0a9b4a6dc1801a483fa2048",
+      "object_type": "blob",
+      "path": "docs/about.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "c4659e648eaeb056da703878509a7b8c7a06045d",
+      "object_type": "blob",
+      "path": "docs/index.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "1c6c84e3ca181c02d2276716e15d453d9d86ff03",
+      "object_type": "blob",
+      "path": "docs/lessons/index.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "f0221d497e391fded30cbee64f719fd343817527",
+      "object_type": "blob",
+      "path": "docs/lessons/lesson-1.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "47acbc88b5ef94d44b3c3eb426c1482c5350ace7",
+      "object_type": "blob",
+      "path": "docs/lessons/lesson-2.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "c9cae1966c8996ed26ddf7c3c696d1cf3f08042e",
+      "object_type": "blob",
+      "path": "docs/technical-guide.md"
+    }
+  ],
+  "ref_requested": "HEAD",
+  "repository": "https://github.com/TEIC/Technical-Contributors.git",
+  "resolved_commit": "4dc125ed6b54aad6cc4fa00523be70c9e219e909",
+  "root_tree": "b926a4e6191bcb1f01b8a00d01bdf52a8abf60c5",
+  "schema_version": 1,
+  "source_id": "teic-public-git-repositories"
+}

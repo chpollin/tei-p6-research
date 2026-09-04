@@ -85,6 +85,37 @@ inventory, hashes for retrieved artifacts, and explicit missing-artifact status.
 
 The alias `current` is never used as an immutable identifier.
 
+### Public TEIC Git repositories
+
+`observable-complete` requires an organization API census paginated to
+exhaustion, a full mirror of every repository in that census, a resolved HEAD
+commit and tree inventory for each repository, and an explicit failure for any
+repository that cannot be mirrored. Repository authority is classified
+separately; completeness does not make every repository normative.
+
+### Historical and governance web records
+
+For the Council, Board, and TEI Archive, `observable-complete` applies only to
+the registered official indexes. Every in-bound page and attachment must be
+retrieved or named as a gap, and external targets must be inventoried. The
+Archive's own warning that historical holdings are incomplete remains a
+permanent limitation even after its present public index has been exhausted.
+
+### Legacy SourceForge records
+
+`observable-complete` requires every tracker exposed by the project metadata to
+be enumerated through its API, every ticket and discussion page to be fetched,
+file and version-control interfaces to be inventoried, and migration relations
+to be preserved when supplied. Rate-limit stops and unavailable legacy tools
+remain explicit gaps.
+
+### Community records and observed customizations
+
+These families can be only `bounded-complete`: each run must name the official
+indexes, external archives, time interval, rights constraints, and sampling
+protocol. A complete official link census does not make an open-ended mailing
+list or the universe of real-world ODDs complete.
+
 ### Literature
 
 “All TEI literature” has no finite boundary and is `not-completable`. A

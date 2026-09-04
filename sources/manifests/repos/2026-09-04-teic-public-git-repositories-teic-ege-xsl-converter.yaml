@@ -1,0 +1,87 @@
+schema_version: 1
+run_id: 2026-09-04-teic-public-git-repositories-teic-ege-xsl-converter
+source_id: teic-public-git-repositories
+started_at: '2026-09-04T16:36:27Z'
+finished_at: '2026-09-04T16:36:28Z'
+status: observable-complete
+adapter:
+  name: tools.corpus.git_snapshot
+  version: 1
+requests:
+- kind: git-mirror
+  repository: https://github.com/TEIC/ege-xsl-converter.git
+  action: updated
+  requested_ref: HEAD
+  resolved_commit: 34b38ec05af02b8bbf247b925124b0268f9c3cd4
+objects:
+- kind: git-tree-inventory
+  path: corpus/normalized/git/org/teic-ege-xsl-converter.json
+  sha256: e4497c21d218ae651852a7e9227a977ee74d8b443697bc5797daea8557f21d20
+  root_tree: ebf4faf84195d3efdba2f65ac2c7d061752a2271
+counts:
+  commits_all_refs: 52
+  refs: 19
+  tree_entries: 24
+refs:
+- name: refs/heads/dependabot/maven/commons-io-commons-io-2.18.0
+  object_type: commit
+  object_id: 7b1eeed494e198028b6b5252c2d6385b378ce44c
+- name: refs/heads/dependabot/maven/net.sf.saxon-Saxon-HE-12.5
+  object_type: commit
+  object_id: a87c7de82984c6c9dc4f249c249fa20b49e604d5
+- name: refs/heads/dependabot/maven/org.apache.maven.plugins-maven-assembly-plugin-3.7.1
+  object_type: commit
+  object_id: 3d6acfef07b7d13ab7648db28dd14fbdc533c434
+- name: refs/heads/main
+  object_type: commit
+  object_id: 34b38ec05af02b8bbf247b925124b0268f9c3cd4
+- name: refs/pull/1/head
+  object_type: commit
+  object_id: c33cb3abcddd3cd226c718f1ef596899219fc4f3
+- name: refs/pull/10/head
+  object_type: commit
+  object_id: 7b1eeed494e198028b6b5252c2d6385b378ce44c
+- name: refs/pull/10/merge
+  object_type: commit
+  object_id: 807d10e5a74e150e78b63f98f4e0134fd958802e
+- name: refs/pull/2/head
+  object_type: commit
+  object_id: ce9bf34e80eb962863c197b949a3db78adb30fc4
+- name: refs/pull/3/head
+  object_type: commit
+  object_id: 5e9e9a8008d4aaa220ec4f711134f82a832c0e58
+- name: refs/pull/4/head
+  object_type: commit
+  object_id: a87c7de82984c6c9dc4f249c249fa20b49e604d5
+- name: refs/pull/4/merge
+  object_type: commit
+  object_id: ad3293b3149f7e7cfad6d315f27a37a394cd4988
+- name: refs/pull/5/head
+  object_type: commit
+  object_id: dbf4284ae834fa49e274fb77bd1e31191794a414
+- name: refs/pull/6/head
+  object_type: commit
+  object_id: 31c920f25d83dcbf82f769a49368a31695495327
+- name: refs/pull/6/merge
+  object_type: commit
+  object_id: 0b12cd3d2b8e88ecd32144f9b36bc9ab1ceb4d1e
+- name: refs/pull/7/head
+  object_type: commit
+  object_id: 7bdae85973646bc77f2c827482fcb7c8ef3906d5
+- name: refs/pull/8/head
+  object_type: commit
+  object_id: 888c95a71f45d65061eb03290ee23424d4876b1b
+- name: refs/pull/9/head
+  object_type: commit
+  object_id: 09ad4bd7c5ae2eb0c84f0330a8810ae58e691dc6
+- name: refs/tags/v0.4
+  object_type: commit
+  object_id: e5d7b83999e71ea290e61fe07ef83de1410eb89a
+- name: refs/tags/v0.5
+  object_type: commit
+  object_id: 7cba9ee70730c6c3dcd109d42a32918f6149b2ab
+gaps: []
+rights_exceptions:
+- The local mirror is not committed; redistribution follows the upstream repository
+  license.
+raw_materialization: corpus\raw\git\TEIC-ege-xsl-converter.git

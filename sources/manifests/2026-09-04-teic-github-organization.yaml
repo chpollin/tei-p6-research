@@ -1,0 +1,39 @@
+schema_version: 1
+run_id: 2026-09-04-teic-github-organization
+source_id: teic-github-organization
+started_at: '2026-09-04T16:28:35Z'
+finished_at: '2026-09-04T16:28:36Z'
+status: observable-complete
+adapter:
+  name: tools.corpus.github_org_census
+  version: 1
+requests:
+- requested_url: https://api.github.com/orgs/TEIC/repos?direction=asc&per_page=100&sort=full_name&type=all
+  canonical_url: https://api.github.com/orgs/TEIC/repos?direction=asc&per_page=100&sort=full_name&type=all
+  final_url: https://api.github.com/orgs/TEIC/repos?direction=asc&per_page=100&sort=full_name&type=all
+  observed_at: '2026-09-04T16:28:35Z'
+  status: 200
+  media_type: application/json
+  byte_count: 210664
+  sha256: 62d965adb5166df6fbd0b21fcef92feca1ea511ce460c0eb991063ee810386f0
+  raw_path: sha256/62/d965adb5166df6fbd0b21fcef92feca1ea511ce460c0eb991063ee810386f0
+  headers:
+    date: Fri, 04 Sep 2026 16:28:36 GMT
+    content-type: application/json; charset=utf-8
+    etag: W/"92e09d929dab06aab4ee2f81cc571bb2960a385d61729fd04b1fd7f34c5717ad"
+    x-github-api-version-selected: '2022-11-28'
+    x-ratelimit-limit: '60'
+    x-ratelimit-remaining: '58'
+    x-ratelimit-resource: core
+    x-ratelimit-reset: '1788540259'
+objects:
+- kind: github-organization-repository-census
+  path: corpus/normalized/github/teic-repositories.jsonl
+  sha256: 87ad239f3a52014c7538f66059a0271f7a09f2c3d32417e22aa9339f6c2265b1
+counts:
+  repositories: 41
+  archived: 9
+  forks: 6
+  http_requests: 1
+  gaps: 0
+gaps: []

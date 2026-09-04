@@ -1,0 +1,19 @@
+{
+  "assets": [
+    {
+      "byte_count": 333504131,
+      "canonical_url": "https://github.com/TEIC/TEI/releases/download/P5_Release_4.12.0/tei-4.12.0.zip",
+      "final_url": "https://github.com/TEIC/TEI/releases/download/P5_Release_4.12.0/tei-4.12.0.zip",
+      "headers": {},
+      "media_type": "application/zip",
+      "observed_at": "2026-09-04T16:49:23Z",
+      "raw_path": "sha256/01/95baccee3b1e3e4f75b21fcf3c7c71cbcd75c796678b6f8c33229da13f66c5",
+      "requested_url": "https://github.com/TEIC/TEI/releases/download/P5_Release_4.12.0/tei-4.12.0.zip",
+      "sha256": "0195baccee3b1e3e4f75b21fcf3c7c71cbcd75c796678b6f8c33229da13f66c5",
+      "status": 200,
+      "transfer": "resumed-external-download-then-local-import"
+    }
+  ],
+  "schema_version": 1,
+  "source_id": "teic-tei-p5-4.12.0"
+}

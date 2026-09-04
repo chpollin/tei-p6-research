@@ -1,0 +1,5116 @@
+{
+  "entries": [
+    {
+      "mode": "100644",
+      "object_id": "cd32fc3fca9515e749f10db92d4da47d46fccaaa",
+      "object_type": "blob",
+      "path": ".docker/conf/httpd.conf"
+    },
+    {
+      "mode": "100755",
+      "object_id": "9166686637720accf7ba0c6271bf1f8c1adb411b",
+      "object_type": "blob",
+      "path": ".docker/dev.sh"
+    },
+    {
+      "mode": "100644",
+      "object_id": "2e98d40528864a02dbe0ba97cbeb49fe437fb0f0",
+      "object_type": "blob",
+      "path": ".docker/docker-compose.yml"
+    },
+    {
+      "mode": "100644",
+      "object_id": "d74de7d3aaaedc33ed7b55f2f69305f04db730c0",
+      "object_type": "blob",
+      "path": ".dockerignore"
+    },
+    {
+      "mode": "100644",
+      "object_id": "046bcf4a719042fc2bf3e7908b41c66ff2be9f63",
+      "object_type": "blob",
+      "path": ".eleventy.js"
+    },
+    {
+      "mode": "100644",
+      "object_id": "bdfdf19cc2ef1c00250baf7ce8d95f116397d61c",
+      "object_type": "blob",
+      "path": ".eleventyignore"
+    },
+    {
+      "mode": "100644",
+      "object_id": "f8ace84dd317858a20dd229c50af690db478889b",
+      "object_type": "blob",
+      "path": ".github/dependabot.yml"
+    },
+    {
+      "mode": "100644",
+      "object_id": "fb78724db20f4b7c38932cd4f451e3e13e710d3d",
+      "object_type": "blob",
+      "path": ".github/workflows/build.yml"
+    },
+    {
+      "mode": "100644",
+      "object_id": "666fb7ec1a7d7031782bf0f548e8a92053544ed6",
+      "object_type": "blob",
+      "path": ".gitignore"
+    },
+    {
+      "mode": "100644",
+      "object_id": "c081951c412f790480a4ab04568a45b2cd400b82",
+      "object_type": "blob",
+      "path": ".gitmodules"
+    },
+    {
+      "mode": "100644",
+      "object_id": "030bbc0ce5e8e2c3180df552be797189056665fe",
+      "object_type": "blob",
+      "path": "Dockerfile"
+    },
+    {
+      "mode": "100644",
+      "object_id": "319cdeee330bed1da796b36049da333768a09bf3",
+      "object_type": "blob",
+      "path": "README.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "5373d3fdf1440c4636a32d68374c12ebf02f58f7",
+      "object_type": "blob",
+      "path": "config/collections.js"
+    },
+    {
+      "mode": "100644",
+      "object_id": "04bf26ec60915234f3f4c7bda003176be3f87d58",
+      "object_type": "blob",
+      "path": "index.js"
+    },
+    {
+      "mode": "100644",
+      "object_id": "daacfb68bef7735ab5b94583faea893e1b85aebd",
+      "object_type": "blob",
+      "path": "package-lock.json"
+    },
+    {
+      "mode": "100644",
+      "object_id": "f3b027de36d6613bb5fe39c07906c53501a2f08a",
+      "object_type": "blob",
+      "path": "package.json"
+    },
+    {
+      "mode": "100644",
+      "object_id": "d65bfbb0a512323ef37d8a37a336c0850f5b311f",
+      "object_type": "blob",
+      "path": "src/_data/menus.json"
+    },
+    {
+      "mode": "100644",
+      "object_id": "d2663fd99edd727e136987611c4efced0af0900e",
+      "object_type": "blob",
+      "path": "src/_includes/analytics.html"
+    },
+    {
+      "mode": "100644",
+      "object_id": "b6852493f0a23a65d15b8ab219413148873cc8f1",
+      "object_type": "blob",
+      "path": "src/_includes/footer.html"
+    },
+    {
+      "mode": "100644",
+      "object_id": "58545f0e06ec5f89ac69a9c9cf708d207f1cf072",
+      "object_type": "blob",
+      "path": "src/_includes/navbar.njk"
+    },
+    {
+      "mode": "100644",
+      "object_id": "15b2296493afb752e1b1a6b934f979f0a31005bd",
+      "object_type": "blob",
+      "path": "src/_includes/navbar_es.njk"
+    },
+    {
+      "mode": "100644",
+      "object_id": "06beef89328c77fd59d0b509855e29e1ccb83a89",
+      "object_type": "blob",
+      "path": "src/_includes/searchmenu.html"
+    },
+    {
+      "mode": "100644",
+      "object_id": "9d49663ec2065d6f465a743ddd4c5759609c6884",
+      "object_type": "blob",
+      "path": "src/_includes/sidenav-about.njk"
+    },
+    {
+      "mode": "100644",
+      "object_id": "5407ad12c3cfbb43d1b7ff6bb36369ad6ddb2184",
+      "object_type": "blob",
+      "path": "src/_includes/sidenav-council.njk"
+    },
+    {
+      "mode": "100644",
+      "object_id": "05be9bf118bb4704dfe665214da7bd1f91bd2679",
+      "object_type": "blob",
+      "path": "src/_layouts/documentation.njk"
+    },
+    {
+      "mode": "100644",
+      "object_id": "f068522e9dd04881ac03aac7d10297fcd0a31266",
+      "object_type": "blob",
+      "path": "src/_layouts/homepage.njk"
+    },
+    {
+      "mode": "100644",
+      "object_id": "06a8f2261699db895bffaacd701d0416d533d983",
+      "object_type": "blob",
+      "path": "src/_layouts/homepage_es.njk"
+    },
+    {
+      "mode": "100644",
+      "object_id": "987cf86d196292ee715732f151a5e50ee31b6afd",
+      "object_type": "blob",
+      "path": "src/_layouts/meeting.njk"
+    },
+    {
+      "mode": "100644",
+      "object_id": "59d354c7eb6fcc1235d7d5ca2a8586852fe51293",
+      "object_type": "blob",
+      "path": "src/_layouts/news.njk"
+    },
+    {
+      "mode": "100644",
+      "object_id": "5368b7c594d736a1df530cd7ae3f6cd84fadb7c5",
+      "object_type": "blob",
+      "path": "src/_layouts/news_page.njk"
+    },
+    {
+      "mode": "100644",
+      "object_id": "8a6be786b94dfefed2c12c3764ea0bc553fa1879",
+      "object_type": "blob",
+      "path": "src/_layouts/page.njk"
+    },
+    {
+      "mode": "100644",
+      "object_id": "b8068a7aa260efa58056a6024bde0768d2e74e2e",
+      "object_type": "blob",
+      "path": "src/_layouts/page_es.njk"
+    },
+    {
+      "mode": "100644",
+      "object_id": "045f4b9d55a04f418dc80ff2d97a8df97ba6be9b",
+      "object_type": "blob",
+      "path": "src/about.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "791f07ba9961f5eb0ca7e27044fe0e1dccdb65a1",
+      "object_type": "blob",
+      "path": "src/about/a-consortium-proposal-for-tei.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "4d993d33dc0b48c64abf71bce66a5c838111755d",
+      "object_type": "blob",
+      "path": "src/about/badges.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "a0cae0c6aad6b3b9b5f7eb57ad27868cc4adbebf",
+      "object_type": "blob",
+      "path": "src/about/badges/I-use-TEI.gif"
+    },
+    {
+      "mode": "100644",
+      "object_id": "b46b3a89fe027e7111e71e61e1d6856be0e46af8",
+      "object_type": "blob",
+      "path": "src/about/badges/I-use-TEI.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "61da8b64ff0e8e5db57920985494a40c6d7d86e7",
+      "object_type": "blob",
+      "path": "src/about/badges/We-use-TEI.gif"
+    },
+    {
+      "mode": "100644",
+      "object_id": "dd36c2183b1d29c5819b06d7564446a74c230268",
+      "object_type": "blob",
+      "path": "src/about/badges/We-use-TEI.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "7ff321603248dcda9873688d84c562896ebda981",
+      "object_type": "blob",
+      "path": "src/about/badges/powered-by-TEI.gif"
+    },
+    {
+      "mode": "100644",
+      "object_id": "4e311410cf25dd0cc3fb609abea71db49782c38c",
+      "object_type": "blob",
+      "path": "src/about/badges/powered-by-TEI.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "7843b6dbb5de4bdb773a32d5a275fa6b42d94f1d",
+      "object_type": "blob",
+      "path": "src/about/board-of-directors.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "3d70f8c1387573a42a2523c24915e47adf440e59",
+      "object_type": "blob",
+      "path": "src/about/bylaws.11tydata.js"
+    },
+    {
+      "mode": "100644",
+      "object_id": "dcf93717517cf85bfe06d52fec18909816aa2767",
+      "object_type": "blob",
+      "path": "src/about/bylaws.xml"
+    },
+    {
+      "mode": "100644",
+      "object_id": "e09aafe0fef03afca4107572d703e1c60cd97800",
+      "object_type": "blob",
+      "path": "src/about/charter.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "1de9656dc6d482c5d9d7a748dbb3d4e55931dd9e",
+      "object_type": "blob",
+      "path": "src/about/code-of-conduct.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "45b5c1ab5553ec4e7ed41712aedc533dcf92f601",
+      "object_type": "blob",
+      "path": "src/about/contact.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "18f0c56790fdef61839e3d4c0cb9c194c8d82207",
+      "object_type": "blob",
+      "path": "src/about/frequently-asked-questions.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "6e9e923041ee1b674d93b7c4ce0b98e9c890cc38",
+      "object_type": "blob",
+      "path": "src/about/history.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "d61feaccc1f9ea28399ed028a5a17097ceba3c04",
+      "object_type": "blob",
+      "path": "src/about/logos.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "3619b03cc355ad940a19a17131a14aaf4cc456a9",
+      "object_type": "blob",
+      "path": "src/about/logos/TEI_Logo.ai"
+    },
+    {
+      "mode": "100644",
+      "object_id": "05ccaa974b99345461e926238748c061c6673901",
+      "object_type": "blob",
+      "path": "src/about/logos/TEI_Logo.eps"
+    },
+    {
+      "mode": "100644",
+      "object_id": "668633db7a008616bc73acf417b8d89ccece0703",
+      "object_type": "blob",
+      "path": "src/about/logos/TEI_Logo.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "07209d771cf72fd1261fb68b65cd04ef4976af48",
+      "object_type": "blob",
+      "path": "src/about/logos/TEI_Logo.svg"
+    },
+    {
+      "mode": "100644",
+      "object_id": "b3851f443c3805107c6b6580c92072ff137c99be",
+      "object_type": "blob",
+      "path": "src/about/logos/TEI_Logo_Achromatic.eps"
+    },
+    {
+      "mode": "100644",
+      "object_id": "1bcd2263915a7ff2948a0c2c076eac4bf45ef6c5",
+      "object_type": "blob",
+      "path": "src/about/logos/TEI_Logo_Achromatic.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "77e586c90f2e0c23c990c84640fe14ffe68a70c4",
+      "object_type": "blob",
+      "path": "src/about/logos/TEI_Logo_Achromatic.svg"
+    },
+    {
+      "mode": "100644",
+      "object_id": "740566444174eaa999ed03015c80f36dc98bb360",
+      "object_type": "blob",
+      "path": "src/about/logos/TEI_Logo_Horizontal.eps"
+    },
+    {
+      "mode": "100644",
+      "object_id": "ed2158ca4803d0fcb43ccff89441b062a9f667be",
+      "object_type": "blob",
+      "path": "src/about/logos/TEI_Logo_Horizontal.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "74312c898a1253a1baa6b3fbac10c58e08d0be37",
+      "object_type": "blob",
+      "path": "src/about/logos/TEI_Logo_Horizontal.svg"
+    },
+    {
+      "mode": "100644",
+      "object_id": "cd1a76995d13a0bbaa94e39bc5bf0c3790a80875",
+      "object_type": "blob",
+      "path": "src/about/logos/TEI_Logo_Horizontal_Achromatic.eps"
+    },
+    {
+      "mode": "100644",
+      "object_id": "b9a43084d8f86ac1ff903b9fcc0d69d51d6b6d4b",
+      "object_type": "blob",
+      "path": "src/about/logos/TEI_Logo_Horizontal_Achromatic.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "ade6eeab49f3725f4d8334dd68d40457bcfde8e4",
+      "object_type": "blob",
+      "path": "src/about/logos/TEI_Logo_Horizontal_Achromatic.svg"
+    },
+    {
+      "mode": "100644",
+      "object_id": "6a2aadf34e00eefdfa0c60fba33b760cc723ea9e",
+      "object_type": "blob",
+      "path": "src/about/logos/TEI_Logo_Horizontal_Light.eps"
+    },
+    {
+      "mode": "100644",
+      "object_id": "97b5f9bafefc539997650262ddc1aca3345a1cad",
+      "object_type": "blob",
+      "path": "src/about/logos/TEI_Logo_Horizontal_Light.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "342828f86e5672a9aca786ac56848b71fe37a4cd",
+      "object_type": "blob",
+      "path": "src/about/logos/TEI_Logo_Horizontal_Light.svg"
+    },
+    {
+      "mode": "100644",
+      "object_id": "4cd8f4681f97035561c368cafc16edab2e5ca3ce",
+      "object_type": "blob",
+      "path": "src/about/logos/TEI_Logo_Light.eps"
+    },
+    {
+      "mode": "100644",
+      "object_id": "606926ebdf9396f4579f4a65cb0c73136262e023",
+      "object_type": "blob",
+      "path": "src/about/logos/TEI_Logo_Light.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "faf9073ef5981bc922093741d21836c1606fed6b",
+      "object_type": "blob",
+      "path": "src/about/logos/TEI_Logo_Light.svg"
+    },
+    {
+      "mode": "100644",
+      "object_id": "326df77f8883f5c8453038802ae91ea5dcdfcf65",
+      "object_type": "blob",
+      "path": "src/about/logos/TEI_Logo_Vertical.eps"
+    },
+    {
+      "mode": "100644",
+      "object_id": "1845c1af27a8980c3ef26fd22c061ec828d776a3",
+      "object_type": "blob",
+      "path": "src/about/logos/TEI_Logo_Vertical.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "11437ea078bdfc112df6769d69a38386494c7698",
+      "object_type": "blob",
+      "path": "src/about/logos/TEI_Logo_Vertical.svg"
+    },
+    {
+      "mode": "100644",
+      "object_id": "72877625402fb4ed5be5285b07830148146ab45c",
+      "object_type": "blob",
+      "path": "src/about/logos/TEI_Logo_Vertical_Achromatic.eps"
+    },
+    {
+      "mode": "100644",
+      "object_id": "60646964d108368414d9d460111b39a2ecde04ca",
+      "object_type": "blob",
+      "path": "src/about/logos/TEI_Logo_Vertical_Achromatic.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "62bcf0834ef457cf5ccafd7a9dfc979b589d3ed8",
+      "object_type": "blob",
+      "path": "src/about/logos/TEI_Logo_Vertical_Achromatic.svg"
+    },
+    {
+      "mode": "100644",
+      "object_id": "d90249660ba080f3c8834991cfb5aa186ee3b343",
+      "object_type": "blob",
+      "path": "src/about/logos/TEI_Logo_Vertical_Light.eps"
+    },
+    {
+      "mode": "100644",
+      "object_id": "7e063c31e3a64ec0948cacd8af771e0ee03fda08",
+      "object_type": "blob",
+      "path": "src/about/logos/TEI_Logo_Vertical_Light.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "7bb9723216bed6e71096229de501469e4b7e32a5",
+      "object_type": "blob",
+      "path": "src/about/logos/TEI_Logo_Vertical_Light.svg"
+    },
+    {
+      "mode": "100644",
+      "object_id": "82756bbbd9eadc928bdde569bf84ebbf52c93c5f",
+      "object_type": "blob",
+      "path": "src/about/logos/tei_logo.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "581d58aaaf39ee422b31a324fd59092eaac94087",
+      "object_type": "blob",
+      "path": "src/about/logos/tei_logo_horizontal.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "5d1bd48c2d3e8f17ccbd2c05992337db598ed2e4",
+      "object_type": "blob",
+      "path": "src/about/logos/tei_logo_vertical.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "1c2038fd7a5a5ce5c41a6cde966428099cf85cf3",
+      "object_type": "blob",
+      "path": "src/about/mission.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "f3f1f86206e8e12c05d0fd50e4326226298c4111",
+      "object_type": "blob",
+      "path": "src/about/organization.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "ea3cabef60a3711fcf8a754338f0f9e9f286d1a1",
+      "object_type": "blob",
+      "path": "src/about/website.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "399b3e7574ababbd473f651703f98b39fd7b1aeb",
+      "object_type": "blob",
+      "path": "src/activities.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "a571d2a6390443cf7f6aa9ccdd7b30f9a9cc5cba",
+      "object_type": "blob",
+      "path": "src/activities/board.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "e15042ff1ec354461a5b3e35c25ac9993b60421b",
+      "object_type": "blob",
+      "path": "src/activities/board/agenda-for-tei-board-conference-call-12-october-2006.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "a76d35991e61757574c5a292ea76496e6cdfa45a",
+      "object_type": "blob",
+      "path": "src/activities/board/agenda-for-tei-board-conference-call-13-may-2008.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "c3535e40973b0a2f3fac216f6ca0aff98b31c60a",
+      "object_type": "blob",
+      "path": "src/activities/board/agenda-for-tei-board-conference-call-19-december-2007.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "affd161d06831a9ca0099891d47a2e65dc6a9a51",
+      "object_type": "blob",
+      "path": "src/activities/board/agenda-for-tei-board-conference-call-20-february-2008.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "0c2d5c9602cc57d1d016da61eaded2ebfa2ba10d",
+      "object_type": "blob",
+      "path": "src/activities/board/agenda-for-tei-board-conference-call-24-january-2006.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "6f9c8cb375c6ab47f2159938695cd9a9425e84c5",
+      "object_type": "blob",
+      "path": "src/activities/board/agenda-for-tei-board-conference-call-29-january-2007.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "1b079dc4464d0d401c4a2f6e689e9fa0170afae1",
+      "object_type": "blob",
+      "path": "src/activities/board/agenda-for-tei-board-conference-call-5-may-2007.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "0da043205958e4fce66a7bb76756dca231533523",
+      "object_type": "blob",
+      "path": "src/activities/board/agenda-for-tei-board-conference-call-5-october-2007.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "d337d2522d1f068d4884afdee5c5c8093e9726a5",
+      "object_type": "blob",
+      "path": "src/activities/board/agenda-for-tei-board-conference-call-9-july-2008.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "a9ec2b2a1e69f644ff5e8268e1adfd85168d3c6f",
+      "object_type": "blob",
+      "path": "src/activities/board/agenda-for-tei-board-conference-call-9-may-2006.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "11fd976f54af7e8d57b38489ef72d7f620847330",
+      "object_type": "blob",
+      "path": "src/activities/board/agenda-for-tei-board-conference-call-friday-may-6-2010-1400-london-bst-1300-utc.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "b17e1fc1a2360f5129ec9645c1bf713fca67811c",
+      "object_type": "blob",
+      "path": "src/activities/board/agenda-for-tei-board-conference-call-monday-february-1-2010-1400-gmt.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "884a279427b8593ee8f2afb209854cc5fbdb34a0",
+      "object_type": "blob",
+      "path": "src/activities/board/agenda-for-tei-board-conference-call-monday-february-8-2010-1400-gmt.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "d6c7070a3e5dba7312b22fe3e201be9dc3d7f85e",
+      "object_type": "blob",
+      "path": "src/activities/board/agenda-for-tei-board-conference-call-monday-june-6-2011-1300-utc-2.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "cd5731b42070c0b02bb168a9aadbad504124f4b8",
+      "object_type": "blob",
+      "path": "src/activities/board/agenda-for-tei-board-conference-call-monday-june-6-2011-1300-utc.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "c9dd01175323407197321ad45dae9accafbe5e00",
+      "object_type": "blob",
+      "path": "src/activities/board/agenda-for-tei-board-conference-call-monday-may-18-2009-1400-london.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "f9fe2b0041e9c7feab086c47b35c1a3da604c7c4",
+      "object_type": "blob",
+      "path": "src/activities/board/agenda-for-tei-board-conference-call-tuesday-february-10-2009-1300-london.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "bcfdd1061b04357e1dd35a9076aa9a93752ddc67",
+      "object_type": "blob",
+      "path": "src/activities/board/agenda-for-tei-board-conference-call-tuesday-july-14-2009-1400-gmt-2.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "8f9558d93076c9305bb7d0d747edbb8c769c7398",
+      "object_type": "blob",
+      "path": "src/activities/board/agenda-for-tei-board-conference-call-tuesday-july-14-2009-1400-gmt.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "0d477e32e8ed921ea899f0bd7685164a5861ee0c",
+      "object_type": "blob",
+      "path": "src/activities/board/agenda-for-tei-board-conference-call-wednesday-december-17-2008-2.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "3cc9ef8aa884ccd35e08dc5344d1c1e62246ec97",
+      "object_type": "blob",
+      "path": "src/activities/board/agenda-for-tei-board-conference-call-wednesday-december-17-2008-3.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "27299294cd431bb6afcf36cc68b8c6c60473ac1c",
+      "object_type": "blob",
+      "path": "src/activities/board/agenda-for-tei-board-conference-call-wednesday-december-17-2008.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "c3c6fcfe3fbd1d00cd1b3d63dd3ae4718ba5bb51",
+      "object_type": "blob",
+      "path": "src/activities/board/agenda-for-the-tei-c-board-meeting-sofia-bulgaria-30-october-2005.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "e745c69c783f5a6831f667281e4527b061964bb5",
+      "object_type": "blob",
+      "path": "src/activities/board/agenda-for-the-tei-c-board-meeting-victoria-b-c-canada-29-october-2006.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "e38b1b8ce1b9d8f1e488d998cc53ee4164ba05a9",
+      "object_type": "blob",
+      "path": "src/activities/board/board-meeting-in-nancy-agenda.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "68f77b0c36c64028cc09fee5992d654fa7139d09",
+      "object_type": "blob",
+      "path": "src/activities/board/board-meeting_2026-01-23.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "478b2852f6bf459d10fa739140d7f45fa15f98b2",
+      "object_type": "blob",
+      "path": "src/activities/board/board-meeting_2026-02-20.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "b38bd3d933507b7433cd01a5c35e8b1cc5cbf97b",
+      "object_type": "blob",
+      "path": "src/activities/board/board-meeting_2026-03-20.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "1f2261ef9e77573ebc2c5f66016f3e9616e8e587",
+      "object_type": "blob",
+      "path": "src/activities/board/board-meeting_2026-04-17.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "bb1a456ba05e941b40e54b7002dac145350dd3c2",
+      "object_type": "blob",
+      "path": "src/activities/board/board-meeting_2026-05-15.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "d8d02d029fc46b3b3eb800d449315d5d75c5c904",
+      "object_type": "blob",
+      "path": "src/activities/board/board-meeting_2026-06-19.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "602d4ffe41b4287992b12e6296af9e416cbbcc08",
+      "object_type": "blob",
+      "path": "src/activities/board/board-meeting_2026-07-17.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "3068585ff7813b555367ac0ce53a89e54722d7cb",
+      "object_type": "blob",
+      "path": "src/activities/board/board-meeting_2026-08-21.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "f619455813ea16a5e479fcd788fdba2d14ee2eb6",
+      "object_type": "blob",
+      "path": "src/activities/board/board-tei-c-board-meeting-2019-01-17.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "003d19a242bdbd43c6bc1520367f43e31754983a",
+      "object_type": "blob",
+      "path": "src/activities/board/board-tei-c-board-meeting-2019-02-14.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "647918bbe7caba4c92d86f4e46ee03550bc3bdee",
+      "object_type": "blob",
+      "path": "src/activities/board/board-tei-c-board-meeting-2019-03-14.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "04a5e4e5d01d894236f3143248be0879afbc661e",
+      "object_type": "blob",
+      "path": "src/activities/board/board-tei-c-board-meeting-2019-04-11.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "8842dc3e5ab5cd10487c1e601a94a8da49fbb148",
+      "object_type": "blob",
+      "path": "src/activities/board/board-tei-c-board-meeting-2019-05-09.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "4cec9cb08563ae51acbea359bfbeb0e74e29a491",
+      "object_type": "blob",
+      "path": "src/activities/board/board-tei-c-board-meeting-2019-06-13.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "2a7649505f2de4e181e503e7e08292cdbea9573a",
+      "object_type": "blob",
+      "path": "src/activities/board/board-tei-c-board-meeting-2019-08-08.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "bbf043e94bd226a3f174be41c7916bae09d9eab4",
+      "object_type": "blob",
+      "path": "src/activities/board/board-tei-c-board-meeting-2019-10-10.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "083a9b66f1884bb6a1f79d6f00474dd15c0c059f",
+      "object_type": "blob",
+      "path": "src/activities/board/board-tei-c-board-meeting-2019-12-12.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "308ce2533e886a7f5192bb672b86eccbd0e287a8",
+      "object_type": "blob",
+      "path": "src/activities/board/board-tei-c-board-meeting-2020-04-16.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "2a3eb8292989f941ee80e472b069b58353ba0972",
+      "object_type": "blob",
+      "path": "src/activities/board/board-tei-c-board-meeting-2020-05-21.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "07b4d595316f5b3f7954f4b4e9fea3c95148c83f",
+      "object_type": "blob",
+      "path": "src/activities/board/board-tei-c-face-to-face-board-meeting-2019-09-20.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "3cdcbb9484c5789cf95034960e419c082cb73158",
+      "object_type": "blob",
+      "path": "src/activities/board/chairs-report-for-tuesday-february-10-2009.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "566a210b10d166ce9574ca4fab31b49149dc7367",
+      "object_type": "blob",
+      "path": "src/activities/board/members-meeting-procedures.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "44fab97b6c0ff8a7e9b1e5b06b3a8203e54a62ba",
+      "object_type": "blob",
+      "path": "src/activities/board/minutes-for-tei-board-conference-call-13-may-2008.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "997d0ec05ecc04b6ad4d40d70854e14caca753cc",
+      "object_type": "blob",
+      "path": "src/activities/board/minutes-for-tei-board-conference-call-monday-may-18-2009-1400-london.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "ec6cc841d40ae1127f485bfd0d7c73bbabac3c63",
+      "object_type": "blob",
+      "path": "src/activities/board/minutes-from-tei-board-meeting-2025-01-30.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "d8c157f08c489befef7ac5379e129c3f52d14e8c",
+      "object_type": "blob",
+      "path": "src/activities/board/minutes-from-tei-board-meeting-2025-02-27.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "6c9513d507b449c53af6561e0a13e128b9a521e0",
+      "object_type": "blob",
+      "path": "src/activities/board/minutes-from-tei-board-meeting-2025-03-27.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "300c1d092f429e58709fe197517b4e14dc041d34",
+      "object_type": "blob",
+      "path": "src/activities/board/minutes-from-tei-board-meeting-2025-04-24.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "89c09cb91d9728d1e6be6af0cf56cc4aba4242c6",
+      "object_type": "blob",
+      "path": "src/activities/board/minutes-from-tei-board-meeting-2025-05-22.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "27ea1026d26981e5312c8601389f9bb92d2826a0",
+      "object_type": "blob",
+      "path": "src/activities/board/minutes-from-tei-board-meeting-2025-06-27.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "3c7df952205571e7e1e2c8443722c14cd74639ae",
+      "object_type": "blob",
+      "path": "src/activities/board/minutes-from-tei-board-meeting-2025-07-24.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "c206e6c3f124942ed469deeace41065eefbce2a3",
+      "object_type": "blob",
+      "path": "src/activities/board/minutes-from-tei-board-meeting-2025-08-20.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "26df8da3c4dd01146c7ff5774a2a15de30218ce8",
+      "object_type": "blob",
+      "path": "src/activities/board/minutes-from-tei-board-meeting-2025-09-17.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "121db866666f190819dafcd4c926b7c8f4d3aaca",
+      "object_type": "blob",
+      "path": "src/activities/board/minutes-from-tei-board-meeting-2025-10-24.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "ebc00cb3be4912eb0c65fe9d6dffa01193243ee8",
+      "object_type": "blob",
+      "path": "src/activities/board/minutes-from-tei-board-meeting-2025-11-14.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "562913e7e11617301298c950f6b35c58a0c5f481",
+      "object_type": "blob",
+      "path": "src/activities/board/minutes-from-tei-board-meeting-2025-12-12.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "6a806a81a4cb001a8b4874b3b5cc826d99b2c274",
+      "object_type": "blob",
+      "path": "src/activities/board/minutes-from-tei-board-meeting-Nov2024.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "37f013d28c6f5052f6a60b7fda2914349dbc54f6",
+      "object_type": "blob",
+      "path": "src/activities/board/minutes-from-tei-board-meeting-Oct2024.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "24190c9b68d7ca3badebd21bb00e5b71b260b08b",
+      "object_type": "blob",
+      "path": "src/activities/board/minutes-from-tei-board-meeting-Sept2024.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "298368dca4835002f6e68dbaddf749e294bd24a8",
+      "object_type": "blob",
+      "path": "src/activities/board/minutes-of-the-board-of-directors-meeting-tingviken-utne-in-hardanger-norway-may-11-12-2001.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "30e557ca2b0cebb07596e99d378f0933ab0d047d",
+      "object_type": "blob",
+      "path": "src/activities/board/minutes-of-the-tei-c-board-meeting-college-park-maryland-usa-4-november-2007.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "f12e04a9cd51d09b30cfb679c439f50da3ac0f4e",
+      "object_type": "blob",
+      "path": "src/activities/board/minutes-of-the-tei-c-board-meeting-kings-college-london-9-november-2008.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "b2d69c00682e860cb76e951354ff4c881c34e3a9",
+      "object_type": "blob",
+      "path": "src/activities/board/minutes-of-the-tei-c-board-meeting-sofia-bulgaria-30-october-2005.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "07eb0bd3bdab0d651d49d92db78943c1d90e98e6",
+      "object_type": "blob",
+      "path": "src/activities/board/minutes-of-the-tei-c-board-meeting-teleconference-1-february-2010.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "56cc0a3d8b53c4e399371b6fead2cce272b8adee",
+      "object_type": "blob",
+      "path": "src/activities/board/minutes-of-the-tei-c-board-meeting-university-of-michigan-14-15-november-2009.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "52ea1a365a1dc4bcc24e47a9805fd488f1cf87b3",
+      "object_type": "blob",
+      "path": "src/activities/board/minutes-of-the-tei-c-board-meeting-victoria-b-c-canada-29-october-2006.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "f1e12a2bf34cffb739bda7b29b21eadaa3b3b8db",
+      "object_type": "blob",
+      "path": "src/activities/board/minutes-of-the-tei-c-board-teleconference-13-december-2006.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "0f42f07054436b464959b7a7eade144a2d63d36b",
+      "object_type": "blob",
+      "path": "src/activities/board/minutes-of-the-tei-c-board-teleconference-17-december-2008.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "194b3218b15ca20dc426adc51f29a80b8fa4109e",
+      "object_type": "blob",
+      "path": "src/activities/board/minutes-ofthe-tei-c-board-meeting-baltimore-24-october-2004.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "1d25b26fed0879281c21caba4a57e382a85f506e",
+      "object_type": "blob",
+      "path": "src/activities/board/minutes-ofthe-tei-c-board-meeting-may-9-10-2002.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "53b582de0c53a0f089ab9c50217cff7faa6932b4",
+      "object_type": "blob",
+      "path": "src/activities/board/minutes-ofthe-tei-c-board-telephone-conference-held-19-june-2003.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "96dce5fb3b4ec902654e61d613d348abe682b38a",
+      "object_type": "blob",
+      "path": "src/activities/board/prague-board-meeting-agenda.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "c0cbed6323f8f3c286b9a19e5df4bad6939dd6a1",
+      "object_type": "blob",
+      "path": "src/activities/board/should-the-email-discussions-of-the-tei-board-be-publicly-accessible.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "8737fcdeabba3eeb0dd1a94bad67f9f89bb324cf",
+      "object_type": "blob",
+      "path": "src/activities/board/summary-of-2013-bylaw-revisions.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "d016aa21267dc787fbdf8ba8557d08fd7ad85dc7",
+      "object_type": "blob",
+      "path": "src/activities/board/tei-board-conference-call-09-july-2008.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "5b51b194671d26b129bc2e4dc3ed051c086188d3",
+      "object_type": "blob",
+      "path": "src/activities/board/tei-board-conference-call-11-august-2011.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "9876fe002c07920c47a9d85e2ff98599fbd9b9e2",
+      "object_type": "blob",
+      "path": "src/activities/board/tei-board-conference-call-12-october-2006.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "d27984671905ae36cbee3a467306b35236fef912",
+      "object_type": "blob",
+      "path": "src/activities/board/tei-board-conference-call-13-14-november-2010.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "370478637e806c2591e70b40d2b48dde54d07582",
+      "object_type": "blob",
+      "path": "src/activities/board/tei-board-conference-call-14-july-2009.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "87e30b612ccf92185b4f87d1911255799f72e807",
+      "object_type": "blob",
+      "path": "src/activities/board/tei-board-conference-call-16-january-2008.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "beb117caecb08e3f482376918b1d644fc4574f86",
+      "object_type": "blob",
+      "path": "src/activities/board/tei-board-conference-call-19-december-2007.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "733b9c28113545746c1034ea5e8e108d8bc2d040",
+      "object_type": "blob",
+      "path": "src/activities/board/tei-board-conference-call-20-february-2008.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "218a0c43e058320428a3f3334b9634aeeaaf33cb",
+      "object_type": "blob",
+      "path": "src/activities/board/tei-board-conference-call-24-january-2006.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "6814aac75a6680300870f65e85fb4dc6ce9e13ca",
+      "object_type": "blob",
+      "path": "src/activities/board/tei-board-conference-call-26-march-2008.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "a6cc413ff87f4a83bd452fc2cbf91e04d45eb027",
+      "object_type": "blob",
+      "path": "src/activities/board/tei-board-conference-call-29-january-2007.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "665e54b4df8f48a3bbdd9a87bb9c7b58c2159052",
+      "object_type": "blob",
+      "path": "src/activities/board/tei-board-conference-call-5-may-2007.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "e2c2a9738918f1bc9a015a4535c104e8369c8744",
+      "object_type": "blob",
+      "path": "src/activities/board/tei-board-conference-call-5-october-2007.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "9363f0205891d44bd839550e12baf71f31893ec5",
+      "object_type": "blob",
+      "path": "src/activities/board/tei-board-conference-call-6-june-2011.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "ebf84b3e994b79d66b0a5b41efd7e6f29b9fcd3e",
+      "object_type": "blob",
+      "path": "src/activities/board/tei-board-conference-call-7-may-2010.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "20abb5d4fdd9b87e0beff280dc227dedaa3a49b6",
+      "object_type": "blob",
+      "path": "src/activities/board/tei-board-conference-call-8-february-2010.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "4e99286367b379642d8b8734681aa76fdeb7b225",
+      "object_type": "blob",
+      "path": "src/activities/board/tei-board-conference-call-8-october-2009.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "993f14c9bc54dd47715c222072cdc0b989f76d25",
+      "object_type": "blob",
+      "path": "src/activities/board/tei-board-conference-call-9-may-2006.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "fedc073195aeb31b950250226429f8794cd983f5",
+      "object_type": "blob",
+      "path": "src/activities/board/tei-board-conference-call-agenda-june-19-2003.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "8af604ba41279ab16b16ecb63491b96f212052b7",
+      "object_type": "blob",
+      "path": "src/activities/board/tei-board-meeting-10-january-2012.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "febab8e19aeea630d5b61c08ac6a7d658ec15251",
+      "object_type": "blob",
+      "path": "src/activities/board/tei-board-meeting-12-oct-02-draft-agenda.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "b06fad45f99e61b9f66a8ae0524f77c17c552841",
+      "object_type": "blob",
+      "path": "src/activities/board/tei-board-meeting-16-october-2011.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "127611324070e9b5f0f5eea3f08a2693c7b67c14",
+      "object_type": "blob",
+      "path": "src/activities/board/tei-board-meeting-31-2008-board-meeting-addendum-central-admin-assistant-manager.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "72d1485d2ee19a7bc85a3a98452829956a351a6d",
+      "object_type": "blob",
+      "path": "src/activities/board/tei-board-meeting-31-2008-board-meeting-addendum-community-outreach-program.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "31524872f9cb773d85a75c577cf9bd9ad8c139bb",
+      "object_type": "blob",
+      "path": "src/activities/board/tei-board-meeting-31-2008-board-meeting-addendum-credit-card-proposal.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "fd5f931e8046e1de3758863bd6f3eb9355f67b3d",
+      "object_type": "blob",
+      "path": "src/activities/board/tei-board-meeting-31-2008-board-meeting-addendum-strategic-travel-2.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "fceb1028616242b65e5b6cd5c6b983cb6e695f34",
+      "object_type": "blob",
+      "path": "src/activities/board/tei-board-meeting-31-2008-board-meeting-addendum-strategic-travel-3.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "f58da44a60054c8bc0cb2c3aa59432fdae014cbe",
+      "object_type": "blob",
+      "path": "src/activities/board/tei-board-meeting-31-2008-board-meeting-addendum-strategic-travel-4.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "1831d36590616aa823aca3a3e71589fe6587c066",
+      "object_type": "blob",
+      "path": "src/activities/board/tei-board-meeting-31-2008-board-meeting-addendum-strategic-travel.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "b4b556877e927605ce1dd84d4680cb63de8f22a9",
+      "object_type": "blob",
+      "path": "src/activities/board/tei-board-meeting-chicago-11-october-2002-minutes.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "def6ea5e6c55ea002e6de4e788d5c9e6b8e5d77a",
+      "object_type": "blob",
+      "path": "src/activities/board/tei-board-meeting-in-person-meeting-2016-09-27.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "7e2d53e9d42c8589d90cc3e30e24201787c1babd",
+      "object_type": "blob",
+      "path": "src/activities/board/tei-board-meeting-minutes-rome-sunday-6-october-2013-900-1600.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "4b8cd2331b8d541047e556140c75e7184ef4a23a",
+      "object_type": "blob",
+      "path": "src/activities/board/tei-board-meeting-teleconference-2012-04-26-1300-1400-gmt-2.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "b25025c80f9ea108b74358e465880ad475bdf7a6",
+      "object_type": "blob",
+      "path": "src/activities/board/tei-board-meeting-teleconference-2012-04-26-1300-1400-gmt.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "76549a03ac0e5dee4cb3f30b0b4cad72060ce605",
+      "object_type": "blob",
+      "path": "src/activities/board/tei-board-meeting.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "af613d1bcc41158a20d5a2bf9d8a742f9b5b7e3d",
+      "object_type": "blob",
+      "path": "src/activities/board/tei-board-minutes-2012-11-10-2012-11-11.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "bc4912883bfe97eb34b3f3ba04d9a58c83f42d48",
+      "object_type": "blob",
+      "path": "src/activities/board/tei-board-minutes-conference-call-2013-02-13.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "a3dca4380b68e7f50ddc30c93cda0b67ba0bb550",
+      "object_type": "blob",
+      "path": "src/activities/board/tei-board-minutes-conference-call-2014-11-24.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "f3ce75863832ab5472682882e09a0d4f17cbdbd3",
+      "object_type": "blob",
+      "path": "src/activities/board/tei-board-minutes-conference-call-2015-01-13.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "010852a34aa6d3543fbb7ac022e0c1eaf572038c",
+      "object_type": "blob",
+      "path": "src/activities/board/tei-board-minutes-conference-call-2015-02-24.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "119571f3492990dafba73d1cbb35645174438d71",
+      "object_type": "blob",
+      "path": "src/activities/board/tei-board-minutes-conference-call-2015-06-25.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "7ae3e403b48d4a3d314099d219558bfdbbd2c65e",
+      "object_type": "blob",
+      "path": "src/activities/board/tei-board-minutes-conference-call-2016-01-12.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "3174f1e60019d6e0a790657581c60bd76b5ac8bd",
+      "object_type": "blob",
+      "path": "src/activities/board/tei-board-minutes-google-hangout-07-june-2016.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "5d04afbf309e23147367bed7e1d9c5ac6360bb08",
+      "object_type": "blob",
+      "path": "src/activities/board/tei-board-minutes-google-hangout-12-january-2017.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "6b0500ba5dbb4c14b2b4f9a31acb6c307c590897",
+      "object_type": "blob",
+      "path": "src/activities/board/tei-board-minutes-google-hangout-2016-02-09.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "b3a6dc5c60330f37ddb721ccbc5ea15b375b7462",
+      "object_type": "blob",
+      "path": "src/activities/board/tei-board-minutes-google-hangout-2016-03-08.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "2f20e78014044b465e8f4a39e9013e3af481fb80",
+      "object_type": "blob",
+      "path": "src/activities/board/tei-board-minutes-google-hangout-2016-04-12.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "f2b5188846ce570a7c659055bf891b4b5d8a4c15",
+      "object_type": "blob",
+      "path": "src/activities/board/tei-board-minutes-google-hangout-21-july-2016.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "843e322487e2cd5d124312102e4d1dc25e9aa764",
+      "object_type": "blob",
+      "path": "src/activities/board/tei-board-minutes-google-hangout-3-march-2017.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "53184e444044e2e668e76ee6dab9aa247c26e6d3",
+      "object_type": "blob",
+      "path": "src/activities/board/tei-board-minutes-in-person-meeting-2015-11-01.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "fd61a195437d3666f0876c711fcf9aa5e3019929",
+      "object_type": "blob",
+      "path": "src/activities/board/tei-board-of-directors-conference-call-2015-04-15.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "67041000e73c346ee084697b92d5d5d63c6addc3",
+      "object_type": "blob",
+      "path": "src/activities/board/tei-board-telecon-held-21-july-2005.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "1e84b613b449aa719a95a20539c1157f2c6c4175",
+      "object_type": "blob",
+      "path": "src/activities/board/tei-bylaws-2.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "5b0050d1fdc7ba52768ecd1e9c0945455239343c",
+      "object_type": "blob",
+      "path": "src/activities/board/tei-bylaws-3.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "4746700b2580fcc1c488eb7b0c36eb6edd20b85d",
+      "object_type": "blob",
+      "path": "src/activities/board/tei-bylaws.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "e3cb9180945dc1b1e4ee80b21edfb64c658f06b1",
+      "object_type": "blob",
+      "path": "src/activities/board/tei-c-board-meeting-2018-02-08.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "dc270490c35fbf923581b786e82db4489742c3af",
+      "object_type": "blob",
+      "path": "src/activities/board/tei-c-board-meeting-2018-03-08.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "c90fb56a8ac6d77aea88592b4978efa5d25dcff6",
+      "object_type": "blob",
+      "path": "src/activities/board/tei-c-board-meeting-2018-04-12.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "a0619b3de811c6f383ad1cd2b4a62f762de79ada",
+      "object_type": "blob",
+      "path": "src/activities/board/tei-c-board-meeting-2018-06-14.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "14c349a42c85982664b79e916d55629b6f99ea9f",
+      "object_type": "blob",
+      "path": "src/activities/board/tei-c-board-meeting-2018-07-12.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "9e4f5126b0dba856faad627d64c9beae0de9213d",
+      "object_type": "blob",
+      "path": "src/activities/board/tei-c-board-meeting-2018-08-16.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "0f62e57034fd782e54256417017a4330414284ed",
+      "object_type": "blob",
+      "path": "src/activities/board/tei-c-board-meeting-2018-09-11.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "ab21648ee40cf545b3a1fee4f7128da096ee9f11",
+      "object_type": "blob",
+      "path": "src/activities/board/tei-c-board-meeting-2018-10-18.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "4dc646a40e492cf49ea97e432d7bdd42625a8641",
+      "object_type": "blob",
+      "path": "src/activities/board/tei-c-board-meeting-2018-11-8.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "b61b0aa035f349e354518af2c5605d1454d98326",
+      "object_type": "blob",
+      "path": "src/activities/board/tei-c-board-meeting-2018-12-18.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "b525576238d16ea7c917165a0ea1832d43d2dfe8",
+      "object_type": "blob",
+      "path": "src/activities/board/tei-c-board-meeting-2019-07-04.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "1d9260e324a86e3f9731b7f82309dcaa07c0e608",
+      "object_type": "blob",
+      "path": "src/activities/board/tei-c-board-meeting-2020-01-16.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "f0bddef51b04618e06f30f43cea8a65489019bd9",
+      "object_type": "blob",
+      "path": "src/activities/board/tei-c-board-meeting-2020-02-20.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "094511f0ae32396d0f871ae19fd9193449023bc9",
+      "object_type": "blob",
+      "path": "src/activities/board/tei-c-board-meeting-2020-03-19.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "9a1cda152fafaad581f535532c62db1a96382861",
+      "object_type": "blob",
+      "path": "src/activities/board/tei-c-board-meeting-2020-06-18.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "526b59c8be02e754d7c6ac7c86650bb9faa4ee60",
+      "object_type": "blob",
+      "path": "src/activities/board/tei-c-board-meeting-2020-07-16.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "8a46f116762549f68088ac594763a8a46bfc2a7b",
+      "object_type": "blob",
+      "path": "src/activities/board/tei-c-board-meeting-2020-08-20.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "d46b1177b5a971b68b5c1537b3a347565a318f2f",
+      "object_type": "blob",
+      "path": "src/activities/board/tei-c-board-meeting-2020-09-17.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "e18e1efb3effb53fb2523a6b1b86d65493255561",
+      "object_type": "blob",
+      "path": "src/activities/board/tei-c-board-meeting-2020-10-15.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "9763f6975e8d542ae7735ef0022b890f5618213c",
+      "object_type": "blob",
+      "path": "src/activities/board/tei-c-board-meeting-2023-04-20.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "15baef1d923e996de6bb562fb4514d8c988694e5",
+      "object_type": "blob",
+      "path": "src/activities/board/tei-c-board-meeting-2023-05-18.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "94f404c219761490f56d7791062e31323fbb1c92",
+      "object_type": "blob",
+      "path": "src/activities/board/tei-c-board-meeting-2023-06-15.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "f492411ae4d1dbbb0b6f9f51c33497b990112591",
+      "object_type": "blob",
+      "path": "src/activities/board/tei-c-board-meeting-2023-07-20.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "0455b36b00cde52b9cf1c507ac7543d491bcf2c0",
+      "object_type": "blob",
+      "path": "src/activities/board/tei-c-board-meeting-minutes-2017-07-13.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "54e4909d106c6dd3ce8d6e5fb70ce148408faadb",
+      "object_type": "blob",
+      "path": "src/activities/board/tei-c-board-meeting-minutes-2017-08-17.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "9169cb26adbdab96c87ba91e60a445c745b42c6e",
+      "object_type": "blob",
+      "path": "src/activities/board/tei-c-board-meeting-minutes-2017-09-14.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "46aff16f0b841479157f1bec0d441b1158f76e4b",
+      "object_type": "blob",
+      "path": "src/activities/board/tei-c-board-meeting-minutes-2018-01-11.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "99606019261fc35a0d45519e99a0942453ae5823",
+      "object_type": "blob",
+      "path": "src/activities/board/tei-c-board-minutes-2017-05-11.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "e09f6c375eca76743c47b267093ecdf1d731f041",
+      "object_type": "blob",
+      "path": "src/activities/board/tei-c-board-minutes-2018-05-10.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "c56067ef24bdd79ab8ef3a238ca41594c658a365",
+      "object_type": "blob",
+      "path": "src/activities/board/tei-c-board-of-directors-teleconference-10-feb-2009.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "130f506def38b48a254d1f5936016d87c66de060",
+      "object_type": "blob",
+      "path": "src/activities/board/tei-consortium-board-meeting-november-9th-2003-minutes.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "872b78349761a0d75e6e71f490b51660cea3fd97",
+      "object_type": "blob",
+      "path": "src/activities/board/tei-consortium-communications-policy.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "04aa2eb3e6e9aceedd5ec7aa3d942ab7e46ae977",
+      "object_type": "blob",
+      "path": "src/activities/board/tei-consortium-procedures-customs-and-practices.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "c6e4a4b223f829b47b4419f4fba301dd0600ba43",
+      "object_type": "blob",
+      "path": "src/activities/board/tei-host-bids-for-2005-2009.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "20a82b94fd5d5927900aa9d9553cd0c394e88516",
+      "object_type": "blob",
+      "path": "src/activities/board/tei-members-meeting-2007-business-meeting-agenda.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "0995de9e68fb026bcd63fbf0b269827da687d447",
+      "object_type": "blob",
+      "path": "src/activities/board/tei-members-meeting-2008-board-meeting-agenda.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "8ff966d4a14542808d59cb0bd8880f401be45c35",
+      "object_type": "blob",
+      "path": "src/activities/board/tei-members-meeting-2009-board-meeting-agenda.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "7e349756963a2a23b9e3022b79dd013437dc0636",
+      "object_type": "blob",
+      "path": "src/activities/board/tei-members-meeting-2010-board-meeting-agenda.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "cec8c3283f774ef3374b55a37c08987f86509d6b",
+      "object_type": "blob",
+      "path": "src/activities/board/tei-members-meeting-2011-board-meeting-agenda-2.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "0b78918cb47ce755753e666783755a8954c84f84",
+      "object_type": "blob",
+      "path": "src/activities/board/tei-members-meeting-2011-board-meeting-agenda.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "9ed77685335c32e93a4a199d3433738b3b486613",
+      "object_type": "blob",
+      "path": "src/activities/board/tei-special-election-february-2011.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "fe39d4fcd3339471d4cf7eae42736552abd6b314",
+      "object_type": "blob",
+      "path": "src/activities/board/text-encoding-intiative-consortium-minutes-of-the-board-of-directors-meeting-saturday-november-17-2001-grand-hotel-duomo-pisa-italy.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "9a78e34a838d662255c580db2714a84ad605ba70",
+      "object_type": "blob",
+      "path": "src/activities/cmsmcq-nachlass.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "91511c3f1a6b5ad76a41a370ad430825d9c5e980",
+      "object_type": "blob",
+      "path": "src/activities/community.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "1b38b99d3aedb36067ae1397f8e801e368cc0c27",
+      "object_type": "blob",
+      "path": "src/activities/council.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "f24981f0f63554dad1a8450a5a1b32a37f558feb",
+      "object_type": "blob",
+      "path": "src/activities/council/meetings.njk"
+    },
+    {
+      "mode": "100644",
+      "object_id": "fff52ce2b9d85748378724a189124efea1b5dc05",
+      "object_type": "blob",
+      "path": "src/activities/council/meetings/draft-agenda-tei-council-meeting-galway-3-4-april-2008.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "e3adf57e31ea9c40848354b8d87abad0c6ef96fd",
+      "object_type": "blob",
+      "path": "src/activities/council/meetings/draft-minutes-of-council-meeting.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "c89b4fec3e1786d3f80e0c3c7d30599255f276bb",
+      "object_type": "blob",
+      "path": "src/activities/council/meetings/face-to-face-meeting-prague-5-7-feb-2017.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "998be4909cec113297eb319507316ee178871a47",
+      "object_type": "blob",
+      "path": "src/activities/council/meetings/fall-2016-face-to-face-vienna.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "0d448e6dde349c310e6b12f98f35481613fa2963",
+      "object_type": "blob",
+      "path": "src/activities/council/meetings/img/letter-blueprint-plantUML-2026-03-12.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "36c036c6641c14260863f17ff75fec20133d0c6d",
+      "object_type": "blob",
+      "path": "src/activities/council/meetings/meetings.11tydata.js"
+    },
+    {
+      "mode": "100644",
+      "object_id": "816913b965427db9bd72d19f58e4d816ca0b4cd6",
+      "object_type": "blob",
+      "path": "src/activities/council/meetings/minutes-of-the-tei-c-council-meeting-jan-12th-2002.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "6f6da4d9ce6236445e9d833f2b49d6f8d5524b87",
+      "object_type": "blob",
+      "path": "src/activities/council/meetings/notes-from-tei-council-conference-call-of-2.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "9b2cc346df9dfbebd8b98ee9cc9792c2a4709374",
+      "object_type": "blob",
+      "path": "src/activities/council/meetings/notes-from-tei-council-conference-call-of.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "61cc60fcfc50fa0eb5abcaba30f5c8441c9e64da",
+      "object_type": "blob",
+      "path": "src/activities/council/meetings/notes-from-tei-meeting-on-element-classes.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "c241e9ab02314c0c45d006824b9f8ee6766ac03c",
+      "object_type": "blob",
+      "path": "src/activities/council/meetings/tc-m12-tei-council-conference-call-2-jul-04.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "3ac0c6552ea584c31c324c4463346ef47f02ef56",
+      "object_type": "blob",
+      "path": "src/activities/council/meetings/tc-m13-tei-council-conference-call-20-sept-04.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "087144d38ffca36dffb418de2a056e5f32bd51b6",
+      "object_type": "blob",
+      "path": "src/activities/council/meetings/tcm03-tei-council-conference-call-26-nov-02.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "07022cf9ca217c300ba3e089251b281ae5adebf6",
+      "object_type": "blob",
+      "path": "src/activities/council/meetings/tcm04-tei-council-conference-call-21-jan-03.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "aec2287930c8c09c697c79f55d80daf1d1cb6fc7",
+      "object_type": "blob",
+      "path": "src/activities/council/meetings/tcm05-tei-council-conference-call-18-mar-03.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "e9a9b69bd08fe42be30e359cf7de9cf9ef5f8be1",
+      "object_type": "blob",
+      "path": "src/activities/council/meetings/tcm07-tei-council-meeting-oxford-15-16-may-2003.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "046eedc9cbe04378895f6c25f01dcab27e625626",
+      "object_type": "blob",
+      "path": "src/activities/council/meetings/tcm08-tei-council-conference-call-23-sep-03.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "4ae7eeb0c4c87bd33158c3cb8b5cfab7db5ed04c",
+      "object_type": "blob",
+      "path": "src/activities/council/meetings/tcm09-tei-council-conference-call-27-jan-04.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "0a1e8ff1547befe17b8cebe421deff072e973b84",
+      "object_type": "blob",
+      "path": "src/activities/council/meetings/tcm10-tei-council-conference-call.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "9dd938a90fe4f6660728790a7e009ed209515dcf",
+      "object_type": "blob",
+      "path": "src/activities/council/meetings/tcm15-tei-council-conference-call.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "67f6bc42237f6a6f6b215ebf870b011fbf72157c",
+      "object_type": "blob",
+      "path": "src/activities/council/meetings/tcm16-tei-council-conference-call.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "797d58865403e66aa2875933aac2f8a6224a4b13",
+      "object_type": "blob",
+      "path": "src/activities/council/meetings/tcm19-tei-council-conference-call.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "0bcb929365d5a819038ecb6cb31095c958d92868",
+      "object_type": "blob",
+      "path": "src/activities/council/meetings/tcm21-tei-council-conference-call.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "ced3d1334e85d94d9266d7f6bbf5893137e428d0",
+      "object_type": "blob",
+      "path": "src/activities/council/meetings/tcm66-xml.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "3c1024b635bba5aff961b50124c59a77aa2909f8",
+      "object_type": "blob",
+      "path": "src/activities/council/meetings/tcm79-xml.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "4036c86b2d3b24b2e9a5dad72d99851c052b874e",
+      "object_type": "blob",
+      "path": "src/activities/council/meetings/tcm80-xml.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "471722a001aa5e83a4ad3a521972745db9bef068",
+      "object_type": "blob",
+      "path": "src/activities/council/meetings/tei-council-2002-06-24-conference-call-notes.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "fb8f243618175145ecb9c2ada3849e6ba866ab70",
+      "object_type": "blob",
+      "path": "src/activities/council/meetings/tei-council-conference-call-17-august-2011.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "120d59761a5ff110b4c939c3459ae005dbf14871",
+      "object_type": "blob",
+      "path": "src/activities/council/meetings/tei-council-conference-call-19-mar-2007.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "4512fed77997b248cc0de8947253e1592299bc6d",
+      "object_type": "blob",
+      "path": "src/activities/council/meetings/tei-council-conference-call-2.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "dd1fe8866b9d6870e57f56712e0a37f3b0a912b3",
+      "object_type": "blob",
+      "path": "src/activities/council/meetings/tei-council-conference-call-3.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "b905e73c428ecf29f2b6b8e63a3f9de8072b23ac",
+      "object_type": "blob",
+      "path": "src/activities/council/meetings/tei-council-conference-call-4.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "c3f62670c34dc7d0c5fd2d0e97794a9442595945",
+      "object_type": "blob",
+      "path": "src/activities/council/meetings/tei-council-conference-call-5.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "fee6b58c4b2d266e2de8a16e185f80a1ea438d15",
+      "object_type": "blob",
+      "path": "src/activities/council/meetings/tei-council-conference-call-of.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "be95496afdd53256b9fdab4408dcb526f4c0a5d9",
+      "object_type": "blob",
+      "path": "src/activities/council/meetings/tei-council-conference-call.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "d65ec5448bc607d19bc0c57063443ba3dd006bdf",
+      "object_type": "blob",
+      "path": "src/activities/council/meetings/tei-council-meeting-10.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "262aa9c99fd834d71fe55e8510a915dc52a2ccab",
+      "object_type": "blob",
+      "path": "src/activities/council/meetings/tei-council-meeting-11.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "7eecb4a274d0a245edbb298de03a1e87eb7e38c4",
+      "object_type": "blob",
+      "path": "src/activities/council/meetings/tei-council-meeting-12.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "efb7f69e6c56d5a9f7b464b472f6a551d482ac4d",
+      "object_type": "blob",
+      "path": "src/activities/council/meetings/tei-council-meeting-13.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "98e577767110fca79bafa24a792763e1c45564f7",
+      "object_type": "blob",
+      "path": "src/activities/council/meetings/tei-council-meeting-14.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "a39f61a720245bdbafbcbbaa826c0e88c8eed96b",
+      "object_type": "blob",
+      "path": "src/activities/council/meetings/tei-council-meeting-15.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "4b7ac0baadd2ecb2a59409c60c709781611e7f1b",
+      "object_type": "blob",
+      "path": "src/activities/council/meetings/tei-council-meeting-16.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "d3c7fed6a3afcff596200ec8fdd4eb7b4b832743",
+      "object_type": "blob",
+      "path": "src/activities/council/meetings/tei-council-meeting-17.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "399296e09428e83f67ed9b488dfa2a57ecc5633c",
+      "object_type": "blob",
+      "path": "src/activities/council/meetings/tei-council-meeting-18.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "075479fa34abb7736d8c94330a5aea051d144093",
+      "object_type": "blob",
+      "path": "src/activities/council/meetings/tei-council-meeting-2.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "c6d99679e48205bfa0757bd7148c7baa267844cc",
+      "object_type": "blob",
+      "path": "src/activities/council/meetings/tei-council-meeting-3.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "83585ed0779e6a2f7d69983ee3fdf57b72808f15",
+      "object_type": "blob",
+      "path": "src/activities/council/meetings/tei-council-meeting-4.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "558d98da61a55aaa301f11058e6c2bbe876454da",
+      "object_type": "blob",
+      "path": "src/activities/council/meetings/tei-council-meeting-5.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "12d9c3d80a7f2759aab5551879cf534f7fc0125e",
+      "object_type": "blob",
+      "path": "src/activities/council/meetings/tei-council-meeting-6.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "e51bef2fab9c4cdba1e49af93c5b6a06ff6dd9ad",
+      "object_type": "blob",
+      "path": "src/activities/council/meetings/tei-council-meeting-7-9-november-2011.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "7b410496b5a96e9c490f2f56146031da577e7508",
+      "object_type": "blob",
+      "path": "src/activities/council/meetings/tei-council-meeting-7.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "b8702d9655c560714b0c154298d5697b5ab2fb6e",
+      "object_type": "blob",
+      "path": "src/activities/council/meetings/tei-council-meeting-8.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "d75a41e7b4acbc3979785173cc61936d5e8ae157",
+      "object_type": "blob",
+      "path": "src/activities/council/meetings/tei-council-meeting-9.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "5c8ede217ef29c79305df6fcc9c735e02b7a0e10",
+      "object_type": "blob",
+      "path": "src/activities/council/meetings/tei-council-meeting-chicago-11-13-april-2011.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "278715acde84badc2430dd8988343d7b640e05fc",
+      "object_type": "blob",
+      "path": "src/activities/council/meetings/tei-council-meeting.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "805934aa5b098fa86a6e070c07ce13f310a65f2c",
+      "object_type": "blob",
+      "path": "src/activities/council/meetings/tei-council-progress-notes-for-june-2007.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "75807968fc04647c86d23db70d119658be083c32",
+      "object_type": "blob",
+      "path": "src/activities/council/meetings/tei-technical-coucil-p5-teleconference_2026-05-06.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "b3300eaa1cb448b1ceedc5099d86d9baca4d259f",
+      "object_type": "blob",
+      "path": "src/activities/council/meetings/tei-technical-council-f2f-graz-2019-09-14-16.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "893fa7150dc271f8186daeca28663c377e9d0a02",
+      "object_type": "blob",
+      "path": "src/activities/council/meetings/tei-technical-council-f2f-meeting-in-Krakow-14-16-sept-2025.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "9096ea8da20ae56454324156515fd41e12614b9e",
+      "object_type": "blob",
+      "path": "src/activities/council/meetings/tei-technical-council-f2f-meeting-in-buenos-aires-6-8-october-2024.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "97cd048d062f896a63d6d65b4a738ffde947a0f5",
+      "object_type": "blob",
+      "path": "src/activities/council/meetings/tei-technical-council-f2f-meeting-in-guelph-7-9-may-2023.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "4745603ee8a2eee524b3dae0515258e13a035afc",
+      "object_type": "blob",
+      "path": "src/activities/council/meetings/tei-technical-council-f2f-meeting-in-newcastle-11-13-september-2022.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "7281749b23c17e4208a9999d5622cd5f6e7cc5fe",
+      "object_type": "blob",
+      "path": "src/activities/council/meetings/tei-technical-council-f2f-meeting-in-paderborn-3-5-september-2023.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "5016a55ad6bb5d9b38b91b48ff68faa8014073d2",
+      "object_type": "blob",
+      "path": "src/activities/council/meetings/tei-technical-council-f2f-meeting-wurzburg-2026-03-10-13.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "b972db185b0b105697b3f203f2a3a5b5078d1b5f",
+      "object_type": "blob",
+      "path": "src/activities/council/meetings/tei-technical-council-f2f-tokyo-2018-09-07-08.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "c9a11a34f5f26e3c168997187addbf54c1f34258",
+      "object_type": "blob",
+      "path": "src/activities/council/meetings/tei-technical-council-f2f-washington-2019-05-06-08.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "a699aefd707fe0ab7362478ac60782674895598d",
+      "object_type": "blob",
+      "path": "src/activities/council/meetings/tei-technical-council-fall-f2f-2017-11-16-18-parkside-hotel-victoria-bc.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "b1babe2c91108383eb2099708cda6526e7e0a5d7",
+      "object_type": "blob",
+      "path": "src/activities/council/meetings/tei-technical-council-meeting-10.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "3667e9736cf6637868389b8e424e987500e2f206",
+      "object_type": "blob",
+      "path": "src/activities/council/meetings/tei-technical-council-meeting-11-13-april-2013.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "9dd274a847e2280eb1d0c0dff0a3d387b288a0f6",
+      "object_type": "blob",
+      "path": "src/activities/council/meetings/tei-technical-council-meeting-11.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "992cd5e7df0258bec3dc087812849dbcf6800a4f",
+      "object_type": "blob",
+      "path": "src/activities/council/meetings/tei-technical-council-meeting-12.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "7e154086b9bde610b0920e20956838d92379f180",
+      "object_type": "blob",
+      "path": "src/activities/council/meetings/tei-technical-council-meeting-13.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "f2c4171433e24c2f03b350b5881f5680ddb3507f",
+      "object_type": "blob",
+      "path": "src/activities/council/meetings/tei-technical-council-meeting-14.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "477592c93586d66fccc070b1e4fa9839eb46cf77",
+      "object_type": "blob",
+      "path": "src/activities/council/meetings/tei-technical-council-meeting-15.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "62a908a3564c53a509c72c753222aeb31665b098",
+      "object_type": "blob",
+      "path": "src/activities/council/meetings/tei-technical-council-meeting-2.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "413a42ab0bacc770c0c3525b034f79a9a432574c",
+      "object_type": "blob",
+      "path": "src/activities/council/meetings/tei-technical-council-meeting-3.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "fa1c156c5a0fb266512c634b06b08b8d255658ac",
+      "object_type": "blob",
+      "path": "src/activities/council/meetings/tei-technical-council-meeting-4.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "37cd4db5d3f39837e96d279956b4de66e918265b",
+      "object_type": "blob",
+      "path": "src/activities/council/meetings/tei-technical-council-meeting-5.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "624b4ee6fd81098c6eba905ca71c753e382ffe9d",
+      "object_type": "blob",
+      "path": "src/activities/council/meetings/tei-technical-council-meeting-6.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "b4d6635b5f630f39338065685848ff8dd562636e",
+      "object_type": "blob",
+      "path": "src/activities/council/meetings/tei-technical-council-meeting-7.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "f64d67e10b239912c0f85131c95a9705247d4be3",
+      "object_type": "blob",
+      "path": "src/activities/council/meetings/tei-technical-council-meeting-8.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "2d87eba70815b70cf2bd9f0ca834d9573a946e50",
+      "object_type": "blob",
+      "path": "src/activities/council/meetings/tei-technical-council-meeting-9.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "aa50979b3d6e94c2af9bb7bd4b79814cf962bf25",
+      "object_type": "blob",
+      "path": "src/activities/council/meetings/tei-technical-council-meeting.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "f7a4dd279931fdfbae3b3a90080c16382d57c98c",
+      "object_type": "blob",
+      "path": "src/activities/council/meetings/tei-technical-council-minutes-2015-05.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "124160f31535f89d228cc1f893af417c7f47cb3b",
+      "object_type": "blob",
+      "path": "src/activities/council/meetings/tei-technical-council-minutes-2015-07.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "629ae9618375d964e98d39ad60fcf6dc18412327",
+      "object_type": "blob",
+      "path": "src/activities/council/meetings/tei-technical-council-minutes-2015-08.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "68c5b3ae836372700280aca8ff24e5b46c6fda02",
+      "object_type": "blob",
+      "path": "src/activities/council/meetings/tei-technical-council-minutes-2015-09.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "95e9321c46dd756ec4267730908698f524f9de3a",
+      "object_type": "blob",
+      "path": "src/activities/council/meetings/tei-technical-council-minutes-2015-10.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "7323e52e5932482fb63b2616666b47224128ec7f",
+      "object_type": "blob",
+      "path": "src/activities/council/meetings/tei-technical-council-minutes-2015-12.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "2a7a7474227dc5627fb72930e95cd9b579f392c9",
+      "object_type": "blob",
+      "path": "src/activities/council/meetings/tei-technical-council-minutes-2016-06.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "89a7e6212920ea3e3d21fff33ef8abc98e63f87c",
+      "object_type": "blob",
+      "path": "src/activities/council/meetings/tei-technical-council-minutes-2016-07.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "368bf59f98ed61c43ba834b201336e2350f02efd",
+      "object_type": "blob",
+      "path": "src/activities/council/meetings/tei-technical-council-minutes-2016-08.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "44c016568163132487fa9cc925c680a45bc7a5dd",
+      "object_type": "blob",
+      "path": "src/activities/council/meetings/tei-technical-council-online-svf2f-2021-01-29-01-30.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "7ed41cbd89940054f63fa38cceabbe23cd8abba4",
+      "object_type": "blob",
+      "path": "src/activities/council/meetings/tei-technical-council-p5-teleconference-2026-07-14.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "3bfd0cf3a917a23c4e39ae830c2614c6a2fc34af",
+      "object_type": "blob",
+      "path": "src/activities/council/meetings/tei-technical-council-p5-teleconference_2026-06-22.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "e58bd3d8adc0a4b6f438aebb022ea0f55b0a558a",
+      "object_type": "blob",
+      "path": "src/activities/council/meetings/tei-technical-council-p6-teleconference-2026-05-20.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "58f0101991e9966abdea0530dcbae0ac0cd83e51",
+      "object_type": "blob",
+      "path": "src/activities/council/meetings/tei-technical-council-p6-teleconference-2026-07-16.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "a8af5461507621d803f1aeabaf993218a40ae3a7",
+      "object_type": "blob",
+      "path": "src/activities/council/meetings/tei-technical-council-p6-teleconference_2026-06-24.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "6b8b458616bffeb8310d853a995c070351a1fb4b",
+      "object_type": "blob",
+      "path": "src/activities/council/meetings/tei-technical-council-short-vf2f-meeting-12-13-april-2024.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "52d0418ecba20037af2b566f56ed2b5ed653b517",
+      "object_type": "blob",
+      "path": "src/activities/council/meetings/tei-technical-council-short-vf2f-meeting-15-16-march-2024.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "aa4bbf3fbb4f523c573172e9a22f8ee86ba5a95a",
+      "object_type": "blob",
+      "path": "src/activities/council/meetings/tei-technical-council-short-vf2f-meeting-18-19-may-2025.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "2c8eed56a0a25885b85f2c9a24adeabcf4ea26b8",
+      "object_type": "blob",
+      "path": "src/activities/council/meetings/tei-technical-council-short-vf2f-meeting-26-27-april-2024.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "d518923b0638e99dcfbb1468ecf729a4a5640479",
+      "object_type": "blob",
+      "path": "src/activities/council/meetings/tei-technical-council-short-vf2f-meeting-online-1-2-april-2021.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "52b771ac0e8f9b06c76f33be44ffa6a0a89ebc94",
+      "object_type": "blob",
+      "path": "src/activities/council/meetings/tei-technical-council-short-vf2f-meeting-online-1-2-october-2021.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "16364a0ca4a37117fe59966fa1993eb36b9fdb1e",
+      "object_type": "blob",
+      "path": "src/activities/council/meetings/tei-technical-council-teleconference-2017-10-26-1300-utc.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "64fcefa0b6182698bd99241ae0a9218cb96d5c3c",
+      "object_type": "blob",
+      "path": "src/activities/council/meetings/tei-technical-council-teleconference-2018-01-25.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "7a6dea8b89345c66bd85c60aef48f1f362d6015f",
+      "object_type": "blob",
+      "path": "src/activities/council/meetings/tei-technical-council-teleconference-2018-03-29.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "de23cbd48f307eee345d566bee5e61c0788668e6",
+      "object_type": "blob",
+      "path": "src/activities/council/meetings/tei-technical-council-teleconference-2018-04-26.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "be1a61ee6569b24f3a570600d65d78aa95bfe67b",
+      "object_type": "blob",
+      "path": "src/activities/council/meetings/tei-technical-council-teleconference-2018-05-31.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "9878e495deea3db7e6ef913f892bbc3b5da741e2",
+      "object_type": "blob",
+      "path": "src/activities/council/meetings/tei-technical-council-teleconference-2018-07-09.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "550935d5047d6a1468c94e05f314fc7e991ce220",
+      "object_type": "blob",
+      "path": "src/activities/council/meetings/tei-technical-council-teleconference-2018-07-26.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "d9fbe47d1f62007b3e12b6e5002d9e2a495a7f83",
+      "object_type": "blob",
+      "path": "src/activities/council/meetings/tei-technical-council-teleconference-2018-08-30.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "a96e5191bb684876d082806bad3fe362e74c3186",
+      "object_type": "blob",
+      "path": "src/activities/council/meetings/tei-technical-council-teleconference-2018-09-27.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "c541dc2600f5aad1b51d4856e93f5ca53aeb1c2d",
+      "object_type": "blob",
+      "path": "src/activities/council/meetings/tei-technical-council-teleconference-2018-10-22.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "502bb2ab7f7e81f7b8ebc3fe2bae2c64c2999191",
+      "object_type": "blob",
+      "path": "src/activities/council/meetings/tei-technical-council-teleconference-2018-11-16.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "4288b3e74a35c0af2c66a159101a0d25da1a32c2",
+      "object_type": "blob",
+      "path": "src/activities/council/meetings/tei-technical-council-teleconference-2018-12-17.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "70edf2dd8472d13a8cf28e6a5b566fdabe12b75e",
+      "object_type": "blob",
+      "path": "src/activities/council/meetings/tei-technical-council-teleconference-2019-01-18.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "5619b6243dc581546ba7dc49190fd9f7c6d8bafd",
+      "object_type": "blob",
+      "path": "src/activities/council/meetings/tei-technical-council-teleconference-2019-02-18.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "822e04da62d175ab947f88da992309c4f467549f",
+      "object_type": "blob",
+      "path": "src/activities/council/meetings/tei-technical-council-teleconference-2019-03-15.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "18afd4b0c7c1d9752b142addc02b61ffc2486407",
+      "object_type": "blob",
+      "path": "src/activities/council/meetings/tei-technical-council-teleconference-2019-04-15.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "43c910c9a790047a7036bb5ae59d828019d3fc38",
+      "object_type": "blob",
+      "path": "src/activities/council/meetings/tei-technical-council-teleconference-2019-06-17.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "47439323c9d0f35d035e6dc5436be476cf99cf82",
+      "object_type": "blob",
+      "path": "src/activities/council/meetings/tei-technical-council-teleconference-2019-07-19.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "76f7b9faf7bb216cce68dde6f1b101bb2944f348",
+      "object_type": "blob",
+      "path": "src/activities/council/meetings/tei-technical-council-teleconference-2019-08-19.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "82b546755590dafdf31539e19ab81a3519abe868",
+      "object_type": "blob",
+      "path": "src/activities/council/meetings/tei-technical-council-teleconference-2019-10-08.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "298771bade0bdadac437a93894b58077633513e5",
+      "object_type": "blob",
+      "path": "src/activities/council/meetings/tei-technical-council-teleconference-2019-11-19.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "a128256bd2cd4650f578e8831459280e8c405461",
+      "object_type": "blob",
+      "path": "src/activities/council/meetings/tei-technical-council-teleconference-2019-12-10.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "272e8bdd85357d2c5e60d036a207ff4583aacf22",
+      "object_type": "blob",
+      "path": "src/activities/council/meetings/tei-technical-council-teleconference-2020-01-16.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "bea1b6e0060ec6437e864645c1cbec3c1260f037",
+      "object_type": "blob",
+      "path": "src/activities/council/meetings/tei-technical-council-teleconference-2020-02-11.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "d3bb262d4daa8d0f84a95c54145a5881feb0ddf6",
+      "object_type": "blob",
+      "path": "src/activities/council/meetings/tei-technical-council-teleconference-2020-03-10.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "a09503eb54bdf121c838faa80f7b1e82f4ce4542",
+      "object_type": "blob",
+      "path": "src/activities/council/meetings/tei-technical-council-teleconference-2020-04-14.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "b5972b0feed7a5231795d4920dedf19ba3364206",
+      "object_type": "blob",
+      "path": "src/activities/council/meetings/tei-technical-council-teleconference-2020-06-09.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "ef5edd3ecb13cdceeb31c5d1ed8c4ef21d9204c7",
+      "object_type": "blob",
+      "path": "src/activities/council/meetings/tei-technical-council-teleconference-2020-07-14.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "a6da5934e28d51238f46c05c3022a5c2d97c4c43",
+      "object_type": "blob",
+      "path": "src/activities/council/meetings/tei-technical-council-teleconference-2020-08-04.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "c2e139a3f38f54757e7ff8dfde27755e6405616a",
+      "object_type": "blob",
+      "path": "src/activities/council/meetings/tei-technical-council-teleconference-2020-09-08.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "726994f7475f104761e8811ebb84ae21877f7ef7",
+      "object_type": "blob",
+      "path": "src/activities/council/meetings/tei-technical-council-teleconference-2020-10-13.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "44da93aaad3dee3b31b6c12b3ff5714ef442fdc3",
+      "object_type": "blob",
+      "path": "src/activities/council/meetings/tei-technical-council-teleconference-2020-11-10.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "9bae24bb535a5e7011699485c388853db575ee45",
+      "object_type": "blob",
+      "path": "src/activities/council/meetings/tei-technical-council-teleconference-2020-12-08-2.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "9c431c39ad8a2c44684d84aee318a8a439bd2f4c",
+      "object_type": "blob",
+      "path": "src/activities/council/meetings/tei-technical-council-teleconference-2020-12-08.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "eae9d9391f8990b47b3a27b30cb92744a0d015c6",
+      "object_type": "blob",
+      "path": "src/activities/council/meetings/tei-technical-council-teleconference-2021-01-14.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "b6ffcbea12569197974b45850f522ccf4538a3e5",
+      "object_type": "blob",
+      "path": "src/activities/council/meetings/tei-technical-council-teleconference-2021-02-11.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "722b2bda17fa59ab274bb37cd09bf4a9c5c1372b",
+      "object_type": "blob",
+      "path": "src/activities/council/meetings/tei-technical-council-teleconference-2021-03-11.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "6ae476aa8b7f892590130dc2d6407e9de6d202d7",
+      "object_type": "blob",
+      "path": "src/activities/council/meetings/tei-technical-council-teleconference-2021-05-13.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "e760ca752c907406df4077f6f6f6dad1df5c7148",
+      "object_type": "blob",
+      "path": "src/activities/council/meetings/tei-technical-council-teleconference-2021-06-10.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "124ca5faaa03d05cfbddef1ed2dca6c366ffcc84",
+      "object_type": "blob",
+      "path": "src/activities/council/meetings/tei-technical-council-teleconference-2021-08-12.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "59ca6bf32f9516c017c8ddf889863de6fa67e6b6",
+      "object_type": "blob",
+      "path": "src/activities/council/meetings/tei-technical-council-teleconference-2021-09-09.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "5f8b926b825e953bbbba7fd7d73d80acd1af9334",
+      "object_type": "blob",
+      "path": "src/activities/council/meetings/tei-technical-council-teleconference-2021-10-14.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "a3ae3e0fe66550a517a640c28a4ecf301d9a191d",
+      "object_type": "blob",
+      "path": "src/activities/council/meetings/tei-technical-council-teleconference-2021-11-11.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "a8eecd055b3fbf0643a9e8596b8abbfb6e3971b7",
+      "object_type": "blob",
+      "path": "src/activities/council/meetings/tei-technical-council-teleconference-2021-12-09.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "9be30c7c79f044f2730edab2ba13466906ce51ba",
+      "object_type": "blob",
+      "path": "src/activities/council/meetings/tei-technical-council-teleconference-2022-01-14.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "d96e56c6190a66aa88ff465ef65419ffbcf92778",
+      "object_type": "blob",
+      "path": "src/activities/council/meetings/tei-technical-council-teleconference-2022-02-11.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "893f2711d949754dd392321bf1c4cf170e76f2b4",
+      "object_type": "blob",
+      "path": "src/activities/council/meetings/tei-technical-council-teleconference-2022-03-11-1500z.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "0a4acbcc6fe549305bce27a8702e0ac22018f04f",
+      "object_type": "blob",
+      "path": "src/activities/council/meetings/tei-technical-council-teleconference-2022-04-08.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "f3d303e3686d46eb2ca726f0c070692dd5c93ec6",
+      "object_type": "blob",
+      "path": "src/activities/council/meetings/tei-technical-council-teleconference-2022-05-13-1500z.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "5121b14febc33c644d560899a079c553c55c636e",
+      "object_type": "blob",
+      "path": "src/activities/council/meetings/tei-technical-council-teleconference-2022-08-12-1500z.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "57eee45bac5b1d853b3385216c53745c4869b864",
+      "object_type": "blob",
+      "path": "src/activities/council/meetings/tei-technical-council-teleconference-2022-10-14.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "f049247b4cac58d8ea75730eafa9b4c80e1daba0",
+      "object_type": "blob",
+      "path": "src/activities/council/meetings/tei-technical-council-teleconference-2022-11-10.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "2899b56c2a16b1950ed51ad39d1dd51443e0106f",
+      "object_type": "blob",
+      "path": "src/activities/council/meetings/tei-technical-council-teleconference-2022-12-08.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "44a5d8864668349ff6838a1dc44caba36701dee9",
+      "object_type": "blob",
+      "path": "src/activities/council/meetings/tei-technical-council-teleconference-2023-01-13.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "12426628466fdd33b3d972679f082df02e23e1f9",
+      "object_type": "blob",
+      "path": "src/activities/council/meetings/tei-technical-council-teleconference-2023-02-10.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "0af5465ce4195dbde5c020af01d6ad639144647d",
+      "object_type": "blob",
+      "path": "src/activities/council/meetings/tei-technical-council-teleconference-2023-03-10.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "27a8ba2e7a46d48d82155b561fc34ea04005891f",
+      "object_type": "blob",
+      "path": "src/activities/council/meetings/tei-technical-council-teleconference-2023-04-14.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "f8c897e131fec3dcff3083c47127903e04cfe686",
+      "object_type": "blob",
+      "path": "src/activities/council/meetings/tei-technical-council-teleconference-2023-06-09.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "fe9c5c33ec3991ed30d95f08b53980a1a279551f",
+      "object_type": "blob",
+      "path": "src/activities/council/meetings/tei-technical-council-teleconference-2023-07-17.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "4fa34c4c88400c2773b49b47806e0b6e81451c56",
+      "object_type": "blob",
+      "path": "src/activities/council/meetings/tei-technical-council-teleconference-2023-08-11.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "5c9c952f3f441edcaf930d3764caa9d392da80a6",
+      "object_type": "blob",
+      "path": "src/activities/council/meetings/tei-technical-council-teleconference-2023-10-13.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "1c8be5ac39d4680d4c737d2ff5a58ed88efa441b",
+      "object_type": "blob",
+      "path": "src/activities/council/meetings/tei-technical-council-teleconference-2023-11-10.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "f607218fe9b6fdcf222b75ac1e7fade08ef5d31c",
+      "object_type": "blob",
+      "path": "src/activities/council/meetings/tei-technical-council-teleconference-2023-12-15.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "087cb4190b0bc41ac9a9f823d3f8866f4a18c01a",
+      "object_type": "blob",
+      "path": "src/activities/council/meetings/tei-technical-council-teleconference-2024-01-12.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "e6cc3c18cb10651dd2fa3162b546c5b2c1257c8d",
+      "object_type": "blob",
+      "path": "src/activities/council/meetings/tei-technical-council-teleconference-2024-02-09.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "7d036d4e3c75efbe39de30c142421f0ad55dac2c",
+      "object_type": "blob",
+      "path": "src/activities/council/meetings/tei-technical-council-teleconference-2024-05-15.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "d0632d1f20ff6b728ee677bc2405f1f37508beeb",
+      "object_type": "blob",
+      "path": "src/activities/council/meetings/tei-technical-council-teleconference-2024-06-21.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "805018256f41339100368103cd336b758d347a94",
+      "object_type": "blob",
+      "path": "src/activities/council/meetings/tei-technical-council-teleconference-2024-07-10.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "b0b5022cdd07f77063cc67ba3b6d6fd61919b4c0",
+      "object_type": "blob",
+      "path": "src/activities/council/meetings/tei-technical-council-teleconference-2024-08-13.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "e0c5bd94f8b8e5fef3c6f5f8b8848fc3e5392979",
+      "object_type": "blob",
+      "path": "src/activities/council/meetings/tei-technical-council-teleconference-2024-09-03.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "0b6ba52b6ee9bcc9936b0630454c2caaacf3c293",
+      "object_type": "blob",
+      "path": "src/activities/council/meetings/tei-technical-council-teleconference-2024-11-12.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "76cb72a8e7c597e84b21b62b6e976aeb6429de00",
+      "object_type": "blob",
+      "path": "src/activities/council/meetings/tei-technical-council-teleconference-2024-12-10.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "6607634f20df31d771a31275dc787f07016cb5f2",
+      "object_type": "blob",
+      "path": "src/activities/council/meetings/tei-technical-council-teleconference-2025-01-14.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "4dfe69e77c93365902eb418717a59823c831364b",
+      "object_type": "blob",
+      "path": "src/activities/council/meetings/tei-technical-council-teleconference-2025-02-11.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "cbf02c5b26440f84431cf4d92c187c7e9f246cc1",
+      "object_type": "blob",
+      "path": "src/activities/council/meetings/tei-technical-council-teleconference-2025-03-18.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "2adf606358a9b8006cae79fbaae77877540b74db",
+      "object_type": "blob",
+      "path": "src/activities/council/meetings/tei-technical-council-teleconference-2025-04-08.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "fb71c0516ab8a14a80a87d68ddf78c43cf50a51f",
+      "object_type": "blob",
+      "path": "src/activities/council/meetings/tei-technical-council-teleconference-2025-06-10.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "139452f0a5c3950320b2de8f0aa595e3513b7bf3",
+      "object_type": "blob",
+      "path": "src/activities/council/meetings/tei-technical-council-teleconference-2025-07-08.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "451aa595b73fb8003d65b629819bb9e4e0b3a78d",
+      "object_type": "blob",
+      "path": "src/activities/council/meetings/tei-technical-council-teleconference-2025-08-12.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "f9eb95b1cf36fe134fe4104d1f25a008825ec6a5",
+      "object_type": "blob",
+      "path": "src/activities/council/meetings/tei-technical-council-teleconference-2025-10-07.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "1e6185a87749707fbd8af31c4a7ee2c879a1d357",
+      "object_type": "blob",
+      "path": "src/activities/council/meetings/tei-technical-council-teleconference-2025-11-11.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "c89ffd47ac086da195b8b74a4a6552f0e39feb78",
+      "object_type": "blob",
+      "path": "src/activities/council/meetings/tei-technical-council-teleconference-2025-12-18.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "7ab0909c467cfe6493c375d8f9c18c91507375af",
+      "object_type": "blob",
+      "path": "src/activities/council/meetings/tei-technical-council-teleconference-2026-01-14.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "e70c1fb18db0a89281559cb307e640956425137d",
+      "object_type": "blob",
+      "path": "src/activities/council/meetings/tei-technical-council-teleconference-2026-04-10.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "bb91e9aae531b8125502152fafb23639febc10b3",
+      "object_type": "blob",
+      "path": "src/activities/council/meetings/tei-technical-council-teleconference_2026-02-09.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "8fc87b0282b7f35831fd2c61fe0d73ddb9a8eada",
+      "object_type": "blob",
+      "path": "src/activities/council/meetings/tei-technical-council-teleconference_2026-04-24.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "7ebb59aab2abd4b975890182e6aae9ac263eee19",
+      "object_type": "blob",
+      "path": "src/activities/council/meetings/tei-technical-council-virtual-f2f-2020-05-01-05-03-05-05-05-12.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "cb226944a4434876d18ce7329515fe8c70dec0f9",
+      "object_type": "blob",
+      "path": "src/activities/council/meetings/tei-teleconference-minutes-2015-01-30.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "6ed41d3336a37233ece46844b271f37124463f74",
+      "object_type": "blob",
+      "path": "src/activities/council/meetings/teleconference-2015-03-27-1230-utc.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "66779eedb027ae7cc8077f51785d5c243f9e3499",
+      "object_type": "blob",
+      "path": "src/activities/council/meetings/teleconference-2015-04-24-1300-utc.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "2e1fa460d7fa784ebfdaf02c8e26a224bb36bab4",
+      "object_type": "blob",
+      "path": "src/activities/council/meetings/teleconference-2015-06-29-1400-utc.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "92d1b55b72eac0c7c76c8ed32633fd8f638d5817",
+      "object_type": "blob",
+      "path": "src/activities/council/meetings/teleconference-2016-01-25-1400-utc.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "036fc2a0ad4b1c0b1587e48b03364bff254233cc",
+      "object_type": "blob",
+      "path": "src/activities/council/meetings/teleconference-2016-02-25.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "11050b806db986d9830e48418939caa085771653",
+      "object_type": "blob",
+      "path": "src/activities/council/meetings/teleconference-2016-03-31.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "4ab77ca82ece31f15937add5cd63d8d8fe0f6365",
+      "object_type": "blob",
+      "path": "src/activities/council/meetings/teleconference-2016-10-27-1300-utc.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "88ca9cadcedd965701fab8a69c3d3c7bb0510a9c",
+      "object_type": "blob",
+      "path": "src/activities/council/meetings/teleconference-2016-11-17-1400-utc.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "52b49890196e4e48bf30ef4a69656c845f92a24e",
+      "object_type": "blob",
+      "path": "src/activities/council/meetings/teleconference-2017-01-26-1400-utc.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "bddb131d9e5b46ca728cec86d605f7779556710d",
+      "object_type": "blob",
+      "path": "src/activities/council/meetings/teleconference-2017-03-30-1300-utc.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "cabc70aee77788e435dc82d29c1a931c94d98a40",
+      "object_type": "blob",
+      "path": "src/activities/council/meetings/teleconference-2017-04-27-1300-utc.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "3c60b4c187bb4d625f286abc16bb338bf6c9cd9d",
+      "object_type": "blob",
+      "path": "src/activities/council/meetings/teleconference-2017-05-25-1300-utc.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "915f4399937cd8732ee8f0f27d6362831f0245b5",
+      "object_type": "blob",
+      "path": "src/activities/council/meetings/teleconference-2017-06-26-1300-utc.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "a3330fe9bdd49d0350b3b2e7ff262dbb1abc8d3e",
+      "object_type": "blob",
+      "path": "src/activities/council/meetings/teleconference-2017-08-31-1300-utc.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "56a9209cfccd08527d6b05aac3a9dfe58a3dcd7a",
+      "object_type": "blob",
+      "path": "src/activities/council/meetings/teleconference-2017-09-28-1300-utc.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "c5507fd01a4b356726624d932c6a7aaf6374ba5d",
+      "object_type": "blob",
+      "path": "src/activities/council/reports.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "bcaa5912992adf3736c1af8644f6a5dff28e81eb",
+      "object_type": "blob",
+      "path": "src/activities/council/reports/report-of-the-tei-council-activities-to-the-members-meeting-2006.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "b4909dab7bf09b80e0e6c160b99dc5f65cf077c0",
+      "object_type": "blob",
+      "path": "src/activities/council/reports/tcr01-report-of-the-tei-council-2003.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "849d613d9697520cb5e82216aaabb5702454e392",
+      "object_type": "blob",
+      "path": "src/activities/council/reports/tcr02-report-of-the-tei-council-to-the-members-meeting-2004.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "86d2bbdabf759c46e82b3ea8bf0bc77a48d1cfca",
+      "object_type": "blob",
+      "path": "src/activities/council/reports/tcr03-report-of-the-tei-council-to-the-members-meeting-2005.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "17706d34398d8f0b13dda2481561e81d86e5c0fe",
+      "object_type": "blob",
+      "path": "src/activities/council/reports/tei-council-annual-report-AGM-2024.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "f2fc593f2f131912afe6e3bcb3ae41fa52d9dedd",
+      "object_type": "blob",
+      "path": "src/activities/council/reports/tei-council-annual-report-AGM-2025.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "69808aa589758af8834373c4eb628011d6963258",
+      "object_type": "blob",
+      "path": "src/activities/infrastructure-group.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "978f5d79c877cadb9733cfa755dbedfcfd149a88",
+      "object_type": "blob",
+      "path": "src/activities/journal.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "bc2d0fdcd68068051acd8761d36f1df69a10a7a9",
+      "object_type": "blob",
+      "path": "src/activities/projects.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "7b7b6ab69eaf2bf4b674b42c6d33414c6399c894",
+      "object_type": "blob",
+      "path": "src/activities/projects/a-digital-comparative-edition-and-translation-of-the-shorter-chinese-saṃyukta-agama.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "94d247e806714212d6fe1af8aa0f70af1a25f271",
+      "object_type": "blob",
+      "path": "src/activities/projects/a-family-at-war-mary-martins-diary-1-january-25-may-1916.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "3c07b7d0a4c805fbad4b545b0ecd8508986cdb0b",
+      "object_type": "blob",
+      "path": "src/activities/projects/african-american-women-writers-of-the-19th-century.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "88e2f49ff4a59d32c26e316d6c0560fc93eb583c",
+      "object_type": "blob",
+      "path": "src/activities/projects/african-languages-lexicon-project-allex.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "bb3400c17571081bdabf81e5945ba1dcfee4906a",
+      "object_type": "blob",
+      "path": "src/activities/projects/album-interactif-de-paleographie-medievale.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "ce1cc24f0d25aeaaf0dc7ffb1fc51a46c1683d30",
+      "object_type": "blob",
+      "path": "src/activities/projects/alex-catalogue-of-electronic-texts.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "0c7cd46e838283a9645e92e9856504d577e1427b",
+      "object_type": "blob",
+      "path": "src/activities/projects/american-memory-from-the-library-of-congress.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "97289184c12c89afba667c9d15b2d25cd3033cb0",
+      "object_type": "blob",
+      "path": "src/activities/projects/american-verse-project.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "c0e7a41e8d6971abd6028c0d564d9babad3b57c7",
+      "object_type": "blob",
+      "path": "src/activities/projects/ancient-inscriptions-of-the-northern-black-sea.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "d809ad66242d5ec9b384643e7d57bc13af415964",
+      "object_type": "blob",
+      "path": "src/activities/projects/anemoscala-corpus-of-modern-greek-poetry.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "d6b1b6150f28d74be2e384b0bdc36a43911bc05a",
+      "object_type": "blob",
+      "path": "src/activities/projects/annotated-digital-edition-of-philipp-hainhofers-1578-1647-travel-and-collection-accounts.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "8e99b12d8319429981a6265d724ca71cce69e712",
+      "object_type": "blob",
+      "path": "src/activities/projects/aphrodisias-in-late-antiquity-2004.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "b264d6bb696a1d4ebb1b171a3757bc27c20d2281",
+      "object_type": "blob",
+      "path": "src/activities/projects/archimedes-palimpsest-project.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "8ada07360f0f29ccce504b179ed0f07344ee3f88",
+      "object_type": "blob",
+      "path": "src/activities/projects/atlas-atla-series.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "f238de423b6446048641d6ab142768cc936cac48",
+      "object_type": "blob",
+      "path": "src/activities/projects/base-de-francais-medieval-old-french-corpus.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "aa49508d3139a13eaa8dbbaf637d72aa171239a1",
+      "object_type": "blob",
+      "path": "src/activities/projects/bequali.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "80eeb9321d0634960bd62b675313cad62c8a2827",
+      "object_type": "blob",
+      "path": "src/activities/projects/berardier-org.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "77f0b8445a1fb53cafb195ac279d8834bb534c53",
+      "object_type": "blob",
+      "path": "src/activities/projects/berlin-intellectuals-1800-1830.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "ca153eee1a843f54fe3f8b1d0410d65794e5d759",
+      "object_type": "blob",
+      "path": "src/activities/projects/beta-maṣaḥǝft-manuscripts-of-ethiopia-and-eritrea.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "660fe1a6f783f099d8759d4bbf8f27a9fd5d7cd8",
+      "object_type": "blob",
+      "path": "src/activities/projects/biblioteca-digital-del-pensamiento-novohispano.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "aa291d212827d5e8aa79d55dc60c63f3c7db4ecf",
+      "object_type": "blob",
+      "path": "src/activities/projects/bibliotheca-legum-a-database-on-carolingian-secular-law-texts.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "b71049657c1a7c00dac52199b524cb67dcfb5315",
+      "object_type": "blob",
+      "path": "src/activities/projects/boccaccios-decameron.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "1f6525789f145117c89636a1c4ed7519455d6be9",
+      "object_type": "blob",
+      "path": "src/activities/projects/bodleian-library-toyota-city-imaging-project.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "67ed1f085baa4f2e11d8d81f74a6dfa791de49b1",
+      "object_type": "blob",
+      "path": "src/activities/projects/boissy-archive.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "181f03177f66bf57130958584f230f50b5edf6ee",
+      "object_type": "blob",
+      "path": "src/activities/projects/book-of-margery-kempe.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "ba17199655b053561ae1e8a7a1c1c35626bfc1ff",
+      "object_type": "blob",
+      "path": "src/activities/projects/brevier-legislative-reports.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "a84b6f0f0bd0725228ddfc3e5678bd36422f717f",
+      "object_type": "blob",
+      "path": "src/activities/projects/british-national-corpus.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "02de40c1031ab65a81414b4ff2da02e1c9994629",
+      "object_type": "blob",
+      "path": "src/activities/projects/british-women-romantic-poets-1789-1832.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "03f8d9fcbc45dcd552293a949e3643c509b0884c",
+      "object_type": "blob",
+      "path": "src/activities/projects/brown-university-scholarly-technology-group.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "c6014cc88ec066158f04de3d53e6d98034c77fee",
+      "object_type": "blob",
+      "path": "src/activities/projects/brown-university-women-writers-project.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "87888af7e595cbf3243f6cec38244aba18c40276",
+      "object_type": "blob",
+      "path": "src/activities/projects/bulgarian-national-corpus.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "e45df48b645f5631ae99d9f995468fe77c7b4bf5",
+      "object_type": "blob",
+      "path": "src/activities/projects/bvh-virtual-humanistic-libraries-bibliotheques-virtuelles-humanistes-2.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "7597be0c904439e713dad4f2d2eacdb591ab65a8",
+      "object_type": "blob",
+      "path": "src/activities/projects/bvh-virtual-humanistic-libraries-bibliotheques-virtuelles-humanistes.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "6a8092f90cf9371f4d5f88976fdb4a1032148019",
+      "object_type": "blob",
+      "path": "src/activities/projects/cambridge-digital-library.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "c3de9572860a21078c701b449c91350b9dba6c27",
+      "object_type": "blob",
+      "path": "src/activities/projects/cambridge-university-press.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "e69da7f74a57edf6807367d0ebe37a74965234bc",
+      "object_type": "blob",
+      "path": "src/activities/projects/capitularia-edition-of-the-frankish-capitularies.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "19c6343e5b2cec2e8b3e753461972144fd6713b3",
+      "object_type": "blob",
+      "path": "src/activities/projects/carl-maria-von-weber-gesamtausgabe.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "324a7296a414a3311d65651bb5dc277759e89c42",
+      "object_type": "blob",
+      "path": "src/activities/projects/cartulaire-blanc-of-the-abbey-of-saint-denis.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "b3559d331ac79f9970b1d0a354f847241f4a0761",
+      "object_type": "blob",
+      "path": "src/activities/projects/celt-project-the-corpus-of-electronic-texts.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "3b419d7703d04e2e2ede1833966b14c3ed583035",
+      "object_type": "blob",
+      "path": "src/activities/projects/chinese-buddhist-electronic-text-association.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "3d8283393f877657a5a7f1f25c8f0292c26b9096",
+      "object_type": "blob",
+      "path": "src/activities/projects/chronicon.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "ba82622872a327534430ddd4624ce1b6205ad857",
+      "object_type": "blob",
+      "path": "src/activities/projects/cms-uploads.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "7ca415954eda60c42f11a7db2e55d4cb5010db03",
+      "object_type": "blob",
+      "path": "src/activities/projects/colonial-despatches-the-colonial-despatches-of-vancouver-island-and-british-columbia-1846-1871.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "bfc2745a1dafb6a5e390c5a7de20891c1babeea5",
+      "object_type": "blob",
+      "path": "src/activities/projects/colonialab.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "d9efd5a51efa7717a5cfccfe2bdf0c510dad4756",
+      "object_type": "blob",
+      "path": "src/activities/projects/computational-linguistics-for-metadata-building-climb.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "8fa79cc2b11917af47acab759cb46d52397bac69",
+      "object_type": "blob",
+      "path": "src/activities/projects/copadocs.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "e09697f40c642359fd5b4f29c3f9d35017ff02c5",
+      "object_type": "blob",
+      "path": "src/activities/projects/corpus-encoding-standard-ces.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "38e2ee4caa7fcd658cb0e05952112c786df75c7c",
+      "object_type": "blob",
+      "path": "src/activities/projects/corpus-toneelkritiek-interbellum.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "e92d7eb3ba11eedf18c3451e250ef469895a2bd8",
+      "object_type": "blob",
+      "path": "src/activities/projects/correspsearch.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "8712d26a1639a56e0158fcf3640c873a4dc7f288",
+      "object_type": "blob",
+      "path": "src/activities/projects/croatiae-auctores-latini.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "94a8c8cc0e95c5fc2e9fbc50b69862524319ad47",
+      "object_type": "blob",
+      "path": "src/activities/projects/croatian-language-corpus-hrvatski-jezini-korpus.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "35aff0b5934c5b39ac0de2b009d2b91f6e3675f2",
+      "object_type": "blob",
+      "path": "src/activities/projects/cursus-project.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "ec6b513b40c5c83b0ca9298ba52967dbd2667650",
+      "object_type": "blob",
+      "path": "src/activities/projects/dafydd-ap-gwilym-edition.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "5d2629d01416508b4fea5369dfbd572d20f07bf4",
+      "object_type": "blob",
+      "path": "src/activities/projects/dalf-digital-archive-of-letters-by-flemish-authors-and-composers-from-the-19th-20th-century.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "c270c7edad9bfc2e959aab58aa6879ea3b2da32a",
+      "object_type": "blob",
+      "path": "src/activities/projects/dantes-lemmatized-works.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "5eb31fd873db14507406b4f4c35ecb99633f83db",
+      "object_type": "blob",
+      "path": "src/activities/projects/dariahteach.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "8874e588040276ce97113157b66be21b34c892d7",
+      "object_type": "blob",
+      "path": "src/activities/projects/darwin-correspondence-project.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "4d6bdd3ec013a5bcd1c29fb52d544d30fbb7f54d",
+      "object_type": "blob",
+      "path": "src/activities/projects/der-junge-goethe-in-seiner-zeit.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "a017f31c6f6d14915f50f99625701e2bc18fbe1f",
+      "object_type": "blob",
+      "path": "src/activities/projects/deutsches-textarchiv-the-german-text-archive.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "2bcb330381dac15e0392ea1b01337af74dc20b86",
+      "object_type": "blob",
+      "path": "src/activities/projects/diccionario-electronico-multilingue-de-verbos-amplios-de-movimiento-andar-ir-venir-volver-multilingual-electronic-dictionary-of-broad-meaning-motion-verbs-andar-walk-ir.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "a66c02277a045dd89fb504c1a000c973c729c826",
+      "object_type": "blob",
+      "path": "src/activities/projects/die-musik-in-geschichte-und-gegenwart-mgg.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "dfc6dd037fa88aa0d974a1048c53d9f596b2139c",
+      "object_type": "blob",
+      "path": "src/activities/projects/digital-archives-and-pacific-cultures.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "bd16f89c3491511b30abd2718f9da38f89032f92",
+      "object_type": "blob",
+      "path": "src/activities/projects/digital-averroes-research-environment-dare.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "b9fc5a66739f261e53f5ab1e9561a2b29ccf74e4",
+      "object_type": "blob",
+      "path": "src/activities/projects/digital-dictionary-of-buddhism-and-cjkv-e-dictionary.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "6f87b09c8efab1c129ce99af85a9f942f3a15f9c",
+      "object_type": "blob",
+      "path": "src/activities/projects/digital-litteratur.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "26715db755ca149f0e5e2ed63ff144aa40dcb444",
+      "object_type": "blob",
+      "path": "src/activities/projects/digital-mitford-the-mary-russell-mitford-archive.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "4d04bf6145f593ff1c5ef5a0e6d85cf48da42d8c",
+      "object_type": "blob",
+      "path": "src/activities/projects/digital-quaker-collection.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "58f976c13a908a2204d8b1466cf7cb5981999e60",
+      "object_type": "blob",
+      "path": "src/activities/projects/digitale-bibliotheek-voor-de-nederlandse-letteren-dbnl.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "e3d165bc3da0bb107854764870c896f1f3a759e3",
+      "object_type": "blob",
+      "path": "src/activities/projects/digitales-worterbuch-der-deutschen-sprache-the-digital-dictionary-of-the-german-language.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "1afb2b829914d18f7b135a11836cacd7a6e28191",
+      "object_type": "blob",
+      "path": "src/activities/projects/dingler-online.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "e969120b61ce70b3a4c0b47912d66ea796032760",
+      "object_type": "blob",
+      "path": "src/activities/projects/documenting-the-american-south.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "09f0caffd9e6b5a4a03e268d9538778d01b52c86",
+      "object_type": "blob",
+      "path": "src/activities/projects/duxbury-online-historical-archive.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "962d6f47c7702442468b800f4b42a05f42177c81",
+      "object_type": "blob",
+      "path": "src/activities/projects/early-19th-century-russian-readership-culture.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "ff744de4c3a676fab0e365d7edcacc8bad0f0f5a",
+      "object_type": "blob",
+      "path": "src/activities/projects/early-american-fiction.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "9060abc44f51cc2ad8951b66a7c98afb4b156922",
+      "object_type": "blob",
+      "path": "src/activities/projects/early-americas-digital-archive.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "f6ed5bbfd460995c0a3ce5c1fd412da1732a9b9a",
+      "object_type": "blob",
+      "path": "src/activities/projects/early-canada-online.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "7b192abb797bd8f6d8becc6beba486afddc4fc9e",
+      "object_type": "blob",
+      "path": "src/activities/projects/early-irish-glossaries-database.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "03bb19b6eba6a05bb624be61be1a81f1e9e9d466",
+      "object_type": "blob",
+      "path": "src/activities/projects/early-modern-french-women-writers.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "d0239d31878c943df2cbfac93ec6d151e8aeda42",
+      "object_type": "blob",
+      "path": "src/activities/projects/edvard-munchs-writings.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "e212a74418c4dcf02f1747a83baf6090231c8ff8",
+      "object_type": "blob",
+      "path": "src/activities/projects/eighteenth-century-poetry-archive.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "036a5ebb3fae1cc9e147dee0ebbd9a9a5661c049",
+      "object_type": "blob",
+      "path": "src/activities/projects/electronic-archive.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "1f556ccdaf51984919dd1c1db1cf87cd5aeadff1",
+      "object_type": "blob",
+      "path": "src/activities/projects/emblem-project-utrecht.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "a0a5fa24202860c6f21e2a1937225497fe11b11a",
+      "object_type": "blob",
+      "path": "src/activities/projects/emily-dickinson-archive.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "48619b8c8e331dfce485f986c05f30ea8346aa73",
+      "object_type": "blob",
+      "path": "src/activities/projects/english-poetry-full-text-database.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "aad6d97a7f6bdbd6be3e6d779a34357cbdd6d451",
+      "object_type": "blob",
+      "path": "src/activities/projects/ernst-barlach-bibliographical-listing-of-secondary-literature.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "cd00845df632c412be457708b6f278a735de1e0c",
+      "object_type": "blob",
+      "path": "src/activities/projects/europeana-regia.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "53299cb4e47e31a464011fd172e85099aa45bf27",
+      "object_type": "blob",
+      "path": "src/activities/projects/ex-bibliotheca-gondomariensi.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "93ccc4801778089eea72f3401fe7784e8d55aac8",
+      "object_type": "blob",
+      "path": "src/activities/projects/experimentation-de-normes-de-balisage-en-langues-partenaires.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "db660b637632be7b6e5a36e14f57cc478796d61f",
+      "object_type": "blob",
+      "path": "src/activities/projects/extracts-from-the-diary-of-robert-graves.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "29652610b38fb79c848f0b5f8d73e239a71414d8",
+      "object_type": "blob",
+      "path": "src/activities/projects/for-better-for-verse.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "f907d393225b7e60ec9f2a2c87243238ad3411d1",
+      "object_type": "blob",
+      "path": "src/activities/projects/fortunoff-video-archive-for-holocaust-testimonies.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "3b9754a420146ad60e664a14cbda3cdefba6be58",
+      "object_type": "blob",
+      "path": "src/activities/projects/freedict.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "8d6b1a416ff2e889a494be3c34396451ec3d3971",
+      "object_type": "blob",
+      "path": "src/activities/projects/freiburger-anthologie-lyrik-und-lied.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "3c769b3b01abece548dcf8aa9fa164444c90cad2",
+      "object_type": "blob",
+      "path": "src/activities/projects/greek-manuscripts-in-sweden.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "70339a1865fefeb018216c3830193478ed67e40d",
+      "object_type": "blob",
+      "path": "src/activities/projects/grundtvigs-works.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "281b2e317ac3c091c27a7484153b55bff8a01722",
+      "object_type": "blob",
+      "path": "src/activities/projects/henrik-ibsens-writings.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "36c9418bc9ec477ee403dd7f47cb65d73b3e17c3",
+      "object_type": "blob",
+      "path": "src/activities/projects/hypergrammar.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "bb78a75a2d3f0586cac500658d8adc956a8dc747",
+      "object_type": "blob",
+      "path": "src/activities/projects/icelandic-online-dictionary-and-readings.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "13f9bd4d61b96f88cfaa962b5fd6bd1f3811c6ef",
+      "object_type": "blob",
+      "path": "src/activities/projects/icon-programming-for-humanists-second-edition.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "5beb9b2265c2e1defbdf97028e38a7e47e4f787a",
+      "object_type": "blob",
+      "path": "src/activities/projects/image-to-text-mary-hamilton-papers.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "e7aeca0afa34a72851c6bbb3efe52667d27fe1eb",
+      "object_type": "blob",
+      "path": "src/activities/projects/in-transition-selected-poems-by-the-baroness-elsa-von-freytag-loringhoven.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "94366b931f844ff0fda9506cc6592f1f17e8cdf7",
+      "object_type": "blob",
+      "path": "src/activities/projects/indiana-authors-and-their-books.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "7492ea2181e52e23b1830756c11f16c46b1a1592",
+      "object_type": "blob",
+      "path": "src/activities/projects/indiana-magazine-of-history.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "bc5d9623e9012d6c297017d5909788a849a76359",
+      "object_type": "blob",
+      "path": "src/activities/projects/indiana-university-bloomington-faculty-council-minutes.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "513b162fac7d6324bda3c7c49b5bcac2c7dfe0b4",
+      "object_type": "blob",
+      "path": "src/activities/projects/indiana-university-board-of-trustees-minutes.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "3f723a1fe3bd173c9765260d80b00bfc75339402",
+      "object_type": "blob",
+      "path": "src/activities/projects/indiana-university-library-electronic-text-resources-letrs.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "0640eb519b89e60011b27ece1091d6cd5413ce43",
+      "object_type": "blob",
+      "path": "src/activities/projects/inscriptiones-antiquae-orae-septentrionalis-ponti-euxini-iospe.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "c41991e7a0cbfc02d75fa4200f3249344841aade",
+      "object_type": "blob",
+      "path": "src/activities/projects/inscriptions-of-aphrodisias-2007.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "80b82b6bf7149945129e18dc17ed1a09bfae747a",
+      "object_type": "blob",
+      "path": "src/activities/projects/inscriptions-of-greek-cyrenaica.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "38b9d5d07270465be07e6d67814d49232e0647c8",
+      "object_type": "blob",
+      "path": "src/activities/projects/inscriptions-of-roman-cyrenaica.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "83447df1ba48c6cbdd27ee133ef6380ec7d8dbf6",
+      "object_type": "blob",
+      "path": "src/activities/projects/inscriptions-of-roman-tripolitania.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "39f6e88b0652030f31d6492ed0ed80c126033425",
+      "object_type": "blob",
+      "path": "src/activities/projects/integrating-digital-papyrology.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "9c43a847a2bf9ca6d86a22d2da8c099847712c04",
+      "object_type": "blob",
+      "path": "src/activities/projects/internet-library-of-early-journals.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "7832199a115fd900e73e695d5aa45af5fb2487a1",
+      "object_type": "blob",
+      "path": "src/activities/projects/japanese-text-initiative.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "6468f6db6e2110e1f31b507b6830ed2b9699f023",
+      "object_type": "blob",
+      "path": "src/activities/projects/john-foxes-book-of-martyrs-variorum-edition-online.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "63af7c1500ef90901e9959db2f39d890686d876c",
+      "object_type": "blob",
+      "path": "src/activities/projects/jos-corpora-of-slovene.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "5f2ee555781d94afa2fa4a479c4a50c54b8fe22c",
+      "object_type": "blob",
+      "path": "src/activities/projects/kolb-proust-archive-for-research.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "507948fccae40f7545d134d977e0993fe7a5f344",
+      "object_type": "blob",
+      "path": "src/activities/projects/law-in-aberdeen-council-registers-1398-1511.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "76ab0cdb5ea37d47afab63b1f766533905e75b99",
+      "object_type": "blob",
+      "path": "src/activities/projects/ldod-archive-collaborative-digital-archive-of-the-book-of-disquiet.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "eb3b5f8a13291c8541b352954591c700a8433aa5",
+      "object_type": "blob",
+      "path": "src/activities/projects/le-mariage-sous-lancien-regime.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "2fc18b4d102d1945eb068e1ff3608e2b447e9a9c",
+      "object_type": "blob",
+      "path": "src/activities/projects/les-dossiers-de-bouvard-et-pecuchet-flaubert.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "316b1bdbbcfdafba7a3cb39f77d46d8a3ec882ff",
+      "object_type": "blob",
+      "path": "src/activities/projects/manuscript-pamphleteering-in-early-stuart-england.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "9cb1b8aa7944d356b2dc6b878899a5ddc854a497",
+      "object_type": "blob",
+      "path": "src/activities/projects/mark-twain-project-online.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "3061030607b88855d860de575f63da1609b24190",
+      "object_type": "blob",
+      "path": "src/activities/projects/medieval-nordic-text-archive-menota.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "54123d6b98ee9fb2eb437dbb7bda5849930ca7e6",
+      "object_type": "blob",
+      "path": "src/activities/projects/miguel-de-cervantes-digital-library.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "5b2790774a07634c468a4c550ffce1451d4bbff5",
+      "object_type": "blob",
+      "path": "src/activities/projects/model-editions-partnership-historical-editions-in-the-digital-age.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "07fa19a1b7f736b31cc101a0d6dc01a46c67c2ad",
+      "object_type": "blob",
+      "path": "src/activities/projects/morris-on-line-edition.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "06f36bff7bed438e8b64e061b969c02cd995d7e1",
+      "object_type": "blob",
+      "path": "src/activities/projects/multext-east.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "3b629d8c1d7737be68f39d37ccabd0a1e2f0a0ed",
+      "object_type": "blob",
+      "path": "src/activities/projects/multilingual-text-tools-and-corpora-multext.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "9a2a170256c19517806b74d135c17a4ed7fc806d",
+      "object_type": "blob",
+      "path": "src/activities/projects/mymanuskrip-malaysian-manuscripts-a-digital-library.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "eefdf7d1b9c781d5a06cf2003eaeac9388083c07",
+      "object_type": "blob",
+      "path": "src/activities/projects/national-corpus-of-polish.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "60a6d56a6ff0a38337ca0b8728c55f486325644d",
+      "object_type": "blob",
+      "path": "src/activities/projects/new-left-review.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "14c9106f12edbcd403ec49bdc0306e6046c34025",
+      "object_type": "blob",
+      "path": "src/activities/projects/new-zealand-electronic-text-centre.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "8f1c2898869d2bd018ca32d5d3e244961f263a20",
+      "object_type": "blob",
+      "path": "src/activities/projects/newcastle-electronic-corpus-of-tyneside-english.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "1c387100440aba3841bc71f0f87a6a570210a0e2",
+      "object_type": "blob",
+      "path": "src/activities/projects/newton-manuscript-project.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "62167de0837cc805f4a1565474e1c31a66b2727a",
+      "object_type": "blob",
+      "path": "src/activities/projects/norsk-ordbok-2014.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "813d82d183ff3f1a3c4733a3e2a455cf91a477af",
+      "object_type": "blob",
+      "path": "src/activities/projects/ocimco-oxford-cambridge-islamic-manuscripts-catalogue-online.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "2ef4016fb4ea60ecc0b3ce4b925182d75660fd92",
+      "object_type": "blob",
+      "path": "src/activities/projects/oxford-text-archive.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "0d8d8768be9aac06767b8cf35119598d0e4cdfea",
+      "object_type": "blob",
+      "path": "src/activities/projects/p-s-post-scriptum.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "08209bb1bc7f0b341354935a2c9f5a05b4f79a09",
+      "object_type": "blob",
+      "path": "src/activities/projects/partial-transcription-of-john-lydgates-fall-of-princes.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "ec3fd1df5a63aa28e16489ec6d445812a9cff724",
+      "object_type": "blob",
+      "path": "src/activities/projects/patristic-text-archive.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "b829ddc1e960d790fdc2700c0c063de03973397d",
+      "object_type": "blob",
+      "path": "src/activities/projects/perseus-project.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "53d17aa8fd0cc45574c2a64bc1c04cca97b1fd0d",
+      "object_type": "blob",
+      "path": "src/activities/projects/peter-plaoul-the-electronic-critical-edition-of-plaouls-commentary-on-the-sentences.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "208153d81d7469051b40217367d026393ebcf346",
+      "object_type": "blob",
+      "path": "src/activities/projects/poetess-archive.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "146cb9519916c5c32bc3faac963c2f97a0541dff",
+      "object_type": "blob",
+      "path": "src/activities/projects/polish-language-of-the-xx-century-sixties.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "3e204e9670f5aaccc2b872f77946f75cea728364",
+      "object_type": "blob",
+      "path": "src/activities/projects/project-lorelei.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "fc5b5f757e727abbfe5c28864572ad4eaf5532f9",
+      "object_type": "blob",
+      "path": "src/activities/projects/proquest.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "fda56538297acf9aa521f0899e68967781050a0b",
+      "object_type": "blob",
+      "path": "src/activities/projects/religious-peacekeeping-and-peacemaking-in-europe-1500-1800-digital-edition-of-early-modern-religious-peace-treaties.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "3e7a5b68bbe470f667e1f97f3e361802ff4f37e2",
+      "object_type": "blob",
+      "path": "src/activities/projects/repertorium-of-old-bulgarian-literature-and-letters.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "98d5c6dacac381abcc356745c6cb6e4055ec14b2",
+      "object_type": "blob",
+      "path": "src/activities/projects/resianica-dictionary.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "045c1bffaab8196a8098227a28a6d203a9b39ba7",
+      "object_type": "blob",
+      "path": "src/activities/projects/roles-et-pouvoirs-des-femmes-au-xvie-siecle-dans-la-france-de-louest.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "c69ecf17cb9b6fb7f7f502b47cf8f55f6aca5194",
+      "object_type": "blob",
+      "path": "src/activities/projects/saint-patricks-confessio-hyperstack.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "ca0e245ffa7584fcf3456c215848e52a7e03b075",
+      "object_type": "blob",
+      "path": "src/activities/projects/salisbury-square.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "e33d0bbf97e5ee24e09dd0ed58282091cfb98ffd",
+      "object_type": "blob",
+      "path": "src/activities/projects/sandrart-net.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "2a1be81d164b4bd4b3231571af775d42c58d406f",
+      "object_type": "blob",
+      "path": "src/activities/projects/sarit.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "727f919d746ac6189e7af44d713fa294defc1277",
+      "object_type": "blob",
+      "path": "src/activities/projects/sbl-slovene-biograpical-lexicon.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "c95f83be3982d2dfd1ba7e19b93ed19907526f50",
+      "object_type": "blob",
+      "path": "src/activities/projects/scholarly-digital-editions-of-slovenian-literature.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "636cdf6916d57dfac6da989672d6c3f9fe59db08",
+      "object_type": "blob",
+      "path": "src/activities/projects/stories-for-all-time-the-icelandic-fornaldarsogur.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "abd490da16193117285f75ff7fa2ecb781308260",
+      "object_type": "blob",
+      "path": "src/activities/projects/szeged-corpus-a-natural-language-processed-hungarian-corpus.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "309afa33ffa1dfbf7eecfcd278d85edc0b03d262",
+      "object_type": "blob",
+      "path": "src/activities/projects/tarsian-a-digital-edition-of-first-corinthians-in-vaticanus-arabicus-13.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "3eb980d8b01210168192ede26b95adf7fb8bfe37",
+      "object_type": "blob",
+      "path": "src/activities/projects/tell-us-about-your-project.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "64eb16bd9dbcc7c26570b2b9d7a86fea012044f9",
+      "object_type": "blob",
+      "path": "src/activities/projects/the-algernon-charles-swinburne-project.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "09a988e2af84c5a3a21497cd80edf358d889effc",
+      "object_type": "blob",
+      "path": "src/activities/projects/the-anglo-saxon-poetry-project.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "921afa78b367699b4c652902e3bca1c23812a65b",
+      "object_type": "blob",
+      "path": "src/activities/projects/the-canadian-confederation-debates.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "c477aaad0d5b530b71dc942ca292c3851532f7eb",
+      "object_type": "blob",
+      "path": "src/activities/projects/the-charles-brockden-brown-electronic-archive-and-scholarly-edition.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "a75e932eb5ac68312bc71196a074d45a995a3061",
+      "object_type": "blob",
+      "path": "src/activities/projects/the-charrette-project.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "0316e954acc8237ec87eb57d237dfe3f03df2ee3",
+      "object_type": "blob",
+      "path": "src/activities/projects/the-chymistry-of-isaac-newton.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "d344449b99bfb98a3d25a201e833ab7a227dc353",
+      "object_type": "blob",
+      "path": "src/activities/projects/the-curious-travellers-project.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "8b3e4dcbbe17c59d292944b6118b33b0d16ff360",
+      "object_type": "blob",
+      "path": "src/activities/projects/the-digital-latin-librarys-library-of-digital-latin-texts.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "33cd5a415377930459e78ab37e29b04453bfcba3",
+      "object_type": "blob",
+      "path": "src/activities/projects/the-digital-temple.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "0698c4e773312eda1e4e1e0dab307ddb81f33b0b",
+      "object_type": "blob",
+      "path": "src/activities/projects/the-digital-walters.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "c980b755b36d0e5e0c5c74d222f95696534b4002",
+      "object_type": "blob",
+      "path": "src/activities/projects/the-doegen-records-web-project.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "a0b78070600a0aafb2c075d3f8891366edeefb63",
+      "object_type": "blob",
+      "path": "src/activities/projects/the-electronic.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "7f3c8ba733bd482e1dd1a5c99860cbb65a7ec93c",
+      "object_type": "blob",
+      "path": "src/activities/projects/the-english-norwegian-parallel-corpus.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "6a94b5652e2099bbae8fb500d93f84f70549598a",
+      "object_type": "blob",
+      "path": "src/activities/projects/the-epidoc-collaborative.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "eba36f71259588714383b49996066317224acd05",
+      "object_type": "blob",
+      "path": "src/activities/projects/the-fida-corpus-of-slovene-language.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "7028b7780fdb275ae7bbfd5716311ff58ab65830",
+      "object_type": "blob",
+      "path": "src/activities/projects/the-future-fire.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "00e2fa8e0e5655d807f0a429ed66fc81fc658a0c",
+      "object_type": "blob",
+      "path": "src/activities/projects/the-harry-watkins-diary-digital-edition.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "83a03636c66e5de9296adc89b4d164804c8d13a5",
+      "object_type": "blob",
+      "path": "src/activities/projects/the-history-of-the-accademia-di-san-luca-c-1590-1635-documents-from-the-archivio-di-stato-di-roma.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "15954be93d7f1e30c7d6ffeb72bd2634e03d5470",
+      "object_type": "blob",
+      "path": "src/activities/projects/the-kapellmeisterbuch-of-the-abbey-of-einsiedeln.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "474059a6ddcf1dba202fb3449b181a4f536a45fa",
+      "object_type": "blob",
+      "path": "src/activities/projects/the-legacy-tobacco-documents-library.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "ce1173ee42cad6d19d6b5fe5855f0118f9d1234b",
+      "object_type": "blob",
+      "path": "src/activities/projects/the-map-of-early-modern-london.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "86574e87752e533b8a19665acf1bf9ad57ce6a0c",
+      "object_type": "blob",
+      "path": "src/activities/projects/the-mary-baker-eddy-papers-project.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "e7e0e861e5f63a4def2c932a7450c6ee4c8bfa79",
+      "object_type": "blob",
+      "path": "src/activities/projects/the-medieval-review.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "269113421ad25ed9dfb8850427092c7eef5ae14c",
+      "object_type": "blob",
+      "path": "src/activities/projects/the-open-siddur-project.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "a5a33287a35322809b8041b1fb87cb4aa3f1473c",
+      "object_type": "blob",
+      "path": "src/activities/projects/the-origin-of-notaries-public-in-asturias.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "7f1401427c67617c2d6bdb5698a1d4e972a17096",
+      "object_type": "blob",
+      "path": "src/activities/projects/the-orlando-project-an-integrated-history-of-womens-writing-in-the-british-isles.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "3a3510655ae43e2be85a08b997bc8fb2adfb8bc9",
+      "object_type": "blob",
+      "path": "src/activities/projects/the-oslo-multilingual-corpus.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "2114804f161f31a9fa72bfc49bef42b9fd85ec36",
+      "object_type": "blob",
+      "path": "src/activities/projects/the-scandinavian-canadian-studies-journal.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "b653efeddfb3d838c881adbbfb50f99369d3d290",
+      "object_type": "blob",
+      "path": "src/activities/projects/the-scholarly-electronic-text-and-image-service.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "0b2b4441e81720a68d91817e145117368e2ceffa",
+      "object_type": "blob",
+      "path": "src/activities/projects/the-shelley-godwin-archive.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "ecd8a25edd43bbf148a2c9a9617109c1c4a79ec9",
+      "object_type": "blob",
+      "path": "src/activities/projects/the-sternberg-project-commented-edition-of-the-correspondence-to-and-from-kaspar-maria-von-sternberg-1761-1838.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "83f263f4cf7629f1407d8b400a3eb5c7788b50f6",
+      "object_type": "blob",
+      "path": "src/activities/projects/the-thomas-macgreevy-archive.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "6b0770c217b3172d9287edd2721beaf22d584f00",
+      "object_type": "blob",
+      "path": "src/activities/projects/the-versioning-machine.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "b13a4864b83d7e0c21512902f4acb50db03e88a7",
+      "object_type": "blob",
+      "path": "src/activities/projects/the-world-of-dante.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "d506c18077e145bd82a00f9397df0089fc1f34e7",
+      "object_type": "blob",
+      "path": "src/activities/projects/the-writings-of-james-fenimore-cooper.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "3b61ae689302b277d5bac0bb00023ff159325034",
+      "object_type": "blob",
+      "path": "src/activities/projects/the-yellow-nineties-online.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "786248cc3baf7979601c06a7f890e45dcfe6ae86",
+      "object_type": "blob",
+      "path": "src/activities/projects/theatre-classique-1550-1890.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "282c40e044934766a9149b43eacafc816a307eba",
+      "object_type": "blob",
+      "path": "src/activities/projects/thesaurus-musicarum-italicarum-tmi.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "ada888b125b088d185003bae43975b004e261ef4",
+      "object_type": "blob",
+      "path": "src/activities/projects/thomas-gray-archive.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "b457df91033d27695b570529b83b98941386a4d1",
+      "object_type": "blob",
+      "path": "src/activities/projects/ticha-a-digital-text-explorer-for-colonial-zapotec.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "0cba70c0cf09307eeac776fad29b988cd7c56201",
+      "object_type": "blob",
+      "path": "src/activities/projects/traveldigital.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "42d3ebf75499d1814603b8107c6e45e11b158e4c",
+      "object_type": "blob",
+      "path": "src/activities/projects/united-farm-workers-of-america-california-collective-bargaining-agreements-collection.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "adf9372b2ec304e126b77ff3ee7cf18ea9a84d49",
+      "object_type": "blob",
+      "path": "src/activities/projects/university-of-michigan-humanities-text-initiative-hti.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "57aaf32e12cc773b1d1386d1e13793925740f488",
+      "object_type": "blob",
+      "path": "src/activities/projects/university-of-virginia-electronic-text-center.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "609c5facd42193c4e37fe432438b8b531dadb110",
+      "object_type": "blob",
+      "path": "src/activities/projects/university-of-virginia-library.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "03dc37478e1e99c54b9065bdadd3f8b99d1ffba6",
+      "object_type": "blob",
+      "path": "src/activities/projects/using-xml-to-generate-research-tools-for-wittgenstein-scholars-by-collaborative-groupwork.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "7cf0cf097f24f2b5a19b872af0353c9e9ae5af4a",
+      "object_type": "blob",
+      "path": "src/activities/projects/victorian-women-writers-project-2.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "8bfdfda46e1ea877b025990b564412fd9bae1859",
+      "object_type": "blob",
+      "path": "src/activities/projects/victorian-women-writers-project.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "cc007365ab9491d9c17c85fe92c0417baf8081af",
+      "object_type": "blob",
+      "path": "src/activities/projects/vincent-van-gogh-the-letters.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "b63551e0a81613bc48069242576729a1e895e700",
+      "object_type": "blob",
+      "path": "src/activities/projects/voices-of-the-holocaust.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "9306a2c93026c7c298f6be4b3c41c7fa4c7445b6",
+      "object_type": "blob",
+      "path": "src/activities/projects/voltaire-foundation.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "4df61ed2aa5e92447599fc04960fdd4348f10071",
+      "object_type": "blob",
+      "path": "src/activities/projects/womens-travel-writing-1830-1930.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "dfcd80c3372c17395534d4f9b64a28be660f9c17",
+      "object_type": "blob",
+      "path": "src/activities/projects/wright-american-fiction-1851-1875.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "b1b92062fa2cff7a683dcfd79d5ec128205a6ba1",
+      "object_type": "blob",
+      "path": "src/activities/projects/ɛpsilon.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "6eb0b3424c5c6bbe3be85f99dd19a8b80684aec8",
+      "object_type": "blob",
+      "path": "src/activities/projects/​​istex-socle-de-la-bibliotheque-scientifique-numerique-nationale.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "52db78aec560ed55521474516c971b5282cac9bd",
+      "object_type": "blob",
+      "path": "src/activities/rahtz-prize-for-tei-ingenuity.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "172124979e939a5cd732a85e7c24789468f5c1f2",
+      "object_type": "blob",
+      "path": "src/activities/sig.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "bf4ef6dcf643b64897573f1edb34147f939d87e9",
+      "object_type": "blob",
+      "path": "src/activities/sig/ai-tools-for-tei.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "13161e84934988f6b75a8ca6b95276b2671cd33f",
+      "object_type": "blob",
+      "path": "src/activities/sig/authoring.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "ca0a7065848f13633959f3b39ea341477c33d0a5",
+      "object_type": "blob",
+      "path": "src/activities/sig/cmc.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "ba8e4cfe23a0d7d71dc0061a2cbc4c93ef5b67a6",
+      "object_type": "blob",
+      "path": "src/activities/sig/computable.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "30f747e3ffc063fb7fbc86ce40be11a01c70e6c3",
+      "object_type": "blob",
+      "path": "src/activities/sig/correspondence.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "ffb148e4d52ceed4c3c134e55e695eae32f560d2",
+      "object_type": "blob",
+      "path": "src/activities/sig/correspondence/tei-sig-on-correspondence-minutes-college-station-nov-9-2012.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "d1ca41aee66e58127ff73c84540460ba18e47df9",
+      "object_type": "blob",
+      "path": "src/activities/sig/correspondence/tei-sig-on-correspondence-minutes-evanston-oct-22-2014.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "89b98b2a72c7c50954580bdfbc70663510e654a8",
+      "object_type": "blob",
+      "path": "src/activities/sig/correspondence/tei-sig-on-correspondence-minutes-from-the-ann-arbor-meeting-14-november-2009.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "6894ab4ef048e892b9f3eb0054638fece33579d4",
+      "object_type": "blob",
+      "path": "src/activities/sig/correspondence/tei-sig-on-correspondence-minutes-from-the-london-meeting-8-november-2008.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "ec3785cd2429832154502278f50fa0422bbe13eb",
+      "object_type": "blob",
+      "path": "src/activities/sig/correspondence/tei-sig-on-correspondence-minutes-rome-oct-3-2013.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "752a809186ca48668952a00a96814e3f7b92d2c8",
+      "object_type": "blob",
+      "path": "src/activities/sig/correspondence/tei-sig-on-correspondence-minutes-wurzburg-oct-15-2011.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "dc862b916d50a443a3f3148b3e9c6a91f70cf248",
+      "object_type": "blob",
+      "path": "src/activities/sig/correspondence/tei-sig-on-correspondence-minutes-zadar-nov-13-2010.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "7b08b1fcd3b58ef2c8edc5b94079b6d5525cb5f8",
+      "object_type": "blob",
+      "path": "src/activities/sig/eastasian.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "1b123c816bb9967bf9ac00f542aa1b593333f5cb",
+      "object_type": "blob",
+      "path": "src/activities/sig/education.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "acabb5fbfd3dd305ea8ac66e810ec60332da8a28",
+      "object_type": "blob",
+      "path": "src/activities/sig/education/key-xml.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "71b25bcab0efb096b487761de28dff9169824065",
+      "object_type": "blob",
+      "path": "src/activities/sig/education/summary-of-tei-training-sig-meeting-2.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "9bca8c89858fa28a0438df2b4fa736af0877a24d",
+      "object_type": "blob",
+      "path": "src/activities/sig/education/summary-of-tei-training-sig-meeting.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "373e6df48fc00360abba619312161c84a07319c8",
+      "object_type": "blob",
+      "path": "src/activities/sig/education/tei-education-sig-meeting-minutes-november-2009.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "287e490542095033a9d6dd6cc99b6d19a147c22b",
+      "object_type": "blob",
+      "path": "src/activities/sig/education/tei-training-short-courses.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "b9b5320954109ab3b44e338c8c0ea0b0e44e4d2b",
+      "object_type": "blob",
+      "path": "src/activities/sig/graphics.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "dbfb25a09d38723b4955f57ef4bfddaf4a7c3762",
+      "object_type": "blob",
+      "path": "src/activities/sig/libraries.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "8200684fa8a2c1d9fb1462f4fd121380027ea4a0",
+      "object_type": "blob",
+      "path": "src/activities/sig/libraries/digital-library-federation-tei-workgroup-2006-02-meeting-minutes.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "9c301a6ead5fa8677589dd5607a4e7f572dbf143",
+      "object_type": "blob",
+      "path": "src/activities/sig/manuscript.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "aabd1e6123cb584ecadb2c087af520cbb1710cfd",
+      "object_type": "blob",
+      "path": "src/activities/sig/manuscript/meeting-of-the-tei-manuscript-sig-november-14-2009-ann-arbor.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "c8f16ad2b2e8c6f17ac49860f532f58c7e9b4db6",
+      "object_type": "blob",
+      "path": "src/activities/sig/manuscript/summary-of-tei-manuscript-sig-meeting.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "f0d024b22b537b3347fc9a48aaf0a051cf039d28",
+      "object_type": "blob",
+      "path": "src/activities/sig/manuscript/tei-manuscript-sig-meeting-report-01.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "834cb7d3273d36434f789873c07b6e845b3399ae",
+      "object_type": "blob",
+      "path": "src/activities/sig/minutes-from-the-sig-convenors-meeting.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "e659d036296ae7bae2ca1ba83688ff570cfc1ee9",
+      "object_type": "blob",
+      "path": "src/activities/sig/music.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "52b1a4ff972d887b5826665252fae83a3cd6a91b",
+      "object_type": "blob",
+      "path": "src/activities/sig/music/meeting-of-the-tei-music-sig-november-14-2009-ann-arbor.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "130b1c66150f4617d62e4a5882f1b559df4971ba",
+      "object_type": "blob",
+      "path": "src/activities/sig/music/meeting-of-the-tei-music-sig-november-8-2008-london.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "5b6219bf2eeced3e713c3d5c102c169858ff904c",
+      "object_type": "blob",
+      "path": "src/activities/sig/ontologies.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "0a00be7f5da35d79cff95de96a5f2adc4f9193f8",
+      "object_type": "blob",
+      "path": "src/activities/sig/overlap.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "c484e5d51101a579790c4d9b7ab0346b7f5d7d2c",
+      "object_type": "blob",
+      "path": "src/activities/sig/overlap/minutes-of-the-tei-overlap-sig-meeting-in-sofia-29-october-2005.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "54aa9583e161458db5d104f0ef959da704d78162",
+      "object_type": "blob",
+      "path": "src/activities/sig/overlap/overlap-sig-meeting-minutes-2.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "434140d33d1f19850278bbeb0485c055f0d3259f",
+      "object_type": "blob",
+      "path": "src/activities/sig/overlap/overlap-sig-meeting-minutes.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "d13d798d5432743a257b82a09508d67cc596defa",
+      "object_type": "blob",
+      "path": "src/activities/sig/publishing.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "03013c23d8679e090ddfbd643fc19d1947dea5b9",
+      "object_type": "blob",
+      "path": "src/activities/sig/publishing/scholarly-publishing-sig-tei-xml-workflows-and-best-practices.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "9ec7304f6b436e014ed491ddf1b03e45e3ac6db3",
+      "object_type": "blob",
+      "path": "src/activities/sig/publishing/tei-scholarly-publishing-sig-minutes-from-14-november-2009.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "09d08b06a6d6b460727e46900b1d5800f9c65ee9",
+      "object_type": "blob",
+      "path": "src/activities/sig/sig-rules-and-regulations.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "8059207c60c0ee7929db493a92e53168a1a53f14",
+      "object_type": "blob",
+      "path": "src/activities/sig/tei-for-linguists.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "148fe86001318c92923f9d372cc1c037630006c9",
+      "object_type": "blob",
+      "path": "src/activities/sig/tools.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "071ef98b7ad55edbc1eebcbe9abd506f6e058ceb",
+      "object_type": "blob",
+      "path": "src/activities/sig/tools/authoring-and-tools-sig-at-2003-members-meeting.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "c626c3e6193d8e96e88b9b60765c8f9dafc87db7",
+      "object_type": "blob",
+      "path": "src/activities/sig/tools/minutes-of-the-tei-presentation-tools-sig-meeting-in-nancy-08-november-2003.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "211a12379019f4b0c28e96a3020e6346d56bfc1c",
+      "object_type": "blob",
+      "path": "src/activities/sig/tools/minutes-of-the-tei-presentation-tools-sig-meeting-in-sofia-29-october-2005.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "0bac4ee92295b7d96dd92a306da63ec5b07f0cbd",
+      "object_type": "blob",
+      "path": "src/activities/sig/tools/tei-presentation-tools-sig-minutes-28-october-2006.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "1d9848f7d42cc02515acee2bff9239672f4178a7",
+      "object_type": "blob",
+      "path": "src/activities/sig/tools/tei-presentation-tools-sig-minutes-3-november-2007.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "8167749cfe64dee3fdc432bd769d2012b9b4a00e",
+      "object_type": "blob",
+      "path": "src/activities/workgroups.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "30d088366a6a77700a851375364acf91fce78c42",
+      "object_type": "blob",
+      "path": "src/activities/workgroups/gis-charge.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "fd1c3e30acaa533e949a4cd31c2543c4b8a6191f",
+      "object_type": "blob",
+      "path": "src/activities/workgroups/internationalization-i18n-workgroup.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "f4d57aab6186cff91cc73c850811013c31244a53",
+      "object_type": "blob",
+      "path": "src/activities/workgroups/lite2-charge.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "565a7eed6f1bb6ac1b56d904f9bfd5195c044e28",
+      "object_type": "blob",
+      "path": "src/activities/workgroups/tei-stylesheets-task-force-charge.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "f2ced3c080f21c033d7a7c10b4e310f6e3155b58",
+      "object_type": "blob",
+      "path": "src/assets/css/cetei.css"
+    },
+    {
+      "mode": "100644",
+      "object_id": "e7ed0c97775f22c74d62f123a0c8d0ec0a61ffeb",
+      "object_type": "blob",
+      "path": "src/assets/css/teic.scss"
+    },
+    {
+      "mode": "100644",
+      "object_id": "f38e94500e2f20b690a2c6ede90634f424a110e4",
+      "object_type": "blob",
+      "path": "src/assets/favicon.ico"
+    },
+    {
+      "mode": "100644",
+      "object_id": "69509ce5fe007b5174b49b211c3de119f1d8c668",
+      "object_type": "blob",
+      "path": "src/assets/img/Generic_Feed-icon.svg"
+    },
+    {
+      "mode": "100644",
+      "object_id": "d135f8cd74e44aece4bcdce7debed4ddbb995c8c",
+      "object_type": "blob",
+      "path": "src/assets/img/TEI_Community_Calls.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "c96997d40a1526eca25f7740b876c9a1e1461fec",
+      "object_type": "blob",
+      "path": "src/assets/img/csm_CMSMCQ_transparent.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "f5a1e68c712a1535ca67ab8a53d277740959f112",
+      "object_type": "blob",
+      "path": "src/assets/img/emblem_color_dark.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "f139910e540ce0c6a1b6bb7619132b73d7810b9e",
+      "object_type": "blob",
+      "path": "src/assets/img/emblem_color_light.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "7d0b4b926ed111d1ea907e1d90848a011c157bb5",
+      "object_type": "blob",
+      "path": "src/assets/img/emblem_color_transparent.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "9717662fa17100b2f34d036cc0b76b577e063b4c",
+      "object_type": "blob",
+      "path": "src/assets/img/emblem_color_transparent.xcf"
+    },
+    {
+      "mode": "100644",
+      "object_id": "b3549ad047c770b41a733d947acc9da6e5742cca",
+      "object_type": "blob",
+      "path": "src/assets/img/logo-petit-hn-rvb-1.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "8b6c738d8e519faf9167cdd3b4668f843f851511",
+      "object_type": "blob",
+      "path": "src/assets/js/CETEI.js"
+    },
+    {
+      "mode": "100644",
+      "object_id": "e8f21f703f7bb4e9ab84daca93c9ee1d5358a316",
+      "object_type": "blob",
+      "path": "src/assets/js/bootstrap.bundle.min.js"
+    },
+    {
+      "mode": "100644",
+      "object_id": "3863da8b7fc1ff8bde216be07ac7da1afe39cf34",
+      "object_type": "blob",
+      "path": "src/assets/js/bootstrap.bundle.min.js.map"
+    },
+    {
+      "mode": "100644",
+      "object_id": "e7e29d5b2a3d258d389ee074ba04353e68f8ffbc",
+      "object_type": "blob",
+      "path": "src/assets/js/jquery-3.7.0.min.js"
+    },
+    {
+      "mode": "100644",
+      "object_id": "d7e81a356025001933124f66806f771504e013d4",
+      "object_type": "blob",
+      "path": "src/assets/js/js-main-bundle.njk"
+    },
+    {
+      "mode": "100644",
+      "object_id": "e3471cff65fea4b0c05f55d0bdd24f5e9c3f08f4",
+      "object_type": "blob",
+      "path": "src/assets/js/popper.min.js.map"
+    },
+    {
+      "mode": "100644",
+      "object_id": "18a10199b1c2a1f556f1283ae7785344603808f4",
+      "object_type": "blob",
+      "path": "src/assets/xslt/rss.xsl"
+    },
+    {
+      "mode": "160000",
+      "object_id": "b9e7e139957339fc1cc06c5a48565cfaa6e65615",
+      "object_type": "commit",
+      "path": "src/documentation/Documentation"
+    },
+    {
+      "mode": "100644",
+      "object_id": "ef793e121d608ed368583edcf2154c8513ae2460",
+      "object_type": "blob",
+      "path": "src/documentation/documentation.11tydata.js"
+    },
+    {
+      "mode": "100644",
+      "object_id": "7373a0bd72a1ffb8c7ea93173d149b0a58c85024",
+      "object_type": "blob",
+      "path": "src/error/not_found.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "6e4bfa135c00840eb74a17f62397146b8e666d84",
+      "object_type": "blob",
+      "path": "src/es/acerca_de.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "e1e52dfbbcdc991653dfaccbb5e6d6317b9cf795",
+      "object_type": "blob",
+      "path": "src/es/acerca_de/mision.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "9410d4bcfceeaa63bbdff4b542b583f7a26badca",
+      "object_type": "blob",
+      "path": "src/es/actividades.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "14d62943eb04c107444d3e7a18eb6de7c3d894b5",
+      "object_type": "blob",
+      "path": "src/es/directrices.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "0ee09398811548a009d29323bf80ca7977521fdc",
+      "object_type": "blob",
+      "path": "src/es/herramientas.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "1bd67151ed53ca9df03ad00015aa0c5a6f469a4a",
+      "object_type": "blob",
+      "path": "src/es/soporte/aprende.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "404cd98da5f9d98a2e7189eca70c45cf22815790",
+      "object_type": "blob",
+      "path": "src/es/tools.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "dd8066e4674871569daac4542a20755ad108c7b2",
+      "object_type": "blob",
+      "path": "src/files/TEI2025_AGM_Slides.pdf"
+    },
+    {
+      "mode": "100644",
+      "object_id": "01d754bfb1ee54b141f2a92090db98ed8a40f89e",
+      "object_type": "blob",
+      "path": "src/files/TEI2026_AGM-slides.pdf"
+    },
+    {
+      "mode": "100644",
+      "object_id": "4deba35ee874ff45d2c2683de020c35c86d510f6",
+      "object_type": "blob",
+      "path": "src/files/TEI_travel_form.pdf"
+    },
+    {
+      "mode": "100644",
+      "object_id": "1b780ff432912908e75b6a473c44e9ff6fbbc577",
+      "object_type": "blob",
+      "path": "src/files/jtei_author_agreement_CC.pdf"
+    },
+    {
+      "mode": "100644",
+      "object_id": "0db97bada8346d61c27e86c974f8e806e1cb8b99",
+      "object_type": "blob",
+      "path": "src/guidelines.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "bb119e28581c269db709f5172b2fa70251a87bf9",
+      "object_type": "blob",
+      "path": "src/guidelines/customization.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "9fb84324d49367c73a7601c239bcebf57b615d91",
+      "object_type": "blob",
+      "path": "src/guidelines/customization/getting-started-with-p5-odds.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "4927b883bd7e68a97c8c3b728fbe13758a426842",
+      "object_type": "blob",
+      "path": "src/guidelines/licensing-and-citation.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "a06a78a2b6ffee8dc0c6bb1a4b57ee9f40717ddc",
+      "object_type": "blob",
+      "path": "src/guidelines/p5.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "ff269a1d2e41dfb76561590ae98f7a9c7f6a982c",
+      "object_type": "blob",
+      "path": "src/guidelines/p5/using-the-tei-github-repository.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "8f3aa20d1daabec9604b3d9e761523956ca4e92d",
+      "object_type": "blob",
+      "path": "src/index.en.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "0006789488449bb9437718c2812a32d7c1980108",
+      "object_type": "blob",
+      "path": "src/index.es.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "ce23590e0e2acbe0b4d844f29fe01b9f8a737d8d",
+      "object_type": "blob",
+      "path": "src/index.var"
+    },
+    {
+      "mode": "100644",
+      "object_id": "bcf5ed4e09441214eeefaa227570e066e1f6ed0d",
+      "object_type": "blob",
+      "path": "src/jTEI/jtei_author_agreement_cc.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "8254c3c0c823c04ba8fd412a3c1dcc1d6a96b661",
+      "object_type": "blob",
+      "path": "src/news.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "dd895a68827e84d89d37ae8281ca767bd4df1be5",
+      "object_type": "blob",
+      "path": "src/news/2023/01/09/rahtz-prize-and-community-award-2022.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "95921555ad567d29f114ccfe84dc3b1c26d38b31",
+      "object_type": "blob",
+      "path": "src/news/2023/01/28/call-for-communications-officer.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "8910f9bbae4c2b0aeb4c3dd427b4fcb064ae4755",
+      "object_type": "blob",
+      "path": "src/news/2023/02/27/call-for-proposals-encoding-cultures-joint-mec-and-tei-conference-2023.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "6be191bd8a756e333907df38e37986abff477357",
+      "object_type": "blob",
+      "path": "src/news/2023/08/02/rahtz-prize-for-ingenuity-2023-call-for-nominations-and-self-submissions.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "d99e37265d8ac4aa3d3a21bc55269388df7844a6",
+      "object_type": "blob",
+      "path": "src/news/2023/08/06/tei-c-elections-2023.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "ef3eebabed1f3946277b931f616c5c1e978555da",
+      "object_type": "blob",
+      "path": "src/news/2023/09/24/tei-annual-members-meeting-report.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "738e8ddd34e2448fc0204fbe9cbcd2b42e1a4e6b",
+      "object_type": "blob",
+      "path": "src/news/2023/tei-2024-website-live.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "37e2eeaf3d4c8478347df4ec0f961bb8dbd0624c",
+      "object_type": "blob",
+      "path": "src/news/2024/2024-election-results.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "6624650c3e27db7531212cae7e37fb3e2e7b9bf2",
+      "object_type": "blob",
+      "path": "src/news/2024/2024-slate-of-nominees.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "004e23aa85cb1c2880b3abd9604ea3ed4442fc7b",
+      "object_type": "blob",
+      "path": "src/news/2024/c-michael-sperberg-mcqueen-1954-2024-in-memoriam.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "d0b01919f8aac94ef6379c765916bca259b630d4",
+      "object_type": "blob",
+      "path": "src/news/2024/new-release-and-new-cmc-chapter-tei-guidelines-4-8-0-stylesheets-7-57-0.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "6dbc195074711689d101cc71211bdec9736d8e3c",
+      "object_type": "blob",
+      "path": "src/news/2024/rahtz-prize-2024-call-for-nominations.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "c23666d8825eea16ef8390cb66d02260bc62776c",
+      "object_type": "blob",
+      "path": "src/news/2024/rahtz-prize-2024-scholarly-xml.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "dbd7108d3ddc4ad7f6ee1086f5e76a51a46a0b5c",
+      "object_type": "blob",
+      "path": "src/news/2024/rahtz-prize-2025-call-for-nominations.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "fe8b15c5b0cab9da144df01f26c55ccb0cd6285f",
+      "object_type": "blob",
+      "path": "src/news/2024/tei-c-2024-call-for-nominations.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "5c7ad273b1e60628f16f73e9f23cb5280ae6862b",
+      "object_type": "blob",
+      "path": "src/news/2025/2025-conference-announement.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "6d5e80b554dcba65e6b0d2f5459c5e3ce573720e",
+      "object_type": "blob",
+      "path": "src/news/2025/2025-conference-extension.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "52f48e68cde299fac8882cd8a8458cf152073d09",
+      "object_type": "blob",
+      "path": "src/news/2025/2025-conference-registration.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "911c921a51209724268b4c1de99da6a40cbceb0c",
+      "object_type": "blob",
+      "path": "src/news/2025/2025-conference-reminder.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "4b0b29b738f446a969b456b231aca670b92d68a7",
+      "object_type": "blob",
+      "path": "src/news/2025/NewTerritoriesTEI2025.pdf"
+    },
+    {
+      "mode": "100644",
+      "object_id": "54ed67e98dd955c31f8b6e4d543bc37d6eeab42f",
+      "object_type": "blob",
+      "path": "src/news/2025/Rahtz-and-Community-Prize-2025.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "3efc65a0b3d336cb75cbc4b84b307e0d080eef2e",
+      "object_type": "blob",
+      "path": "src/news/2025/TEINewTerritoriesProgramme1.0.pdf"
+    },
+    {
+      "mode": "100644",
+      "object_id": "3b909d4867114f946d68da248cf00a2c5fb1950d",
+      "object_type": "blob",
+      "path": "src/news/2025/TEINewTerritoriesProgramme1.1.1.pdf"
+    },
+    {
+      "mode": "100644",
+      "object_id": "765a2e0a1e6a6044f3d6b91acaa2724e79fa409c",
+      "object_type": "blob",
+      "path": "src/news/2025/election-results-2025.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "80a4b52507f3f1d9f8a9418438f95e99166babe4",
+      "object_type": "blob",
+      "path": "src/news/2025/new-release-tei-guidelines-4-10-0-stylesheets-7-59-0.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "566ce32ac8d8e55ed1be118bd27d865d221d6de0",
+      "object_type": "blob",
+      "path": "src/news/2025/patch-release-tei-guidelines-4-10-1.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "c1c945ee489e92363aaa45f5f8249d1ef0f2dc93",
+      "object_type": "blob",
+      "path": "src/news/2025/patch-release-tei-guidelines-4-10-2.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "ed97e5538873271d9c9054352c63bbd9259f6324",
+      "object_type": "blob",
+      "path": "src/news/2025/tei-2025-early-bird.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "6c071b864a0e2dba16ccff756fbfd980d5e21162",
+      "object_type": "blob",
+      "path": "src/news/2025/tei-2025-programme.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "9a726bc1e60a0577e9cbc69ddec2b7134e2f22c6",
+      "object_type": "blob",
+      "path": "src/news/2025/tei-c-2025-call-for-nominations.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "33adcd6494888bc56b71a1d52877916a8f95e42d",
+      "object_type": "blob",
+      "path": "src/news/2025/tei-c-elections-2025.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "1e1e1d41360bbf2fc1df921160b292c84854f3de",
+      "object_type": "blob",
+      "path": "src/news/2025/tei-call-for-hosts-TEI2027.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "b44f6935b4a7fb57007ef2a25388fcb8a81265ea",
+      "object_type": "blob",
+      "path": "src/news/2026/CallForTEI2028ConferenceHost.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "1ab6e2b332557f6622b31a15dfc23bdb4d895207",
+      "object_type": "blob",
+      "path": "src/news/2026/ReportOnMembershipConsultation.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "d68d817fad59811bd3ebab8489a5330eea8f56e2",
+      "object_type": "blob",
+      "path": "src/news/2026/TEI-C_survey.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "f2d91137842514184c7f915222a01fa173833d3f",
+      "object_type": "blob",
+      "path": "src/news/2026/call_for_treasurer.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "b38d2d219e215624765684404a03c9cca0954197",
+      "object_type": "blob",
+      "path": "src/news/2026/electionResults.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "824b55d7d0c0f5b4b4d3b0b3b59a87709089185c",
+      "object_type": "blob",
+      "path": "src/news/2026/elections2026.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "542f68eae6999eb43374f6934fc58f889bf466ef",
+      "object_type": "blob",
+      "path": "src/news/2026/nominations2026.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "835ac75c7aa3c49b89bf6e800fc9e20ec99cc81a",
+      "object_type": "blob",
+      "path": "src/news/2026/tei-2026-announcement.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "a568f68775dc724401d1c4a72baad85d7875cf48",
+      "object_type": "blob",
+      "path": "src/news/2026/tei-2026-registration.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "277a6a7d129cddebae72fdc7ebcffb05d7fbd0e6",
+      "object_type": "blob",
+      "path": "src/news/README.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "c7ee6c0eaf49a7a3aa597cd1cd03d0728f4f1c83",
+      "object_type": "blob",
+      "path": "src/news/news.11tydata.js"
+    },
+    {
+      "mode": "100644",
+      "object_id": "fa2daa92f2eee0ea1b00adeb89e7e274a80a27f0",
+      "object_type": "blob",
+      "path": "src/news_rss.njk"
+    },
+    {
+      "mode": "100644",
+      "object_id": "61fa508fe745d4bd122d32938a940df88077ad80",
+      "object_type": "blob",
+      "path": "src/ns/1.0.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "b2ec1c90a91624391e7b09c2b4b04daeaed0f092",
+      "object_type": "blob",
+      "path": "src/ns/Examples.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "b2edb9949994aaf364d25a1eb96edd3106d638c4",
+      "object_type": "blob",
+      "path": "src/support.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "b23ef7ab4400984bcde1625a7dc8866bffb08424",
+      "object_type": "blob",
+      "path": "src/support/bids.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "62de1eaa1431a3a95719c2564d35c710f35cdb7b",
+      "object_type": "blob",
+      "path": "src/support/learn.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "7b9b3f01598b1928a320703df13f905b1dc4fe54",
+      "object_type": "blob",
+      "path": "src/support/learn/a-bibliography-of-publications-related-to-the-text-encoding-initiative.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "c1fd9cacebcabfd4634e6fe8371a162c48dc07df",
+      "object_type": "blob",
+      "path": "src/support/learn/introducing-the-guidelines.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "26835167ec465a8ab80f1d03e815c02bd972515d",
+      "object_type": "blob",
+      "path": "src/support/learn/teach-yourself-tei.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "5a07ba26c1f44d1f44e854f1f33249962a9460e3",
+      "object_type": "blob",
+      "path": "src/support/samples.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "f2e8e03132cf1ce10351fd93e0c53a2a6b92a716",
+      "object_type": "blob",
+      "path": "src/tei_travel_form.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "c6b8d8b5d40f2fbcc6358ec5641b40d001fd3580",
+      "object_type": "blob",
+      "path": "src/tools.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "9dcb99b211afe730c0d68c5a65b901bade1703a6",
+      "object_type": "blob",
+      "path": "src/tools/i18n.md"
+    }
+  ],
+  "ref_requested": "HEAD",
+  "repository": "https://github.com/TEIC/website.git",
+  "resolved_commit": "5e0dc114a6de427a445b6c09a1cc974074a484f6",
+  "root_tree": "b44f5c8193c9058d6e7fda622519fa3b6f6bbcee",
+  "schema_version": 1,
+  "source_id": "teic-public-git-repositories"
+}

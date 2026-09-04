@@ -1,0 +1,286 @@
+{
+  "entries": [
+    {
+      "mode": "100644",
+      "object_id": "a3cb6d71572512f3a97829eddb43c8074dd94664",
+      "object_type": "blob",
+      "path": ".gitignore"
+    },
+    {
+      "mode": "100644",
+      "object_id": "0ad25db4bd1d86c452db3f9602ccdbe172438f52",
+      "object_type": "blob",
+      "path": "LICENSE"
+    },
+    {
+      "mode": "100644",
+      "object_id": "c101d9eba077bae3187904337db6bad1b77d38af",
+      "object_type": "blob",
+      "path": "README.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "18854876c67fdee2dbd3d0448dc69a530d5f30a7",
+      "object_type": "blob",
+      "path": "docs/_config.yml"
+    },
+    {
+      "mode": "100644",
+      "object_id": "c8c809fb6a9c83763f97552ad77e656da22e8dfa",
+      "object_type": "blob",
+      "path": "docs/index.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "b217ac0fe587f8e51b5849a85e0f8270a9f2e16c",
+      "object_type": "blob",
+      "path": "docs/xpath-axis.gif"
+    },
+    {
+      "mode": "100644",
+      "object_id": "cfa247ed764d3259414cfe9a80dd918f959552ca",
+      "object_type": "blob",
+      "path": "docs/xpath-solutions.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "94350b5c592ead40ff4c2bc17f14a1fd507549e6",
+      "object_type": "blob",
+      "path": "docs/xpath.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "cc093f1ea087246d605dab58d1035bac02d157ec",
+      "object_type": "blob",
+      "path": "docs/xpath_es.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "635032c7a3f3d04ad4f1f23e5ee13f988db284d7",
+      "object_type": "blob",
+      "path": "docs/xslt.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "a2ae270ad68e6f306ff06048b7e243aa21243953",
+      "object_type": "blob",
+      "path": "output/html-letters/1819-01-10-MaryWebb.html"
+    },
+    {
+      "mode": "100644",
+      "object_id": "5784ddd601bf7a644a8697c3c08dfbcc6a4e6a29",
+      "object_type": "blob",
+      "path": "output/html-letters/de-hsa-letter-2246.html"
+    },
+    {
+      "mode": "100644",
+      "object_id": "82460b774ad72395433f599cdd7b35eb96e0db1b",
+      "object_type": "blob",
+      "path": "output/html-letters/de_hsa-letter-856.html"
+    },
+    {
+      "mode": "100644",
+      "object_id": "a6392d38379581eec0f60a5345dd256febf46940",
+      "object_type": "blob",
+      "path": "output/html-letters/es_PS4000-TEIP5.html"
+    },
+    {
+      "mode": "100644",
+      "object_id": "acc52c11433bc0e2bb1bda6ba4697dc933813eb5",
+      "object_type": "blob",
+      "path": "output/html-letters/ja_soseki-letter-ex3.html"
+    },
+    {
+      "mode": "100644",
+      "object_id": "16bbc959fc3b5525dc893ed475ee42d402a93ec9",
+      "object_type": "blob",
+      "path": "output/id-transform-esLetter.xml"
+    },
+    {
+      "mode": "100644",
+      "object_id": "1a86433c223039bda5f68f8b6ef10d15e5e0eff7",
+      "object_type": "blob",
+      "path": "output/js/jquery-3.7.1.js"
+    },
+    {
+      "mode": "100644",
+      "object_id": "a567ab0e640c402c75d4a79d51820b23459cb7a2",
+      "object_type": "blob",
+      "path": "output/js/ready.js"
+    },
+    {
+      "mode": "100644",
+      "object_id": "45b964104e364da3e9dfd6a2284f14f689cbb2c3",
+      "object_type": "blob",
+      "path": "output/letter-to-pieChart.html"
+    },
+    {
+      "mode": "100644",
+      "object_id": "1208da09d131d33edff3f650558af26e0f5389bb",
+      "object_type": "blob",
+      "path": "output/letter-to-table.html"
+    },
+    {
+      "mode": "100644",
+      "object_id": "e52c6516e41c695b7d8fdd9bcc858851d9aa5111",
+      "object_type": "blob",
+      "path": "output/letter-to-text.txt"
+    },
+    {
+      "mode": "100644",
+      "object_id": "13bc198510068006d19d1fc7ebdefb66d7c78895",
+      "object_type": "blob",
+      "path": "output/letters-to-svg.svg"
+    },
+    {
+      "mode": "100644",
+      "object_id": "1b26aefbe54e15bf3a1a1af63427d0ff4e043f9b",
+      "object_type": "blob",
+      "path": "xml/1819-01-10-MaryWebb.xml"
+    },
+    {
+      "mode": "100644",
+      "object_id": "8448232b30d593215472464c142a20da66aae9dd",
+      "object_type": "blob",
+      "path": "xml/README.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "990aa8a98b8452232b9017c49ea52b3018d2c7ac",
+      "object_type": "blob",
+      "path": "xml/de-hsa-letter-2246.xml"
+    },
+    {
+      "mode": "100644",
+      "object_id": "4ace32d9e63bb6c867f014331ba75434bfdad710",
+      "object_type": "blob",
+      "path": "xml/de_hsa-letter-856.xml"
+    },
+    {
+      "mode": "100644",
+      "object_id": "09fcb801a677a8ddf4712c66c5e89fccea1b90f5",
+      "object_type": "blob",
+      "path": "xml/es-hsa-letter-590.xml"
+    },
+    {
+      "mode": "100644",
+      "object_id": "6178cd37917326e81488d4834b0b74cdc5ae6742",
+      "object_type": "blob",
+      "path": "xml/es_PS4000-TEIP5.xml"
+    },
+    {
+      "mode": "100644",
+      "object_id": "689c4e07715e47fe93a5290a4048ffc6ddad1f7d",
+      "object_type": "blob",
+      "path": "xml/ja_soseki-letter-ex3.xml"
+    },
+    {
+      "mode": "100644",
+      "object_id": "a6ce6e309d6d9f4831dceafc604505448ce60fac",
+      "object_type": "blob",
+      "path": "xslt/1_TEItoHTML-starter.xsl"
+    },
+    {
+      "mode": "100644",
+      "object_id": "6dea4a90f1d284c30ec6aba9f83977901d35f32d",
+      "object_type": "blob",
+      "path": "xslt/1_letter-to-html.xsl"
+    },
+    {
+      "mode": "100644",
+      "object_id": "89b353838aefc9bc2d5d9327373789c8cf76ced3",
+      "object_type": "blob",
+      "path": "xslt/1a_letter-to-html.xsl"
+    },
+    {
+      "mode": "100644",
+      "object_id": "c69c86f6703181547b3e71b483bf71416dc7a256",
+      "object_type": "blob",
+      "path": "xslt/1b_letter-to-html.xsl"
+    },
+    {
+      "mode": "100644",
+      "object_id": "410d9dfddf4815df70ebb85e8f05ef8b04b5f633",
+      "object_type": "blob",
+      "path": "xslt/2_letter-to-html-table-starter.xsl"
+    },
+    {
+      "mode": "100644",
+      "object_id": "5ef718a4a24a95aab4997b14826f28331323b186",
+      "object_type": "blob",
+      "path": "xslt/2_letter-to-html-table.xsl"
+    },
+    {
+      "mode": "100644",
+      "object_id": "5a5ac0f97effd7b6e0044a8a62fb3ab49bbaf3f7",
+      "object_type": "blob",
+      "path": "xslt/3_TEI-to-pieChart-starter.xsl"
+    },
+    {
+      "mode": "100644",
+      "object_id": "71f7ffe0d5cd2dc0f9e4c33ef960b914cfccf979",
+      "object_type": "blob",
+      "path": "xslt/3_TEI-to-pieChart.xsl"
+    },
+    {
+      "mode": "100644",
+      "object_id": "e12781800315f2ac8755332405763aa56a4044c1",
+      "object_type": "blob",
+      "path": "xslt/3_TEI-to-text-starter.xsl"
+    },
+    {
+      "mode": "100644",
+      "object_id": "aecded1c18faf4c63e783279833f5b93d8ed340c",
+      "object_type": "blob",
+      "path": "xslt/3_TEI-to-text.xsl"
+    },
+    {
+      "mode": "100644",
+      "object_id": "260528b335c8b43197af3c60451dc3b6a4bb3f35",
+      "object_type": "blob",
+      "path": "xslt/4_TEI-to-SVG-starter.xsl"
+    },
+    {
+      "mode": "100644",
+      "object_id": "ea90f79aa415e15adc791c7b498e5b57bf324b83",
+      "object_type": "blob",
+      "path": "xslt/4_TEI-to-SVG.xsl"
+    },
+    {
+      "mode": "100644",
+      "object_id": "815da307a94e8b5801e34d1d9159601e77c10bdd",
+      "object_type": "blob",
+      "path": "xslt/idTransform.xsl"
+    },
+    {
+      "mode": "100644",
+      "object_id": "1a86433c223039bda5f68f8b6ef10d15e5e0eff7",
+      "object_type": "blob",
+      "path": "xslt/js/jquery-3.7.1.js"
+    },
+    {
+      "mode": "100644",
+      "object_id": "a567ab0e640c402c75d4a79d51820b23459cb7a2",
+      "object_type": "blob",
+      "path": "xslt/js/ready.js"
+    },
+    {
+      "mode": "100644",
+      "object_id": "9ca82bbd85f878e5d8de0ed53e130cf49febc435",
+      "object_type": "blob",
+      "path": "xslt/mitfordSI-to-backlist.xsl"
+    },
+    {
+      "mode": "100644",
+      "object_id": "f1ab3e7606b839fec43f64803d401cf86f42b372",
+      "object_type": "blob",
+      "path": "xslt/soseki_trans.xsl"
+    }
+  ],
+  "ref_requested": "HEAD",
+  "repository": "https://github.com/TEIC/tei2024-XSLT-workshop.git",
+  "resolved_commit": "db12ea77b02da0643395fef49e3f9d6bde525b78",
+  "root_tree": "d230bc2be21ed9b17cc33b3176f46798623594e1",
+  "schema_version": 1,
+  "source_id": "teic-public-git-repositories"
+}

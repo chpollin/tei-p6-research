@@ -1,0 +1,63 @@
+schema_version: 1
+run_id: 2026-09-04-teic-public-git-repositories-teic-roma-antiqua
+source_id: teic-public-git-repositories
+started_at: '2026-09-04T16:39:00Z'
+finished_at: '2026-09-04T16:39:05Z'
+status: observable-complete
+adapter:
+  name: tools.corpus.git_snapshot
+  version: 1
+requests:
+- kind: git-mirror
+  repository: https://github.com/TEIC/Roma-Antiqua.git
+  action: cloned
+  requested_ref: HEAD
+  resolved_commit: 931c3253f6d22b50a4e157b63be7ff665a472327
+objects:
+- kind: git-tree-inventory
+  path: corpus/normalized/git/org/teic-roma-antiqua.json
+  sha256: d93146effd49836a215b0aac3f90506a52d59cf43160174a9d3dc4781d8d52eb
+  root_tree: 4c8a295c381cfaa98c929c829eeb1feba6605567
+counts:
+  commits_all_refs: 639
+  refs: 11
+  tree_entries: 74
+refs:
+- name: refs/heads/dev
+  object_type: commit
+  object_id: 931c3253f6d22b50a4e157b63be7ff665a472327
+- name: refs/heads/master
+  object_type: commit
+  object_id: 9f9b3d6c97977f0edfab94822031e5060bd67eb2
+- name: refs/pull/2/head
+  object_type: commit
+  object_id: 32cc4363c942eeff5f50b249fd05c53614a72f89
+- name: refs/pull/3/head
+  object_type: commit
+  object_id: 91f441651e8c325480a864853944c6e3dacca1b6
+- name: refs/pull/30/head
+  object_type: commit
+  object_id: 302d231144e074aa78948c9221e51353db243de4
+- name: refs/pull/31/head
+  object_type: commit
+  object_id: 7c015d4f8b611cd861bb4ae9c0b2ee248672da88
+- name: refs/pull/4/head
+  object_type: commit
+  object_id: 6d6c5997e55ff959a7ae860b77d16d341e7023fc
+- name: refs/pull/5/head
+  object_type: commit
+  object_id: 3ad524ea6d36534b2e63a13ea666759f092a4a20
+- name: refs/pull/6/head
+  object_type: commit
+  object_id: b708acc03fa5aab87ac314a944246a3f28289d4b
+- name: refs/tags/v5.0.0
+  object_type: tag
+  object_id: f8d44fe92645cb45ffa69ed0129b7c4abb87ccf1
+- name: refs/tags/v5.0.1
+  object_type: tag
+  object_id: 3c39bef963f43335dd2b35b66f9f0dc7bf3531e9
+gaps: []
+rights_exceptions:
+- The local mirror is not committed; redistribution follows the upstream repository
+  license.
+raw_materialization: corpus\raw\git\TEIC-Roma-Antiqua.git

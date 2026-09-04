@@ -2,7 +2,7 @@ schema_version: 1
 lock_id: teic-tei-p5-4.12.0
 source_id: teic-tei-p5-4.12.0
 as_of: "2026-09-04"
-retrieval_status: not_started
+retrieval_status: observable-complete
 
 release:
   product: TEI P5 Guidelines
@@ -34,8 +34,20 @@ required_components:
   - p5attlist.txt-or-explicit-gap
   - upstream-license
 
-hashes: {}
-counts: {}
-gaps:
-  - code: release-tree-not-materialized
-    status: expected-before-first-ingestion
+hashes:
+  git_commit: 113e933e21f016e2655518321e9d10214b8d9fcb
+  git_root_tree: ecac0afb3d131c28ab1c6b84fe998fb087ada871
+  official_release_zip_sha256: 0195baccee3b1e3e4f75b21fcf3c7c71cbcd75c796678b6f8c33229da13f66c5
+counts:
+  git_tree_entries: 1965
+  commits_all_observed_refs: 27184
+  release_zip_members: 15303
+  release_zip_files: 15211
+  release_zip_uncompressed_bytes: 974189181
+gaps: []
+
+manifests:
+  - sources/manifests/2026-09-04-teic-tei-p5-4.12.0.yaml
+  - sources/manifests/2026-09-04-tei-p5-4.12.0-published-html.yaml
+  - sources/manifests/2026-09-04-tei-p5-4.12.0-release-asset.yaml
+  - sources/manifests/2026-09-04-tei-p5-4.12.0-release-members.yaml

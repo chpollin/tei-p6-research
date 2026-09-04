@@ -1,0 +1,292 @@
+{
+  "entries": [
+    {
+      "mode": "100644",
+      "object_id": "0b348c679ca4135f40b27af556768ef89852ecaf",
+      "object_type": "blob",
+      "path": ".github/dependabot.yml"
+    },
+    {
+      "mode": "100644",
+      "object_id": "1180479cf60bc96efaa3da12e15f6edb15b73ef2",
+      "object_type": "blob",
+      "path": ".github/workflows/maven.yml"
+    },
+    {
+      "mode": "100644",
+      "object_id": "849033f2fab7f62cf787c8067dbed36cb60ac58f",
+      "object_type": "blob",
+      "path": ".gitignore"
+    },
+    {
+      "mode": "100644",
+      "object_id": "0e1596d2a44f8098fd825d2e1b90f7f9af32936e",
+      "object_type": "blob",
+      "path": "CITATION.cff"
+    },
+    {
+      "mode": "100644",
+      "object_id": "9387f08a888bea1b616fb02f6af325f145f2c0e2",
+      "object_type": "blob",
+      "path": "LICENCE.txt"
+    },
+    {
+      "mode": "100644",
+      "object_id": "c7ab253c74b922059d62aeecf2c64f319eb6f4cc",
+      "object_type": "blob",
+      "path": "LOG"
+    },
+    {
+      "mode": "100644",
+      "object_id": "75bf88992435638473d73748f36225c5000ab54e",
+      "object_type": "blob",
+      "path": "MAVEN.txt"
+    },
+    {
+      "mode": "100644",
+      "object_id": "bdd5a2b217947f3b12c261e050b6d137c2edf818",
+      "object_type": "blob",
+      "path": "README.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "902e681f3b14b3dfd64cbe37a2caeeea243e243e",
+      "object_type": "blob",
+      "path": "build.xml"
+    },
+    {
+      "mode": "100644",
+      "object_id": "49bf7e07ff9c286bf0edfbefbb656c56059ef2ee",
+      "object_type": "blob",
+      "path": "pom.xml"
+    },
+    {
+      "mode": "100644",
+      "object_id": "4b948d94feb570bf0721eb0a8e211ed2bd737c5f",
+      "object_type": "blob",
+      "path": "src/main/java/pl/psnc/dl/ege/ConversionPerformer.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "082ff98f08405f1811a9e85e23a4bed46731d356",
+      "object_type": "blob",
+      "path": "src/main/java/pl/psnc/dl/ege/EGEImpl.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "3f412b93bbb5649b018b556519492c54db3eda80",
+      "object_type": "blob",
+      "path": "src/main/java/pl/psnc/dl/ege/ExceptionListener.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "1389b12105f779d17c084d361c8fe21c27a0d5f2",
+      "object_type": "blob",
+      "path": "src/main/java/pl/psnc/dl/ege/component/ConfigurableConverter.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "90dae4d828f2cca3fe3cf48a940b4b08f30202c5",
+      "object_type": "blob",
+      "path": "src/main/java/pl/psnc/dl/ege/configuration/EGEConfigurationManager.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "847ad6e5969447d5e8d71e0582520c1a8989e4c1",
+      "object_type": "blob",
+      "path": "src/main/java/pl/psnc/dl/ege/configuration/EGEConstants.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "4d229acefdc7cdd42dea54537ec247b46338cfad",
+      "object_type": "blob",
+      "path": "src/main/java/pl/psnc/dl/ege/utils/BufferOutputStream.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "5ff5e2948b3893677a82dc57d77649336cd46334",
+      "object_type": "blob",
+      "path": "src/main/java/pl/psnc/dl/ege/utils/DataBuffer.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "1b50f7a64543602ca519c61812918dd85b8793c5",
+      "object_type": "blob",
+      "path": "src/main/java/pl/psnc/dl/ege/utils/EGEIOUtils.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "459f8322a1d58777ce9f95d62fbf62e60430d84e",
+      "object_type": "blob",
+      "path": "src/main/java/pl/psnc/dl/ege/utils/IOResolver.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "85b6467de0df30139ffbde9fc16f4e1e3ad25cd6",
+      "object_type": "blob",
+      "path": "src/main/java/pl/psnc/dl/ege/utils/ZipIOResolver.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "306d2511abe69bd4cbe8717b0f5556b80d37b8ef",
+      "object_type": "blob",
+      "path": "src/main/java/pl/psnc/dl/ege/webapp/config/LabelProvider.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "01db2286759845e1b03f1de1aea17347fc6124dc",
+      "object_type": "blob",
+      "path": "src/main/java/pl/psnc/dl/ege/webapp/config/MimeExtensionProvider.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "593f9a65a704cae4e5158f4f1a64ccbfcbb40a0b",
+      "object_type": "blob",
+      "path": "src/main/java/pl/psnc/dl/ege/webapp/config/PreConfig.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "474610f43fcd5dcbf1e47c14f33ec712787e5bfc",
+      "object_type": "blob",
+      "path": "src/main/java/pl/psnc/dl/ege/webapp/request/ConversionRequestResolver.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "ce99bab331734764e033a8025862dadb37963f44",
+      "object_type": "blob",
+      "path": "src/main/java/pl/psnc/dl/ege/webapp/request/ConversionsPropertiesHandler.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "7419699e6a7d5bb3cce7fb60deb1dfdf79fa7962",
+      "object_type": "blob",
+      "path": "src/main/java/pl/psnc/dl/ege/webapp/request/CustomizationRequestResolver.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "cf06234a5194964cf6f8603700c81ec19fa2fecc",
+      "object_type": "blob",
+      "path": "src/main/java/pl/psnc/dl/ege/webapp/request/InfoRequestResolver.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "2242b66c88153e49732c12ac5d7c1fd119b8d35d",
+      "object_type": "blob",
+      "path": "src/main/java/pl/psnc/dl/ege/webapp/request/Method.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "338fe710c7b41ca77e4db50b413575c870adca4d",
+      "object_type": "blob",
+      "path": "src/main/java/pl/psnc/dl/ege/webapp/request/OperationId.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "c7f785be7e019e6a4a637740ad9f0f2263d0fd35",
+      "object_type": "blob",
+      "path": "src/main/java/pl/psnc/dl/ege/webapp/request/RequestResolver.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "2fee9857248135b1e613da01ecf1063e79139e4a",
+      "object_type": "blob",
+      "path": "src/main/java/pl/psnc/dl/ege/webapp/request/RequestResolvingException.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "3932699fa93288170df299d10f28bb2ab52c3f79",
+      "object_type": "blob",
+      "path": "src/main/java/pl/psnc/dl/ege/webapp/request/ValidationRequestResolver.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "f4b965bc0ba8099eef28cdee257a9d01c6e9ff52",
+      "object_type": "blob",
+      "path": "src/main/java/pl/psnc/dl/ege/webapp/servlethelpers/Conversion.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "cf41282dc53c822322d40bc24dd591c2a3480f30",
+      "object_type": "blob",
+      "path": "src/main/java/pl/psnc/dl/ege/webapp/servlethelpers/Customization.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "dac8b4ff329649cd920e2c77c1789b66ec1f3d33",
+      "object_type": "blob",
+      "path": "src/main/java/pl/psnc/dl/ege/webapp/servlethelpers/Info.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "71f8f85a379bc6f70f196a62490692cb6747cb60",
+      "object_type": "blob",
+      "path": "src/main/java/pl/psnc/dl/ege/webapp/servlethelpers/Validation.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "56efb27c16f4d584901a3c2d5ef084e7a41da13c",
+      "object_type": "blob",
+      "path": "src/main/resources/META-INF/plugin.xml"
+    },
+    {
+      "mode": "100644",
+      "object_id": "070b7a15260277879cc68c9b43d7bc6de70bd006",
+      "object_type": "blob",
+      "path": "src/site/resources/images/ege-overview.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "061d8eb3fc84f3a1885a220d4e4d466be4a5dc9b",
+      "object_type": "blob",
+      "path": "src/site/resources/images/ege.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "6978d902ef1271d36c25f9df4322b3a933057201",
+      "object_type": "blob",
+      "path": "src/site/resources/images/enrich-logo.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "4a51578da48c44b0220be28da25ab245f309b818",
+      "object_type": "blob",
+      "path": "src/site/resources/images/graf.jpg"
+    },
+    {
+      "mode": "100644",
+      "object_id": "e742a1858c29ff17b45760c7690f96c81bad6807",
+      "object_type": "blob",
+      "path": "src/site/resources/images/tabela.jpg"
+    },
+    {
+      "mode": "100644",
+      "object_id": "5ceccb23ee3ad3c87f117fc2d59924635122e11c",
+      "object_type": "blob",
+      "path": "src/site/resources/images/uml.gif"
+    },
+    {
+      "mode": "100644",
+      "object_id": "501076b74495fa842ce928007b516d8d61c03697",
+      "object_type": "blob",
+      "path": "src/site/site.xml"
+    },
+    {
+      "mode": "100644",
+      "object_id": "5ce08998f671ca655b94e7ea2fbef5e9a885f20d",
+      "object_type": "blob",
+      "path": "src/site/xdoc/download.xml"
+    },
+    {
+      "mode": "100644",
+      "object_id": "8db8900d196bc3790ca9d7386b1d0201456c969d",
+      "object_type": "blob",
+      "path": "src/site/xdoc/index.xml"
+    }
+  ],
+  "ref_requested": "HEAD",
+  "repository": "https://github.com/TEIC/ege-framework.git",
+  "resolved_commit": "5c8cf83dd12956c4fb1ffc9c42e6428518df56f7",
+  "root_tree": "ab80919cc4a45f7862aacda439819fc7ffe21b06",
+  "schema_version": 1,
+  "source_id": "teic-public-git-repositories"
+}

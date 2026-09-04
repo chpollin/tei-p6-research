@@ -1,0 +1,100 @@
+{
+  "entries": [
+    {
+      "mode": "100644",
+      "object_id": "88079866713ea0925fac8088d034ca798e45fdd0",
+      "object_type": "blob",
+      "path": ".gitignore"
+    },
+    {
+      "mode": "100644",
+      "object_id": "0f90c6fa9a2e14877a8e43970cbcaa8d7d970f9b",
+      "object_type": "blob",
+      "path": "LICENSE"
+    },
+    {
+      "mode": "100644",
+      "object_id": "2f2a9b2f226536c0f85fa3dd6fbcc01404c8b08f",
+      "object_type": "blob",
+      "path": "README.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "d66dbb094bc419c0b18f76320f4a17140b377acd",
+      "object_type": "blob",
+      "path": "humanum/README.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "70f1077aada33bdc1142cc0678d2e2fd876042f4",
+      "object_type": "blob",
+      "path": "humanum/docker-compose_debian-packages.yml"
+    },
+    {
+      "mode": "100644",
+      "object_id": "3f12423f2fc2e5aa8037fbbc7e10c637bf332c88",
+      "object_type": "blob",
+      "path": "humanum/docker-compose_ojs-dev.yml"
+    },
+    {
+      "mode": "100644",
+      "object_id": "24cde43db31bae317d34c8940e47f458ae9f992a",
+      "object_type": "blob",
+      "path": "humanum/docker-compose_ojs.yml"
+    },
+    {
+      "mode": "100644",
+      "object_id": "a0dc75ea4ee3cde77612a54255fa642e646786bb",
+      "object_type": "blob",
+      "path": "humanum/docker-compose_roma.yml"
+    },
+    {
+      "mode": "100644",
+      "object_id": "06eb0cf152412edce45b892861c8080d9835b72f",
+      "object_type": "blob",
+      "path": "humanum/docker-compose_tei-core-services.yml"
+    },
+    {
+      "mode": "100644",
+      "object_id": "bce3b9e1ece252387372ee0b663eaf93d306488e",
+      "object_type": "blob",
+      "path": "humanum/docker-compose_teigarage.yml"
+    },
+    {
+      "mode": "100644",
+      "object_id": "5c7fedd9d42cab679d8222447bd17a69a4b31061",
+      "object_type": "blob",
+      "path": "humanum/docker-compose_teiwiki.yml"
+    },
+    {
+      "mode": "100644",
+      "object_id": "3d3cf5f840a8eda71b16bb5dfdf79066d71773da",
+      "object_type": "blob",
+      "path": "humanum/docker-compose_vault.yml"
+    },
+    {
+      "mode": "100644",
+      "object_id": "efb9e69a1f395f81295ab529b25c24ed125cc506",
+      "object_type": "blob",
+      "path": "humanum/docker-compose_website.yml"
+    },
+    {
+      "mode": "100755",
+      "object_id": "777086bd26ffad0b157d19e9c775439f7a6a590c",
+      "object_type": "blob",
+      "path": "humanum/docker-update.sh"
+    },
+    {
+      "mode": "100644",
+      "object_id": "492dd18b6fdec167a2f9e6dd2341fd75f60d0db2",
+      "object_type": "blob",
+      "path": "humanum/vault.conf"
+    }
+  ],
+  "ref_requested": "HEAD",
+  "repository": "https://github.com/TEIC/infrastructure.git",
+  "resolved_commit": "32264b3619d54b5ee0b8b46fb89d2f99bc5c64dc",
+  "root_tree": "3f61131edeb54309e2c22ab2013f49e4e46ced85",
+  "schema_version": 1,
+  "source_id": "teic-public-git-repositories"
+}

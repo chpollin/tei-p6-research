@@ -1,0 +1,45 @@
+schema_version: 1
+run_id: 2026-09-04-teic-public-git-repositories-teic-teidev-docker
+source_id: teic-public-git-repositories
+started_at: '2026-09-04T16:40:08Z'
+finished_at: '2026-09-04T16:40:09Z'
+status: observable-complete
+adapter:
+  name: tools.corpus.git_snapshot
+  version: 1
+requests:
+- kind: git-mirror
+  repository: https://github.com/TEIC/teidev-docker.git
+  action: cloned
+  requested_ref: HEAD
+  resolved_commit: 985c33a2b56a880ffa736a59c13fcab0a25e0b21
+objects:
+- kind: git-tree-inventory
+  path: corpus/normalized/git/org/teic-teidev-docker.json
+  sha256: ed54dc8cc0855f3eba69dcc9e6bf2097f5ad4ac46d6c2de8220800a4be0e37a2
+  root_tree: 58354d835fd21f3b4839fb062e72de8b36122dd9
+counts:
+  commits_all_refs: 37
+  refs: 5
+  tree_entries: 2
+refs:
+- name: refs/heads/dev
+  object_type: commit
+  object_id: 985c33a2b56a880ffa736a59c13fcab0a25e0b21
+- name: refs/heads/master
+  object_type: commit
+  object_id: 4d0f4be2d6166bf35034c50ef61182fe2abcfe97
+- name: refs/heads/update_locale
+  object_type: commit
+  object_id: be855dfed164b4ae0fc5a070c19eae7dbe7c7822
+- name: refs/pull/1/head
+  object_type: commit
+  object_id: 375e0a8fbe5082142a69f4a3085088083d4d8e72
+- name: refs/pull/2/head
+  object_type: commit
+  object_id: be855dfed164b4ae0fc5a070c19eae7dbe7c7822
+gaps: []
+rights_exceptions:
+- The local mirror is not committed; redistribution follows the upstream repository
+  license.
+raw_materialization: corpus\raw\git\TEIC-teidev-docker.git

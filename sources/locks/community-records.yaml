@@ -1,0 +1,29 @@
+schema_version: 1
+lock_id: tei-community-records-bounded-census
+source_id: tei-community-records
+as_of: "2026-09-04"
+retrieval_status: partial
+
+scope:
+  tei_l:
+    discovery_page: https://www.tei-c.org/support/
+    archive_boundary: https://listserv.brown.edu/archives/cgi-bin/wa?A0=TEI-L
+  sig_index: https://www.tei-c.org/activities/sig/
+  concluded_workgroups: https://www.tei-c.org/Vault/Workgroups/
+  annual_meetings: to-be-resolved-from-official-index
+  rule: Exhaust each declared official index; message archives require their own date, query, privacy, and rights boundary.
+
+rights:
+  user_generated_content: true
+  review_before_full_text_commit: true
+
+counts:
+  sig_index_pages_retrieved: 3
+  sig_external_links_inventoried: 101
+gaps:
+  - code: tei-l-archive-tls-certificate-not-verified
+    status: blocks-bounded-complete
+  - code: annual-meeting-and-workgroup-targets-under-reconciliation
+    status: open
+
+manifest: sources/manifests/2026-09-04-tei-sig-records.yaml

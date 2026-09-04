@@ -1,0 +1,31 @@
+schema_version: 1
+lock_id: tei-real-world-customizations-sample
+source_id: tei-real-world-customizations
+as_of: "2026-09-04"
+retrieval_status: partial
+
+scope:
+  official_index: https://www.tei-c.org/guidelines/customization/
+  sampling_dimensions:
+    - document-domain
+    - project-scale
+    - customization-complexity
+    - processing-stack
+    - age-and-p5-version
+    - language-and-region
+  rule: Census every customization linked by the official index, then add a separately justified purposive sample; never generalize beyond the sampled frame.
+
+rights:
+  per_project_review: true
+
+records:
+  - kind: official-customization-index
+    manifest: sources/manifests/2026-09-04-tei-official-customizations.yaml
+counts:
+  official_index_pages_retrieved: 2
+  external_artifact_links_inventoried: 122
+gaps:
+  - code: sampling-protocol-not-yet-approved
+    status: blocks-bounded-complete
+  - code: legacy-lite-customization-url-returns-404
+    status: open

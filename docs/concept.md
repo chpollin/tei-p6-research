@@ -2,9 +2,10 @@
 
 A provenance-complete knowledge base architecture for humans and AI agents. A Promptotyping profile for evidence-grounded knowledge work.
 
-This document describes the concept. The repository around it is the reference implementation of that concept.
-
-Its function is reference documentation for the architecture. The single internal method manuscript lives in `paper/40_output/grounded-vault-method.md`, where the former blog and planned article have been consolidated. The manuscript has no submission target. The Promptotyping paper remains a separate publication project.
+This document describes the Grounded Vault concept. In this repository it is
+reference documentation for the inherited architecture; the project-specific
+Promptotyping contract lives in `knowledge/`, beginning with
+`knowledge/specification.md`.
 
 ## 1. Problem
 
@@ -171,7 +172,7 @@ Folder names, the exact split of `10_markdown/`, and the handling of the registe
 
 ## 11. Instantiation
 
-A project instantiates the template by setting a small number of parameters. These are the purpose, which names the overall topic in its first sentence, the controlled topic set (which becomes the MOC set), the active source types, the output genre with its chapter register and style sheet, the working language of the content, the role that holds verification authority, and the mechanisms that fulfil the check contracts. Everything else, the layer model, the anchor mechanics per source type, the check contracts of the three instances, the status progression and the governance document set, is invariant. The instantiation mechanism is a template repository with placeholders plus the setup guide `SETUP.md`, which carries a prompt for the first agent session that fills them.
+A project instantiates the template by setting a small number of parameters. These are the purpose, which names the overall topic in its first sentence, the controlled topic set (which becomes the MOC set), the active source types, the output genre with its chapter register and style sheet, the working language of the content, the role that holds verification authority, and the mechanisms that fulfil the check contracts. Everything else, the layer model, the anchor mechanics per source type, the check contracts of the three instances, the status progression and the governance document set, is invariant. In this repository instantiation is complete; `SETUP.md` now documents local project onboarding and the first production cycle.
 
 ## 12. Lineage
 

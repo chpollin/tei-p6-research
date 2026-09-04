@@ -1,0 +1,82 @@
+{
+  "entries": [
+    {
+      "mode": "100644",
+      "object_id": "6c9f7708ccb9f667ebca3beda8fe87ae83dce71a",
+      "object_type": "blob",
+      "path": ".dockerignore"
+    },
+    {
+      "mode": "100644",
+      "object_id": "8103e90e3e92df650988ba475cf98d7b11460516",
+      "object_type": "blob",
+      "path": ".github/dependabot.yml"
+    },
+    {
+      "mode": "100644",
+      "object_id": "f7f120dc31b5994b94d882a61c7cab2030d7811c",
+      "object_type": "blob",
+      "path": ".github/workflows/docker-publish.yml"
+    },
+    {
+      "mode": "100644",
+      "object_id": "8e76772888f3473dd85cedaf049a3f868ae909ba",
+      "object_type": "blob",
+      "path": ".gitignore"
+    },
+    {
+      "mode": "100644",
+      "object_id": "84986fd48b635a25b6aa8f9c3952f852b88e36f7",
+      "object_type": "blob",
+      "path": "Dockerfile"
+    },
+    {
+      "mode": "100644",
+      "object_id": "edf9f39fe53e3998aee694860693a87ff1390452",
+      "object_type": "blob",
+      "path": "LICENSE.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "059d36eff70054dcd541647424a6c7e45776841c",
+      "object_type": "blob",
+      "path": "README.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "0a92cec4c19da24a7c64793faaa58eda99cd6b76",
+      "object_type": "blob",
+      "path": "docker-compose.yml"
+    },
+    {
+      "mode": "100755",
+      "object_id": "804bf32447b839360c0d63a16d0147333b14bf8d",
+      "object_type": "blob",
+      "path": "files/config-creator.php"
+    },
+    {
+      "mode": "100644",
+      "object_id": "8f582a6dbc7e84e6dde7dd07b8074cf68bce3779",
+      "object_type": "blob",
+      "path": "files/entrypoint.sh"
+    },
+    {
+      "mode": "100644",
+      "object_id": "8361077abd51c7524826dabf8d580045429a9f68",
+      "object_type": "blob",
+      "path": "files/ojs.config.env"
+    },
+    {
+      "mode": "100644",
+      "object_id": "3f56dfcd641e493d6661ae4a100b19533c6d5d05",
+      "object_type": "blob",
+      "path": "files/pkp.sh"
+    }
+  ],
+  "ref_requested": "HEAD",
+  "repository": "https://github.com/TEIC/docker-pkp-ojs.git",
+  "resolved_commit": "619ddea3b5915b01ca98693bc3905ec61181220b",
+  "root_tree": "d2ef504413fccae33365681d3dd448624670a61d",
+  "schema_version": 1,
+  "source_id": "teic-public-git-repositories"
+}

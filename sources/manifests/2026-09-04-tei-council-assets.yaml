@@ -1,0 +1,96 @@
+schema_version: 1
+run_id: 2026-09-04-tei-council-assets
+source_id: tei-council-minutes
+started_at: '2026-09-04T16:52:56Z'
+finished_at: '2026-09-04T16:53:24Z'
+status: partial
+adapter:
+  name: tools.corpus.asset_snapshot
+  version: 1
+requests:
+- url: https://www.tei-c.org/activities/council/meetings/img/letter-blueprint-plantUML-2026-03-12.png
+  transfer: streamed
+- url: https://www.tei-c.org/activities/council/meetings/minutes-of-the-tei-c-council-meeting-jan-12th-2002/I3.3.1
+  transfer: streamed
+- url: https://www.tei-c.org/activities/council/meetings/minutes-of-the-tei-c-council-meeting-jan-12th-2002/I3.3.2
+  transfer: streamed
+- url: https://www.tei-c.org/activities/council/meetings/minutes-of-the-tei-c-council-meeting-jan-12th-2002/I3.3.3
+  transfer: streamed
+- url: https://www.tei-c.org/activities/council/meetings/minutes-of-the-tei-c-council-meeting-jan-12th-2002/I3.3.4
+  transfer: streamed
+- url: https://www.tei-c.org/activities/council/meetings/minutes-of-the-tei-c-council-meeting-jan-12th-2002/I3.3.5
+  transfer: streamed
+- url: https://www.tei-c.org/activities/council/meetings/minutes-of-the-tei-c-council-meeting-jan-12th-2002/I3.3.6
+  transfer: streamed
+- url: https://www.tei-c.org/activities/council/meetings/notes-from-tei-council-conference-call-of/sai3.4
+  transfer: streamed
+- url: https://www.tei-c.org/activities/council/meetings/tei-technical-council-teleconference-2025-12-18/%20https:/tei2026.tei-c.org
+  transfer: streamed
+- url: https://www.tei-c.org/activities/council/meetings/tei-technical-council-teleconference-2026-01-14/%20https:/tei2026.tei-c.org
+  transfer: streamed
+derived_from_manifests:
+- sources/manifests/2026-09-04-tei-council-minutes-r2.yaml
+objects:
+- kind: release-asset-inventory
+  path: corpus/normalized/assets/tei-council-assets.json
+  sha256: 6bc4e3614e7df26007b6fade15137ff72cfc9e21a2ddc7115409d5dc1babdeb2
+counts:
+  requested_assets: 10
+  retrieved_assets: 1
+  bytes: 18953
+  gaps: 9
+assets:
+- requested_url: https://www.tei-c.org/activities/council/meetings/img/letter-blueprint-plantUML-2026-03-12.png
+  canonical_url: https://www.tei-c.org/activities/council/meetings/img/letter-blueprint-plantUML-2026-03-12.png
+  final_url: https://www.tei-c.org/activities/council/meetings/img/letter-blueprint-plantUML-2026-03-12.png
+  observed_at: '2026-09-04T16:52:56Z'
+  status: 200
+  media_type: image/png
+  byte_count: 18953
+  sha256: f848b5061e0d325e6b9a56c4ed49fa901fbcdb1df6bb5d11cce62227fe554205
+  raw_path: sha256/f8/48b5061e0d325e6b9a56c4ed49fa901fbcdb1df6bb5d11cce62227fe554205
+  headers:
+    date: Fri, 04 Sep 2026 16:53:00 GMT
+    content-type: image/png
+    content-length: '18953'
+    last-modified: Wed, 02 Sep 2026 22:38:05 GMT
+    etag: '"4a09-65a87b04a2d40"'
+gaps:
+- code: asset-fetch-failed
+  url: https://www.tei-c.org/activities/council/meetings/minutes-of-the-tei-c-council-meeting-jan-12th-2002/I3.3.2
+  detail: 'failed to fetch https://www.tei-c.org/activities/council/meetings/minutes-of-the-tei-c-council-meeting-jan-12th-2002/I3.3.2:
+    HTTP Error 404: Not Found'
+- code: asset-fetch-failed
+  url: https://www.tei-c.org/activities/council/meetings/minutes-of-the-tei-c-council-meeting-jan-12th-2002/I3.3.1
+  detail: 'failed to fetch https://www.tei-c.org/activities/council/meetings/minutes-of-the-tei-c-council-meeting-jan-12th-2002/I3.3.1:
+    HTTP Error 404: Not Found'
+- code: asset-fetch-failed
+  url: https://www.tei-c.org/activities/council/meetings/minutes-of-the-tei-c-council-meeting-jan-12th-2002/I3.3.3
+  detail: 'failed to fetch https://www.tei-c.org/activities/council/meetings/minutes-of-the-tei-c-council-meeting-jan-12th-2002/I3.3.3:
+    HTTP Error 404: Not Found'
+- code: asset-fetch-failed
+  url: https://www.tei-c.org/activities/council/meetings/minutes-of-the-tei-c-council-meeting-jan-12th-2002/I3.3.4
+  detail: 'failed to fetch https://www.tei-c.org/activities/council/meetings/minutes-of-the-tei-c-council-meeting-jan-12th-2002/I3.3.4:
+    HTTP Error 404: Not Found'
+- code: asset-fetch-failed
+  url: https://www.tei-c.org/activities/council/meetings/notes-from-tei-council-conference-call-of/sai3.4
+  detail: 'failed to fetch https://www.tei-c.org/activities/council/meetings/notes-from-tei-council-conference-call-of/sai3.4:
+    HTTP Error 404: Not Found'
+- code: asset-fetch-failed
+  url: https://www.tei-c.org/activities/council/meetings/minutes-of-the-tei-c-council-meeting-jan-12th-2002/I3.3.6
+  detail: 'failed to fetch https://www.tei-c.org/activities/council/meetings/minutes-of-the-tei-c-council-meeting-jan-12th-2002/I3.3.6:
+    HTTP Error 404: Not Found'
+- code: asset-fetch-failed
+  url: https://www.tei-c.org/activities/council/meetings/minutes-of-the-tei-c-council-meeting-jan-12th-2002/I3.3.5
+  detail: 'failed to fetch https://www.tei-c.org/activities/council/meetings/minutes-of-the-tei-c-council-meeting-jan-12th-2002/I3.3.5:
+    HTTP Error 404: Not Found'
+- code: asset-fetch-failed
+  url: https://www.tei-c.org/activities/council/meetings/tei-technical-council-teleconference-2025-12-18/%20https:/tei2026.tei-c.org
+  detail: 'failed to fetch https://www.tei-c.org/activities/council/meetings/tei-technical-council-teleconference-2025-12-18/%20https:/tei2026.tei-c.org:
+    HTTP Error 404: Not Found'
+- code: asset-fetch-failed
+  url: https://www.tei-c.org/activities/council/meetings/tei-technical-council-teleconference-2026-01-14/%20https:/tei2026.tei-c.org
+  detail: 'failed to fetch https://www.tei-c.org/activities/council/meetings/tei-technical-council-teleconference-2026-01-14/%20https:/tei2026.tei-c.org:
+    HTTP Error 404: Not Found'
+rights_exceptions:
+- Release assets remain in ignored content-addressed raw storage.

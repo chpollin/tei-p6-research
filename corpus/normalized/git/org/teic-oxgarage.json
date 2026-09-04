@@ -1,0 +1,2554 @@
+{
+  "entries": [
+    {
+      "mode": "100644",
+      "object_id": "7afa8ea3cd732ee115ef3faa5cac9e189a2fc0db",
+      "object_type": "blob",
+      "path": ".dockerignore"
+    },
+    {
+      "mode": "100644",
+      "object_id": "e987b69e5f3cd9959b97e9caaf6bc7abbaa720ab",
+      "object_type": "blob",
+      "path": ".gitignore"
+    },
+    {
+      "mode": "100644",
+      "object_id": "bf1856637a7e215b7f5f1f5dcb7aed159c6eb1f7",
+      "object_type": "blob",
+      "path": ".travis.yml"
+    },
+    {
+      "mode": "100644",
+      "object_id": "21039ba0ba4a73d789f35612dbe13a7c952035b8",
+      "object_type": "blob",
+      "path": "Dockerfile"
+    },
+    {
+      "mode": "100644",
+      "object_id": "92b370f0e0e1b91cf8baf5d0f78c56a9824c39f1",
+      "object_type": "blob",
+      "path": "LICENSE"
+    },
+    {
+      "mode": "100644",
+      "object_id": "55275c9f4e63f70359a24d9de276ce2df189c750",
+      "object_type": "blob",
+      "path": "Makefile"
+    },
+    {
+      "mode": "100644",
+      "object_id": "384ee5787ef8c104f0e904336235c0a5f3c6089e",
+      "object_type": "blob",
+      "path": "README.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "75aca9b837d28608aab89b580c8b506528cc1c16",
+      "object_type": "blob",
+      "path": "Tests/A00005.hdr"
+    },
+    {
+      "mode": "100644",
+      "object_id": "318ae9be5b96a7fecba487afe696d6beafd45773",
+      "object_type": "blob",
+      "path": "Tests/A00005.xml"
+    },
+    {
+      "mode": "100644",
+      "object_id": "c4368a10fd94d6692760fdea3b83a0781234bcf1",
+      "object_type": "blob",
+      "path": "Tests/Makefile"
+    },
+    {
+      "mode": "100644",
+      "object_id": "67afff336f80aa0daaef4eac0d596cd8cc281747",
+      "object_type": "blob",
+      "path": "Tests/about-equations.docx"
+    },
+    {
+      "mode": "100644",
+      "object_id": "67afff336f80aa0daaef4eac0d596cd8cc281747",
+      "object_type": "blob",
+      "path": "Tests/about-equations.docx.ok"
+    },
+    {
+      "mode": "100644",
+      "object_id": "4c208eb053d627afe749207ea67be75f4cc70102",
+      "object_type": "blob",
+      "path": "Tests/demo.xml"
+    },
+    {
+      "mode": "100644",
+      "object_id": "e5b465ad5c338d010b6cbc28346b4cacd37f718f",
+      "object_type": "blob",
+      "path": "Tests/expected-results/A00005.xml"
+    },
+    {
+      "mode": "100644",
+      "object_id": "9b595029b7402ed1f75d2879bf10bac1474060da",
+      "object_type": "blob",
+      "path": "Tests/expected-results/result.docx"
+    },
+    {
+      "mode": "100644",
+      "object_id": "f749ba478f0ad10997f7ba9c61157517de8db4a3",
+      "object_type": "blob",
+      "path": "Tests/expected-results/result.epub"
+    },
+    {
+      "mode": "100644",
+      "object_id": "6d3a5e4a77683e9d35d36ecbf0e2769f7d31a916",
+      "object_type": "blob",
+      "path": "Tests/expected-results/result.html"
+    },
+    {
+      "mode": "100644",
+      "object_id": "8a8fe736330763c2d4b287bbd39d3239de67eb7c",
+      "object_type": "blob",
+      "path": "Tests/expected-results/result.isosch"
+    },
+    {
+      "mode": "100644",
+      "object_id": "bd6d890f5f3dd61b615c3af2995a44f9d1ee8645",
+      "object_type": "blob",
+      "path": "Tests/expected-results/result.nlm"
+    },
+    {
+      "mode": "100644",
+      "object_id": "69cb724cca790d6fc9cb102db4a8f5b5939fe47e",
+      "object_type": "blob",
+      "path": "Tests/expected-results/result.odt"
+    },
+    {
+      "mode": "100644",
+      "object_id": "3b0eea6ad03439292d045509e14cc31302d105f7",
+      "object_type": "blob",
+      "path": "Tests/expected-results/result.pdf"
+    },
+    {
+      "mode": "100644",
+      "object_id": "bf1a367f6cf5250349ae1838a3954b15b880f3fa",
+      "object_type": "blob",
+      "path": "Tests/expected-results/result.rng"
+    },
+    {
+      "mode": "100644",
+      "object_id": "0eb7ca5bab3f6fba96dc1c9aaf14b90d441026ce",
+      "object_type": "blob",
+      "path": "Tests/expected-results/result.tex"
+    },
+    {
+      "mode": "100644",
+      "object_id": "de9dcf2b9f5dbf97bfaf7f0fe551bbce86b29792",
+      "object_type": "blob",
+      "path": "Tests/expected-results/result.txt"
+    },
+    {
+      "mode": "100644",
+      "object_id": "0dd1a0cefcb3a7d1b2f6899d67b90081aff506a4",
+      "object_type": "blob",
+      "path": "Tests/expected-results/result.xml"
+    },
+    {
+      "mode": "100644",
+      "object_id": "e4a6501533650ed498c093ec1a89c0d938d72d5a",
+      "object_type": "blob",
+      "path": "Tests/expected-results/result2.docx"
+    },
+    {
+      "mode": "100644",
+      "object_id": "78aa74eef06c8ce3e9949f99b94450b92e0362d3",
+      "object_type": "blob",
+      "path": "Tests/expected-results/result2.epub"
+    },
+    {
+      "mode": "100644",
+      "object_id": "9768689ee36b198fa30c0712237d7fcd1834c607",
+      "object_type": "blob",
+      "path": "Tests/expected-results/result2.html"
+    },
+    {
+      "mode": "100644",
+      "object_id": "d106f5bd814eaa2eedae2aa5e45fa5944347ceb6",
+      "object_type": "blob",
+      "path": "Tests/expected-results/result2.pdf"
+    },
+    {
+      "mode": "100644",
+      "object_id": "40fd9a7ecf41cf6b48bf47e92a48a8000ced0d9c",
+      "object_type": "blob",
+      "path": "Tests/expected-results/result2.rng"
+    },
+    {
+      "mode": "100644",
+      "object_id": "1c227b918262e0a82563e75d2777f822556eb7e8",
+      "object_type": "blob",
+      "path": "Tests/expected-results/result2.tex"
+    },
+    {
+      "mode": "100644",
+      "object_id": "47ae1ce89c600326bf2663b954f921d146c33e77",
+      "object_type": "blob",
+      "path": "Tests/expected-results/result2.xml"
+    },
+    {
+      "mode": "100644",
+      "object_id": "484eff84b460e086863e3e14f0d1ba80f34560a9",
+      "object_type": "blob",
+      "path": "Tests/expected-results/result3.html"
+    },
+    {
+      "mode": "100644",
+      "object_id": "8e02b5adfe1370f898485cfca4bf550eee5811e7",
+      "object_type": "blob",
+      "path": "Tests/expected-results/result3.xml"
+    },
+    {
+      "mode": "100644",
+      "object_id": "1b306bd8a8241f9c0b4aeea73b9f2ec3be6f4f94",
+      "object_type": "blob",
+      "path": "Tests/expected-results/result4.dtd"
+    },
+    {
+      "mode": "100644",
+      "object_id": "77f3264aa19bc6ad6689301f3d7a2dbe687b8f7e",
+      "object_type": "blob",
+      "path": "Tests/expected-results/result4.html"
+    },
+    {
+      "mode": "100644",
+      "object_id": "828b00539a0184dd6d5ddf62f82be403f4f77915",
+      "object_type": "blob",
+      "path": "Tests/expected-results/result4.oddc"
+    },
+    {
+      "mode": "100644",
+      "object_id": "eef3e0fb2e10ac9cf02e2e8afe60f13f0f1ccbe8",
+      "object_type": "blob",
+      "path": "Tests/expected-results/result4.xml"
+    },
+    {
+      "mode": "100644",
+      "object_id": "7dcf577c7fc4d87cd8e64f5ab0fb8fc33905cf51",
+      "object_type": "blob",
+      "path": "Tests/expected-results/result5.xml"
+    },
+    {
+      "mode": "100644",
+      "object_id": "74c11d03e053aa4d4199fdf513a301ea065803b8",
+      "object_type": "blob",
+      "path": "Tests/expected-results/test.js"
+    },
+    {
+      "mode": "100644",
+      "object_id": "49e6daa48bb07d4c8605a4e5def045ea7b065341",
+      "object_type": "blob",
+      "path": "Tests/lessing.jpg"
+    },
+    {
+      "mode": "100644",
+      "object_id": "4ca3d2b07f0c329990f6ba430042cef602f607cd",
+      "object_type": "blob",
+      "path": "Tests/pics.zip"
+    },
+    {
+      "mode": "100644",
+      "object_id": "b5a2326716825cfae09c9877586250b29af6a91b",
+      "object_type": "blob",
+      "path": "Tests/portrait.jpg"
+    },
+    {
+      "mode": "100644",
+      "object_id": "9182f2b21463773410d2fe758900b1708562395a",
+      "object_type": "blob",
+      "path": "Tests/test-image.docx"
+    },
+    {
+      "mode": "100644",
+      "object_id": "89e413dd7c6138913895d8ae6cf1097a2d9f59aa",
+      "object_type": "blob",
+      "path": "Tests/test.dbk"
+    },
+    {
+      "mode": "100644",
+      "object_id": "3f25b0401919c9b4ce018f42d2daeae11c8ea43e",
+      "object_type": "blob",
+      "path": "Tests/test.dbk.xml"
+    },
+    {
+      "mode": "100644",
+      "object_id": "a886c68cf64db188e435435fc0459099b11b2d54",
+      "object_type": "blob",
+      "path": "Tests/test.doc"
+    },
+    {
+      "mode": "100644",
+      "object_id": "ee26d7f7e8b6b39f33f7f674db2e254e36ea98a9",
+      "object_type": "blob",
+      "path": "Tests/test.docx"
+    },
+    {
+      "mode": "100644",
+      "object_id": "693914b470d7ce6a94aebc31668e38f85368a7d2",
+      "object_type": "blob",
+      "path": "Tests/test.html"
+    },
+    {
+      "mode": "100644",
+      "object_id": "790db709206caf497b2a032f100fce031082cf1a",
+      "object_type": "blob",
+      "path": "Tests/test.odd"
+    },
+    {
+      "mode": "100644",
+      "object_id": "828b00539a0184dd6d5ddf62f82be403f4f77915",
+      "object_type": "blob",
+      "path": "Tests/test.oddc"
+    },
+    {
+      "mode": "100644",
+      "object_id": "b17e51c7222a95cf66d0799220954bcdaee3d157",
+      "object_type": "blob",
+      "path": "Tests/test.odt"
+    },
+    {
+      "mode": "100644",
+      "object_id": "9849a13d71768ac2c7c0e0f07614770a6e586534",
+      "object_type": "blob",
+      "path": "Tests/test.tite"
+    },
+    {
+      "mode": "100644",
+      "object_id": "4a714ab63e3fa7edecb118322b4b6d8c80f88773",
+      "object_type": "blob",
+      "path": "Tests/test.xls"
+    },
+    {
+      "mode": "100644",
+      "object_id": "04feab517039055747be43c8d19d0e6c0c150054",
+      "object_type": "blob",
+      "path": "Tests/test.xlsx"
+    },
+    {
+      "mode": "100644",
+      "object_id": "72aeb1644d2d7f9e3418e8ac3574ea85652623ee",
+      "object_type": "blob",
+      "path": "Tests/test.xml"
+    },
+    {
+      "mode": "100644",
+      "object_id": "c2ca70780568dc0d24640a6dfeb51ba6fcd13b71",
+      "object_type": "blob",
+      "path": "Tests/test2.odd"
+    },
+    {
+      "mode": "100644",
+      "object_id": "be1023104e5409255a42b36640dc6b74fb9bed01",
+      "object_type": "blob",
+      "path": "Tests/test8.xml"
+    },
+    {
+      "mode": "100644",
+      "object_id": "e6fd5027819c7eba188e173e74ee81562bf6ddca",
+      "object_type": "blob",
+      "path": "Tests/testp4.xml"
+    },
+    {
+      "mode": "100644",
+      "object_id": "fd2a01863fdd3035fac5918c59666363544bfe23",
+      "object_type": "blob",
+      "path": "VERSION"
+    },
+    {
+      "mode": "100644",
+      "object_id": "4b46cd7194f7569572fd9ac4289a31750f3aa1a3",
+      "object_type": "blob",
+      "path": "commons-compress-20050911.jar"
+    },
+    {
+      "mode": "100644",
+      "object_id": "133dc6cb35f5ca2c5920fd0933a557c2def88680",
+      "object_type": "blob",
+      "path": "commons-io-1.4.jar"
+    },
+    {
+      "mode": "100644",
+      "object_id": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "object_type": "blob",
+      "path": "debian-tei-oxgarage/build-stamp"
+    },
+    {
+      "mode": "100644",
+      "object_id": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "object_type": "blob",
+      "path": "debian-tei-oxgarage/configure-stamp"
+    },
+    {
+      "mode": "100644",
+      "object_id": "d3aa66f21bcfed153fbd53c740a6663a7e3ac96f",
+      "object_type": "blob",
+      "path": "debian-tei-oxgarage/debian/changelog"
+    },
+    {
+      "mode": "100644",
+      "object_id": "b8626c4cff2849624fb67f87cd0ad72b163671ad",
+      "object_type": "blob",
+      "path": "debian-tei-oxgarage/debian/compat"
+    },
+    {
+      "mode": "100644",
+      "object_id": "a0e08cb9c4753101eb342990b4387946d5f05423",
+      "object_type": "blob",
+      "path": "debian-tei-oxgarage/debian/control"
+    },
+    {
+      "mode": "100644",
+      "object_id": "1c628ec1526d8df8d7b715543bac3521e669da51",
+      "object_type": "blob",
+      "path": "debian-tei-oxgarage/debian/copyright"
+    },
+    {
+      "mode": "100644",
+      "object_id": "1362f9421c4b3ced867a1a2e75f3bf1398b56c48",
+      "object_type": "blob",
+      "path": "debian-tei-oxgarage/debian/files"
+    },
+    {
+      "mode": "100644",
+      "object_id": "d239a9da7838dff4e71b497f48753c85f7f55dcf",
+      "object_type": "blob",
+      "path": "debian-tei-oxgarage/debian/postinst"
+    },
+    {
+      "mode": "100644",
+      "object_id": "95174faa7014c362c1422858a1ff6991885e5c41",
+      "object_type": "blob",
+      "path": "debian-tei-oxgarage/debian/postrm"
+    },
+    {
+      "mode": "100644",
+      "object_id": "1a2485251c33a70432394c93fb89330ef214bfc9",
+      "object_type": "blob",
+      "path": "debian-tei-oxgarage/debian/preinst"
+    },
+    {
+      "mode": "100644",
+      "object_id": "13f47935d98bc44bbe5f7dafb745814aab2b8b79",
+      "object_type": "blob",
+      "path": "debian-tei-oxgarage/debian/prerm"
+    },
+    {
+      "mode": "100755",
+      "object_id": "44e41b0afae2cb995d75c46d1c2176ef6b9a9571",
+      "object_type": "blob",
+      "path": "debian-tei-oxgarage/debian/rules"
+    },
+    {
+      "mode": "100644",
+      "object_id": "89ae9db8f88b823b6a7eabf55e203658739da122",
+      "object_type": "blob",
+      "path": "debian-tei-oxgarage/debian/source/format"
+    },
+    {
+      "mode": "100644",
+      "object_id": "0496ac33b686622abdbd9320915ade29c2c7b10e",
+      "object_type": "blob",
+      "path": "docker-entrypoint.sh"
+    },
+    {
+      "mode": "100644",
+      "object_id": "9387f08a888bea1b616fb02f6af325f145f2c0e2",
+      "object_type": "blob",
+      "path": "ege-api/LICENCE.txt"
+    },
+    {
+      "mode": "100644",
+      "object_id": "f9f132af5820da9cd913b1bd630c7f283836f05a",
+      "object_type": "blob",
+      "path": "ege-api/pom.xml"
+    },
+    {
+      "mode": "100644",
+      "object_id": "0865f5b7852cc6473b70ecd2d831b14cdcd50f71",
+      "object_type": "blob",
+      "path": "ege-api/src/main/assembly/dist.xml"
+    },
+    {
+      "mode": "100644",
+      "object_id": "348ac546e393088a9643426fbfe7448ffa7901b0",
+      "object_type": "blob",
+      "path": "ege-api/src/main/assembly/src.xml"
+    },
+    {
+      "mode": "100644",
+      "object_id": "5e9495128c0376427420c4189993b3851770b702",
+      "object_type": "blob",
+      "path": "ege-api/src/main/java/META-INF/MANIFEST.MF"
+    },
+    {
+      "mode": "100644",
+      "object_id": "4c677cb9f3da55fbbaab1e55a0a68598a3232da3",
+      "object_type": "blob",
+      "path": "ege-api/src/main/java/pl/psnc/dl/ege/EGE.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "beb7b9ac60a991bea7eb881f3df82db238d5d12a",
+      "object_type": "blob",
+      "path": "ege-api/src/main/java/pl/psnc/dl/ege/component/Converter.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "df79a7e8e60e7a82dc6f539c460d064bb98ff725",
+      "object_type": "blob",
+      "path": "ege-api/src/main/java/pl/psnc/dl/ege/component/NamedConverter.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "83819ddef0cdcb6c6a0f4e056e20d5b025da3c89",
+      "object_type": "blob",
+      "path": "ege-api/src/main/java/pl/psnc/dl/ege/component/Recognizer.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "abc62e12b56e3ea3be91cc09577a0c058037cd22",
+      "object_type": "blob",
+      "path": "ege-api/src/main/java/pl/psnc/dl/ege/component/Validator.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "90aaac673271a089f1e03918904257b2eb209375",
+      "object_type": "blob",
+      "path": "ege-api/src/main/java/pl/psnc/dl/ege/exception/ConverterException.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "8ac81d847494fedbfbf63cd82c26676cba2b250e",
+      "object_type": "blob",
+      "path": "ege-api/src/main/java/pl/psnc/dl/ege/exception/EGEException.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "0e0034d0db029c0a2d8fcf63e3782de4c53a44a3",
+      "object_type": "blob",
+      "path": "ege-api/src/main/java/pl/psnc/dl/ege/exception/RecognizerException.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "ae823ee40861a2ffdda3b5f7a4c45a7b45548331",
+      "object_type": "blob",
+      "path": "ege-api/src/main/java/pl/psnc/dl/ege/exception/ValidatorException.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "7c876a910763d81cb73aafe2bd5ac77e84e0c32a",
+      "object_type": "blob",
+      "path": "ege-api/src/main/java/pl/psnc/dl/ege/types/ConversionAction.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "47e7c694f3b6468f5c9c5e483a65df03e0876862",
+      "object_type": "blob",
+      "path": "ege-api/src/main/java/pl/psnc/dl/ege/types/ConversionActionArguments.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "40668ef12d6c5fd255837ced4cdb591fbfff9e61",
+      "object_type": "blob",
+      "path": "ege-api/src/main/java/pl/psnc/dl/ege/types/ConversionsPath.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "2fb775951d8e9d095df22e3b729286b1bcb22f5b",
+      "object_type": "blob",
+      "path": "ege-api/src/main/java/pl/psnc/dl/ege/types/DataType.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "afb9318835019563fcef4b9d2a4b6a437a0ef295",
+      "object_type": "blob",
+      "path": "ege-api/src/main/java/pl/psnc/dl/ege/types/ValidationResult.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "719ba3e36ffc72731ca1958b32db966544783f41",
+      "object_type": "blob",
+      "path": "ege-api/src/site/resources/images/Thumbs.db"
+    },
+    {
+      "mode": "100644",
+      "object_id": "070b7a15260277879cc68c9b43d7bc6de70bd006",
+      "object_type": "blob",
+      "path": "ege-api/src/site/resources/images/ege-overview.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "061d8eb3fc84f3a1885a220d4e4d466be4a5dc9b",
+      "object_type": "blob",
+      "path": "ege-api/src/site/resources/images/ege.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "6978d902ef1271d36c25f9df4322b3a933057201",
+      "object_type": "blob",
+      "path": "ege-api/src/site/resources/images/enrich-logo.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "4a51578da48c44b0220be28da25ab245f309b818",
+      "object_type": "blob",
+      "path": "ege-api/src/site/resources/images/graf.jpg"
+    },
+    {
+      "mode": "100644",
+      "object_id": "e742a1858c29ff17b45760c7690f96c81bad6807",
+      "object_type": "blob",
+      "path": "ege-api/src/site/resources/images/tabela.jpg"
+    },
+    {
+      "mode": "100644",
+      "object_id": "5ceccb23ee3ad3c87f117fc2d59924635122e11c",
+      "object_type": "blob",
+      "path": "ege-api/src/site/resources/images/uml.gif"
+    },
+    {
+      "mode": "100644",
+      "object_id": "544a3be9c169b36d0a3d77cf17afe6070d59175c",
+      "object_type": "blob",
+      "path": "ege-api/src/site/site.xml"
+    },
+    {
+      "mode": "100644",
+      "object_id": "0e8740b304559e60ffd35309aec10ac2e9e55fe2",
+      "object_type": "blob",
+      "path": "ege-api/src/site/xdoc/download.xml"
+    },
+    {
+      "mode": "100644",
+      "object_id": "c64fa0e24c9f3284637222aff6ec8af16e4f9613",
+      "object_type": "blob",
+      "path": "ege-api/src/site/xdoc/index.xml"
+    },
+    {
+      "mode": "100644",
+      "object_id": "9387f08a888bea1b616fb02f6af325f145f2c0e2",
+      "object_type": "blob",
+      "path": "ege-framework/LICENCE.txt"
+    },
+    {
+      "mode": "100644",
+      "object_id": "c7ab253c74b922059d62aeecf2c64f319eb6f4cc",
+      "object_type": "blob",
+      "path": "ege-framework/LOG"
+    },
+    {
+      "mode": "100644",
+      "object_id": "75bf88992435638473d73748f36225c5000ab54e",
+      "object_type": "blob",
+      "path": "ege-framework/MAVEN.txt"
+    },
+    {
+      "mode": "100644",
+      "object_id": "902e681f3b14b3dfd64cbe37a2caeeea243e243e",
+      "object_type": "blob",
+      "path": "ege-framework/build.xml"
+    },
+    {
+      "mode": "100644",
+      "object_id": "63c4e6c9c5f9902507683556d171b8fc45ef155a",
+      "object_type": "blob",
+      "path": "ege-framework/pom.xml"
+    },
+    {
+      "mode": "100644",
+      "object_id": "af264bcad21240fc1209b945bd3f863df80e1a9d",
+      "object_type": "blob",
+      "path": "ege-framework/src/main/java/pl/psnc/dl/ege/ConversionPerformer.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "4eabe12551807f31927cf554583ac43237e04ebe",
+      "object_type": "blob",
+      "path": "ege-framework/src/main/java/pl/psnc/dl/ege/EGEImpl.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "269673b5441cd10858bd2f99d62279c550804aab",
+      "object_type": "blob",
+      "path": "ege-framework/src/main/java/pl/psnc/dl/ege/ExceptionListener.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "cb262b964d50a23c3bcaabd2b179eeb895957150",
+      "object_type": "blob",
+      "path": "ege-framework/src/main/java/pl/psnc/dl/ege/component/ConfigurableConverter.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "9d3e17c0eba760da78037aeb940e965592a75390",
+      "object_type": "blob",
+      "path": "ege-framework/src/main/java/pl/psnc/dl/ege/configuration/EGEConfigurationManager.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "ebec31706c4eb48de819e11883b4efea0c1a40d2",
+      "object_type": "blob",
+      "path": "ege-framework/src/main/java/pl/psnc/dl/ege/configuration/EGEConstants.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "4d229acefdc7cdd42dea54537ec247b46338cfad",
+      "object_type": "blob",
+      "path": "ege-framework/src/main/java/pl/psnc/dl/ege/utils/BufferOutputStream.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "5339c7c33048ced7de486a4ea0bf206085d7a2ba",
+      "object_type": "blob",
+      "path": "ege-framework/src/main/java/pl/psnc/dl/ege/utils/DataBuffer.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "ca340389a0707bfb258ebf0858b5ba6823477f38",
+      "object_type": "blob",
+      "path": "ege-framework/src/main/java/pl/psnc/dl/ege/utils/EGEIOUtils.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "68ef22c2338dc4f0e586df3dc3c4f33f96f93fa7",
+      "object_type": "blob",
+      "path": "ege-framework/src/main/java/pl/psnc/dl/ege/utils/IOResolver.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "85b6467de0df30139ffbde9fc16f4e1e3ad25cd6",
+      "object_type": "blob",
+      "path": "ege-framework/src/main/java/pl/psnc/dl/ege/utils/ZipIOResolver.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "95a2d02d02f13f567f7ab1ca74ac3b8f22f52bc9",
+      "object_type": "blob",
+      "path": "ege-framework/src/main/resources/META-INF/plugin.xml"
+    },
+    {
+      "mode": "100644",
+      "object_id": "070b7a15260277879cc68c9b43d7bc6de70bd006",
+      "object_type": "blob",
+      "path": "ege-framework/src/site/resources/images/ege-overview.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "061d8eb3fc84f3a1885a220d4e4d466be4a5dc9b",
+      "object_type": "blob",
+      "path": "ege-framework/src/site/resources/images/ege.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "6978d902ef1271d36c25f9df4322b3a933057201",
+      "object_type": "blob",
+      "path": "ege-framework/src/site/resources/images/enrich-logo.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "4a51578da48c44b0220be28da25ab245f309b818",
+      "object_type": "blob",
+      "path": "ege-framework/src/site/resources/images/graf.jpg"
+    },
+    {
+      "mode": "100644",
+      "object_id": "e742a1858c29ff17b45760c7690f96c81bad6807",
+      "object_type": "blob",
+      "path": "ege-framework/src/site/resources/images/tabela.jpg"
+    },
+    {
+      "mode": "100644",
+      "object_id": "5ceccb23ee3ad3c87f117fc2d59924635122e11c",
+      "object_type": "blob",
+      "path": "ege-framework/src/site/resources/images/uml.gif"
+    },
+    {
+      "mode": "100644",
+      "object_id": "501076b74495fa842ce928007b516d8d61c03697",
+      "object_type": "blob",
+      "path": "ege-framework/src/site/site.xml"
+    },
+    {
+      "mode": "100644",
+      "object_id": "5ce08998f671ca655b94e7ea2fbef5e9a885f20d",
+      "object_type": "blob",
+      "path": "ege-framework/src/site/xdoc/download.xml"
+    },
+    {
+      "mode": "100644",
+      "object_id": "8db8900d196bc3790ca9d7386b1d0201456c969d",
+      "object_type": "blob",
+      "path": "ege-framework/src/site/xdoc/index.xml"
+    },
+    {
+      "mode": "100644",
+      "object_id": "9387f08a888bea1b616fb02f6af325f145f2c0e2",
+      "object_type": "blob",
+      "path": "ege-validator/LICENCE.txt"
+    },
+    {
+      "mode": "100644",
+      "object_id": "b2bb9d13ed30c0e3822a85194f84ec3f39e00b35",
+      "object_type": "blob",
+      "path": "ege-validator/pom.xml"
+    },
+    {
+      "mode": "100644",
+      "object_id": "0865f5b7852cc6473b70ecd2d831b14cdcd50f71",
+      "object_type": "blob",
+      "path": "ege-validator/src/main/assembly/dist.xml"
+    },
+    {
+      "mode": "100644",
+      "object_id": "348ac546e393088a9643426fbfe7448ffa7901b0",
+      "object_type": "blob",
+      "path": "ege-validator/src/main/assembly/src.xml"
+    },
+    {
+      "mode": "100644",
+      "object_id": "1b4bd94a031a84dc779aa36d2857ecb7e41062db",
+      "object_type": "blob",
+      "path": "ege-validator/src/main/java/pl/psnc/dl/ege/validator/EGEValidator.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "843dc8e746c50f5f94bf361001e653d56b5802d9",
+      "object_type": "blob",
+      "path": "ege-validator/src/main/java/pl/psnc/dl/ege/validator/StandardErrorHandler.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "8423e840818609019144428eab7b20175f0fa105",
+      "object_type": "blob",
+      "path": "ege-validator/src/main/java/pl/psnc/dl/ege/validator/XmlValidatorsProvider.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "13e061039e21288b40552ea2b51b7d4df28611a3",
+      "object_type": "blob",
+      "path": "ege-validator/src/main/java/pl/psnc/dl/ege/validator/xml/DTDValidator.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "541662833c71c9ec81dbc6b9f9ec8bd959f54908",
+      "object_type": "blob",
+      "path": "ege-validator/src/main/java/pl/psnc/dl/ege/validator/xml/ExceptionListenerImpl.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "44a3d02f14b45e43eb582be9502951927d7e3064",
+      "object_type": "blob",
+      "path": "ege-validator/src/main/java/pl/psnc/dl/ege/validator/xml/SchemaValidator.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "06c18ba62cfb6355443bfe9f2898516ad5c09c64",
+      "object_type": "blob",
+      "path": "ege-validator/src/main/java/pl/psnc/dl/ege/validator/xml/XmlValidator.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "c35746485e5497cbd4c206276619bf2105e68a0c",
+      "object_type": "blob",
+      "path": "ege-validator/src/main/resources/META-INF/plugin.xml"
+    },
+    {
+      "mode": "100644",
+      "object_id": "b2b563f87aaafd10dd8c004dde6c0d0978d46e1b",
+      "object_type": "blob",
+      "path": "ege-validator/src/main/resources/ead-dtd/_ead.dtd"
+    },
+    {
+      "mode": "100644",
+      "object_id": "1e36b698cee98716e90b0fc99dbe3cd6ac138238",
+      "object_type": "blob",
+      "path": "ege-validator/src/main/resources/ead-dtd/ead.dtd"
+    },
+    {
+      "mode": "100644",
+      "object_id": "9ac85aac34c4673471636e7f2b2904c72e8a9d61",
+      "object_type": "blob",
+      "path": "ege-validator/src/main/resources/ead-dtd/eadbase.ent"
+    },
+    {
+      "mode": "100644",
+      "object_id": "8baaf9b1694839c2e31c4371682173bca2d0858c",
+      "object_type": "blob",
+      "path": "ege-validator/src/main/resources/ead-dtd/eadchars.ent"
+    },
+    {
+      "mode": "100644",
+      "object_id": "fe56d9916904fa0548a8d7c900fc131a85afc8c7",
+      "object_type": "blob",
+      "path": "ege-validator/src/main/resources/ead-dtd/eadgrp.dtd"
+    },
+    {
+      "mode": "100644",
+      "object_id": "dd7aef40df25a1d3b267d63b0cdde7224be18f6e",
+      "object_type": "blob",
+      "path": "ege-validator/src/main/resources/ead-dtd/eadnotat.ent"
+    },
+    {
+      "mode": "100644",
+      "object_id": "d9b4c5eef3dfaba596333c2f00e65f81a3ef8cd8",
+      "object_type": "blob",
+      "path": "ege-validator/src/main/resources/ead-dtd/eadsgml.dcl"
+    },
+    {
+      "mode": "100644",
+      "object_id": "b49c30947f6505e5dd83037e68182f26c992bf15",
+      "object_type": "blob",
+      "path": "ege-validator/src/main/resources/ead-dtd/isodia.ent"
+    },
+    {
+      "mode": "100644",
+      "object_id": "1ed96fad866b94adc208a6126344cb0678612f0e",
+      "object_type": "blob",
+      "path": "ege-validator/src/main/resources/ead-dtd/isogrk1.ent"
+    },
+    {
+      "mode": "100644",
+      "object_id": "726b7dd70592f2033aa7e2a22ec6f3487525319c",
+      "object_type": "blob",
+      "path": "ege-validator/src/main/resources/ead-dtd/isogrk2.ent"
+    },
+    {
+      "mode": "100644",
+      "object_id": "28b5c2766c523c401c9643887809ba37ab5639ed",
+      "object_type": "blob",
+      "path": "ege-validator/src/main/resources/ead-dtd/isogrk3.ent"
+    },
+    {
+      "mode": "100644",
+      "object_id": "e85b7d32ccc8d0761b8d0a7b5a670c7589ac7c9e",
+      "object_type": "blob",
+      "path": "ege-validator/src/main/resources/ead-dtd/isogrk4.ent"
+    },
+    {
+      "mode": "100644",
+      "object_id": "43ae7649d9b54aaf545d7b4db8ec310e337ccf4d",
+      "object_type": "blob",
+      "path": "ege-validator/src/main/resources/ead-dtd/isolat1.ent"
+    },
+    {
+      "mode": "100644",
+      "object_id": "c29b828f1b2a976863611703a387dc86a521dd52",
+      "object_type": "blob",
+      "path": "ege-validator/src/main/resources/ead-dtd/isolat2.ent"
+    },
+    {
+      "mode": "100644",
+      "object_id": "9c0cdd7dc9a702a0f6cee9dd8aa0faf71536ed72",
+      "object_type": "blob",
+      "path": "ege-validator/src/main/resources/ead-dtd/isonum.ent"
+    },
+    {
+      "mode": "100644",
+      "object_id": "a11787828a38f60b2716ef56ba4c108165af4c54",
+      "object_type": "blob",
+      "path": "ege-validator/src/main/resources/ead-dtd/isopub.ent"
+    },
+    {
+      "mode": "100644",
+      "object_id": "07e81008d2a0a719b28806d06aa488e2b36e956a",
+      "object_type": "blob",
+      "path": "ege-validator/src/main/resources/ead-dtd/isotech.ent"
+    },
+    {
+      "mode": "100644",
+      "object_id": "70a567a01996f1181b23628afb49efc89254327c",
+      "object_type": "blob",
+      "path": "ege-validator/src/main/resources/master-dtd/masterx.dtd"
+    },
+    {
+      "mode": "100644",
+      "object_id": "e3cbdd8b2145c557008e7363ba548fc9e726d705",
+      "object_type": "blob",
+      "path": "ege-validator/src/main/resources/tei-schema/XMLSchema.dtd"
+    },
+    {
+      "mode": "100644",
+      "object_id": "2516ce00db5e176d222f7bad48c1360f1243563b",
+      "object_type": "blob",
+      "path": "ege-validator/src/main/resources/tei-schema/datatypes.dtd"
+    },
+    {
+      "mode": "100644",
+      "object_id": "8cd485bbe558a79d82b2dc1e282af58d608cfb3e",
+      "object_type": "blob",
+      "path": "ege-validator/src/main/resources/tei-schema/enrich.xsd"
+    },
+    {
+      "mode": "100644",
+      "object_id": "75d273a6451073c02b231425a876ea08322e4ea4",
+      "object_type": "blob",
+      "path": "ege-validator/src/main/resources/tei-schema/xml.xsd"
+    },
+    {
+      "mode": "100644",
+      "object_id": "ea97704df4abb58d2b11b21919eb6113f5ceef80",
+      "object_type": "blob",
+      "path": "ege-validator/src/main/resources/validators.xml"
+    },
+    {
+      "mode": "100644",
+      "object_id": "c53471547040b6932ec00737c7b37841f0a80ecf",
+      "object_type": "blob",
+      "path": "ege-validator/src/site/resources/images/Thumbs.db"
+    },
+    {
+      "mode": "100644",
+      "object_id": "070b7a15260277879cc68c9b43d7bc6de70bd006",
+      "object_type": "blob",
+      "path": "ege-validator/src/site/resources/images/ege-overview.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "061d8eb3fc84f3a1885a220d4e4d466be4a5dc9b",
+      "object_type": "blob",
+      "path": "ege-validator/src/site/resources/images/ege.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "6978d902ef1271d36c25f9df4322b3a933057201",
+      "object_type": "blob",
+      "path": "ege-validator/src/site/resources/images/enrich-logo.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "4a51578da48c44b0220be28da25ab245f309b818",
+      "object_type": "blob",
+      "path": "ege-validator/src/site/resources/images/graf.jpg"
+    },
+    {
+      "mode": "100644",
+      "object_id": "e742a1858c29ff17b45760c7690f96c81bad6807",
+      "object_type": "blob",
+      "path": "ege-validator/src/site/resources/images/tabela.jpg"
+    },
+    {
+      "mode": "100644",
+      "object_id": "5ceccb23ee3ad3c87f117fc2d59924635122e11c",
+      "object_type": "blob",
+      "path": "ege-validator/src/site/resources/images/uml.gif"
+    },
+    {
+      "mode": "100644",
+      "object_id": "0a6a6140b7dca32b8a70c98dc66e352d37ed7edb",
+      "object_type": "blob",
+      "path": "ege-validator/src/site/site.xml"
+    },
+    {
+      "mode": "100644",
+      "object_id": "0565f2cbf581810e119aad1167aef520fb80d15c",
+      "object_type": "blob",
+      "path": "ege-validator/src/site/xdoc/download.xml"
+    },
+    {
+      "mode": "100644",
+      "object_id": "71c4c3ab8172e3828297f4231dd714f7d890511c",
+      "object_type": "blob",
+      "path": "ege-validator/src/site/xdoc/index.xml"
+    },
+    {
+      "mode": "100644",
+      "object_id": "9387f08a888bea1b616fb02f6af325f145f2c0e2",
+      "object_type": "blob",
+      "path": "ege-webclient/LICENCE.txt"
+    },
+    {
+      "mode": "100644",
+      "object_id": "3780622bd790cd4b7a96861ed8b02fe20c1b35e9",
+      "object_type": "blob",
+      "path": "ege-webclient/pom.xml"
+    },
+    {
+      "mode": "100644",
+      "object_id": "d10fa5c2fd934297fc807905767d3c2ca09eceda",
+      "object_type": "blob",
+      "path": "ege-webclient/src/main/webapp/WEB-INF/web.xml"
+    },
+    {
+      "mode": "100644",
+      "object_id": "066a421542bef20ce2461c19840a6a9d9c7e7cdb",
+      "object_type": "blob",
+      "path": "ege-webclient/src/main/webapp/helpFiles-en/convert.html"
+    },
+    {
+      "mode": "100644",
+      "object_id": "335477033f58780b852845aeaa0b184bf8a90763",
+      "object_type": "blob",
+      "path": "ege-webclient/src/main/webapp/helpFiles-en/convertFrom.html"
+    },
+    {
+      "mode": "100644",
+      "object_id": "623ba4161daa348cad863b4867f5900bd63c2443",
+      "object_type": "blob",
+      "path": "ege-webclient/src/main/webapp/helpFiles-en/convertTo.html"
+    },
+    {
+      "mode": "100644",
+      "object_id": "4bb14b92db9231abe74a4c6b6cf1e806348ce172",
+      "object_type": "blob",
+      "path": "ege-webclient/src/main/webapp/helpFiles-en/errorHelp.html"
+    },
+    {
+      "mode": "100644",
+      "object_id": "239a976cb8c1207916c4a0d2b3c7b6809b44a894",
+      "object_type": "blob",
+      "path": "ege-webclient/src/main/webapp/helpFiles-en/images.html"
+    },
+    {
+      "mode": "100644",
+      "object_id": "9bd3ae03857a8f90c5b6399e9917333260c929fd",
+      "object_type": "blob",
+      "path": "ege-webclient/src/main/webapp/helpFiles-en/moreOptions.html"
+    },
+    {
+      "mode": "100644",
+      "object_id": "511ea61b4b19fc3425b7067f7aa8683a4a6410f3",
+      "object_type": "blob",
+      "path": "ege-webclient/src/main/webapp/helpFiles-en/validationErrorHelp.html"
+    },
+    {
+      "mode": "100644",
+      "object_id": "0554a4cfa2509452225f3fcb36b2b51e354320e8",
+      "object_type": "blob",
+      "path": "ege-webclient/src/main/webapp/helpFiles-fr/convert.html"
+    },
+    {
+      "mode": "100644",
+      "object_id": "52e89a2abbc7de2b29ca6a1e66c695359e193d83",
+      "object_type": "blob",
+      "path": "ege-webclient/src/main/webapp/helpFiles-fr/convertFrom.html"
+    },
+    {
+      "mode": "100644",
+      "object_id": "fc1ddaf45bf347776bcf835c4b07e0b2e4abe09c",
+      "object_type": "blob",
+      "path": "ege-webclient/src/main/webapp/helpFiles-fr/convertTo.html"
+    },
+    {
+      "mode": "100644",
+      "object_id": "ee8061d4a6907c3c35aec03c80dde1c615e8eea5",
+      "object_type": "blob",
+      "path": "ege-webclient/src/main/webapp/helpFiles-fr/errorHelp.html"
+    },
+    {
+      "mode": "100644",
+      "object_id": "8f067af058547aefa963a8a351b279dc6083e288",
+      "object_type": "blob",
+      "path": "ege-webclient/src/main/webapp/helpFiles-fr/images.html"
+    },
+    {
+      "mode": "100644",
+      "object_id": "bbc6f3c9d2562f6ae1fe2f8bbf9d9153ba743649",
+      "object_type": "blob",
+      "path": "ege-webclient/src/main/webapp/helpFiles-fr/moreOptions.html"
+    },
+    {
+      "mode": "100644",
+      "object_id": "e629b4b73f74d16b2faa8560caa6292629c7d61e",
+      "object_type": "blob",
+      "path": "ege-webclient/src/main/webapp/helpFiles-fr/validationErrorHelp.html"
+    },
+    {
+      "mode": "100644",
+      "object_id": "066a421542bef20ce2461c19840a6a9d9c7e7cdb",
+      "object_type": "blob",
+      "path": "ege-webclient/src/main/webapp/helpFiles/convert.html"
+    },
+    {
+      "mode": "100644",
+      "object_id": "335477033f58780b852845aeaa0b184bf8a90763",
+      "object_type": "blob",
+      "path": "ege-webclient/src/main/webapp/helpFiles/convertFrom.html"
+    },
+    {
+      "mode": "100644",
+      "object_id": "623ba4161daa348cad863b4867f5900bd63c2443",
+      "object_type": "blob",
+      "path": "ege-webclient/src/main/webapp/helpFiles/convertTo.html"
+    },
+    {
+      "mode": "100644",
+      "object_id": "4bb14b92db9231abe74a4c6b6cf1e806348ce172",
+      "object_type": "blob",
+      "path": "ege-webclient/src/main/webapp/helpFiles/errorHelp.html"
+    },
+    {
+      "mode": "100644",
+      "object_id": "239a976cb8c1207916c4a0d2b3c7b6809b44a894",
+      "object_type": "blob",
+      "path": "ege-webclient/src/main/webapp/helpFiles/images.html"
+    },
+    {
+      "mode": "100644",
+      "object_id": "9bd3ae03857a8f90c5b6399e9917333260c929fd",
+      "object_type": "blob",
+      "path": "ege-webclient/src/main/webapp/helpFiles/moreOptions.html"
+    },
+    {
+      "mode": "100644",
+      "object_id": "511ea61b4b19fc3425b7067f7aa8683a4a6410f3",
+      "object_type": "blob",
+      "path": "ege-webclient/src/main/webapp/helpFiles/validationErrorHelp.html"
+    },
+    {
+      "mode": "100644",
+      "object_id": "25cbccf5a3c99325d2e24d1a57d5c83c8b203616",
+      "object_type": "blob",
+      "path": "ege-webclient/src/main/webapp/i18n.xml"
+    },
+    {
+      "mode": "100644",
+      "object_id": "e6dcfa9ace3b15c0a9d4d126722ef93c53a44295",
+      "object_type": "blob",
+      "path": "ege-webclient/src/main/webapp/images/banner.jpg"
+    },
+    {
+      "mode": "100644",
+      "object_id": "ebe2014a316c84a27ae89aed8c35393db9978b0b",
+      "object_type": "blob",
+      "path": "ege-webclient/src/main/webapp/images/crest.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "19e491face0a7505cd741f8b82bea6f7f87d0359",
+      "object_type": "blob",
+      "path": "ege-webclient/src/main/webapp/images/documents.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "6835a41b49180645b032a1801832711e00a5f2e6",
+      "object_type": "blob",
+      "path": "ege-webclient/src/main/webapp/images/favicon.ico"
+    },
+    {
+      "mode": "100644",
+      "object_id": "9629c637370939efa8bb3a95379bb68d6fc5c278",
+      "object_type": "blob",
+      "path": "ege-webclient/src/main/webapp/images/header-bg.jpg"
+    },
+    {
+      "mode": "100644",
+      "object_id": "ca28502e767991cbb6caa5f727d552c035973796",
+      "object_type": "blob",
+      "path": "ege-webclient/src/main/webapp/images/presentation.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "ca28502e767991cbb6caa5f727d552c035973796",
+      "object_type": "blob",
+      "path": "ege-webclient/src/main/webapp/images/presentations.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "79c7ace0cf8e734dc4096832b0a104396e6279f9",
+      "object_type": "blob",
+      "path": "ege-webclient/src/main/webapp/images/servicename.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "6cb9eb811744964c656dbd90f695d2b1761a4b25",
+      "object_type": "blob",
+      "path": "ege-webclient/src/main/webapp/images/spreadsheet.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "6cb9eb811744964c656dbd90f695d2b1761a4b25",
+      "object_type": "blob",
+      "path": "ege-webclient/src/main/webapp/images/spreadsheets.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "19e491face0a7505cd741f8b82bea6f7f87d0359",
+      "object_type": "blob",
+      "path": "ege-webclient/src/main/webapp/images/text.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "7f436b3428cde898668059e42a279de5344965fa",
+      "object_type": "blob",
+      "path": "ege-webclient/src/main/webapp/index.jsp"
+    },
+    {
+      "mode": "100644",
+      "object_id": "e1b8635dd04e8b3720e7981bcf03358cdeb3f6ee",
+      "object_type": "blob",
+      "path": "ege-webclient/src/main/webapp/js/ege-js-client.js"
+    },
+    {
+      "mode": "100644",
+      "object_id": "6f4ade9e1d5774334e1444908b161b1cb50e19da",
+      "object_type": "blob",
+      "path": "ege-webclient/src/main/webapp/js/ege-js-validation.js"
+    },
+    {
+      "mode": "100644",
+      "object_id": "6e42405ca235912503cd39d903b6779b36661cc1",
+      "object_type": "blob",
+      "path": "ege-webclient/src/main/webapp/js/jquery.form.js"
+    },
+    {
+      "mode": "100644",
+      "object_id": "e8f73eb4785690f041efb57de310f2d0d6ab16a6",
+      "object_type": "blob",
+      "path": "ege-webclient/src/main/webapp/js/jquery.geturlparam.js"
+    },
+    {
+      "mode": "100644",
+      "object_id": "7c243080233761859937d52195b670602731a379",
+      "object_type": "blob",
+      "path": "ege-webclient/src/main/webapp/js/jquery.js"
+    },
+    {
+      "mode": "100644",
+      "object_id": "55719053cebe632db81faa0ce69c4da3a9db1b78",
+      "object_type": "blob",
+      "path": "ege-webclient/src/main/webapp/js/themes/custom-theme/images/Thumbs.db"
+    },
+    {
+      "mode": "100644",
+      "object_id": "5b5dab2ab7b1c50dea9cfe73dc5a269a92d2d4b4",
+      "object_type": "blob",
+      "path": "ege-webclient/src/main/webapp/js/themes/custom-theme/images/ui-bg_flat_0_aaaaaa_40x100.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "5ea0d817dd689a695775b99faabe44ef71bac87a",
+      "object_type": "blob",
+      "path": "ege-webclient/src/main/webapp/js/themes/custom-theme/images/ui-bg_flat_75_e7e8e9_40x100.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "ad3d6346e00f246102f72f2e026ed0491988b394",
+      "object_type": "blob",
+      "path": "ege-webclient/src/main/webapp/js/themes/custom-theme/images/ui-bg_glass_55_fbf9ee_1x400.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "42ccba269b6e91bef12ad0fa18be651b5ef0ee68",
+      "object_type": "blob",
+      "path": "ege-webclient/src/main/webapp/js/themes/custom-theme/images/ui-bg_glass_65_ffffff_1x400.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "546536d4dd11126ea4f1143d11af99fa02ae7987",
+      "object_type": "blob",
+      "path": "ege-webclient/src/main/webapp/js/themes/custom-theme/images/ui-bg_glass_75_cbcdd2_1x400.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "91b836c439557a949042c79e3cf8e3f1435fa06e",
+      "object_type": "blob",
+      "path": "ege-webclient/src/main/webapp/js/themes/custom-theme/images/ui-bg_highlight-soft_75_83b3ec_1x100.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "ec17b66f67a1d9787813e9c75a34a1a8cc861a80",
+      "object_type": "blob",
+      "path": "ege-webclient/src/main/webapp/js/themes/custom-theme/images/ui-bg_inset-hard_75_88b7f2_1x100.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "0e05810fffe0b6b8ac320e55d1eb4ba259b89d92",
+      "object_type": "blob",
+      "path": "ege-webclient/src/main/webapp/js/themes/custom-theme/images/ui-bg_inset-soft_95_fef1ec_1x100.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "ee039dc096a38a3753f92519546eee94bcfbeffa",
+      "object_type": "blob",
+      "path": "ege-webclient/src/main/webapp/js/themes/custom-theme/images/ui-icons_222222_256x240.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "45e8928e5284adacea3f9ec07b9b50667d2ac65f",
+      "object_type": "blob",
+      "path": "ege-webclient/src/main/webapp/js/themes/custom-theme/images/ui-icons_2e83ff_256x240.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "7ec70d11bfb2f77374dfd00ef61ba0c3647b5a0c",
+      "object_type": "blob",
+      "path": "ege-webclient/src/main/webapp/js/themes/custom-theme/images/ui-icons_454545_256x240.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "5ba708c39172a69e069136bd1309c4322c61f571",
+      "object_type": "blob",
+      "path": "ege-webclient/src/main/webapp/js/themes/custom-theme/images/ui-icons_888888_256x240.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "7930a558099bc8d92b4264eb67a0f040460f4a4f",
+      "object_type": "blob",
+      "path": "ege-webclient/src/main/webapp/js/themes/custom-theme/images/ui-icons_cd0a0a_256x240.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "ba28c41956cd698f99ae992bbd68e8e5052d12bf",
+      "object_type": "blob",
+      "path": "ege-webclient/src/main/webapp/js/themes/custom-theme/jquery-ui-1.7.2.custom.css"
+    },
+    {
+      "mode": "100644",
+      "object_id": "ee1b1b640b1514f8e124f61d70edc1ccd4cc27d4",
+      "object_type": "blob",
+      "path": "ege-webclient/src/main/webapp/js/themes/custom-theme/ui.accordion.css"
+    },
+    {
+      "mode": "100644",
+      "object_id": "543e4c3bc9b7f37542318e33fe40fa9fdcd00de7",
+      "object_type": "blob",
+      "path": "ege-webclient/src/main/webapp/js/themes/custom-theme/ui.all.css"
+    },
+    {
+      "mode": "100644",
+      "object_id": "ba53841419d576e59259b22e3e944d30fd124360",
+      "object_type": "blob",
+      "path": "ege-webclient/src/main/webapp/js/themes/custom-theme/ui.base.css"
+    },
+    {
+      "mode": "100644",
+      "object_id": "c2f18f2c08553b20771289cc660f46a69b20d783",
+      "object_type": "blob",
+      "path": "ege-webclient/src/main/webapp/js/themes/custom-theme/ui.core.css"
+    },
+    {
+      "mode": "100644",
+      "object_id": "567f8c97b562d47a0998236c567a04802c7d69d7",
+      "object_type": "blob",
+      "path": "ege-webclient/src/main/webapp/js/themes/custom-theme/ui.datepicker.css"
+    },
+    {
+      "mode": "100644",
+      "object_id": "2997595b7d276e06108270ee0ac45c608d260439",
+      "object_type": "blob",
+      "path": "ege-webclient/src/main/webapp/js/themes/custom-theme/ui.dialog.css"
+    },
+    {
+      "mode": "100644",
+      "object_id": "bc0939ecfa10f135eb8cb7df856c62c39ece525f",
+      "object_type": "blob",
+      "path": "ege-webclient/src/main/webapp/js/themes/custom-theme/ui.progressbar.css"
+    },
+    {
+      "mode": "100644",
+      "object_id": "44efeb2e86c70229e50d1ceb40555938965a8b55",
+      "object_type": "blob",
+      "path": "ege-webclient/src/main/webapp/js/themes/custom-theme/ui.resizable.css"
+    },
+    {
+      "mode": "100644",
+      "object_id": "4c5621879e83dad5504319ca9003e9f6c418555c",
+      "object_type": "blob",
+      "path": "ege-webclient/src/main/webapp/js/themes/custom-theme/ui.slider.css"
+    },
+    {
+      "mode": "100644",
+      "object_id": "3ca6b9a0a914bcab051b7801c59a4b7db427574d",
+      "object_type": "blob",
+      "path": "ege-webclient/src/main/webapp/js/themes/custom-theme/ui.tabs.css"
+    },
+    {
+      "mode": "100644",
+      "object_id": "ce084a7c1591957e0a3216ab95971261bc826836",
+      "object_type": "blob",
+      "path": "ege-webclient/src/main/webapp/js/themes/custom-theme/ui.theme.css"
+    },
+    {
+      "mode": "100644",
+      "object_id": "82290f48334c81272ff5991962951758137a08ba",
+      "object_type": "blob",
+      "path": "ege-webclient/src/main/webapp/js/thickbox/loadingAnimation.gif"
+    },
+    {
+      "mode": "100644",
+      "object_id": "a3d16a3331e6f9601e1c79820cd60011976e0630",
+      "object_type": "blob",
+      "path": "ege-webclient/src/main/webapp/js/thickbox/thickbox.css"
+    },
+    {
+      "mode": "100644",
+      "object_id": "30ea88f393a399b34c3d65d6d60b58f89189b91f",
+      "object_type": "blob",
+      "path": "ege-webclient/src/main/webapp/js/thickbox/thickbox.js"
+    },
+    {
+      "mode": "100644",
+      "object_id": "5292d77bd0c4f8ddaf4242c6deb61e5a14cb3eab",
+      "object_type": "blob",
+      "path": "ege-webclient/src/main/webapp/js/ui/jquery-ui-1.7.2.custom.js"
+    },
+    {
+      "mode": "100644",
+      "object_id": "5493e0aeb443bfd39dfcce0ae6a3087ee631cd7b",
+      "object_type": "blob",
+      "path": "ege-webclient/src/main/webapp/js/ui/ui.core.js"
+    },
+    {
+      "mode": "100644",
+      "object_id": "d914b3e4f902dafb677ce5fcb58b00166f989783",
+      "object_type": "blob",
+      "path": "ege-webclient/src/main/webapp/js/ui/ui.tabs.js"
+    },
+    {
+      "mode": "100644",
+      "object_id": "b92c6cd0e16430dedbef0ea832b9e1ddba1ad1f5",
+      "object_type": "blob",
+      "path": "ege-webclient/src/main/webapp/style/cssp_print.css"
+    },
+    {
+      "mode": "100644",
+      "object_id": "138ff492fd467fe755d2b00fcd1a6c157a3390c3",
+      "object_type": "blob",
+      "path": "ege-webclient/src/main/webapp/style/images/LowerCrest-000066.gif"
+    },
+    {
+      "mode": "100644",
+      "object_id": "4f5dedcf14bc2d1bcde0236f9c278393e2c6489e",
+      "object_type": "blob",
+      "path": "ege-webclient/src/main/webapp/style/images/OUCSLogo-000066.gif"
+    },
+    {
+      "mode": "100644",
+      "object_id": "8c163a8fe095f4ed41bfe5a8972fd9a660c36e3e",
+      "object_type": "blob",
+      "path": "ege-webclient/src/main/webapp/style/images/SearchCorner-000066.gif"
+    },
+    {
+      "mode": "100644",
+      "object_id": "51bda2e5c558ea328a663c34a8cea26eb3c0b23d",
+      "object_type": "blob",
+      "path": "ege-webclient/src/main/webapp/style/images/UpperBar.jpg"
+    },
+    {
+      "mode": "100644",
+      "object_id": "ecdbcaabd4fbb39d09d45cdc04c2b4b11069d3cf",
+      "object_type": "blob",
+      "path": "ege-webclient/src/main/webapp/style/img/Thumbs.db"
+    },
+    {
+      "mode": "100644",
+      "object_id": "0cd37f97d5bba66f7a82aad1804ea28f14d79da9",
+      "object_type": "blob",
+      "path": "ege-webclient/src/main/webapp/style/img/ege.jpg"
+    },
+    {
+      "mode": "100644",
+      "object_id": "f1cb9614b254494a40f897cbce91d95d821d163f",
+      "object_type": "blob",
+      "path": "ege-webclient/src/main/webapp/style/img/err.gif"
+    },
+    {
+      "mode": "100644",
+      "object_id": "0741de965002d5006b79249cf3d5383213f069ea",
+      "object_type": "blob",
+      "path": "ege-webclient/src/main/webapp/style/img/help_sm.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "f357deb7f7cce01fa753f420ec3862cce2020b3b",
+      "object_type": "blob",
+      "path": "ege-webclient/src/main/webapp/style/main.css"
+    },
+    {
+      "mode": "100644",
+      "object_id": "665e2daef948b93285c37227fda1415b4549c4bd",
+      "object_type": "blob",
+      "path": "ege-webclient/src/main/webapp/style/oucs.css"
+    },
+    {
+      "mode": "100644",
+      "object_id": "fe948c1394ca414bfd6d5522764559bb9a0f75a4",
+      "object_type": "blob",
+      "path": "ege-webclient/src/site/resources/images/Thumbs.db"
+    },
+    {
+      "mode": "100644",
+      "object_id": "070b7a15260277879cc68c9b43d7bc6de70bd006",
+      "object_type": "blob",
+      "path": "ege-webclient/src/site/resources/images/ege-overview.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "061d8eb3fc84f3a1885a220d4e4d466be4a5dc9b",
+      "object_type": "blob",
+      "path": "ege-webclient/src/site/resources/images/ege.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "6978d902ef1271d36c25f9df4322b3a933057201",
+      "object_type": "blob",
+      "path": "ege-webclient/src/site/resources/images/enrich-logo.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "4a51578da48c44b0220be28da25ab245f309b818",
+      "object_type": "blob",
+      "path": "ege-webclient/src/site/resources/images/graf.jpg"
+    },
+    {
+      "mode": "100644",
+      "object_id": "e742a1858c29ff17b45760c7690f96c81bad6807",
+      "object_type": "blob",
+      "path": "ege-webclient/src/site/resources/images/tabela.jpg"
+    },
+    {
+      "mode": "100644",
+      "object_id": "5ceccb23ee3ad3c87f117fc2d59924635122e11c",
+      "object_type": "blob",
+      "path": "ege-webclient/src/site/resources/images/uml.gif"
+    },
+    {
+      "mode": "100644",
+      "object_id": "e5b553d014d19b2625c1978d14a11ce1d4c7d66e",
+      "object_type": "blob",
+      "path": "ege-webclient/src/site/site.xml"
+    },
+    {
+      "mode": "100644",
+      "object_id": "cd247f29e79039a03aaf8c0643e67dce46b7f7c4",
+      "object_type": "blob",
+      "path": "ege-webclient/src/site/xdoc/download.xml"
+    },
+    {
+      "mode": "100644",
+      "object_id": "2902013a472b12030cff843ae022113e89d920ca",
+      "object_type": "blob",
+      "path": "ege-webclient/src/site/xdoc/index.xml"
+    },
+    {
+      "mode": "100644",
+      "object_id": "9387f08a888bea1b616fb02f6af325f145f2c0e2",
+      "object_type": "blob",
+      "path": "ege-webservice/LICENCE.txt"
+    },
+    {
+      "mode": "100644",
+      "object_id": "de3fa9e42075635149233a2bbb21ff80d752c2d4",
+      "object_type": "blob",
+      "path": "ege-webservice/pom.xml"
+    },
+    {
+      "mode": "100644",
+      "object_id": "3ca686f4178b3483f55cd6b6c2fbaacf3bc46c3e",
+      "object_type": "blob",
+      "path": "ege-webservice/src/main/assembly/dist.xml"
+    },
+    {
+      "mode": "100644",
+      "object_id": "348ac546e393088a9643426fbfe7448ffa7901b0",
+      "object_type": "blob",
+      "path": "ege-webservice/src/main/assembly/src.xml"
+    },
+    {
+      "mode": "100644",
+      "object_id": "531deb6cf99462a5b93865fed856bb37a8395690",
+      "object_type": "blob",
+      "path": "ege-webservice/src/main/java/pl/psnc/dl/ege/webapp/config/LabelProvider.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "63625d09d51ff2cd325cc9ebb31c1f0f13653bf6",
+      "object_type": "blob",
+      "path": "ege-webservice/src/main/java/pl/psnc/dl/ege/webapp/config/MimeExtensionProvider.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "a0f2ee527963fbeb3597d4ce06a307777f302d7f",
+      "object_type": "blob",
+      "path": "ege-webservice/src/main/java/pl/psnc/dl/ege/webapp/config/PreConfig.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "a089ca886d37fb36a422d06ccfaedda4b401b835",
+      "object_type": "blob",
+      "path": "ege-webservice/src/main/java/pl/psnc/dl/ege/webapp/request/ConversionRequestResolver.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "ddaac183f972eb8f736ab2ec9e2ff3644b98cf97",
+      "object_type": "blob",
+      "path": "ege-webservice/src/main/java/pl/psnc/dl/ege/webapp/request/ConversionsPropertiesHandler.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "3300b8fb4e48570d323fb0dcf5470ac184d8b602",
+      "object_type": "blob",
+      "path": "ege-webservice/src/main/java/pl/psnc/dl/ege/webapp/request/Method.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "6d7a8367fa81edfbe450a72933c20c49deb962c6",
+      "object_type": "blob",
+      "path": "ege-webservice/src/main/java/pl/psnc/dl/ege/webapp/request/OperationId.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "98b547ce1dd154eb174bb847f764b3be1278dbd2",
+      "object_type": "blob",
+      "path": "ege-webservice/src/main/java/pl/psnc/dl/ege/webapp/request/RequestResolver.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "5c04e090f28a8b34f377a1af2686351df50dff6d",
+      "object_type": "blob",
+      "path": "ege-webservice/src/main/java/pl/psnc/dl/ege/webapp/request/RequestResolvingException.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "ddc1c2dbad6a317555a6784fcaae9ea4628cccae",
+      "object_type": "blob",
+      "path": "ege-webservice/src/main/java/pl/psnc/dl/ege/webapp/request/ValidationRequestResolver.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "e468f373519e3f7e9f706cb440e10e9d780fc87a",
+      "object_type": "blob",
+      "path": "ege-webservice/src/main/java/pl/psnc/dl/ege/webapp/servlet/ConversionServlet.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "c77ccd03bb77d4e44d0e7b59a04885738505b351",
+      "object_type": "blob",
+      "path": "ege-webservice/src/main/java/pl/psnc/dl/ege/webapp/servlet/ValidationServlet.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "24748228249c3b7c09c3089a592cc9b30b47e29f",
+      "object_type": "blob",
+      "path": "ege-webservice/src/main/webapp/WEB-INF/config/fileExt.xml"
+    },
+    {
+      "mode": "100644",
+      "object_id": "ec4aa7ad96241ad48ce877ce0ba90ad9beda02fe",
+      "object_type": "blob",
+      "path": "ege-webservice/src/main/webapp/WEB-INF/lib/oxgarage.properties"
+    },
+    {
+      "mode": "100644",
+      "object_id": "dd99d52199564adde5f2bc8b3831fb6de30fb2d4",
+      "object_type": "blob",
+      "path": "ege-webservice/src/main/webapp/WEB-INF/lib/tei-config/configuration/OpenOfficeConfig"
+    },
+    {
+      "mode": "100644",
+      "object_id": "15a2c9aebbd87f6c1ddd282bee18b3301e93d7b0",
+      "object_type": "blob",
+      "path": "ege-webservice/src/main/webapp/WEB-INF/lib/tei-config/configuration/tei-config.xml"
+    },
+    {
+      "mode": "100644",
+      "object_id": "1bc3ea7b2c9fe667864ab4d96e665473e3d9dd4c",
+      "object_type": "blob",
+      "path": "ege-webservice/src/main/webapp/WEB-INF/lib/tei-config/images/TEI.icns"
+    },
+    {
+      "mode": "100644",
+      "object_id": "60a793a2708e7264c04a0e85b719549443a853c2",
+      "object_type": "blob",
+      "path": "ege-webservice/src/main/webapp/WEB-INF/lib/tei-config/images/TEI.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "9c838554f3f4ccf2e416723b2ffc66c2419c963d",
+      "object_type": "blob",
+      "path": "ege-webservice/src/main/webapp/WEB-INF/lib/tei-config/images/Thumbs.db"
+    },
+    {
+      "mode": "100644",
+      "object_id": "b8a937c314d818e992d8c50874105373444e0039",
+      "object_type": "blob",
+      "path": "ege-webservice/src/main/webapp/WEB-INF/locale/labels_en.xml"
+    },
+    {
+      "mode": "100644",
+      "object_id": "87ae69fb7bf19ae5426531c9a007cd0e1c6b2b61",
+      "object_type": "blob",
+      "path": "ege-webservice/src/main/webapp/WEB-INF/locale/labels_fr.xml"
+    },
+    {
+      "mode": "100644",
+      "object_id": "f349ebb4b18d87c31a4003e6aa3d88b4ce9434c3",
+      "object_type": "blob",
+      "path": "ege-webservice/src/main/webapp/WEB-INF/locale/labels_pl.xml"
+    },
+    {
+      "mode": "100644",
+      "object_id": "8df8fd131d382661e90c880c8ddd0aafef27fb8c",
+      "object_type": "blob",
+      "path": "ege-webservice/src/main/webapp/WEB-INF/web.xml"
+    },
+    {
+      "mode": "100644",
+      "object_id": "64df9357a2f9773aa9e183781db7f3f728f58be3",
+      "object_type": "blob",
+      "path": "ege-webservice/src/main/webapp/error.jsp"
+    },
+    {
+      "mode": "100644",
+      "object_id": "76657f060375caf589539f5090a1f7fe4d9e66ea",
+      "object_type": "blob",
+      "path": "ege-webservice/src/main/webapp/index.html"
+    },
+    {
+      "mode": "100644",
+      "object_id": "8beaf2d794c7b91e3998a9dcb3e36c0f1fa8ce23",
+      "object_type": "blob",
+      "path": "ege-webservice/src/site/resources/images/Thumbs.db"
+    },
+    {
+      "mode": "100644",
+      "object_id": "070b7a15260277879cc68c9b43d7bc6de70bd006",
+      "object_type": "blob",
+      "path": "ege-webservice/src/site/resources/images/ege-overview.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "061d8eb3fc84f3a1885a220d4e4d466be4a5dc9b",
+      "object_type": "blob",
+      "path": "ege-webservice/src/site/resources/images/ege.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "6978d902ef1271d36c25f9df4322b3a933057201",
+      "object_type": "blob",
+      "path": "ege-webservice/src/site/resources/images/enrich-logo.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "4a51578da48c44b0220be28da25ab245f309b818",
+      "object_type": "blob",
+      "path": "ege-webservice/src/site/resources/images/graf.jpg"
+    },
+    {
+      "mode": "100644",
+      "object_id": "e742a1858c29ff17b45760c7690f96c81bad6807",
+      "object_type": "blob",
+      "path": "ege-webservice/src/site/resources/images/tabela.jpg"
+    },
+    {
+      "mode": "100644",
+      "object_id": "5ceccb23ee3ad3c87f117fc2d59924635122e11c",
+      "object_type": "blob",
+      "path": "ege-webservice/src/site/resources/images/uml.gif"
+    },
+    {
+      "mode": "100644",
+      "object_id": "21eeb52c2e24b057e71d416a727bdf14f9b70215",
+      "object_type": "blob",
+      "path": "ege-webservice/src/site/site.xml"
+    },
+    {
+      "mode": "100644",
+      "object_id": "9e9a142d63bb07c16e5c58f3821e84bee04bf7c7",
+      "object_type": "blob",
+      "path": "ege-webservice/src/site/xdoc/download.xml"
+    },
+    {
+      "mode": "100644",
+      "object_id": "be7722f4c3f48145adc3ebf2a5494a56c0b83e02",
+      "object_type": "blob",
+      "path": "ege-webservice/src/site/xdoc/index.xml"
+    },
+    {
+      "mode": "100644",
+      "object_id": "9387f08a888bea1b616fb02f6af325f145f2c0e2",
+      "object_type": "blob",
+      "path": "ege-xsl-converter/LICENCE.txt"
+    },
+    {
+      "mode": "100644",
+      "object_id": "0274d1f9d8dc8ddd200f7f3bced638fda8c9774c",
+      "object_type": "blob",
+      "path": "ege-xsl-converter/pom.xml"
+    },
+    {
+      "mode": "100644",
+      "object_id": "0865f5b7852cc6473b70ecd2d831b14cdcd50f71",
+      "object_type": "blob",
+      "path": "ege-xsl-converter/src/main/assembly/dist.xml"
+    },
+    {
+      "mode": "100644",
+      "object_id": "348ac546e393088a9643426fbfe7448ffa7901b0",
+      "object_type": "blob",
+      "path": "ege-xsl-converter/src/main/assembly/src.xml"
+    },
+    {
+      "mode": "100644",
+      "object_id": "5e9495128c0376427420c4189993b3851770b702",
+      "object_type": "blob",
+      "path": "ege-xsl-converter/src/main/java/META-INF/MANIFEST.MF"
+    },
+    {
+      "mode": "100644",
+      "object_id": "4272c78eef81980cf69c99080d8b0dad56f68530",
+      "object_type": "blob",
+      "path": "ege-xsl-converter/src/main/java/pl/psnc/dl/ege/MultiXslConverter.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "534e31b53c77cfbff8d11abb7e15e36c930555c0",
+      "object_type": "blob",
+      "path": "ege-xsl-converter/src/main/java/pl/psnc/dl/ege/MultiXslOutputResolver.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "f4fda3249a27393467b4216ada19a0d411d517c2",
+      "object_type": "blob",
+      "path": "ege-xsl-converter/src/main/resources/META-INF/plugin.xml"
+    },
+    {
+      "mode": "100644",
+      "object_id": "a4168e8300b77637a7dfab13769859278ef187fb",
+      "object_type": "blob",
+      "path": "ege-xsl-converter/src/main/resources/ead2enrich/ead2enrich.xsl"
+    },
+    {
+      "mode": "100644",
+      "object_id": "495ab251b6e8ca9f09e51e8bcc65ace848db1f1f",
+      "object_type": "blob",
+      "path": "ege-xsl-converter/src/main/resources/master2enrich/master2enrich.xsl"
+    },
+    {
+      "mode": "100644",
+      "object_id": "8beaf2d794c7b91e3998a9dcb3e36c0f1fa8ce23",
+      "object_type": "blob",
+      "path": "ege-xsl-converter/src/site/resources/images/Thumbs.db"
+    },
+    {
+      "mode": "100644",
+      "object_id": "070b7a15260277879cc68c9b43d7bc6de70bd006",
+      "object_type": "blob",
+      "path": "ege-xsl-converter/src/site/resources/images/ege-overview.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "061d8eb3fc84f3a1885a220d4e4d466be4a5dc9b",
+      "object_type": "blob",
+      "path": "ege-xsl-converter/src/site/resources/images/ege.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "6978d902ef1271d36c25f9df4322b3a933057201",
+      "object_type": "blob",
+      "path": "ege-xsl-converter/src/site/resources/images/enrich-logo.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "4a51578da48c44b0220be28da25ab245f309b818",
+      "object_type": "blob",
+      "path": "ege-xsl-converter/src/site/resources/images/graf.jpg"
+    },
+    {
+      "mode": "100644",
+      "object_id": "e742a1858c29ff17b45760c7690f96c81bad6807",
+      "object_type": "blob",
+      "path": "ege-xsl-converter/src/site/resources/images/tabela.jpg"
+    },
+    {
+      "mode": "100644",
+      "object_id": "5ceccb23ee3ad3c87f117fc2d59924635122e11c",
+      "object_type": "blob",
+      "path": "ege-xsl-converter/src/site/resources/images/uml.gif"
+    },
+    {
+      "mode": "100644",
+      "object_id": "ffe6a2c15fb39c5242b6ce7e4c7b52f7c181a203",
+      "object_type": "blob",
+      "path": "ege-xsl-converter/src/site/site.xml"
+    },
+    {
+      "mode": "100644",
+      "object_id": "bb1944d3ff89fea677f0531f66a795449af9e89e",
+      "object_type": "blob",
+      "path": "ege-xsl-converter/src/site/xdoc/download.xml"
+    },
+    {
+      "mode": "100644",
+      "object_id": "929b92a30fc47842676a5280ef4ed5c748b26cec",
+      "object_type": "blob",
+      "path": "ege-xsl-converter/src/site/xdoc/index.xml"
+    },
+    {
+      "mode": "100644",
+      "object_id": "e633afbe6842aa92b1a8f0ff3f5b8c0e3283961b",
+      "object_type": "blob",
+      "path": "jod-lib/commons-cli-1.1.jar"
+    },
+    {
+      "mode": "100644",
+      "object_id": "133dc6cb35f5ca2c5920fd0933a557c2def88680",
+      "object_type": "blob",
+      "path": "jod-lib/commons-io-1.4.jar"
+    },
+    {
+      "mode": "100644",
+      "object_id": "af626dacca0ed81e53737575ef291ee8c81e1a12",
+      "object_type": "blob",
+      "path": "jod-lib/jodconverter-core-3.0-beta-4.jar"
+    },
+    {
+      "mode": "100644",
+      "object_id": "ef29094093d39ecf5a50c24fc61f10c8c5b6b195",
+      "object_type": "blob",
+      "path": "jod-lib/json-20090211.jar"
+    },
+    {
+      "mode": "100644",
+      "object_id": "423a90702531755db5f599637cd56db9be4f809f",
+      "object_type": "blob",
+      "path": "jod-lib/juh-3.2.1.jar"
+    },
+    {
+      "mode": "100644",
+      "object_id": "a71926b93f56d1c86b96709ae9b98ab4c51a10b4",
+      "object_type": "blob",
+      "path": "jod-lib/jurt-3.2.1.jar"
+    },
+    {
+      "mode": "100644",
+      "object_id": "d2325145488d89ac9f4328bce4d8afd3b2c33c4b",
+      "object_type": "blob",
+      "path": "jod-lib/ridl-3.2.1.jar"
+    },
+    {
+      "mode": "100644",
+      "object_id": "e5bd96c160bc99cf6a458d03de87413a05f54c17",
+      "object_type": "blob",
+      "path": "jod-lib/unoil-3.2.1.jar"
+    },
+    {
+      "mode": "100644",
+      "object_id": "2578ecb84c295c4255600566b280c4b328043b52",
+      "object_type": "blob",
+      "path": "jpf-1.5.1.jar"
+    },
+    {
+      "mode": "100644",
+      "object_id": "358db3a9e243d3050108a2706e69e13a7c077d7a",
+      "object_type": "blob",
+      "path": "jpf-boot.jar"
+    },
+    {
+      "mode": "100644",
+      "object_id": "b1ccfc50c7c8f8b40db0c7fbf4d1cd97c3ddc533",
+      "object_type": "blob",
+      "path": "jpf-tools.jar"
+    },
+    {
+      "mode": "100644",
+      "object_id": "2578ecb84c295c4255600566b280c4b328043b52",
+      "object_type": "blob",
+      "path": "jpf.jar"
+    },
+    {
+      "mode": "100644",
+      "object_id": "c1214645a9d329581f2d877b1e91a61a4099752e",
+      "object_type": "blob",
+      "path": "log4j.xml"
+    },
+    {
+      "mode": "100755",
+      "object_id": "21799c6799837c7fa0abfd1fe83958db2fb436a0",
+      "object_type": "blob",
+      "path": "mydch"
+    },
+    {
+      "mode": "100644",
+      "object_id": "ab88d55513554decad7155b0b89c055ff683c266",
+      "object_type": "blob",
+      "path": "notes.txt"
+    },
+    {
+      "mode": "100644",
+      "object_id": "9387f08a888bea1b616fb02f6af325f145f2c0e2",
+      "object_type": "blob",
+      "path": "oo-converter/LICENCE.txt"
+    },
+    {
+      "mode": "100644",
+      "object_id": "9fe689f77ffc3107881277ac140e9c9301665b05",
+      "object_type": "blob",
+      "path": "oo-converter/pom.xml"
+    },
+    {
+      "mode": "100644",
+      "object_id": "f2f447e5ff31daafddf5e94807730fb3ea997272",
+      "object_type": "blob",
+      "path": "oo-converter/src/main/java/uk/ac/ox/oucs/oxgarage/oo/InputPresentationFormat.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "50d2c03e8ac4286ff55830f3f778e73a9a74e130",
+      "object_type": "blob",
+      "path": "oo-converter/src/main/java/uk/ac/ox/oucs/oxgarage/oo/InputSpreadsheetFormat.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "c073f8f9b2b951f174cf8e6a16037da7fd80f4d3",
+      "object_type": "blob",
+      "path": "oo-converter/src/main/java/uk/ac/ox/oucs/oxgarage/oo/InputTextFormat.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "8f33cccad93f7faaea8623741de20d63f34a006d",
+      "object_type": "blob",
+      "path": "oo-converter/src/main/java/uk/ac/ox/oucs/oxgarage/oo/OOConfiguration.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "42437c3b446101cde403e0bc3303869eb0af2d1a",
+      "object_type": "blob",
+      "path": "oo-converter/src/main/java/uk/ac/ox/oucs/oxgarage/oo/OOConversionsFamily.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "715c4d802f672141b019a6d2205b64e8295152e6",
+      "object_type": "blob",
+      "path": "oo-converter/src/main/java/uk/ac/ox/oucs/oxgarage/oo/OOConverter.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "b72407cea379c6855ceb13747e25cb9253d1df95",
+      "object_type": "blob",
+      "path": "oo-converter/src/main/java/uk/ac/ox/oucs/oxgarage/oo/OutputPresentationFormat.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "e5c0a18a50cad53bc79fb815e4b4fb7bac599e66",
+      "object_type": "blob",
+      "path": "oo-converter/src/main/java/uk/ac/ox/oucs/oxgarage/oo/OutputSpreadsheetFormat.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "f920779e24896e1e1972979f8abf4d8cc676901f",
+      "object_type": "blob",
+      "path": "oo-converter/src/main/java/uk/ac/ox/oucs/oxgarage/oo/OutputTextFormat.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "46eedbd0857808af9cbfa18367cbbcf6cc41fff1",
+      "object_type": "blob",
+      "path": "oo-converter/src/main/resources/META-INF/plugin.xml"
+    },
+    {
+      "mode": "100644",
+      "object_id": "d0e0c0b4dad977de2a2a424c5ef6b759f01812f1",
+      "object_type": "blob",
+      "path": "pom.xml"
+    },
+    {
+      "mode": "100644",
+      "object_id": "5204e982a690694029331862c74a8e25ebd3883f",
+      "object_type": "blob",
+      "path": "saxon9he.jar"
+    },
+    {
+      "mode": "100755",
+      "object_id": "4630468922eb35a1d712d57c6790e527db50e746",
+      "object_type": "blob",
+      "path": "src/main/assembly/dist.xml"
+    },
+    {
+      "mode": "100755",
+      "object_id": "c3f5e61401b232ce51fee45480c3ab7dc030bcf8",
+      "object_type": "blob",
+      "path": "src/main/assembly/site.xml"
+    },
+    {
+      "mode": "100755",
+      "object_id": "8beaf2d794c7b91e3998a9dcb3e36c0f1fa8ce23",
+      "object_type": "blob",
+      "path": "src/site/resources/images/Thumbs.db"
+    },
+    {
+      "mode": "100755",
+      "object_id": "070b7a15260277879cc68c9b43d7bc6de70bd006",
+      "object_type": "blob",
+      "path": "src/site/resources/images/ege-overview.png"
+    },
+    {
+      "mode": "100755",
+      "object_id": "937c0895245d9e58fe96b7e5a9acf8f36dc4de16",
+      "object_type": "blob",
+      "path": "src/site/resources/images/ege-webclient1.png"
+    },
+    {
+      "mode": "100755",
+      "object_id": "8350b9c5f0fe8833fdef3e141206e7330d7e632d",
+      "object_type": "blob",
+      "path": "src/site/resources/images/ege-webclient2.png"
+    },
+    {
+      "mode": "100755",
+      "object_id": "b119debe3906112160c2f752e407a599e956a95b",
+      "object_type": "blob",
+      "path": "src/site/resources/images/ege-webclient3.png"
+    },
+    {
+      "mode": "100755",
+      "object_id": "061d8eb3fc84f3a1885a220d4e4d466be4a5dc9b",
+      "object_type": "blob",
+      "path": "src/site/resources/images/ege.png"
+    },
+    {
+      "mode": "100755",
+      "object_id": "6978d902ef1271d36c25f9df4322b3a933057201",
+      "object_type": "blob",
+      "path": "src/site/resources/images/enrich-logo.png"
+    },
+    {
+      "mode": "100755",
+      "object_id": "4a51578da48c44b0220be28da25ab245f309b818",
+      "object_type": "blob",
+      "path": "src/site/resources/images/graf.jpg"
+    },
+    {
+      "mode": "100755",
+      "object_id": "e742a1858c29ff17b45760c7690f96c81bad6807",
+      "object_type": "blob",
+      "path": "src/site/resources/images/tabela.jpg"
+    },
+    {
+      "mode": "100755",
+      "object_id": "5ceccb23ee3ad3c87f117fc2d59924635122e11c",
+      "object_type": "blob",
+      "path": "src/site/resources/images/uml.gif"
+    },
+    {
+      "mode": "100755",
+      "object_id": "737b15b6684ef704fd5e64db5affaf16832f3ed1",
+      "object_type": "blob",
+      "path": "src/site/site.xml"
+    },
+    {
+      "mode": "100755",
+      "object_id": "b3d3b3ade9fecedac51aaafc63813f401952ea38",
+      "object_type": "blob",
+      "path": "src/site/xdoc/creation.xml"
+    },
+    {
+      "mode": "100755",
+      "object_id": "608730b605e6b2dfa867e23ca9021b5af90f93a2",
+      "object_type": "blob",
+      "path": "src/site/xdoc/download.xml"
+    },
+    {
+      "mode": "100755",
+      "object_id": "c9c7a45e154ea0cfad601adec3a79f9f13b964c0",
+      "object_type": "blob",
+      "path": "src/site/xdoc/index.xml"
+    },
+    {
+      "mode": "100755",
+      "object_id": "36af42fec0671c1b62c6f1c9f479bb0a57bc4e5c",
+      "object_type": "blob",
+      "path": "src/site/xdoc/internal.xml"
+    },
+    {
+      "mode": "100755",
+      "object_id": "3954128cfc99d7108b9c305c9e2f0f6457fc7ee1",
+      "object_type": "blob",
+      "path": "src/site/xdoc/restws.xml"
+    },
+    {
+      "mode": "100755",
+      "object_id": "66663135cbd8967a0af5ca1a60af6f2e47394033",
+      "object_type": "blob",
+      "path": "src/site/xdoc/usage.xml"
+    },
+    {
+      "mode": "100755",
+      "object_id": "68d7cc095751c15906784de55ca03876050735db",
+      "object_type": "blob",
+      "path": "src/site/xdoc/webclient.xml"
+    },
+    {
+      "mode": "100755",
+      "object_id": "8a376344c08a055ff8a252188e0aa90c17f0e73e",
+      "object_type": "blob",
+      "path": "src/site/xdoc/xslconverter.xml"
+    },
+    {
+      "mode": "100644",
+      "object_id": "9387f08a888bea1b616fb02f6af325f145f2c0e2",
+      "object_type": "blob",
+      "path": "tei-converter/LICENCE.txt"
+    },
+    {
+      "mode": "100644",
+      "object_id": "325e36988fd40a919bae67a03b3888432bfb15cd",
+      "object_type": "blob",
+      "path": "tei-converter/build.xml"
+    },
+    {
+      "mode": "100644",
+      "object_id": "61c1b0d46a2529041ca105cc877256744ca0c5a0",
+      "object_type": "blob",
+      "path": "tei-converter/pom.xml"
+    },
+    {
+      "mode": "100644",
+      "object_id": "5e9495128c0376427420c4189993b3851770b702",
+      "object_type": "blob",
+      "path": "tei-converter/src/main/java/META-INF/MANIFEST.MF"
+    },
+    {
+      "mode": "100644",
+      "object_id": "720936df50442822a6459dfeb27d084702d6c4da",
+      "object_type": "blob",
+      "path": "tei-converter/src/main/java/pl/psnc/dl/ege/tei/ComplexConverter.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "d9efe0af4afb9b98b642e492e349a0c3b9179eca",
+      "object_type": "blob",
+      "path": "tei-converter/src/main/java/pl/psnc/dl/ege/tei/ConverterConfiguration.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "28441068ded47fd6528a6ba3cc35e40b267ec978",
+      "object_type": "blob",
+      "path": "tei-converter/src/main/java/pl/psnc/dl/ege/tei/DocXConverter.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "69189788036bf2aac8efe5109416ec683862140a",
+      "object_type": "blob",
+      "path": "tei-converter/src/main/java/pl/psnc/dl/ege/tei/Format.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "62a6ec77be844ee54f3f2720b514ece2d026cfee",
+      "object_type": "blob",
+      "path": "tei-converter/src/main/java/pl/psnc/dl/ege/tei/ImageFetcher.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "0f8ba8541e3f6dab1b71e86f4e429ef21e999953",
+      "object_type": "blob",
+      "path": "tei-converter/src/main/java/pl/psnc/dl/ege/tei/OdtConverter.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "77ddbb53f28f101ff27e5159cacb9786ffa203ae",
+      "object_type": "blob",
+      "path": "tei-converter/src/main/java/pl/psnc/dl/ege/tei/TEIConverter.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "03874258f8ff92b7fd12f79c3e91546f330dd53d",
+      "object_type": "blob",
+      "path": "tei-converter/src/main/java/pl/psnc/dl/ege/tei/TEIConverterURIResolver.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "5a57299499222813c49d3fee3888b6b651833c2f",
+      "object_type": "blob",
+      "path": "tei-converter/src/main/java/pl/psnc/dl/ege/tei/XlsXConverter.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "4817c52df0908a731dcd95639c88fe13210bbd88",
+      "object_type": "blob",
+      "path": "tei-converter/src/main/resources/META-INF/plugin.xml"
+    },
+    {
+      "mode": "100644",
+      "object_id": "15a2c9aebbd87f6c1ddd282bee18b3301e93d7b0",
+      "object_type": "blob",
+      "path": "tei-converter/src/main/templates/tei-config/configuration/tei-config.xml"
+    },
+    {
+      "mode": "100644",
+      "object_id": "1bc3ea7b2c9fe667864ab4d96e665473e3d9dd4c",
+      "object_type": "blob",
+      "path": "tei-converter/src/main/templates/tei-config/images/TEI.icns"
+    },
+    {
+      "mode": "100644",
+      "object_id": "60a793a2708e7264c04a0e85b719549443a853c2",
+      "object_type": "blob",
+      "path": "tei-converter/src/main/templates/tei-config/images/TEI.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "070b7a15260277879cc68c9b43d7bc6de70bd006",
+      "object_type": "blob",
+      "path": "tei-converter/src/site/resources/images/ege-overview.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "061d8eb3fc84f3a1885a220d4e4d466be4a5dc9b",
+      "object_type": "blob",
+      "path": "tei-converter/src/site/resources/images/ege.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "6978d902ef1271d36c25f9df4322b3a933057201",
+      "object_type": "blob",
+      "path": "tei-converter/src/site/resources/images/enrich-logo.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "4a51578da48c44b0220be28da25ab245f309b818",
+      "object_type": "blob",
+      "path": "tei-converter/src/site/resources/images/graf.jpg"
+    },
+    {
+      "mode": "100644",
+      "object_id": "e742a1858c29ff17b45760c7690f96c81bad6807",
+      "object_type": "blob",
+      "path": "tei-converter/src/site/resources/images/tabela.jpg"
+    },
+    {
+      "mode": "100644",
+      "object_id": "5ceccb23ee3ad3c87f117fc2d59924635122e11c",
+      "object_type": "blob",
+      "path": "tei-converter/src/site/resources/images/uml.gif"
+    },
+    {
+      "mode": "100644",
+      "object_id": "e47bdc728f34eb19195cd17f56e5942c5d3ecf56",
+      "object_type": "blob",
+      "path": "tei-converter/src/site/site.xml"
+    },
+    {
+      "mode": "100644",
+      "object_id": "f894c44df9885902dc70f42bdb8ebcdbe5709078",
+      "object_type": "blob",
+      "path": "tei-converter/src/site/xdoc/download.xml"
+    },
+    {
+      "mode": "100644",
+      "object_id": "28d0f3c03cc8a8ec6f78278ecb774739e38dc812",
+      "object_type": "blob",
+      "path": "tei-converter/src/site/xdoc/index.xml"
+    },
+    {
+      "mode": "100644",
+      "object_id": "3bb17fae88eb3dae9632113e436015c3ca21b5f8",
+      "object_type": "blob",
+      "path": "tei-javalib/build.xml"
+    },
+    {
+      "mode": "100644",
+      "object_id": "6c2b643a7ebb4921c64f1078b1db6885dffc4b7f",
+      "object_type": "blob",
+      "path": "tei-javalib/pom.xml"
+    },
+    {
+      "mode": "100644",
+      "object_id": "58ad0f6747b238e3789288332693c4bab834c99e",
+      "object_type": "blob",
+      "path": "tei-javalib/src/main/java/org/tei/docx/DocX.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "3bce1343e667af6aac6762e26448a64d23104057",
+      "object_type": "blob",
+      "path": "tei-javalib/src/main/java/org/tei/docx/DocXPropertiesProvider.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "350e703bb7e47976faca146cdfcf9e9f96f76650",
+      "object_type": "blob",
+      "path": "tei-javalib/src/main/java/org/tei/exceptions/ConfigurationException.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "dfce96cc7ea122ac0456b2867fc217f3c1765d61",
+      "object_type": "blob",
+      "path": "tei-javalib/src/main/java/org/tei/tei/DTDGenerationProperties.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "cd3480f0de7ee8ffcde784d9d3e1e91f14a00b87",
+      "object_type": "blob",
+      "path": "tei-javalib/src/main/java/org/tei/tei/DocXTransformationProperties.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "f1ec171afb5000851c267511548926ddf2ebfe2f",
+      "object_type": "blob",
+      "path": "tei-javalib/src/main/java/org/tei/tei/DocumentationGenerationProperties.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "c704dd211afce2529b67855196ea36629ce59e07",
+      "object_type": "blob",
+      "path": "tei-javalib/src/main/java/org/tei/tei/ODDGenerationProperties.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "7c53d503fd6bdc4fec01eff8e93d8cdfbe6a5cf4",
+      "object_type": "blob",
+      "path": "tei-javalib/src/main/java/org/tei/tei/RelaxGenerationProperties.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "597063177df097f5e45696f9b7f1f57d93733dff",
+      "object_type": "blob",
+      "path": "tei-javalib/src/main/java/org/tei/tei/TEI.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "0be28350aaab8043cc3fc0f52d7ea47d83b6fcec",
+      "object_type": "blob",
+      "path": "tei-javalib/src/main/java/org/tei/tei/TEIArchive.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "b24c6a80239bda6923911612fe5d29e7f53eb250",
+      "object_type": "blob",
+      "path": "tei-javalib/src/main/java/org/tei/tei/TEIArchivePropertiesProvider.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "2ec987b1936d7d87135e148f76bea3164a2ae4ce",
+      "object_type": "blob",
+      "path": "tei-javalib/src/main/java/org/tei/tei/TEIPropertiesProvider.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "9f1e6da351907532c54030bb6f263a425c10315a",
+      "object_type": "blob",
+      "path": "tei-javalib/src/main/java/org/tei/tei/TransformationProperties.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "1fb78624d787aa69c3bbd7a0343cb1ac73b851c2",
+      "object_type": "blob",
+      "path": "tei-javalib/src/main/java/org/tei/utils/FileUtils.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "509a7d7468a10230a78ef79adf0bf6776c3f1deb",
+      "object_type": "blob",
+      "path": "tei-javalib/src/main/java/org/tei/utils/SaxonProcFactory.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "5cb62faf45934f866eaa8d1fe0c08bf1b4f63f64",
+      "object_type": "blob",
+      "path": "tei-javalib/src/main/java/org/tei/utils/XMLUtils.java"
+    }
+  ],
+  "ref_requested": "HEAD",
+  "repository": "https://github.com/TEIC/oxgarage.git",
+  "resolved_commit": "02173ed5d52d4c8618beb1387f58543bd298aa22",
+  "root_tree": "149e17760faad5988c452e1ff069399e094d9d67",
+  "schema_version": 1,
+  "source_id": "teic-public-git-repositories"
+}

@@ -1,0 +1,40 @@
+schema_version: 1
+lock_id: tei-legacy-sourceforge-observable-corpus
+source_id: tei-legacy-sourceforge
+as_of: "2026-09-04"
+retrieval_status: partial
+
+scope:
+  project: https://sourceforge.net/projects/tei/
+  trackers:
+    - https://sourceforge.net/p/tei/bugs/
+    - https://sourceforge.net/p/tei/feature-requests/
+    - https://sourceforge.net/p/tei/support-requests/
+  files: https://sourceforge.net/projects/tei/files/
+  include_migrated_objects: true
+  rule: Enumerate every object currently exposed by the public SourceForge project interfaces and preserve migration relations to GitHub when supplied.
+
+identity:
+  preferred: sourceforge-project-tracker-ticket-id
+
+rights:
+  review_before_full_text_commit: true
+
+counts:
+  bugs_enumerated: 774
+  feature_requests_enumerated: 567
+  support_requests_enumerated: 8
+  tickets_retrieved: 1226
+  discussion_posts_retrieved: 7925
+gaps:
+  - code: sourceforge-rate-limit
+    failed_ticket_fetches: 123
+    status: blocks-observable-complete
+  - code: support-files-and-version-control-interfaces-not-yet-reconciled
+    status: open
+  - code: first-partial-run-requires-refetch-for-per-ticket-raw-hash-links
+    status: open
+
+manifests:
+  - sources/manifests/2026-09-04-tei-legacy-sourceforge.yaml
+  - sources/manifests/2026-09-04-tei-legacy-sourceforge-r2.yaml

@@ -1,0 +1,36 @@
+schema_version: 1
+run_id: 2026-09-04-teic-public-git-repositories-teic-tei2024-xslt-workshop
+source_id: teic-public-git-repositories
+started_at: '2026-09-04T16:39:15Z'
+finished_at: '2026-09-04T16:39:17Z'
+status: observable-complete
+adapter:
+  name: tools.corpus.git_snapshot
+  version: 1
+requests:
+- kind: git-mirror
+  repository: https://github.com/TEIC/tei2024-XSLT-workshop.git
+  action: cloned
+  requested_ref: HEAD
+  resolved_commit: db12ea77b02da0643395fef49e3f9d6bde525b78
+objects:
+- kind: git-tree-inventory
+  path: corpus/normalized/git/org/teic-tei2024-xslt-workshop.json
+  sha256: 0de83a23f93e2f6abfaec6d1b70786968ea0d01b2a3a0a95d22f10f266d51b98
+  root_tree: d230bc2be21ed9b17cc33b3176f46798623594e1
+counts:
+  commits_all_refs: 86
+  refs: 2
+  tree_entries: 46
+refs:
+- name: refs/heads/main
+  object_type: commit
+  object_id: db12ea77b02da0643395fef49e3f9d6bde525b78
+- name: refs/tags/v2.0
+  object_type: commit
+  object_id: 72104cd864b7eb03c229b9a933faa926594e0f61
+gaps: []
+rights_exceptions:
+- The local mirror is not committed; redistribution follows the upstream repository
+  license.
+raw_materialization: corpus\raw\git\TEIC-tei2024-XSLT-workshop.git

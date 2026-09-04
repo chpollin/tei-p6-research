@@ -1,0 +1,22 @@
+{
+  "entries": [
+    {
+      "mode": "100644",
+      "object_id": "b08fc15c244c67add4b3547a66971dd1ed138d85",
+      "object_type": "blob",
+      "path": "Dockerfile"
+    },
+    {
+      "mode": "100644",
+      "object_id": "a9e85053228bcc991e76e9740ca6429e706ac30a",
+      "object_type": "blob",
+      "path": "README.md"
+    }
+  ],
+  "ref_requested": "HEAD",
+  "repository": "https://github.com/TEIC/teidev-docker.git",
+  "resolved_commit": "985c33a2b56a880ffa736a59c13fcab0a25e0b21",
+  "root_tree": "58354d835fd21f3b4839fb062e72de8b36122dd9",
+  "schema_version": 1,
+  "source_id": "teic-public-git-repositories"
+}

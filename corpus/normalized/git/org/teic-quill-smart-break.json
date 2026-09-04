@@ -1,0 +1,70 @@
+{
+  "entries": [
+    {
+      "mode": "100644",
+      "object_id": "d9252ddd3bb5ad5c1153553f273ef148c361ba3d",
+      "object_type": "blob",
+      "path": ".github/workflows/nodejs.yml"
+    },
+    {
+      "mode": "100644",
+      "object_id": "9d15be2dab7e1179b850073c9a02f7649ee69c4c",
+      "object_type": "blob",
+      "path": ".github/workflows/npmpublish.yml"
+    },
+    {
+      "mode": "100644",
+      "object_id": "994c9fc3f6ee2c75d9f05da0d9f64a71597d9fbf",
+      "object_type": "blob",
+      "path": ".gitignore"
+    },
+    {
+      "mode": "100644",
+      "object_id": "e9c79e8a4832f93e62d1abda30b72a72e86dceaa",
+      "object_type": "blob",
+      "path": "LICENSE"
+    },
+    {
+      "mode": "100644",
+      "object_id": "8a0e2f4d1b3813c0ec24bde2d2e5da39d58f4126",
+      "object_type": "blob",
+      "path": "README.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "1bdd6b44d600a26969d0e3ca383bcf9ced1fbb34",
+      "object_type": "blob",
+      "path": "package-lock.json"
+    },
+    {
+      "mode": "100644",
+      "object_id": "1e94b52a78a082741b37b301b61d3e752f7a1c8c",
+      "object_type": "blob",
+      "path": "package.json"
+    },
+    {
+      "mode": "100644",
+      "object_id": "b58ad1be42b801b341ed0469305e321f691229ab",
+      "object_type": "blob",
+      "path": "src/blots/smart-break.js"
+    },
+    {
+      "mode": "100644",
+      "object_id": "048ea554882177609b74b07fe693d3c3b958ea09",
+      "object_type": "blob",
+      "path": "src/smart-breaker.js"
+    },
+    {
+      "mode": "100644",
+      "object_id": "b24dd92f42dd183695fcfdf72c3dc4895ebbc238",
+      "object_type": "blob",
+      "path": "webpack.config.js"
+    }
+  ],
+  "ref_requested": "HEAD",
+  "repository": "https://github.com/TEIC/quill-smart-break.git",
+  "resolved_commit": "d778d0cf2a95742ad5e31f690aa3490773ed278c",
+  "root_tree": "29dfebf7b7196e96cbdec22bc1dc3c27b6735a8b",
+  "schema_version": 1,
+  "source_id": "teic-public-git-repositories"
+}

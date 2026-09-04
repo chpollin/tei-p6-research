@@ -1,0 +1,130 @@
+{
+  "entries": [
+    {
+      "mode": "100644",
+      "object_id": "cdd918f7a644dc9d69cc3b43e17b503f22d9c2fa",
+      "object_type": "blob",
+      "path": ".gitignore"
+    },
+    {
+      "mode": "100644",
+      "object_id": "78fb4f14be6afb5d0cc8772d526639c1b201eade",
+      "object_type": "blob",
+      "path": "Makefile"
+    },
+    {
+      "mode": "100644",
+      "object_id": "c9582b2984bbf6a5aba776d99a937df5001828ed",
+      "object_type": "blob",
+      "path": "P5-new.xml"
+    },
+    {
+      "mode": "100644",
+      "object_id": "fbd5f31483aff7724f3202b94f80a925dff560f8",
+      "object_type": "blob",
+      "path": "README.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "3e0fe19c059da1e4145df4a1b95a2dd68fe5022c",
+      "object_type": "blob",
+      "path": "convert.xsl"
+    },
+    {
+      "mode": "100644",
+      "object_id": "717f53241b9a28a1f86294681dd75b8e45f7fe27",
+      "object_type": "blob",
+      "path": "odd2exodd.xsl"
+    },
+    {
+      "mode": "100644",
+      "object_id": "1782c2c5d76a5a732a212e163cc82d6bbefc3177",
+      "object_type": "blob",
+      "path": "pureodd-all.odd"
+    },
+    {
+      "mode": "100644",
+      "object_id": "f94f570a88c65b84001aba36ae727afa39d4b854",
+      "object_type": "blob",
+      "path": "pureodd-all.rng"
+    },
+    {
+      "mode": "100644",
+      "object_id": "0fe01b669b70c145a9f5e10466bfde7bbf69bc81",
+      "object_type": "blob",
+      "path": "pureodd-test.odd"
+    },
+    {
+      "mode": "100644",
+      "object_id": "61add6b2db54b571761d5019493a2361f0a7f3bc",
+      "object_type": "blob",
+      "path": "pureodd-test.xml"
+    },
+    {
+      "mode": "100644",
+      "object_id": "02536297e96ee5b6fb390cd0bbf32ecba8e9c373",
+      "object_type": "blob",
+      "path": "pureodd.html"
+    },
+    {
+      "mode": "100644",
+      "object_id": "590fa7f4388f339e2711377ba1ecf5d8509dcd2d",
+      "object_type": "blob",
+      "path": "pureodd.nvdl"
+    },
+    {
+      "mode": "100644",
+      "object_id": "f5010581faeecfb963c79c686e14739b9dbb1280",
+      "object_type": "blob",
+      "path": "pureodd.odd"
+    },
+    {
+      "mode": "100644",
+      "object_id": "eb44a1dda088f248ae0f7185e896898ad76b3da8",
+      "object_type": "blob",
+      "path": "showconvert.xsl"
+    },
+    {
+      "mode": "100644",
+      "object_id": "6dc60a8121d56127a03488f5977f404b182155b9",
+      "object_type": "blob",
+      "path": "tei.css"
+    },
+    {
+      "mode": "100644",
+      "object_id": "eb21555589d93fb53aae52b14013b1f22528cafd",
+      "object_type": "blob",
+      "path": "test.rng"
+    },
+    {
+      "mode": "100644",
+      "object_id": "c305c9faf06b3997bdfe1137bc959a49d05d3b88",
+      "object_type": "blob",
+      "path": "testall-withdtd.xml"
+    },
+    {
+      "mode": "100644",
+      "object_id": "4db7ff499b0ee1cd99681ca54637f1ff0bb65209",
+      "object_type": "blob",
+      "path": "testall.xml"
+    },
+    {
+      "mode": "100644",
+      "object_id": "6889468c44ce2b6a22baf87d9132ba20d33f5c37",
+      "object_type": "blob",
+      "path": "topureodd.xsl"
+    },
+    {
+      "mode": "100644",
+      "object_id": "bfe3c4b3aac98ca9f36ad2077c895dc980604433",
+      "object_type": "blob",
+      "path": "xml.xsd"
+    }
+  ],
+  "ref_requested": "HEAD",
+  "repository": "https://github.com/TEIC/pureodd.git",
+  "resolved_commit": "504dba62c5837083f7f705a1ef7d3be442a8172a",
+  "root_tree": "99b760ca66a8a989297d052ef8254b14e0e48b02",
+  "schema_version": 1,
+  "source_id": "teic-public-git-repositories"
+}

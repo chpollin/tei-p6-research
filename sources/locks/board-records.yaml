@@ -1,0 +1,30 @@
+schema_version: 1
+lock_id: tei-board-records-observable-corpus
+source_id: tei-board-records
+as_of: "2026-09-04"
+retrieval_status: partial
+
+scope:
+  board_index: https://www.tei-c.org/activities/board/
+  date_start: null
+  date_end: "2026-09-04"
+  rule: Enumerate every meeting, agenda, minute, slide deck, procedural document, and policy record linked by the official Board page through date_end.
+
+identity:
+  preferred: official-date-event-type-and-source-id
+  manifestation_merge: false
+
+rights:
+  review_before_full_text_commit: true
+
+counts:
+  responses: 225
+  successful_responses: 197
+  external_links_inventoried: 358
+  unavailable_linked_objects: 28
+gaps:
+  - code: linked-objects-return-http-errors
+    count: 28
+    status: recorded-in-run-manifest
+
+manifest: sources/manifests/2026-09-04-tei-board-records-r2.yaml

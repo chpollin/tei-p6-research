@@ -1,0 +1,69 @@
+schema_version: 1
+run_id: 2026-09-04-teic-public-git-repositories-teic-docker-pkp-ojs
+source_id: teic-public-git-repositories
+started_at: '2026-09-04T16:36:20Z'
+finished_at: '2026-09-04T16:36:21Z'
+status: observable-complete
+adapter:
+  name: tools.corpus.git_snapshot
+  version: 1
+requests:
+- kind: git-mirror
+  repository: https://github.com/TEIC/docker-pkp-ojs.git
+  action: cloned
+  requested_ref: HEAD
+  resolved_commit: 619ddea3b5915b01ca98693bc3905ec61181220b
+objects:
+- kind: git-tree-inventory
+  path: corpus/normalized/git/org/teic-docker-pkp-ojs.json
+  sha256: 1e2cf59305bfc980fed77b8d7835379411981d5d4048c7f435801633f773502f
+  root_tree: d2ef504413fccae33365681d3dd448624670a61d
+counts:
+  commits_all_refs: 83
+  refs: 13
+  tree_entries: 12
+refs:
+- name: refs/heads/3.2.0
+  object_type: commit
+  object_id: f0988060a20b71554513f59e4e6fba96c0e9a679
+- name: refs/heads/3.3.0
+  object_type: commit
+  object_id: 41c79eb97adc2e805a3c3b57e2c37d82c5d5dcb5
+- name: refs/heads/3.4.0
+  object_type: commit
+  object_id: b839d0f8d22a11a1894d7c008d20536407db2e38
+- name: refs/heads/main
+  object_type: commit
+  object_id: 619ddea3b5915b01ca98693bc3905ec61181220b
+- name: refs/pull/1/head
+  object_type: commit
+  object_id: 57a56976ef47f5fd01e2907b4f9bbf1dbdcc8a6d
+- name: refs/pull/2/head
+  object_type: commit
+  object_id: 0d7777adb80a6d14c26768df35a0a82f0100c854
+- name: refs/pull/3/head
+  object_type: commit
+  object_id: 1394ac4229d73bddb011a2bb1e1b51850016fee0
+- name: refs/pull/4/head
+  object_type: commit
+  object_id: 1a76bb09f9b5924d5eb8530656b66571c434b8af
+- name: refs/pull/5/head
+  object_type: commit
+  object_id: 286366c0a61a17f107c86b7002fade4289a74223
+- name: refs/pull/6/head
+  object_type: commit
+  object_id: e067649a70907df261b6b1b73c2db9154100129f
+- name: refs/pull/7/head
+  object_type: commit
+  object_id: cef6d942dddb5af9e9eb887b27c9b6a8c5498e51
+- name: refs/pull/8/head
+  object_type: commit
+  object_id: dd44b3c77705ceaabd4e3a38bf70eecb913c187b
+- name: refs/pull/9/head
+  object_type: commit
+  object_id: 02d7bfbe3284c71ef3cb2a2e6e6a50538c691788
+gaps: []
+rights_exceptions:
+- The local mirror is not committed; redistribution follows the upstream repository
+  license.
+raw_materialization: corpus\raw\git\TEIC-docker-pkp-ojs.git

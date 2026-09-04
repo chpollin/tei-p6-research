@@ -1,0 +1,75 @@
+schema_version: 1
+run_id: 2026-09-04-teic-public-git-repositories-teic-jenkins
+source_id: teic-public-git-repositories
+started_at: '2026-09-04T16:36:36Z'
+finished_at: '2026-09-04T16:36:37Z'
+status: observable-complete
+adapter:
+  name: tools.corpus.git_snapshot
+  version: 1
+requests:
+- kind: git-mirror
+  repository: https://github.com/TEIC/Jenkins.git
+  action: cloned
+  requested_ref: HEAD
+  resolved_commit: c89e77c885228b25ed3febb14d81dd0892f34dd8
+objects:
+- kind: git-tree-inventory
+  path: corpus/normalized/git/org/teic-jenkins.json
+  sha256: a7d2641d9b73032a306ad38cb63121b3cd311f618e2d8dd979f87ab4b60faefd
+  root_tree: bb6576d2d19a1dce7b07714ca020e4cbbbe74ab8
+counts:
+  commits_all_refs: 142
+  refs: 15
+  tree_entries: 30
+refs:
+- name: refs/heads/dev
+  object_type: commit
+  object_id: c89e77c885228b25ed3febb14d81dd0892f34dd8
+- name: refs/heads/main
+  object_type: commit
+  object_id: ab6acd7b28ef79ceac5910c5c53f72948ea72bc6
+- name: refs/pull/10/head
+  object_type: commit
+  object_id: eeb1852558950a573077655b1b199dfe7bbd131a
+- name: refs/pull/13/head
+  object_type: commit
+  object_id: 3ac3187770c36e4059826e43ba44a397a3036ab4
+- name: refs/pull/14/head
+  object_type: commit
+  object_id: 38954845e45b0d2cc18af48d34f8e27589322e78
+- name: refs/pull/15/head
+  object_type: commit
+  object_id: baee333807c1389e3e06bdca72e419d4b8568d56
+- name: refs/pull/16/head
+  object_type: commit
+  object_id: c476d1dddd2c954e17067aa50a908722a9c2932a
+- name: refs/pull/17/head
+  object_type: commit
+  object_id: 2bc2c0a3cfc2b15a1ef2f2d99568c80350e24766
+- name: refs/pull/18/head
+  object_type: commit
+  object_id: 56110674fc948cdc08ef3e7ffd8bb82f8ebdd690
+- name: refs/pull/19/head
+  object_type: commit
+  object_id: a142d7e6801e828f95593b270d52bf0abd89c30e
+- name: refs/pull/20/head
+  object_type: commit
+  object_id: a962475e87a3ee6c257a6bbda812103c5231b2cb
+- name: refs/pull/21/head
+  object_type: commit
+  object_id: 6047b0420e4028035998d413bf35056a9fb5dbb8
+- name: refs/pull/5/head
+  object_type: commit
+  object_id: c22a5572a258196acab785662a141690f822750f
+- name: refs/pull/6/head
+  object_type: commit
+  object_id: c9f920cc3080950b3222911093dfe8b27341520d
+- name: refs/pull/9/head
+  object_type: commit
+  object_id: dc5c735b09dc38bc51c11006f8630a932b67d812
+gaps: []
+rights_exceptions:
+- The local mirror is not committed; redistribution follows the upstream repository
+  license.
+raw_materialization: corpus\raw\git\TEIC-Jenkins.git

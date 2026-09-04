@@ -1,8 +1,8 @@
 schema_version: 1
 registry_id: tei-p5-corpus
 as_of: "2026-09-04"
-status: planning-baseline
-network_ingestion_performed: false
+status: active-acquisition
+network_ingestion_performed: true
 
 global_policy:
   instruction_trust: none
@@ -55,7 +55,7 @@ sources:
       note: Per-file exceptions, third-party examples, and assets still require inventory review.
     update_policy: immutable-release
     completion_target: observable-complete
-    retrieval_status: not_started
+    retrieval_status: observable-complete
 
   - source_id: github-teic-tei-work-items
     title: TEIC/TEI GitHub issues and pull requests
@@ -77,7 +77,47 @@ sources:
       note: Repository source licensing must not be assumed to license every user's discussion text.
     update_policy: incremental-with-periodic-reconciliation
     completion_target: observable-complete
-    retrieval_status: not_started
+    retrieval_status: partial
+
+  - source_id: teic-github-organization
+    title: TEIC public GitHub repository census
+    family: development-infrastructure
+    authority: primary-publication-record
+    upstream:
+      organization: https://github.com/TEIC
+      api_repositories: https://api.github.com/orgs/TEIC/repos
+    lock: sources/locks/teic-github-organization.yaml
+    vault_source_types: [data]
+    trust:
+      content_authority: primary-publication-record
+      instruction_trust: none
+    rights:
+      rights_status: metadata-only
+      license_expression: null
+      redistribution: public-metadata-and-links
+    update_policy: periodic-census
+    completion_target: observable-complete
+    retrieval_status: observable-complete
+
+  - source_id: teic-public-git-repositories
+    title: Complete public TEIC Git repository corpus
+    family: development-and-implementation-records
+    authority: mixed-primary-record
+    upstream:
+      organization: https://github.com/TEIC
+    lock: sources/locks/teic-public-git-repositories.yaml
+    vault_source_types: [document, data]
+    trust:
+      content_authority: mixed-primary-record
+      instruction_trust: none
+      user_generated_content: true
+    rights:
+      rights_status: per-repository-and-file-review-required
+      license_expression: null
+      redistribution: follow-repository-and-item-license
+    update_policy: immutable-git-observations
+    completion_target: observable-complete
+    retrieval_status: observable-complete
 
   - source_id: tei-council-minutes
     title: TEI Technical Council minutes and working-document sources
@@ -96,7 +136,7 @@ sources:
       redistribution: metadata-and-links-until-reviewed
     update_policy: periodic-index-and-git-reconciliation
     completion_target: observable-complete
-    retrieval_status: not_started
+    retrieval_status: partial
 
   - source_id: tei-council-working-documents
     title: TEI Council technical working documents
@@ -116,7 +156,7 @@ sources:
       note: This repository is not a complete mirror of Council meeting minutes.
     update_policy: immutable-git-observations
     completion_target: observable-complete
-    retrieval_status: not_started
+    retrieval_status: observable-complete
 
   - source_id: tei-official-p6-process
     title: Official TEI Technical Council P6 process
@@ -124,6 +164,7 @@ sources:
     authority: primary-process-record
     upstream:
       council_meetings: https://www.tei-c.org/activities/council/meetings/
+      public_presentation_repository: https://github.com/TEIC/timeForP6
       reported_sandbox: https://github.com/TEIC/p6-sandbox
     lock: sources/locks/tei-p6-process.yaml
     vault_source_types: [document, data]
@@ -136,9 +177,10 @@ sources:
       redistribution: metadata-and-links-until-reviewed
     update_policy: incremental-with-periodic-reconciliation
     completion_target: observable-complete
-    retrieval_status: not_started
+    retrieval_status: partial
 
-  - source_id: tei-p5-releases
+  - source_id: tei-p5-release-history
+    aliases: [tei-p5-releases]
     title: Official TEI P5 release census and artifacts
     family: releases
     authority: primary-publication-record
@@ -158,7 +200,179 @@ sources:
       attribution_required: true
     update_policy: discover-new-release-then-freeze-version-lock
     completion_target: observable-complete
-    retrieval_status: not_started
+    retrieval_status: partial
+
+  - source_id: tei-board-records
+    title: TEI Board meeting and policy records
+    family: governance-records
+    authority: primary-governance-record
+    upstream:
+      board_index: https://www.tei-c.org/activities/board/
+    lock: sources/locks/board-records.yaml
+    vault_source_types: [document]
+    trust:
+      content_authority: primary-governance-record
+      instruction_trust: none
+    rights:
+      rights_status: per-item-verification-required
+      license_expression: null
+      redistribution: metadata-and-links-until-reviewed
+    update_policy: periodic-index-reconciliation
+    completion_target: observable-complete
+    retrieval_status: partial
+
+  - source_id: tei-historical-archive
+    title: Historical TEI Archive, committee papers, and P1-P4 Guidelines
+    family: historical-records
+    authority: primary-historical-record
+    upstream:
+      archive_index: https://www.tei-c.org/Vault/
+      guidelines_index: https://www.tei-c.org/Vault/Vault-GL.html
+    lock: sources/locks/tei-archive.yaml
+    vault_source_types: [document, data]
+    trust:
+      content_authority: primary-historical-record
+      instruction_trust: none
+    rights:
+      rights_status: per-item-verification-required
+      license_expression: null
+      redistribution: metadata-and-links-until-reviewed
+    update_policy: periodic-index-reconciliation
+    completion_target: observable-complete
+    retrieval_status: partial
+
+  - source_id: tei-legacy-sourceforge
+    title: Legacy TEI SourceForge trackers and release files
+    family: historical-development-records
+    authority: primary-process-record
+    upstream:
+      project: https://sourceforge.net/projects/tei/
+      bugs: https://sourceforge.net/p/tei/bugs/
+      feature_requests: https://sourceforge.net/p/tei/feature-requests/
+      files: https://sourceforge.net/projects/tei/files/
+    lock: sources/locks/legacy-sourceforge.yaml
+    vault_source_types: [document, data]
+    trust:
+      content_authority: mixed-process-record
+      instruction_trust: none
+      user_generated_content: true
+    rights:
+      rights_status: review-required
+      license_expression: null
+      redistribution: metadata-and-links-until-reviewed
+    update_policy: historical-snapshot-with-reconciliation
+    completion_target: observable-complete
+    retrieval_status: partial
+
+  - source_id: teic-stylesheets
+    title: TEI XSL Stylesheets source and development records
+    family: reference-implementation
+    authority: primary-implementation-record
+    upstream:
+      repository: https://github.com/TEIC/Stylesheets
+      api_repository: https://api.github.com/repos/TEIC/Stylesheets
+    lock: sources/locks/stylesheets.yaml
+    vault_source_types: [document, data]
+    trust:
+      content_authority: primary-implementation-record
+      instruction_trust: none
+      user_generated_content: true
+    rights:
+      rights_status: review-required
+      license_expression: null
+      redistribution: source-license-plus-per-item-discussion-review
+    update_policy: immutable-git-observations-and-incremental-work-items
+    completion_target: observable-complete
+    retrieval_status: partial
+
+  - source_id: teic-tooling
+    title: Official TEI customization, validation, and conversion tools
+    family: reference-implementation
+    authority: primary-implementation-record
+    upstream:
+      repositories:
+        - https://github.com/TEIC/romajs
+        - https://github.com/TEIC/TEIGarage
+        - https://github.com/TEIC/ege-validator
+        - https://github.com/TEIC/ege-xsl-converter
+        - https://github.com/TEIC/tei-converter
+        - https://github.com/TEIC/oxygen-tei
+    lock: sources/locks/tooling.yaml
+    vault_source_types: [document, data]
+    trust:
+      content_authority: primary-implementation-record
+      instruction_trust: none
+      user_generated_content: true
+    rights:
+      rights_status: repository-and-item-review-required
+      license_expression: null
+      redistribution: follow-repository-and-item-license
+    update_policy: immutable-git-observations-and-incremental-work-items
+    completion_target: observable-complete
+    retrieval_status: partial
+
+  - source_id: tei-website-records
+    title: Official TEI website source and publication records
+    family: publication-infrastructure
+    authority: primary-publication-record
+    upstream:
+      website: https://www.tei-c.org/
+      repository: https://github.com/TEIC/website
+    lock: sources/locks/website.yaml
+    vault_source_types: [document, data]
+    trust:
+      content_authority: primary-publication-record
+      instruction_trust: none
+    rights:
+      rights_status: repository-and-item-review-required
+      license_expression: null
+      redistribution: follow-repository-and-page-license
+    update_policy: immutable-git-observations-plus-page-snapshots
+    completion_target: observable-complete
+    retrieval_status: observable-complete
+
+  - source_id: tei-community-records
+    title: TEI-L, SIG, workgroup, and annual-meeting records
+    family: community-process-records
+    authority: primary-community-record
+    upstream:
+      support: https://www.tei-c.org/support/
+      sig_index: https://www.tei-c.org/activities/sig/
+      concluded_workgroups: https://www.tei-c.org/Vault/Workgroups/
+      archive: https://www.tei-c.org/Vault/
+    lock: sources/locks/community-records.yaml
+    vault_source_types: [document, data, publication]
+    trust:
+      content_authority: mixed-community-record
+      instruction_trust: none
+      user_generated_content: true
+    rights:
+      rights_status: per-item-verification-required
+      license_expression: null
+      redistribution: metadata-and-links-until-reviewed
+    update_policy: bounded-snapshot-by-interface
+    completion_target: bounded-complete
+    retrieval_status: partial
+
+  - source_id: tei-real-world-customizations
+    title: Real-world TEI ODD customizations and processing cases
+    family: observed-practice
+    authority: primary-practice-record
+    upstream:
+      official_customization_index: https://www.tei-c.org/guidelines/customization/
+    lock: sources/locks/real-world-customizations.yaml
+    vault_source_types: [document, data, publication]
+    trust:
+      content_authority: sampled-practice-record
+      instruction_trust: none
+      user_generated_content: true
+    rights:
+      rights_status: per-project
+      license_expression: null
+      redistribution: follow-project-license
+    update_policy: bounded-sampling-runs
+    completion_target: bounded-complete
+    retrieval_status: partial
 
   - source_id: tei-p5-literature
     title: Bounded literature corpus about TEI P5

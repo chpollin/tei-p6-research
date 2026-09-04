@@ -1,0 +1,87 @@
+schema_version: 1
+run_id: 2026-09-04-teic-public-git-repositories-teic-ege-webclient
+source_id: teic-public-git-repositories
+started_at: '2026-09-04T16:36:26Z'
+finished_at: '2026-09-04T16:36:29Z'
+status: observable-complete
+adapter:
+  name: tools.corpus.git_snapshot
+  version: 1
+requests:
+- kind: git-mirror
+  repository: https://github.com/TEIC/ege-webclient.git
+  action: cloned
+  requested_ref: HEAD
+  resolved_commit: c8a2e7e7408c56eca6c349768f84c67d47eb5d3c
+objects:
+- kind: git-tree-inventory
+  path: corpus/normalized/git/org/teic-ege-webclient.json
+  sha256: d17261e7945fc211ce3ac47f377f4917b89864d56ee2d680570b21baefe7ed4c
+  root_tree: 9c2aa5574ff849301c8aef9dccd7d2d088e9e7ce
+counts:
+  commits_all_refs: 46
+  refs: 19
+  tree_entries: 99
+refs:
+- name: refs/heads/dependabot/github_actions/actions/checkout-6
+  object_type: commit
+  object_id: 7a7f3baa449382a302c4d1b974c62acc04ba397e
+- name: refs/heads/dependabot/github_actions/actions/upload-artifact-6
+  object_type: commit
+  object_id: f29f80507bf984225f6abe6df6691cb5897bf5e6
+- name: refs/heads/dependabot/github_actions/s4u/maven-settings-action-4.0.0
+  object_type: commit
+  object_id: 09e46e853772832caa21603089448656796d18e7
+- name: refs/heads/main
+  object_type: commit
+  object_id: c8a2e7e7408c56eca6c349768f84c67d47eb5d3c
+- name: refs/pull/1/head
+  object_type: commit
+  object_id: 0d3eb97de8dc6dfa7ad16dc923e08227d4f99977
+- name: refs/pull/10/head
+  object_type: commit
+  object_id: f29f80507bf984225f6abe6df6691cb5897bf5e6
+- name: refs/pull/10/merge
+  object_type: commit
+  object_id: f99c90c1dac9284476567c3dda38c35f0164dafd
+- name: refs/pull/2/head
+  object_type: commit
+  object_id: a93e887f056d8c8e767f6bc15a33d675d12b56cc
+- name: refs/pull/3/head
+  object_type: commit
+  object_id: 26ca59c7133a01da6bb88890c856b48d27177cec
+- name: refs/pull/4/head
+  object_type: commit
+  object_id: 086afb67bc209167e1f149fe40955f25a7faa345
+- name: refs/pull/5/head
+  object_type: commit
+  object_id: b3d41b4d6b7ede9586f7adde9bd0c60d0c770187
+- name: refs/pull/6/head
+  object_type: commit
+  object_id: 8df979d9c04bb52f612b376bee62f03a30aab27a
+- name: refs/pull/7/head
+  object_type: commit
+  object_id: 09e46e853772832caa21603089448656796d18e7
+- name: refs/pull/7/merge
+  object_type: commit
+  object_id: 46677acc86865d1be71c1bfc4d8a110d27f64e91
+- name: refs/pull/8/head
+  object_type: commit
+  object_id: e85059ecdd7176797706933344d5dd69764f7e7f
+- name: refs/pull/9/head
+  object_type: commit
+  object_id: 7a7f3baa449382a302c4d1b974c62acc04ba397e
+- name: refs/pull/9/merge
+  object_type: commit
+  object_id: 6231aedce16aee93ee936d17aed4a1652cd88376
+- name: refs/tags/v0.3
+  object_type: commit
+  object_id: 6d893032c4217e501f7f1798df7284a84b26368b
+- name: refs/tags/v0.4
+  object_type: commit
+  object_id: f902793cc9bbccefefc63a61ef40786055d8ed2a
+gaps: []
+rights_exceptions:
+- The local mirror is not committed; redistribution follows the upstream repository
+  license.
+raw_materialization: corpus\raw\git\TEIC-ege-webclient.git

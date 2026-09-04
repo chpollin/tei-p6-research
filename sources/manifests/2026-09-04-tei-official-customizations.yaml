@@ -1,0 +1,157 @@
+schema_version: 1
+run_id: 2026-09-04-tei-official-customizations
+source_id: tei-real-world-customizations
+started_at: '2026-09-04T16:31:17Z'
+finished_at: '2026-09-04T16:31:33Z'
+status: partial
+adapter:
+  name: tools.corpus.web_census
+  version: 1
+requests:
+- root_url: https://www.tei-c.org/guidelines/customization/
+  allow_prefixes:
+  - https://www.tei-c.org/guidelines/customization/
+  depth: 1
+  max_pages: 300
+  include_binary: false
+objects:
+- kind: web-census
+  path: corpus/normalized/web/tei-official-customizations.jsonl
+  sha256: 366352ef5a21dea4786567aeb2d23ead504099d6f57919383cc4a248421cc8be
+counts:
+  responses: 3
+  successful_responses: 2
+  external_links_inventoried: 122
+  depth_boundary_links_inventoried: 0
+  binary_links_inventoried_not_fetched: 0
+  gaps: 1
+external_links:
+- http://music-encoding.org/
+- http://roma.tei-c.org/
+- http://tei-c.org/release/doc/tei-p5-doc/en/html/TD.html
+- http://tei-c.org/release/doc/tei-p5-doc/en/html/USE.html
+- http://tei-c.org/release/doc/tei-xsl/
+- http://www.nvdl.org/
+- http://www.tei-c.org/release/doc/tei-p5-doc/en/html/REF-CLASSES-ATTS.html
+- http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-age.html
+- http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-att.typed.html
+- http://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-castList.html
+- http://www.w3.org/Math/
+- http://www.w3.org/TR/SVG11/
+- https://books.openedition.org/oep/692
+- https://epidoc.stoa.org/gl/latest/
+- https://epidoc.stoa.org/schema/latest/tei-epidoc.rng
+- https://epidoc.stoa.org/schema/latest/tei-epidoc.xml
+- https://github.com/EpiDoc/Source
+- https://github.com/TEIC/Stylesheets
+- https://github.com/TEIC/TEI
+- https://github.com/TEIC/TEI/issues
+- https://github.com/music-encoding/music-encoding/tree/develop/source/modules
+- https://github.com/sydb/TEI-in-Libraries
+- https://journals.openedition.org/jtei
+- https://members.tei-c.org/
+- https://members.tei-c.org/Events/meetings
+- https://members.tei-c.org/Join
+- https://roma.tei-c.org/
+- https://tei-c.org/guidelines/customization/
+- https://tei-c.org/guidelines/customization/customizing-the-tei-with-roma/
+- https://teibyexample.org/exist/tutorials/TBED08v00.htm
+- https://teic.github.io/PDF/howtoChain.pdf
+- https://teic.github.io/PDF/howtoGenerate.pdf
+- https://teic.github.io/PDF/purifyDoc.pdf
+- https://teigarage.tei-c.org/
+- https://wiki.tei-c.org/index.php/Category:Customization
+- https://www.huma-num.fr/
+- https://www.tei-c.org/
+- https://www.tei-c.org/Vault/
+- https://www.tei-c.org/about/
+- https://www.tei-c.org/about/board-of-directors/
+- https://www.tei-c.org/about/code-of-conduct/
+- https://www.tei-c.org/about/contact/
+- https://www.tei-c.org/about/frequently-asked-questions/
+- https://www.tei-c.org/about/history/
+- https://www.tei-c.org/about/mission/
+- https://www.tei-c.org/activities/
+- https://www.tei-c.org/activities/board/
+- https://www.tei-c.org/activities/community/
+- https://www.tei-c.org/activities/council/
+- https://www.tei-c.org/activities/infrastructure-group/
+- https://www.tei-c.org/activities/rahtz-prize-for-tei-ingenuity
+- https://www.tei-c.org/activities/sig/
+- https://www.tei-c.org/activities/workgroups/
+- https://www.tei-c.org/css/teic.css
+- https://www.tei-c.org/guidelines/
+- https://www.tei-c.org/guidelines/licensing-and-citation/
+- https://www.tei-c.org/guidelines/p5/
+- https://www.tei-c.org/img/emblem_color_dark.png
+- https://www.tei-c.org/img/logo-petit-hn-rvb-1.png
+- https://www.tei-c.org/js/main.js
+- https://www.tei-c.org/news/
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/USE.html
+- https://www.tei-c.org/release/doc/tei-p5-doc/en/html/index.html
+- https://www.tei-c.org/release/doc/tei-p5-exemplars/html/tei_jtei.doc.html
+- https://www.tei-c.org/release/doc/tei-p5-exemplars/html/tei_lite.doc.html
+- https://www.tei-c.org/release/doc/tei-p5-exemplars/html/tei_simplePrint.doc.html
+- https://www.tei-c.org/release/doc/tei-p5-exemplars/html/tei_tite.doc.html
+- https://www.tei-c.org/release/doc/tei-p5-exemplars/pdf/tei_lite.doc.pdf
+- https://www.tei-c.org/release/doc/tei-p5-exemplars/pdf/tei_simplePrint.doc.pdf
+- https://www.tei-c.org/release/doc/tei-p5-exemplars/pdf/tei_tite.doc.pdf
+- https://www.tei-c.org/release/xml/tei/custom/odd/tei_all.odd
+- https://www.tei-c.org/release/xml/tei/custom/odd/tei_allPlus.odd
+- https://www.tei-c.org/release/xml/tei/custom/odd/tei_bare.odd
+- https://www.tei-c.org/release/xml/tei/custom/odd/tei_corpus.odd
+- https://www.tei-c.org/release/xml/tei/custom/odd/tei_drama.odd
+- https://www.tei-c.org/release/xml/tei/custom/odd/tei_jtei.odd
+- https://www.tei-c.org/release/xml/tei/custom/odd/tei_lite.odd
+- https://www.tei-c.org/release/xml/tei/custom/odd/tei_math.odd
+- https://www.tei-c.org/release/xml/tei/custom/odd/tei_ms.odd
+- https://www.tei-c.org/release/xml/tei/custom/odd/tei_odds.odd
+- https://www.tei-c.org/release/xml/tei/custom/odd/tei_simplePrint.odd
+- https://www.tei-c.org/release/xml/tei/custom/odd/tei_speech.odd
+- https://www.tei-c.org/release/xml/tei/custom/odd/tei_svg.odd
+- https://www.tei-c.org/release/xml/tei/custom/odd/tei_tite.odd
+- https://www.tei-c.org/release/xml/tei/custom/odd/tei_xinclude.odd
+- https://www.tei-c.org/release/xml/tei/custom/schema/dtd/tei_all.dtd
+- https://www.tei-c.org/release/xml/tei/custom/schema/dtd/tei_bare.dtd
+- https://www.tei-c.org/release/xml/tei/custom/schema/dtd/tei_corpus.dtd
+- https://www.tei-c.org/release/xml/tei/custom/schema/dtd/tei_drama.dtd
+- https://www.tei-c.org/release/xml/tei/custom/schema/dtd/tei_lite.dtd
+- https://www.tei-c.org/release/xml/tei/custom/schema/dtd/tei_ms.dtd
+- https://www.tei-c.org/release/xml/tei/custom/schema/dtd/tei_simplePrint.dtd
+- https://www.tei-c.org/release/xml/tei/custom/schema/dtd/tei_speech.dtd
+- https://www.tei-c.org/release/xml/tei/custom/schema/dtd/tei_tite.dtd
+- https://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_all.rng
+- https://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_allPlus.rng
+- https://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_bare.rng
+- https://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_corpus.rng
+- https://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_drama.rng
+- https://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_lite.rng
+- https://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_math.rng
+- https://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_ms.rng
+- https://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_odds.rng
+- https://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_simplePrint.rng
+- https://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_speech.rng
+- https://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_svg.rng
+- https://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_tite.rng
+- https://www.tei-c.org/release/xml/tei/custom/schema/relaxng/tei_xinclude.rng
+- https://www.tei-c.org/release/xml/tei/custom/schema/xsd/tei_all.xsd
+- https://www.tei-c.org/release/xml/tei/custom/schema/xsd/tei_bare.xsd
+- https://www.tei-c.org/release/xml/tei/custom/schema/xsd/tei_corpus.xsd
+- https://www.tei-c.org/release/xml/tei/custom/schema/xsd/tei_drama.xsd
+- https://www.tei-c.org/release/xml/tei/custom/schema/xsd/tei_lite.xsd
+- https://www.tei-c.org/release/xml/tei/custom/schema/xsd/tei_ms.xsd
+- https://www.tei-c.org/release/xml/tei/custom/schema/xsd/tei_simplePrint.xsd
+- https://www.tei-c.org/release/xml/tei/custom/schema/xsd/tei_speech.xsd
+- https://www.tei-c.org/release/xml/tei/custom/schema/xsd/tei_tite.xsd
+- https://www.tei-c.org/support/
+- https://www.tei-c.org/support/bids/
+- https://www.tei-c.org/support/learn/
+- https://www.tei-c.org/tools/
+- https://www.wwp.neu.edu/outreach/resources/customization.html
+depth_boundary_links: []
+gaps:
+- code: http-error
+  url: https://www.tei-c.org/guidelines/customization/Lite/
+  status: 404
+rights_exceptions:
+- Raw response bodies remain local until per-item redistribution rights are reviewed.

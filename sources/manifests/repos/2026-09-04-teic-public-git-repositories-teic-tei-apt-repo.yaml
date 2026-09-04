@@ -1,0 +1,33 @@
+schema_version: 1
+run_id: 2026-09-04-teic-public-git-repositories-teic-tei-apt-repo
+source_id: teic-public-git-repositories
+started_at: '2026-09-04T16:39:10Z'
+finished_at: '2026-09-04T16:39:11Z'
+status: observable-complete
+adapter:
+  name: tools.corpus.git_snapshot
+  version: 1
+requests:
+- kind: git-mirror
+  repository: https://github.com/TEIC/TEI-apt-repo.git
+  action: cloned
+  requested_ref: HEAD
+  resolved_commit: a8b476d2defabe529a084ba143f275a0aba2b621
+objects:
+- kind: git-tree-inventory
+  path: corpus/normalized/git/org/teic-tei-apt-repo.json
+  sha256: 42d1ecce04390de12035cbd7f4d98680d44f78153499fb4e87779a40be8416c4
+  root_tree: 433a58a0be98d8943407a0dd58f531c27e559fe7
+counts:
+  commits_all_refs: 15
+  refs: 1
+  tree_entries: 8
+refs:
+- name: refs/heads/main
+  object_type: commit
+  object_id: a8b476d2defabe529a084ba143f275a0aba2b621
+gaps: []
+rights_exceptions:
+- The local mirror is not committed; redistribution follows the upstream repository
+  license.
+raw_materialization: corpus\raw\git\TEIC-TEI-apt-repo.git

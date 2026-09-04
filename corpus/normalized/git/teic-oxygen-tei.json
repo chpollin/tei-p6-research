@@ -1,0 +1,4156 @@
+{
+  "entries": [
+    {
+      "mode": "100644",
+      "object_id": "8bfaac41362e12ed694d92c9be13fa6c4bcb85e7",
+      "object_type": "blob",
+      "path": ".gitignore"
+    },
+    {
+      "mode": "100644",
+      "object_id": "4b0c03e615914423d01a35cbb00eaa66673c834e",
+      "object_type": "blob",
+      "path": "Images/acceptLicense.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "6f500b668accf0ea667f1efc47c3961257787f12",
+      "object_type": "blob",
+      "path": "Images/addPlugin.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "3105b3b50d71d73156bde417693f856cc2bc71a1",
+      "object_type": "blob",
+      "path": "Images/continueAnyway.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "f1c9f458c7d2538a3ad7a34bad73dc1add5c82ca",
+      "object_type": "blob",
+      "path": "Images/enableUpdates.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "1f259278d7e4318c0607b7a3f083c3bf1489043c",
+      "object_type": "blob",
+      "path": "Images/installAddon.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "cb1a760419d154630b4e492e3bc47cc360667867",
+      "object_type": "blob",
+      "path": "Images/oxygenPrefsAddons.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "68a53c45691c9bc7a72baf4b49a71b42a7c29658",
+      "object_type": "blob",
+      "path": "README.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "8a3dd7d458581213c0557402b88edf27158b162f",
+      "object_type": "blob",
+      "path": "oxygen-tei-plugin.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "7d3f58b5086f376f1c3d3854705854d75652f5b8",
+      "object_type": "blob",
+      "path": "oxygen-tei/.classpath"
+    },
+    {
+      "mode": "100644",
+      "object_id": "e6a3c6dd80da32b3a639ecac07b5a0603b64d27d",
+      "object_type": "blob",
+      "path": "oxygen-tei/.project"
+    },
+    {
+      "mode": "100644",
+      "object_id": "9ce11b021066b783274da3503100a6d100e212e8",
+      "object_type": "blob",
+      "path": "oxygen-tei/.settings/org.eclipse.jdt.core.prefs"
+    },
+    {
+      "mode": "100644",
+      "object_id": "5d3753150cf999ab259cb59f55467d7f2bbb12ef",
+      "object_type": "blob",
+      "path": "oxygen-tei/LICENSE.txt"
+    },
+    {
+      "mode": "100644",
+      "object_id": "c614b17b864c0dfd71b8fc441d02757175b5d5a6",
+      "object_type": "blob",
+      "path": "oxygen-tei/README.txt"
+    },
+    {
+      "mode": "100644",
+      "object_id": "40627362746c6a0879bab517b23e54b2e4aedd74",
+      "object_type": "blob",
+      "path": "oxygen-tei/ant"
+    },
+    {
+      "mode": "100644",
+      "object_id": "992988dc7e6fbbedffb2371880f04aed580d9475",
+      "object_type": "blob",
+      "path": "oxygen-tei/ant.bat"
+    },
+    {
+      "mode": "100755",
+      "object_id": "e9004294473fb38e760c6741c3f7ce5295d5f8d1",
+      "object_type": "blob",
+      "path": "oxygen-tei/build-for-jenkins.sh"
+    },
+    {
+      "mode": "100644",
+      "object_id": "172344b794499b69fab1f37189077824e464a35a",
+      "object_type": "blob",
+      "path": "oxygen-tei/build.properties"
+    },
+    {
+      "mode": "100644",
+      "object_id": "47d720e7c9a2f67f624e0aa6376d7b526a622e6f",
+      "object_type": "blob",
+      "path": "oxygen-tei/build.xml"
+    },
+    {
+      "mode": "100644",
+      "object_id": "45f9ead0610f4de2de3ea2bb47698f040e3b3b25",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/.settings/org.eclipse.jdt.core.prefs"
+    },
+    {
+      "mode": "100644",
+      "object_id": "8cc7f5a15ee059e84ccccdc0139deb4cf9995a3f",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/LICENSE.txt"
+    },
+    {
+      "mode": "100644",
+      "object_id": "0ae1792f86727c8737e1ebdab3cac68702bbd4fd",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/README.txt"
+    },
+    {
+      "mode": "100644",
+      "object_id": "0f79765898f9a1d6904a6d5c5f7e5b7fe66f53d6",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/TEI.LICENSE.TXT"
+    },
+    {
+      "mode": "100644",
+      "object_id": "39f3d9936aa4f49f0d68fb63c078977684ccea05",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/build.xml"
+    },
+    {
+      "mode": "100644",
+      "object_id": "586cb72043e19cb7c14dbc7cefe4c02287f0ecf4",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/catalog.xml"
+    },
+    {
+      "mode": "100644",
+      "object_id": "78313b431d240f4446be89866b01ac0cd3886632",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/description.html"
+    },
+    {
+      "mode": "100644",
+      "object_id": "35263e9831a94669b896c5fea1cc3113362b1643",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/i18n/translation.xml"
+    },
+    {
+      "mode": "100644",
+      "object_id": "d1adec3c4c20c6904796aa0c08b9132577f71461",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/resources/breakLines.xsl"
+    },
+    {
+      "mode": "100644",
+      "object_id": "ea4f35fc6ebe28e12f723bbb49e9d84e35d7572e",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/resources/externalPasteOptions.xml"
+    },
+    {
+      "mode": "100644",
+      "object_id": "55150856bba9324f9d140a0bde1e223f77e1c7a9",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/resources/filterNodes.xsl"
+    },
+    {
+      "mode": "100644",
+      "object_id": "b5b454b7206c4a2faeb5d5afe15a6b4d1f097fd0",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/resources/idGenerationDefaultOptions.xml"
+    },
+    {
+      "mode": "100644",
+      "object_id": "0a780cfabe8fd0f67a66ffc5021838e53ad0c0ec",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/resources/idGenerationDefaultOptionsP5.xml"
+    },
+    {
+      "mode": "100644",
+      "object_id": "c8d189075864c7813c5d3a6c9a08c3382cd6b7d9",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/resources/jtei-overrides.xsl"
+    },
+    {
+      "mode": "100644",
+      "object_id": "503e3e84a0828d1e5bf3c24785227d5271e9a714",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/resources/nestedLists.xsl"
+    },
+    {
+      "mode": "100644",
+      "object_id": "c5f01cf8c9690e472de5423cdf03933ee3019a91",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/resources/nestedSections.xsl"
+    },
+    {
+      "mode": "100644",
+      "object_id": "5cdf6f6337ccf1adf783f4abfe4de81a85e1ce75",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/resources/processInTableContext.xsl"
+    },
+    {
+      "mode": "100644",
+      "object_id": "4a0a3e17a869d07c6743c3439a7e3e796eb53764",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/resources/setNamespace.xsl"
+    },
+    {
+      "mode": "100644",
+      "object_id": "fa95d1a9a5cf86e487482f82d08df184d7a60c9b",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/resources/wrapGlobalInlineNodesInPara.xsl"
+    },
+    {
+      "mode": "100644",
+      "object_id": "637a64160d134122e3b282fb50bc34a8b1a199af",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/resources/xhtml2jteiDriver.xsl"
+    },
+    {
+      "mode": "100644",
+      "object_id": "0af9d00e8be3722d8842bf07ec7bd0eeb035a40a",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/resources/xhtml2tei5.xsl"
+    },
+    {
+      "mode": "100644",
+      "object_id": "8dbf1ea590dfe39f2fe877806c9520d1432ce1e2",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/resources/xhtml2tei5Driver.xsl"
+    },
+    {
+      "mode": "100644",
+      "object_id": "3575cbf13a62fce5e1e4a88cfaa77722a6029f8c",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/Alternative16.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "eeb3b1fed08379a2aae1f9d6e126826d20ab7a81",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/Alternative16@2x.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "6504b5958fd4d632ca043b7248fe4d2ae4ccaab4",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/AntDefaultExtensionPoint16.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "3a964f80ac6293d8cede1dd783e351641b5aef3e",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/AntDefaultExtensionPoint16@2x.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "ee839db28935f5cb22e7e8dd6865b214118d7bb0",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/AntDefaultTarget16.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "75b08294a86a8085ddfe49643031c72512f55ba6",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/AntDefaultTarget16@2x.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "e5a1402a65f2aafe1b6bebbe078f576743595c4a",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/AntDefinition16.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "972ea47c2426eccf3a497ee5a29efa08cd4ed124",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/AntDefinition16@2x.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "e5b347986f66af495ab3f41f06c566628fbe3827",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/AntExtensionPoint16.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "381da68e2a71d5b42ce5cfc37ef646672d87b0ba",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/AntExtensionPoint16@2x.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "3c613f181d1e977bf493766196e7a87bd68e6651",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/AntProject16.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "5bcc541d611593471f021d23c0c2a95f034ff563",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/AntProject16@2x.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "057ce871145f206a607844e009ab15b1071faf49",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/AntProperty16.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "5e436573de795e30c3568dd75c1a9f9ac67824e4",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/AntProperty16@2x.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "2957add253371baf0a35c766bec086809f30c738",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/AntReference16.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "b9433b17d4a892ecdcd7ebdfc37024b92b1896d9",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/AntReference16@2x.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "2eba2d4e4aafcc7e12496f824e9729f217743040",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/AntTarget16.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "83d61a31249d68024d8fb29072d58f9ffbefabd8",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/AntTarget16@2x.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "37088e8a7fb114f3b03617c00d1bd14c8113ddcc",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/AntTask16.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "44ea6086819a1ddf1408b3f586edfb319c818c44",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/AntTask16@2x.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "82fee40ac0db75a6eb9bd6c344f03ad86482fc2a",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/AntType16.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "efce41bc22500bc5deb780bca96e07b6714155a0",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/AntType16@2x.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "f78282720dfd99bc1d37078a7119c62652b5e57e",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/Assert16.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "5b5f57d3e15c52506131ff51efb419dbc96cead4",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/Assert16@2x.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "14c476a1d5ff502e5840ebd005d09b9f649335ac",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/AttributeDeclaration16.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "d6e5e2eac7b806014fdcf00c9a11b9cd3172a8f2",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/AttributeDeclaration16@2x.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "2eff8412467e06785bc34df7862ee7a3eeee6c2b",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/AttributeGroup16.gif"
+    },
+    {
+      "mode": "100644",
+      "object_id": "7a1f72ac0c37bd3890d733975879501d1268ddf0",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/AttributeGroup16@2x.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "f50e49c6ba93933ee03090118358a83d1a781463",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/CSSAtRule16.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "81e652277e92408748523f2f3a81937099df778e",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/CSSAtRule16@2x.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "97cb04eb157ef0bb2017f0c01854dcc0de7cf57c",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/CSSAudio16.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "84ca9869a3107b18c5578dcb41822efa264fe3e5",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/CSSAudio16@2x.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "b0fd33e0c9fd6844c333a170dc3f1a008bb706af",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/CSSBackground16.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "1bb0f811742ab94b888cabf97c01c302ad49bef8",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/CSSBackground16@2x.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "dafb4487450599b9dec118655bbe0fc3819aa87e",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/CSSBorder16.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "274eb6d1585ecfe5d1a25d52202ed721cf7b74d2",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/CSSBorder16@2x.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "ac18a86f2a9cea39049f55a6b300c6c5e7b03787",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/CSSCursor16.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "86fef5b0a54fcf8105876abe56d8765ba305ea27",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/CSSCursor16@2x.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "529c7cb4b234f797d50f38f1ac432d53cb527b7f",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/CSSFont16.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "79231e5018d7b8f9cceae08608374cee9805a1e5",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/CSSFont16@2x.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "e394f0c585b0e0ffbad57f35420d5d4dd4a0c2e1",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/CSSList16.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "d93400df16cd1d92bc8337c0e9dafff2f44949f6",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/CSSList16@2x.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "5368c8c90fc1029b4ed2692bfd3a49a342fe2ebe",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/CSSList16_dark.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "5b9607e75450752e97ca25a17e5f9be95cc2b9d8",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/CSSOutline16.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "fcb7171e420d461e5225a516bd1107e656ecfd59",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/CSSOutline16@2x.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "2e766a974afa5a8ddce2635802fd9ed612908840",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/CSSPage16.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "89b61c7913eb003ae28bd8a4f8fe1698320391b4",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/CSSPage16@2x.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "69b8869142f16347d327b7e77837ad91ac9c9c75",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/CSSPosition16.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "9c6219e7fccbc0e22f5ba58264db9c9bb69f759c",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/CSSPosition16@2x.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "3f5992226932737c96f1e17984203b5b03107335",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/CSSResize16.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "c86c93e19ec0d77a2eebe8b6cc2d5a305074738c",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/CSSResize16@2x.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "2f5d2f9165652d6e4409df14b236b59c6717bd91",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/CSSTable16.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "07c17ba57bd5f3bcb10ee5be9ec414eb1cca6919",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/CSSTable16@2x.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "8d1993b15076bd8d1fe2bce86342bf441e4ccb5e",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/CSSText16.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "55a1bcfc1aad0822c1865c9a32d5ae7c9776fe5e",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/CSSText16@2x.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "35bcad75d894cebcc5cc437fe3292ebede4bfdac",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/CSSZIndex16.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "9b23fd6bc28bd3607706077a4602a10d2eb2295f",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/CSSZIndex16@2x.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "58dcf5ff929be5a70738e3babdbbc62c25df34af",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/ComplexType16.gif"
+    },
+    {
+      "mode": "100644",
+      "object_id": "dcc02d02877cb3ad0278d37f7fde9affc2e78c4a",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/ComplexType16@2x.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "2490fb6945c8e322641088290824f0c7a81e548d",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/CssClass16.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "697284785c86d9835fba298ab8b2b5d8ac22d00e",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/CssClass16@2x.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "f73c3ed19133c3b30cc4e1f6444db2d033568158",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/CssElement16.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "cf6400ea7fc6425d9c3a572f72f44eca75170a7e",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/CssElement16@2x.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "11774b7181ee80d99838ab49150cc0c4777bc5f0",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/CssId16.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "7470b760d06a6cf2e934e94e4d9be2cc3050bbdf",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/CssId16@2x.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "356953573e48ad4a2b2fe85eb01e1e72269a6fd5",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/CssMedia16.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "707042ead56469ae5dcad3df33c8f9cb9d47865e",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/CssMedia16@2x.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "30dee19aeaed1741167ded6ab52285fed370869b",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/CssRuler16.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "57005a2c200c08f00b06c0a427072d9b18e0f0ff",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/CssRuler16@2x.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "a665b57707cbf6d4242916cee1caeaa8b2f95f2e",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/ElementA16.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "07e80a3c2f1d3f26a4f320384e6459f4e6afbdd7",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/ElementA16@2x.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "55b812a224dd235c973f464d1cf5bce4a9d31691",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/ElementAll16.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "4c1350e091919fe54b3565f75c8a349a1cc57455",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/ElementAll16@2x.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "fdae1d2b729f0998cd6b0e92b4c8051b3341f315",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/ElementAudio16.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "682ecf07189380f2a710448d319cf8bb92bb35ea",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/ElementAudio16@2x.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "5cd50aa25a193752b7fa8f5e9a1d76ed95cf68be",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/ElementBody16.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "12821d383699926d7a739f96f99d16ebe28bdeea",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/ElementBody16@2x.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "285587872021770695d688f2c69fe51b106eb2de",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/ElementBold16.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "a49993e052534364adc1610062e2a7b64a909e7d",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/ElementBold16@2x.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "0bfce1b2af54feced222a193c3a305f957cf0d2d",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/ElementBold16_dark.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "d26f826ee5926ea6f988690d22291bca2c323c27",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/ElementBold16_dark@2x.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "15357a13dec4cb3a8bcf0cd8cc6c7aedeb4001bf",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/ElementBookmap16.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "5b21c4a0499f58ed5acaa961dba9ac0d2e8cf718",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/ElementBookmap16@2x.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "b88ce04ba411a82224beef4cb7de93fa6c25c768",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/ElementChoice16.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "0f2b689f617beadcbeb101c379e66140be5bf2de",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/ElementChoice16@2x.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "4483f598dad988cff2e34a02e484098f86c850b4",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/ElementConcept16.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "dd880a8a984fee6df49ea7ebeea47f36f052b089",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/ElementConcept16@2x.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "d5c22d577790102caf6438ad2d18a20f222679ee",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/ElementDITA16.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "4b3e04d5b4af4b0b271feeb83f0937f6f212e711",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/ElementDITA16@2x.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "edc7272983eae4c29386df035c6dd99cb419cee6",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/ElementDeclaration16.gif"
+    },
+    {
+      "mode": "100644",
+      "object_id": "77eb8202e75ed910c41f89e9f596ee528e242c61",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/ElementDeclaration16@2x.gif"
+    },
+    {
+      "mode": "100644",
+      "object_id": "c9855db12e01c7c673d27e8736077cd33d43f08c",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/ElementDiv16.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "b032a074facb8c5bf63422c0603dd456ab918855",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/ElementDiv16@2x.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "4badf520206c97013ef2837fcbd27c8aa7d5e4c9",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/ElementDocbook16.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "c1b0c3848a0bf164bf40c6d32b202ee759fa9b00",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/ElementDocbook16@2x.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "12281401b85e9861ee949a6465e9d708bfc52a82",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/ElementH116.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "afbe09fb974cfd2970b7c4eef6ebeddf4c5a0e57",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/ElementH116@2x.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "78e0a944e51183c9ab3cefa9aa72da7c0400d9ba",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/ElementH216.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "27b4675c5b86e4f9d097f548a81409f9b59f81fa",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/ElementH216@2x.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "923850f341d15fd3243243a0bb07bc0bad58646d",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/ElementH316.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "84904fd3b05e3e9ee9b3844617f9b5dab668bb2b",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/ElementH316@2x.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "e48ce4dd389d59beca859a5c1ad740427e174521",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/ElementH416.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "8329d119fd53813fe1869bf042eb8e8b59d056c8",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/ElementH416@2x.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "236007eabea807b769bc85eaf42a8905c0445a23",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/ElementH516.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "5fa26194413fcc330c01c9e540bacbbd52776d2a",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/ElementH516@2x.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "bc3e32f594f719a4387fe580670696c8db74d105",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/ElementH616.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "5cd3300ba14b8bf06268378387ebc307e0a79d2a",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/ElementH616@2x.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "a2709b8b8425e666486890a8371df80c9847fa13",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/ElementHead16.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "425e18d86682862e76d131a564972b57d3b253eb",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/ElementHead16@2x.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "37497f601ea9b64b36e17afc5fbedac7b6f65497",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/ElementHr16.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "a8a2ed471d39cd1fbda0dce33386d2190ddf2e70",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/ElementHr16@2x.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "8c924544264f2837a440380bacd8a6ad58636669",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/ElementHtml16.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "89544c48beed545a7a19f8cd789a7cafccf5f87e",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/ElementHtml16@2x.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "7ebe20c48f443485a90cbbf43b654e76f9d4028a",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/ElementImage16.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "edc9ad752c1e73750d23ebe2e9542d03254cf6a6",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/ElementImage16@2x.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "86ae7d736a20e6067fc302c7f8662787fc8790a3",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/ElementIndexterm16.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "797224d0e63567b685da0705502d119ea8f3a060",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/ElementIndexterm16@2x.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "30b434967cbbaf912f78393fd472bc790ae893a8",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/ElementItalic16.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "4c2f0c8f7452f547e97ce9b5fe3068bae87cabf5",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/ElementItalic16@2x.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "05ac39b43ae166fc5328d7c139b7c0246aa802b5",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/ElementItalic16_dark.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "ed5f6ea16367761c9abdbc9b1064a08d4e393d32",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/ElementLi16.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "7ae1aa40821b5a2146781eb040b01bcaccec36af",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/ElementLi16@2x.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "62b3d181d4944829a2284dc41422907a20dadae6",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/ElementLi16_dark.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "0351347f114a0959820bf1c9f98686e9d0a7d302",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/ElementLink16.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "7a83a452097a11b7b0cc41657226269806dae3af",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/ElementLink16@2x.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "edde835be0a6d67d8c4d9ca5c4f301f1692770b5",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/ElementMap16.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "742af151ded64a9f1c0b347b454520bb319d3e25",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/ElementMap16@2x.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "2a3ad89007964ddc4ba3f31f61f3ca1c71f785d1",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/ElementMap16_dark.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "5431254c778cb6d405a6ff1af45c13456ecbac86",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/ElementMedia16.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "740e293746cfaee8a57a6d8970552bc7c2b4a137",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/ElementMedia16@2x.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "49f2a2b8a1b216732572468da4691b2fcaa198b9",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/ElementMeta16.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "9df7739a16e6b78f0e7a5e9a9356ba8bc0d97d04",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/ElementMeta16@2x.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "25ec26a51a45e375db1a0bcfec4a7d0843194d87",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/ElementOl16.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "8336bdbcbfa66f3dcc181e8535e49190fcd2ad7f",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/ElementOl16@2x.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "d6e372483107a6015d2501c13266f3a4754be58f",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/ElementOl16_dark.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "8f80558347f43caf6e0f5dc71ff984cbf19e9146",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/ElementOpenContent16.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "30243eb2c03151c3f48402d9d3ca530d7392d0f5",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/ElementOpenContent16@2x.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "73179a395dbfb4134c37ffe36fd849846e92f8d4",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/ElementOutput16.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "cb9d0348c70306dd868ea5024271e377f55e6a99",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/ElementOutput16@2x.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "bc1006ec4bee65c6e9948c3516eb124d1643db59",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/ElementOverride16.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "191efc22e960759ffa35fe19cec70e7852f2b9a7",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/ElementOverride16@2x.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "6002ce58d24c562fece16e6a09a35c1a9d0204ef",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/ElementPara16.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "785ea9e71b4e524b48b85568b668611233f7ddb4",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/ElementPara16@2x.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "e32fc264239730bf7e7b9b09814156b9d8469c1f",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/ElementPara16_dark.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "7cdfe657fffcab5254188b9a6421e3a035f13827",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/ElementSchema16.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "bb15222155bf40b2aeae223cd8e55fa735dced4e",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/ElementSchema16@2x.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "48392aa5b250cf5f9ff1376429486e89a45e998c",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/ElementScript16.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "99729ca0ad5f3fc7c03a550faaa6522e4ed97a1b",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/ElementScript16@2x.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "9368e71c59a4fa185216cce6cea52d8fbba22942",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/ElementSection16.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "955716098dcded4d6404e4036a80dbd28bf91bef",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/ElementSection16@2x.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "22b071eb185ec455e38839a59ec2646c7b57cd56",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/ElementSequence16.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "c96a4a6175d61d6b7fe48204d72b5afc1c0a41ef",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/ElementSequence16@2x.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "12e9f949de3acc7a9906c8182a866ed9849098fa",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/ElementSpan16.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "2f7bb131fd5ea18fcea32b85474d626739be2161",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/ElementSpan16@2x.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "dbf161b6bad329756f6596a61f004654c95678c7",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/ElementStyle16.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "1bb0f811742ab94b888cabf97c01c302ad49bef8",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/ElementStyle16@2x.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "e5239c7ae282e3a63993fb691414f43269263d82",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/ElementStylesheet16.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "1f8c3d997a9a3a8088955f1b8122edbe4422fc64",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/ElementStylesheet16@2x.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "ec7f6393cd9a0fba154fe1a39007e79a43f9bf12",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/ElementTBody16.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "f0bd05ac82364e068da2c6d4afee980315dbec22",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/ElementTBody16@2x.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "5a2cb9bf0d0aa45b7553cd7903133448f7fc3298",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/ElementTEI16.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "2ee911aac2116edf988fe43f8e9ff3dad28f3410",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/ElementTEI16@2x.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "762f73f8152bebb0dca048ec07bcd1a4005af81d",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/ElementTFoot16.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "a6c20e1c856bc6cddf668a610b82d36e57205dc7",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/ElementTFoot16@2x.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "ab64a10573a2c3c3fd3a4e556e5a2eddfe4fe447",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/ElementTHead16.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "e6a9cae41970c05504b27c08d9824e3f99a073bb",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/ElementTHead16@2x.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "2d961cb01803cec80119db704bb60345ba15aafd",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/ElementTable16.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "51dd2432ce1e77210e2132e1a11bdd4e55c780df",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/ElementTable16@2x.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "72908cea443e7cbe9c3ade11e7429c90404558c2",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/ElementTask16.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "2f9e07ba78aad7c8d0f5fd62f83d85bb5fe15fa2",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/ElementTask16@2x.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "c344cc96e3ce3dae9ddd6f7be7bacdefc513cab6",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/ElementTd16.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "8ab95c0560d54acf6c219867b5b3029a8be7be5a",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/ElementTd16@2x.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "88ecc4f74f6d410db18c3b04aa5cfcad8de48c0e",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/ElementTh16.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "2bc7f022b1455d98e05067d2c6a23a50b0bfa1b1",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/ElementTh16@2x.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "dc3722ad7aa504699792a253ea63f4dceb93baf3",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/ElementTitle16.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "14dfffb2e0f69d3cc860f8ba2c61ee7e818f5a05",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/ElementTitle16@2x.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "e2c0920b4d14a753282bce3701967ead445e7d53",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/ElementTitle16_dark.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "a1b281ae79f808aa7c6f67f0be362408cc2e22a3",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/ElementTopic16.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "899da3ab55f84cd6f1468b68c778d68669d0828c",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/ElementTopic16@2x.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "ad50361bcaffc018f176892167f96c51f57229f2",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/ElementTr16.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "fad0bdff77a126e124f00072e49026f2a1a8756f",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/ElementTr16@2x.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "7443cecc1a1e1c55c29d915b3e6fbd9d66e8fa35",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/ElementUl16.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "556031a1dc58b6b77d773dcc45818938928a33ac",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/ElementUl16@2x.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "547914f1087d6bb00ad563c9f886c42ddd88d9a4",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/ElementUl16_dark.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "1d41914aded297572b1202fb5f4b6b18bc9f9358",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/ElementUnderline16.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "d3968f5479b3cffb7066f097e6adb1e9f01c5328",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/ElementUnderline16@2x.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "9b85f32b38e3c43992fa81741fda4a1c7645c81a",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/ElementUnderline16_dark.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "2bacc1377b30c98e6b549a9cc180bd0ae8bd47f6",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/ElementVideo16.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "fd0348bc63f70172969bfde43f111b82bed4a6a8",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/ElementVideo16@2x.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "a6b9be9ead2e0d7cf1fd82709bf2c8f29b0e866d",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/ElementXref16.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "b2dba46951e72151da8cde967edf2cc74546c5cc",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/ElementXref16@2x.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "07ccff7d337d07de9ecbc50050a0589c5f8fb7e7",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/EmptyIcon16.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "0e06af368c6b21242a1d8686b7ce8c628a64897d",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/EmptyIcon16@2x.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "8e59e575a5f7f93243213aa8acdf30c7cc17ccf4",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/Import16.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "5bca9894b24491c0646c25fdd2af197fde13ed9b",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/Import16@2x.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "fd34abef01115b5250e30d6c8e907b519fd6c541",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/Include16.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "f6af4e3c28ad99ff96e116473ffb408c011ea9fe",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/Include16@2x.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "14927171e3fffab4cc875f1b0f18d4f397d5bae6",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/ModelGroup16.gif"
+    },
+    {
+      "mode": "100644",
+      "object_id": "faf06f809b1c8a76aeaddfb50371267a79f79e97",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/ModelGroup16@2x.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "a8ab3c909373b421eaf78cac73790abddf07fb26",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/Notation16.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "24354e93cc255fc2b8896e8a410a30e1b59c6444",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/Notation16@2x.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "f1b2ad1642f84b514252655d9f3089f6aff45f60",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/Redefine16.gif"
+    },
+    {
+      "mode": "100644",
+      "object_id": "3025932a84b1098f2dd17418ad3cd87553f3accd",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/Redefine16.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "92a9e984723c7d39e4346818c2d75eeefbb3b523",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/Redefine16@2x.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "7a85201a9f9d634d87fd0c620c7f31759c96267c",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/SchActive16.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "c4fbdaef5e3b5ab54d4ef139466807e79a506a28",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/SchActive16@2x.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "588d08de7929436e4f379353b60013d3b1aa8472",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/SchAssert16.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "2129061b7858caac5d1def43e9018986fc3e65ec",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/SchAssert16@2x.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "1536fcbf7e10969ebf45bdb104f735d580348480",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/SchDiagnostic16.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "ba29aa015d594dc0e0703c3832fee3cb701cff8a",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/SchDiagnostic16@2x.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "fd8c14a86e40770d9cc2be03689d2ebeac3547c4",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/SchDiagnostics16.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "43c7f28a262b962db028121b6f5b968ca80bc0bf",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/SchDiagnostics16@2x.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "875c1d1711683ad15e5de28952f7b1c6801d88a9",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/SchLet16.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "c5910d11632c5847eb531585828958466ea3699c",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/SchLet16@2x.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "47715f1adddb63310f7b5a8a02fa31d92fee8284",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/SchNameSpace16.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "bdacef40aee1f137f569239fb215f0b1ee711270",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/SchNameSpace16@2x.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "2f070420bf518c6cd59967c6346fd56ce629c5fb",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/SchPattern16.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "45bde31ce27e35ab271c41aa26ee4c63abdfc49d",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/SchPattern16@2x.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "167ab7a8fd881b7cfff8fc129e72b15c82ebc8a8",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/SchPhase16.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "dc8da468a817ce0eb430459d8d0a97303afe3315",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/SchPhase16@2x.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "d22265670f2f7588f4d7afc51263b0012e09c41b",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/SchReport16.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "faf333349a893be69f9f90170d6d6f38ddbef1f5",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/SchReport16@2x.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "5ced275676a0de1ae502756bd34aacef8cd99b13",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/SchRule16.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "e4f6e3601f8e4ea307852182da5a9ec1a5ba8504",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/SchRule16@2x.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "b2a3e534b3abcba5d32c3e2231a70f5935cf4c2d",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/SchSchema16.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "d7e9d274da787ca9ce3268dc55d8fa1a068e889c",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/SchSchema16@2x.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "dd021fbebb727fdf0f1594d269f011ba49c8a200",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/SimpleType16.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "7912806c2a236800712886aa997dce600cc272ef",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/SimpleType16@2x.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "0693de630b04d755146aef8ba8587077e3a52bb8",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/XSLAttributeSet16.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "94a86dee35bf0e52f523e7ef34296a68dbf05dfc",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/XSLAttributeSet16@2x.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "aeb3833bc8aadcc6457509828ea6976f1f7607d5",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/XSLCharacterMap16.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "248810a2862c4081d398a325ed8945e9e3278ae5",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/XSLCharacterMap16@2x.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "1838de8a4e7e2b130d16dc16586c827cc2de53d2",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/XSLFunction16.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "fc79ff70a35f2638642287ec377cfce3f080e0d1",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/XSLFunction16@2x.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "ece3e5dd068a7683a9852994f442b40427be4392",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/XSLKey16.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "227cb5f694624043df80319548895232b29bf3fb",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/XSLKey16@2x.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "3bf4efd97d529d468df3005effdda864417b8742",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/XSLNamedMatchTemplate16.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "f5509c597a8f189c3302bcb39b703a127c5efe2e",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/XSLNamedMatchTemplate16@2x.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "03fde020bcfaf7575e23ee9142c01cc339f868c8",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/XSLNamedTemplate16.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "6b0234ac4d2d60d99580457d3ab95b12458825c0",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/XSLNamedTemplate16@2x.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "022687383d23f90b0f1c6b04530356ed5e84ab96",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/XSLParam16.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "a21d4bda084fe2d63b92eff0ded08ee1d8bc32f4",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/XSLParam16@2x.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "281c9b4ed099697b38cd6eb9a70d4fb033d0175b",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/XSLTemplate16.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "089bbbc86c593c1f75ffd0ede0dac62d0a14b643",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/XSLTemplate16@2x.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "2b621c44ee23e8e2ea419058c0e13032c8a26031",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/XSLVariable16.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "ca5accf1368a631ac05830d52087ad7c057c2f41",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/XSLVariable16@2x.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "c25256a940bd8ef7ad5e8467a994287aa0cd6190",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/wsdlBinding16.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "825d7f43bb89ba5937f9def7af5460eb578896bf",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/wsdlBinding16@2x.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "8511e9a554f6f7b5ac7b6ae214653c2a9378fdc3",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/wsdlBindingOperation16.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "88cbb7c29b2087259c70f62e0278cd0005c97c28",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/wsdlBindingOperation16@2x.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "39dbf3d8d76f59785c8bb4ac62242e36130e5028",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/wsdlMessage16.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "bd2a59b64faffb309ad216c9fae5a970f9ad699c",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/wsdlMessage16@2x.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "baed02dbdbcb339c4492bbbe3224cf9a0cf6caf8",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/wsdlMessagePart16.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "149cc6284b50a303bb5dc3bb1c8802debc3f68d5",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/wsdlMessagePart16@2x.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "b6c5b8f5fff386f013c2f3152807445dafc1dd22",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/wsdlOperationFault16.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "5b481d7fbb9e97a6598e2eed4b5cf7aa9eccce95",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/wsdlOperationFault16@2x.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "4547df730532c1691543cc05bedbefe99696cd8d",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/wsdlOperationInput16.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "917fefe9babf61b9612f48516e6acfbd3e2e4eaf",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/wsdlOperationInput16@2x.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "35dcc29e5a35eb46d88279e3384da276fb9decc2",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/wsdlOperationOutput16.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "539b198463945531f3639bb63be2cce7d4d1f142",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/wsdlOperationOutput16@2x.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "ff4cd0ad93822b8a6524b3ba56f327ff5999efe1",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/wsdlPortType16.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "352349bf8d936654f3ad163063b0f49452c53d21",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/wsdlPortType16@2x.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "98ae9cd546bce9d127e2887ff181b21247c6ed3d",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/wsdlPortTypeOperation16.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "a9acf35d6a08ca3e38d4c5a5fde4a56814e94034",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/wsdlPortTypeOperation16@2x.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "2911e801fb90eead4d2541a6a0cf2c802f81ac67",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/wsdlService16.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "9afb104848171287f6dfc95257fccb01d0881558",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/wsdlService16@2x.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "78bf8d27061cfb26b1f15d587b763524923fe31d",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/wsdlServicePort16.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "9109b32d4d7ddde0735ddb19aa41f329a619b5c9",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/wsdlServicePort16@2x.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "f83ae7d712960cca196cd8d1bb0609fbccd2bdc7",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/wsdlTypesGroup16.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "dc5753b2220bc63af18521ba590be50af3cba668",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/images/node-customizer/wsdlTypesGroup16@2x.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "41c8b1685a997fea1aa46592c53124b318a117f6",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/commons/AbstractDocumentTypeHelper.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "0180dc8b02a0c7c6b98fa14b77aa0bb67ec025ad",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/commons/CannotEditException.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "9c95d3790fb71758c3b8ecedd96366d8a439737c",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/commons/DefaultElementLocatorProvider.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "378eed622390cc072d6adeeec2e9b9fd8c738295",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/commons/ExtensionTags.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "38c6e849755e856844b05204ab997b1fa866eea7",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/commons/IDElementLocator.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "6100d89c7c71061a0d6270b27ba5e7138aee7bbc",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/commons/ImageFileChooser.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "ed4a67ffe9ab6115580c3977baf0a29a2cf8dcea",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/commons/MediaFileChooser.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "8da6ad067c0d870c44ed90dc4ebcad99ecabc50f",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/commons/ObjectChooser.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "092ad920e7f02dd3bb93ec1eb1c5439ff881ce57",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/commons/PasteAsReferenceException.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "6172b034d9f27582ce2375cd173c2f59d57ef518",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/commons/XMLNodeRendererCustomizerAdapter.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "906fecd516158322ceff551552795e2c899b77a6",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/commons/XPointerElementLocator.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "359b669fb5bf119d3ede21dea03f70415a2d4a15",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/commons/editor/InplaceEditorUtil.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "4ac6c97b94cb96169c267e2bbd89149f633f3e77",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/commons/editor/SimpleURLChooserEditor.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "3454b707a4f3ffffc93b4c5bfba2cc6350fffb5b",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/commons/editor/URLChooserEditorSWT.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "50e7a1d9d939f889e630624fa0c4baa21c541a04",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/commons/id/ConfigureAutoIDElementsOperation.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "5e68344c1ece8049491e8321438749b550a52f30",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/commons/id/DefaultUniqueAttributesRecognizer.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "801c1e56a0d3467cec32ad34c39d453591180682",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/commons/id/ECIDElementsCustomizer.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "db7b3542898452474c6ddb4c16c5264e081ad73e",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/commons/id/ECIDElementsCustomizerDialog.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "b4da27653f9ebd1c3811d9a82af46b74e7a79774",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/commons/id/GenerateIDElementsInfo.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "6877bc10c247efd855ec57c414b8024b00568c1d",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/commons/id/GenerateIDsOperation.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "3f3a959a6931627d5665017eda412c86159ece54",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/commons/id/SAIDElementsCustomizer.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "88b625b838ab7344973cc92bdd93886a6afbb61c",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/commons/id/SAIDElementsCustomizerDialog.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "966f33ffa1e71a6717c9afd4a30090cd4e56c70b",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/commons/imagemap/AuthorImageMapDecorator.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "3bb29f568e55a94e586cb7f8ce2efa6db43d553f",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/commons/imagemap/EditImageMapCore.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "34dc1a4ac67c720fc2663a714f500fa2dd7ef129",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/commons/imagemap/EditImageMapWithSurroundCore.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "3032cf752134703686ea2ac0c21529d302428ef3",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/commons/operations/ChangeAttributeOperation.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "bfe0500c1d02f243408e9aeeddc3bf9e1d3e87cb",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/commons/operations/ChangePseudoClassesOperation.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "d98015d973fc4d31502bb1bdf6071b07b41758f3",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/commons/operations/CommonsOperationsUtil.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "06be4cc017f338ab3467103431a2640aa0e5f984",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/commons/operations/DefaultExtensions.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "929eaf2a13f2a0322ee9ddd627574a267a9d981a",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/commons/operations/DeleteElementOperation.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "34daa7c0d1b18343f56d0b36d591d0ef97457974",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/commons/operations/DeleteElementsOperation.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "0058fde1857c2c7d6dd76624f92fdf4c22183556",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/commons/operations/EditImageMapOperation.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "b03313c48da927828e9a31693983cf3ee662e94c",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/commons/operations/ExecuteCommandLineOperation.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "4e790b7ab775b7ea81ef7f996537ee08daf31641",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/commons/operations/ExecuteMultipleActionsOperation.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "a34d0c6cc47f7ee5fb991ac3ae4e6d4e572eee04",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/commons/operations/ExecuteMultipleWebappCompatibleActionsOperation.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "06f35f058e811730194a4e56122b51dc92b4d129",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/commons/operations/ExecuteTransformationScenariosOperation.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "4cd5210ff4b9d1d4782a174f6abc7b6cacb106a0",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/commons/operations/InsertEquationOperation.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "2f2ce6dcf201a9eb23f8c2fa4c6498da9701274e",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/commons/operations/InsertFragmentOperation.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "6f720161352e587b1fbcd8651140a105f143d86e",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/commons/operations/InsertListOperation.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "7c4fbd0531f2186fb6facbcf2ee20cbdf593ef48",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/commons/operations/InsertOrReplaceFragmentOperation.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "ac4d1de6d759454a195d15704d42de0b90069c67",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/commons/operations/InsertOrReplaceTextOperation.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "04feb9b8a82e8396025a8e8e7306ba6800619ee4",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/commons/operations/InsertXIncludeOperation.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "141ec0b878caac49aa35b395e2f5bd6a18c0f8dd",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/commons/operations/JSOperation.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "ab44d675152e3697646e864fd7948dd33093327e",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/commons/operations/MoveCaretOperation.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "11e078a53d8e5302a7535d8029e0417e1b1802d9",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/commons/operations/MoveCaretUtil.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "5da6d2fd7d0b66b5e5494a5c10271b85b94e2543",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/commons/operations/MoveElementOperation.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "6e266a00b48fc5859922d6cc7cc58f5919307d57",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/commons/operations/OpenInSystemAppOperation.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "9a964b0b1105667dd4ac02a04610cd9c175d0427",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/commons/operations/PromoteDemoteItemOperation.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "ae952634e8f39915c4e02852b1e27b17416e5d46",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/commons/operations/PseudoClassOperation.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "6702480716c238be8247a1e288b6fdd5f861614a",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/commons/operations/RemovePseudoClassOperation.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "93972f500b742dd45f1fad7bc02ee8f6c0778ab8",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/commons/operations/RenameElementOperation.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "8350edfaf6bfd618999889f87830d97ae218bdb5",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/commons/operations/ReplaceContentOperation.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "5a1de6faea12a7d9085e56ebc3f4283589d32c25",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/commons/operations/SetPseudoClassOperation.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "8fb772cde5e971453b498dc6d1f359cf3da5dcff",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/commons/operations/SetReadOnlyStatusOperation.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "6ac51a5b6a15af47e15d1c09b93e0f7128f54853",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/commons/operations/ShowElementDocumentationOperation.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "5d30ce66703acaf41f671b4a8e568ff0c6757535",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/commons/operations/SurroundWithFragmentOperation.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "9ca147b49a9a35ac8c35b78d604c2bbc2c9b6a02",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/commons/operations/SurroundWithTextOperation.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "154317043b2dbe4f9e07964f90cf8288bfe62813",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/commons/operations/TogglePseudoClassOperation.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "bd289afcef1a4512e2575df5d81a2b71d1d7b40e",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/commons/operations/ToggleSurroundWithElementOperation.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "94114c843f0148a9bf48e010eb1df0a1a871d63c",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/commons/operations/TransformOperation.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "66e5a3f864541981f8b1ebcd07dd7ef36e507023",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/commons/operations/UnwrapTagsOperation.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "b6fe5ce091d520fce6ef39cb25ac001df8455daf",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/commons/operations/WebappMarkAsSavedOperation.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "439a44ff993702131429dedc28be9ad1f6d7062d",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/commons/operations/XQueryOperation.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "abcd7c0aa828120b8d85d1b72dae4eedc8464349",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/commons/operations/XQueryUpdateOperation.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "9281e0d229d51467a4087ff8ec5f013f9e0d390a",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/commons/operations/XSLTOperation.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "c4ee9bc640c03718a9254fa2d18b0d29621fd6f4",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/commons/operations/text/CapitalizeSentencesOperation.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "12ad3a04f34ef6577e93b0c1bf822c09887cca26",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/commons/operations/text/CapitalizeWordsOperation.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "a557e744e2bda18bc39037d1796bc856aebe837d",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/commons/operations/text/ConvertHexToCharOperation.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "02fd17d56a24ee4311b687e2c81e13eb301fa4eb",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/commons/operations/text/CountWordsOperation.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "ce11ca7c50d36c98ca9ffddce5c2ef8415f7c0a2",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/commons/operations/text/FormSelectedTextOperation.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "2b17b1127351d70690fade7282f98a6fa83feb22",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/commons/operations/text/SelectedTextOperation.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "9089b3c87eebbecd8e16ecd367287a24fd420b10",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/commons/operations/text/ToLowerCaseOperation.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "cbbb12356e3030f6d172d4e80fbf16b5d68947de",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/commons/operations/text/ToUpperCaseOperation.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "a502ccc29d89a764dadfee43b33d1919cc39f1c5",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/commons/package-info.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "d139fed8f266a97a027fc1521cf268ffd3eb07c9",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/commons/sort/CriterionComposite.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "80bca132d823016825c807654e328638eab96702",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/commons/sort/CriterionInformation.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "84d2cada79f523f31b07a3e8b9cb09f70898d469",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/commons/sort/CriterionPanel.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "953185a545ee55abafdfba902cc2566a66b47089",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/commons/sort/DITAListSortOperation.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "357db457d3113fe6a46d968f8e50c2aa57ae3702",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/commons/sort/DocbookListSortOperation.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "17825cfc990b602129c453d4f8c8544394ee371b",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/commons/sort/ECSortCustomizerDialog.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "74b4376f6366161455f7b97c9454ad9dbdce62ea",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/commons/sort/KeysController.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "8ca03bd0ec616bc7e7fdee92137cc9e6626025df",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/commons/sort/SASortCustomizerDialog.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "67fb3e6f2cc75296f5e7962dbb14ae6d4f348132",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/commons/sort/SimpleTableSortOperation.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "68eaa60de8fbe7a1ee3a695e85fac41044f22ab4",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/commons/sort/SortCriteriaInformation.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "cf5533d9f6dfd6a6f9e88f417a63cfcc7311febe",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/commons/sort/SortCustomizer.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "f8bb565358779b4bb759a3b5d4cf8e1854a3cd2f",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/commons/sort/SortOperation.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "ee4e91f5d5bbdcc54a8a63c8080552aad98d82c4",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/commons/sort/TEIListSortOperation.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "53cb04fe0b8542fae7b907803cf60a8e21a0cdec",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/commons/sort/TableSortOperation.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "e71f5832634eac2ab1c5920acd73d99550d352ea",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/commons/sort/TableSortUtil.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "66b34cb2ac68be50052f5c9d08aa8517e4160087",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/commons/sort/XHTMLListSortOperation.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "2bd51b20b67d685b19390abbe14cca2f98817733",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/commons/table/operations/AbstractTableOperation.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "4415029fadf64f4e3933a7e57e657f95f72821be",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/commons/table/operations/AuthorTableHelper.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "37ce8aea25e5184d894ee511b93846863f0e2851",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/commons/table/operations/DeleteColumnOperationBase.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "be511018aff577fb61ca2c49821c901a485c0a43",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/commons/table/operations/DeleteRowOperationBase.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "862508de84c6265483acb18d674b08e79688621e",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/commons/table/operations/ECCustomTableColumnInsertionDialog.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "8394bd811c09e48171fd29feab3f7f3b76fae1d8",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/commons/table/operations/ECCustomTableRowInsertionDialog.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "564c834c23419bb175d1af4f67d5f90430a216df",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/commons/table/operations/ECTableColumnInsertionCustomizerInvoker.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "5de12dda8887a02151622298acb0fc10f5c9efea",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/commons/table/operations/ECTableCustomizerDialog.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "b85c1a47f98ed9e99dbcffc3ebaccb3f0d10ea2e",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/commons/table/operations/ECTableRowInsertionCustomizerInvoker.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "471d3a45c3598f37113bdeab1aa027970864e747",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/commons/table/operations/ECTableSplitCustomizerDialog.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "5d32405f8c65809e08ca41c671485afdc87b8976",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/commons/table/operations/InsertColumnOperationBase.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "34e5a27e013e017f072470c93e1b85f6681d4c43",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/commons/table/operations/InsertRowOperationBase.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "c72f3f1684656d45abafdeffe9e1baf1e0c25fd5",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/commons/table/operations/InsertTableCellsContentConstants.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "008165ad953630f42fbd1ff5041573946a4e62c9",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/commons/table/operations/InsertTableOperationBase.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "88e50520657770822c56c16f7a1315934dc930b9",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/commons/table/operations/JoinCellAboveBelowOperationBase.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "00d29506d0d64678e45045faff60b6f9f132adec",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/commons/table/operations/JoinOperationBase.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "7f9b47fe0f9a8296527905991885030c2aa49b54",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/commons/table/operations/JoinRowCellsOperationBase.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "f5c63053ef3a09dce4898f41c4fdb96aa488f6a4",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/commons/table/operations/ListContentProvider.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "ce3625552f63d4f91e9823de52e04e2fcde9f0bd",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/commons/table/operations/SACustomTableColumnInsertionDialog.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "51e52f6cbb6029c68580b4eff448d4d166fd30ca",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/commons/table/operations/SACustomTableRowInsertionDialog.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "dacb22cdc9ef779a854af1d30883c571bf5c3931",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/commons/table/operations/SATableColumnInsertionCustomizerInvoker.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "993d9a7529090e5482962e51b21152f3976136c0",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/commons/table/operations/SATableCustomizerDialog.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "57bb5a1d49923fe8037460ff8515f8618434187c",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/commons/table/operations/SATableRowInsertionCustomizerInvoker.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "cdbf3bc739dfc6909433449c6130ff3b1b713e17",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/commons/table/operations/SATableSplitCustomizerDialog.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "de841ff9a5bfd08ea757ec18332e2a27fbac0ccc",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/commons/table/operations/SplitCellAboveBelowOperationBase.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "14d9c399a7f936dbfaabc4d6783c00d352b0d9c8",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/commons/table/operations/SplitLeftRightOperationBase.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "75b39dc61016ee7557929de4f2f4979572f10612",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/commons/table/operations/SplitOperationBase.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "9a7bf408081ef4653907ea8109a7a4adb5dd6a07",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/commons/table/operations/TableColumnInsertionCustomizer.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "5bf722e00f103597a85f59fed1e0f5508cc12705",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/commons/table/operations/TableColumnsInfo.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "d03c14fca81cf3f063b632b4357bf829fbe20448",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/commons/table/operations/TableCustomizer.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "86b1c0a5701077f74613d115d1459d7ed839fd24",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/commons/table/operations/TableCustomizerConstants.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "ec9d1dc4f4e65484faa70c8cdd5d38e1a0116a4c",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/commons/table/operations/TableInfo.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "69e2062fdfbb4300f02ee1ffd4034ad9a06d051d",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/commons/table/operations/TableOperationsUtil.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "36003940c454767f7ba55cbc4c2f0809645f074c",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/commons/table/operations/TableRowInsertionCustomizer.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "1a5ec25445e4ddc9aec53859551cd299a14c1776",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/commons/table/operations/TableRowsInfo.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "9820b3507eedaedf672502c7f485828482f1ce50",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/commons/table/operations/cals/CALSAndHTMLTableSortOperation.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "aca29e09a661d7e250349c630b5f97184702cedb",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/commons/table/operations/cals/CALSConstants.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "62dffa8f533a86737d617d6ed0d0f085e3f7ac05",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/commons/table/operations/cals/CALSDocumentTypeHelper.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "824de90f4117350e0ac8f12b2fadeefc22c3a6b8",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/commons/table/operations/cals/CALSTableColumnSpecificationInformation.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "ea6d496c8cf842681e8e2913b50921ab774c6764",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/commons/table/operations/cals/DeleteColumnOperation.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "b64b146d06c59a8e906877e8470fbe47678efc05",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/commons/table/operations/cals/DeleteRowOperation.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "dcfc07343ca2e2e1f6763f8e0ca396322c92cb34",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/commons/table/operations/cals/InsertColumnOperation.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "1cd155b19712258b5749c97699840b705bcd3b07",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/commons/table/operations/cals/InsertRowOperation.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "91c22d6ac7541316f90fadbb9dce12de80b0dc10",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/commons/table/operations/cals/InsertSingleColumnOperation.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "717c955edb05e6206d8919b27ffc4d9b197364bb",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/commons/table/operations/cals/InsertSingleRowOperation.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "2ba494f73dc5b9c45038f3244452453f58902e00",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/commons/table/operations/cals/JoinCellAboveBelowOperation.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "5f2af4217cd697e58fad89d92cbe7d9e0cb98b22",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/commons/table/operations/cals/JoinOperation.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "13b3ab248a4ec84302b6cfcfab1a34b8231b9926",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/commons/table/operations/cals/JoinRowCellsOperation.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "bd055552dd50d4a652c5b21287ff3e6bbf88ddab",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/commons/table/operations/cals/SplitCellAboveBelowOperation.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "bc9c1edc1c4b7024980e9259b4cb928be527deaa",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/commons/table/operations/cals/SplitLeftRightOperation.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "ae8e57bd07f893cf7894ac661e466d36b2d881be",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/commons/table/operations/cals/SplitOperation.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "b9dfa4e4219c3d9f7418188dbbfe862b80cef256",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/commons/table/operations/xhtml/DeleteColumnOperation.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "343e6e020a182b07a38b2dfb86f8b6c7f5a554b0",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/commons/table/operations/xhtml/DeleteRowOperation.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "9231aedfcd14911733a322b0c3eaaaa7db632166",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/commons/table/operations/xhtml/ECXHTMLTableCustomizerDialog.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "e2a7b4b255596abd1c52bae0ca89af6cf93ced2c",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/commons/table/operations/xhtml/ECXHTMLTableCustomizerInvoker.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "87e2cb87076644cd8188fede48fc3d70368ad06b",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/commons/table/operations/xhtml/InsertColumnOperation.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "37ade1d24936c87c1a784c6077c247c2e31ae424",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/commons/table/operations/xhtml/InsertRowOperation.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "e4ce5475f3e5c78e623968e24df36c63eb713694",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/commons/table/operations/xhtml/InsertSingleColumnOperation.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "07449c23e48fd8b81543015d537ce25e0cf4355d",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/commons/table/operations/xhtml/InsertSingleRowOperation.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "c9ec74401a853489702877929e9b1c3ce7299a32",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/commons/table/operations/xhtml/InsertTableOperation.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "2276ea06c257fea676d77f17b0fe0b91651001db",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/commons/table/operations/xhtml/JoinCellAboveBelowOperation.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "4dc20b830ac021cba1555c3f0019573c6e28ee4b",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/commons/table/operations/xhtml/JoinOperation.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "af4f51c25f878acf62f6bcbae9ae8a3b1d91d097",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/commons/table/operations/xhtml/JoinRowCellsOperation.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "046fdb64a96487f767621645701de023a4682d2e",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/commons/table/operations/xhtml/SAXHTMLTableCustomizerDialog.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "a05c571b631f3b9808bde3f49f8e7e47cd189586",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/commons/table/operations/xhtml/SAXHTMLTableCustomizerInvoker.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "5e2b3160980c2c92ace9bf9bc376007e2d0975df",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/commons/table/operations/xhtml/SplitCellAboveBelowOperation.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "68d7fdda3b2795b65ec3cbb81b7e66d528bc3d61",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/commons/table/operations/xhtml/SplitLeftRightOperation.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "61c1f1f22296cd0f5b5bca7f4a56c2d4217aea77",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/commons/table/operations/xhtml/SplitOperation.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "660ad444a325b731c1f7cb35d3a69ae3a43aa827",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/commons/table/operations/xhtml/XHTMLConstants.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "523fd0786e3885a67ebd4375d4c2adbfa598905b",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/commons/table/operations/xhtml/XHTMLDocumentTypeHelper.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "8c8658e4d48fccff58d8405e580b0ae5b569f39a",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/commons/table/operations/xhtml/XHTMLTableSortOperation.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "cd07dcca9eac2f7dc0f87e288180e9e6d69de503",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/commons/table/properties/CALSAndHTMLShowTablePropertiesBase.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "23839c48c77216efda02e01f2ecbba09eb4f80a5",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/commons/table/properties/CALSShowTableProperties.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "01912a2956bb2c83298448de41e6a5a3a7594e8a",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/commons/table/properties/ECPropertiesComposite.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "e3492ad792e7b26c621f8628f014b0cb50de0697",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/commons/table/properties/ECPropertyComposite.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "1efa42032cfc089250bdeac73f2029755b72520e",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/commons/table/properties/ECTablePropertiesCustomizerDialog.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "cfed879cfb2966bd38c2fd08a9d7c00696e1be90",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/commons/table/properties/EditedTablePropertiesInfo.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "83a9e912fc25b623a23886209f95340f77213efb",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/commons/table/properties/GuiElements.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "60d34e6692ce564c5116ff5021408d1e24911079",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/commons/table/properties/PropertySelectionController.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "cb426d3f8a0f6c9697e318d19487108634ebc9ab",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/commons/table/properties/SAPropertyPanel.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "f7f80ebc13861c71102390384d5a9e3b6db6a688",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/commons/table/properties/SATablePropertiesCustomizerDialog.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "9da8c8887c1dc16970d217613f82d09056e608df",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/commons/table/properties/ShowTablePropertiesBaseOperation.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "5a3a2b2b1c0932d96b48f0757f327b5cdd55efee",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/commons/table/properties/TabInfo.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "cfa331b4c656607bde65066401cff93a432b68c7",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/commons/table/properties/TableHelper.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "0680c7a43c4be8e1e5a48f6715786d17277215b0",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/commons/table/properties/TableHelperConstants.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "345cb190832415cdabf17e55918f635e25923b99",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/commons/table/properties/TablePropertiesConstants.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "81ebfd020e28a94570bd67f86760e15a5e66bf8a",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/commons/table/properties/TablePropertiesHelper.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "8779ef0f288a3d83c26e292d9b3071c25dfae373",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/commons/table/properties/TablePropertiesHelperBase.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "785a267d5eef852bada6765625ff0d16631ee62e",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/commons/table/properties/TableProperty.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "3ff0d0140b6ffa90de4024bb736a6f0d1af861af",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/commons/table/spansupport/CALSTableCellSpanProvider.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "68027529f73ed504ee8b23740415e092ee90dc01",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/commons/table/spansupport/CALSandHTMLTableCellSpanProvider.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "fc2aa843a26dbf799eeb4d86c4d72688a2b89409",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/commons/table/spansupport/HTMLTableCellSpanProvider.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "99f9c554ef0422d251b0120cca25063d19df04a7",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/commons/table/spansupport/TEITableCellSpanProvider.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "f99d27d07da44494e71999238361966b696265c0",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/commons/table/support/CALSColSpanSpec.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "2e01d9a4f6a6cab30b7401ca5d3a0b204ac5f0e7",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/commons/table/support/CALSColSpec.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "8c8e0f1c0ef2f0c9dfb506a18f31d6f0539de6c5",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/commons/table/support/CALSTableCellInfoProvider.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "e884c523ca68e92d44e73602277ceb86098f9afd",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/commons/table/support/CALSandHTMLTableCellInfoProvider.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "6d4a404dcbc04c47f399d581627ec2ca5bb881fb",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/commons/table/support/DITACALSTableCellInfoProvider.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "aab8304155139f8cabefcc59ba506cccda23037c",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/commons/table/support/DITATableCellInfoProvider.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "f9122de6c53b66314166c7b35ee0c6312e09e836",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/commons/table/support/DITATableCellSepInfoProvider.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "e6d3f59910f580defa301a13b9cc16325083c1b6",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/commons/table/support/HTMLTableCellInfoProvider.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "a752d1de8a356b74ec17f9d6d7827823b750f1f4",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/commons/table/support/errorscanner/CALSAndHTMLTableLayoutProblem.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "69aee6da032a54afe3b60d0948b7248d822d80e5",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/commons/table/support/errorscanner/TableLayoutErrorsListener.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "961dce487c1c92b29077c619bb7239d911ff0c71",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/commons/table/support/errorscanner/TableLayoutProblem.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "7593a664506f7bb092beaaf6449a303e981def29",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/commons/ui/EclipseHelpUtils.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "6556e05be08de586313697ccfbfc9795abf5c66f",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/commons/ui/OKCancelDialog.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "6ce39d773e0ec4c09b72236fc7aef63e6bc8d3d4",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/tei/ECTEIFigureEntityAttributeCustomizer.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "f3d662c21d43f70797d27f2e078847cff0320bc8",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/tei/EditImageMapOperation.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "653936fb4c43a7615c719d612e7ca0b9f425f3c9",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/tei/InsertImageOperationP4.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "8c3127fdcf7b8baf8c25a902cdfd5d73df053f8a",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/tei/InsertImageOperationP5.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "0b9c5c1fa48fde9eaee462cffe4ba6ecc8ccf7d9",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/tei/SATEIFigureEntityAttributeCustomizer.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "b3ec0386b07f9463ae2f982b6b29e6dc200eacd7",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/tei/TEIAuthorImageDecorator.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "5acf616b9d3eb3f18203fab1f8b7f3bd21314e52",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/tei/TEIAuthorTableOperationsHandler.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "0db847eba5fa5b953fc678b2b92c70387becd5a9",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/tei/TEIDocumentTypeHelper.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "4957f0cee96c80f8f6a14f167af5113da4713120",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/tei/TEIEditImageMapCore.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "6fb1c4e0ca0031529ec43bd0884c72f4f3cd3602",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/tei/TEIExtensionsBundleBase.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "c3159d8bfbdefd122751dc861c931afb67d6c461",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/tei/TEIInsertListOperation.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "e619da14a7f195136483736f7ce6d60c18a35429",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/tei/TEINodeRendererCustomizer.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "6f6b124bf6bb1f1e4e1d3504941c447e710af01b",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/tei/TEIP4ExternalObjectInsertionHandler.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "548f79b85c9e367d054f372cc97e9e3fa8462ed8",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/tei/TEIP5ExtensionsBundle.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "15f062f9574338d2d06e5c49d7a968c8cae9256f",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/tei/TEIP5ExternalObjectInsertionHandler.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "bac8931b6464ce781a86b9bfc65c16eb9b0d12f1",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/tei/TEISchemaAwareEditingHandler.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "4dd69d7c9eeb19e3d2062f211443d248d32dd74d",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/tei/TEI_jteiExtensionsBundle.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "0121b97cb913164636e19dbb0cff4c7961f208a3",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/tei/TEI_jteiExternalObjectInsertionHandler.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "640f7d1433cd32d19cc4b9f5c9bfa29dcb525248",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/tei/id/GenerateIDsTEIP4Operation.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "cc83c365e71d0eab46ad094771654fd0008cbd65",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/tei/id/GenerateIDsTEIP5Operation.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "8a29e1836ad1bc06accdb154e493488fe47c48f2",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/tei/id/TEIConfigureAutoIDElementsOperation.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "c73eeaf43204fadfb630965b7785b43a94fb456c",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/tei/id/TEIIDElementsConstants.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "7b493f2856e201efc847b7249fa704a0a630a89d",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/tei/id/TEIP4UniqueAttributesRecognizer.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "ce4bbbc0a704e3203ceb65605421a9ead9b7a03a",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/tei/id/TEIP5ConfigureAutoIDElementsOperation.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "228a112a40679f3ceb38d3a78457fe31b0d62985",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/tei/id/TEIP5IDTypeRecognizer.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "67f63e05b2304240f3feef27c48cc28e7f06d7bf",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/tei/id/TEIP5UniqueAttributesRecognizer.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "bc4e0e2077b70a7c53f1f156199b7a0c53b7bb69",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/tei/package-info.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "0b3344a65f236e1ab4bf8dd80b8486098f49fa13",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/tei/table/DeleteColumnOperation.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "a9e8d7eea118b20076404e46ba77c4e61ff921fa",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/tei/table/DeleteRowOperation.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "6c163e57c048529f8df913ac3040354965ce8a4b",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/tei/table/ECTEITableCustomizer.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "117896c8bbc701f5a823a43990b326aeac6c4cdf",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/tei/table/ECTEITableCustomizerDialog.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "2d823f9910e35b4bf71e5cc329d7db64b276918a",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/tei/table/InsertColumnOperation.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "8e50510cb1840ec4c8d2839664ebbd36e942e68a",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/tei/table/InsertRowOperation.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "751ae9120054983f5d89e992677660d453e2ff8f",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/tei/table/InsertSingleColumnOperation.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "4e652505d85bc7ce89be82d78611ac99a9ca5983",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/tei/table/InsertSingleRowOperation.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "58a384edaa07f089aa1a374df759cb441dd093b0",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/tei/table/InsertTableOperation.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "51e7e388c1b97a08d6db29af59630566a79bd530",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/tei/table/JoinCellAboveBelowOperation.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "6fa5d916bc18af9231f4bce9e68136cd86400937",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/tei/table/JoinOperation.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "272f4dfc6ac64f74c3e3b0a4e90274a63bf3776c",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/tei/table/JoinRowCellsOperation.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "993d5758b7f6c65da471e5cc6b85761c34ad59dc",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/tei/table/SATEITableCustomizer.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "1caf4c604f5680b24c2b4beb901067e934e5ffe4",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/tei/table/SATEITableCustomizerDialog.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "cdfce551e9ff566cfea0a26fed0aada0f135726c",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/tei/table/SplitCellAboveBelowOperation.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "cdeec7626c4af0df5527cf9cd074343463678ad6",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/tei/table/SplitLeftRightOperation.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "3d0df63a2fd01ac3ffccaa924c934f459389dd09",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/tei/table/SplitOperation.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "8f918ac59e5141861a371eae872f77d0df3a2e8a",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/tei/table/TEIConstants.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "90762081a296a1a6b4cad7876596f11276410166",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/src/ro/sync/ecss/extensions/tei/table/TEITableSortOperation.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "292f90a344dc2d963a917cfc7e30f819ad3ee8e5",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/styleguide/catalog.xml"
+    },
+    {
+      "mode": "100644",
+      "object_id": "84cc615480d883be5619267dced1ebdb914a73a0",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/styleguide/contentCompletionElementsMap.xml"
+    },
+    {
+      "mode": "100644",
+      "object_id": "f7512b08c4a31fced5bedd4fd035782cbd1f33ed",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/styleguide/contentFilter.xsl"
+    },
+    {
+      "mode": "100644",
+      "object_id": "074cd2d6f47207eadacb83b65ed376724b4268fa",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/tei2xml.dtd"
+    },
+    {
+      "mode": "100644",
+      "object_id": "2d3c145e40d0ab67f8b1f417b49f626a01398682",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/teip5.framework"
+    },
+    {
+      "mode": "100644",
+      "object_id": "d9422abda2d7eebcaa9b915ceb0a0aa32df114af",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/teip5jtei.framework"
+    },
+    {
+      "mode": "100644",
+      "object_id": "29f3dee3599a27b5f9c7da4ebc29fc6afdcea82b",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/teip5odd.framework"
+    },
+    {
+      "mode": "100644",
+      "object_id": "9065fd0ed5b9fa7db78047c43a73af0ba3e1ddb8",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/web/framework.js"
+    },
+    {
+      "mode": "100644",
+      "object_id": "8c81bb90cfec9bf1aec5905b4cd840ce117ce051",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/xml/tei/css/alternate-full-width-layout.css"
+    },
+    {
+      "mode": "100644",
+      "object_id": "3cfbb4c99c39cdc6f4a8cc31f0e6892e12582fb1",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/xml/tei/css/dark-theme.css"
+    },
+    {
+      "mode": "100644",
+      "object_id": "df7bc3ada9e99b87e570b6c59d3fc4d2c8ad96f5",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/xml/tei/css/img/link.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "58dbf9ff147bd2d70b778ffa3b583060101114f0",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/xml/tei/css/isosch/iso-schematron.css"
+    },
+    {
+      "mode": "100644",
+      "object_id": "836afa6b84eb9ff8ef4df705b719af9419e18eae",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/xml/tei/css/jtei.css"
+    },
+    {
+      "mode": "100644",
+      "object_id": "b460598faf4e83ed8390b82f45ea9bbc75fdfdc4",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/xml/tei/css/links.css"
+    },
+    {
+      "mode": "100644",
+      "object_id": "4efbb9b7e35e09033d89b39798aa571c5bfc90ba",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/xml/tei/css/page.css"
+    },
+    {
+      "mode": "100644",
+      "object_id": "afd84aa474298dca18975c3b0527a6b14eaf4458",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/xml/tei/css/relaxng/relaxng.css"
+    },
+    {
+      "mode": "100644",
+      "object_id": "f9c58fcdaf78bf21daecafbc7a2aa3998ec6fcb6",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/xml/tei/css/tei.css"
+    },
+    {
+      "mode": "100644",
+      "object_id": "055bfaa5ca60c7555d3c952675d538f30d487ef3",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/xml/tei/css/tei_oxygen.css"
+    },
+    {
+      "mode": "100644",
+      "object_id": "0e13f2da65b2d02f99d502801aed11e7cf597118",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/xml/tei/css/tei_oxygen_odd.css"
+    },
+    {
+      "mode": "100644",
+      "object_id": "766d6af957c2414998b51586221eb4849b01b2de",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/xml/tei/jtei_aux/images/odt_large.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "072f4ceb1dc22371888e2d2542eb8478d67703b7",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/xml/tei/jtei_aux/images/odt_small.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "0f716c47db306afa37496399cb28df572e162007",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/xml/tei/jtei_aux/images/pdficon_large.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "657ac68ca80a34b6573811f6646c6449f7ae07e2",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/xml/tei/jtei_aux/images/pdficon_small.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "2735dad9888db2180f7ebbaa0e9d32beedbb9454",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/xml/tei/jtei_aux/trans/log4j.properties"
+    },
+    {
+      "mode": "100644",
+      "object_id": "09aa052bd2bc9e8073429883776d19bd7f53264b",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/xml/tei/jtei_aux/trans/log4j2.properties"
+    },
+    {
+      "mode": "100644",
+      "object_id": "1b6f71ddeb9ccfc0a6dfae78ad353c8dad814368",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/xml/tei/jtei_aux/trans/logback.xml"
+    },
+    {
+      "mode": "100644",
+      "object_id": "254e2cc42a6d0135cccf2047768b9e44f25e666f",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/xml/tei/jtei_aux/trans/pdf/fonts-license/dejavu.license.txt"
+    },
+    {
+      "mode": "100644",
+      "object_id": "eb1e7387156aabafc5c33822569cc75d7798e074",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/xml/tei/jtei_aux/trans/pdf/fonts-license/gentium.license.txt"
+    },
+    {
+      "mode": "100644",
+      "object_id": "d645695673349e3947e8e5ae42332d0ac3164cd7",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/xml/tei/jtei_aux/trans/pdf/fonts-license/roboto.license.txt"
+    },
+    {
+      "mode": "100644",
+      "object_id": "7d36bd4cfe68843cbf403a41699acd6ee923f0b0",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/xml/tei/jtei_aux/trans/pdf/fonts.conf.xml"
+    },
+    {
+      "mode": "100644",
+      "object_id": "4c40003d42663acdc3462e7c4a860f457bc707a1",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/xml/tei/jtei_aux/trans/pdf/fonts/DejaVuSansCondensed-Bold.ttf"
+    },
+    {
+      "mode": "100644",
+      "object_id": "24b611b180cfc6ca66c70fcf909ec2fe078486f2",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/xml/tei/jtei_aux/trans/pdf/fonts/DejaVuSansCondensed-BoldOblique.ttf"
+    },
+    {
+      "mode": "100644",
+      "object_id": "1e0526f9a45de8e9b8d36b63a868877064860882",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/xml/tei/jtei_aux/trans/pdf/fonts/DejaVuSansCondensed-Oblique.ttf"
+    },
+    {
+      "mode": "100644",
+      "object_id": "7f168d13c5eaa4e69b8681c00547b2c7bbe3fa11",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/xml/tei/jtei_aux/trans/pdf/fonts/DejaVuSansCondensed.ttf"
+    },
+    {
+      "mode": "100644",
+      "object_id": "9c716794f70b10900beded00f5422deb832f01b1",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/xml/tei/jtei_aux/trans/pdf/fonts/DejaVuSansMono-Bold.ttf"
+    },
+    {
+      "mode": "100644",
+      "object_id": "d6536a5cc256583c156c6e284348ef066c740f13",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/xml/tei/jtei_aux/trans/pdf/fonts/DejaVuSansMono-BoldOblique.ttf"
+    },
+    {
+      "mode": "100644",
+      "object_id": "e1af3413048d379311a219af07deedd47ad329d9",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/xml/tei/jtei_aux/trans/pdf/fonts/DejaVuSansMono-Oblique.ttf"
+    },
+    {
+      "mode": "100644",
+      "object_id": "8b7bb2a4e1b2c27786398c320e9020bcc24c3af3",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/xml/tei/jtei_aux/trans/pdf/fonts/DejaVuSansMono.ttf"
+    },
+    {
+      "mode": "100644",
+      "object_id": "0677a1113698affcc2b6eb2fd7e2e8b87a9c2480",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/xml/tei/jtei_aux/trans/pdf/fonts/GenBkBasB.ttf"
+    },
+    {
+      "mode": "100644",
+      "object_id": "cf898574bd9bba3ad3c5b3a886893fce86dae903",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/xml/tei/jtei_aux/trans/pdf/fonts/GenBkBasBI.ttf"
+    },
+    {
+      "mode": "100644",
+      "object_id": "c62506b17cebcddd756b9d34b6aed37a372a196d",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/xml/tei/jtei_aux/trans/pdf/fonts/GenBkBasI.ttf"
+    },
+    {
+      "mode": "100644",
+      "object_id": "9c76a38180a114e272c5c3cb618567987e1f25c1",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/xml/tei/jtei_aux/trans/pdf/fonts/GenBkBasR.ttf"
+    },
+    {
+      "mode": "100644",
+      "object_id": "7bc1b3d8b2cdbdb9b9fa536ba4cd2ebffce7ac99",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/xml/tei/jtei_aux/trans/pdf/fonts/GentiumPlus-I.ttf"
+    },
+    {
+      "mode": "100644",
+      "object_id": "c1194dd3595ec2d4e456ca5d170de19be73f8c47",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/xml/tei/jtei_aux/trans/pdf/fonts/GentiumPlus-R.ttf"
+    },
+    {
+      "mode": "100644",
+      "object_id": "a355c27cde02b13da43c30ae060c5fb164b36b76",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/xml/tei/jtei_aux/trans/pdf/fonts/Roboto-Bold.ttf"
+    },
+    {
+      "mode": "100644",
+      "object_id": "3c9a7a37361b6ae0571b33f09b6b55367e188cfe",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/xml/tei/jtei_aux/trans/pdf/fonts/Roboto-BoldItalic.ttf"
+    },
+    {
+      "mode": "100644",
+      "object_id": "94c6bcc67e09602f6d90ac10f449b5c05c2f7021",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/xml/tei/jtei_aux/trans/pdf/fonts/Roboto-Light.ttf"
+    },
+    {
+      "mode": "100644",
+      "object_id": "04cc002302024c4e032d32319f0d40a32b54aada",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/xml/tei/jtei_aux/trans/pdf/fonts/Roboto-LightItalic.ttf"
+    },
+    {
+      "mode": "100644",
+      "object_id": "39c63d7461796094c0b8889ee8fe2706d344a99a",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/xml/tei/jtei_aux/trans/pdf/fonts/Roboto-Medium.ttf"
+    },
+    {
+      "mode": "100644",
+      "object_id": "dc743f0a66cf3741e90f712aba22a91197b7e59c",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/xml/tei/jtei_aux/trans/pdf/fonts/Roboto-MediumItalic.ttf"
+    },
+    {
+      "mode": "100644",
+      "object_id": "5485b815d1fbdc241748da624f64e5d5a968456d",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/xml/tei/jtei_aux/trans/pdf/jtei-pdf.xml"
+    },
+    {
+      "mode": "100644",
+      "object_id": "51da491b0b846bfc92e29c65e0b7949c0137ddc0",
+      "object_type": "blob",
+      "path": "oxygen-tei/frameworks/tei/xml/tei/jtei_aux/trans/pdf/lib/fontbox-2.0.8.jar"
+    },
+    {
+      "mode": "100644",
+      "object_id": "62c2806a5ced0298c3b9c21edc47794942cd7bd9",
+      "object_type": "blob",
+      "path": "oxygen-tei/jenkins/updateSite.oxygen"
+    },
+    {
+      "mode": "100644",
+      "object_id": "2bd3d209782b65a5baa275eb41b749be7b2e43aa",
+      "object_type": "blob",
+      "path": "oxygen-tei/jenkins/updateSite.xsl"
+    },
+    {
+      "mode": "100644",
+      "object_id": "46f2e750f42ba531f48fb70fd72fcc8b39a158af",
+      "object_type": "blob",
+      "path": "oxygen-tei/lib/eclipse3/org.eclipse.core.commands_3.6.100.v20130515-1857.jar"
+    },
+    {
+      "mode": "100644",
+      "object_id": "2b3959da8a5e1799c460bdac8c24561d01d992ce",
+      "object_type": "blob",
+      "path": "oxygen-tei/lib/eclipse3/org.eclipse.core.runtime_3.9.0.v20130326-1255.jar"
+    },
+    {
+      "mode": "100644",
+      "object_id": "6fe28a62343723402c6890e0b0621b6720f7522a",
+      "object_type": "blob",
+      "path": "oxygen-tei/lib/eclipse3/org.eclipse.equinox.common_3.9.0.v20170207-1454.jar"
+    },
+    {
+      "mode": "100644",
+      "object_id": "76fd57145f0638cb37ffacde10c9855e7dcf26e0",
+      "object_type": "blob",
+      "path": "oxygen-tei/lib/eclipse3/org.eclipse.jface.text_3.8.101.v20130802-1147.jar"
+    },
+    {
+      "mode": "100644",
+      "object_id": "b1505692721f3228364adf01113e8a1389dd5eae",
+      "object_type": "blob",
+      "path": "oxygen-tei/lib/eclipse3/org.eclipse.jface_3.9.0.v20130521-1714.jar"
+    },
+    {
+      "mode": "100644",
+      "object_id": "c152830e863a51f06f25d4abfcc77181d8eeeab4",
+      "object_type": "blob",
+      "path": "oxygen-tei/lib/eclipse3/org.eclipse.osgi_3.8.1.v20120830-144521.jar"
+    },
+    {
+      "mode": "100644",
+      "object_id": "604f3a80e16cdbcc811b7d9e4780be96b6b1d652",
+      "object_type": "blob",
+      "path": "oxygen-tei/lib/eclipse3/org.eclipse.swt.win32.win32.x86_3.102.1.v20130827-2048.jar"
+    },
+    {
+      "mode": "100644",
+      "object_id": "73f58d90bd42c65ba1a6bdc92e9bcc2c7dc9ea19",
+      "object_type": "blob",
+      "path": "oxygen-tei/lib/eclipse3/org.eclipse.text_3.5.300.v20130515-1451.jar"
+    },
+    {
+      "mode": "100644",
+      "object_id": "873c3e493b38728df8822b118d427ffb538fcc0b",
+      "object_type": "blob",
+      "path": "oxygen-tei/lib/eclipse3/org.eclipse.ui.editors_3.8.100.v20130513-1637.jar"
+    },
+    {
+      "mode": "100644",
+      "object_id": "867ae346cdc64b1fa6bfe3f20fccbc53b9bb8f46",
+      "object_type": "blob",
+      "path": "oxygen-tei/lib/eclipse3/org.eclipse.ui.workbench_3.105.1.v20130821-1411.jar"
+    },
+    {
+      "mode": "100644",
+      "object_id": "878b0d9422bcb0235f2e288dc92fb5012506a59d",
+      "object_type": "blob",
+      "path": "oxygen-tei/lib/js.jar"
+    },
+    {
+      "mode": "100644",
+      "object_id": "625130719013f195869881a36dcb8d2b14d64d1e",
+      "object_type": "blob",
+      "path": "oxygen-tei/lib/log4j.jar"
+    },
+    {
+      "mode": "100644",
+      "object_id": "c7d01c57b24a09c8963f44182cc7adac75965bc3",
+      "object_type": "blob",
+      "path": "oxygen-tei/lib/log4j.properties"
+    },
+    {
+      "mode": "100644",
+      "object_id": "4c4ab42ab6736697add78668015cc7cc86038dba",
+      "object_type": "blob",
+      "path": "oxygen-tei/lib/saxon9he.jar"
+    },
+    {
+      "mode": "100644",
+      "object_id": "a3887247946e81c65642f32f9c3668545094d050",
+      "object_type": "blob",
+      "path": "oxygen-tei/tei-c.org/updateSite.xsl"
+    },
+    {
+      "mode": "100644",
+      "object_id": "d2c55c9ba61911c9e00d1df6dad67e40618f8078",
+      "object_type": "blob",
+      "path": "oxygen-tei/tools/ant/INSTALL"
+    },
+    {
+      "mode": "100644",
+      "object_id": "5d4321077343aacf5946eba38009c217dad62650",
+      "object_type": "blob",
+      "path": "oxygen-tei/tools/ant/KEYS"
+    },
+    {
+      "mode": "100644",
+      "object_id": "e7789e03327486a3d2c44f008f19f6eb910f40cf",
+      "object_type": "blob",
+      "path": "oxygen-tei/tools/ant/LICENSE"
+    },
+    {
+      "mode": "100644",
+      "object_id": "05013f1985f0a7bd67e87f86ab2585ca456b0e87",
+      "object_type": "blob",
+      "path": "oxygen-tei/tools/ant/LICENSE.dom"
+    },
+    {
+      "mode": "100644",
+      "object_id": "006c924b263c23fd13cb527778c4858263465a57",
+      "object_type": "blob",
+      "path": "oxygen-tei/tools/ant/LICENSE.sax"
+    },
+    {
+      "mode": "100644",
+      "object_id": "70cb54a0d2d243f0896b5a75d4d454f71893eb62",
+      "object_type": "blob",
+      "path": "oxygen-tei/tools/ant/LICENSE.xerces"
+    },
+    {
+      "mode": "100644",
+      "object_id": "a47f6927bd441fcedb29ee5e6a92fcd6771d8cbd",
+      "object_type": "blob",
+      "path": "oxygen-tei/tools/ant/NOTICE"
+    },
+    {
+      "mode": "100644",
+      "object_id": "ef25be45f830519431b0b9fbb8dc0a105f07554e",
+      "object_type": "blob",
+      "path": "oxygen-tei/tools/ant/README"
+    },
+    {
+      "mode": "100644",
+      "object_id": "7bf8d5fa296250c242c01e9ff35af8af32b15f82",
+      "object_type": "blob",
+      "path": "oxygen-tei/tools/ant/WHATSNEW"
+    },
+    {
+      "mode": "100644",
+      "object_id": "0dc84e045aa08b3b87a5c6587489b6e72c769156",
+      "object_type": "blob",
+      "path": "oxygen-tei/tools/ant/bin/ant"
+    },
+    {
+      "mode": "100644",
+      "object_id": "9f18b82a4442bb4e9f54776ca5c2ed0787790165",
+      "object_type": "blob",
+      "path": "oxygen-tei/tools/ant/bin/ant.bat"
+    },
+    {
+      "mode": "100644",
+      "object_id": "70665c003c6dfee7bfaae7ecaed5163ce9879c26",
+      "object_type": "blob",
+      "path": "oxygen-tei/tools/ant/bin/ant.cmd"
+    },
+    {
+      "mode": "100644",
+      "object_id": "8110f86efea38ba5fcd0ed57b2af883155d341a8",
+      "object_type": "blob",
+      "path": "oxygen-tei/tools/ant/bin/antRun"
+    },
+    {
+      "mode": "100644",
+      "object_id": "c7d90f03e7303465ca6d2c24dd23a2221932378a",
+      "object_type": "blob",
+      "path": "oxygen-tei/tools/ant/bin/antRun.bat"
+    },
+    {
+      "mode": "100644",
+      "object_id": "dbea10f2a8a649f36c5890a761f261439ff07f7b",
+      "object_type": "blob",
+      "path": "oxygen-tei/tools/ant/bin/antRun.pl"
+    },
+    {
+      "mode": "100644",
+      "object_id": "046026657b2b62a31b4e0a8dfcfc8e69794fce15",
+      "object_type": "blob",
+      "path": "oxygen-tei/tools/ant/bin/antenv.cmd"
+    },
+    {
+      "mode": "100644",
+      "object_id": "37891241b768295a8bc9ce54b76c8431910c178e",
+      "object_type": "blob",
+      "path": "oxygen-tei/tools/ant/bin/complete-ant-cmd.pl"
+    },
+    {
+      "mode": "100644",
+      "object_id": "3149be4ce41033e9150e69fe8c794c364a8cefe0",
+      "object_type": "blob",
+      "path": "oxygen-tei/tools/ant/bin/envset.cmd"
+    },
+    {
+      "mode": "100644",
+      "object_id": "dc7e9bf531f2c51fcb719474f6e42ada017c6dc1",
+      "object_type": "blob",
+      "path": "oxygen-tei/tools/ant/bin/lcp.bat"
+    },
+    {
+      "mode": "100644",
+      "object_id": "5f8307ac33ccfac00b9086a8a7e04010ad91e9b8",
+      "object_type": "blob",
+      "path": "oxygen-tei/tools/ant/bin/runant.pl"
+    },
+    {
+      "mode": "100644",
+      "object_id": "0f81a804257b7a9be7ede1166ded3dbd188c7267",
+      "object_type": "blob",
+      "path": "oxygen-tei/tools/ant/bin/runant.py"
+    },
+    {
+      "mode": "100644",
+      "object_id": "34b4f5d59e5023fbb34c99a6cebc9ff00cc3c772",
+      "object_type": "blob",
+      "path": "oxygen-tei/tools/ant/bin/runrc.cmd"
+    },
+    {
+      "mode": "100644",
+      "object_id": "2c6a6b4513df9571b23422641a9a6cad265f853c",
+      "object_type": "blob",
+      "path": "oxygen-tei/tools/ant/etc/ant-bootstrap.jar"
+    },
+    {
+      "mode": "100644",
+      "object_id": "5e6d848526b48db489bc8f2f039d977a0b71aeff",
+      "object_type": "blob",
+      "path": "oxygen-tei/tools/ant/etc/changelog.xsl"
+    },
+    {
+      "mode": "100644",
+      "object_id": "47aa2f7e6b9846083463c820be32bb859496df7a",
+      "object_type": "blob",
+      "path": "oxygen-tei/tools/ant/etc/checkstyle/checkstyle-frames.xsl"
+    },
+    {
+      "mode": "100644",
+      "object_id": "aab516194cc50b79fa7e23cc79da06cb9c0f2c73",
+      "object_type": "blob",
+      "path": "oxygen-tei/tools/ant/etc/checkstyle/checkstyle-text.xsl"
+    },
+    {
+      "mode": "100644",
+      "object_id": "bacf11eb9b0e7544175a4ebfeb2155aa42407b5a",
+      "object_type": "blob",
+      "path": "oxygen-tei/tools/ant/etc/checkstyle/checkstyle-xdoc.xsl"
+    },
+    {
+      "mode": "100644",
+      "object_id": "357bea36b9bc6418e4daa04826544622cfd02700",
+      "object_type": "blob",
+      "path": "oxygen-tei/tools/ant/etc/coverage-frames.xsl"
+    },
+    {
+      "mode": "100644",
+      "object_id": "d693280c61efc45c1035bf011e02b7d95055700a",
+      "object_type": "blob",
+      "path": "oxygen-tei/tools/ant/etc/jdepend-frames.xsl"
+    },
+    {
+      "mode": "100644",
+      "object_id": "028b6daf05950c16bac8c1994a993630047fe537",
+      "object_type": "blob",
+      "path": "oxygen-tei/tools/ant/etc/jdepend.xsl"
+    },
+    {
+      "mode": "100644",
+      "object_id": "3258412ecec103f5b1bfa79cf2d4702123c249c2",
+      "object_type": "blob",
+      "path": "oxygen-tei/tools/ant/etc/junit-frames-xalan1.xsl"
+    },
+    {
+      "mode": "100644",
+      "object_id": "2149fe280e26141e7006f658aa7662759c1c6bec",
+      "object_type": "blob",
+      "path": "oxygen-tei/tools/ant/etc/junit-frames.xsl"
+    },
+    {
+      "mode": "100644",
+      "object_id": "0da2a6887c7faf0775bea8d36d58f809fa76d567",
+      "object_type": "blob",
+      "path": "oxygen-tei/tools/ant/etc/junit-noframes.xsl"
+    },
+    {
+      "mode": "100644",
+      "object_id": "26ad1fb6882d1c1c53209b6bab8b1b377d787444",
+      "object_type": "blob",
+      "path": "oxygen-tei/tools/ant/etc/log.xsl"
+    },
+    {
+      "mode": "100644",
+      "object_id": "883324d5236b746a4a73a8d4838cdf3ef9f9b000",
+      "object_type": "blob",
+      "path": "oxygen-tei/tools/ant/etc/maudit-frames.xsl"
+    },
+    {
+      "mode": "100644",
+      "object_id": "cd5afe7608eb85e0adf9f9e2651904c665a91722",
+      "object_type": "blob",
+      "path": "oxygen-tei/tools/ant/etc/mmetrics-frames.xsl"
+    },
+    {
+      "mode": "100644",
+      "object_id": "49c4b17f18dae167f7d30140aa577664408dcc63",
+      "object_type": "blob",
+      "path": "oxygen-tei/tools/ant/etc/tagdiff.xsl"
+    },
+    {
+      "mode": "100644",
+      "object_id": "b2efcbb1674f25d33bb36a232cc2c24a5d0aed3a",
+      "object_type": "blob",
+      "path": "oxygen-tei/tools/ant/fetch.xml"
+    },
+    {
+      "mode": "100644",
+      "object_id": "332fc7cfa0296b3579f0cd8bd90b5007e5902e3f",
+      "object_type": "blob",
+      "path": "oxygen-tei/tools/ant/get-m2.xml"
+    },
+    {
+      "mode": "100644",
+      "object_id": "35aa2c78b6f70a5c0129ba5188e84a06b11f9d5e",
+      "object_type": "blob",
+      "path": "oxygen-tei/tools/ant/lib/README"
+    },
+    {
+      "mode": "100644",
+      "object_id": "7d32582fbd41605ce93fc561348b226df58d04d4",
+      "object_type": "blob",
+      "path": "oxygen-tei/tools/ant/lib/ant-antlr.jar"
+    },
+    {
+      "mode": "100644",
+      "object_id": "04f82d72ec876d6e0aa50b40f9e1b68e0ac0952c",
+      "object_type": "blob",
+      "path": "oxygen-tei/tools/ant/lib/ant-apache-bcel.jar"
+    },
+    {
+      "mode": "100644",
+      "object_id": "2e75648289d8ab28d786666c41bdd410b55f5d44",
+      "object_type": "blob",
+      "path": "oxygen-tei/tools/ant/lib/ant-apache-bsf.jar"
+    },
+    {
+      "mode": "100644",
+      "object_id": "78c2133cf65f6e241cb218504f319d71c63fa8a0",
+      "object_type": "blob",
+      "path": "oxygen-tei/tools/ant/lib/ant-apache-log4j.jar"
+    },
+    {
+      "mode": "100644",
+      "object_id": "497814810e0b78c08cfe4658332785407732373d",
+      "object_type": "blob",
+      "path": "oxygen-tei/tools/ant/lib/ant-apache-oro.jar"
+    },
+    {
+      "mode": "100644",
+      "object_id": "dfedea307a77f85c70241e79f8a48bbaab52e1b2",
+      "object_type": "blob",
+      "path": "oxygen-tei/tools/ant/lib/ant-apache-regexp.jar"
+    },
+    {
+      "mode": "100644",
+      "object_id": "ed8004eb203d7621d29a1d50e233e8e30d18d11c",
+      "object_type": "blob",
+      "path": "oxygen-tei/tools/ant/lib/ant-apache-resolver.jar"
+    },
+    {
+      "mode": "100644",
+      "object_id": "b7e1dee62a75f8ee15309e67fb2645c09641ed66",
+      "object_type": "blob",
+      "path": "oxygen-tei/tools/ant/lib/ant-commons-logging.jar"
+    },
+    {
+      "mode": "100644",
+      "object_id": "25b7fe6ef1f241ffc454053f79d84b2e62cffd0b",
+      "object_type": "blob",
+      "path": "oxygen-tei/tools/ant/lib/ant-commons-net.jar"
+    },
+    {
+      "mode": "100644",
+      "object_id": "062537661a514c2ce97d18948f4f25f7226cc1a0",
+      "object_type": "blob",
+      "path": "oxygen-tei/tools/ant/lib/ant-contrib-1.0b3.jar"
+    },
+    {
+      "mode": "100644",
+      "object_id": "613adaf4bf14ce78daf4537b4a6b42e754a2e054",
+      "object_type": "blob",
+      "path": "oxygen-tei/tools/ant/lib/ant-jai.jar"
+    },
+    {
+      "mode": "100644",
+      "object_id": "7ac7755dd8690b98c038dc6f7ef2da4fc21dfb94",
+      "object_type": "blob",
+      "path": "oxygen-tei/tools/ant/lib/ant-javamail.jar"
+    },
+    {
+      "mode": "100644",
+      "object_id": "9ff68d04b87a0e403921f22e60d1cfa245e1d96f",
+      "object_type": "blob",
+      "path": "oxygen-tei/tools/ant/lib/ant-jdepend.jar"
+    },
+    {
+      "mode": "100644",
+      "object_id": "01365c2b910b1ee46582ad7327606cb559ad16b1",
+      "object_type": "blob",
+      "path": "oxygen-tei/tools/ant/lib/ant-jmf.jar"
+    },
+    {
+      "mode": "100644",
+      "object_id": "59f5fd1e9b23da618b43cc3e7ef832f7ec9b55af",
+      "object_type": "blob",
+      "path": "oxygen-tei/tools/ant/lib/ant-jsch.jar"
+    },
+    {
+      "mode": "100644",
+      "object_id": "d2b1665bd4cc9561b9194c58ec05aa4a7ec65529",
+      "object_type": "blob",
+      "path": "oxygen-tei/tools/ant/lib/ant-junit.jar"
+    },
+    {
+      "mode": "100644",
+      "object_id": "939abb57975f5ba08484e582f84ed3702d570a89",
+      "object_type": "blob",
+      "path": "oxygen-tei/tools/ant/lib/ant-launcher.jar"
+    },
+    {
+      "mode": "100644",
+      "object_id": "6d38a989a7aa15b8364a04f7a5bc7d841e3abac1",
+      "object_type": "blob",
+      "path": "oxygen-tei/tools/ant/lib/ant-netrexx.jar"
+    },
+    {
+      "mode": "100644",
+      "object_id": "2d209fac8a8184528ab0d3221a42b85c99ec3176",
+      "object_type": "blob",
+      "path": "oxygen-tei/tools/ant/lib/ant-nodeps.jar"
+    },
+    {
+      "mode": "100644",
+      "object_id": "668b190ea5c71aa1b528adf7ff46adbd953c2e25",
+      "object_type": "blob",
+      "path": "oxygen-tei/tools/ant/lib/ant-starteam.jar"
+    },
+    {
+      "mode": "100644",
+      "object_id": "2d6ab230765dee630c8cc268b92908f8ae56d74f",
+      "object_type": "blob",
+      "path": "oxygen-tei/tools/ant/lib/ant-stylebook.jar"
+    },
+    {
+      "mode": "100644",
+      "object_id": "0069327bd56a94de08ea0bfaed574309a19ea806",
+      "object_type": "blob",
+      "path": "oxygen-tei/tools/ant/lib/ant-swing.jar"
+    },
+    {
+      "mode": "100644",
+      "object_id": "cc73c8d31f62b2e901fc46b71409dcfab84264e2",
+      "object_type": "blob",
+      "path": "oxygen-tei/tools/ant/lib/ant-testutil.jar"
+    },
+    {
+      "mode": "100644",
+      "object_id": "ef838ec368372f2152efd1b3a82daa399e2d137b",
+      "object_type": "blob",
+      "path": "oxygen-tei/tools/ant/lib/ant-trax.jar"
+    },
+    {
+      "mode": "100644",
+      "object_id": "9f0de19de38e2878ed605cce44cf913326b25520",
+      "object_type": "blob",
+      "path": "oxygen-tei/tools/ant/lib/ant-weblogic.jar"
+    },
+    {
+      "mode": "100644",
+      "object_id": "7f5be4a4e05939429353a90e882846aeac72b976",
+      "object_type": "blob",
+      "path": "oxygen-tei/tools/ant/lib/ant.jar"
+    },
+    {
+      "mode": "100644",
+      "object_id": "444f7074320aeed32393a09ecaeb31cb676df56b",
+      "object_type": "blob",
+      "path": "oxygen-tei/tools/ant/lib/ant.zip"
+    },
+    {
+      "mode": "100644",
+      "object_id": "799448eb0895a3259a18e42cbd7d97beddfad8db",
+      "object_type": "blob",
+      "path": "oxygen-tei/tools/ant/lib/libraries.properties"
+    },
+    {
+      "mode": "100644",
+      "object_id": "2fcd52b6b756020c08892e8b1124d79f45ff6870",
+      "object_type": "blob",
+      "path": "oxygen-tei/update-and-upload.sh"
+    }
+  ],
+  "ref_requested": "HEAD",
+  "repository": "https://github.com/TEIC/oxygen-tei.git",
+  "resolved_commit": "265bab252fb5a86e6bdcacb89807abd6246d7b7d",
+  "root_tree": "4d246d1c077b2e354172d1aeb2baf1f8f2275d76",
+  "schema_version": 1,
+  "source_id": "teic-tooling"
+}

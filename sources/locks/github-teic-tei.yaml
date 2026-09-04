@@ -2,7 +2,7 @@ schema_version: 1
 lock_id: github-teic-tei-observable-history
 source_id: github-teic-tei-work-items
 as_of: "2026-09-04"
-retrieval_status: not_started
+retrieval_status: partial
 
 repository:
   owner: TEIC
@@ -11,8 +11,8 @@ repository:
   api_base: https://api.github.com/repos/TEIC/TEI
 
 snapshot:
-  observed_at: null
-  api_version: null
+  observed_at: "2026-09-04"
+  api_version: "2022-11-28"
   api_version_rule: Pin the supported GitHub API version in the first run manifest; never change it silently during a run.
   authentication: read-only-token-from-secret-store
   state_scope: all
@@ -49,5 +49,6 @@ incremental_policy:
 
 counts: {}
 gaps:
-  - code: no-api-snapshot-yet
-    status: expected-before-first-ingestion
+  - code: authenticated-github-api-session-unavailable
+    status: blocks-observable-complete
+    remediation: Run gh auth login with read-only public-repository access; the collector reads the local gh credential without printing it.

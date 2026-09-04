@@ -1,17 +1,61 @@
 # Changelog
 
-What changed in the template, for anyone running an instance built from it.
+Material changes to the TEI P6 Research Vault are recorded here. Architectural
+rationale remains in the append-only `knowledge/journal.md`; Git preserves the
+complete file history.
 
-An entry is written when a change makes an existing instance do something or lets it do something new. Everything else stays in the git history, which is the complete record. Each entry names the date, what changed, and whether a running instance has to act. Versions are dates, because instances follow the template by commit rather than by release.
+## 2026-09-04
 
-## 2026-08-10
+### Project baseline
 
-**Self-report is a named case (act).** A source that speaks about itself, about its own priority, reach or achievement, covers the claim and never the matter the claim is about. `knowledge/schema.md` states the rule at the assertion type, `knowledge/operations.md` adds the verdict rule to the machine-review contract, and the `build-assertions` skill carries it as a step. Running instances should walk their assertions for statements taken from self-descriptive sources, since neither validation nor review flags this case on its own.
+- Instantiated the Grounded Vault as the independent TEI P6 Research Vault.
+- Added the five-layer provenance chain, validator, tests, CI, Obsidian
+  configuration, twelve topic MOCs, and Codex/Claude action layers.
+- Added TEI-specific source registries, locks, corpus boundaries, context
+  manifests, and analysis workflows.
+- Pinned TEI P5 4.12.0 to full commit
+  `113e933e21f016e2655518321e9d10214b8d9fcb`.
 
-**Self-report widens to the displaced subject (act).** The entry above named one case of a wider defect, in which a passage supports the statement while its subject is not the matter the assertion is about. The second case is the state report, where a source shows the matter in one state at one time, such as a restored object, a dated inventory or a plan. `knowledge/schema.md` now states both at the assertion type, `knowledge/operations.md` gives both a verdict rule in the machine-review contract, and the `build-assertions` skill checks for both. Running instances should walk their assertions for statements taken from a dated state, since neither validation nor review flags this case on its own. An instance that pins a source by commit or by revision is the clearest occurrence, because there the state is recorded and the statement usually is not.
+### Acquisition contract
 
-**Open questions hold questions and no findings (act).** A finding that could carry an assertion belongs in the core statements with its own anchor and ID. The section keeps minting no IDs, which is what makes it the one place where unanchored material may rest.
+- Added the staged multi-agent acquisition runbook.
+- Separated the official TEI P6 process from independent P6 proposals.
+- Separated the official Council meeting index from the incomplete
+  `TEIC/Documentation` working-document repository.
+- Defined observable and bounded completeness, raw-data quarantine, rights
+  gates, resumable acquisition, and reconciliation requirements.
 
-**The first production cycle runs vertically.** `SETUP.md` now says that the smallest full pass is finished before a second source is touched, and why the horizontal order produces nothing checkable until the last layer.
+### Promptotyping project scaffold
 
-**Two explanatory passages.** `knowledge/schema.md` states the oracle the chain fastens onto, and it separates posit from assertion by kind rather than by ripeness. No rule changed.
+- Reframed `knowledge/` as the executable Promptotyping document of the project.
+- Expanded the project specification with seven research questions, a
+  source-authority model, comparative P6 evaluation dimensions, deliverables,
+  success criteria, and decision gates.
+- Rebuilt `README.md`, `HOME.md`, `AGENTS.md`, `CLAUDE.md`, and `SETUP.md` as
+  consistent project-specific entry points.
+- Adapted the generated project page to the TEI P6 project and added the
+  specification, state, and journal sections.
+- Removed obsolete routes into the upstream template's example research
+  instance.
+
+### P6 design knowledge
+
+- Added a repository-wide architecture map and contribution contract.
+- Added the provisional P6 design dossier covering design principles, the
+  candidate core model, blueprints and customization, serialization and
+  conformance, executable examples and migration, comparative evaluation,
+  versioning and governance, and the research agenda.
+- Connected human and agent navigation to the dossier while preserving the
+  distinction between provisional design knowledge and grounded evidence.
+
+### Primary-source acquisition
+
+- Defined the finite, auditable meaning of “all primary sources” and registered
+  normative, governance, historical, implementation, community, and practice
+  source families.
+- Added tested collectors for Git mirrors, the TEIC GitHub organization census,
+  GitHub work items, bounded web indexes, SourceForge trackers, and large release
+  assets.
+- Began content-addressed acquisition of P5 4.12.0, every public TEIC Git
+  repository, P5 release history, Council and Board records, the TEI Archive,
+  official P6 records, tooling, customizations, and legacy trackers.

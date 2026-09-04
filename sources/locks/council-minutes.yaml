@@ -2,7 +2,7 @@ schema_version: 1
 lock_id: tei-council-minutes-observable-corpus
 source_id: tei-council-minutes
 as_of: "2026-09-04"
-retrieval_status: not_started
+retrieval_status: partial
 
 scope:
   meeting_index: https://www.tei-c.org/activities/council/meetings/
@@ -24,7 +24,16 @@ identity:
 rights:
   review_before_full_text_commit: true
 
-counts: {}
+counts:
+  official_pages_retrieved: 206
+  external_links_inventoried: 2473
+  binary_links_not_fetched: 10
+  binary_assets_retrieved_on_reconciliation: 1
+  unavailable_or_malformed_binary_targets: 9
 gaps:
-  - code: no-index-snapshot-yet
-    status: expected-before-first-ingestion
+  - code: linked-attachments-and-external-working-documents-not-yet-reconciled
+    status: open
+
+manifests:
+  - sources/manifests/2026-09-04-tei-council-minutes-r2.yaml
+  - sources/manifests/2026-09-04-tei-council-assets.yaml

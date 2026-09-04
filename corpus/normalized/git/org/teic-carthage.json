@@ -1,0 +1,364 @@
+{
+  "entries": [
+    {
+      "mode": "100644",
+      "object_id": "fd3ec72ec6dafc91237bf9ac1ae6ab2fb825a0ae",
+      "object_type": "blob",
+      "path": "Makefile"
+    },
+    {
+      "mode": "100644",
+      "object_id": "ccc1596e2ebb957c0ab5cd68eeb2bfa1c20142a1",
+      "object_type": "blob",
+      "path": "README"
+    },
+    {
+      "mode": "100644",
+      "object_id": "035062de8fa9ce834e670380cc26bbddc606eab1",
+      "object_type": "blob",
+      "path": "README.SPQR"
+    },
+    {
+      "mode": "100755",
+      "object_id": "f5ddf13db91f4491f61add32697b822844d9c378",
+      "object_type": "blob",
+      "path": "carthage"
+    },
+    {
+      "mode": "100644",
+      "object_id": "c03e1f4396a5ea3b6083837057ff657efa687433",
+      "object_type": "blob",
+      "path": "carthago.h"
+    },
+    {
+      "mode": "100644",
+      "object_id": "7a69fe665f5c32738d220d553d2372c6d4e2ec59",
+      "object_type": "blob",
+      "path": "carthago.y"
+    },
+    {
+      "mode": "100644",
+      "object_id": "a11bd3ff15fa883e1b61d99c90b99c2b080184c9",
+      "object_type": "blob",
+      "path": "dpp.tab.h"
+    },
+    {
+      "mode": "100644",
+      "object_id": "5e91984bf461546765bc103c46f1b9fb8f623638",
+      "object_type": "blob",
+      "path": "dpp/dpp.1"
+    },
+    {
+      "mode": "100644",
+      "object_id": "b9508bb5be54850198221e00779da487ac413b18",
+      "object_type": "blob",
+      "path": "dpp/dpp.y"
+    },
+    {
+      "mode": "100644",
+      "object_id": "46f2045a0afc3a98966d34d1b13aa0de2e935c55",
+      "object_type": "blob",
+      "path": "dpp/dppflags.h"
+    },
+    {
+      "mode": "100644",
+      "object_id": "2b413044f70ac8eaa5ad14a5b8dbcb436ec4344e",
+      "object_type": "blob",
+      "path": "dpp/dpplex.h"
+    },
+    {
+      "mode": "100644",
+      "object_id": "26a77a5f2eb43e088d0e9f8eec7bb6c46bbdfb9b",
+      "object_type": "blob",
+      "path": "dpp/dpplex.l"
+    },
+    {
+      "mode": "100644",
+      "object_id": "6caea4ad54fac40e6b3b660c446b8994fb3e5a08",
+      "object_type": "blob",
+      "path": "dpp/dppman.html"
+    },
+    {
+      "mode": "100644",
+      "object_id": "596f6228e1d6878c71513c60d2b123a974a48cdc",
+      "object_type": "blob",
+      "path": "dpp/dtd.dtd"
+    },
+    {
+      "mode": "100644",
+      "object_id": "883e99db64c1eb18de965e8224b643e949028281",
+      "object_type": "blob",
+      "path": "dpp/entmgr.c"
+    },
+    {
+      "mode": "100644",
+      "object_id": "c1ec370c0b25f280d1d3826df4ca7a5c5f3abe61",
+      "object_type": "blob",
+      "path": "dpp/entmgr.h"
+    },
+    {
+      "mode": "100644",
+      "object_id": "08cb61dd34627c2ad2f830130007b7b10cf32a97",
+      "object_type": "blob",
+      "path": "dpp/filesrch.c"
+    },
+    {
+      "mode": "100644",
+      "object_id": "46c1e6827d31724b095268d680541d524045072d",
+      "object_type": "blob",
+      "path": "dpp/lllit.c"
+    },
+    {
+      "mode": "100644",
+      "object_id": "3786e45631fcd24cf886347619be288108598b8b",
+      "object_type": "blob",
+      "path": "dpp/lllit.h"
+    },
+    {
+      "mode": "100644",
+      "object_id": "75494f057b1de0b3e7c0b04470807844341106ac",
+      "object_type": "blob",
+      "path": "dpp/makefile"
+    },
+    {
+      "mode": "100644",
+      "object_id": "4dfd5bdd1956cb0dbcd7dd553bfc3c865ac442a3",
+      "object_type": "blob",
+      "path": "dpp/msg.c"
+    },
+    {
+      "mode": "100644",
+      "object_id": "5149c8f14802bef5514aefc982ad1833848e23a4",
+      "object_type": "blob",
+      "path": "dpp/msg.h"
+    },
+    {
+      "mode": "100644",
+      "object_id": "cbbbb07135e0f5da342cc1cda9b69b4826dc58d3",
+      "object_type": "blob",
+      "path": "dpp/mycat.c"
+    },
+    {
+      "mode": "100644",
+      "object_id": "1808826823cc16f8cf7f29297fe38890b4a247fc",
+      "object_type": "blob",
+      "path": "dpp/mycat.h"
+    },
+    {
+      "mode": "100644",
+      "object_id": "a7b66c244a80353d8af790745f5cb2dc0159ab8f",
+      "object_type": "blob",
+      "path": "dpp/myfiles.c"
+    },
+    {
+      "mode": "100644",
+      "object_id": "2be30f99245aa036910c78728c493bb4ac90c375",
+      "object_type": "blob",
+      "path": "dpp/sgmldtd.h"
+    },
+    {
+      "mode": "100644",
+      "object_id": "49040fd5d249b126b73c51cbe757d8965cea3779",
+      "object_type": "blob",
+      "path": "dpplex.c"
+    },
+    {
+      "mode": "100644",
+      "object_id": "7b968a609cd61972fc89a35199f751e80555bb29",
+      "object_type": "blob",
+      "path": "dpplex.h"
+    },
+    {
+      "mode": "100644",
+      "object_id": "2971c5e19d606df8fc248b0b768b58d7b7d6c6d3",
+      "object_type": "blob",
+      "path": "dpplex.l"
+    },
+    {
+      "mode": "100644",
+      "object_id": "2f494951bee52ef7876840f8ec95c238242ca41b",
+      "object_type": "blob",
+      "path": "entmgr.c"
+    },
+    {
+      "mode": "100644",
+      "object_id": "4978193c9494c1426c8435f72a387fa2dab2f4c6",
+      "object_type": "blob",
+      "path": "entmgr.h"
+    },
+    {
+      "mode": "100644",
+      "object_id": "5910391e2a758e789464f015384e9c49f7c85b35",
+      "object_type": "blob",
+      "path": "index.xml"
+    },
+    {
+      "mode": "100644",
+      "object_id": "8d8ef4274be2a7ba95542c07ca2549a007033830",
+      "object_type": "blob",
+      "path": "index.xsl"
+    },
+    {
+      "mode": "100644",
+      "object_id": "2d06cfe15f733b777e9e4f7522ec34f95e0e62eb",
+      "object_type": "blob",
+      "path": "lib/Makefile"
+    },
+    {
+      "mode": "100644",
+      "object_id": "46f2045a0afc3a98966d34d1b13aa0de2e935c55",
+      "object_type": "blob",
+      "path": "lib/dppflags.h"
+    },
+    {
+      "mode": "100644",
+      "object_id": "6bcf93cc17b400c5b8fa25d7c14b23ae3358af0a",
+      "object_type": "blob",
+      "path": "lib/hash.c"
+    },
+    {
+      "mode": "100644",
+      "object_id": "06249284c024db9190ed112cccdd1c24a1f7c53a",
+      "object_type": "blob",
+      "path": "lib/hash.h"
+    },
+    {
+      "mode": "100644",
+      "object_id": "8a4d9f88b369078a3de0e7c8bd3564feffd69f95",
+      "object_type": "blob",
+      "path": "lib/msg.c"
+    },
+    {
+      "mode": "100644",
+      "object_id": "55e9424ff7f17e451377b3ffb60620f87d2517c0",
+      "object_type": "blob",
+      "path": "lib/msg.h"
+    },
+    {
+      "mode": "100644",
+      "object_id": "e3f3f62f2f85731d3fbacb93046e0fdd8ccc1e2a",
+      "object_type": "blob",
+      "path": "lib/oldhash.c"
+    },
+    {
+      "mode": "100644",
+      "object_id": "e9ab40277165434336438caf2b975cf8f0cedaee",
+      "object_type": "blob",
+      "path": "lib/strings.c"
+    },
+    {
+      "mode": "100644",
+      "object_id": "1061add8b80980419d26a59b7e1d2cbcb9504eed",
+      "object_type": "blob",
+      "path": "lib/strings.h"
+    },
+    {
+      "mode": "100644",
+      "object_id": "46c1e6827d31724b095268d680541d524045072d",
+      "object_type": "blob",
+      "path": "lllit.c"
+    },
+    {
+      "mode": "100644",
+      "object_id": "3786e45631fcd24cf886347619be288108598b8b",
+      "object_type": "blob",
+      "path": "lllit.h"
+    },
+    {
+      "mode": "100644",
+      "object_id": "cbbbb07135e0f5da342cc1cda9b69b4826dc58d3",
+      "object_type": "blob",
+      "path": "mycat.c"
+    },
+    {
+      "mode": "100644",
+      "object_id": "1808826823cc16f8cf7f29297fe38890b4a247fc",
+      "object_type": "blob",
+      "path": "mycat.h"
+    },
+    {
+      "mode": "100644",
+      "object_id": "716b916706694f89ae69ec509ba3b209b8573d9d",
+      "object_type": "blob",
+      "path": "myfiles.c"
+    },
+    {
+      "mode": "100644",
+      "object_id": "938b43f62d9c79e8ce66948d5507fa2947693519",
+      "object_type": "blob",
+      "path": "other/fpires.y"
+    },
+    {
+      "mode": "100644",
+      "object_id": "ec6928da88c3f06c7c7279659a6a1956ef8937fa",
+      "object_type": "blob",
+      "path": "other/fpiresl.l"
+    },
+    {
+      "mode": "100644",
+      "object_id": "77c22d60601d20d1148237c204bca8b80f592d8e",
+      "object_type": "blob",
+      "path": "runcart"
+    },
+    {
+      "mode": "100644",
+      "object_id": "2be30f99245aa036910c78728c493bb4ac90c375",
+      "object_type": "blob",
+      "path": "sgmldtd.h"
+    },
+    {
+      "mode": "100644",
+      "object_id": "8435f4694642a61177a2a13240bbb72350f3977b",
+      "object_type": "blob",
+      "path": "test.dtd"
+    },
+    {
+      "mode": "100644",
+      "object_id": "f886e8fc2b0f5d2d74105839987cb2f14ffd3449",
+      "object_type": "blob",
+      "path": "tests/carthago.droplist"
+    },
+    {
+      "mode": "100644",
+      "object_id": "c486091fe4f407eed28f1b0af34bfa7d69fd73f3",
+      "object_type": "blob",
+      "path": "tests/clean.dtd"
+    },
+    {
+      "mode": "100644",
+      "object_id": "ff0a58469b8a9acbd71d04a996ec3622204348f2",
+      "object_type": "blob",
+      "path": "tests/dirty.dtd"
+    },
+    {
+      "mode": "100644",
+      "object_id": "c486091fe4f407eed28f1b0af34bfa7d69fd73f3",
+      "object_type": "blob",
+      "path": "tests/myclean.dtd"
+    },
+    {
+      "mode": "100644",
+      "object_id": "c486091fe4f407eed28f1b0af34bfa7d69fd73f3",
+      "object_type": "blob",
+      "path": "tests/new.dtd"
+    },
+    {
+      "mode": "100644",
+      "object_id": "9cc0f1f9f3e01a9c7d9cde74c01130f47a4f005c",
+      "object_type": "blob",
+      "path": "tests/test.out"
+    },
+    {
+      "mode": "100755",
+      "object_id": "db420b97410ff0e717c8c747eda80b276930504e",
+      "object_type": "blob",
+      "path": "xcarthage"
+    }
+  ],
+  "ref_requested": "HEAD",
+  "repository": "https://github.com/TEIC/Carthage.git",
+  "resolved_commit": "eaf0e323ff50d4b604bd16dc5f78183b326554f7",
+  "root_tree": "829e78c4001f8c2af7c789304dd48a138a358930",
+  "schema_version": 1,
+  "source_id": "teic-public-git-repositories"
+}

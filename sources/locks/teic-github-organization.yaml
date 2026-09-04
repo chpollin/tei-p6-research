@@ -1,0 +1,17 @@
+schema_version: 1
+lock_id: teic-github-organization-public-repositories
+source_id: teic-github-organization
+as_of: "2026-09-04"
+retrieval_status: observable-complete
+
+scope:
+  organization: TEIC
+  interface: https://api.github.com/orgs/TEIC/repos
+  repository_visibility: public
+  rule: Paginate the public organization repository API to exhaustion at observation time.
+
+counts:
+  public_repositories: 41
+
+manifest: sources/manifests/2026-09-04-teic-github-organization.yaml
+gaps: []

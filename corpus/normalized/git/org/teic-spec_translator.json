@@ -1,0 +1,226 @@
+{
+  "entries": [
+    {
+      "mode": "100644",
+      "object_id": "7603af2df1eedf1719fabc5a0a6d4bedc2939461",
+      "object_type": "blob",
+      "path": ".gitignore"
+    },
+    {
+      "mode": "100644",
+      "object_id": "598692f13dab767557f4328826fd134034ef8c00",
+      "object_type": "blob",
+      "path": "LICENSE.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "ac35810285042b51c700273c0c247bf446f662f7",
+      "object_type": "blob",
+      "path": "README.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "299d6fcefd1abc817b09fbc57e0b87053fa569f6",
+      "object_type": "blob",
+      "path": "app.js"
+    },
+    {
+      "mode": "100755",
+      "object_id": "bda5383426c595acba39a8b4a6f65e610356b131",
+      "object_type": "blob",
+      "path": "bin/www"
+    },
+    {
+      "mode": "100644",
+      "object_id": "1b69be1c8bb0d89daafeaacb1487e3ba5158cfea",
+      "object_type": "blob",
+      "path": "docs/css/TEI-logo.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "bc910fb9b4b572cd3847196d04bfe31b0b7f6669",
+      "object_type": "blob",
+      "path": "docs/css/codemirror.css"
+    },
+    {
+      "mode": "100644",
+      "object_id": "eca1ff498a3654afcdd01b053bab664398a71339",
+      "object_type": "blob",
+      "path": "docs/css/guidelines.css"
+    },
+    {
+      "mode": "100644",
+      "object_id": "bab8753727706feff02699f0e9210be5983b0e4b",
+      "object_type": "blob",
+      "path": "docs/doc_de.html"
+    },
+    {
+      "mode": "100644",
+      "object_id": "4160284886c366ae62dbadfdf8952fef66531690",
+      "object_type": "blob",
+      "path": "docs/doc_en.html"
+    },
+    {
+      "mode": "100644",
+      "object_id": "d17a5145902feaa120ab809e2d8d1068ba0bbecf",
+      "object_type": "blob",
+      "path": "docs/doc_es.html"
+    },
+    {
+      "mode": "100644",
+      "object_id": "6e17f88c802b7d6451c761980f7375598fe643e8",
+      "object_type": "blob",
+      "path": "docs/doc_fr.html"
+    },
+    {
+      "mode": "100644",
+      "object_id": "6d0f82d1c583f1e83ead6c457c0b2e2b46fb2910",
+      "object_type": "blob",
+      "path": "docs/doc_it.html"
+    },
+    {
+      "mode": "100644",
+      "object_id": "a69aff1e432a6478fc5100e5aa10639a5df6d285",
+      "object_type": "blob",
+      "path": "docs/doc_ja.html"
+    },
+    {
+      "mode": "100644",
+      "object_id": "9e6a3571cfd582034064bf639e37532b3fa53c02",
+      "object_type": "blob",
+      "path": "docs/doc_ko.html"
+    },
+    {
+      "mode": "100644",
+      "object_id": "17000ce40c4fec036063dc4b69b126c31fbf69c4",
+      "object_type": "blob",
+      "path": "docs/doc_zh.html"
+    },
+    {
+      "mode": "100644",
+      "object_id": "7f4002ba50f55de619be575df14e7803e7e7de27",
+      "object_type": "blob",
+      "path": "docs/index.html"
+    },
+    {
+      "mode": "100644",
+      "object_id": "7f90e503a56a689e633b62fff42973d311eca201",
+      "object_type": "blob",
+      "path": "docs/js/CETEI.js"
+    },
+    {
+      "mode": "100644",
+      "object_id": "f23842f14990e1b3f72762f40ffb9107e0033f44",
+      "object_type": "blob",
+      "path": "docs/js/codemirror.js"
+    },
+    {
+      "mode": "100644",
+      "object_id": "aa60060b39e70e20e1147e251daf12daa2786121",
+      "object_type": "blob",
+      "path": "docs/js/i18n.js"
+    },
+    {
+      "mode": "100644",
+      "object_id": "73c6e0e0dd0208341e4e99a2cbdf6575cb36149c",
+      "object_type": "blob",
+      "path": "docs/js/xml.js"
+    },
+    {
+      "mode": "100644",
+      "object_id": "b34907e29facf185e330776d092673e35090cd1c",
+      "object_type": "blob",
+      "path": "docs/loggedout.html"
+    },
+    {
+      "mode": "100644",
+      "object_id": "f4d48bda7801fac5ea86a12fd7c72d021eef8b97",
+      "object_type": "blob",
+      "path": "docs/overview.html"
+    },
+    {
+      "mode": "100644",
+      "object_id": "89758e76f475ad04d4e8c898b038b98c2aecfa97",
+      "object_type": "blob",
+      "path": "docs/translate.html"
+    },
+    {
+      "mode": "100644",
+      "object_id": "8cde396d42f2db02bff9edb8a62c0bac9f7c4caa",
+      "object_type": "blob",
+      "path": "docs/user.html"
+    },
+    {
+      "mode": "100644",
+      "object_id": "1ca5cd42dd9dcfe9f9bb9d5e9c1858df2f0ce19f",
+      "object_type": "blob",
+      "path": "package-lock.json"
+    },
+    {
+      "mode": "100644",
+      "object_id": "0b9a99512e6ec9c41f1c54b294c3db85dcb9a94e",
+      "object_type": "blob",
+      "path": "package.json"
+    },
+    {
+      "mode": "100644",
+      "object_id": "0823d543bec71e7d1072017dd7339cd0d178bc4e",
+      "object_type": "blob",
+      "path": "rollup.config.js"
+    },
+    {
+      "mode": "100644",
+      "object_id": "e114705bc49647b61f8ef3429c7bb29d43661918",
+      "object_type": "blob",
+      "path": "routes/auth.js"
+    },
+    {
+      "mode": "100644",
+      "object_id": "a0bd36346e2a5f845295da7c0632ab8a536833ad",
+      "object_type": "blob",
+      "path": "src/api.js"
+    },
+    {
+      "mode": "100644",
+      "object_id": "4cb7648a4f751ffc2b8136471734e0ff047a2934",
+      "object_type": "blob",
+      "path": "src/auth.js"
+    },
+    {
+      "mode": "100644",
+      "object_id": "c9be8ce286b50cfc8810e1ddbbab10d667c8ff85",
+      "object_type": "blob",
+      "path": "src/internationalize.js"
+    },
+    {
+      "mode": "100644",
+      "object_id": "557793bb396608e51953d1faea89ba889af087a5",
+      "object_type": "blob",
+      "path": "src/translator.js"
+    },
+    {
+      "mode": "100644",
+      "object_id": "06597656253f827fc78314c829a767d0f8d529a3",
+      "object_type": "blob",
+      "path": "views/error.hbs"
+    },
+    {
+      "mode": "100644",
+      "object_id": "068eb6bee2620aea0c61dc4a9b2c572c60c6ff09",
+      "object_type": "blob",
+      "path": "views/layout.hbs"
+    },
+    {
+      "mode": "100644",
+      "object_id": "a1297eb6e04585bdf3cfa2c9d6c4f89fbbd7611d",
+      "object_type": "blob",
+      "path": "views/user.hbs"
+    }
+  ],
+  "ref_requested": "HEAD",
+  "repository": "https://github.com/TEIC/spec_translator.git",
+  "resolved_commit": "3206c61871896b5780dd4931e84bc9e1ef7f6058",
+  "root_tree": "99c68ead3555c43864ae08bd5aef149a9df6d1db",
+  "schema_version": 1,
+  "source_id": "teic-public-git-repositories"
+}

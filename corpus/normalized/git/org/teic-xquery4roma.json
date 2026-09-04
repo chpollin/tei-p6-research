@@ -1,0 +1,238 @@
+{
+  "entries": [
+    {
+      "mode": "100644",
+      "object_id": "fd151913ea09b2419295ba70acfcc672f2cc9a47",
+      "object_type": "blob",
+      "path": ".dockerignore"
+    },
+    {
+      "mode": "100644",
+      "object_id": "b0c5b0e4efd04b1d105979f20d907209a71cf0c0",
+      "object_type": "blob",
+      "path": ".github/workflows/docker-publish.yml"
+    },
+    {
+      "mode": "100644",
+      "object_id": "c4af5a72d356a800bdb9ebc5c3637044cb2240a1",
+      "object_type": "blob",
+      "path": ".gitignore"
+    },
+    {
+      "mode": "100644",
+      "object_id": "77f6c89494c72ece3ec3fe9fe099268db295cdc5",
+      "object_type": "blob",
+      "path": "Dockerfile"
+    },
+    {
+      "mode": "100644",
+      "object_id": "216615c95627937c07b15f6eb277706ce5e84c10",
+      "object_type": "blob",
+      "path": "LICENSE"
+    },
+    {
+      "mode": "100644",
+      "object_id": "491d7cd96556436df5eda8631c77e06f8a0afb61",
+      "object_type": "blob",
+      "path": "README.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "507f66aa793ddd5f7cdaab1318aaf234fa0e573e",
+      "object_type": "blob",
+      "path": "build.xml"
+    },
+    {
+      "mode": "100644",
+      "object_id": "3ad568f0b38c11e6f28094a413083a5194b23ce6",
+      "object_type": "blob",
+      "path": "collection.xconf"
+    },
+    {
+      "mode": "100644",
+      "object_id": "e7ffd4981c44b00dbb23a634fc3d674ad797b0f9",
+      "object_type": "blob",
+      "path": "controller.xql"
+    },
+    {
+      "mode": "100644",
+      "object_id": "6903cd8cc5a88d51689d183643c6bf23fd5bd882",
+      "object_type": "blob",
+      "path": "expath-pkg.xml"
+    },
+    {
+      "mode": "100644",
+      "object_id": "2ac78a5c8c31d995302ded5e055f98562eb7a887",
+      "object_type": "blob",
+      "path": "modules/allbymod.xql"
+    },
+    {
+      "mode": "100644",
+      "object_id": "964ebdbc20cad9c440eab6d0a30c73fd6f470b6c",
+      "object_type": "blob",
+      "path": "modules/attclassbyname.xql"
+    },
+    {
+      "mode": "100644",
+      "object_id": "c89d077a3c342aa92cde8071ecf361b5d818120e",
+      "object_type": "blob",
+      "path": "modules/attclasses.xql"
+    },
+    {
+      "mode": "100644",
+      "object_id": "e87b6a01b4a5411c30604ab5757f392a89eb7ad7",
+      "object_type": "blob",
+      "path": "modules/attsbyelem.xql"
+    },
+    {
+      "mode": "100644",
+      "object_id": "684a00e57c01be38fc1fc2e1739aa2a6aedf2b55",
+      "object_type": "blob",
+      "path": "modules/class.xql"
+    },
+    {
+      "mode": "100644",
+      "object_id": "4a00d1a1106abb32d0df58482d2842d5c39ef3fb",
+      "object_type": "blob",
+      "path": "modules/classes.xql"
+    },
+    {
+      "mode": "100644",
+      "object_id": "97ac489261b2f55164e9346062f4ac9347cf347d",
+      "object_type": "blob",
+      "path": "modules/classmembers.xql"
+    },
+    {
+      "mode": "100644",
+      "object_id": "cc1b0b57bf854bf5a5a29074fe95b4fe75e36662",
+      "object_type": "blob",
+      "path": "modules/classspecs.xql"
+    },
+    {
+      "mode": "100644",
+      "object_id": "587b6ed93960b8b59039a593990f13f6f836ed07",
+      "object_type": "blob",
+      "path": "modules/config.xqm"
+    },
+    {
+      "mode": "100644",
+      "object_id": "3ace91212f83b36995772623eecd1af711aa9dc3",
+      "object_type": "blob",
+      "path": "modules/copytag.xql"
+    },
+    {
+      "mode": "100644",
+      "object_id": "14d75a280d8d8e52ad0d52bbbc81f61d3c22506c",
+      "object_type": "blob",
+      "path": "modules/count-pages.xql"
+    },
+    {
+      "mode": "100644",
+      "object_id": "007376dd18dac00555932fb5b44858dec9a65e28",
+      "object_type": "blob",
+      "path": "modules/datatypes.xql"
+    },
+    {
+      "mode": "100644",
+      "object_id": "35b4cc885f59b2bd32af480e4ce04c259fc74167",
+      "object_type": "blob",
+      "path": "modules/element.xql"
+    },
+    {
+      "mode": "100644",
+      "object_id": "31961a3acf6983c0ad92fddc32b5e2413b5f3348",
+      "object_type": "blob",
+      "path": "modules/elemsbymod.xql"
+    },
+    {
+      "mode": "100644",
+      "object_id": "d1d20c7e0027501a1cf90a9b7d400925309bd8e9",
+      "object_type": "blob",
+      "path": "modules/getversion.xql"
+    },
+    {
+      "mode": "100644",
+      "object_id": "63df029c383078ddb6c4e5d3db38726a926e0236",
+      "object_type": "blob",
+      "path": "modules/i18n.xql"
+    },
+    {
+      "mode": "100644",
+      "object_id": "c59a8875b3297ac132f4a1057874f4d0e8d2e0b0",
+      "object_type": "blob",
+      "path": "modules/index.xml"
+    },
+    {
+      "mode": "100644",
+      "object_id": "7f336303520efed37ef2bec8f062065edec68e92",
+      "object_type": "blob",
+      "path": "modules/macros.xql"
+    },
+    {
+      "mode": "100644",
+      "object_id": "d3770903525ffaa456330667c3961073003b66fd",
+      "object_type": "blob",
+      "path": "modules/modules.xql"
+    },
+    {
+      "mode": "100644",
+      "object_id": "5d337e8371adc2a78431ae9e6f27705683f58cb4",
+      "object_type": "blob",
+      "path": "modules/objectsbymod.xql"
+    },
+    {
+      "mode": "100644",
+      "object_id": "6883aa96696d778b00c3a6e43a3b4b9c4d75cd27",
+      "object_type": "blob",
+      "path": "modules/ref.xql"
+    },
+    {
+      "mode": "100644",
+      "object_id": "33f27e2cad3c94ca005645cad1bb917beadc2e9e",
+      "object_type": "blob",
+      "path": "modules/showtag.xql"
+    },
+    {
+      "mode": "100644",
+      "object_id": "ec14d1c739728857eef11b35012c042e59f68b0e",
+      "object_type": "blob",
+      "path": "modules/tag.xql"
+    },
+    {
+      "mode": "100644",
+      "object_id": "229e581d4fdb6be6a470870cc65a47bd6de4a360",
+      "object_type": "blob",
+      "path": "modules/teiclasses.xql"
+    },
+    {
+      "mode": "100644",
+      "object_id": "cd33b0de7ab42f1caed0426d67ccb0e1baa8e481",
+      "object_type": "blob",
+      "path": "modules/w3cdatatypes.xql"
+    },
+    {
+      "mode": "100644",
+      "object_id": "fc362a70b3234080abd05868d7bc982fdd27611f",
+      "object_type": "blob",
+      "path": "post-install.xql"
+    },
+    {
+      "mode": "100644",
+      "object_id": "532a3cabab5e42dc28e112bf17bcd4a271edab35",
+      "object_type": "blob",
+      "path": "pre-install.xql"
+    },
+    {
+      "mode": "100644",
+      "object_id": "f69c0afef5da4ac2eeffed134e093341f39d9bc1",
+      "object_type": "blob",
+      "path": "repo.xml"
+    }
+  ],
+  "ref_requested": "HEAD",
+  "repository": "https://github.com/TEIC/xquery4roma.git",
+  "resolved_commit": "6f1d1a914b6afc69665ca399fd3da91a3ef2c5c4",
+  "root_tree": "847db1ed23583065bb98347d0e461e99b303c9e0",
+  "schema_version": 1,
+  "source_id": "teic-public-git-repositories"
+}

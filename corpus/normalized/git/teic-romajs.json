@@ -1,0 +1,940 @@
+{
+  "entries": [
+    {
+      "mode": "100644",
+      "object_id": "4687bc4f4462088a00aaff176e3cfd311a4f9e04",
+      "object_type": "blob",
+      "path": ".babelrc"
+    },
+    {
+      "mode": "100644",
+      "object_id": "0d1cc521f0c56ae4427e9ac7b1c5a46ae67aa919",
+      "object_type": "blob",
+      "path": ".dockerignore"
+    },
+    {
+      "mode": "100644",
+      "object_id": "fa3fd3160a0b31a65bf43883d16858c1e8e7e5f5",
+      "object_type": "blob",
+      "path": ".eslintrc"
+    },
+    {
+      "mode": "100644",
+      "object_id": "a4fac85aacaaa63a223e5b604dc748f0633cd636",
+      "object_type": "blob",
+      "path": ".github/workflows/docker-publish.yml"
+    },
+    {
+      "mode": "100644",
+      "object_id": "3f2c7fa2e84ce7b268b677bc16d778a982e73821",
+      "object_type": "blob",
+      "path": ".gitignore"
+    },
+    {
+      "mode": "100644",
+      "object_id": "3a0250df385e043750af0a7d86d70c534edb7171",
+      "object_type": "blob",
+      "path": ".travis.yml"
+    },
+    {
+      "mode": "100644",
+      "object_id": "e98d6b2adfda4f09128cf44f669819b35247eba9",
+      "object_type": "blob",
+      "path": "Dockerfile"
+    },
+    {
+      "mode": "100644",
+      "object_id": "b44b69444582240a7c2834227e66e0d744ff74e6",
+      "object_type": "blob",
+      "path": "LICENSE"
+    },
+    {
+      "mode": "100644",
+      "object_id": "fb67cfe5f3e0585c3fe6a20d087439bffeecd6a2",
+      "object_type": "blob",
+      "path": "README.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "f38e94500e2f20b690a2c6ede90634f424a110e4",
+      "object_type": "blob",
+      "path": "assets/favicon.ico"
+    },
+    {
+      "mode": "100755",
+      "object_id": "6e155cef028134c65696f994b5ba126915e7d0d1",
+      "object_type": "blob",
+      "path": "docker-entrypoint.sh"
+    },
+    {
+      "mode": "100644",
+      "object_id": "ea0dd3c0c0ecb0a5290351dc24ec153732c36f35",
+      "object_type": "blob",
+      "path": "docker-nginx.conf"
+    },
+    {
+      "mode": "100644",
+      "object_id": "044aac3f85b4ce0067467119f6ba40c29e2c6ecc",
+      "object_type": "blob",
+      "path": "index.html"
+    },
+    {
+      "mode": "100644",
+      "object_id": "4223ce17e05d72f4b0d895007255bbd6c7a360cb",
+      "object_type": "blob",
+      "path": "package.json"
+    },
+    {
+      "mode": "100644",
+      "object_id": "47137bf83b79eed318482096d2f5d6ca2b5eecb4",
+      "object_type": "blob",
+      "path": "scripts/deepl.js"
+    },
+    {
+      "mode": "100644",
+      "object_id": "1cf6f92548e3bc34ed28a859e43abc2e4df4d0ea",
+      "object_type": "blob",
+      "path": "server.js"
+    },
+    {
+      "mode": "100644",
+      "object_id": "2edc120c4fdc2c65dadcd9be65398aa7017ae558",
+      "object_type": "blob",
+      "path": "src/actions/attributes.js"
+    },
+    {
+      "mode": "100644",
+      "object_id": "c12af321f487ffb38ac6f71e37f66a3e03d07444",
+      "object_type": "blob",
+      "path": "src/actions/classes.js"
+    },
+    {
+      "mode": "100644",
+      "object_id": "15bea92292feaef86c96c452a086393f30029044",
+      "object_type": "blob",
+      "path": "src/actions/datatypes.js"
+    },
+    {
+      "mode": "100644",
+      "object_id": "3ad97f30e71b39578dda35b2c641cc25d9b0b3b2",
+      "object_type": "blob",
+      "path": "src/actions/elements.js"
+    },
+    {
+      "mode": "100644",
+      "object_id": "512f6bd366340d14eeba9702e9d08537d5e18486",
+      "object_type": "blob",
+      "path": "src/actions/index.js"
+    },
+    {
+      "mode": "100644",
+      "object_id": "492857fad4545ce76d2530b46237da7cf11ea0dd",
+      "object_type": "blob",
+      "path": "src/actions/interface.js"
+    },
+    {
+      "mode": "100644",
+      "object_id": "d9320adfa7e74f36fa9fa2c2b558440a86a3f087",
+      "object_type": "blob",
+      "path": "src/actions/modules.js"
+    },
+    {
+      "mode": "100644",
+      "object_id": "774e991a4e9bef5c58b7000efdcb30cea195031c",
+      "object_type": "blob",
+      "path": "src/actions/settings.js"
+    },
+    {
+      "mode": "100644",
+      "object_id": "306e69026647d1bc40ff2b6a70c4ee1a38e65671",
+      "object_type": "blob",
+      "path": "src/components/AddMemberFab.js"
+    },
+    {
+      "mode": "100644",
+      "object_id": "e2aa85b0193bb82eb0f6630346b9f2208eb4b003",
+      "object_type": "blob",
+      "path": "src/components/AltIdent.js"
+    },
+    {
+      "mode": "100644",
+      "object_id": "f74895e8c7a5d306abf6ebd23babb17144498aa2",
+      "object_type": "blob",
+      "path": "src/components/App.js"
+    },
+    {
+      "mode": "100644",
+      "object_id": "d460d6485a2cb5092364bd12220430599722bccc",
+      "object_type": "blob",
+      "path": "src/components/AttDatatype.js"
+    },
+    {
+      "mode": "100644",
+      "object_id": "53f32f537cdc8573980588d2a8d89ccdd5cbca22",
+      "object_type": "blob",
+      "path": "src/components/Attribute.js"
+    },
+    {
+      "mode": "100644",
+      "object_id": "46fd49b3fd8d46ec50f8894cc78a459bfdb384af",
+      "object_type": "blob",
+      "path": "src/components/Attributes.js"
+    },
+    {
+      "mode": "100644",
+      "object_id": "a3381b7df4e513895868cbdbec133e65d468bd31",
+      "object_type": "blob",
+      "path": "src/components/AttributesOnMember.js"
+    },
+    {
+      "mode": "100644",
+      "object_id": "aa51061a70d5e604fbbf49f3ca121def14454004",
+      "object_type": "blob",
+      "path": "src/components/Blockly.js"
+    },
+    {
+      "mode": "100644",
+      "object_id": "550d82fe318bdd408149657e59bc9766884eabf5",
+      "object_type": "blob",
+      "path": "src/components/Class.js"
+    },
+    {
+      "mode": "100644",
+      "object_id": "785ef9687d904c71bb1de426d7bf1e9eec90d510",
+      "object_type": "blob",
+      "path": "src/components/ClassAttributes.js"
+    },
+    {
+      "mode": "100644",
+      "object_id": "36e6a04ed50a817451e980ccfed9e3e35ff43c11",
+      "object_type": "blob",
+      "path": "src/components/ContentModel.js"
+    },
+    {
+      "mode": "100644",
+      "object_id": "fdbceed8351147bec1c8bbe8af17814e17db1ebe",
+      "object_type": "blob",
+      "path": "src/components/DataRef.js"
+    },
+    {
+      "mode": "100644",
+      "object_id": "1188f83147b9cd7ab5a945da85ed30c4a24ad55e",
+      "object_type": "blob",
+      "path": "src/components/Datatype.js"
+    },
+    {
+      "mode": "100644",
+      "object_id": "27ff96eba11bcb407f0f61ff404a12d221102785",
+      "object_type": "blob",
+      "path": "src/components/DatatypeContent.js"
+    },
+    {
+      "mode": "100644",
+      "object_id": "d5892d2e38b1e29115b03196b0bf3d973e46c5ce",
+      "object_type": "blob",
+      "path": "src/components/Desc.js"
+    },
+    {
+      "mode": "100644",
+      "object_id": "6b2b436207fe74b897c0957bebda4fda014cf170",
+      "object_type": "blob",
+      "path": "src/components/Documentation.js"
+    },
+    {
+      "mode": "100644",
+      "object_id": "0d72a9dc085218ffbf6af1f4c3acf1f065e38d22",
+      "object_type": "blob",
+      "path": "src/components/DownloadButton.js"
+    },
+    {
+      "mode": "100644",
+      "object_id": "ae543ce31eb734b712dbaac436676518fc6c4a86",
+      "object_type": "blob",
+      "path": "src/components/Element.js"
+    },
+    {
+      "mode": "100644",
+      "object_id": "b2356157aa266f41efec9d509379e876d07cfaac",
+      "object_type": "blob",
+      "path": "src/components/FilterSearchBar.js"
+    },
+    {
+      "mode": "100644",
+      "object_id": "936031571a7e043279cbb4eadfd1b279bad6cbb2",
+      "object_type": "blob",
+      "path": "src/components/Header.js"
+    },
+    {
+      "mode": "100644",
+      "object_id": "bebed55b346722dbb4cd10ce0fbc76a51c7faceb",
+      "object_type": "blob",
+      "path": "src/components/Home.js"
+    },
+    {
+      "mode": "100644",
+      "object_id": "060395e69fbee65866947afd62e43bad7193eb84",
+      "object_type": "blob",
+      "path": "src/components/Member.js"
+    },
+    {
+      "mode": "100644",
+      "object_id": "c8dd6bb052d03043a15b291fe1470e394e0097b0",
+      "object_type": "blob",
+      "path": "src/components/MemberFacet.js"
+    },
+    {
+      "mode": "100644",
+      "object_id": "4d55c23ec0d7898774a08ffecad5ace6f3e941bd",
+      "object_type": "blob",
+      "path": "src/components/MembersList.js"
+    },
+    {
+      "mode": "100644",
+      "object_id": "7dbabe8c7c93b649376b0b71362eb7183514ffb9",
+      "object_type": "blob",
+      "path": "src/components/ModelClassMemberships.js"
+    },
+    {
+      "mode": "100644",
+      "object_id": "03a2c5f87f690ea3f9eb4a21eeb81012993f6fc4",
+      "object_type": "blob",
+      "path": "src/components/Module.js"
+    },
+    {
+      "mode": "100644",
+      "object_id": "04d8f65a3fd42a2ee678316c3b8229ee605a045c",
+      "object_type": "blob",
+      "path": "src/components/Rng.js"
+    },
+    {
+      "mode": "100644",
+      "object_id": "1100a09fb521b39f7b35190c79ebc5adf36d18fd",
+      "object_type": "blob",
+      "path": "src/components/Settings.js"
+    },
+    {
+      "mode": "100644",
+      "object_id": "ecc7d99d4eef49224c53754f8f1375046d6c8ea9",
+      "object_type": "blob",
+      "path": "src/components/ValItem.js"
+    },
+    {
+      "mode": "100644",
+      "object_id": "64021b873a48fb1462eb177be65032062cf5008d",
+      "object_type": "blob",
+      "path": "src/components/ValList.js"
+    },
+    {
+      "mode": "100644",
+      "object_id": "7c4fd7b43db1345127cb88e156bf5501618bee36",
+      "object_type": "blob",
+      "path": "src/components/dialogs/ErrorReporting.js"
+    },
+    {
+      "mode": "100644",
+      "object_id": "fa5024d1c19b3f011bd5a9df839c6f0bb3ebf4a5",
+      "object_type": "blob",
+      "path": "src/components/dialogs/Info.js"
+    },
+    {
+      "mode": "100644",
+      "object_id": "70011f493024f484183269bc2b18283fac215b9f",
+      "object_type": "blob",
+      "path": "src/components/dialogs/NewAttribute.js"
+    },
+    {
+      "mode": "100644",
+      "object_id": "c0efd476878f5fc02df8f5317b3366c20bf800af",
+      "object_type": "blob",
+      "path": "src/components/dialogs/NewClass.js"
+    },
+    {
+      "mode": "100644",
+      "object_id": "5f4df838952df5a8adda3251458bb4c118c4345b",
+      "object_type": "blob",
+      "path": "src/components/dialogs/NewDatatype.js"
+    },
+    {
+      "mode": "100644",
+      "object_id": "7b076b05e783817c7347da55415f307fb18a222a",
+      "object_type": "blob",
+      "path": "src/components/dialogs/NewElement.js"
+    },
+    {
+      "mode": "100644",
+      "object_id": "aaa60d2cb51d8a6ac2aaacf29dae5e2a0f3ebbb7",
+      "object_type": "blob",
+      "path": "src/components/dialogs/Revert.js"
+    },
+    {
+      "mode": "100644",
+      "object_id": "20a94f2faec5e6bdfd6b8be368310bf9a9e6bf20",
+      "object_type": "blob",
+      "path": "src/components/dialogs/YesNo.js"
+    },
+    {
+      "mode": "100644",
+      "object_id": "c5f6283f008f9ce5372ba167db78462f6364fec3",
+      "object_type": "blob",
+      "path": "src/components/pickers/AnchoredPicker.js"
+    },
+    {
+      "mode": "100644",
+      "object_id": "46e36b32d3236bb21d0c2098d9cd27377bca1e58",
+      "object_type": "blob",
+      "path": "src/components/pickers/AttPicker.js"
+    },
+    {
+      "mode": "100644",
+      "object_id": "3e298a3b6ac9185e0b7ab07487b0fdd31982c8e2",
+      "object_type": "blob",
+      "path": "src/components/pickers/FixedPicker.js"
+    },
+    {
+      "mode": "100644",
+      "object_id": "52b6f4e0806377927c30bb96cca3c179f4ce2c4f",
+      "object_type": "blob",
+      "path": "src/components/pickers/ModalPicker.js"
+    },
+    {
+      "mode": "100644",
+      "object_id": "f78fc2750141d593e4b1e631f82fc91ecebf44cd",
+      "object_type": "blob",
+      "path": "src/components/pickers/Picker.js"
+    },
+    {
+      "mode": "100644",
+      "object_id": "8cac75b3b89ae02d62b537ed309b0d458471afd2",
+      "object_type": "blob",
+      "path": "src/containers/AttClassAttPicker.js"
+    },
+    {
+      "mode": "100644",
+      "object_id": "57957be1e43ac0f97aa43a761041dabfa247b7fd",
+      "object_type": "blob",
+      "path": "src/containers/AttClassPicker.js"
+    },
+    {
+      "mode": "100644",
+      "object_id": "65828b64f882266a02b1dee9462800386aff577d",
+      "object_type": "blob",
+      "path": "src/containers/BlocklyContainer.js"
+    },
+    {
+      "mode": "100644",
+      "object_id": "f2abd7c31e6c6902e5f5794e57b8e06017a95d19",
+      "object_type": "blob",
+      "path": "src/containers/ClassPage.js"
+    },
+    {
+      "mode": "100644",
+      "object_id": "1543b5e96d6e40055ee69abaf66c79990d88cbbd",
+      "object_type": "blob",
+      "path": "src/containers/CreateNewClass.js"
+    },
+    {
+      "mode": "100644",
+      "object_id": "aa6b6bc1848e6668b1f757beb3f8196f2b729aad",
+      "object_type": "blob",
+      "path": "src/containers/CreateNewDatatype.js"
+    },
+    {
+      "mode": "100644",
+      "object_id": "760d9dccb4af72e4d3f81875a0eeaa8af6ce9fa6",
+      "object_type": "blob",
+      "path": "src/containers/CreateNewElement.js"
+    },
+    {
+      "mode": "100644",
+      "object_id": "dc8ecffb6bef34cfc78092ee5dacae26fd84dd0b",
+      "object_type": "blob",
+      "path": "src/containers/DatatypePage.js"
+    },
+    {
+      "mode": "100644",
+      "object_id": "70dd48f52f218238ba9672b6fe4d516e74dbbec4",
+      "object_type": "blob",
+      "path": "src/containers/DatatypePicker.js"
+    },
+    {
+      "mode": "100644",
+      "object_id": "10738599aac9b266c13fa7e69d5a3b69c713cfaa",
+      "object_type": "blob",
+      "path": "src/containers/Download.js"
+    },
+    {
+      "mode": "100644",
+      "object_id": "84e374cb08dbc77378d1a8580582833d00b4486d",
+      "object_type": "blob",
+      "path": "src/containers/EditAttribute.js"
+    },
+    {
+      "mode": "100644",
+      "object_id": "3516f0332239352a204e8480fe1057d0fe0f2fd6",
+      "object_type": "blob",
+      "path": "src/containers/EditAttributeAltIdent.js"
+    },
+    {
+      "mode": "100644",
+      "object_id": "51b1ce9b1e359a513ed5a0019336d99ce4fec37c",
+      "object_type": "blob",
+      "path": "src/containers/EditAttributeDesc.js"
+    },
+    {
+      "mode": "100644",
+      "object_id": "db9e58087ed0056e81f92513a1e190a683a9356d",
+      "object_type": "blob",
+      "path": "src/containers/EditAttributes.js"
+    },
+    {
+      "mode": "100644",
+      "object_id": "fcf8ca7d3a8a678f08f8c40b53b776b38a60563a",
+      "object_type": "blob",
+      "path": "src/containers/EditClassAttributes.js"
+    },
+    {
+      "mode": "100644",
+      "object_id": "573dacfe9f6f4d4dfe997cde9260f8030fbdb935",
+      "object_type": "blob",
+      "path": "src/containers/EditMemberAltIdent.js"
+    },
+    {
+      "mode": "100644",
+      "object_id": "65263e8d4142f117acb91af2898b6cc638fd7ece",
+      "object_type": "blob",
+      "path": "src/containers/EditMemberDesc.js"
+    },
+    {
+      "mode": "100644",
+      "object_id": "d0c8debfc81c44790e3e2304d6b7417120c95482",
+      "object_type": "blob",
+      "path": "src/containers/EditModelClassMemberships.js"
+    },
+    {
+      "mode": "100644",
+      "object_id": "1e2c8e3ed02efe7ea61faa0fdb423e393a057633",
+      "object_type": "blob",
+      "path": "src/containers/EditValItemDesc.js"
+    },
+    {
+      "mode": "100644",
+      "object_id": "0ed15e5c596c1c49a743e805212ea5c6e36b2442",
+      "object_type": "blob",
+      "path": "src/containers/ElementPage.js"
+    },
+    {
+      "mode": "100644",
+      "object_id": "70264aea1181944053ab40a9f7336f0cca69588f",
+      "object_type": "blob",
+      "path": "src/containers/ErrorReportingDialog.js"
+    },
+    {
+      "mode": "100644",
+      "object_id": "ecb0e193c50193a678501b1fb0b3bc589da777a5",
+      "object_type": "blob",
+      "path": "src/containers/FilterSearch.js"
+    },
+    {
+      "mode": "100644",
+      "object_id": "d1ffa552fdae9e4b59f32bc28f591f3b83d7f92a",
+      "object_type": "blob",
+      "path": "src/containers/HeaderContainer.js"
+    },
+    {
+      "mode": "100644",
+      "object_id": "99619ce99d1aec2a3738c67a4eb4e668e4ff56de",
+      "object_type": "blob",
+      "path": "src/containers/HomePage.js"
+    },
+    {
+      "mode": "100644",
+      "object_id": "e550dd3ac3a3f2ae42f5552c993b736d56590202",
+      "object_type": "blob",
+      "path": "src/containers/Members.js"
+    },
+    {
+      "mode": "100644",
+      "object_id": "07ef32aab5abdfb704ad089853bb319d788adbc4",
+      "object_type": "blob",
+      "path": "src/containers/ModelClassPicker.js"
+    },
+    {
+      "mode": "100644",
+      "object_id": "9eece17db56431f175f64c8962cc0ce98c3a0ffc",
+      "object_type": "blob",
+      "path": "src/containers/NewAttributeDialog.js"
+    },
+    {
+      "mode": "100644",
+      "object_id": "cf691618865ce3ee05b3d14b223cda4d2b5bc086",
+      "object_type": "blob",
+      "path": "src/containers/SettingsPage.js"
+    },
+    {
+      "mode": "100644",
+      "object_id": "8f7b03b943e0e7efd3e2a5aeacc741078310f665",
+      "object_type": "blob",
+      "path": "src/containers/SingleModule.js"
+    },
+    {
+      "mode": "100644",
+      "object_id": "5795417270801143321a88fd5b7327125087d54c",
+      "object_type": "blob",
+      "path": "src/index.js"
+    },
+    {
+      "mode": "100644",
+      "object_id": "82a1386aa346c0c7837b3649bdd674a77299d3f6",
+      "object_type": "blob",
+      "path": "src/localForageConfig.js"
+    },
+    {
+      "mode": "100644",
+      "object_id": "91be90a894d0be9bad1e3c35e9912942293ba332",
+      "object_type": "blob",
+      "path": "src/localization/i18n.js"
+    },
+    {
+      "mode": "100644",
+      "object_id": "7956fc5933ec328f929ad3aaf7e32be0622f4948",
+      "object_type": "blob",
+      "path": "src/localization/i18n.json"
+    },
+    {
+      "mode": "100644",
+      "object_id": "e053d7b558c3e180c4b12d1bd70a83ad7fa61f58",
+      "object_type": "blob",
+      "path": "src/reducers/attributes.js"
+    },
+    {
+      "mode": "100644",
+      "object_id": "7809c7fee4b2647ae66ba547e1ebf8a1631858df",
+      "object_type": "blob",
+      "path": "src/reducers/classes.js"
+    },
+    {
+      "mode": "100644",
+      "object_id": "38388ece0548367d49bfb53e1f770d6ae85f76dd",
+      "object_type": "blob",
+      "path": "src/reducers/datatypes.js"
+    },
+    {
+      "mode": "100644",
+      "object_id": "70b918e62702d7639cdb2dca27307ecdf09c2db8",
+      "object_type": "blob",
+      "path": "src/reducers/elements.js"
+    },
+    {
+      "mode": "100644",
+      "object_id": "587cf018e5444db1d176e3ef762f63962f0890bf",
+      "object_type": "blob",
+      "path": "src/reducers/index.js"
+    },
+    {
+      "mode": "100644",
+      "object_id": "32e22c2d3abe5a83426713436c2a76078c2d749c",
+      "object_type": "blob",
+      "path": "src/reducers/interface.js"
+    },
+    {
+      "mode": "100644",
+      "object_id": "0591ee85f15a9b1f7bfd721e32ce1b6b80a87688",
+      "object_type": "blob",
+      "path": "src/reducers/modules.js"
+    },
+    {
+      "mode": "100644",
+      "object_id": "7e4ef176707b0b066b833a3ce49a96f45baa48b3",
+      "object_type": "blob",
+      "path": "src/reducers/odd/mergeElements.js"
+    },
+    {
+      "mode": "100644",
+      "object_id": "354fdc97c9e8ef227e9a72fe68ebf7ebb0afdd12",
+      "object_type": "blob",
+      "path": "src/reducers/odd/mergeModules.js"
+    },
+    {
+      "mode": "100644",
+      "object_id": "7d6d85560b40bc2b619b31ce0a20117591d5fa4d",
+      "object_type": "blob",
+      "path": "src/reducers/odd/processAttributes.js"
+    },
+    {
+      "mode": "100644",
+      "object_id": "b285a4edd3e3431cb4332da6eefe0089143897ca",
+      "object_type": "blob",
+      "path": "src/reducers/odd/processClassMemberships.js"
+    },
+    {
+      "mode": "100644",
+      "object_id": "2e071214657e2109f6d7660dc3fc806d98492ec8",
+      "object_type": "blob",
+      "path": "src/reducers/odd/processDocEls.js"
+    },
+    {
+      "mode": "100644",
+      "object_id": "955909436c43ec46c51a1472a85d125708352cb9",
+      "object_type": "blob",
+      "path": "src/reducers/odd/updateClasses.js"
+    },
+    {
+      "mode": "100644",
+      "object_id": "fd82ad0ae8c6e76a6e2f79ec805a60f5ada7a262",
+      "object_type": "blob",
+      "path": "src/reducers/odd/updateDatatypes.js"
+    },
+    {
+      "mode": "100644",
+      "object_id": "37df60c1d02bff3c94e50500568e2419aa2ea4d7",
+      "object_type": "blob",
+      "path": "src/reducers/odd/updateElements.js"
+    },
+    {
+      "mode": "100644",
+      "object_id": "a8f59fff6a8ab44fca8394640cdb8c98e4c5cab8",
+      "object_type": "blob",
+      "path": "src/reducers/odd/utils.js"
+    },
+    {
+      "mode": "100644",
+      "object_id": "272d43f06d10ad9343fb3e6037832c0e93150730",
+      "object_type": "blob",
+      "path": "src/reducers/settings.js"
+    },
+    {
+      "mode": "100644",
+      "object_id": "17b8f5857fb1613f18071572291bf2fb8eb744bf",
+      "object_type": "blob",
+      "path": "src/reducers/updateOdd.js"
+    },
+    {
+      "mode": "100644",
+      "object_id": "7267f91ffc53d0c469837d46a01efeff1d7cfe73",
+      "object_type": "blob",
+      "path": "src/scss/romajs.scss"
+    },
+    {
+      "mode": "100644",
+      "object_id": "8b099b587609f5d5a88d6ecce1089b04b4be27f1",
+      "object_type": "blob",
+      "path": "src/utils/blocks.js"
+    },
+    {
+      "mode": "100644",
+      "object_id": "11532405d746acc16c0be58619f74c85415f02e6",
+      "object_type": "blob",
+      "path": "src/utils/clone.js"
+    },
+    {
+      "mode": "100644",
+      "object_id": "b144c36e1a18e27c34d8d0f64903e498cfcc47bf",
+      "object_type": "blob",
+      "path": "src/utils/datasources.js"
+    },
+    {
+      "mode": "100644",
+      "object_id": "b5f56da93efd962c07e5f42b16dbd7731e7dabde",
+      "object_type": "blob",
+      "path": "src/utils/deepCompare.js"
+    },
+    {
+      "mode": "100644",
+      "object_id": "53636074d56568d063aa3fd1924031c5a310002a",
+      "object_type": "blob",
+      "path": "src/utils/escape.js"
+    },
+    {
+      "mode": "100644",
+      "object_id": "9d2c7588092616f8d2eef68b96acc4a61027ea41",
+      "object_type": "blob",
+      "path": "src/utils/exceptions.js"
+    },
+    {
+      "mode": "100644",
+      "object_id": "82bf1087b557cc9c783c6c4651aec73e94912103",
+      "object_type": "blob",
+      "path": "src/utils/primitiveDatatypes.js"
+    },
+    {
+      "mode": "100644",
+      "object_id": "c67e3a86ed2f284c24cae735414b8fe5117bf045",
+      "object_type": "blob",
+      "path": "src/utils/safeSelect.js"
+    },
+    {
+      "mode": "100644",
+      "object_id": "30ebb306c750398a43ea47f755dfe7b37bb9f6ed",
+      "object_type": "blob",
+      "path": "src/utils/teigarage.js"
+    },
+    {
+      "mode": "100644",
+      "object_id": "028d5a554f048177d9a50d60b2fa492ce23bd49e",
+      "object_type": "blob",
+      "path": "src/utils/urls.js"
+    },
+    {
+      "mode": "100644",
+      "object_id": "cdac063fb05afc1fbc17c5450b120bc96c31f0e8",
+      "object_type": "blob",
+      "path": "src/utils/version.js"
+    },
+    {
+      "mode": "100644",
+      "object_id": "20e4cdbb62c104f0f181590d844c79e3934f54ea",
+      "object_type": "blob",
+      "path": "src/utils/versions.js"
+    },
+    {
+      "mode": "100644",
+      "object_id": "8cfaf6644134c24e7ff146190a094a9807c5024f",
+      "object_type": "blob",
+      "path": "test/actions/attributes.js"
+    },
+    {
+      "mode": "100644",
+      "object_id": "e796c007acb71486cefef7b20b7dde346610437c",
+      "object_type": "blob",
+      "path": "test/actions/classes.js"
+    },
+    {
+      "mode": "100644",
+      "object_id": "98030fb8fdbd687d60f14589bcc43134c00e5259",
+      "object_type": "blob",
+      "path": "test/actions/datatypes.js"
+    },
+    {
+      "mode": "100644",
+      "object_id": "b17fcea45a5c5d984a69fd2284bf4881e547dbb1",
+      "object_type": "blob",
+      "path": "test/actions/elements.js"
+    },
+    {
+      "mode": "100644",
+      "object_id": "4ebeb0947dfa321fb8ad0fdca91f5149828e4398",
+      "object_type": "blob",
+      "path": "test/actions/index.js"
+    },
+    {
+      "mode": "100644",
+      "object_id": "feb26ffcbd3c53819ae432efdc0632a17fd5e93a",
+      "object_type": "blob",
+      "path": "test/actions/modules.js"
+    },
+    {
+      "mode": "100644",
+      "object_id": "79805a5bb90b5a0a50522611ab91ad81967d4aa7",
+      "object_type": "blob",
+      "path": "test/fakeData/bare.json"
+    },
+    {
+      "mode": "100644",
+      "object_id": "73fafa607eccef919800e14f98a7436d2c8b5906",
+      "object_type": "blob",
+      "path": "test/fakeData/bare.odd"
+    },
+    {
+      "mode": "100644",
+      "object_id": "8c61a378f965fd98c44f398ecda0517dcdb5231e",
+      "object_type": "blob",
+      "path": "test/fakeData/p5subset.json"
+    },
+    {
+      "mode": "100644",
+      "object_id": "d3b7ecce39737d52ec520f78800f71d13a4c8923",
+      "object_type": "blob",
+      "path": "test/fakeData/tei_lite.json"
+    },
+    {
+      "mode": "100644",
+      "object_id": "e97b57660468eb397c63997cda7c70850b6d0c7c",
+      "object_type": "blob",
+      "path": "test/fakeData/tei_lite.odd"
+    },
+    {
+      "mode": "100644",
+      "object_id": "b44480ec996169227fb3d05544f613d2fb7b4ec9",
+      "object_type": "blob",
+      "path": "test/reducers/attributes.js"
+    },
+    {
+      "mode": "100644",
+      "object_id": "47d83f91d2f6ad46f66bfa7199fbbc190b294f0e",
+      "object_type": "blob",
+      "path": "test/reducers/classes.js"
+    },
+    {
+      "mode": "100644",
+      "object_id": "f7b861ffa93a518a271fbb795638f97236b6504f",
+      "object_type": "blob",
+      "path": "test/reducers/combinedReducers.js"
+    },
+    {
+      "mode": "100644",
+      "object_id": "f3565b50456d13bbe90e333d7f20a36b0062ce78",
+      "object_type": "blob",
+      "path": "test/reducers/datatypes.js"
+    },
+    {
+      "mode": "100644",
+      "object_id": "06404e28d0c8795d4651dd6d7178912e1394e581",
+      "object_type": "blob",
+      "path": "test/reducers/elements.js"
+    },
+    {
+      "mode": "100644",
+      "object_id": "d99cd691d3049be525fd2777027cd4fb965afa6c",
+      "object_type": "blob",
+      "path": "test/reducers/index.js"
+    },
+    {
+      "mode": "100644",
+      "object_id": "9e65a7a62ca7cb0efa81debd4bd92e3d4c1311d9",
+      "object_type": "blob",
+      "path": "test/reducers/modules.js"
+    },
+    {
+      "mode": "100644",
+      "object_id": "72d592802a536c50d5df7d5902f7ae665403b639",
+      "object_type": "blob",
+      "path": "test/reducers/settings.js"
+    },
+    {
+      "mode": "100644",
+      "object_id": "76a3980785b34281dba0cd2747f3d55ab4d67a60",
+      "object_type": "blob",
+      "path": "test/reducers/updateOdd.js"
+    },
+    {
+      "mode": "100644",
+      "object_id": "c1c5674e40441f08962f1f20f00de6ff68b7d68a",
+      "object_type": "blob",
+      "path": "test/reducers/updateOdd_classes.js"
+    },
+    {
+      "mode": "100644",
+      "object_id": "9538cc6828067959e35cf46bab3c9bab2d5099f7",
+      "object_type": "blob",
+      "path": "test/reducers/updateOdd_datatypes.js"
+    },
+    {
+      "mode": "100644",
+      "object_id": "cbcf25d3de436a399ef5e96645d07adee81bb864",
+      "object_type": "blob",
+      "path": "test/setup.js"
+    },
+    {
+      "mode": "100644",
+      "object_id": "8bf38864cfeb36c0746f3ecb9d80e03033e865f5",
+      "object_type": "blob",
+      "path": "vite.config.js"
+    }
+  ],
+  "ref_requested": "HEAD",
+  "repository": "https://github.com/TEIC/romajs.git",
+  "resolved_commit": "2b2da4b4aa7ac774e55bcf9a234a87922d6755b2",
+  "root_tree": "c4fbe3b6d4c869d72a0fbb52093ab9a7256c6ca0",
+  "schema_version": 1,
+  "source_id": "teic-tooling"
+}

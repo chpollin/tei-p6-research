@@ -1,0 +1,19 @@
+schema_version: 1
+lock_id: teic-public-git-repositories
+source_id: teic-public-git-repositories
+as_of: "2026-09-04"
+retrieval_status: observable-complete
+
+scope:
+  organization: TEIC
+  repository_census: corpus/normalized/github/teic-repositories.jsonl
+  rule: Mirror every repository in the observable-complete public organization census and resolve HEAD to a full commit.
+
+counts:
+  repositories_expected: 41
+  repositories_mirrored: 41
+  tree_entries: 25415
+  commits_all_refs_sum: 40957
+
+manifest: sources/manifests/2026-09-04-teic-public-git-repositories.yaml
+gaps: []

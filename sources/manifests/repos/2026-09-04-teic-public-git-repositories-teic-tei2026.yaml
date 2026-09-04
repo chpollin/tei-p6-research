@@ -1,0 +1,33 @@
+schema_version: 1
+run_id: 2026-09-04-teic-public-git-repositories-teic-tei2026
+source_id: teic-public-git-repositories
+started_at: '2026-09-04T16:39:17Z'
+finished_at: '2026-09-04T16:40:08Z'
+status: observable-complete
+adapter:
+  name: tools.corpus.git_snapshot
+  version: 1
+requests:
+- kind: git-mirror
+  repository: https://github.com/TEIC/tei2026.git
+  action: cloned
+  requested_ref: HEAD
+  resolved_commit: e62b53a79d1cd9f053fe20d44843852fe407c9cf
+objects:
+- kind: git-tree-inventory
+  path: corpus/normalized/git/org/teic-tei2026.json
+  sha256: 1bb23feb1e2302b1ddde5aa5fa84c52d66136ce48476d351828c6eadc5a80a74
+  root_tree: 2cbeb1e94eadad1ba5eb14e011f503a91b0d64f8
+counts:
+  commits_all_refs: 62
+  refs: 1
+  tree_entries: 135
+refs:
+- name: refs/heads/main
+  object_type: commit
+  object_id: e62b53a79d1cd9f053fe20d44843852fe407c9cf
+gaps: []
+rights_exceptions:
+- The local mirror is not committed; redistribution follows the upstream repository
+  license.
+raw_materialization: corpus\raw\git\TEIC-tei2026.git

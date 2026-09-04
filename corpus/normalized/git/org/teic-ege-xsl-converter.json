@@ -1,0 +1,154 @@
+{
+  "entries": [
+    {
+      "mode": "100644",
+      "object_id": "0b348c679ca4135f40b27af556768ef89852ecaf",
+      "object_type": "blob",
+      "path": ".github/dependabot.yml"
+    },
+    {
+      "mode": "100644",
+      "object_id": "49e0416b0713c22f31a984de69781d30e574de9c",
+      "object_type": "blob",
+      "path": ".github/workflows/maven.yml"
+    },
+    {
+      "mode": "100644",
+      "object_id": "a6f01bdd0a09417535ee206eb81a730e94d5ee8d",
+      "object_type": "blob",
+      "path": ".gitignore"
+    },
+    {
+      "mode": "100644",
+      "object_id": "9387f08a888bea1b616fb02f6af325f145f2c0e2",
+      "object_type": "blob",
+      "path": "LICENCE.txt"
+    },
+    {
+      "mode": "100644",
+      "object_id": "69c732a2e0fd7dcb6ef3c12e7154c30d084439d6",
+      "object_type": "blob",
+      "path": "README.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "bfbd83ee7c57901111880a48cd92fd65e012b2b7",
+      "object_type": "blob",
+      "path": "pom.xml"
+    },
+    {
+      "mode": "100644",
+      "object_id": "0865f5b7852cc6473b70ecd2d831b14cdcd50f71",
+      "object_type": "blob",
+      "path": "src/main/assembly/dist.xml"
+    },
+    {
+      "mode": "100644",
+      "object_id": "348ac546e393088a9643426fbfe7448ffa7901b0",
+      "object_type": "blob",
+      "path": "src/main/assembly/src.xml"
+    },
+    {
+      "mode": "100644",
+      "object_id": "5e9495128c0376427420c4189993b3851770b702",
+      "object_type": "blob",
+      "path": "src/main/java/META-INF/MANIFEST.MF"
+    },
+    {
+      "mode": "100644",
+      "object_id": "4272c78eef81980cf69c99080d8b0dad56f68530",
+      "object_type": "blob",
+      "path": "src/main/java/pl/psnc/dl/ege/MultiXslConverter.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "718b3837d330f3e17f08ae78dc794b5017aba6db",
+      "object_type": "blob",
+      "path": "src/main/java/pl/psnc/dl/ege/MultiXslOutputResolver.java"
+    },
+    {
+      "mode": "100644",
+      "object_id": "f4fda3249a27393467b4216ada19a0d411d517c2",
+      "object_type": "blob",
+      "path": "src/main/resources/META-INF/plugin.xml"
+    },
+    {
+      "mode": "100644",
+      "object_id": "a4168e8300b77637a7dfab13769859278ef187fb",
+      "object_type": "blob",
+      "path": "src/main/resources/ead2enrich/ead2enrich.xsl"
+    },
+    {
+      "mode": "100644",
+      "object_id": "495ab251b6e8ca9f09e51e8bcc65ace848db1f1f",
+      "object_type": "blob",
+      "path": "src/main/resources/master2enrich/master2enrich.xsl"
+    },
+    {
+      "mode": "100644",
+      "object_id": "8beaf2d794c7b91e3998a9dcb3e36c0f1fa8ce23",
+      "object_type": "blob",
+      "path": "src/site/resources/images/Thumbs.db"
+    },
+    {
+      "mode": "100644",
+      "object_id": "070b7a15260277879cc68c9b43d7bc6de70bd006",
+      "object_type": "blob",
+      "path": "src/site/resources/images/ege-overview.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "061d8eb3fc84f3a1885a220d4e4d466be4a5dc9b",
+      "object_type": "blob",
+      "path": "src/site/resources/images/ege.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "6978d902ef1271d36c25f9df4322b3a933057201",
+      "object_type": "blob",
+      "path": "src/site/resources/images/enrich-logo.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "4a51578da48c44b0220be28da25ab245f309b818",
+      "object_type": "blob",
+      "path": "src/site/resources/images/graf.jpg"
+    },
+    {
+      "mode": "100644",
+      "object_id": "e742a1858c29ff17b45760c7690f96c81bad6807",
+      "object_type": "blob",
+      "path": "src/site/resources/images/tabela.jpg"
+    },
+    {
+      "mode": "100644",
+      "object_id": "5ceccb23ee3ad3c87f117fc2d59924635122e11c",
+      "object_type": "blob",
+      "path": "src/site/resources/images/uml.gif"
+    },
+    {
+      "mode": "100644",
+      "object_id": "ffe6a2c15fb39c5242b6ce7e4c7b52f7c181a203",
+      "object_type": "blob",
+      "path": "src/site/site.xml"
+    },
+    {
+      "mode": "100644",
+      "object_id": "bb1944d3ff89fea677f0531f66a795449af9e89e",
+      "object_type": "blob",
+      "path": "src/site/xdoc/download.xml"
+    },
+    {
+      "mode": "100644",
+      "object_id": "929b92a30fc47842676a5280ef4ed5c748b26cec",
+      "object_type": "blob",
+      "path": "src/site/xdoc/index.xml"
+    }
+  ],
+  "ref_requested": "HEAD",
+  "repository": "https://github.com/TEIC/ege-xsl-converter.git",
+  "resolved_commit": "34b38ec05af02b8bbf247b925124b0268f9c3cd4",
+  "root_tree": "ebf4faf84195d3efdba2f65ac2c7d061752a2271",
+  "schema_version": 1,
+  "source_id": "teic-public-git-repositories"
+}

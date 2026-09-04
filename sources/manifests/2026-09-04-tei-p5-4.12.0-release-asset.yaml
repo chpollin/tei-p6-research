@@ -1,0 +1,36 @@
+schema_version: 1
+run_id: 2026-09-04-tei-p5-4.12.0-release-asset
+source_id: teic-tei-p5-4.12.0
+started_at: '2026-09-04T16:49:23Z'
+finished_at: '2026-09-04T16:49:23Z'
+status: observable-complete
+adapter:
+  name: tools.corpus.asset_snapshot
+  version: 1
+requests:
+- url: https://github.com/TEIC/TEI/releases/download/P5_Release_4.12.0/tei-4.12.0.zip
+  transfer: resumed
+objects:
+- kind: release-asset-inventory
+  path: corpus/normalized/assets/tei-p5-4.12.0-release.json
+  sha256: 0cf9dbf6609d88a00240c3ffd9e0629415df1e475af66b7b0b528774165f0736
+counts:
+  requested_assets: 1
+  retrieved_assets: 1
+  bytes: 333504131
+  gaps: 0
+assets:
+- requested_url: https://github.com/TEIC/TEI/releases/download/P5_Release_4.12.0/tei-4.12.0.zip
+  canonical_url: https://github.com/TEIC/TEI/releases/download/P5_Release_4.12.0/tei-4.12.0.zip
+  final_url: https://github.com/TEIC/TEI/releases/download/P5_Release_4.12.0/tei-4.12.0.zip
+  observed_at: '2026-09-04T16:49:23Z'
+  status: 200
+  media_type: application/zip
+  byte_count: 333504131
+  sha256: 0195baccee3b1e3e4f75b21fcf3c7c71cbcd75c796678b6f8c33229da13f66c5
+  raw_path: sha256/01/95baccee3b1e3e4f75b21fcf3c7c71cbcd75c796678b6f8c33229da13f66c5
+  headers: {}
+  transfer: resumed-external-download-then-local-import
+gaps: []
+rights_exceptions:
+- Release assets remain in ignored content-addressed raw storage.

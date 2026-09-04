@@ -1,8 +1,8 @@
 schema_version: 1
 lock_id: tei-p5-release-census
-source_id: tei-p5-releases
+source_id: tei-p5-release-history
 as_of: "2026-09-04"
-retrieval_status: not_started
+retrieval_status: partial
 
 discovery_sources:
   - https://www.tei-c.org/guidelines/p5/
@@ -29,10 +29,16 @@ per_release_requirements:
 latest_planning_baseline:
   version: "4.12.0"
   published_revision: "113e933e2"
-  evidence_status: declared-not-retrieved
+  evidence_status: git-tree-retrieved-published-assets-under-reconciliation
 
 versions: []
-counts: {}
+counts:
+  official_version_directories_observed: 50
+  release_index_responses: 53
 gaps:
-  - code: release-census-not-yet-ingested
-    status: expected-before-first-ingestion
+  - code: per-release-child-locks-not-yet-generated
+    status: open
+  - code: one-legacy-backup-file-inventoried-not-fetched
+    status: open
+
+manifest: sources/manifests/2026-09-04-tei-p5-releases-r2.yaml

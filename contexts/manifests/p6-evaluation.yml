@@ -12,6 +12,9 @@ read_in_order:
   - knowledge/index.md
   - knowledge/state.md
   - knowledge/specification.md
+  - docs/p6/README.md
+  - docs/p6/design-principles.md
+  - docs/p6/evaluation.md
   - contexts/START.md
   - workflows/evaluate-p6-proposal.md
 retrieve:

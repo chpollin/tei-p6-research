@@ -1,0 +1,292 @@
+{
+  "entries": [
+    {
+      "mode": "100644",
+      "object_id": "9e48be5b16fed6889afcd648ad18120ff092c9ec",
+      "object_type": "blob",
+      "path": ".gitignore"
+    },
+    {
+      "mode": "100644",
+      "object_id": "f5cea3fd174c15bcdfd16b7fdc3d69b1dbae20d4",
+      "object_type": "blob",
+      "path": ".travis.yml"
+    },
+    {
+      "mode": "100644",
+      "object_id": "2745a9dd0e81923de904202927a2a26b872c4baf",
+      "object_type": "blob",
+      "path": "LICENSE.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "9e45c9565df06274740bd734cc8c8756761beba9",
+      "object_type": "blob",
+      "path": "README.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "2d07cdc7cd82de60a1b05a51cb83a3e658a011e8",
+      "object_type": "blob",
+      "path": "package-lock.json"
+    },
+    {
+      "mode": "100644",
+      "object_id": "18c620ac29c9d9ace3c06634ec8d171f73e71489",
+      "object_type": "blob",
+      "path": "package.json"
+    },
+    {
+      "mode": "100644",
+      "object_id": "6769f999502620b5b4f0d55f372eba1e6ee6e62d",
+      "object_type": "blob",
+      "path": "rollup.config.js"
+    },
+    {
+      "mode": "100644",
+      "object_id": "704c8b25360e77270129a776398292ea38855ccd",
+      "object_type": "blob",
+      "path": "src/CETEI.js"
+    },
+    {
+      "mode": "100644",
+      "object_id": "46a4a78af3e853f9f1837df487b5e2e1159e47c2",
+      "object_type": "blob",
+      "path": "src/behaviors.js"
+    },
+    {
+      "mode": "100644",
+      "object_id": "e40faedbe5169ac1b4a1a7a4b7076f066c8c38b7",
+      "object_type": "blob",
+      "path": "src/defaultBehaviors.js"
+    },
+    {
+      "mode": "100644",
+      "object_id": "bffb2bfd59e009df38200aae8cc6b6fc3854c7bc",
+      "object_type": "blob",
+      "path": "src/dom.js"
+    },
+    {
+      "mode": "100644",
+      "object_id": "6b923258c3a7fd96b0308068be64e522aa980eb5",
+      "object_type": "blob",
+      "path": "src/utilities.js"
+    },
+    {
+      "mode": "100644",
+      "object_id": "b6a4c11d7ddc855e67d381b47ae361246dbdf0ae",
+      "object_type": "blob",
+      "path": "test/CETEIcean.css"
+    },
+    {
+      "mode": "100644",
+      "object_id": "a29a0bab90512f12587074dbb6a3a4fd484758de",
+      "object_type": "blob",
+      "path": "test/EEBOTest.html"
+    },
+    {
+      "mode": "100644",
+      "object_id": "a7c4bff441c7dd4d3b8f1a394b44184266ba382e",
+      "object_type": "blob",
+      "path": "test/TCW22.html"
+    },
+    {
+      "mode": "100644",
+      "object_id": "38d96ba7742e3edcf8e4e2248aced32d75a2a318",
+      "object_type": "blob",
+      "path": "test/addBehaviorTest.html"
+    },
+    {
+      "mode": "100644",
+      "object_id": "a28465015ac198a6d140e22159661f221290b4a7",
+      "object_type": "blob",
+      "path": "test/externalgetTest.html"
+    },
+    {
+      "mode": "100644",
+      "object_id": "5176ba20aca3c9c6850cef186b0dde6fb38d3a47",
+      "object_type": "blob",
+      "path": "test/images/page.jpg"
+    },
+    {
+      "mode": "100644",
+      "object_id": "dc1b6bf39d9a5b772fe1b3d104aa72cab94e9e97",
+      "object_type": "blob",
+      "path": "test/nodeTest.js"
+    },
+    {
+      "mode": "100644",
+      "object_id": "72e095a5c2720f32936aa49fe2d56efd4ca688d7",
+      "object_type": "blob",
+      "path": "test/simpleTest.html"
+    },
+    {
+      "mode": "100644",
+      "object_id": "310a66e064a91a0b1b0e6786b5a3e1f5045c86b8",
+      "object_type": "blob",
+      "path": "test/testTEI.xml"
+    },
+    {
+      "mode": "100644",
+      "object_id": "8915f0163f4cbc4c62e7922d030492b487769101",
+      "object_type": "blob",
+      "path": "tutorial_en/README.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "3414204a100dbd03b771be729cc2a6d92ae42146",
+      "object_type": "blob",
+      "path": "tutorial_en/css/tei.css"
+    },
+    {
+      "mode": "100644",
+      "object_id": "17f6d97368b954d71776af6057d012bf7807019a",
+      "object_type": "blob",
+      "path": "tutorial_en/example/css/tei.css"
+    },
+    {
+      "mode": "100644",
+      "object_id": "a206508b21ff12a4242cb17cb7124c0e82bb5ed1",
+      "object_type": "blob",
+      "path": "tutorial_en/example/index.html"
+    },
+    {
+      "mode": "100644",
+      "object_id": "b3c8f155da23298c503a3fdb64c3a3f442ccf0c5",
+      "object_type": "blob",
+      "path": "tutorial_en/fpn-washington.xml"
+    },
+    {
+      "mode": "100644",
+      "object_id": "7241bae1b514ce80abf7e21c167bb2f61c57ecff",
+      "object_type": "blob",
+      "path": "tutorial_en/js/CETEI.js"
+    },
+    {
+      "mode": "100644",
+      "object_id": "9e0a0b9988c60c1bf3eafe5f90eb52b9ebc687cb",
+      "object_type": "blob",
+      "path": "tutorial_es/README.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "ecc25f110b17333d9bb43873ac8d8440451459a8",
+      "object_type": "blob",
+      "path": "tutorial_es/Ruy_Diaz-La_Argentina_Manuscrita.xml"
+    },
+    {
+      "mode": "100644",
+      "object_id": "3414204a100dbd03b771be729cc2a6d92ae42146",
+      "object_type": "blob",
+      "path": "tutorial_es/css/tei.css"
+    },
+    {
+      "mode": "100644",
+      "object_id": "6d77fb285dafd0bbe1f63b1b6a20b4e25d7cc70c",
+      "object_type": "blob",
+      "path": "tutorial_es/example/css/tei.css"
+    },
+    {
+      "mode": "100644",
+      "object_id": "ac08e5921de30a5c7a6bfabc3244e1b2521163c5",
+      "object_type": "blob",
+      "path": "tutorial_es/example/index.html"
+    },
+    {
+      "mode": "100644",
+      "object_id": "541c8216be6447c6cd84133bc04dd2de9c27a48b",
+      "object_type": "blob",
+      "path": "tutorial_es/js/CETEI.js"
+    },
+    {
+      "mode": "100644",
+      "object_id": "f5c6b035afd9d98065acda8582eb77e107029810",
+      "object_type": "blob",
+      "path": "tutorial_es/screenshots/ceteicean_es1.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "7182a5884d289713628a66c252d27f5b101818a2",
+      "object_type": "blob",
+      "path": "tutorial_es/screenshots/ceteicean_es2.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "16b29789056405ff3517494728a70953e7a87cdf",
+      "object_type": "blob",
+      "path": "tutorial_es/screenshots/ceteicean_es3.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "e75e39b0e4d59bb93e0346fd08e2eb21e20545ca",
+      "object_type": "blob",
+      "path": "tutorial_es/screenshots/ceteicean_es4.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "7322c42cdb4f95a5226fe53e300fb00bf4029952",
+      "object_type": "blob",
+      "path": "tutorial_es/screenshots/ceteicean_es5.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "769253b724d179a1d989a2326da70da34f0ce809",
+      "object_type": "blob",
+      "path": "tutorial_ja/README.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "3414204a100dbd03b771be729cc2a6d92ae42146",
+      "object_type": "blob",
+      "path": "tutorial_ja/css/tei.css"
+    },
+    {
+      "mode": "100644",
+      "object_id": "17f6d97368b954d71776af6057d012bf7807019a",
+      "object_type": "blob",
+      "path": "tutorial_ja/example/css/tei.css"
+    },
+    {
+      "mode": "100644",
+      "object_id": "a206508b21ff12a4242cb17cb7124c0e82bb5ed1",
+      "object_type": "blob",
+      "path": "tutorial_ja/example/index.html"
+    },
+    {
+      "mode": "100644",
+      "object_id": "b277c1f9516000b6a1dd0dbf57a0e59d92b50a71",
+      "object_type": "blob",
+      "path": "tutorial_ja/example/index_ja.html"
+    },
+    {
+      "mode": "100644",
+      "object_id": "b3c8f155da23298c503a3fdb64c3a3f442ccf0c5",
+      "object_type": "blob",
+      "path": "tutorial_ja/fpn-washington.xml"
+    },
+    {
+      "mode": "100644",
+      "object_id": "7241bae1b514ce80abf7e21c167bb2f61c57ecff",
+      "object_type": "blob",
+      "path": "tutorial_ja/js/CETEI.js"
+    },
+    {
+      "mode": "100644",
+      "object_id": "d1db3a1c3052cdc3a7d0bbfcf6bd807e610e685f",
+      "object_type": "blob",
+      "path": "tutorial_ja/meros.xml"
+    },
+    {
+      "mode": "100644",
+      "object_id": "012610f5a56bbeb58ebf57b6ba1efeb7a0cb0db7",
+      "object_type": "blob",
+      "path": "xslt/make-CETEIcean.xsl"
+    }
+  ],
+  "ref_requested": "HEAD",
+  "repository": "https://github.com/TEIC/CETEIcean.git",
+  "resolved_commit": "da4d4d5ad05fbda9b1ab4fba66a91b835bc7443d",
+  "root_tree": "e50cd0ee149386e146036ad66079a065b419e839",
+  "schema_version": 1,
+  "source_id": "teic-public-git-repositories"
+}

@@ -1,0 +1,238 @@
+{
+  "entries": [
+    {
+      "mode": "100644",
+      "object_id": "b23d653f20b1aa3ec6211725f4b7fe8c14a7c0e4",
+      "object_type": "blob",
+      "path": ".github/workflows/validate_MAF_examples.yml"
+    },
+    {
+      "mode": "100644",
+      "object_id": "8611900a8f6deaf45b44c39541e1a9c874b7ee61",
+      "object_type": "blob",
+      "path": "MAF/LICENSE.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "51a74cfb0e04c6117da3fc6c434be60b4b573ddf",
+      "object_type": "blob",
+      "path": "MAF/MAF-1.html"
+    },
+    {
+      "mode": "100644",
+      "object_id": "ad8054aca032e3ea911ab2c2ecbca5b3a78e2c2f",
+      "object_type": "blob",
+      "path": "MAF/MAF-1.odd"
+    },
+    {
+      "mode": "100644",
+      "object_id": "a3ccca6b9583496dcc8396b99b07e6a8489ded6c",
+      "object_type": "blob",
+      "path": "MAF/MAF-1.rng"
+    },
+    {
+      "mode": "100644",
+      "object_id": "cc4940f4f2bf8677c0757ff998bd8a903d24e9ac",
+      "object_type": "blob",
+      "path": "MAF/MAF-1_examples.xml"
+    },
+    {
+      "mode": "100644",
+      "object_id": "62c3b11649de2d5b46b47d6eafe7bb224d6f9d11",
+      "object_type": "blob",
+      "path": "MAF/README.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "dc9a1be3b41aa61ca4ae61162a298d20f547b1f5",
+      "object_type": "blob",
+      "path": "MAF/base/README.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "76d6b1a7f948834124a300c7d1b575b9dfd897f9",
+      "object_type": "blob",
+      "path": "MAF/base/bare-test.rng"
+    },
+    {
+      "mode": "100644",
+      "object_id": "2847940ebed9df6ecd94c98acf1741375237fe0c",
+      "object_type": "blob",
+      "path": "MAF/base/p5subset.xml"
+    },
+    {
+      "mode": "100644",
+      "object_id": "2847940ebed9df6ecd94c98acf1741375237fe0c",
+      "object_type": "blob",
+      "path": "MAF/base/p5subset_27062025.xml"
+    },
+    {
+      "mode": "100644",
+      "object_id": "3aba8bcb89de2cbe1826c93a3a78a617adf974d7",
+      "object_type": "blob",
+      "path": "MAF/base/tei_bare-subset.xml"
+    },
+    {
+      "mode": "100644",
+      "object_id": "3aba8bcb89de2cbe1826c93a3a78a617adf974d7",
+      "object_type": "blob",
+      "path": "MAF/base/tei_bare-subset_27062025.xml"
+    },
+    {
+      "mode": "100644",
+      "object_id": "d8be5f42968828f2d9633769aa884145b5eb92c1",
+      "object_type": "blob",
+      "path": "MAF/base/tei_bare.odd"
+    },
+    {
+      "mode": "100644",
+      "object_id": "e3e732bb809045ae402ae7387c856ee8257ad119",
+      "object_type": "blob",
+      "path": "MAF/doc/XSLT/UD2MAF.html"
+    },
+    {
+      "mode": "100644",
+      "object_id": "80d04c912ca91a9fb5a4f42f9f8072e1ded294d4",
+      "object_type": "blob",
+      "path": "MAF/doc/XSLT/UD2MAF.indexList.html"
+    },
+    {
+      "mode": "100644",
+      "object_id": "88ab24825004081dec876642103ae511b0e9c2a2",
+      "object_type": "blob",
+      "path": "MAF/doc/XSLT/UD2MAF0.html"
+    },
+    {
+      "mode": "100644",
+      "object_id": "383d373eb214cf11e24ea56ba786af5493a531c2",
+      "object_type": "blob",
+      "path": "MAF/doc/XSLT/docHtml.css"
+    },
+    {
+      "mode": "100644",
+      "object_id": "78d309a0e577f63f7250ccc9c4d6d163cc697e82",
+      "object_type": "blob",
+      "path": "MAF/doc/XSLT/img/btM.gif"
+    },
+    {
+      "mode": "100644",
+      "object_id": "63e253532e054e15a96032c14c4272199f6f2038",
+      "object_type": "blob",
+      "path": "MAF/doc/XSLT/img/btP.gif"
+    },
+    {
+      "mode": "100644",
+      "object_id": "aacb1da416e7b23c3cae78c82b28a98bc7153b72",
+      "object_type": "blob",
+      "path": "MAF/doc/XSLT/img/cBL.gif"
+    },
+    {
+      "mode": "100644",
+      "object_id": "48879ca267460ac4644bc50afb7d4f217d38357e",
+      "object_type": "blob",
+      "path": "MAF/doc/XSLT/img/cBR.gif"
+    },
+    {
+      "mode": "100644",
+      "object_id": "b52ae5496adbf05e5a18b3588edb78647ae0ab20",
+      "object_type": "blob",
+      "path": "MAF/doc/XSLT/img/cTL.gif"
+    },
+    {
+      "mode": "100644",
+      "object_id": "136df091acdec71adf77ac1ab4fee8649d951a1a",
+      "object_type": "blob",
+      "path": "MAF/doc/XSLT/img/cTR.gif"
+    },
+    {
+      "mode": "100644",
+      "object_id": "739bb6512f240e1cc0d0a7b6acb83a1e1195922a",
+      "object_type": "blob",
+      "path": "MAF/doc/XSLT/img/hierarchy_arrow.gif"
+    },
+    {
+      "mode": "100644",
+      "object_id": "c0b44c6fbd7a06e3456f066feb6b84a04de2d9e7",
+      "object_type": "blob",
+      "path": "MAF/doc/XSLT/img/lB.gif"
+    },
+    {
+      "mode": "100644",
+      "object_id": "bfbef22682fef87d9610eb284a082b7b6f374905",
+      "object_type": "blob",
+      "path": "MAF/doc/XSLT/img/lL.gif"
+    },
+    {
+      "mode": "100644",
+      "object_id": "cd75fdc268c0aeac6f7c6c4cc5f2598959edd71e",
+      "object_type": "blob",
+      "path": "MAF/doc/XSLT/img/lR.gif"
+    },
+    {
+      "mode": "100644",
+      "object_id": "c67c57666a20ed9aa6c93ee8f4559d15d38018dc",
+      "object_type": "blob",
+      "path": "MAF/doc/XSLT/img/lT.gif"
+    },
+    {
+      "mode": "100644",
+      "object_id": "6a99711189783b8321120ead883810bf6520de54",
+      "object_type": "blob",
+      "path": "MAF/doc/XSLT/img/tplN12.gif"
+    },
+    {
+      "mode": "100644",
+      "object_id": "e29b2b85951959e8e3a3d6f3d145a6f26dcc513d",
+      "object_type": "blob",
+      "path": "MAF/doc/XSLT/img/tplN16.gif"
+    },
+    {
+      "mode": "100644",
+      "object_id": "717a96d129d5f50438288b1585073ae7c643db3e",
+      "object_type": "blob",
+      "path": "MAF/etc/UD2MAF_sample_input-2020-06-24.conllu"
+    },
+    {
+      "mode": "100644",
+      "object_id": "bce17802210ac291693a15efd0a4577f022a1e4b",
+      "object_type": "blob",
+      "path": "MAF/etc/UD2MAF_sample_output_2020-06-24.xml"
+    },
+    {
+      "mode": "100644",
+      "object_id": "3ef135cefb2a5d85c24019b88305d48d9c971c31",
+      "object_type": "blob",
+      "path": "MAF/etc/current_UD2MAF_output.xml"
+    },
+    {
+      "mode": "100644",
+      "object_id": "493a3cf25189c16663f36cd600e55d726131110d",
+      "object_type": "blob",
+      "path": "MAF/etc/p5subset.xml"
+    },
+    {
+      "mode": "100644",
+      "object_id": "2695dde900039c47acfe737a8195596b0a716fb8",
+      "object_type": "blob",
+      "path": "MAF/etc/p5subset.xml_7may2020"
+    },
+    {
+      "mode": "100644",
+      "object_id": "25565086109fae963ea40592816ce0d81ed83a18",
+      "object_type": "blob",
+      "path": "MAF/tools/XSLT/UD2MAF.xsl"
+    },
+    {
+      "mode": "100644",
+      "object_id": "a37a408263385b4ec69abc33100feeacf4ae1a31",
+      "object_type": "blob",
+      "path": "README.md"
+    }
+  ],
+  "ref_requested": "HEAD",
+  "repository": "https://github.com/TEIC/ISOTC37.git",
+  "resolved_commit": "000adbd70b82e1b18bb1c51479ff00c5b40220c5",
+  "root_tree": "c6a784e028953b708fa6ce0a92b6fce60fcd4533",
+  "schema_version": 1,
+  "source_id": "teic-public-git-repositories"
+}

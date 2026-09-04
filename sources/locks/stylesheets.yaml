@@ -1,0 +1,35 @@
+schema_version: 1
+lock_id: teic-stylesheets-observation
+source_id: teic-stylesheets
+as_of: "2026-09-04"
+retrieval_status: partial
+
+repository:
+  owner: TEIC
+  name: Stylesheets
+  canonical_url: https://github.com/TEIC/Stylesheets
+  observed_default_branch: dev
+
+scope:
+  include_git_history: true
+  include_releases: true
+  include_work_items: true
+  include_tests_and_profiles: true
+
+identity:
+  git: full-commit-and-blob-sha
+  github: github-node-id
+
+rights:
+  repository_license_review_required: true
+  discussion_text_review_required: true
+
+counts:
+  tree_entries: 986
+  commits_all_observed_refs: 7449
+resolved_head_commit: d603656e4addf8cdbd2156c60b2695487d92cf6b
+gaps:
+  - code: github-work-items-not-yet-acquired
+    status: blocked-authentication
+
+manifest: sources/manifests/2026-09-04-teic-stylesheets.yaml

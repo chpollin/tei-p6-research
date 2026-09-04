@@ -1,0 +1,87 @@
+schema_version: 1
+run_id: 2026-09-04-teic-public-git-repositories-teic-hackathon
+source_id: teic-public-git-repositories
+started_at: '2026-09-04T16:36:28Z'
+finished_at: '2026-09-04T16:39:10Z'
+status: observable-complete
+adapter:
+  name: tools.corpus.git_snapshot
+  version: 1
+requests:
+- kind: git-mirror
+  repository: https://github.com/TEIC/Hackathon.git
+  action: cloned
+  requested_ref: HEAD
+  resolved_commit: 081a4c7efe3a02814e7f1766031230073084063d
+objects:
+- kind: git-tree-inventory
+  path: corpus/normalized/git/org/teic-hackathon.json
+  sha256: 0bf9bce1150bf846484eb18cf87e0a3ef5c5a623729ec86e9cfbbe3c29aafc4e
+  root_tree: 1254c910ec9c36a5e3e85fa9b3156f69af553184
+counts:
+  commits_all_refs: 155
+  refs: 19
+  tree_entries: 4223
+refs:
+- name: refs/heads/master
+  object_type: commit
+  object_id: 081a4c7efe3a02814e7f1766031230073084063d
+- name: refs/pull/1/head
+  object_type: commit
+  object_id: 33fe4d2767f4bd8faf5ef49faddb96b7c220918b
+- name: refs/pull/10/head
+  object_type: commit
+  object_id: e774c5cee6bf2542036e6d22cf805365f02bdc8f
+- name: refs/pull/10/merge
+  object_type: commit
+  object_id: 46abc91b33bdc77499554ebd713d2b9338942994
+- name: refs/pull/11/head
+  object_type: commit
+  object_id: 460958539e6ccb71b9e0d4ad1d500a6428c874ff
+- name: refs/pull/11/merge
+  object_type: commit
+  object_id: 9d8fffefdd7307dca513fd18a9390fa35f28b27d
+- name: refs/pull/12/head
+  object_type: commit
+  object_id: fab9e4b28f763b76e4a9bae9b7b9f6d290896573
+- name: refs/pull/13/head
+  object_type: commit
+  object_id: cccbb2019b520987e268f4a61cae6b7bec501728
+- name: refs/pull/2/head
+  object_type: commit
+  object_id: 09ca6a42a6fc569fa649a3a5c1eff6562aee149c
+- name: refs/pull/2/merge
+  object_type: commit
+  object_id: 427857b439cf30ee47c98e929191dab3d1ea946b
+- name: refs/pull/3/head
+  object_type: commit
+  object_id: 972bbdc6b3c0432f7ae814e30f8520bf5fa9364c
+- name: refs/pull/4/head
+  object_type: commit
+  object_id: 6681f224691a0f8022ebd162676c17361b76c77f
+- name: refs/pull/5/head
+  object_type: commit
+  object_id: ffe0524e1b03038f0d1b03e41da21a4e52cb88c8
+- name: refs/pull/6/head
+  object_type: commit
+  object_id: e1ec71641cfc98464bcf9744f4d5af10cf7b77cd
+- name: refs/pull/6/merge
+  object_type: commit
+  object_id: 3d77774ff10376a19122b686a0bece56ef6ce7e3
+- name: refs/pull/7/head
+  object_type: commit
+  object_id: 54c33bc9f3144ef4ced300b6201106b577a75900
+- name: refs/pull/8/head
+  object_type: commit
+  object_id: 32576c86af5a8db7818d1ed172fdb669252804f3
+- name: refs/pull/9/head
+  object_type: commit
+  object_id: 114c00b4d334583f25eadde5cee2c8f831936cef
+- name: refs/pull/9/merge
+  object_type: commit
+  object_id: cd81d03ed355fc03711dac4fee92c2cb0a89499b
+gaps: []
+rights_exceptions:
+- The local mirror is not committed; redistribution follows the upstream repository
+  license.
+raw_materialization: corpus\raw\git\TEIC-Hackathon.git

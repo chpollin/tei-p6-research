@@ -1,0 +1,141 @@
+schema_version: 1
+run_id: 2026-09-04-teic-public-git-repositories-teic-ege-framework
+source_id: teic-public-git-repositories
+started_at: '2026-09-04T16:36:24Z'
+finished_at: '2026-09-04T16:36:26Z'
+status: observable-complete
+adapter:
+  name: tools.corpus.git_snapshot
+  version: 1
+requests:
+- kind: git-mirror
+  repository: https://github.com/TEIC/ege-framework.git
+  action: cloned
+  requested_ref: HEAD
+  resolved_commit: 5c8cf83dd12956c4fb1ffc9c42e6428518df56f7
+objects:
+- kind: git-tree-inventory
+  path: corpus/normalized/git/org/teic-ege-framework.json
+  sha256: 78f0933ac4cccca9d103f3860bb6f7e87945983ca02b15e0db6ec867a03169a6
+  root_tree: ab80919cc4a45f7862aacda439819fc7ffe21b06
+counts:
+  commits_all_refs: 68
+  refs: 37
+  tree_entries: 47
+refs:
+- name: refs/heads/dependabot/maven/commons-fileupload-commons-fileupload-1.5
+  object_type: commit
+  object_id: 0fcb3789cadc23f1f902f5197bc7ebea9cee8acc
+- name: refs/heads/dependabot/maven/commons-io-commons-io-2.18.0
+  object_type: commit
+  object_id: f74afa001db97081fe9cf21f18c2dc22d8d8d0ae
+- name: refs/heads/dependabot/maven/org.apache.logging.log4j-log4j-api-2.24.3
+  object_type: commit
+  object_id: 8b4761260c73125574b5fadcbd34d3bdc624eaea
+- name: refs/heads/dependabot/maven/org.apache.logging.log4j-log4j-core-2.24.3
+  object_type: commit
+  object_id: 4dc9e3b76329d03c00f4ddc4c3ac5120dfbccd15
+- name: refs/heads/dependabot/maven/org.json-json-20250107
+  object_type: commit
+  object_id: 9b89bd6fb6a1b5fcfeae6433fc14718b0074b434
+- name: refs/heads/main
+  object_type: commit
+  object_id: 5c8cf83dd12956c4fb1ffc9c42e6428518df56f7
+- name: refs/pull/1/head
+  object_type: commit
+  object_id: 3432158010b7d2edcfb30e81942fa7ba96b0da75
+- name: refs/pull/10/head
+  object_type: commit
+  object_id: 3cb676d1ff69a3689dbd8001ba7594b519cd0f23
+- name: refs/pull/11/head
+  object_type: commit
+  object_id: 9e624e2dc14a22e2f48c279032401f41f9ed57b4
+- name: refs/pull/12/head
+  object_type: commit
+  object_id: f7f50736f27b030076d2258aba761b4996be1858
+- name: refs/pull/13/head
+  object_type: commit
+  object_id: f74afa001db97081fe9cf21f18c2dc22d8d8d0ae
+- name: refs/pull/13/merge
+  object_type: commit
+  object_id: 9ae2d922dca7768164b73f5fa023c3d8d0f45538
+- name: refs/pull/14/head
+  object_type: commit
+  object_id: 65a3e924a51c3bd7f1a674b12aed3cc333ca1d22
+- name: refs/pull/15/head
+  object_type: commit
+  object_id: 81c4ac9393936a57a9094e2cf2c9f6163238b57a
+- name: refs/pull/16/head
+  object_type: commit
+  object_id: 4dc9e3b76329d03c00f4ddc4c3ac5120dfbccd15
+- name: refs/pull/16/merge
+  object_type: commit
+  object_id: ca38f27a5fe694deb1d0f06898d6d4e083d5d11e
+- name: refs/pull/17/head
+  object_type: commit
+  object_id: 8b4761260c73125574b5fadcbd34d3bdc624eaea
+- name: refs/pull/17/merge
+  object_type: commit
+  object_id: 1d5c1312f360d951d67029b76b9e247da6ce4288
+- name: refs/pull/18/head
+  object_type: commit
+  object_id: 2ffdab1cfbc282ccc6d14f275881e5e13c8bc651
+- name: refs/pull/19/head
+  object_type: commit
+  object_id: 9b89bd6fb6a1b5fcfeae6433fc14718b0074b434
+- name: refs/pull/19/merge
+  object_type: commit
+  object_id: b6840ed2f8279401d772721bee5ade4af31d7678
+- name: refs/pull/2/head
+  object_type: commit
+  object_id: 4dc35f10abbf8506df8818ebb7d234c8b639e55b
+- name: refs/pull/3/head
+  object_type: commit
+  object_id: 04f9b912fd8113271def83cad58967ef4c89bf3c
+- name: refs/pull/4/head
+  object_type: commit
+  object_id: e50d96c587b3cc28d2e3e11036ad1dcf179a0cf0
+- name: refs/pull/5/head
+  object_type: commit
+  object_id: 50669fe000d6d94d67e5a33fae5ea7d1436be4d9
+- name: refs/pull/6/head
+  object_type: commit
+  object_id: 28545acfdc0773e7642d41e7d5d543afc72bd274
+- name: refs/pull/7/head
+  object_type: commit
+  object_id: 0fcb3789cadc23f1f902f5197bc7ebea9cee8acc
+- name: refs/pull/7/merge
+  object_type: commit
+  object_id: b33f0b3cbe3292eb3ac881b9adac3caf7e804329
+- name: refs/pull/8/head
+  object_type: commit
+  object_id: 36f3179bc9e8cfe278f6fd048c6cb208e7a5484a
+- name: refs/pull/9/head
+  object_type: commit
+  object_id: 34339937a5f0ce15a072bf1c29ac85414ebec20f
+- name: refs/tags/v0.3
+  object_type: commit
+  object_id: 30693db387b7dc5cacf134f6b38e20896b3ef592
+- name: refs/tags/v0.4
+  object_type: commit
+  object_id: 26522d29964c6e81a4431ecef43b312792a82402
+- name: refs/tags/v0.5
+  object_type: commit
+  object_id: 77d5cec5f9c669168d5e3020733e1f82ad6c7ae7
+- name: refs/tags/v0.5.1
+  object_type: commit
+  object_id: b3b8456cb775f48c2d3d201fc76b98a586e573b6
+- name: refs/tags/v0.5.2
+  object_type: tag
+  object_id: 086a7bd774415fa46913248bea4f8fa4c2784dbf
+- name: refs/tags/v0.5.3
+  object_type: commit
+  object_id: 420e1f664e236d9c39f67eac2d8fafaa55f92415
+- name: refs/tags/v0.5.4
+  object_type: commit
+  object_id: 93622b73186c182afca9de4040f0366ea1da5f17
+gaps: []
+rights_exceptions:
+- The local mirror is not committed; redistribution follows the upstream repository
+  license.
+raw_materialization: corpus\raw\git\TEIC-ege-framework.git

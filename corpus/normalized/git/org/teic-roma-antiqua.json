@@ -1,0 +1,454 @@
+{
+  "entries": [
+    {
+      "mode": "100644",
+      "object_id": "ff342e88ddd33b52ca5d9d6a15d8edcacdd581ba",
+      "object_type": "blob",
+      "path": ".gitignore"
+    },
+    {
+      "mode": "100644",
+      "object_id": "47e824bc7f6add09f55bfdff2a27eb4343b922d9",
+      "object_type": "blob",
+      "path": "ChangeLog"
+    },
+    {
+      "mode": "100644",
+      "object_id": "a2b18af5ded23b333f6dca117c84fb2fd7d73449",
+      "object_type": "blob",
+      "path": "Dockerfile"
+    },
+    {
+      "mode": "100644",
+      "object_id": "3ccabc0c5d6e6dd7ce9036587e7cb4415896da97",
+      "object_type": "blob",
+      "path": "Makefile"
+    },
+    {
+      "mode": "100644",
+      "object_id": "ac7075966fb3d2ed8a0e90e86fff317dbef1f58d",
+      "object_type": "blob",
+      "path": "Project"
+    },
+    {
+      "mode": "100644",
+      "object_id": "7235933597f0fea4232d2afa53fc553232bd2f77",
+      "object_type": "blob",
+      "path": "README.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "60a793a2708e7264c04a0e85b719549443a853c2",
+      "object_type": "blob",
+      "path": "TEI-glow.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "898b490871312baf6d5c8d7774f657a250248948",
+      "object_type": "blob",
+      "path": "TODO"
+    },
+    {
+      "mode": "100644",
+      "object_id": "6b244dcd6960b101b0ab4d9e5162d39632dec80c",
+      "object_type": "blob",
+      "path": "VERSION"
+    },
+    {
+      "mode": "100644",
+      "object_id": "b8626c4cff2849624fb67f87cd0ad72b163671ad",
+      "object_type": "blob",
+      "path": "debian-tei-roma/debian/compat"
+    },
+    {
+      "mode": "100644",
+      "object_id": "589380e03ae35744befcba30d3c3a984f8310ba9",
+      "object_type": "blob",
+      "path": "debian-tei-roma/debian/control"
+    },
+    {
+      "mode": "100644",
+      "object_id": "b3ff1e12e35faf696fa01c13678da6492ba0cc5f",
+      "object_type": "blob",
+      "path": "debian-tei-roma/debian/copyright"
+    },
+    {
+      "mode": "100755",
+      "object_id": "82568cd9148a796dd14a0a9af94c1c5b710b6a8b",
+      "object_type": "blob",
+      "path": "debian-tei-roma/debian/rules"
+    },
+    {
+      "mode": "100644",
+      "object_id": "89ae9db8f88b823b6a7eabf55e203658739da122",
+      "object_type": "blob",
+      "path": "debian-tei-roma/debian/source/format"
+    },
+    {
+      "mode": "100755",
+      "object_id": "fd83a40d1e62d46af47d6f5bfdaeb452da1dc48a",
+      "object_type": "blob",
+      "path": "docker-roma-entrypoint.sh"
+    },
+    {
+      "mode": "100644",
+      "object_id": "b59828bb1e7794ee2be0901e2f6072402914f515",
+      "object_type": "blob",
+      "path": "g/pgb_bottom.gif"
+    },
+    {
+      "mode": "100644",
+      "object_id": "bcd27b9973f3a2cbfb5c98de5e65410bd923816b",
+      "object_type": "blob",
+      "path": "g/pgb_left.gif"
+    },
+    {
+      "mode": "100644",
+      "object_id": "b40e97f4c8d96c1ebb3d611c9f4c5a9df09ee89c",
+      "object_type": "blob",
+      "path": "g/pgb_right.gif"
+    },
+    {
+      "mode": "100644",
+      "object_id": "12ef86afb426970c7e8b1902b731d607b55c0201",
+      "object_type": "blob",
+      "path": "g/pgb_top.gif"
+    },
+    {
+      "mode": "100644",
+      "object_id": "fc2560981ee1caca400e225e48d282106f907f2d",
+      "object_type": "blob",
+      "path": "g/pixel.gif"
+    },
+    {
+      "mode": "100644",
+      "object_id": "6492ea46bf61faabb299334ee6740b1a482b6751",
+      "object_type": "blob",
+      "path": "index.html"
+    },
+    {
+      "mode": "100755",
+      "object_id": "d7350496ab43841840606c13bed4034155eced53",
+      "object_type": "blob",
+      "path": "mydch"
+    },
+    {
+      "mode": "100644",
+      "object_id": "136510e26d4ae35eaed6aba359015e07a42759ad",
+      "object_type": "blob",
+      "path": "notam/notamHandler.php"
+    },
+    {
+      "mode": "100644",
+      "object_id": "3b50bcc22d83496fbfc759ecd636aca097e2c695",
+      "object_type": "blob",
+      "path": "notam/stylesheets/notam2html.xsl"
+    },
+    {
+      "mode": "100644",
+      "object_id": "d24a165d5031058cf27a018de372022b9ea35b9c",
+      "object_type": "blob",
+      "path": "oddtofilter.xsl"
+    },
+    {
+      "mode": "100644",
+      "object_id": "1dd6a335492e3291be5e64258a3336d716898c89",
+      "object_type": "blob",
+      "path": "parser/parser.php"
+    },
+    {
+      "mode": "100644",
+      "object_id": "016df3a1bdf3a7777f581fa82a17e129dedd4129",
+      "object_type": "blob",
+      "path": "progressbar/progressbar.js"
+    },
+    {
+      "mode": "100644",
+      "object_id": "e3d0a995e451bf586406940b3fd02e2b8e65c5c6",
+      "object_type": "blob",
+      "path": "resource/resource.php"
+    },
+    {
+      "mode": "100644",
+      "object_id": "80e7be6f797ddabf52dca3e5e343ef6c207898e5",
+      "object_type": "blob",
+      "path": "roma.1"
+    },
+    {
+      "mode": "100644",
+      "object_id": "fe5c33f58290cfbef0e2a5cd60bdf3a8b0c73dbb",
+      "object_type": "blob",
+      "path": "roma.css"
+    },
+    {
+      "mode": "100644",
+      "object_id": "796e43aef9ba1d47066e1ab86c403de7bf30eac9",
+      "object_type": "blob",
+      "path": "roma.js"
+    },
+    {
+      "mode": "100644",
+      "object_id": "e8b10cae9273520befbb058b8f0ec26fa2c70f8e",
+      "object_type": "blob",
+      "path": "roma/config-dist.php"
+    },
+    {
+      "mode": "100644",
+      "object_id": "8cd7fc39cdb643a7d7241a1e23a0d55a6c0cdff3",
+      "object_type": "blob",
+      "path": "roma/docdom.php"
+    },
+    {
+      "mode": "100644",
+      "object_id": "ad382e152e721ef77e1f725ca58145e97d667892",
+      "object_type": "blob",
+      "path": "roma/exception.php"
+    },
+    {
+      "mode": "100644",
+      "object_id": "0c6c85b2338cb77c1c460b597ac0b0b040be7649",
+      "object_type": "blob",
+      "path": "roma/oddschema.odd"
+    },
+    {
+      "mode": "100644",
+      "object_id": "23ee0ad020f7aba44a870caf838732fd41ed62b5",
+      "object_type": "blob",
+      "path": "roma/relaxng.rng"
+    },
+    {
+      "mode": "100644",
+      "object_id": "3d6c383f90ea56fe9992380631d32e0f578d6097",
+      "object_type": "blob",
+      "path": "roma/res/addAttributes.res"
+    },
+    {
+      "mode": "100644",
+      "object_id": "6b1d7731054859f82050fb778a3f0cd531cfbd5b",
+      "object_type": "blob",
+      "path": "roma/res/addElements.res"
+    },
+    {
+      "mode": "100644",
+      "object_id": "a450cab1fe45ff3d8b570b3028f023d33383d24c",
+      "object_type": "blob",
+      "path": "roma/res/changeAttributes.res"
+    },
+    {
+      "mode": "100644",
+      "object_id": "3d48fb10516068528918fecace5803be3c3dedb7",
+      "object_type": "blob",
+      "path": "roma/res/changeClasses.res"
+    },
+    {
+      "mode": "100644",
+      "object_id": "8f34ce01783535fc45e449277c0d7a83fda98bdd",
+      "object_type": "blob",
+      "path": "roma/res/changeElement.res"
+    },
+    {
+      "mode": "100644",
+      "object_id": "c327e2f1045eb5b384b29c0d60ece7c873ee37c9",
+      "object_type": "blob",
+      "path": "roma/res/changeModule.res"
+    },
+    {
+      "mode": "100644",
+      "object_id": "883009c78202e579d80aaabef55389f90e3c66d3",
+      "object_type": "blob",
+      "path": "roma/res/createDocumentation.res"
+    },
+    {
+      "mode": "100644",
+      "object_id": "a6fe859eaaed71f6d9985af0956224d95859adb7",
+      "object_type": "blob",
+      "path": "roma/res/createSchema.res"
+    },
+    {
+      "mode": "100644",
+      "object_id": "dda06f7eda58cae58317930dc7bc5ea7719073a1",
+      "object_type": "blob",
+      "path": "roma/res/customizeCustomization.res"
+    },
+    {
+      "mode": "100644",
+      "object_id": "b23e4c15059f276c285645b6d998f00819906a47",
+      "object_type": "blob",
+      "path": "roma/res/customizeLanguage.res"
+    },
+    {
+      "mode": "100644",
+      "object_id": "48334b80bd73d38e8cb4f8e395217db6bf883c05",
+      "object_type": "blob",
+      "path": "roma/res/listAttributes.res"
+    },
+    {
+      "mode": "100644",
+      "object_id": "2ee4d2f5109973cbf3230e01aca68c0f313c2472",
+      "object_type": "blob",
+      "path": "roma/res/listElements.res"
+    },
+    {
+      "mode": "100644",
+      "object_id": "c452e027942624542ce9ca249b0b1910bb49a164",
+      "object_type": "blob",
+      "path": "roma/res/main.res"
+    },
+    {
+      "mode": "100644",
+      "object_id": "d2471476ad7a5fc85872dd89c37eb062639d5d0b",
+      "object_type": "blob",
+      "path": "roma/res/merge.pl"
+    },
+    {
+      "mode": "100644",
+      "object_id": "2cfc7cfb127baaddd3463e03b494a82b978318cf",
+      "object_type": "blob",
+      "path": "roma/res/modules.res"
+    },
+    {
+      "mode": "100644",
+      "object_id": "03acf13f910893bc78f2c0119747bdaf37a3b876",
+      "object_type": "blob",
+      "path": "roma/roma.php"
+    },
+    {
+      "mode": "100644",
+      "object_id": "14e0595581440e756dd54924a7ec5abf73be2d23",
+      "object_type": "blob",
+      "path": "roma/romadom.php"
+    },
+    {
+      "mode": "100644",
+      "object_id": "391c58ff0fe5620fd509f1daad865d324b4df83e",
+      "object_type": "blob",
+      "path": "roma/sanitychecker.php"
+    },
+    {
+      "mode": "100644",
+      "object_id": "f113c27406876a1adc301f78c9d79ecab12802b4",
+      "object_type": "blob",
+      "path": "roma/sanitychecker_errorhandler.php"
+    },
+    {
+      "mode": "100644",
+      "object_id": "46ba9dc69ad35fa31117b09cdbfd67c1681aee07",
+      "object_type": "blob",
+      "path": "roma/stylesheets/addAttribute.xsl"
+    },
+    {
+      "mode": "100644",
+      "object_id": "c0e6771c0b3402280dce8662c58fcaf0b8d1e772",
+      "object_type": "blob",
+      "path": "roma/stylesheets/addElements.xsl"
+    },
+    {
+      "mode": "100644",
+      "object_id": "cba6f43d739e2055b37f6363f51d517e96080e6d",
+      "object_type": "blob",
+      "path": "roma/stylesheets/changeClasses.xsl"
+    },
+    {
+      "mode": "100644",
+      "object_id": "72d37186555e187654bd568c3d409b77811df3af",
+      "object_type": "blob",
+      "path": "roma/stylesheets/changeModules.xsl"
+    },
+    {
+      "mode": "100644",
+      "object_id": "e346343c72f509cb84de4cfb7558245f93585871",
+      "object_type": "blob",
+      "path": "roma/stylesheets/listAddedAttributes.xsl"
+    },
+    {
+      "mode": "100644",
+      "object_id": "55c30f574e90148fe7a4d9e0e23f28611745aefc",
+      "object_type": "blob",
+      "path": "roma/stylesheets/listAddedElements.xsl"
+    },
+    {
+      "mode": "100644",
+      "object_id": "80d68668681e6e54a00b11c9820776069ca0eae8",
+      "object_type": "blob",
+      "path": "roma/stylesheets/modules.xsl"
+    },
+    {
+      "mode": "100644",
+      "object_id": "9b8851705b592ff1b2b371f87d1fc9f2498687be",
+      "object_type": "blob",
+      "path": "roma/stylesheets/sanityChecker.xsl"
+    },
+    {
+      "mode": "100644",
+      "object_id": "2e84dad2e6c6ab663e9e2b62e4c5c5bf081c3edd",
+      "object_type": "blob",
+      "path": "roma/templates/createDocumentation.tem"
+    },
+    {
+      "mode": "100644",
+      "object_id": "ed50a516f2cb3691ddb91bea95a732e411ae414c",
+      "object_type": "blob",
+      "path": "roma/templates/createSchema.tem"
+    },
+    {
+      "mode": "100644",
+      "object_id": "ce74b8fae7a6e4adca43acc3180a6ac9e86c648d",
+      "object_type": "blob",
+      "path": "roma/templates/customizeCustomization.tem"
+    },
+    {
+      "mode": "100644",
+      "object_id": "4407ce2b3f00798eddb83c98557e0c68c5762dcb",
+      "object_type": "blob",
+      "path": "roma/templates/customizeLanguage.tem"
+    },
+    {
+      "mode": "100644",
+      "object_id": "e4112a84c63bd20ca74e3cacee018adc9d8e3f1d",
+      "object_type": "blob",
+      "path": "roma/templates/main.tem"
+    },
+    {
+      "mode": "100644",
+      "object_id": "5ca6fdcb7f4f2822945da6c1607d8aa705f22c14",
+      "object_type": "blob",
+      "path": "roma/templates/sanityCheck.tem"
+    },
+    {
+      "mode": "100644",
+      "object_id": "f4be84505ac3a02538b7aafeaf497ee039ffcd07",
+      "object_type": "blob",
+      "path": "roma/xml/roma.xml"
+    },
+    {
+      "mode": "100755",
+      "object_id": "97dca1b5fc0ed4da57ad8733070af4e7f81b3781",
+      "object_type": "blob",
+      "path": "roma2.sh"
+    },
+    {
+      "mode": "100644",
+      "object_id": "8056ff1033e1174c244eb39b12a39f45d4feb10c",
+      "object_type": "blob",
+      "path": "sitemap-dist.xmap"
+    },
+    {
+      "mode": "100644",
+      "object_id": "66ed104ff6bc5c37e3ffb52dc1bcd4d7e59a95a2",
+      "object_type": "blob",
+      "path": "startroma.php"
+    },
+    {
+      "mode": "100644",
+      "object_id": "292cc038755d93d8515af71a7af6606c21ee60fb",
+      "object_type": "blob",
+      "path": "teilogo.jpg"
+    }
+  ],
+  "ref_requested": "HEAD",
+  "repository": "https://github.com/TEIC/Roma-Antiqua.git",
+  "resolved_commit": "931c3253f6d22b50a4e157b63be7ff665a472327",
+  "root_tree": "4c8a295c381cfaa98c929c829eeb1feba6605567",
+  "schema_version": 1,
+  "source_id": "teic-public-git-repositories"
+}

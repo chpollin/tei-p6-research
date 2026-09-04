@@ -1,0 +1,108 @@
+schema_version: 1
+run_id: 2026-09-04-teic-public-git-repositories-teic-oo-converter
+source_id: teic-public-git-repositories
+started_at: '2026-09-04T16:36:39Z'
+finished_at: '2026-09-04T16:36:44Z'
+status: observable-complete
+adapter:
+  name: tools.corpus.git_snapshot
+  version: 1
+requests:
+- kind: git-mirror
+  repository: https://github.com/TEIC/oo-converter.git
+  action: cloned
+  requested_ref: HEAD
+  resolved_commit: 752b83cbffb28551adf750f9d2acc1bd76f266fd
+objects:
+- kind: git-tree-inventory
+  path: corpus/normalized/git/org/teic-oo-converter.json
+  sha256: d1e92170583c196e8b63f9f84135336cedc35041f2d94ffd74b745e53bbff560
+  root_tree: db792fd32e7c0a6801d025462f342adb268da32e
+counts:
+  commits_all_refs: 58
+  refs: 26
+  tree_entries: 20
+refs:
+- name: refs/heads/dependabot/maven/commons-cli-commons-cli-1.9.0
+  object_type: commit
+  object_id: ace69fa879cd9f5e7dc7b0a7b727805e793d9bf0
+- name: refs/heads/dependabot/maven/commons-io-commons-io-2.18.0
+  object_type: commit
+  object_id: 5b25961c6895baf9fbec8e26964f97e634af8e8c
+- name: refs/heads/dependabot/maven/org.json-json-20250107
+  object_type: commit
+  object_id: acfe3219af73448e7d71d37ebad703872a17ec6b
+- name: refs/heads/main
+  object_type: commit
+  object_id: 752b83cbffb28551adf750f9d2acc1bd76f266fd
+- name: refs/pull/1/head
+  object_type: commit
+  object_id: 4f0af4e327e59dd9fd5e7848e1bb65118ea3b483
+- name: refs/pull/10/head
+  object_type: commit
+  object_id: 77701954e47698564e96d4c795dbe2f9e788bb3f
+- name: refs/pull/11/head
+  object_type: commit
+  object_id: 6856ffc42d5e72d8298ac23c37f26ef185e8d4a0
+- name: refs/pull/12/head
+  object_type: commit
+  object_id: ace69fa879cd9f5e7dc7b0a7b727805e793d9bf0
+- name: refs/pull/12/merge
+  object_type: commit
+  object_id: cf9754922ca5d0c51b0fdc10824c858d0d415dcf
+- name: refs/pull/13/head
+  object_type: commit
+  object_id: 5b25961c6895baf9fbec8e26964f97e634af8e8c
+- name: refs/pull/13/merge
+  object_type: commit
+  object_id: b117d4bb537108d378b83404980f5d1852e071fd
+- name: refs/pull/14/head
+  object_type: commit
+  object_id: 8fcea6fb5e147407e90349da5c8dc368b822b9ab
+- name: refs/pull/15/head
+  object_type: commit
+  object_id: acfe3219af73448e7d71d37ebad703872a17ec6b
+- name: refs/pull/15/merge
+  object_type: commit
+  object_id: 372595c5f65f43e9608a1b64d4c292103f49702d
+- name: refs/pull/2/head
+  object_type: commit
+  object_id: 3fd65abe3e8bff471265d0cc5ce736d96f51c89e
+- name: refs/pull/3/head
+  object_type: commit
+  object_id: c9eca0779c696a9f18d35f6325c0f13f5297e609
+- name: refs/pull/4/head
+  object_type: commit
+  object_id: c5d6c7f7f55d8abae22cf0739918b4835ce762cd
+- name: refs/pull/5/head
+  object_type: commit
+  object_id: 9669c6fe8807101a51f04112d2609a522c4c201e
+- name: refs/pull/6/head
+  object_type: commit
+  object_id: 945bf6a34d3a5770bb0d36d620ef856c411e1f2e
+- name: refs/pull/7/head
+  object_type: commit
+  object_id: 46b015e645278a96dae05ae4891731cbfb1fc062
+- name: refs/pull/8/head
+  object_type: commit
+  object_id: 4add520793088113dff009a2dbb8122a74d204c5
+- name: refs/pull/9/head
+  object_type: commit
+  object_id: 91144af5c8f4e10ea4e8ed87ba70b100cfe30ccc
+- name: refs/tags/v1.0
+  object_type: commit
+  object_id: 593fc83a5ae26e25a500bc5faae7eeb1ff40d318
+- name: refs/tags/v1.1
+  object_type: commit
+  object_id: 630ba96ce7d6a05a436a83ecbe4cb49caec5948b
+- name: refs/tags/v1.1.1
+  object_type: commit
+  object_id: b50c06d088cb1382c911dc01c2dee3db7d5bd918
+- name: refs/tags/v1.1.2
+  object_type: commit
+  object_id: b4b8cc7b2394dbfc1cbc6aa8d2cba93d8386673e
+gaps: []
+rights_exceptions:
+- The local mirror is not committed; redistribution follows the upstream repository
+  license.
+raw_materialization: corpus\raw\git\TEIC-oo-converter.git

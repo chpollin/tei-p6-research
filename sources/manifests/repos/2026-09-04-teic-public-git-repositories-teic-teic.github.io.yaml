@@ -1,0 +1,39 @@
+schema_version: 1
+run_id: 2026-09-04-teic-public-git-repositories-teic-teic.github.io
+source_id: teic-public-git-repositories
+started_at: '2026-09-04T16:39:23Z'
+finished_at: '2026-09-04T16:43:25Z'
+status: observable-complete
+adapter:
+  name: tools.corpus.git_snapshot
+  version: 1
+requests:
+- kind: git-mirror
+  repository: https://github.com/TEIC/teic.github.io.git
+  action: cloned
+  requested_ref: HEAD
+  resolved_commit: 61ac6f2d6b4aeb9310cdfd2e730761ccb1b68f6e
+objects:
+- kind: git-tree-inventory
+  path: corpus/normalized/git/org/teic-teic.github.io.json
+  sha256: 65744f850ff757002ee571aeaf131bd5b29e0c165cbd42cd5e99fcf3087bea65
+  root_tree: f22b1cc12f7a91a812faa9e9841aa5d786a583a3
+counts:
+  commits_all_refs: 136
+  refs: 3
+  tree_entries: 12538
+refs:
+- name: refs/heads/master
+  object_type: commit
+  object_id: 61ac6f2d6b4aeb9310cdfd2e730761ccb1b68f6e
+- name: refs/pull/1/head
+  object_type: commit
+  object_id: 5ae98ccf4a715ed82703df9e6d02becac0859cc1
+- name: refs/pull/1/merge
+  object_type: commit
+  object_id: 096007fecedf0e9e689adb42fe61b223bbb6315f
+gaps: []
+rights_exceptions:
+- The local mirror is not committed; redistribution follows the upstream repository
+  license.
+raw_materialization: corpus\raw\git\TEIC-teic.github.io.git

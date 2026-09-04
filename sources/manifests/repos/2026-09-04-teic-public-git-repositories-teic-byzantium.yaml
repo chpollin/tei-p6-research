@@ -1,0 +1,33 @@
+schema_version: 1
+run_id: 2026-09-04-teic-public-git-repositories-teic-byzantium
+source_id: teic-public-git-repositories
+started_at: '2026-09-04T16:36:06Z'
+finished_at: '2026-09-04T16:36:24Z'
+status: observable-complete
+adapter:
+  name: tools.corpus.git_snapshot
+  version: 1
+requests:
+- kind: git-mirror
+  repository: https://github.com/TEIC/Byzantium.git
+  action: cloned
+  requested_ref: HEAD
+  resolved_commit: 59971fd8292a753cf4d056758d14d12666da3ed9
+objects:
+- kind: git-tree-inventory
+  path: corpus/normalized/git/org/teic-byzantium.json
+  sha256: 7887873b8b2e5e2541d11f4253ad12070d8992b297d2f6b272f7cf2c78d8f7ac
+  root_tree: 10ea6129c7482314d226dfe1405dce6cc72ef076
+counts:
+  commits_all_refs: 119
+  refs: 1
+  tree_entries: 246
+refs:
+- name: refs/heads/master
+  object_type: commit
+  object_id: 59971fd8292a753cf4d056758d14d12666da3ed9
+gaps: []
+rights_exceptions:
+- The local mirror is not committed; redistribution follows the upstream repository
+  license.
+raw_materialization: corpus\raw\git\TEIC-Byzantium.git

@@ -1,0 +1,50 @@
+schema_version: 1
+lock_id: teic-official-tooling-observation
+source_id: teic-tooling
+as_of: "2026-09-04"
+retrieval_status: partial
+
+repositories:
+  - owner: TEIC
+    name: romajs
+    role: odd-customization-ui
+  - owner: TEIC
+    name: TEIGarage
+    role: conversion-service
+  - owner: TEIC
+    name: ege-validator
+    role: validation-service
+  - owner: TEIC
+    name: ege-xsl-converter
+    role: conversion-service
+  - owner: TEIC
+    name: tei-converter
+    role: conversion-library
+  - owner: TEIC
+    name: oxygen-tei
+    role: editor-integration
+
+scope:
+  include_git_history: true
+  include_releases: true
+  include_work_items: true
+  rule: Observe exact public revisions and treat behavior as implementation evidence rather than normative TEI semantics.
+
+rights:
+  per_repository_and_item_review: true
+
+counts:
+  registered_repositories_materialized: 6
+  registered_repository_tree_entries: 1023
+  registered_repository_commits_all_refs_sum: 1513
+gaps:
+  - code: github-work-items-not-yet-acquired
+    status: blocked-authentication
+
+manifests:
+  - sources/manifests/2026-09-04-teic-romajs.yaml
+  - sources/manifests/2026-09-04-teic-teigarage.yaml
+  - sources/manifests/2026-09-04-teic-ege-validator.yaml
+  - sources/manifests/2026-09-04-teic-ege-xsl-converter.yaml
+  - sources/manifests/2026-09-04-teic-tei-converter.yaml
+  - sources/manifests/2026-09-04-teic-oxygen-tei.yaml

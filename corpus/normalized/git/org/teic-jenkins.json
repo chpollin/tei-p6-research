@@ -1,0 +1,190 @@
+{
+  "entries": [
+    {
+      "mode": "100644",
+      "object_id": "6b8710a711f3b689885aa5c26c6c06bde348e82b",
+      "object_type": "blob",
+      "path": ".dockerignore"
+    },
+    {
+      "mode": "100644",
+      "object_id": "0d08e261a2ae9d87844cc5092013cf01f98b301d",
+      "object_type": "blob",
+      "path": ".github/dependabot.yml"
+    },
+    {
+      "mode": "100644",
+      "object_id": "ce69520f6b23ab0ab7ee62a5821b970a3ff52571",
+      "object_type": "blob",
+      "path": ".github/workflows/docker-publish.yml"
+    },
+    {
+      "mode": "100644",
+      "object_id": "0b979bb5d97f636ef858ff5517510f458d7e4c03",
+      "object_type": "blob",
+      "path": ".gitignore"
+    },
+    {
+      "mode": "100644",
+      "object_id": "fb859010474a340e1e9a301e3003dbbeab3bbdd9",
+      "object_type": "blob",
+      "path": "Dockerfile"
+    },
+    {
+      "mode": "100644",
+      "object_id": "8dada3edaf50dbc082c9a125058f25def75e625a",
+      "object_type": "blob",
+      "path": "LICENSE"
+    },
+    {
+      "mode": "100644",
+      "object_id": "68bbb87ddf912bd954ed698d6204aaea287a0f12",
+      "object_type": "blob",
+      "path": "README.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "124aa6355c4282ae93a2c5b1e667ae5f00f548f4",
+      "object_type": "blob",
+      "path": "discussion.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "c0bb779830b108b6d299ebee16b04f97280081ee",
+      "object_type": "blob",
+      "path": "jobs/Guidelines-Link-Check/config.xml"
+    },
+    {
+      "mode": "100644",
+      "object_id": "cea526df7dffa41cf16939daf54114d070ed31d5",
+      "object_type": "blob",
+      "path": "jobs/Guidelines-Link-Check/linkchecker.xsl"
+    },
+    {
+      "mode": "100644",
+      "object_id": "6b64250e6873ec89a7629d517c80118c59ce176f",
+      "object_type": "blob",
+      "path": "jobs/Guidelines-Link-Check/linkcheckerrcalphabeta"
+    },
+    {
+      "mode": "100644",
+      "object_id": "6b64250e6873ec89a7629d517c80118c59ce176f",
+      "object_type": "blob",
+      "path": "jobs/Guidelines-Link-Check/linkcheckerrcrelease"
+    },
+    {
+      "mode": "100644",
+      "object_id": "28ec07c186ec41479b4a73263dfa49e28d51f034",
+      "object_type": "blob",
+      "path": "jobs/Roma/config.xml"
+    },
+    {
+      "mode": "100644",
+      "object_id": "2913de6154621b171df3f8a8f3e7f5d4c1a4692d",
+      "object_type": "blob",
+      "path": "jobs/Stylesheets-dev/config.xml"
+    },
+    {
+      "mode": "100644",
+      "object_id": "005ed7cd4e553d1ea1fc82d91064758b30b5f97c",
+      "object_type": "blob",
+      "path": "jobs/Stylesheets-release-7.44.0/config.xml"
+    },
+    {
+      "mode": "100644",
+      "object_id": "8316fce79a56dea2085150d812d59f197d4dbcc7",
+      "object_type": "blob",
+      "path": "jobs/Stylesheets/config.xml"
+    },
+    {
+      "mode": "100644",
+      "object_id": "4711b4fa4642878fab6322b436758cd0901818af",
+      "object_type": "blob",
+      "path": "jobs/TEIP5-Documentation-dev/config.xml"
+    },
+    {
+      "mode": "100644",
+      "object_id": "a1c9fd6df7dd6ec00fb740beddcbdbd7fb884ead",
+      "object_type": "blob",
+      "path": "jobs/TEIP5-Documentation-release-3.3.0/config.xml"
+    },
+    {
+      "mode": "100644",
+      "object_id": "4388f8254cc30d7deb3c6ea6064e9cd3aff0b927",
+      "object_type": "blob",
+      "path": "jobs/TEIP5-Documentation/config.xml"
+    },
+    {
+      "mode": "100644",
+      "object_id": "e3f8472219ed614aa4a1db3d3dc3d82705277934",
+      "object_type": "blob",
+      "path": "jobs/TEIP5-Test-dev/config.xml"
+    },
+    {
+      "mode": "100644",
+      "object_id": "1c3326f91cc9e2ec00592adb2dc172488b229a6c",
+      "object_type": "blob",
+      "path": "jobs/TEIP5-Test-release-3.3.0/config.xml"
+    },
+    {
+      "mode": "100644",
+      "object_id": "6e7c1b073e6ff2be11c399ec07a0286954918118",
+      "object_type": "blob",
+      "path": "jobs/TEIP5-Test/config.xml"
+    },
+    {
+      "mode": "100644",
+      "object_id": "5a113edd81791f9ea90200d8fbf06b821552247a",
+      "object_type": "blob",
+      "path": "jobs/TEIP5-dev/config.xml"
+    },
+    {
+      "mode": "100644",
+      "object_id": "80871a3c0395045a842f915cc875bf214574f7d6",
+      "object_type": "blob",
+      "path": "jobs/TEIP5-release-3.3.0/config.xml"
+    },
+    {
+      "mode": "100644",
+      "object_id": "c4a28e5abb69007498161e1237d6bc46286b5173",
+      "object_type": "blob",
+      "path": "jobs/TEIP5/config.xml"
+    },
+    {
+      "mode": "100755",
+      "object_id": "7b042be0fb4e83c0d98fc7748101feeae3b0842d",
+      "object_type": "blob",
+      "path": "jobs/backup-issues/backup-issues.sh"
+    },
+    {
+      "mode": "100644",
+      "object_id": "9bec8e85c27429f9f14f6af58cd438928cdb25ea",
+      "object_type": "blob",
+      "path": "jobs/backup-issues/config.xml"
+    },
+    {
+      "mode": "100644",
+      "object_id": "8a5fc3c158418d3a8f0cdbef5445b113d6f86d6c",
+      "object_type": "blob",
+      "path": "jobs/oxygen-tei-bleeding/config.xml"
+    },
+    {
+      "mode": "100644",
+      "object_id": "ece28bc147ab93a499c397d2b10edd5416b1c479",
+      "object_type": "blob",
+      "path": "jobs/oxygen-tei-stable/config.xml"
+    },
+    {
+      "mode": "100644",
+      "object_id": "62da2bac6bc4f21d1dc835e65b8f57f56fa4ce44",
+      "object_type": "blob",
+      "path": "tei-log-parse-rules"
+    }
+  ],
+  "ref_requested": "HEAD",
+  "repository": "https://github.com/TEIC/Jenkins.git",
+  "resolved_commit": "c89e77c885228b25ed3febb14d81dd0892f34dd8",
+  "root_tree": "bb6576d2d19a1dce7b07714ca020e4cbbbe74ab8",
+  "schema_version": 1,
+  "source_id": "teic-public-git-repositories"
+}

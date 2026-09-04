@@ -1,0 +1,58 @@
+{
+  "entries": [
+    {
+      "mode": "100644",
+      "object_id": "6b8710a711f3b689885aa5c26c6c06bde348e82b",
+      "object_type": "blob",
+      "path": ".dockerignore"
+    },
+    {
+      "mode": "100644",
+      "object_id": "a035fd6dca04794693f5b4f54aba7d624be80229",
+      "object_type": "blob",
+      "path": "Dockerfile"
+    },
+    {
+      "mode": "100644",
+      "object_id": "28d076cccbf8d2248cc5d55b89c91ba8514dd427",
+      "object_type": "blob",
+      "path": "README.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "7a046e8593c0436db4e4ca6661784c5f81818c8c",
+      "object_type": "blob",
+      "path": "build.xml"
+    },
+    {
+      "mode": "100644",
+      "object_id": "86f5ad773965ba76ef25bc45920cedef00ec1f3f",
+      "object_type": "blob",
+      "path": "index.tmpl"
+    },
+    {
+      "mode": "100644",
+      "object_id": "df013be6907463c0918eb0007454a33588b23486",
+      "object_type": "blob",
+      "path": "index.xsl"
+    },
+    {
+      "mode": "100644",
+      "object_id": "441029fccb67aa35e4899fbd9e381b8d65185e42",
+      "object_type": "blob",
+      "path": "tei-c.pub.key.asc"
+    },
+    {
+      "mode": "100755",
+      "object_id": "1515dfd891ea488988a5b01bbcd9a3736d7db5c1",
+      "object_type": "blob",
+      "path": "update-Docker-image.sh"
+    }
+  ],
+  "ref_requested": "HEAD",
+  "repository": "https://github.com/TEIC/TEI-apt-repo.git",
+  "resolved_commit": "a8b476d2defabe529a084ba143f275a0aba2b621",
+  "root_tree": "433a58a0be98d8943407a0dd58f531c27e559fe7",
+  "schema_version": 1,
+  "source_id": "teic-public-git-repositories"
+}

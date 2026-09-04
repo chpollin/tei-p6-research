@@ -1,0 +1,660 @@
+schema_version: 1
+run_id: 2026-09-04-tei-legacy-sourceforge-r2
+source_id: tei-legacy-sourceforge
+started_at: '2026-09-04T16:48:03Z'
+finished_at: '2026-09-04T17:01:16Z'
+status: partial
+adapter:
+  name: tools.corpus.sourceforge_snapshot
+  version: 1
+requests:
+  project: https://sourceforge.net/rest/p/tei
+  trackers:
+    bugs: https://sourceforge.net/rest/p/tei/bugs
+    feature-requests: https://sourceforge.net/rest/p/tei/feature-requests
+    support-requests: https://sourceforge.net/rest/p/tei/support-requests
+  workers: 2
+  resume_from: corpus/normalized/sourceforge/tei-legacy-trackers.jsonl
+  delay_seconds: 0.2
+project:
+  shortname: tei
+  name: Text Encoding Initiative
+  status: active
+  moved_to_url: ''
+objects:
+- kind: sourceforge-ticket-metadata
+  path: corpus/normalized/sourceforge/tei-legacy-trackers-r2.jsonl
+  sha256: d66a0cd652a31f9e6504bef762d7938c5651f3d70b282a0fbb6205c39e501e49
+counts:
+  tickets_by_tracker:
+    bugs: 774
+    feature-requests: 567
+    support-requests: 8
+  tickets: 1226
+  tickets_reused_from_prior_run: 660
+  comments: 7925
+  http_responses: 1148
+  gaps: 124
+gaps:
+- code: ticket-fetch-failed
+  tracker: feature-requests
+  ticket_num: 454
+  detail: 'failed to fetch https://sourceforge.net/rest/p/tei/feature-requests/454:
+    HTTP Error 429: Too Many Requests'
+- code: ticket-fetch-failed
+  tracker: feature-requests
+  ticket_num: 455
+  detail: 'failed to fetch https://sourceforge.net/rest/p/tei/feature-requests/455:
+    HTTP Error 429: Too Many Requests'
+- code: ticket-fetch-failed
+  tracker: feature-requests
+  ticket_num: 456
+  detail: 'failed to fetch https://sourceforge.net/rest/p/tei/feature-requests/456:
+    HTTP Error 429: Too Many Requests'
+- code: ticket-fetch-failed
+  tracker: feature-requests
+  ticket_num: 457
+  detail: 'failed to fetch https://sourceforge.net/rest/p/tei/feature-requests/457:
+    HTTP Error 429: Too Many Requests'
+- code: ticket-fetch-failed
+  tracker: feature-requests
+  ticket_num: 458
+  detail: 'failed to fetch https://sourceforge.net/rest/p/tei/feature-requests/458:
+    HTTP Error 429: Too Many Requests'
+- code: ticket-fetch-failed
+  tracker: feature-requests
+  ticket_num: 459
+  detail: 'failed to fetch https://sourceforge.net/rest/p/tei/feature-requests/459:
+    HTTP Error 429: Too Many Requests'
+- code: ticket-fetch-failed
+  tracker: feature-requests
+  ticket_num: 460
+  detail: 'failed to fetch https://sourceforge.net/rest/p/tei/feature-requests/460:
+    HTTP Error 429: Too Many Requests'
+- code: ticket-fetch-failed
+  tracker: feature-requests
+  ticket_num: 461
+  detail: 'failed to fetch https://sourceforge.net/rest/p/tei/feature-requests/461:
+    HTTP Error 429: Too Many Requests'
+- code: ticket-fetch-failed
+  tracker: feature-requests
+  ticket_num: 462
+  detail: 'failed to fetch https://sourceforge.net/rest/p/tei/feature-requests/462:
+    HTTP Error 429: Too Many Requests'
+- code: ticket-fetch-failed
+  tracker: feature-requests
+  ticket_num: 463
+  detail: 'failed to fetch https://sourceforge.net/rest/p/tei/feature-requests/463:
+    HTTP Error 429: Too Many Requests'
+- code: ticket-fetch-failed
+  tracker: feature-requests
+  ticket_num: 464
+  detail: 'failed to fetch https://sourceforge.net/rest/p/tei/feature-requests/464:
+    HTTP Error 429: Too Many Requests'
+- code: ticket-fetch-failed
+  tracker: feature-requests
+  ticket_num: 465
+  detail: 'failed to fetch https://sourceforge.net/rest/p/tei/feature-requests/465:
+    HTTP Error 429: Too Many Requests'
+- code: ticket-fetch-failed
+  tracker: feature-requests
+  ticket_num: 466
+  detail: 'failed to fetch https://sourceforge.net/rest/p/tei/feature-requests/466:
+    HTTP Error 429: Too Many Requests'
+- code: ticket-fetch-failed
+  tracker: feature-requests
+  ticket_num: 467
+  detail: 'failed to fetch https://sourceforge.net/rest/p/tei/feature-requests/467:
+    HTTP Error 429: Too Many Requests'
+- code: ticket-fetch-failed
+  tracker: feature-requests
+  ticket_num: 468
+  detail: 'failed to fetch https://sourceforge.net/rest/p/tei/feature-requests/468:
+    HTTP Error 429: Too Many Requests'
+- code: ticket-fetch-failed
+  tracker: feature-requests
+  ticket_num: 469
+  detail: 'failed to fetch https://sourceforge.net/rest/p/tei/feature-requests/469:
+    HTTP Error 429: Too Many Requests'
+- code: ticket-fetch-failed
+  tracker: feature-requests
+  ticket_num: 470
+  detail: 'failed to fetch https://sourceforge.net/rest/p/tei/feature-requests/470:
+    HTTP Error 429: Too Many Requests'
+- code: ticket-fetch-failed
+  tracker: feature-requests
+  ticket_num: 471
+  detail: 'failed to fetch https://sourceforge.net/rest/p/tei/feature-requests/471:
+    HTTP Error 429: Too Many Requests'
+- code: ticket-fetch-failed
+  tracker: feature-requests
+  ticket_num: 472
+  detail: 'failed to fetch https://sourceforge.net/rest/p/tei/feature-requests/472:
+    HTTP Error 429: Too Many Requests'
+- code: ticket-fetch-failed
+  tracker: feature-requests
+  ticket_num: 473
+  detail: 'failed to fetch https://sourceforge.net/rest/p/tei/feature-requests/473:
+    HTTP Error 429: Too Many Requests'
+- code: ticket-fetch-failed
+  tracker: feature-requests
+  ticket_num: 474
+  detail: 'failed to fetch https://sourceforge.net/rest/p/tei/feature-requests/474:
+    HTTP Error 429: Too Many Requests'
+- code: ticket-fetch-failed
+  tracker: feature-requests
+  ticket_num: 475
+  detail: 'failed to fetch https://sourceforge.net/rest/p/tei/feature-requests/475:
+    HTTP Error 429: Too Many Requests'
+- code: ticket-fetch-failed
+  tracker: feature-requests
+  ticket_num: 476
+  detail: 'failed to fetch https://sourceforge.net/rest/p/tei/feature-requests/476:
+    HTTP Error 429: Too Many Requests'
+- code: ticket-fetch-failed
+  tracker: feature-requests
+  ticket_num: 477
+  detail: 'failed to fetch https://sourceforge.net/rest/p/tei/feature-requests/477:
+    HTTP Error 429: Too Many Requests'
+- code: ticket-fetch-failed
+  tracker: feature-requests
+  ticket_num: 478
+  detail: 'failed to fetch https://sourceforge.net/rest/p/tei/feature-requests/478:
+    HTTP Error 429: Too Many Requests'
+- code: ticket-fetch-failed
+  tracker: feature-requests
+  ticket_num: 479
+  detail: 'failed to fetch https://sourceforge.net/rest/p/tei/feature-requests/479:
+    HTTP Error 429: Too Many Requests'
+- code: ticket-fetch-failed
+  tracker: feature-requests
+  ticket_num: 480
+  detail: 'failed to fetch https://sourceforge.net/rest/p/tei/feature-requests/480:
+    HTTP Error 429: Too Many Requests'
+- code: ticket-fetch-failed
+  tracker: feature-requests
+  ticket_num: 481
+  detail: 'failed to fetch https://sourceforge.net/rest/p/tei/feature-requests/481:
+    HTTP Error 429: Too Many Requests'
+- code: ticket-fetch-failed
+  tracker: feature-requests
+  ticket_num: 482
+  detail: 'failed to fetch https://sourceforge.net/rest/p/tei/feature-requests/482:
+    HTTP Error 429: Too Many Requests'
+- code: ticket-fetch-failed
+  tracker: feature-requests
+  ticket_num: 483
+  detail: 'failed to fetch https://sourceforge.net/rest/p/tei/feature-requests/483:
+    HTTP Error 429: Too Many Requests'
+- code: ticket-fetch-failed
+  tracker: feature-requests
+  ticket_num: 484
+  detail: 'failed to fetch https://sourceforge.net/rest/p/tei/feature-requests/484:
+    HTTP Error 429: Too Many Requests'
+- code: ticket-fetch-failed
+  tracker: feature-requests
+  ticket_num: 485
+  detail: 'failed to fetch https://sourceforge.net/rest/p/tei/feature-requests/485:
+    HTTP Error 429: Too Many Requests'
+- code: ticket-fetch-failed
+  tracker: feature-requests
+  ticket_num: 486
+  detail: 'failed to fetch https://sourceforge.net/rest/p/tei/feature-requests/486:
+    HTTP Error 429: Too Many Requests'
+- code: ticket-fetch-failed
+  tracker: feature-requests
+  ticket_num: 487
+  detail: 'failed to fetch https://sourceforge.net/rest/p/tei/feature-requests/487:
+    HTTP Error 429: Too Many Requests'
+- code: ticket-fetch-failed
+  tracker: feature-requests
+  ticket_num: 488
+  detail: 'failed to fetch https://sourceforge.net/rest/p/tei/feature-requests/488:
+    HTTP Error 429: Too Many Requests'
+- code: ticket-fetch-failed
+  tracker: feature-requests
+  ticket_num: 489
+  detail: 'failed to fetch https://sourceforge.net/rest/p/tei/feature-requests/489:
+    HTTP Error 429: Too Many Requests'
+- code: ticket-fetch-failed
+  tracker: feature-requests
+  ticket_num: 490
+  detail: 'failed to fetch https://sourceforge.net/rest/p/tei/feature-requests/490:
+    HTTP Error 429: Too Many Requests'
+- code: ticket-fetch-failed
+  tracker: feature-requests
+  ticket_num: 491
+  detail: 'failed to fetch https://sourceforge.net/rest/p/tei/feature-requests/491:
+    HTTP Error 429: Too Many Requests'
+- code: ticket-fetch-failed
+  tracker: feature-requests
+  ticket_num: 492
+  detail: 'failed to fetch https://sourceforge.net/rest/p/tei/feature-requests/492:
+    HTTP Error 429: Too Many Requests'
+- code: ticket-fetch-failed
+  tracker: feature-requests
+  ticket_num: 493
+  detail: 'failed to fetch https://sourceforge.net/rest/p/tei/feature-requests/493:
+    HTTP Error 429: Too Many Requests'
+- code: ticket-fetch-failed
+  tracker: feature-requests
+  ticket_num: 494
+  detail: 'failed to fetch https://sourceforge.net/rest/p/tei/feature-requests/494:
+    HTTP Error 429: Too Many Requests'
+- code: ticket-fetch-failed
+  tracker: feature-requests
+  ticket_num: 495
+  detail: 'failed to fetch https://sourceforge.net/rest/p/tei/feature-requests/495:
+    HTTP Error 429: Too Many Requests'
+- code: ticket-fetch-failed
+  tracker: feature-requests
+  ticket_num: 496
+  detail: 'failed to fetch https://sourceforge.net/rest/p/tei/feature-requests/496:
+    HTTP Error 429: Too Many Requests'
+- code: ticket-fetch-failed
+  tracker: feature-requests
+  ticket_num: 497
+  detail: 'failed to fetch https://sourceforge.net/rest/p/tei/feature-requests/497:
+    HTTP Error 429: Too Many Requests'
+- code: ticket-fetch-failed
+  tracker: feature-requests
+  ticket_num: 498
+  detail: 'failed to fetch https://sourceforge.net/rest/p/tei/feature-requests/498:
+    HTTP Error 429: Too Many Requests'
+- code: ticket-fetch-failed
+  tracker: feature-requests
+  ticket_num: 499
+  detail: 'failed to fetch https://sourceforge.net/rest/p/tei/feature-requests/499:
+    HTTP Error 429: Too Many Requests'
+- code: ticket-fetch-failed
+  tracker: feature-requests
+  ticket_num: 500
+  detail: 'failed to fetch https://sourceforge.net/rest/p/tei/feature-requests/500:
+    HTTP Error 429: Too Many Requests'
+- code: ticket-fetch-failed
+  tracker: feature-requests
+  ticket_num: 501
+  detail: 'failed to fetch https://sourceforge.net/rest/p/tei/feature-requests/501:
+    HTTP Error 429: Too Many Requests'
+- code: ticket-fetch-failed
+  tracker: feature-requests
+  ticket_num: 502
+  detail: 'failed to fetch https://sourceforge.net/rest/p/tei/feature-requests/502:
+    HTTP Error 429: Too Many Requests'
+- code: ticket-fetch-failed
+  tracker: feature-requests
+  ticket_num: 503
+  detail: 'failed to fetch https://sourceforge.net/rest/p/tei/feature-requests/503:
+    HTTP Error 429: Too Many Requests'
+- code: ticket-fetch-failed
+  tracker: feature-requests
+  ticket_num: 504
+  detail: 'failed to fetch https://sourceforge.net/rest/p/tei/feature-requests/504:
+    HTTP Error 429: Too Many Requests'
+- code: ticket-fetch-failed
+  tracker: feature-requests
+  ticket_num: 505
+  detail: 'failed to fetch https://sourceforge.net/rest/p/tei/feature-requests/505:
+    HTTP Error 429: Too Many Requests'
+- code: ticket-fetch-failed
+  tracker: feature-requests
+  ticket_num: 506
+  detail: 'failed to fetch https://sourceforge.net/rest/p/tei/feature-requests/506:
+    HTTP Error 429: Too Many Requests'
+- code: ticket-fetch-failed
+  tracker: feature-requests
+  ticket_num: 507
+  detail: 'failed to fetch https://sourceforge.net/rest/p/tei/feature-requests/507:
+    HTTP Error 429: Too Many Requests'
+- code: ticket-fetch-failed
+  tracker: feature-requests
+  ticket_num: 508
+  detail: 'failed to fetch https://sourceforge.net/rest/p/tei/feature-requests/508:
+    HTTP Error 429: Too Many Requests'
+- code: ticket-fetch-failed
+  tracker: feature-requests
+  ticket_num: 509
+  detail: 'failed to fetch https://sourceforge.net/rest/p/tei/feature-requests/509:
+    HTTP Error 429: Too Many Requests'
+- code: ticket-fetch-failed
+  tracker: feature-requests
+  ticket_num: 510
+  detail: 'failed to fetch https://sourceforge.net/rest/p/tei/feature-requests/510:
+    HTTP Error 429: Too Many Requests'
+- code: ticket-fetch-failed
+  tracker: feature-requests
+  ticket_num: 511
+  detail: 'failed to fetch https://sourceforge.net/rest/p/tei/feature-requests/511:
+    HTTP Error 429: Too Many Requests'
+- code: ticket-fetch-failed
+  tracker: feature-requests
+  ticket_num: 512
+  detail: 'failed to fetch https://sourceforge.net/rest/p/tei/feature-requests/512:
+    HTTP Error 429: Too Many Requests'
+- code: ticket-fetch-failed
+  tracker: feature-requests
+  ticket_num: 513
+  detail: 'failed to fetch https://sourceforge.net/rest/p/tei/feature-requests/513:
+    HTTP Error 429: Too Many Requests'
+- code: ticket-fetch-failed
+  tracker: feature-requests
+  ticket_num: 514
+  detail: 'failed to fetch https://sourceforge.net/rest/p/tei/feature-requests/514:
+    HTTP Error 429: Too Many Requests'
+- code: ticket-fetch-failed
+  tracker: feature-requests
+  ticket_num: 515
+  detail: 'failed to fetch https://sourceforge.net/rest/p/tei/feature-requests/515:
+    HTTP Error 429: Too Many Requests'
+- code: ticket-fetch-failed
+  tracker: feature-requests
+  ticket_num: 516
+  detail: 'failed to fetch https://sourceforge.net/rest/p/tei/feature-requests/516:
+    HTTP Error 429: Too Many Requests'
+- code: ticket-fetch-failed
+  tracker: feature-requests
+  ticket_num: 517
+  detail: 'failed to fetch https://sourceforge.net/rest/p/tei/feature-requests/517:
+    HTTP Error 429: Too Many Requests'
+- code: ticket-fetch-failed
+  tracker: feature-requests
+  ticket_num: 518
+  detail: 'failed to fetch https://sourceforge.net/rest/p/tei/feature-requests/518:
+    HTTP Error 429: Too Many Requests'
+- code: ticket-fetch-failed
+  tracker: feature-requests
+  ticket_num: 519
+  detail: 'failed to fetch https://sourceforge.net/rest/p/tei/feature-requests/519:
+    HTTP Error 429: Too Many Requests'
+- code: ticket-fetch-failed
+  tracker: feature-requests
+  ticket_num: 520
+  detail: 'failed to fetch https://sourceforge.net/rest/p/tei/feature-requests/520:
+    HTTP Error 429: Too Many Requests'
+- code: ticket-fetch-failed
+  tracker: feature-requests
+  ticket_num: 521
+  detail: 'failed to fetch https://sourceforge.net/rest/p/tei/feature-requests/521:
+    HTTP Error 429: Too Many Requests'
+- code: ticket-fetch-failed
+  tracker: feature-requests
+  ticket_num: 522
+  detail: 'failed to fetch https://sourceforge.net/rest/p/tei/feature-requests/522:
+    HTTP Error 429: Too Many Requests'
+- code: ticket-fetch-failed
+  tracker: feature-requests
+  ticket_num: 523
+  detail: 'failed to fetch https://sourceforge.net/rest/p/tei/feature-requests/523:
+    HTTP Error 429: Too Many Requests'
+- code: ticket-fetch-failed
+  tracker: feature-requests
+  ticket_num: 524
+  detail: 'failed to fetch https://sourceforge.net/rest/p/tei/feature-requests/524:
+    HTTP Error 429: Too Many Requests'
+- code: ticket-fetch-failed
+  tracker: feature-requests
+  ticket_num: 525
+  detail: 'failed to fetch https://sourceforge.net/rest/p/tei/feature-requests/525:
+    HTTP Error 429: Too Many Requests'
+- code: ticket-fetch-failed
+  tracker: feature-requests
+  ticket_num: 526
+  detail: 'failed to fetch https://sourceforge.net/rest/p/tei/feature-requests/526:
+    HTTP Error 429: Too Many Requests'
+- code: ticket-fetch-failed
+  tracker: feature-requests
+  ticket_num: 527
+  detail: 'failed to fetch https://sourceforge.net/rest/p/tei/feature-requests/527:
+    HTTP Error 429: Too Many Requests'
+- code: ticket-fetch-failed
+  tracker: feature-requests
+  ticket_num: 528
+  detail: 'failed to fetch https://sourceforge.net/rest/p/tei/feature-requests/528:
+    HTTP Error 429: Too Many Requests'
+- code: ticket-fetch-failed
+  tracker: feature-requests
+  ticket_num: 529
+  detail: 'failed to fetch https://sourceforge.net/rest/p/tei/feature-requests/529:
+    HTTP Error 429: Too Many Requests'
+- code: ticket-fetch-failed
+  tracker: feature-requests
+  ticket_num: 530
+  detail: 'failed to fetch https://sourceforge.net/rest/p/tei/feature-requests/530:
+    HTTP Error 429: Too Many Requests'
+- code: ticket-fetch-failed
+  tracker: feature-requests
+  ticket_num: 531
+  detail: 'failed to fetch https://sourceforge.net/rest/p/tei/feature-requests/531:
+    HTTP Error 429: Too Many Requests'
+- code: ticket-fetch-failed
+  tracker: feature-requests
+  ticket_num: 532
+  detail: 'failed to fetch https://sourceforge.net/rest/p/tei/feature-requests/532:
+    HTTP Error 429: Too Many Requests'
+- code: ticket-fetch-failed
+  tracker: feature-requests
+  ticket_num: 533
+  detail: 'failed to fetch https://sourceforge.net/rest/p/tei/feature-requests/533:
+    HTTP Error 429: Too Many Requests'
+- code: ticket-fetch-failed
+  tracker: feature-requests
+  ticket_num: 534
+  detail: 'failed to fetch https://sourceforge.net/rest/p/tei/feature-requests/534:
+    HTTP Error 429: Too Many Requests'
+- code: ticket-fetch-failed
+  tracker: feature-requests
+  ticket_num: 535
+  detail: 'failed to fetch https://sourceforge.net/rest/p/tei/feature-requests/535:
+    HTTP Error 429: Too Many Requests'
+- code: ticket-fetch-failed
+  tracker: feature-requests
+  ticket_num: 536
+  detail: 'failed to fetch https://sourceforge.net/rest/p/tei/feature-requests/536:
+    HTTP Error 429: Too Many Requests'
+- code: ticket-fetch-failed
+  tracker: feature-requests
+  ticket_num: 537
+  detail: 'failed to fetch https://sourceforge.net/rest/p/tei/feature-requests/537:
+    HTTP Error 429: Too Many Requests'
+- code: ticket-fetch-failed
+  tracker: feature-requests
+  ticket_num: 538
+  detail: 'failed to fetch https://sourceforge.net/rest/p/tei/feature-requests/538:
+    HTTP Error 429: Too Many Requests'
+- code: ticket-fetch-failed
+  tracker: feature-requests
+  ticket_num: 539
+  detail: 'failed to fetch https://sourceforge.net/rest/p/tei/feature-requests/539:
+    HTTP Error 429: Too Many Requests'
+- code: ticket-fetch-failed
+  tracker: feature-requests
+  ticket_num: 540
+  detail: 'failed to fetch https://sourceforge.net/rest/p/tei/feature-requests/540:
+    HTTP Error 429: Too Many Requests'
+- code: ticket-fetch-failed
+  tracker: feature-requests
+  ticket_num: 541
+  detail: 'failed to fetch https://sourceforge.net/rest/p/tei/feature-requests/541:
+    HTTP Error 429: Too Many Requests'
+- code: ticket-fetch-failed
+  tracker: feature-requests
+  ticket_num: 542
+  detail: 'failed to fetch https://sourceforge.net/rest/p/tei/feature-requests/542:
+    HTTP Error 429: Too Many Requests'
+- code: ticket-fetch-failed
+  tracker: feature-requests
+  ticket_num: 543
+  detail: 'failed to fetch https://sourceforge.net/rest/p/tei/feature-requests/543:
+    HTTP Error 429: Too Many Requests'
+- code: ticket-fetch-failed
+  tracker: feature-requests
+  ticket_num: 544
+  detail: 'failed to fetch https://sourceforge.net/rest/p/tei/feature-requests/544:
+    HTTP Error 429: Too Many Requests'
+- code: ticket-fetch-failed
+  tracker: feature-requests
+  ticket_num: 545
+  detail: 'failed to fetch https://sourceforge.net/rest/p/tei/feature-requests/545:
+    HTTP Error 429: Too Many Requests'
+- code: ticket-fetch-failed
+  tracker: feature-requests
+  ticket_num: 546
+  detail: 'failed to fetch https://sourceforge.net/rest/p/tei/feature-requests/546:
+    HTTP Error 429: Too Many Requests'
+- code: ticket-fetch-failed
+  tracker: feature-requests
+  ticket_num: 547
+  detail: 'failed to fetch https://sourceforge.net/rest/p/tei/feature-requests/547:
+    HTTP Error 429: Too Many Requests'
+- code: ticket-fetch-failed
+  tracker: feature-requests
+  ticket_num: 548
+  detail: 'failed to fetch https://sourceforge.net/rest/p/tei/feature-requests/548:
+    HTTP Error 429: Too Many Requests'
+- code: ticket-fetch-failed
+  tracker: feature-requests
+  ticket_num: 549
+  detail: 'failed to fetch https://sourceforge.net/rest/p/tei/feature-requests/549:
+    HTTP Error 429: Too Many Requests'
+- code: ticket-fetch-failed
+  tracker: feature-requests
+  ticket_num: 550
+  detail: 'failed to fetch https://sourceforge.net/rest/p/tei/feature-requests/550:
+    HTTP Error 429: Too Many Requests'
+- code: ticket-fetch-failed
+  tracker: feature-requests
+  ticket_num: 551
+  detail: 'failed to fetch https://sourceforge.net/rest/p/tei/feature-requests/551:
+    HTTP Error 429: Too Many Requests'
+- code: ticket-fetch-failed
+  tracker: feature-requests
+  ticket_num: 552
+  detail: 'failed to fetch https://sourceforge.net/rest/p/tei/feature-requests/552:
+    HTTP Error 429: Too Many Requests'
+- code: ticket-fetch-failed
+  tracker: feature-requests
+  ticket_num: 553
+  detail: 'failed to fetch https://sourceforge.net/rest/p/tei/feature-requests/553:
+    HTTP Error 429: Too Many Requests'
+- code: ticket-fetch-failed
+  tracker: feature-requests
+  ticket_num: 554
+  detail: 'failed to fetch https://sourceforge.net/rest/p/tei/feature-requests/554:
+    HTTP Error 429: Too Many Requests'
+- code: ticket-fetch-failed
+  tracker: feature-requests
+  ticket_num: 555
+  detail: 'failed to fetch https://sourceforge.net/rest/p/tei/feature-requests/555:
+    HTTP Error 429: Too Many Requests'
+- code: ticket-fetch-failed
+  tracker: feature-requests
+  ticket_num: 556
+  detail: 'failed to fetch https://sourceforge.net/rest/p/tei/feature-requests/556:
+    HTTP Error 429: Too Many Requests'
+- code: ticket-fetch-failed
+  tracker: feature-requests
+  ticket_num: 557
+  detail: 'failed to fetch https://sourceforge.net/rest/p/tei/feature-requests/557:
+    HTTP Error 429: Too Many Requests'
+- code: ticket-fetch-failed
+  tracker: feature-requests
+  ticket_num: 558
+  detail: 'failed to fetch https://sourceforge.net/rest/p/tei/feature-requests/558:
+    HTTP Error 429: Too Many Requests'
+- code: ticket-fetch-failed
+  tracker: feature-requests
+  ticket_num: 560
+  detail: 'failed to fetch https://sourceforge.net/rest/p/tei/feature-requests/560:
+    HTTP Error 429: Too Many Requests'
+- code: ticket-fetch-failed
+  tracker: feature-requests
+  ticket_num: 561
+  detail: 'failed to fetch https://sourceforge.net/rest/p/tei/feature-requests/561:
+    HTTP Error 429: Too Many Requests'
+- code: ticket-fetch-failed
+  tracker: feature-requests
+  ticket_num: 562
+  detail: 'failed to fetch https://sourceforge.net/rest/p/tei/feature-requests/562:
+    HTTP Error 429: Too Many Requests'
+- code: ticket-fetch-failed
+  tracker: feature-requests
+  ticket_num: 563
+  detail: 'failed to fetch https://sourceforge.net/rest/p/tei/feature-requests/563:
+    HTTP Error 429: Too Many Requests'
+- code: ticket-fetch-failed
+  tracker: feature-requests
+  ticket_num: 564
+  detail: 'failed to fetch https://sourceforge.net/rest/p/tei/feature-requests/564:
+    HTTP Error 429: Too Many Requests'
+- code: ticket-fetch-failed
+  tracker: feature-requests
+  ticket_num: 565
+  detail: 'failed to fetch https://sourceforge.net/rest/p/tei/feature-requests/565:
+    HTTP Error 429: Too Many Requests'
+- code: ticket-fetch-failed
+  tracker: feature-requests
+  ticket_num: 566
+  detail: 'failed to fetch https://sourceforge.net/rest/p/tei/feature-requests/566:
+    HTTP Error 429: Too Many Requests'
+- code: ticket-fetch-failed
+  tracker: feature-requests
+  ticket_num: 567
+  detail: 'failed to fetch https://sourceforge.net/rest/p/tei/feature-requests/567:
+    HTTP Error 429: Too Many Requests'
+- code: ticket-fetch-failed
+  tracker: feature-requests
+  ticket_num: 568
+  detail: 'failed to fetch https://sourceforge.net/rest/p/tei/feature-requests/568:
+    HTTP Error 429: Too Many Requests'
+- code: ticket-fetch-failed
+  tracker: feature-requests
+  ticket_num: 569
+  detail: 'failed to fetch https://sourceforge.net/rest/p/tei/feature-requests/569:
+    HTTP Error 429: Too Many Requests'
+- code: ticket-fetch-failed
+  tracker: support-requests
+  ticket_num: 1
+  detail: 'failed to fetch https://sourceforge.net/rest/p/tei/support-requests/1:
+    HTTP Error 429: Too Many Requests'
+- code: ticket-fetch-failed
+  tracker: support-requests
+  ticket_num: 2
+  detail: 'failed to fetch https://sourceforge.net/rest/p/tei/support-requests/2:
+    HTTP Error 429: Too Many Requests'
+- code: ticket-fetch-failed
+  tracker: support-requests
+  ticket_num: 3
+  detail: 'failed to fetch https://sourceforge.net/rest/p/tei/support-requests/3:
+    HTTP Error 429: Too Many Requests'
+- code: ticket-fetch-failed
+  tracker: support-requests
+  ticket_num: 4
+  detail: 'failed to fetch https://sourceforge.net/rest/p/tei/support-requests/4:
+    HTTP Error 429: Too Many Requests'
+- code: ticket-fetch-failed
+  tracker: support-requests
+  ticket_num: 6
+  detail: 'failed to fetch https://sourceforge.net/rest/p/tei/support-requests/6:
+    HTTP Error 429: Too Many Requests'
+- code: ticket-fetch-failed
+  tracker: support-requests
+  ticket_num: 7
+  detail: 'failed to fetch https://sourceforge.net/rest/p/tei/support-requests/7:
+    HTTP Error 429: Too Many Requests'
+- code: ticket-fetch-failed
+  tracker: support-requests
+  ticket_num: 8
+  detail: 'failed to fetch https://sourceforge.net/rest/p/tei/support-requests/8:
+    HTTP Error 429: Too Many Requests'
+- code: ticket-fetch-failed
+  tracker: support-requests
+  ticket_num: 9
+  detail: 'failed to fetch https://sourceforge.net/rest/p/tei/support-requests/9:
+    HTTP Error 429: Too Many Requests'
+- code: ticket-count-mismatch
+  expected: 1349
+  observed: 1226
+rights_exceptions:
+- Ticket and discussion prose remain in local content-addressed raw storage.
+- Normalized output contains metadata, summaries, links, and relationship identifiers
+  only.

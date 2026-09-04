@@ -1,0 +1,1228 @@
+{
+  "entries": [
+    {
+      "mode": "100644",
+      "object_id": "2b17c37ea489f0cf0a386606d50c9add32b9857a",
+      "object_type": "blob",
+      "path": "Build"
+    },
+    {
+      "mode": "100644",
+      "object_id": "35e910683d0a8afb52d499244ddd98ee516c10b9",
+      "object_type": "blob",
+      "path": "Makefile"
+    },
+    {
+      "mode": "100644",
+      "object_id": "8e99e09d4202dde4d5217f7f44120e03ac300452",
+      "object_type": "blob",
+      "path": "README.TXT"
+    },
+    {
+      "mode": "100644",
+      "object_id": "0eb1f8b739d35b7c9e3d2dd5c5977a95973df3f4",
+      "object_type": "blob",
+      "path": "debian/changelog"
+    },
+    {
+      "mode": "100644",
+      "object_id": "d98915ca0302f3f017b068a5e7e17b30c328825d",
+      "object_type": "blob",
+      "path": "debian/control"
+    },
+    {
+      "mode": "100644",
+      "object_id": "5aa2349c6be1e9a3d9c9958d11d19662a29520d5",
+      "object_type": "blob",
+      "path": "debian/copyright"
+    },
+    {
+      "mode": "100644",
+      "object_id": "aea9c81c8b70b0920b0c1729a932fb01b307d79e",
+      "object_type": "blob",
+      "path": "debian/emacsen-install"
+    },
+    {
+      "mode": "100644",
+      "object_id": "e1e4cb39b061014c63eea904ea4d29893fb8e5e9",
+      "object_type": "blob",
+      "path": "debian/emacsen-remove"
+    },
+    {
+      "mode": "100644",
+      "object_id": "eb92866ad6bd029a9178d78b5ee1f215591b78bf",
+      "object_type": "blob",
+      "path": "debian/emacsen-startup"
+    },
+    {
+      "mode": "100755",
+      "object_id": "b93fd5c588381bc9742f3b251a969023e0ffb7a6",
+      "object_type": "blob",
+      "path": "debian/rules"
+    },
+    {
+      "mode": "100644",
+      "object_id": "bfff47ea2001bd15008caad71a12f150ab86d780",
+      "object_type": "blob",
+      "path": "doc/emacstut/e-tut01.gif"
+    },
+    {
+      "mode": "100644",
+      "object_id": "c6565c724f8262ee136f39ea501a5c047b39af8c",
+      "object_type": "blob",
+      "path": "doc/emacstut/e-tut01a.gif"
+    },
+    {
+      "mode": "100644",
+      "object_id": "116e9a7e46912a000d8cf27ca737250914a1a663",
+      "object_type": "blob",
+      "path": "doc/emacstut/e-tut02.gif"
+    },
+    {
+      "mode": "100644",
+      "object_id": "da9a519f669da0a6e741867093485a85cea56222",
+      "object_type": "blob",
+      "path": "doc/emacstut/e-tut03.gif"
+    },
+    {
+      "mode": "100644",
+      "object_id": "951f66b716ed199582003e1a616201ca092956a8",
+      "object_type": "blob",
+      "path": "doc/emacstut/e-tut04.gif"
+    },
+    {
+      "mode": "100644",
+      "object_id": "ce0780695701da9acd7e78dda541ec92bcfa6a16",
+      "object_type": "blob",
+      "path": "doc/emacstut/e-tut05.gif"
+    },
+    {
+      "mode": "100644",
+      "object_id": "6c4ae40b99f9f702c8e77ad8d62ad8acf86db16b",
+      "object_type": "blob",
+      "path": "doc/emacstut/e-tut06.gif"
+    },
+    {
+      "mode": "100644",
+      "object_id": "a899f04d0f8269f6a0b01bba6030b455f2cc36d5",
+      "object_type": "blob",
+      "path": "doc/emacstut/e-tut07.gif"
+    },
+    {
+      "mode": "100644",
+      "object_id": "5e3d308dca8cc81b13de275017f363727c008397",
+      "object_type": "blob",
+      "path": "doc/emacstut/e-tut08.gif"
+    },
+    {
+      "mode": "100644",
+      "object_id": "2972b66145ea3740d31ce4cc2bf0bb155df1c55d",
+      "object_type": "blob",
+      "path": "doc/emacstut/e-tut09.gif"
+    },
+    {
+      "mode": "100644",
+      "object_id": "ac623fec54a5a93e8c21623d28aed6bc8d2f70b9",
+      "object_type": "blob",
+      "path": "doc/emacstut/e-tut10.gif"
+    },
+    {
+      "mode": "100644",
+      "object_id": "1c4697ec9c54428f1861a8fc522c27e4ab468b77",
+      "object_type": "blob",
+      "path": "doc/emacstut/e-tut11.gif"
+    },
+    {
+      "mode": "100644",
+      "object_id": "a0b0ba5f5215fa0085b01cab720e5e308a98dd8e",
+      "object_type": "blob",
+      "path": "doc/emacstut/e-tut12.gif"
+    },
+    {
+      "mode": "100644",
+      "object_id": "05d48b2305bdb2828bacfd7f1c508838124f2af8",
+      "object_type": "blob",
+      "path": "doc/emacstut/e-tut13.gif"
+    },
+    {
+      "mode": "100644",
+      "object_id": "dd389c1480ceb9c83851c91247d39b2b2ad7a433",
+      "object_type": "blob",
+      "path": "doc/emacstut/e-tut14.gif"
+    },
+    {
+      "mode": "100644",
+      "object_id": "e3f4fcc14fd7999ea1bc93d7690bfb3b582d8569",
+      "object_type": "blob",
+      "path": "doc/emacstut/e-tut15.gif"
+    },
+    {
+      "mode": "100644",
+      "object_id": "bf81908b3253cb9ee7436d53078399a02014833f",
+      "object_type": "blob",
+      "path": "doc/emacstut/e-tut16.gif"
+    },
+    {
+      "mode": "100644",
+      "object_id": "830a27573f448fc3dea0b66758be445850fbd4a4",
+      "object_type": "blob",
+      "path": "doc/emacstut/e-tut17.gif"
+    },
+    {
+      "mode": "100644",
+      "object_id": "b74d4228a943813232daec3efe7531104704a294",
+      "object_type": "blob",
+      "path": "doc/emacstut/e-tut18.gif"
+    },
+    {
+      "mode": "100644",
+      "object_id": "495443734f562c9a1095dc03153d13dadb94518f",
+      "object_type": "blob",
+      "path": "doc/emacstut/e-tut19.gif"
+    },
+    {
+      "mode": "100644",
+      "object_id": "236d12074fb00c6894fbe0ae9f7f67c646a0690b",
+      "object_type": "blob",
+      "path": "doc/emacstut/e-tut20.gif"
+    },
+    {
+      "mode": "100644",
+      "object_id": "4c3a34b2ba0c86ff988b360caad5aa6ace1aeebf",
+      "object_type": "blob",
+      "path": "doc/emacstut/e-tut25.gif"
+    },
+    {
+      "mode": "100644",
+      "object_id": "acbd60ddb4cc2b20ab421b5dc5c80a2c92502e1e",
+      "object_type": "blob",
+      "path": "doc/emacstut/e-tut26.gif"
+    },
+    {
+      "mode": "100644",
+      "object_id": "d88b0a5b2deac004361a1a1e38cf7c8d4ce47338",
+      "object_type": "blob",
+      "path": "doc/emacstut/e-tut30.gif"
+    },
+    {
+      "mode": "100644",
+      "object_id": "20ec583b60785342140a7b459aa91a491a359d29",
+      "object_type": "blob",
+      "path": "doc/emacstut/e-tut31.gif"
+    },
+    {
+      "mode": "100644",
+      "object_id": "ee8623602548d3c9da8cb92202df34d54831f0fe",
+      "object_type": "blob",
+      "path": "doc/emacstut/e-tut32.gif"
+    },
+    {
+      "mode": "100644",
+      "object_id": "bb76154aac6a4e236de37266f7cf0dad136fe273",
+      "object_type": "blob",
+      "path": "doc/emacstut/e-tut33.gif"
+    },
+    {
+      "mode": "100644",
+      "object_id": "a6329d2899647c54c106569ffc9e381d27bb03ed",
+      "object_type": "blob",
+      "path": "doc/emacstut/emacstut.html"
+    },
+    {
+      "mode": "100644",
+      "object_id": "a66df1bbb774d134150a6ae74e3471a7a8ec27fa",
+      "object_type": "blob",
+      "path": "doc/emacstut/emacstut.xml"
+    },
+    {
+      "mode": "100644",
+      "object_id": "6278f7e7c31e280b7724409c4c417245f7e6be60",
+      "object_type": "blob",
+      "path": "doc/emacstut/index.doc"
+    },
+    {
+      "mode": "100644",
+      "object_id": "e88aa17505b96e2d3d0520ed35f311aa32a9b173",
+      "object_type": "blob",
+      "path": "doc/emacstut/mytei.xsl"
+    },
+    {
+      "mode": "100644",
+      "object_id": "ac97e3637cf4250c8a64b75dbc4ba74b8ea1db7d",
+      "object_type": "blob",
+      "path": "doc/emacstut/refcard.htm"
+    },
+    {
+      "mode": "100644",
+      "object_id": "46b915be419182cf9dc784d71eb6697938532c37",
+      "object_type": "blob",
+      "path": "doc/emacstut/tei.css"
+    },
+    {
+      "mode": "100644",
+      "object_id": "669cb2f1bc0ee8c775d14e397ab7e864891d8a96",
+      "object_type": "blob",
+      "path": "doc/emacstut/teislides.css"
+    },
+    {
+      "mode": "100644",
+      "object_id": "08c89ab42f703dbb382f3cad28848f0407553694",
+      "object_type": "blob",
+      "path": "doc/index.html"
+    },
+    {
+      "mode": "100644",
+      "object_id": "7e896d95c497cc56eacf17f6ccdbca77091d8322",
+      "object_type": "blob",
+      "path": "doc/master-emacs.html"
+    },
+    {
+      "mode": "100644",
+      "object_id": "6ad25424edbff1a2ba44e5ed667de58da9722cb2",
+      "object_type": "blob",
+      "path": "doc/sgmlnt/cyg/cygbook1.html"
+    },
+    {
+      "mode": "100644",
+      "object_id": "ec37f59100fcb5d43b998ca03f9c7da682fe8332",
+      "object_type": "blob",
+      "path": "doc/sgmlnt/cyg/cygc1112.html"
+    },
+    {
+      "mode": "100644",
+      "object_id": "eb9d780b0d6f1d8850be6b3dcf9af4ef1b8bb269",
+      "object_type": "blob",
+      "path": "doc/sgmlnt/cyg/cygc1224.html"
+    },
+    {
+      "mode": "100644",
+      "object_id": "60189ad15cb3bc41ee9a70545afcdf08db71b1f4",
+      "object_type": "blob",
+      "path": "doc/sgmlnt/cyg/cygc123.html"
+    },
+    {
+      "mode": "100644",
+      "object_id": "11576ae4e613bbb1a57d6213275c821242cdd0d4",
+      "object_type": "blob",
+      "path": "doc/sgmlnt/cyg/cygc1544.html"
+    },
+    {
+      "mode": "100644",
+      "object_id": "f692ac180f8240ca96f0cc2da2dc9156f769c60d",
+      "object_type": "blob",
+      "path": "doc/sgmlnt/cyg/cygc174.html"
+    },
+    {
+      "mode": "100644",
+      "object_id": "45011456e7f593832d3c2ca4958a85fd8ec682b0",
+      "object_type": "blob",
+      "path": "doc/sgmlnt/cyg/cygc1793.html"
+    },
+    {
+      "mode": "100644",
+      "object_id": "c07755f3fc3e84aae9f262b88ee029ca369a247d",
+      "object_type": "blob",
+      "path": "doc/sgmlnt/cyg/cygc259.html"
+    },
+    {
+      "mode": "100644",
+      "object_id": "332feb95a29be4437c06346f676b0c573edb9305",
+      "object_type": "blob",
+      "path": "doc/sgmlnt/cyg/cygc591.html"
+    },
+    {
+      "mode": "100644",
+      "object_id": "622e29d8135c4de5678860ae04351f0c721f949e",
+      "object_type": "blob",
+      "path": "doc/sgmlnt/cyg/cygc66.html"
+    },
+    {
+      "mode": "100644",
+      "object_id": "f105dae858a8e38102e9c64a50694f52370d4178",
+      "object_type": "blob",
+      "path": "doc/sgmlnt/cyg/cygc760.html"
+    },
+    {
+      "mode": "100644",
+      "object_id": "eca2f0931ebbf28c80ed9602950875cfa7f8a97c",
+      "object_type": "blob",
+      "path": "doc/sgmlnt/cyg/cygc867.html"
+    },
+    {
+      "mode": "100644",
+      "object_id": "9494398da7acfd5acd3c9173a187d10e9c96ea65",
+      "object_type": "blob",
+      "path": "doc/sgmlnt/cyg/cygc97.html"
+    },
+    {
+      "mode": "100644",
+      "object_id": "998e2d1bd885847343a38ade2f75f2d9095e24c4",
+      "object_type": "blob",
+      "path": "doc/sgmlnt/cyg/cygf61.html"
+    },
+    {
+      "mode": "100644",
+      "object_id": "b33f601ad1ae22c209a42c3bd248a63da2bd280a",
+      "object_type": "blob",
+      "path": "doc/sgmlnt/cyg/cygx1038.html"
+    },
+    {
+      "mode": "100644",
+      "object_id": "4fd1031c4d332f63716dcb70f719082e89b0a31d",
+      "object_type": "blob",
+      "path": "doc/sgmlnt/cyg/cygx106.html"
+    },
+    {
+      "mode": "100644",
+      "object_id": "7fa0504d5689109814e2225130cff4ff5d480171",
+      "object_type": "blob",
+      "path": "doc/sgmlnt/cyg/cygx1097.html"
+    },
+    {
+      "mode": "100644",
+      "object_id": "cef3e0d06a0d0a3ce9f15e82b9d88961317d28b9",
+      "object_type": "blob",
+      "path": "doc/sgmlnt/cyg/cygx1102.html"
+    },
+    {
+      "mode": "100644",
+      "object_id": "638f95439d2af5d88887b386e57025af9debfc6d",
+      "object_type": "blob",
+      "path": "doc/sgmlnt/cyg/cygx111.html"
+    },
+    {
+      "mode": "100644",
+      "object_id": "4f2b7a45280189fc024df01b66571edea4159b01",
+      "object_type": "blob",
+      "path": "doc/sgmlnt/cyg/cygx1132.html"
+    },
+    {
+      "mode": "100644",
+      "object_id": "6e147d5d5ced293eebbb2cdec5afc79ae566ba3f",
+      "object_type": "blob",
+      "path": "doc/sgmlnt/cyg/cygx1157.html"
+    },
+    {
+      "mode": "100644",
+      "object_id": "550a1841d5bbe063c7443334ef21b183185c445d",
+      "object_type": "blob",
+      "path": "doc/sgmlnt/cyg/cygx1168.html"
+    },
+    {
+      "mode": "100644",
+      "object_id": "293247fd3b5f5eb2fed2f8369a327666db8e5ca1",
+      "object_type": "blob",
+      "path": "doc/sgmlnt/cyg/cygx1217.html"
+    },
+    {
+      "mode": "100644",
+      "object_id": "eb417fc3358699d0b4810936333302e102fd5dd9",
+      "object_type": "blob",
+      "path": "doc/sgmlnt/cyg/cygx1220.html"
+    },
+    {
+      "mode": "100644",
+      "object_id": "64a67dc99eb42c3e5b3991ca9e194fa1dd375e21",
+      "object_type": "blob",
+      "path": "doc/sgmlnt/cyg/cygx1250.html"
+    },
+    {
+      "mode": "100644",
+      "object_id": "e03ed156b15f4c7b6d68aca643330585df5a2881",
+      "object_type": "blob",
+      "path": "doc/sgmlnt/cyg/cygx1302.html"
+    },
+    {
+      "mode": "100644",
+      "object_id": "975e376417706d5e39b1d3b51b49ef1a9530a8f8",
+      "object_type": "blob",
+      "path": "doc/sgmlnt/cyg/cygx132.html"
+    },
+    {
+      "mode": "100644",
+      "object_id": "7fe2d5984fdafca15e958d8559d0df784ab1293a",
+      "object_type": "blob",
+      "path": "doc/sgmlnt/cyg/cygx1370.html"
+    },
+    {
+      "mode": "100644",
+      "object_id": "fba27b6684808346542c48d94a857c1619ff1a4f",
+      "object_type": "blob",
+      "path": "doc/sgmlnt/cyg/cygx1400.html"
+    },
+    {
+      "mode": "100644",
+      "object_id": "31f9284fcd0fa1b5256f34af6f377980f65ca656",
+      "object_type": "blob",
+      "path": "doc/sgmlnt/cyg/cygx1421.html"
+    },
+    {
+      "mode": "100644",
+      "object_id": "2a85c29b4e7d5f541b9476d0aa75b44e03249785",
+      "object_type": "blob",
+      "path": "doc/sgmlnt/cyg/cygx1437.html"
+    },
+    {
+      "mode": "100644",
+      "object_id": "f6833fe166c2beaccb988905af81481ec5095b96",
+      "object_type": "blob",
+      "path": "doc/sgmlnt/cyg/cygx1447.html"
+    },
+    {
+      "mode": "100644",
+      "object_id": "38c73eab0d82742fb06c0cb9df3e69dffdccaa8d",
+      "object_type": "blob",
+      "path": "doc/sgmlnt/cyg/cygx1459.html"
+    },
+    {
+      "mode": "100644",
+      "object_id": "db509368c1efa7cd2f9bf81f5a09ca628ffaff2a",
+      "object_type": "blob",
+      "path": "doc/sgmlnt/cyg/cygx1524.html"
+    },
+    {
+      "mode": "100644",
+      "object_id": "74ba62f438d2c45946df17cb5326fb6b6e6dbbfb",
+      "object_type": "blob",
+      "path": "doc/sgmlnt/cyg/cygx1564.html"
+    },
+    {
+      "mode": "100644",
+      "object_id": "b8e2c2a48b36e6fa35e62533b229aeda51b0d7e7",
+      "object_type": "blob",
+      "path": "doc/sgmlnt/cyg/cygx161.html"
+    },
+    {
+      "mode": "100644",
+      "object_id": "260ca65411c88065bc3698acff8df697b7e11805",
+      "object_type": "blob",
+      "path": "doc/sgmlnt/cyg/cygx1687.html"
+    },
+    {
+      "mode": "100644",
+      "object_id": "947886e05da806147cd70dec4ed6327577ea5b88",
+      "object_type": "blob",
+      "path": "doc/sgmlnt/cyg/cygx171.html"
+    },
+    {
+      "mode": "100644",
+      "object_id": "fd845a0676f2d49b0a451e0998057a89a8d2f056",
+      "object_type": "blob",
+      "path": "doc/sgmlnt/cyg/cygx1804.html"
+    },
+    {
+      "mode": "100644",
+      "object_id": "466fbf2f73b50204ac40345090c64b109983d0a8",
+      "object_type": "blob",
+      "path": "doc/sgmlnt/cyg/cygx203.html"
+    },
+    {
+      "mode": "100644",
+      "object_id": "98a7aea3baa34f5756e784238253fc41c21355ab",
+      "object_type": "blob",
+      "path": "doc/sgmlnt/cyg/cygx253.html"
+    },
+    {
+      "mode": "100644",
+      "object_id": "14aaafa8da98bf5fc3b50334ce31ece8f17bd436",
+      "object_type": "blob",
+      "path": "doc/sgmlnt/cyg/cygx357.html"
+    },
+    {
+      "mode": "100644",
+      "object_id": "d65848b8911106ccf02bc415f4f20cc84a782dde",
+      "object_type": "blob",
+      "path": "doc/sgmlnt/cyg/cygx459.html"
+    },
+    {
+      "mode": "100644",
+      "object_id": "1c9b877fb597c26c24f043e1ed1a14d29fcc9084",
+      "object_type": "blob",
+      "path": "doc/sgmlnt/cyg/cygx494.html"
+    },
+    {
+      "mode": "100644",
+      "object_id": "e238c3a5019c4ded8102116546ffd4cbe99becec",
+      "object_type": "blob",
+      "path": "doc/sgmlnt/cyg/cygx544.html"
+    },
+    {
+      "mode": "100644",
+      "object_id": "0c16aa14d4b3106e90789e9153e898d9335767be",
+      "object_type": "blob",
+      "path": "doc/sgmlnt/cyg/cygx567.html"
+    },
+    {
+      "mode": "100644",
+      "object_id": "4a6aaab613a7e4b36f8ede37d9a3f425003f5c3c",
+      "object_type": "blob",
+      "path": "doc/sgmlnt/cyg/cygx577.html"
+    },
+    {
+      "mode": "100644",
+      "object_id": "f5961ac2b1309e40c2907f24d1013bdea07f56b0",
+      "object_type": "blob",
+      "path": "doc/sgmlnt/cyg/cygx616.html"
+    },
+    {
+      "mode": "100644",
+      "object_id": "cffe42b22811faf4129059165dfaa1cac9b381bd",
+      "object_type": "blob",
+      "path": "doc/sgmlnt/cyg/cygx674.html"
+    },
+    {
+      "mode": "100644",
+      "object_id": "fc55483b533d417213ed8437b855ed1e4f475642",
+      "object_type": "blob",
+      "path": "doc/sgmlnt/cyg/cygx696.html"
+    },
+    {
+      "mode": "100644",
+      "object_id": "ed60a5e910221453486f64d96a1df1b942d724c9",
+      "object_type": "blob",
+      "path": "doc/sgmlnt/cyg/cygx73.html"
+    },
+    {
+      "mode": "100644",
+      "object_id": "feba76b88391ee1726d7c5167ba4d169c615acbf",
+      "object_type": "blob",
+      "path": "doc/sgmlnt/cyg/cygx736.html"
+    },
+    {
+      "mode": "100644",
+      "object_id": "3cc22fcf71043904d999088ab0b8949466b6a490",
+      "object_type": "blob",
+      "path": "doc/sgmlnt/cyg/cygx752.html"
+    },
+    {
+      "mode": "100644",
+      "object_id": "a2bc29ad74a3d0f58a47bc5ab498cd689ec13a8b",
+      "object_type": "blob",
+      "path": "doc/sgmlnt/cyg/cygx76.html"
+    },
+    {
+      "mode": "100644",
+      "object_id": "7878508847fbdfdeab62f13f61831cde4920c5f2",
+      "object_type": "blob",
+      "path": "doc/sgmlnt/cyg/cygx777.html"
+    },
+    {
+      "mode": "100644",
+      "object_id": "7a73ef48e05157663f5c20ccd69914f06cadd880",
+      "object_type": "blob",
+      "path": "doc/sgmlnt/cyg/cygx79.html"
+    },
+    {
+      "mode": "100644",
+      "object_id": "e59fd40c7d0c817af65dcd0b3d50baf975c86dda",
+      "object_type": "blob",
+      "path": "doc/sgmlnt/cyg/cygx812.html"
+    },
+    {
+      "mode": "100644",
+      "object_id": "40cd7079327f26a303dd02b4a8bf33da2b80f865",
+      "object_type": "blob",
+      "path": "doc/sgmlnt/cyg/cygx847.html"
+    },
+    {
+      "mode": "100644",
+      "object_id": "1cfc0c8b7e6ec883a757fff6415a686dbbd7e4ac",
+      "object_type": "blob",
+      "path": "doc/sgmlnt/cyg/cygx857.html"
+    },
+    {
+      "mode": "100644",
+      "object_id": "b6c1f4216162d1892674c4f0cdf23b793a975173",
+      "object_type": "blob",
+      "path": "doc/sgmlnt/cyg/cygx86.html"
+    },
+    {
+      "mode": "100644",
+      "object_id": "e91c9f552cf78f0f371c155e2de686a5bc8bc8ef",
+      "object_type": "blob",
+      "path": "doc/sgmlnt/cyg/cygx911.html"
+    },
+    {
+      "mode": "100644",
+      "object_id": "2598b60190fba9f246f906dae3fee535751a9c47",
+      "object_type": "blob",
+      "path": "doc/sgmlnt/cyg/cygx94.html"
+    },
+    {
+      "mode": "100644",
+      "object_id": "883418f0109fe3265d10549bcac89d98f62bb2fc",
+      "object_type": "blob",
+      "path": "doc/sgmlnt/cyg/cygx977.html"
+    },
+    {
+      "mode": "100644",
+      "object_id": "4765fef8c43bc017886d9e11ce72e48b3160cad5",
+      "object_type": "blob",
+      "path": "doc/sgmlnt/win/book1.html"
+    },
+    {
+      "mode": "100644",
+      "object_id": "02c6aeea572ce6839f2e9b1354ec70ae4f37515a",
+      "object_type": "blob",
+      "path": "doc/sgmlnt/win/c1096.html"
+    },
+    {
+      "mode": "100644",
+      "object_id": "867bf47fe695b1caf8291448a4c0840fa121ce29",
+      "object_type": "blob",
+      "path": "doc/sgmlnt/win/c123.html"
+    },
+    {
+      "mode": "100644",
+      "object_id": "a381585f2843f326d3dc9930296bf048a7e13090",
+      "object_type": "blob",
+      "path": "doc/sgmlnt/win/c1409.html"
+    },
+    {
+      "mode": "100644",
+      "object_id": "93e068820634f0f993255f7a36dea3e6e30efb46",
+      "object_type": "blob",
+      "path": "doc/sgmlnt/win/c164.html"
+    },
+    {
+      "mode": "100644",
+      "object_id": "e76b50d837f61b3dfa222f469584813827af6fbc",
+      "object_type": "blob",
+      "path": "doc/sgmlnt/win/c466.html"
+    },
+    {
+      "mode": "100644",
+      "object_id": "837d3cb13d38624fe88ac301255e39ca6cd5c413",
+      "object_type": "blob",
+      "path": "doc/sgmlnt/win/c636.html"
+    },
+    {
+      "mode": "100644",
+      "object_id": "d05c37b9d6bb307fb2dadf25d4efc5bd7cb432ac",
+      "object_type": "blob",
+      "path": "doc/sgmlnt/win/c66.html"
+    },
+    {
+      "mode": "100644",
+      "object_id": "ed8e0d44cf44ab3e61c42067a821666de02f1472",
+      "object_type": "blob",
+      "path": "doc/sgmlnt/win/c742.html"
+    },
+    {
+      "mode": "100644",
+      "object_id": "9bc04ce3c1e483c07eb80b3c6d1bb305435b56b1",
+      "object_type": "blob",
+      "path": "doc/sgmlnt/win/c97.html"
+    },
+    {
+      "mode": "100644",
+      "object_id": "9787bdaa2ed1a596412531d93a0d9352f78845b6",
+      "object_type": "blob",
+      "path": "doc/sgmlnt/win/c987.html"
+    },
+    {
+      "mode": "100644",
+      "object_id": "4919c7027028a6522eee4f26ca2f99583e107a0a",
+      "object_type": "blob",
+      "path": "doc/sgmlnt/win/f61.html"
+    },
+    {
+      "mode": "100644",
+      "object_id": "2a3fa650ef0d01cb1f02f0d898149a02e4986182",
+      "object_type": "blob",
+      "path": "doc/sgmlnt/win/readme.txt"
+    },
+    {
+      "mode": "100644",
+      "object_id": "5c8ab669775e6dabcf4f2e8c8be449ccca08dd70",
+      "object_type": "blob",
+      "path": "doc/sgmlnt/win/x1007.html"
+    },
+    {
+      "mode": "100644",
+      "object_id": "74ad098f79bcf41a61a903ad71821b8c58082289",
+      "object_type": "blob",
+      "path": "doc/sgmlnt/win/x1029.html"
+    },
+    {
+      "mode": "100644",
+      "object_id": "3d3f95944b3da6082c90f7053fe83ebca723734e",
+      "object_type": "blob",
+      "path": "doc/sgmlnt/win/x1040.html"
+    },
+    {
+      "mode": "100644",
+      "object_id": "82dd185d3822a99bb2d6d89ee1fc4b24d386d3a3",
+      "object_type": "blob",
+      "path": "doc/sgmlnt/win/x106.html"
+    },
+    {
+      "mode": "100644",
+      "object_id": "46a0f46c71a5cdbba3ea0e93d8b94d10e89a00bd",
+      "object_type": "blob",
+      "path": "doc/sgmlnt/win/x1089.html"
+    },
+    {
+      "mode": "100644",
+      "object_id": "696a2c947fbcefa68255ff414eed9ea287a338d4",
+      "object_type": "blob",
+      "path": "doc/sgmlnt/win/x1092.html"
+    },
+    {
+      "mode": "100644",
+      "object_id": "1c4a356b99fc64a3ce82a161e26a274cf6ba1ac4",
+      "object_type": "blob",
+      "path": "doc/sgmlnt/win/x111.html"
+    },
+    {
+      "mode": "100644",
+      "object_id": "64df7fb722f54abeca42562746f3f599dfc424b1",
+      "object_type": "blob",
+      "path": "doc/sgmlnt/win/x1122.html"
+    },
+    {
+      "mode": "100644",
+      "object_id": "933401d38e0253642a5acc369409dfabc38e76ae",
+      "object_type": "blob",
+      "path": "doc/sgmlnt/win/x1174.html"
+    },
+    {
+      "mode": "100644",
+      "object_id": "b05169f21cf69d337d745dadf551afd3ee6eb241",
+      "object_type": "blob",
+      "path": "doc/sgmlnt/win/x1245.html"
+    },
+    {
+      "mode": "100644",
+      "object_id": "a8c26588a37d28ca8a52e48496a1dde13aa9304f",
+      "object_type": "blob",
+      "path": "doc/sgmlnt/win/x1272.html"
+    },
+    {
+      "mode": "100644",
+      "object_id": "96e87f64d2a754de6c60479d5eb4b0e45fc4a5bf",
+      "object_type": "blob",
+      "path": "doc/sgmlnt/win/x1291.html"
+    },
+    {
+      "mode": "100644",
+      "object_id": "8fb6947727de6102f8bb3072d26b2a27ca09f86e",
+      "object_type": "blob",
+      "path": "doc/sgmlnt/win/x1307.html"
+    },
+    {
+      "mode": "100644",
+      "object_id": "8e861916b559b4a3d4ecbb27f7e5276d7703dd4d",
+      "object_type": "blob",
+      "path": "doc/sgmlnt/win/x1315.html"
+    },
+    {
+      "mode": "100644",
+      "object_id": "4dec0ac027c4490d4438bbcdd992cfd8ca6b7f61",
+      "object_type": "blob",
+      "path": "doc/sgmlnt/win/x132.html"
+    },
+    {
+      "mode": "100644",
+      "object_id": "6baa42366c4ad58a4cbf50868106f3805fbbd37e",
+      "object_type": "blob",
+      "path": "doc/sgmlnt/win/x1327.html"
+    },
+    {
+      "mode": "100644",
+      "object_id": "4c40d5d6b68f34858f1643981fcbefaddc2140cf",
+      "object_type": "blob",
+      "path": "doc/sgmlnt/win/x1389.html"
+    },
+    {
+      "mode": "100644",
+      "object_id": "1c8058a69c86b3cf15178dee1a9de0c81fd9f06f",
+      "object_type": "blob",
+      "path": "doc/sgmlnt/win/x1420.html"
+    },
+    {
+      "mode": "100644",
+      "object_id": "5bb9c7c26efffc478ed283704058ba24b1679428",
+      "object_type": "blob",
+      "path": "doc/sgmlnt/win/x146.html"
+    },
+    {
+      "mode": "100644",
+      "object_id": "4ff25537f97cd3cc7536457875e0cc223a90dbdf",
+      "object_type": "blob",
+      "path": "doc/sgmlnt/win/x161.html"
+    },
+    {
+      "mode": "100644",
+      "object_id": "d427a47f3bb09fe0402614f28322241a1f3639f7",
+      "object_type": "blob",
+      "path": "doc/sgmlnt/win/x252.html"
+    },
+    {
+      "mode": "100644",
+      "object_id": "a92e8267d3df8949c0467ee6d0e2ad41f52cfd1b",
+      "object_type": "blob",
+      "path": "doc/sgmlnt/win/x334.html"
+    },
+    {
+      "mode": "100644",
+      "object_id": "64f8abc3b02dfe09622fb21301bce2224d6cf9a6",
+      "object_type": "blob",
+      "path": "doc/sgmlnt/win/x369.html"
+    },
+    {
+      "mode": "100644",
+      "object_id": "181e2ed549de24a0e1ccee1550be7626dd372a0d",
+      "object_type": "blob",
+      "path": "doc/sgmlnt/win/x419.html"
+    },
+    {
+      "mode": "100644",
+      "object_id": "7a850d965753fd1c6120a38c610af4e70280f887",
+      "object_type": "blob",
+      "path": "doc/sgmlnt/win/x442.html"
+    },
+    {
+      "mode": "100644",
+      "object_id": "41bc508dd4a267b748f21c40237a273bbfda757c",
+      "object_type": "blob",
+      "path": "doc/sgmlnt/win/x452.html"
+    },
+    {
+      "mode": "100644",
+      "object_id": "51e5b09edfe46d4f5497d5ea40288c511ad01457",
+      "object_type": "blob",
+      "path": "doc/sgmlnt/win/x491.html"
+    },
+    {
+      "mode": "100644",
+      "object_id": "773acdead7d3ec2cd1b9f8243a15dc8c04f221ed",
+      "object_type": "blob",
+      "path": "doc/sgmlnt/win/x550.html"
+    },
+    {
+      "mode": "100644",
+      "object_id": "5751d039cccb74e9a6352e75c7afe7ef247d0761",
+      "object_type": "blob",
+      "path": "doc/sgmlnt/win/x572.html"
+    },
+    {
+      "mode": "100644",
+      "object_id": "ad951d7fdfb0652b8ee3a8fe9555bbcbd65071c5",
+      "object_type": "blob",
+      "path": "doc/sgmlnt/win/x612.html"
+    },
+    {
+      "mode": "100644",
+      "object_id": "b8f9cd9081099bc04500d3b2cde5104e2d07cf75",
+      "object_type": "blob",
+      "path": "doc/sgmlnt/win/x628.html"
+    },
+    {
+      "mode": "100644",
+      "object_id": "82ea17e6e0383b183822aac860bb42775368053f",
+      "object_type": "blob",
+      "path": "doc/sgmlnt/win/x658.html"
+    },
+    {
+      "mode": "100644",
+      "object_id": "ebbdf9216dac4e72d9909b8319305767e7c7b7bb",
+      "object_type": "blob",
+      "path": "doc/sgmlnt/win/x683.html"
+    },
+    {
+      "mode": "100644",
+      "object_id": "eca06adc102ede06a637a39fec45fcdfe5f27d69",
+      "object_type": "blob",
+      "path": "doc/sgmlnt/win/x722.html"
+    },
+    {
+      "mode": "100644",
+      "object_id": "76e3430a804636931d15f3a96b0274bb3e4cd40e",
+      "object_type": "blob",
+      "path": "doc/sgmlnt/win/x73.html"
+    },
+    {
+      "mode": "100644",
+      "object_id": "978d24de4004594d2dac3dfae6a3bcf368f6679a",
+      "object_type": "blob",
+      "path": "doc/sgmlnt/win/x732.html"
+    },
+    {
+      "mode": "100644",
+      "object_id": "cbf3554b9b91ed2ff390779e8feff7f387076cc3",
+      "object_type": "blob",
+      "path": "doc/sgmlnt/win/x76.html"
+    },
+    {
+      "mode": "100644",
+      "object_id": "e0f6bb7eabb0d00b41e694a4413ef77cf7d2922a",
+      "object_type": "blob",
+      "path": "doc/sgmlnt/win/x786.html"
+    },
+    {
+      "mode": "100644",
+      "object_id": "56ebe94fe9cb27f2e510a37db3df1dfc275b2743",
+      "object_type": "blob",
+      "path": "doc/sgmlnt/win/x79.html"
+    },
+    {
+      "mode": "100644",
+      "object_id": "0d8ff4386fdfc0df46b57e5b15e75ca6e8e0eadb",
+      "object_type": "blob",
+      "path": "doc/sgmlnt/win/x852.html"
+    },
+    {
+      "mode": "100644",
+      "object_id": "a935d612958efac6dab2769ea3598b48f669f1a5",
+      "object_type": "blob",
+      "path": "doc/sgmlnt/win/x86.html"
+    },
+    {
+      "mode": "100644",
+      "object_id": "433d19b4b4e2515b4c6aba167b72133028411d30",
+      "object_type": "blob",
+      "path": "doc/sgmlnt/win/x913.html"
+    },
+    {
+      "mode": "100644",
+      "object_id": "c4777bd4d7da7598c1d025f928f19991aed6fd7c",
+      "object_type": "blob",
+      "path": "doc/sgmlnt/win/x94.html"
+    },
+    {
+      "mode": "100644",
+      "object_id": "a1b5993129ff967197e45d3a901bef17fee3cb80",
+      "object_type": "blob",
+      "path": "doc/sgmlnt/win/x972.html"
+    },
+    {
+      "mode": "100644",
+      "object_id": "58090eaf2f9e05f23fc86e386f44528c2e2f35f1",
+      "object_type": "blob",
+      "path": "doc/sgmlnt/win/x977.html"
+    },
+    {
+      "mode": "100644",
+      "object_id": "89d0d6de5121dcb7b4df23e737f2b51a301d4c37",
+      "object_type": "blob",
+      "path": "doc/sp/archform.htm"
+    },
+    {
+      "mode": "100644",
+      "object_id": "561a4ac334c5589d3cf5f4245fa8bd1aef3cf52f",
+      "object_type": "blob",
+      "path": "doc/sp/build.htm"
+    },
+    {
+      "mode": "100644",
+      "object_id": "991757a340913209c9ea300296d886367f502809",
+      "object_type": "blob",
+      "path": "doc/sp/catalog"
+    },
+    {
+      "mode": "100644",
+      "object_id": "c10b8243ff508662e4f90f228db50731814ffe5a",
+      "object_type": "blob",
+      "path": "doc/sp/catalog.htm"
+    },
+    {
+      "mode": "100644",
+      "object_id": "e95de28d60cd4efb869c72c7238a93615207522a",
+      "object_type": "blob",
+      "path": "doc/sp/charset.htm"
+    },
+    {
+      "mode": "100644",
+      "object_id": "357d4e2b47588f05754a32b92d9a2f4b5ddb2443",
+      "object_type": "blob",
+      "path": "doc/sp/features.htm"
+    },
+    {
+      "mode": "100644",
+      "object_id": "c6b78a34eae53e72935ee8aa53f9a1680236c290",
+      "object_type": "blob",
+      "path": "doc/sp/generic.htm"
+    },
+    {
+      "mode": "100644",
+      "object_id": "61cbddbee9a2e5c62c4c3d1b3a6ddd67a2ac83b7",
+      "object_type": "blob",
+      "path": "doc/sp/ideas.htm"
+    },
+    {
+      "mode": "100644",
+      "object_id": "2b9b0ea28b9c4affa2f3631f0a2b6b119eb217f5",
+      "object_type": "blob",
+      "path": "doc/sp/index.htm"
+    },
+    {
+      "mode": "100644",
+      "object_id": "ca9148901463910d4dd01100a7af9d3dbba0a7dd",
+      "object_type": "blob",
+      "path": "doc/sp/new.htm"
+    },
+    {
+      "mode": "100644",
+      "object_id": "4fa82c2a86aa37e4d8690375c676a693b7956cbf",
+      "object_type": "blob",
+      "path": "doc/sp/nsgmls.htm"
+    },
+    {
+      "mode": "100644",
+      "object_id": "1f7f5cf936b518b58ba9d979687eda01f3a318bf",
+      "object_type": "blob",
+      "path": "doc/sp/sgmldecl.htm"
+    },
+    {
+      "mode": "100644",
+      "object_id": "cfd7e641ccb22c66d6d302e3a27e272f810213c9",
+      "object_type": "blob",
+      "path": "doc/sp/sgmlnorm.htm"
+    },
+    {
+      "mode": "100644",
+      "object_id": "aa225a8dba02b058a742f2325cb3ff6060117690",
+      "object_type": "blob",
+      "path": "doc/sp/sgmlsout.htm"
+    },
+    {
+      "mode": "100644",
+      "object_id": "3da41d57935c89217f81961673d683ef3b9c0cb5",
+      "object_type": "blob",
+      "path": "doc/sp/spam.htm"
+    },
+    {
+      "mode": "100644",
+      "object_id": "e75ad5abdbe91f3f38b44a0689e9e9904ecd812a",
+      "object_type": "blob",
+      "path": "doc/sp/spent.htm"
+    },
+    {
+      "mode": "100644",
+      "object_id": "32d3209d19f53d7c820b7f2a017ca9598f990b17",
+      "object_type": "blob",
+      "path": "doc/sp/sx.htm"
+    },
+    {
+      "mode": "100644",
+      "object_id": "0f60a78aec86842c27cfa32fb0b7cdcbf1485a4f",
+      "object_type": "blob",
+      "path": "doc/sp/sysdecl.htm"
+    },
+    {
+      "mode": "100644",
+      "object_id": "5a30b2fe7973d297a193a69c6ea715739be40930",
+      "object_type": "blob",
+      "path": "doc/sp/sysid.htm"
+    },
+    {
+      "mode": "100644",
+      "object_id": "cfcc67989c38d469ec0198ce148601253c516881",
+      "object_type": "blob",
+      "path": "doc/sp/xml.htm"
+    },
+    {
+      "mode": "100644",
+      "object_id": "3869c453087d7af43af897e31c2c9c4012ec19c9",
+      "object_type": "blob",
+      "path": "tei-emacs/color-theme.el"
+    },
+    {
+      "mode": "100644",
+      "object_id": "5d90c6325f7cbfead10f70972be4e77f86e38b68",
+      "object_type": "blob",
+      "path": "tei-emacs/display.png"
+    },
+    {
+      "mode": "100644",
+      "object_id": "c437f78e94b5654d75357173c06dc5cf5700bf7c",
+      "object_type": "blob",
+      "path": "tei-emacs/dlgopen.el"
+    },
+    {
+      "mode": "100644",
+      "object_id": "a6fdec7a98d89ca6e7561a2aee2016862ba3c1a8",
+      "object_type": "blob",
+      "path": "tei-emacs/func-doc.el"
+    },
+    {
+      "mode": "100644",
+      "object_id": "76b826afb9a649d87aecb2a0627e24026edcad08",
+      "object_type": "blob",
+      "path": "tei-emacs/iso-html.el"
+    },
+    {
+      "mode": "100644",
+      "object_id": "4261ae6e9acc0810294264631c1f3330848d2506",
+      "object_type": "blob",
+      "path": "tei-emacs/iso-tex.el"
+    },
+    {
+      "mode": "100644",
+      "object_id": "52ab94281b4e422a1e51399189448b44f6d33123",
+      "object_type": "blob",
+      "path": "tei-emacs/quail-sanskrit.el"
+    },
+    {
+      "mode": "100644",
+      "object_id": "28828b1d75802746253edb74e005d95bd2e63928",
+      "object_type": "blob",
+      "path": "tei-emacs/schemas.xml"
+    },
+    {
+      "mode": "100644",
+      "object_id": "c71f7a515687844dcf53c450ce9b816062465c4b",
+      "object_type": "blob",
+      "path": "tei-emacs/sgml-input.el"
+    },
+    {
+      "mode": "100644",
+      "object_id": "4eeeb641414858bc0439270ae4d128d9fbdce53d",
+      "object_type": "blob",
+      "path": "tei-emacs/tei-emacs-init.el"
+    },
+    {
+      "mode": "100644",
+      "object_id": "b75b9ef04ef489d327b02f119f53cf672e59df72",
+      "object_type": "blob",
+      "path": "tei-emacs/unichars.el"
+    },
+    {
+      "mode": "100644",
+      "object_id": "9a67932efaf5d64bee48599993a22ed25411155e",
+      "object_type": "blob",
+      "path": "tei-emacs/windoze.el"
+    },
+    {
+      "mode": "100644",
+      "object_id": "6b5754d5b13e289aeeff56503a0ae998d2c6399a",
+      "object_type": "blob",
+      "path": "tei-emacs/xmlchars.el"
+    },
+    {
+      "mode": "100644",
+      "object_id": "60f2ee1af54bfb984f3ce6bf35a51a0b4d95a6e9",
+      "object_type": "blob",
+      "path": "tei-emacs/xmlrun.el"
+    },
+    {
+      "mode": "100644",
+      "object_id": "9241ac26a3508a2f4ecd7497d8a0697657273ae2",
+      "object_type": "blob",
+      "path": "tei-emacs/xmlsgml-setup.el"
+    },
+    {
+      "mode": "100644",
+      "object_id": "87602107fd152983498ee1a03346f05d0cd7f394",
+      "object_type": "blob",
+      "path": "tei-emacs/xmlunicode.el"
+    }
+  ],
+  "ref_requested": "HEAD",
+  "repository": "https://github.com/TEIC/tei-emacs.git",
+  "resolved_commit": "45bc05fbda4eb8edc7660fa8060fd42c80db2847",
+  "root_tree": "5bfe7600e9967b33cc2623f1aa113ac4d82a0d42",
+  "schema_version": 1,
+  "source_id": "teic-public-git-repositories"
+}

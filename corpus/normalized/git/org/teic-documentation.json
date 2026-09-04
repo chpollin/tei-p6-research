@@ -1,0 +1,106 @@
+{
+  "entries": [
+    {
+      "mode": "100644",
+      "object_id": "0d0bafdcba2f5f484675672990eeb9d155f98c2d",
+      "object_type": "blob",
+      "path": ".github/workflows/deploy.yml"
+    },
+    {
+      "mode": "100644",
+      "object_id": "1077cfc5b008171b0bc0c0ffd68cd5bbdbe3f82b",
+      "object_type": "blob",
+      "path": ".github/workflows/publish.yml"
+    },
+    {
+      "mode": "100644",
+      "object_id": "8bfaac41362e12ed694d92c9be13fa6c4bcb85e7",
+      "object_type": "blob",
+      "path": ".gitignore"
+    },
+    {
+      "mode": "100644",
+      "object_id": "d06cea6d9d72c2cfeb833534889681230d9d52b1",
+      "object_type": "blob",
+      "path": "Bylaws/Bylaws-2000.xml"
+    },
+    {
+      "mode": "100644",
+      "object_id": "d0ef167feadf4c060dfeb749490f1234b08eabf7",
+      "object_type": "blob",
+      "path": "README.md"
+    },
+    {
+      "mode": "100644",
+      "object_id": "2181001ab82c308dffb11b48d6fb6f29c28f0f22",
+      "object_type": "blob",
+      "path": "TCW/tcw09.xml"
+    },
+    {
+      "mode": "100644",
+      "object_id": "04b944c39b76f0cc37aefa393662c42006b7b4e4",
+      "object_type": "blob",
+      "path": "TCW/tcw20.xml"
+    },
+    {
+      "mode": "100644",
+      "object_id": "d8b460cb1667385b25be1cca6b017ba28387750f",
+      "object_type": "blob",
+      "path": "TCW/tcw22.xml"
+    },
+    {
+      "mode": "100644",
+      "object_id": "f5fa229c2b8a3f0df2a813949f656b8f094b0d71",
+      "object_type": "blob",
+      "path": "TCW/tcw24.xml"
+    },
+    {
+      "mode": "100644",
+      "object_id": "413193f579d978404e79cc06248cd332e8d11db2",
+      "object_type": "blob",
+      "path": "TCW/tcw27.xml"
+    },
+    {
+      "mode": "100644",
+      "object_id": "10791ce6181bec270413a2a7aff64fe06148f9f2",
+      "object_type": "blob",
+      "path": "TCW/tcw30.xml"
+    },
+    {
+      "mode": "100644",
+      "object_id": "944b667e6ad56da8c41df3532ac439724618a56d",
+      "object_type": "blob",
+      "path": "TCW/tcw31.xml"
+    },
+    {
+      "mode": "100644",
+      "object_id": "7582c869aa1651449652ebe12a66abfcbb11586e",
+      "object_type": "blob",
+      "path": "TCW/tcw32.xml"
+    },
+    {
+      "mode": "100644",
+      "object_id": "770fe17959b3ac493cd615ea6acc4e354277fb1a",
+      "object_type": "blob",
+      "path": "TCW/tcw33.xml"
+    },
+    {
+      "mode": "100755",
+      "object_id": "305944f141b1a1ee72a3bd2fb007f117b0137bcc",
+      "object_type": "blob",
+      "path": "bin/publish.sh"
+    },
+    {
+      "mode": "100644",
+      "object_id": "a60d99abc7d6c1c1223d67766ba48a0c6bd2e091",
+      "object_type": "blob",
+      "path": "make-CETEIcean.xsl"
+    }
+  ],
+  "ref_requested": "HEAD",
+  "repository": "https://github.com/TEIC/Documentation.git",
+  "resolved_commit": "04207dd45740d999efa8eed2ac443315289a23a8",
+  "root_tree": "f2252f9ab63a828c119eecd7795fc57008351101",
+  "schema_version": 1,
+  "source_id": "teic-public-git-repositories"
+}

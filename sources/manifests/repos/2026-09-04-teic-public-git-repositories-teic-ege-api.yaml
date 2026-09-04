@@ -1,0 +1,117 @@
+schema_version: 1
+run_id: 2026-09-04-teic-public-git-repositories-teic-ege-api
+source_id: teic-public-git-repositories
+started_at: '2026-09-04T16:36:24Z'
+finished_at: '2026-09-04T16:36:26Z'
+status: observable-complete
+adapter:
+  name: tools.corpus.git_snapshot
+  version: 1
+requests:
+- kind: git-mirror
+  repository: https://github.com/TEIC/ege-api.git
+  action: cloned
+  requested_ref: HEAD
+  resolved_commit: fb69b099e38c9d62704b62b4ff604327bbfd8073
+objects:
+- kind: git-tree-inventory
+  path: corpus/normalized/git/org/teic-ege-api.json
+  sha256: a2ee8ef2b87cee2b7213aef03581e801c1de96b0c7f230b4d02ad23e47cd91b8
+  root_tree: 5df6c547daee08d5cbfff6d71dfb7b0237c81543
+counts:
+  commits_all_refs: 50
+  refs: 29
+  tree_entries: 38
+refs:
+- name: refs/heads/dependabot/maven/org.apache.maven.plugins-maven-compiler-plugin-3.14.0
+  object_type: commit
+  object_id: 97f3a8d0aec590a9f07fb2f896a925016007d80f
+- name: refs/heads/dependabot/maven/org.owasp-dependency-check-maven-12.1.1
+  object_type: commit
+  object_id: 63b6977bc35fb70ee422cae4765ee2d4b283ad30
+- name: refs/heads/main
+  object_type: commit
+  object_id: fb69b099e38c9d62704b62b4ff604327bbfd8073
+- name: refs/pull/1/head
+  object_type: commit
+  object_id: dc0b36b90019aaeba8f2976bf203915556296513
+- name: refs/pull/10/head
+  object_type: commit
+  object_id: 85698d268a0733bebc91b2f881e070ae8649981c
+- name: refs/pull/11/head
+  object_type: commit
+  object_id: b24f6b041860530c27371bd0307464b7a93af64c
+- name: refs/pull/12/head
+  object_type: commit
+  object_id: cb157a00351b474398dafede4aadf464222cbbd8
+- name: refs/pull/13/head
+  object_type: commit
+  object_id: 6f1b7986f43229e449b601aae1c05b2dddcd494e
+- name: refs/pull/14/head
+  object_type: commit
+  object_id: da12e7dc34d41cddf9329912d6742096122589a4
+- name: refs/pull/15/head
+  object_type: commit
+  object_id: b809067e8122544f4c1ab089213beca2b834278e
+- name: refs/pull/16/head
+  object_type: commit
+  object_id: fadec44c54c37cf77270867735f7255dc564a981
+- name: refs/pull/17/head
+  object_type: commit
+  object_id: 56ed1ae726109e4c9175b8595dbfa17229180fca
+- name: refs/pull/18/head
+  object_type: commit
+  object_id: 97f3a8d0aec590a9f07fb2f896a925016007d80f
+- name: refs/pull/18/merge
+  object_type: commit
+  object_id: 57a98031511496527a0e99020709ae24caf80b7a
+- name: refs/pull/19/head
+  object_type: commit
+  object_id: 63b6977bc35fb70ee422cae4765ee2d4b283ad30
+- name: refs/pull/19/merge
+  object_type: commit
+  object_id: 14dd4ae57e073c48d586c54aa2449328b10e9d0c
+- name: refs/pull/2/head
+  object_type: commit
+  object_id: 4e97ecc775aecf78477a3ac951bc2f22f97a5e61
+- name: refs/pull/3/head
+  object_type: commit
+  object_id: 06511401489492e44dfe8b0b5aaa589631d8a22c
+- name: refs/pull/4/head
+  object_type: commit
+  object_id: 81448bfff18401b33b3198ecc9afc94cb87fa806
+- name: refs/pull/5/head
+  object_type: commit
+  object_id: fd272be2ad99ed1a45061c0a2880b1eeff460e67
+- name: refs/pull/6/head
+  object_type: commit
+  object_id: ac6cc29e336fc6817c949b282c3dd674ab6291f8
+- name: refs/pull/7/head
+  object_type: commit
+  object_id: 37d85a0177105e9f6304e23311be63a4c7ee4b50
+- name: refs/pull/8/head
+  object_type: commit
+  object_id: 5eb4d6bdc0f74142a749cf517d60cb87dc1bae6a
+- name: refs/pull/9/head
+  object_type: commit
+  object_id: 94c3020b6edd69033266f9ce660b25ed1d02e5ae
+- name: refs/tags/v0.2.1
+  object_type: commit
+  object_id: 3c0450bd98d2260d0545a5190b3df575e32c97dd
+- name: refs/tags/v0.3.0
+  object_type: commit
+  object_id: 109f411278c12c6fb90dee0d213b3c1700b1909a
+- name: refs/tags/v0.4.0
+  object_type: commit
+  object_id: e5bad06762e7a5b288bcd0e6561960ed30d29d82
+- name: refs/tags/v0.4.1
+  object_type: commit
+  object_id: 687592a091e4108bb815e12a3f241c9f93e83d9d
+- name: refs/tags/v0.4.2
+  object_type: commit
+  object_id: fb69b099e38c9d62704b62b4ff604327bbfd8073
+gaps: []
+rights_exceptions:
+- The local mirror is not committed; redistribution follows the upstream repository
+  license.
+raw_materialization: corpus\raw\git\TEIC-ege-api.git

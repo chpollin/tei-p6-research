@@ -38,19 +38,12 @@ The first normative baseline is TEI P5 4.12.0, published at revision
 first network ingestion must resolve and record the full Git object ID before
 claiming a reproducible checkout.
 
-The broader corpus has five registered source families:
-
-1. the tagged TEI P5 source and its published Guidelines;
-2. all publicly observable `TEIC/TEI` GitHub issues and pull requests in the
-   declared snapshot;
-3. Technical Council meeting minutes and their source repository;
-4. the official P5 release census and release artifacts;
-5. a bounded literature corpus, beginning with the Guidelines bibliography and
-   the Journal of the Text Encoding Initiative.
-
-See `sources/registry.yaml` for authority, trust, rights, cadence, and admission
-rules. See `corpus/COMPLETENESS.md` for what the word *complete* means for each
-family.
+The corpus covers normative releases, development and governance records,
+historical design documents, reference implementations, official P6 work, and
+bounded evidence of community practice. The authoritative family census is
+`sources/PRIMARY-SOURCES.md`; `sources/registry.yaml` records authority, trust,
+rights, cadence, and admission rules. `corpus/COMPLETENESS.md` defines what the
+word *complete* means for each boundary.
 
 ## Current, development, and historical states
 
@@ -61,9 +54,9 @@ family.
   release and is not normative merely because it is newer.
 - **Historical P5:** every P5 release discoverable through the official release
   index at the observation time, each resolved to its own immutable lock.
-- **P6 and later work:** out of scope for the normative P5 corpus. It may enter as
-  contextual evidence only when a separately registered source explicitly
-  discusses P5.
+- **Official P6 work:** acquired as a separately registered primary process
+  record. It is not a normative release and remains distinct from this project's
+  independent P6 design proposals.
 
 ## Trust boundary
 
