@@ -1,0 +1,44 @@
+schema_version: 1
+lock_id: tei-p5-literature-bounded-seeds
+source_id: tei-p5-literature
+as_of: "2026-09-04"
+retrieval_status: not_started
+
+scope:
+  claim: bounded-not-global
+  global_completeness: not-completable
+  completion_target: bounded-complete
+  languages: []
+  date_start: null
+  date_end: "2026-09-04"
+
+seed_sets:
+  - seed_id: guidelines-4.12.0-bibliography
+    kind: finite-bibliography
+    url: https://www.tei-c.org/release/doc/tei-p5-doc/en/html/BIB.html
+    locked_release: "4.12.0"
+  - seed_id: journal-of-the-text-encoding-initiative
+    kind: journal-census
+    url: https://journals.openedition.org/jtei/
+
+search_protocol:
+  exact_queries: []
+  indexes: []
+  inclusion_criteria: []
+  exclusion_criteria: []
+  disposition_vocabulary:
+    - included
+    - duplicate
+    - excluded-with-reason
+    - unavailable
+    - pending-review
+
+rights:
+  license_granularity: per-item
+  full_text_commit_requires_verified_license: true
+
+records: []
+counts: {}
+gaps:
+  - code: search-protocol-not-yet-declared
+    status: blocks-bounded-complete

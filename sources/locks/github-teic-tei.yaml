@@ -1,0 +1,53 @@
+schema_version: 1
+lock_id: github-teic-tei-observable-history
+source_id: github-teic-tei-work-items
+as_of: "2026-09-04"
+retrieval_status: not_started
+
+repository:
+  owner: TEIC
+  name: TEI
+  canonical_url: https://github.com/TEIC/TEI
+  api_base: https://api.github.com/repos/TEIC/TEI
+
+snapshot:
+  observed_at: null
+  api_version: null
+  api_version_rule: Pin the supported GitHub API version in the first run manifest; never change it silently during a run.
+  authentication: read-only-token-from-secret-store
+  state_scope: all
+
+required_collections:
+  repository_metadata: true
+  issues: true
+  issue_comments: true
+  issue_timeline_events: true
+  pull_requests: true
+  pull_request_reviews: true
+  pull_request_review_comments: true
+  pull_request_commits: true
+  pull_request_file_relations: true
+  labels: true
+  milestones: true
+  releases: true
+  reactions: if-exposed-and-within-api-contract
+
+pagination:
+  rule: Follow API-provided cursors or Link headers to exhaustion.
+  max_page_size: 100
+
+identity:
+  primary: github-node-id
+  human_key: github:TEIC/TEI:<kind>:<number>
+  do_not_parse_identity_from_url: true
+
+incremental_policy:
+  changed_since_overlap_hours: 24
+  changed_parent_rehydration: full
+  reconciliation: periodic-full-identifier-census
+  deletion_policy: soft-state-no-longer-observable
+
+counts: {}
+gaps:
+  - code: no-api-snapshot-yet
+    status: expected-before-first-ingestion

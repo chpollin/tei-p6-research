@@ -1,0 +1,16 @@
+# Originals may be confidential; they never enter version control.
+00_sources/*
+!00_sources/README.md
+
+# Local credentials (reviewer APIs, reference manager)
+.env
+
+# Python
+__pycache__/
+.pytest_cache/
+.venv/
+
+# Upstream Grounded Vault research instance retained locally for reference,
+# but not part of the TEI P6 vault.
+/paper/
+/docs/field-report-kisug-writing-wave.md

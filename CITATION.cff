@@ -1,0 +1,20 @@
+cff-version: 1.2.0
+message: "If you use this research vault, please cite it using these metadata."
+type: software
+title: "TEI P6 Research Vault"
+abstract: "A provenance-complete analysis of TEI P5 and grounded research environment for designing a possible next generation of the Text Encoding Initiative."
+authors:
+  - family-names: Pollin
+    given-names: Christopher
+    affiliation: "Digital Humanities Craft OG"
+    orcid: "https://orcid.org/0000-0002-4879-129X"
+keywords:
+  - tei
+  - text-encoding
+  - digital-editions
+  - ai-agents
+  - digital-humanities
+  - knowledge-base
+  - promptotyping
+  - provenance
+license: CC-BY-4.0

@@ -1,0 +1,32 @@
+kind: context-manifest
+version: 1
+id: tei-p5-element
+purpose: Analyze one named TEI P5 element without loading an entire release or issue corpus.
+token_budget: 8000
+parameters:
+  required:
+    - element_name
+  optional:
+    - tei_release
+read_in_order:
+  - knowledge/index.md
+  - knowledge/state.md
+  - knowledge/specification.md
+  - contexts/START.md
+  - workflows/analyze-element.md
+retrieve:
+  - matching topic maps in 30_assertions/MOC-*.md
+  - assertions whose title, statement, or support names the exact element
+  - the grounding distillates of those assertions
+  - exact source passages only for load-bearing details
+expand_when:
+  - condition: No assertion covers the requested facet.
+    action: Record an open question; use the standard acquire-to-assertion chain if new source work is authorized.
+  - condition: Historical rationale or current implementation is requested.
+    action: Route the relevant identifier through contexts/manifests/issue-decision.yml.
+exclude_by_default:
+  - corpus/**
+  - 00_sources/**
+  - unrelated modules
+  - unrelated GitHub discussions
+grounding_policy: Context output is navigation only; cite the canonical Grounded Vault chain.

@@ -1,0 +1,5 @@
+# Raw acquisition objects are local materializations. Audit metadata belongs in
+# sources/manifests; redistributable snapshots require an explicit rights review.
+*
+!.gitignore
+!README.md

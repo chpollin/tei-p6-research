@@ -1,0 +1,31 @@
+kind: context-manifest
+version: 1
+id: tei-p5-module
+purpose: Analyze one TEI P5 module, its boundaries, dependencies, classes and characteristic modeling patterns.
+token_budget: 12000
+parameters:
+  required:
+    - module_name
+  optional:
+    - tei_release
+read_in_order:
+  - knowledge/index.md
+  - knowledge/state.md
+  - knowledge/specification.md
+  - contexts/START.md
+  - workflows/analyze-module.md
+retrieve:
+  - matching topic maps in 30_assertions/MOC-*.md
+  - assertions and distillates naming the module
+  - representative element analyses only where needed
+  - source passages for module definition, dependencies and constraints
+expand_when:
+  - condition: A cross-module dependency affects the conclusion.
+    action: Retrieve only the referenced class, macro, element or module.
+  - condition: A historical design claim is needed.
+    action: Route its issue, pull request or governance record through contexts/manifests/issue-decision.yml.
+exclude_by_default:
+  - corpus/**
+  - 00_sources/**
+  - exhaustive element detail not relevant to the question
+grounding_policy: Context output is navigation only; cite the canonical Grounded Vault chain.

@@ -1,0 +1,39 @@
+schema_version: 1
+lock_id: teic-tei-p5-4.12.0
+source_id: teic-tei-p5-4.12.0
+as_of: "2026-09-04"
+retrieval_status: not_started
+
+release:
+  product: TEI P5 Guidelines
+  version: "4.12.0"
+  release_tag: P5_Release_4.12.0
+  published_revision: "113e933e2"
+  revision_kind: abbreviated-git-sha
+  resolved_full_commit_sha: null
+  resolution_rule: Resolve the published revision to exactly one full commit before checkout and record it in a new immutable lock revision.
+
+origins:
+  git_repository: https://github.com/TEIC/TEI.git
+  github_release: https://github.com/TEIC/TEI/releases/tag/P5_Release_4.12.0
+  guidelines_html: https://www.tei-c.org/release/doc/tei-p5-doc/en/html/
+  vault_release: https://www.tei-c.org/Vault/P5/4.12.0/
+
+required_components:
+  - git-tree-inventory
+  - P5/Source/Guidelines
+  - P5/Source/Specs
+  - P5/ReleaseNotes
+  - generated-schema-inventory
+  - published-html-inventory
+  - published-pdf-or-explicit-gap
+  - p5subset.xml-or-explicit-gap
+  - p5subset.json-or-explicit-gap
+  - p5attlist.txt-or-explicit-gap
+  - upstream-license
+
+hashes: {}
+counts: {}
+gaps:
+  - code: unresolved-full-commit-sha
+    status: expected-before-first-ingestion

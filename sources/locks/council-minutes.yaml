@@ -1,0 +1,35 @@
+schema_version: 1
+lock_id: tei-council-minutes-observable-corpus
+source_id: tei-council-minutes
+as_of: "2026-09-04"
+retrieval_status: not_started
+
+scope:
+  meeting_index: https://www.tei-c.org/activities/council/meetings/
+  source_repository: https://github.com/TEIC/Documentation.git
+  date_start: null
+  date_end: "2026-09-04"
+  rule: Enumerate every meeting exposed by the official index through date_end; preserve older archival gaps explicitly.
+
+required_manifestations:
+  - official-index-record
+  - official-meeting-page-or-explicit-gap
+  - source-repository-document-when-present
+  - attachment-inventory
+  - referenced-working-paper-inventory
+
+identity:
+  preferred: official-meeting-date-and-stable-source-id
+  title_is_identity: false
+  manifestation_merge: false
+
+git:
+  observed_full_commit_sha: null
+
+rights:
+  review_before_full_text_commit: true
+
+counts: {}
+gaps:
+  - code: no-index-snapshot-yet
+    status: expected-before-first-ingestion

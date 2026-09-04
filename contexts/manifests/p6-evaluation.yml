@@ -1,0 +1,30 @@
+kind: context-manifest
+version: 1
+id: tei-p6-proposal-evaluation
+purpose: Evaluate a proposed P6 design against grounded P5 behavior, explicit requirements and migration consequences.
+token_budget: 16000
+parameters:
+  required:
+    - proposal
+  optional:
+    - evaluation_criteria
+read_in_order:
+  - knowledge/index.md
+  - knowledge/state.md
+  - knowledge/specification.md
+  - contexts/START.md
+  - workflows/evaluate-p6-proposal.md
+retrieve:
+  - verified or grounded assertions describing the relevant P5 behavior
+  - contested assertions and open questions in the same topics
+  - official future-version material when the proposal claims existing consensus
+  - representative P5 examples needed for compatibility analysis
+expand_when:
+  - condition: The proposal calls a P5 behavior defective or obsolete.
+    action: Retrieve counterexamples, affected modules and grounded evidence of actual cost.
+  - condition: The proposal claims endorsement or planned adoption.
+    action: Trace the official decision and preserve its date and status.
+exclude_by_default:
+  - unrelated P5 modules
+  - speculative advantages not tied to an explicit criterion
+grounding_policy: P5 descriptions may become assertions; recommendations and design choices remain clearly marked posits unless a source is itself being reported.

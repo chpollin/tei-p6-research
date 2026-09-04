@@ -1,0 +1,34 @@
+{
+  "collapse-color-groups": true,
+  "collapse-display": false,
+  "collapse-filter": false,
+  "collapse-forces": true,
+  "collapse-search": false,
+  "lineSizeMultiplier": 1,
+  "nodeSizeMultiplier": 1,
+  "repelStrength": 10,
+  "showArrow": true,
+  "showAttachments": false,
+  "showOrphans": false,
+  "showTags": false,
+  "textFadeMultiplier": 0,
+  "search": "-path:corpus -path:00_sources -path:paper -path:tests -path:tools",
+  "colorGroups": [
+    {
+      "query": "path:10_markdown",
+      "color": { "a": 1, "rgb": 39423 }
+    },
+    {
+      "query": "path:20_distillates",
+      "color": { "a": 1, "rgb": 16750848 }
+    },
+    {
+      "query": "path:30_assertions",
+      "color": { "a": 1, "rgb": 10053324 }
+    },
+    {
+      "query": "path:40_output",
+      "color": { "a": 1, "rgb": 16724940 }
+    }
+  ]
+}

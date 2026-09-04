@@ -1,0 +1,19 @@
+{
+  "alwaysUpdateLinks": false,
+  "attachmentFolderPath": "00_sources/attachments",
+  "newFileLocation": "current",
+  "newLinkFormat": "relative",
+  "promptDelete": true,
+  "showUnsupportedFiles": true,
+  "useMarkdownLinks": false,
+  "userIgnoreFilters": [
+    "corpus/",
+    "00_sources/",
+    "paper/",
+    "tests/",
+    "tools/",
+    ".git/",
+    ".github/",
+    ".claude/"
+  ]
+}

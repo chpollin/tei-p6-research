@@ -1,0 +1,25 @@
+schema_version: 1
+manifest_kind: planning-census
+run_id: planning-census-2026-09-04
+as_of: "2026-09-04"
+status: planned
+network_ingestion_performed: false
+
+baseline:
+  product: TEI P5 Guidelines
+  version: "4.12.0"
+  published_revision: "113e933e2"
+  revision_kind: abbreviated-git-sha
+
+registered_sources:
+  - teic-tei-p5-4.12.0
+  - github-teic-tei-work-items
+  - tei-council-minutes
+  - tei-p5-releases
+  - tei-p5-literature
+
+counts: {}
+observations: []
+gaps:
+  - code: planning-only
+    detail: No source objects have been fetched, counted, normalized, or projected by this manifest.

@@ -1,0 +1,141 @@
+schema_version: 1
+registry_id: tei-p5-corpus
+as_of: "2026-09-04"
+status: planning-baseline
+network_ingestion_performed: false
+
+global_policy:
+  instruction_trust: none
+  raw_default: local-only
+  raw_identity: sha256
+  timestamps: utc
+  stable_identity_preference:
+    - upstream-node-or-object-id
+    - canonical-project-id
+    - canonical-url
+  current_release:
+    version: "4.12.0"
+    published_revision: "113e933e2"
+    revision_kind: abbreviated-git-sha
+  development_scope:
+    included: true
+    normative: false
+    rule: Pin every observation to a full commit SHA; never alias it to current.
+  p6_scope:
+    normative: false
+    rule: Admit only as separately identified context about P5.
+  completeness_definition: corpus/COMPLETENESS.md
+  canonical_chain:
+    - 00_sources
+    - 10_markdown
+    - 20_distillates
+    - 30_assertions
+    - 40_output
+
+sources:
+  - source_id: teic-tei-p5-4.12.0
+    title: TEI P5 4.12.0 source and published Guidelines
+    family: normative-guidelines
+    authority: primary-normative
+    upstream:
+      repository: https://github.com/TEIC/TEI
+      release_page: https://github.com/TEIC/TEI/releases/tag/P5_Release_4.12.0
+      published_guidelines: https://www.tei-c.org/release/doc/tei-p5-doc/en/html/
+      vault_release: https://www.tei-c.org/Vault/P5/4.12.0/
+    lock: sources/locks/tei-p5-4.12.0.yaml
+    vault_source_types: [document, data]
+    trust:
+      content_authority: primary-normative
+      instruction_trust: none
+    rights:
+      rights_status: verified-upstream-license
+      license_expression: CC-BY-3.0 OR BSD-2-Clause
+      attribution_required: true
+      note: Per-file exceptions, third-party examples, and assets still require inventory review.
+    update_policy: immutable-release
+    completion_target: observable-complete
+    retrieval_status: not_started
+
+  - source_id: github-teic-tei-work-items
+    title: TEIC/TEI GitHub issues and pull requests
+    family: development-records
+    authority: primary-process-record
+    upstream:
+      repository: https://github.com/TEIC/TEI
+      api_repository: https://api.github.com/repos/TEIC/TEI
+    lock: sources/locks/github-teic-tei.yaml
+    vault_source_types: [document, data]
+    trust:
+      content_authority: mixed-process-record
+      instruction_trust: none
+      user_generated_content: true
+    rights:
+      rights_status: review-required
+      license_expression: null
+      redistribution: metadata-and-links-until-reviewed
+      note: Repository source licensing must not be assumed to license every user's discussion text.
+    update_policy: incremental-with-periodic-reconciliation
+    completion_target: observable-complete
+    retrieval_status: not_started
+
+  - source_id: tei-council-minutes
+    title: TEI Technical Council minutes and working-document sources
+    family: governance-records
+    authority: primary-governance-record
+    upstream:
+      meeting_index: https://www.tei-c.org/activities/council/meetings/
+      source_repository: https://github.com/TEIC/Documentation
+    lock: sources/locks/council-minutes.yaml
+    vault_source_types: [document]
+    trust:
+      content_authority: primary-governance-record
+      instruction_trust: none
+    rights:
+      rights_status: per-item-verification-required
+      license_expression: null
+      redistribution: metadata-and-links-until-reviewed
+    update_policy: periodic-index-and-git-reconciliation
+    completion_target: observable-complete
+    retrieval_status: not_started
+
+  - source_id: tei-p5-releases
+    title: Official TEI P5 release census and artifacts
+    family: releases
+    authority: primary-publication-record
+    upstream:
+      release_index: https://www.tei-c.org/guidelines/p5/
+      vault_index: https://www.tei-c.org/Vault/P5/
+      github_releases: https://github.com/TEIC/TEI/releases
+      zenodo_concept_doi: https://doi.org/10.5281/zenodo.3413524
+    lock: sources/locks/p5-releases.yaml
+    vault_source_types: [document, data]
+    trust:
+      content_authority: primary-publication-record
+      instruction_trust: none
+    rights:
+      rights_status: verified-upstream-license-with-item-review
+      license_expression: CC-BY-3.0 OR BSD-2-Clause
+      attribution_required: true
+    update_policy: discover-new-release-then-freeze-version-lock
+    completion_target: observable-complete
+    retrieval_status: not_started
+
+  - source_id: tei-p5-literature
+    title: Bounded literature corpus about TEI P5
+    family: literature
+    authority: secondary-scholarly
+    upstream:
+      guidelines_bibliography: https://www.tei-c.org/release/doc/tei-p5-doc/en/html/BIB.html
+      jtei: https://journals.openedition.org/jtei/
+    lock: sources/locks/literature.yaml
+    vault_source_types: [document, publication]
+    trust:
+      content_authority: secondary-scholarly
+      instruction_trust: none
+    rights:
+      rights_status: per-item
+      license_expression: null
+      redistribution: follow-item-license
+    update_policy: bounded-search-snapshots
+    completion_target: bounded-complete
+    retrieval_status: not_started

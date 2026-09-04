@@ -1,0 +1,38 @@
+schema_version: 1
+lock_id: tei-p5-release-census
+source_id: tei-p5-releases
+as_of: "2026-09-04"
+retrieval_status: not_started
+
+discovery_sources:
+  - https://www.tei-c.org/guidelines/p5/
+  - https://www.tei-c.org/Vault/P5/
+  - https://github.com/TEIC/TEI/releases
+  - https://doi.org/10.5281/zenodo.3413524
+
+scope:
+  generation: P5
+  include_prereleases_when_officially_listed: true
+  include_current_alias_as_identity: false
+  rule: Every version observed in an official index gets an immutable per-version child lock.
+
+per_release_requirements:
+  - version
+  - publication-date-or-explicit-gap
+  - release-notes-or-explicit-gap
+  - tag-and-revision-or-explicit-gap
+  - artifact-inventory
+  - retrieved-artifact-sha256
+  - source-manifestation-relations
+  - license-and-rights-review
+
+latest_planning_baseline:
+  version: "4.12.0"
+  published_revision: "113e933e2"
+  evidence_status: declared-not-retrieved
+
+versions: []
+counts: {}
+gaps:
+  - code: release-census-not-yet-ingested
+    status: expected-before-first-ingestion

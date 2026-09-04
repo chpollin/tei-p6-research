@@ -1,0 +1,33 @@
+{
+  "@context": "https://w3id.org/codemeta/3.0",
+  "@type": "SoftwareSourceCode",
+  "name": "TEI P6 Research Vault",
+  "description": "A provenance-complete analysis of TEI P5 and grounded research environment for designing a possible next generation of the Text Encoding Initiative.",
+  "isBasedOn": "https://github.com/DigitalHumanitiesCraft/grounded-vault",
+  "author": [
+    {
+      "@type": "Person",
+      "id": "https://orcid.org/0000-0002-4879-129X",
+      "givenName": "Christopher",
+      "familyName": "Pollin",
+      "affiliation": {
+        "@type": "Organization",
+        "name": "Digital Humanities Craft OG"
+      },
+      "sameAs": "https://github.com/chpollin"
+    }
+  ],
+  "programmingLanguage": "Python",
+  "keywords": [
+    "tei",
+    "text-encoding",
+    "digital-editions",
+    "ai-agents",
+    "digital-humanities",
+    "knowledge-base",
+    "promptotyping",
+    "provenance"
+  ],
+  "license": "https://spdx.org/licenses/CC-BY-4.0",
+  "dateModified": "2026-09-04"
+}
