@@ -1,0 +1,1713 @@
+{
+  "attribution": "edition humboldt digital, Berlin-Brandenburgische Akademie der Wissenschaften 2025; source XML identifies editors Dominik Erdmann and Christian Thomas and contributor Florian Schnee; dataset editors are named in the pinned README and CITATION.",
+  "authority": "Bounded experiment; not a Vault grounding source or domain review.",
+  "editorial": [
+    {
+      "baseline_checks": {
+        "date_and_place_metadata": true,
+        "nested_element_order": true,
+        "primary_text": true,
+        "rendition_and_parentage": true,
+        "separate_equal_extents": true
+      },
+      "candidate_checks": {
+        "date_and_place_metadata": true,
+        "nested_element_order": true,
+        "primary_text": true,
+        "rendition_and_parentage": true,
+        "separate_equal_extents": true
+      },
+      "comparison": {
+        "baseline": {
+          "limitations": [
+            "Parsed XML preserves hierarchy, attribute values, and text/tail; lexical entity spelling, attribute order, quote style, and original namespace prefixes are not retained.",
+            "Task observations apply the same declared text projection; unsupported constructs remain in the tree without a domain interpretation."
+          ],
+          "observations": {
+            "breaks": [],
+            "elements": [
+              {
+                "attributes": {},
+                "extent": [
+                  0,
+                  19
+                ],
+                "id": "e0",
+                "parent": null,
+                "tag": "head"
+              },
+              {
+                "attributes": {
+                  "calendar": "#gregorian",
+                  "when": "1790-06-15"
+                },
+                "extent": [
+                  0,
+                  19
+                ],
+                "id": "e0.0",
+                "parent": "e0",
+                "tag": "date"
+              },
+              {
+                "attributes": {
+                  "rendition": "#u"
+                },
+                "extent": [
+                  0,
+                  19
+                ],
+                "id": "e0.0.0",
+                "parent": "e0.0",
+                "tag": "hi"
+              },
+              {
+                "attributes": {
+                  "rendition": "#aq"
+                },
+                "extent": [
+                  9,
+                  19
+                ],
+                "id": "e0.0.0.0",
+                "parent": "e0.0.0",
+                "tag": "hi"
+              },
+              {
+                "attributes": {
+                  "ref": "https://edition-humboldt.de/H0005512 https://www.geonames.org/11609031"
+                },
+                "extent": [
+                  9,
+                  19
+                ],
+                "id": "e0.0.0.0.0",
+                "parent": "e0.0.0.0",
+                "tag": "placeName"
+              }
+            ],
+            "notes": [],
+            "pointers": [
+              {
+                "attribute": "calendar",
+                "element": "e0.0",
+                "value": "#gregorian"
+              },
+              {
+                "attribute": "rendition",
+                "element": "e0.0.0",
+                "value": "#u"
+              },
+              {
+                "attribute": "rendition",
+                "element": "e0.0.0.0",
+                "value": "#aq"
+              },
+              {
+                "attribute": "ref",
+                "element": "e0.0.0.0.0",
+                "value": "https://edition-humboldt.de/H0005512 https://www.geonames.org/11609031"
+              }
+            ],
+            "text": "Bäder in Derbyshire"
+          },
+          "representation": {
+            "stand_off": [],
+            "tree": {
+              "attributes": {},
+              "children": [
+                {
+                  "attributes": {
+                    "calendar": "#gregorian",
+                    "when": "1790-06-15"
+                  },
+                  "children": [
+                    {
+                      "attributes": {
+                        "rendition": "#u"
+                      },
+                      "children": [
+                        {
+                          "attributes": {
+                            "rendition": "#aq"
+                          },
+                          "children": [
+                            {
+                              "attributes": {
+                                "ref": "https://edition-humboldt.de/H0005512 https://www.geonames.org/11609031"
+                              },
+                              "children": [],
+                              "id": "e0.0.0.0.0",
+                              "namespace": "http://www.tei-c.org/ns/1.0",
+                              "tag": "placeName",
+                              "tail": "",
+                              "text": "Derbyshire"
+                            }
+                          ],
+                          "id": "e0.0.0.0",
+                          "namespace": "http://www.tei-c.org/ns/1.0",
+                          "tag": "hi",
+                          "tail": "",
+                          "text": ""
+                        }
+                      ],
+                      "id": "e0.0.0",
+                      "namespace": "http://www.tei-c.org/ns/1.0",
+                      "tag": "hi",
+                      "tail": "",
+                      "text": "Bäder in "
+                    }
+                  ],
+                  "id": "e0.0",
+                  "namespace": "http://www.tei-c.org/ns/1.0",
+                  "tag": "date",
+                  "tail": "",
+                  "text": ""
+                }
+              ],
+              "id": "e0",
+              "namespace": "http://www.tei-c.org/ns/1.0",
+              "tag": "head",
+              "tail": "",
+              "text": ""
+            }
+          }
+        },
+        "candidate": {
+          "limitations": [
+            "Whitespace collapse/trim and note exclusion define a new primary text projection; source bytes must be retained separately.",
+            "TEI attribute and note interpretation depends on the explicit tei-fragment-0.1 annotation binding; base 0.1 alone does not validate that meaning.",
+            "Pointers retain values without resolution, authority, or external referent validation; no full P5/ODD conformance or lexical round-trip is claimed.",
+            "Synthetic inspection checks do not measure editor time, learnability, or architecture preference."
+          ],
+          "observations": {
+            "breaks": [],
+            "elements": [
+              {
+                "attributes": {},
+                "extent": [
+                  0,
+                  19
+                ],
+                "id": "e0",
+                "parent": null,
+                "tag": "head"
+              },
+              {
+                "attributes": {
+                  "calendar": "#gregorian",
+                  "when": "1790-06-15"
+                },
+                "extent": [
+                  0,
+                  19
+                ],
+                "id": "e0.0",
+                "parent": "e0",
+                "tag": "date"
+              },
+              {
+                "attributes": {
+                  "rendition": "#u"
+                },
+                "extent": [
+                  0,
+                  19
+                ],
+                "id": "e0.0.0",
+                "parent": "e0.0",
+                "tag": "hi"
+              },
+              {
+                "attributes": {
+                  "rendition": "#aq"
+                },
+                "extent": [
+                  9,
+                  19
+                ],
+                "id": "e0.0.0.0",
+                "parent": "e0.0.0",
+                "tag": "hi"
+              },
+              {
+                "attributes": {
+                  "ref": "https://edition-humboldt.de/H0005512 https://www.geonames.org/11609031"
+                },
+                "extent": [
+                  9,
+                  19
+                ],
+                "id": "e0.0.0.0.0",
+                "parent": "e0.0.0.0",
+                "tag": "placeName"
+              }
+            ],
+            "notes": [],
+            "pointers": [
+              {
+                "attribute": "calendar",
+                "element": "e0.0",
+                "value": "#gregorian"
+              },
+              {
+                "attribute": "rendition",
+                "element": "e0.0.0",
+                "value": "#u"
+              },
+              {
+                "attribute": "rendition",
+                "element": "e0.0.0.0",
+                "value": "#aq"
+              },
+              {
+                "attribute": "ref",
+                "element": "e0.0.0.0.0",
+                "value": "https://edition-humboldt.de/H0005512 https://www.geonames.org/11609031"
+              }
+            ],
+            "text": "Bäder in Derbyshire"
+          },
+          "package": {
+            "agents": [
+              {
+                "id": "mapper",
+                "label": "Bounded fragment mapping policy"
+              }
+            ],
+            "annotations": [
+              {
+                "agent": "mapper",
+                "body": "{\"attributes\":{},\"binding\":\"tei-fragment-0.1\",\"element\":\"e0\",\"kind\":\"element\",\"node\":\"n-e0\",\"parent\":null,\"tag\":\"head\"}",
+                "id": "a-e0",
+                "selection": "s-e0"
+              },
+              {
+                "agent": "mapper",
+                "body": "{\"attributes\":{\"calendar\":\"#gregorian\",\"when\":\"1790-06-15\"},\"binding\":\"tei-fragment-0.1\",\"element\":\"e0.0\",\"kind\":\"element\",\"node\":\"n-e0.0\",\"parent\":\"e0\",\"tag\":\"date\"}",
+                "id": "a-e0.0",
+                "selection": "s-e0.0"
+              },
+              {
+                "agent": "mapper",
+                "body": "{\"attributes\":{\"rendition\":\"#u\"},\"binding\":\"tei-fragment-0.1\",\"element\":\"e0.0.0\",\"kind\":\"element\",\"node\":\"n-e0.0.0\",\"parent\":\"e0.0\",\"tag\":\"hi\"}",
+                "id": "a-e0.0.0",
+                "selection": "s-e0.0.0"
+              },
+              {
+                "agent": "mapper",
+                "body": "{\"attributes\":{\"rendition\":\"#aq\"},\"binding\":\"tei-fragment-0.1\",\"element\":\"e0.0.0.0\",\"kind\":\"element\",\"node\":\"n-e0.0.0.0\",\"parent\":\"e0.0.0\",\"tag\":\"hi\"}",
+                "id": "a-e0.0.0.0",
+                "selection": "s-e0.0.0.0"
+              },
+              {
+                "agent": "mapper",
+                "body": "{\"attributes\":{\"ref\":\"https://edition-humboldt.de/H0005512 https://www.geonames.org/11609031\"},\"binding\":\"tei-fragment-0.1\",\"element\":\"e0.0.0.0.0\",\"kind\":\"element\",\"node\":\"n-e0.0.0.0.0\",\"parent\":\"e0.0.0.0\",\"tag\":\"placeName\"}",
+                "id": "a-e0.0.0.0.0",
+                "selection": "s-e0.0.0.0.0"
+              }
+            ],
+            "concepts": [
+              {
+                "applies_to": "node",
+                "definition": "TEI element date",
+                "id": "tei-date",
+                "label": "date"
+              },
+              {
+                "applies_to": "node",
+                "definition": "TEI element head",
+                "id": "tei-head",
+                "label": "head"
+              },
+              {
+                "applies_to": "node",
+                "definition": "TEI element hi",
+                "id": "tei-hi",
+                "label": "hi"
+              },
+              {
+                "applies_to": "node",
+                "definition": "TEI element placeName",
+                "id": "tei-placeName",
+                "label": "placeName"
+              }
+            ],
+            "continuities": [],
+            "model_version": "0.1",
+            "readings": [
+              {
+                "agent": "mapper",
+                "id": "r-main",
+                "label": "TEI main-text element hierarchy",
+                "nodes": [
+                  {
+                    "id": "n-e0",
+                    "parent": null,
+                    "selection": "s-e0",
+                    "type": "tei-head"
+                  },
+                  {
+                    "id": "n-e0.0",
+                    "parent": "n-e0",
+                    "selection": "s-e0.0",
+                    "type": "tei-date"
+                  },
+                  {
+                    "id": "n-e0.0.0",
+                    "parent": "n-e0.0",
+                    "selection": "s-e0.0.0",
+                    "type": "tei-hi"
+                  },
+                  {
+                    "id": "n-e0.0.0.0",
+                    "parent": "n-e0.0.0",
+                    "selection": "s-e0.0.0.0",
+                    "type": "tei-hi"
+                  },
+                  {
+                    "id": "n-e0.0.0.0.0",
+                    "parent": "n-e0.0.0.0",
+                    "selection": "s-e0.0.0.0.0",
+                    "type": "tei-placeName"
+                  }
+                ],
+                "version": "v-main"
+              }
+            ],
+            "relations": [],
+            "selections": [
+              {
+                "id": "s-e0",
+                "selector": {
+                  "kind": "ranges",
+                  "segments": [
+                    {
+                      "end": 19,
+                      "quote": "Bäder in Derbyshire",
+                      "start": 0
+                    }
+                  ]
+                },
+                "version": "v-main"
+              },
+              {
+                "id": "s-e0.0",
+                "selector": {
+                  "kind": "ranges",
+                  "segments": [
+                    {
+                      "end": 19,
+                      "quote": "Bäder in Derbyshire",
+                      "start": 0
+                    }
+                  ]
+                },
+                "version": "v-main"
+              },
+              {
+                "id": "s-e0.0.0",
+                "selector": {
+                  "kind": "ranges",
+                  "segments": [
+                    {
+                      "end": 19,
+                      "quote": "Bäder in Derbyshire",
+                      "start": 0
+                    }
+                  ]
+                },
+                "version": "v-main"
+              },
+              {
+                "id": "s-e0.0.0.0",
+                "selector": {
+                  "kind": "ranges",
+                  "segments": [
+                    {
+                      "end": 19,
+                      "quote": "Derbyshire",
+                      "start": 9
+                    }
+                  ]
+                },
+                "version": "v-main"
+              },
+              {
+                "id": "s-e0.0.0.0.0",
+                "selector": {
+                  "kind": "ranges",
+                  "segments": [
+                    {
+                      "end": 19,
+                      "quote": "Derbyshire",
+                      "start": 9
+                    }
+                  ]
+                },
+                "version": "v-main"
+              }
+            ],
+            "texts": [],
+            "versions": [
+              {
+                "content": "Bäder in Derbyshire",
+                "id": "v-main",
+                "parents": [],
+                "sha256": "4d2635c25249bf83620930e45994ed0346bc9b3bba39581dce4f364fe31e78b3"
+              }
+            ]
+          },
+          "unsupported": [],
+          "valid": true
+        },
+        "observations_equal": true
+      },
+      "id": "case-1-hierarchy",
+      "observations_equal": true,
+      "passed": true,
+      "role": "development"
+    },
+    {
+      "baseline_checks": {
+        "line_break_retained": true,
+        "nested_responsibility": true,
+        "primary_text": true,
+        "reciprocal_note_references": true,
+        "separate_note_texts": true,
+        "source_note_identifiers": true
+      },
+      "candidate_checks": {
+        "line_break_retained": true,
+        "nested_responsibility": true,
+        "primary_text": true,
+        "reciprocal_note_references": true,
+        "separate_note_texts": true,
+        "source_note_identifiers": true
+      },
+      "comparison": {
+        "baseline": {
+          "limitations": [
+            "Parsed XML preserves hierarchy, attribute values, and text/tail; lexical entity spelling, attribute order, quote style, and original namespace prefixes are not retained.",
+            "Task observations apply the same declared text projection; unsupported constructs remain in the tree without a domain interpretation."
+          ],
+          "observations": {
+            "breaks": [
+              {
+                "attributes": {},
+                "id": "e0.1",
+                "offset": 13,
+                "parent": "e0"
+              }
+            ],
+            "elements": [
+              {
+                "attributes": {},
+                "extent": [
+                  0,
+                  21
+                ],
+                "id": "e0",
+                "parent": null,
+                "tag": "head"
+              },
+              {
+                "attributes": {
+                  "calendar": "#gregorian",
+                  "when": "1790"
+                },
+                "extent": [
+                  7,
+                  11
+                ],
+                "id": "e0.0",
+                "parent": "e0",
+                "tag": "date"
+              },
+              {
+                "attributes": {
+                  "ref": "https://edition-humboldt.de/H0005653 https://www.geonames.org/6269131"
+                },
+                "extent": [
+                  13,
+                  20
+                ],
+                "id": "e0.3",
+                "parent": "e0",
+                "tag": "placeName"
+              }
+            ],
+            "notes": [
+              {
+                "attributes": {
+                  "hand": "#unknown"
+                },
+                "id": "e0.2",
+                "own_text": "6255",
+                "parent": "e0",
+                "refs": [
+                  {
+                    "attributes": {
+                      "corresp": "#f05a05fb-11de-42d0-9a05-fb11def2d021",
+                      "type": "editorialNote",
+                      "xml:id": "bab01c0c-9760-4703-b01c-0c9760d7037b"
+                    },
+                    "id": "e0.2.0",
+                    "parent": "e0.2",
+                    "text": "6255"
+                  }
+                ]
+              },
+              {
+                "attributes": {
+                  "corresp": "#bab01c0c-9760-4703-b01c-0c9760d7037b",
+                  "resp": "#CT #DE",
+                  "type": "editorial",
+                  "xml:id": "f05a05fb-11de-42d0-9a05-fb11def2d021"
+                },
+                "id": "e0.2.1",
+                "own_text": "Handschriftliche Notiz, Bleistift von unbekannter Hand: Altsignatur der Sammlung Radowitz/Archivsignatur.",
+                "parent": "e0.2",
+                "refs": []
+              }
+            ],
+            "pointers": [
+              {
+                "attribute": "calendar",
+                "element": "e0.0",
+                "value": "#gregorian"
+              },
+              {
+                "attribute": "hand",
+                "element": "e0.2",
+                "value": "#unknown"
+              },
+              {
+                "attribute": "corresp",
+                "element": "e0.2.0",
+                "value": "#f05a05fb-11de-42d0-9a05-fb11def2d021"
+              },
+              {
+                "attribute": "xml:id",
+                "element": "e0.2.0",
+                "value": "bab01c0c-9760-4703-b01c-0c9760d7037b"
+              },
+              {
+                "attribute": "corresp",
+                "element": "e0.2.1",
+                "value": "#bab01c0c-9760-4703-b01c-0c9760d7037b"
+              },
+              {
+                "attribute": "resp",
+                "element": "e0.2.1",
+                "value": "#CT #DE"
+              },
+              {
+                "attribute": "xml:id",
+                "element": "e0.2.1",
+                "value": "f05a05fb-11de-42d0-9a05-fb11def2d021"
+              },
+              {
+                "attribute": "ref",
+                "element": "e0.3",
+                "value": "https://edition-humboldt.de/H0005653 https://www.geonames.org/6269131"
+              }
+            ],
+            "text": "Reise. 1790. England."
+          },
+          "representation": {
+            "stand_off": [
+              {
+                "element": "e0.1",
+                "kind": "break"
+              },
+              {
+                "element": "e0.2",
+                "kind": "note"
+              },
+              {
+                "element": "e0.2.1",
+                "kind": "note"
+              }
+            ],
+            "tree": {
+              "attributes": {},
+              "children": [
+                {
+                  "attributes": {
+                    "calendar": "#gregorian",
+                    "when": "1790"
+                  },
+                  "children": [],
+                  "id": "e0.0",
+                  "namespace": "http://www.tei-c.org/ns/1.0",
+                  "tag": "date",
+                  "tail": ". ",
+                  "text": "1790"
+                },
+                {
+                  "attributes": {},
+                  "children": [],
+                  "id": "e0.1",
+                  "namespace": "http://www.tei-c.org/ns/1.0",
+                  "tag": "lb",
+                  "tail": "",
+                  "text": ""
+                },
+                {
+                  "attributes": {
+                    "hand": "#unknown"
+                  },
+                  "children": [
+                    {
+                      "attributes": {
+                        "corresp": "#f05a05fb-11de-42d0-9a05-fb11def2d021",
+                        "type": "editorialNote",
+                        "xml:id": "bab01c0c-9760-4703-b01c-0c9760d7037b"
+                      },
+                      "children": [],
+                      "id": "e0.2.0",
+                      "namespace": "http://www.tei-c.org/ns/1.0",
+                      "tag": "ref",
+                      "tail": "",
+                      "text": "6255"
+                    },
+                    {
+                      "attributes": {
+                        "corresp": "#bab01c0c-9760-4703-b01c-0c9760d7037b",
+                        "resp": "#CT #DE",
+                        "type": "editorial",
+                        "xml:id": "f05a05fb-11de-42d0-9a05-fb11def2d021"
+                      },
+                      "children": [],
+                      "id": "e0.2.1",
+                      "namespace": "http://www.tei-c.org/ns/1.0",
+                      "tag": "note",
+                      "tail": "\n                    ",
+                      "text": "Handschriftliche Notiz, Bleistift von unbekannter Hand:\n                                Altsignatur der Sammlung Radowitz/Archivsignatur."
+                    }
+                  ],
+                  "id": "e0.2",
+                  "namespace": "http://www.tei-c.org/ns/1.0",
+                  "tag": "note",
+                  "tail": "\n                    ",
+                  "text": ""
+                },
+                {
+                  "attributes": {
+                    "ref": "https://edition-humboldt.de/H0005653 https://www.geonames.org/6269131"
+                  },
+                  "children": [],
+                  "id": "e0.3",
+                  "namespace": "http://www.tei-c.org/ns/1.0",
+                  "tag": "placeName",
+                  "tail": ".",
+                  "text": "England"
+                }
+              ],
+              "id": "e0",
+              "namespace": "http://www.tei-c.org/ns/1.0",
+              "tag": "head",
+              "tail": "",
+              "text": "Reise. "
+            }
+          }
+        },
+        "candidate": {
+          "limitations": [
+            "Whitespace collapse/trim and note exclusion define a new primary text projection; source bytes must be retained separately.",
+            "TEI attribute and note interpretation depends on the explicit tei-fragment-0.1 annotation binding; base 0.1 alone does not validate that meaning.",
+            "Pointers retain values without resolution, authority, or external referent validation; no full P5/ODD conformance or lexical round-trip is claimed.",
+            "Synthetic inspection checks do not measure editor time, learnability, or architecture preference."
+          ],
+          "observations": {
+            "breaks": [
+              {
+                "attributes": {},
+                "id": "e0.1",
+                "offset": 13,
+                "parent": "e0"
+              }
+            ],
+            "elements": [
+              {
+                "attributes": {},
+                "extent": [
+                  0,
+                  21
+                ],
+                "id": "e0",
+                "parent": null,
+                "tag": "head"
+              },
+              {
+                "attributes": {
+                  "calendar": "#gregorian",
+                  "when": "1790"
+                },
+                "extent": [
+                  7,
+                  11
+                ],
+                "id": "e0.0",
+                "parent": "e0",
+                "tag": "date"
+              },
+              {
+                "attributes": {
+                  "ref": "https://edition-humboldt.de/H0005653 https://www.geonames.org/6269131"
+                },
+                "extent": [
+                  13,
+                  20
+                ],
+                "id": "e0.3",
+                "parent": "e0",
+                "tag": "placeName"
+              }
+            ],
+            "notes": [
+              {
+                "attributes": {
+                  "hand": "#unknown"
+                },
+                "id": "e0.2",
+                "own_text": "6255",
+                "parent": "e0",
+                "refs": [
+                  {
+                    "attributes": {
+                      "corresp": "#f05a05fb-11de-42d0-9a05-fb11def2d021",
+                      "type": "editorialNote",
+                      "xml:id": "bab01c0c-9760-4703-b01c-0c9760d7037b"
+                    },
+                    "id": "e0.2.0",
+                    "parent": "e0.2",
+                    "text": "6255"
+                  }
+                ]
+              },
+              {
+                "attributes": {
+                  "corresp": "#bab01c0c-9760-4703-b01c-0c9760d7037b",
+                  "resp": "#CT #DE",
+                  "type": "editorial",
+                  "xml:id": "f05a05fb-11de-42d0-9a05-fb11def2d021"
+                },
+                "id": "e0.2.1",
+                "own_text": "Handschriftliche Notiz, Bleistift von unbekannter Hand: Altsignatur der Sammlung Radowitz/Archivsignatur.",
+                "parent": "e0.2",
+                "refs": []
+              }
+            ],
+            "pointers": [
+              {
+                "attribute": "calendar",
+                "element": "e0.0",
+                "value": "#gregorian"
+              },
+              {
+                "attribute": "hand",
+                "element": "e0.2",
+                "value": "#unknown"
+              },
+              {
+                "attribute": "corresp",
+                "element": "e0.2.0",
+                "value": "#f05a05fb-11de-42d0-9a05-fb11def2d021"
+              },
+              {
+                "attribute": "xml:id",
+                "element": "e0.2.0",
+                "value": "bab01c0c-9760-4703-b01c-0c9760d7037b"
+              },
+              {
+                "attribute": "corresp",
+                "element": "e0.2.1",
+                "value": "#bab01c0c-9760-4703-b01c-0c9760d7037b"
+              },
+              {
+                "attribute": "resp",
+                "element": "e0.2.1",
+                "value": "#CT #DE"
+              },
+              {
+                "attribute": "xml:id",
+                "element": "e0.2.1",
+                "value": "f05a05fb-11de-42d0-9a05-fb11def2d021"
+              },
+              {
+                "attribute": "ref",
+                "element": "e0.3",
+                "value": "https://edition-humboldt.de/H0005653 https://www.geonames.org/6269131"
+              }
+            ],
+            "text": "Reise. 1790. England."
+          },
+          "package": {
+            "agents": [
+              {
+                "id": "mapper",
+                "label": "Bounded fragment mapping policy"
+              }
+            ],
+            "annotations": [
+              {
+                "agent": "mapper",
+                "body": "{\"attributes\":{},\"binding\":\"tei-fragment-0.1\",\"element\":\"e0\",\"kind\":\"element\",\"node\":\"n-e0\",\"parent\":null,\"tag\":\"head\"}",
+                "id": "a-e0",
+                "selection": "s-e0"
+              },
+              {
+                "agent": "mapper",
+                "body": "{\"attributes\":{\"calendar\":\"#gregorian\",\"when\":\"1790\"},\"binding\":\"tei-fragment-0.1\",\"element\":\"e0.0\",\"kind\":\"element\",\"node\":\"n-e0.0\",\"parent\":\"e0\",\"tag\":\"date\"}",
+                "id": "a-e0.0",
+                "selection": "s-e0.0"
+              },
+              {
+                "agent": "mapper",
+                "body": "{\"attributes\":{},\"binding\":\"tei-fragment-0.1\",\"element\":\"e0.1\",\"kind\":\"break\",\"parent\":\"e0\"}",
+                "id": "a-e0.1",
+                "selection": "s-e0.1"
+              },
+              {
+                "agent": "mapper",
+                "body": "{\"attributes\":{\"hand\":\"#unknown\"},\"binding\":\"tei-fragment-0.1\",\"element\":\"e0.2\",\"kind\":\"note\",\"own_text\":\"6255\",\"parent\":\"e0\",\"refs\":[{\"attributes\":{\"corresp\":\"#f05a05fb-11de-42d0-9a05-fb11def2d021\",\"type\":\"editorialNote\",\"xml:id\":\"bab01c0c-9760-4703-b01c-0c9760d7037b\"},\"id\":\"e0.2.0\",\"parent\":\"e0.2\",\"text\":\"6255\"}]}",
+                "id": "a-e0.2",
+                "selection": "s-e0.2"
+              },
+              {
+                "agent": "mapper",
+                "body": "{\"attributes\":{\"corresp\":\"#bab01c0c-9760-4703-b01c-0c9760d7037b\",\"resp\":\"#CT #DE\",\"type\":\"editorial\",\"xml:id\":\"f05a05fb-11de-42d0-9a05-fb11def2d021\"},\"binding\":\"tei-fragment-0.1\",\"element\":\"e0.2.1\",\"kind\":\"note\",\"own_text\":\"Handschriftliche Notiz, Bleistift von unbekannter Hand: Altsignatur der Sammlung Radowitz/Archivsignatur.\",\"parent\":\"e0.2\",\"refs\":[]}",
+                "id": "a-e0.2.1",
+                "selection": "s-e0.2.1"
+              },
+              {
+                "agent": "mapper",
+                "body": "{\"attributes\":{\"ref\":\"https://edition-humboldt.de/H0005653 https://www.geonames.org/6269131\"},\"binding\":\"tei-fragment-0.1\",\"element\":\"e0.3\",\"kind\":\"element\",\"node\":\"n-e0.3\",\"parent\":\"e0\",\"tag\":\"placeName\"}",
+                "id": "a-e0.3",
+                "selection": "s-e0.3"
+              }
+            ],
+            "concepts": [
+              {
+                "applies_to": "node",
+                "definition": "TEI element date",
+                "id": "tei-date",
+                "label": "date"
+              },
+              {
+                "applies_to": "node",
+                "definition": "TEI element head",
+                "id": "tei-head",
+                "label": "head"
+              },
+              {
+                "applies_to": "node",
+                "definition": "TEI element placeName",
+                "id": "tei-placeName",
+                "label": "placeName"
+              }
+            ],
+            "continuities": [],
+            "model_version": "0.1",
+            "readings": [
+              {
+                "agent": "mapper",
+                "id": "r-main",
+                "label": "TEI main-text element hierarchy",
+                "nodes": [
+                  {
+                    "id": "n-e0",
+                    "parent": null,
+                    "selection": "s-e0",
+                    "type": "tei-head"
+                  },
+                  {
+                    "id": "n-e0.0",
+                    "parent": "n-e0",
+                    "selection": "s-e0.0",
+                    "type": "tei-date"
+                  },
+                  {
+                    "id": "n-e0.3",
+                    "parent": "n-e0",
+                    "selection": "s-e0.3",
+                    "type": "tei-placeName"
+                  }
+                ],
+                "version": "v-main"
+              }
+            ],
+            "relations": [],
+            "selections": [
+              {
+                "id": "s-e0",
+                "selector": {
+                  "kind": "ranges",
+                  "segments": [
+                    {
+                      "end": 21,
+                      "quote": "Reise. 1790. England.",
+                      "start": 0
+                    }
+                  ]
+                },
+                "version": "v-main"
+              },
+              {
+                "id": "s-e0.0",
+                "selector": {
+                  "kind": "ranges",
+                  "segments": [
+                    {
+                      "end": 11,
+                      "quote": "1790",
+                      "start": 7
+                    }
+                  ]
+                },
+                "version": "v-main"
+              },
+              {
+                "id": "s-e0.1",
+                "selector": {
+                  "kind": "point",
+                  "offset": 13
+                },
+                "version": "v-main"
+              },
+              {
+                "id": "s-e0.2",
+                "selector": {
+                  "kind": "point",
+                  "offset": 13
+                },
+                "version": "v-main"
+              },
+              {
+                "id": "s-e0.2.1",
+                "selector": {
+                  "kind": "point",
+                  "offset": 13
+                },
+                "version": "v-main"
+              },
+              {
+                "id": "s-e0.3",
+                "selector": {
+                  "kind": "ranges",
+                  "segments": [
+                    {
+                      "end": 20,
+                      "quote": "England",
+                      "start": 13
+                    }
+                  ]
+                },
+                "version": "v-main"
+              }
+            ],
+            "texts": [],
+            "versions": [
+              {
+                "content": "Reise. 1790. England.",
+                "id": "v-main",
+                "parents": [],
+                "sha256": "9a4d1c0592d124fbfc6a9ba87e3aa8ac5bde7cd2d86a54167e1888838950ecf2"
+              }
+            ]
+          },
+          "unsupported": [],
+          "valid": true
+        },
+        "observations_equal": true
+      },
+      "id": "case-2-interrupted-heading",
+      "observations_equal": true,
+      "passed": true,
+      "role": "development"
+    },
+    {
+      "baseline_primary_text_matches": false,
+      "comparison": {
+        "baseline": {
+          "limitations": [
+            "Parsed XML preserves hierarchy, attribute values, and text/tail; lexical entity spelling, attribute order, quote style, and original namespace prefixes are not retained.",
+            "Task observations apply the same declared text projection; unsupported constructs remain in the tree without a domain interpretation."
+          ],
+          "observations": {
+            "breaks": [
+              {
+                "attributes": {},
+                "id": "e0.1",
+                "offset": 31,
+                "parent": "e0"
+              },
+              {
+                "attributes": {},
+                "id": "e0.2",
+                "offset": 59,
+                "parent": "e0"
+              },
+              {
+                "attributes": {},
+                "id": "e0.3",
+                "offset": 86,
+                "parent": "e0"
+              },
+              {
+                "attributes": {},
+                "id": "e0.4",
+                "offset": 111,
+                "parent": "e0"
+              },
+              {
+                "attributes": {},
+                "id": "e0.6",
+                "offset": 138,
+                "parent": "e0"
+              },
+              {
+                "attributes": {},
+                "id": "e0.8",
+                "offset": 165,
+                "parent": "e0"
+              }
+            ],
+            "elements": [
+              {
+                "attributes": {},
+                "extent": [
+                  0,
+                  186
+                ],
+                "id": "e0",
+                "parent": null,
+                "tag": "p"
+              },
+              {
+                "attributes": {
+                  "rendition": "#aq"
+                },
+                "extent": [
+                  4,
+                  14
+                ],
+                "id": "e0.0",
+                "parent": "e0",
+                "tag": "hi"
+              },
+              {
+                "attributes": {
+                  "ref": "https://edition-humboldt.de/H0017348 https://www.geonames.org/2647639"
+                },
+                "extent": [
+                  4,
+                  14
+                ],
+                "id": "e0.0.0",
+                "parent": "e0.0",
+                "tag": "placeName"
+              },
+              {
+                "attributes": {
+                  "type": "folNum"
+                },
+                "extent": [
+                  165,
+                  168
+                ],
+                "id": "e0.10",
+                "parent": "e0",
+                "tag": "fw"
+              },
+              {
+                "attributes": {
+                  "type": "mineral"
+                },
+                "extent": [
+                  169,
+                  175
+                ],
+                "id": "e0.11",
+                "parent": "e0",
+                "tag": "name"
+              },
+              {
+                "attributes": {
+                  "rendition": "#aq"
+                },
+                "extent": [
+                  115,
+                  124
+                ],
+                "id": "e0.5",
+                "parent": "e0",
+                "tag": "hi"
+              },
+              {
+                "attributes": {
+                  "type": "mineral"
+                },
+                "extent": [
+                  145,
+                  154
+                ],
+                "id": "e0.7",
+                "parent": "e0",
+                "tag": "name"
+              },
+              {
+                "attributes": {
+                  "facs": "#f0018",
+                  "n": "[9v]"
+                },
+                "extent": [
+                  165,
+                  165
+                ],
+                "id": "e0.9",
+                "parent": "e0",
+                "tag": "pb"
+              }
+            ],
+            "notes": [],
+            "pointers": [
+              {
+                "attribute": "rendition",
+                "element": "e0.0",
+                "value": "#aq"
+              },
+              {
+                "attribute": "ref",
+                "element": "e0.0.0",
+                "value": "https://edition-humboldt.de/H0017348 https://www.geonames.org/2647639"
+              },
+              {
+                "attribute": "rendition",
+                "element": "e0.5",
+                "value": "#aq"
+              }
+            ],
+            "text": "Bei Hales owen erscheinen zwei kegelförmige, zum Theil mit Buschwerk bekränzte Hügel. Läßt ihre Form, die Nähe der Rowlyragghügel und des rothen Sandsteins hier auf 16. Basalt schließen."
+          },
+          "representation": {
+            "stand_off": [
+              {
+                "element": "e0.1",
+                "kind": "break"
+              },
+              {
+                "element": "e0.2",
+                "kind": "break"
+              },
+              {
+                "element": "e0.3",
+                "kind": "break"
+              },
+              {
+                "element": "e0.4",
+                "kind": "break"
+              },
+              {
+                "element": "e0.6",
+                "kind": "break"
+              },
+              {
+                "element": "e0.8",
+                "kind": "break"
+              }
+            ],
+            "tree": {
+              "attributes": {},
+              "children": [
+                {
+                  "attributes": {
+                    "rendition": "#aq"
+                  },
+                  "children": [
+                    {
+                      "attributes": {
+                        "ref": "https://edition-humboldt.de/H0017348 https://www.geonames.org/2647639"
+                      },
+                      "children": [],
+                      "id": "e0.0.0",
+                      "namespace": "http://www.tei-c.org/ns/1.0",
+                      "tag": "placeName",
+                      "tail": "",
+                      "text": "Hales owen"
+                    }
+                  ],
+                  "id": "e0.0",
+                  "namespace": "http://www.tei-c.org/ns/1.0",
+                  "tag": "hi",
+                  "tail": " erscheinen zwei\n                        ",
+                  "text": ""
+                },
+                {
+                  "attributes": {},
+                  "children": [],
+                  "id": "e0.1",
+                  "namespace": "http://www.tei-c.org/ns/1.0",
+                  "tag": "lb",
+                  "tail": "kegelförmige, zum Theil mit ",
+                  "text": ""
+                },
+                {
+                  "attributes": {},
+                  "children": [],
+                  "id": "e0.2",
+                  "namespace": "http://www.tei-c.org/ns/1.0",
+                  "tag": "lb",
+                  "tail": "Buschwerk bekränzte Hügel. ",
+                  "text": ""
+                },
+                {
+                  "attributes": {},
+                  "children": [],
+                  "id": "e0.3",
+                  "namespace": "http://www.tei-c.org/ns/1.0",
+                  "tag": "lb",
+                  "tail": "Läßt ihre Form, die Nähe\n                        ",
+                  "text": ""
+                },
+                {
+                  "attributes": {},
+                  "children": [],
+                  "id": "e0.4",
+                  "namespace": "http://www.tei-c.org/ns/1.0",
+                  "tag": "lb",
+                  "tail": "der ",
+                  "text": ""
+                },
+                {
+                  "attributes": {
+                    "rendition": "#aq"
+                  },
+                  "children": [],
+                  "id": "e0.5",
+                  "namespace": "http://www.tei-c.org/ns/1.0",
+                  "tag": "hi",
+                  "tail": "hügel und des ",
+                  "text": "Rowlyragg"
+                },
+                {
+                  "attributes": {},
+                  "children": [],
+                  "id": "e0.6",
+                  "namespace": "http://www.tei-c.org/ns/1.0",
+                  "tag": "lb",
+                  "tail": "rothen ",
+                  "text": ""
+                },
+                {
+                  "attributes": {
+                    "type": "mineral"
+                  },
+                  "children": [],
+                  "id": "e0.7",
+                  "namespace": "http://www.tei-c.org/ns/1.0",
+                  "tag": "name",
+                  "tail": "s hier auf ",
+                  "text": "Sandstein"
+                },
+                {
+                  "attributes": {},
+                  "children": [],
+                  "id": "e0.8",
+                  "namespace": "http://www.tei-c.org/ns/1.0",
+                  "tag": "lb",
+                  "tail": "\n                        ",
+                  "text": ""
+                },
+                {
+                  "attributes": {
+                    "facs": "#f0018",
+                    "n": "[9v]"
+                  },
+                  "children": [],
+                  "id": "e0.9",
+                  "namespace": "http://www.tei-c.org/ns/1.0",
+                  "tag": "pb",
+                  "tail": "\n                        ",
+                  "text": ""
+                },
+                {
+                  "attributes": {
+                    "type": "folNum"
+                  },
+                  "children": [],
+                  "id": "e0.10",
+                  "namespace": "http://www.tei-c.org/ns/1.0",
+                  "tag": "fw",
+                  "tail": "\n                        ",
+                  "text": "16."
+                },
+                {
+                  "attributes": {
+                    "type": "mineral"
+                  },
+                  "children": [],
+                  "id": "e0.11",
+                  "namespace": "http://www.tei-c.org/ns/1.0",
+                  "tag": "name",
+                  "tail": " schließen.",
+                  "text": "Basalt"
+                }
+              ],
+              "id": "e0",
+              "namespace": "http://www.tei-c.org/ns/1.0",
+              "tag": "p",
+              "tail": "",
+              "text": "Bei "
+            }
+          }
+        },
+        "candidate": {
+          "limitations": [
+            "Whitespace collapse/trim and note exclusion define a new primary text projection; source bytes must be retained separately.",
+            "TEI attribute and note interpretation depends on the explicit tei-fragment-0.1 annotation binding; base 0.1 alone does not validate that meaning.",
+            "Pointers retain values without resolution, authority, or external referent validation; no full P5/ODD conformance or lexical round-trip is claimed.",
+            "Synthetic inspection checks do not measure editor time, learnability, or architecture preference."
+          ],
+          "observations": null,
+          "package": null,
+          "unsupported": [
+            "fw",
+            "pb"
+          ],
+          "valid": false
+        },
+        "observations_equal": false
+      },
+      "expected_primary_text": "Bei Hales owen erscheinen zwei kegelförmige, zum Theil mit Buschwerk bekränzte Hügel. Läßt ihre Form, die Nähe der Rowlyragghügel und des rothen Sandsteins hier auf Basalt schließen.",
+      "id": "case-3-holdout-media",
+      "migration_success": false,
+      "outcome": "Candidate explicitly refuses unsupported source constructs; retained tree XML is not a claim of task-semantic or media preservation.",
+      "passed": true,
+      "role": "holdout"
+    }
+  ],
+  "format_version": 1,
+  "identity": [
+    {
+      "actual": {
+        "codes": [],
+        "valid": true
+      },
+      "expected": {
+        "codes": [],
+        "valid": true
+      },
+      "id": "I01-initial-attributed-hypotheses",
+      "nonmutating": true,
+      "passed": true
+    },
+    {
+      "actual": {
+        "codes": [],
+        "valid": true
+      },
+      "expected": {
+        "codes": [],
+        "valid": true
+      },
+      "id": "I02-revised-hypothesis-retains-competing-editor",
+      "nonmutating": true,
+      "passed": true
+    },
+    {
+      "actual": {
+        "codes": [],
+        "valid": true
+      },
+      "expected": {
+        "codes": [],
+        "valid": true
+      },
+      "id": "I03-hypothesis-correction-preserves-b-and-selection",
+      "nonmutating": true,
+      "passed": true
+    },
+    {
+      "actual": {
+        "claims": [
+          "claim-e1-c",
+          "claim-e2-a"
+        ]
+      },
+      "expected": {
+        "claims": [
+          "claim-e1-c",
+          "claim-e2-a"
+        ]
+      },
+      "id": "I04-current-claims-preserve-editor-disagreement",
+      "nonmutating": true,
+      "passed": true
+    },
+    {
+      "actual": {
+        "claims": [
+          "claim-e1-c"
+        ]
+      },
+      "expected": {
+        "claims": [
+          "claim-e1-c"
+        ]
+      },
+      "id": "I05-one-editors-current-view-does-not-judge-other",
+      "nonmutating": true,
+      "passed": true
+    },
+    {
+      "actual": {
+        "codes": [],
+        "valid": true
+      },
+      "expected": {
+        "codes": [],
+        "valid": true
+      },
+      "id": "I06-historical-cycle-is-not-a-truth-failure",
+      "nonmutating": true,
+      "passed": true
+    },
+    {
+      "actual": {
+        "claims": [
+          "claim-e1-reverse"
+        ]
+      },
+      "expected": {
+        "claims": [
+          "claim-e1-reverse"
+        ]
+      },
+      "id": "I07-current-subject-filter",
+      "nonmutating": true,
+      "passed": true
+    },
+    {
+      "actual": {
+        "claims": [
+          "claim-e1-c",
+          "claim-e1-d",
+          "claim-e2-a"
+        ]
+      },
+      "expected": {
+        "claims": [
+          "claim-e1-c",
+          "claim-e1-d",
+          "claim-e2-a"
+        ]
+      },
+      "id": "I08-both-fork-successors-remain-current",
+      "nonmutating": true,
+      "passed": true
+    },
+    {
+      "actual": {
+        "claims": [
+          "claim-e1-d",
+          "claim-e2-a"
+        ]
+      },
+      "expected": {
+        "claims": [
+          "claim-e1-d",
+          "claim-e2-a"
+        ]
+      },
+      "id": "I09-later-replacement-does-not-reactivate-first-claim",
+      "nonmutating": true,
+      "passed": true
+    },
+    {
+      "actual": {
+        "codes": [
+          "E_PROFILE_ENDPOINT"
+        ],
+        "valid": false
+      },
+      "expected": {
+        "codes": [
+          "E_PROFILE_ENDPOINT"
+        ],
+        "valid": false
+      },
+      "id": "I10-derivation-endpoint-must-be-a-version",
+      "nonmutating": true,
+      "passed": true
+    },
+    {
+      "actual": {
+        "codes": [
+          "E_PROFILE_SUPERSESSION"
+        ],
+        "valid": false
+      },
+      "expected": {
+        "codes": [
+          "E_PROFILE_SUPERSESSION"
+        ],
+        "valid": false
+      },
+      "id": "I11-cross-agent-supersession-rejected",
+      "nonmutating": true,
+      "passed": true
+    },
+    {
+      "actual": {
+        "codes": [
+          "E_PROFILE_SUPERSESSION"
+        ],
+        "valid": false
+      },
+      "expected": {
+        "codes": [
+          "E_PROFILE_SUPERSESSION"
+        ],
+        "valid": false
+      },
+      "id": "I12-supersession-subject-must-stay-the-same",
+      "nonmutating": true,
+      "passed": true
+    },
+    {
+      "actual": {
+        "codes": [
+          "E_CLAIM_REWRITE"
+        ],
+        "valid": false
+      },
+      "expected": {
+        "codes": [
+          "E_CLAIM_REWRITE"
+        ],
+        "valid": false
+      },
+      "id": "I13-deleting-earlier-claim-breaks-revision-history",
+      "nonmutating": true,
+      "passed": true
+    },
+    {
+      "actual": {
+        "codes": [
+          "E_CLAIM_REWRITE"
+        ],
+        "valid": false
+      },
+      "expected": {
+        "codes": [
+          "E_CLAIM_REWRITE"
+        ],
+        "valid": false
+      },
+      "id": "I14-rewriting-earlier-claim-breaks-revision-history",
+      "nonmutating": true,
+      "passed": true
+    },
+    {
+      "actual": {
+        "codes": [
+          "E_PROFILE_CYCLE"
+        ],
+        "valid": false
+      },
+      "expected": {
+        "codes": [
+          "E_PROFILE_CYCLE"
+        ],
+        "valid": false
+      },
+      "id": "I15-supersession-cycle-rejected",
+      "nonmutating": true,
+      "passed": true
+    },
+    {
+      "actual": {
+        "codes": [
+          "E_PROFILE_CONCEPT"
+        ],
+        "valid": false
+      },
+      "expected": {
+        "codes": [
+          "E_PROFILE_CONCEPT"
+        ],
+        "valid": false
+      },
+      "id": "I16-reserved-definition-cannot-assert-historical-truth",
+      "nonmutating": true,
+      "passed": true
+    },
+    {
+      "actual": {
+        "codes": [
+          "E_VERSION_REWRITE"
+        ],
+        "valid": false
+      },
+      "expected": {
+        "codes": [
+          "E_VERSION_REWRITE"
+        ],
+        "valid": false
+      },
+      "id": "I17-technical-parent-change-still-rewrites-version",
+      "nonmutating": true,
+      "passed": true
+    },
+    {
+      "actual": {
+        "codes": [
+          "E_CLAIM_REWRITE"
+        ],
+        "valid": false
+      },
+      "expected": {
+        "codes": [
+          "E_CLAIM_REWRITE"
+        ],
+        "valid": false
+      },
+      "id": "I18-deleting-supersession-cannot-erase-revision-history",
+      "nonmutating": true,
+      "passed": true
+    }
+  ],
+  "inputs": {
+    "10_markdown/documents/humboldt-h0017682-7d174637.md": "5998ebffe9f12697da4619723d48a27323aa75c717326988d108a91ce856113e",
+    "experiments/editorial_cases/cases.json": "460d8fea952818808b3c306d7f7fcaedd8d15b9d87c1ba28ff9bf464940c2d58",
+    "experiments/editorial_cases/identity-cases.json": "3a0948f2be40fa10a71d1f9128d17696bfed4938200b2cdcf60f410bb0f0e4d6",
+    "experiments/editorial_cases/intake.json": "4f739f260237bd2520ef25530ef7ef8aa70b0fe9bfcecfdbfb7f438cb7e9d21a",
+    "experiments/editorial_cases/mapping-freeze.json": "0e965501f0ee0cd86df5c86e77b24fe6b053cf421d482709b1ebc1c287f65d8b",
+    "experiments/editorial_cases/profile.json": "454aa9416b334594aa24fc2e45695338c165fd1a2f555b141bfe4620c827ad5e",
+    "experiments/editorial_cases/protocol.json": "c2254656433a146eba44f6d255097ceba7380ac452e83ade384b5b325bd18652",
+    "tools/check_editorial_cases.py": "1e42b8c94d128a6e1945df4cf0b7f67be3f5d3378a9ee70d9d58c24d0009fcc5",
+    "tools/ingest_editorial_cases.py": "281dce84ef2bd363a737a3b97b4b334a07a75b53985086477e4c6d3c45c60666",
+    "tools/models/abstract_text.py": "0a5206407f15518937a73a432087db0803fc89820c30c4f343226f0438c64aaf",
+    "tools/models/editorial_profile.py": "aecc4a9550ed80175c2104cd22b5d5f52f9d94441deb2dc4567d26999b602a13",
+    "tools/tei/editorial_cases.py": "3490633eb3233fadb1afe5dce2c25ced45ba47f9ed8f7109914ce24537c1d628"
+  },
+  "license": "CC-BY-SA-4.0 for original XML and adapted source observations; original source attribution retained",
+  "limits": [
+    "Single-document purposive sample",
+    "No measured editor workflow or practical-adequacy verdict",
+    "No full P5/ODD or whole-document conversion guarantee",
+    "Tree retention, task observations, and media semantics are distinct",
+    "Identity examples are synthetic; editorial source fragments are real"
+  ],
+  "summary": {
+    "holdout_migration_success": false,
+    "identity_cases": 18,
+    "identity_passes": 18,
+    "passed": true,
+    "real_fragments": 3,
+    "successful_bounded_mappings": 2
+  }
+}

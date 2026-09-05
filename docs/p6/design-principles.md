@@ -64,10 +64,16 @@ equivalence is tested.
 
 ## Prefer progressive complexity
 
-Simple documents and introductory use cases should remain simple. Advanced
-features should compose onto a small core instead of making every document
-carry the full complexity of the standard. Reduced surface area is useful only
-when it does not erase necessary distinctions.
+Evaluate complexity with named authoring and processing tasks. For an
+introductory task, record the concepts the author must understand, declarations
+they must supply, steps needed to diagnose an error, and dependencies a
+receiving tool must obtain. Generated or inherited declarations reduce effort
+only when their effective values remain inspectable and reproducible.
+
+Add an advanced feature to the same example, such as a second annotation of a
+paragraph, and record what changes in the document, explanation, and processor.
+Reduced markup is useful only when it preserves necessary distinctions and
+does not move unexplained complexity into tools or implicit conventions.
 
 ## Treat migration as part of the design
 

@@ -1,0 +1,102 @@
+{
+  "format_version": 1,
+  "experiment": "editorial-cases-1",
+  "license": "CC-BY-SA-4.0 for original XML and adapted source observations; original source attribution retained",
+  "attribution": "edition humboldt digital, Berlin-Brandenburgische Akademie der Wissenschaften 2025; source XML identifies editors Dominik Erdmann and Christian Thomas and contributor Florian Schnee; dataset editors are named in the pinned README and CITATION.",
+  "source": "humboldt-h0017682-7d174637",
+  "projection_policy": "For these task observations only, collapse XML whitespace runs to single spaces and trim ends; a primary reading excludes note descendants and fw descendants. Preserve original source bytes separately. Empty lb and pb mark locations and do not contribute characters. This is not a full diplomatic transcription or edition-wide normalization policy.",
+  "authored_before_mapper": true,
+  "cases": [
+    {
+      "case_id": "case-1-hierarchy",
+      "holdout": false,
+      "source_path": "data/travel-journal/H0017682.xml",
+      "start_line": 880,
+      "end_line": 880,
+      "start_byte": 99692,
+      "end_byte": 99927,
+      "fragment_sha256": "d564c4f53e43bb67e64e2105f49c0fb0809c40fcc706b16f55abc675cf3bab96",
+      "inherited_namespace": "http://www.tei-c.org/ns/1.0",
+      "xpath": "/*/*[2]/*/*[2]/*[13]/*[1]",
+      "original_xml": "<head><date when=\"1790-06-15\" calendar=\"#gregorian\"><hi rendition=\"#u\">Bäder in <hi rendition=\"#aq\"><placeName ref=\"https://edition-humboldt.de/H0005512 https://www.geonames.org/11609031\">Derbyshire</placeName></hi></hi></date></head>",
+      "role": "development",
+      "editorial_task": "Inspect a dated diary heading while preserving nested typography, the place label, and the source-encoded calendar date.",
+      "primary_text": "Bäder in Derbyshire",
+      "required_observations": [
+        "One head contains date, whose when is 1790-06-15 and calendar is #gregorian.",
+        "The date contains a hi with rendition #u. Its ordered mixed content is text Bäder in followed by a nested hi with rendition #aq.",
+        "The inner hi contains placeName with text Derbyshire and ref exactly https://edition-humboldt.de/H0005512 https://www.geonames.org/11609031.",
+        "Nested hi extents and their containment remain inspectable even where equal extents occur; identical spans do not make distinct source elements identical.",
+        "The two external place reference tokens remain pointers; this experiment does not resolve their entities or certify their truth."
+      ],
+      "explicit_non_claims": [
+        "The when value does not establish the date Humboldt wrote the entry.",
+        "Calendar and rendition pointers are retained, not resolved into an acquired project registry."
+      ]
+    },
+    {
+      "case_id": "case-2-interrupted-heading",
+      "holdout": false,
+      "source_path": "data/travel-journal/H0017682.xml",
+      "start_line": 69,
+      "end_line": 72,
+      "start_byte": 3971,
+      "end_byte": 4633,
+      "fragment_sha256": "dba21659975c9b781b41ca47766a585361f876fb6bda35acaed4502212cb0891",
+      "inherited_namespace": "http://www.tei-c.org/ns/1.0",
+      "xpath": "/*/*[2]/*/*[2]/*[1]",
+      "original_xml": "<head>Reise. <date when=\"1790\" calendar=\"#gregorian\">1790</date>. <lb/><note hand=\"#unknown\"><ref xml:id=\"bab01c0c-9760-4703-b01c-0c9760d7037b\" corresp=\"#f05a05fb-11de-42d0-9a05-fb11def2d021\" type=\"editorialNote\">6255</ref><note xml:id=\"f05a05fb-11de-42d0-9a05-fb11def2d021\" corresp=\"#bab01c0c-9760-4703-b01c-0c9760d7037b\" type=\"editorial\" resp=\"#CT #DE\">Handschriftliche Notiz, Bleistift von unbekannter Hand:\n                                Altsignatur der Sammlung Radowitz/Archivsignatur.</note>\n                    </note>\n                    <placeName ref=\"https://edition-humboldt.de/H0005653 https://www.geonames.org/6269131\">England</placeName>.</head>",
+      "role": "development",
+      "editorial_task": "Offer the heading's main reading independently from an unknown-hand archival note, while retaining the note and the modern editorial explanation with their relationships.",
+      "primary_text": "Reise. 1790. England.",
+      "primary_segments": [
+        "Reise. 1790.",
+        "England."
+      ],
+      "unknown_hand_note_text": "6255",
+      "editorial_note_text": "Handschriftliche Notiz, Bleistift von unbekannter Hand: Altsignatur der Sammlung Radowitz/Archivsignatur.",
+      "required_observations": [
+        "The main heading's reading order remains prefix Reise. 1790. followed by England.; 6255 and the editorial explanation are not inserted into this task's primary reading.",
+        "A source lb remains locatable between prefix and unknown-hand note.",
+        "The outer note has hand #unknown. Preserve that encoded uncertainty; do not attribute 6255 to Humboldt.",
+        "Within that note, ref xml:id bab01c0c-9760-4703-b01c-0c9760d7037b contains 6255 and points via corresp to #f05a05fb-11de-42d0-9a05-fb11def2d021.",
+        "The editorial note has xml:id f05a05fb-11de-42d0-9a05-fb11def2d021, type editorial, resp #CT #DE, and reciprocal corresp #bab01c0c-9760-4703-b01c-0c9760d7037b.",
+        "The outer unknown-hand note and inner modern editorial note remain separate objects with distinct responsibility information.",
+        "If all note prose inhabits the same character sequence, primary heading membership must exclude those note characters and is discontinuous; a contiguous envelope alone does not preserve this task observation. A separately stored note is an alternative policy with an explicit insertion attachment."
+      ],
+      "explicit_non_claims": [
+        "The discontinuous primary reading is a project-defined editorial task observation, not proof that the original TEI tree is defective.",
+        "No claim that the official edition UI implements this projection was tested."
+      ]
+    },
+    {
+      "case_id": "case-3-holdout-media",
+      "holdout": true,
+      "source_path": "data/travel-journal/H0017682.xml",
+      "start_line": 869,
+      "end_line": 874,
+      "start_byte": 98315,
+      "end_byte": 98924,
+      "fragment_sha256": "61a52e8ea51cc5c0d6b024b74c62010c9564106fead7742ca265b8792c2d0b9a",
+      "inherited_namespace": "http://www.tei-c.org/ns/1.0",
+      "xpath": "/*/*[2]/*/*[2]/*[12]/*[4]",
+      "original_xml": "<p>Bei <hi rendition=\"#aq\"><placeName ref=\"https://edition-humboldt.de/H0017348 https://www.geonames.org/2647639\">Hales owen</placeName></hi> erscheinen zwei\n                        <lb/>kegelförmige, zum Theil mit <lb/>Buschwerk bekränzte Hügel. <lb/>Läßt ihre Form, die Nähe\n                        <lb/>der <hi rendition=\"#aq\">Rowlyragg</hi>hügel und des <lb/>rothen <name type=\"mineral\">Sandstein</name>s hier auf <lb/>\n                        <pb facs=\"#f0018\" n=\"[9v]\"/>\n                        <fw type=\"folNum\">16.</fw>\n                        <name type=\"mineral\">Basalt</name> schließen.</p>",
+      "role": "holdout-do-not-expose-to-mapper-before-rules-freeze",
+      "editorial_task": "Read prose through a page transition and inspect its page/facsimile association without adding foliation to the prose or inventing a media target.",
+      "primary_text": "Bei Hales owen erscheinen zwei kegelförmige, zum Theil mit Buschwerk bekränzte Hügel. Läßt ihre Form, die Nähe der Rowlyragghügel und des rothen Sandsteins hier auf Basalt schließen.",
+      "folio_text": "16.",
+      "required_observations": [
+        "One paragraph continues through a pb and fw, from prose ending hier auf to Basalt schließen.",
+        "The page break carries n [9v] and facs #f0018; retain their lexical values and the break's position.",
+        "The following fw has type folNum and content 16.; its content remains accessible but outside the task's primary prose reading.",
+        "The full acquired XML contains no element with xml:id f0018, no facsimile element, and no graphic element; report the media association as unresolved in this declared source boundary.",
+        "Neither successful string extraction nor preserved pointer spelling establishes facsimile alignment or complete migration.",
+        "Return an explicit unsupported or unresolved-media outcome if the target profile cannot represent the page object/association; do not silently erase it or invent an image URI."
+      ],
+      "explicit_non_claims": [
+        "Absence in this XML does not establish that the edition lacks the image or resolves it incorrectly.",
+        "No image, image license, or external page service was acquired or evaluated."
+      ]
+    }
+  ]
+}

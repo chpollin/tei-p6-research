@@ -1,0 +1,2998 @@
+{
+  "authority": "Synthetic experimental observations; not a Vault grounding source or human acceptance.",
+  "canonical_checks": [
+    {
+      "model": "empty",
+      "passed": true,
+      "sha256": "6b95e764596ce1558edb9356d9216225c8b4de45ecae5be0eda2b0b6932c5010"
+    },
+    {
+      "model": "ungrouped_version",
+      "passed": true,
+      "sha256": "864ad5225b06843b0210aa886749426d70eb9ceb1b98dabee252c7be187b29ba"
+    },
+    {
+      "model": "whole_range",
+      "passed": true,
+      "sha256": "51ea5e0655dc0c152bf28b49a34c6861e1b60a58859065fcdc7ff4d6f4af53d9"
+    },
+    {
+      "model": "discontinuous",
+      "passed": true,
+      "sha256": "ec2ace7c9963d258415af13cd4405bf85b7cc27054ef0336f92d7b39f46c4bee"
+    },
+    {
+      "model": "overlapping_all",
+      "passed": true,
+      "sha256": "b92002758f31cca4aa25852a99b6b5dd2a9d275befd530d171d861ce2671381e"
+    },
+    {
+      "model": "ambiguous_annotation",
+      "passed": true,
+      "sha256": "16d7d8ba6ebd901e40cadb5b26366012252cdfda39381b7aa85e401129bb0658"
+    },
+    {
+      "model": "absent_annotation",
+      "passed": true,
+      "sha256": "a8324709025c466ff2aa4f573ea3e4e7a83efb968c1dd433e6b984fe3fa80927"
+    },
+    {
+      "model": "empty_point",
+      "passed": true,
+      "sha256": "d6a76b050d4244e48aae10105180ee69640876f1e789fc09be1a60ef03c884e9"
+    },
+    {
+      "model": "unicode_codepoints",
+      "passed": true,
+      "sha256": "c1b6bd5892dfcdcb04ae70f6d9b40385df1196734f319bdeed4d95940c5bed0c"
+    },
+    {
+      "model": "no_normalization",
+      "passed": true,
+      "sha256": "3f939d62f93d1d84ec00a249eaa6dd3e1ea282ad52e06181942cf00fbda0c47a"
+    },
+    {
+      "model": "adjacent_segments",
+      "passed": true,
+      "sha256": "13e36b4598b59af8d42f5f99ac9b64e026f384c19671ba3c063257b461590daf"
+    },
+    {
+      "model": "attributed_continuity",
+      "passed": true,
+      "sha256": "d9333a454a264402918a33b97327cff345a0263095011f00ba8251ba898c0244"
+    },
+    {
+      "model": "version_dag",
+      "passed": true,
+      "sha256": "e872134f54097d55961b20cc2c16565a0472f424b1bebf4d16c6131960c2b99a"
+    },
+    {
+      "model": "equal_content_distinct_ids",
+      "passed": true,
+      "sha256": "42c21d9c5a38539841a24b3cd37234905eda5b2f90bdaaa6633bd26994292c1b"
+    },
+    {
+      "model": "competing_readings",
+      "passed": true,
+      "sha256": "f14347d08ca2d0d0307a7487ca748f34a4d0a850aa4654744b8d8b50914474f8"
+    },
+    {
+      "model": "equal_parent_child",
+      "passed": true,
+      "sha256": "207e655a5cc36a9c4c5eeb9e1529eb01b2507501e56e1d2411c6688c6a72a2c1"
+    },
+    {
+      "model": "literal_context",
+      "passed": true,
+      "sha256": "5501a1c1a4ffa53704599d13e57836689f6ca04986b922c3598f5994376801e3"
+    },
+    {
+      "model": "contradictory_interpretations",
+      "passed": true,
+      "sha256": "a1b9cfaca35c6e9d08f96c39f66286f1f0045900dce4bb488a9f9a5d12cff81e"
+    },
+    {
+      "model": "adjacent_reading_target",
+      "passed": true,
+      "sha256": "237240da327d4e6cf8901e91bdd796a3e688dda00c308281e1cd3adeb220e5f9"
+    },
+    {
+      "model": "canonical_original",
+      "passed": true,
+      "sha256": "6a058169b5800ae9e2e89c2ef332b827e134cc84617f86a8b0a055669a0ebc17"
+    },
+    {
+      "model": "canonical_reordered",
+      "passed": true,
+      "sha256": "6a058169b5800ae9e2e89c2ef332b827e134cc84617f86a8b0a055669a0ebc17"
+    },
+    {
+      "model": "competing_reordered",
+      "passed": true,
+      "sha256": "f14347d08ca2d0d0307a7487ca748f34a4d0a850aa4654744b8d8b50914474f8"
+    },
+    {
+      "model": "nodes_reordered",
+      "passed": true,
+      "sha256": "207e655a5cc36a9c4c5eeb9e1529eb01b2507501e56e1d2411c6688c6a72a2c1"
+    },
+    {
+      "model": "selector_kind_changed",
+      "passed": true,
+      "sha256": "2a8aaf611c5df9da44d4389b55f728d4264b17003974f25a9c9eb8338eb55110"
+    },
+    {
+      "model": "selector_policy_changed",
+      "passed": true,
+      "sha256": "079af75b29b0e4cd4da876b6c67f7bdfde7fef33b4e5f8b75c485529d5a60b15"
+    },
+    {
+      "model": "segmentation_changed",
+      "passed": true,
+      "sha256": "d1a356f8784e016c5dc7d552b29840e4ed595111a13166589f03344b4843fb63"
+    },
+    {
+      "model": "selection_id_changed",
+      "passed": true,
+      "sha256": "8f337f6d9039c37f72b5b95f25b99e6468f98f1ae95111a9376547e079c29665"
+    },
+    {
+      "model": "attribution_changed",
+      "passed": true,
+      "sha256": "879656a569d25e23a5ebf8f97f9a4594dd47c999feb9029750460efe6ba78b30"
+    },
+    {
+      "model": "criterion_changed",
+      "passed": true,
+      "sha256": "fc8b8577db9271a3eee7a9c5405332de270a3140da72deabceef8074900206e6"
+    },
+    {
+      "model": "composed_version",
+      "passed": true,
+      "sha256": "f030f4f96d9218ecd42ba35076501acf58a3956d11a10490adc0ad0f87bdf921"
+    },
+    {
+      "model": "decomposed_version",
+      "passed": true,
+      "sha256": "5b336aff504d687207597aca1b229062012a036372d36287e33e478c5764188d"
+    },
+    {
+      "model": "appended_version",
+      "passed": true,
+      "sha256": "2f28d7d950741b2b368e7d2da37f68afd5919b98edb83ce18610c4259855528b"
+    },
+    {
+      "model": "rewritten_content",
+      "passed": true,
+      "sha256": "9e41514643d2cb2f2befb115b12b030bd0fbab89e23921109987d8bd1cc73f23"
+    },
+    {
+      "model": "rewritten_parents",
+      "passed": true,
+      "sha256": "b5e83ea1052777e43e5299adf90f833545b25102c894fbb7c074410581e8c823"
+    },
+    {
+      "model": "identity_and_reanchoring",
+      "passed": true,
+      "sha256": "6450d2aaa4f60d2dc6ba31d3727585d5be904c3cf0ae7d2d25f5b45385777a89"
+    },
+    {
+      "model": "unclaimed_target_version",
+      "passed": true,
+      "sha256": "8de44330a8c6a5f98be41c80dacace662124e79f57a7207857d5ea76e23a562a"
+    },
+    {
+      "model": "ambiguous_reanchor_source",
+      "passed": true,
+      "sha256": "1a39f516ff586b0e1a1633d133bc330311cdd9cf401a3b3cd538b39265aa6a34"
+    },
+    {
+      "model": "plural_reanchor_policy",
+      "passed": true,
+      "sha256": "e61423aadc55b3767ad7a11f38a71761b4e4408e79bf0d40f713193d755aed23"
+    }
+  ],
+  "cases": [
+    {
+      "actual": {
+        "all_selections_resolved": true,
+        "codes": [],
+        "resolutions": {},
+        "valid": true
+      },
+      "description": "An entirely empty package makes no domain adequacy claim.",
+      "expected": {
+        "all_selections_resolved": true,
+        "codes": [],
+        "resolutions": {},
+        "valid": true
+      },
+      "id": "empty",
+      "nonmutating": true,
+      "operation": "validate",
+      "passed": true,
+      "rules": [
+        "R13",
+        "R10"
+      ]
+    },
+    {
+      "actual": {
+        "all_selections_resolved": true,
+        "codes": [],
+        "resolutions": {},
+        "valid": true
+      },
+      "description": "A version may exist without an editorial text grouping.",
+      "expected": {
+        "all_selections_resolved": true,
+        "codes": [],
+        "resolutions": {},
+        "valid": true
+      },
+      "id": "ungrouped_version",
+      "nonmutating": true,
+      "operation": "validate",
+      "passed": true,
+      "rules": [
+        "R04",
+        "R13"
+      ]
+    },
+    {
+      "actual": {
+        "all_selections_resolved": true,
+        "codes": [],
+        "resolutions": {
+          "whole": {
+            "candidates": [],
+            "status": "resolved",
+            "targets": [
+              {
+                "kind": "region",
+                "segments": [
+                  {
+                    "end": 6,
+                    "start": 0
+                  }
+                ]
+              }
+            ],
+            "version": "v1"
+          }
+        },
+        "valid": true
+      },
+      "description": "A nonempty half-open interval resolves to one region.",
+      "expected": {
+        "all_selections_resolved": true,
+        "codes": [],
+        "resolutions": {
+          "whole": {
+            "candidates": [],
+            "status": "resolved",
+            "targets": [
+              {
+                "kind": "region",
+                "segments": [
+                  {
+                    "end": 6,
+                    "start": 0
+                  }
+                ]
+              }
+            ],
+            "version": "v1"
+          }
+        },
+        "valid": true
+      },
+      "id": "whole_range",
+      "nonmutating": true,
+      "operation": "validate",
+      "passed": true,
+      "rules": [
+        "R05",
+        "R06"
+      ]
+    },
+    {
+      "actual": {
+        "all_selections_resolved": true,
+        "codes": [],
+        "resolutions": {
+          "parts": {
+            "candidates": [],
+            "status": "resolved",
+            "targets": [
+              {
+                "kind": "region",
+                "segments": [
+                  {
+                    "end": 2,
+                    "start": 0
+                  },
+                  {
+                    "end": 6,
+                    "start": 4
+                  }
+                ]
+              }
+            ],
+            "version": "v1"
+          }
+        },
+        "valid": true
+      },
+      "description": "Two separated segments form ONE target, available to an annotation.",
+      "expected": {
+        "all_selections_resolved": true,
+        "codes": [],
+        "resolutions": {
+          "parts": {
+            "candidates": [],
+            "status": "resolved",
+            "targets": [
+              {
+                "kind": "region",
+                "segments": [
+                  {
+                    "end": 2,
+                    "start": 0
+                  },
+                  {
+                    "end": 6,
+                    "start": 4
+                  }
+                ]
+              }
+            ],
+            "version": "v1"
+          }
+        },
+        "valid": true
+      },
+      "id": "discontinuous",
+      "nonmutating": true,
+      "operation": "validate",
+      "passed": true,
+      "rules": [
+        "R06",
+        "R07"
+      ]
+    },
+    {
+      "actual": {
+        "all_selections_resolved": true,
+        "codes": [],
+        "resolutions": {
+          "plural": {
+            "candidates": [],
+            "status": "resolved",
+            "targets": [
+              {
+                "kind": "region",
+                "segments": [
+                  {
+                    "end": 2,
+                    "start": 0
+                  }
+                ]
+              },
+              {
+                "kind": "region",
+                "segments": [
+                  {
+                    "end": 3,
+                    "start": 1
+                  }
+                ]
+              },
+              {
+                "kind": "region",
+                "segments": [
+                  {
+                    "end": 4,
+                    "start": 2
+                  }
+                ]
+              }
+            ],
+            "version": "v1"
+          }
+        },
+        "valid": true
+      },
+      "description": "All policy preserves three distinct overlapping occurrences.",
+      "expected": {
+        "all_selections_resolved": true,
+        "codes": [],
+        "resolutions": {
+          "plural": {
+            "candidates": [],
+            "status": "resolved",
+            "targets": [
+              {
+                "kind": "region",
+                "segments": [
+                  {
+                    "end": 2,
+                    "start": 0
+                  }
+                ]
+              },
+              {
+                "kind": "region",
+                "segments": [
+                  {
+                    "end": 3,
+                    "start": 1
+                  }
+                ]
+              },
+              {
+                "kind": "region",
+                "segments": [
+                  {
+                    "end": 4,
+                    "start": 2
+                  }
+                ]
+              }
+            ],
+            "version": "v1"
+          }
+        },
+        "valid": true
+      },
+      "id": "overlapping_all",
+      "nonmutating": true,
+      "operation": "validate",
+      "passed": true,
+      "rules": [
+        "R06"
+      ]
+    },
+    {
+      "actual": {
+        "all_selections_resolved": false,
+        "codes": [
+          "W_AMBIGUOUS"
+        ],
+        "resolutions": {
+          "plural": {
+            "candidates": [
+              {
+                "kind": "region",
+                "segments": [
+                  {
+                    "end": 2,
+                    "start": 0
+                  }
+                ]
+              },
+              {
+                "kind": "region",
+                "segments": [
+                  {
+                    "end": 3,
+                    "start": 1
+                  }
+                ]
+              },
+              {
+                "kind": "region",
+                "segments": [
+                  {
+                    "end": 4,
+                    "start": 2
+                  }
+                ]
+              }
+            ],
+            "status": "ambiguous",
+            "targets": [],
+            "version": "v1"
+          }
+        },
+        "valid": true
+      },
+      "description": "Ambiguity is valid and retains all candidates but accepts none.",
+      "expected": {
+        "all_selections_resolved": false,
+        "codes": [
+          "W_AMBIGUOUS"
+        ],
+        "resolutions": {
+          "plural": {
+            "candidates": [
+              {
+                "kind": "region",
+                "segments": [
+                  {
+                    "end": 2,
+                    "start": 0
+                  }
+                ]
+              },
+              {
+                "kind": "region",
+                "segments": [
+                  {
+                    "end": 3,
+                    "start": 1
+                  }
+                ]
+              },
+              {
+                "kind": "region",
+                "segments": [
+                  {
+                    "end": 4,
+                    "start": 2
+                  }
+                ]
+              }
+            ],
+            "status": "ambiguous",
+            "targets": [],
+            "version": "v1"
+          }
+        },
+        "valid": true
+      },
+      "id": "ambiguous_annotation",
+      "nonmutating": true,
+      "operation": "validate",
+      "passed": true,
+      "rules": [
+        "R07",
+        "R10"
+      ]
+    },
+    {
+      "actual": {
+        "all_selections_resolved": false,
+        "codes": [
+          "W_ABSENT"
+        ],
+        "resolutions": {
+          "missing": {
+            "candidates": [],
+            "status": "absent",
+            "targets": [],
+            "version": "v1"
+          }
+        },
+        "valid": true
+      },
+      "description": "An annotation can keep a quotation absent from this version.",
+      "expected": {
+        "all_selections_resolved": false,
+        "codes": [
+          "W_ABSENT"
+        ],
+        "resolutions": {
+          "missing": {
+            "candidates": [],
+            "status": "absent",
+            "targets": [],
+            "version": "v1"
+          }
+        },
+        "valid": true
+      },
+      "id": "absent_annotation",
+      "nonmutating": true,
+      "operation": "validate",
+      "passed": true,
+      "rules": [
+        "R07"
+      ]
+    },
+    {
+      "actual": {
+        "all_selections_resolved": true,
+        "codes": [],
+        "resolutions": {
+          "origin": {
+            "candidates": [],
+            "status": "resolved",
+            "targets": [
+              {
+                "kind": "point",
+                "offset": 0
+              }
+            ],
+            "version": "v1"
+          }
+        },
+        "valid": true
+      },
+      "description": "Empty content has a valid point at zero.",
+      "expected": {
+        "all_selections_resolved": true,
+        "codes": [],
+        "resolutions": {
+          "origin": {
+            "candidates": [],
+            "status": "resolved",
+            "targets": [
+              {
+                "kind": "point",
+                "offset": 0
+              }
+            ],
+            "version": "v1"
+          }
+        },
+        "valid": true
+      },
+      "id": "empty_point",
+      "nonmutating": true,
+      "operation": "validate",
+      "passed": true,
+      "rules": [
+        "R05",
+        "R06"
+      ]
+    },
+    {
+      "actual": {
+        "all_selections_resolved": true,
+        "codes": [],
+        "resolutions": {
+          "astral": {
+            "candidates": [],
+            "status": "resolved",
+            "targets": [
+              {
+                "kind": "region",
+                "segments": [
+                  {
+                    "end": 2,
+                    "start": 1
+                  }
+                ]
+              }
+            ],
+            "version": "v1"
+          },
+          "combining": {
+            "candidates": [],
+            "status": "resolved",
+            "targets": [
+              {
+                "kind": "region",
+                "segments": [
+                  {
+                    "end": 4,
+                    "start": 3
+                  }
+                ]
+              }
+            ],
+            "version": "v1"
+          },
+          "end": {
+            "candidates": [],
+            "status": "resolved",
+            "targets": [
+              {
+                "kind": "point",
+                "offset": 5
+              }
+            ],
+            "version": "v1"
+          }
+        },
+        "valid": true
+      },
+      "description": "Astral symbols count once; combining marks remain separately addressable.",
+      "expected": {
+        "all_selections_resolved": true,
+        "codes": [],
+        "resolutions": {
+          "astral": {
+            "candidates": [],
+            "status": "resolved",
+            "targets": [
+              {
+                "kind": "region",
+                "segments": [
+                  {
+                    "end": 2,
+                    "start": 1
+                  }
+                ]
+              }
+            ],
+            "version": "v1"
+          },
+          "combining": {
+            "candidates": [],
+            "status": "resolved",
+            "targets": [
+              {
+                "kind": "region",
+                "segments": [
+                  {
+                    "end": 4,
+                    "start": 3
+                  }
+                ]
+              }
+            ],
+            "version": "v1"
+          },
+          "end": {
+            "candidates": [],
+            "status": "resolved",
+            "targets": [
+              {
+                "kind": "point",
+                "offset": 5
+              }
+            ],
+            "version": "v1"
+          }
+        },
+        "valid": true
+      },
+      "id": "unicode_codepoints",
+      "nonmutating": true,
+      "operation": "validate",
+      "passed": true,
+      "rules": [
+        "R05"
+      ]
+    },
+    {
+      "actual": {
+        "all_selections_resolved": false,
+        "codes": [
+          "W_ABSENT"
+        ],
+        "resolutions": {
+          "normalization_absent": {
+            "candidates": [],
+            "status": "absent",
+            "targets": [],
+            "version": "decomposed"
+          }
+        },
+        "valid": true
+      },
+      "description": "Canonically related Unicode spellings remain different literal content.",
+      "expected": {
+        "all_selections_resolved": false,
+        "codes": [
+          "W_ABSENT"
+        ],
+        "resolutions": {
+          "normalization_absent": {
+            "candidates": [],
+            "status": "absent",
+            "targets": [],
+            "version": "decomposed"
+          }
+        },
+        "valid": true
+      },
+      "id": "no_normalization",
+      "nonmutating": true,
+      "operation": "validate",
+      "passed": true,
+      "rules": [
+        "R03",
+        "R05",
+        "R11"
+      ]
+    },
+    {
+      "actual": {
+        "all_selections_resolved": false,
+        "codes": [
+          "E_HASH"
+        ],
+        "resolutions": {},
+        "valid": false
+      },
+      "description": "A syntactically plausible hash must equal exact UTF-8 content.",
+      "expected": {
+        "all_selections_resolved": false,
+        "codes": [
+          "E_HASH"
+        ],
+        "resolutions": {},
+        "valid": false
+      },
+      "id": "wrong_hash",
+      "nonmutating": true,
+      "operation": "validate",
+      "passed": true,
+      "rules": [
+        "R03",
+        "R10"
+      ]
+    },
+    {
+      "actual": {
+        "all_selections_resolved": false,
+        "codes": [
+          "E_REFERENCE"
+        ],
+        "resolutions": {},
+        "valid": false
+      },
+      "description": "A selection version reference must resolve.",
+      "expected": {
+        "all_selections_resolved": false,
+        "codes": [
+          "E_REFERENCE"
+        ],
+        "resolutions": {},
+        "valid": false
+      },
+      "id": "missing_version_reference",
+      "nonmutating": true,
+      "operation": "validate",
+      "passed": true,
+      "rules": [
+        "R02"
+      ]
+    },
+    {
+      "actual": {
+        "all_selections_resolved": false,
+        "codes": [
+          "E_BOUNDS"
+        ],
+        "resolutions": {},
+        "valid": false
+      },
+      "description": "A point cannot exceed the code-point length.",
+      "expected": {
+        "all_selections_resolved": false,
+        "codes": [
+          "E_BOUNDS"
+        ],
+        "resolutions": {},
+        "valid": false
+      },
+      "id": "point_bounds",
+      "nonmutating": true,
+      "operation": "validate",
+      "passed": true,
+      "rules": [
+        "R05"
+      ]
+    },
+    {
+      "actual": {
+        "all_selections_resolved": false,
+        "codes": [
+          "E_SELECTOR"
+        ],
+        "resolutions": {},
+        "valid": false
+      },
+      "description": "JSON true is not a valid integer coordinate.",
+      "expected": {
+        "all_selections_resolved": false,
+        "codes": [
+          "E_SELECTOR"
+        ],
+        "resolutions": {},
+        "valid": false
+      },
+      "id": "boolean_offset",
+      "nonmutating": true,
+      "operation": "validate",
+      "passed": true,
+      "rules": [
+        "R05"
+      ]
+    },
+    {
+      "actual": {
+        "all_selections_resolved": false,
+        "codes": [
+          "E_QUOTE"
+        ],
+        "resolutions": {},
+        "valid": false
+      },
+      "description": "Correct bounds do not excuse a nonliteral segment quote.",
+      "expected": {
+        "all_selections_resolved": false,
+        "codes": [
+          "E_QUOTE"
+        ],
+        "resolutions": {},
+        "valid": false
+      },
+      "id": "range_quote_mismatch",
+      "nonmutating": true,
+      "operation": "validate",
+      "passed": true,
+      "rules": [
+        "R05"
+      ]
+    },
+    {
+      "actual": {
+        "all_selections_resolved": false,
+        "codes": [
+          "E_BOUNDS"
+        ],
+        "resolutions": {},
+        "valid": false
+      },
+      "description": "Empty content cannot contain a nonempty interval.",
+      "expected": {
+        "all_selections_resolved": false,
+        "codes": [
+          "E_BOUNDS"
+        ],
+        "resolutions": {},
+        "valid": false
+      },
+      "id": "region_on_empty",
+      "nonmutating": true,
+      "operation": "validate",
+      "passed": true,
+      "rules": [
+        "R05"
+      ]
+    },
+    {
+      "actual": {
+        "all_selections_resolved": true,
+        "codes": [],
+        "resolutions": {
+          "adjacent": {
+            "candidates": [],
+            "status": "resolved",
+            "targets": [
+              {
+                "kind": "region",
+                "segments": [
+                  {
+                    "end": 3,
+                    "start": 0
+                  },
+                  {
+                    "end": 6,
+                    "start": 3
+                  }
+                ]
+              }
+            ],
+            "version": "v1"
+          }
+        },
+        "valid": true
+      },
+      "description": "Adjacent segments are allowed and retain their segmentation.",
+      "expected": {
+        "all_selections_resolved": true,
+        "codes": [],
+        "resolutions": {
+          "adjacent": {
+            "candidates": [],
+            "status": "resolved",
+            "targets": [
+              {
+                "kind": "region",
+                "segments": [
+                  {
+                    "end": 3,
+                    "start": 0
+                  },
+                  {
+                    "end": 6,
+                    "start": 3
+                  }
+                ]
+              }
+            ],
+            "version": "v1"
+          }
+        },
+        "valid": true
+      },
+      "id": "adjacent_segments",
+      "nonmutating": true,
+      "operation": "validate",
+      "passed": true,
+      "rules": [
+        "R06",
+        "R11"
+      ]
+    },
+    {
+      "actual": {
+        "all_selections_resolved": false,
+        "codes": [
+          "E_SELECTOR"
+        ],
+        "resolutions": {},
+        "valid": false
+      },
+      "description": "One ranges selector cannot overlap its own segments.",
+      "expected": {
+        "all_selections_resolved": false,
+        "codes": [
+          "E_SELECTOR"
+        ],
+        "resolutions": {},
+        "valid": false
+      },
+      "id": "overlapping_segments",
+      "nonmutating": true,
+      "operation": "validate",
+      "passed": true,
+      "rules": [
+        "R06"
+      ]
+    },
+    {
+      "actual": {
+        "all_selections_resolved": false,
+        "codes": [
+          "E_CONTINUITY"
+        ],
+        "resolutions": {},
+        "valid": false
+      },
+      "description": "Declaring a text requires an explicit continuity claim.",
+      "expected": {
+        "all_selections_resolved": false,
+        "codes": [
+          "E_CONTINUITY"
+        ],
+        "resolutions": {},
+        "valid": false
+      },
+      "id": "unclaimed_text",
+      "nonmutating": true,
+      "operation": "validate",
+      "passed": true,
+      "rules": [
+        "R04",
+        "R13"
+      ]
+    },
+    {
+      "actual": {
+        "all_selections_resolved": true,
+        "codes": [],
+        "resolutions": {},
+        "valid": true
+      },
+      "description": "Overlapping version memberships express distinct attributed criteria.",
+      "expected": {
+        "all_selections_resolved": true,
+        "codes": [],
+        "resolutions": {},
+        "valid": true
+      },
+      "id": "attributed_continuity",
+      "nonmutating": true,
+      "operation": "validate",
+      "passed": true,
+      "rules": [
+        "R01",
+        "R04"
+      ]
+    },
+    {
+      "actual": {
+        "all_selections_resolved": false,
+        "codes": [
+          "E_SHAPE"
+        ],
+        "resolutions": {},
+        "valid": false
+      },
+      "description": "A continuity claim must articulate a nonempty grouping policy.",
+      "expected": {
+        "all_selections_resolved": false,
+        "codes": [
+          "E_SHAPE"
+        ],
+        "resolutions": {},
+        "valid": false
+      },
+      "id": "missing_criterion",
+      "nonmutating": true,
+      "operation": "validate",
+      "passed": true,
+      "rules": [
+        "R04"
+      ]
+    },
+    {
+      "actual": {
+        "all_selections_resolved": false,
+        "codes": [
+          "E_REFERENCE"
+        ],
+        "resolutions": {},
+        "valid": false
+      },
+      "description": "An editorial continuity claim must reference an actual agent.",
+      "expected": {
+        "all_selections_resolved": false,
+        "codes": [
+          "E_REFERENCE"
+        ],
+        "resolutions": {},
+        "valid": false
+      },
+      "id": "missing_attribution",
+      "nonmutating": true,
+      "operation": "validate",
+      "passed": true,
+      "rules": [
+        "R02",
+        "R04"
+      ]
+    },
+    {
+      "actual": {
+        "all_selections_resolved": true,
+        "codes": [],
+        "resolutions": {},
+        "valid": true
+      },
+      "description": "Diamond ancestry is allowed and does not establish text continuity.",
+      "expected": {
+        "all_selections_resolved": true,
+        "codes": [],
+        "resolutions": {},
+        "valid": true
+      },
+      "id": "version_dag",
+      "nonmutating": true,
+      "operation": "validate",
+      "passed": true,
+      "rules": [
+        "R02",
+        "R03",
+        "R04"
+      ]
+    },
+    {
+      "actual": {
+        "all_selections_resolved": false,
+        "codes": [
+          "E_VERSION_CYCLE"
+        ],
+        "resolutions": {},
+        "valid": false
+      },
+      "description": "Only acyclic version ancestry is valid.",
+      "expected": {
+        "all_selections_resolved": false,
+        "codes": [
+          "E_VERSION_CYCLE"
+        ],
+        "resolutions": {},
+        "valid": false
+      },
+      "id": "version_cycle",
+      "nonmutating": true,
+      "operation": "validate",
+      "passed": true,
+      "rules": [
+        "R02"
+      ]
+    },
+    {
+      "actual": {
+        "all_selections_resolved": true,
+        "codes": [],
+        "resolutions": {},
+        "valid": true
+      },
+      "description": "Equal content and hashes do not collapse distinct version records.",
+      "expected": {
+        "all_selections_resolved": true,
+        "codes": [],
+        "resolutions": {},
+        "valid": true
+      },
+      "id": "equal_content_distinct_ids",
+      "nonmutating": true,
+      "operation": "validate",
+      "passed": true,
+      "rules": [
+        "R01"
+      ]
+    },
+    {
+      "actual": {
+        "all_selections_resolved": true,
+        "codes": [],
+        "resolutions": {
+          "left": {
+            "candidates": [],
+            "status": "resolved",
+            "targets": [
+              {
+                "kind": "region",
+                "segments": [
+                  {
+                    "end": 4,
+                    "start": 0
+                  }
+                ]
+              }
+            ],
+            "version": "v1"
+          },
+          "right": {
+            "candidates": [],
+            "status": "resolved",
+            "targets": [
+              {
+                "kind": "region",
+                "segments": [
+                  {
+                    "end": 6,
+                    "start": 2
+                  }
+                ]
+              }
+            ],
+            "version": "v1"
+          }
+        },
+        "valid": true
+      },
+      "description": "Crossing extents across attributed readings and relation cycles are allowed.",
+      "expected": {
+        "all_selections_resolved": true,
+        "codes": [],
+        "resolutions": {
+          "left": {
+            "candidates": [],
+            "status": "resolved",
+            "targets": [
+              {
+                "kind": "region",
+                "segments": [
+                  {
+                    "end": 4,
+                    "start": 0
+                  }
+                ]
+              }
+            ],
+            "version": "v1"
+          },
+          "right": {
+            "candidates": [],
+            "status": "resolved",
+            "targets": [
+              {
+                "kind": "region",
+                "segments": [
+                  {
+                    "end": 6,
+                    "start": 2
+                  }
+                ]
+              }
+            ],
+            "version": "v1"
+          }
+        },
+        "valid": true
+      },
+      "id": "competing_readings",
+      "nonmutating": true,
+      "operation": "validate",
+      "passed": true,
+      "rules": [
+        "R02",
+        "R08",
+        "R09"
+      ]
+    },
+    {
+      "actual": {
+        "all_selections_resolved": false,
+        "codes": [
+          "E_SIBLING_OVERLAP"
+        ],
+        "resolutions": {},
+        "valid": false
+      },
+      "description": "The same crossing intervals are invalid as roots of one reading.",
+      "expected": {
+        "all_selections_resolved": false,
+        "codes": [
+          "E_SIBLING_OVERLAP"
+        ],
+        "resolutions": {},
+        "valid": false
+      },
+      "id": "overlap_siblings",
+      "nonmutating": true,
+      "operation": "validate",
+      "passed": true,
+      "rules": [
+        "R08"
+      ]
+    },
+    {
+      "actual": {
+        "all_selections_resolved": true,
+        "codes": [],
+        "resolutions": {
+          "left": {
+            "candidates": [],
+            "status": "resolved",
+            "targets": [
+              {
+                "kind": "region",
+                "segments": [
+                  {
+                    "end": 4,
+                    "start": 0
+                  }
+                ]
+              }
+            ],
+            "version": "v1"
+          },
+          "right": {
+            "candidates": [],
+            "status": "resolved",
+            "targets": [
+              {
+                "kind": "region",
+                "segments": [
+                  {
+                    "end": 6,
+                    "start": 2
+                  }
+                ]
+              }
+            ],
+            "version": "v1"
+          }
+        },
+        "valid": true
+      },
+      "description": "Parent and child may assert the exact same nonempty extent.",
+      "expected": {
+        "all_selections_resolved": true,
+        "codes": [],
+        "resolutions": {
+          "left": {
+            "candidates": [],
+            "status": "resolved",
+            "targets": [
+              {
+                "kind": "region",
+                "segments": [
+                  {
+                    "end": 4,
+                    "start": 0
+                  }
+                ]
+              }
+            ],
+            "version": "v1"
+          },
+          "right": {
+            "candidates": [],
+            "status": "resolved",
+            "targets": [
+              {
+                "kind": "region",
+                "segments": [
+                  {
+                    "end": 6,
+                    "start": 2
+                  }
+                ]
+              }
+            ],
+            "version": "v1"
+          }
+        },
+        "valid": true
+      },
+      "id": "equal_parent_child",
+      "nonmutating": true,
+      "operation": "validate",
+      "passed": true,
+      "rules": [
+        "R01",
+        "R08"
+      ]
+    },
+    {
+      "actual": {
+        "all_selections_resolved": false,
+        "codes": [
+          "E_READING_CYCLE"
+        ],
+        "resolutions": {},
+        "valid": false
+      },
+      "description": "Equal extents do not make a cycle in parent edges valid.",
+      "expected": {
+        "all_selections_resolved": false,
+        "codes": [
+          "E_READING_CYCLE"
+        ],
+        "resolutions": {},
+        "valid": false
+      },
+      "id": "reading_cycle",
+      "nonmutating": true,
+      "operation": "validate",
+      "passed": true,
+      "rules": [
+        "R02",
+        "R08"
+      ]
+    },
+    {
+      "actual": {
+        "all_selections_resolved": false,
+        "codes": [
+          "E_CONTAINMENT"
+        ],
+        "resolutions": {},
+        "valid": false
+      },
+      "description": "A child extending past its parent fails containment.",
+      "expected": {
+        "all_selections_resolved": false,
+        "codes": [
+          "E_CONTAINMENT"
+        ],
+        "resolutions": {},
+        "valid": false
+      },
+      "id": "child_not_contained",
+      "nonmutating": true,
+      "operation": "validate",
+      "passed": true,
+      "rules": [
+        "R08"
+      ]
+    },
+    {
+      "actual": {
+        "all_selections_resolved": false,
+        "codes": [
+          "E_READING_TARGET"
+        ],
+        "resolutions": {},
+        "valid": false
+      },
+      "description": "One target with multiple segments is still unsuitable for a reading node.",
+      "expected": {
+        "all_selections_resolved": false,
+        "codes": [
+          "E_READING_TARGET"
+        ],
+        "resolutions": {},
+        "valid": false
+      },
+      "id": "discontinuous_reading_target",
+      "nonmutating": true,
+      "operation": "validate",
+      "passed": true,
+      "rules": [
+        "R06",
+        "R08"
+      ]
+    },
+    {
+      "actual": {
+        "all_selections_resolved": false,
+        "codes": [
+          "E_READING_TARGET",
+          "W_ABSENT"
+        ],
+        "resolutions": {},
+        "valid": false
+      },
+      "description": "An absent annotation target cannot become a reading-node interval.",
+      "expected": {
+        "all_selections_resolved": false,
+        "codes": [
+          "E_READING_TARGET",
+          "W_ABSENT"
+        ],
+        "resolutions": {},
+        "valid": false
+      },
+      "id": "absent_reading_target",
+      "nonmutating": true,
+      "operation": "validate",
+      "passed": true,
+      "rules": [
+        "R07",
+        "R08",
+        "R10"
+      ]
+    },
+    {
+      "actual": {
+        "all_selections_resolved": false,
+        "codes": [
+          "E_READING_TARGET"
+        ],
+        "resolutions": {},
+        "valid": false
+      },
+      "description": "Several accepted targets do not identify one reading-node interval.",
+      "expected": {
+        "all_selections_resolved": false,
+        "codes": [
+          "E_READING_TARGET"
+        ],
+        "resolutions": {},
+        "valid": false
+      },
+      "id": "plural_reading_target",
+      "nonmutating": true,
+      "operation": "validate",
+      "passed": true,
+      "rules": [
+        "R06",
+        "R08"
+      ]
+    },
+    {
+      "actual": {
+        "all_selections_resolved": false,
+        "codes": [
+          "E_TYPE"
+        ],
+        "resolutions": {},
+        "valid": false
+      },
+      "description": "A relation concept is not a node type even though its ID resolves.",
+      "expected": {
+        "all_selections_resolved": false,
+        "codes": [
+          "E_TYPE"
+        ],
+        "resolutions": {},
+        "valid": false
+      },
+      "id": "wrong_concept_category",
+      "nonmutating": true,
+      "operation": "validate",
+      "passed": true,
+      "rules": [
+        "R09"
+      ]
+    },
+    {
+      "actual": {
+        "all_selections_resolved": false,
+        "codes": [
+          "E_SHAPE"
+        ],
+        "resolutions": {},
+        "valid": false
+      },
+      "description": "A declared reading must contain at least one node.",
+      "expected": {
+        "all_selections_resolved": false,
+        "codes": [
+          "E_SHAPE"
+        ],
+        "resolutions": {},
+        "valid": false
+      },
+      "id": "empty_reading",
+      "nonmutating": true,
+      "operation": "validate",
+      "passed": true,
+      "rules": [
+        "R13"
+      ]
+    },
+    {
+      "actual": {
+        "all_selections_resolved": false,
+        "codes": [
+          "E_DUPLICATE_ID"
+        ],
+        "resolutions": {},
+        "valid": false
+      },
+      "description": "IDs are globally unique across registries.",
+      "expected": {
+        "all_selections_resolved": false,
+        "codes": [
+          "E_DUPLICATE_ID"
+        ],
+        "resolutions": {},
+        "valid": false
+      },
+      "id": "duplicate_global_id",
+      "nonmutating": true,
+      "operation": "validate",
+      "passed": true,
+      "rules": [
+        "R01"
+      ]
+    },
+    {
+      "actual": {
+        "all_selections_resolved": false,
+        "codes": [
+          "E_SHAPE"
+        ],
+        "resolutions": {},
+        "valid": false
+      },
+      "description": "The closed package shape rejects unknown fields.",
+      "expected": {
+        "all_selections_resolved": false,
+        "codes": [
+          "E_SHAPE"
+        ],
+        "resolutions": {},
+        "valid": false
+      },
+      "id": "unknown_field",
+      "nonmutating": true,
+      "operation": "validate",
+      "passed": true,
+      "rules": [
+        "R10",
+        "R13"
+      ]
+    },
+    {
+      "actual": {
+        "all_selections_resolved": true,
+        "codes": [],
+        "resolutions": {
+          "contextual": {
+            "candidates": [],
+            "status": "resolved",
+            "targets": [
+              {
+                "kind": "region",
+                "segments": [
+                  {
+                    "end": 4,
+                    "start": 2
+                  }
+                ]
+              }
+            ],
+            "version": "v1"
+          }
+        },
+        "valid": true
+      },
+      "description": "Adjacent literal prefix picks the final overlapping occurrence.",
+      "expected": {
+        "all_selections_resolved": true,
+        "codes": [],
+        "resolutions": {
+          "contextual": {
+            "candidates": [],
+            "status": "resolved",
+            "targets": [
+              {
+                "kind": "region",
+                "segments": [
+                  {
+                    "end": 4,
+                    "start": 2
+                  }
+                ]
+              }
+            ],
+            "version": "v1"
+          }
+        },
+        "valid": true
+      },
+      "id": "literal_context",
+      "nonmutating": true,
+      "operation": "validate",
+      "passed": true,
+      "rules": [
+        "R05",
+        "R07"
+      ]
+    },
+    {
+      "actual": {
+        "all_selections_resolved": true,
+        "codes": [],
+        "resolutions": {
+          "sameA": {
+            "candidates": [],
+            "status": "resolved",
+            "targets": [
+              {
+                "kind": "region",
+                "segments": [
+                  {
+                    "end": 2,
+                    "start": 0
+                  }
+                ]
+              }
+            ],
+            "version": "v1"
+          },
+          "sameB": {
+            "candidates": [],
+            "status": "resolved",
+            "targets": [
+              {
+                "kind": "region",
+                "segments": [
+                  {
+                    "end": 2,
+                    "start": 0
+                  }
+                ]
+              }
+            ],
+            "version": "v1"
+          }
+        },
+        "valid": true
+      },
+      "description": "Distinct IDs and conflicting annotation bodies remain valid assertions by people.",
+      "expected": {
+        "all_selections_resolved": true,
+        "codes": [],
+        "resolutions": {
+          "sameA": {
+            "candidates": [],
+            "status": "resolved",
+            "targets": [
+              {
+                "kind": "region",
+                "segments": [
+                  {
+                    "end": 2,
+                    "start": 0
+                  }
+                ]
+              }
+            ],
+            "version": "v1"
+          },
+          "sameB": {
+            "candidates": [],
+            "status": "resolved",
+            "targets": [
+              {
+                "kind": "region",
+                "segments": [
+                  {
+                    "end": 2,
+                    "start": 0
+                  }
+                ]
+              }
+            ],
+            "version": "v1"
+          }
+        },
+        "valid": true
+      },
+      "id": "contradictory_interpretations",
+      "nonmutating": true,
+      "operation": "validate",
+      "passed": true,
+      "rules": [
+        "R01",
+        "R09"
+      ]
+    },
+    {
+      "actual": {
+        "all_selections_resolved": true,
+        "codes": [],
+        "resolutions": {
+          "adjacent": {
+            "candidates": [],
+            "status": "resolved",
+            "targets": [
+              {
+                "kind": "region",
+                "segments": [
+                  {
+                    "end": 3,
+                    "start": 0
+                  },
+                  {
+                    "end": 6,
+                    "start": 3
+                  }
+                ]
+              }
+            ],
+            "version": "v1"
+          }
+        },
+        "valid": true
+      },
+      "description": "Adjacent segments form a contiguous node interval without erasing their boundary.",
+      "expected": {
+        "all_selections_resolved": true,
+        "codes": [],
+        "resolutions": {
+          "adjacent": {
+            "candidates": [],
+            "status": "resolved",
+            "targets": [
+              {
+                "kind": "region",
+                "segments": [
+                  {
+                    "end": 3,
+                    "start": 0
+                  },
+                  {
+                    "end": 6,
+                    "start": 3
+                  }
+                ]
+              }
+            ],
+            "version": "v1"
+          }
+        },
+        "valid": true
+      },
+      "id": "adjacent_reading_target",
+      "nonmutating": true,
+      "operation": "validate",
+      "passed": true,
+      "rules": [
+        "R06",
+        "R08",
+        "R11"
+      ]
+    },
+    {
+      "actual": {
+        "all_selections_resolved": false,
+        "codes": [
+          "E_READING_TARGET"
+        ],
+        "resolutions": {},
+        "valid": false
+      },
+      "description": "A resolved point remains an invalid reading-node target.",
+      "expected": {
+        "all_selections_resolved": false,
+        "codes": [
+          "E_READING_TARGET"
+        ],
+        "resolutions": {},
+        "valid": false
+      },
+      "id": "point_reading_target",
+      "nonmutating": true,
+      "operation": "validate",
+      "passed": true,
+      "rules": [
+        "R05",
+        "R08"
+      ]
+    },
+    {
+      "actual": {
+        "equivalent": true
+      },
+      "description": "Object keys, registries, parent sets, and continuity membership reorder freely.",
+      "expected": {
+        "equivalent": true
+      },
+      "id": "canonical_reordering",
+      "nonmutating": true,
+      "operation": "equivalent",
+      "passed": true,
+      "rules": [
+        "R01",
+        "R11"
+      ]
+    },
+    {
+      "actual": {
+        "equivalent": true
+      },
+      "description": "Competing readings are records, not an ordered priority list.",
+      "expected": {
+        "equivalent": true
+      },
+      "id": "readings_registry_order",
+      "nonmutating": true,
+      "operation": "equivalent",
+      "passed": true,
+      "rules": [
+        "R01",
+        "R11"
+      ]
+    },
+    {
+      "actual": {
+        "equivalent": true
+      },
+      "description": "Reordering node records preserves explicit hierarchy edges.",
+      "expected": {
+        "equivalent": true
+      },
+      "id": "node_registry_order",
+      "nonmutating": true,
+      "operation": "equivalent",
+      "passed": true,
+      "rules": [
+        "R01",
+        "R11"
+      ]
+    },
+    {
+      "actual": {
+        "equivalent": false
+      },
+      "description": "Equal resolved extents do not erase selector-kind identity.",
+      "expected": {
+        "equivalent": false
+      },
+      "id": "selector_kind_inequality",
+      "nonmutating": true,
+      "operation": "equivalent",
+      "passed": true,
+      "rules": [
+        "R01",
+        "R11"
+      ]
+    },
+    {
+      "actual": {
+        "equivalent": false
+      },
+      "description": "One versus all remains distinct even when the quote occurs once.",
+      "expected": {
+        "equivalent": false
+      },
+      "id": "selector_policy_inequality",
+      "nonmutating": true,
+      "operation": "equivalent",
+      "passed": true,
+      "rules": [
+        "R01",
+        "R11"
+      ]
+    },
+    {
+      "actual": {
+        "equivalent": false
+      },
+      "description": "A split into adjacent segments is preserved by canonical comparison.",
+      "expected": {
+        "equivalent": false
+      },
+      "id": "segmentation_inequality",
+      "nonmutating": true,
+      "operation": "equivalent",
+      "passed": true,
+      "rules": [
+        "R01",
+        "R11"
+      ]
+    },
+    {
+      "actual": {
+        "equivalent": false
+      },
+      "description": "Alpha-renaming changes record identity despite equal target extents.",
+      "expected": {
+        "equivalent": false
+      },
+      "id": "id_inequality",
+      "nonmutating": true,
+      "operation": "equivalent",
+      "passed": true,
+      "rules": [
+        "R01",
+        "R11"
+      ]
+    },
+    {
+      "actual": {
+        "equivalent": false
+      },
+      "description": "A different responsible editor changes the continuity claim.",
+      "expected": {
+        "equivalent": false
+      },
+      "id": "attribution_inequality",
+      "nonmutating": true,
+      "operation": "equivalent",
+      "passed": true,
+      "rules": [
+        "R01",
+        "R11"
+      ]
+    },
+    {
+      "actual": {
+        "equivalent": false
+      },
+      "description": "Editorial grouping criteria are substantive canonical data.",
+      "expected": {
+        "equivalent": false
+      },
+      "id": "criterion_inequality",
+      "nonmutating": true,
+      "operation": "equivalent",
+      "passed": true,
+      "rules": [
+        "R01",
+        "R11"
+      ]
+    },
+    {
+      "actual": {
+        "equivalent": false
+      },
+      "description": "Canonical JSON comparison does not normalize Unicode content.",
+      "expected": {
+        "equivalent": false
+      },
+      "id": "unicode_inequality",
+      "nonmutating": true,
+      "operation": "equivalent",
+      "passed": true,
+      "rules": [
+        "R01",
+        "R11"
+      ]
+    },
+    {
+      "actual": {
+        "codes": [],
+        "valid": true
+      },
+      "description": "Membership ordering cannot rewrite a version.",
+      "expected": {
+        "codes": [],
+        "valid": true
+      },
+      "id": "revision_order_only",
+      "nonmutating": true,
+      "operation": "revision",
+      "passed": true,
+      "rules": [
+        "R03"
+      ]
+    },
+    {
+      "actual": {
+        "codes": [],
+        "valid": true
+      },
+      "description": "A changed text is admitted as a new version with a new ID.",
+      "expected": {
+        "codes": [],
+        "valid": true
+      },
+      "id": "revision_append",
+      "nonmutating": true,
+      "operation": "revision",
+      "passed": true,
+      "rules": [
+        "R03"
+      ]
+    },
+    {
+      "actual": {
+        "codes": [
+          "E_VERSION_REWRITE"
+        ],
+        "valid": false
+      },
+      "description": "A faithful new hash does not permit changing content under the old ID.",
+      "expected": {
+        "codes": [
+          "E_VERSION_REWRITE"
+        ],
+        "valid": false
+      },
+      "id": "revision_content_rewrite",
+      "nonmutating": true,
+      "operation": "revision",
+      "passed": true,
+      "rules": [
+        "R03"
+      ]
+    },
+    {
+      "actual": {
+        "codes": [
+          "E_VERSION_REWRITE"
+        ],
+        "valid": false
+      },
+      "description": "Reused version ancestry is frozen even when replacement ancestry is acyclic.",
+      "expected": {
+        "codes": [
+          "E_VERSION_REWRITE"
+        ],
+        "valid": false
+      },
+      "id": "revision_parent_rewrite",
+      "nonmutating": true,
+      "operation": "revision",
+      "passed": true,
+      "rules": [
+        "R03"
+      ]
+    },
+    {
+      "actual": {
+        "codes": [],
+        "valid": true
+      },
+      "description": "An absent later record is outside rewrite detection.",
+      "expected": {
+        "codes": [],
+        "valid": true
+      },
+      "id": "revision_delete",
+      "nonmutating": true,
+      "operation": "revision",
+      "passed": true,
+      "rules": [
+        "R03"
+      ]
+    },
+    {
+      "actual": {
+        "codes": [
+          "E_HASH"
+        ],
+        "valid": false
+      },
+      "description": "Revision checks validate package hash fidelity first.",
+      "expected": {
+        "codes": [
+          "E_HASH"
+        ],
+        "valid": false
+      },
+      "id": "revision_invalid_hash",
+      "nonmutating": true,
+      "operation": "revision",
+      "passed": true,
+      "rules": [
+        "R03"
+      ]
+    },
+    {
+      "actual": {
+        "all_selections_resolved": true,
+        "codes": [],
+        "resolutions": {
+          "source_adjacent": {
+            "candidates": [],
+            "status": "resolved",
+            "targets": [
+              {
+                "kind": "region",
+                "segments": [
+                  {
+                    "end": 3,
+                    "start": 0
+                  },
+                  {
+                    "end": 7,
+                    "start": 3
+                  }
+                ]
+              }
+            ],
+            "version": "v1"
+          },
+          "source_parts": {
+            "candidates": [],
+            "status": "resolved",
+            "targets": [
+              {
+                "kind": "region",
+                "segments": [
+                  {
+                    "end": 3,
+                    "start": 0
+                  },
+                  {
+                    "end": 7,
+                    "start": 4
+                  }
+                ]
+              }
+            ],
+            "version": "v1"
+          },
+          "source_point": {
+            "candidates": [],
+            "status": "resolved",
+            "targets": [
+              {
+                "kind": "point",
+                "offset": 0
+              }
+            ],
+            "version": "v1"
+          },
+          "source_quote": {
+            "candidates": [],
+            "status": "resolved",
+            "targets": [
+              {
+                "kind": "region",
+                "segments": [
+                  {
+                    "end": 7,
+                    "start": 4
+                  }
+                ]
+              }
+            ],
+            "version": "v1"
+          },
+          "source_range": {
+            "candidates": [],
+            "status": "resolved",
+            "targets": [
+              {
+                "kind": "region",
+                "segments": [
+                  {
+                    "end": 7,
+                    "start": 0
+                  }
+                ]
+              }
+            ],
+            "version": "v1"
+          }
+        },
+        "valid": true
+      },
+      "description": "Explicit editorial continuity connects immutable versions without silently moving annotations.",
+      "expected": {
+        "all_selections_resolved": true,
+        "codes": [],
+        "resolutions": {
+          "source_adjacent": {
+            "candidates": [],
+            "status": "resolved",
+            "targets": [
+              {
+                "kind": "region",
+                "segments": [
+                  {
+                    "end": 3,
+                    "start": 0
+                  },
+                  {
+                    "end": 7,
+                    "start": 3
+                  }
+                ]
+              }
+            ],
+            "version": "v1"
+          },
+          "source_parts": {
+            "candidates": [],
+            "status": "resolved",
+            "targets": [
+              {
+                "kind": "region",
+                "segments": [
+                  {
+                    "end": 3,
+                    "start": 0
+                  },
+                  {
+                    "end": 7,
+                    "start": 4
+                  }
+                ]
+              }
+            ],
+            "version": "v1"
+          },
+          "source_point": {
+            "candidates": [],
+            "status": "resolved",
+            "targets": [
+              {
+                "kind": "point",
+                "offset": 0
+              }
+            ],
+            "version": "v1"
+          },
+          "source_quote": {
+            "candidates": [],
+            "status": "resolved",
+            "targets": [
+              {
+                "kind": "region",
+                "segments": [
+                  {
+                    "end": 7,
+                    "start": 4
+                  }
+                ]
+              }
+            ],
+            "version": "v1"
+          },
+          "source_range": {
+            "candidates": [],
+            "status": "resolved",
+            "targets": [
+              {
+                "kind": "region",
+                "segments": [
+                  {
+                    "end": 7,
+                    "start": 0
+                  }
+                ]
+              }
+            ],
+            "version": "v1"
+          }
+        },
+        "valid": true
+      },
+      "id": "identity_and_reanchoring",
+      "nonmutating": true,
+      "operation": "validate",
+      "passed": true,
+      "rules": [
+        "R03",
+        "R04",
+        "R06",
+        "R12"
+      ]
+    },
+    {
+      "actual": {
+        "codes": [],
+        "proposal": {
+          "accepted": false,
+          "continuity": "continuity",
+          "resolution": {
+            "candidates": [],
+            "status": "resolved",
+            "targets": [
+              {
+                "kind": "region",
+                "segments": [
+                  {
+                    "end": 9,
+                    "start": 2
+                  }
+                ]
+              }
+            ],
+            "version": "v2"
+          },
+          "source_selection": "source_range",
+          "target_version": "v2"
+        }
+      },
+      "description": "A source range supplies its literal quote for a proposed target.",
+      "expected": {
+        "codes": [],
+        "proposal": {
+          "accepted": false,
+          "continuity": "continuity",
+          "resolution": {
+            "candidates": [],
+            "status": "resolved",
+            "targets": [
+              {
+                "kind": "region",
+                "segments": [
+                  {
+                    "end": 9,
+                    "start": 2
+                  }
+                ]
+              }
+            ],
+            "version": "v2"
+          },
+          "source_selection": "source_range",
+          "target_version": "v2"
+        }
+      },
+      "id": "reanchor_range_success",
+      "nonmutating": true,
+      "operation": "reanchor",
+      "passed": true,
+      "rules": [
+        "R12"
+      ]
+    },
+    {
+      "actual": {
+        "codes": [],
+        "proposal": {
+          "accepted": false,
+          "continuity": "continuity",
+          "resolution": {
+            "candidates": [],
+            "status": "resolved",
+            "targets": [
+              {
+                "kind": "region",
+                "segments": [
+                  {
+                    "end": 9,
+                    "start": 6
+                  }
+                ]
+              }
+            ],
+            "version": "v2"
+          },
+          "source_selection": "source_quote",
+          "target_version": "v2"
+        }
+      },
+      "description": "Quote reanchoring retains the literal adjacent prefix and suffix.",
+      "expected": {
+        "codes": [],
+        "proposal": {
+          "accepted": false,
+          "continuity": "continuity",
+          "resolution": {
+            "candidates": [],
+            "status": "resolved",
+            "targets": [
+              {
+                "kind": "region",
+                "segments": [
+                  {
+                    "end": 9,
+                    "start": 6
+                  }
+                ]
+              }
+            ],
+            "version": "v2"
+          },
+          "source_selection": "source_quote",
+          "target_version": "v2"
+        }
+      },
+      "id": "reanchor_context_success",
+      "nonmutating": true,
+      "operation": "reanchor",
+      "passed": true,
+      "rules": [
+        "R12"
+      ]
+    },
+    {
+      "actual": {
+        "codes": [
+          "W_AMBIGUOUS"
+        ],
+        "proposal": {
+          "accepted": false,
+          "continuity": "continuity",
+          "resolution": {
+            "candidates": [
+              {
+                "kind": "region",
+                "segments": [
+                  {
+                    "end": 7,
+                    "start": 0
+                  }
+                ]
+              },
+              {
+                "kind": "region",
+                "segments": [
+                  {
+                    "end": 17,
+                    "start": 10
+                  }
+                ]
+              }
+            ],
+            "status": "ambiguous",
+            "targets": [],
+            "version": "v3"
+          },
+          "source_selection": "source_range",
+          "target_version": "v3"
+        }
+      },
+      "description": "Multiple target matches produce an unaccepted ambiguous proposal.",
+      "expected": {
+        "codes": [
+          "W_AMBIGUOUS"
+        ],
+        "proposal": {
+          "accepted": false,
+          "continuity": "continuity",
+          "resolution": {
+            "candidates": [
+              {
+                "kind": "region",
+                "segments": [
+                  {
+                    "end": 7,
+                    "start": 0
+                  }
+                ]
+              },
+              {
+                "kind": "region",
+                "segments": [
+                  {
+                    "end": 17,
+                    "start": 10
+                  }
+                ]
+              }
+            ],
+            "status": "ambiguous",
+            "targets": [],
+            "version": "v3"
+          },
+          "source_selection": "source_range",
+          "target_version": "v3"
+        }
+      },
+      "id": "reanchor_ambiguous",
+      "nonmutating": true,
+      "operation": "reanchor",
+      "passed": true,
+      "rules": [
+        "R12"
+      ]
+    },
+    {
+      "actual": {
+        "codes": [
+          "W_ABSENT"
+        ],
+        "proposal": {
+          "accepted": false,
+          "continuity": "continuity",
+          "resolution": {
+            "candidates": [],
+            "status": "absent",
+            "targets": [],
+            "version": "v4"
+          },
+          "source_selection": "source_range",
+          "target_version": "v4"
+        }
+      },
+      "description": "A missing target quotation produces an unaccepted absent proposal.",
+      "expected": {
+        "codes": [
+          "W_ABSENT"
+        ],
+        "proposal": {
+          "accepted": false,
+          "continuity": "continuity",
+          "resolution": {
+            "candidates": [],
+            "status": "absent",
+            "targets": [],
+            "version": "v4"
+          },
+          "source_selection": "source_range",
+          "target_version": "v4"
+        }
+      },
+      "id": "reanchor_absent",
+      "nonmutating": true,
+      "operation": "reanchor",
+      "passed": true,
+      "rules": [
+        "R12"
+      ]
+    },
+    {
+      "actual": {
+        "codes": [
+          "E_REANCHOR_UNSUPPORTED"
+        ],
+        "proposal": null
+      },
+      "description": "Point migration requires a policy outside this experiment.",
+      "expected": {
+        "codes": [
+          "E_REANCHOR_UNSUPPORTED"
+        ],
+        "proposal": null
+      },
+      "id": "reanchor_point_unsupported",
+      "nonmutating": true,
+      "operation": "reanchor",
+      "passed": true,
+      "rules": [
+        "R12"
+      ]
+    },
+    {
+      "actual": {
+        "codes": [
+          "E_REANCHOR_UNSUPPORTED"
+        ],
+        "proposal": null
+      },
+      "description": "Multi-segment target migration is explicitly unsupported.",
+      "expected": {
+        "codes": [
+          "E_REANCHOR_UNSUPPORTED"
+        ],
+        "proposal": null
+      },
+      "id": "reanchor_discontinuous_unsupported",
+      "nonmutating": true,
+      "operation": "reanchor",
+      "passed": true,
+      "rules": [
+        "R12"
+      ]
+    },
+    {
+      "actual": {
+        "codes": [
+          "E_REANCHOR_UNSUPPORTED"
+        ],
+        "proposal": null
+      },
+      "description": "Even contiguous adjacent segments exceed the one-segment reanchoring contract.",
+      "expected": {
+        "codes": [
+          "E_REANCHOR_UNSUPPORTED"
+        ],
+        "proposal": null
+      },
+      "id": "reanchor_adjacent_unsupported",
+      "nonmutating": true,
+      "operation": "reanchor",
+      "passed": true,
+      "rules": [
+        "R12"
+      ]
+    },
+    {
+      "actual": {
+        "codes": [
+          "E_REANCHOR"
+        ],
+        "proposal": null
+      },
+      "description": "Version ancestry alone does not authorize editorial continuity.",
+      "expected": {
+        "codes": [
+          "E_REANCHOR"
+        ],
+        "proposal": null
+      },
+      "id": "reanchor_no_continuity",
+      "nonmutating": true,
+      "operation": "reanchor",
+      "passed": true,
+      "rules": [
+        "R12"
+      ]
+    },
+    {
+      "actual": {
+        "codes": [
+          "E_REANCHOR"
+        ],
+        "proposal": null
+      },
+      "description": "An ambiguous source cannot be reanchored; source warnings are not duplicated by this operation.",
+      "expected": {
+        "codes": [
+          "E_REANCHOR"
+        ],
+        "proposal": null
+      },
+      "id": "reanchor_unresolved_source",
+      "nonmutating": true,
+      "operation": "reanchor",
+      "passed": true,
+      "rules": [
+        "R07",
+        "R12"
+      ]
+    },
+    {
+      "actual": {
+        "codes": [],
+        "proposal": {
+          "accepted": false,
+          "continuity": "continuity",
+          "resolution": {
+            "candidates": [],
+            "status": "resolved",
+            "targets": [
+              {
+                "kind": "region",
+                "segments": [
+                  {
+                    "end": 7,
+                    "start": 0
+                  }
+                ]
+              },
+              {
+                "kind": "region",
+                "segments": [
+                  {
+                    "end": 17,
+                    "start": 10
+                  }
+                ]
+              }
+            ],
+            "version": "v3"
+          },
+          "source_selection": "source_all",
+          "target_version": "v3"
+        }
+      },
+      "description": "Quote/all stays intentional plurality when one source occurrence becomes two target occurrences.",
+      "expected": {
+        "codes": [],
+        "proposal": {
+          "accepted": false,
+          "continuity": "continuity",
+          "resolution": {
+            "candidates": [],
+            "status": "resolved",
+            "targets": [
+              {
+                "kind": "region",
+                "segments": [
+                  {
+                    "end": 7,
+                    "start": 0
+                  }
+                ]
+              },
+              {
+                "kind": "region",
+                "segments": [
+                  {
+                    "end": 17,
+                    "start": 10
+                  }
+                ]
+              }
+            ],
+            "version": "v3"
+          },
+          "source_selection": "source_all",
+          "target_version": "v3"
+        }
+      },
+      "id": "reanchor_preserves_all_policy",
+      "nonmutating": true,
+      "operation": "reanchor",
+      "passed": true,
+      "rules": [
+        "R06",
+        "R12"
+      ]
+    }
+  ],
+  "coverage": {
+    "R01": [
+      "attributed_continuity",
+      "equal_content_distinct_ids",
+      "equal_parent_child",
+      "duplicate_global_id",
+      "contradictory_interpretations",
+      "canonical_reordering",
+      "readings_registry_order",
+      "node_registry_order",
+      "selector_kind_inequality",
+      "selector_policy_inequality",
+      "segmentation_inequality",
+      "id_inequality",
+      "attribution_inequality",
+      "criterion_inequality",
+      "unicode_inequality"
+    ],
+    "R02": [
+      "missing_version_reference",
+      "missing_attribution",
+      "version_dag",
+      "version_cycle",
+      "competing_readings",
+      "reading_cycle"
+    ],
+    "R03": [
+      "no_normalization",
+      "wrong_hash",
+      "version_dag",
+      "revision_order_only",
+      "revision_append",
+      "revision_content_rewrite",
+      "revision_parent_rewrite",
+      "revision_delete",
+      "revision_invalid_hash",
+      "identity_and_reanchoring"
+    ],
+    "R04": [
+      "ungrouped_version",
+      "unclaimed_text",
+      "attributed_continuity",
+      "missing_criterion",
+      "missing_attribution",
+      "version_dag",
+      "identity_and_reanchoring"
+    ],
+    "R05": [
+      "whole_range",
+      "empty_point",
+      "unicode_codepoints",
+      "no_normalization",
+      "point_bounds",
+      "boolean_offset",
+      "range_quote_mismatch",
+      "region_on_empty",
+      "literal_context",
+      "point_reading_target"
+    ],
+    "R06": [
+      "whole_range",
+      "discontinuous",
+      "overlapping_all",
+      "empty_point",
+      "adjacent_segments",
+      "overlapping_segments",
+      "discontinuous_reading_target",
+      "plural_reading_target",
+      "adjacent_reading_target",
+      "identity_and_reanchoring",
+      "reanchor_preserves_all_policy"
+    ],
+    "R07": [
+      "discontinuous",
+      "ambiguous_annotation",
+      "absent_annotation",
+      "absent_reading_target",
+      "literal_context",
+      "reanchor_unresolved_source"
+    ],
+    "R08": [
+      "competing_readings",
+      "overlap_siblings",
+      "equal_parent_child",
+      "reading_cycle",
+      "child_not_contained",
+      "discontinuous_reading_target",
+      "absent_reading_target",
+      "plural_reading_target",
+      "adjacent_reading_target",
+      "point_reading_target"
+    ],
+    "R09": [
+      "competing_readings",
+      "wrong_concept_category",
+      "contradictory_interpretations"
+    ],
+    "R10": [
+      "empty",
+      "ambiguous_annotation",
+      "wrong_hash",
+      "absent_reading_target",
+      "unknown_field"
+    ],
+    "R11": [
+      "no_normalization",
+      "adjacent_segments",
+      "adjacent_reading_target",
+      "canonical_reordering",
+      "readings_registry_order",
+      "node_registry_order",
+      "selector_kind_inequality",
+      "selector_policy_inequality",
+      "segmentation_inequality",
+      "id_inequality",
+      "attribution_inequality",
+      "criterion_inequality",
+      "unicode_inequality"
+    ],
+    "R12": [
+      "identity_and_reanchoring",
+      "reanchor_range_success",
+      "reanchor_context_success",
+      "reanchor_ambiguous",
+      "reanchor_absent",
+      "reanchor_point_unsupported",
+      "reanchor_discontinuous_unsupported",
+      "reanchor_adjacent_unsupported",
+      "reanchor_no_continuity",
+      "reanchor_unresolved_source",
+      "reanchor_preserves_all_policy"
+    ],
+    "R13": [
+      "empty",
+      "ungrouped_version",
+      "unclaimed_text",
+      "empty_reading",
+      "unknown_field"
+    ]
+  },
+  "examples": [
+    {
+      "matches_case_model": true,
+      "passed": true,
+      "path": "experiments/abstract_text_v01/examples/competing-readings.json",
+      "valid": true
+    },
+    {
+      "matches_case_model": true,
+      "passed": true,
+      "path": "experiments/abstract_text_v01/examples/identity-and-reanchoring.json",
+      "valid": true
+    }
+  ],
+  "fingerprint_policy": "SHA-256 of UTF-8 text with checkout CRLF/CR normalized to LF; model content is unchanged.",
+  "format_version": 1,
+  "inputs": {
+    "docs/p6/abstract-text-model-v0.1.md": "55dabe31ee85b3413791231f18a26917d75f492615ab366a18887f56c4673d19",
+    "experiments/abstract_text_v01/cases.json": "a0a8e8e5bda961c5d3866779e114425bcd3e0eccdc74c8eeffd92279afbb57ea",
+    "experiments/abstract_text_v01/examples/competing-readings.json": "bb2c1e74033b018ba6ab450be75d07f230fb0208df8e33dcacb28bf967304147",
+    "experiments/abstract_text_v01/examples/identity-and-reanchoring.json": "b4c44be65d342374cd91458c3ebff8bf6d2c416b386233cf61ad1c4f2d76df90",
+    "experiments/abstract_text_v01/spec.json": "fed61ae06e05c92408722410c8a09168825675f33fb0e917475192886820cd86",
+    "tools/check_abstract_text_v01.py": "6d15edba8b360873bf72182ed95915b2788e530639de2eed453f51e37624dfc0",
+    "tools/models/__init__.py": "24fcec930743dfdc176120f5dc7fb9056db911b40628634d8240cac1498414e1",
+    "tools/models/abstract_text.py": "0a5206407f15518937a73a432087db0803fc89820c30c4f343226f0438c64aaf",
+    "tools/models/bindings.py": "b532453475c8462b4f954b529414a0f2ca8519dafad54252dd048f05b546e79e",
+    "tools/models/editorial_profile.py": "aecc4a9550ed80175c2104cd22b5d5f52f9d94441deb2dc4567d26999b602a13"
+  },
+  "model_version": "0.1",
+  "summary": {
+    "canonical_checks": 38,
+    "case_passes": 68,
+    "cases": 68,
+    "example_checks": 2,
+    "models": 60,
+    "passed": true
+  }
+}

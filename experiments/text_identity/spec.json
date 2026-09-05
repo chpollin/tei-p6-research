@@ -1,0 +1,74 @@
+{
+  "format_version": 1,
+  "authority": "Independent experimental definitions; synthetic cases only; no official TEI or universal ontology claim.",
+  "input_shape": {
+    "suite": "Object with format_version: 1 and nonempty cases array. Each case has a unique nonempty id, description, model, expected and optional reanchor.",
+    "model": "Exactly texts, versions, regions, annotations; each is an array of objects. IDs are nonempty strings and globally unique.",
+    "text": {
+      "id": "ID"
+    },
+    "version": {
+      "id": "ID",
+      "text": "text ID",
+      "content": "Unicode string (may be empty)",
+      "sha256": "lowercase SHA-256 of exact UTF-8 bytes",
+      "parent": "optional existing version ID of same text; null is invalid"
+    },
+    "region": {
+      "id": "ID",
+      "version": "version ID",
+      "selector": "A or B"
+    },
+    "annotation": {
+      "id": "ID",
+      "region": "region ID",
+      "body": "nonempty Unicode string of interpretation"
+    },
+    "A": {
+      "kind": "A",
+      "start": "integer Unicode-code-point offset; booleans invalid",
+      "end": "exclusive integer offset; 0 <= start < end <= length",
+      "quote": "nonempty exact Unicode string"
+    },
+    "B": {
+      "kind": "B",
+      "quote": "nonempty exact Unicode string",
+      "prefix": "optional immediately adjacent literal Unicode string",
+      "suffix": "optional immediately adjacent literal Unicode string"
+    },
+    "reanchor": {
+      "region": "source region ID",
+      "target_version": "explicit destination version ID belonging to same text"
+    },
+    "expected": "Exact object: diagnostics (sorted unique codes), resolutions (region ID -> {version,start,end,quote}), optional reanchor ({diagnostics,proposal})."
+  },
+  "semantics": {
+    "normalization": "None. UTF-8 encodability required; code points, not grapheme clusters or UTF-16 units.",
+    "unknown_fields": "Model and model objects/selectors reject unknown fields. Descriptive suite/case fields are not semantically evaluated.",
+    "ancestry": "At most one parent of the same text; iterative cycle detection.",
+    "failure": "Structural identity/reference/hash/cycle errors suppress all resolutions. Selector errors suppress only the affected region.",
+    "quotation": "Literal case-sensitive occurrence search includes overlapping matches. Empty quotes/regions excluded.",
+    "reanchor": "Model must fully validate; retain A quote or B quote and context, search target, return all candidates and absent/unique/ambiguous status. accepted is always false; original objects never mutate.",
+    "expectation": "Case checks compare the exact diagnostics-code set and resolutions/proposals to hand-authored expected values. Diagnostic paths appear in the report for inspection.",
+    "report": "Deterministic UTF-8 JSON with sorted keys, no timestamps or absolute paths; SHA-256 of contract, spec, cases and imported project implementation modules. Runner exits nonzero on any expectation mismatch or --check drift."
+  },
+  "diagnostics": {
+    "E_SHAPE": "Malformed model/object/collection/content or unexpected/missing fields.",
+    "E_ID": "Object ID is not a nonempty string.",
+    "E_DUPLICATE_ID": "An ID occurs more than once across model objects.",
+    "E_REFERENCE": "A required typed reference does not resolve to the intended object category.",
+    "E_OWNERSHIP": "Version parent belongs to another text.",
+    "E_HASH": "Version content differs from declared SHA-256 or hash field is malformed.",
+    "E_CYCLE": "Version ancestry contains a cycle.",
+    "E_SELECTOR": "Unknown/malformed selector, empty quote, or invalid Unicode/context.",
+    "E_BOUNDS": "A positions are not integer nonempty bounds inside the version.",
+    "E_QUOTE": "A's selected substring differs from its integrity quote.",
+    "E_NO_MATCH": "B has no matching quote/context occurrence.",
+    "E_AMBIGUOUS": "B has multiple matching quote/context occurrences.",
+    "E_REANCHOR": "Malformed request, invalid source model/region, missing target, or cross-text target."
+  },
+  "limitations": [
+    "No P5 conversion, discontinuous/empty regions, collaborative editing, grapheme indexing, normalization, or automatic interpretation transfer.",
+    "Finite synthetic fixtures cannot demonstrate philosophical correctness, real-world migration cost, or annotation usability."
+  ]
+}

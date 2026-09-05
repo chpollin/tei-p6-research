@@ -1,0 +1,11 @@
+{
+  "format_version": 1,
+  "mapping_version": "tei-fragment-0.1",
+  "development_cases": ["case-1-hierarchy", "case-2-interrupted-heading"],
+  "withheld_case": "case-3-holdout-media",
+  "mapper_sha256_before_unblinding": "3490633eb3233fadb1afe5dce2c25ced45ba47f9ed8f7109914ce24537c1d628",
+  "mapper_tests_sha256_before_unblinding": "d13e509f902a403b9083dfb9d8cc07cdb37b92ac088c4b585b4f63f8629430ae",
+  "procedure": "The mapper author saw only the two development fragments and their tasks. The integrator and independent source reader knew the holdout; it challenges implementation coverage, not a statistically independent architecture hypothesis.",
+  "expectations": "Source reader authored textual and markup expectations before mapper construction. Integrator translated their stated facts into executable checks; this translation is not independent domain verification.",
+  "post_unblinding_changes": []
+}

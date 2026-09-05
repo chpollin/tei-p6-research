@@ -1,0 +1,1712 @@
+{
+  "format_version": 1,
+  "profile_version": "editorial-provenance-0.1",
+  "models": {
+    "initial": {
+      "model_version": "0.1",
+      "agents": [
+        {
+          "id": "editor-one",
+          "label": "Editor One"
+        },
+        {
+          "id": "editor-two",
+          "label": "Editor Two"
+        }
+      ],
+      "concepts": [
+        {
+          "id": "ep-derived-from",
+          "label": "Historical derivation claim",
+          "definition": "An agent's hypothesis that the source version derives historically from the target version; not a technical construction dependency or a continuity assertion.",
+          "applies_to": "relation"
+        },
+        {
+          "id": "ep-supersedes",
+          "label": "Supersedes derivation claim",
+          "definition": "The source derivation claim supersedes the target derivation claim for the same subject version and agent, retaining both claims without asserting historical truth.",
+          "applies_to": "relation"
+        }
+      ],
+      "texts": [],
+      "versions": [
+        {
+          "id": "version-a",
+          "content": "alpha",
+          "sha256": "8ed3f6ad685b959ead7022518e1af76cd816f8e8ec7ccdda1ed4018e8f2223f8",
+          "parents": []
+        },
+        {
+          "id": "version-b",
+          "content": "beta",
+          "sha256": "f44e64e75f3948e9f73f8dfa94721c4ce8cbb4f265c4790c702b2d41cfbf2753",
+          "parents": []
+        },
+        {
+          "id": "version-c",
+          "content": "gamma",
+          "sha256": "be9d587defa1f0c09ef49eb17e206983a5f8f8289e4281860bd0ee5a19592c67",
+          "parents": []
+        },
+        {
+          "id": "version-d",
+          "content": "delta",
+          "sha256": "4f4a9410ffcdf895c4adb880659e9b5c0dd1f23a30790684340b3eaacb045398",
+          "parents": []
+        }
+      ],
+      "continuities": [],
+      "selections": [
+        {
+          "id": "selection-b",
+          "version": "version-b",
+          "selector": {
+            "kind": "ranges",
+            "segments": [
+              {
+                "start": 0,
+                "end": 4,
+                "quote": "beta"
+              }
+            ]
+          }
+        }
+      ],
+      "readings": [],
+      "annotations": [
+        {
+          "id": "annotation-b",
+          "agent": "editor-one",
+          "selection": "selection-b",
+          "body": "An annotation preserved while historical attribution changes."
+        }
+      ],
+      "relations": [
+        {
+          "id": "claim-e1-a",
+          "type": "ep-derived-from",
+          "source": "version-b",
+          "target": "version-a",
+          "agent": "editor-one"
+        },
+        {
+          "id": "claim-e2-a",
+          "type": "ep-derived-from",
+          "source": "version-b",
+          "target": "version-a",
+          "agent": "editor-two"
+        }
+      ]
+    },
+    "revised": {
+      "model_version": "0.1",
+      "agents": [
+        {
+          "id": "editor-one",
+          "label": "Editor One"
+        },
+        {
+          "id": "editor-two",
+          "label": "Editor Two"
+        }
+      ],
+      "concepts": [
+        {
+          "id": "ep-derived-from",
+          "label": "Historical derivation claim",
+          "definition": "An agent's hypothesis that the source version derives historically from the target version; not a technical construction dependency or a continuity assertion.",
+          "applies_to": "relation"
+        },
+        {
+          "id": "ep-supersedes",
+          "label": "Supersedes derivation claim",
+          "definition": "The source derivation claim supersedes the target derivation claim for the same subject version and agent, retaining both claims without asserting historical truth.",
+          "applies_to": "relation"
+        }
+      ],
+      "texts": [],
+      "versions": [
+        {
+          "id": "version-a",
+          "content": "alpha",
+          "sha256": "8ed3f6ad685b959ead7022518e1af76cd816f8e8ec7ccdda1ed4018e8f2223f8",
+          "parents": []
+        },
+        {
+          "id": "version-b",
+          "content": "beta",
+          "sha256": "f44e64e75f3948e9f73f8dfa94721c4ce8cbb4f265c4790c702b2d41cfbf2753",
+          "parents": []
+        },
+        {
+          "id": "version-c",
+          "content": "gamma",
+          "sha256": "be9d587defa1f0c09ef49eb17e206983a5f8f8289e4281860bd0ee5a19592c67",
+          "parents": []
+        },
+        {
+          "id": "version-d",
+          "content": "delta",
+          "sha256": "4f4a9410ffcdf895c4adb880659e9b5c0dd1f23a30790684340b3eaacb045398",
+          "parents": []
+        }
+      ],
+      "continuities": [],
+      "selections": [
+        {
+          "id": "selection-b",
+          "version": "version-b",
+          "selector": {
+            "kind": "ranges",
+            "segments": [
+              {
+                "start": 0,
+                "end": 4,
+                "quote": "beta"
+              }
+            ]
+          }
+        }
+      ],
+      "readings": [],
+      "annotations": [
+        {
+          "id": "annotation-b",
+          "agent": "editor-one",
+          "selection": "selection-b",
+          "body": "An annotation preserved while historical attribution changes."
+        }
+      ],
+      "relations": [
+        {
+          "id": "claim-e1-a",
+          "type": "ep-derived-from",
+          "source": "version-b",
+          "target": "version-a",
+          "agent": "editor-one"
+        },
+        {
+          "id": "claim-e2-a",
+          "type": "ep-derived-from",
+          "source": "version-b",
+          "target": "version-a",
+          "agent": "editor-two"
+        },
+        {
+          "id": "claim-e1-c",
+          "type": "ep-derived-from",
+          "source": "version-b",
+          "target": "version-c",
+          "agent": "editor-one"
+        },
+        {
+          "id": "replace-a-with-c",
+          "type": "ep-supersedes",
+          "source": "claim-e1-c",
+          "target": "claim-e1-a",
+          "agent": "editor-one"
+        }
+      ]
+    },
+    "historical_cycle": {
+      "model_version": "0.1",
+      "agents": [
+        {
+          "id": "editor-one",
+          "label": "Editor One"
+        },
+        {
+          "id": "editor-two",
+          "label": "Editor Two"
+        }
+      ],
+      "concepts": [
+        {
+          "id": "ep-derived-from",
+          "label": "Historical derivation claim",
+          "definition": "An agent's hypothesis that the source version derives historically from the target version; not a technical construction dependency or a continuity assertion.",
+          "applies_to": "relation"
+        },
+        {
+          "id": "ep-supersedes",
+          "label": "Supersedes derivation claim",
+          "definition": "The source derivation claim supersedes the target derivation claim for the same subject version and agent, retaining both claims without asserting historical truth.",
+          "applies_to": "relation"
+        }
+      ],
+      "texts": [],
+      "versions": [
+        {
+          "id": "version-a",
+          "content": "alpha",
+          "sha256": "8ed3f6ad685b959ead7022518e1af76cd816f8e8ec7ccdda1ed4018e8f2223f8",
+          "parents": []
+        },
+        {
+          "id": "version-b",
+          "content": "beta",
+          "sha256": "f44e64e75f3948e9f73f8dfa94721c4ce8cbb4f265c4790c702b2d41cfbf2753",
+          "parents": []
+        },
+        {
+          "id": "version-c",
+          "content": "gamma",
+          "sha256": "be9d587defa1f0c09ef49eb17e206983a5f8f8289e4281860bd0ee5a19592c67",
+          "parents": []
+        },
+        {
+          "id": "version-d",
+          "content": "delta",
+          "sha256": "4f4a9410ffcdf895c4adb880659e9b5c0dd1f23a30790684340b3eaacb045398",
+          "parents": []
+        }
+      ],
+      "continuities": [],
+      "selections": [
+        {
+          "id": "selection-b",
+          "version": "version-b",
+          "selector": {
+            "kind": "ranges",
+            "segments": [
+              {
+                "start": 0,
+                "end": 4,
+                "quote": "beta"
+              }
+            ]
+          }
+        }
+      ],
+      "readings": [],
+      "annotations": [
+        {
+          "id": "annotation-b",
+          "agent": "editor-one",
+          "selection": "selection-b",
+          "body": "An annotation preserved while historical attribution changes."
+        }
+      ],
+      "relations": [
+        {
+          "id": "claim-e1-a",
+          "type": "ep-derived-from",
+          "source": "version-b",
+          "target": "version-a",
+          "agent": "editor-one"
+        },
+        {
+          "id": "claim-e2-a",
+          "type": "ep-derived-from",
+          "source": "version-b",
+          "target": "version-a",
+          "agent": "editor-two"
+        },
+        {
+          "id": "claim-e1-reverse",
+          "type": "ep-derived-from",
+          "source": "version-a",
+          "target": "version-b",
+          "agent": "editor-one"
+        }
+      ]
+    },
+    "forked": {
+      "model_version": "0.1",
+      "agents": [
+        {
+          "id": "editor-one",
+          "label": "Editor One"
+        },
+        {
+          "id": "editor-two",
+          "label": "Editor Two"
+        }
+      ],
+      "concepts": [
+        {
+          "id": "ep-derived-from",
+          "label": "Historical derivation claim",
+          "definition": "An agent's hypothesis that the source version derives historically from the target version; not a technical construction dependency or a continuity assertion.",
+          "applies_to": "relation"
+        },
+        {
+          "id": "ep-supersedes",
+          "label": "Supersedes derivation claim",
+          "definition": "The source derivation claim supersedes the target derivation claim for the same subject version and agent, retaining both claims without asserting historical truth.",
+          "applies_to": "relation"
+        }
+      ],
+      "texts": [],
+      "versions": [
+        {
+          "id": "version-a",
+          "content": "alpha",
+          "sha256": "8ed3f6ad685b959ead7022518e1af76cd816f8e8ec7ccdda1ed4018e8f2223f8",
+          "parents": []
+        },
+        {
+          "id": "version-b",
+          "content": "beta",
+          "sha256": "f44e64e75f3948e9f73f8dfa94721c4ce8cbb4f265c4790c702b2d41cfbf2753",
+          "parents": []
+        },
+        {
+          "id": "version-c",
+          "content": "gamma",
+          "sha256": "be9d587defa1f0c09ef49eb17e206983a5f8f8289e4281860bd0ee5a19592c67",
+          "parents": []
+        },
+        {
+          "id": "version-d",
+          "content": "delta",
+          "sha256": "4f4a9410ffcdf895c4adb880659e9b5c0dd1f23a30790684340b3eaacb045398",
+          "parents": []
+        }
+      ],
+      "continuities": [],
+      "selections": [
+        {
+          "id": "selection-b",
+          "version": "version-b",
+          "selector": {
+            "kind": "ranges",
+            "segments": [
+              {
+                "start": 0,
+                "end": 4,
+                "quote": "beta"
+              }
+            ]
+          }
+        }
+      ],
+      "readings": [],
+      "annotations": [
+        {
+          "id": "annotation-b",
+          "agent": "editor-one",
+          "selection": "selection-b",
+          "body": "An annotation preserved while historical attribution changes."
+        }
+      ],
+      "relations": [
+        {
+          "id": "claim-e1-a",
+          "type": "ep-derived-from",
+          "source": "version-b",
+          "target": "version-a",
+          "agent": "editor-one"
+        },
+        {
+          "id": "claim-e2-a",
+          "type": "ep-derived-from",
+          "source": "version-b",
+          "target": "version-a",
+          "agent": "editor-two"
+        },
+        {
+          "id": "claim-e1-c",
+          "type": "ep-derived-from",
+          "source": "version-b",
+          "target": "version-c",
+          "agent": "editor-one"
+        },
+        {
+          "id": "replace-a-with-c",
+          "type": "ep-supersedes",
+          "source": "claim-e1-c",
+          "target": "claim-e1-a",
+          "agent": "editor-one"
+        },
+        {
+          "id": "claim-e1-d",
+          "type": "ep-derived-from",
+          "source": "version-b",
+          "target": "version-d",
+          "agent": "editor-one"
+        },
+        {
+          "id": "replace-a-with-d",
+          "type": "ep-supersedes",
+          "source": "claim-e1-d",
+          "target": "claim-e1-a",
+          "agent": "editor-one"
+        }
+      ]
+    },
+    "revised_twice": {
+      "model_version": "0.1",
+      "agents": [
+        {
+          "id": "editor-one",
+          "label": "Editor One"
+        },
+        {
+          "id": "editor-two",
+          "label": "Editor Two"
+        }
+      ],
+      "concepts": [
+        {
+          "id": "ep-derived-from",
+          "label": "Historical derivation claim",
+          "definition": "An agent's hypothesis that the source version derives historically from the target version; not a technical construction dependency or a continuity assertion.",
+          "applies_to": "relation"
+        },
+        {
+          "id": "ep-supersedes",
+          "label": "Supersedes derivation claim",
+          "definition": "The source derivation claim supersedes the target derivation claim for the same subject version and agent, retaining both claims without asserting historical truth.",
+          "applies_to": "relation"
+        }
+      ],
+      "texts": [],
+      "versions": [
+        {
+          "id": "version-a",
+          "content": "alpha",
+          "sha256": "8ed3f6ad685b959ead7022518e1af76cd816f8e8ec7ccdda1ed4018e8f2223f8",
+          "parents": []
+        },
+        {
+          "id": "version-b",
+          "content": "beta",
+          "sha256": "f44e64e75f3948e9f73f8dfa94721c4ce8cbb4f265c4790c702b2d41cfbf2753",
+          "parents": []
+        },
+        {
+          "id": "version-c",
+          "content": "gamma",
+          "sha256": "be9d587defa1f0c09ef49eb17e206983a5f8f8289e4281860bd0ee5a19592c67",
+          "parents": []
+        },
+        {
+          "id": "version-d",
+          "content": "delta",
+          "sha256": "4f4a9410ffcdf895c4adb880659e9b5c0dd1f23a30790684340b3eaacb045398",
+          "parents": []
+        }
+      ],
+      "continuities": [],
+      "selections": [
+        {
+          "id": "selection-b",
+          "version": "version-b",
+          "selector": {
+            "kind": "ranges",
+            "segments": [
+              {
+                "start": 0,
+                "end": 4,
+                "quote": "beta"
+              }
+            ]
+          }
+        }
+      ],
+      "readings": [],
+      "annotations": [
+        {
+          "id": "annotation-b",
+          "agent": "editor-one",
+          "selection": "selection-b",
+          "body": "An annotation preserved while historical attribution changes."
+        }
+      ],
+      "relations": [
+        {
+          "id": "claim-e1-a",
+          "type": "ep-derived-from",
+          "source": "version-b",
+          "target": "version-a",
+          "agent": "editor-one"
+        },
+        {
+          "id": "claim-e2-a",
+          "type": "ep-derived-from",
+          "source": "version-b",
+          "target": "version-a",
+          "agent": "editor-two"
+        },
+        {
+          "id": "claim-e1-c",
+          "type": "ep-derived-from",
+          "source": "version-b",
+          "target": "version-c",
+          "agent": "editor-one"
+        },
+        {
+          "id": "replace-a-with-c",
+          "type": "ep-supersedes",
+          "source": "claim-e1-c",
+          "target": "claim-e1-a",
+          "agent": "editor-one"
+        },
+        {
+          "id": "claim-e1-d",
+          "type": "ep-derived-from",
+          "source": "version-b",
+          "target": "version-d",
+          "agent": "editor-one"
+        },
+        {
+          "id": "replace-c-with-d",
+          "type": "ep-supersedes",
+          "source": "claim-e1-d",
+          "target": "claim-e1-c",
+          "agent": "editor-one"
+        }
+      ]
+    },
+    "wrong_endpoint": {
+      "model_version": "0.1",
+      "agents": [
+        {
+          "id": "editor-one",
+          "label": "Editor One"
+        },
+        {
+          "id": "editor-two",
+          "label": "Editor Two"
+        }
+      ],
+      "concepts": [
+        {
+          "id": "ep-derived-from",
+          "label": "Historical derivation claim",
+          "definition": "An agent's hypothesis that the source version derives historically from the target version; not a technical construction dependency or a continuity assertion.",
+          "applies_to": "relation"
+        },
+        {
+          "id": "ep-supersedes",
+          "label": "Supersedes derivation claim",
+          "definition": "The source derivation claim supersedes the target derivation claim for the same subject version and agent, retaining both claims without asserting historical truth.",
+          "applies_to": "relation"
+        }
+      ],
+      "texts": [],
+      "versions": [
+        {
+          "id": "version-a",
+          "content": "alpha",
+          "sha256": "8ed3f6ad685b959ead7022518e1af76cd816f8e8ec7ccdda1ed4018e8f2223f8",
+          "parents": []
+        },
+        {
+          "id": "version-b",
+          "content": "beta",
+          "sha256": "f44e64e75f3948e9f73f8dfa94721c4ce8cbb4f265c4790c702b2d41cfbf2753",
+          "parents": []
+        },
+        {
+          "id": "version-c",
+          "content": "gamma",
+          "sha256": "be9d587defa1f0c09ef49eb17e206983a5f8f8289e4281860bd0ee5a19592c67",
+          "parents": []
+        },
+        {
+          "id": "version-d",
+          "content": "delta",
+          "sha256": "4f4a9410ffcdf895c4adb880659e9b5c0dd1f23a30790684340b3eaacb045398",
+          "parents": []
+        }
+      ],
+      "continuities": [],
+      "selections": [
+        {
+          "id": "selection-b",
+          "version": "version-b",
+          "selector": {
+            "kind": "ranges",
+            "segments": [
+              {
+                "start": 0,
+                "end": 4,
+                "quote": "beta"
+              }
+            ]
+          }
+        }
+      ],
+      "readings": [],
+      "annotations": [
+        {
+          "id": "annotation-b",
+          "agent": "editor-one",
+          "selection": "selection-b",
+          "body": "An annotation preserved while historical attribution changes."
+        }
+      ],
+      "relations": [
+        {
+          "id": "claim-e1-a",
+          "type": "ep-derived-from",
+          "source": "version-b",
+          "target": "selection-b",
+          "agent": "editor-one"
+        },
+        {
+          "id": "claim-e2-a",
+          "type": "ep-derived-from",
+          "source": "version-b",
+          "target": "version-a",
+          "agent": "editor-two"
+        }
+      ]
+    },
+    "cross_agent": {
+      "model_version": "0.1",
+      "agents": [
+        {
+          "id": "editor-one",
+          "label": "Editor One"
+        },
+        {
+          "id": "editor-two",
+          "label": "Editor Two"
+        }
+      ],
+      "concepts": [
+        {
+          "id": "ep-derived-from",
+          "label": "Historical derivation claim",
+          "definition": "An agent's hypothesis that the source version derives historically from the target version; not a technical construction dependency or a continuity assertion.",
+          "applies_to": "relation"
+        },
+        {
+          "id": "ep-supersedes",
+          "label": "Supersedes derivation claim",
+          "definition": "The source derivation claim supersedes the target derivation claim for the same subject version and agent, retaining both claims without asserting historical truth.",
+          "applies_to": "relation"
+        }
+      ],
+      "texts": [],
+      "versions": [
+        {
+          "id": "version-a",
+          "content": "alpha",
+          "sha256": "8ed3f6ad685b959ead7022518e1af76cd816f8e8ec7ccdda1ed4018e8f2223f8",
+          "parents": []
+        },
+        {
+          "id": "version-b",
+          "content": "beta",
+          "sha256": "f44e64e75f3948e9f73f8dfa94721c4ce8cbb4f265c4790c702b2d41cfbf2753",
+          "parents": []
+        },
+        {
+          "id": "version-c",
+          "content": "gamma",
+          "sha256": "be9d587defa1f0c09ef49eb17e206983a5f8f8289e4281860bd0ee5a19592c67",
+          "parents": []
+        },
+        {
+          "id": "version-d",
+          "content": "delta",
+          "sha256": "4f4a9410ffcdf895c4adb880659e9b5c0dd1f23a30790684340b3eaacb045398",
+          "parents": []
+        }
+      ],
+      "continuities": [],
+      "selections": [
+        {
+          "id": "selection-b",
+          "version": "version-b",
+          "selector": {
+            "kind": "ranges",
+            "segments": [
+              {
+                "start": 0,
+                "end": 4,
+                "quote": "beta"
+              }
+            ]
+          }
+        }
+      ],
+      "readings": [],
+      "annotations": [
+        {
+          "id": "annotation-b",
+          "agent": "editor-one",
+          "selection": "selection-b",
+          "body": "An annotation preserved while historical attribution changes."
+        }
+      ],
+      "relations": [
+        {
+          "id": "claim-e1-a",
+          "type": "ep-derived-from",
+          "source": "version-b",
+          "target": "version-a",
+          "agent": "editor-one"
+        },
+        {
+          "id": "claim-e2-a",
+          "type": "ep-derived-from",
+          "source": "version-b",
+          "target": "version-a",
+          "agent": "editor-two"
+        },
+        {
+          "id": "claim-e1-c",
+          "type": "ep-derived-from",
+          "source": "version-b",
+          "target": "version-c",
+          "agent": "editor-one"
+        },
+        {
+          "id": "replace-a-with-c",
+          "type": "ep-supersedes",
+          "source": "claim-e1-c",
+          "target": "claim-e1-a",
+          "agent": "editor-two"
+        }
+      ]
+    },
+    "wrong_subject": {
+      "model_version": "0.1",
+      "agents": [
+        {
+          "id": "editor-one",
+          "label": "Editor One"
+        },
+        {
+          "id": "editor-two",
+          "label": "Editor Two"
+        }
+      ],
+      "concepts": [
+        {
+          "id": "ep-derived-from",
+          "label": "Historical derivation claim",
+          "definition": "An agent's hypothesis that the source version derives historically from the target version; not a technical construction dependency or a continuity assertion.",
+          "applies_to": "relation"
+        },
+        {
+          "id": "ep-supersedes",
+          "label": "Supersedes derivation claim",
+          "definition": "The source derivation claim supersedes the target derivation claim for the same subject version and agent, retaining both claims without asserting historical truth.",
+          "applies_to": "relation"
+        }
+      ],
+      "texts": [],
+      "versions": [
+        {
+          "id": "version-a",
+          "content": "alpha",
+          "sha256": "8ed3f6ad685b959ead7022518e1af76cd816f8e8ec7ccdda1ed4018e8f2223f8",
+          "parents": []
+        },
+        {
+          "id": "version-b",
+          "content": "beta",
+          "sha256": "f44e64e75f3948e9f73f8dfa94721c4ce8cbb4f265c4790c702b2d41cfbf2753",
+          "parents": []
+        },
+        {
+          "id": "version-c",
+          "content": "gamma",
+          "sha256": "be9d587defa1f0c09ef49eb17e206983a5f8f8289e4281860bd0ee5a19592c67",
+          "parents": []
+        },
+        {
+          "id": "version-d",
+          "content": "delta",
+          "sha256": "4f4a9410ffcdf895c4adb880659e9b5c0dd1f23a30790684340b3eaacb045398",
+          "parents": []
+        }
+      ],
+      "continuities": [],
+      "selections": [
+        {
+          "id": "selection-b",
+          "version": "version-b",
+          "selector": {
+            "kind": "ranges",
+            "segments": [
+              {
+                "start": 0,
+                "end": 4,
+                "quote": "beta"
+              }
+            ]
+          }
+        }
+      ],
+      "readings": [],
+      "annotations": [
+        {
+          "id": "annotation-b",
+          "agent": "editor-one",
+          "selection": "selection-b",
+          "body": "An annotation preserved while historical attribution changes."
+        }
+      ],
+      "relations": [
+        {
+          "id": "claim-e1-a",
+          "type": "ep-derived-from",
+          "source": "version-b",
+          "target": "version-a",
+          "agent": "editor-one"
+        },
+        {
+          "id": "claim-e2-a",
+          "type": "ep-derived-from",
+          "source": "version-b",
+          "target": "version-a",
+          "agent": "editor-two"
+        },
+        {
+          "id": "claim-e1-c",
+          "type": "ep-derived-from",
+          "source": "version-a",
+          "target": "version-c",
+          "agent": "editor-one"
+        },
+        {
+          "id": "replace-a-with-c",
+          "type": "ep-supersedes",
+          "source": "claim-e1-c",
+          "target": "claim-e1-a",
+          "agent": "editor-one"
+        }
+      ]
+    },
+    "deleted_claim": {
+      "model_version": "0.1",
+      "agents": [
+        {
+          "id": "editor-one",
+          "label": "Editor One"
+        },
+        {
+          "id": "editor-two",
+          "label": "Editor Two"
+        }
+      ],
+      "concepts": [
+        {
+          "id": "ep-derived-from",
+          "label": "Historical derivation claim",
+          "definition": "An agent's hypothesis that the source version derives historically from the target version; not a technical construction dependency or a continuity assertion.",
+          "applies_to": "relation"
+        },
+        {
+          "id": "ep-supersedes",
+          "label": "Supersedes derivation claim",
+          "definition": "The source derivation claim supersedes the target derivation claim for the same subject version and agent, retaining both claims without asserting historical truth.",
+          "applies_to": "relation"
+        }
+      ],
+      "texts": [],
+      "versions": [
+        {
+          "id": "version-a",
+          "content": "alpha",
+          "sha256": "8ed3f6ad685b959ead7022518e1af76cd816f8e8ec7ccdda1ed4018e8f2223f8",
+          "parents": []
+        },
+        {
+          "id": "version-b",
+          "content": "beta",
+          "sha256": "f44e64e75f3948e9f73f8dfa94721c4ce8cbb4f265c4790c702b2d41cfbf2753",
+          "parents": []
+        },
+        {
+          "id": "version-c",
+          "content": "gamma",
+          "sha256": "be9d587defa1f0c09ef49eb17e206983a5f8f8289e4281860bd0ee5a19592c67",
+          "parents": []
+        },
+        {
+          "id": "version-d",
+          "content": "delta",
+          "sha256": "4f4a9410ffcdf895c4adb880659e9b5c0dd1f23a30790684340b3eaacb045398",
+          "parents": []
+        }
+      ],
+      "continuities": [],
+      "selections": [
+        {
+          "id": "selection-b",
+          "version": "version-b",
+          "selector": {
+            "kind": "ranges",
+            "segments": [
+              {
+                "start": 0,
+                "end": 4,
+                "quote": "beta"
+              }
+            ]
+          }
+        }
+      ],
+      "readings": [],
+      "annotations": [
+        {
+          "id": "annotation-b",
+          "agent": "editor-one",
+          "selection": "selection-b",
+          "body": "An annotation preserved while historical attribution changes."
+        }
+      ],
+      "relations": [
+        {
+          "id": "claim-e2-a",
+          "type": "ep-derived-from",
+          "source": "version-b",
+          "target": "version-a",
+          "agent": "editor-two"
+        }
+      ]
+    },
+    "rewritten_claim": {
+      "model_version": "0.1",
+      "agents": [
+        {
+          "id": "editor-one",
+          "label": "Editor One"
+        },
+        {
+          "id": "editor-two",
+          "label": "Editor Two"
+        }
+      ],
+      "concepts": [
+        {
+          "id": "ep-derived-from",
+          "label": "Historical derivation claim",
+          "definition": "An agent's hypothesis that the source version derives historically from the target version; not a technical construction dependency or a continuity assertion.",
+          "applies_to": "relation"
+        },
+        {
+          "id": "ep-supersedes",
+          "label": "Supersedes derivation claim",
+          "definition": "The source derivation claim supersedes the target derivation claim for the same subject version and agent, retaining both claims without asserting historical truth.",
+          "applies_to": "relation"
+        }
+      ],
+      "texts": [],
+      "versions": [
+        {
+          "id": "version-a",
+          "content": "alpha",
+          "sha256": "8ed3f6ad685b959ead7022518e1af76cd816f8e8ec7ccdda1ed4018e8f2223f8",
+          "parents": []
+        },
+        {
+          "id": "version-b",
+          "content": "beta",
+          "sha256": "f44e64e75f3948e9f73f8dfa94721c4ce8cbb4f265c4790c702b2d41cfbf2753",
+          "parents": []
+        },
+        {
+          "id": "version-c",
+          "content": "gamma",
+          "sha256": "be9d587defa1f0c09ef49eb17e206983a5f8f8289e4281860bd0ee5a19592c67",
+          "parents": []
+        },
+        {
+          "id": "version-d",
+          "content": "delta",
+          "sha256": "4f4a9410ffcdf895c4adb880659e9b5c0dd1f23a30790684340b3eaacb045398",
+          "parents": []
+        }
+      ],
+      "continuities": [],
+      "selections": [
+        {
+          "id": "selection-b",
+          "version": "version-b",
+          "selector": {
+            "kind": "ranges",
+            "segments": [
+              {
+                "start": 0,
+                "end": 4,
+                "quote": "beta"
+              }
+            ]
+          }
+        }
+      ],
+      "readings": [],
+      "annotations": [
+        {
+          "id": "annotation-b",
+          "agent": "editor-one",
+          "selection": "selection-b",
+          "body": "An annotation preserved while historical attribution changes."
+        }
+      ],
+      "relations": [
+        {
+          "id": "claim-e1-a",
+          "type": "ep-derived-from",
+          "source": "version-b",
+          "target": "version-d",
+          "agent": "editor-one"
+        },
+        {
+          "id": "claim-e2-a",
+          "type": "ep-derived-from",
+          "source": "version-b",
+          "target": "version-a",
+          "agent": "editor-two"
+        }
+      ]
+    },
+    "supersession_cycle": {
+      "model_version": "0.1",
+      "agents": [
+        {
+          "id": "editor-one",
+          "label": "Editor One"
+        },
+        {
+          "id": "editor-two",
+          "label": "Editor Two"
+        }
+      ],
+      "concepts": [
+        {
+          "id": "ep-derived-from",
+          "label": "Historical derivation claim",
+          "definition": "An agent's hypothesis that the source version derives historically from the target version; not a technical construction dependency or a continuity assertion.",
+          "applies_to": "relation"
+        },
+        {
+          "id": "ep-supersedes",
+          "label": "Supersedes derivation claim",
+          "definition": "The source derivation claim supersedes the target derivation claim for the same subject version and agent, retaining both claims without asserting historical truth.",
+          "applies_to": "relation"
+        }
+      ],
+      "texts": [],
+      "versions": [
+        {
+          "id": "version-a",
+          "content": "alpha",
+          "sha256": "8ed3f6ad685b959ead7022518e1af76cd816f8e8ec7ccdda1ed4018e8f2223f8",
+          "parents": []
+        },
+        {
+          "id": "version-b",
+          "content": "beta",
+          "sha256": "f44e64e75f3948e9f73f8dfa94721c4ce8cbb4f265c4790c702b2d41cfbf2753",
+          "parents": []
+        },
+        {
+          "id": "version-c",
+          "content": "gamma",
+          "sha256": "be9d587defa1f0c09ef49eb17e206983a5f8f8289e4281860bd0ee5a19592c67",
+          "parents": []
+        },
+        {
+          "id": "version-d",
+          "content": "delta",
+          "sha256": "4f4a9410ffcdf895c4adb880659e9b5c0dd1f23a30790684340b3eaacb045398",
+          "parents": []
+        }
+      ],
+      "continuities": [],
+      "selections": [
+        {
+          "id": "selection-b",
+          "version": "version-b",
+          "selector": {
+            "kind": "ranges",
+            "segments": [
+              {
+                "start": 0,
+                "end": 4,
+                "quote": "beta"
+              }
+            ]
+          }
+        }
+      ],
+      "readings": [],
+      "annotations": [
+        {
+          "id": "annotation-b",
+          "agent": "editor-one",
+          "selection": "selection-b",
+          "body": "An annotation preserved while historical attribution changes."
+        }
+      ],
+      "relations": [
+        {
+          "id": "claim-e1-a",
+          "type": "ep-derived-from",
+          "source": "version-b",
+          "target": "version-a",
+          "agent": "editor-one"
+        },
+        {
+          "id": "claim-e2-a",
+          "type": "ep-derived-from",
+          "source": "version-b",
+          "target": "version-a",
+          "agent": "editor-two"
+        },
+        {
+          "id": "claim-e1-c",
+          "type": "ep-derived-from",
+          "source": "version-b",
+          "target": "version-c",
+          "agent": "editor-one"
+        },
+        {
+          "id": "replace-a-with-c",
+          "type": "ep-supersedes",
+          "source": "claim-e1-c",
+          "target": "claim-e1-a",
+          "agent": "editor-one"
+        },
+        {
+          "id": "replace-c-with-a",
+          "type": "ep-supersedes",
+          "source": "claim-e1-a",
+          "target": "claim-e1-c",
+          "agent": "editor-one"
+        }
+      ]
+    },
+    "changed_reserved_concept": {
+      "model_version": "0.1",
+      "agents": [
+        {
+          "id": "editor-one",
+          "label": "Editor One"
+        },
+        {
+          "id": "editor-two",
+          "label": "Editor Two"
+        }
+      ],
+      "concepts": [
+        {
+          "id": "ep-derived-from",
+          "label": "Historical derivation claim",
+          "definition": "The source version certainly derives from the target version.",
+          "applies_to": "relation"
+        },
+        {
+          "id": "ep-supersedes",
+          "label": "Supersedes derivation claim",
+          "definition": "The source derivation claim supersedes the target derivation claim for the same subject version and agent, retaining both claims without asserting historical truth.",
+          "applies_to": "relation"
+        }
+      ],
+      "texts": [],
+      "versions": [
+        {
+          "id": "version-a",
+          "content": "alpha",
+          "sha256": "8ed3f6ad685b959ead7022518e1af76cd816f8e8ec7ccdda1ed4018e8f2223f8",
+          "parents": []
+        },
+        {
+          "id": "version-b",
+          "content": "beta",
+          "sha256": "f44e64e75f3948e9f73f8dfa94721c4ce8cbb4f265c4790c702b2d41cfbf2753",
+          "parents": []
+        },
+        {
+          "id": "version-c",
+          "content": "gamma",
+          "sha256": "be9d587defa1f0c09ef49eb17e206983a5f8f8289e4281860bd0ee5a19592c67",
+          "parents": []
+        },
+        {
+          "id": "version-d",
+          "content": "delta",
+          "sha256": "4f4a9410ffcdf895c4adb880659e9b5c0dd1f23a30790684340b3eaacb045398",
+          "parents": []
+        }
+      ],
+      "continuities": [],
+      "selections": [
+        {
+          "id": "selection-b",
+          "version": "version-b",
+          "selector": {
+            "kind": "ranges",
+            "segments": [
+              {
+                "start": 0,
+                "end": 4,
+                "quote": "beta"
+              }
+            ]
+          }
+        }
+      ],
+      "readings": [],
+      "annotations": [
+        {
+          "id": "annotation-b",
+          "agent": "editor-one",
+          "selection": "selection-b",
+          "body": "An annotation preserved while historical attribution changes."
+        }
+      ],
+      "relations": [
+        {
+          "id": "claim-e1-a",
+          "type": "ep-derived-from",
+          "source": "version-b",
+          "target": "version-a",
+          "agent": "editor-one"
+        },
+        {
+          "id": "claim-e2-a",
+          "type": "ep-derived-from",
+          "source": "version-b",
+          "target": "version-a",
+          "agent": "editor-two"
+        }
+      ]
+    },
+    "changed_technical_parents": {
+      "model_version": "0.1",
+      "agents": [
+        {
+          "id": "editor-one",
+          "label": "Editor One"
+        },
+        {
+          "id": "editor-two",
+          "label": "Editor Two"
+        }
+      ],
+      "concepts": [
+        {
+          "id": "ep-derived-from",
+          "label": "Historical derivation claim",
+          "definition": "An agent's hypothesis that the source version derives historically from the target version; not a technical construction dependency or a continuity assertion.",
+          "applies_to": "relation"
+        },
+        {
+          "id": "ep-supersedes",
+          "label": "Supersedes derivation claim",
+          "definition": "The source derivation claim supersedes the target derivation claim for the same subject version and agent, retaining both claims without asserting historical truth.",
+          "applies_to": "relation"
+        }
+      ],
+      "texts": [],
+      "versions": [
+        {
+          "id": "version-a",
+          "content": "alpha",
+          "sha256": "8ed3f6ad685b959ead7022518e1af76cd816f8e8ec7ccdda1ed4018e8f2223f8",
+          "parents": []
+        },
+        {
+          "id": "version-b",
+          "content": "beta",
+          "sha256": "f44e64e75f3948e9f73f8dfa94721c4ce8cbb4f265c4790c702b2d41cfbf2753",
+          "parents": [
+            "version-a"
+          ]
+        },
+        {
+          "id": "version-c",
+          "content": "gamma",
+          "sha256": "be9d587defa1f0c09ef49eb17e206983a5f8f8289e4281860bd0ee5a19592c67",
+          "parents": []
+        },
+        {
+          "id": "version-d",
+          "content": "delta",
+          "sha256": "4f4a9410ffcdf895c4adb880659e9b5c0dd1f23a30790684340b3eaacb045398",
+          "parents": []
+        }
+      ],
+      "continuities": [],
+      "selections": [
+        {
+          "id": "selection-b",
+          "version": "version-b",
+          "selector": {
+            "kind": "ranges",
+            "segments": [
+              {
+                "start": 0,
+                "end": 4,
+                "quote": "beta"
+              }
+            ]
+          }
+        }
+      ],
+      "readings": [],
+      "annotations": [
+        {
+          "id": "annotation-b",
+          "agent": "editor-one",
+          "selection": "selection-b",
+          "body": "An annotation preserved while historical attribution changes."
+        }
+      ],
+      "relations": [
+        {
+          "id": "claim-e1-a",
+          "type": "ep-derived-from",
+          "source": "version-b",
+          "target": "version-a",
+          "agent": "editor-one"
+        },
+        {
+          "id": "claim-e2-a",
+          "type": "ep-derived-from",
+          "source": "version-b",
+          "target": "version-a",
+          "agent": "editor-two"
+        }
+      ]
+    },
+    "deleted_supersession": {
+      "model_version": "0.1",
+      "agents": [
+        {
+          "id": "editor-one",
+          "label": "Editor One"
+        },
+        {
+          "id": "editor-two",
+          "label": "Editor Two"
+        }
+      ],
+      "concepts": [
+        {
+          "id": "ep-derived-from",
+          "label": "Historical derivation claim",
+          "definition": "An agent's hypothesis that the source version derives historically from the target version; not a technical construction dependency or a continuity assertion.",
+          "applies_to": "relation"
+        },
+        {
+          "id": "ep-supersedes",
+          "label": "Supersedes derivation claim",
+          "definition": "The source derivation claim supersedes the target derivation claim for the same subject version and agent, retaining both claims without asserting historical truth.",
+          "applies_to": "relation"
+        }
+      ],
+      "texts": [],
+      "versions": [
+        {
+          "id": "version-a",
+          "content": "alpha",
+          "sha256": "8ed3f6ad685b959ead7022518e1af76cd816f8e8ec7ccdda1ed4018e8f2223f8",
+          "parents": []
+        },
+        {
+          "id": "version-b",
+          "content": "beta",
+          "sha256": "f44e64e75f3948e9f73f8dfa94721c4ce8cbb4f265c4790c702b2d41cfbf2753",
+          "parents": []
+        },
+        {
+          "id": "version-c",
+          "content": "gamma",
+          "sha256": "be9d587defa1f0c09ef49eb17e206983a5f8f8289e4281860bd0ee5a19592c67",
+          "parents": []
+        },
+        {
+          "id": "version-d",
+          "content": "delta",
+          "sha256": "4f4a9410ffcdf895c4adb880659e9b5c0dd1f23a30790684340b3eaacb045398",
+          "parents": []
+        }
+      ],
+      "continuities": [],
+      "selections": [
+        {
+          "id": "selection-b",
+          "version": "version-b",
+          "selector": {
+            "kind": "ranges",
+            "segments": [
+              {
+                "start": 0,
+                "end": 4,
+                "quote": "beta"
+              }
+            ]
+          }
+        }
+      ],
+      "readings": [],
+      "annotations": [
+        {
+          "id": "annotation-b",
+          "agent": "editor-one",
+          "selection": "selection-b",
+          "body": "An annotation preserved while historical attribution changes."
+        }
+      ],
+      "relations": [
+        {
+          "id": "claim-e1-a",
+          "type": "ep-derived-from",
+          "source": "version-b",
+          "target": "version-a",
+          "agent": "editor-one"
+        },
+        {
+          "id": "claim-e2-a",
+          "type": "ep-derived-from",
+          "source": "version-b",
+          "target": "version-a",
+          "agent": "editor-two"
+        },
+        {
+          "id": "claim-e1-c",
+          "type": "ep-derived-from",
+          "source": "version-b",
+          "target": "version-c",
+          "agent": "editor-one"
+        }
+      ]
+    }
+  },
+  "cases": [
+    {
+      "id": "I01-initial-attributed-hypotheses",
+      "operation": "validate",
+      "input": {
+        "model": "initial"
+      },
+      "expected": {
+        "valid": true,
+        "codes": []
+      }
+    },
+    {
+      "id": "I02-revised-hypothesis-retains-competing-editor",
+      "operation": "validate",
+      "input": {
+        "model": "revised"
+      },
+      "expected": {
+        "valid": true,
+        "codes": []
+      }
+    },
+    {
+      "id": "I03-hypothesis-correction-preserves-b-and-selection",
+      "operation": "revision",
+      "input": {
+        "before": "initial",
+        "after": "revised"
+      },
+      "expected": {
+        "valid": true,
+        "codes": []
+      }
+    },
+    {
+      "id": "I04-current-claims-preserve-editor-disagreement",
+      "operation": "current",
+      "input": {
+        "model": "revised"
+      },
+      "expected": {
+        "claims": [
+          "claim-e1-c",
+          "claim-e2-a"
+        ]
+      }
+    },
+    {
+      "id": "I05-one-editors-current-view-does-not-judge-other",
+      "operation": "current",
+      "input": {
+        "model": "revised",
+        "agent": "editor-one"
+      },
+      "expected": {
+        "claims": [
+          "claim-e1-c"
+        ]
+      }
+    },
+    {
+      "id": "I06-historical-cycle-is-not-a-truth-failure",
+      "operation": "validate",
+      "input": {
+        "model": "historical_cycle"
+      },
+      "expected": {
+        "valid": true,
+        "codes": []
+      }
+    },
+    {
+      "id": "I07-current-subject-filter",
+      "operation": "current",
+      "input": {
+        "model": "historical_cycle",
+        "subject": "version-a"
+      },
+      "expected": {
+        "claims": [
+          "claim-e1-reverse"
+        ]
+      }
+    },
+    {
+      "id": "I08-both-fork-successors-remain-current",
+      "operation": "current",
+      "input": {
+        "model": "forked"
+      },
+      "expected": {
+        "claims": [
+          "claim-e1-c",
+          "claim-e1-d",
+          "claim-e2-a"
+        ]
+      }
+    },
+    {
+      "id": "I09-later-replacement-does-not-reactivate-first-claim",
+      "operation": "current",
+      "input": {
+        "model": "revised_twice"
+      },
+      "expected": {
+        "claims": [
+          "claim-e1-d",
+          "claim-e2-a"
+        ]
+      }
+    },
+    {
+      "id": "I10-derivation-endpoint-must-be-a-version",
+      "operation": "validate",
+      "input": {
+        "model": "wrong_endpoint"
+      },
+      "expected": {
+        "valid": false,
+        "codes": [
+          "E_PROFILE_ENDPOINT"
+        ]
+      }
+    },
+    {
+      "id": "I11-cross-agent-supersession-rejected",
+      "operation": "validate",
+      "input": {
+        "model": "cross_agent"
+      },
+      "expected": {
+        "valid": false,
+        "codes": [
+          "E_PROFILE_SUPERSESSION"
+        ]
+      }
+    },
+    {
+      "id": "I12-supersession-subject-must-stay-the-same",
+      "operation": "validate",
+      "input": {
+        "model": "wrong_subject"
+      },
+      "expected": {
+        "valid": false,
+        "codes": [
+          "E_PROFILE_SUPERSESSION"
+        ]
+      }
+    },
+    {
+      "id": "I13-deleting-earlier-claim-breaks-revision-history",
+      "operation": "revision",
+      "input": {
+        "before": "initial",
+        "after": "deleted_claim"
+      },
+      "expected": {
+        "valid": false,
+        "codes": [
+          "E_CLAIM_REWRITE"
+        ]
+      }
+    },
+    {
+      "id": "I14-rewriting-earlier-claim-breaks-revision-history",
+      "operation": "revision",
+      "input": {
+        "before": "initial",
+        "after": "rewritten_claim"
+      },
+      "expected": {
+        "valid": false,
+        "codes": [
+          "E_CLAIM_REWRITE"
+        ]
+      }
+    },
+    {
+      "id": "I15-supersession-cycle-rejected",
+      "operation": "validate",
+      "input": {
+        "model": "supersession_cycle"
+      },
+      "expected": {
+        "valid": false,
+        "codes": [
+          "E_PROFILE_CYCLE"
+        ]
+      }
+    },
+    {
+      "id": "I16-reserved-definition-cannot-assert-historical-truth",
+      "operation": "validate",
+      "input": {
+        "model": "changed_reserved_concept"
+      },
+      "expected": {
+        "valid": false,
+        "codes": [
+          "E_PROFILE_CONCEPT"
+        ]
+      }
+    },
+    {
+      "id": "I17-technical-parent-change-still-rewrites-version",
+      "operation": "revision",
+      "input": {
+        "before": "initial",
+        "after": "changed_technical_parents"
+      },
+      "expected": {
+        "valid": false,
+        "codes": [
+          "E_VERSION_REWRITE"
+        ]
+      }
+    },
+    {
+      "id": "I18-deleting-supersession-cannot-erase-revision-history",
+      "operation": "revision",
+      "input": {
+        "before": "revised",
+        "after": "deleted_supersession"
+      },
+      "expected": {
+        "valid": false,
+        "codes": [
+          "E_CLAIM_REWRITE"
+        ]
+      }
+    }
+  ]
+}

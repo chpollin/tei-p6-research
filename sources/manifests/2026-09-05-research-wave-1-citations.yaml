@@ -1,0 +1,199 @@
+schema_version: 1
+run_id: 2026-09-05-research-wave-1-citations
+source_id: tei-p5-literature
+source_ids:
+- tei-p5-literature
+- tei-legacy-sourceforge
+started_at: '2026-09-05T12:06:45Z'
+finished_at: '2026-09-05T12:15:14Z'
+status: bounded-complete
+scope:
+  boundary: 'Four selected citation-only sources: W3C REC2017, Piez2014, Renear/Wickett2010,
+    and SourceForge feature request363.'
+  status_applies_to: curated intake only; source families and substantive requirement
+    coverage remain partial
+adapter:
+  name: curated primary-metadata CSL import + tools.check_wave1_sources
+  version: 1
+references_path: references/research-wave-1.json
+objects:
+- kind: csl-json-bibliography
+  path: references/research-wave-1.json
+  sha256: ce2213d46ed973d3d06406fe6f7816f43f218dfef42285130cf87a9e335efc5f
+admissions:
+- reference_id: w3c-web-annotation-20170223
+  source_type: publication
+  source_id: tei-p5-literature
+  lock_file: sources/locks/literature.yaml
+  response: &id001
+    byte_count: 284185
+    canonical_url: https://www.w3.org/TR/2017/REC-annotation-model-20170223/
+    final_url: https://www.w3.org/TR/2017/REC-annotation-model-20170223/
+    headers:
+      content-type: text/html; charset=utf-8
+      date: Sat, 05 Sep 2026 12:06:49 GMT
+      last-modified: Wed, 22 Feb 2017 08:03:33 GMT
+      link: <https://www.w3.org/TR/annotation-model/>;rel="canonical"
+    media_type: text/html
+    observed_at: '2026-09-05T12:06:45Z'
+    raw_path: sha256/a7/513e022f56c0a6f4e99ac11aec03f3451d1ff1ce14054780b3ccfb38fa7980
+    requested_url: https://www.w3.org/TR/2017/REC-annotation-model-20170223/
+    sha256: a7513e022f56c0a6f4e99ac11aec03f3451d1ff1ce14054780b3ccfb38fa7980
+    status: 200
+  extraction:
+    kind: html-visible-text
+  quotes:
+  - text: the user agent discovers multiple matching text sequences, then the selection
+      SHOULD be treated as matching all of the matches.
+    locator: section 4.2.4, Text Quote Selector
+  distillate_path: 20_distillates/publications/w3c-web-annotation-20170223.md
+  rights: Citation and checked short quotation only; complete primary response stays
+    in ignored local raw storage.
+  authority: Attributed primary author/standard statement; no claim of TEI endorsement.
+  instruction_trust: none
+- reference_id: tei-sourceforge-fr363
+  source_type: publication
+  source_id: tei-legacy-sourceforge
+  lock_file: sources/locks/legacy-sourceforge.yaml
+  response:
+    byte_count: 7792
+    canonical_url: https://sourceforge.net/rest/p/tei/feature-requests/363
+    final_url: https://sourceforge.net/rest/p/tei/feature-requests/363
+    media_type: application/json
+    observed_at: '2026-09-05T08:57:29Z'
+    raw_path: sha256/a2/b5dda4296137cc63046f1edbd01014b0112697b38e3b657a8e62e6ab3ccbec
+    sha256: a2b5dda4296137cc63046f1edbd01014b0112697b38e3b657a8e62e6ab3ccbec
+    status: 200
+    local_path: corpus/raw/sha256/a2/b5dda4296137cc63046f1edbd01014b0112697b38e3b657a8e62e6ab3ccbec
+    hash_check: passed
+  extraction:
+    kind: json-field
+    path:
+    - ticket
+    - description
+  quotes:
+  - text: The suggestion is to do this by adding a new attribute @target to the &lt;span&gt;
+      element
+    locator: original ticket description, 2012-05-15
+  distillate_path: 20_distillates/publications/tei-sourceforge-fr363.md
+  rights: Citation and checked short quotation only; complete primary response stays
+    in ignored local raw storage.
+  authority: Historical participant proposal; no governance, merge or release conclusion.
+  instruction_trust: none
+- reference_id: piez2014range
+  source_type: publication
+  source_id: tei-p5-literature
+  lock_file: sources/locks/literature.yaml
+  response: &id002
+    byte_count: 105694
+    canonical_url: https://www.balisage.net/Proceedings/vol13/html/Piez01/BalisageVol13-Piez01.html
+    final_url: https://www.balisage.net/Proceedings/vol13/html/Piez01/BalisageVol13-Piez01.html
+    headers:
+      content-length: '105694'
+      content-type: text/html
+      date: Sat, 05 Sep 2026 12:12:08 GMT
+      last-modified: Thu, 20 Feb 2025 09:41:42 GMT
+    media_type: text/html
+    observed_at: '2026-09-05T12:12:06Z'
+    raw_path: sha256/4c/1a45a70165010f72a5d47848f0bf04b6a3f0394af5b2155fe411efcce5bbf0
+    requested_url: https://www.balisage.net/Proceedings/vol13/html/Piez01/BalisageVol13-Piez01.html
+    sha256: 4c1a45a70165010f72a5d47848f0bf04b6a3f0394af5b2155fe411efcce5bbf0
+    status: 200
+  extraction:
+    kind: html-visible-text
+  quotes:
+  - text: Where we can have any hierarchy or none, hierarchy itself is immediately
+      open for study.
+    locator: The reign of the OHCO, final sentence
+  distillate_path: 20_distillates/publications/piez2014range.md
+  rights: Citation and checked short quotation only; complete primary response stays
+    in ignored local raw storage.
+  authority: Attributed primary author/standard statement; no claim of TEI endorsement.
+  instruction_trust: none
+- reference_id: renear-wickett2010documents
+  source_type: publication
+  source_id: tei-p5-literature
+  lock_file: sources/locks/literature.yaml
+  response: &id003
+    byte_count: 101834
+    canonical_url: https://www.balisage.net/Proceedings/vol5/html/Renear01/BalisageVol5-Renear01.html
+    final_url: https://www.balisage.net/Proceedings/vol5/html/Renear01/BalisageVol5-Renear01.html
+    headers:
+      content-length: '101834'
+      content-type: text/html
+      date: Sat, 05 Sep 2026 12:15:17 GMT
+      last-modified: Thu, 20 Feb 2025 10:23:02 GMT
+    media_type: text/html
+    observed_at: '2026-09-05T12:15:14Z'
+    raw_path: sha256/07/afcd383aa4874d5f4c4d4f7c4e1c3fbc1a615a2063774357dbb2dd14d5da1b
+    requested_url: https://www.balisage.net/Proceedings/vol5/html/Renear01/BalisageVol5-Renear01.html
+    sha256: 07afcd383aa4874d5f4c4d4f7c4e1c3fbc1a615a2063774357dbb2dd14d5da1b
+    status: 200
+  extraction:
+    kind: html-visible-text
+  quotes:
+  - text: Editing strings is mapping from one string to another, not modifying a persistent
+      underlying entity.
+    locator: The Arguments, paragraph after string transformation
+  distillate_path: 20_distillates/publications/renear-wickett2010documents.md
+  rights: Citation and checked short quotation only; complete primary response stays
+    in ignored local raw storage.
+  authority: Attributed primary author/standard statement; no claim of TEI endorsement.
+  instruction_trust: none
+counts:
+  selected_sources: 4
+  short_quotations: 4
+upstream_manifests:
+- sources/manifests/2026-09-05-tei-legacy-sourceforge-r3.yaml
+requests:
+- *id001
+- byte_count: 28540
+  canonical_url: https://www.w3.org/Consortium/Legal/2015/doc-license
+  final_url: https://www.w3.org/copyright/document-license-2015/
+  headers:
+    content-type: text/html; charset=UTF-8
+    date: Sat, 05 Sep 2026 12:08:31 GMT
+  media_type: text/html
+  observed_at: '2026-09-05T12:08:27Z'
+  raw_path: sha256/f3/df06a8686e6cd5e3bde34ff9f7c6490b98e4f5b84263c5e4ba55fb2a3ff956
+  requested_url: https://www.w3.org/Consortium/Legal/2015/doc-license
+  sha256: f3df06a8686e6cd5e3bde34ff9f7c6490b98e4f5b84263c5e4ba55fb2a3ff956
+  status: 200
+- byte_count: 118
+  canonical_url: https://www.ideals.illinois.edu/items/9468
+  final_url: https://www.ideals.illinois.edu/items/9468
+  headers:
+    content-length: '118'
+    content-type: text/html
+    date: Sat, 05 Sep 2026 12:08:47 GMT
+  media_type: text/html
+  observed_at: '2026-09-05T12:08:42Z'
+  raw_path: sha256/58/bf2215b395dcac74c009aa98701854e43cbe54a1cd3a95fee6a647ca9910d4
+  requested_url: https://www.ideals.illinois.edu/items/9468
+  sha256: 58bf2215b395dcac74c009aa98701854e43cbe54a1cd3a95fee6a647ca9910d4
+  status: 403
+- byte_count: 118
+  canonical_url: https://www.ideals.illinois.edu/items/9468/bitstreams/35290/data.pdf
+  final_url: https://www.ideals.illinois.edu/items/9468/bitstreams/35290/data.pdf
+  headers:
+    content-length: '118'
+    content-type: text/html
+    date: Sat, 05 Sep 2026 12:08:50 GMT
+  media_type: text/html
+  observed_at: '2026-09-05T12:08:47Z'
+  raw_path: sha256/58/bf2215b395dcac74c009aa98701854e43cbe54a1cd3a95fee6a647ca9910d4
+  requested_url: https://www.ideals.illinois.edu/items/9468/bitstreams/35290/data.pdf
+  sha256: 58bf2215b395dcac74c009aa98701854e43cbe54a1cd3a95fee6a647ca9910d4
+  status: 403
+- *id002
+- *id003
+rights_exceptions:
+- No full third-party prose is published. W3C document-use notice was inspected; full
+  text is retained only as raw.
+gaps: []
+known_limits:
+- code: literature-search-remains-partial
+  detail: Three literature sources are admitted alongside one separately locked historical ticket; this is not a complete literature census.
+- code: renear-1993-full-text-unavailable
+  detail: Two HTTP 403 responses are recorded; this unadmitted candidate supplies no content claim.
+instruction_trust: none

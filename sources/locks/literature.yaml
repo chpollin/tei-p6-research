@@ -1,8 +1,8 @@
 schema_version: 1
 lock_id: tei-p5-literature-bounded-seeds
 source_id: tei-p5-literature
-as_of: "2026-09-04"
-retrieval_status: not_started
+as_of: "2026-09-05"
+retrieval_status: partial
 
 scope:
   claim: bounded-not-global
@@ -10,7 +10,7 @@ scope:
   completion_target: bounded-complete
   languages: []
   date_start: null
-  date_end: "2026-09-04"
+  date_end: "2026-09-05"
 
 seed_sets:
   - seed_id: guidelines-4.12.0-bibliography
@@ -37,8 +37,57 @@ rights:
   license_granularity: per-item
   full_text_commit_requires_verified_license: true
 
-records: []
-counts: {}
+authority_policy: The registry classifies this holding as a literature family; each record states its actual authority, including comparative technical standards. No literature claim inherits TEI normative authority.
+
+records:
+  - id: w3c-web-annotation-20170223
+    disposition: included
+    version: W3C Recommendation 2017-02-23
+    url: https://www.w3.org/TR/2017/REC-annotation-model-20170223/
+    snapshot_sha256: a7513e022f56c0a6f4e99ac11aec03f3451d1ff1ce14054780b3ccfb38fa7980
+    source_type: publication
+    authority: official-comparative-technical-standard-not-TEI-policy
+  - id: piez2014range
+    disposition: included
+    version: publisher HTML observed 2026-09-05
+    doi: 10.4242/BalisageVol13.Piez01
+    snapshot_sha256: 4c1a45a70165010f72a5d47848f0bf04b6a3f0394af5b2155fe411efcce5bbf0
+    source_type: publication
+    authority: attributed-scholarly-model-argument
+  - id: renear-wickett2010documents
+    disposition: included
+    version: provisional pre-conference paper, publisher HTML observed 2026-09-05
+    doi: 10.4242/BalisageVol5.Renear01
+    snapshot_sha256: 07afcd383aa4874d5f4c4d4f7c4e1c3fbc1a615a2063774357dbb2dd14d5da1b
+    source_type: publication
+    authority: attributed-provisional-philosophical-argument
+  - id: renear-mylonas-durand-ohco-author1993
+    disposition: unavailable
+    version: repository-described author version 1993; distinct from 1996 publication
+    url: https://www.ideals.illinois.edu/items/9468
+    reason: substantive retrieval returned HTTP 403; no content claims admitted
+counts:
+  wave1_candidates: 4
+  wave1_admitted_publications: 3
+  wave1_unavailable: 1
+bounded_runs:
+  - run_id: W1-LITERATURE
+    manifest: sources/manifests/2026-09-05-research-wave-1-citations.yaml
+    scope: Four candidate works on identity, hierarchy, and annotation; not a seed-set census.
+    queries:
+      - 'site.balisage.net Proceedings Renear Mylonas Durand refining our notion of what text really is'
+      - 'site.w3.org TR 2017 REC annotation-model 20170223'
+      - '"Refining our Notion" "ohco.html"'
+      - 'site.tei-c.org/Vault/P5/4.12.0 "Renear"'
+    inclusion: Primary model arguments or official comparative models with substantive readable text challenging pilot assumptions.
+    exclusion: Snippets alone, tertiary descriptions, and a second citation-chaining pass.
+    seed_check: Pinned BIB-Bibliography.xml entries WADM and Renearetal1996 were checked after initial web discovery; not an exhaustive bibliography disposition.
+    citation_chaining: One bounded search for primary texts citing the seed OHCO paper; no further candidate references followed.
+    completion: partial
 gaps:
-  - code: search-protocol-not-yet-declared
+  - code: full-seed-census-protocol-and-dispositions-remain-open
+    status: blocks-bounded-complete
+  - code: renear-1993-full-text-unavailable
+    status: explicit-access-gap
+  - code: no-zotero-or-jtei-census
     status: blocks-bounded-complete

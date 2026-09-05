@@ -13,6 +13,7 @@ _ALLOWED_OVERVIEW_PATHS = (
     ("sources", "manifests"),
     ("corpus", "normalized"),
     ("corpus", "projections"),
+    ("10_markdown", "documents"),
 )
 
 

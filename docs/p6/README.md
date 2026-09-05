@@ -14,23 +14,30 @@ migratable without presuming that a complete redesign is the correct answer.
 |---|---|
 | [`design-principles.md`](design-principles.md) | What properties should guide every candidate? |
 | [`core-model.md`](core-model.md) | What must a serialization-independent model represent? |
+| [`abstract-text-model-v0.1.md`](abstract-text-model-v0.1.md) | What exactly does the bounded executable candidate mean, how is it checked, and how can it be accepted? |
 | [`blueprints-and-customization.md`](blueprints-and-customization.md) | How can shared models be selected, constrained, and extended? |
 | [`serialization-and-conformance.md`](serialization-and-conformance.md) | How do bindings, validation, equivalence, and loss work? |
 | [`examples-and-migration.md`](examples-and-migration.md) | How are P5/P6 comparisons and migrations made executable? |
+| [`editorial-case-study.md`](editorial-case-study.md) | What do the bounded diary mappings preserve, where do they fail, and what does the separate historical-claim profile test? |
 | [`evaluation.md`](evaluation.md) | How are alternatives compared without assuming the answer? |
 | [`versioning-and-governance.md`](versioning-and-governance.md) | How do identifiers, releases, compatibility, and decisions evolve? |
 | [`research-agenda.md`](research-agenda.md) | Which questions require evidence, prototypes, or governance decisions? |
+| [`text-identity-pilot.md`](text-identity-pilot.md) | How can a bounded text/version/region/annotation experiment be tested and accepted? |
+| [`proposal-outline.md`](proposal-outline.md) | How will the findings, model alternatives, and evaluations form an independent Proposal for TEI P6? |
+| [`research-wave-1.md`](research-wave-1.md) | What bounded P5, discussion, and literature packages feed the first proposal integration? |
 
 The project-wide purpose and constraints remain authoritative in
 `knowledge/specification.md`. Grounded descriptions of P5 belong in the
 numbered evidence chain. Accepted research conclusions belong in `40_output/`.
 This dossier contains design hypotheses, definitions under consideration, and
-contracts for future experiments.
+contracts for experiments. The broader core-model sketch is not an inventory of
+v0.1 features. The [P6 Design chapter](../../40_output/12-p6-design.md) connects
+the bounded candidate to grounded premises and explicit project posits.
 
 ## Candidate architecture
 
 ```text
-P5 evidence and use cases
+P5 + text theory + editorial practice
           |
           v
 requirements and counterexamples
@@ -53,18 +60,19 @@ serialization-independent core model
               comparative evaluation
 ```
 
-The candidate unit of standardization is not a single XML schema. It is a
-system comprising a semantic core, customization rules, normative bindings,
-invariants, conformance levels, diagnostic behavior, and an executable test
-suite.
+This flow sketches one candidate: a semantic core with customization rules,
+normative bindings, invariants, conformance levels, diagnostic behavior, and an
+executable test suite. The need for each component, its boundary, and competing
+arrangements remain questions for comparative evaluation. Neither this diagram
+nor a successful selector pilot settles the architecture.
 
 ## Epistemic discipline
 
 Statements in this directory use four roles:
 
-- **Requirement:** a capability a candidate is evaluated against. It becomes
-  evidence-based only when linked to grounded findings or an explicit project
-  decision.
+- **Requirement:** a capability a candidate is evaluated against. Distinguish
+  requirements derived from grounded findings from explicit project choices;
+  a project decision records a commitment, not external evidence of need.
 - **Hypothesis:** a proposed design choice that must be tested against
   alternatives.
 - **Contract:** an operational rule for a prototype or evaluation.

@@ -18,37 +18,56 @@ related: [index, specification, design, operations, state]
 
 # Schema
 
-This document defines the rules of the vault. It sets out the layer model, the controlled vocabularies, the anchor mechanics per source type, the audit trail, and for every content document type the exact frontmatter and section skeleton. Every content file, whether produced by agent or human, derives from the rules set here. The procedures that produce and check these documents live in [[knowledge/operations]]; this document defines only what a well-formed artifact is.
+This schema defines artifact types, frontmatter, section skeletons, anchor
+forms, and status rules. Every content file follows these contracts.
+[[knowledge/operations]] defines how the files are produced and checked.
 
 ## Layer model
 
 | Layer | Folder | Content | Anchor it carries |
 |---|---|---|---|
-| Sources | `00_sources/` | originals, local only | none; this is the ground |
+| Sources | `00_sources/` | originals, local only | none |
 | Markdown representation | `10_markdown/` | archived full texts, datasets with schema | block IDs, file plus schema |
 | Distillates | `20_distillates/` | one distillate per source | grounding anchors into its source, statement IDs |
 | Assertions | `30_assertions/` | atomic cross-source statements, topic maps | grounding anchors into distillate statements |
 | Output | `40_output/` | one file per chapter | footnote anchors into assertions, posits marked |
 
-The source inventory in `knowledge/state.md` lists every Markdown representation and every distillate, and it is generated from the file state by `python tools/inventory.py . --write` rather than maintained by hand. The files are the one record of what the vault holds, so there is no second bookkeeping that could drift away from them.
+Generate the source inventory in [[knowledge/state]] with
+`python tools/inventory.py . --write`. It lists every representation and
+distillate from actual files and must not be maintained by hand.
 
-The layers carry these definitions. A **source** is the original file exactly as it arrived, kept untouched so that every later form of its content can be checked against it. A **Markdown representation** is the uniform Markdown form of a source, produced once by converting the original and given block IDs so that later layers anchor into passages that never change afterwards. A **distillate** is the set of single statements extracted from one source, each anchored to the passage of the representation it was taken from. An **assertion** is a single source-supported statement synthesized from the distillates of a topic and grounded in at least one distillate statement. The **output** is the final output of the vault, one or more documents such as a report, proposal, thesis or paper; its document type is the chapter, and a **chapter** is an output text in which every load-bearing sentence carries a footnote to an assertion and every own conclusion is marked as a posit.
+A source is the unchanged original. Its Markdown representation is converted
+once and given stable block IDs. A distillate extracts statements from exactly
+one source. An assertion synthesizes one claim from the topic's distillates
+and cites at least one supporting statement. A chapter is the output unit.
+Its factual premises cite assertions and its own conclusions are explicit posits.
 
-Two rules constrain the chain. Anchors are minted only at the layer they belong to; a Markdown representation mints block IDs, a distillate mints statement IDs, and no higher layer creates anchors into material below its direct predecessor. And each layer references only the layer directly beneath it; the output binds to assertions, assertions bind to distillate statements, distillates bind to the blocks of the Markdown representation.
+Anchors are minted only at their own layer. Representations mint block IDs
+and distillates mint statement IDs. Higher layers reference existing anchors
+in their direct predecessor. Chapters cite assertions, assertions cite
+distillate statements, and document distillates cite representation blocks.
 
-The chain fastens onto one property of its subject matter. Whether a passage covers a statement is settled by a fast oracle, a resolver that answers in milliseconds whether the anchor exists and what stands at it. Qualities without such an oracle stay unrewarded wherever checking has to scale, which is why the maintainability of code goes unscored in machine learning and shows its cost only in weeks and months. Verification here is therefore fastened to the one relation that is cheap to test, and everything the relation cannot settle is handed to the instances defined in [[knowledge/operations]].
+Anchor resolution establishes structural traceability. It does not establish
+that the passage supports the claim. Source-support review and human
+verification remain separate checks under [[knowledge/operations]].
 
 ## Controlled vocabularies
 
-- `type`: `representation` | `distillate` | `assertion` | `moc` | `glossary` | `chapter`. The value `representation` is the machine-side short form for Markdown representation; the prose of this vault uses the full term.
-- `source-type`: `document` | `publication` | `data`
-- `channel`: `handover` | `collection` | `import` | `deep-research`
-- `status`: `grounded` | `validated` | `verified`, plus `contested` (assertions only) and `superseded` (distillates only)
-- `topics`: values must each name an existing topic map; the set of `MOC-*.md` files in `30_assertions/` is the controlled topic set
+| Field | Allowed values or constraint |
+|---|---|
+| `type` | `representation`, `distillate`, `assertion`, `moc`, `glossary`, `chapter` |
+| `source-type` | `document`, `publication`, `data` |
+| `channel` | `handover`, `collection`, `import`, `deep-research` |
+| `status` | `grounded`, `validated`, `verified`, plus `contested` for assertions and `superseded` for distillates |
+| `topics` | Each value names an existing `MOC-*.md` topic map in `30_assertions/` |
+
+The value `representation` is the machine-side abbreviation. Prose uses
+“Markdown representation.”
 
 ## Audit trail
 
-A status records the outcome of checks that actually ran. Every check writes its date into the `checked` map of the document it checked:
+Status records checks that actually ran. Every check writes its date into
+the checked artifact's `checked` map.
 
 ```yaml
 status: validated
@@ -57,11 +76,24 @@ checked:
   machine-review: 2026-07-11
 ```
 
-The discipline is machine-enforced: `validated` requires `checked.validation` and `checked.machine-review`; `verified` additionally requires `checked.verification`. Every entry of the map carries an ISO date, because a record without one cannot be held against the content it judges. `grounded` is the entry status of every freshly produced document and requires no entry. A document's status is the minimum of the states of its anchors, judged against the anchors an assertion names in `grounding` and a chapter in its `assertions` mirror, so one unreviewed anchor keeps the whole document at `grounded`. `contested` and `superseded` lie beside the ladder and earn no rank, so a document resting on one of them stays at `grounded` as well. For publication distillates the intake-time quotation check is recorded as `checked.quote`, because the source text may be unavailable to later validation runs. No instance ever sets a status above its own authority; the contracts are defined in [[knowledge/operations]].
+`validated` requires `checked.validation` and `checked.machine-review`.
+`verified` additionally requires `checked.verification`. Every entry has an
+ISO date. A new artifact enters as `grounded` without requiring a check entry.
+
+An artifact's status is the minimum status of its anchors.
+Assertions use their `grounding` field and chapters their `assertions` mirror
+for this comparison. An unreviewed anchor keeps the dependent artifact at
+`grounded`. The separate states `contested` and `superseded` have no ladder
+rank, so their dependents also remain `grounded`.
+
+Publication distillates record the intake quotation check as `checked.quote`
+because the full text may be unavailable later. No check may assign a status
+above its authority in [[knowledge/operations]].
 
 ## Source metadata
 
-Every Markdown representation carries a compact, Dublin-Core-compatible metadata block. Licensing and confidentiality are metadata of the individual source; nothing else in the architecture depends on them.
+Every representation carries Dublin-Core-compatible source metadata.
+Licensing and confidentiality are properties of the individual source.
 
 ```yaml
 metadata:
@@ -76,15 +108,24 @@ metadata:
 
 ## Source types
 
-The source type of a source follows from whether its content may be stored in the vault and from the anchor that storage decision permits.
+Choose the source type by storage rights and the required anchor.
 
-A **document** is a source whose full text may be stored in the vault. It is converted into a Markdown representation and anchored by block reference into that representation. A **publication** is a source that is only cited. What lies in the vault is the bibliographic record, and the anchor is the verbatim quotation together with the identifier. A **data** source is a file whose anchor is a deterministic computation over that file. An aggregate or a statistical finding exists at no single passage, so the computation takes the place of one.
+| Source type | Representation and anchor |
+|---|---|
+| `document` | Stored full text in a Markdown representation, anchored by block references |
+| `publication` | Bibliographic record, anchored by an exact quotation and source identifier |
+| `data` | Data file and schema description, anchored by a deterministic computation |
 
-The criterion is storability, and the publication status of a source decides nothing by itself, so an open-access article that may be stored is treated as a `document`. Where a full text may be stored, `document` is preferred over `publication`, because its anchors resolve inside the vault.
+An aggregate finding may have no corresponding passage. Its computation
+therefore supplies the anchor.
+
+Publication status does not determine source type. Prefer `document` when
+the full text may be stored, including an open-access article with suitable
+rights, because its anchors resolve inside the vault.
 
 ## Bibliographic records
 
-`references/` holds the bibliographic records of the citable-only sources as CSL JSON, exported from the reference manager. Each file is a JSON array of records, and each record carries an `id` alongside its bibliographic fields.
+`references/` holds the bibliographic records of the citable-only sources as CSL JSON, normally exported from the reference manager. A small curated primary-metadata import follows the recorded intake procedure in [[knowledge/operations]]. Each file is a JSON array of records, and each record carries an `id` alongside its bibliographic fields.
 
 ```json
 [
@@ -108,7 +149,9 @@ Each type carries its frontmatter as a code block, followed by the section skele
 
 ### 1. Markdown representation (source-type: document)
 
-The uniform Markdown form of a source, produced once by converting the original and given block IDs so that later layers anchor into passages that never change afterwards. Exactly one per source, stored in `10_markdown/documents/`. A revised source enters as a new file with a date-suffixed slug; existing anchors keep resolving against the old file.
+Store exactly one immutable representation per admitted document source in
+`10_markdown/documents/`. A revised source enters as a new file with a
+date-suffixed slug. Existing anchors continue to address the older file.
 
 ```yaml
 ---
@@ -123,7 +166,8 @@ updated: 2026-01-01
 ---
 ```
 
-The body is the converted full text under an H1 taken from the original. Every anchor-relevant paragraph ends with a block ID:
+Use the original H1 above the converted full text. Each anchor-relevant
+paragraph ends with a block ID.
 
 ```markdown
 The board approves centrally operated services. ^a1b2
@@ -152,7 +196,10 @@ The body describes columns, units, encodings and known limitations. The anchor o
 
 ### 3. Distillate
 
-The set of single statements extracted from one source, each anchored to the passage of the representation it was taken from. One file per source in `20_distillates/<source-type>s/`, same slug as its Markdown representation. The core statements reproduce their source without merging it with other sources; synthesis belongs to assertions, and judging the source belongs to the Appraisal section defined below.
+Store one distillate per source in `20_distillates/<source-type>s/`,
+using the representation's slug where one exists. Its core statements
+reproduce that source alone. Cross-source synthesis belongs in assertions
+and source appraisal in the optional Appraisal section.
 
 ```yaml
 ---
@@ -196,17 +243,21 @@ updated: 2026-01-01
 - [[20_distillates/…]] / [[30_assertions/…]]
 ```
 
-Every core statement carries exactly one grounding anchor into its source and ends with a statement ID (`^s1`, `^s2`, …), the anchor assertions bind to. The anchor form varies by source type:
+Each core statement has exactly one source anchor and ends with a statement
+ID such as `^s1`. Assertions cite these IDs. The source type determines the
+anchor form.
 
-- **document**: a block reference into the Markdown representation, as above.
-- **publication**: a verbatim quotation with citation instead of a block reference. The quotation must appear character for character in the source; the intake-time check is recorded as `checked.quote`.
+- For a document, use a block reference into its representation.
+- For a publication, use a verbatim quotation and citation. Check exact
+  quotation identity at intake and record `checked.quote`.
 
   ```markdown
   - <statement in own words> ^s1
     > "<verbatim quotation>" (<identifier>, p. <n>)
   ```
 
-- **data**: a reproducible computation instead of a block reference, named on an indented line. The script lives in `tools/analysis/` and is deterministic.
+- For data, name a reproducible computation on an indented line. Its
+  deterministic script lives in `tools/analysis/`.
 
   ```markdown
   - <statement, e.g. an aggregate or finding> ^s1
@@ -215,9 +266,16 @@ Every core statement carries exactly one grounding anchor into its source and en
 
   The script reads the data file of the Markdown representation, takes no arguments, and prints the stated result and nothing else to standard output. Validation re-runs it from the vault root and compares that output character for character with the stated result, so a formatting difference is a defect.
 
-The **Appraisal** section is optional and holds the judgment of the source, covering the standing of its venue and its review, the strengths and limits of its method, its relevance to the output of this vault, and the position the vault takes towards it, as far as each applies to the source at hand. Saying what a source is worth is a different speech act from saying what it says, and the section separates the two so that a reader can tell evidence from opinion at a glance. The appraisal is the vault's own judgment and therefore a posit, so it carries no grounding obligation and no anchor of its own. It also mints no IDs, because every ID in a distillate is citable from the assertion layer; validation raises `E-STATEMENT` on an ID minted anywhere but in the core statements, which is what keeps an appraisal from ever becoming grounding. Where an appraisal shapes the output, it enters as a posit footnote there.
+The optional **Appraisal** evaluates the source's venue, review, method,
+relevance, and limitations where applicable. It expresses the project's
+judgment and carries no grounding obligation. It cannot mint anchors or
+statement IDs. Validation raises `E-STATEMENT` for any ID outside Core
+statements. An appraisal used in output becomes a posit footnote.
 
-The **Open questions** section holds questions and no findings. A finding that could carry an assertion belongs in the core statements with an anchor and an ID of its own, and it is lifted there rather than cited from where it sits. The section mints no IDs for the same reason the appraisal mints none, and that is what makes it the one place in the chain where unanchored material may rest, including whatever a perspective pass produced before the sources were chosen.
+**Open questions** contains questions rather than findings and mints no IDs.
+A source-supported finding belongs in Core statements with its own anchor
+and ID. Unresolved perspectives may remain as questions until sources can
+support a statement.
 
 ### 4. Assertion
 
@@ -255,15 +313,29 @@ updated: 2026-01-01
 - [[30_assertions/…]]
 ```
 
-A conclusion without source support never becomes an assertion; it enters the output as a posit. Assertions that cannot be reconciled are both set to `contested` and linked to each other in `contested-with`.
+A conclusion without source support enters output as a posit. Irreconcilable
+assertions are both marked `contested` and linked reciprocally in
+`contested-with`.
 
-Posit and assertion differ in kind and not in ripeness, and reading the posit as an unripe assertion is the common mistake. An assertion rests on sources and carries a status on the ladder, which records how far it has been checked. A posit rests on the author, and it carries no status because it makes no claim about a source that a check could test. A posit therefore never matures into an assertion. Where a source turns up later, a new assertion is written and the posit falls away. What it leaves behind is its open evidence question, which is a research task rather than a defect, and the `posits` count of a chapter measures how much of that text stands on the author alone.
+An assertion reports a source-supported claim and carries a check status.
+A posit records the author's judgment, with no status of its own. It does not
+mature into an assertion. If later sources support a claim, write a new
+assertion and remove the replaced posit. The open evidence question remains
+a research task. A chapter's `posits` count records its authorial conclusions.
 
-A passage can support a statement whose subject is not the subject the assertion is about, and the coverage relation still holds. No check catches this on its own, because validation and machine review test exactly that relation. Two cases of such a displaced subject occur often enough to be named.
+Source support can conceal a shift in what the statement is about.
+Two recurring forms require explicit attribution or additional evidence.
 
-**Self-report.** Where a source speaks about itself, about its own priority, reach or achievement, its passage covers the claim and never the matter the claim is about. The distillate holds such a statement as what the source asserts. An assertion built from it either carries the speaker along, in the form that the source claims something, or it rests on a second and independent source.
+**Self-report.** A source's claim about its own priority, reach, or achievement
+supports an attributed report of that claim. Asserting the achievement itself
+requires an independent source. Preserve this attribution in the distillate
+and assertion.
 
-**State report.** Where a source shows the matter in one state at one time, its passage covers that state and never the matter across time. A restored object witnesses the restoration, a dated inventory witnesses the day it was taken, a plan witnesses what was intended when it was written. The distillate holds such a statement together with the state and its date. An assertion built from it either names the state and its date, or it rests on a source that establishes the property for the span the assertion claims.
+**State report.** A source that shows an object in one state at one time
+supports that dated observation. Preserve the state and date in the
+distillate and assertion, or cite a source that establishes the wider period
+being claimed. A restoration records the restored state, an inventory its
+dated contents, and a plan an intention.
 
 ### 5. Topic map (MOC)
 
@@ -315,7 +387,11 @@ The body gives the definition in one or two sentences with a grounding anchor wh
 
 ### 7. Chapter
 
-An output text in which every load-bearing sentence carries a footnote to an assertion and every own conclusion is marked as a posit. One file per chapter in `40_output/`, continuous prose in the project's working language and style sheet. The type name `chapter` denotes the acceptance-capable unit of the output, one file that is checked and accepted on its own; in an article genre it corresponds to a section.
+Store one chapter per file in `40_output/`, using continuous prose in the
+project's working language and style. Every factual premise cites an assertion
+and every own conclusion is marked as a posit. The chapter is independently
+checkable and acceptable as an output unit. In an article it may correspond
+to a section.
 
 ```yaml
 ---
@@ -329,7 +405,8 @@ updated: 2026-01-01
 ---
 ```
 
-The anchor contract of the output: every load-bearing sentence carries a footnote marker; every footnote begins with one of two keywords and nothing else counts.
+Every load-bearing sentence has a footnote marker. Each footnote begins with
+one of the two keywords shown below. Other openings do not satisfy the contract.
 
 ```markdown
 Water use fell by a third after metering was introduced.[^1] The board should
@@ -340,9 +417,11 @@ therefore extend metering to all sites.[^2]
       across sites. Open evidence question: site-level baseline data.
 ```
 
-Validation cross-checks the footnotes against the `assertions` mirror and the `posits` count. Footnotes are the reference notation; an instantiation may substitute another notation as long as marker, keyword and mirror survive.
+Validation compares the footnotes with the `assertions` mirror and `posits`
+count. An alternative notation must preserve the marker, keyword, and mirror.
 
-Where a chapter reports a matter the sources disagree on, it grounds in both sides of the contested pair. A chapter that names one assertion of such a pair and none of its counterparts presents the dispute as settled, and validation raises `W-CONTESTED`.
+A chapter discussing contested claims cites both sides of each pair.
+Citing one without any counterpart raises `W-CONTESTED`.
 
 ## Meta documents
 

@@ -1,0 +1,149 @@
+{
+  "model_version": "0.1",
+  "agents": [
+    {
+      "id": "editor",
+      "label": "Editor Ada"
+    },
+    {
+      "id": "reviewer",
+      "label": "Editor Bea"
+    }
+  ],
+  "concepts": [],
+  "texts": [
+    {
+      "id": "text",
+      "label": "An editorially continuous fox sentence"
+    }
+  ],
+  "versions": [
+    {
+      "id": "v1",
+      "content": "red fox",
+      "sha256": "e4b9541d4e1fb0603420bb154fe94a0244ae3635f8f5b217dc67407755948811",
+      "parents": []
+    },
+    {
+      "id": "v2",
+      "content": "a red fox!",
+      "sha256": "83bee8d0ad36b5b9c7f7cf8b422779eb41aa4d84a8707e809bd97d2269d5dc0b",
+      "parents": [
+        "v1"
+      ]
+    },
+    {
+      "id": "v3",
+      "content": "red fox / red fox",
+      "sha256": "78c93968a6cb4648c78042f5b4636921d3e98bcd7ff04e70bf64e8fa4f721f59",
+      "parents": [
+        "v2"
+      ]
+    },
+    {
+      "id": "v4",
+      "content": "no match",
+      "sha256": "9bc94ab9b39bfff44297d99f66b2d1dc08ba96658be582098c879d223aa84283",
+      "parents": [
+        "v3"
+      ]
+    }
+  ],
+  "continuities": [
+    {
+      "id": "continuity",
+      "text": "text",
+      "versions": [
+        "v1",
+        "v2",
+        "v3",
+        "v4"
+      ],
+      "agent": "editor",
+      "criterion": "For this synthetic example, successive sentence edits retain editorial text identity; target matches require separate review."
+    }
+  ],
+  "selections": [
+    {
+      "id": "source_range",
+      "version": "v1",
+      "selector": {
+        "kind": "ranges",
+        "segments": [
+          {
+            "start": 0,
+            "end": 7,
+            "quote": "red fox"
+          }
+        ]
+      }
+    },
+    {
+      "id": "source_quote",
+      "version": "v1",
+      "selector": {
+        "kind": "quote",
+        "exact": "fox",
+        "match": "one",
+        "prefix": "red ",
+        "suffix": ""
+      }
+    },
+    {
+      "id": "source_point",
+      "version": "v1",
+      "selector": {
+        "kind": "point",
+        "offset": 0
+      }
+    },
+    {
+      "id": "source_parts",
+      "version": "v1",
+      "selector": {
+        "kind": "ranges",
+        "segments": [
+          {
+            "start": 0,
+            "end": 3,
+            "quote": "red"
+          },
+          {
+            "start": 4,
+            "end": 7,
+            "quote": "fox"
+          }
+        ]
+      }
+    },
+    {
+      "id": "source_adjacent",
+      "version": "v1",
+      "selector": {
+        "kind": "ranges",
+        "segments": [
+          {
+            "start": 0,
+            "end": 3,
+            "quote": "red"
+          },
+          {
+            "start": 3,
+            "end": 7,
+            "quote": " fox"
+          }
+        ]
+      }
+    }
+  ],
+  "readings": [],
+  "annotations": [
+    {
+      "id": "annotation",
+      "agent": "editor",
+      "selection": "source_range",
+      "body": "This source target remains fixed when a reanchoring proposal is computed."
+    }
+  ],
+  "relations": []
+}

@@ -1,4 +1,4 @@
-# Markdown projections
+# Corpus projections
 
 Projections are deterministic, disposable reading views over normalized corpus
 records. They exist to make long-lived source material navigable in Obsidian and
@@ -18,8 +18,18 @@ A projection must:
 - remain reproducible byte-for-byte from the normalized records.
 
 Projection paths are not Grounded Vault anchors. To enter the evidence chain, a
-selected projection is promoted under the existing `00_sources`/`10_markdown`
-rules, where immutable block anchors are minted. Downstream layers continue to
+selected primary source is admitted under the existing `00_sources`/`10_markdown`
+rules, or the citation-only publication route. The projection itself is not
+promoted into evidence. Downstream layers continue to
 reference only the layer directly beneath them.
 
-No projections have been generated yet.
+The P5 specification navigation projection has its bounded contract in
+`docs/p6/research-wave-1.md`. Build it with:
+
+```powershell
+py -3 -m tools.tei.build_atlas --output corpus/projections/p5-specs-4.12.0.json
+```
+
+Append `--check` for a read-only byte comparison. It requires the locked local
+Git mirror. The JSON represents direct declarations and source locators;
+inherited semantics and a compiled P5 model remain outside its scope.

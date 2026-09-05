@@ -142,7 +142,12 @@ python tools/build_docs.py --date YYYY-MM-DD
 
 After changing registry, lock, manifest, or materials-overview inputs or code,
 run the corresponding `tools/build_corpus_overview.py` command documented in
-`SETUP.md`. Never hand-edit `docs/index.html` or `docs/corpus.html`.
+`SETUP.md`. All public HTML is generated. The home builder owns `docs/index.html`
+and its `docs/home.html` compatibility alias. The other builders own
+`docs/project.html`, `docs/corpus.html`, `docs/knowledge.html`, and
+`docs/model.html`. Regenerate affected pages using the commands in `SETUP.md`.
+Never hand-edit these outputs. All pages share the navigation, footer, and base
+styles in `tools/sitegen/chrome.py` and `tools/sitegen/assets/workbench.css`.
 
 ## Subagents
 

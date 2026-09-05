@@ -1,0 +1,70 @@
+/* Model-specific relationships and reference layout; shared UI is workbench.css. */
+.model-main { max-width: 1300px; }
+.model-main > section { margin-top: 2.8rem; }
+.model-main p { max-width: 100ch; }
+.model-sections { display: flex; gap: .6rem 1.3rem; flex-wrap: wrap; margin: 1.3rem 0; }
+.model-sections a { font-size: .9rem; }
+.model-controls { display: flex; flex-wrap: wrap; gap: .8rem; align-items: baseline; }
+.model-class-choices { display: flex; flex-wrap: wrap; gap: .4rem; }
+.model-class-choices button { font-family: var(--mono); font-size: .8rem; }
+.model-class-choices button[aria-pressed=true] { background: #dce7f1; font-weight: bold; }
+#model-show-all { font-size: .8rem; }
+.model-diagram-scroll { overflow: auto; margin: 1rem 0; }
+.model-diagram { display: block; width: 100%; min-width: 850px; height: auto; }
+.model-node { cursor: pointer; }
+.model-node rect { fill: var(--soft); }
+.model-node text { font-family: var(--mono); font-size: 12px; fill: var(--muted); }
+.model-node .model-node-name { font-size: 16px; font-weight: 700; fill: var(--ink); }
+.model-node[data-selected=true] rect { fill: #dce7f1; }
+.model-node[data-related=true] rect { fill: #edf2f6; }
+.model-node:focus-visible { outline: none; }
+.model-node:focus-visible rect { stroke: var(--link); stroke-width: 3; }
+.model-abstract rect { fill: #f5f1e9; }
+.model-edge path { fill: none; stroke: #8796a4; stroke-width: 1.4; }
+#model-arrow path { fill: #8796a4; }
+.model-diagram[data-filtered=true] .model-edge { opacity: .08; }
+.model-diagram[data-filtered=true] .model-edge[data-selected=true] { opacity: 1; }
+.model-edge[data-selected=true] path { stroke: var(--link); stroke-width: 2; }
+.model-inspector { background: var(--soft); padding: 1.2rem 1.4rem; margin: .5rem 0 1.5rem; }
+.model-inspector h3 { margin-top: 0; }
+#model-selection-status { color: var(--muted); font-size: .85rem; }
+.model-inspector table { background: var(--paper); }
+.model-inspector .model-location { display: none; }
+.model-inspector-content p { max-width: 95ch; }
+.model-classes { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem 3rem; }
+.model-class { padding: .2rem 0 1rem; scroll-margin-top: 1rem; min-width: 0; }
+.model-class h3 { font-family: var(--mono); font-size: 1.07rem; }
+.model-class h4 { font-size: .9rem; margin: 1rem 0 .5rem; }
+.model-location { color: var(--muted); font-size: .85rem; }
+.model-table-scroll, .model-definition .table-scroll { max-width: 100%; overflow: auto; margin: .8rem 0 1.2rem; }
+.model-main table { width: 100%; border-collapse: collapse; text-align: left; font-size: .87rem; }
+.model-main caption { text-align: left; color: var(--muted); font-size: .8rem; margin-bottom: .5rem; }
+.model-main th, .model-main td { padding: .55rem .7rem; vertical-align: top; }
+.model-main thead { background: var(--soft); }
+.model-main tbody tr:nth-child(even) { background: #fafbfc; }
+.model-main tbody th { font-weight: 400; }
+.model-main table p { margin: 0; }
+.model-class-references ul { padding-left: 1.2rem; font-size: .87rem; }
+.model-class-references li { margin: .45rem 0; }
+.model-count { font-family: var(--mono); white-space: nowrap; }
+.model-rules, .model-operations { display: grid; grid-template-columns: 4.5rem minmax(0, 1fr); gap: 1rem 1.4rem; max-width: 1100px; }
+.model-rules dt, .model-operations dt { font-weight: 600; }
+.model-rules dd, .model-operations dd { margin: 0; min-width: 0; overflow-wrap: anywhere; }
+.model-operations { grid-template-columns: minmax(12rem, 17rem) minmax(0, 1fr); }
+.model-definition article { max-width: 100ch; }
+.model-definition article h2 { font-size: 1.25rem; margin-top: 2rem; }
+.model-definition article h3 { font-size: 1.1rem; margin-top: 2rem; }
+.model-definition article h4 { margin-top: 1.5rem; }
+.model-definition article li { margin: .45rem 0; }
+@media(max-width:850px) {
+  .model-classes { grid-template-columns: 1fr; }
+  .model-operations { grid-template-columns: minmax(0, 1fr); gap: .4rem; }
+  .model-operations dd { margin-bottom: 1rem; }
+  .model-diagram { min-width: 950px; }
+}
+@media(max-width:540px) {
+  .model-rules { grid-template-columns: 2.8rem minmax(0, 1fr); gap: 1rem .6rem; }
+  .model-inspector { padding: 1rem; }
+  .model-main > section { margin-top: 2rem; }
+}
+@media print { .model-controls, .model-inspector { display: none !important; } .model-diagram .model-edge { opacity: 1 !important; } .model-classes { display: block; } }

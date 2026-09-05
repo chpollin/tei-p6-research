@@ -20,17 +20,26 @@ must name the supported conformance level for each model feature and use case.
 
 ## Conformance classes
 
+Report model preservation separately from lexical or byte preservation. The
+following are proposed binding classes, not Grounded Vault research statuses.
+
 | Class | Required behavior |
 |---|---|
-| lossless | model to binding to model preserves every normative distinction |
-| semantic | declared meaning is preserved, but lexical or presentation details may normalize |
+| model-lossless | model to binding to model preserves every distinction required by the named model and blueprint |
+| declared-equivalence | preserves an explicitly defined task-specific equivalence relation, naming which model differences may be ignored |
 | projection | a named subset is exported and omitted information is reported |
 | unsupported | the binding rejects the construct with a defined diagnostic |
 
-A document may be lossless for one blueprint and only a projection for another.
+A conversion may be model-lossless for one blueprint and a projection for another.
 Conformance is therefore reported against the model version, blueprint,
 binding version, and declared class rather than against the file extension
 alone.
+
+Lexical normalization is compatible with model-lossless conversion only when
+the changed distinction is outside that model contract. Byte identity is a
+separate archival property. Ignoring differences in local labels is permissible
+only if the declared task does not require those labels and required object
+identities remain recoverable.
 
 ## Candidate bindings
 
@@ -85,6 +94,12 @@ syntax parsing
                         -> cross-binding conformance
 ```
 
+The diagram groups responsibilities; implementations must follow the actual
+dependencies between checks. Resolve and pin definitions needed by a rule
+before evaluating it. Report a check as not evaluated when a required
+dependency is unavailable, separately from a violated rule. Reference cycles
+are violations only where the relevant relation or contract prohibits them.
+
 Candidate technologies include RELAX NG and Schematron for XML, JSON Schema for
 JSON-shaped data, SHACL or ShEx for RDF graphs, and an implementation-neutral
 invariant layer for rules that those languages cannot express consistently.
@@ -96,10 +111,16 @@ only the part of the contract assigned to that validation layer.
 
 ## Semantic comparison
 
-Roundtrip tests compare normalized model states, not source bytes. The
-comparison process must preserve semantic order, identity, datatypes, language,
-explicit versus inferred values where relevant, relations, spans, and named
-hierarchies.
+Define the comparison relation before evaluating a converter, with examples
+that must compare equal and examples that must remain different. Distinguish
+identity preservation from permitted renaming of local identifiers. A
+converter's own normalization is not sufficient evidence of preserved meaning.
+
+Model roundtrips compare the declared model distinctions; byte preservation
+requires a separate test. The comparison contract names its treatment of
+order, identity, datatypes, language, explicit versus inferred values,
+relations, spans, and named hierarchies. Any ignored difference needs a
+task-specific rationale and an independently reviewed expected outcome.
 
 Each roundtrip produces a report containing the input binding and version,
 blueprint, normalization steps, losses, unsupported constructs, diagnostics,

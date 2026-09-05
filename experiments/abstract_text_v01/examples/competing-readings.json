@@ -1,0 +1,114 @@
+{
+  "model_version": "0.1",
+  "agents": [
+    {
+      "id": "editor",
+      "label": "Editor Ada"
+    },
+    {
+      "id": "reviewer",
+      "label": "Editor Bea"
+    }
+  ],
+  "concepts": [
+    {
+      "id": "unit",
+      "label": "Editorial unit",
+      "definition": "A contiguous unit asserted by an editor.",
+      "applies_to": "node"
+    },
+    {
+      "id": "disagrees",
+      "label": "Disagrees with",
+      "definition": "An attributed disagreement; consistency is not machine evaluated.",
+      "applies_to": "relation"
+    }
+  ],
+  "texts": [],
+  "versions": [
+    {
+      "id": "v1",
+      "content": "abcdef",
+      "sha256": "bef57ec7f53a6d40beb640a780a639c83bc29ac8a9816f1fc6c5c6dcd93c4721",
+      "parents": []
+    }
+  ],
+  "continuities": [],
+  "selections": [
+    {
+      "id": "left",
+      "version": "v1",
+      "selector": {
+        "kind": "ranges",
+        "segments": [
+          {
+            "start": 0,
+            "end": 4,
+            "quote": "abcd"
+          }
+        ]
+      }
+    },
+    {
+      "id": "right",
+      "version": "v1",
+      "selector": {
+        "kind": "ranges",
+        "segments": [
+          {
+            "start": 2,
+            "end": 6,
+            "quote": "cdef"
+          }
+        ]
+      }
+    }
+  ],
+  "readings": [
+    {
+      "id": "readingA",
+      "version": "v1",
+      "agent": "editor",
+      "label": "First editorial reading",
+      "nodes": [
+        {
+          "id": "nodeA",
+          "type": "unit",
+          "selection": "left",
+          "parent": null
+        }
+      ]
+    },
+    {
+      "id": "readingB",
+      "version": "v1",
+      "agent": "reviewer",
+      "label": "Competing editorial reading",
+      "nodes": [
+        {
+          "id": "nodeB",
+          "type": "unit",
+          "selection": "right",
+          "parent": null
+        }
+      ]
+    }
+  ],
+  "annotations": [],
+  "relations": [
+    {
+      "id": "relationA",
+      "type": "disagrees",
+      "source": "nodeA",
+      "target": "nodeB",
+      "agent": "editor"
+    },
+    {
+      "id": "relationB",
+      "type": "disagrees",
+      "source": "nodeB",
+      "target": "nodeA",
+      "agent": "reviewer"
+    }
+  ]
+}

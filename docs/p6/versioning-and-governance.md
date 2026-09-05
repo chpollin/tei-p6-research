@@ -16,10 +16,17 @@ codes, examples, and conformance tests. A release identifies a coherent set of
 compatible versions rather than assuming that all components always change
 together.
 
-Every governed object needs a stable identifier, owner, version, status,
-dependency declaration, change history, and replacement relation where
-applicable. Human-readable labels and documentation may change without changing
-identity; semantic changes require a version decision.
+Distinguish the persistent identifier of a governed object from the immutable
+identifier of a particular definition. An instance's dependency context must
+make the applicable definition recoverable. Governed definitions name their
+owner, dependencies, change history, and replacement relations where applicable.
+
+A wording change counts as editorial only when interpretation, validation, and
+processing consequences remain unchanged. A semantic change requires an
+explicit decision whether it revises the same concept or introduces a distinct
+concept, with relations to earlier definitions and consequences for existing
+data. A content hash identifies a definition's bytes, not the correctness of
+that semantic decision.
 
 ## Change classes
 
@@ -103,6 +110,7 @@ reference validators, converters, compatibility guidance, implementation
 reports, and a transition window. Governance should make it possible for P5 and
 P6 ecosystems to coexist while projects evaluate migration.
 
-The research project evaluates such policies comparatively. Any eventual
-recommendation remains an independent posit until adopted through the official
-TEI governance process.
+The research project evaluates such policies comparatively. Its recommendation
+remains a reasoned posit. If an official body adopts a policy, that separate
+event may be reported through grounded process records; adoption neither makes
+the research reasoning a source fact nor supplies human verification of it.

@@ -15,5 +15,13 @@ jobs:
       - run: pip install pyyaml pytest
       - name: Validate the vault
         run: python tools/validate.py .
-      - name: Test the validator
-        run: python -m pytest tests -q
+      - name: Check current first-wave source-support review
+        run: python tools/check_wave1_sources.py . --review-only
+      - name: Reproduce Abstract Text Model 0.1
+        run: python tools/check_abstract_text_v01.py --check
+      - name: Reproduce editorial cases and current source review
+        run: |
+          python tools/ingest_editorial_cases.py --check
+          python tools/check_editorial_cases.py --check
+      - name: Check the bounded pilot and run the full test suite
+        run: python tools/check_text_identity_pilot.py

@@ -1,0 +1,1878 @@
+{
+  "format_version": 1,
+  "cases": [
+    {
+      "id": "fixed-position",
+      "description": "A resolves on its immutable named version.",
+      "model": {
+        "texts": [
+          {
+            "id": "t1"
+          }
+        ],
+        "versions": [
+          {
+            "id": "v1",
+            "text": "t1",
+            "content": "The red fox.",
+            "sha256": "38e8088daaa555fe087381b9f11ced9c76507a2b7242a1442ef4b1c70763aca3"
+          }
+        ],
+        "regions": [
+          {
+            "id": "r1",
+            "version": "v1",
+            "selector": {
+              "kind": "A",
+              "start": 4,
+              "end": 7,
+              "quote": "red"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "id": "a1",
+            "region": "r1",
+            "body": "Synthetic interpretation"
+          }
+        ]
+      },
+      "expected": {
+        "diagnostics": [],
+        "resolutions": {
+          "r1": {
+            "version": "v1",
+            "start": 4,
+            "end": 7,
+            "quote": "red"
+          }
+        }
+      }
+    },
+    {
+      "id": "fixed-quotation",
+      "description": "B resolves a unique quote on its named version.",
+      "model": {
+        "texts": [
+          {
+            "id": "t1"
+          }
+        ],
+        "versions": [
+          {
+            "id": "v1",
+            "text": "t1",
+            "content": "The red fox.",
+            "sha256": "38e8088daaa555fe087381b9f11ced9c76507a2b7242a1442ef4b1c70763aca3"
+          }
+        ],
+        "regions": [
+          {
+            "id": "r1",
+            "version": "v1",
+            "selector": {
+              "kind": "B",
+              "quote": "red"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "id": "a1",
+            "region": "r1",
+            "body": "Synthetic interpretation"
+          }
+        ]
+      },
+      "expected": {
+        "diagnostics": [],
+        "resolutions": {
+          "r1": {
+            "version": "v1",
+            "start": 4,
+            "end": 7,
+            "quote": "red"
+          }
+        }
+      }
+    },
+    {
+      "id": "insertion-stale-position",
+      "description": "Reusing A positions after insertion fails quote integrity.",
+      "model": {
+        "texts": [
+          {
+            "id": "t1"
+          }
+        ],
+        "versions": [
+          {
+            "id": "v1",
+            "text": "t1",
+            "content": "Now: The red fox.",
+            "sha256": "c589dd9ff410b3ca35e7301acaad657e807f3a7d878a3800404488b36a01f897"
+          }
+        ],
+        "regions": [
+          {
+            "id": "r1",
+            "version": "v1",
+            "selector": {
+              "kind": "A",
+              "start": 4,
+              "end": 7,
+              "quote": "red"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "id": "a1",
+            "region": "r1",
+            "body": "Synthetic interpretation"
+          }
+        ]
+      },
+      "expected": {
+        "diagnostics": [
+          "E_QUOTE"
+        ],
+        "resolutions": {}
+      }
+    },
+    {
+      "id": "insertion-quotation",
+      "description": "B can find the same literal quote after insertion; interpretation is not inferred.",
+      "model": {
+        "texts": [
+          {
+            "id": "t1"
+          }
+        ],
+        "versions": [
+          {
+            "id": "v1",
+            "text": "t1",
+            "content": "Now: The red fox.",
+            "sha256": "c589dd9ff410b3ca35e7301acaad657e807f3a7d878a3800404488b36a01f897"
+          }
+        ],
+        "regions": [
+          {
+            "id": "r1",
+            "version": "v1",
+            "selector": {
+              "kind": "B",
+              "quote": "red"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "id": "a1",
+            "region": "r1",
+            "body": "Synthetic interpretation"
+          }
+        ]
+      },
+      "expected": {
+        "diagnostics": [],
+        "resolutions": {
+          "r1": {
+            "version": "v1",
+            "start": 9,
+            "end": 12,
+            "quote": "red"
+          }
+        }
+      }
+    },
+    {
+      "id": "edit-within-position",
+      "description": "An edit within the region breaks A quote integrity.",
+      "model": {
+        "texts": [
+          {
+            "id": "t1"
+          }
+        ],
+        "versions": [
+          {
+            "id": "v1",
+            "text": "t1",
+            "content": "The blue fox.",
+            "sha256": "bb997362c3cfedfd13afc34460ed7af36c7eb2730645bff0f9a2b8380b0f5f32"
+          }
+        ],
+        "regions": [
+          {
+            "id": "r1",
+            "version": "v1",
+            "selector": {
+              "kind": "A",
+              "start": 4,
+              "end": 7,
+              "quote": "red"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "id": "a1",
+            "region": "r1",
+            "body": "Synthetic interpretation"
+          }
+        ]
+      },
+      "expected": {
+        "diagnostics": [
+          "E_QUOTE"
+        ],
+        "resolutions": {}
+      }
+    },
+    {
+      "id": "edit-within-quotation",
+      "description": "An edit within the region removes B's exact quote.",
+      "model": {
+        "texts": [
+          {
+            "id": "t1"
+          }
+        ],
+        "versions": [
+          {
+            "id": "v1",
+            "text": "t1",
+            "content": "The blue fox.",
+            "sha256": "bb997362c3cfedfd13afc34460ed7af36c7eb2730645bff0f9a2b8380b0f5f32"
+          }
+        ],
+        "regions": [
+          {
+            "id": "r1",
+            "version": "v1",
+            "selector": {
+              "kind": "B",
+              "quote": "red"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "id": "a1",
+            "region": "r1",
+            "body": "Synthetic interpretation"
+          }
+        ]
+      },
+      "expected": {
+        "diagnostics": [
+          "E_NO_MATCH"
+        ],
+        "resolutions": {}
+      }
+    },
+    {
+      "id": "deletion-position",
+      "description": "Deletion makes A's previously selected quote differ.",
+      "model": {
+        "texts": [
+          {
+            "id": "t1"
+          }
+        ],
+        "versions": [
+          {
+            "id": "v1",
+            "text": "t1",
+            "content": "The fox.",
+            "sha256": "5bd1d9026dc3f6ffabef8a82ab03d892693ae898cfd369e7c3f874570b4c1005"
+          }
+        ],
+        "regions": [
+          {
+            "id": "r1",
+            "version": "v1",
+            "selector": {
+              "kind": "A",
+              "start": 4,
+              "end": 7,
+              "quote": "red"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "id": "a1",
+            "region": "r1",
+            "body": "Synthetic interpretation"
+          }
+        ]
+      },
+      "expected": {
+        "diagnostics": [
+          "E_QUOTE"
+        ],
+        "resolutions": {}
+      }
+    },
+    {
+      "id": "deletion-quotation",
+      "description": "Deletion leaves no exact quotation candidate.",
+      "model": {
+        "texts": [
+          {
+            "id": "t1"
+          }
+        ],
+        "versions": [
+          {
+            "id": "v1",
+            "text": "t1",
+            "content": "The fox.",
+            "sha256": "5bd1d9026dc3f6ffabef8a82ab03d892693ae898cfd369e7c3f874570b4c1005"
+          }
+        ],
+        "regions": [
+          {
+            "id": "r1",
+            "version": "v1",
+            "selector": {
+              "kind": "B",
+              "quote": "red"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "id": "a1",
+            "region": "r1",
+            "body": "Synthetic interpretation"
+          }
+        ]
+      },
+      "expected": {
+        "diagnostics": [
+          "E_NO_MATCH"
+        ],
+        "resolutions": {}
+      }
+    },
+    {
+      "id": "repeated-quotation",
+      "description": "B reports repeated quotations as ambiguity.",
+      "model": {
+        "texts": [
+          {
+            "id": "t1"
+          }
+        ],
+        "versions": [
+          {
+            "id": "v1",
+            "text": "t1",
+            "content": "red red",
+            "sha256": "4047a4f6448f7bda83f5b7a93a5a659da20e445022363e5a2b1d1176a11bbda6"
+          }
+        ],
+        "regions": [
+          {
+            "id": "r1",
+            "version": "v1",
+            "selector": {
+              "kind": "B",
+              "quote": "red"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "id": "a1",
+            "region": "r1",
+            "body": "Synthetic interpretation"
+          }
+        ]
+      },
+      "expected": {
+        "diagnostics": [
+          "E_AMBIGUOUS"
+        ],
+        "resolutions": {}
+      }
+    },
+    {
+      "id": "repeated-position",
+      "description": "A selects a known occurrence even when content repeats.",
+      "model": {
+        "texts": [
+          {
+            "id": "t1"
+          }
+        ],
+        "versions": [
+          {
+            "id": "v1",
+            "text": "t1",
+            "content": "red red",
+            "sha256": "4047a4f6448f7bda83f5b7a93a5a659da20e445022363e5a2b1d1176a11bbda6"
+          }
+        ],
+        "regions": [
+          {
+            "id": "r1",
+            "version": "v1",
+            "selector": {
+              "kind": "A",
+              "start": 4,
+              "end": 7,
+              "quote": "red"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "id": "a1",
+            "region": "r1",
+            "body": "Synthetic interpretation"
+          }
+        ]
+      },
+      "expected": {
+        "diagnostics": [],
+        "resolutions": {
+          "r1": {
+            "version": "v1",
+            "start": 4,
+            "end": 7,
+            "quote": "red"
+          }
+        }
+      }
+    },
+    {
+      "id": "literal-context",
+      "description": "Immediately adjacent context disambiguates B.",
+      "model": {
+        "texts": [
+          {
+            "id": "t1"
+          }
+        ],
+        "versions": [
+          {
+            "id": "v1",
+            "text": "t1",
+            "content": "L red R red",
+            "sha256": "cc1b5b64360e7cb11d566903dcb666ae8ade53acd1f5a17f462c7619da72eb6f"
+          }
+        ],
+        "regions": [
+          {
+            "id": "r1",
+            "version": "v1",
+            "selector": {
+              "kind": "B",
+              "quote": "red",
+              "prefix": "L ",
+              "suffix": " R"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "id": "a1",
+            "region": "r1",
+            "body": "Synthetic interpretation"
+          }
+        ]
+      },
+      "expected": {
+        "diagnostics": [],
+        "resolutions": {
+          "r1": {
+            "version": "v1",
+            "start": 2,
+            "end": 5,
+            "quote": "red"
+          }
+        }
+      }
+    },
+    {
+      "id": "context-destroyed",
+      "description": "A surviving quote need not preserve B's original adjacent context.",
+      "model": {
+        "texts": [
+          {
+            "id": "t1"
+          }
+        ],
+        "versions": [
+          {
+            "id": "v1",
+            "text": "t1",
+            "content": "red red",
+            "sha256": "4047a4f6448f7bda83f5b7a93a5a659da20e445022363e5a2b1d1176a11bbda6"
+          }
+        ],
+        "regions": [
+          {
+            "id": "r1",
+            "version": "v1",
+            "selector": {
+              "kind": "B",
+              "quote": "red",
+              "prefix": "L ",
+              "suffix": " R"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "id": "a1",
+            "region": "r1",
+            "body": "Synthetic interpretation"
+          }
+        ]
+      },
+      "expected": {
+        "diagnostics": [
+          "E_NO_MATCH"
+        ],
+        "resolutions": {}
+      }
+    },
+    {
+      "id": "overlapping-quote-occurrences",
+      "description": "Overlapping literal occurrences are both candidates.",
+      "model": {
+        "texts": [
+          {
+            "id": "t1"
+          }
+        ],
+        "versions": [
+          {
+            "id": "v1",
+            "text": "t1",
+            "content": "banana",
+            "sha256": "b493d48364afe44d11c0165cf470a4164d1e2609911ef998be868d46ade3de4e"
+          }
+        ],
+        "regions": [
+          {
+            "id": "r1",
+            "version": "v1",
+            "selector": {
+              "kind": "B",
+              "quote": "ana"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "id": "a1",
+            "region": "r1",
+            "body": "Synthetic interpretation"
+          }
+        ]
+      },
+      "expected": {
+        "diagnostics": [
+          "E_AMBIGUOUS"
+        ],
+        "resolutions": {}
+      }
+    },
+    {
+      "id": "overlapping-annotations",
+      "description": "Different annotation regions may overlap without a model contradiction.",
+      "model": {
+        "texts": [
+          {
+            "id": "t1"
+          }
+        ],
+        "versions": [
+          {
+            "id": "v1",
+            "text": "t1",
+            "content": "The red fox.",
+            "sha256": "38e8088daaa555fe087381b9f11ced9c76507a2b7242a1442ef4b1c70763aca3"
+          }
+        ],
+        "regions": [
+          {
+            "id": "r1",
+            "version": "v1",
+            "selector": {
+              "kind": "A",
+              "start": 4,
+              "end": 7,
+              "quote": "red"
+            }
+          },
+          {
+            "id": "r2",
+            "version": "v1",
+            "selector": {
+              "kind": "A",
+              "start": 4,
+              "end": 11,
+              "quote": "red fox"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "id": "a1",
+            "region": "r1",
+            "body": "Synthetic interpretation"
+          },
+          {
+            "id": "a2",
+            "region": "r2",
+            "body": "A different overlapping interpretation"
+          }
+        ]
+      },
+      "expected": {
+        "diagnostics": [],
+        "resolutions": {
+          "r1": {
+            "version": "v1",
+            "start": 4,
+            "end": 7,
+            "quote": "red"
+          },
+          "r2": {
+            "version": "v1",
+            "start": 4,
+            "end": 11,
+            "quote": "red fox"
+          }
+        }
+      }
+    },
+    {
+      "id": "unicode-codepoints",
+      "description": "The emoji occupies one code point and combining accent another.",
+      "model": {
+        "texts": [
+          {
+            "id": "t1"
+          }
+        ],
+        "versions": [
+          {
+            "id": "v1",
+            "text": "t1",
+            "content": "A😀éZ",
+            "sha256": "75d0a188697852c2e2ce7e7fe623111a09eab74ec3f073b5c223340a44e862e5"
+          }
+        ],
+        "regions": [
+          {
+            "id": "r1",
+            "version": "v1",
+            "selector": {
+              "kind": "A",
+              "start": 1,
+              "end": 4,
+              "quote": "😀é"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "id": "a1",
+            "region": "r1",
+            "body": "Synthetic interpretation"
+          }
+        ]
+      },
+      "expected": {
+        "diagnostics": [],
+        "resolutions": {
+          "r1": {
+            "version": "v1",
+            "start": 1,
+            "end": 4,
+            "quote": "😀é"
+          }
+        }
+      }
+    },
+    {
+      "id": "normalization-quotation",
+      "description": "Composed quote does not match decomposed content.",
+      "model": {
+        "texts": [
+          {
+            "id": "t1"
+          }
+        ],
+        "versions": [
+          {
+            "id": "v1",
+            "text": "t1",
+            "content": "café",
+            "sha256": "81ef060bcd98adc7824eb5c1ada83c32491b16018e11e79f00ab9d09e04b015a"
+          }
+        ],
+        "regions": [
+          {
+            "id": "r1",
+            "version": "v1",
+            "selector": {
+              "kind": "B",
+              "quote": "café"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "id": "a1",
+            "region": "r1",
+            "body": "Synthetic interpretation"
+          }
+        ]
+      },
+      "expected": {
+        "diagnostics": [
+          "E_NO_MATCH"
+        ],
+        "resolutions": {}
+      }
+    },
+    {
+      "id": "normalization-position",
+      "description": "Composed quote also fails A's literal integrity check.",
+      "model": {
+        "texts": [
+          {
+            "id": "t1"
+          }
+        ],
+        "versions": [
+          {
+            "id": "v1",
+            "text": "t1",
+            "content": "café",
+            "sha256": "81ef060bcd98adc7824eb5c1ada83c32491b16018e11e79f00ab9d09e04b015a"
+          }
+        ],
+        "regions": [
+          {
+            "id": "r1",
+            "version": "v1",
+            "selector": {
+              "kind": "A",
+              "start": 0,
+              "end": 4,
+              "quote": "café"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "id": "a1",
+            "region": "r1",
+            "body": "Synthetic interpretation"
+          }
+        ]
+      },
+      "expected": {
+        "diagnostics": [
+          "E_QUOTE"
+        ],
+        "resolutions": {}
+      }
+    },
+    {
+      "id": "invalid-bounds",
+      "description": "A cannot exceed version length.",
+      "model": {
+        "texts": [
+          {
+            "id": "t1"
+          }
+        ],
+        "versions": [
+          {
+            "id": "v1",
+            "text": "t1",
+            "content": "The red fox.",
+            "sha256": "38e8088daaa555fe087381b9f11ced9c76507a2b7242a1442ef4b1c70763aca3"
+          }
+        ],
+        "regions": [
+          {
+            "id": "r1",
+            "version": "v1",
+            "selector": {
+              "kind": "A",
+              "start": 4,
+              "end": 99,
+              "quote": "red"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "id": "a1",
+            "region": "r1",
+            "body": "Synthetic interpretation"
+          }
+        ]
+      },
+      "expected": {
+        "diagnostics": [
+          "E_BOUNDS"
+        ],
+        "resolutions": {}
+      }
+    },
+    {
+      "id": "empty-region",
+      "description": "A excludes empty regions.",
+      "model": {
+        "texts": [
+          {
+            "id": "t1"
+          }
+        ],
+        "versions": [
+          {
+            "id": "v1",
+            "text": "t1",
+            "content": "The red fox.",
+            "sha256": "38e8088daaa555fe087381b9f11ced9c76507a2b7242a1442ef4b1c70763aca3"
+          }
+        ],
+        "regions": [
+          {
+            "id": "r1",
+            "version": "v1",
+            "selector": {
+              "kind": "A",
+              "start": 4,
+              "end": 4,
+              "quote": "red"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "id": "a1",
+            "region": "r1",
+            "body": "Synthetic interpretation"
+          }
+        ]
+      },
+      "expected": {
+        "diagnostics": [
+          "E_BOUNDS"
+        ],
+        "resolutions": {}
+      }
+    },
+    {
+      "id": "boolean-position",
+      "description": "JSON booleans are not integer positions.",
+      "model": {
+        "texts": [
+          {
+            "id": "t1"
+          }
+        ],
+        "versions": [
+          {
+            "id": "v1",
+            "text": "t1",
+            "content": "The red fox.",
+            "sha256": "38e8088daaa555fe087381b9f11ced9c76507a2b7242a1442ef4b1c70763aca3"
+          }
+        ],
+        "regions": [
+          {
+            "id": "r1",
+            "version": "v1",
+            "selector": {
+              "kind": "A",
+              "start": true,
+              "end": 7,
+              "quote": "red"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "id": "a1",
+            "region": "r1",
+            "body": "Synthetic interpretation"
+          }
+        ]
+      },
+      "expected": {
+        "diagnostics": [
+          "E_BOUNDS"
+        ],
+        "resolutions": {}
+      }
+    },
+    {
+      "id": "empty-quotation",
+      "description": "B excludes empty exact quotations.",
+      "model": {
+        "texts": [
+          {
+            "id": "t1"
+          }
+        ],
+        "versions": [
+          {
+            "id": "v1",
+            "text": "t1",
+            "content": "The red fox.",
+            "sha256": "38e8088daaa555fe087381b9f11ced9c76507a2b7242a1442ef4b1c70763aca3"
+          }
+        ],
+        "regions": [
+          {
+            "id": "r1",
+            "version": "v1",
+            "selector": {
+              "kind": "B",
+              "quote": ""
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "id": "a1",
+            "region": "r1",
+            "body": "Synthetic interpretation"
+          }
+        ]
+      },
+      "expected": {
+        "diagnostics": [
+          "E_SELECTOR"
+        ],
+        "resolutions": {}
+      }
+    },
+    {
+      "id": "malformed-context",
+      "description": "B context must be Unicode strings.",
+      "model": {
+        "texts": [
+          {
+            "id": "t1"
+          }
+        ],
+        "versions": [
+          {
+            "id": "v1",
+            "text": "t1",
+            "content": "The red fox.",
+            "sha256": "38e8088daaa555fe087381b9f11ced9c76507a2b7242a1442ef4b1c70763aca3"
+          }
+        ],
+        "regions": [
+          {
+            "id": "r1",
+            "version": "v1",
+            "selector": {
+              "kind": "B",
+              "quote": "red",
+              "prefix": []
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "id": "a1",
+            "region": "r1",
+            "body": "Synthetic interpretation"
+          }
+        ]
+      },
+      "expected": {
+        "diagnostics": [
+          "E_SELECTOR"
+        ],
+        "resolutions": {}
+      }
+    },
+    {
+      "id": "broken-reference",
+      "description": "Version references must resolve.",
+      "model": {
+        "texts": [
+          {
+            "id": "t1"
+          }
+        ],
+        "versions": [
+          {
+            "id": "v1",
+            "text": "t1",
+            "content": "The red fox.",
+            "sha256": "38e8088daaa555fe087381b9f11ced9c76507a2b7242a1442ef4b1c70763aca3"
+          }
+        ],
+        "regions": [
+          {
+            "id": "r1",
+            "version": "missing",
+            "selector": {
+              "kind": "A",
+              "start": 4,
+              "end": 7,
+              "quote": "red"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "id": "a1",
+            "region": "r1",
+            "body": "Synthetic interpretation"
+          }
+        ]
+      },
+      "expected": {
+        "diagnostics": [
+          "E_REFERENCE"
+        ],
+        "resolutions": {}
+      }
+    },
+    {
+      "id": "reference-object",
+      "description": "Reference values must be IDs, not objects.",
+      "model": {
+        "texts": [
+          {
+            "id": "t1"
+          }
+        ],
+        "versions": [
+          {
+            "id": "v1",
+            "text": "t1",
+            "content": "The red fox.",
+            "sha256": "38e8088daaa555fe087381b9f11ced9c76507a2b7242a1442ef4b1c70763aca3"
+          }
+        ],
+        "regions": [
+          {
+            "id": "r1",
+            "version": "v1",
+            "selector": {
+              "kind": "A",
+              "start": 4,
+              "end": 7,
+              "quote": "red"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "id": "a1",
+            "region": {
+              "id": "r1"
+            },
+            "body": "Synthetic interpretation"
+          }
+        ]
+      },
+      "expected": {
+        "diagnostics": [
+          "E_REFERENCE"
+        ],
+        "resolutions": {}
+      }
+    },
+    {
+      "id": "duplicate-identity",
+      "description": "IDs are unique across object types.",
+      "model": {
+        "texts": [
+          {
+            "id": "t1"
+          }
+        ],
+        "versions": [
+          {
+            "id": "v1",
+            "text": "t1",
+            "content": "The red fox.",
+            "sha256": "38e8088daaa555fe087381b9f11ced9c76507a2b7242a1442ef4b1c70763aca3"
+          }
+        ],
+        "regions": [
+          {
+            "id": "r1",
+            "version": "v1",
+            "selector": {
+              "kind": "A",
+              "start": 4,
+              "end": 7,
+              "quote": "red"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "id": "v1",
+            "region": "r1",
+            "body": "Synthetic interpretation"
+          }
+        ]
+      },
+      "expected": {
+        "diagnostics": [
+          "E_DUPLICATE_ID"
+        ],
+        "resolutions": {}
+      }
+    },
+    {
+      "id": "changed-version-content",
+      "description": "Version byte content must match its declared hash.",
+      "model": {
+        "texts": [
+          {
+            "id": "t1"
+          }
+        ],
+        "versions": [
+          {
+            "id": "v1",
+            "text": "t1",
+            "content": "The blue fox.",
+            "sha256": "38e8088daaa555fe087381b9f11ced9c76507a2b7242a1442ef4b1c70763aca3"
+          }
+        ],
+        "regions": [
+          {
+            "id": "r1",
+            "version": "v1",
+            "selector": {
+              "kind": "A",
+              "start": 4,
+              "end": 7,
+              "quote": "red"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "id": "a1",
+            "region": "r1",
+            "body": "Synthetic interpretation"
+          }
+        ]
+      },
+      "expected": {
+        "diagnostics": [
+          "E_HASH"
+        ],
+        "resolutions": {}
+      }
+    },
+    {
+      "id": "version-parent-cycle",
+      "description": "Version ancestry cannot contain a cycle.",
+      "model": {
+        "texts": [
+          {
+            "id": "t1"
+          }
+        ],
+        "versions": [
+          {
+            "id": "v1",
+            "text": "t1",
+            "content": "The red fox.",
+            "sha256": "38e8088daaa555fe087381b9f11ced9c76507a2b7242a1442ef4b1c70763aca3",
+            "parent": "v2"
+          },
+          {
+            "id": "v2",
+            "text": "t1",
+            "content": "The red fox.",
+            "sha256": "38e8088daaa555fe087381b9f11ced9c76507a2b7242a1442ef4b1c70763aca3",
+            "parent": "v1"
+          }
+        ],
+        "regions": [
+          {
+            "id": "r1",
+            "version": "v1",
+            "selector": {
+              "kind": "A",
+              "start": 4,
+              "end": 7,
+              "quote": "red"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "id": "a1",
+            "region": "r1",
+            "body": "Synthetic interpretation"
+          }
+        ]
+      },
+      "expected": {
+        "diagnostics": [
+          "E_CYCLE"
+        ],
+        "resolutions": {}
+      }
+    },
+    {
+      "id": "parent-ownership",
+      "description": "Parent and child versions must belong to the same text.",
+      "model": {
+        "texts": [
+          {
+            "id": "t1"
+          },
+          {
+            "id": "t2"
+          }
+        ],
+        "versions": [
+          {
+            "id": "v1",
+            "text": "t1",
+            "content": "The red fox.",
+            "sha256": "38e8088daaa555fe087381b9f11ced9c76507a2b7242a1442ef4b1c70763aca3"
+          },
+          {
+            "id": "v2",
+            "text": "t2",
+            "content": "Two texts",
+            "sha256": "6a45453ffe773fe0cf4a6b282d2fe6815ea5f61797d59ba253b4a2559e750bf0",
+            "parent": "v1"
+          }
+        ],
+        "regions": [
+          {
+            "id": "r1",
+            "version": "v1",
+            "selector": {
+              "kind": "A",
+              "start": 4,
+              "end": 7,
+              "quote": "red"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "id": "a1",
+            "region": "r1",
+            "body": "Synthetic interpretation"
+          }
+        ]
+      },
+      "expected": {
+        "diagnostics": [
+          "E_OWNERSHIP"
+        ],
+        "resolutions": {}
+      }
+    },
+    {
+      "id": "equal-content-distinct-texts",
+      "description": "Equal strings may belong to separately assigned text identities.",
+      "model": {
+        "texts": [
+          {
+            "id": "t1"
+          },
+          {
+            "id": "t2"
+          }
+        ],
+        "versions": [
+          {
+            "id": "v1",
+            "text": "t1",
+            "content": "The red fox.",
+            "sha256": "38e8088daaa555fe087381b9f11ced9c76507a2b7242a1442ef4b1c70763aca3"
+          },
+          {
+            "id": "v2",
+            "text": "t2",
+            "content": "The red fox.",
+            "sha256": "38e8088daaa555fe087381b9f11ced9c76507a2b7242a1442ef4b1c70763aca3"
+          }
+        ],
+        "regions": [
+          {
+            "id": "r1",
+            "version": "v1",
+            "selector": {
+              "kind": "A",
+              "start": 4,
+              "end": 7,
+              "quote": "red"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "id": "a1",
+            "region": "r1",
+            "body": "Synthetic interpretation"
+          }
+        ]
+      },
+      "expected": {
+        "diagnostics": [],
+        "resolutions": {
+          "r1": {
+            "version": "v1",
+            "start": 4,
+            "end": 7,
+            "quote": "red"
+          }
+        }
+      }
+    },
+    {
+      "id": "malformed-model",
+      "description": "A non-object model produces a diagnostic.",
+      "model": [],
+      "expected": {
+        "diagnostics": [
+          "E_SHAPE"
+        ],
+        "resolutions": {}
+      }
+    },
+    {
+      "id": "malformed-object",
+      "description": "Non-object collection entries produce a diagnostic.",
+      "model": {
+        "texts": [
+          {
+            "id": "t1"
+          }
+        ],
+        "versions": [
+          {
+            "id": "v1",
+            "text": "t1",
+            "content": "The red fox.",
+            "sha256": "38e8088daaa555fe087381b9f11ced9c76507a2b7242a1442ef4b1c70763aca3"
+          }
+        ],
+        "regions": [
+          null
+        ],
+        "annotations": [
+          {
+            "id": "a1",
+            "region": "r1",
+            "body": "Synthetic interpretation"
+          }
+        ]
+      },
+      "expected": {
+        "diagnostics": [
+          "E_SHAPE"
+        ],
+        "resolutions": {}
+      }
+    },
+    {
+      "id": "reanchor-insertion",
+      "description": "Reanchor proposes a shifted range and preserves the original A annotation.",
+      "model": {
+        "texts": [
+          {
+            "id": "t1"
+          }
+        ],
+        "versions": [
+          {
+            "id": "v1",
+            "text": "t1",
+            "content": "The red fox.",
+            "sha256": "38e8088daaa555fe087381b9f11ced9c76507a2b7242a1442ef4b1c70763aca3"
+          },
+          {
+            "id": "v2",
+            "text": "t1",
+            "content": "Now: The red fox.",
+            "sha256": "c589dd9ff410b3ca35e7301acaad657e807f3a7d878a3800404488b36a01f897",
+            "parent": "v1"
+          }
+        ],
+        "regions": [
+          {
+            "id": "r1",
+            "version": "v1",
+            "selector": {
+              "kind": "A",
+              "start": 4,
+              "end": 7,
+              "quote": "red"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "id": "a1",
+            "region": "r1",
+            "body": "Synthetic interpretation"
+          }
+        ]
+      },
+      "reanchor": {
+        "region": "r1",
+        "target_version": "v2"
+      },
+      "expected": {
+        "diagnostics": [],
+        "resolutions": {
+          "r1": {
+            "version": "v1",
+            "start": 4,
+            "end": 7,
+            "quote": "red"
+          }
+        },
+        "reanchor": {
+          "diagnostics": [],
+          "proposal": {
+            "region": "r1",
+            "source_version": "v1",
+            "target_version": "v2",
+            "candidates": [
+              {
+                "start": 9,
+                "end": 12
+              }
+            ],
+            "status": "unique",
+            "accepted": false
+          }
+        }
+      }
+    },
+    {
+      "id": "reanchor-deletion",
+      "description": "Reanchor reports absence after deletion.",
+      "model": {
+        "texts": [
+          {
+            "id": "t1"
+          }
+        ],
+        "versions": [
+          {
+            "id": "v1",
+            "text": "t1",
+            "content": "The red fox.",
+            "sha256": "38e8088daaa555fe087381b9f11ced9c76507a2b7242a1442ef4b1c70763aca3"
+          },
+          {
+            "id": "v2",
+            "text": "t1",
+            "content": "The fox.",
+            "sha256": "5bd1d9026dc3f6ffabef8a82ab03d892693ae898cfd369e7c3f874570b4c1005",
+            "parent": "v1"
+          }
+        ],
+        "regions": [
+          {
+            "id": "r1",
+            "version": "v1",
+            "selector": {
+              "kind": "A",
+              "start": 4,
+              "end": 7,
+              "quote": "red"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "id": "a1",
+            "region": "r1",
+            "body": "Synthetic interpretation"
+          }
+        ]
+      },
+      "reanchor": {
+        "region": "r1",
+        "target_version": "v2"
+      },
+      "expected": {
+        "diagnostics": [],
+        "resolutions": {
+          "r1": {
+            "version": "v1",
+            "start": 4,
+            "end": 7,
+            "quote": "red"
+          }
+        },
+        "reanchor": {
+          "diagnostics": [],
+          "proposal": {
+            "region": "r1",
+            "source_version": "v1",
+            "target_version": "v2",
+            "candidates": [],
+            "status": "absent",
+            "accepted": false
+          }
+        }
+      }
+    },
+    {
+      "id": "reanchor-repeated",
+      "description": "Reanchor cannot accept one repeated occurrence automatically.",
+      "model": {
+        "texts": [
+          {
+            "id": "t1"
+          }
+        ],
+        "versions": [
+          {
+            "id": "v1",
+            "text": "t1",
+            "content": "The red fox.",
+            "sha256": "38e8088daaa555fe087381b9f11ced9c76507a2b7242a1442ef4b1c70763aca3"
+          },
+          {
+            "id": "v2",
+            "text": "t1",
+            "content": "red red",
+            "sha256": "4047a4f6448f7bda83f5b7a93a5a659da20e445022363e5a2b1d1176a11bbda6",
+            "parent": "v1"
+          }
+        ],
+        "regions": [
+          {
+            "id": "r1",
+            "version": "v1",
+            "selector": {
+              "kind": "A",
+              "start": 4,
+              "end": 7,
+              "quote": "red"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "id": "a1",
+            "region": "r1",
+            "body": "Synthetic interpretation"
+          }
+        ]
+      },
+      "reanchor": {
+        "region": "r1",
+        "target_version": "v2"
+      },
+      "expected": {
+        "diagnostics": [],
+        "resolutions": {
+          "r1": {
+            "version": "v1",
+            "start": 4,
+            "end": 7,
+            "quote": "red"
+          }
+        },
+        "reanchor": {
+          "diagnostics": [],
+          "proposal": {
+            "region": "r1",
+            "source_version": "v1",
+            "target_version": "v2",
+            "candidates": [
+              {
+                "start": 0,
+                "end": 3
+              },
+              {
+                "start": 4,
+                "end": 7
+              }
+            ],
+            "status": "ambiguous",
+            "accepted": false
+          }
+        }
+      }
+    },
+    {
+      "id": "reanchor-context-loss",
+      "description": "B reanchor retains immediate context and can fail while the quote survives.",
+      "model": {
+        "texts": [
+          {
+            "id": "t1"
+          }
+        ],
+        "versions": [
+          {
+            "id": "v1",
+            "text": "t1",
+            "content": "The red fox.",
+            "sha256": "38e8088daaa555fe087381b9f11ced9c76507a2b7242a1442ef4b1c70763aca3"
+          },
+          {
+            "id": "v2",
+            "text": "t1",
+            "content": "red red",
+            "sha256": "4047a4f6448f7bda83f5b7a93a5a659da20e445022363e5a2b1d1176a11bbda6",
+            "parent": "v1"
+          }
+        ],
+        "regions": [
+          {
+            "id": "r1",
+            "version": "v1",
+            "selector": {
+              "kind": "B",
+              "quote": "red",
+              "prefix": "The ",
+              "suffix": " fox."
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "id": "a1",
+            "region": "r1",
+            "body": "Synthetic interpretation"
+          }
+        ]
+      },
+      "reanchor": {
+        "region": "r1",
+        "target_version": "v2"
+      },
+      "expected": {
+        "diagnostics": [],
+        "resolutions": {
+          "r1": {
+            "version": "v1",
+            "start": 4,
+            "end": 7,
+            "quote": "red"
+          }
+        },
+        "reanchor": {
+          "diagnostics": [],
+          "proposal": {
+            "region": "r1",
+            "source_version": "v1",
+            "target_version": "v2",
+            "candidates": [],
+            "status": "absent",
+            "accepted": false
+          }
+        }
+      }
+    },
+    {
+      "id": "surviving-quote-changed-interpretation-position",
+      "description": "A resolves the unchanged quote at the same offsets in both versions. As a declared human case assumption, replacing fox with car makes the old fur-color interpretation inappropriate; the machine does not determine this. Reanchoring only proposes the unique candidate with accepted false.",
+      "model": {
+        "texts": [{"id": "t1"}],
+        "versions": [
+          {
+            "id": "v1",
+            "text": "t1",
+            "content": "The red fox.",
+            "sha256": "38e8088daaa555fe087381b9f11ced9c76507a2b7242a1442ef4b1c70763aca3"
+          },
+          {
+            "id": "v2",
+            "text": "t1",
+            "content": "The red car.",
+            "sha256": "e59392b8cb52e189386f2eeca1327d47dbde320efc89af195d9d7cc38ca03bac",
+            "parent": "v1"
+          }
+        ],
+        "regions": [
+          {
+            "id": "r-old",
+            "version": "v1",
+            "selector": {"kind": "A", "start": 4, "end": 7, "quote": "red"}
+          },
+          {
+            "id": "r-new",
+            "version": "v2",
+            "selector": {"kind": "A", "start": 4, "end": 7, "quote": "red"}
+          }
+        ],
+        "annotations": [
+          {"id": "a-old", "region": "r-old", "body": "The word red describes the fox's fur color."}
+        ]
+      },
+      "reanchor": {"region": "r-old", "target_version": "v2"},
+      "expected": {
+        "diagnostics": [],
+        "resolutions": {
+          "r-old": {"version": "v1", "start": 4, "end": 7, "quote": "red"},
+          "r-new": {"version": "v2", "start": 4, "end": 7, "quote": "red"}
+        },
+        "reanchor": {
+          "diagnostics": [],
+          "proposal": {
+            "region": "r-old",
+            "source_version": "v1",
+            "target_version": "v2",
+            "candidates": [{"start": 4, "end": 7}],
+            "status": "unique",
+            "accepted": false
+          }
+        }
+      }
+    },
+    {
+      "id": "surviving-quote-changed-interpretation-quotation",
+      "description": "B resolves the unique quote in both versions. As a declared human case assumption, replacing fox with car makes the old fur-color interpretation inappropriate; the machine does not determine this. Reanchoring only proposes the unique candidate with accepted false.",
+      "model": {
+        "texts": [{"id": "t1"}],
+        "versions": [
+          {
+            "id": "v1",
+            "text": "t1",
+            "content": "The red fox.",
+            "sha256": "38e8088daaa555fe087381b9f11ced9c76507a2b7242a1442ef4b1c70763aca3"
+          },
+          {
+            "id": "v2",
+            "text": "t1",
+            "content": "The red car.",
+            "sha256": "e59392b8cb52e189386f2eeca1327d47dbde320efc89af195d9d7cc38ca03bac",
+            "parent": "v1"
+          }
+        ],
+        "regions": [
+          {
+            "id": "r-old",
+            "version": "v1",
+            "selector": {"kind": "B", "quote": "red"}
+          },
+          {
+            "id": "r-new",
+            "version": "v2",
+            "selector": {"kind": "B", "quote": "red"}
+          }
+        ],
+        "annotations": [
+          {"id": "a-old", "region": "r-old", "body": "The word red describes the fox's fur color."}
+        ]
+      },
+      "reanchor": {"region": "r-old", "target_version": "v2"},
+      "expected": {
+        "diagnostics": [],
+        "resolutions": {
+          "r-old": {"version": "v1", "start": 4, "end": 7, "quote": "red"},
+          "r-new": {"version": "v2", "start": 4, "end": 7, "quote": "red"}
+        },
+        "reanchor": {
+          "diagnostics": [],
+          "proposal": {
+            "region": "r-old",
+            "source_version": "v1",
+            "target_version": "v2",
+            "candidates": [{"start": 4, "end": 7}],
+            "status": "unique",
+            "accepted": false
+          }
+        }
+      }
+    },
+    {
+      "id": "reanchor-cross-text",
+      "description": "Reanchor cannot transfer a region to a separately identified text.",
+      "model": {
+        "texts": [
+          {
+            "id": "t1"
+          },
+          {
+            "id": "t2"
+          }
+        ],
+        "versions": [
+          {
+            "id": "v1",
+            "text": "t1",
+            "content": "The red fox.",
+            "sha256": "38e8088daaa555fe087381b9f11ced9c76507a2b7242a1442ef4b1c70763aca3"
+          },
+          {
+            "id": "v2",
+            "text": "t2",
+            "content": "The red fox.",
+            "sha256": "38e8088daaa555fe087381b9f11ced9c76507a2b7242a1442ef4b1c70763aca3"
+          }
+        ],
+        "regions": [
+          {
+            "id": "r1",
+            "version": "v1",
+            "selector": {
+              "kind": "A",
+              "start": 4,
+              "end": 7,
+              "quote": "red"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "id": "a1",
+            "region": "r1",
+            "body": "Synthetic interpretation"
+          }
+        ]
+      },
+      "reanchor": {
+        "region": "r1",
+        "target_version": "v2"
+      },
+      "expected": {
+        "diagnostics": [],
+        "resolutions": {
+          "r1": {
+            "version": "v1",
+            "start": 4,
+            "end": 7,
+            "quote": "red"
+          }
+        },
+        "reanchor": {
+          "diagnostics": [
+            "E_REANCHOR"
+          ],
+          "proposal": null
+        }
+      }
+    }
+  ]
+}

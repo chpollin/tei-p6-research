@@ -64,9 +64,16 @@ origin of every effective rule. Two incompatible cardinalities or content
 requirements cannot silently collapse into whichever one a processor happens
 to load last.
 
-A composed model is valid only if all mandatory core invariants hold and every
-conflict has a defined resolution. Diagnostics should identify the contributing
-blueprints and exact rules, not only the invalid instance location.
+Deterministic composition establishes which rules apply; it does not establish
+that any instance can satisfy them. Distinguish dependency validity, resolved
+rule conflicts, and satisfiability. For each supported constraint language,
+state which checks are decidable, which use bounded examples, and which remain
+unresolved. Diagnostics identify the contributing rules and must not report an
+unresolved satisfiability question as a proven valid composition.
+
+For example, requiring exactly one value while intersecting the disjoint
+allowed sets `{x}` and `{y}` admits no valid instance. A defined merge order
+does not resolve this problem unless its policy explicitly changes a rule.
 
 ## Context-sensitive rules
 
@@ -81,10 +88,11 @@ explicit specialization rather than relying only on position.
 
 ## Interoperability contract
 
-Every customization publishes a machine-readable declaration of its base,
-version dependencies, selected concepts, restrictions, extensions, aliases,
-binding profiles, and conformance class. This declaration enables two projects
-to compute their shared subset and identify incompatible or unknown extensions.
+Every customization publishes its base, version dependencies, selected
+concepts, restrictions, extensions, aliases, binding profiles, and conformance
+claim. These declarations support comparison of shared declarations and
+detected conflicts. A common vocabulary alone does not guarantee that
+instances satisfy both customizations or that processors interpret them alike.
 
 Interoperability may occur at several levels: common core, common blueprint,
 exact customization, or explicit projection. Exchange claims must name the

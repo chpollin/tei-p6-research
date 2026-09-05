@@ -1,13 +1,8 @@
 # Contributing
 
-Contributions are welcome from TEI users, editors, standards researchers,
-tool builders, and developers. This repository distinguishes source material,
-grounded findings, and design proposals so that each contribution can be
-reviewed under the right standard.
-
 Read `README.md` for the project overview, `knowledge/specification.md` for
 scope, and `ARCHITECTURE.md` for the system boundaries. Consult
-`knowledge/state.md` before beginning work: a registered source or planned
+`knowledge/state.md` before beginning work. A registered source or planned
 artifact may not yet exist locally.
 
 ## Choose the contribution path
@@ -16,14 +11,12 @@ artifact may not yet exist locally.
 |---|---|---|
 | source registration or acquisition | `sources/`, `corpus/` | `docs/multi-agent-acquisition-runbook.md` |
 | source representation or research finding | numbered evidence chain | `knowledge/schema.md` and `knowledge/operations.md` |
-| P6 hypothesis or design experiment | `docs/p6/` and future prototype paths | `docs/p6/README.md` |
+| P6 hypothesis or design experiment | `docs/p6/` and explicitly contracted experiment paths | `docs/p6/README.md` |
 | validator, collector, or build change | `tools/`, `tests/` | repository tests and generated-file rules |
 | navigation or project documentation | root, `knowledge/`, `contexts/`, `workflows/` | `ARCHITECTURE.md` and the relevant canonical knowledge document |
 
-Do not place a contribution in a higher-evidence layer because it appears
-plausible. A description of P5 begins from a source; a recommendation for P6
-begins as a proposal and becomes publishable only after its premises and tests
-are visible.
+A description of P5 requires source support. A P6 recommendation is a project
+judgment whose premises, alternatives, and tests must be available for review.
 
 ## Source and corpus contributions
 
@@ -39,7 +32,7 @@ project-authored summaries are preferred when rights are uncertain.
 
 ## Grounded knowledge contributions
 
-Follow the chain one layer at a time:
+Follow the chain one layer at a time.
 
 ```text
 source -> representation -> distillate -> assertion -> output
@@ -53,7 +46,7 @@ posits.
 
 Use `grounded` for a newly traceable artifact. Use `validated` only after both
 deterministic validation and the recorded machine-review procedure have passed.
-Contributors and agents must never assign `verified`; that status is reserved
+Contributors and agents must never assign `verified`. That status is reserved
 for the designated human expert.
 
 ## P6 design contributions
@@ -61,6 +54,11 @@ for the designated human expert.
 Begin with `docs/p6/README.md` and `workflows/evaluate-p6-proposal.md`. State the
 problem, affected stakeholders, baseline P5 behavior, alternative options, and
 evaluation criteria. Separate facts about P5 from the proposed solution.
+
+A question about text identity or interpretation need not begin with a claimed
+P5 defect. Name its theoretical or practical motivation, distinguish sourced
+requirements from project assumptions, and specify a case that could refute
+the proposal. Define a pilot through a bounded question and explicit exclusions.
 
 A substantial proposal should include representative P5 examples,
 counterexamples, a candidate abstract representation, supported serialization
@@ -76,10 +74,10 @@ tools.
 
 Collectors and transformations must be reproducible from pinned inputs. Tests
 should cover success, failure, incomplete acquisition, and hostile or malformed
-content. Generated files are never hand-edited; change their source or builder
+content. Generated files are never hand-edited. Change their source or builder
 and regenerate them.
 
-Before proposing a change, run the checks appropriate to its scope:
+Before proposing a change, run the checks appropriate to its scope.
 
 ```text
 python tools/validate.py .
@@ -92,7 +90,23 @@ Changes to generated documentation must be rebuilt using the documented build
 command. Any warning from validation must be investigated even when it does not
 fail the process.
 
-## Review checklist
+## Writing and review
+
+Use connected prose for arguments and explanations. Each paragraph should
+make one point and supply its reason or consequence. Remove repeated scope
+statements and sentences that merely announce the next sentence. Use no
+semicolons or colons in running prose. Preserve punctuation required by quoted
+source text, code, URLs, metadata, and formal citation syntax.
+
+Use a list for independent checks or ordered actions. Use a table when the
+reader needs to compare the same attributes across alternatives. Definitions
+that need sustained explanation belong in prose rather than label-and-colon
+lists.
+
+Editorial and argument review can improve definitions, examples, scope and
+clarity. It is separate from the recorded source-support procedure. If a
+review changes a core statement or its grounding, rerun the required checks.
+Unchanged source claims do not acquire new authority from a prose review.
 
 - The contribution belongs to the correct plane and layer.
 - Versions, dates, identifiers, rights, and known gaps are explicit.
@@ -108,4 +122,4 @@ fail the process.
 
 New artifact types, statuses, anchor forms, or bypass layers require a recorded
 architecture decision before implementation. Durable decisions are appended to
-`knowledge/journal.md`; they are not retroactively rewritten.
+`knowledge/journal.md`. They are not retroactively rewritten.

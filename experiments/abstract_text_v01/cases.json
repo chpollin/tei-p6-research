@@ -1,0 +1,5193 @@
+{
+  "format_version": 1,
+  "model_version": "0.1",
+  "models": {
+    "empty": {
+      "model_version": "0.1",
+      "agents": [],
+      "concepts": [],
+      "texts": [],
+      "versions": [],
+      "continuities": [],
+      "selections": [],
+      "readings": [],
+      "annotations": [],
+      "relations": []
+    },
+    "ungrouped_version": {
+      "model_version": "0.1",
+      "agents": [],
+      "concepts": [],
+      "texts": [],
+      "versions": [
+        {
+          "id": "v1",
+          "content": "abcdef",
+          "sha256": "bef57ec7f53a6d40beb640a780a639c83bc29ac8a9816f1fc6c5c6dcd93c4721",
+          "parents": []
+        }
+      ],
+      "continuities": [],
+      "selections": [],
+      "readings": [],
+      "annotations": [],
+      "relations": []
+    },
+    "whole_range": {
+      "model_version": "0.1",
+      "agents": [],
+      "concepts": [],
+      "texts": [],
+      "versions": [
+        {
+          "id": "v1",
+          "content": "abcdef",
+          "sha256": "bef57ec7f53a6d40beb640a780a639c83bc29ac8a9816f1fc6c5c6dcd93c4721",
+          "parents": []
+        }
+      ],
+      "continuities": [],
+      "selections": [
+        {
+          "id": "whole",
+          "version": "v1",
+          "selector": {
+            "kind": "ranges",
+            "segments": [
+              {
+                "start": 0,
+                "end": 6,
+                "quote": "abcdef"
+              }
+            ]
+          }
+        }
+      ],
+      "readings": [],
+      "annotations": [],
+      "relations": []
+    },
+    "discontinuous": {
+      "model_version": "0.1",
+      "agents": [
+        {
+          "id": "editor",
+          "label": "Editor Ada"
+        },
+        {
+          "id": "reviewer",
+          "label": "Editor Bea"
+        }
+      ],
+      "concepts": [],
+      "texts": [],
+      "versions": [
+        {
+          "id": "v1",
+          "content": "abcdef",
+          "sha256": "bef57ec7f53a6d40beb640a780a639c83bc29ac8a9816f1fc6c5c6dcd93c4721",
+          "parents": []
+        }
+      ],
+      "continuities": [],
+      "selections": [
+        {
+          "id": "parts",
+          "version": "v1",
+          "selector": {
+            "kind": "ranges",
+            "segments": [
+              {
+                "start": 0,
+                "end": 2,
+                "quote": "ab"
+              },
+              {
+                "start": 4,
+                "end": 6,
+                "quote": "ef"
+              }
+            ]
+          }
+        }
+      ],
+      "readings": [],
+      "annotations": [
+        {
+          "id": "annotation",
+          "agent": "editor",
+          "selection": "parts",
+          "body": "One discontinuous editorial target."
+        }
+      ],
+      "relations": []
+    },
+    "overlapping_all": {
+      "model_version": "0.1",
+      "agents": [],
+      "concepts": [],
+      "texts": [],
+      "versions": [
+        {
+          "id": "v1",
+          "content": "aaaa",
+          "sha256": "61be55a8e2f6b4e172338bddf184d6dbee29c98853e0a0485ecee7f27b9af0b4",
+          "parents": []
+        }
+      ],
+      "continuities": [],
+      "selections": [
+        {
+          "id": "plural",
+          "version": "v1",
+          "selector": {
+            "kind": "quote",
+            "exact": "aa",
+            "match": "all"
+          }
+        }
+      ],
+      "readings": [],
+      "annotations": [],
+      "relations": []
+    },
+    "ambiguous_annotation": {
+      "model_version": "0.1",
+      "agents": [
+        {
+          "id": "editor",
+          "label": "Editor Ada"
+        },
+        {
+          "id": "reviewer",
+          "label": "Editor Bea"
+        }
+      ],
+      "concepts": [],
+      "texts": [],
+      "versions": [
+        {
+          "id": "v1",
+          "content": "aaaa",
+          "sha256": "61be55a8e2f6b4e172338bddf184d6dbee29c98853e0a0485ecee7f27b9af0b4",
+          "parents": []
+        }
+      ],
+      "continuities": [],
+      "selections": [
+        {
+          "id": "plural",
+          "version": "v1",
+          "selector": {
+            "kind": "quote",
+            "exact": "aa",
+            "match": "one"
+          }
+        }
+      ],
+      "readings": [],
+      "annotations": [
+        {
+          "id": "annotation",
+          "agent": "editor",
+          "selection": "plural",
+          "body": "Retain ambiguity for an editor."
+        }
+      ],
+      "relations": []
+    },
+    "absent_annotation": {
+      "model_version": "0.1",
+      "agents": [
+        {
+          "id": "editor",
+          "label": "Editor Ada"
+        },
+        {
+          "id": "reviewer",
+          "label": "Editor Bea"
+        }
+      ],
+      "concepts": [],
+      "texts": [],
+      "versions": [
+        {
+          "id": "v1",
+          "content": "abcdef",
+          "sha256": "bef57ec7f53a6d40beb640a780a639c83bc29ac8a9816f1fc6c5c6dcd93c4721",
+          "parents": []
+        }
+      ],
+      "continuities": [],
+      "selections": [
+        {
+          "id": "missing",
+          "version": "v1",
+          "selector": {
+            "kind": "quote",
+            "exact": "xyz",
+            "match": "one"
+          }
+        }
+      ],
+      "readings": [],
+      "annotations": [
+        {
+          "id": "annotation",
+          "agent": "editor",
+          "selection": "missing",
+          "body": "An intentionally unresolved specification."
+        }
+      ],
+      "relations": []
+    },
+    "empty_point": {
+      "model_version": "0.1",
+      "agents": [],
+      "concepts": [],
+      "texts": [],
+      "versions": [
+        {
+          "id": "v1",
+          "content": "",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "parents": []
+        }
+      ],
+      "continuities": [],
+      "selections": [
+        {
+          "id": "origin",
+          "version": "v1",
+          "selector": {
+            "kind": "point",
+            "offset": 0
+          }
+        }
+      ],
+      "readings": [],
+      "annotations": [],
+      "relations": []
+    },
+    "unicode_codepoints": {
+      "model_version": "0.1",
+      "agents": [],
+      "concepts": [],
+      "texts": [],
+      "versions": [
+        {
+          "id": "v1",
+          "content": "A😀éZ",
+          "sha256": "75d0a188697852c2e2ce7e7fe623111a09eab74ec3f073b5c223340a44e862e5",
+          "parents": []
+        }
+      ],
+      "continuities": [],
+      "selections": [
+        {
+          "id": "astral",
+          "version": "v1",
+          "selector": {
+            "kind": "ranges",
+            "segments": [
+              {
+                "start": 1,
+                "end": 2,
+                "quote": "😀"
+              }
+            ]
+          }
+        },
+        {
+          "id": "combining",
+          "version": "v1",
+          "selector": {
+            "kind": "ranges",
+            "segments": [
+              {
+                "start": 3,
+                "end": 4,
+                "quote": "́"
+              }
+            ]
+          }
+        },
+        {
+          "id": "end",
+          "version": "v1",
+          "selector": {
+            "kind": "point",
+            "offset": 5
+          }
+        }
+      ],
+      "readings": [],
+      "annotations": [],
+      "relations": []
+    },
+    "no_normalization": {
+      "model_version": "0.1",
+      "agents": [],
+      "concepts": [],
+      "texts": [],
+      "versions": [
+        {
+          "id": "composed",
+          "content": "é",
+          "sha256": "4a99557e4033c3539de2eb65472017cad5f9557f7a0625a09f1c3f6e2ba69c4c",
+          "parents": []
+        },
+        {
+          "id": "decomposed",
+          "content": "é",
+          "sha256": "bf12767b0f2a56b2190075bae8169f656e3ce8d6357d4aff184bc6c7ea48f9f6",
+          "parents": []
+        }
+      ],
+      "continuities": [],
+      "selections": [
+        {
+          "id": "normalization_absent",
+          "version": "decomposed",
+          "selector": {
+            "kind": "quote",
+            "exact": "é",
+            "match": "one"
+          }
+        }
+      ],
+      "readings": [],
+      "annotations": [],
+      "relations": []
+    },
+    "wrong_hash": {
+      "model_version": "0.1",
+      "agents": [],
+      "concepts": [],
+      "texts": [],
+      "versions": [
+        {
+          "id": "v1",
+          "content": "abcdef",
+          "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+          "parents": []
+        }
+      ],
+      "continuities": [],
+      "selections": [
+        {
+          "id": "whole",
+          "version": "v1",
+          "selector": {
+            "kind": "ranges",
+            "segments": [
+              {
+                "start": 0,
+                "end": 6,
+                "quote": "abcdef"
+              }
+            ]
+          }
+        }
+      ],
+      "readings": [],
+      "annotations": [],
+      "relations": []
+    },
+    "missing_version_reference": {
+      "model_version": "0.1",
+      "agents": [],
+      "concepts": [],
+      "texts": [],
+      "versions": [
+        {
+          "id": "v1",
+          "content": "abcdef",
+          "sha256": "bef57ec7f53a6d40beb640a780a639c83bc29ac8a9816f1fc6c5c6dcd93c4721",
+          "parents": []
+        }
+      ],
+      "continuities": [],
+      "selections": [
+        {
+          "id": "whole",
+          "version": "missing",
+          "selector": {
+            "kind": "ranges",
+            "segments": [
+              {
+                "start": 0,
+                "end": 6,
+                "quote": "abcdef"
+              }
+            ]
+          }
+        }
+      ],
+      "readings": [],
+      "annotations": [],
+      "relations": []
+    },
+    "point_bounds": {
+      "model_version": "0.1",
+      "agents": [],
+      "concepts": [],
+      "texts": [],
+      "versions": [
+        {
+          "id": "v1",
+          "content": "abcdef",
+          "sha256": "bef57ec7f53a6d40beb640a780a639c83bc29ac8a9816f1fc6c5c6dcd93c4721",
+          "parents": []
+        }
+      ],
+      "continuities": [],
+      "selections": [
+        {
+          "id": "outside",
+          "version": "v1",
+          "selector": {
+            "kind": "point",
+            "offset": 7
+          }
+        }
+      ],
+      "readings": [],
+      "annotations": [],
+      "relations": []
+    },
+    "boolean_offset": {
+      "model_version": "0.1",
+      "agents": [],
+      "concepts": [],
+      "texts": [],
+      "versions": [
+        {
+          "id": "v1",
+          "content": "abcdef",
+          "sha256": "bef57ec7f53a6d40beb640a780a639c83bc29ac8a9816f1fc6c5c6dcd93c4721",
+          "parents": []
+        }
+      ],
+      "continuities": [],
+      "selections": [
+        {
+          "id": "boolean",
+          "version": "v1",
+          "selector": {
+            "kind": "point",
+            "offset": true
+          }
+        }
+      ],
+      "readings": [],
+      "annotations": [],
+      "relations": []
+    },
+    "range_quote_mismatch": {
+      "model_version": "0.1",
+      "agents": [],
+      "concepts": [],
+      "texts": [],
+      "versions": [
+        {
+          "id": "v1",
+          "content": "abcdef",
+          "sha256": "bef57ec7f53a6d40beb640a780a639c83bc29ac8a9816f1fc6c5c6dcd93c4721",
+          "parents": []
+        }
+      ],
+      "continuities": [],
+      "selections": [
+        {
+          "id": "wrong_quote",
+          "version": "v1",
+          "selector": {
+            "kind": "ranges",
+            "segments": [
+              {
+                "start": 0,
+                "end": 2,
+                "quote": "ac"
+              }
+            ]
+          }
+        }
+      ],
+      "readings": [],
+      "annotations": [],
+      "relations": []
+    },
+    "region_on_empty": {
+      "model_version": "0.1",
+      "agents": [],
+      "concepts": [],
+      "texts": [],
+      "versions": [
+        {
+          "id": "v1",
+          "content": "",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "parents": []
+        }
+      ],
+      "continuities": [],
+      "selections": [
+        {
+          "id": "nonempty",
+          "version": "v1",
+          "selector": {
+            "kind": "ranges",
+            "segments": [
+              {
+                "start": 0,
+                "end": 1,
+                "quote": "a"
+              }
+            ]
+          }
+        }
+      ],
+      "readings": [],
+      "annotations": [],
+      "relations": []
+    },
+    "adjacent_segments": {
+      "model_version": "0.1",
+      "agents": [],
+      "concepts": [],
+      "texts": [],
+      "versions": [
+        {
+          "id": "v1",
+          "content": "abcdef",
+          "sha256": "bef57ec7f53a6d40beb640a780a639c83bc29ac8a9816f1fc6c5c6dcd93c4721",
+          "parents": []
+        }
+      ],
+      "continuities": [],
+      "selections": [
+        {
+          "id": "adjacent",
+          "version": "v1",
+          "selector": {
+            "kind": "ranges",
+            "segments": [
+              {
+                "start": 0,
+                "end": 3,
+                "quote": "abc"
+              },
+              {
+                "start": 3,
+                "end": 6,
+                "quote": "def"
+              }
+            ]
+          }
+        }
+      ],
+      "readings": [],
+      "annotations": [],
+      "relations": []
+    },
+    "overlapping_segments": {
+      "model_version": "0.1",
+      "agents": [],
+      "concepts": [],
+      "texts": [],
+      "versions": [
+        {
+          "id": "v1",
+          "content": "abcdef",
+          "sha256": "bef57ec7f53a6d40beb640a780a639c83bc29ac8a9816f1fc6c5c6dcd93c4721",
+          "parents": []
+        }
+      ],
+      "continuities": [],
+      "selections": [
+        {
+          "id": "overlap",
+          "version": "v1",
+          "selector": {
+            "kind": "ranges",
+            "segments": [
+              {
+                "start": 0,
+                "end": 3,
+                "quote": "abc"
+              },
+              {
+                "start": 2,
+                "end": 4,
+                "quote": "cd"
+              }
+            ]
+          }
+        }
+      ],
+      "readings": [],
+      "annotations": [],
+      "relations": []
+    },
+    "unclaimed_text": {
+      "model_version": "0.1",
+      "agents": [],
+      "concepts": [],
+      "texts": [
+        {
+          "id": "text",
+          "label": "Unclaimed identity"
+        }
+      ],
+      "versions": [
+        {
+          "id": "v1",
+          "content": "abcdef",
+          "sha256": "bef57ec7f53a6d40beb640a780a639c83bc29ac8a9816f1fc6c5c6dcd93c4721",
+          "parents": []
+        }
+      ],
+      "continuities": [],
+      "selections": [],
+      "readings": [],
+      "annotations": [],
+      "relations": []
+    },
+    "attributed_continuity": {
+      "model_version": "0.1",
+      "agents": [
+        {
+          "id": "editor",
+          "label": "Editor Ada"
+        },
+        {
+          "id": "reviewer",
+          "label": "Editor Bea"
+        }
+      ],
+      "concepts": [],
+      "texts": [
+        {
+          "id": "text",
+          "label": "Editorially grouped work"
+        }
+      ],
+      "versions": [
+        {
+          "id": "v1",
+          "content": "abcdef",
+          "sha256": "bef57ec7f53a6d40beb640a780a639c83bc29ac8a9816f1fc6c5c6dcd93c4721",
+          "parents": []
+        },
+        {
+          "id": "v2",
+          "content": "abcXdef",
+          "sha256": "f417a234c5780c4d3f8c3d8b1e89af29afc5cdfbcd7f0a18a32e931d5f30e0ee",
+          "parents": [
+            "v1"
+          ]
+        }
+      ],
+      "continuities": [
+        {
+          "id": "claim",
+          "text": "text",
+          "versions": [
+            "v1",
+            "v2"
+          ],
+          "agent": "editor",
+          "criterion": "Treat insertion of X as a revision of the same editorial work."
+        },
+        {
+          "id": "rival",
+          "text": "text",
+          "versions": [
+            "v1"
+          ],
+          "agent": "reviewer",
+          "criterion": "Group only the first witness; exclude the altered witness."
+        }
+      ],
+      "selections": [],
+      "readings": [],
+      "annotations": [],
+      "relations": []
+    },
+    "missing_criterion": {
+      "model_version": "0.1",
+      "agents": [
+        {
+          "id": "editor",
+          "label": "Editor Ada"
+        },
+        {
+          "id": "reviewer",
+          "label": "Editor Bea"
+        }
+      ],
+      "concepts": [],
+      "texts": [
+        {
+          "id": "text",
+          "label": "Editorially grouped work"
+        }
+      ],
+      "versions": [
+        {
+          "id": "v1",
+          "content": "abcdef",
+          "sha256": "bef57ec7f53a6d40beb640a780a639c83bc29ac8a9816f1fc6c5c6dcd93c4721",
+          "parents": []
+        },
+        {
+          "id": "v2",
+          "content": "abcXdef",
+          "sha256": "f417a234c5780c4d3f8c3d8b1e89af29afc5cdfbcd7f0a18a32e931d5f30e0ee",
+          "parents": [
+            "v1"
+          ]
+        }
+      ],
+      "continuities": [
+        {
+          "id": "claim",
+          "text": "text",
+          "versions": [
+            "v1",
+            "v2"
+          ],
+          "agent": "editor",
+          "criterion": ""
+        },
+        {
+          "id": "rival",
+          "text": "text",
+          "versions": [
+            "v1"
+          ],
+          "agent": "reviewer",
+          "criterion": "Group only the first witness; exclude the altered witness."
+        }
+      ],
+      "selections": [],
+      "readings": [],
+      "annotations": [],
+      "relations": []
+    },
+    "missing_attribution": {
+      "model_version": "0.1",
+      "agents": [
+        {
+          "id": "editor",
+          "label": "Editor Ada"
+        },
+        {
+          "id": "reviewer",
+          "label": "Editor Bea"
+        }
+      ],
+      "concepts": [],
+      "texts": [
+        {
+          "id": "text",
+          "label": "Editorially grouped work"
+        }
+      ],
+      "versions": [
+        {
+          "id": "v1",
+          "content": "abcdef",
+          "sha256": "bef57ec7f53a6d40beb640a780a639c83bc29ac8a9816f1fc6c5c6dcd93c4721",
+          "parents": []
+        },
+        {
+          "id": "v2",
+          "content": "abcXdef",
+          "sha256": "f417a234c5780c4d3f8c3d8b1e89af29afc5cdfbcd7f0a18a32e931d5f30e0ee",
+          "parents": [
+            "v1"
+          ]
+        }
+      ],
+      "continuities": [
+        {
+          "id": "claim",
+          "text": "text",
+          "versions": [
+            "v1",
+            "v2"
+          ],
+          "agent": "missing",
+          "criterion": "Treat insertion of X as a revision of the same editorial work."
+        },
+        {
+          "id": "rival",
+          "text": "text",
+          "versions": [
+            "v1"
+          ],
+          "agent": "reviewer",
+          "criterion": "Group only the first witness; exclude the altered witness."
+        }
+      ],
+      "selections": [],
+      "readings": [],
+      "annotations": [],
+      "relations": []
+    },
+    "version_dag": {
+      "model_version": "0.1",
+      "agents": [],
+      "concepts": [],
+      "texts": [],
+      "versions": [
+        {
+          "id": "v1",
+          "content": "abcdef",
+          "sha256": "bef57ec7f53a6d40beb640a780a639c83bc29ac8a9816f1fc6c5c6dcd93c4721",
+          "parents": []
+        },
+        {
+          "id": "v2",
+          "content": "abcdef",
+          "sha256": "bef57ec7f53a6d40beb640a780a639c83bc29ac8a9816f1fc6c5c6dcd93c4721",
+          "parents": [
+            "v1"
+          ]
+        },
+        {
+          "id": "v3",
+          "content": "abcXdef",
+          "sha256": "f417a234c5780c4d3f8c3d8b1e89af29afc5cdfbcd7f0a18a32e931d5f30e0ee",
+          "parents": [
+            "v1"
+          ]
+        },
+        {
+          "id": "v4",
+          "content": "aaaa",
+          "sha256": "61be55a8e2f6b4e172338bddf184d6dbee29c98853e0a0485ecee7f27b9af0b4",
+          "parents": [
+            "v2",
+            "v3"
+          ]
+        }
+      ],
+      "continuities": [],
+      "selections": [],
+      "readings": [],
+      "annotations": [],
+      "relations": []
+    },
+    "version_cycle": {
+      "model_version": "0.1",
+      "agents": [],
+      "concepts": [],
+      "texts": [],
+      "versions": [
+        {
+          "id": "v1",
+          "content": "abcdef",
+          "sha256": "bef57ec7f53a6d40beb640a780a639c83bc29ac8a9816f1fc6c5c6dcd93c4721",
+          "parents": [
+            "v2"
+          ]
+        },
+        {
+          "id": "v2",
+          "content": "aaaa",
+          "sha256": "61be55a8e2f6b4e172338bddf184d6dbee29c98853e0a0485ecee7f27b9af0b4",
+          "parents": [
+            "v1"
+          ]
+        }
+      ],
+      "continuities": [],
+      "selections": [],
+      "readings": [],
+      "annotations": [],
+      "relations": []
+    },
+    "equal_content_distinct_ids": {
+      "model_version": "0.1",
+      "agents": [],
+      "concepts": [],
+      "texts": [],
+      "versions": [
+        {
+          "id": "v1",
+          "content": "abcdef",
+          "sha256": "bef57ec7f53a6d40beb640a780a639c83bc29ac8a9816f1fc6c5c6dcd93c4721",
+          "parents": []
+        },
+        {
+          "id": "v2",
+          "content": "abcdef",
+          "sha256": "bef57ec7f53a6d40beb640a780a639c83bc29ac8a9816f1fc6c5c6dcd93c4721",
+          "parents": []
+        }
+      ],
+      "continuities": [],
+      "selections": [],
+      "readings": [],
+      "annotations": [],
+      "relations": []
+    },
+    "competing_readings": {
+      "model_version": "0.1",
+      "agents": [
+        {
+          "id": "editor",
+          "label": "Editor Ada"
+        },
+        {
+          "id": "reviewer",
+          "label": "Editor Bea"
+        }
+      ],
+      "concepts": [
+        {
+          "id": "unit",
+          "label": "Editorial unit",
+          "definition": "A contiguous unit asserted by an editor.",
+          "applies_to": "node"
+        },
+        {
+          "id": "disagrees",
+          "label": "Disagrees with",
+          "definition": "An attributed disagreement; consistency is not machine evaluated.",
+          "applies_to": "relation"
+        }
+      ],
+      "texts": [],
+      "versions": [
+        {
+          "id": "v1",
+          "content": "abcdef",
+          "sha256": "bef57ec7f53a6d40beb640a780a639c83bc29ac8a9816f1fc6c5c6dcd93c4721",
+          "parents": []
+        }
+      ],
+      "continuities": [],
+      "selections": [
+        {
+          "id": "left",
+          "version": "v1",
+          "selector": {
+            "kind": "ranges",
+            "segments": [
+              {
+                "start": 0,
+                "end": 4,
+                "quote": "abcd"
+              }
+            ]
+          }
+        },
+        {
+          "id": "right",
+          "version": "v1",
+          "selector": {
+            "kind": "ranges",
+            "segments": [
+              {
+                "start": 2,
+                "end": 6,
+                "quote": "cdef"
+              }
+            ]
+          }
+        }
+      ],
+      "readings": [
+        {
+          "id": "readingA",
+          "version": "v1",
+          "agent": "editor",
+          "label": "First editorial reading",
+          "nodes": [
+            {
+              "id": "nodeA",
+              "type": "unit",
+              "selection": "left",
+              "parent": null
+            }
+          ]
+        },
+        {
+          "id": "readingB",
+          "version": "v1",
+          "agent": "reviewer",
+          "label": "Competing editorial reading",
+          "nodes": [
+            {
+              "id": "nodeB",
+              "type": "unit",
+              "selection": "right",
+              "parent": null
+            }
+          ]
+        }
+      ],
+      "annotations": [],
+      "relations": [
+        {
+          "id": "relationA",
+          "type": "disagrees",
+          "source": "nodeA",
+          "target": "nodeB",
+          "agent": "editor"
+        },
+        {
+          "id": "relationB",
+          "type": "disagrees",
+          "source": "nodeB",
+          "target": "nodeA",
+          "agent": "reviewer"
+        }
+      ]
+    },
+    "overlap_siblings": {
+      "model_version": "0.1",
+      "agents": [
+        {
+          "id": "editor",
+          "label": "Editor Ada"
+        },
+        {
+          "id": "reviewer",
+          "label": "Editor Bea"
+        }
+      ],
+      "concepts": [
+        {
+          "id": "unit",
+          "label": "Editorial unit",
+          "definition": "A contiguous unit asserted by an editor.",
+          "applies_to": "node"
+        }
+      ],
+      "texts": [],
+      "versions": [
+        {
+          "id": "v1",
+          "content": "abcdef",
+          "sha256": "bef57ec7f53a6d40beb640a780a639c83bc29ac8a9816f1fc6c5c6dcd93c4721",
+          "parents": []
+        }
+      ],
+      "continuities": [],
+      "selections": [
+        {
+          "id": "left",
+          "version": "v1",
+          "selector": {
+            "kind": "ranges",
+            "segments": [
+              {
+                "start": 0,
+                "end": 4,
+                "quote": "abcd"
+              }
+            ]
+          }
+        },
+        {
+          "id": "right",
+          "version": "v1",
+          "selector": {
+            "kind": "ranges",
+            "segments": [
+              {
+                "start": 2,
+                "end": 6,
+                "quote": "cdef"
+              }
+            ]
+          }
+        }
+      ],
+      "readings": [
+        {
+          "id": "readingA",
+          "version": "v1",
+          "agent": "editor",
+          "label": "First editorial reading",
+          "nodes": [
+            {
+              "id": "nodeA",
+              "type": "unit",
+              "selection": "left",
+              "parent": null
+            },
+            {
+              "id": "nodeB",
+              "type": "unit",
+              "selection": "right",
+              "parent": null
+            }
+          ]
+        }
+      ],
+      "annotations": [],
+      "relations": []
+    },
+    "equal_parent_child": {
+      "model_version": "0.1",
+      "agents": [
+        {
+          "id": "editor",
+          "label": "Editor Ada"
+        },
+        {
+          "id": "reviewer",
+          "label": "Editor Bea"
+        }
+      ],
+      "concepts": [
+        {
+          "id": "unit",
+          "label": "Editorial unit",
+          "definition": "A contiguous unit asserted by an editor.",
+          "applies_to": "node"
+        }
+      ],
+      "texts": [],
+      "versions": [
+        {
+          "id": "v1",
+          "content": "abcdef",
+          "sha256": "bef57ec7f53a6d40beb640a780a639c83bc29ac8a9816f1fc6c5c6dcd93c4721",
+          "parents": []
+        }
+      ],
+      "continuities": [],
+      "selections": [
+        {
+          "id": "left",
+          "version": "v1",
+          "selector": {
+            "kind": "ranges",
+            "segments": [
+              {
+                "start": 0,
+                "end": 4,
+                "quote": "abcd"
+              }
+            ]
+          }
+        },
+        {
+          "id": "right",
+          "version": "v1",
+          "selector": {
+            "kind": "ranges",
+            "segments": [
+              {
+                "start": 2,
+                "end": 6,
+                "quote": "cdef"
+              }
+            ]
+          }
+        }
+      ],
+      "readings": [
+        {
+          "id": "readingA",
+          "version": "v1",
+          "agent": "editor",
+          "label": "First editorial reading",
+          "nodes": [
+            {
+              "id": "nodeA",
+              "type": "unit",
+              "selection": "left",
+              "parent": null
+            },
+            {
+              "id": "child",
+              "type": "unit",
+              "selection": "left",
+              "parent": "nodeA"
+            }
+          ]
+        }
+      ],
+      "annotations": [],
+      "relations": []
+    },
+    "reading_cycle": {
+      "model_version": "0.1",
+      "agents": [
+        {
+          "id": "editor",
+          "label": "Editor Ada"
+        },
+        {
+          "id": "reviewer",
+          "label": "Editor Bea"
+        }
+      ],
+      "concepts": [
+        {
+          "id": "unit",
+          "label": "Editorial unit",
+          "definition": "A contiguous unit asserted by an editor.",
+          "applies_to": "node"
+        }
+      ],
+      "texts": [],
+      "versions": [
+        {
+          "id": "v1",
+          "content": "abcdef",
+          "sha256": "bef57ec7f53a6d40beb640a780a639c83bc29ac8a9816f1fc6c5c6dcd93c4721",
+          "parents": []
+        }
+      ],
+      "continuities": [],
+      "selections": [
+        {
+          "id": "left",
+          "version": "v1",
+          "selector": {
+            "kind": "ranges",
+            "segments": [
+              {
+                "start": 0,
+                "end": 4,
+                "quote": "abcd"
+              }
+            ]
+          }
+        },
+        {
+          "id": "right",
+          "version": "v1",
+          "selector": {
+            "kind": "ranges",
+            "segments": [
+              {
+                "start": 2,
+                "end": 6,
+                "quote": "cdef"
+              }
+            ]
+          }
+        }
+      ],
+      "readings": [
+        {
+          "id": "readingA",
+          "version": "v1",
+          "agent": "editor",
+          "label": "First editorial reading",
+          "nodes": [
+            {
+              "id": "nodeA",
+              "type": "unit",
+              "selection": "left",
+              "parent": "child"
+            },
+            {
+              "id": "child",
+              "type": "unit",
+              "selection": "left",
+              "parent": "nodeA"
+            }
+          ]
+        }
+      ],
+      "annotations": [],
+      "relations": []
+    },
+    "child_not_contained": {
+      "model_version": "0.1",
+      "agents": [
+        {
+          "id": "editor",
+          "label": "Editor Ada"
+        },
+        {
+          "id": "reviewer",
+          "label": "Editor Bea"
+        }
+      ],
+      "concepts": [
+        {
+          "id": "unit",
+          "label": "Editorial unit",
+          "definition": "A contiguous unit asserted by an editor.",
+          "applies_to": "node"
+        }
+      ],
+      "texts": [],
+      "versions": [
+        {
+          "id": "v1",
+          "content": "abcdef",
+          "sha256": "bef57ec7f53a6d40beb640a780a639c83bc29ac8a9816f1fc6c5c6dcd93c4721",
+          "parents": []
+        }
+      ],
+      "continuities": [],
+      "selections": [
+        {
+          "id": "left",
+          "version": "v1",
+          "selector": {
+            "kind": "ranges",
+            "segments": [
+              {
+                "start": 0,
+                "end": 4,
+                "quote": "abcd"
+              }
+            ]
+          }
+        },
+        {
+          "id": "right",
+          "version": "v1",
+          "selector": {
+            "kind": "ranges",
+            "segments": [
+              {
+                "start": 2,
+                "end": 6,
+                "quote": "cdef"
+              }
+            ]
+          }
+        }
+      ],
+      "readings": [
+        {
+          "id": "readingA",
+          "version": "v1",
+          "agent": "editor",
+          "label": "First editorial reading",
+          "nodes": [
+            {
+              "id": "nodeA",
+              "type": "unit",
+              "selection": "left",
+              "parent": null
+            },
+            {
+              "id": "child",
+              "type": "unit",
+              "selection": "right",
+              "parent": "nodeA"
+            }
+          ]
+        }
+      ],
+      "annotations": [],
+      "relations": []
+    },
+    "discontinuous_reading_target": {
+      "model_version": "0.1",
+      "agents": [
+        {
+          "id": "editor",
+          "label": "Editor Ada"
+        },
+        {
+          "id": "reviewer",
+          "label": "Editor Bea"
+        }
+      ],
+      "concepts": [
+        {
+          "id": "unit",
+          "label": "Editorial unit",
+          "definition": "A contiguous unit asserted by an editor.",
+          "applies_to": "node"
+        }
+      ],
+      "texts": [],
+      "versions": [
+        {
+          "id": "v1",
+          "content": "abcdef",
+          "sha256": "bef57ec7f53a6d40beb640a780a639c83bc29ac8a9816f1fc6c5c6dcd93c4721",
+          "parents": []
+        }
+      ],
+      "continuities": [],
+      "selections": [
+        {
+          "id": "parts",
+          "version": "v1",
+          "selector": {
+            "kind": "ranges",
+            "segments": [
+              {
+                "start": 0,
+                "end": 2,
+                "quote": "ab"
+              },
+              {
+                "start": 4,
+                "end": 6,
+                "quote": "ef"
+              }
+            ]
+          }
+        }
+      ],
+      "readings": [
+        {
+          "id": "reading",
+          "version": "v1",
+          "agent": "editor",
+          "label": "A discontinuous node is not supported",
+          "nodes": [
+            {
+              "id": "node",
+              "type": "unit",
+              "selection": "parts",
+              "parent": null
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "annotation",
+          "agent": "editor",
+          "selection": "parts",
+          "body": "One discontinuous editorial target."
+        }
+      ],
+      "relations": []
+    },
+    "absent_reading_target": {
+      "model_version": "0.1",
+      "agents": [
+        {
+          "id": "editor",
+          "label": "Editor Ada"
+        },
+        {
+          "id": "reviewer",
+          "label": "Editor Bea"
+        }
+      ],
+      "concepts": [
+        {
+          "id": "unit",
+          "label": "Editorial unit",
+          "definition": "A contiguous unit asserted by an editor.",
+          "applies_to": "node"
+        }
+      ],
+      "texts": [],
+      "versions": [
+        {
+          "id": "v1",
+          "content": "abcdef",
+          "sha256": "bef57ec7f53a6d40beb640a780a639c83bc29ac8a9816f1fc6c5c6dcd93c4721",
+          "parents": []
+        }
+      ],
+      "continuities": [],
+      "selections": [
+        {
+          "id": "missing",
+          "version": "v1",
+          "selector": {
+            "kind": "quote",
+            "exact": "xyz",
+            "match": "one"
+          }
+        }
+      ],
+      "readings": [
+        {
+          "id": "reading",
+          "version": "v1",
+          "agent": "editor",
+          "label": "Unresolved node",
+          "nodes": [
+            {
+              "id": "node",
+              "type": "unit",
+              "selection": "missing",
+              "parent": null
+            }
+          ]
+        }
+      ],
+      "annotations": [
+        {
+          "id": "annotation",
+          "agent": "editor",
+          "selection": "missing",
+          "body": "An intentionally unresolved specification."
+        }
+      ],
+      "relations": []
+    },
+    "plural_reading_target": {
+      "model_version": "0.1",
+      "agents": [
+        {
+          "id": "editor",
+          "label": "Editor Ada"
+        },
+        {
+          "id": "reviewer",
+          "label": "Editor Bea"
+        }
+      ],
+      "concepts": [
+        {
+          "id": "unit",
+          "label": "Editorial unit",
+          "definition": "A contiguous unit asserted by an editor.",
+          "applies_to": "node"
+        }
+      ],
+      "texts": [],
+      "versions": [
+        {
+          "id": "v1",
+          "content": "aaaa",
+          "sha256": "61be55a8e2f6b4e172338bddf184d6dbee29c98853e0a0485ecee7f27b9af0b4",
+          "parents": []
+        }
+      ],
+      "continuities": [],
+      "selections": [
+        {
+          "id": "plural",
+          "version": "v1",
+          "selector": {
+            "kind": "quote",
+            "exact": "aa",
+            "match": "all"
+          }
+        }
+      ],
+      "readings": [
+        {
+          "id": "reading",
+          "version": "v1",
+          "agent": "editor",
+          "label": "Plural node",
+          "nodes": [
+            {
+              "id": "node",
+              "type": "unit",
+              "selection": "plural",
+              "parent": null
+            }
+          ]
+        }
+      ],
+      "annotations": [],
+      "relations": []
+    },
+    "wrong_concept_category": {
+      "model_version": "0.1",
+      "agents": [
+        {
+          "id": "editor",
+          "label": "Editor Ada"
+        },
+        {
+          "id": "reviewer",
+          "label": "Editor Bea"
+        }
+      ],
+      "concepts": [
+        {
+          "id": "unit",
+          "label": "Editorial unit",
+          "definition": "A contiguous unit asserted by an editor.",
+          "applies_to": "node"
+        },
+        {
+          "id": "relationType",
+          "label": "Disagrees with",
+          "definition": "An attributed disagreement; consistency is not machine evaluated.",
+          "applies_to": "relation"
+        }
+      ],
+      "texts": [],
+      "versions": [
+        {
+          "id": "v1",
+          "content": "abcdef",
+          "sha256": "bef57ec7f53a6d40beb640a780a639c83bc29ac8a9816f1fc6c5c6dcd93c4721",
+          "parents": []
+        }
+      ],
+      "continuities": [],
+      "selections": [
+        {
+          "id": "left",
+          "version": "v1",
+          "selector": {
+            "kind": "ranges",
+            "segments": [
+              {
+                "start": 0,
+                "end": 4,
+                "quote": "abcd"
+              }
+            ]
+          }
+        },
+        {
+          "id": "right",
+          "version": "v1",
+          "selector": {
+            "kind": "ranges",
+            "segments": [
+              {
+                "start": 2,
+                "end": 6,
+                "quote": "cdef"
+              }
+            ]
+          }
+        }
+      ],
+      "readings": [
+        {
+          "id": "readingA",
+          "version": "v1",
+          "agent": "editor",
+          "label": "First editorial reading",
+          "nodes": [
+            {
+              "id": "nodeA",
+              "type": "relationType",
+              "selection": "left",
+              "parent": null
+            }
+          ]
+        },
+        {
+          "id": "readingB",
+          "version": "v1",
+          "agent": "reviewer",
+          "label": "Competing editorial reading",
+          "nodes": [
+            {
+              "id": "nodeB",
+              "type": "unit",
+              "selection": "right",
+              "parent": null
+            }
+          ]
+        }
+      ],
+      "annotations": [],
+      "relations": []
+    },
+    "empty_reading": {
+      "model_version": "0.1",
+      "agents": [
+        {
+          "id": "editor",
+          "label": "Editor Ada"
+        },
+        {
+          "id": "reviewer",
+          "label": "Editor Bea"
+        }
+      ],
+      "concepts": [],
+      "texts": [],
+      "versions": [
+        {
+          "id": "v1",
+          "content": "abcdef",
+          "sha256": "bef57ec7f53a6d40beb640a780a639c83bc29ac8a9816f1fc6c5c6dcd93c4721",
+          "parents": []
+        }
+      ],
+      "continuities": [],
+      "selections": [],
+      "readings": [
+        {
+          "id": "reading",
+          "version": "v1",
+          "agent": "editor",
+          "label": "Empty reading",
+          "nodes": []
+        }
+      ],
+      "annotations": [],
+      "relations": []
+    },
+    "duplicate_global_id": {
+      "model_version": "0.1",
+      "agents": [
+        {
+          "id": "v1",
+          "label": "Conflicting global ID"
+        }
+      ],
+      "concepts": [],
+      "texts": [],
+      "versions": [
+        {
+          "id": "v1",
+          "content": "abcdef",
+          "sha256": "bef57ec7f53a6d40beb640a780a639c83bc29ac8a9816f1fc6c5c6dcd93c4721",
+          "parents": []
+        }
+      ],
+      "continuities": [],
+      "selections": [],
+      "readings": [],
+      "annotations": [],
+      "relations": []
+    },
+    "unknown_field": {
+      "model_version": "0.1",
+      "agents": [],
+      "concepts": [],
+      "texts": [],
+      "versions": [
+        {
+          "id": "v1",
+          "content": "abcdef",
+          "sha256": "bef57ec7f53a6d40beb640a780a639c83bc29ac8a9816f1fc6c5c6dcd93c4721",
+          "parents": []
+        }
+      ],
+      "continuities": [],
+      "selections": [],
+      "readings": [],
+      "annotations": [],
+      "relations": [],
+      "extra": "Unknown fields are not silently ignored."
+    },
+    "literal_context": {
+      "model_version": "0.1",
+      "agents": [],
+      "concepts": [],
+      "texts": [],
+      "versions": [
+        {
+          "id": "v1",
+          "content": "aaaa",
+          "sha256": "61be55a8e2f6b4e172338bddf184d6dbee29c98853e0a0485ecee7f27b9af0b4",
+          "parents": []
+        }
+      ],
+      "continuities": [],
+      "selections": [
+        {
+          "id": "contextual",
+          "version": "v1",
+          "selector": {
+            "kind": "quote",
+            "exact": "aa",
+            "match": "one",
+            "prefix": "aa",
+            "suffix": ""
+          }
+        }
+      ],
+      "readings": [],
+      "annotations": [],
+      "relations": []
+    },
+    "contradictory_interpretations": {
+      "model_version": "0.1",
+      "agents": [
+        {
+          "id": "editor",
+          "label": "Editor Ada"
+        },
+        {
+          "id": "reviewer",
+          "label": "Editor Bea"
+        }
+      ],
+      "concepts": [
+        {
+          "id": "unit",
+          "label": "Editorial unit",
+          "definition": "A contiguous unit asserted by an editor.",
+          "applies_to": "node"
+        }
+      ],
+      "texts": [],
+      "versions": [
+        {
+          "id": "v1",
+          "content": "abcdef",
+          "sha256": "bef57ec7f53a6d40beb640a780a639c83bc29ac8a9816f1fc6c5c6dcd93c4721",
+          "parents": []
+        }
+      ],
+      "continuities": [],
+      "selections": [
+        {
+          "id": "sameA",
+          "version": "v1",
+          "selector": {
+            "kind": "ranges",
+            "segments": [
+              {
+                "start": 0,
+                "end": 2,
+                "quote": "ab"
+              }
+            ]
+          }
+        },
+        {
+          "id": "sameB",
+          "version": "v1",
+          "selector": {
+            "kind": "ranges",
+            "segments": [
+              {
+                "start": 0,
+                "end": 2,
+                "quote": "ab"
+              }
+            ]
+          }
+        }
+      ],
+      "readings": [],
+      "annotations": [
+        {
+          "id": "claimA",
+          "agent": "editor",
+          "selection": "sameA",
+          "body": "This is a name."
+        },
+        {
+          "id": "claimB",
+          "agent": "reviewer",
+          "selection": "sameB",
+          "body": "This is not a name."
+        }
+      ],
+      "relations": []
+    },
+    "adjacent_reading_target": {
+      "model_version": "0.1",
+      "agents": [
+        {
+          "id": "editor",
+          "label": "Editor Ada"
+        },
+        {
+          "id": "reviewer",
+          "label": "Editor Bea"
+        }
+      ],
+      "concepts": [
+        {
+          "id": "unit",
+          "label": "Editorial unit",
+          "definition": "A contiguous unit asserted by an editor.",
+          "applies_to": "node"
+        },
+        {
+          "id": "disagrees",
+          "label": "Disagrees with",
+          "definition": "An attributed disagreement; consistency is not machine evaluated.",
+          "applies_to": "relation"
+        }
+      ],
+      "texts": [],
+      "versions": [
+        {
+          "id": "v1",
+          "content": "abcdef",
+          "sha256": "bef57ec7f53a6d40beb640a780a639c83bc29ac8a9816f1fc6c5c6dcd93c4721",
+          "parents": []
+        }
+      ],
+      "continuities": [],
+      "selections": [
+        {
+          "id": "adjacent",
+          "version": "v1",
+          "selector": {
+            "kind": "ranges",
+            "segments": [
+              {
+                "start": 0,
+                "end": 3,
+                "quote": "abc"
+              },
+              {
+                "start": 3,
+                "end": 6,
+                "quote": "def"
+              }
+            ]
+          }
+        }
+      ],
+      "readings": [
+        {
+          "id": "reading",
+          "version": "v1",
+          "agent": "editor",
+          "label": "Contiguous despite segment boundary",
+          "nodes": [
+            {
+              "id": "node",
+              "type": "unit",
+              "selection": "adjacent",
+              "parent": null
+            }
+          ]
+        }
+      ],
+      "annotations": [],
+      "relations": []
+    },
+    "point_reading_target": {
+      "model_version": "0.1",
+      "agents": [
+        {
+          "id": "editor",
+          "label": "Editor Ada"
+        },
+        {
+          "id": "reviewer",
+          "label": "Editor Bea"
+        }
+      ],
+      "concepts": [
+        {
+          "id": "unit",
+          "label": "Editorial unit",
+          "definition": "A contiguous unit asserted by an editor.",
+          "applies_to": "node"
+        },
+        {
+          "id": "disagrees",
+          "label": "Disagrees with",
+          "definition": "An attributed disagreement; consistency is not machine evaluated.",
+          "applies_to": "relation"
+        }
+      ],
+      "texts": [],
+      "versions": [
+        {
+          "id": "v1",
+          "content": "",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "parents": []
+        }
+      ],
+      "continuities": [],
+      "selections": [
+        {
+          "id": "origin",
+          "version": "v1",
+          "selector": {
+            "kind": "point",
+            "offset": 0
+          }
+        }
+      ],
+      "readings": [
+        {
+          "id": "reading",
+          "version": "v1",
+          "agent": "editor",
+          "label": "Point has no extent",
+          "nodes": [
+            {
+              "id": "node",
+              "type": "unit",
+              "selection": "origin",
+              "parent": null
+            }
+          ]
+        }
+      ],
+      "annotations": [],
+      "relations": []
+    },
+    "canonical_original": {
+      "model_version": "0.1",
+      "agents": [
+        {
+          "id": "editor",
+          "label": "Editor Ada"
+        },
+        {
+          "id": "reviewer",
+          "label": "Editor Bea"
+        }
+      ],
+      "concepts": [],
+      "texts": [
+        {
+          "id": "text",
+          "label": "Editorially grouped work"
+        }
+      ],
+      "versions": [
+        {
+          "id": "v1",
+          "content": "abcdef",
+          "sha256": "bef57ec7f53a6d40beb640a780a639c83bc29ac8a9816f1fc6c5c6dcd93c4721",
+          "parents": []
+        },
+        {
+          "id": "v2",
+          "content": "abcXdef",
+          "sha256": "f417a234c5780c4d3f8c3d8b1e89af29afc5cdfbcd7f0a18a32e931d5f30e0ee",
+          "parents": [
+            "v1"
+          ]
+        },
+        {
+          "id": "v3",
+          "content": "aaaa",
+          "sha256": "61be55a8e2f6b4e172338bddf184d6dbee29c98853e0a0485ecee7f27b9af0b4",
+          "parents": []
+        },
+        {
+          "id": "v4",
+          "content": "no match",
+          "sha256": "9bc94ab9b39bfff44297d99f66b2d1dc08ba96658be582098c879d223aa84283",
+          "parents": [
+            "v1",
+            "v2",
+            "v3"
+          ]
+        }
+      ],
+      "continuities": [
+        {
+          "id": "claim",
+          "text": "text",
+          "versions": [
+            "v1",
+            "v2",
+            "v3",
+            "v4"
+          ],
+          "agent": "editor",
+          "criterion": "Treat insertion of X as a revision of the same editorial work."
+        },
+        {
+          "id": "rival",
+          "text": "text",
+          "versions": [
+            "v1"
+          ],
+          "agent": "reviewer",
+          "criterion": "Group only the first witness; exclude the altered witness."
+        }
+      ],
+      "selections": [
+        {
+          "id": "whole",
+          "version": "v1",
+          "selector": {
+            "kind": "ranges",
+            "segments": [
+              {
+                "start": 0,
+                "end": 6,
+                "quote": "abcdef"
+              }
+            ]
+          }
+        }
+      ],
+      "readings": [],
+      "annotations": [],
+      "relations": []
+    },
+    "canonical_reordered": {
+      "relations": [],
+      "annotations": [],
+      "readings": [],
+      "selections": [
+        {
+          "selector": {
+            "segments": [
+              {
+                "quote": "abcdef",
+                "end": 6,
+                "start": 0
+              }
+            ],
+            "kind": "ranges"
+          },
+          "version": "v1",
+          "id": "whole"
+        }
+      ],
+      "continuities": [
+        {
+          "criterion": "Group only the first witness; exclude the altered witness.",
+          "agent": "reviewer",
+          "versions": [
+            "v1"
+          ],
+          "text": "text",
+          "id": "rival"
+        },
+        {
+          "criterion": "Treat insertion of X as a revision of the same editorial work.",
+          "agent": "editor",
+          "versions": [
+            "v4",
+            "v3",
+            "v2",
+            "v1"
+          ],
+          "text": "text",
+          "id": "claim"
+        }
+      ],
+      "versions": [
+        {
+          "parents": [
+            "v3",
+            "v2",
+            "v1"
+          ],
+          "sha256": "9bc94ab9b39bfff44297d99f66b2d1dc08ba96658be582098c879d223aa84283",
+          "content": "no match",
+          "id": "v4"
+        },
+        {
+          "parents": [],
+          "sha256": "61be55a8e2f6b4e172338bddf184d6dbee29c98853e0a0485ecee7f27b9af0b4",
+          "content": "aaaa",
+          "id": "v3"
+        },
+        {
+          "parents": [
+            "v1"
+          ],
+          "sha256": "f417a234c5780c4d3f8c3d8b1e89af29afc5cdfbcd7f0a18a32e931d5f30e0ee",
+          "content": "abcXdef",
+          "id": "v2"
+        },
+        {
+          "parents": [],
+          "sha256": "bef57ec7f53a6d40beb640a780a639c83bc29ac8a9816f1fc6c5c6dcd93c4721",
+          "content": "abcdef",
+          "id": "v1"
+        }
+      ],
+      "texts": [
+        {
+          "label": "Editorially grouped work",
+          "id": "text"
+        }
+      ],
+      "concepts": [],
+      "agents": [
+        {
+          "label": "Editor Bea",
+          "id": "reviewer"
+        },
+        {
+          "label": "Editor Ada",
+          "id": "editor"
+        }
+      ],
+      "model_version": "0.1"
+    },
+    "competing_reordered": {
+      "model_version": "0.1",
+      "agents": [
+        {
+          "id": "editor",
+          "label": "Editor Ada"
+        },
+        {
+          "id": "reviewer",
+          "label": "Editor Bea"
+        }
+      ],
+      "concepts": [
+        {
+          "id": "disagrees",
+          "label": "Disagrees with",
+          "definition": "An attributed disagreement; consistency is not machine evaluated.",
+          "applies_to": "relation"
+        },
+        {
+          "id": "unit",
+          "label": "Editorial unit",
+          "definition": "A contiguous unit asserted by an editor.",
+          "applies_to": "node"
+        }
+      ],
+      "texts": [],
+      "versions": [
+        {
+          "id": "v1",
+          "content": "abcdef",
+          "sha256": "bef57ec7f53a6d40beb640a780a639c83bc29ac8a9816f1fc6c5c6dcd93c4721",
+          "parents": []
+        }
+      ],
+      "continuities": [],
+      "selections": [
+        {
+          "id": "left",
+          "version": "v1",
+          "selector": {
+            "kind": "ranges",
+            "segments": [
+              {
+                "start": 0,
+                "end": 4,
+                "quote": "abcd"
+              }
+            ]
+          }
+        },
+        {
+          "id": "right",
+          "version": "v1",
+          "selector": {
+            "kind": "ranges",
+            "segments": [
+              {
+                "start": 2,
+                "end": 6,
+                "quote": "cdef"
+              }
+            ]
+          }
+        }
+      ],
+      "readings": [
+        {
+          "id": "readingB",
+          "version": "v1",
+          "agent": "reviewer",
+          "label": "Competing editorial reading",
+          "nodes": [
+            {
+              "id": "nodeB",
+              "type": "unit",
+              "selection": "right",
+              "parent": null
+            }
+          ]
+        },
+        {
+          "id": "readingA",
+          "version": "v1",
+          "agent": "editor",
+          "label": "First editorial reading",
+          "nodes": [
+            {
+              "id": "nodeA",
+              "type": "unit",
+              "selection": "left",
+              "parent": null
+            }
+          ]
+        }
+      ],
+      "annotations": [],
+      "relations": [
+        {
+          "id": "relationB",
+          "type": "disagrees",
+          "source": "nodeB",
+          "target": "nodeA",
+          "agent": "reviewer"
+        },
+        {
+          "id": "relationA",
+          "type": "disagrees",
+          "source": "nodeA",
+          "target": "nodeB",
+          "agent": "editor"
+        }
+      ]
+    },
+    "nodes_reordered": {
+      "model_version": "0.1",
+      "agents": [
+        {
+          "id": "editor",
+          "label": "Editor Ada"
+        },
+        {
+          "id": "reviewer",
+          "label": "Editor Bea"
+        }
+      ],
+      "concepts": [
+        {
+          "id": "unit",
+          "label": "Editorial unit",
+          "definition": "A contiguous unit asserted by an editor.",
+          "applies_to": "node"
+        }
+      ],
+      "texts": [],
+      "versions": [
+        {
+          "id": "v1",
+          "content": "abcdef",
+          "sha256": "bef57ec7f53a6d40beb640a780a639c83bc29ac8a9816f1fc6c5c6dcd93c4721",
+          "parents": []
+        }
+      ],
+      "continuities": [],
+      "selections": [
+        {
+          "id": "left",
+          "version": "v1",
+          "selector": {
+            "kind": "ranges",
+            "segments": [
+              {
+                "start": 0,
+                "end": 4,
+                "quote": "abcd"
+              }
+            ]
+          }
+        },
+        {
+          "id": "right",
+          "version": "v1",
+          "selector": {
+            "kind": "ranges",
+            "segments": [
+              {
+                "start": 2,
+                "end": 6,
+                "quote": "cdef"
+              }
+            ]
+          }
+        }
+      ],
+      "readings": [
+        {
+          "id": "readingA",
+          "version": "v1",
+          "agent": "editor",
+          "label": "First editorial reading",
+          "nodes": [
+            {
+              "id": "child",
+              "type": "unit",
+              "selection": "left",
+              "parent": "nodeA"
+            },
+            {
+              "id": "nodeA",
+              "type": "unit",
+              "selection": "left",
+              "parent": null
+            }
+          ]
+        }
+      ],
+      "annotations": [],
+      "relations": []
+    },
+    "selector_kind_changed": {
+      "model_version": "0.1",
+      "agents": [],
+      "concepts": [],
+      "texts": [],
+      "versions": [
+        {
+          "id": "v1",
+          "content": "abcdef",
+          "sha256": "bef57ec7f53a6d40beb640a780a639c83bc29ac8a9816f1fc6c5c6dcd93c4721",
+          "parents": []
+        }
+      ],
+      "continuities": [],
+      "selections": [
+        {
+          "id": "whole",
+          "version": "v1",
+          "selector": {
+            "kind": "quote",
+            "exact": "abcdef",
+            "match": "one"
+          }
+        }
+      ],
+      "readings": [],
+      "annotations": [],
+      "relations": []
+    },
+    "selector_policy_changed": {
+      "model_version": "0.1",
+      "agents": [],
+      "concepts": [],
+      "texts": [],
+      "versions": [
+        {
+          "id": "v1",
+          "content": "abcdef",
+          "sha256": "bef57ec7f53a6d40beb640a780a639c83bc29ac8a9816f1fc6c5c6dcd93c4721",
+          "parents": []
+        }
+      ],
+      "continuities": [],
+      "selections": [
+        {
+          "id": "whole",
+          "version": "v1",
+          "selector": {
+            "kind": "quote",
+            "exact": "abcdef",
+            "match": "all"
+          }
+        }
+      ],
+      "readings": [],
+      "annotations": [],
+      "relations": []
+    },
+    "segmentation_changed": {
+      "model_version": "0.1",
+      "agents": [],
+      "concepts": [],
+      "texts": [],
+      "versions": [
+        {
+          "id": "v1",
+          "content": "abcdef",
+          "sha256": "bef57ec7f53a6d40beb640a780a639c83bc29ac8a9816f1fc6c5c6dcd93c4721",
+          "parents": []
+        }
+      ],
+      "continuities": [],
+      "selections": [
+        {
+          "id": "whole",
+          "version": "v1",
+          "selector": {
+            "kind": "ranges",
+            "segments": [
+              {
+                "start": 0,
+                "end": 3,
+                "quote": "abc"
+              },
+              {
+                "start": 3,
+                "end": 6,
+                "quote": "def"
+              }
+            ]
+          }
+        }
+      ],
+      "readings": [],
+      "annotations": [],
+      "relations": []
+    },
+    "selection_id_changed": {
+      "model_version": "0.1",
+      "agents": [],
+      "concepts": [],
+      "texts": [],
+      "versions": [
+        {
+          "id": "v1",
+          "content": "abcdef",
+          "sha256": "bef57ec7f53a6d40beb640a780a639c83bc29ac8a9816f1fc6c5c6dcd93c4721",
+          "parents": []
+        }
+      ],
+      "continuities": [],
+      "selections": [
+        {
+          "id": "renamed",
+          "version": "v1",
+          "selector": {
+            "kind": "ranges",
+            "segments": [
+              {
+                "start": 0,
+                "end": 6,
+                "quote": "abcdef"
+              }
+            ]
+          }
+        }
+      ],
+      "readings": [],
+      "annotations": [],
+      "relations": []
+    },
+    "attribution_changed": {
+      "model_version": "0.1",
+      "agents": [
+        {
+          "id": "editor",
+          "label": "Editor Ada"
+        },
+        {
+          "id": "reviewer",
+          "label": "Editor Bea"
+        }
+      ],
+      "concepts": [],
+      "texts": [
+        {
+          "id": "text",
+          "label": "Editorially grouped work"
+        }
+      ],
+      "versions": [
+        {
+          "id": "v1",
+          "content": "abcdef",
+          "sha256": "bef57ec7f53a6d40beb640a780a639c83bc29ac8a9816f1fc6c5c6dcd93c4721",
+          "parents": []
+        },
+        {
+          "id": "v2",
+          "content": "abcXdef",
+          "sha256": "f417a234c5780c4d3f8c3d8b1e89af29afc5cdfbcd7f0a18a32e931d5f30e0ee",
+          "parents": [
+            "v1"
+          ]
+        }
+      ],
+      "continuities": [
+        {
+          "id": "claim",
+          "text": "text",
+          "versions": [
+            "v1",
+            "v2"
+          ],
+          "agent": "reviewer",
+          "criterion": "Treat insertion of X as a revision of the same editorial work."
+        },
+        {
+          "id": "rival",
+          "text": "text",
+          "versions": [
+            "v1"
+          ],
+          "agent": "reviewer",
+          "criterion": "Group only the first witness; exclude the altered witness."
+        }
+      ],
+      "selections": [],
+      "readings": [],
+      "annotations": [],
+      "relations": []
+    },
+    "criterion_changed": {
+      "model_version": "0.1",
+      "agents": [
+        {
+          "id": "editor",
+          "label": "Editor Ada"
+        },
+        {
+          "id": "reviewer",
+          "label": "Editor Bea"
+        }
+      ],
+      "concepts": [],
+      "texts": [
+        {
+          "id": "text",
+          "label": "Editorially grouped work"
+        }
+      ],
+      "versions": [
+        {
+          "id": "v1",
+          "content": "abcdef",
+          "sha256": "bef57ec7f53a6d40beb640a780a639c83bc29ac8a9816f1fc6c5c6dcd93c4721",
+          "parents": []
+        },
+        {
+          "id": "v2",
+          "content": "abcXdef",
+          "sha256": "f417a234c5780c4d3f8c3d8b1e89af29afc5cdfbcd7f0a18a32e931d5f30e0ee",
+          "parents": [
+            "v1"
+          ]
+        }
+      ],
+      "continuities": [
+        {
+          "id": "claim",
+          "text": "text",
+          "versions": [
+            "v1",
+            "v2"
+          ],
+          "agent": "editor",
+          "criterion": "Group every witness regardless of spelling changes."
+        },
+        {
+          "id": "rival",
+          "text": "text",
+          "versions": [
+            "v1"
+          ],
+          "agent": "reviewer",
+          "criterion": "Group only the first witness; exclude the altered witness."
+        }
+      ],
+      "selections": [],
+      "readings": [],
+      "annotations": [],
+      "relations": []
+    },
+    "composed_version": {
+      "model_version": "0.1",
+      "agents": [],
+      "concepts": [],
+      "texts": [],
+      "versions": [
+        {
+          "id": "v1",
+          "content": "é",
+          "sha256": "4a99557e4033c3539de2eb65472017cad5f9557f7a0625a09f1c3f6e2ba69c4c",
+          "parents": []
+        }
+      ],
+      "continuities": [],
+      "selections": [],
+      "readings": [],
+      "annotations": [],
+      "relations": []
+    },
+    "decomposed_version": {
+      "model_version": "0.1",
+      "agents": [],
+      "concepts": [],
+      "texts": [],
+      "versions": [
+        {
+          "id": "v1",
+          "content": "é",
+          "sha256": "bf12767b0f2a56b2190075bae8169f656e3ce8d6357d4aff184bc6c7ea48f9f6",
+          "parents": []
+        }
+      ],
+      "continuities": [],
+      "selections": [],
+      "readings": [],
+      "annotations": [],
+      "relations": []
+    },
+    "appended_version": {
+      "model_version": "0.1",
+      "agents": [],
+      "concepts": [],
+      "texts": [],
+      "versions": [
+        {
+          "id": "v1",
+          "content": "abcdef",
+          "sha256": "bef57ec7f53a6d40beb640a780a639c83bc29ac8a9816f1fc6c5c6dcd93c4721",
+          "parents": []
+        },
+        {
+          "id": "v2",
+          "content": "abcXdef",
+          "sha256": "f417a234c5780c4d3f8c3d8b1e89af29afc5cdfbcd7f0a18a32e931d5f30e0ee",
+          "parents": [
+            "v1"
+          ]
+        }
+      ],
+      "continuities": [],
+      "selections": [],
+      "readings": [],
+      "annotations": [],
+      "relations": []
+    },
+    "rewritten_content": {
+      "model_version": "0.1",
+      "agents": [],
+      "concepts": [],
+      "texts": [],
+      "versions": [
+        {
+          "id": "v1",
+          "content": "abcXdef",
+          "sha256": "f417a234c5780c4d3f8c3d8b1e89af29afc5cdfbcd7f0a18a32e931d5f30e0ee",
+          "parents": []
+        }
+      ],
+      "continuities": [],
+      "selections": [],
+      "readings": [],
+      "annotations": [],
+      "relations": []
+    },
+    "rewritten_parents": {
+      "model_version": "0.1",
+      "agents": [],
+      "concepts": [],
+      "texts": [],
+      "versions": [
+        {
+          "id": "v1",
+          "content": "abcdef",
+          "sha256": "bef57ec7f53a6d40beb640a780a639c83bc29ac8a9816f1fc6c5c6dcd93c4721",
+          "parents": []
+        },
+        {
+          "id": "v2",
+          "content": "abcdef",
+          "sha256": "bef57ec7f53a6d40beb640a780a639c83bc29ac8a9816f1fc6c5c6dcd93c4721",
+          "parents": [
+            "v1"
+          ]
+        },
+        {
+          "id": "v3",
+          "content": "abcXdef",
+          "sha256": "f417a234c5780c4d3f8c3d8b1e89af29afc5cdfbcd7f0a18a32e931d5f30e0ee",
+          "parents": [
+            "v1"
+          ]
+        },
+        {
+          "id": "v4",
+          "content": "aaaa",
+          "sha256": "61be55a8e2f6b4e172338bddf184d6dbee29c98853e0a0485ecee7f27b9af0b4",
+          "parents": [
+            "v1"
+          ]
+        }
+      ],
+      "continuities": [],
+      "selections": [],
+      "readings": [],
+      "annotations": [],
+      "relations": []
+    },
+    "identity_and_reanchoring": {
+      "model_version": "0.1",
+      "agents": [
+        {
+          "id": "editor",
+          "label": "Editor Ada"
+        },
+        {
+          "id": "reviewer",
+          "label": "Editor Bea"
+        }
+      ],
+      "concepts": [],
+      "texts": [
+        {
+          "id": "text",
+          "label": "An editorially continuous fox sentence"
+        }
+      ],
+      "versions": [
+        {
+          "id": "v1",
+          "content": "red fox",
+          "sha256": "e4b9541d4e1fb0603420bb154fe94a0244ae3635f8f5b217dc67407755948811",
+          "parents": []
+        },
+        {
+          "id": "v2",
+          "content": "a red fox!",
+          "sha256": "83bee8d0ad36b5b9c7f7cf8b422779eb41aa4d84a8707e809bd97d2269d5dc0b",
+          "parents": [
+            "v1"
+          ]
+        },
+        {
+          "id": "v3",
+          "content": "red fox / red fox",
+          "sha256": "78c93968a6cb4648c78042f5b4636921d3e98bcd7ff04e70bf64e8fa4f721f59",
+          "parents": [
+            "v2"
+          ]
+        },
+        {
+          "id": "v4",
+          "content": "no match",
+          "sha256": "9bc94ab9b39bfff44297d99f66b2d1dc08ba96658be582098c879d223aa84283",
+          "parents": [
+            "v3"
+          ]
+        }
+      ],
+      "continuities": [
+        {
+          "id": "continuity",
+          "text": "text",
+          "versions": [
+            "v1",
+            "v2",
+            "v3",
+            "v4"
+          ],
+          "agent": "editor",
+          "criterion": "For this synthetic example, successive sentence edits retain editorial text identity; target matches require separate review."
+        }
+      ],
+      "selections": [
+        {
+          "id": "source_range",
+          "version": "v1",
+          "selector": {
+            "kind": "ranges",
+            "segments": [
+              {
+                "start": 0,
+                "end": 7,
+                "quote": "red fox"
+              }
+            ]
+          }
+        },
+        {
+          "id": "source_quote",
+          "version": "v1",
+          "selector": {
+            "kind": "quote",
+            "exact": "fox",
+            "match": "one",
+            "prefix": "red ",
+            "suffix": ""
+          }
+        },
+        {
+          "id": "source_point",
+          "version": "v1",
+          "selector": {
+            "kind": "point",
+            "offset": 0
+          }
+        },
+        {
+          "id": "source_parts",
+          "version": "v1",
+          "selector": {
+            "kind": "ranges",
+            "segments": [
+              {
+                "start": 0,
+                "end": 3,
+                "quote": "red"
+              },
+              {
+                "start": 4,
+                "end": 7,
+                "quote": "fox"
+              }
+            ]
+          }
+        },
+        {
+          "id": "source_adjacent",
+          "version": "v1",
+          "selector": {
+            "kind": "ranges",
+            "segments": [
+              {
+                "start": 0,
+                "end": 3,
+                "quote": "red"
+              },
+              {
+                "start": 3,
+                "end": 7,
+                "quote": " fox"
+              }
+            ]
+          }
+        }
+      ],
+      "readings": [],
+      "annotations": [
+        {
+          "id": "annotation",
+          "agent": "editor",
+          "selection": "source_range",
+          "body": "This source target remains fixed when a reanchoring proposal is computed."
+        }
+      ],
+      "relations": []
+    },
+    "unclaimed_target_version": {
+      "model_version": "0.1",
+      "agents": [
+        {
+          "id": "editor",
+          "label": "Editor Ada"
+        },
+        {
+          "id": "reviewer",
+          "label": "Editor Bea"
+        }
+      ],
+      "concepts": [],
+      "texts": [
+        {
+          "id": "text",
+          "label": "An editorially continuous fox sentence"
+        }
+      ],
+      "versions": [
+        {
+          "id": "v1",
+          "content": "red fox",
+          "sha256": "e4b9541d4e1fb0603420bb154fe94a0244ae3635f8f5b217dc67407755948811",
+          "parents": []
+        },
+        {
+          "id": "v2",
+          "content": "a red fox!",
+          "sha256": "83bee8d0ad36b5b9c7f7cf8b422779eb41aa4d84a8707e809bd97d2269d5dc0b",
+          "parents": [
+            "v1"
+          ]
+        },
+        {
+          "id": "v3",
+          "content": "red fox / red fox",
+          "sha256": "78c93968a6cb4648c78042f5b4636921d3e98bcd7ff04e70bf64e8fa4f721f59",
+          "parents": [
+            "v2"
+          ]
+        },
+        {
+          "id": "v4",
+          "content": "no match",
+          "sha256": "9bc94ab9b39bfff44297d99f66b2d1dc08ba96658be582098c879d223aa84283",
+          "parents": [
+            "v3"
+          ]
+        }
+      ],
+      "continuities": [
+        {
+          "id": "continuity",
+          "text": "text",
+          "versions": [
+            "v1"
+          ],
+          "agent": "editor",
+          "criterion": "For this synthetic example, successive sentence edits retain editorial text identity; target matches require separate review."
+        }
+      ],
+      "selections": [
+        {
+          "id": "source_range",
+          "version": "v1",
+          "selector": {
+            "kind": "ranges",
+            "segments": [
+              {
+                "start": 0,
+                "end": 7,
+                "quote": "red fox"
+              }
+            ]
+          }
+        },
+        {
+          "id": "source_quote",
+          "version": "v1",
+          "selector": {
+            "kind": "quote",
+            "exact": "fox",
+            "match": "one",
+            "prefix": "red ",
+            "suffix": ""
+          }
+        },
+        {
+          "id": "source_point",
+          "version": "v1",
+          "selector": {
+            "kind": "point",
+            "offset": 0
+          }
+        },
+        {
+          "id": "source_parts",
+          "version": "v1",
+          "selector": {
+            "kind": "ranges",
+            "segments": [
+              {
+                "start": 0,
+                "end": 3,
+                "quote": "red"
+              },
+              {
+                "start": 4,
+                "end": 7,
+                "quote": "fox"
+              }
+            ]
+          }
+        },
+        {
+          "id": "source_adjacent",
+          "version": "v1",
+          "selector": {
+            "kind": "ranges",
+            "segments": [
+              {
+                "start": 0,
+                "end": 3,
+                "quote": "red"
+              },
+              {
+                "start": 3,
+                "end": 7,
+                "quote": " fox"
+              }
+            ]
+          }
+        }
+      ],
+      "readings": [],
+      "annotations": [
+        {
+          "id": "annotation",
+          "agent": "editor",
+          "selection": "source_range",
+          "body": "This source target remains fixed when a reanchoring proposal is computed."
+        }
+      ],
+      "relations": []
+    },
+    "ambiguous_reanchor_source": {
+      "model_version": "0.1",
+      "agents": [
+        {
+          "id": "editor",
+          "label": "Editor Ada"
+        },
+        {
+          "id": "reviewer",
+          "label": "Editor Bea"
+        }
+      ],
+      "concepts": [],
+      "texts": [
+        {
+          "id": "text",
+          "label": "An editorially continuous fox sentence"
+        }
+      ],
+      "versions": [
+        {
+          "id": "v1",
+          "content": "red fox",
+          "sha256": "e4b9541d4e1fb0603420bb154fe94a0244ae3635f8f5b217dc67407755948811",
+          "parents": []
+        },
+        {
+          "id": "v2",
+          "content": "a red fox!",
+          "sha256": "83bee8d0ad36b5b9c7f7cf8b422779eb41aa4d84a8707e809bd97d2269d5dc0b",
+          "parents": [
+            "v1"
+          ]
+        },
+        {
+          "id": "v3",
+          "content": "red fox / red fox",
+          "sha256": "78c93968a6cb4648c78042f5b4636921d3e98bcd7ff04e70bf64e8fa4f721f59",
+          "parents": [
+            "v2"
+          ]
+        },
+        {
+          "id": "v4",
+          "content": "no match",
+          "sha256": "9bc94ab9b39bfff44297d99f66b2d1dc08ba96658be582098c879d223aa84283",
+          "parents": [
+            "v3"
+          ]
+        }
+      ],
+      "continuities": [
+        {
+          "id": "continuity",
+          "text": "text",
+          "versions": [
+            "v1",
+            "v2",
+            "v3",
+            "v4"
+          ],
+          "agent": "editor",
+          "criterion": "For this synthetic example, successive sentence edits retain editorial text identity; target matches require separate review."
+        }
+      ],
+      "selections": [
+        {
+          "id": "source_range",
+          "version": "v1",
+          "selector": {
+            "kind": "ranges",
+            "segments": [
+              {
+                "start": 0,
+                "end": 7,
+                "quote": "red fox"
+              }
+            ]
+          }
+        },
+        {
+          "id": "source_quote",
+          "version": "v1",
+          "selector": {
+            "kind": "quote",
+            "exact": "fox",
+            "match": "one",
+            "prefix": "red ",
+            "suffix": ""
+          }
+        },
+        {
+          "id": "source_point",
+          "version": "v1",
+          "selector": {
+            "kind": "point",
+            "offset": 0
+          }
+        },
+        {
+          "id": "source_parts",
+          "version": "v1",
+          "selector": {
+            "kind": "ranges",
+            "segments": [
+              {
+                "start": 0,
+                "end": 3,
+                "quote": "red"
+              },
+              {
+                "start": 4,
+                "end": 7,
+                "quote": "fox"
+              }
+            ]
+          }
+        },
+        {
+          "id": "source_adjacent",
+          "version": "v1",
+          "selector": {
+            "kind": "ranges",
+            "segments": [
+              {
+                "start": 0,
+                "end": 3,
+                "quote": "red"
+              },
+              {
+                "start": 3,
+                "end": 7,
+                "quote": " fox"
+              }
+            ]
+          }
+        },
+        {
+          "id": "unresolved_source",
+          "version": "v3",
+          "selector": {
+            "kind": "quote",
+            "exact": "red fox",
+            "match": "one"
+          }
+        }
+      ],
+      "readings": [],
+      "annotations": [
+        {
+          "id": "annotation",
+          "agent": "editor",
+          "selection": "source_range",
+          "body": "This source target remains fixed when a reanchoring proposal is computed."
+        }
+      ],
+      "relations": []
+    },
+    "plural_reanchor_policy": {
+      "model_version": "0.1",
+      "agents": [
+        {
+          "id": "editor",
+          "label": "Editor Ada"
+        },
+        {
+          "id": "reviewer",
+          "label": "Editor Bea"
+        }
+      ],
+      "concepts": [],
+      "texts": [
+        {
+          "id": "text",
+          "label": "An editorially continuous fox sentence"
+        }
+      ],
+      "versions": [
+        {
+          "id": "v1",
+          "content": "red fox",
+          "sha256": "e4b9541d4e1fb0603420bb154fe94a0244ae3635f8f5b217dc67407755948811",
+          "parents": []
+        },
+        {
+          "id": "v2",
+          "content": "a red fox!",
+          "sha256": "83bee8d0ad36b5b9c7f7cf8b422779eb41aa4d84a8707e809bd97d2269d5dc0b",
+          "parents": [
+            "v1"
+          ]
+        },
+        {
+          "id": "v3",
+          "content": "red fox / red fox",
+          "sha256": "78c93968a6cb4648c78042f5b4636921d3e98bcd7ff04e70bf64e8fa4f721f59",
+          "parents": [
+            "v2"
+          ]
+        },
+        {
+          "id": "v4",
+          "content": "no match",
+          "sha256": "9bc94ab9b39bfff44297d99f66b2d1dc08ba96658be582098c879d223aa84283",
+          "parents": [
+            "v3"
+          ]
+        }
+      ],
+      "continuities": [
+        {
+          "id": "continuity",
+          "text": "text",
+          "versions": [
+            "v1",
+            "v2",
+            "v3",
+            "v4"
+          ],
+          "agent": "editor",
+          "criterion": "For this synthetic example, successive sentence edits retain editorial text identity; target matches require separate review."
+        }
+      ],
+      "selections": [
+        {
+          "id": "source_range",
+          "version": "v1",
+          "selector": {
+            "kind": "ranges",
+            "segments": [
+              {
+                "start": 0,
+                "end": 7,
+                "quote": "red fox"
+              }
+            ]
+          }
+        },
+        {
+          "id": "source_quote",
+          "version": "v1",
+          "selector": {
+            "kind": "quote",
+            "exact": "fox",
+            "match": "one",
+            "prefix": "red ",
+            "suffix": ""
+          }
+        },
+        {
+          "id": "source_point",
+          "version": "v1",
+          "selector": {
+            "kind": "point",
+            "offset": 0
+          }
+        },
+        {
+          "id": "source_parts",
+          "version": "v1",
+          "selector": {
+            "kind": "ranges",
+            "segments": [
+              {
+                "start": 0,
+                "end": 3,
+                "quote": "red"
+              },
+              {
+                "start": 4,
+                "end": 7,
+                "quote": "fox"
+              }
+            ]
+          }
+        },
+        {
+          "id": "source_adjacent",
+          "version": "v1",
+          "selector": {
+            "kind": "ranges",
+            "segments": [
+              {
+                "start": 0,
+                "end": 3,
+                "quote": "red"
+              },
+              {
+                "start": 3,
+                "end": 7,
+                "quote": " fox"
+              }
+            ]
+          }
+        },
+        {
+          "id": "source_all",
+          "version": "v1",
+          "selector": {
+            "kind": "quote",
+            "exact": "red fox",
+            "match": "all"
+          }
+        }
+      ],
+      "readings": [],
+      "annotations": [
+        {
+          "id": "annotation",
+          "agent": "editor",
+          "selection": "source_range",
+          "body": "This source target remains fixed when a reanchoring proposal is computed."
+        }
+      ],
+      "relations": []
+    }
+  },
+  "cases": [
+    {
+      "id": "empty",
+      "description": "An entirely empty package makes no domain adequacy claim.",
+      "rules": [
+        "R13",
+        "R10"
+      ],
+      "operation": "validate",
+      "input": {
+        "model": "empty"
+      },
+      "expected": {
+        "valid": true,
+        "all_selections_resolved": true,
+        "codes": [],
+        "resolutions": {}
+      }
+    },
+    {
+      "id": "ungrouped_version",
+      "description": "A version may exist without an editorial text grouping.",
+      "rules": [
+        "R04",
+        "R13"
+      ],
+      "operation": "validate",
+      "input": {
+        "model": "ungrouped_version"
+      },
+      "expected": {
+        "valid": true,
+        "all_selections_resolved": true,
+        "codes": [],
+        "resolutions": {}
+      }
+    },
+    {
+      "id": "whole_range",
+      "description": "A nonempty half-open interval resolves to one region.",
+      "rules": [
+        "R05",
+        "R06"
+      ],
+      "operation": "validate",
+      "input": {
+        "model": "whole_range"
+      },
+      "expected": {
+        "valid": true,
+        "all_selections_resolved": true,
+        "codes": [],
+        "resolutions": {
+          "whole": {
+            "version": "v1",
+            "status": "resolved",
+            "targets": [
+              {
+                "kind": "region",
+                "segments": [
+                  {
+                    "start": 0,
+                    "end": 6
+                  }
+                ]
+              }
+            ],
+            "candidates": []
+          }
+        }
+      }
+    },
+    {
+      "id": "discontinuous",
+      "description": "Two separated segments form ONE target, available to an annotation.",
+      "rules": [
+        "R06",
+        "R07"
+      ],
+      "operation": "validate",
+      "input": {
+        "model": "discontinuous"
+      },
+      "expected": {
+        "valid": true,
+        "all_selections_resolved": true,
+        "codes": [],
+        "resolutions": {
+          "parts": {
+            "version": "v1",
+            "status": "resolved",
+            "targets": [
+              {
+                "kind": "region",
+                "segments": [
+                  {
+                    "start": 0,
+                    "end": 2
+                  },
+                  {
+                    "start": 4,
+                    "end": 6
+                  }
+                ]
+              }
+            ],
+            "candidates": []
+          }
+        }
+      }
+    },
+    {
+      "id": "overlapping_all",
+      "description": "All policy preserves three distinct overlapping occurrences.",
+      "rules": [
+        "R06"
+      ],
+      "operation": "validate",
+      "input": {
+        "model": "overlapping_all"
+      },
+      "expected": {
+        "valid": true,
+        "all_selections_resolved": true,
+        "codes": [],
+        "resolutions": {
+          "plural": {
+            "version": "v1",
+            "status": "resolved",
+            "targets": [
+              {
+                "kind": "region",
+                "segments": [
+                  {
+                    "start": 0,
+                    "end": 2
+                  }
+                ]
+              },
+              {
+                "kind": "region",
+                "segments": [
+                  {
+                    "start": 1,
+                    "end": 3
+                  }
+                ]
+              },
+              {
+                "kind": "region",
+                "segments": [
+                  {
+                    "start": 2,
+                    "end": 4
+                  }
+                ]
+              }
+            ],
+            "candidates": []
+          }
+        }
+      }
+    },
+    {
+      "id": "ambiguous_annotation",
+      "description": "Ambiguity is valid and retains all candidates but accepts none.",
+      "rules": [
+        "R07",
+        "R10"
+      ],
+      "operation": "validate",
+      "input": {
+        "model": "ambiguous_annotation"
+      },
+      "expected": {
+        "valid": true,
+        "all_selections_resolved": false,
+        "codes": [
+          "W_AMBIGUOUS"
+        ],
+        "resolutions": {
+          "plural": {
+            "version": "v1",
+            "status": "ambiguous",
+            "targets": [],
+            "candidates": [
+              {
+                "kind": "region",
+                "segments": [
+                  {
+                    "start": 0,
+                    "end": 2
+                  }
+                ]
+              },
+              {
+                "kind": "region",
+                "segments": [
+                  {
+                    "start": 1,
+                    "end": 3
+                  }
+                ]
+              },
+              {
+                "kind": "region",
+                "segments": [
+                  {
+                    "start": 2,
+                    "end": 4
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "id": "absent_annotation",
+      "description": "An annotation can keep a quotation absent from this version.",
+      "rules": [
+        "R07"
+      ],
+      "operation": "validate",
+      "input": {
+        "model": "absent_annotation"
+      },
+      "expected": {
+        "valid": true,
+        "all_selections_resolved": false,
+        "codes": [
+          "W_ABSENT"
+        ],
+        "resolutions": {
+          "missing": {
+            "version": "v1",
+            "status": "absent",
+            "targets": [],
+            "candidates": []
+          }
+        }
+      }
+    },
+    {
+      "id": "empty_point",
+      "description": "Empty content has a valid point at zero.",
+      "rules": [
+        "R05",
+        "R06"
+      ],
+      "operation": "validate",
+      "input": {
+        "model": "empty_point"
+      },
+      "expected": {
+        "valid": true,
+        "all_selections_resolved": true,
+        "codes": [],
+        "resolutions": {
+          "origin": {
+            "version": "v1",
+            "status": "resolved",
+            "targets": [
+              {
+                "kind": "point",
+                "offset": 0
+              }
+            ],
+            "candidates": []
+          }
+        }
+      }
+    },
+    {
+      "id": "unicode_codepoints",
+      "description": "Astral symbols count once; combining marks remain separately addressable.",
+      "rules": [
+        "R05"
+      ],
+      "operation": "validate",
+      "input": {
+        "model": "unicode_codepoints"
+      },
+      "expected": {
+        "valid": true,
+        "all_selections_resolved": true,
+        "codes": [],
+        "resolutions": {
+          "astral": {
+            "version": "v1",
+            "status": "resolved",
+            "targets": [
+              {
+                "kind": "region",
+                "segments": [
+                  {
+                    "start": 1,
+                    "end": 2
+                  }
+                ]
+              }
+            ],
+            "candidates": []
+          },
+          "combining": {
+            "version": "v1",
+            "status": "resolved",
+            "targets": [
+              {
+                "kind": "region",
+                "segments": [
+                  {
+                    "start": 3,
+                    "end": 4
+                  }
+                ]
+              }
+            ],
+            "candidates": []
+          },
+          "end": {
+            "version": "v1",
+            "status": "resolved",
+            "targets": [
+              {
+                "kind": "point",
+                "offset": 5
+              }
+            ],
+            "candidates": []
+          }
+        }
+      }
+    },
+    {
+      "id": "no_normalization",
+      "description": "Canonically related Unicode spellings remain different literal content.",
+      "rules": [
+        "R03",
+        "R05",
+        "R11"
+      ],
+      "operation": "validate",
+      "input": {
+        "model": "no_normalization"
+      },
+      "expected": {
+        "valid": true,
+        "all_selections_resolved": false,
+        "codes": [
+          "W_ABSENT"
+        ],
+        "resolutions": {
+          "normalization_absent": {
+            "version": "decomposed",
+            "status": "absent",
+            "targets": [],
+            "candidates": []
+          }
+        }
+      }
+    },
+    {
+      "id": "wrong_hash",
+      "description": "A syntactically plausible hash must equal exact UTF-8 content.",
+      "rules": [
+        "R03",
+        "R10"
+      ],
+      "operation": "validate",
+      "input": {
+        "model": "wrong_hash"
+      },
+      "expected": {
+        "valid": false,
+        "all_selections_resolved": false,
+        "codes": [
+          "E_HASH"
+        ],
+        "resolutions": {}
+      }
+    },
+    {
+      "id": "missing_version_reference",
+      "description": "A selection version reference must resolve.",
+      "rules": [
+        "R02"
+      ],
+      "operation": "validate",
+      "input": {
+        "model": "missing_version_reference"
+      },
+      "expected": {
+        "valid": false,
+        "all_selections_resolved": false,
+        "codes": [
+          "E_REFERENCE"
+        ],
+        "resolutions": {}
+      }
+    },
+    {
+      "id": "point_bounds",
+      "description": "A point cannot exceed the code-point length.",
+      "rules": [
+        "R05"
+      ],
+      "operation": "validate",
+      "input": {
+        "model": "point_bounds"
+      },
+      "expected": {
+        "valid": false,
+        "all_selections_resolved": false,
+        "codes": [
+          "E_BOUNDS"
+        ],
+        "resolutions": {}
+      }
+    },
+    {
+      "id": "boolean_offset",
+      "description": "JSON true is not a valid integer coordinate.",
+      "rules": [
+        "R05"
+      ],
+      "operation": "validate",
+      "input": {
+        "model": "boolean_offset"
+      },
+      "expected": {
+        "valid": false,
+        "all_selections_resolved": false,
+        "codes": [
+          "E_SELECTOR"
+        ],
+        "resolutions": {}
+      }
+    },
+    {
+      "id": "range_quote_mismatch",
+      "description": "Correct bounds do not excuse a nonliteral segment quote.",
+      "rules": [
+        "R05"
+      ],
+      "operation": "validate",
+      "input": {
+        "model": "range_quote_mismatch"
+      },
+      "expected": {
+        "valid": false,
+        "all_selections_resolved": false,
+        "codes": [
+          "E_QUOTE"
+        ],
+        "resolutions": {}
+      }
+    },
+    {
+      "id": "region_on_empty",
+      "description": "Empty content cannot contain a nonempty interval.",
+      "rules": [
+        "R05"
+      ],
+      "operation": "validate",
+      "input": {
+        "model": "region_on_empty"
+      },
+      "expected": {
+        "valid": false,
+        "all_selections_resolved": false,
+        "codes": [
+          "E_BOUNDS"
+        ],
+        "resolutions": {}
+      }
+    },
+    {
+      "id": "adjacent_segments",
+      "description": "Adjacent segments are allowed and retain their segmentation.",
+      "rules": [
+        "R06",
+        "R11"
+      ],
+      "operation": "validate",
+      "input": {
+        "model": "adjacent_segments"
+      },
+      "expected": {
+        "valid": true,
+        "all_selections_resolved": true,
+        "codes": [],
+        "resolutions": {
+          "adjacent": {
+            "version": "v1",
+            "status": "resolved",
+            "targets": [
+              {
+                "kind": "region",
+                "segments": [
+                  {
+                    "start": 0,
+                    "end": 3
+                  },
+                  {
+                    "start": 3,
+                    "end": 6
+                  }
+                ]
+              }
+            ],
+            "candidates": []
+          }
+        }
+      }
+    },
+    {
+      "id": "overlapping_segments",
+      "description": "One ranges selector cannot overlap its own segments.",
+      "rules": [
+        "R06"
+      ],
+      "operation": "validate",
+      "input": {
+        "model": "overlapping_segments"
+      },
+      "expected": {
+        "valid": false,
+        "all_selections_resolved": false,
+        "codes": [
+          "E_SELECTOR"
+        ],
+        "resolutions": {}
+      }
+    },
+    {
+      "id": "unclaimed_text",
+      "description": "Declaring a text requires an explicit continuity claim.",
+      "rules": [
+        "R04",
+        "R13"
+      ],
+      "operation": "validate",
+      "input": {
+        "model": "unclaimed_text"
+      },
+      "expected": {
+        "valid": false,
+        "all_selections_resolved": false,
+        "codes": [
+          "E_CONTINUITY"
+        ],
+        "resolutions": {}
+      }
+    },
+    {
+      "id": "attributed_continuity",
+      "description": "Overlapping version memberships express distinct attributed criteria.",
+      "rules": [
+        "R01",
+        "R04"
+      ],
+      "operation": "validate",
+      "input": {
+        "model": "attributed_continuity"
+      },
+      "expected": {
+        "valid": true,
+        "all_selections_resolved": true,
+        "codes": [],
+        "resolutions": {}
+      }
+    },
+    {
+      "id": "missing_criterion",
+      "description": "A continuity claim must articulate a nonempty grouping policy.",
+      "rules": [
+        "R04"
+      ],
+      "operation": "validate",
+      "input": {
+        "model": "missing_criterion"
+      },
+      "expected": {
+        "valid": false,
+        "all_selections_resolved": false,
+        "codes": [
+          "E_SHAPE"
+        ],
+        "resolutions": {}
+      }
+    },
+    {
+      "id": "missing_attribution",
+      "description": "An editorial continuity claim must reference an actual agent.",
+      "rules": [
+        "R02",
+        "R04"
+      ],
+      "operation": "validate",
+      "input": {
+        "model": "missing_attribution"
+      },
+      "expected": {
+        "valid": false,
+        "all_selections_resolved": false,
+        "codes": [
+          "E_REFERENCE"
+        ],
+        "resolutions": {}
+      }
+    },
+    {
+      "id": "version_dag",
+      "description": "Diamond ancestry is allowed and does not establish text continuity.",
+      "rules": [
+        "R02",
+        "R03",
+        "R04"
+      ],
+      "operation": "validate",
+      "input": {
+        "model": "version_dag"
+      },
+      "expected": {
+        "valid": true,
+        "all_selections_resolved": true,
+        "codes": [],
+        "resolutions": {}
+      }
+    },
+    {
+      "id": "version_cycle",
+      "description": "Only acyclic version ancestry is valid.",
+      "rules": [
+        "R02"
+      ],
+      "operation": "validate",
+      "input": {
+        "model": "version_cycle"
+      },
+      "expected": {
+        "valid": false,
+        "all_selections_resolved": false,
+        "codes": [
+          "E_VERSION_CYCLE"
+        ],
+        "resolutions": {}
+      }
+    },
+    {
+      "id": "equal_content_distinct_ids",
+      "description": "Equal content and hashes do not collapse distinct version records.",
+      "rules": [
+        "R01"
+      ],
+      "operation": "validate",
+      "input": {
+        "model": "equal_content_distinct_ids"
+      },
+      "expected": {
+        "valid": true,
+        "all_selections_resolved": true,
+        "codes": [],
+        "resolutions": {}
+      }
+    },
+    {
+      "id": "competing_readings",
+      "description": "Crossing extents across attributed readings and relation cycles are allowed.",
+      "rules": [
+        "R02",
+        "R08",
+        "R09"
+      ],
+      "operation": "validate",
+      "input": {
+        "model": "competing_readings"
+      },
+      "expected": {
+        "valid": true,
+        "all_selections_resolved": true,
+        "codes": [],
+        "resolutions": {
+          "left": {
+            "version": "v1",
+            "status": "resolved",
+            "targets": [
+              {
+                "kind": "region",
+                "segments": [
+                  {
+                    "start": 0,
+                    "end": 4
+                  }
+                ]
+              }
+            ],
+            "candidates": []
+          },
+          "right": {
+            "version": "v1",
+            "status": "resolved",
+            "targets": [
+              {
+                "kind": "region",
+                "segments": [
+                  {
+                    "start": 2,
+                    "end": 6
+                  }
+                ]
+              }
+            ],
+            "candidates": []
+          }
+        }
+      }
+    },
+    {
+      "id": "overlap_siblings",
+      "description": "The same crossing intervals are invalid as roots of one reading.",
+      "rules": [
+        "R08"
+      ],
+      "operation": "validate",
+      "input": {
+        "model": "overlap_siblings"
+      },
+      "expected": {
+        "valid": false,
+        "all_selections_resolved": false,
+        "codes": [
+          "E_SIBLING_OVERLAP"
+        ],
+        "resolutions": {}
+      }
+    },
+    {
+      "id": "equal_parent_child",
+      "description": "Parent and child may assert the exact same nonempty extent.",
+      "rules": [
+        "R01",
+        "R08"
+      ],
+      "operation": "validate",
+      "input": {
+        "model": "equal_parent_child"
+      },
+      "expected": {
+        "valid": true,
+        "all_selections_resolved": true,
+        "codes": [],
+        "resolutions": {
+          "left": {
+            "version": "v1",
+            "status": "resolved",
+            "targets": [
+              {
+                "kind": "region",
+                "segments": [
+                  {
+                    "start": 0,
+                    "end": 4
+                  }
+                ]
+              }
+            ],
+            "candidates": []
+          },
+          "right": {
+            "version": "v1",
+            "status": "resolved",
+            "targets": [
+              {
+                "kind": "region",
+                "segments": [
+                  {
+                    "start": 2,
+                    "end": 6
+                  }
+                ]
+              }
+            ],
+            "candidates": []
+          }
+        }
+      }
+    },
+    {
+      "id": "reading_cycle",
+      "description": "Equal extents do not make a cycle in parent edges valid.",
+      "rules": [
+        "R02",
+        "R08"
+      ],
+      "operation": "validate",
+      "input": {
+        "model": "reading_cycle"
+      },
+      "expected": {
+        "valid": false,
+        "all_selections_resolved": false,
+        "codes": [
+          "E_READING_CYCLE"
+        ],
+        "resolutions": {}
+      }
+    },
+    {
+      "id": "child_not_contained",
+      "description": "A child extending past its parent fails containment.",
+      "rules": [
+        "R08"
+      ],
+      "operation": "validate",
+      "input": {
+        "model": "child_not_contained"
+      },
+      "expected": {
+        "valid": false,
+        "all_selections_resolved": false,
+        "codes": [
+          "E_CONTAINMENT"
+        ],
+        "resolutions": {}
+      }
+    },
+    {
+      "id": "discontinuous_reading_target",
+      "description": "One target with multiple segments is still unsuitable for a reading node.",
+      "rules": [
+        "R06",
+        "R08"
+      ],
+      "operation": "validate",
+      "input": {
+        "model": "discontinuous_reading_target"
+      },
+      "expected": {
+        "valid": false,
+        "all_selections_resolved": false,
+        "codes": [
+          "E_READING_TARGET"
+        ],
+        "resolutions": {}
+      }
+    },
+    {
+      "id": "absent_reading_target",
+      "description": "An absent annotation target cannot become a reading-node interval.",
+      "rules": [
+        "R07",
+        "R08",
+        "R10"
+      ],
+      "operation": "validate",
+      "input": {
+        "model": "absent_reading_target"
+      },
+      "expected": {
+        "valid": false,
+        "all_selections_resolved": false,
+        "codes": [
+          "E_READING_TARGET",
+          "W_ABSENT"
+        ],
+        "resolutions": {}
+      }
+    },
+    {
+      "id": "plural_reading_target",
+      "description": "Several accepted targets do not identify one reading-node interval.",
+      "rules": [
+        "R06",
+        "R08"
+      ],
+      "operation": "validate",
+      "input": {
+        "model": "plural_reading_target"
+      },
+      "expected": {
+        "valid": false,
+        "all_selections_resolved": false,
+        "codes": [
+          "E_READING_TARGET"
+        ],
+        "resolutions": {}
+      }
+    },
+    {
+      "id": "wrong_concept_category",
+      "description": "A relation concept is not a node type even though its ID resolves.",
+      "rules": [
+        "R09"
+      ],
+      "operation": "validate",
+      "input": {
+        "model": "wrong_concept_category"
+      },
+      "expected": {
+        "valid": false,
+        "all_selections_resolved": false,
+        "codes": [
+          "E_TYPE"
+        ],
+        "resolutions": {}
+      }
+    },
+    {
+      "id": "empty_reading",
+      "description": "A declared reading must contain at least one node.",
+      "rules": [
+        "R13"
+      ],
+      "operation": "validate",
+      "input": {
+        "model": "empty_reading"
+      },
+      "expected": {
+        "valid": false,
+        "all_selections_resolved": false,
+        "codes": [
+          "E_SHAPE"
+        ],
+        "resolutions": {}
+      }
+    },
+    {
+      "id": "duplicate_global_id",
+      "description": "IDs are globally unique across registries.",
+      "rules": [
+        "R01"
+      ],
+      "operation": "validate",
+      "input": {
+        "model": "duplicate_global_id"
+      },
+      "expected": {
+        "valid": false,
+        "all_selections_resolved": false,
+        "codes": [
+          "E_DUPLICATE_ID"
+        ],
+        "resolutions": {}
+      }
+    },
+    {
+      "id": "unknown_field",
+      "description": "The closed package shape rejects unknown fields.",
+      "rules": [
+        "R10",
+        "R13"
+      ],
+      "operation": "validate",
+      "input": {
+        "model": "unknown_field"
+      },
+      "expected": {
+        "valid": false,
+        "all_selections_resolved": false,
+        "codes": [
+          "E_SHAPE"
+        ],
+        "resolutions": {}
+      }
+    },
+    {
+      "id": "literal_context",
+      "description": "Adjacent literal prefix picks the final overlapping occurrence.",
+      "rules": [
+        "R05",
+        "R07"
+      ],
+      "operation": "validate",
+      "input": {
+        "model": "literal_context"
+      },
+      "expected": {
+        "valid": true,
+        "all_selections_resolved": true,
+        "codes": [],
+        "resolutions": {
+          "contextual": {
+            "version": "v1",
+            "status": "resolved",
+            "targets": [
+              {
+                "kind": "region",
+                "segments": [
+                  {
+                    "start": 2,
+                    "end": 4
+                  }
+                ]
+              }
+            ],
+            "candidates": []
+          }
+        }
+      }
+    },
+    {
+      "id": "contradictory_interpretations",
+      "description": "Distinct IDs and conflicting annotation bodies remain valid assertions by people.",
+      "rules": [
+        "R01",
+        "R09"
+      ],
+      "operation": "validate",
+      "input": {
+        "model": "contradictory_interpretations"
+      },
+      "expected": {
+        "valid": true,
+        "all_selections_resolved": true,
+        "codes": [],
+        "resolutions": {
+          "sameA": {
+            "version": "v1",
+            "status": "resolved",
+            "targets": [
+              {
+                "kind": "region",
+                "segments": [
+                  {
+                    "start": 0,
+                    "end": 2
+                  }
+                ]
+              }
+            ],
+            "candidates": []
+          },
+          "sameB": {
+            "version": "v1",
+            "status": "resolved",
+            "targets": [
+              {
+                "kind": "region",
+                "segments": [
+                  {
+                    "start": 0,
+                    "end": 2
+                  }
+                ]
+              }
+            ],
+            "candidates": []
+          }
+        }
+      }
+    },
+    {
+      "id": "adjacent_reading_target",
+      "description": "Adjacent segments form a contiguous node interval without erasing their boundary.",
+      "rules": [
+        "R06",
+        "R08",
+        "R11"
+      ],
+      "operation": "validate",
+      "input": {
+        "model": "adjacent_reading_target"
+      },
+      "expected": {
+        "valid": true,
+        "all_selections_resolved": true,
+        "codes": [],
+        "resolutions": {
+          "adjacent": {
+            "version": "v1",
+            "status": "resolved",
+            "targets": [
+              {
+                "kind": "region",
+                "segments": [
+                  {
+                    "start": 0,
+                    "end": 3
+                  },
+                  {
+                    "start": 3,
+                    "end": 6
+                  }
+                ]
+              }
+            ],
+            "candidates": []
+          }
+        }
+      }
+    },
+    {
+      "id": "point_reading_target",
+      "description": "A resolved point remains an invalid reading-node target.",
+      "rules": [
+        "R05",
+        "R08"
+      ],
+      "operation": "validate",
+      "input": {
+        "model": "point_reading_target"
+      },
+      "expected": {
+        "valid": false,
+        "all_selections_resolved": false,
+        "codes": [
+          "E_READING_TARGET"
+        ],
+        "resolutions": {}
+      }
+    },
+    {
+      "id": "canonical_reordering",
+      "description": "Object keys, registries, parent sets, and continuity membership reorder freely.",
+      "rules": [
+        "R01",
+        "R11"
+      ],
+      "operation": "equivalent",
+      "input": {
+        "left": "canonical_original",
+        "right": "canonical_reordered"
+      },
+      "expected": {
+        "equivalent": true
+      }
+    },
+    {
+      "id": "readings_registry_order",
+      "description": "Competing readings are records, not an ordered priority list.",
+      "rules": [
+        "R01",
+        "R11"
+      ],
+      "operation": "equivalent",
+      "input": {
+        "left": "competing_readings",
+        "right": "competing_reordered"
+      },
+      "expected": {
+        "equivalent": true
+      }
+    },
+    {
+      "id": "node_registry_order",
+      "description": "Reordering node records preserves explicit hierarchy edges.",
+      "rules": [
+        "R01",
+        "R11"
+      ],
+      "operation": "equivalent",
+      "input": {
+        "left": "equal_parent_child",
+        "right": "nodes_reordered"
+      },
+      "expected": {
+        "equivalent": true
+      }
+    },
+    {
+      "id": "selector_kind_inequality",
+      "description": "Equal resolved extents do not erase selector-kind identity.",
+      "rules": [
+        "R01",
+        "R11"
+      ],
+      "operation": "equivalent",
+      "input": {
+        "left": "whole_range",
+        "right": "selector_kind_changed"
+      },
+      "expected": {
+        "equivalent": false
+      }
+    },
+    {
+      "id": "selector_policy_inequality",
+      "description": "One versus all remains distinct even when the quote occurs once.",
+      "rules": [
+        "R01",
+        "R11"
+      ],
+      "operation": "equivalent",
+      "input": {
+        "left": "selector_kind_changed",
+        "right": "selector_policy_changed"
+      },
+      "expected": {
+        "equivalent": false
+      }
+    },
+    {
+      "id": "segmentation_inequality",
+      "description": "A split into adjacent segments is preserved by canonical comparison.",
+      "rules": [
+        "R01",
+        "R11"
+      ],
+      "operation": "equivalent",
+      "input": {
+        "left": "whole_range",
+        "right": "segmentation_changed"
+      },
+      "expected": {
+        "equivalent": false
+      }
+    },
+    {
+      "id": "id_inequality",
+      "description": "Alpha-renaming changes record identity despite equal target extents.",
+      "rules": [
+        "R01",
+        "R11"
+      ],
+      "operation": "equivalent",
+      "input": {
+        "left": "whole_range",
+        "right": "selection_id_changed"
+      },
+      "expected": {
+        "equivalent": false
+      }
+    },
+    {
+      "id": "attribution_inequality",
+      "description": "A different responsible editor changes the continuity claim.",
+      "rules": [
+        "R01",
+        "R11"
+      ],
+      "operation": "equivalent",
+      "input": {
+        "left": "attributed_continuity",
+        "right": "attribution_changed"
+      },
+      "expected": {
+        "equivalent": false
+      }
+    },
+    {
+      "id": "criterion_inequality",
+      "description": "Editorial grouping criteria are substantive canonical data.",
+      "rules": [
+        "R01",
+        "R11"
+      ],
+      "operation": "equivalent",
+      "input": {
+        "left": "attributed_continuity",
+        "right": "criterion_changed"
+      },
+      "expected": {
+        "equivalent": false
+      }
+    },
+    {
+      "id": "unicode_inequality",
+      "description": "Canonical JSON comparison does not normalize Unicode content.",
+      "rules": [
+        "R01",
+        "R11"
+      ],
+      "operation": "equivalent",
+      "input": {
+        "left": "composed_version",
+        "right": "decomposed_version"
+      },
+      "expected": {
+        "equivalent": false
+      }
+    },
+    {
+      "id": "revision_order_only",
+      "description": "Membership ordering cannot rewrite a version.",
+      "rules": [
+        "R03"
+      ],
+      "operation": "revision",
+      "input": {
+        "before": "canonical_original",
+        "after": "canonical_reordered"
+      },
+      "expected": {
+        "valid": true,
+        "codes": []
+      }
+    },
+    {
+      "id": "revision_append",
+      "description": "A changed text is admitted as a new version with a new ID.",
+      "rules": [
+        "R03"
+      ],
+      "operation": "revision",
+      "input": {
+        "before": "ungrouped_version",
+        "after": "appended_version"
+      },
+      "expected": {
+        "valid": true,
+        "codes": []
+      }
+    },
+    {
+      "id": "revision_content_rewrite",
+      "description": "A faithful new hash does not permit changing content under the old ID.",
+      "rules": [
+        "R03"
+      ],
+      "operation": "revision",
+      "input": {
+        "before": "ungrouped_version",
+        "after": "rewritten_content"
+      },
+      "expected": {
+        "valid": false,
+        "codes": [
+          "E_VERSION_REWRITE"
+        ]
+      }
+    },
+    {
+      "id": "revision_parent_rewrite",
+      "description": "Reused version ancestry is frozen even when replacement ancestry is acyclic.",
+      "rules": [
+        "R03"
+      ],
+      "operation": "revision",
+      "input": {
+        "before": "version_dag",
+        "after": "rewritten_parents"
+      },
+      "expected": {
+        "valid": false,
+        "codes": [
+          "E_VERSION_REWRITE"
+        ]
+      }
+    },
+    {
+      "id": "revision_delete",
+      "description": "An absent later record is outside rewrite detection.",
+      "rules": [
+        "R03"
+      ],
+      "operation": "revision",
+      "input": {
+        "before": "ungrouped_version",
+        "after": "empty"
+      },
+      "expected": {
+        "valid": true,
+        "codes": []
+      }
+    },
+    {
+      "id": "revision_invalid_hash",
+      "description": "Revision checks validate package hash fidelity first.",
+      "rules": [
+        "R03"
+      ],
+      "operation": "revision",
+      "input": {
+        "before": "ungrouped_version",
+        "after": "wrong_hash"
+      },
+      "expected": {
+        "valid": false,
+        "codes": [
+          "E_HASH"
+        ]
+      }
+    },
+    {
+      "id": "identity_and_reanchoring",
+      "description": "Explicit editorial continuity connects immutable versions without silently moving annotations.",
+      "rules": [
+        "R03",
+        "R04",
+        "R06",
+        "R12"
+      ],
+      "operation": "validate",
+      "input": {
+        "model": "identity_and_reanchoring"
+      },
+      "expected": {
+        "valid": true,
+        "all_selections_resolved": true,
+        "codes": [],
+        "resolutions": {
+          "source_range": {
+            "version": "v1",
+            "status": "resolved",
+            "targets": [
+              {
+                "kind": "region",
+                "segments": [
+                  {
+                    "start": 0,
+                    "end": 7
+                  }
+                ]
+              }
+            ],
+            "candidates": []
+          },
+          "source_quote": {
+            "version": "v1",
+            "status": "resolved",
+            "targets": [
+              {
+                "kind": "region",
+                "segments": [
+                  {
+                    "start": 4,
+                    "end": 7
+                  }
+                ]
+              }
+            ],
+            "candidates": []
+          },
+          "source_point": {
+            "version": "v1",
+            "status": "resolved",
+            "targets": [
+              {
+                "kind": "point",
+                "offset": 0
+              }
+            ],
+            "candidates": []
+          },
+          "source_parts": {
+            "version": "v1",
+            "status": "resolved",
+            "targets": [
+              {
+                "kind": "region",
+                "segments": [
+                  {
+                    "start": 0,
+                    "end": 3
+                  },
+                  {
+                    "start": 4,
+                    "end": 7
+                  }
+                ]
+              }
+            ],
+            "candidates": []
+          },
+          "source_adjacent": {
+            "version": "v1",
+            "status": "resolved",
+            "targets": [
+              {
+                "kind": "region",
+                "segments": [
+                  {
+                    "start": 0,
+                    "end": 3
+                  },
+                  {
+                    "start": 3,
+                    "end": 7
+                  }
+                ]
+              }
+            ],
+            "candidates": []
+          }
+        }
+      }
+    },
+    {
+      "id": "reanchor_range_success",
+      "description": "A source range supplies its literal quote for a proposed target.",
+      "rules": [
+        "R12"
+      ],
+      "operation": "reanchor",
+      "input": {
+        "model": "identity_and_reanchoring",
+        "selection": "source_range",
+        "target_version": "v2",
+        "continuity": "continuity"
+      },
+      "expected": {
+        "codes": [],
+        "proposal": {
+          "source_selection": "source_range",
+          "target_version": "v2",
+          "continuity": "continuity",
+          "resolution": {
+            "version": "v2",
+            "status": "resolved",
+            "targets": [
+              {
+                "kind": "region",
+                "segments": [
+                  {
+                    "start": 2,
+                    "end": 9
+                  }
+                ]
+              }
+            ],
+            "candidates": []
+          },
+          "accepted": false
+        }
+      }
+    },
+    {
+      "id": "reanchor_context_success",
+      "description": "Quote reanchoring retains the literal adjacent prefix and suffix.",
+      "rules": [
+        "R12"
+      ],
+      "operation": "reanchor",
+      "input": {
+        "model": "identity_and_reanchoring",
+        "selection": "source_quote",
+        "target_version": "v2",
+        "continuity": "continuity"
+      },
+      "expected": {
+        "codes": [],
+        "proposal": {
+          "source_selection": "source_quote",
+          "target_version": "v2",
+          "continuity": "continuity",
+          "resolution": {
+            "version": "v2",
+            "status": "resolved",
+            "targets": [
+              {
+                "kind": "region",
+                "segments": [
+                  {
+                    "start": 6,
+                    "end": 9
+                  }
+                ]
+              }
+            ],
+            "candidates": []
+          },
+          "accepted": false
+        }
+      }
+    },
+    {
+      "id": "reanchor_ambiguous",
+      "description": "Multiple target matches produce an unaccepted ambiguous proposal.",
+      "rules": [
+        "R12"
+      ],
+      "operation": "reanchor",
+      "input": {
+        "model": "identity_and_reanchoring",
+        "selection": "source_range",
+        "target_version": "v3",
+        "continuity": "continuity"
+      },
+      "expected": {
+        "codes": [
+          "W_AMBIGUOUS"
+        ],
+        "proposal": {
+          "source_selection": "source_range",
+          "target_version": "v3",
+          "continuity": "continuity",
+          "resolution": {
+            "version": "v3",
+            "status": "ambiguous",
+            "targets": [],
+            "candidates": [
+              {
+                "kind": "region",
+                "segments": [
+                  {
+                    "start": 0,
+                    "end": 7
+                  }
+                ]
+              },
+              {
+                "kind": "region",
+                "segments": [
+                  {
+                    "start": 10,
+                    "end": 17
+                  }
+                ]
+              }
+            ]
+          },
+          "accepted": false
+        }
+      }
+    },
+    {
+      "id": "reanchor_absent",
+      "description": "A missing target quotation produces an unaccepted absent proposal.",
+      "rules": [
+        "R12"
+      ],
+      "operation": "reanchor",
+      "input": {
+        "model": "identity_and_reanchoring",
+        "selection": "source_range",
+        "target_version": "v4",
+        "continuity": "continuity"
+      },
+      "expected": {
+        "codes": [
+          "W_ABSENT"
+        ],
+        "proposal": {
+          "source_selection": "source_range",
+          "target_version": "v4",
+          "continuity": "continuity",
+          "resolution": {
+            "version": "v4",
+            "status": "absent",
+            "targets": [],
+            "candidates": []
+          },
+          "accepted": false
+        }
+      }
+    },
+    {
+      "id": "reanchor_point_unsupported",
+      "description": "Point migration requires a policy outside this experiment.",
+      "rules": [
+        "R12"
+      ],
+      "operation": "reanchor",
+      "input": {
+        "model": "identity_and_reanchoring",
+        "selection": "source_point",
+        "target_version": "v2",
+        "continuity": "continuity"
+      },
+      "expected": {
+        "codes": [
+          "E_REANCHOR_UNSUPPORTED"
+        ],
+        "proposal": null
+      }
+    },
+    {
+      "id": "reanchor_discontinuous_unsupported",
+      "description": "Multi-segment target migration is explicitly unsupported.",
+      "rules": [
+        "R12"
+      ],
+      "operation": "reanchor",
+      "input": {
+        "model": "identity_and_reanchoring",
+        "selection": "source_parts",
+        "target_version": "v2",
+        "continuity": "continuity"
+      },
+      "expected": {
+        "codes": [
+          "E_REANCHOR_UNSUPPORTED"
+        ],
+        "proposal": null
+      }
+    },
+    {
+      "id": "reanchor_adjacent_unsupported",
+      "description": "Even contiguous adjacent segments exceed the one-segment reanchoring contract.",
+      "rules": [
+        "R12"
+      ],
+      "operation": "reanchor",
+      "input": {
+        "model": "identity_and_reanchoring",
+        "selection": "source_adjacent",
+        "target_version": "v2",
+        "continuity": "continuity"
+      },
+      "expected": {
+        "codes": [
+          "E_REANCHOR_UNSUPPORTED"
+        ],
+        "proposal": null
+      }
+    },
+    {
+      "id": "reanchor_no_continuity",
+      "description": "Version ancestry alone does not authorize editorial continuity.",
+      "rules": [
+        "R12"
+      ],
+      "operation": "reanchor",
+      "input": {
+        "model": "unclaimed_target_version",
+        "selection": "source_range",
+        "target_version": "v2",
+        "continuity": "continuity"
+      },
+      "expected": {
+        "codes": [
+          "E_REANCHOR"
+        ],
+        "proposal": null
+      }
+    },
+    {
+      "id": "reanchor_unresolved_source",
+      "description": "An ambiguous source cannot be reanchored; source warnings are not duplicated by this operation.",
+      "rules": [
+        "R07",
+        "R12"
+      ],
+      "operation": "reanchor",
+      "input": {
+        "model": "ambiguous_reanchor_source",
+        "selection": "unresolved_source",
+        "target_version": "v2",
+        "continuity": "continuity"
+      },
+      "expected": {
+        "codes": [
+          "E_REANCHOR"
+        ],
+        "proposal": null
+      }
+    },
+    {
+      "id": "reanchor_preserves_all_policy",
+      "description": "Quote/all stays intentional plurality when one source occurrence becomes two target occurrences.",
+      "rules": [
+        "R06",
+        "R12"
+      ],
+      "operation": "reanchor",
+      "input": {
+        "model": "plural_reanchor_policy",
+        "selection": "source_all",
+        "target_version": "v3",
+        "continuity": "continuity"
+      },
+      "expected": {
+        "codes": [],
+        "proposal": {
+          "source_selection": "source_all",
+          "target_version": "v3",
+          "continuity": "continuity",
+          "resolution": {
+            "version": "v3",
+            "status": "resolved",
+            "targets": [
+              {
+                "kind": "region",
+                "segments": [
+                  {
+                    "start": 0,
+                    "end": 7
+                  }
+                ]
+              },
+              {
+                "kind": "region",
+                "segments": [
+                  {
+                    "start": 10,
+                    "end": 17
+                  }
+                ]
+              }
+            ],
+            "candidates": []
+          },
+          "accepted": false
+        }
+      }
+    }
+  ]
+}

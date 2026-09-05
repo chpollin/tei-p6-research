@@ -1,13 +1,14 @@
 # P6 research agenda
 
-Status: stable question map
-Authority: independent project planning document
+This independent question map defines the research needed to justify a P6
+candidate. Current work and blockers belong in `knowledge/state.md`.
 
-This document identifies the questions that must be answered before a formal
-P6 design candidate can be justified. It does not track progress; current work,
-owners, and blockers belong in `knowledge/state.md`.
+## From text concepts, practice, and P5 to requirements
 
-## From P5 to requirements
+The model's scope must name the text forms and tasks it intends to cover.
+It need not provide an ontology of every subject discussed in a text. P5
+supplies the baseline and migration obligations. Textual scholarship,
+alternative models, and editorial practice challenge the proposed categories.
 
 The project must establish which P5 distinctions are conceptual, which are
 serialization-driven, which arise from compatibility or governance, and which
@@ -17,17 +18,20 @@ preserve.
 
 Resolution requires the pinned ODD model, prose Guidelines, representative
 customizations, issue and decision trails, processing evidence, teaching
-experience, and real examples. The output is a grounded requirement and
-counterexample set, not a list of complaints.
+experience, and real examples. The output distinguishes requirements derived
+from grounded findings from proposed project requirements, and gives
+counterexamples for both. A conceptual question need not first be framed as a
+P5 defect.
 
 ## Core-model questions
 
-The candidate model must answer:
+The core comparison must answer these questions.
 
-- What are the irreducible primitives for text, structure, annotation,
-  identity, relation, order, and constraint?
-- Is a typed ordered graph sufficient, or are hyperedges, regions, events, or
-  other primitives required?
+- Which primitives for text, structure, annotation, identity, relation, order,
+  and constraint are justified by the declared tasks and counterexamples?
+- How does a typed ordered graph compare with a primary tree plus references
+  and annotations? Do particular cases require regions, events, or other
+  primitives, and what would justify treating them as primitive?
 - How are mixed content and multiple hierarchies represented without privileging
   one syntax?
 - How are spans anchored, and how do anchors behave under editing and version
@@ -59,10 +63,9 @@ hierarchies, inferred values, and package context. It must decide which
 roundtrips are lossless, which preserve only declared semantics, and which are
 intentional projections.
 
-The central comparison is not “XML versus JSON.” It is whether the abstract
-model and binding contracts preserve the required distinctions in tools and
-real workflows. XML, JSON-LD, RDF, and YAML form the initial contrast set;
-additional syntaxes require a concrete use case.
+Compare whether each binding preserves the required distinctions in tools and
+real workflows. XML, JSON-LD, RDF, and YAML form the initial contrast set.
+Additional syntaxes require a concrete use case.
 
 ## Validation questions
 
@@ -87,11 +90,18 @@ Two representations may be equivalent for one blueprint and not for another.
 Equivalence must always name its model, blueprint, binding versions, and
 comparison class.
 
+Define that relation independently of a converter or canonical form, using
+expected observations and equal/unequal example pairs reviewed in advance.
+Only then test whether canonicalization implements it. Distinguish preservation
+of all model distinctions, equivalence for a declared task, and byte identity.
+They answer different questions.
+
 ## Migration questions
 
-The migration study must determine which P5 documents and customizations map
-exactly, which require normalization or policy, and which cannot be represented
-without loss. It must cover documents, ODDs, schemas, processors, identifiers,
+The migration study must record coverage, model preservation, lexical changes,
+policy or tool dependencies, and reversibility separately. An equivalent result
+may still require normalization and editorial policy. The study must cover documents,
+ODDs, schemas, processors, identifiers,
 stylesheets, APIs, training material, and institutional workflows.
 
 Migration quality is measured through representative corpora and explicit loss
@@ -117,12 +127,59 @@ communities with different technical resources. It must also define ownership
 and review of the core, blueprints, bindings, identifiers, deprecations, test
 suites, and compatibility policies.
 
-A formally elegant architecture that cannot be governed, implemented, or
-adopted is not an optimized standard.
-
 ## Required decision evidence
 
-Each resolved question should leave three connected results: grounded findings
-about P5 and stakeholder needs, a reproducible example or prototype, and a
-comparative decision record with alternatives and migration consequences.
-Only then can the result be promoted into the final design specification.
+Each decision needs grounded premises, a reproducible example or prototype,
+and a comparison of alternatives and migration consequences. Requirements and
+recommendations that express the project's judgment remain explicit posits.
+A bounded pilot may justify another experiment while leaving an architecture
+recommendation open.
+
+## Next bounded research packages
+
+These packages define work and acceptance criteria. Before delegation, name
+the base commit, exclusive write paths, read-only inputs, required checks, and
+gaps to report. The integrator owns shared contracts and state.
+
+### A. Text identity requirements
+
+Select a bounded set of text-theoretical, annotation-model, and editorial
+practice sources. Record why each can illuminate textual continuity, version,
+target, or interpretation. Admit and distill each source separately. Synthesize
+only through assertions. Derive a requirement set that distinguishes source
+findings from project choices, with an adverse example for each requirement.
+
+Acceptance requires at least two conceptual alternatives to face the same
+independently reviewed observations. Explain where each distinguishes text, version,
+occurrence, selector, resolved target, and attributed interpretation, and where
+it deliberately leaves a question open. Two selectors inside one object model
+do not satisfy this comparison. A missing source or unsupported generalization
+is reported as a gap.
+
+### B. Real editorial cases
+
+Select three bounded case packages from distinct editorial contexts, together
+covering hierarchy, overlap, and customization or contextual interpretation.
+Record the selection unit, inclusion and exclusion rules, source versions,
+rights, authority, relevant ODD and tool context, and known sampling bias.
+State required editorial observations before writing candidate encodings.
+Reserve an adverse case for testing after the candidates have been defined.
+
+Acceptance requires reproduction from declared inputs, independent domain
+review of the expected distinctions, and explicit coverage gaps. Three
+purposefully selected cases support comparison within their scope. They cannot
+establish prevalence, general migratability, or universal coverage.
+New executable artifact types require a recorded contract before implementation.
+
+### C. One comparative workflow decision
+
+Use annotation review after a text edit as the first decision-sized task.
+Compare repair within P5 tooling, compatible evolution, an alternative abstract
+model, and retaining or deferring the current behavior. Hold the editorial task
+and expected observations fixed. Specify participant roles, procedure, baseline,
+and acceptance criteria before measuring correctness, effort, errors, and
+interventions. Report migration on the independent axes above.
+
+Acceptance requires technical and domain reviews of the same record, with
+costs and unknowns alongside benefits. The recommendation must name evidence
+that would reverse it. Its scope may be limited to another bounded prototype.

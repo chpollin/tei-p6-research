@@ -11,6 +11,7 @@ sys.path.insert(0, str(REPO / "tools"))
 
 from build_corpus_overview import build_page, prepare_sources  # noqa: E402
 from sitegen.assets import read_asset  # noqa: E402
+from sitegen.chrome import render_footer, render_header  # noqa: E402
 from sitegen.source_data import resolve_repo_file  # noqa: E402
 
 
@@ -31,7 +32,7 @@ def test_overview_is_a_plain_white_work_surface() -> None:
     page = build_page(REPO, "2026-09-05")
 
     assert "background: var(--paper)" in page
-    assert "--paper: #ffffff" in page
+    assert "--paper: #fff" in page
     assert "<h1 id=\"page-title\">Materials</h1>" in page
     assert "This overview shows" not in page
     assert "supporting workbench" not in page
@@ -42,11 +43,10 @@ def test_overview_is_a_plain_white_work_surface() -> None:
     assert 'id="status-filter"' in page
     assert 'id="material-filter"' in page
     assert page.count('class="sort-button"') == 4
-    assert '<header class="site-header">' in page
+    assert render_header("materials") in page
     assert 'aria-current="page">Materials</a>' in page
-    assert 'data-project-link>About</a>' in page
-    assert '<footer class="site-footer">' in page
-    assert "not officially affiliated with the TEI Consortium" in page
+    assert '<a href="project.html">About</a>' in page
+    assert render_footer("2026-09-05") in page
     assert "Commits all observed refs" not in page
     assert "External links inventoried" not in page
     assert "Bugs enumerated" not in page
@@ -145,10 +145,28 @@ retrieval_status: observable-complete
 def test_overview_inlines_its_source_assets() -> None:
     page = build_page(REPO, "2026-09-05")
 
-    assert f'<style>\n{read_asset("materials.css")}</style>' in page
+    assert f'<style>\n{read_asset("workbench.css")}\n{read_asset("materials.css")}</style>' in page
     assert f'<script>\n{read_asset("materials.js")}</script>' in page
     assert '<link rel="stylesheet"' not in page
     assert '<script src="' not in page
+
+
+def test_overview_uses_plain_holding_lists_and_distinguishes_literature() -> None:
+    page = build_page(REPO, "2026-09-05")
+    assert page.count("<table ") == 1
+    assert '<ul class="holding-list">' in page
+    assert '<li class="holding-item">' in page
+    assert 'class="holding-status"' in page
+    assert '>Data</a>' in page and '>Manifest</a>' in page
+    assert "Source families and recorded holdings." in page
+    assert "Individual raw files are not enumerated here." in page
+    assert '<a href="knowledge.html">Knowledge</a>' in page
+    assert '<aside class="literature-note" id="literature">' in page
+    assert 'data-repo-path="sources/locks/literature.yaml"' in page
+    assert page.count('<tr class="source-row" data-source-row') == 16
+    for asset in ("workbench.css", "materials.css"):
+        assert "border-top:" not in read_asset(asset)
+        assert "border-bottom:" not in read_asset(asset)
 
 
 def test_overview_rejects_unsafe_or_unexpected_repository_paths() -> None:

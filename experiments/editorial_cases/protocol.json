@@ -1,0 +1,25 @@
+{
+  "format_version": 1,
+  "experiment": "editorial-cases-1",
+  "authority": "Independent purposive research experiment; requirements are project posits, not verified user needs.",
+  "sampling": {
+    "unit": "A locally identifiable XML fragment in a published scholarly edition, with full source context retained at admission.",
+    "discovery_bound": "At most four publicly accessible edition repository candidates; select three cases, preferably within one licensed edition corpus.",
+    "inclusion": ["Actual editorial source XML, not a tutorial-only example", "An exact immutable version or dated snapshot", "Source publication and editorial context identified", "Rights and attribution reviewed before redistribution"],
+    "exclusion": ["No identifiable source snapshot", "Unresolved rights for the intended stored representation", "Synthetic or Guidelines-only examples presented as real practice"],
+    "target_tasks": ["Inspect hierarchy and mixed content without losing textual order", "Preserve an editorial distinction that challenges one contiguous structural extent", "Expose an adverse unsupported feature without silently flattening it"],
+    "biases": ["Purposefully selected challenge cases", "Accessible and licensed sources preferred", "A single edition cannot represent the diversity of TEI practice"],
+    "holdout": "One adverse source fragment is withheld from mapper development and evaluated only after the mapping rules are fixed. It is not a statistically independent test of an architecture designed with knowledge of the problem family."
+  },
+  "comparison": {
+    "candidates": ["Versioned character sequence with attributed contiguous forests and explicit annotations", "Primary tree with separately identified stand-off observations"],
+    "oracle": "Case-specific expected text, structural distinctions, target observations, and declared losses are authored before mapper results are seen.",
+    "axes": ["coverage of declared source constructs", "preservation of specified task observations", "lexical changes", "policy and external dependencies", "reversibility under the stated scope"],
+    "not_measured": ["Editor completion time", "Learnability", "Community preference", "Full P5/ODD conformance", "Whole-document migration fidelity"]
+  },
+  "outputs": {
+    "cases": "Authored requirements and immutable source locators in cases.json; never a grounding target.",
+    "report": "Generated deterministic comparison report with input fingerprints; never hand edited and never a grounding target.",
+    "profile": "An optional profile of existing v0.1 records; core validation remains separate from profile conformance."
+  }
+}

@@ -27,8 +27,9 @@ The unit of comparison is a design decision, not an entire imagined standard.
 Each record identifies:
 
 - the grounded P5 baseline and affected constructs;
-- stakeholders and representative use cases;
-- the demonstrated problem and relevant counterevidence;
+- stakeholders, use cases, and the selection scope they cover;
+- the demonstrated problem or explicitly proposed requirement, and relevant
+  counterevidence;
 - candidate options, including preservation of current behavior;
 - assumptions and unresolved dependencies;
 - expected benefits and regressions by criterion;
@@ -68,6 +69,35 @@ Counts of issues, elements, or lines of markup are descriptive measurements,
 not automatic quality scores. Qualitative judgments name the reviewer,
 procedure, and uncertainty where possible.
 
+These levels describe support for evaluation, not additional Vault artifact
+types or statuses. A prototype report is an experiment output; to support a
+persistent factual assertion, its versioned observations must enter the
+canonical source-to-assertion chain. A design recommendation remains a reasoned
+posit even when its factual premises are well supported.
+
+## Adequacy and practical use
+
+Evaluate three separate questions: whether the declared rules are consistent
+and executable; whether the model preserves the distinctions required by the
+chosen cases; and whether people can use it to complete the intended tasks.
+Passing instance validation answers only part of the first question. A bounded
+search that finds no contradiction must state its bounds; it is not a general
+proof of consistency or satisfiability.
+
+Define the expected editorial observations before implementing an encoding or
+converter. Include pairs that must count as equivalent and pairs that must
+remain distinct. Have those expectations reviewed independently of the
+implementation so that the converter does not define its own correctness.
+
+A practical-use comparison names the task, participant role and relevant
+experience, baseline tools, procedure, and acceptance criteria in advance.
+For example, ask an editor to inspect and revise an annotation after a text
+change, then observe correctness, time, errors, help requests, and interventions
+under each candidate. Keep task and starting information comparable. Small
+exploratory trials can expose problems; report their sample and limits instead
+of generalizing to all TEI users. Lower node counts or shorter markup alone do
+not establish learnability or usability.
+
 ## Comparative scorecard
 
 A scorecard should record observations before any aggregate score. Suggested
@@ -98,9 +128,12 @@ introduced only through the repository's architecture-decision process.
 
 A proposal cannot pass directly from an attractive example to a design
 recommendation. Its baseline behavior must be established; the problem must be
-supported; alternatives must be comparable; representative and adverse cases
-must run; migration must be measured; and official-process claims must be
-dated and attributed.
+supported or the proposed requirement explicitly justified; alternatives must
+be comparable; cases selected for the declared scope and adverse cases must
+run; migration consequences must be measured where claimed; and official-process
+claims must be dated and attributed. An exploratory experiment may leave these
+questions open, but must limit its conclusion accordingly. A selector experiment
+within one object model cannot justify choosing that model over another.
 
 The project may conclude that different blueprints need different solutions.
 Uniformity is preferred only when it improves the shared contract without

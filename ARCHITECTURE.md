@@ -1,15 +1,10 @@
 # Repository architecture
 
-This document explains how TEI P6 Research fits together. It is a
-map of the system, not a second schema. The normative repository contracts are
-defined in `knowledge/schema.md` and `knowledge/operations.md`; current facts
-are recorded in `knowledge/state.md`.
+This map records data flow and document ownership. The repository contracts
+are defined in `knowledge/schema.md` and `knowledge/operations.md`.
+Current facts are recorded in `knowledge/state.md`.
 
 ## Entry points and document ownership
-
-The repository has several entry points because they serve different readers.
-They should link to one another, but they must not become parallel versions of
-the project contract.
 
 | Entry point | Single responsibility |
 |---|---|
@@ -23,11 +18,9 @@ the project contract.
 | `EXPOSE.md` | one-page narrative description for scholarly communication |
 | `knowledge/` | canonical project contract, rules, current state, and decisions |
 
-Volatile facts appear only in `knowledge/state.md` or run manifests. A rule is
-defined once in its canonical knowledge document; all other entry points
-summarize it only when necessary and link to the authority. Generated HTML
-pages in `docs/` are products of their builders, not additional documentation
-sources.
+Rules have one canonical definition. Entry points summarize only what their
+readers need and link to that definition. Generated HTML pages in `docs/` are
+products of their builders, not additional documentation sources.
 
 Git history records what changed. `knowledge/state.md` records what is true
 now, and `knowledge/journal.md` records only durable decisions and their
@@ -36,8 +29,8 @@ project starts publishing named versions.
 
 ## System at a glance
 
-The repository consists of four connected internal planes and one read-only
-publication surface:
+Four working planes connect through project controls and a read-only
+publication surface.
 
 ```text
                     PROJECT CONTROL
@@ -67,21 +60,20 @@ helps humans and agents retrieve only the material needed for a task.
 
 ## Publication surface
 
-The static research workbench is a generated view across project controls and
-repository-safe acquisition metadata. Its materials page is derived from the
-registry, locks, and selected manifests; its project page is derived from the
-public overview and knowledge documents. GitHub Pages publishes those views for
-one exact repository revision.
+The static workbench presents the canonical proposal, model definition,
+comparative examples, acquisition inventory, and knowledge chain. Its materials
+page uses the registry, locks, and selected manifests. Its project page uses
+the public overview and knowledge documents. GitHub Pages publishes the
+generated views for one exact repository revision.
 
 Publication does not add an evidence layer or raise any artifact's status. The
-site excludes ignored raw source bodies, links technical records as audit
-affordances, and exposes only claims and holdings that its pinned inputs can
-support. Interface rules live in `knowledge/design.md`; current deployment
-state lives in `knowledge/state.md`.
+site excludes ignored raw source bodies and links acquisition records and
+canonical knowledge for inspection. Interface rules live in
+`knowledge/design.md`. Deployment state lives in `knowledge/state.md`.
 
 ## Project control
 
-The seven documents in `knowledge/` form the executable Promptotyping contract:
+The seven documents in `knowledge/` define the Promptotyping contract.
 
 | File | Authority |
 |---|---|
@@ -100,7 +92,7 @@ never treated as proof that data has been acquired.
 
 ## Acquisition plane
 
-Large or changing collections are processed through:
+Large or changing collections follow the acquisition chain.
 
 ```text
 registered source -> raw observation -> normalized record -> projection
@@ -111,23 +103,22 @@ local-only. `corpus/normalized/` contains loss-minimizing machine records.
 `corpus/projections/` contains deterministic reading and retrieval views. Every
 transformation is tied to a run manifest and source hash.
 
-Nothing in `corpus/` is a grounding target. A selected item becomes research
-evidence only after identity, rights, source type, and integrity checks admit it
-to the numbered chain.
+Nothing in `corpus/` is a grounding target. A selected item enters the numbered
+research chain after identity, rights, source type, and integrity checks.
+Admission creates neither a research finding nor human verification.
 
 ## Evidence plane
 
-The canonical Grounded Vault chain is:
+Admitted sources enter the Grounded Vault chain.
 
 ```text
 00_sources -> 10_markdown -> 20_distillates -> 30_assertions -> 40_output
 ```
 
-Each layer references only the layer directly beneath it. Representations mint
-stable block anchors; distillates mint source-specific statement identifiers;
-assertions combine statements across sources; output chapters cite assertions.
-An unsupported design conclusion is marked as a posit and never disguised as
-an assertion.
+Each layer references its direct predecessor. Representations mint stable
+block anchors. Distillates mint source-specific statement identifiers.
+Assertions combine those statements, and output chapters cite assertions.
+Design conclusions enter output as explicit posits.
 
 Structural grounding does not mean truth. Deterministic validation checks that
 artifacts and anchors conform. Adversarial machine review tests whether a cited
@@ -137,7 +128,7 @@ verification.
 ## Context plane
 
 `contexts/START.md` and `contexts/ROUTER.md` select the smallest suitable
-reading path. Manifests define bounded context packs; generated packs contain
+reading path. Manifests define bounded context packs. Generated packs contain
 only material already present elsewhere and never create new propositions.
 `workflows/` then supplies the procedure for a particular task, such as
 analyzing an element, comparing releases, tracing a decision, or evaluating a
@@ -154,21 +145,30 @@ ask, candidate abstractions, serialization contracts, experiments, and
 evaluation method. It does not establish how P5 works and does not represent an
 official TEI decision.
 
-The intended experimental flow is:
+Design experiments connect requirements to comparative recommendations.
 
 ```text
-grounded P5 finding + explicit requirement
+grounded source findings + explicit requirement or model posit
     -> candidate core-model decision
         -> blueprint and serialization bindings
             -> validators and converters
                 -> examples, migration, and roundtrip tests
                     -> comparative evaluation
-                        -> grounded recommendation in 40_output/
+                        -> reasoned recommendation in 40_output/
 ```
 
-Executable model artifacts will be introduced only after their paths, schemas,
-generation rules, and authority have been recorded. Generated results must be
-reproducible from pinned inputs and must not be hand-edited.
+Experimental reports require admission as versioned data sources before they
+can ground empirical assertions. A recommendation cites grounded premises and
+marks its design judgment as a posit.
+
+Executable model artifacts require recorded paths, schemas, generation rules,
+and authority. The v0.1 contract uses `experiments/abstract_text_v01/spec.json`
+and independently authored cases and examples, with the reference library in
+`tools/models/` and the runner in `tools/check_abstract_text_v01.py`. Its generated
+report fingerprints the definition, contract, code, and cases. Generated
+results must reproduce from declared inputs and must not be hand-edited.
+The full definition and exclusions are in
+`docs/p6/abstract-text-model-v0.1.md`.
 
 ## Authority and trust boundaries
 

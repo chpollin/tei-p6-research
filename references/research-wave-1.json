@@ -1,0 +1,49 @@
+[
+  {
+    "id": "w3c-web-annotation-20170223",
+    "type": "report",
+    "title": "Web Annotation Data Model",
+    "editor": [{"family": "Sanderson", "given": "Robert"}, {"family": "Ciccarese", "given": "Paolo"}, {"family": "Young", "given": "Benjamin"}],
+    "publisher": "World Wide Web Consortium",
+    "issued": {"date-parts": [[2017, 2, 23]]},
+    "genre": "W3C Recommendation",
+    "URL": "https://www.w3.org/TR/2017/REC-annotation-model-20170223/",
+    "note": "Citation-only intake of the dated recommendation. Copyright 2017 W3C (MIT, ERCIM, Keio, Beihang). Document use: https://www.w3.org/copyright/document-license-2015/. Source authority is Web Annotation, not TEI policy."
+  },
+  {
+    "id": "tei-sourceforge-fr363",
+    "type": "post",
+    "title": "<span>should be generalised to support discontinuous spans",
+    "author": [{"literal": "louburnard"}],
+    "container-title": "TEI SourceForge feature requests",
+    "issued": {"date-parts": [[2012, 5, 15]]},
+    "URL": "https://sourceforge.net/p/tei/feature-requests/363/",
+    "note": "Historical participant proposal, ticket 363; observed through the locked 2026-09-05 tracker snapshot. No redistribution licence established; citation and short quotation only."
+  },
+  {
+    "id": "piez2014range",
+    "type": "paper-conference",
+    "title": "Hierarchies within range space: From LMNL to OHCO",
+    "author": [{"family": "Piez", "given": "Wendell"}],
+    "issued": {"date-parts": [[2014]]},
+    "container-title": "Proceedings of Balisage: The Markup Conference 2014",
+    "collection-title": "Balisage Series on Markup Technologies",
+    "volume": "13",
+    "DOI": "10.4242/BalisageVol13.Piez01",
+    "URL": "https://www.balisage.net/Proceedings/vol13/html/Piez01/BalisageVol13-Piez01.html",
+    "note": "Publisher HTML snapshot 2026-09-05. Copyright retained by author; publisher permission does not establish redistribution permission. Citation-only intake."
+  },
+  {
+    "id": "renear-wickett2010documents",
+    "type": "paper-conference",
+    "title": "There are No Documents",
+    "author": [{"family": "Renear", "given": "Allen H."}, {"family": "Wickett", "given": "Karen M."}],
+    "issued": {"date-parts": [[2010]]},
+    "container-title": "Proceedings of Balisage: The Markup Conference 2010",
+    "collection-title": "Balisage Series on Markup Technologies",
+    "volume": "5",
+    "DOI": "10.4242/BalisageVol5.Renear01",
+    "URL": "https://www.balisage.net/Proceedings/vol5/html/Renear01/BalisageVol5-Renear01.html",
+    "note": "Publisher HTML snapshot 2026-09-05; page describes a provisional pre-conference argument. Copyright retained by authors; citation-only intake. The title is not treated as an established conclusion."
+  }
+]

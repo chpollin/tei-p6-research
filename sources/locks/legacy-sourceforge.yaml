@@ -43,3 +43,27 @@ manifests:
   - sources/manifests/2026-09-04-tei-legacy-sourceforge.yaml
   - sources/manifests/2026-09-04-tei-legacy-sourceforge-r2.yaml
   - sources/manifests/2026-09-05-tei-legacy-sourceforge-r3.yaml
+
+bounded_readings:
+  - run_id: W1-ISSUES
+    as_of: "2026-09-05"
+    input: corpus/normalized/sourceforge/tei-legacy-trackers-r3.jsonl
+    input_sha256: f5024d3d04f23bf5be920476fc84ceab7b0fc044c55a6f8333601d2c5f32258c
+    field: summary
+    regex: '(?i)stand.?off|\banchor\b|\bspan\b|overlap|text.?identity'
+    scope: Title search of the acquired ticket snapshot, followed by exact raw reading of three selected discussions; no body census or prevalence estimate.
+    counts: {tickets_searched: 1349, title_matches: 8, discussions_read: 3, posts_read: 73, citation_admissions: 1}
+    dispositions:
+      - {tracker: feature-requests, ticket: 354, disposition: pending-review, reason: read with counterargument; supersession unresolved; not admitted}
+      - {tracker: feature-requests, ticket: 363, disposition: included, reason: one attributed proposal admitted by citation; outcome trail remains open}
+      - {tracker: feature-requests, ticket: 378, disposition: pending-review, reason: read with counterarguments; governance and migration identity unresolved; not admitted}
+      - {tracker: bugs, ticket: 501, disposition: excluded-with-reason, reason: lower relevance to this selector/container wave based on title; body not read}
+      - {tracker: bugs, ticket: 591, disposition: excluded-with-reason, reason: lower relevance to this selector/container wave based on title; body not read}
+      - {tracker: feature-requests, ticket: 50, disposition: excluded-with-reason, reason: lower relevance to this selector/container wave based on title; body not read}
+      - {tracker: feature-requests, ticket: 386, disposition: excluded-with-reason, reason: lower relevance to this selector/container wave based on title; body not read}
+      - {tracker: feature-requests, ticket: 470, disposition: excluded-with-reason, reason: lower relevance to this selector/container wave based on title; body not read}
+    admission_manifest: sources/manifests/2026-09-05-research-wave-1-citations.yaml
+    gaps:
+      - No independently established SVN-to-Git mapping or first release of the discontinuous-span extension.
+      - No complete governance-decision-implementation-release chain.
+      - No exhaustive post-migration GitHub discussion acquisition.

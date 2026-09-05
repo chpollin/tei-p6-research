@@ -1,12 +1,15 @@
 # Candidate P6 core model
 
-Status: modeling hypothesis
-Authority: independent project proposal, subject to evidence and prototyping
+An independent modeling hypothesis, subject to evidence and prototyping.
 
-This document defines the smallest useful candidate for a
-serialization-independent P6 model. It is deliberately a conceptual contract,
-not yet a schema or implementation. Its purpose is to make competing
-formalizations comparable.
+This broader sketch defines questions for comparing a serialization-independent
+core with alternative models. It does not specify an implementation or
+establish that its primitives are necessary or sufficient.
+
+The [Abstract Text Model 0.1 definition](abstract-text-model-v0.1.md) specifies
+the bounded executable candidate. It implements selected distinctions from
+this sketch. Generic domain entities, properties, customization, and the
+complete metamodel below remain outside that implementation.
 
 ## Modeling target
 
@@ -15,15 +18,17 @@ structural containment, metadata, annotation, references, overlapping regions,
 and graph relations. It must also support domain-specific restrictions and
 extensions without making a particular serialization normative.
 
-A plain tree is insufficient when structures overlap or annotations are
-stand-off. A plain unordered graph is insufficient when textual sequence and
-mixed content matter. The working hypothesis is therefore a typed, attributed,
-ordered graph with explicit text regions and named hierarchies.
+The comparison requires explicit representations of order, containment,
+overlap, and stand-off annotation. These requirements do not by themselves
+select one data structure. A typed, attributed graph with ordered sequences and
+named hierarchies is one candidate. A primary tree with separately modeled
+references and annotations is another. Compare their preservation of the same
+distinctions, authoring and processing costs, and migration behavior before
+preferring either.
 
 ## Four modeling levels
 
-The design separates four levels that P5 implementations often encounter
-through different surfaces:
+The candidate separates four modeling levels for evaluation.
 
 | Level | Role | Example responsibility |
 |---|---|---|
@@ -38,28 +43,36 @@ silently modify the meaning of a shared concept.
 
 ## Candidate primitives
 
-The following primitives form the current hypothesis:
+These primitives are proposed for comparison.
 
 | Primitive | Meaning |
 |---|---|
-| concept | a stable semantic type with an identifier and definition |
+| concept | an identified semantic type whose applicable definition is versioned |
 | node | an instance of one or more compatible concepts |
 | property | a typed value attached to a node or relation |
 | text segment | an immutable or versioned sequence of textual units |
-| content sequence | an ordered list of text items, nodes, or references |
+| content sequence | an ordered list of occurrences of text items, nodes, or references |
 | hierarchy | a named, directed containment view over nodes and sequences |
 | relation | a typed directed or undirected association between identified objects |
-| span | an identified region anchored by boundaries in a content sequence |
+| span | a contiguous region addressed by a selector within a declared sequence or version |
 | constraint | a named rule with scope, severity, and test semantics |
 | declaration | the blueprint, language, version, and binding context of an instance |
 
-Text, containment, and relation are separate primitives. This avoids treating a
-character sequence as an accidental property of XML, treating every relation
-as containment, or forcing overlapping structures into a single tree.
+This candidate separates text, containment, and other relations. Experiments
+must test which distinctions require separate primitives and which can be
+expressed adequately through composition or a domain-specific profile.
+
+Distinguish an encoding object, the object it describes, and an attributed claim
+about that object when a use case requires it. A record describing a person is
+not identical to that person. Two annotations of one region need not make the
+same claim. Compare direct properties with independently addressable statements
+using conflicting attributions, separate responsibility, and revision of one
+claim. An extra statement object must
+serve a demonstrated need for addressing, provenance, or interpretation.
 
 ## Abstract structure
 
-A candidate instance can be sketched as:
+A candidate instance has the following proposed components.
 
 ```text
 I = (D, N, X, Q, H, R, S, V)
@@ -84,14 +97,17 @@ Order is semantic only where the model declares an ordered sequence. Object
 member order in JSON, triple order in RDF, attribute order in XML, and map order
 in YAML must not acquire meaning accidentally.
 
-A content sequence contains explicit items. An item may be a text segment, a
-contained node, or a reference to another identified object. Inline annotation
-can therefore be represented as contained structure when properly nested or as
-a span/relation when nesting would create false semantics.
+A content sequence records ordered occurrences of text segments, nodes, or
+references. The formalization must state whether repeated references denote
+distinct occurrences and how an anchor identifies the intended occurrence.
+Sequence membership and hierarchical containment need an explicit consistency
+rule. Neither may silently override the other. Converting contained annotation
+to a separate region claim requires a mapping of target, scope, and
+interpretation. Proper nesting alone does not establish equivalence.
 
-The model must define normalization boundaries: line-ending normalization,
-Unicode normalization, whitespace policy, and whether lexical distinctions such
-as entity references are semantic, binding-specific, or preservation metadata.
+The model must define policies for line endings, Unicode, and whitespace.
+It must classify lexical distinctions such as entity references as semantic,
+binding-specific, or preservation metadata.
 
 ## Hierarchy, overlap, and stand-off annotation
 
@@ -100,10 +116,13 @@ declare one hierarchy as the preferred serialization tree without implying that
 other hierarchies are less meaningful. Nodes may participate in more than one
 hierarchy when the relevant constraints allow it.
 
-Spans point to stable boundaries in an ordered sequence. They support overlap,
-discontinuous annotation, and stand-off layers without splitting the underlying
-text merely to satisfy one serialization. The design must still decide how
-boundaries survive editing and how text versions affect anchored annotations.
+A region selector is evaluated against a declared sequence or text version.
+A contiguous interval and a discontinuous selection require distinguishable
+selection structures. Neither implies that the selected material remains the
+same after editing. Experiments must state how versions, boundaries, and
+repeated occurrences are identified and whether cross-version correspondence
+is asserted, computed, or unresolved. The bounded pilot's region record is one
+experimental representation, not a definition imposed on this general model.
 
 ## Identity and references
 
@@ -112,9 +131,10 @@ serialization-local key, file path, or namespace prefix. Bindings may use XML
 IDs, JSON keys, IRIs, blank nodes, or external indexes, but their mapping
 contract must state how canonical identity is preserved.
 
-References resolve within a declared dataset or package context. Broken,
-ambiguous, cyclic, or version-incompatible references receive defined
-diagnostics rather than processor-dependent behavior.
+References resolve within a declared dataset or package context. Distinguish
+known missing or incompatible targets from targets that cannot yet be checked.
+Cycles violate a rule only where the relevant relation or processing contract
+prohibits them. Diagnostics name the condition and the rule being evaluated.
 
 ## Properties and datatypes
 
@@ -124,9 +144,8 @@ references, or structured values. Language-tagged strings, dates, measures,
 uncertain values, and controlled vocabularies require model-level semantics
 rather than serialization-specific conventions.
 
-Defaults are especially sensitive: a value inferred from a blueprint is not
-the same as a value explicitly recorded by an encoder. The canonical
-representation must preserve that distinction whenever it affects validation,
+Values inferred from a blueprint and values explicitly recorded by an encoder
+must remain distinguishable whenever that affects validation,
 roundtripping, or interpretation.
 
 ## Constraints
@@ -142,29 +161,20 @@ Constraints should distinguish at least violations, warnings, and informative
 normalizations. A binding-specific limitation is reported by the binding and
 does not silently weaken the core model.
 
-## Candidate invariants
+A formalization must check unique identity, complete declarations, reference
+resolution, deterministic order, and the graph and value rules defined above.
+Version and customization dependencies must be explicit. A blueprint cannot
+weaken a core rule designated as non-overridable.
 
-Any formalization of this core should test at least these invariants:
-
-1. identities are unique in their declared scope;
-2. every type, property, hierarchy, relation, and constraint is declared;
-3. references and span boundaries resolve or carry an explicit external status;
-4. ordered sequence positions are deterministic;
-5. each named containment hierarchy satisfies its declared acyclicity and
-   ownership rules;
-6. property values satisfy their datatype and cardinality contracts;
-7. a blueprint cannot weaken a non-overridable core invariant;
-8. a binding identifies every normalization or loss it introduces;
-9. equivalent serializations normalize to the same semantic comparison form;
-10. version and customization dependencies are explicit.
-
-These are candidate invariants, not settled P6 requirements. Each must be tested
-against grounded P5 examples and counterexamples before adoption.
+Bindings must identify their normalizations and losses and preserve an
+independently specified comparison relation. Tests must include both equivalent
+instances and pairs that must remain distinct. These proposed obligations
+require evaluation against P5 cases and counterexamples before adoption.
 
 ## What remains deliberately undecided
 
-The canonical formal language, granularity of text positions, identity model,
-default semantics, hierarchy composition, ontology relationship, and precise
-customization algebra remain open. `research-agenda.md` records the experiments
-needed to choose among alternatives without turning this initial sketch into an
-unexamined commitment.
+For this broader model, formal language, position units, identity rules,
+defaults, hierarchy composition, ontology connections, and customization
+algebra remain research questions. Version 0.1 fixes a subset for its bounded
+contract. [research-agenda.md](research-agenda.md) defines the comparisons
+needed to assess extensions.

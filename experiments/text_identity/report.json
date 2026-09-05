@@ -1,0 +1,740 @@
+{
+  "cases": [
+    {
+      "actual": {
+        "diagnostics": [],
+        "resolutions": {
+          "r1": {
+            "end": 7,
+            "quote": "red",
+            "start": 4,
+            "version": "v1"
+          }
+        }
+      },
+      "details": [],
+      "id": "fixed-position",
+      "passed": true
+    },
+    {
+      "actual": {
+        "diagnostics": [],
+        "resolutions": {
+          "r1": {
+            "end": 7,
+            "quote": "red",
+            "start": 4,
+            "version": "v1"
+          }
+        }
+      },
+      "details": [],
+      "id": "fixed-quotation",
+      "passed": true
+    },
+    {
+      "actual": {
+        "diagnostics": [
+          "E_QUOTE"
+        ],
+        "resolutions": {}
+      },
+      "details": [
+        {
+          "code": "E_QUOTE",
+          "path": "regions/r1/selector"
+        }
+      ],
+      "id": "insertion-stale-position",
+      "passed": true
+    },
+    {
+      "actual": {
+        "diagnostics": [],
+        "resolutions": {
+          "r1": {
+            "end": 12,
+            "quote": "red",
+            "start": 9,
+            "version": "v1"
+          }
+        }
+      },
+      "details": [],
+      "id": "insertion-quotation",
+      "passed": true
+    },
+    {
+      "actual": {
+        "diagnostics": [
+          "E_QUOTE"
+        ],
+        "resolutions": {}
+      },
+      "details": [
+        {
+          "code": "E_QUOTE",
+          "path": "regions/r1/selector"
+        }
+      ],
+      "id": "edit-within-position",
+      "passed": true
+    },
+    {
+      "actual": {
+        "diagnostics": [
+          "E_NO_MATCH"
+        ],
+        "resolutions": {}
+      },
+      "details": [
+        {
+          "code": "E_NO_MATCH",
+          "path": "regions/r1/selector"
+        }
+      ],
+      "id": "edit-within-quotation",
+      "passed": true
+    },
+    {
+      "actual": {
+        "diagnostics": [
+          "E_QUOTE"
+        ],
+        "resolutions": {}
+      },
+      "details": [
+        {
+          "code": "E_QUOTE",
+          "path": "regions/r1/selector"
+        }
+      ],
+      "id": "deletion-position",
+      "passed": true
+    },
+    {
+      "actual": {
+        "diagnostics": [
+          "E_NO_MATCH"
+        ],
+        "resolutions": {}
+      },
+      "details": [
+        {
+          "code": "E_NO_MATCH",
+          "path": "regions/r1/selector"
+        }
+      ],
+      "id": "deletion-quotation",
+      "passed": true
+    },
+    {
+      "actual": {
+        "diagnostics": [
+          "E_AMBIGUOUS"
+        ],
+        "resolutions": {}
+      },
+      "details": [
+        {
+          "code": "E_AMBIGUOUS",
+          "path": "regions/r1/selector"
+        }
+      ],
+      "id": "repeated-quotation",
+      "passed": true
+    },
+    {
+      "actual": {
+        "diagnostics": [],
+        "resolutions": {
+          "r1": {
+            "end": 7,
+            "quote": "red",
+            "start": 4,
+            "version": "v1"
+          }
+        }
+      },
+      "details": [],
+      "id": "repeated-position",
+      "passed": true
+    },
+    {
+      "actual": {
+        "diagnostics": [],
+        "resolutions": {
+          "r1": {
+            "end": 5,
+            "quote": "red",
+            "start": 2,
+            "version": "v1"
+          }
+        }
+      },
+      "details": [],
+      "id": "literal-context",
+      "passed": true
+    },
+    {
+      "actual": {
+        "diagnostics": [
+          "E_NO_MATCH"
+        ],
+        "resolutions": {}
+      },
+      "details": [
+        {
+          "code": "E_NO_MATCH",
+          "path": "regions/r1/selector"
+        }
+      ],
+      "id": "context-destroyed",
+      "passed": true
+    },
+    {
+      "actual": {
+        "diagnostics": [
+          "E_AMBIGUOUS"
+        ],
+        "resolutions": {}
+      },
+      "details": [
+        {
+          "code": "E_AMBIGUOUS",
+          "path": "regions/r1/selector"
+        }
+      ],
+      "id": "overlapping-quote-occurrences",
+      "passed": true
+    },
+    {
+      "actual": {
+        "diagnostics": [],
+        "resolutions": {
+          "r1": {
+            "end": 7,
+            "quote": "red",
+            "start": 4,
+            "version": "v1"
+          },
+          "r2": {
+            "end": 11,
+            "quote": "red fox",
+            "start": 4,
+            "version": "v1"
+          }
+        }
+      },
+      "details": [],
+      "id": "overlapping-annotations",
+      "passed": true
+    },
+    {
+      "actual": {
+        "diagnostics": [],
+        "resolutions": {
+          "r1": {
+            "end": 4,
+            "quote": "😀é",
+            "start": 1,
+            "version": "v1"
+          }
+        }
+      },
+      "details": [],
+      "id": "unicode-codepoints",
+      "passed": true
+    },
+    {
+      "actual": {
+        "diagnostics": [
+          "E_NO_MATCH"
+        ],
+        "resolutions": {}
+      },
+      "details": [
+        {
+          "code": "E_NO_MATCH",
+          "path": "regions/r1/selector"
+        }
+      ],
+      "id": "normalization-quotation",
+      "passed": true
+    },
+    {
+      "actual": {
+        "diagnostics": [
+          "E_QUOTE"
+        ],
+        "resolutions": {}
+      },
+      "details": [
+        {
+          "code": "E_QUOTE",
+          "path": "regions/r1/selector"
+        }
+      ],
+      "id": "normalization-position",
+      "passed": true
+    },
+    {
+      "actual": {
+        "diagnostics": [
+          "E_BOUNDS"
+        ],
+        "resolutions": {}
+      },
+      "details": [
+        {
+          "code": "E_BOUNDS",
+          "path": "regions/r1/selector"
+        }
+      ],
+      "id": "invalid-bounds",
+      "passed": true
+    },
+    {
+      "actual": {
+        "diagnostics": [
+          "E_BOUNDS"
+        ],
+        "resolutions": {}
+      },
+      "details": [
+        {
+          "code": "E_BOUNDS",
+          "path": "regions/r1/selector"
+        }
+      ],
+      "id": "empty-region",
+      "passed": true
+    },
+    {
+      "actual": {
+        "diagnostics": [
+          "E_BOUNDS"
+        ],
+        "resolutions": {}
+      },
+      "details": [
+        {
+          "code": "E_BOUNDS",
+          "path": "regions/r1/selector"
+        }
+      ],
+      "id": "boolean-position",
+      "passed": true
+    },
+    {
+      "actual": {
+        "diagnostics": [
+          "E_SELECTOR"
+        ],
+        "resolutions": {}
+      },
+      "details": [
+        {
+          "code": "E_SELECTOR",
+          "path": "regions/r1/selector"
+        }
+      ],
+      "id": "empty-quotation",
+      "passed": true
+    },
+    {
+      "actual": {
+        "diagnostics": [
+          "E_SELECTOR"
+        ],
+        "resolutions": {}
+      },
+      "details": [
+        {
+          "code": "E_SELECTOR",
+          "path": "regions/r1/selector"
+        }
+      ],
+      "id": "malformed-context",
+      "passed": true
+    },
+    {
+      "actual": {
+        "diagnostics": [
+          "E_REFERENCE"
+        ],
+        "resolutions": {}
+      },
+      "details": [
+        {
+          "code": "E_REFERENCE",
+          "path": "regions/r1/version"
+        }
+      ],
+      "id": "broken-reference",
+      "passed": true
+    },
+    {
+      "actual": {
+        "diagnostics": [
+          "E_REFERENCE"
+        ],
+        "resolutions": {}
+      },
+      "details": [
+        {
+          "code": "E_REFERENCE",
+          "path": "annotations/a1/region"
+        }
+      ],
+      "id": "reference-object",
+      "passed": true
+    },
+    {
+      "actual": {
+        "diagnostics": [
+          "E_DUPLICATE_ID"
+        ],
+        "resolutions": {}
+      },
+      "details": [
+        {
+          "code": "E_DUPLICATE_ID",
+          "path": "annotations[0]"
+        }
+      ],
+      "id": "duplicate-identity",
+      "passed": true
+    },
+    {
+      "actual": {
+        "diagnostics": [
+          "E_HASH"
+        ],
+        "resolutions": {}
+      },
+      "details": [
+        {
+          "code": "E_HASH",
+          "path": "versions/v1/sha256"
+        }
+      ],
+      "id": "changed-version-content",
+      "passed": true
+    },
+    {
+      "actual": {
+        "diagnostics": [
+          "E_CYCLE"
+        ],
+        "resolutions": {}
+      },
+      "details": [
+        {
+          "code": "E_CYCLE",
+          "path": "versions/v1/parent"
+        }
+      ],
+      "id": "version-parent-cycle",
+      "passed": true
+    },
+    {
+      "actual": {
+        "diagnostics": [
+          "E_OWNERSHIP"
+        ],
+        "resolutions": {}
+      },
+      "details": [
+        {
+          "code": "E_OWNERSHIP",
+          "path": "versions/v2/parent"
+        }
+      ],
+      "id": "parent-ownership",
+      "passed": true
+    },
+    {
+      "actual": {
+        "diagnostics": [],
+        "resolutions": {
+          "r1": {
+            "end": 7,
+            "quote": "red",
+            "start": 4,
+            "version": "v1"
+          }
+        }
+      },
+      "details": [],
+      "id": "equal-content-distinct-texts",
+      "passed": true
+    },
+    {
+      "actual": {
+        "diagnostics": [
+          "E_SHAPE"
+        ],
+        "resolutions": {}
+      },
+      "details": [
+        {
+          "code": "E_SHAPE",
+          "path": "model"
+        }
+      ],
+      "id": "malformed-model",
+      "passed": true
+    },
+    {
+      "actual": {
+        "diagnostics": [
+          "E_SHAPE"
+        ],
+        "resolutions": {}
+      },
+      "details": [
+        {
+          "code": "E_SHAPE",
+          "path": "regions[0]"
+        }
+      ],
+      "id": "malformed-object",
+      "passed": true
+    },
+    {
+      "actual": {
+        "diagnostics": [],
+        "reanchor": {
+          "diagnostics": [],
+          "proposal": {
+            "accepted": false,
+            "candidates": [
+              {
+                "end": 12,
+                "start": 9
+              }
+            ],
+            "region": "r1",
+            "source_version": "v1",
+            "status": "unique",
+            "target_version": "v2"
+          }
+        },
+        "resolutions": {
+          "r1": {
+            "end": 7,
+            "quote": "red",
+            "start": 4,
+            "version": "v1"
+          }
+        }
+      },
+      "details": [],
+      "id": "reanchor-insertion",
+      "passed": true
+    },
+    {
+      "actual": {
+        "diagnostics": [],
+        "reanchor": {
+          "diagnostics": [],
+          "proposal": {
+            "accepted": false,
+            "candidates": [],
+            "region": "r1",
+            "source_version": "v1",
+            "status": "absent",
+            "target_version": "v2"
+          }
+        },
+        "resolutions": {
+          "r1": {
+            "end": 7,
+            "quote": "red",
+            "start": 4,
+            "version": "v1"
+          }
+        }
+      },
+      "details": [],
+      "id": "reanchor-deletion",
+      "passed": true
+    },
+    {
+      "actual": {
+        "diagnostics": [],
+        "reanchor": {
+          "diagnostics": [],
+          "proposal": {
+            "accepted": false,
+            "candidates": [
+              {
+                "end": 3,
+                "start": 0
+              },
+              {
+                "end": 7,
+                "start": 4
+              }
+            ],
+            "region": "r1",
+            "source_version": "v1",
+            "status": "ambiguous",
+            "target_version": "v2"
+          }
+        },
+        "resolutions": {
+          "r1": {
+            "end": 7,
+            "quote": "red",
+            "start": 4,
+            "version": "v1"
+          }
+        }
+      },
+      "details": [],
+      "id": "reanchor-repeated",
+      "passed": true
+    },
+    {
+      "actual": {
+        "diagnostics": [],
+        "reanchor": {
+          "diagnostics": [],
+          "proposal": {
+            "accepted": false,
+            "candidates": [],
+            "region": "r1",
+            "source_version": "v1",
+            "status": "absent",
+            "target_version": "v2"
+          }
+        },
+        "resolutions": {
+          "r1": {
+            "end": 7,
+            "quote": "red",
+            "start": 4,
+            "version": "v1"
+          }
+        }
+      },
+      "details": [],
+      "id": "reanchor-context-loss",
+      "passed": true
+    },
+    {
+      "actual": {
+        "diagnostics": [],
+        "reanchor": {
+          "diagnostics": [],
+          "proposal": {
+            "accepted": false,
+            "candidates": [
+              {
+                "end": 7,
+                "start": 4
+              }
+            ],
+            "region": "r-old",
+            "source_version": "v1",
+            "status": "unique",
+            "target_version": "v2"
+          }
+        },
+        "resolutions": {
+          "r-new": {
+            "end": 7,
+            "quote": "red",
+            "start": 4,
+            "version": "v2"
+          },
+          "r-old": {
+            "end": 7,
+            "quote": "red",
+            "start": 4,
+            "version": "v1"
+          }
+        }
+      },
+      "details": [],
+      "id": "surviving-quote-changed-interpretation-position",
+      "passed": true
+    },
+    {
+      "actual": {
+        "diagnostics": [],
+        "reanchor": {
+          "diagnostics": [],
+          "proposal": {
+            "accepted": false,
+            "candidates": [
+              {
+                "end": 7,
+                "start": 4
+              }
+            ],
+            "region": "r-old",
+            "source_version": "v1",
+            "status": "unique",
+            "target_version": "v2"
+          }
+        },
+        "resolutions": {
+          "r-new": {
+            "end": 7,
+            "quote": "red",
+            "start": 4,
+            "version": "v2"
+          },
+          "r-old": {
+            "end": 7,
+            "quote": "red",
+            "start": 4,
+            "version": "v1"
+          }
+        }
+      },
+      "details": [],
+      "id": "surviving-quote-changed-interpretation-quotation",
+      "passed": true
+    },
+    {
+      "actual": {
+        "diagnostics": [],
+        "reanchor": {
+          "diagnostics": [
+            "E_REANCHOR"
+          ],
+          "proposal": null
+        },
+        "resolutions": {
+          "r1": {
+            "end": 7,
+            "quote": "red",
+            "start": 4,
+            "version": "v1"
+          }
+        }
+      },
+      "details": [],
+      "id": "reanchor-cross-text",
+      "passed": true
+    }
+  ],
+  "format_version": 1,
+  "inputs": {
+    "docs/p6/text-identity-pilot.md": "5059f1f8f5b4a82c76188dbf6e84ce81bb869e4f3805ba597a8f51673035f6cc",
+    "experiments/text_identity/cases.json": "a507ae84efdfcad8eb6ee791e001c37d5ed57b6e380b07e65453b99caebcbe4b",
+    "experiments/text_identity/spec.json": "1b6b15c7d8a081fb4215be08f7b85b27ad7fb036f1aa2e4a43f661839efcb597",
+    "tools/__init__.py": "bfbe55a00528e6b1bfa94096c8eb7f6dee8bca831778732f8980475b94ce96b4",
+    "tools/pilots/__init__.py": "4da824874df48464d31f4cd941d7b95d45446e3dea8fde213cc486795532d69f",
+    "tools/pilots/text_identity.py": "6c9e1cae3b1f258cc3b9075e19aa881c9e0868af1197e24bda78a663a4c02167"
+  },
+  "scope": "Synthetic finite modeling experiment; not P5 conversion or ontological evidence.",
+  "summary": {
+    "cases": 38,
+    "passed": 38
+  }
+}

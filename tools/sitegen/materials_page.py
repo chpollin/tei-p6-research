@@ -8,6 +8,7 @@ from pathlib import Path, PurePosixPath
 from typing import Any
 
 from sitegen.assets import read_asset
+from sitegen.chrome import render_footer, render_header
 from sitegen.materials_view import (
     GAP_LABELS,
     STATUS_HELP,
@@ -18,7 +19,7 @@ from sitegen.materials_view import (
 from sitegen.source_data import local_href
 
 
-CSS = "\n" + read_asset("materials.css")
+CSS = "\n" + read_asset("workbench.css") + "\n" + read_asset("materials.css")
 SCRIPT = "\n" + read_asset("materials.js")
 
 
@@ -86,24 +87,24 @@ def render_source(source: dict[str, Any], index: int) -> str:
         proof_link = f'<a {link_attributes(record["manifest_ref"])}>Manifest</a>'
         record_status = STATUS_LABELS.get(record["status"], record["status"] or "—")
         material_rows.append(
-            "<tr><td><strong>"
+            '<li class="holding-item"><div class="holding-title"><strong>'
             + html.escape(record["label"])
-            + "</strong><small>"
+            + '</strong><span class="holding-status">'
+            + html.escape(record_status)
+            + '</span><span class="row-links">'
+            + data_link
+            + proof_link
+            + "</span></div><small>"
             + html.escape(record["description"])
             + '</small><small class="run-meta">Run <code>'
             + html.escape(record["run_id"])
             + "</code>"
-            + "</small></td><td>"
-            + html.escape(record_status)
-            + '</td><td><span class="row-links">'
-            + data_link
-            + proof_link
-            + "</span></td></tr>"
+            + "</small></li>"
         )
     materials_detail = (
-        '<div class="subtable-wrap"><table class="subtable"><thead><tr><th>Holding</th><th>Acquisition</th><th>Open</th></tr></thead><tbody>'
+        '<ul class="holding-list">'
         + "".join(material_rows)
-        + "</tbody></table></div>"
+        + "</ul>"
         if material_rows
         else '<p class="empty-value">No completed acquisition run is available for this source.</p>'
     )
@@ -191,6 +192,22 @@ def build_page(root: Path, date: str, repository_base: str | None = None) -> str
         for source in registered_sources
         if source["authority"] != "secondary-scholarly"
     ]
+    literature = [source for source in registered_sources if source["authority"] == "secondary-scholarly"]
+    literature_rows = "".join(
+        '<li><a ' + link_attributes(source["lock_ref"]) + '>'
+        + html.escape(source["title"]) + "</a> · "
+        + html.escape(STATUS_LABELS.get(source["status"], source["status"])) + "</li>"
+        for source in literature
+    )
+    literature_note = (
+        '<aside class="literature-note" id="literature"><h2>Registered literature</h2>'
+        '<p>Scholarly literature is registered separately from the primary-source families. '
+        'Its acquisition state does not imply a complete bibliography.</p><ul>'
+        + literature_rows + '</ul><p>Read the resulting claims and source chains in '
+        '<a href="knowledge.html">Knowledge</a>.</p></aside>'
+        if literature else ''
+    )
+    literature_link = ' · <a href="#literature">Registered literature</a>' if literature else ''
     statuses = Counter(source["status"] for source in sources)
     rows = "".join(
         render_source(source, index) for index, source in enumerate(sources, start=1)
@@ -235,30 +252,25 @@ def build_page(root: Path, date: str, repository_base: str | None = None) -> str
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="repository-base" content="{html.escape(repository_base, quote=True)}">
 <title>Materials · TEI P6 Research</title>
-<meta name="description" content="Working inventory of acquired primary materials and known gaps in TEI P6 Research.">
+<meta name="description" content="Source families, recorded holdings, acquisition states and gaps in TEI P6 Research.">
 <style>{CSS}</style>
 </head>
 <body>
-<div class="shell">
-  <header class="site-header">
-    <a class="brand" href="corpus.html"><span class="brand-name">TEI P6</span><span class="brand-context">Research</span></a>
-    <nav class="primary-nav" aria-label="Primary navigation">
-      <a class="nav-link" href="corpus.html" aria-current="page">Materials</a>
-      <a class="nav-link" href="index.html" data-project-link>About</a>
-    </nav>
-  </header>
-  <main>
+<a class="skip-link" href="#main">Skip to materials</a>
+{render_header("materials")}
+  <main class="wb-main" id="main">
   <header class="page-head">
     <h1 id="page-title">Materials</h1>
     <p class="results-meta" role="status" aria-live="polite"><span id="result-count">{len(sources)}</span> sources</p>
   </header>
+  <p class="wb-description materials-scope">Source families and recorded holdings. Individual raw files are not enumerated here.<br><a href="knowledge.html">Knowledge</a>{literature_link}</p>
   <section aria-label="Source families">
     <div class="toolbar">
       <label class="control control-search"><span>Full-text search</span><input id="search" class="search" type="search" placeholder="Search sources and holdings"></label>
       <label class="control"><span>Acquisition</span><select id="status-filter" class="select">{"".join(status_options)}</select></label>
       <label class="control"><span>Material type</span><select id="material-filter" class="select">{"".join(material_options)}</select></label>
     </div>
-    <div class="table-wrap">
+    <div class="table-wrap" tabindex="0" role="region" aria-label="Source holdings table">
       <table class="source-table">
         <caption class="sr-only">Registered primary sources and their acquired holdings</caption>
         <colgroup><col><col><col><col><col><col></colgroup>
@@ -277,14 +289,9 @@ def build_page(root: Path, date: str, repository_base: str | None = None) -> str
     </div>
     <p id="empty" class="empty">No source matches the current selection.</p>
   </section>
+  {literature_note}
   </main>
-  <footer class="site-footer">
-    <p>Independent research project · not officially affiliated with the TEI Consortium</p>
-    <nav class="footer-nav" aria-label="Further information">
-      <a href="index.html" data-project-link>About</a>
-    </nav>
-  </footer>
-</div>
+{render_footer(date)}
 <script>{SCRIPT}</script>
 </body>
 </html>

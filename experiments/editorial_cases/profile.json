@@ -1,0 +1,25 @@
+{
+  "profile_version": "editorial-provenance-0.1",
+  "base_model_version": "0.1",
+  "authority": "Independent optional profile; validates attributed record structure, not historical truth.",
+  "technical_parents": "Version parents are declared frozen technical construction inputs. They do not establish historical derivation, and [] means none recorded, not an original or independent witness.",
+  "concepts": [
+    {"id": "ep-derived-from", "label": "Historical derivation claim", "definition": "An agent's hypothesis that the source version derives historically from the target version; not a technical construction dependency or a continuity assertion.", "applies_to": "relation"},
+    {"id": "ep-supersedes", "label": "Supersedes derivation claim", "definition": "The source derivation claim supersedes the target derivation claim for the same subject version and agent, retaining both claims without asserting historical truth.", "applies_to": "relation"}
+  ],
+  "rules": {
+    "P01": "The base package validates and contains both reserved concepts with the exact records above. Other concepts and relations remain permitted under base rules.",
+    "P02": "Every ep-derived-from relation has two version endpoints. Its agent attributes the hypothesis. Hypothesis cycles or contradictory hypotheses may coexist; no truth verdict is inferred.",
+    "P03": "Every ep-supersedes relation connects two distinct ep-derived-from relations. The newer/source claim, older/target claim, and supersedes relation have the same agent ID; the claims share the same subject/source version. The supersession graph is acyclic.",
+    "P04": "Current claims are ep-derived-from relations with no incoming supersedes edge (no ep-supersedes relation targeting their ID). Return every surviving branch sorted by claim ID; order confers no authority. An optional agent or subject filter limits the view without judging other claims.",
+    "P05": "check_profile_revision first applies base check_revision and profile validation to both packages in a caller-declared shared ID scope. Every prior ep-derived-from and ep-supersedes relation must remain present with its exact record. Correction appends a new claim and explicit supersession edge; removing or rewriting history is E_CLAIM_REWRITE.",
+    "P06": "All operations are nonmutating. Profile conformance neither approves an interpretation nor authorizes reanchoring; base continuity policy remains separate."
+  },
+  "diagnostics": ["E_PROFILE_CONCEPT", "E_PROFILE_ENDPOINT", "E_PROFILE_SUPERSESSION", "E_PROFILE_CYCLE", "E_CLAIM_REWRITE"],
+  "operations": {
+    "validate_profile": "package -> {valid,diagnostics}; include base diagnostics, add profile constraints, no resolution output required",
+    "check_profile_revision": "before,after -> {valid,diagnostics}; enforce P05",
+    "current_derivations": "package, optional agent ID, optional subject version ID -> deep-copied list of current derivation relation records sorted by ID; invalid profile or unknown/wrong-type filter rejects with ValueError"
+  },
+  "limits": ["No bare withdrawal or negative derivation claim", "No cross-agent supersession", "No automatic preference between concurrent claims", "No historical truth, time, external evidence-link, authenticity, or persistent-store guarantee", "Base check_revision alone does not enforce this optional profile's append-only history"]
+}

@@ -1,0 +1,136 @@
+{
+  "format_version": 1,
+  "commit": "7d174637d0b2cf56edaacac3b5e7e283e8ba8245",
+  "dataset_version": "11.0.1",
+  "edition_url": "https://github.com/telota/edition-humboldt-digital/blob/7d174637d0b2cf56edaacac3b5e7e283e8ba8245/data/travel-journal/H0017682.xml",
+  "license_url": "https://github.com/telota/edition-humboldt-digital/blob/7d174637d0b2cf56edaacac3b5e7e283e8ba8245/README.md",
+  "attribution": "edition humboldt digital, Berlin-Brandenburgische Akademie der Wissenschaften 2025; source XML identifies editors Dominik Erdmann and Christian Thomas and contributor Florian Schnee; dataset editors are named in the pinned README and CITATION.",
+  "finished_at": "2026-09-05T14:25:00Z",
+  "sources": [
+    {
+      "path": "README.md",
+      "requested_url": "https://raw.githubusercontent.com/telota/edition-humboldt-digital/7d174637d0b2cf56edaacac3b5e7e283e8ba8245/README.md",
+      "canonical_url": "https://raw.githubusercontent.com/telota/edition-humboldt-digital/7d174637d0b2cf56edaacac3b5e7e283e8ba8245/README.md",
+      "final_url": "https://raw.githubusercontent.com/telota/edition-humboldt-digital/7d174637d0b2cf56edaacac3b5e7e283e8ba8245/README.md",
+      "observed_at": "2026-09-05T14:14:58Z",
+      "status": 200,
+      "media_type": "text/plain",
+      "byte_count": 2040,
+      "sha256": "dfff8e57e9b48c3259c7246983ae0670ae3e3fe9f8850ebfb17dae0d09fe5fa5",
+      "raw_path": "sha256/df/ff8e57e9b48c3259c7246983ae0670ae3e3fe9f8850ebfb17dae0d09fe5fa5",
+      "headers": {
+        "content-length": "2040",
+        "content-type": "text/plain; charset=utf-8",
+        "etag": "\"1be9396b85106dca76adc5b67f5132d2f0e0eef6f898c648debeda773abdf862\"",
+        "date": "Sat, 05 Sep 2026 14:14:59 GMT"
+      },
+      "role": "license-and-context"
+    },
+    {
+      "path": "CITATION.cff",
+      "requested_url": "https://raw.githubusercontent.com/telota/edition-humboldt-digital/7d174637d0b2cf56edaacac3b5e7e283e8ba8245/CITATION.cff",
+      "canonical_url": "https://raw.githubusercontent.com/telota/edition-humboldt-digital/7d174637d0b2cf56edaacac3b5e7e283e8ba8245/CITATION.cff",
+      "final_url": "https://raw.githubusercontent.com/telota/edition-humboldt-digital/7d174637d0b2cf56edaacac3b5e7e283e8ba8245/CITATION.cff",
+      "observed_at": "2026-09-05T14:14:59Z",
+      "status": 200,
+      "media_type": "text/plain",
+      "byte_count": 1332,
+      "sha256": "27da706a8dc919bf477ab73e36f42b94efab4366ca81826a28e64ecd19d11064",
+      "raw_path": "sha256/27/da706a8dc919bf477ab73e36f42b94efab4366ca81826a28e64ecd19d11064",
+      "headers": {
+        "content-length": "1332",
+        "content-type": "text/plain; charset=utf-8",
+        "etag": "\"ce54c9758340980b19913cf966886f7efbd65e2651a1bb38c3bdc82c6be67d74\"",
+        "date": "Sat, 05 Sep 2026 14:15:01 GMT"
+      },
+      "role": "citation"
+    },
+    {
+      "path": "data/travel-journal/H0017682.xml",
+      "requested_url": "https://raw.githubusercontent.com/telota/edition-humboldt-digital/7d174637d0b2cf56edaacac3b5e7e283e8ba8245/data/travel-journal/H0017682.xml",
+      "canonical_url": "https://raw.githubusercontent.com/telota/edition-humboldt-digital/7d174637d0b2cf56edaacac3b5e7e283e8ba8245/data/travel-journal/H0017682.xml",
+      "final_url": "https://raw.githubusercontent.com/telota/edition-humboldt-digital/7d174637d0b2cf56edaacac3b5e7e283e8ba8245/data/travel-journal/H0017682.xml",
+      "observed_at": "2026-09-05T14:16:51Z",
+      "status": 200,
+      "media_type": "text/plain",
+      "byte_count": 137475,
+      "sha256": "89ac55d98d4756cb8ffce59f958d5c6885c8dc22e47e250b1ccd58386e516a54",
+      "raw_path": "sha256/89/ac55d98d4756cb8ffce59f958d5c6885c8dc22e47e250b1ccd58386e516a54",
+      "headers": {
+        "content-length": "137475",
+        "content-type": "text/plain; charset=utf-8",
+        "etag": "\"d68446746ab9a77701a82ab07e3b8b3acde5194f114d26b882aadba27ea93284\"",
+        "date": "Sat, 05 Sep 2026 14:16:53 GMT"
+      },
+      "role": "edition-xml"
+    },
+    {
+      "path": "schemata/ediarum.avhr.api.rng",
+      "requested_url": "https://raw.githubusercontent.com/telota/edition-humboldt-digital/7d174637d0b2cf56edaacac3b5e7e283e8ba8245/schemata/ediarum.avhr.api.rng",
+      "canonical_url": "https://raw.githubusercontent.com/telota/edition-humboldt-digital/7d174637d0b2cf56edaacac3b5e7e283e8ba8245/schemata/ediarum.avhr.api.rng",
+      "final_url": "https://raw.githubusercontent.com/telota/edition-humboldt-digital/7d174637d0b2cf56edaacac3b5e7e283e8ba8245/schemata/ediarum.avhr.api.rng",
+      "observed_at": "2026-09-05T14:17:13Z",
+      "status": 200,
+      "media_type": "text/plain",
+      "byte_count": 258748,
+      "sha256": "24a25ecfa82869cfcb9cd56b0c85b5d770782def0be5b0422fa327e7c09c756a",
+      "raw_path": "sha256/24/a25ecfa82869cfcb9cd56b0c85b5d770782def0be5b0422fa327e7c09c756a",
+      "headers": {
+        "content-length": "258748",
+        "content-type": "text/plain; charset=utf-8",
+        "etag": "\"3ba9ec9bb5037106a05cac6cf41477950c8e270d6da20482bddc46e639723197\"",
+        "date": "Sat, 05 Sep 2026 14:17:14 GMT"
+      },
+      "role": "project-schema"
+    }
+  ],
+  "fragments": [
+    {
+      "case_id": "case-1-hierarchy",
+      "holdout": false,
+      "source_path": "data/travel-journal/H0017682.xml",
+      "start_line": 880,
+      "end_line": 880,
+      "start_byte": 99692,
+      "end_byte": 99927,
+      "fragment_sha256": "d564c4f53e43bb67e64e2105f49c0fb0809c40fcc706b16f55abc675cf3bab96",
+      "inherited_namespace": "http://www.tei-c.org/ns/1.0",
+      "xpath": "/*/*[2]/*/*[2]/*[13]/*[1]",
+      "original_xml": "<head><date when=\"1790-06-15\" calendar=\"#gregorian\"><hi rendition=\"#u\">Bäder in <hi rendition=\"#aq\"><placeName ref=\"https://edition-humboldt.de/H0005512 https://www.geonames.org/11609031\">Derbyshire</placeName></hi></hi></date></head>"
+    },
+    {
+      "case_id": "case-2-interrupted-heading",
+      "holdout": false,
+      "source_path": "data/travel-journal/H0017682.xml",
+      "start_line": 69,
+      "end_line": 72,
+      "start_byte": 3971,
+      "end_byte": 4633,
+      "fragment_sha256": "dba21659975c9b781b41ca47766a585361f876fb6bda35acaed4502212cb0891",
+      "inherited_namespace": "http://www.tei-c.org/ns/1.0",
+      "xpath": "/*/*[2]/*/*[2]/*[1]",
+      "original_xml": "<head>Reise. <date when=\"1790\" calendar=\"#gregorian\">1790</date>. <lb/><note hand=\"#unknown\"><ref xml:id=\"bab01c0c-9760-4703-b01c-0c9760d7037b\" corresp=\"#f05a05fb-11de-42d0-9a05-fb11def2d021\" type=\"editorialNote\">6255</ref><note xml:id=\"f05a05fb-11de-42d0-9a05-fb11def2d021\" corresp=\"#bab01c0c-9760-4703-b01c-0c9760d7037b\" type=\"editorial\" resp=\"#CT #DE\">Handschriftliche Notiz, Bleistift von unbekannter Hand:\n                                Altsignatur der Sammlung Radowitz/Archivsignatur.</note>\n                    </note>\n                    <placeName ref=\"https://edition-humboldt.de/H0005653 https://www.geonames.org/6269131\">England</placeName>.</head>"
+    },
+    {
+      "case_id": "case-3-holdout-media",
+      "holdout": true,
+      "source_path": "data/travel-journal/H0017682.xml",
+      "start_line": 869,
+      "end_line": 874,
+      "start_byte": 98315,
+      "end_byte": 98924,
+      "fragment_sha256": "61a52e8ea51cc5c0d6b024b74c62010c9564106fead7742ca265b8792c2d0b9a",
+      "inherited_namespace": "http://www.tei-c.org/ns/1.0",
+      "xpath": "/*/*[2]/*/*[2]/*[12]/*[4]",
+      "original_xml": "<p>Bei <hi rendition=\"#aq\"><placeName ref=\"https://edition-humboldt.de/H0017348 https://www.geonames.org/2647639\">Hales owen</placeName></hi> erscheinen zwei\n                        <lb/>kegelförmige, zum Theil mit <lb/>Buschwerk bekränzte Hügel. <lb/>Läßt ihre Form, die Nähe\n                        <lb/>der <hi rendition=\"#aq\">Rowlyragg</hi>hügel und des <lb/>rothen <name type=\"mineral\">Sandstein</name>s hier auf <lb/>\n                        <pb facs=\"#f0018\" n=\"[9v]\"/>\n                        <fw type=\"folNum\">16.</fw>\n                        <name type=\"mineral\">Basalt</name> schließen.</p>"
+    }
+  ],
+  "known_limits": [
+    "Purposive three-fragment sample of one diary; not three independent editions or corpus-wide coverage.",
+    "Faust corpus considered at discovery; Humboldt selected for accessible licensed primary editorial XML. A second inspected diary H0019162 was excluded in favor of shorter challenge fragments from H0017682.",
+    "A recursive tree request failed; bounded directory requests identified selected files. No full tree completeness claim.",
+    "Project RNG acquired and parsed, but whole-diary RelaxNG validation exceeded 60 seconds without a result and was stopped; embedded Schematron and effective ODD semantics were not evaluated.",
+    "Historical manuscript date, dataset release 11.0.1, and XML self-citation of the edition version are different temporal facts.",
+    "No external entity register, image, image license, or page service acquired."
+  ]
+}

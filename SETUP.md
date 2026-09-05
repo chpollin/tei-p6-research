@@ -138,7 +138,61 @@ For one chapter acceptance:
 python tools/validate.py . --chapter 40_output/CHAPTER-SLUG.md
 ```
 
+For the bounded text identity and annotation pilot:
+
+```powershell
+python tools/check_text_identity_pilot.py
+```
+
+On Windows with the Python launcher, `py -3` can replace `python`. The combined
+gate checks source integrity, chapter provenance, current independent-review
+coverage, experiment reproduction, and the full test suite. Human acceptance
+uses `docs/p6/text-identity-pilot.md`; passing code does not approve an ontology.
+After an intentional experiment or contract change, regenerate its report with
+`python -m tools.pilots.text_identity`. Changed research claims require fresh
+review via `python tools/check_text_identity_pilot.py --emit-review` and an
+independent reviewer; generating pairs alone is not review.
+
+For Abstract Text Model 0.1, the independent case gate needs no raw corpus:
+
+```powershell
+py -3 tools/check_abstract_text_v01.py --check
+py -3 tools/check_abstract_text_v01.py --validate experiments/abstract_text_v01/examples/competing-readings.json
+py -3 -m pytest tests/models tests/test_check_abstract_text_v01.py
+```
+
+The first command checks frozen expectations, all declared rule and operation
+coverage, nonmutation, canonical reproduction, standalone examples, and exact
+report reproduction. It fails if the report is missing or stale. After reviewing
+an intentional model, contract, or fixture change, regenerate with
+`py -3 tools/check_abstract_text_v01.py` and rerun `--check`. Input fingerprints
+normalize checkout line endings; strings inside model instances remain exact.
+The validation command prints machine-readable diagnostics and resolutions.
+Use `docs/p6/abstract-text-model-v0.1.md` for the definitions and separate human
+acceptance questions. A passing gate does not establish real P5 migration or
+practical adequacy.
+
 ## 8. Regenerate documentation
+
+The first research wave also provides two read-only reproduction checks:
+
+```powershell
+py -3 -m tools.tei.build_atlas --output corpus/projections/p5-specs-4.12.0.json --check
+py -3 tools/check_wave1_sources.py .
+py -3 tools/check_wave1_sources.py . --review-only
+```
+
+The atlas check requires the locked local TEI Git mirror. Omit `--check` to
+regenerate the projection after an intentional generator or control-input
+change. The quotation check requires the four local raw snapshots named in
+`sources/manifests/2026-09-05-research-wave-1-citations.yaml`; it performs no
+network retrieval and fails clearly when a snapshot is unavailable. A clean
+checkout without ignored raw data can inspect the recorded intake but cannot
+claim to have rerun quotation fidelity. Neither command assigns research status.
+
+`--review-only` needs no ignored originals. It checks the current eight canonical
+source-support prompts, exact dependency coverage, and their passing verdict
+hashes. CI runs this check separately from the local raw-source quotation check.
 
 After changing `README.md`, `docs/concept.md`, or knowledge documents consumed
 by the site builder:
@@ -146,15 +200,26 @@ by the site builder:
 ```powershell
 python tools/build_docs.py --date YYYY-MM-DD
 python tools/build_corpus_overview.py --date YYYY-MM-DD
+python tools/build_home.py --date YYYY-MM-DD
+python tools/build_knowledge.py --date YYYY-MM-DD
+python tools/build_model_reference.py --date YYYY-MM-DD
 ```
 
-Never hand-edit `docs/index.html` or `docs/corpus.html`.
+Never hand-edit generated HTML. The home builder writes `docs/index.html` and
+the compatible `docs/home.html` alias; the project builder writes
+`docs/project.html`. Knowledge and Model builders write `docs/knowledge.html`
+and `docs/model.html`. These paths are identical locally and on GitHub Pages.
+The home generator reads the complete canonical proposal in
+`40_output/12-p6-design.md`, its source links, model definitions and examples.
 
 ## 9. Publish the research workbench
 
 `.github/workflows/pages.yml` validates and regenerates the static site on
-`main`, publishes the materials overview at the GitHub Pages root, and keeps the
-full project documentation at `project.html`. Internal control and normalized
+`main`, publishes the proposal home at the GitHub Pages root, the materials
+overview at `corpus.html`, and the full project documentation at `project.html`.
+The formal model reference is `model.html`; `knowledge.html` inventories the
+actual Vault artifacts and exposes their precise provenance links.
+Internal control and normalized
 data links resolve to the exact GitHub commit used for the deployment; ignored
 raw source bodies are never included in the Pages artifact.
 

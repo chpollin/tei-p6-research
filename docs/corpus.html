@@ -5,158 +5,155 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="repository-base" content="">
 <title>Materials · TEI P6 Research</title>
-<meta name="description" content="Working inventory of acquired primary materials and known gaps in TEI P6 Research.">
+<meta name="description" content="Source families, recorded holdings, acquisition states and gaps in TEI P6 Research.">
 <style>
+/* Shared workbench tokens, typography, navigation and controls. */
 :root {
   color-scheme: light;
-  --paper: #ffffff;
-  --soft: #f7f8f9;
-  --ink: #191919;
-  --muted: #686b70;
-  --line: #dfe1e4;
-  --link: #174ea6;
-  --complete: #26734d;
-  --partial: #8a5a00;
-  --pending: #9b3a32;
+  --paper: #fff; --soft: #f6f7f8; --ink: #22262b; --muted: #606974;
+  --line: #dce0e5; --link: #234e78; --complete: #286844;
+  --partial: #805300; --pending: #8a3c32;
+  --font: Arial, Helvetica, sans-serif;
+  --mono: ui-monospace, SFMono-Regular, Consolas, monospace;
 }
 * { box-sizing: border-box; }
-.sr-only {
-  position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
-  overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0;
-}
-body {
-  margin: 0;
-  background: var(--paper);
-  color: var(--ink);
-  font: 16px/1.5 "Segoe UI", Inter, system-ui, sans-serif;
-}
-a { color: var(--link); }
+html { scroll-padding-top: 1rem; }
+body { margin: 0; background: var(--paper); color: var(--ink); font: 15px/1.6 var(--font); }
+a { color: var(--link); text-underline-offset: .16em; }
 button, input, select { font: inherit; }
-button, select { cursor: pointer; }
-.shell { width: min(1580px, calc(100% - 2.5rem)); margin: 0 auto; padding: 1.15rem 0 3rem; }
-.site-header {
-  display: flex; align-items: stretch; justify-content: space-between; gap: 1.5rem;
-  min-height: 3.4rem; border-bottom: 1px solid var(--line);
+button, select, summary { cursor: pointer; }
+button, input, select { color: var(--ink); }
+button, select, input[type=search] { border: 0; border-radius: 3px; background: var(--soft); padding: .45rem .65rem; }
+a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, summary:focus-visible, [tabindex]:focus-visible { outline: 2px solid var(--link); outline-offset: 3px; }
+[hidden] { display: none !important; }
+h1, h2, h3, h4 { line-height: 1.35; font-family: var(--font); }
+h1 { font-size: 1.65rem; font-weight: 650; margin: 0 0 .75rem; }
+h2 { font-size: 1.18rem; margin: 1.8rem 0 .65rem; }
+h3 { font-size: 1rem; margin: 1.3rem 0 .5rem; }
+p { margin: 0 0 .85rem; }
+code, pre { font-family: var(--mono); font-size: .86em; }
+code { overflow-wrap: anywhere; }
+pre { overflow: auto; white-space: pre; background: var(--soft); padding: 1rem; line-height: 1.55; }
+.wb-header { max-width: 1512px; min-height: 62px; padding: 0 24px; margin: auto; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+.wb-brand { white-space: nowrap; color: var(--ink); font-weight: 700; text-decoration: none; font-size: 15px; }
+.wb-brand span { font-weight: 400; color: var(--muted); margin-left: 5px; }
+.wb-nav { display: flex; align-items: stretch; gap: 24px; align-self: stretch; }
+.wb-nav a { display: flex; align-items: center; text-decoration: none; color: var(--muted); font-size: 13px; }
+.wb-nav a[aria-current=page] { color: var(--ink); font-weight: 700; }
+.wb-footer { max-width: 1512px; margin: 2rem auto 0; padding: 1rem 24px; display: flex; justify-content: space-between; gap: 1rem; font-size: 12px; color: var(--muted); }
+.wb-main { max-width: 1512px; margin: auto; padding: 24px; }
+.wb-description { max-width: 90ch; color: var(--muted); font-size: .88rem; }
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+.skip-link { position: absolute; top: -100px; left: 20px; z-index: 100; padding: .6rem; background: white; }
+.skip-link:focus { top: 10px; }
+@media(max-width:640px) {
+  .wb-header { padding: 12px 16px 0; gap: 8px; align-items: flex-start; flex-wrap: wrap; }
+  .wb-nav { gap: 20px; min-height: 40px; }
+  .wb-main { padding: 20px 16px; }
+  .wb-footer { padding: 1rem 16px; flex-direction: column; }
+  h1 { font-size: 1.4rem; }
 }
-.brand { display: flex; align-items: center; gap: .55rem; color: var(--ink); text-decoration: none; }
-.brand-name { font-weight: 700; letter-spacing: -.015em; }
-.brand-context { color: var(--muted); font-size: .82rem; }
-.primary-nav { display: flex; align-items: stretch; gap: 1.35rem; }
-.nav-link { display: flex; align-items: center; border-bottom: 2px solid transparent; color: var(--muted); text-decoration: none; font-size: .87rem; }
-.nav-link:hover { color: var(--ink); }
-.nav-link[aria-current="page"] { border-bottom-color: var(--ink); color: var(--ink); }
-.page-head { display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; padding: 1.2rem 0 .85rem; }
-h1 { margin: 0; font-size: 1.55rem; line-height: 1.2; letter-spacing: -.015em; font-weight: 650; }
+@media(prefers-reduced-motion:reduce) { html { scroll-behavior: auto !important; } }
+@media print { .wb-header, .wb-footer { display: none; } }
+
+/* Materials-specific layout; shared typography and chrome are in workbench.css. */
+.page-head { display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; }
 .results-meta { margin: 0; color: var(--muted); font-size: .84rem; white-space: nowrap; }
-.toolbar {
-  position: sticky; top: 0; z-index: 5;
-  display: grid; grid-template-columns: minmax(18rem, 1fr) minmax(11rem, auto) minmax(13rem, auto);
-  gap: .65rem; padding: .7rem 0; background: var(--paper); border-top: 1px solid var(--line);
-}
+.materials-scope { margin-bottom: .8rem; }
+.toolbar { position: sticky; top: 0; z-index: 5; display: grid; grid-template-columns: minmax(18rem, 1fr) minmax(11rem, auto) minmax(13rem, auto); gap: .65rem; padding: .7rem 0 1rem; background: var(--paper); }
 .control { display: grid; gap: .22rem; min-width: 0; }
 .control span { color: var(--muted); font-size: .76rem; }
-.search, .select {
-  width: 100%; min-height: 2.45rem; padding: .46rem .65rem;
-  border: 1px solid #b9bcc1; border-radius: 2px; background: var(--paper); color: var(--ink);
-}
-.search:focus, .select:focus, .expand:focus, .sort-button:focus { outline: 2px solid var(--link); outline-offset: 1px; }
-.table-wrap { overflow-x: auto; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
-.source-table { width: 100%; min-width: 1120px; border-collapse: collapse; table-layout: fixed; }
+.search, .select { width: 100%; min-height: 2.45rem; }
+.table-wrap { position: relative; overflow-x: auto; }
+.source-table { width: 100%; min-width: 1060px; border-collapse: collapse; table-layout: fixed; }
 .source-table col:nth-child(1) { width: 31%; }
 .source-table col:nth-child(2) { width: 24%; }
 .source-table col:nth-child(3) { width: 18%; }
 .source-table col:nth-child(4) { width: 15%; }
 .source-table col:nth-child(5) { width: 9%; }
 .source-table col:nth-child(6) { width: 3%; }
-th { padding: .55rem .7rem; border-bottom: 1px solid var(--line); color: var(--muted); text-align: left; font-size: .76rem; font-weight: 600; }
-.sort-button { display: inline-flex; align-items: center; gap: .35rem; padding: 0; border: 0; background: transparent; color: inherit; font: inherit; }
+.source-table th { padding: .55rem .7rem; color: var(--muted); text-align: left; font-size: .76rem; font-weight: 600; }
+.sort-button { display: inline-flex; align-items: center; gap: .35rem; padding: 0; background: transparent; color: inherit; font: inherit; }
 .sort-button:hover { color: var(--ink); }
 .sort-mark { width: .8rem; color: var(--muted); }
-td { padding: .85rem .7rem; border-top: 1px solid var(--line); vertical-align: top; }
-.source-row:first-child td { border-top: 0; }
-.source-row:hover td { background: #fbfbfb; }
+.source-table td { padding: .85rem .7rem; vertical-align: top; }
+.source-row:hover td { background: #fafbfc; }
 .source-row[hidden], .detail-row[hidden] { display: none; }
-.source-cell strong { display: block; line-height: 1.3; font-size: .95rem; font-weight: 620; }
+.source-cell strong { display: block; line-height: 1.3; font-size: .95rem; font-weight: 600; }
 .source-cell small { display: block; margin-top: .3rem; max-width: 54ch; color: var(--muted); font-size: .78rem; line-height: 1.4; }
 .material-summary { margin: 0; padding-left: 1rem; font-size: .84rem; }
 .material-summary li + li { margin-top: .16rem; }
 .metrics-cell, .date-cell { color: var(--muted); font-size: .82rem; }
 .status-cell > small { display: block; margin-top: .28rem; color: var(--muted); font-size: .76rem; }
-.status-text { font-size: .84rem; font-weight: 600; text-decoration: underline dotted; text-underline-offset: .2rem; }
+.status-text { font-size: .84rem; font-weight: 600; }
 .status-observable-complete, .status-bounded-complete { color: var(--complete); }
 .status-partial { color: var(--partial); }
 .status-planned, .status-not_started, .status-not-completable { color: var(--pending); }
-.action-cell { padding-left: .2rem; padding-right: .2rem; text-align: center; }
-.expand { width: 2rem; height: 2rem; padding: 0; border: 0; background: transparent; color: var(--muted); font-size: 1.1rem; line-height: 1; }
+.source-table .action-cell { padding-left: .2rem; padding-right: .2rem; text-align: center; }
+.expand { width: 2rem; height: 2rem; padding: 0; background: transparent; color: var(--muted); font-size: 1.1rem; line-height: 1; }
 .expand:hover { color: var(--ink); background: var(--soft); }
 .expand[aria-expanded="true"] span { display: inline-block; transform: rotate(45deg); }
-.detail-row > td { padding: 0; background: var(--soft); }
-.detail-panel { display: grid; grid-template-columns: minmax(30rem, 2fr) minmax(15rem, 1fr) minmax(12rem, .8fr); gap: 1.6rem; padding: 1.25rem 1.5rem 1.5rem; }
-.detail-panel h2 { margin: 0 0 .55rem; color: var(--muted); font-size: .76rem; font-weight: 650; letter-spacing: .045em; text-transform: uppercase; }
+.source-table .detail-row > td { padding: 0; }
+.detail-panel { display: grid; grid-template-columns: minmax(25rem, 2fr) minmax(15rem, 1fr) minmax(12rem, .8fr); gap: 1.6rem; padding: 1rem .7rem 1.8rem; }
+.detail-panel h2 { margin: 0 0 .65rem; color: var(--muted); font-size: .85rem; font-weight: 600; }
 .detail-panel p, .gap-list { margin: 0; font-size: .84rem; }
 .holdings-section { min-width: 0; }
-.subtable-wrap { overflow-x: auto; }
-.subtable { width: 100%; min-width: 34rem; border-collapse: collapse; table-layout: auto; background: var(--paper); }
-.subtable th { padding: .4rem .55rem; background: #f0f1f2; }
-.subtable td { padding: .55rem; font-size: .8rem; }
-.subtable td:first-child { width: 58%; }
-.subtable strong { display: block; font-weight: 600; }
-.subtable small { display: block; margin-top: .16rem; color: var(--muted); line-height: 1.35; }
-.row-links { display: flex; flex-wrap: wrap; gap: .45rem; }
+.holding-list { list-style: none; margin: 0; padding: 0; }
+.holding-item + .holding-item { margin-top: 1.2rem; }
+.holding-title { display: flex; align-items: baseline; flex-wrap: wrap; gap: .3rem .8rem; font-size: .84rem; }
+.holding-title strong { font-weight: 600; }
+.holding-status { color: var(--muted); font-size: .78rem; }
+.holding-item small { display: block; margin-top: .2rem; max-width: 72ch; color: var(--muted); font-size: .78rem; line-height: 1.45; overflow-wrap: anywhere; }
+.row-links { display: inline-flex; flex-wrap: wrap; gap: .6rem; }
 .facts { margin: 0; }
 .facts div + div { margin-top: .5rem; }
-dt { color: var(--muted); font-size: .7rem; letter-spacing: .04em; text-transform: uppercase; }
-dd { margin: .05rem 0 0; font-size: .82rem; overflow-wrap: anywhere; }
+.facts dt { color: var(--muted); font-size: .75rem; }
+.facts dd { margin: .05rem 0 0; font-size: .82rem; overflow-wrap: anywhere; }
 .gap-list { padding-left: 1.1rem; }
 .gap-list li + li { margin-top: .3rem; }
 .clear { color: var(--complete); }
 .link-list { display: flex; flex-wrap: wrap; gap: .35rem .8rem; font-size: .84rem; }
-.link-list a, .link-list span, .detail-panel p, dd { overflow-wrap: anywhere; }
-.technical-details { grid-column: 1 / -1; border-top: 1px solid var(--line); padding-top: .8rem; }
-.technical-details summary { color: var(--muted); cursor: pointer; font-size: .8rem; }
+.link-list a, .link-list span, .detail-panel p { overflow-wrap: anywhere; }
+.technical-details { grid-column: 1 / -1; padding-top: .2rem; }
+.technical-details summary { color: var(--muted); font-size: .8rem; }
 .technical-details[open] summary { margin-bottom: .8rem; }
 .technical-details .facts { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1rem; }
 .technical-links { margin-top: .8rem; }
 .empty-value { color: var(--muted); font-size: .82rem; }
-.empty { display: none; margin: 0; padding: 2rem .7rem; border-bottom: 1px solid var(--line); color: var(--muted); }
-.site-footer { display: flex; align-items: center; justify-content: space-between; gap: 1rem; margin-top: 1rem; padding-top: .85rem; border-top: 1px solid var(--line); color: var(--muted); font-size: .76rem; }
-.site-footer p { margin: 0; }
-.footer-nav { display: flex; flex-wrap: wrap; gap: .9rem; }
-.site-footer a { color: inherit; text-decoration: none; }
-.site-footer a:hover { color: var(--ink); text-decoration: underline; }
+.empty { display: none; margin: 0; padding: 2rem .7rem; color: var(--muted); }
+.literature-note { max-width: 90ch; margin: 2rem 0 0; font-size: .84rem; }
+.literature-note h2 { font-size: 1rem; }
+.literature-note ul { padding-left: 1.1rem; }
 @media (max-width: 860px) {
-  .shell { width: min(100% - 1.25rem, 1580px); padding-top: .75rem; }
   .toolbar { grid-template-columns: 1fr 1fr; }
   .control-search { grid-column: 1 / -1; }
   .detail-panel { grid-template-columns: 1fr; }
   .technical-details { grid-column: 1; }
   .technical-details .facts { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .brand-context { display: none; }
-  .site-footer { align-items: flex-start; flex-direction: column; }
+}
+@media (max-width: 480px) {
+  .page-head { display: block; }
+  .results-meta { margin-bottom: .6rem; }
+  .toolbar { grid-template-columns: 1fr; }
 }
 </style>
 </head>
 <body>
-<div class="shell">
-  <header class="site-header">
-    <a class="brand" href="corpus.html"><span class="brand-name">TEI P6</span><span class="brand-context">Research</span></a>
-    <nav class="primary-nav" aria-label="Primary navigation">
-      <a class="nav-link" href="corpus.html" aria-current="page">Materials</a>
-      <a class="nav-link" href="index.html" data-project-link>About</a>
-    </nav>
-  </header>
-  <main>
+<a class="skip-link" href="#main">Skip to materials</a>
+<header class="wb-header"><a class="wb-brand" href="index.html">TEI P6 <span>Research</span></a><nav class="wb-nav" aria-label="Main navigation"><a href="index.html">Proposal</a><a href="model.html">Model</a><a href="corpus.html" aria-current="page">Materials</a><a href="knowledge.html">Knowledge</a><a href="project.html">About</a></nav></header>
+  <main class="wb-main" id="main">
   <header class="page-head">
     <h1 id="page-title">Materials</h1>
     <p class="results-meta" role="status" aria-live="polite"><span id="result-count">16</span> sources</p>
   </header>
+  <p class="wb-description materials-scope">Source families and recorded holdings. Individual raw files are not enumerated here.<br><a href="knowledge.html">Knowledge</a> · <a href="#literature">Registered literature</a></p>
   <section aria-label="Source families">
     <div class="toolbar">
       <label class="control control-search"><span>Full-text search</span><input id="search" class="search" type="search" placeholder="Search sources and holdings"></label>
       <label class="control"><span>Acquisition</span><select id="status-filter" class="select"><option value="all">All acquisition states</option><option value="observable-complete">Acquired</option><option value="partial">Partially acquired</option></select></label>
-      <label class="control"><span>Material type</span><select id="material-filter" class="select"><option value="all">All material types</option><option value="git tree inventory">Git tree inventory</option><option value="public git repositories">Public Git repositories</option><option value="release archive">Release archive</option><option value="repository census">Repository census</option><option value="ticket and discussion records">Ticket and discussion records</option><option value="web page census">Web page census</option><option value="zip member inventory">ZIP member inventory</option><option value="__none__">Not yet acquired</option></select></label>
+      <label class="control"><span>Material type</span><select id="material-filter" class="select"><option value="all">All material types</option><option value="data holding">Data holding</option><option value="git tree inventory">Git tree inventory</option><option value="public git repositories">Public Git repositories</option><option value="release archive">Release archive</option><option value="repository census">Repository census</option><option value="ticket and discussion records">Ticket and discussion records</option><option value="web page census">Web page census</option><option value="zip member inventory">ZIP member inventory</option><option value="__none__">Not yet acquired</option></select></label>
     </div>
-    <div class="table-wrap">
+    <div class="table-wrap" tabindex="0" role="region" aria-label="Source holdings table">
       <table class="source-table">
         <caption class="sr-only">Registered primary sources and their acquired holdings</caption>
         <colgroup><col><col><col><col><col><col></colgroup>
@@ -184,7 +181,7 @@ dd { margin: .05rem 0 0; font-size: .82rem; overflow-wrap: anywhere; }
     <div class="detail-panel">
       <section class="holdings-section">
         <h2>Holdings</h2>
-        <div class="subtable-wrap"><table class="subtable"><thead><tr><th>Holding</th><th>Acquisition</th><th>Open</th></tr></thead><tbody><tr><td><strong>Git tree inventory</strong><small>File and directory structure of a pinned Git state.</small><small class="run-meta">Run <code>2026-09-04-teic-tei-p5-4.12.0</code></small></td><td>Acquired</td><td><span class="row-links"><a href="../corpus/normalized/git/teic-tei-p5-4.12.0.json" data-repo-path="corpus/normalized/git/teic-tei-p5-4.12.0.json">Data</a><a href="../sources/manifests/2026-09-04-teic-tei-p5-4.12.0.yaml" data-repo-path="sources/manifests/2026-09-04-teic-tei-p5-4.12.0.yaml">Manifest</a></span></td></tr><tr><td><strong>Web page census</strong><small>Acquired web pages and responses within the locked crawl boundary.</small><small class="run-meta">Run <code>2026-09-04-tei-p5-4.12.0-published-html</code></small></td><td>Partially acquired</td><td><span class="row-links"><a href="../corpus/normalized/web/tei-p5-4.12.0-published-html.jsonl" data-repo-path="corpus/normalized/web/tei-p5-4.12.0-published-html.jsonl">Data</a><a href="../sources/manifests/2026-09-04-tei-p5-4.12.0-published-html.yaml" data-repo-path="sources/manifests/2026-09-04-tei-p5-4.12.0-published-html.yaml">Manifest</a></span></td></tr><tr><td><strong>Release archive</strong><small>Downloaded release archive with checksum verification.</small><small class="run-meta">Run <code>2026-09-04-tei-p5-4.12.0-release-asset</code></small></td><td>Acquired</td><td><span class="row-links"><a href="../corpus/normalized/assets/tei-p5-4.12.0-release.json" data-repo-path="corpus/normalized/assets/tei-p5-4.12.0-release.json">Data</a><a href="../sources/manifests/2026-09-04-tei-p5-4.12.0-release-asset.yaml" data-repo-path="sources/manifests/2026-09-04-tei-p5-4.12.0-release-asset.yaml">Manifest</a></span></td></tr><tr><td><strong>ZIP member inventory</strong><small>Inventory of files contained in a release archive.</small><small class="run-meta">Run <code>2026-09-04-tei-p5-4.12.0-release-members</code></small></td><td>Acquired</td><td><span class="row-links"><a href="../corpus/normalized/assets/tei-p5-4.12.0-release-members.json" data-repo-path="corpus/normalized/assets/tei-p5-4.12.0-release-members.json">Data</a><a href="../sources/manifests/2026-09-04-tei-p5-4.12.0-release-members.yaml" data-repo-path="sources/manifests/2026-09-04-tei-p5-4.12.0-release-members.yaml">Manifest</a></span></td></tr></tbody></table></div>
+        <ul class="holding-list"><li class="holding-item"><div class="holding-title"><strong>Git tree inventory</strong><span class="holding-status">Acquired</span><span class="row-links"><a href="../corpus/normalized/git/teic-tei-p5-4.12.0.json" data-repo-path="corpus/normalized/git/teic-tei-p5-4.12.0.json">Data</a><a href="../sources/manifests/2026-09-04-teic-tei-p5-4.12.0.yaml" data-repo-path="sources/manifests/2026-09-04-teic-tei-p5-4.12.0.yaml">Manifest</a></span></div><small>File and directory structure of a pinned Git state.</small><small class="run-meta">Run <code>2026-09-04-teic-tei-p5-4.12.0</code></small></li><li class="holding-item"><div class="holding-title"><strong>Web page census</strong><span class="holding-status">Partially acquired</span><span class="row-links"><a href="../corpus/normalized/web/tei-p5-4.12.0-published-html.jsonl" data-repo-path="corpus/normalized/web/tei-p5-4.12.0-published-html.jsonl">Data</a><a href="../sources/manifests/2026-09-04-tei-p5-4.12.0-published-html.yaml" data-repo-path="sources/manifests/2026-09-04-tei-p5-4.12.0-published-html.yaml">Manifest</a></span></div><small>Acquired web pages and responses within the locked crawl boundary.</small><small class="run-meta">Run <code>2026-09-04-tei-p5-4.12.0-published-html</code></small></li><li class="holding-item"><div class="holding-title"><strong>Release archive</strong><span class="holding-status">Acquired</span><span class="row-links"><a href="../corpus/normalized/assets/tei-p5-4.12.0-release.json" data-repo-path="corpus/normalized/assets/tei-p5-4.12.0-release.json">Data</a><a href="../sources/manifests/2026-09-04-tei-p5-4.12.0-release-asset.yaml" data-repo-path="sources/manifests/2026-09-04-tei-p5-4.12.0-release-asset.yaml">Manifest</a></span></div><small>Downloaded release archive with checksum verification.</small><small class="run-meta">Run <code>2026-09-04-tei-p5-4.12.0-release-asset</code></small></li><li class="holding-item"><div class="holding-title"><strong>ZIP member inventory</strong><span class="holding-status">Acquired</span><span class="row-links"><a href="../corpus/normalized/assets/tei-p5-4.12.0-release-members.json" data-repo-path="corpus/normalized/assets/tei-p5-4.12.0-release-members.json">Data</a><a href="../sources/manifests/2026-09-04-tei-p5-4.12.0-release-members.yaml" data-repo-path="sources/manifests/2026-09-04-tei-p5-4.12.0-release-members.yaml">Manifest</a></span></div><small>Inventory of files contained in a release archive.</small><small class="run-meta">Run <code>2026-09-04-tei-p5-4.12.0-release-members</code></small></li></ul>
       </section>
       <section>
         <h2>Open items</h2>
@@ -256,7 +253,7 @@ dd { margin: .05rem 0 0; font-size: .82rem; overflow-wrap: anywhere; }
     <div class="detail-panel">
       <section class="holdings-section">
         <h2>Holdings</h2>
-        <div class="subtable-wrap"><table class="subtable"><thead><tr><th>Holding</th><th>Acquisition</th><th>Open</th></tr></thead><tbody><tr><td><strong>Repository census</strong><small>Publicly visible repositories at the observation time.</small><small class="run-meta">Run <code>2026-09-04-teic-github-organization</code></small></td><td>Acquired</td><td><span class="row-links"><a href="../corpus/normalized/github/teic-repositories.jsonl" data-repo-path="corpus/normalized/github/teic-repositories.jsonl">Data</a><a href="../sources/manifests/2026-09-04-teic-github-organization.yaml" data-repo-path="sources/manifests/2026-09-04-teic-github-organization.yaml">Manifest</a></span></td></tr></tbody></table></div>
+        <ul class="holding-list"><li class="holding-item"><div class="holding-title"><strong>Repository census</strong><span class="holding-status">Acquired</span><span class="row-links"><a href="../corpus/normalized/github/teic-repositories.jsonl" data-repo-path="corpus/normalized/github/teic-repositories.jsonl">Data</a><a href="../sources/manifests/2026-09-04-teic-github-organization.yaml" data-repo-path="sources/manifests/2026-09-04-teic-github-organization.yaml">Manifest</a></span></div><small>Publicly visible repositories at the observation time.</small><small class="run-meta">Run <code>2026-09-04-teic-github-organization</code></small></li></ul>
       </section>
       <section>
         <h2>Open items</h2>
@@ -292,7 +289,7 @@ dd { margin: .05rem 0 0; font-size: .82rem; overflow-wrap: anywhere; }
     <div class="detail-panel">
       <section class="holdings-section">
         <h2>Holdings</h2>
-        <div class="subtable-wrap"><table class="subtable"><thead><tr><th>Holding</th><th>Acquisition</th><th>Open</th></tr></thead><tbody><tr><td><strong>Public Git repositories</strong><small>Pinned Git states of the registered public repositories.</small><small class="run-meta">Run <code>2026-09-04-teic-public-git-repositories</code></small></td><td>Acquired</td><td><span class="row-links"><a href="../sources/manifests/2026-09-04-teic-public-git-repositories.yaml" data-repo-path="sources/manifests/2026-09-04-teic-public-git-repositories.yaml">Manifest</a></span></td></tr></tbody></table></div>
+        <ul class="holding-list"><li class="holding-item"><div class="holding-title"><strong>Public Git repositories</strong><span class="holding-status">Acquired</span><span class="row-links"><a href="../sources/manifests/2026-09-04-teic-public-git-repositories.yaml" data-repo-path="sources/manifests/2026-09-04-teic-public-git-repositories.yaml">Manifest</a></span></div><small>Pinned Git states of the registered public repositories.</small><small class="run-meta">Run <code>2026-09-04-teic-public-git-repositories</code></small></li></ul>
       </section>
       <section>
         <h2>Open items</h2>
@@ -328,7 +325,7 @@ dd { margin: .05rem 0 0; font-size: .82rem; overflow-wrap: anywhere; }
     <div class="detail-panel">
       <section class="holdings-section">
         <h2>Holdings</h2>
-        <div class="subtable-wrap"><table class="subtable"><thead><tr><th>Holding</th><th>Acquisition</th><th>Open</th></tr></thead><tbody><tr><td><strong>Web page census</strong><small>Acquired web pages and responses within the locked crawl boundary.</small><small class="run-meta">Run <code>2026-09-04-tei-council-minutes-r2</code></small></td><td>Partially acquired</td><td><span class="row-links"><a href="../corpus/normalized/web/tei-council-minutes.jsonl" data-repo-path="corpus/normalized/web/tei-council-minutes.jsonl">Data</a><a href="../sources/manifests/2026-09-04-tei-council-minutes-r2.yaml" data-repo-path="sources/manifests/2026-09-04-tei-council-minutes-r2.yaml">Manifest</a></span></td></tr><tr><td><strong>Release archive</strong><small>Downloaded release archive with checksum verification.</small><small class="run-meta">Run <code>2026-09-04-tei-council-assets</code></small></td><td>Partially acquired</td><td><span class="row-links"><a href="../corpus/normalized/assets/tei-council-assets.json" data-repo-path="corpus/normalized/assets/tei-council-assets.json">Data</a><a href="../sources/manifests/2026-09-04-tei-council-assets.yaml" data-repo-path="sources/manifests/2026-09-04-tei-council-assets.yaml">Manifest</a></span></td></tr></tbody></table></div>
+        <ul class="holding-list"><li class="holding-item"><div class="holding-title"><strong>Web page census</strong><span class="holding-status">Partially acquired</span><span class="row-links"><a href="../corpus/normalized/web/tei-council-minutes.jsonl" data-repo-path="corpus/normalized/web/tei-council-minutes.jsonl">Data</a><a href="../sources/manifests/2026-09-04-tei-council-minutes-r2.yaml" data-repo-path="sources/manifests/2026-09-04-tei-council-minutes-r2.yaml">Manifest</a></span></div><small>Acquired web pages and responses within the locked crawl boundary.</small><small class="run-meta">Run <code>2026-09-04-tei-council-minutes-r2</code></small></li><li class="holding-item"><div class="holding-title"><strong>Release archive</strong><span class="holding-status">Partially acquired</span><span class="row-links"><a href="../corpus/normalized/assets/tei-council-assets.json" data-repo-path="corpus/normalized/assets/tei-council-assets.json">Data</a><a href="../sources/manifests/2026-09-04-tei-council-assets.yaml" data-repo-path="sources/manifests/2026-09-04-tei-council-assets.yaml">Manifest</a></span></div><small>Downloaded release archive with checksum verification.</small><small class="run-meta">Run <code>2026-09-04-tei-council-assets</code></small></li></ul>
       </section>
       <section>
         <h2>Open items</h2>
@@ -364,7 +361,7 @@ dd { margin: .05rem 0 0; font-size: .82rem; overflow-wrap: anywhere; }
     <div class="detail-panel">
       <section class="holdings-section">
         <h2>Holdings</h2>
-        <div class="subtable-wrap"><table class="subtable"><thead><tr><th>Holding</th><th>Acquisition</th><th>Open</th></tr></thead><tbody><tr><td><strong>Git tree inventory</strong><small>File and directory structure of a pinned Git state.</small><small class="run-meta">Run <code>2026-09-04-teic-documentation</code></small></td><td>Acquired</td><td><span class="row-links"><a href="../corpus/normalized/git/teic-documentation.json" data-repo-path="corpus/normalized/git/teic-documentation.json">Data</a><a href="../sources/manifests/2026-09-04-teic-documentation.yaml" data-repo-path="sources/manifests/2026-09-04-teic-documentation.yaml">Manifest</a></span></td></tr></tbody></table></div>
+        <ul class="holding-list"><li class="holding-item"><div class="holding-title"><strong>Git tree inventory</strong><span class="holding-status">Acquired</span><span class="row-links"><a href="../corpus/normalized/git/teic-documentation.json" data-repo-path="corpus/normalized/git/teic-documentation.json">Data</a><a href="../sources/manifests/2026-09-04-teic-documentation.yaml" data-repo-path="sources/manifests/2026-09-04-teic-documentation.yaml">Manifest</a></span></div><small>File and directory structure of a pinned Git state.</small><small class="run-meta">Run <code>2026-09-04-teic-documentation</code></small></li></ul>
       </section>
       <section>
         <h2>Open items</h2>
@@ -400,7 +397,7 @@ dd { margin: .05rem 0 0; font-size: .82rem; overflow-wrap: anywhere; }
     <div class="detail-panel">
       <section class="holdings-section">
         <h2>Holdings</h2>
-        <div class="subtable-wrap"><table class="subtable"><thead><tr><th>Holding</th><th>Acquisition</th><th>Open</th></tr></thead><tbody><tr><td><strong>Git tree inventory</strong><small>File and directory structure of a pinned Git state.</small><small class="run-meta">Run <code>2026-09-04-teic-time-for-p6</code></small></td><td>Acquired</td><td><span class="row-links"><a href="../corpus/normalized/git/teic-time-for-p6.json" data-repo-path="corpus/normalized/git/teic-time-for-p6.json">Data</a><a href="../sources/manifests/2026-09-04-teic-time-for-p6.yaml" data-repo-path="sources/manifests/2026-09-04-teic-time-for-p6.yaml">Manifest</a></span></td></tr><tr><td><strong>Web page census</strong><small>Acquired web pages and responses within the locked crawl boundary.</small><small class="run-meta">Run <code>2026-09-04-tei-council-minutes-r2</code></small></td><td>Partially acquired</td><td><span class="row-links"><a href="../corpus/normalized/web/tei-council-minutes.jsonl" data-repo-path="corpus/normalized/web/tei-council-minutes.jsonl">Data</a><a href="../sources/manifests/2026-09-04-tei-council-minutes-r2.yaml" data-repo-path="sources/manifests/2026-09-04-tei-council-minutes-r2.yaml">Manifest</a></span></td></tr></tbody></table></div>
+        <ul class="holding-list"><li class="holding-item"><div class="holding-title"><strong>Git tree inventory</strong><span class="holding-status">Acquired</span><span class="row-links"><a href="../corpus/normalized/git/teic-time-for-p6.json" data-repo-path="corpus/normalized/git/teic-time-for-p6.json">Data</a><a href="../sources/manifests/2026-09-04-teic-time-for-p6.yaml" data-repo-path="sources/manifests/2026-09-04-teic-time-for-p6.yaml">Manifest</a></span></div><small>File and directory structure of a pinned Git state.</small><small class="run-meta">Run <code>2026-09-04-teic-time-for-p6</code></small></li><li class="holding-item"><div class="holding-title"><strong>Web page census</strong><span class="holding-status">Partially acquired</span><span class="row-links"><a href="../corpus/normalized/web/tei-council-minutes.jsonl" data-repo-path="corpus/normalized/web/tei-council-minutes.jsonl">Data</a><a href="../sources/manifests/2026-09-04-tei-council-minutes-r2.yaml" data-repo-path="sources/manifests/2026-09-04-tei-council-minutes-r2.yaml">Manifest</a></span></div><small>Acquired web pages and responses within the locked crawl boundary.</small><small class="run-meta">Run <code>2026-09-04-tei-council-minutes-r2</code></small></li></ul>
       </section>
       <section>
         <h2>Open items</h2>
@@ -436,7 +433,7 @@ dd { margin: .05rem 0 0; font-size: .82rem; overflow-wrap: anywhere; }
     <div class="detail-panel">
       <section class="holdings-section">
         <h2>Holdings</h2>
-        <div class="subtable-wrap"><table class="subtable"><thead><tr><th>Holding</th><th>Acquisition</th><th>Open</th></tr></thead><tbody><tr><td><strong>Web page census</strong><small>Acquired web pages and responses within the locked crawl boundary.</small><small class="run-meta">Run <code>2026-09-04-tei-p5-releases-r2</code></small></td><td>Partially acquired</td><td><span class="row-links"><a href="../corpus/normalized/web/tei-p5-releases.jsonl" data-repo-path="corpus/normalized/web/tei-p5-releases.jsonl">Data</a><a href="../sources/manifests/2026-09-04-tei-p5-releases-r2.yaml" data-repo-path="sources/manifests/2026-09-04-tei-p5-releases-r2.yaml">Manifest</a></span></td></tr></tbody></table></div>
+        <ul class="holding-list"><li class="holding-item"><div class="holding-title"><strong>Web page census</strong><span class="holding-status">Partially acquired</span><span class="row-links"><a href="../corpus/normalized/web/tei-p5-releases.jsonl" data-repo-path="corpus/normalized/web/tei-p5-releases.jsonl">Data</a><a href="../sources/manifests/2026-09-04-tei-p5-releases-r2.yaml" data-repo-path="sources/manifests/2026-09-04-tei-p5-releases-r2.yaml">Manifest</a></span></div><small>Acquired web pages and responses within the locked crawl boundary.</small><small class="run-meta">Run <code>2026-09-04-tei-p5-releases-r2</code></small></li></ul>
       </section>
       <section>
         <h2>Open items</h2>
@@ -472,7 +469,7 @@ dd { margin: .05rem 0 0; font-size: .82rem; overflow-wrap: anywhere; }
     <div class="detail-panel">
       <section class="holdings-section">
         <h2>Holdings</h2>
-        <div class="subtable-wrap"><table class="subtable"><thead><tr><th>Holding</th><th>Acquisition</th><th>Open</th></tr></thead><tbody><tr><td><strong>Web page census</strong><small>Acquired web pages and responses within the locked crawl boundary.</small><small class="run-meta">Run <code>2026-09-04-tei-board-records-r2</code></small></td><td>Partially acquired</td><td><span class="row-links"><a href="../corpus/normalized/web/tei-board-records.jsonl" data-repo-path="corpus/normalized/web/tei-board-records.jsonl">Data</a><a href="../sources/manifests/2026-09-04-tei-board-records-r2.yaml" data-repo-path="sources/manifests/2026-09-04-tei-board-records-r2.yaml">Manifest</a></span></td></tr></tbody></table></div>
+        <ul class="holding-list"><li class="holding-item"><div class="holding-title"><strong>Web page census</strong><span class="holding-status">Partially acquired</span><span class="row-links"><a href="../corpus/normalized/web/tei-board-records.jsonl" data-repo-path="corpus/normalized/web/tei-board-records.jsonl">Data</a><a href="../sources/manifests/2026-09-04-tei-board-records-r2.yaml" data-repo-path="sources/manifests/2026-09-04-tei-board-records-r2.yaml">Manifest</a></span></div><small>Acquired web pages and responses within the locked crawl boundary.</small><small class="run-meta">Run <code>2026-09-04-tei-board-records-r2</code></small></li></ul>
       </section>
       <section>
         <h2>Open items</h2>
@@ -508,7 +505,7 @@ dd { margin: .05rem 0 0; font-size: .82rem; overflow-wrap: anywhere; }
     <div class="detail-panel">
       <section class="holdings-section">
         <h2>Holdings</h2>
-        <div class="subtable-wrap"><table class="subtable"><thead><tr><th>Holding</th><th>Acquisition</th><th>Open</th></tr></thead><tbody><tr><td><strong>Web page census</strong><small>Acquired web pages and responses within the locked crawl boundary.</small><small class="run-meta">Run <code>2026-09-04-tei-historical-archive-r2</code></small></td><td>Partially acquired</td><td><span class="row-links"><a href="../corpus/normalized/web/tei-historical-archive.jsonl" data-repo-path="corpus/normalized/web/tei-historical-archive.jsonl">Data</a><a href="../sources/manifests/2026-09-04-tei-historical-archive-r2.yaml" data-repo-path="sources/manifests/2026-09-04-tei-historical-archive-r2.yaml">Manifest</a></span></td></tr></tbody></table></div>
+        <ul class="holding-list"><li class="holding-item"><div class="holding-title"><strong>Web page census</strong><span class="holding-status">Partially acquired</span><span class="row-links"><a href="../corpus/normalized/web/tei-historical-archive.jsonl" data-repo-path="corpus/normalized/web/tei-historical-archive.jsonl">Data</a><a href="../sources/manifests/2026-09-04-tei-historical-archive-r2.yaml" data-repo-path="sources/manifests/2026-09-04-tei-historical-archive-r2.yaml">Manifest</a></span></div><small>Acquired web pages and responses within the locked crawl boundary.</small><small class="run-meta">Run <code>2026-09-04-tei-historical-archive-r2</code></small></li></ul>
       </section>
       <section>
         <h2>Open items</h2>
@@ -544,7 +541,7 @@ dd { margin: .05rem 0 0; font-size: .82rem; overflow-wrap: anywhere; }
     <div class="detail-panel">
       <section class="holdings-section">
         <h2>Holdings</h2>
-        <div class="subtable-wrap"><table class="subtable"><thead><tr><th>Holding</th><th>Acquisition</th><th>Open</th></tr></thead><tbody><tr><td><strong>Ticket and discussion records</strong><small>Ticket metadata and discussion posts from the historical trackers.</small><small class="run-meta">Run <code>2026-09-04-tei-legacy-sourceforge</code></small></td><td>Partially acquired</td><td><span class="row-links"><a href="../corpus/normalized/sourceforge/tei-legacy-trackers.jsonl" data-repo-path="corpus/normalized/sourceforge/tei-legacy-trackers.jsonl">Data</a><a href="../sources/manifests/2026-09-04-tei-legacy-sourceforge.yaml" data-repo-path="sources/manifests/2026-09-04-tei-legacy-sourceforge.yaml">Manifest</a></span></td></tr><tr><td><strong>Ticket and discussion records</strong><small>Ticket metadata and discussion posts from the historical trackers.</small><small class="run-meta">Run <code>2026-09-04-tei-legacy-sourceforge-r2</code></small></td><td>Partially acquired</td><td><span class="row-links"><a href="../corpus/normalized/sourceforge/tei-legacy-trackers-r2.jsonl" data-repo-path="corpus/normalized/sourceforge/tei-legacy-trackers-r2.jsonl">Data</a><a href="../sources/manifests/2026-09-04-tei-legacy-sourceforge-r2.yaml" data-repo-path="sources/manifests/2026-09-04-tei-legacy-sourceforge-r2.yaml">Manifest</a></span></td></tr><tr><td><strong>Ticket and discussion records</strong><small>Ticket metadata and discussion posts from the historical trackers.</small><small class="run-meta">Run <code>2026-09-05-tei-legacy-sourceforge-r3</code></small></td><td>Acquired</td><td><span class="row-links"><a href="../corpus/normalized/sourceforge/tei-legacy-trackers-r3.jsonl" data-repo-path="corpus/normalized/sourceforge/tei-legacy-trackers-r3.jsonl">Data</a><a href="../sources/manifests/2026-09-05-tei-legacy-sourceforge-r3.yaml" data-repo-path="sources/manifests/2026-09-05-tei-legacy-sourceforge-r3.yaml">Manifest</a></span></td></tr></tbody></table></div>
+        <ul class="holding-list"><li class="holding-item"><div class="holding-title"><strong>Ticket and discussion records</strong><span class="holding-status">Partially acquired</span><span class="row-links"><a href="../corpus/normalized/sourceforge/tei-legacy-trackers.jsonl" data-repo-path="corpus/normalized/sourceforge/tei-legacy-trackers.jsonl">Data</a><a href="../sources/manifests/2026-09-04-tei-legacy-sourceforge.yaml" data-repo-path="sources/manifests/2026-09-04-tei-legacy-sourceforge.yaml">Manifest</a></span></div><small>Ticket metadata and discussion posts from the historical trackers.</small><small class="run-meta">Run <code>2026-09-04-tei-legacy-sourceforge</code></small></li><li class="holding-item"><div class="holding-title"><strong>Ticket and discussion records</strong><span class="holding-status">Partially acquired</span><span class="row-links"><a href="../corpus/normalized/sourceforge/tei-legacy-trackers-r2.jsonl" data-repo-path="corpus/normalized/sourceforge/tei-legacy-trackers-r2.jsonl">Data</a><a href="../sources/manifests/2026-09-04-tei-legacy-sourceforge-r2.yaml" data-repo-path="sources/manifests/2026-09-04-tei-legacy-sourceforge-r2.yaml">Manifest</a></span></div><small>Ticket metadata and discussion posts from the historical trackers.</small><small class="run-meta">Run <code>2026-09-04-tei-legacy-sourceforge-r2</code></small></li><li class="holding-item"><div class="holding-title"><strong>Ticket and discussion records</strong><span class="holding-status">Acquired</span><span class="row-links"><a href="../corpus/normalized/sourceforge/tei-legacy-trackers-r3.jsonl" data-repo-path="corpus/normalized/sourceforge/tei-legacy-trackers-r3.jsonl">Data</a><a href="../sources/manifests/2026-09-05-tei-legacy-sourceforge-r3.yaml" data-repo-path="sources/manifests/2026-09-05-tei-legacy-sourceforge-r3.yaml">Manifest</a></span></div><small>Ticket metadata and discussion posts from the historical trackers.</small><small class="run-meta">Run <code>2026-09-05-tei-legacy-sourceforge-r3</code></small></li></ul>
       </section>
       <section>
         <h2>Open items</h2>
@@ -580,7 +577,7 @@ dd { margin: .05rem 0 0; font-size: .82rem; overflow-wrap: anywhere; }
     <div class="detail-panel">
       <section class="holdings-section">
         <h2>Holdings</h2>
-        <div class="subtable-wrap"><table class="subtable"><thead><tr><th>Holding</th><th>Acquisition</th><th>Open</th></tr></thead><tbody><tr><td><strong>Git tree inventory</strong><small>File and directory structure of a pinned Git state.</small><small class="run-meta">Run <code>2026-09-04-teic-stylesheets</code></small></td><td>Acquired</td><td><span class="row-links"><a href="../corpus/normalized/git/teic-stylesheets.json" data-repo-path="corpus/normalized/git/teic-stylesheets.json">Data</a><a href="../sources/manifests/2026-09-04-teic-stylesheets.yaml" data-repo-path="sources/manifests/2026-09-04-teic-stylesheets.yaml">Manifest</a></span></td></tr></tbody></table></div>
+        <ul class="holding-list"><li class="holding-item"><div class="holding-title"><strong>Git tree inventory</strong><span class="holding-status">Acquired</span><span class="row-links"><a href="../corpus/normalized/git/teic-stylesheets.json" data-repo-path="corpus/normalized/git/teic-stylesheets.json">Data</a><a href="../sources/manifests/2026-09-04-teic-stylesheets.yaml" data-repo-path="sources/manifests/2026-09-04-teic-stylesheets.yaml">Manifest</a></span></div><small>File and directory structure of a pinned Git state.</small><small class="run-meta">Run <code>2026-09-04-teic-stylesheets</code></small></li></ul>
       </section>
       <section>
         <h2>Open items</h2>
@@ -616,7 +613,7 @@ dd { margin: .05rem 0 0; font-size: .82rem; overflow-wrap: anywhere; }
     <div class="detail-panel">
       <section class="holdings-section">
         <h2>Holdings</h2>
-        <div class="subtable-wrap"><table class="subtable"><thead><tr><th>Holding</th><th>Acquisition</th><th>Open</th></tr></thead><tbody><tr><td><strong>Git tree inventory</strong><small>File and directory structure of a pinned Git state.</small><small class="run-meta">Run <code>2026-09-04-teic-romajs</code></small></td><td>Acquired</td><td><span class="row-links"><a href="../corpus/normalized/git/teic-romajs.json" data-repo-path="corpus/normalized/git/teic-romajs.json">Data</a><a href="../sources/manifests/2026-09-04-teic-romajs.yaml" data-repo-path="sources/manifests/2026-09-04-teic-romajs.yaml">Manifest</a></span></td></tr><tr><td><strong>Git tree inventory</strong><small>File and directory structure of a pinned Git state.</small><small class="run-meta">Run <code>2026-09-04-teic-teigarage</code></small></td><td>Acquired</td><td><span class="row-links"><a href="../corpus/normalized/git/teic-teigarage.json" data-repo-path="corpus/normalized/git/teic-teigarage.json">Data</a><a href="../sources/manifests/2026-09-04-teic-teigarage.yaml" data-repo-path="sources/manifests/2026-09-04-teic-teigarage.yaml">Manifest</a></span></td></tr><tr><td><strong>Git tree inventory</strong><small>File and directory structure of a pinned Git state.</small><small class="run-meta">Run <code>2026-09-04-teic-ege-validator</code></small></td><td>Acquired</td><td><span class="row-links"><a href="../corpus/normalized/git/teic-ege-validator.json" data-repo-path="corpus/normalized/git/teic-ege-validator.json">Data</a><a href="../sources/manifests/2026-09-04-teic-ege-validator.yaml" data-repo-path="sources/manifests/2026-09-04-teic-ege-validator.yaml">Manifest</a></span></td></tr><tr><td><strong>Git tree inventory</strong><small>File and directory structure of a pinned Git state.</small><small class="run-meta">Run <code>2026-09-04-teic-ege-xsl-converter</code></small></td><td>Acquired</td><td><span class="row-links"><a href="../corpus/normalized/git/teic-ege-xsl-converter.json" data-repo-path="corpus/normalized/git/teic-ege-xsl-converter.json">Data</a><a href="../sources/manifests/2026-09-04-teic-ege-xsl-converter.yaml" data-repo-path="sources/manifests/2026-09-04-teic-ege-xsl-converter.yaml">Manifest</a></span></td></tr><tr><td><strong>Git tree inventory</strong><small>File and directory structure of a pinned Git state.</small><small class="run-meta">Run <code>2026-09-04-teic-tei-converter</code></small></td><td>Acquired</td><td><span class="row-links"><a href="../corpus/normalized/git/teic-tei-converter.json" data-repo-path="corpus/normalized/git/teic-tei-converter.json">Data</a><a href="../sources/manifests/2026-09-04-teic-tei-converter.yaml" data-repo-path="sources/manifests/2026-09-04-teic-tei-converter.yaml">Manifest</a></span></td></tr><tr><td><strong>Git tree inventory</strong><small>File and directory structure of a pinned Git state.</small><small class="run-meta">Run <code>2026-09-04-teic-oxygen-tei</code></small></td><td>Acquired</td><td><span class="row-links"><a href="../corpus/normalized/git/teic-oxygen-tei.json" data-repo-path="corpus/normalized/git/teic-oxygen-tei.json">Data</a><a href="../sources/manifests/2026-09-04-teic-oxygen-tei.yaml" data-repo-path="sources/manifests/2026-09-04-teic-oxygen-tei.yaml">Manifest</a></span></td></tr></tbody></table></div>
+        <ul class="holding-list"><li class="holding-item"><div class="holding-title"><strong>Git tree inventory</strong><span class="holding-status">Acquired</span><span class="row-links"><a href="../corpus/normalized/git/teic-romajs.json" data-repo-path="corpus/normalized/git/teic-romajs.json">Data</a><a href="../sources/manifests/2026-09-04-teic-romajs.yaml" data-repo-path="sources/manifests/2026-09-04-teic-romajs.yaml">Manifest</a></span></div><small>File and directory structure of a pinned Git state.</small><small class="run-meta">Run <code>2026-09-04-teic-romajs</code></small></li><li class="holding-item"><div class="holding-title"><strong>Git tree inventory</strong><span class="holding-status">Acquired</span><span class="row-links"><a href="../corpus/normalized/git/teic-teigarage.json" data-repo-path="corpus/normalized/git/teic-teigarage.json">Data</a><a href="../sources/manifests/2026-09-04-teic-teigarage.yaml" data-repo-path="sources/manifests/2026-09-04-teic-teigarage.yaml">Manifest</a></span></div><small>File and directory structure of a pinned Git state.</small><small class="run-meta">Run <code>2026-09-04-teic-teigarage</code></small></li><li class="holding-item"><div class="holding-title"><strong>Git tree inventory</strong><span class="holding-status">Acquired</span><span class="row-links"><a href="../corpus/normalized/git/teic-ege-validator.json" data-repo-path="corpus/normalized/git/teic-ege-validator.json">Data</a><a href="../sources/manifests/2026-09-04-teic-ege-validator.yaml" data-repo-path="sources/manifests/2026-09-04-teic-ege-validator.yaml">Manifest</a></span></div><small>File and directory structure of a pinned Git state.</small><small class="run-meta">Run <code>2026-09-04-teic-ege-validator</code></small></li><li class="holding-item"><div class="holding-title"><strong>Git tree inventory</strong><span class="holding-status">Acquired</span><span class="row-links"><a href="../corpus/normalized/git/teic-ege-xsl-converter.json" data-repo-path="corpus/normalized/git/teic-ege-xsl-converter.json">Data</a><a href="../sources/manifests/2026-09-04-teic-ege-xsl-converter.yaml" data-repo-path="sources/manifests/2026-09-04-teic-ege-xsl-converter.yaml">Manifest</a></span></div><small>File and directory structure of a pinned Git state.</small><small class="run-meta">Run <code>2026-09-04-teic-ege-xsl-converter</code></small></li><li class="holding-item"><div class="holding-title"><strong>Git tree inventory</strong><span class="holding-status">Acquired</span><span class="row-links"><a href="../corpus/normalized/git/teic-tei-converter.json" data-repo-path="corpus/normalized/git/teic-tei-converter.json">Data</a><a href="../sources/manifests/2026-09-04-teic-tei-converter.yaml" data-repo-path="sources/manifests/2026-09-04-teic-tei-converter.yaml">Manifest</a></span></div><small>File and directory structure of a pinned Git state.</small><small class="run-meta">Run <code>2026-09-04-teic-tei-converter</code></small></li><li class="holding-item"><div class="holding-title"><strong>Git tree inventory</strong><span class="holding-status">Acquired</span><span class="row-links"><a href="../corpus/normalized/git/teic-oxygen-tei.json" data-repo-path="corpus/normalized/git/teic-oxygen-tei.json">Data</a><a href="../sources/manifests/2026-09-04-teic-oxygen-tei.yaml" data-repo-path="sources/manifests/2026-09-04-teic-oxygen-tei.yaml">Manifest</a></span></div><small>File and directory structure of a pinned Git state.</small><small class="run-meta">Run <code>2026-09-04-teic-oxygen-tei</code></small></li></ul>
       </section>
       <section>
         <h2>Open items</h2>
@@ -652,7 +649,7 @@ dd { margin: .05rem 0 0; font-size: .82rem; overflow-wrap: anywhere; }
     <div class="detail-panel">
       <section class="holdings-section">
         <h2>Holdings</h2>
-        <div class="subtable-wrap"><table class="subtable"><thead><tr><th>Holding</th><th>Acquisition</th><th>Open</th></tr></thead><tbody><tr><td><strong>Git tree inventory</strong><small>File and directory structure of a pinned Git state.</small><small class="run-meta">Run <code>2026-09-04-teic-website</code></small></td><td>Acquired</td><td><span class="row-links"><a href="../corpus/normalized/git/teic-website.json" data-repo-path="corpus/normalized/git/teic-website.json">Data</a><a href="../sources/manifests/2026-09-04-teic-website.yaml" data-repo-path="sources/manifests/2026-09-04-teic-website.yaml">Manifest</a></span></td></tr></tbody></table></div>
+        <ul class="holding-list"><li class="holding-item"><div class="holding-title"><strong>Git tree inventory</strong><span class="holding-status">Acquired</span><span class="row-links"><a href="../corpus/normalized/git/teic-website.json" data-repo-path="corpus/normalized/git/teic-website.json">Data</a><a href="../sources/manifests/2026-09-04-teic-website.yaml" data-repo-path="sources/manifests/2026-09-04-teic-website.yaml">Manifest</a></span></div><small>File and directory structure of a pinned Git state.</small><small class="run-meta">Run <code>2026-09-04-teic-website</code></small></li></ul>
       </section>
       <section>
         <h2>Open items</h2>
@@ -688,7 +685,7 @@ dd { margin: .05rem 0 0; font-size: .82rem; overflow-wrap: anywhere; }
     <div class="detail-panel">
       <section class="holdings-section">
         <h2>Holdings</h2>
-        <div class="subtable-wrap"><table class="subtable"><thead><tr><th>Holding</th><th>Acquisition</th><th>Open</th></tr></thead><tbody><tr><td><strong>Web page census</strong><small>Acquired web pages and responses within the locked crawl boundary.</small><small class="run-meta">Run <code>2026-09-04-tei-sig-records</code></small></td><td>Acquired</td><td><span class="row-links"><a href="../corpus/normalized/web/tei-sig-records.jsonl" data-repo-path="corpus/normalized/web/tei-sig-records.jsonl">Data</a><a href="../sources/manifests/2026-09-04-tei-sig-records.yaml" data-repo-path="sources/manifests/2026-09-04-tei-sig-records.yaml">Manifest</a></span></td></tr></tbody></table></div>
+        <ul class="holding-list"><li class="holding-item"><div class="holding-title"><strong>Web page census</strong><span class="holding-status">Acquired</span><span class="row-links"><a href="../corpus/normalized/web/tei-sig-records.jsonl" data-repo-path="corpus/normalized/web/tei-sig-records.jsonl">Data</a><a href="../sources/manifests/2026-09-04-tei-sig-records.yaml" data-repo-path="sources/manifests/2026-09-04-tei-sig-records.yaml">Manifest</a></span></div><small>Acquired web pages and responses within the locked crawl boundary.</small><small class="run-meta">Run <code>2026-09-04-tei-sig-records</code></small></li></ul>
       </section>
       <section>
         <h2>Open items</h2>
@@ -711,12 +708,12 @@ dd { margin: .05rem 0 0; font-size: .82rem; overflow-wrap: anywhere; }
     </div>
   </td>
 </tr>
-<tr class="source-row" data-source-row data-detail-id="source-detail-16" data-status="partial" data-status-rank="2" data-materials="web page census" data-title="real-world odd customizations and processing practice" data-date="2026-09-04" data-search="tei-real-world-customizations real-world odd customizations and processing practice real-world tei odd customizations and processing cases observed odd customizations and processing practice from real projects. documented practice primary-practice-record per-project web page census acquired web pages and responses within the locked crawl boundary. the sampling protocol for real-world projects has not yet been defined a historical lite customization is no longer reachable">
+<tr class="source-row" data-source-row data-detail-id="source-detail-16" data-status="partial" data-status-rank="2" data-materials="web page census|data holding" data-title="real-world odd customizations and processing practice" data-date="2026-09-05" data-search="tei-real-world-customizations real-world odd customizations and processing practice real-world tei odd customizations and processing cases observed odd customizations and processing practice from real projects. documented practice primary-practice-record per-project web page census data holding acquired web pages and responses within the locked crawl boundary. normalized holding from this acquisition run. normalized holding from this acquisition run. the sampling protocol for real-world projects has not yet been defined a historical lite customization is no longer reachable">
   <td class="source-cell"><strong>Real-world ODD customizations and processing practice</strong><small>Observed ODD customizations and processing practice from real projects.</small></td>
-  <td class="materials-cell"><ul class="material-summary"><li>Web page census</li></ul></td>
+  <td class="materials-cell"><ul class="material-summary"><li>Web page census</li><li>Data holding</li></ul></td>
   <td class="metrics-cell">2 index pages · 122 inventoried artifact links</td>
   <td class="status-cell"><span class="status-text status-partial" title="Part of the locked holding was acquired; open gaps are recorded.">Partially acquired</span><small>2 open items</small></td>
-  <td class="date-cell"><time datetime="2026-09-04">2026-09-04</time></td>
+  <td class="date-cell"><time datetime="2026-09-05">2026-09-05</time></td>
   <td class="action-cell"><button class="expand" type="button" aria-expanded="false" aria-controls="source-detail-16" aria-label="Show details for Real-world ODD customizations and processing practice"><span aria-hidden="true">+</span></button></td>
 </tr>
 <tr class="detail-row" id="source-detail-16" data-detail-row hidden>
@@ -724,7 +721,7 @@ dd { margin: .05rem 0 0; font-size: .82rem; overflow-wrap: anywhere; }
     <div class="detail-panel">
       <section class="holdings-section">
         <h2>Holdings</h2>
-        <div class="subtable-wrap"><table class="subtable"><thead><tr><th>Holding</th><th>Acquisition</th><th>Open</th></tr></thead><tbody><tr><td><strong>Web page census</strong><small>Acquired web pages and responses within the locked crawl boundary.</small><small class="run-meta">Run <code>2026-09-04-tei-official-customizations</code></small></td><td>Partially acquired</td><td><span class="row-links"><a href="../corpus/normalized/web/tei-official-customizations.jsonl" data-repo-path="corpus/normalized/web/tei-official-customizations.jsonl">Data</a><a href="../sources/manifests/2026-09-04-tei-official-customizations.yaml" data-repo-path="sources/manifests/2026-09-04-tei-official-customizations.yaml">Manifest</a></span></td></tr></tbody></table></div>
+        <ul class="holding-list"><li class="holding-item"><div class="holding-title"><strong>Web page census</strong><span class="holding-status">Partially acquired</span><span class="row-links"><a href="../corpus/normalized/web/tei-official-customizations.jsonl" data-repo-path="corpus/normalized/web/tei-official-customizations.jsonl">Data</a><a href="../sources/manifests/2026-09-04-tei-official-customizations.yaml" data-repo-path="sources/manifests/2026-09-04-tei-official-customizations.yaml">Manifest</a></span></div><small>Acquired web pages and responses within the locked crawl boundary.</small><small class="run-meta">Run <code>2026-09-04-tei-official-customizations</code></small></li><li class="holding-item"><div class="holding-title"><strong>Data holding</strong><span class="holding-status">Acquired</span><span class="row-links"><a href="../10_markdown/documents/humboldt-h0017682-7d174637.md" data-repo-path="10_markdown/documents/humboldt-h0017682-7d174637.md">Data</a><a href="../sources/manifests/2026-09-05-editorial-cases.yaml" data-repo-path="sources/manifests/2026-09-05-editorial-cases.yaml">Manifest</a></span></div><small>Normalized holding from this acquisition run.</small><small class="run-meta">Run <code>2026-09-05-editorial-cases</code></small></li><li class="holding-item"><div class="holding-title"><strong>Data holding</strong><span class="holding-status">Acquired</span><span class="row-links"><a href="../corpus/normalized/observed-practice/humboldt-selected-7d174637.json" data-repo-path="corpus/normalized/observed-practice/humboldt-selected-7d174637.json">Data</a><a href="../sources/manifests/2026-09-05-editorial-cases.yaml" data-repo-path="sources/manifests/2026-09-05-editorial-cases.yaml">Manifest</a></span></div><small>Normalized holding from this acquisition run.</small><small class="run-meta">Run <code>2026-09-05-editorial-cases</code></small></li></ul>
       </section>
       <section>
         <h2>Open items</h2>
@@ -742,7 +739,7 @@ dd { margin: .05rem 0 0; font-size: .82rem; overflow-wrap: anywhere; }
           <div><dt>Rights</dt><dd>per-project</dd></div>
           <div><dt>Source types</dt><dd>document, data, publication</dd></div>
         </dl>
-        <div class="link-list technical-links"><a href="../sources/locks/real-world-customizations.yaml" data-repo-path="sources/locks/real-world-customizations.yaml">Source Lock</a><a href="../sources/manifests/2026-09-04-tei-official-customizations.yaml" data-repo-path="sources/manifests/2026-09-04-tei-official-customizations.yaml">Acquisition manifest 1</a></div>
+        <div class="link-list technical-links"><a href="../sources/locks/real-world-customizations.yaml" data-repo-path="sources/locks/real-world-customizations.yaml">Source Lock</a><a href="../sources/manifests/2026-09-04-tei-official-customizations.yaml" data-repo-path="sources/manifests/2026-09-04-tei-official-customizations.yaml">Acquisition manifest 1</a><a href="../sources/manifests/2026-09-05-editorial-cases.yaml" data-repo-path="sources/manifests/2026-09-05-editorial-cases.yaml">Acquisition manifest 2</a></div>
       </details>
     </div>
   </td>
@@ -751,14 +748,9 @@ dd { margin: .05rem 0 0; font-size: .82rem; overflow-wrap: anywhere; }
     </div>
     <p id="empty" class="empty">No source matches the current selection.</p>
   </section>
+  <aside class="literature-note" id="literature"><h2>Registered literature</h2><p>Scholarly literature is registered separately from the primary-source families. Its acquisition state does not imply a complete bibliography.</p><ul><li><a href="../sources/locks/literature.yaml" data-repo-path="sources/locks/literature.yaml">Bounded literature corpus about TEI P5</a> · Partially acquired</li></ul><p>Read the resulting claims and source chains in <a href="knowledge.html">Knowledge</a>.</p></aside>
   </main>
-  <footer class="site-footer">
-    <p>Independent research project · not officially affiliated with the TEI Consortium</p>
-    <nav class="footer-nav" aria-label="Further information">
-      <a href="index.html" data-project-link>About</a>
-    </nav>
-  </footer>
-</div>
+<footer class="wb-footer"><span>Independent research. No official TEI Consortium affiliation.</span><span>Build 2026-09-05</span></footer>
 <script>
 const search = document.querySelector("#search");
 const statusFilter = document.querySelector("#status-filter");

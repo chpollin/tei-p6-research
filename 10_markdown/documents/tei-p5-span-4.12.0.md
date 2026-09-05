@@ -1,0 +1,167 @@
+---
+type: representation
+source-type: document
+source: '[[00_sources/tei-p5-span-4.12.0.xml]]'
+converter: tools.ingest_text_identity v1; complete XML plus XML itertext English reading
+  blocks with whitespace normalized
+channel: collection
+metadata:
+  title: TEI P5 4.12.0 span specification
+  creator: TEI Consortium
+  date: '2026-07-28'
+  format: application/xml
+  identifier: https://github.com/TEIC/TEI/blob/113e933e21f016e2655518321e9d10214b8d9fcb/P5/Source/Specs/span.xml
+  license: CC-BY-3.0
+  confidential: false
+created: '2026-09-05'
+updated: '2026-09-05'
+---
+
+# span
+
+Copyright TEI Consortium. Source used under CC-BY-3.0; upstream also offers BSD-2-Clause.
+License records: `LICENSE.md` and `P5/COPYING.txt` at commit `113e933e21f016e2655518321e9d10214b8d9fcb`.
+
+The XML below is the complete source, preserved as inert text, including all languages,
+examples, declarations, and processing instructions. A separator newline before the
+closing fence is not part of the source. The converter records the exact byte length.
+Reading blocks reproduce English descriptions and English remarks paragraphs using
+XML `itertext`; whitespace runs become one space and surrounding whitespace is removed.
+They are reading projections of this source, not additional sources or interpretations.
+
+Source byte length: 6800. Git blob: `7eef78bf21e96322e669fb86d7c0282e25a5d79b`.
+
+## Complete XML source
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- © TEI Consortium. Dual-licensed under CC-by and BSD2 licenses; see the file COPYING.txt for details. -->
+<?xml-model href="https://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl" type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
+<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" module="analysis" xml:id="gi-span" ident="span">
+  <desc versionDate="2005-01-14" xml:lang="en">associates an interpretative annotation directly with a span of text.</desc>
+  <desc versionDate="2007-12-20" xml:lang="ko">해석적 부호를 텍스트의 일정 부분과 직접적으로 연결시킨다.</desc>
+  <desc versionDate="2007-05-02" xml:lang="zh-TW">將詮釋性註釋直接和一段文字段連結。</desc>
+  <desc versionDate="2008-04-05" xml:lang="ja">テキスト部分に解釈的注釈を関連づける。</desc>
+  <desc versionDate="2009-02-13" xml:lang="fr">associe une interprétation sous forme d'annotation directement à un passage donné dans un texte.</desc>
+  <desc versionDate="2007-05-04" xml:lang="es">asocia una anotación interpretativa directamente con un periodo de texto.</desc>
+  <desc versionDate="2007-01-21" xml:lang="it">associa direttamente l'annotazione interpretativa ad una prozione di testo.</desc>
+  <classes>
+    <memberOf key="att.global"/>
+    <memberOf key="att.cmc"/>
+    <memberOf key="att.interpLike"/>
+    <memberOf key="att.pointing"/>
+    <memberOf key="model.global.meta"/>
+  </classes>
+  <content>
+    <macroRef key="macro.phraseSeq.limited"/>
+  </content>
+  <constraintSpec ident="target-from" scheme="schematron" xml:lang="en">
+    <constraint>
+      <sch:rule context="tei:span">
+        <sch:report test="@from and @target">
+          Only one of the attributes @target and @from may be supplied on &lt;<sch:name/>&gt;.
+        </sch:report>
+      </sch:rule>
+    </constraint>
+  </constraintSpec>
+  <constraintSpec ident="targetto" scheme="schematron" xml:lang="en">
+    <constraint>
+      <sch:rule context="tei:span">
+        <sch:report test="@to and @target">
+          Only one of the attributes @target and @to may be supplied on &lt;<sch:name/>&gt;.
+        </sch:report>
+      </sch:rule>
+    </constraint>
+  </constraintSpec>
+  <constraintSpec ident="tonotfrom" scheme="schematron" xml:lang="en">
+    <constraint>
+      <sch:rule context="tei:span">
+        <sch:report test="@to and not(@from)">
+          If @to is supplied on &lt;<sch:name/>&gt;, @from must be supplied as well.
+        </sch:report>
+      </sch:rule>
+    </constraint>
+  </constraintSpec>
+  <constraintSpec ident="tofrom" scheme="schematron" xml:lang="en">
+    <constraint>
+      <sch:rule context="tei:span">
+        <sch:report test="contains(normalize-space(@to),' ') or contains(normalize-space(@from),' ')">
+          The attributes @to and @from on &lt;<sch:name/>&gt; may each contain only a single value.
+        </sch:report>
+      </sch:rule>
+    </constraint>
+  </constraintSpec>
+  <attList>
+    <attDef ident="from" usage="opt">
+      <desc versionDate="2013-01-15" xml:lang="en">gives the identifier of the node which is the starting point of the span of text being annotated; if not accompanied by a <att>to</att> attribute, gives the identifier of the node of the entire span of text being annotated.</desc>
+      <desc versionDate="2007-12-20" xml:lang="ko">현재 부호를 붙이는 단락의 처음을 명시함; <att>to</att> 속성과 같이 쓰이지 않으면 전체 문단을 명시함.</desc>
+      <desc versionDate="2007-05-02" xml:lang="zh-TW">指出被註解段落的起點；若沒有使用屬性<att>to</att>，則指出全部段落。</desc>
+      <desc versionDate="2008-04-05" xml:lang="ja">当該注釈対象の始点を示す。属性<att>to</att>がない場合は、対象全 体を示す。</desc>
+      <desc versionDate="2007-06-12" xml:lang="fr">précise le début du passage sur lequel porte l'annotation ; s'il n'est pas accompagné d'un attribut <att>to</att>, désigne alors l'intégralité du passage</desc>
+      <desc versionDate="2007-05-04" xml:lang="es">especifica el principio del pasaje que se anota; si no aparece con el atributo <att>to</att>, especifica el pasaje entero.</desc>
+      <desc versionDate="2007-01-21" xml:lang="it">indica l'inizio di un brano annotato; se non è accompagnato dall'attributo <att>to</att> indica l'inero brano.</desc>
+      <datatype><dataRef key="teidata.pointer"/></datatype>
+    </attDef>
+    <attDef ident="to" usage="opt">
+      <desc versionDate="2013-01-15" xml:lang="en">gives the identifier of the node which is the end-point of the span of text being annotated.</desc>
+      <desc versionDate="2007-12-20" xml:lang="ko">부호를 붙이는 단락의 끝을 명시한다.</desc>
+      <desc versionDate="2007-05-02" xml:lang="zh-TW">指出被註解段落的終點。</desc>
+      <desc versionDate="2008-04-05" xml:lang="ja">注釈対象の終点を示す。</desc>
+      <desc versionDate="2007-06-12" xml:lang="fr">spécifie la fin du passage annoté.</desc>
+      <desc versionDate="2007-05-04" xml:lang="es">especifica el final del pasaje que se anota.</desc>
+      <desc versionDate="2007-01-21" xml:lang="it">indica la fine del brano annotato.</desc>
+      <datatype><dataRef key="teidata.pointer"/></datatype>
+    </attDef>
+  </attList>
+  <exemplum xml:lang="en">
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="gi-span-egXML-bs">
+      <p xml:id="para2">(The "aftermath" starts here)</p>
+      <p xml:id="para3">(The "aftermath" continues here)</p>
+      <p xml:id="para4">(The "aftermath" ends in this paragraph)</p>
+      <!-- ... -->
+      <span type="structure" from="#para2" to="#para4">aftermath</span>
+    </egXML>
+  </exemplum>
+  <exemplum versionDate="2008-04-06" xml:lang="fr">
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="gi-span-egXML-ra">
+      <p xml:id="fr_para2">(la "conséquence" commence ici)</p>
+      <p xml:id="fr_para3">(la "conséquence" continue ici)</p>
+      <p xml:id="fr_para4">(la "conséquence" se termine dans ce paragraphe)</p>
+      <span type="structure" from="#fr_para2" to="#fr_para4">conséquence</span>
+    </egXML>
+  </exemplum>
+  <exemplum xml:lang="zh-TW">
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="gi-span-egXML-ku">
+      <p xml:id="zh-tw_第二小節">("結局"從這裡開始)</p>
+      <p xml:id="zh-tw_第三小節">("結局"持續)</p>
+      <p xml:id="zh-tw_第四小節">("結局"結束於此)</p>
+      <!-- ... -->
+      <span type="架構" from="#zh-tw_第二小節" to="#zh-tw_第四小節">結局</span>
+    </egXML>
+  </exemplum>
+  <listRef>
+    <ptr target="#AISP"/>
+  </listRef>
+</elementSpec>
+```
+
+## English reading blocks
+
+### Reading 1
+
+XML location: `/elementSpec[1]/desc[1]`.
+
+associates an interpretative annotation directly with a span of text. ^r1
+
+### Reading 2
+
+XML location: `/elementSpec[1]/attList[1]/attDef[1]/desc[1]`.
+
+gives the identifier of the node which is the starting point of the span of text being annotated; if not accompanied by a to attribute, gives the identifier of the node of the entire span of text being annotated. ^r2
+
+### Reading 3
+
+XML location: `/elementSpec[1]/attList[1]/attDef[2]/desc[1]`.
+
+gives the identifier of the node which is the end-point of the span of text being annotated. ^r3
+

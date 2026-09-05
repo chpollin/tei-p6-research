@@ -1,0 +1,103 @@
+schema_version: 1
+run_id: 2026-09-05-text-identity-pilot-admission
+source_id: teic-tei-p5-4.12.0
+started_at: '2026-09-05T11:07:56Z'
+finished_at: '2026-09-05T11:07:56Z'
+status: bounded-complete
+scope:
+  boundary: Exactly anchor.xml, span.xml, and annotation.xml from P5/Source/Specs
+    at the locked release commit
+  status_applies_to: three selected complete Git blobs and their immutable representations
+    only; not the source family
+adapter:
+  name: tools.ingest_text_identity
+  version: 1
+lock_file: sources/locks/tei-p5-4.12.0.yaml
+upstream_manifest: sources/manifests/2026-09-04-teic-tei-p5-4.12.0.yaml
+upstream_inventory_sha256: b2ae1cc64d77027d3cd766a8aa532db08c30f276d07494c62eb6d43a5fdb6476
+requests:
+- kind: locked-git-blob-admission
+  commit: 113e933e21f016e2655518321e9d10214b8d9fcb
+  path: P5/Source/Specs/anchor.xml
+  blob_id: 14fe6e40ab7f3684075d4861d88cdc164f3b143b
+- kind: locked-git-blob-admission
+  commit: 113e933e21f016e2655518321e9d10214b8d9fcb
+  path: P5/Source/Specs/span.xml
+  blob_id: 7eef78bf21e96322e669fb86d7c0282e25a5d79b
+- kind: locked-git-blob-admission
+  commit: 113e933e21f016e2655518321e9d10214b8d9fcb
+  path: P5/Source/Specs/annotation.xml
+  blob_id: 9c98ca8590036df7de925753c7d65fb028c41d1b
+objects:
+- kind: markdown-representation
+  path: 10_markdown/documents/tei-p5-anchor-4.12.0.md
+  sha256: 1de6b2ad31fede7d5afb0004b0c8732e55a56c1b887c1bd6e203bc9b2c680f17
+- kind: markdown-representation
+  path: 10_markdown/documents/tei-p5-span-4.12.0.md
+  sha256: bd4324910173c2c66cb2e1d2940026716e68b960c0abb47bf88cd7778d9ff167
+- kind: markdown-representation
+  path: 10_markdown/documents/tei-p5-annotation-4.12.0.md
+  sha256: 63614a0fd6b4b5f9e251a0bfa5f3db1e2c44ae7654e594aa4f74258f5cf91500
+counts:
+  admitted_sources: 3
+  representations: 3
+  original_bytes: 18821
+gaps: []
+rights_exceptions: []
+known_limits:
+- No claim of complete P5 source-family acquisition; the published-HTML reconciliation
+  remains separate.
+- Selected sources do not establish general text-version identity or automatic cross-version
+  anchoring.
+rights:
+  rights_status: storage-and-redistribution-permitted-with-attribution
+  selected_license: CC-BY-3.0
+  upstream_license_choice: CC-BY-3.0 OR BSD-2-Clause
+  license_url: https://creativecommons.org/licenses/by/3.0/
+  attribution: TEI Consortium; TEI P5 4.12.0; original source paths and pinned commit
+    recorded per admission
+  license_records:
+  - git_path: LICENSE.md
+    git_blob_id: 8611900a8f6deaf45b44c39541e1a9c874b7ee61
+    commit: 113e933e21f016e2655518321e9d10214b8d9fcb
+  - git_path: P5/COPYING.txt
+    git_blob_id: b5e5172a89b6dbffa557b9ba86c884a4ddbff493
+    commit: 113e933e21f016e2655518321e9d10214b8d9fcb
+instruction_trust: none
+admissions:
+- source_type: document
+  git_path: P5/Source/Specs/anchor.xml
+  commit: 113e933e21f016e2655518321e9d10214b8d9fcb
+  original_path: 00_sources/tei-p5-anchor-4.12.0.xml
+  original_bytes: 5444
+  original_sha256: a1386328602d892319ecf6bbe9a70a0e2719328ef09811a3339b4dabb42b1aa7
+  git_blob_id: 14fe6e40ab7f3684075d4861d88cdc164f3b143b
+  representation_path: 10_markdown/documents/tei-p5-anchor-4.12.0.md
+  representation_sha256: 1de6b2ad31fede7d5afb0004b0c8732e55a56c1b887c1bd6e203bc9b2c680f17
+  english_reading_blocks: 2
+  content_authority: normative specification source at the pinned P5 4.12.0 release
+  instruction_trust: none
+- source_type: document
+  git_path: P5/Source/Specs/span.xml
+  commit: 113e933e21f016e2655518321e9d10214b8d9fcb
+  original_path: 00_sources/tei-p5-span-4.12.0.xml
+  original_bytes: 6800
+  original_sha256: 58ef6ed04465559a08f1d6b70af6f64ba3d2f518aa3a70a93350fd0372df6546
+  git_blob_id: 7eef78bf21e96322e669fb86d7c0282e25a5d79b
+  representation_path: 10_markdown/documents/tei-p5-span-4.12.0.md
+  representation_sha256: bd4324910173c2c66cb2e1d2940026716e68b960c0abb47bf88cd7778d9ff167
+  english_reading_blocks: 3
+  content_authority: normative specification source at the pinned P5 4.12.0 release
+  instruction_trust: none
+- source_type: document
+  git_path: P5/Source/Specs/annotation.xml
+  commit: 113e933e21f016e2655518321e9d10214b8d9fcb
+  original_path: 00_sources/tei-p5-annotation-4.12.0.xml
+  original_bytes: 6577
+  original_sha256: b16085fad75d50c60bc5e0264af3a06116205161cd182a2eca46847357f942f9
+  git_blob_id: 9c98ca8590036df7de925753c7d65fb028c41d1b
+  representation_path: 10_markdown/documents/tei-p5-annotation-4.12.0.md
+  representation_sha256: 63614a0fd6b4b5f9e251a0bfa5f3db1e2c44ae7654e594aa4f74258f5cf91500
+  english_reading_blocks: 16
+  content_authority: normative specification source at the pinned P5 4.12.0 release
+  instruction_trust: none

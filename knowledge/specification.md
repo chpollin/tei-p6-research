@@ -18,23 +18,25 @@ related: [index, design, schema, operations, state, journal]
 
 # Specification
 
-This is the Promptotyping project contract for TEI P6 Research. It
-defines the problem, research questions, boundaries, intended artifacts,
-evaluation dimensions, and success criteria of this instance. The invariant
-Grounded Vault mechanics live in [[knowledge/schema]] and
-[[knowledge/operations]]; volatile progress lives in [[knowledge/state]];
-the public research-workbench contract lives in [[knowledge/design]]; decisions
-and changes of rationale are appended to [[knowledge/journal]].
+This contract defines the research questions, scope, deliverables, and
+acceptance criteria. Grounded Vault rules live in [[knowledge/schema]] and
+[[knowledge/operations]], current progress in [[knowledge/state]], and the
+interface contract in [[knowledge/design]]. Durable decisions are appended
+to [[knowledge/journal]].
 
 ## Project proposition
 
-The project will construct a provenance-complete account of how TEI P5 is
-modeled, how that model developed, where its users and maintainers encounter
-friction, and which architecture choices for TEI P6 are justified by the
-evidence.
+The project develops and evaluates an abstract text model for a possible TEI
+P6. Its concepts, identities, relations, and rules must support practical
+encoding and processing. The model states its scope and makes its choices
+traceable to source findings, declared assumptions, and reproducible tests.
 
-The project does not treat “P5 is historically grown” or “P6 requires a full
-rewrite” as established facts. These are propositions to decompose and test.
+P5 supplies a normative baseline, successful patterns, demonstrated problems,
+and migration obligations. Text-theoretical scholarship, alternative models,
+and documented editorial practice must supply additional requirements and
+counterexamples. Reproducing P5 coherently is not sufficient to establish that
+a candidate adequately models text across the declared use contexts.
+
 Repair within P5, compatible evolution, major-version redesign, and deliberate
 non-change remain comparable options until the evidence narrows them.
 
@@ -42,53 +44,41 @@ non-change remain comparable options until the evidence narrows them.
 
 TEI P5 is simultaneously a vocabulary, a customization system, a formal schema
 source, a body of prose Guidelines, a governance process, an implementation
-ecosystem, and a set of community practices. Judging its architecture from only
-one of these surfaces produces incomplete conclusions:
-
-- the published Guidelines show normative documentation but not every design
-  rationale or implementation constraint;
-- the ODD sources show formal structures but not how projects understand or use
-  them;
-- issues and pull requests show reported needs and change work but do not alone
-  establish consensus or released effects;
-- Council minutes show discussion and decisions but not necessarily merged or
-  published implementation;
-- papers and project reports show analyses and practices but are not normative;
-- local ODDs and toolchains show real adaptation but form a biased sample unless
-  their collection protocol is explicit.
-
-A credible P6 design therefore needs an evidence system that keeps these source
-roles separate while allowing their relationships to be studied.
+ecosystem, and a set of community practices. These surfaces establish different
+facts. ODD declarations alone do not explain editorial use, and a discussion
+record does not establish a released capability. The source-authority table
+below defines these limits. The research must connect the relevant records
+without treating their authority as interchangeable.
 
 ## Intended outcome
 
-The final outcome is not merely a new schema. It is a reviewable design dossier
-consisting of:
-
-1. a version-bound atlas of the P5 conceptual and formal model;
-2. a history of significant model and governance decisions;
-3. a classified corpus of demonstrated pain points, use cases, and successful
-   patterns;
-4. explicit P6 design principles and alternatives;
-5. a proposed abstract model and its relation to serializations;
-6. a compatibility and migration strategy;
-7. executable prototypes or formalizations sufficient to test central claims;
-8. an evaluation report linking each recommendation to P5 evidence,
-   counterevidence, trade-offs, and open questions.
+The intended publication combines a P5 model atlas, decision history,
+grounded requirements and successful patterns, an abstract model, evaluated
+alternatives, and migration studies. Executable prototypes test the central
+claims. Recommendations name their evidence, counterevidence, costs, and
+open questions. The deliverables table specifies their locations and
+acceptance conditions.
 
 The output genre is an English scholarly synthesis and design specification for
 researchers, scholarly editors, standards maintainers, educators, and tool
 builders.
 
-The project will also develop a public, static-first research workbench that
-supports the evidence-based exploration and evaluation of possible TEI P6
-architectures. Its first view is an inventory of acquired primary materials;
-later views may support evidence tracing, comparison, proposal evaluation, and
-migration experiments as their underlying canonical data become ready. The
-workbench is an interface over the vault, not a new evidence layer and not an
-official TEI decision system.
+The public workbench opens with the full technical proposal. Examples branch
+into comparisons of P5 variants and candidate bindings. Model presents the
+formal definition and class relationships, Materials the acquisition inventory,
+Knowledge the admitted artifacts and provenance chain, and About the project
+contracts. These views use one layout and canonical repository inputs.
+Publication does not create evidence or an official TEI decision.
 
 ## Research questions
+
+The central question is which distinctions among textual objects, their
+representations, and editorial claims are needed for the declared tasks.
+Generality is relative to an explicit range of text forms and practices. The
+project does not attempt to model every subject that a text can discuss.
+Domain-specific descriptions may connect to other models through explicit
+relations. Text identity, carriers, transcription, interpretation, and version
+continuity remain questions that an element inventory alone cannot settle.
 
 ### RQ1 — What is the P5 model?
 
@@ -137,7 +127,7 @@ required for existing projects and software to adopt a new architecture?
 
 ## Research object and temporal scope
 
-The project keeps four states distinct:
+The project keeps four states distinct.
 
 | State | Role |
 |---|---|
@@ -150,6 +140,11 @@ The primary baseline is TEI P5 4.12.0 at commit
 `113e933e21f016e2655518321e9d10214b8d9fcb`. The alias `current` and a moving
 branch name are never used as immutable evidence identities.
 
+Every module in that baseline is in scope for investigation. Module inventory,
+source interpretation, formal requirements, and executed cases remain separate
+coverage measures. Document types, media forms, and textual phenomena are
+cross-cutting dimensions rather than equivalents of P5 modules or model classes.
+
 The project studies P5 and official P6 records globally where sources permit,
 but corpus completeness is always bounded by the interfaces, dates, languages,
 rights, and search protocols recorded under `sources/` and
@@ -157,7 +152,7 @@ rights, and search protocols recorded under `sources/` and
 
 ## Source and authority model
 
-Sources establish different kinds of claims:
+Source authority is specific to the kind of claim being made.
 
 | Source family | Primary authority | Cannot establish alone |
 |---|---|---|
@@ -170,7 +165,7 @@ Sources establish different kinds of claims:
 | scholarly literature | analysis, critique, comparison, and reported practice | TEI normativity |
 | deterministic corpus computation | aggregate result over the declared snapshot | meaning beyond its measured scope |
 
-Decision trails preserve four independent transitions:
+Decision trails preserve the transitions between proposal and release.
 
 ```text
 discussion/proposal
@@ -184,7 +179,7 @@ rights, and instruction trust are separate fields.
 
 ## Promptotyping model
 
-The project is maintained as an executable research specification:
+The project is maintained as an executable research specification.
 
 | Component | Project realization |
 |---|---|
@@ -197,20 +192,19 @@ The project is maintained as an executable research specification:
 | Feedback | deterministic validation, adversarial machine review, human verification, prototype results |
 
 The documents in `knowledge/` are part of the control system. They are revised
-when the project learns something about its own method or scope; research
+when the project learns something about its own method or scope. Research
 findings themselves enter the canonical Grounded Vault layers.
 
 ## Acquisition and knowledge boundary
 
-Large collections are acquired through:
+Large collections follow the acquisition chain.
 
 ```text
 sources -> corpus/raw -> corpus/normalized -> corpus/projections
 ```
 
 This corpus supports inventory, discovery, counting, graph construction, and
-candidate selection. It is not evidence by itself. Persistent claims enter only
-through:
+candidate selection. Persistent claims require admission to the knowledge chain.
 
 ```text
 00_sources -> 10_markdown -> 20_distillates -> 30_assertions -> 40_output
@@ -221,8 +215,8 @@ procedures are specified in `docs/multi-agent-acquisition-runbook.md`.
 
 ## Evaluation dimensions for P6 options
 
-No proposal is called “optimized” without naming the dimensions and trade-offs.
-Every material option is evaluated against:
+Every material option is evaluated on the following dimensions, with losses
+and gains reported together.
 
 1. **Conceptual clarity** — concepts and distinctions are explicit and
    internally coherent.
@@ -251,8 +245,8 @@ A gain on one dimension may be accepted only with its losses on others visible.
 
 ## Design constraints
 
-- XML remains part of the evaluated ecosystem; replacement or supplementary
-  serializations require evidence and explicit compatibility analysis.
+- XML remains part of the evaluated ecosystem. Alternative serializations
+  require evidence and explicit compatibility analysis.
 - Existing TEI documents, ODDs, schemas, processors, teaching material, and
   institutional practices are migration subjects, not disposable noise.
 - Formal simplification must not silently collapse conceptually necessary
@@ -262,8 +256,7 @@ A gain on one dimension may be accepted only with its losses on others visible.
 - Private or inaccessible material cannot be used as if publicly auditable.
 - Public availability does not imply permission to redistribute full text.
 - Agent output is not evidence merely because it is reproducible or fluent.
-- The project may document unresolved alternatives; premature convergence is a
-  defect.
+- Unresolved alternatives remain explicit until the evidence supports a decision.
 
 ## Non-goals
 
@@ -282,35 +275,35 @@ A gain on one dimension may be accepted only with its losses on others visible.
 | Deliverable | Canonical location | Acceptance condition |
 |---|---|---|
 | source and rights register | `sources/` | version/snapshot, authority, rights, scope, and gaps explicit |
-| reproducible corpus | `corpus/` plus manifests | declared boundary exhausted or gaps recorded; hashes reconcile |
+| reproducible corpus | `corpus/` plus manifests | declared boundary exhausted or gaps recorded, with reconciled hashes |
 | P5 formal object graph | generated corpus projections | byte-reproducible from pinned ODD sources |
 | grounded topic knowledge | `10_markdown/` through `30_assertions/` | every assertion resolves to source-faithful statements |
-| P5 architecture synthesis | `40_output/` | all load-bearing claims grounded; posits explicit |
+| P5 architecture synthesis | `40_output/` | grounded factual premises and explicit posits |
 | P6 option matrix | `40_output/` | alternatives compared across declared dimensions |
 | migration dossier | `40_output/` | mappings, affected artifacts, costs, gaps, and test results explicit |
 | agent context packs | `contexts/generated/` | deterministic, dependency-hashed, no new propositions |
-| research workbench | `docs/` | generated from declared vault state; public views preserve provenance, rights, and official-versus-independent distinctions |
+| research workbench | `docs/` | generated from declared inputs, with provenance, rights, and independent status preserved |
 
 ## Success criteria
 
-The project reaches research readiness when:
+Research readiness requires the following results.
 
 - the selected P5 baseline is fully materialized and every formal object points
-  to an exact ODD source location;
+  to an exact ODD source location.
 - the declared GitHub snapshot is `observable-complete` and reconciled across
-  issues, PRs, comments, reviews, timelines, commits, and releases;
+  issues, PRs, comments, reviews, timelines, commits, and releases.
 - governance, history, and literature collections state finite boundaries,
-  rights, dispositions, and gaps;
+  rights, dispositions, and gaps.
 - at least one real-use/customization corpus has a documented sampling and
-  rights protocol;
+  rights protocol.
 - every central P5 problem claim has supporting evidence, counterevidence or an
-  explicit open-evidence status;
+  explicit open-evidence status.
 - three vertical pilots traverse the full provenance chain and pass independent
-  machine review;
+  machine review.
 - P6 alternatives are compared against the same evaluation dimensions and
-  representative use cases;
+  representative use cases.
 - a migration prototype tests representative P5 documents and reports loss,
-  ambiguity, manual intervention, and tooling impact;
+  ambiguity, manual intervention, and tooling impact.
 - the validator and test suite pass, generated artifacts reproduce, and no
   machine process assigns human verification.
 
@@ -323,20 +316,27 @@ is not a design candidate.
 
 | Parameter | Value |
 |---|---|
-| Controlled topic set | P5 Architecture; Abstract Model; ODD and Customization; Elements and Classes; Text and Document Structures; Annotation and Overlap; Critical Apparatus; Metadata and Entities; History and Governance; Issues and Decisions; Interoperability and Processing; P6 Design |
+| Controlled topic set | P5 Architecture, Abstract Model, ODD and Customization, Elements and Classes, Text and Document Structures, Annotation and Overlap, Critical Apparatus, Metadata and Entities, History and Governance, Issues and Decisions, Interoperability and Processing, P6 Design |
 | Active source types | document, publication, data |
 | Primary baseline | TEI P5 4.12.0, commit `113e933e21f016e2655518321e9d10214b8d9fcb` |
 | Output genre | scholarly synthesis and design specification |
-| Working language of content | English throughout; canonical TEI identifiers remain unchanged |
-| Verification role | project owner or explicitly designated TEI domain expert; no human verifier assigned |
+| Working language of content | English, with canonical TEI identifiers unchanged |
+| Verification role | project owner or explicitly designated TEI domain expert |
 | Validation mechanism | `tools/validate.py` |
 | Machine review | adversarial review in a separate agent/model context under anti-anchoring |
 | Corpus completion | family-specific `observable-complete`, `bounded-complete`, or explicit gap state |
 
 ## Style sheet
 
-Output uses precise English scholarly and technical prose. Canonical TEI
-element, attribute, class, module, macro, datatype, and ODD identifiers remain unchanged.
+Output uses precise English scholarly and technical prose. Each paragraph
+develops one point. Remove repeated scope statements and sentences that add no
+information. Use no colons or semicolons in running prose. Preserve punctuation
+required by code, quotations, URLs, metadata, and formal citation syntax.
+Use lists for navigation, independent checks, or ordered actions, and tables
+to compare the same attributes across alternatives.
+
+Canonical TEI element, attribute, class, module, macro, datatype, and ODD
+identifiers remain unchanged.
 Every load-bearing statement carries the provenance link required by
 [[knowledge/schema]] and names the release, commit, or snapshot when
 version-sensitive.
@@ -348,39 +348,33 @@ described as human verification.
 
 ## Decision gates
 
-1. **Corpus gate:** no bulk synthesis before source boundaries and rights rules
-   are operational.
-2. **Model gate:** no architectural critique before the baseline ODD model and
-   its prose relations are inventory-complete.
-3. **Problem gate:** no problem is promoted to a design requirement without
-   evidence and relevant counterevidence.
-4. **Option gate:** no preferred P6 option before alternatives are evaluated
-   against the same dimensions.
-5. **Migration gate:** no design candidate before representative P5 migration
-   is prototyped.
-6. **Verification gate:** no `verified` status without the designated human
-   expert.
+The bounded text identity and annotation pilot applies these gates to one
+experimental question before broader architecture selection. Its contract and
+human acceptance procedure are in `docs/p6/text-identity-pilot.md`. It tests
+explicit definitions and finite synthetic cases. It does not establish a
+general ontology of text, complete P5 coverage, or real-world migratability.
+
+| Gate | Requirement |
+|---|---|
+| Corpus | Source boundaries and rights rules must be operational before bulk synthesis |
+| Model | A bounded architectural claim needs complete source coverage for its constructs and dependencies. Architecture-wide claims also require the declared P5 inventory and its prose relations to be complete. Exploratory hypotheses may proceed with explicit scope and gaps. Inventory completion alone does not establish ontological adequacy |
+| Problem | A claimed problem needs supporting evidence and relevant counterevidence before becoming a design requirement |
+| Option | Alternatives face the same evaluation dimensions before a P6 option is preferred |
+| Migration | Representative P5 migration is prototyped before design-candidate readiness |
+| Verification | Only the designated human expert may assign `verified` |
 
 ## Settled decisions
 
-- 2026-09-05: The project is maintained as the independent TEI P6 Research in
-  the public `chpollin/tei-p6-research` repository, using a Grounded Vault for
-  its evidence system.
-- 2026-09-04: The controlled topic set contains twelve P5-analysis and P6-design
-  maps; all three source types are active.
-- 2026-09-05: Project knowledge, the public interface, and the scholarly
-  synthesis and design specification use English throughout; canonical TEI
-  identifiers remain unchanged.
-- 2026-09-04: Human verification is reserved for the project owner or an
-  explicitly designated TEI domain expert.
-- 2026-09-04: Separate-context adversarial review establishes machine review
-  only, never human verification.
-- 2026-09-04: Official TEI P6 process records and independent P6 proposals are
-  different source and claim categories.
-- 2026-09-04: The data corpus is a discovery and analysis layer; it cannot
-  bypass the canonical Grounded Vault chain.
-- 2026-09-04: P6 options are evaluated comparatively; a complete rewrite is not
-  assumed in advance.
-- 2026-09-04: Provisional P6 design knowledge is organized under `docs/p6/`.
-  It is not an evidence layer; factual claims still require the canonical
-  Grounded Vault chain, and executable artifacts require explicit contracts.
+The decision rationale remains in [[knowledge/journal]].
+
+| Date | Settled choice |
+|---|---|
+| 2026-09-05 | Independent TEI P6 Research in `chpollin/tei-p6-research`, using the Grounded Vault evidence system |
+| 2026-09-04 | Twelve topic maps and all three source types |
+| 2026-09-05 | English project content and interface, with canonical TEI identifiers unchanged |
+| 2026-09-04 | Human verification by the owner or an explicitly designated TEI domain expert |
+| 2026-09-04 | Separate-context adversarial review establishes machine review only |
+| 2026-09-04 | Official P6 process records remain distinct from independent proposals |
+| 2026-09-04 | Corpus discovery and analysis cannot bypass the canonical knowledge chain |
+| 2026-09-04 | P6 alternatives are compared without presuming a complete rewrite |
+| 2026-09-04 | Provisional design work belongs in `docs/p6/`, outside the evidence chain. Executable artifacts require explicit contracts |

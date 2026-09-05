@@ -1,0 +1,65 @@
+{
+  "format_version": 1,
+  "model_version": "0.1",
+  "authority": "Independent experimental model; definitions are project posits, not an official TEI standard or a universal ontology.",
+  "input": {
+    "package": "Exactly model_version='0.1' and the nine collections below; all collections are arrays, possibly empty. No unknown fields.",
+    "id": "Package-local identifier matching [A-Za-z][A-Za-z0-9._:-]*; globally unique across all records, including nested reading nodes.",
+    "string": "Nonempty UTF-8-encodable Unicode string unless explicitly stated otherwise.",
+    "agents": {"required": {"id": "id", "label": "string"}},
+    "concepts": {"required": {"id": "id", "label": "string", "definition": "string", "applies_to": "node|relation"}},
+    "texts": {"required": {"id": "id", "label": "string"}},
+    "versions": {"required": {"id": "id", "content": "Unicode string, may be empty", "sha256": "lowercase SHA-256 of exact UTF-8 content", "parents": "duplicate-free array of version IDs declaring frozen technical construction inputs; empty means none recorded, not historical independence"}},
+    "continuities": {"required": {"id": "id", "text": "text ID", "versions": "nonempty duplicate-free array of version IDs", "agent": "agent ID", "criterion": "string describing the editorial grouping policy"}},
+    "selections": {"required": {"id": "id", "version": "version ID", "selector": "one selector below"}},
+    "readings": {"required": {"id": "id", "version": "version ID", "agent": "agent ID", "label": "string", "nodes": "nonempty array of node records"}},
+    "node": {"required": {"id": "id", "type": "concept ID with applies_to=node", "selection": "selection ID in the reading version", "parent": "null or node ID in the same reading"}},
+    "annotations": {"required": {"id": "id", "agent": "agent ID", "selection": "selection ID", "body": "string; interpretation is not evaluated"}},
+    "relations": {"required": {"id": "id", "type": "concept ID with applies_to=relation", "source": "any package object ID", "target": "any package object ID", "agent": "agent ID"}},
+    "selectors": {
+      "point": {"required": {"kind": "point", "offset": "integer, not boolean; 0 <= offset <= content length"}},
+      "ranges": {"required": {"kind": "ranges", "segments": "nonempty ordered array of {start,end,quote}; integer nonempty half-open bounds; exact quote; segments disjoint and ascending, adjacency allowed and preserved"}},
+      "quote": {"required": {"kind": "quote", "exact": "string", "match": "one|all"}, "optional": {"prefix": "literal adjacent Unicode string, may be empty", "suffix": "literal adjacent Unicode string, may be empty"}}
+    }
+  },
+  "rules": {
+    "R01": "Record identity is by declared ID, never by equality of content, target, label, or interpretation; records do not establish identity of outside referents.",
+    "R02": "All required references resolve to the declared record category in this closed package. Other relation cycles are allowed; only version ancestry and reading parent relations must be acyclic.",
+    "R03": "Version content and technical construction inputs (parents) are frozen under reused version IDs; correcting those inputs requires a new version-record ID. Hash fidelity checks current content only; check_revision compares reused version records between two valid packages. Deleting a version from a later package is not itself a rewrite check.",
+    "R04": "Each declared text has at least one continuity claim. Versions may occur in several differently attributed groupings or none; technical parentage does not prove editorial continuity or historical derivation. Revisable historical hypotheses require a separate attributed relation contract.",
+    "R05": "Positions count Unicode code points. No whitespace, newline, case, or Unicode normalization is inferred. Empty versions permit a point at zero, not a nonempty region.",
+    "R06": "A ranges selector resolves to ONE region target containing its ordered segments, including when discontinuous. Point selection resolves to ONE point target. Quote/all resolves to one separate region target per occurrence, including overlapping occurrences. Quote targets and candidates are ordered by ascending start position.",
+    "R07": "Quote/one with several matches is ambiguous, with no accepted targets and all candidate targets retained. Zero matches is absent. These are W_AMBIGUOUS or W_ABSENT, not malformed instances. An annotation may preserve an unresolved target specification.",
+    "R08": "A reading node must resolve to exactly one contiguous, nonempty region in its reading version. Multiple adjacent segments count as contiguous, preserving segmentation in the resolution and using their enclosing interval only for hierarchy checks; any gap is invalid for a reading node. Every child interval is contained in its parent; siblings including roots do not overlap. Parent graphs are forests. Coverage gaps, equal parent-child extents, and crossing extents between separate readings are allowed.",
+    "R09": "Node and relation type references respect concept applies_to. Concept definitions and annotation bodies are interpreted by people or domain processors; v0.1 does not evaluate their truth or logical consistency.",
+    "R10": "Validation and all public operations are nonmutating. Structural errors suppress all resolutions; unresolved quotation warnings do not make an otherwise valid package invalid.",
+    "R11": "Canonical comparison preserves exact IDs, labels, definitions, attribution, policies, selector kind and match mode, content, hierarchy edges, and annotation bodies. Object-key and registry order are ignored; parents and continuity version membership are sets; segment order and segmentation are preserved. No alpha-renaming or Unicode normalization.",
+    "R12": "Reanchoring requires an explicit continuity claim containing both versions and a resolved source selection. Only quotation and single-segment ranges are supported. Retain literal quote/context; for a source range search its quote under match=one. Return a proposal with accepted=false, never a changed annotation. Point and multi-segment reanchoring are explicitly unsupported.",
+    "R13": "Empty registries are allowed; declaring a text without a continuity claim or a reading without nodes is invalid. No full-domain or practical-adequacy claim follows from a valid empty or synthetic package."
+  },
+  "validation_result": {
+    "valid": "true iff no E_ diagnostic",
+    "all_selections_resolved": "false on any structural error or any absent/ambiguous selection; true otherwise, including no selections",
+    "diagnostics": "sorted unique {code,path} objects",
+    "resolutions": "selection ID -> {version,status,targets,candidates}; status resolved|absent|ambiguous; candidates always present, populated only for ambiguity"
+  },
+  "target_shapes": {
+    "point": {"kind": "point", "offset": "integer"},
+    "region": {"kind": "region", "segments": "array of {start,end}; no inferred merging"}
+  },
+  "diagnostics": ["E_SHAPE", "E_ID", "E_DUPLICATE_ID", "E_REFERENCE", "E_HASH", "E_VERSION_CYCLE", "E_CONTINUITY", "E_SELECTOR", "E_BOUNDS", "E_QUOTE", "E_READING_TARGET", "E_READING_PARENT", "E_READING_CYCLE", "E_CONTAINMENT", "E_SIBLING_OVERLAP", "E_TYPE", "E_VERSION_REWRITE", "E_REANCHOR", "E_REANCHOR_UNSUPPORTED", "W_ABSENT", "W_AMBIGUOUS"],
+  "operations": {
+    "validate_model": "package -> validation_result",
+    "canonical_bytes": "valid package -> deterministic UTF-8 JSON bytes; reject invalid packages",
+    "equivalent": "two valid packages -> bool under R11; invalid packages rejected",
+    "check_revision": "two packages in a caller-declared shared ID scope -> {valid,diagnostics}; validate both first, then detect changed reused version records (content/hash/parents membership). Do not infer a rewrite by comparing coincidental local IDs from independent packages.",
+    "propose_reanchor": "package, selection ID, target version ID, continuity ID -> {diagnostics,proposal}; proposal null on error, otherwise {source_selection,target_version,continuity,resolution,accepted:false}"
+  },
+  "limits": [
+    "No complete P5 mapping, XML/RDF binding, customization algebra, effective ODD processor, or migration benchmark.",
+    "Finite character strings only; no physical-carrier, image-area, audio-time, grapheme or token coordinate systems.",
+    "Closed local references; no external retrieval, persistent history service, collaborative edit protocol, or automatic interpretation approval.",
+    "Reading nodes require one contiguous resolved interval; discontinuous and plural selections remain available for annotations.",
+    "Synthetic examples and executable consistency checks do not establish universal expressivity or practical usability."
+  ]
+}

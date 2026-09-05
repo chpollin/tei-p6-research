@@ -163,3 +163,253 @@ one monolithic mixture of research data interpretation, markup, styling, and
 interaction code. It changes implementation organization only: the workbench
 remains a projection, creates no evidence layer, and publishes no raw source
 bodies.
+
+## 2026-09-05 — Bounded text identity and annotation pilot
+
+The first executable model experiment concerns text, text versions, regions,
+and annotations. Its purpose is to test the research-to-design workflow and
+explicit identity assumptions, not to establish a universal ontology or select
+the final P6 architecture. The user authorized this pilot and requested a
+reviewable acceptance procedure with formal validation.
+
+`docs/p6/text-identity-pilot.md` owns the experiment contract and human review
+procedure. `experiments/text_identity/` holds hand-authored synthetic fixtures,
+an experiment specification, and a deterministically generated JSON report;
+`tools/pilots/text_identity.py` implements the bounded semantics and runner;
+`tests/pilots/` contains positive, negative, and adversarial checks. Experiment
+format version 1 is local to this pilot, not a new Grounded Vault artifact type
+or status. Experiment results and reports are not grounding targets. Any
+persistent empirical assertion about them must first enter the canonical chain
+as a versioned data source; the pilot chapter may instead present the proposed
+experiment and its interpretation explicitly as posits.
+
+Selected complete P5 specification files are admitted from the already acquired
+4.12.0 Git component at its locked commit, with per-file hashes and upstream
+licensing preserved. The partial family-level HTML boundary does not prevent
+admission of those reconciled Git blobs and is not upgraded by this pilot.
+Representations preserve the complete XML as a fenced source block and expose
+verbatim English descriptions as mechanically checked reading blocks. Original
+XML remains ignored and reproducibly materializable. Independent source-support
+review uses the existing `tools/review.py` pairs and verdict vocabulary; audit
+files under `experiments/text_identity/review/` are review records, never evidence.
+
+All candidate definitions are project hypotheses. Both compared selectors bind
+to an explicit immutable text version. Reanchoring creates a proposal for human
+confirmation and cannot silently change an existing annotation. Human acceptance
+of the experiment is separate from expert verification of grounding relations;
+no machine process assigns `verified`.
+
+The acceptance runner `tools/check_text_identity_pilot.py` checks the actual
+chapter dependency closure against the declared pilot review scope and ties
+each independent verdict to its exact prompt hash. Pilot source-review prompts
+extend the existing pair cutter's source location with mechanically recovered
+XML ancestor labels and the integrity-checked source title and locator. The
+first review exposed that bare English descriptions alone omitted the release
+and attribute context necessary for these claims; its nonpassing records are
+retained. Context completion does not change immutable representations or
+introduce the producer's reasoning into review.
+
+## 2026-09-05 — Critical review clarifies the route from evidence to a text model
+
+The user requested a constructive GPT-6 review of the project texts. Three
+independent reading packages covered the model dossier, the pilot argument,
+and the research programme. Their editorial judgments are not source-support
+verdicts and do not replace passage-level review or human verification.
+
+The research target is an explicitly scoped, conceptually coherent and usable
+abstract text model for a possible P6. P5 supplies the normative baseline and
+migration obligations; independent theoretical and practice sources must also
+challenge the model's adequacy. Narrow claims need complete coverage of their
+own source dependencies; generalized architectural claims require the full
+declared P5 model inventory. This clarifies the existing scoped pilot policy.
+
+The pilot compares selectors within one assumed object model, not complete
+architectures. Its region record, selector and resolved interval are now
+distinguished without changing the executable format. Additional synthetic
+cases expose successful literal matching with a changed interpretive context;
+the semantic judgment remains a declared human question.
+
+Candidate design prose distinguishes model preservation, task-specific
+equivalence and byte preservation. Proposed migration reporting uses separate
+axes for coverage, preservation, lexical changes, dependencies and reversibility.
+These revise future experiment contracts, not canonical evidence types or
+statuses. No binding or migration implementation is implied. Source
+representations and reviewed source claims remain unchanged; recommendations
+remain posits even if an official body later adopts them.
+
+## 2026-09-05 — First research wave and proposal integration
+
+The user authorized a first parallel wave of P5 reconstruction, discussion
+analysis, and literature reading, together with the outline of an independent
+Proposal for TEI P6. The eventual coverage ambition includes every relevant
+distinction and practice that the declared P5, issue, and literature boundaries
+can substantiate. Individual waves remain bounded; they do not narrow the
+long-term ambition or imply global completeness.
+
+The first extractor produces a provisional navigation projection of the
+top-level XML specifications in the locked P5 release. Its contract records
+source commit, path, Git blob, SHA-256, and XML locators; direct declarations
+and references are distinguished from inherited or compiled semantics. The
+versioned JSON output under `corpus/projections/` is reproducible from those
+inputs and is never a grounding target. This is a specialization of the existing
+projection layer, not a new evidence type. Its rules and exclusions are recorded
+in `docs/p6/research-wave-1.md` before persistent generation.
+
+The proposal outline remains a design-dossier document. It maps questions and
+acceptance obligations to the existing output chapters; it does not serve as
+evidence or claim that the final proposal is already supported. Source reading,
+requirement formation, model choice, and technical/practical evaluation remain
+separate steps. Shared control files and integration are owned by the root agent.
+
+For this small curated wave, citation-only sources use the existing publication
+type and a local CSL JSON bibliography batch transcribed from the consulted
+primary metadata. This instantiates import without an external reference-manager
+export; it adds no source type or grounding layer. Exact response snapshots,
+hashes, extraction rules, and short quotations are recorded at intake. W3C is
+cited conservatively under its document-use notice; unlicensed discussion and
+scholarly full text remain in ignored raw storage. Quotation fidelity is checked
+locally before its date is recorded. Clean checkouts without those raw snapshots
+retain the intake record but cannot claim to have repeated that check.
+
+The first fresh-context support review rejected the Renear/Wickett assertion
+heading because it widened a distinction about modifying an entity into one
+about identity. The heading was narrowed to the supported wording. The
+nonpassing audit remains alongside the replacement review; agreement of the
+producer with a source is not a substitute for this independent check.
+
+## 2026-09-05 — Abstract Text Model 0.1 executable research contract
+
+The user requested a complete first working model. Version 0.1 is a bounded,
+independent modeling hypothesis with precise definitions, a reference JSON
+encoding, pure validation and comparison operations, adversarial examples, and
+a reproducible report. Its experimental artifacts live in
+`experiments/abstract_text_v01/`, implementation in `tools/models/`, and focused
+tests in `tests/models/`. The normative research definition is
+`docs/p6/abstract-text-model-v0.1.md`; the machine field/rule contract is
+`experiments/abstract_text_v01/spec.json`. They must agree. Case expectations
+are authored independently of the resolver. Generated reports fingerprint all
+inputs and never become grounding without source admission.
+
+This specializes the existing experiment plane; no Vault source type, anchor,
+or research status is added. Model object IDs and diagnostics belong only to
+the experimental format. The old text-identity pilot, immutable sources, and
+reviewed source assertions remain intact. The new design argument belongs in
+the ordinary P6 Design output chapter with explicit posits.
+
+The candidate separates versioned character content, attributed continuity,
+target specifications and resolved targets, attributed structural readings,
+annotations, and other typed relations. Intentional plural targets differ from
+unresolved choice; a discontinuous aggregate differs from several independent
+targets. A closed package uses finite Unicode strings; structural-reading nodes
+use contiguous resolved intervals in 0.1. Other textual media, full P5 migration,
+domain customization algebra, and persistent storage are excluded from this
+release, without narrowing the programme's eventual coverage ambition.
+
+Version 0.1 commits to an inspectable candidate for testing, not a preferred
+final P6 architecture. The documentation compares a primary-tree-plus-stand-off
+alternative on the same observations, without assuming that overlap defeats
+all tree-based designs. Human acceptance of definitions and practical adequacy
+remains separate from deterministic conformance.
+
+Independent ontology review clarified that continuity membership is positive,
+not exclusionary; shared version IDs require a caller-declared scope for
+revision comparison. Adjacent range components retain their segmentation but
+count as contiguous for reading containment. Reanchoring remains explicitly
+single-segment for ranges. These are definitions of this experiment, not claims
+that the selected distinctions exhaust textual identity or structure.
+
+The implementation and fixture packages were authored by separate GPT-6 agents;
+fixture expectations were written without consulting the implementation. Their
+first integration exposed one diagnostic disagreement: valid coordinates in
+overlapping aggregate components should yield `E_SELECTOR`, while individually
+invalid coordinates yield `E_BOUNDS`. The implementation was aligned to this
+distinction, preserving the independently authored expected outcome. A separate
+read-only code review challenged malformed inputs and ancestry traversal.
+These machine reviews test a project contract; they do not promote model
+posits to source assertions or replace human acceptance.
+
+## 2026-09-05 — Editorial provenance and real-case comparison
+
+The owner requested implementation of the proposal review's three priorities:
+clarify version identity, examine real editorial cases comparatively, and
+rewrite the proposal around a continuous example. The v0.1 core remains a
+bounded candidate. Its technical construction dependencies must be distinguished
+from revisable scholarly hypotheses about historical derivation. Such hypotheses
+are attributed relations, not changes to the character version they describe.
+A small optional editorial profile will constrain the existing relation records
+and demonstrate correction without changing version or selection identity.
+This introduces no new Vault source type, status, anchor, or evidence layer.
+
+The case study uses a purposive, finite discovery of at most four openly
+accessible edition repositories and three selected cases, preferably within one
+edition to make the intake boundary manageable. Inclusion requires real
+editorial XML, an exact source snapshot, contextual identification, and a
+recorded rights disposition; tutorial examples cannot substitute for practice.
+The target tasks concern mixed content and hierarchy, discontinuous or competing
+structures, and an adverse case involving information outside the candidate's
+scope. This sample cannot establish community-wide need or usability.
+
+Discovery handoffs are navigation aids. Exact sources and rights records enter
+the acquisition controls and canonical admission chain before output makes
+source-derived claims. Project-authored preservation expectations are frozen
+before mapping. At least one adverse case is held back from mapper development
+and evaluated after its rules are defined. Domain expert review remains a
+separate, uncompleted task, never simulated by an agent verdict.
+
+The experiment plane is specialized at `experiments/editorial_cases/`: a
+hand-authored protocol and case expectations, selected source locators and
+hashes, reference mappings, and generated observation/comparison reports.
+`tools/models/editorial_profile.py` and `tools/tei/editorial_cases.py` own
+executable processing; focused tests live beside their existing model and TEI
+test families. `docs/p6/editorial-case-study.md` explains the method and choices;
+`40_output/12-p6-design.md` remains the grounded synthesis with explicit posits.
+No report or experiment file may be cited as grounding without its own source
+admission. A comparison reports the exact preserved observations and declared
+losses for both the range/forest candidate and a primary-tree-plus-stand-off
+representation. It does not assume either architecture wins.
+
+The owner explicitly requested the full proposal on the frontend home page and
+a stronger explanatory interface. This supersedes the original inventory-only
+landing-page choice. The new generated home combines the canonical proposal,
+inspectable example views, assertion/posit distinctions, and evidence navigation;
+the existing inventory remains a separate Materials page. No client framework,
+backend, evidence layer, or duplicated proposal text is introduced. Small
+licensed excerpts keep their own attribution and license. The integrator owns
+navigation, Pages routing, shared contracts, source integration, and publication
+configuration; the frontend worker owns only its new generator, view, assets,
+and focused tests. Local completion does not imply a committed or deployed site.
+
+## 2026-09-05 — Technical proposal and comparative examples
+
+The owner rejected the promotional home treatment and requested a technical
+publication: canonical proposal first, right-hand example branches, P5 variants,
+candidate bindings, formal descriptions and relationship diagrams. All P5
+modules provide the coverage inventory; modules, document types, media and
+phenomena remain distinct navigation axes. Coverage is a research obligation,
+not an implemented-domain claim. A generated comparison view outside the Vault
+chain assembles existing cases, source pointers and runtime checks. Its bindings
+have explicit contracts and preservation tests; unavailable bindings and failed
+mappings remain visible. The core model and frozen editorial holdout are not
+silently expanded to improve the display. Publishing to the existing GitHub
+Pages site was requested by the owner and remains the delivery target.
+
+## 2026-09-05 — Shared workbench and concise prose
+
+The owner requested one layout across all public pages and rejected decorative
+horizontal rules. Navigation, footer, typography and controls now have one
+maintained source. Page styles describe only their content. Local and published
+routes are identical. The old home path remains a generated compatibility alias.
+
+The Model reference derives fields and constraints from the existing model
+contract. The Knowledge browser follows immediate-layer links and backreferences
+through actual Vault artifacts. Both are navigation projections outside the
+evidence chain. The Materials page distinguishes source-family holdings from
+individual raw objects, and the proposal links its grounded premises to the
+Knowledge browser.
+
+Editorial revision removes repeated introductions and consolidates overlapping
+document roles. Running prose avoids colons and semicolons. Lists serve
+navigation, alternatives and procedures. Tables express comparable fields,
+constraints and results. Code, identifiers, quotations, source records and
+required anchor notation preserve their exact syntax. Historical journal entries
+remain unchanged so that earlier decisions can still be reconstructed.

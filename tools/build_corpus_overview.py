@@ -36,7 +36,7 @@ def main() -> int:
     output = args.output or root / "docs" / "corpus.html"
     output.parent.mkdir(parents=True, exist_ok=True)
     page = build_page(root, args.date, repository_base=args.repository_base)
-    output.write_text(page, encoding="utf-8")
+    output.write_text(page, encoding="utf-8", newline="\n")
     print(f"OK: {output} ({len(page)} bytes)")
     return 0
 

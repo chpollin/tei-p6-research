@@ -1,0 +1,74 @@
+schema_version: 1
+run_id: 2026-09-05-editorial-cases
+source_id: tei-real-world-customizations
+started_at: '2026-09-05T14:14:58Z'
+finished_at: '2026-09-05T14:25:00Z'
+status: bounded-complete
+lock_file: sources/locks/real-world-customizations.yaml
+scope:
+  boundary: Exactly README, CITATION, selected diary and edition RNG at the pinned
+    commit; three diary fragments; no family completeness
+  protocol: experiments/editorial_cases/protocol.json
+adapter:
+  name: tools.ingest_editorial_cases
+  version: 1
+requests:
+- requested_url: https://raw.githubusercontent.com/telota/edition-humboldt-digital/7d174637d0b2cf56edaacac3b5e7e283e8ba8245/README.md
+  observed_at: '2026-09-05T14:14:58Z'
+  status: 200
+  sha256: dfff8e57e9b48c3259c7246983ae0670ae3e3fe9f8850ebfb17dae0d09fe5fa5
+  byte_count: 2040
+- requested_url: https://raw.githubusercontent.com/telota/edition-humboldt-digital/7d174637d0b2cf56edaacac3b5e7e283e8ba8245/CITATION.cff
+  observed_at: '2026-09-05T14:14:59Z'
+  status: 200
+  sha256: 27da706a8dc919bf477ab73e36f42b94efab4366ca81826a28e64ecd19d11064
+  byte_count: 1332
+- requested_url: https://raw.githubusercontent.com/telota/edition-humboldt-digital/7d174637d0b2cf56edaacac3b5e7e283e8ba8245/data/travel-journal/H0017682.xml
+  observed_at: '2026-09-05T14:16:51Z'
+  status: 200
+  sha256: 89ac55d98d4756cb8ffce59f958d5c6885c8dc22e47e250b1ccd58386e516a54
+  byte_count: 137475
+- requested_url: https://raw.githubusercontent.com/telota/edition-humboldt-digital/7d174637d0b2cf56edaacac3b5e7e283e8ba8245/schemata/ediarum.avhr.api.rng
+  observed_at: '2026-09-05T14:17:13Z'
+  status: 200
+  sha256: 24a25ecfa82869cfcb9cd56b0c85b5d770782def0be5b0422fa327e7c09c756a
+  byte_count: 258748
+objects:
+- path: 10_markdown/documents/humboldt-h0017682-7d174637.md
+  sha256: 5998ebffe9f12697da4619723d48a27323aa75c717326988d108a91ce856113e
+- path: corpus/normalized/observed-practice/humboldt-selected-7d174637.json
+  sha256: c605eb9ac30cedf2ff580adea1e75d6a4550e8d3940c6b1c46314b319850ace3
+counts:
+  response_bodies: 4
+  admitted_sources: 1
+  selected_fragments: 3
+rights:
+  license: CC-BY-SA-4.0
+  attribution: edition humboldt digital, Berlin-Brandenburgische Akademie der Wissenschaften
+    2025; source XML identifies editors Dominik Erdmann and Christian Thomas and contributor
+    Florian Schnee; dataset editors are named in the pinned README and CITATION.
+  license_source: https://github.com/telota/edition-humboldt-digital/blob/7d174637d0b2cf56edaacac3b5e7e283e8ba8245/README.md
+content_authority: sampled-practice-record
+instruction_trust: none
+gaps: []
+known_limits:
+- Purposive three-fragment sample of one diary; not three independent editions or
+  corpus-wide coverage.
+- Faust corpus considered at discovery; Humboldt selected for accessible licensed
+  primary editorial XML. A second inspected diary H0019162 was excluded in favor of
+  shorter challenge fragments from H0017682.
+- A recursive tree request failed; bounded directory requests identified selected
+  files. No full tree completeness claim.
+- Project RNG acquired and parsed, but whole-diary RelaxNG validation exceeded 60
+  seconds without a result and was stopped; embedded Schematron and effective ODD
+  semantics were not evaluated.
+- Historical manuscript date, dataset release 11.0.1, and XML self-citation of the
+  edition version are different temporal facts.
+- No external entity register, image, image license, or page service acquired.
+admissions:
+- source_type: document
+  original_path: 00_sources/humboldt-h0017682-7d174637.xml
+  representation_path: 10_markdown/documents/humboldt-h0017682-7d174637.md
+  original_sha256: 89ac55d98d4756cb8ffce59f958d5c6885c8dc22e47e250b1ccd58386e516a54
+  commit: 7d174637d0b2cf56edaacac3b5e7e283e8ba8245
+  source_path: data/travel-journal/H0017682.xml

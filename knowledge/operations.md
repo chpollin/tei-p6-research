@@ -9,21 +9,32 @@ method:
 status: draft
 language: en
 created: "2026-09-04"
-updated: "2026-09-04"
+updated: "2026-09-05"
 related: [schema, state, journal]
 ---
 
 # Operations
 
-This document defines the procedures of the vault, one section per chain. Every chain produces or checks artifacts defined in [[knowledge/schema]] and updates the registers in [[knowledge/state]]. Decisions made along the way go to [[knowledge/journal]].
+These procedures produce and check the artifacts defined in
+[[knowledge/schema]]. Record processing state in [[knowledge/state]] and
+durable decisions in [[knowledge/journal]].
 
 ## Acquire
 
-How a source enters the vault is orthogonal to its type; the channel is recorded in the `channel` field of the Markdown representation and changes nothing about checking.
+Acquisition channel and source type are independent. Record the channel in
+the representation's `channel` field without changing its checking obligations.
 
-- **handover** and **collection**: place the original in `00_sources/`.
-- **import**: export records from the reference library as CSL JSON into `references/`, one file per batch of records.
-- **deep-research**: run the research prompt below. Capture every located publication in the reference manager and export it as CSL JSON into `references/`. The research report itself never becomes a source; all anchors bind to the located publications.
+| Channel | Action |
+|---|---|
+| `handover` or `collection` | Place the original in `00_sources/` |
+| `import` | Export the reference library as CSL JSON into `references/`, one file per batch |
+| `deep-research` | Run the prompt below, capture every located publication in the reference manager, and export CSL JSON |
+
+For a small curated import, CSL records may be transcribed from consulted
+primary metadata. Record this choice in the journal and identify the exact
+snapshots and bibliographic checks in the intake manifest. Apply the same
+quotation and support checks. The CSL record remains the publication root.
+An agent's report or reading memo never replaces the located source.
 
 ### Deep research prompt skeleton
 
@@ -37,28 +48,44 @@ How a source enters the vault is orthogonal to its type; the channel is recorded
 
 ## Ingest
 
-Per source, produce the Markdown representation. The operation is the **Markdown conversion**, and it runs in two steps. The first step converts the original into structure-preserving Markdown, so that headings, lists, tables and paragraph boundaries survive as the original had them. The second step stamps a block ID onto every anchor-relevant paragraph. After the second step the file is never edited again, because every later layer anchors into these blocks and an edit would move them.
+For an archivable document, first convert the original to Markdown while
+preserving its headings, lists, tables, and paragraph boundaries. Then stamp
+each anchor-relevant paragraph with a block ID. The resulting representation
+is immutable.
 
-Which converter performs the first step is decided per source, along this list. The chosen converter is recorded in the `converter` field of the Markdown representation as before, so that a later run can be reproduced or repeated with a different tool.
+Choose the converter by source structure and record it in `converter`.
 
-- Short, simply structured texts are converted by the agent itself, because a tool adds nothing where the structure is already flat.
-- Standard office and PDF formats go through MarkItDown or pandoc.
-- Complex layouts and scanned documents go through Docling, which works markedly faster when a GPU is available.
-- Image sources that require OCR are a named extension point of this profile and are not yet worked out.
+| Source structure | Conversion |
+|---|---|
+| Short, simple text | Agent conversion |
+| Standard office or PDF document | MarkItDown or pandoc |
+| Complex layout or scanned document | Docling |
+| Image requiring OCR | Unelaborated extension point |
 
-1. **document**: run the Markdown conversion into `10_markdown/documents/`, note the converter in the frontmatter, set the H1 from the original, fill the metadata block.
-2. **data**: place the data file in `10_markdown/data/`, write the schema description of the same slug, fill the metadata block.
-3. **publication**: no Markdown representation, because the CSL JSON record in `references/` is the root of this source type.
+| Source type | Required artifact |
+|---|---|
+| `document` | Markdown in `10_markdown/documents/`, with converter, original H1, and metadata |
+| `data` | Data file in `10_markdown/data/` and a schema description with the same slug and metadata |
+| `publication` | CSL JSON in `references/`, with no Markdown representation |
 
-Then run `python tools/inventory.py . --write`, which rewrites the source inventory in [[knowledge/state]] from the real file state.
+Run `python tools/inventory.py . --write` to regenerate the source inventory
+in [[knowledge/state]] from the files.
 
 ## Distill
 
-One distillate per source, produced as a three-stage chain:
+Produce one distillate per source through three steps.
 
-1. **Extraction**: an LLM extracts the core statements with the canonical prompt (one statement per anchor, no evaluation, no cross-source merging).
-2. **Formatting**: deterministic pass that enforces the section skeleton, statement IDs and anchor syntax from [[knowledge/schema]].
-3. **Fidelity check**: compare each statement against its anchor; for publications run the quotation check now, while the source text is at hand, and record it as `checked.quote`.
+1. Extract core statements with the canonical prompt, one statement per
+   anchor, without evaluation or cross-source merging.
+2. Apply the section skeleton, statement IDs, and anchor syntax in
+   [[knowledge/schema]] through deterministic formatting.
+3. Compare every statement with its source anchor. For publications, check
+   the quotation while the full text is available and record `checked.quote`.
+
+Reformulate or discard statements that fail fidelity checking and repeat the
+check until every retained statement passes. Write any optional Appraisal
+afterwards so that judgments cannot influence the extraction. Appraisal
+remains outside the source-fidelity check.
 
 ### Canonical extraction prompt skeleton
 
@@ -77,25 +104,29 @@ One distillate per source, produced as a three-stage chain:
 >
 > SOURCE: {Markdown representation, quotation set, or data schema description}
 
-The chain iterates. A statement that fails the fidelity check is reformulated or discarded, and the check runs again, until every remaining statement passes.
-
-Where the source is to be judged as well as reproduced, the appraisal is written after the chain has run, so that no evaluation can leak into the extraction the chain checks. It goes into the optional Appraisal section defined in [[knowledge/schema]] and stays outside the fidelity check, which has nothing to compare it against.
-
-The distillate enters at `status: grounded`. Run `python tools/inventory.py . --write` again, so that the source inventory in [[knowledge/state]] carries the new file state.
+Set the new distillate to `grounded` and run
+`python tools/inventory.py . --write` again.
 
 ## Build assertions
 
-Assertions are where the vault synthesizes, one file per assertion, and the work proceeds by topic in these steps.
+Work by topic, with one file per assertion.
 
-1. **Read in**: enter through the topic map of the topic and read every distillate registered there, so that synthesis covers the sources the topic actually holds rather than the ones at hand.
-2. **Group**: gather the distillate statements that concern the same matter, across sources and across source types. A group is the unit an assertion is written from.
-3. **Formulate**: write one atomic assertion per group, carried jointly by the sources of that group. Atomic means one statement that cannot be split without losing its point.
-4. **Ground**: list in `grounding` every statement ID that supports the assertion, one per supporting source, and say in the Support section what each anchor contributes.
-5. **Contradictions**: where a group holds statements that cannot be reconciled, write two assertions instead of one, set both to `contested`, and link them to each other in `contested-with` on both sides.
-6. **Posit candidates**: a conclusion that no distillate statement carries is noted for the output as a posit candidate and never becomes an assertion. The appraisal sections of the distillates are read at this step as posit candidates, never as support, because they hold the vault's judgment of a source rather than its content.
-7. **Register**: enter every assertion in its topic map with a half-sentence of orientation, and record questions the sources leave open under the map's open questions.
+1. Enter through the topic map and read every distillate registered there.
+2. Group statements about the same matter across sources and source types.
+3. Formulate one atomic assertion per group, supported jointly by that group.
+   An atomic statement cannot be split without losing its point.
+4. List the supporting statement IDs in `grounding`, one per supporting
+   source, and explain each anchor's contribution in Support.
+5. For irreconcilable statements, write two assertions, mark both `contested`,
+   and link them reciprocally through `contested-with`.
+6. Reserve unsupported conclusions and distillate appraisals for output posits.
+   They cannot ground assertions.
+7. Register each assertion in its topic map with a short orientation and
+   record unresolved questions under Open questions.
 
-Machine review then runs over every pair of assertion and supporting statement, under the contract below. A verdict below *fully supports* means the assertion is reformulated to the width its sources actually carry, or the grounding is corrected by dropping the anchor that does not carry it and naming one that does. Review repeats on the changed pair.
+Machine-review every assertion against each supporting statement. Only
+*fully supports* passes. Narrow a failed assertion or replace its unsupported
+anchor with one that carries the claim, then review the changed pair again.
 
 ### Assertion review prompt skeleton
 
@@ -112,36 +143,88 @@ Machine review then runs over every pair of assertion and supporting statement, 
 
 ## Write chapters
 
-Write per chapter, in the working language and style sheet set in [[knowledge/specification]]. Every load-bearing sentence gets a footnote `Grounded in [[assertion]]`; every own conclusion gets a footnote `Posit: <rationale>. Open evidence question: <question>`. Mirror the referenced assertions and the posit count in the frontmatter. Update the chapter register in [[knowledge/state]].
+Use the working language and style sheet in [[knowledge/specification]].
+Every load-bearing sentence receives a `Grounded in [[assertion]]` footnote
+or, for an own conclusion, a
+`Posit: <rationale>. Open evidence question: <question>` footnote. Mirror the
+referenced assertions and posit count in frontmatter and update the chapter
+register in [[knowledge/state]].
 
-A chapter that reports the state of research across the sources of a topic is written with the same means and needs no type of its own. Enter through the topic map, and let the three parts fall on the mechanics that already carry them. What the sources agree on becomes sentences grounded in the assertions of the topic. What they disagree on becomes sentences grounded in both sides of a contested pair, which is why taking one side alone raises `W-CONTESTED`. The gap that the vault's own work closes carries no source and becomes a posit footnote with its open evidence question; the topic map's open questions are the register such a gap is read off. A synthesis chapter that later feeds another chapter stays an ordinary row in the chapter register.
+A synthesis of a topic uses the same chapter contract. Enter through its map.
+Ground agreement in the relevant assertions and disagreement in both sides of
+a contested pair. Citing only one side triggers `W-CONTESTED`. A research gap
+drawn from the map's open questions enters as a posit with its evidence
+question. A synthesis chapter remains an ordinary chapter even when it later
+informs another chapter.
 
 ## Query
 
-To answer a question from the vault, enter through the topic maps, follow assertions to their distillate statements and, where exactness matters, down to the source passage. Quote assertions by wikilink so the answer stays anchored. Questions the vault cannot answer are recorded as open questions in the topic's map.
+Enter through topic maps and follow assertions to distillate statements.
+Consult source passages where exact wording matters. Cite assertions by
+wikilink. Record unanswered questions in the topic map.
 
 ## Check
 
-Three instances check the vault. The architecture fixes their contracts; the mechanism fulfilling each contract is an instantiation decision recorded in [[knowledge/specification]].
+The three check contracts are fixed. Their implementation mechanisms are
+project choices recorded in [[knowledge/specification]].
 
 ### Contract: validation
 
-- Judges: formal conformance of every file against [[knowledge/schema]].
-- Authority: gates everything; no other check runs on a file that fails validation. Sets no status by itself except enforcing the discipline.
-- Conditions: deterministic, same input, same verdict. Runs on every change.
-- Record: `checked.validation: <date>` on every file that passes.
-- Reference mechanism: `python tools/validate.py .` (checks frontmatter per type, anchor resolution, statement IDs, quotation identity where a source text is available, computation declarations, MOC reachability, bidirectional contested links, chapter mirror and footnote keywords, status discipline). Data anchors are re-run and compared by default; `--no-computations` switches that off for a fast run.
-- Chapter scope: `python tools/validate.py . --chapter 40_output/<slug>` judges one chapter and, transitively, the assertions, distillates and Markdown representations it grounds in, so that a chapter can be reported ready while other parts of the vault are still in progress. The scope walk follows only anchors pointing one layer down, so a neighbouring branch of the vault stays out of the verdict. The vault-level warnings stay out too, because they are decidable only over the whole vault, and the run names them in its closing lines. In this mode any warning inside the scope fails the run alongside an error, because the question the run answers is whether this chapter is ready for acceptance.
-- The checks with their own codes are these. `E-ANCHOR` fires when an anchor does not resolve, and it resolves the frontmatter targets `representation`, `superseded-by` and `contested-with` as well as the anchors in the body. `E-LAYER` fires when an anchor skips a layer instead of binding to the layer directly beneath its own. `E-GROUNDING` fires when a document that owes grounding carries an empty grounding. `E-DUPLICATE` fires when a block ID or a statement ID occurs more than once in one file. `E-STATUS` fires when a status lacks a check its rung requires or when an entry of `checked` records no date. `E-LADDER` fires when a document stands higher on the status ladder than an anchor it rests on, the rule that a status is the minimum of the states of its anchors. `W-PLACEHOLDER` fires while an unreplaced template placeholder in double braces remains anywhere in the vault. `W-EMPTY` fires while the production chain from `10_markdown` to `40_output` holds no document, so that no content check had a subject. `W-STALE` fires when a document's `updated` date is younger than the youngest of its `checked` dates, because then its checks are older than the content they judge; a document without any check date does not fire, since that is the state the status ladder starts from. `W-DUPLICATE-GROUNDING` fires when two assertions carry the same grounding set or one grounding set contains the other, the shape an accidentally duplicated assertion has. `W-ALIAS` fires when the alias of a chapter footnote wikilink differs from the H1 title of the assertion it points to, because a shortened alias can silently drop the clause that restricts the assertion.
-- A run without errors is not by itself the success criterion. Every warning is printed, counted and to be acted on; a warning names either a check that found no subject or a defect the schema does not make an error, and both are the failure modes a silent green run hides. Over the whole vault a warning never changes the exit code, so that work in progress stays runnable. In chapter mode a warning fails the run, because there the run decides acceptance.
+Validation checks formal conformance against [[knowledge/schema]]. It is
+deterministic and runs on every change. A failing file cannot proceed to
+another check. Validation alone does not promote status. Record
+`checked.validation: <date>` on each file that passes.
+
+Run `python tools/validate.py .` to check frontmatter, anchors, statement IDs,
+quotation identity where source text is available, computation declarations,
+topic-map reachability, reciprocal contested links, chapter mirrors and
+footnote keywords, and status discipline. Data computations are rerun and
+their results compared by default. `--no-computations` omits that step for a
+faster, narrower check.
+
+Use `python tools/validate.py . --chapter 40_output/<slug>` to check a chapter
+and the assertions, distillates, and representations it grounds in. The scope
+walk follows only immediate-layer anchors. Other branches and vault-wide
+warnings are excluded, and the closing output names the excluded checks.
+Any warning or error within chapter scope fails the run.
+
+| Diagnostic | Condition |
+|---|---|
+| `E-ANCHOR` | An anchor or frontmatter target in `representation`, `superseded-by`, or `contested-with` does not resolve |
+| `E-LAYER` | An anchor skips its direct predecessor layer |
+| `E-GROUNDING` | An artifact with a grounding obligation has empty grounding |
+| `E-DUPLICATE` | A block or statement ID occurs more than once within a file |
+| `E-STATUS` | A required check is missing or an entry in `checked` lacks a date |
+| `E-LADDER` | An artifact's status exceeds that of an anchor it rests on |
+| `W-PLACEHOLDER` | An unreplaced double-brace placeholder remains in the vault |
+| `W-EMPTY` | No document exists in the production chain from `10_markdown` to `40_output` |
+| `W-STALE` | `updated` is later than the most recent recorded check date. Artifacts without check dates do not trigger it |
+| `W-DUPLICATE-GROUNDING` | Two assertions have equal grounding sets or one set contains the other |
+| `W-ALIAS` | A chapter footnote alias differs from its assertion's H1 and may omit a qualifying clause |
+
+Every warning must be investigated. Warnings identify either a check with no
+subject or a condition the schema does not classify as an error. They are
+printed and counted. Vault-wide warnings preserve a successful exit code for
+work in progress. Chapter warnings fail the run because it judges readiness
+for acceptance.
 
 ### Contract: machine review
 
-- Judges: whether a source location actually supports the statement built on it, per pair, with the fixed verdict vocabulary: **fully supports** | **partially supports** | **overreaches** | **contradicts** | **not in the text**. Only *fully supports* passes.
-- Authority: together with validation lifts a document to `validated`, never higher.
-- Conditions: anti-anchoring is mandatory. The reviewer sees only the source location and the statement; the producing agent's reasoning stays hidden. A reviewer from a different model family than the producer decorrelates error modes and is recommended.
-- Record: `checked.machine-review: <date>`; verdicts below *fully supports* trigger rework and are noted in the journal when they reveal a systematic pattern.
-- Reference prompt skeleton:
+Machine review judges source support for each passage and statement pair.
+Its fixed verdicts are **fully supports**, **partially supports**,
+**overreaches**, **contradicts**, and **not in the text**. Only *fully supports*
+passes. Together with validation, this permits `validated` status and no higher.
+
+Anti-anchoring is mandatory. The reviewer sees the source location and bare
+statement, without the producing agent's reasoning. A reviewer from a different
+model family is recommended to reduce correlated errors.
+
+A document pair contains the anchored block and heading path. A publication
+pair contains the quotation. A data pair contains the computation and its
+result. Each is paired only with the statement being judged.
+
+Record `checked.machine-review: <date>`. Failed verdicts require rework.
+Record systematic failure patterns in the journal.
 
   > You are an adversarial reviewer. Below are a source passage and a statement
   > that claims to be supported by it. Your task is to refute the statement.
@@ -152,16 +235,27 @@ Three instances check the vault. The architecture fixes their contracts; the mec
   > PASSAGE: {source location, with its heading path}
   > STATEMENT: {statement}
 
-- Pair cutting: a pair consists of the anchored location (for documents the block plus its heading path, for publications the quotation, for data the computation and its result) and the bare statement. Nothing else enters the pair.
-- Displaced subject: where the passage supports the statement while its subject is not the matter the assertion is about, the reviewer adds one line naming the displacement. In **self-report** the source speaks about itself, about its own priority, reach or achievement; the verdict stays *fully supports* when the statement reports the claim as the source's own, and it is *overreaches* when the statement asserts the matter the claim is about. In **state report** the source shows the matter in one state at one time, such as a restored object, a dated inventory or a plan; the verdict stays *fully supports* when the statement names that state with its date, and it is *overreaches* when the statement asserts the property of the matter as such. These are the cases the coverage relation cannot separate on its own.
+The reviewer must add a line when the statement displaces the passage's subject.
+For a self-report, *fully supports* applies when the statement attributes the
+claim to the source. Asserting the claimed achievement itself is *overreaches*.
+For a state report, the statement must retain the state and date shown by the
+source. Extending that observation into an unqualified property of the object
+is *overreaches*. Examples include restored objects, dated inventories, and plans.
 
 ### Contract: verification
 
-- Judges: whether a grounding relation holds as evidence, by human expert judgment. The authority is the verification role named in [[knowledge/specification]].
-- Authority: alone lifts to `verified`. Machine checks prepare, never replace it.
-- Conditions: proceeds passage by passage on the prepared pairs; may sample where the machine review pass rate justifies it, with the sampling rule noted in the journal.
-- Record: `checked.verification: <date>` set by or on behalf of the verifying role.
+The human verification role named in [[knowledge/specification]] judges
+whether grounding holds as evidence. Only this role may establish `verified`.
+Machine checks prepare the material without replacing that judgment.
+
+Verification proceeds passage by passage over the prepared pairs. Sampling is
+permitted where the machine-review pass rate justifies it, with the sampling
+rule recorded in the journal. Record `checked.verification: <date>` by or on
+behalf of the verifying role.
 
 ### Status discipline
 
-`grounded` → (validation and machine review passed) → `validated` → (expert passed) → `verified`. `contested` is set by assertion building or review when sources conflict, and resolved only by verification. A document's status is the minimum of its anchors' states.
+`grounded` → (validation and machine review passed) → `validated` →
+(expert passed) → `verified`. Assertion building or review may set
+`contested` when sources conflict. Only verification resolves it.
+An artifact's status is the minimum of its anchors' states.

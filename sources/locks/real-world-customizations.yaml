@@ -1,7 +1,7 @@
 schema_version: 1
 lock_id: tei-real-world-customizations-sample
 source_id: tei-real-world-customizations
-as_of: "2026-09-04"
+as_of: "2026-09-05"
 retrieval_status: partial
 
 scope:
@@ -21,11 +21,20 @@ rights:
 records:
   - kind: official-customization-index
     manifest: sources/manifests/2026-09-04-tei-official-customizations.yaml
+  - kind: purposive-editorial-fragment-study
+    manifest: sources/manifests/2026-09-05-editorial-cases.yaml
+    protocol: experiments/editorial_cases/protocol.json
+    repository: https://github.com/telota/edition-humboldt-digital
+    commit: 7d174637d0b2cf56edaacac3b5e7e283e8ba8245
+    dataset_version: 11.0.1
+    boundary: Three fragments in one England travel diary, with four pinned source/context responses; not the edition corpus.
+    rights: CC-BY-SA-4.0
 counts:
   official_index_pages_retrieved: 2
   external_artifact_links_inventoried: 122
 gaps:
   - code: sampling-protocol-not-yet-approved
     status: blocks-bounded-complete
+    detail: The family-wide customization census protocol remains open; the separately authorized three-fragment Humboldt study has its own bounded protocol and does not complete this family.
   - code: legacy-lite-customization-url-returns-404
     status: open

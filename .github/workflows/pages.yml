@@ -27,17 +27,18 @@ jobs:
         run: |
           python tools/validate.py .
           python -m tools.corpus.validate_control_plane .
-          python -m pytest tests/test_build_corpus_overview.py tests/test_build_docs.py tests/test_pages_workflow.py -q
+          python -m pytest tests/test_build_corpus_overview.py tests/test_build_docs.py tests/test_build_home.py tests/test_build_knowledge.py tests/test_build_model_reference.py tests/test_pages_workflow.py -q
       - name: Generate the public static site
         run: |
           BUILD_DATE="$(date -u +%F)"
           REPOSITORY_BASE="${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/blob/${GITHUB_SHA}/"
-          python tools/build_docs.py --date "${BUILD_DATE}"
+          python tools/build_docs.py --date "${BUILD_DATE}" --repository-url "${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}" --repository-revision "${GITHUB_SHA}"
           python tools/build_corpus_overview.py --date "${BUILD_DATE}" --repository-base "${REPOSITORY_BASE}"
+          python tools/build_home.py --date "${BUILD_DATE}" --repository-base "${REPOSITORY_BASE}"
+          python tools/build_knowledge.py --date "${BUILD_DATE}" --repository-base "${REPOSITORY_BASE}"
+          python tools/build_model_reference.py --date "${BUILD_DATE}" --repository-base "${REPOSITORY_BASE}"
           mkdir -p _site
           cp -R docs/. _site/
-          cp docs/index.html _site/project.html
-          cp docs/corpus.html _site/index.html
           touch _site/.nojekyll
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3

@@ -1,4 +1,4 @@
-"""Generate the project page docs/index.html from the repository's own documents.
+"""Generate the About page docs/project.html from the repository's own documents.
 
 Data flow: README.md, docs/concept.md and the knowledge documents are read in a
 fixed order, their YAML frontmatter is stripped, their Markdown is converted to
@@ -30,14 +30,15 @@ from pathlib import Path
 from urllib.parse import quote, urlsplit, urlunsplit
 
 from sitegen.assets import read_asset
+from sitegen.chrome import render_footer, render_header
 
 
 PROJECT_TITLE = "TEI P6 Research"
 PROJECT_TAGLINE = (
-    "A grounded research environment for understanding TEI P5 and evaluating "
-    "next-generation TEI architectures."
+    "Project scope, research method, and repository contracts."
 )
 REPOSITORY_URL: str | None = None
+REPOSITORY_REVISION = "main"
 
 # (anchor id, section title, source file relative to the vault root)
 SECTIONS = [
@@ -79,7 +80,7 @@ def _repository_href(href: str, source: Path) -> str:
         return href
     resolved = posixpath.normpath((source.parent / parsed.path).as_posix())
     if REPOSITORY_URL:
-        repository_path = f"{REPOSITORY_URL}/blob/main/{quote(resolved, safe='/')}"
+        repository_path = f"{REPOSITORY_URL}/blob/{quote(REPOSITORY_REVISION, safe='')}/{quote(resolved, safe='/')}"
     else:
         repository_path = f"../{quote(resolved, safe='/')}"
     return html.escape(
@@ -291,11 +292,11 @@ def _render_chain() -> str:
     )
 
 
-CSS = "\n" + read_asset("project.css")
+CSS = "\n" + read_asset("workbench.css") + "\n" + read_asset("project.css")
 
 
 def build_page(root: Path, date: str) -> str:
-    nav = '<li><a href="corpus.html">Primary data</a></li>' + "".join(
+    nav = "".join(
         f'<li><a href="#{anchor}">{html.escape(title)}</a></li>'
         for anchor, title, _ in SECTIONS
     )
@@ -315,21 +316,24 @@ def build_page(root: Path, date: str) -> str:
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>{PROJECT_TITLE}</title>
+<title>About · {PROJECT_TITLE}</title>
 <meta name="description" content="{PROJECT_TAGLINE}">
 <style>{CSS}</style>
 </head>
 <body>
-<div class="wrap">
-<header class="page">
-<h1>{PROJECT_TITLE}</h1>
-<p class="tagline">{PROJECT_TAGLINE}</p>
-<p class="generated">This page is generated from {source_label} and reflects
-their state of {html.escape(date)}.</p>
+<a class="skip-link" href="#main">Skip to project documents</a>
+{render_header("about")}
+<main class="wb-main" id="main">
+<header class="project-intro">
+<h1>About</h1>
+<p class="wb-description">{PROJECT_TAGLINE} Generated from {source_label}.</p>
 </header>
-<nav class="toc" aria-label="Sections"><ul>{nav}</ul></nav>
+<div class="project-layout">
+<nav class="project-toc" aria-label="Project documents"><ul>{nav}</ul></nav>
+<div class="project-content">
 {_render_chain()}
-{sections}</div>
+{sections}</div></div></main>
+{render_footer(date)}
 </body>
 </html>
 """
@@ -348,26 +352,31 @@ def main() -> int:
         "--output",
         type=Path,
         default=None,
-        help="target file (default: <root>/docs/index.html)",
+        help="target file (default: <root>/docs/project.html)",
     )
     parser.add_argument(
         "--repository-url",
         default=None,
         help="optional canonical repository URL used for source links",
     )
+    parser.add_argument(
+        "--repository-revision", default="main",
+        help="Git revision for deployed source links (default: main)",
+    )
     args = parser.parse_args()
 
-    global REPOSITORY_URL
+    global REPOSITORY_URL, REPOSITORY_REVISION
     REPOSITORY_URL = args.repository_url.rstrip("/") if args.repository_url else None
+    REPOSITORY_REVISION = args.repository_revision
     root: Path = args.root.resolve()
-    output: Path = args.output or root / "docs" / "index.html"
+    output: Path = args.output or root / "docs" / "project.html"
     try:
         page = build_page(root, args.date)
     except FileNotFoundError as error:
         print(f"FEHLER: {error}", file=sys.stderr)
         return 1
     output.parent.mkdir(parents=True, exist_ok=True)
-    output.write_text(page, encoding="utf-8")
+    output.write_text(page, encoding="utf-8", newline="\n")
     print(f"OK: {output} ({len(page)} bytes, {len(SECTIONS)} sections)")
     return 0
 

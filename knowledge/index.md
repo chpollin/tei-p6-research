@@ -15,34 +15,25 @@ related: [specification, design, schema, operations, state, journal]
 
 # Index
 
-Navigation and terminology of the vault. Human readers start at [[HOME]]. Codex
-starts at `AGENTS.md`; Claude Code starts at `CLAUDE.md`. Both action layers
-route into this same declarative knowledge system.
-
-Together, the seven files in `knowledge/` are the Promptotyping document of the
-project: specification describes what is being attempted, design governs the
-public research workbench, schema defines the artifacts, operations defines the
-executable method, state records present reality, journal preserves decisions,
-and this index connects them. Research claims do not live here; they enter the
-Grounded Vault production layers.
+This index connects the project contracts and defines navigation terms.
+Human readers start at [[HOME]], Codex at `AGENTS.md`, and Claude Code at
+`CLAUDE.md`. The agent adapters route into the same knowledge contracts.
+Research claims enter the Grounded Vault layers.
 
 ## Reading paths
 
-- **Understand the project**: [[knowledge/specification]] for problem,
-  questions, scope, evaluation dimensions and success criteria, then
-  [[knowledge/state]] for where work stands.
-- **Produce or check content**: [[knowledge/schema]] for what a well-formed artifact is, [[knowledge/operations]] for the chain that produces it.
-- **Understand a past decision**: [[knowledge/journal]], append-only, newest last.
-- **Design or change the research workbench**: [[knowledge/design]] for the
-  information architecture, content placement, interaction, accessibility,
-  provenance, generation, and publication contract.
-- **Plan acquisition**: `sources/registry.yaml`, `corpus/COMPLETENESS.md`, and
-  `docs/multi-agent-acquisition-runbook.md` after the project contract.
-- **Understand the repository system**: `ARCHITECTURE.md` for planes, data
-  flows, authority, and trust boundaries.
-- **Develop or evaluate a P6 design**: `docs/p6/README.md` for the provisional
-  design dossier, then `workflows/evaluate-p6-proposal.md` for the grounded
-  comparison procedure.
+Read [[knowledge/specification]] for scope and evaluation, then
+[[knowledge/state]] for actual holdings and open work. Content production uses
+[[knowledge/schema]] and [[knowledge/operations]]. Interface work follows
+[[knowledge/design]]. The public workbench opens with the full technical
+proposal and connects it to Model, Materials, Knowledge, and About.
+
+| Task | Additional entry points |
+|---|---|
+| Plan acquisition | `sources/registry.yaml`, `corpus/COMPLETENESS.md`, and `docs/multi-agent-acquisition-runbook.md` |
+| Understand repository structure | `ARCHITECTURE.md` |
+| Develop or evaluate a P6 design | `docs/p6/README.md`, then `workflows/evaluate-p6-proposal.md` |
+| Understand a past decision | [[knowledge/journal]], with newer entries last |
 
 ## The seven knowledge documents
 
@@ -52,41 +43,40 @@ Grounded Vault production layers.
 | [[knowledge/specification]] | purpose, parameters, settled decisions | on decisions |
 | [[knowledge/design]] | research-workbench information architecture and interface contract | on product decisions |
 | [[knowledge/schema]] | layer model, document types, anchor mechanics, audit trail | rarely, by decision |
-| [[knowledge/operations]] | the chains: acquire, ingest, distill, assertions, chapters, query, check | rarely, by decision |
+| [[knowledge/operations]] | acquisition, ingestion, synthesis, query, and checks | rarely, by decision |
 | [[knowledge/state]] | source inventory, chapter register, everything volatile | constantly |
 | [[knowledge/journal]] | decision history | append-only |
 
-A document is split only when its sections develop divergent update rhythms or divergent readers.
+A document is split only when sections need different update rhythms or readers.
 
-The P6 architecture documents under `docs/p6/` are outside these seven control documents
-and outside the evidence chain. They organize provisional requirements,
-hypotheses, experiment contracts, and open research questions. They may not be
-used as evidence for P5 behavior or official TEI policy.
+The dossier under `docs/p6/` organizes provisional requirements, hypotheses,
+and experiment contracts. It is outside the evidence chain and cannot ground
+claims about P5 or official TEI policy.
 
 ## Terminology
 
-- **Source**: The original file exactly as it arrived, kept untouched so that every later form of its content can be checked against it.
-- **Markdown representation**: The uniform Markdown form of a source, produced once by converting the original and given block IDs so that later layers anchor into passages that never change afterwards.
-- **Distillate**: The set of single statements extracted from one source, each anchored to the passage of the representation it was taken from.
-- **Assertion**: A single source-supported statement synthesized from the distillates of a topic and grounded in at least one distillate statement.
-- **Chapter**: An output text in which every load-bearing sentence carries a footnote to an assertion and every own conclusion is marked as a posit.
-- **Source type**: a class of sources defined by its Markdown representation, its distillation operation and its grounding anchor.
-- **Grounding**: the anchor relation between an assertion and its source locations. A structural property an agent can produce; it says nothing about whether the statement is true.
-- **Evidence**: a grounding relation that has passed human expert verification. Relational and deliberately rare; a fresh vault contains grounding, evidence arises only through review.
-- **Provenance chain**: the unbroken anchor path from an output sentence through assertions and distillates to source locations. A break anywhere is a defect that validation detects.
-- **Audit trail**: the principle that status fields record outcomes of checks that actually ran, each with its date on the checked document.
-- **Posit**: a conclusion in the output without source support, explicitly marked with its rationale and open evidence question.
-- **Validation / machine review / verification**: the three checking instances, deterministic, adversarial-probabilistic, human. Note that this assignment inverts the IEEE convention; here establishing truth is a human act.
-- **Finding / interpretation / proposal**: respectively a source-supported
-  observation, an explicitly reasoned reading of findings, and a design option.
-  One may motivate the next but never silently becomes it.
-- **Official P6 process**: TEI Council discussions, decisions, experiments and
-  artifacts explicitly concerning P6. These are primary process records but
-  are not identical with this independent vault's proposals and are not assumed
-  to constitute a released standard.
-- **Observable-complete**: every object publicly observable through the
-  registered finite interface during the declared snapshot interval was
-  retrieved or recorded as a gap. It does not mean everything that ever
-  existed.
-- **Bounded-complete**: every result of a declared finite search, index, or
-  bibliography protocol received a recorded disposition.
+| Term | Meaning in this vault |
+|---|---|
+| Source | The original file, preserved exactly as received |
+| Markdown representation | The stable converted source with block IDs for later citations |
+| Distillate | Statements extracted from one source and individually anchored to it |
+| Assertion | One source-supported statement grounded in one or more distillate statements |
+| Chapter | Output whose factual premises cite assertions and whose own conclusions are marked as posits |
+| Source type | A source class defined by its representation, distillation procedure, and grounding anchor |
+| Grounding | The structural anchor relation connecting a claim to source locations, without establishing truth |
+| Evidence | A grounding relation that has passed human expert verification |
+| Provenance chain | The unbroken path from output through assertions and distillates to source locations |
+| Audit trail | Dated records of checks that actually ran on the artifact |
+| Posit | An authorial conclusion with an explicit rationale and open evidence question |
+| Validation | Deterministic checks of artifact structure, anchors, and declared rules |
+| Machine review | Adversarial review of whether source passages support their statements |
+| Verification | Review by the designated human expert |
+| Finding, interpretation, proposal | A source-supported observation, a reasoned account of findings, and a design option, respectively |
+| Official P6 process | TEI Council records and artifacts concerning P6, distinct from this project's proposals and not presumed to be a released standard |
+| Observable-complete | Every object observable through a registered finite interface during the snapshot interval was retrieved or recorded as a gap |
+| Bounded-complete | Every result of a declared finite search, index, or bibliography protocol received a disposition |
+
+Findings can motivate interpretations and proposals without establishing them.
+Completion labels describe the recorded boundary, never all material that has
+ever existed. The artifact rules remain in [[knowledge/schema]] and the
+acquisition vocabulary in `corpus/COMPLETENESS.md`.

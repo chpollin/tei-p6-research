@@ -9,14 +9,23 @@ requirements are in `knowledge/specification.md`, system boundaries in
 
 ## Intended result
 
-The programme produces four connected outcomes:
+The programme develops an abstract text model whose conceptual distinctions
+and practical consequences can be examined. It produces four connected outcomes:
 
 1. a version-bound formal and conceptual atlas of TEI P5;
 2. an auditable history of problems, decisions, implementations, and releases;
 3. formally specified P6 alternatives with bindings, examples, and migration
    behavior;
-4. a grounded recommendation that exposes evidence, counterevidence,
+4. a reasoned recommendation that exposes evidence, counterevidence,
    trade-offs, uncertainty, and adoption costs.
+
+The intended integrating text is an independent **Proposal for TEI P6**.
+`docs/p6/proposal-outline.md` maps its argument to the output chapters;
+`docs/p6/research-wave-1.md` defines the first parallel execution packages.
+
+P5 reconstruction and migration are essential baselines. Independent theoretical
+and editorial sources must also challenge whether the proposed text concepts
+are adequate for their declared scope.
 
 ## Work sequence
 
@@ -64,6 +73,8 @@ The programme can be divided into independently reviewable workstreams:
   maps, retrieval indexes, and context packs.
 - **P6 design:** principles, core-model alternatives, blueprints,
   serializations, constraints, examples, and governance.
+- **Text concepts and practice:** independently sourced definitions, explicit
+  identity assumptions, bounded case selection, and editorial task expectations.
 - **Conformance and migration:** validators, converters, roundtrip comparison,
   loss reports, compatibility matrices, and implementation studies.
 
