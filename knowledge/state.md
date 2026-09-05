@@ -36,7 +36,7 @@ Everything volatile in one place, so the rule documents stay stable. Update rows
 | Official P6 process | partial | public `TEIC/timeForP6` history acquired; relevant Council records inventoried; reported `TEIC/p6-sandbox` remains non-public or absent |
 | Independent P6 design dossier | conceptual scaffold | design contracts exist under `docs/p6/`; no executable metamodel, binding, converter, fixture corpus or conformance result yet |
 | Grounded knowledge | pilot begun | one official-P6-process source has an immutable representation and one-source distillate; no assertions or chapters exist |
-| Research frontend | deployment pending | `docs/corpus.html` is a generated, read-only inventory governed by `knowledge/design.md`; the public repository and GitHub Pages workflow are ready for the first deployment |
+| Research frontend | published | `docs/corpus.html` is a generated, read-only inventory governed by `knowledge/design.md` and published at `https://chpollin.github.io/tei-p6-research/` through GitHub Pages |
 
 ## Program phases
 
