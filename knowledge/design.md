@@ -1,7 +1,7 @@
 ---
 title: Research Workbench Design
 project:
-  name: "TEI P6 Research Vault"
+  name: "TEI P6 Research"
   repository: "tei-p6-research"
 method:
   name: Promptotyping
@@ -29,11 +29,11 @@ changes of rationale are appended to [[knowledge/journal]].
 
 ## Product role
 
-The workbench is the public working surface over the TEI P6 Research Vault. Its
-first task is to let a reader inspect which primary materials have actually
-been acquired, how they are organized, and where bounded acquisition gaps
-remain. Later surfaces may support evidence tracing, comparison, proposal
-evaluation, and migration experiments when their canonical inputs are ready.
+The workbench is the public working surface for TEI P6 Research. Its first task
+is to let a reader inspect which primary materials have actually been acquired,
+how they are organized, and where bounded acquisition gaps remain. Later
+surfaces may support evidence tracing, comparison, proposal evaluation, and
+migration experiments when their canonical inputs are ready.
 
 The workbench is:
 
@@ -128,6 +128,33 @@ Sorting and filtering change only the view. They do not mutate source records
 or create a new research artifact. The page must remain useful as generated
 static HTML without a server-side application or a JavaScript framework.
 
+## Implementation architecture
+
+The workbench remains a static, framework-free publication. Its maintained
+source architecture separates four concerns:
+
+1. **Data and view model:** input readers validate pinned repository records;
+   separate view-model builders add presentation-ready labels and descriptions.
+2. **Rendering:** page-specific render functions consume only those view
+   models; they do not fetch or reinterpret source records. Shared page chrome
+   is extracted only where the working surfaces have the same interaction and
+   layout contract.
+3. **CSS:** layout, typography, responsive behavior, and state styling live in
+   dedicated source assets rather than Python string fragments.
+4. **JavaScript:** search, filtering, sorting, disclosure, and accessibility
+   behavior live in dedicated source modules and do not contain research data.
+
+The build embeds the required CSS and JavaScript deterministically into complete
+HTML pages. Those generated HTML pages are the only published artifacts;
+source modules remain implementation inputs. Materials and About may retain
+different page shells while they serve different tasks. Introducing a client
+framework, package runtime, server-side state, or manually maintained page
+requires a new recorded decision rather than incremental drift.
+
+Tests should target page-model contracts, semantic HTML, user-visible behavior,
+and byte-reproducible builds instead of coupling primarily to long HTML string
+fragments.
+
 ## Header, About, and footer
 
 The initial header contains the project identity and two destinations:
@@ -202,6 +229,7 @@ A workbench change is ready when:
 - search, filters, sorting, disclosure, and keyboard use work together;
 - explanatory content is in About and technical controls use progressive
   disclosure;
+- data/view-model, rendering, CSS, and JavaScript sources remain separate;
 - the generated page reproduces from pinned inputs and passes repository checks;
 - the interface preserves the independent, unofficial, and bounded-completeness
   distinctions.

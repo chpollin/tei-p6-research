@@ -1,13 +1,43 @@
 # Repository architecture
 
-This document explains how the TEI P6 Research Vault fits together. It is a
+This document explains how TEI P6 Research fits together. It is a
 map of the system, not a second schema. The normative repository contracts are
 defined in `knowledge/schema.md` and `knowledge/operations.md`; current facts
 are recorded in `knowledge/state.md`.
 
+## Entry points and document ownership
+
+The repository has several entry points because they serve different readers.
+They should link to one another, but they must not become parallel versions of
+the project contract.
+
+| Entry point | Single responsibility |
+|---|---|
+| `README.md` | concise public landing page and route to the live workbench |
+| `HOME.md` | human navigation inside the Obsidian-compatible vault |
+| `AGENTS.md` / `CLAUDE.md` | thin tool-specific action layers that route into `knowledge/` |
+| `SETUP.md` | local installation, generation, validation, and publication commands |
+| `CONTRIBUTING.md` | contribution paths and review expectations |
+| `PLAN.md` | stable phase sequence and exit gates, never current progress |
+| `ARCHITECTURE.md` | system planes, data flow, authority, and document ownership |
+| `EXPOSE.md` | one-page narrative description for scholarly communication |
+| `knowledge/` | canonical project contract, rules, current state, and decisions |
+
+Volatile facts appear only in `knowledge/state.md` or run manifests. A rule is
+defined once in its canonical knowledge document; all other entry points
+summarize it only when necessary and link to the authority. Generated HTML
+pages in `docs/` are products of their builders, not additional documentation
+sources.
+
+Git history records what changed. `knowledge/state.md` records what is true
+now, and `knowledge/journal.md` records only durable decisions and their
+rationale. A release-oriented changelog will be introduced only when the
+project starts publishing named versions.
+
 ## System at a glance
 
-The repository consists of four connected planes:
+The repository consists of four connected internal planes and one read-only
+publication surface:
 
 ```text
                     PROJECT CONTROL
@@ -34,6 +64,20 @@ Acquisition gathers bounded source collections. The evidence plane turns
 admitted sources into traceable research knowledge. The design plane develops
 and tests P6 hypotheses without presenting them as findings. The context plane
 helps humans and agents retrieve only the material needed for a task.
+
+## Publication surface
+
+The static research workbench is a generated view across project controls and
+repository-safe acquisition metadata. Its materials page is derived from the
+registry, locks, and selected manifests; its project page is derived from the
+public overview and knowledge documents. GitHub Pages publishes those views for
+one exact repository revision.
+
+Publication does not add an evidence layer or raise any artifact's status. The
+site excludes ignored raw source bodies, links technical records as audit
+affordances, and exposes only claims and holdings that its pinned inputs can
+support. Interface rules live in `knowledge/design.md`; current deployment
+state lives in `knowledge/state.md`.
 
 ## Project control
 

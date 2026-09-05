@@ -1,7 +1,7 @@
 ---
 title: Journal
 project:
-  name: "TEI P6 Research Vault"
+  name: "TEI P6 Research"
   repository: "tei-p6-research"
 method:
   name: Promptotyping
@@ -96,8 +96,8 @@ internal IDs, control vocabulary, rights metadata, and manifest names are kept
 under technical details. Full-text search, acquisition-status filtering,
 material-type filtering, and column sorting replace explanatory prose and
 aggregate number displays. Methodological qualifications remain in the project
-documentation or concise status help, while open gaps appear as short German
-work items linked to their complete control records.
+documentation or concise status help, while open gaps appear as short work
+items linked to their complete control records.
 
 ## 2026-09-05 — Interface design split into a seventh control document
 
@@ -134,3 +134,32 @@ the project visibly independent and broad enough to contain acquisition,
 grounded knowledge, P6 design evaluation, and the research workbench without
 presenting itself as the official TEI P6 repository. GitHub Pages publishes the
 generated static workbench from this repository through the pinned workflow.
+
+## 2026-09-05 — Public name and documentation history policy settled
+
+The public project name is **TEI P6 Research**. “Grounded Vault” describes the
+evidence system used by the project, not the public project name. Repository
+entry points retain separate responsibilities and route into the canonical
+`knowledge/` contract instead of restating it as parallel specifications.
+
+Git history records file-level change, `knowledge/state.md` records present
+reality, and this journal records only durable decisions and their rationale.
+A release-oriented changelog is intentionally deferred until the project
+publishes named versions; maintaining one before then would duplicate Git and
+encourage status facts to drift outside `knowledge/state.md`.
+
+## 2026-09-05 — Static workbench source architecture modularized
+
+The public workbench remains framework-free and produces deterministic static
+HTML for GitHub Pages. Its maintained implementation is divided into data and
+view-model construction, rendering, CSS, and JavaScript. Page-specific
+renderers preserve the distinct Materials and About tasks; infrastructure is
+shared only where their contracts coincide. CSS and JavaScript source modules
+are embedded during generation, so complete generated HTML remains the only
+published artifact.
+
+This separation allows the workbench to grow without turning its builder into
+one monolithic mixture of research data interpretation, markup, styling, and
+interaction code. It changes implementation organization only: the workbench
+remains a projection, creates no evidence layer, and publishes no raw source
+bodies.

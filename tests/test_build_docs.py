@@ -7,6 +7,7 @@ REPO = Path(__file__).parents[1]
 sys.path.insert(0, str(REPO / "tools"))
 
 from build_docs import PROJECT_TITLE, SECTIONS, _inline, build_page  # noqa: E402
+from sitegen.assets import read_asset  # noqa: E402
 
 
 def test_relative_links_resolve_from_their_source_document() -> None:
@@ -39,3 +40,15 @@ def test_project_page_contains_promptotyping_project_documents() -> None:
     assert 'id="state"' in page
     assert 'id="journal"' in page
     assert '<a href="corpus.html">Primary data</a>' in page
+
+
+def test_project_page_inlines_its_source_stylesheet() -> None:
+    page = build_page(REPO, "2026-09-05")
+
+    assert PROJECT_TITLE == "TEI P6 Research"
+    assert f'<style>\n{read_asset("project.css")}</style>' in page
+    assert '<link rel="stylesheet"' not in page
+
+
+def test_project_page_build_is_deterministic() -> None:
+    assert build_page(REPO, "2026-09-05") == build_page(REPO, "2026-09-05")

@@ -1,7 +1,8 @@
 # Project setup
 
-This repository is already instantiated as the TEI P6 Research Vault. This
-guide prepares a local environment; it is not a template-substitution workflow.
+This repository contains TEI P6 Research and its Grounded Vault evidence
+system. This guide prepares a local environment; it is not a
+template-substitution workflow.
 
 ## 1. Read the project contract
 
@@ -29,7 +30,8 @@ Requirements:
 - Python 3.11 or newer
 - PyYAML
 - pytest for the test suite
-- GitHub CLI for repository creation and authenticated API acquisition
+- GitHub CLI when authenticated GitHub acquisition or repository administration
+  is required
 
 With `uv`:
 
@@ -50,9 +52,9 @@ python tools/validate.py .
 python -m pytest tests
 ```
 
-`W-EMPTY` and `W-NO-OUTPUT` describe the present empty production chain. They
-are expected until the first complete vertical pilot, but remain findings to
-report rather than warnings to hide.
+Warnings such as `W-EMPTY` and `W-NO-OUTPUT` describe missing production
+artifacts. Investigate and report them rather than hiding them; their current
+applicability belongs in `knowledge/state.md`, not this setup guide.
 
 ## 3. Open as an Obsidian vault
 
@@ -63,21 +65,22 @@ community plugins remain uncommitted.
 Start at `HOME.md`. The repository continues to work as plain Markdown without
 Obsidian.
 
-## 4. Configure GitHub
+## 4. Use GitHub and authenticated acquisition
 
 The canonical public remote is
-`https://github.com/chpollin/tei-p6-research`. Authenticate interactively:
+`https://github.com/chpollin/tei-p6-research`. A normal clone already configures
+it as `origin`; verify the checkout with:
 
 ```powershell
-gh auth login
+git remote get-url origin
 gh auth status
 ```
 
-If the checkout does not yet have `origin`, configure it and push:
+Run `gh auth login` only when authentication is absent and the task requires
+GitHub API access or repository administration:
 
 ```powershell
-git remote add origin https://github.com/chpollin/tei-p6-research.git
-git push -u origin main
+gh auth login
 ```
 
 Full GitHub corpus acquisition also requires authenticated read access. Tokens
@@ -104,42 +107,23 @@ approved for versioning, the integrator adds a narrow per-file exception to
 is admitted explicitly according to `sources/README.md`,
 `corpus/COMPLETENESS.md`, and `knowledge/operations.md`.
 
-## 6. Build collectors before collecting production data
+## 6. Acquire or admit material
 
-Follow `docs/multi-agent-acquisition-runbook.md`. The first work wave builds and
-tests three independent collector families:
+Follow `docs/multi-agent-acquisition-runbook.md` for collector work and the
+Acquire and Ingest sections of `knowledge/operations.md` for source admission.
+Those documents own the fetch, identity, rights, reconciliation, and provenance
+requirements; `knowledge/state.md` records which families are actually ready.
 
-1. TEI Git, release, Vault, and baseline materialization;
-2. GitHub issues, PRs, comments, reviews, timelines, and relations;
-3. governance, history, Zotero, JTEI, and bounded literature discovery.
+Production collection starts only after the relevant offline fixtures and
+integration checks pass. Source registration or a local cache alone never
+establishes acquisition.
 
-Each collector needs:
+## 7. Run a vertical research cycle
 
-- content-addressed immutable raw storage;
-- request and cursor journaling;
-- resume and bounded retry;
-- exact source/version/API identity;
-- offline replay fixtures;
-- normalization schemas;
-- count and pagination reconciliation;
-- explicit rights and gap states.
-
-Production crawls run only after the collector's fixture tests and integration
-gate pass.
-
-## 7. Run the first vertical production cycle
-
-Before bulk distillation, carry one rights-cleared source through every layer:
-
-1. **Acquire:** register and retrieve the exact source version.
-2. **Admit:** place the allowed original in `00_sources/` or its citation record
-   in `references/`.
-3. **Represent:** create the immutable anchored file in `10_markdown/`.
-4. **Distill:** create source-faithful atomic statements in `20_distillates/`.
-5. **Assert:** synthesize one cross-source-ready claim in `30_assertions/` and
-   register it in the relevant MOC.
-6. **Write:** create one grounded paragraph in `40_output/`.
-7. **Check:** run validation and adversarial source-support review.
+Before topic-scale distillation, take one rights-cleared source through the
+canonical chain. Use `knowledge/operations.md` for the complete procedure and
+`workflows/` for TEI-specific analysis routes; do not create a shortcut from
+the acquisition corpus to a higher evidence layer.
 
 Run after representation and distillate changes:
 
@@ -153,10 +137,6 @@ For one chapter acceptance:
 ```powershell
 python tools/validate.py . --chapter 40_output/CHAPTER-SLUG.md
 ```
-
-The first three planned pilots are a normative P5 architecture claim, a
-Council-to-release decision trail, and an official-P6-process observation kept
-separate from an independent proposal.
 
 ## 8. Regenerate documentation
 
@@ -178,8 +158,11 @@ full project documentation at `project.html`. Internal control and normalized
 data links resolve to the exact GitHub commit used for the deployment; ignored
 raw source bodies are never included in the Pages artifact.
 
-Before the first publication, configure the GitHub remote, settle repository
-visibility, and enable GitHub Pages with GitHub Actions as its source.
+The canonical deployment is live at
+`https://chpollin.github.io/tei-p6-research/`. Changes reach it only after they
+are reviewed, committed, and pushed to `main`; the workflow then rebuilds from
+the pushed revision. A fork must enable GitHub Pages with GitHub Actions as its
+source before its first deployment.
 
 ## 10. Completion gate
 
@@ -193,4 +176,6 @@ python -m pytest tests
 
 Also verify that generated files reproduce, no ignored raw data or secret is
 staged, source rights and gaps are explicit, and `knowledge/state.md` describes
-the actual repository rather than intended future work.
+the actual repository rather than intended future work. Run
+`python -m tools.corpus.validate_control_plane .` whenever registry, lock,
+manifest, or normalized-corpus controls change.

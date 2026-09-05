@@ -1,7 +1,7 @@
 ---
 title: Specification
 project:
-  name: "TEI P6 Research Vault"
+  name: "TEI P6 Research"
   repository: "tei-p6-research"
 method:
   name: Promptotyping
@@ -18,7 +18,7 @@ related: [index, design, schema, operations, state, journal]
 
 # Specification
 
-This is the Promptotyping project contract for the TEI P6 Research Vault. It
+This is the Promptotyping project contract for TEI P6 Research. It
 defines the problem, research questions, boundaries, intended artifacts,
 evaluation dimensions, and success criteria of this instance. The invariant
 Grounded Vault mechanics live in [[knowledge/schema]] and
@@ -363,8 +363,9 @@ described as human verification.
 
 ## Settled decisions
 
-- 2026-09-05: The Grounded Vault is maintained as the independent TEI P6
-  Research Vault in the public `chpollin/tei-p6-research` repository.
+- 2026-09-05: The project is maintained as the independent TEI P6 Research in
+  the public `chpollin/tei-p6-research` repository, using a Grounded Vault for
+  its evidence system.
 - 2026-09-04: The controlled topic set contains twelve P5-analysis and P6-design
   maps; all three source types are active.
 - 2026-09-05: Project knowledge, the public interface, and the scholarly

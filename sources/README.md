@@ -27,6 +27,9 @@ source_id: <registry-id>
 started_at: <UTC timestamp>
 finished_at: <UTC timestamp or null>
 status: planned | partial | observable-complete | bounded-complete | failed
+scope:
+  boundary: <observed-interface-or-sample>
+  status_applies_to: <request-or-object-boundary>
 adapter:
   name: <name>
   version: <version-or-code-sha>
@@ -39,6 +42,9 @@ rights_exceptions: []
 
 `source_id` resolves the lock through the dated registry. A manifest may repeat
 `lock_file` for convenience, but the registry mapping remains authoritative.
+The manifest status applies only to its declared request and `scope`. Completing
+a narrower interface or sample does not change the completion status of the
+whole source family.
 
 Counts belong only in manifests produced from observed data. Registry and lock
 files do not contain guessed issue, release, meeting, file, or literature counts.

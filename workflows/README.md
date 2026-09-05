@@ -10,4 +10,5 @@ Shared completion checks:
 2. Preserve release, repository, date and source-state qualifiers.
 3. Follow every load-bearing claim to the canonical layer below it.
 4. Record unsupported questions in the relevant topic map when editing the vault is in scope.
-5. Run the checks required by `knowledge/operations.md` and `AGENTS.md`.
+5. Run the checks required by `knowledge/operations.md` and the applicable
+   repository adapter (`AGENTS.md` or `CLAUDE.md`).

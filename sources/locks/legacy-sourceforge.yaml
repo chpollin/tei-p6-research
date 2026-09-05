@@ -1,7 +1,7 @@
 schema_version: 1
 lock_id: tei-legacy-sourceforge-observable-corpus
 source_id: tei-legacy-sourceforge
-as_of: "2026-09-04"
+as_of: "2026-09-05"
 retrieval_status: partial
 
 scope:
@@ -24,17 +24,22 @@ counts:
   bugs_enumerated: 774
   feature_requests_enumerated: 567
   support_requests_enumerated: 8
-  tickets_retrieved: 1226
-  discussion_posts_retrieved: 7925
+  tickets_retrieved: 1349
+  discussion_posts_retrieved: 8880
+coverage:
+  tracker_api:
+    retrieval_status: observable-complete
+    as_of: "2026-09-05"
+    manifest: sources/manifests/2026-09-05-tei-legacy-sourceforge-r3.yaml
+    boundary: Every ticket exposed by the bugs, feature-requests, and support-requests REST interfaces, together with its observable discussion pages.
+  release_files_and_version_control:
+    retrieval_status: partial
+    boundary: SourceForge release-file and legacy version-control interfaces registered for this family.
 gaps:
-  - code: sourceforge-rate-limit
-    failed_ticket_fetches: 123
-    status: blocks-observable-complete
   - code: support-files-and-version-control-interfaces-not-yet-reconciled
-    status: open
-  - code: first-partial-run-requires-refetch-for-per-ticket-raw-hash-links
-    status: open
+    status: blocks-family-observable-complete
 
 manifests:
   - sources/manifests/2026-09-04-tei-legacy-sourceforge.yaml
   - sources/manifests/2026-09-04-tei-legacy-sourceforge-r2.yaml
+  - sources/manifests/2026-09-05-tei-legacy-sourceforge-r3.yaml

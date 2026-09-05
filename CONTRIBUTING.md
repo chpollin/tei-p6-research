@@ -18,7 +18,7 @@ artifact may not yet exist locally.
 | source representation or research finding | numbered evidence chain | `knowledge/schema.md` and `knowledge/operations.md` |
 | P6 hypothesis or design experiment | `docs/p6/` and future prototype paths | `docs/p6/README.md` |
 | validator, collector, or build change | `tools/`, `tests/` | repository tests and generated-file rules |
-| navigation or project documentation | root, `knowledge/`, `contexts/`, `workflows/` | authority and state rules in `AGENTS.md` |
+| navigation or project documentation | root, `knowledge/`, `contexts/`, `workflows/` | `ARCHITECTURE.md` and the relevant canonical knowledge document |
 
 Do not place a contribution in a higher-evidence layer because it appears
 plausible. A description of P5 begins from a source; a recommendation for P6

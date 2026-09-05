@@ -178,7 +178,7 @@ def snapshot(
             for line in resume_from.read_text(encoding="utf-8").splitlines()
             if line
         ]
-    resumed_count = len(records)
+    loaded_from_prior_count = len(records)
     records_by_key = {
         (str(row["tracker"]), int(row["ticket_num"])): row for row in records
     }
@@ -199,6 +199,13 @@ def snapshot(
             enumerated[tracker] = []
             gaps.append({"code": "tracker-enumeration-failed", "tracker": tracker, "detail": str(error)})
 
+    enumerated_keys = {
+        (tracker, number)
+        for tracker, numbers in enumerated.items()
+        for number in numbers
+    }
+    reused_without_fetch_count = len(enumerated_keys & existing)
+    fetched_or_refetched_count = 0
     with ThreadPoolExecutor(max_workers=workers) as executor:
         futures = {
             executor.submit(
@@ -223,6 +230,7 @@ def snapshot(
                 )
                 continue
             records_by_key[(tracker, number)] = fetched["record"]
+            fetched_or_refetched_count += 1
             response_count += 1 + len(fetched["thread_responses"])
 
     records = list(records_by_key.values())
@@ -239,6 +247,14 @@ def snapshot(
         "started_at": started_at,
         "finished_at": utc_now(),
         "status": status,
+        "scope": {
+            "boundary": "tracker-rest-interfaces",
+            "status_applies_to": "requests.trackers",
+            "completion_rule": (
+                "Every ticket exposed by the listed tracker REST interfaces, "
+                "together with its observable discussion pages."
+            ),
+        },
         "adapter": {"name": "tools.corpus.sourceforge_snapshot", "version": 1},
         "requests": {
             "project": canonical_url(project_url),
@@ -264,7 +280,12 @@ def snapshot(
         "counts": {
             "tickets_by_tracker": {name: len(numbers) for name, numbers in enumerated.items()},
             "tickets": len(records),
-            "tickets_reused_from_prior_run": resumed_count,
+            "tickets_loaded_from_prior_run": loaded_from_prior_count,
+            "tickets_reused_without_fetch": reused_without_fetch_count,
+            "tickets_fetched_or_refetched": fetched_or_refetched_count,
+            # Compatibility alias for manifests produced before the explicit
+            # loaded/reused/fetched split. It now carries its literal meaning.
+            "tickets_reused_from_prior_run": reused_without_fetch_count,
             "comments": sum(int(record["comment_count"]) for record in records),
             "http_responses": response_count,
             "gaps": len(gaps),

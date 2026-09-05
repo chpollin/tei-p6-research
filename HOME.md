@@ -1,6 +1,6 @@
-# TEI P6 Research Vault
+# TEI P6 Research
 
-This vault supports a provenance-complete analysis of TEI P5 and the
+The research vault supports a provenance-complete analysis of TEI P5 and the
 evidence-grounded design of a possible next TEI generation. Its purpose,
 scope, and evidence obligations are defined in
 [[knowledge/specification]]. Every load-bearing statement in the final output
@@ -15,6 +15,7 @@ verified quotation, or reproducible computation.
 
 ## Understand the project
 
+- [Explore the live materials workbench](https://chpollin.github.io/tei-p6-research/)
 - [Project overview](README.md)
 - [One-page exposé](EXPOSE.md)
 - [Repository architecture](ARCHITECTURE.md)
@@ -24,6 +25,11 @@ verified quotation, or reproducible computation.
 - [[knowledge/journal|Decision history]]
 - [P6 design dossier](docs/p6/README.md)
 - [Contribution contract](CONTRIBUTING.md)
+
+These entry points have distinct jobs. `README.md` is the public landing page,
+this file is the vault map, `ARCHITECTURE.md` explains the system, and
+`SETUP.md` contains executable local instructions. The authoritative research
+contract and current status remain in `knowledge/`.
 
 ## Follow the evidence
 

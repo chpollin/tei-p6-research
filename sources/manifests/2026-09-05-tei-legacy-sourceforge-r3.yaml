@@ -1,0 +1,54 @@
+schema_version: 1
+run_id: 2026-09-05-tei-legacy-sourceforge-r3
+source_id: tei-legacy-sourceforge
+started_at: '2026-09-05T07:49:20Z'
+finished_at: '2026-09-05T09:13:36Z'
+status: observable-complete
+scope:
+  boundary: tracker-rest-interfaces
+  status_applies_to: requests.trackers
+  completion_rule: Every ticket exposed by the listed tracker REST interfaces,
+    together with its observable discussion pages.
+  excluded_family_boundaries:
+  - release-files
+  - legacy-version-control
+adapter:
+  name: tools.corpus.sourceforge_snapshot
+  version: 1
+requests:
+  project: https://sourceforge.net/rest/p/tei
+  trackers:
+    bugs: https://sourceforge.net/rest/p/tei/bugs
+    feature-requests: https://sourceforge.net/rest/p/tei/feature-requests
+    support-requests: https://sourceforge.net/rest/p/tei/support-requests
+  workers: 1
+  resume_from: corpus/normalized/sourceforge/tei-legacy-trackers-r2.jsonl
+  delay_seconds: 0.75
+  refresh_missing_raw_links: true
+project:
+  shortname: tei
+  name: Text Encoding Initiative
+  status: active
+  moved_to_url: ''
+objects:
+- kind: sourceforge-ticket-metadata
+  path: corpus/normalized/sourceforge/tei-legacy-trackers-r3.jsonl
+  sha256: f5024d3d04f23bf5be920476fc84ceab7b0fc044c55a6f8333601d2c5f32258c
+counts:
+  tickets_by_tracker:
+    bugs: 774
+    feature-requests: 567
+    support-requests: 8
+  tickets: 1349
+  tickets_loaded_from_prior_run: 1226
+  tickets_reused_without_fetch: 0
+  tickets_fetched_or_refetched: 1349
+  tickets_reused_from_prior_run: 0
+  comments: 8880
+  http_responses: 2714
+  gaps: 0
+gaps: []
+rights_exceptions:
+- Ticket and discussion prose remain in local content-addressed raw storage.
+- Normalized output contains metadata, summaries, links, and relationship identifiers
+  only.

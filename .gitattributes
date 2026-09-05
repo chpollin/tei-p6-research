@@ -1,2 +1,10 @@
+# Normalize repository text to LF on every platform. Git still detects binary
+# files automatically and leaves their byte content unchanged.
+* text=auto eol=lf
+
+# Admitted originals are byte-faithful source artifacts. Do not normalize them.
+00_sources/** -text
+00_sources/README.md text eol=lf
+
 # Preserve source-faithful whitespace in immutable ingested representations.
 10_markdown/documents/tei-time-for-p6-readme-2026-07-16.md -whitespace

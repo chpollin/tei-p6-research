@@ -26,6 +26,7 @@ jobs:
       - name: Validate research data and frontend
         run: |
           python tools/validate.py .
+          python -m tools.corpus.validate_control_plane .
           python -m pytest tests/test_build_corpus_overview.py tests/test_build_docs.py tests/test_pages_workflow.py -q
       - name: Generate the public static site
         run: |

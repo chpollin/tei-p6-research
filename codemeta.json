@@ -1,8 +1,11 @@
 {
   "@context": "https://w3id.org/codemeta/3.0",
   "@type": "SoftwareSourceCode",
-  "name": "TEI P6 Research Vault",
+  "name": "TEI P6 Research",
   "description": "A provenance-complete analysis of TEI P5 and grounded research environment for designing a possible next generation of the Text Encoding Initiative.",
+  "codeRepository": "https://github.com/chpollin/tei-p6-research",
+  "issueTracker": "https://github.com/chpollin/tei-p6-research/issues",
+  "url": "https://chpollin.github.io/tei-p6-research/",
   "isBasedOn": "https://github.com/DigitalHumanitiesCraft/grounded-vault",
   "author": [
     {
@@ -29,5 +32,5 @@
     "provenance"
   ],
   "license": "https://spdx.org/licenses/CC-BY-4.0",
-  "dateModified": "2026-09-04"
+  "dateModified": "2026-09-05"
 }

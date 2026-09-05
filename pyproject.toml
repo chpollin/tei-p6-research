@@ -1,5 +1,5 @@
 [project]
-name = "tei-p6-research-vault"
+name = "tei-p6-research"
 version = "0"
 requires-python = ">=3.11"
 dependencies = ["pyyaml"]

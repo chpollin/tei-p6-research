@@ -1,4 +1,4 @@
-# Exposé: TEI P6 Research Vault
+# Exposé: TEI P6 Research
 
 The TEI Guidelines are not only an XML vocabulary. TEI P5 combines a conceptual
 model, modular declarations, ODD customization, generated schemas, prose
@@ -9,8 +9,8 @@ therefore begin by reconstructing how P5 actually works, why it developed in
 that way, where its complexity creates demonstrated problems, and which of its
 capabilities remain essential.
 
-The TEI P6 Research Vault is an independent, provenance-complete research
-environment for that task. Its guiding question is: **Which architecture for a
+TEI P6 Research is an independent, provenance-complete research environment for
+that task. Its guiding question is: **Which architecture for a
 next TEI generation is best supported by the formal properties, development
 history, and real-world use of P5?** The project does not assume that a complete
 rewrite is necessary. Repair within P5, compatibility-preserving evolution,

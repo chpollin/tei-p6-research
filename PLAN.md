@@ -1,7 +1,7 @@
 # Research and implementation plan
 
 This document defines the stable sequence of work for the TEI P6 Research
-Vault. It does not repeat current progress, object counts, or blockers; those
+project. It does not repeat current progress, object counts, or blockers; those
 belong in `knowledge/state.md` and acquisition manifests. Detailed project
 requirements are in `knowledge/specification.md`, system boundaries in
 `ARCHITECTURE.md`, and collector procedures in

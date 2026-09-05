@@ -1,6 +1,6 @@
 schema_version: 1
 registry_id: tei-p5-corpus
-as_of: "2026-09-04"
+as_of: "2026-09-05"
 status: active-acquisition
 network_ingestion_performed: true
 
@@ -249,6 +249,7 @@ sources:
       project: https://sourceforge.net/projects/tei/
       bugs: https://sourceforge.net/p/tei/bugs/
       feature_requests: https://sourceforge.net/p/tei/feature-requests/
+      support_requests: https://sourceforge.net/p/tei/support-requests/
       files: https://sourceforge.net/projects/tei/files/
     lock: sources/locks/legacy-sourceforge.yaml
     vault_source_types: [document, data]
@@ -263,6 +264,7 @@ sources:
     update_policy: historical-snapshot-with-reconciliation
     completion_target: observable-complete
     retrieval_status: partial
+    retrieval_note: The 2026-09-05 tracker API snapshot is observable-complete; release-file and legacy version-control interfaces remain unreconciled.
 
   - source_id: teic-stylesheets
     title: TEI XSL Stylesheets source and development records

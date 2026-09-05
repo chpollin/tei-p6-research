@@ -1,7 +1,7 @@
 ---
 title: Operations
 project:
-  name: "TEI P6 Research Vault"
+  name: "TEI P6 Research"
   repository: "tei-p6-research"
 method:
   name: Promptotyping

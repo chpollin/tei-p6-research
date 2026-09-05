@@ -1,7 +1,7 @@
 ---
 title: State
 project:
-  name: "TEI P6 Research Vault"
+  name: "TEI P6 Research"
   repository: "tei-p6-research"
 method:
   name: Promptotyping
@@ -31,7 +31,7 @@ Everything volatile in one place, so the rule documents stay stable. Update rows
 | GitHub work-item corpus | blocked | collector and tests are ready; a read-only authenticated GitHub session is required for exhaustive issues, PRs, comments, reviews, and timelines |
 | Governance corpus | partial | 206 Council pages and 225 Board targets observed; inaccessible historical links and external working documents remain explicit gaps |
 | Historical TEI Archive | partial | 394 index/page responses acquired; 363 linked non-HTML artifacts are in reconciliation |
-| Legacy SourceForge | partial | 1,349 bug, feature, and support ticket IDs enumerated; 1,226 tickets and 7,925 discussion posts acquired; 123 ticket fetches await a rate-limit-safe continuation |
+| Legacy SourceForge | partial | tracker API boundary observable-complete on 2026-09-05: all 1,349 enumerated bug, feature, and support tickets plus 8,880 discussion posts acquired; release-file and legacy version-control interfaces remain unreconciled |
 | Literature corpus | planned | bounded seeds registered; no completed harvest or disposition report |
 | Official P6 process | partial | public `TEIC/timeForP6` history acquired; relevant Council records inventoried; reported `TEIC/p6-sandbox` remains non-public or absent |
 | Independent P6 design dossier | conceptual scaffold | design contracts exist under `docs/p6/`; no executable metamodel, binding, converter, fixture corpus or conformance result yet |
@@ -83,10 +83,10 @@ One row per chapter of the output. Writing status mirrors the chapter's frontmat
 
 <!-- Short, current list; done items are deleted, decisions go to the journal. -->
 
-- Confirm GitHub owner and repository visibility, then configure the remote.
-- Authenticate GitHub read access before the observable-complete issue and PR bootstrap.
-- Complete the authenticated GitHub work-item bootstrap after `gh auth login`.
-- Reconcile the remaining Archive, SourceForge, external Council, and community-interface gaps.
+- Authenticate GitHub read access and complete the observable-complete issue,
+  pull-request, comment, review, and timeline bootstrap.
+- Reconcile the remaining Archive, SourceForge release-file and legacy
+  version-control, external Council, and community-interface gaps.
 - Resolve the P5 published-HTML and website-snapshot coverage exceptions before relying on their family-level `observable-complete` labels.
 - Reconcile `planned`, `not_started`, and blocked acquisition language with the completion vocabulary.
 - Complete three vertical production cycles before topic-scale source admission.

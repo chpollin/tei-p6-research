@@ -11,6 +11,7 @@ def test_pages_workflow_publishes_generated_material_overview() -> None:
     )
 
     assert "python tools/validate.py ." in workflow
+    assert "python -m tools.corpus.validate_control_plane ." in workflow
     assert "python tools/build_corpus_overview.py" in workflow
     assert '--repository-base "${REPOSITORY_BASE}"' in workflow
     assert "cp docs/corpus.html _site/index.html" in workflow

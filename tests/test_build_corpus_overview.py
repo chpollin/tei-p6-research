@@ -1,5 +1,6 @@
 """Tests for the deterministic primary-data overview generator."""
 
+import subprocess
 import sys
 from pathlib import Path
 
@@ -9,11 +10,14 @@ REPO = Path(__file__).parents[1]
 sys.path.insert(0, str(REPO / "tools"))
 
 from build_corpus_overview import build_page, prepare_sources  # noqa: E402
+from sitegen.assets import read_asset  # noqa: E402
+from sitegen.source_data import resolve_repo_file  # noqa: E402
 
 
 def test_overview_uses_one_table_row_pair_per_primary_source_family() -> None:
     page = build_page(REPO, "2026-09-05")
 
+    assert "<title>Materials · TEI P6 Research</title>" in page
     assert '<span id="result-count">16</span> sources' in page
     assert page.count('<tr class="source-row" data-source-row') == 16
     assert page.count('<tr class="detail-row"') == 16
@@ -66,6 +70,9 @@ def test_overview_names_materials_from_completed_runs() -> None:
     assert "Release archive" in page
     assert "ZIP member inventory" in page
     assert "Ticket and discussion records" in page
+    assert "Run <code>2026-09-04-tei-legacy-sourceforge</code>" in page
+    assert "Run <code>2026-09-04-tei-legacy-sourceforge-r2</code>" in page
+    assert "Run <code>2026-09-05-tei-legacy-sourceforge-r3</code>" in page
     assert "Not yet acquired" in page
     assert "Normative P5 baseline" in page
     assert "File and directory structure of a pinned Git state." in page
@@ -133,3 +140,48 @@ retrieval_status: observable-complete
 
     with pytest.raises(ValueError, match="retrieval_status mismatch"):
         prepare_sources(tmp_path)
+
+
+def test_overview_inlines_its_source_assets() -> None:
+    page = build_page(REPO, "2026-09-05")
+
+    assert f'<style>\n{read_asset("materials.css")}</style>' in page
+    assert f'<script>\n{read_asset("materials.js")}</script>' in page
+    assert '<link rel="stylesheet"' not in page
+    assert '<script src="' not in page
+
+
+def test_overview_rejects_unsafe_or_unexpected_repository_paths() -> None:
+    with pytest.raises(ValueError, match="unsafe local overview link"):
+        resolve_repo_file(REPO, "../README.md")
+    with pytest.raises(ValueError, match="unexpected local overview link"):
+        resolve_repo_file(REPO, "README.md")
+
+
+def test_overview_build_is_deterministic() -> None:
+    first = build_page(REPO, "2026-09-05")
+    second = build_page(REPO, "2026-09-05")
+
+    assert first == second
+
+
+def test_overview_cli_remains_compatible(tmp_path: Path) -> None:
+    output = tmp_path / "corpus.html"
+    result = subprocess.run(
+        [
+            sys.executable,
+            str(REPO / "tools" / "build_corpus_overview.py"),
+            "--date",
+            "2026-09-05",
+            "--root",
+            str(REPO),
+            "--output",
+            str(output),
+        ],
+        check=True,
+        capture_output=True,
+        text=True,
+    )
+
+    assert result.stdout.startswith(f"OK: {output}")
+    assert output.read_text(encoding="utf-8") == build_page(REPO, "2026-09-05")
