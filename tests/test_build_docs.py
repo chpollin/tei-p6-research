@@ -32,7 +32,10 @@ def test_project_page_contains_promptotyping_project_documents() -> None:
     page = build_page(REPO, "2026-09-04")
 
     assert f"<title>{PROJECT_TITLE}</title>" in page
-    assert len(SECTIONS) == 8
+    assert '<html lang="en">' in page
+    assert len(SECTIONS) == 9
     assert 'id="project"' in page
+    assert 'id="design"' in page
     assert 'id="state"' in page
     assert 'id="journal"' in page
+    assert '<a href="corpus.html">Primary data</a>' in page

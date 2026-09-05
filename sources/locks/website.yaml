@@ -2,7 +2,7 @@ schema_version: 1
 lock_id: tei-website-publication-observation
 source_id: tei-website-records
 as_of: "2026-09-04"
-retrieval_status: observable-complete
+retrieval_status: partial
 
 repository:
   owner: TEIC
@@ -24,4 +24,7 @@ counts:
   commits_all_observed_refs: 560
 resolved_head_commit: 5e0dc114a6de427a445b6c09a1cc974074a484f6
 manifest: sources/manifests/2026-09-04-teic-website.yaml
-gaps: []
+gaps:
+  - code: public-page-snapshot-boundary-not-yet-acquired
+    status: blocks-family-observable-complete
+    detail: The Git repository is fully inventoried, but the registered publication-record family also requires page snapshots that the current manifest does not cover.

@@ -55,7 +55,7 @@ sources:
       note: Per-file exceptions, third-party examples, and assets still require inventory review.
     update_policy: immutable-release
     completion_target: observable-complete
-    retrieval_status: observable-complete
+    retrieval_status: partial
 
   - source_id: github-teic-tei-work-items
     title: TEIC/TEI GitHub issues and pull requests
@@ -329,7 +329,7 @@ sources:
       redistribution: follow-repository-and-page-license
     update_policy: immutable-git-observations-plus-page-snapshots
     completion_target: observable-complete
-    retrieval_status: observable-complete
+    retrieval_status: partial
 
   - source_id: tei-community-records
     title: TEI-L, SIG, workgroup, and annual-meeting records

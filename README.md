@@ -118,7 +118,7 @@ rights, and acquisition manifests live in [`sources/`](sources/).
 ## Repository structure
 
 ```text
-tei-p6/
+tei-p6-research/
 |-- 00_sources/        admitted source originals
 |-- 10_markdown/       stable, anchored source representations
 |-- 20_distillates/    source-specific atomic statements
@@ -141,8 +141,9 @@ tei-p6/
 The project is navigated through [`HOME.md`](HOME.md) in Obsidian,
 [`AGENTS.md`](AGENTS.md) in Codex, or [`CLAUDE.md`](CLAUDE.md) in Claude Code.
 Its system map is in [`ARCHITECTURE.md`](ARCHITECTURE.md), its full research
-contract is in [`knowledge/specification.md`](knowledge/specification.md), and
-the provisional model-design workbench begins at
+contract is in [`knowledge/specification.md`](knowledge/specification.md), its
+public interface contract is in [`knowledge/design.md`](knowledge/design.md),
+and the provisional model-design workbench begins at
 [`docs/p6/README.md`](docs/p6/README.md). The compact one-page account is in
 [`EXPOSE.md`](EXPOSE.md).
 

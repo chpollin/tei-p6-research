@@ -2,7 +2,7 @@
 title: Schema
 project:
   name: "TEI P6 Research Vault"
-  repository: "tei-p6"
+  repository: "tei-p6-research"
 method:
   name: Promptotyping
   url: https://dhcraft.org/Promptotyping/
@@ -12,8 +12,8 @@ profile:
 status: draft
 language: en
 created: "2026-09-04"
-updated: "2026-09-04"
-related: [index, specification, operations, state]
+updated: "2026-09-05"
+related: [index, specification, design, operations, state]
 ---
 
 # Schema
@@ -346,7 +346,7 @@ Where a chapter reports a matter the sources disagree on, it grounds in both sid
 
 ## Meta documents
 
-The six documents in `knowledge/` carry the Promptotyping header (as at the top of this file) instead of a content `type`. They are meta-knowledge about the vault and are exempt from the content schema. A knowledge document is split only when its sections develop divergent update rhythms or divergent readers.
+The seven documents in `knowledge/` carry the Promptotyping header (as at the top of this file) instead of a content `type`. They are meta-knowledge about the vault and are exempt from the content schema. `knowledge/design.md` governs the research workbench but creates no artifact type, status, or grounding target. A knowledge document is split only when its sections develop divergent update rhythms or divergent readers.
 
 ## Naming
 

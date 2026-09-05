@@ -14,6 +14,9 @@ Before changing content or running acquisition:
 5. route a content task through `contexts/START.md` and
    `contexts/ROUTER.md`.
 
+For research-frontend, About, or publication work, also read
+`knowledge/design.md`.
+
 Do not assume that a source named in `sources/registry.yaml` has already been
 downloaded. A completed run manifest and matching local artifacts establish
 that state.
@@ -62,22 +65,20 @@ Obsidian.
 
 ## 4. Configure GitHub
 
-The local repository has no GitHub remote until owner and visibility are
-decided. Authenticate interactively:
+The canonical public remote is
+`https://github.com/chpollin/tei-p6-research`. Authenticate interactively:
 
 ```powershell
 gh auth login
 gh auth status
 ```
 
-Then create the remote with one explicit visibility choice:
+If the checkout does not yet have `origin`, configure it and push:
 
 ```powershell
-gh repo create OWNER/tei-p6 --source . --remote origin --push --private
+git remote add origin https://github.com/chpollin/tei-p6-research.git
+git push -u origin main
 ```
-
-Use `--public` only when public visibility is intended. Repository creation is
-an external write and must not be inferred from local setup alone.
 
 Full GitHub corpus acquisition also requires authenticated read access. Tokens
 stay in the GitHub credential store or environment; they never enter files,
@@ -164,11 +165,23 @@ by the site builder:
 
 ```powershell
 python tools/build_docs.py --date YYYY-MM-DD
+python tools/build_corpus_overview.py --date YYYY-MM-DD
 ```
 
-Never hand-edit `docs/index.html`.
+Never hand-edit `docs/index.html` or `docs/corpus.html`.
 
-## 9. Completion gate
+## 9. Publish the research workbench
+
+`.github/workflows/pages.yml` validates and regenerates the static site on
+`main`, publishes the materials overview at the GitHub Pages root, and keeps the
+full project documentation at `project.html`. Internal control and normalized
+data links resolve to the exact GitHub commit used for the deployment; ignored
+raw source bodies are never included in the Pages artifact.
+
+Before the first publication, configure the GitHub remote, settle repository
+visibility, and enable GitHub Pages with GitHub Actions as its source.
+
+## 10. Completion gate
 
 Before handing off a change:
 

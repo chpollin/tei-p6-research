@@ -1,0 +1,868 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="repository-base" content="">
+<title>Materials · TEI P6 Research Vault</title>
+<meta name="description" content="Working inventory of acquired primary materials and known gaps in the TEI P6 Research Vault.">
+<style>
+:root {
+  color-scheme: light;
+  --paper: #ffffff;
+  --soft: #f7f8f9;
+  --ink: #191919;
+  --muted: #686b70;
+  --line: #dfe1e4;
+  --link: #174ea6;
+  --complete: #26734d;
+  --partial: #8a5a00;
+  --pending: #9b3a32;
+}
+* { box-sizing: border-box; }
+.sr-only {
+  position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0;
+}
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font: 16px/1.5 "Segoe UI", Inter, system-ui, sans-serif;
+}
+a { color: var(--link); }
+button, input, select { font: inherit; }
+button, select { cursor: pointer; }
+.shell { width: min(1580px, calc(100% - 2.5rem)); margin: 0 auto; padding: 1.15rem 0 3rem; }
+.site-header {
+  display: flex; align-items: stretch; justify-content: space-between; gap: 1.5rem;
+  min-height: 3.4rem; border-bottom: 1px solid var(--line);
+}
+.brand { display: flex; align-items: center; gap: .55rem; color: var(--ink); text-decoration: none; }
+.brand-name { font-weight: 700; letter-spacing: -.015em; }
+.brand-context { color: var(--muted); font-size: .82rem; }
+.primary-nav { display: flex; align-items: stretch; gap: 1.35rem; }
+.nav-link { display: flex; align-items: center; border-bottom: 2px solid transparent; color: var(--muted); text-decoration: none; font-size: .87rem; }
+.nav-link:hover { color: var(--ink); }
+.nav-link[aria-current="page"] { border-bottom-color: var(--ink); color: var(--ink); }
+.page-head { display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; padding: 1.2rem 0 .85rem; }
+h1 { margin: 0; font-size: 1.55rem; line-height: 1.2; letter-spacing: -.015em; font-weight: 650; }
+.results-meta { margin: 0; color: var(--muted); font-size: .84rem; white-space: nowrap; }
+.toolbar {
+  position: sticky; top: 0; z-index: 5;
+  display: grid; grid-template-columns: minmax(18rem, 1fr) minmax(11rem, auto) minmax(13rem, auto);
+  gap: .65rem; padding: .7rem 0; background: var(--paper); border-top: 1px solid var(--line);
+}
+.control { display: grid; gap: .22rem; min-width: 0; }
+.control span { color: var(--muted); font-size: .76rem; }
+.search, .select {
+  width: 100%; min-height: 2.45rem; padding: .46rem .65rem;
+  border: 1px solid #b9bcc1; border-radius: 2px; background: var(--paper); color: var(--ink);
+}
+.search:focus, .select:focus, .expand:focus, .sort-button:focus { outline: 2px solid var(--link); outline-offset: 1px; }
+.table-wrap { overflow-x: auto; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.source-table { width: 100%; min-width: 1120px; border-collapse: collapse; table-layout: fixed; }
+.source-table col:nth-child(1) { width: 31%; }
+.source-table col:nth-child(2) { width: 24%; }
+.source-table col:nth-child(3) { width: 18%; }
+.source-table col:nth-child(4) { width: 15%; }
+.source-table col:nth-child(5) { width: 9%; }
+.source-table col:nth-child(6) { width: 3%; }
+th { padding: .55rem .7rem; border-bottom: 1px solid var(--line); color: var(--muted); text-align: left; font-size: .76rem; font-weight: 600; }
+.sort-button { display: inline-flex; align-items: center; gap: .35rem; padding: 0; border: 0; background: transparent; color: inherit; font: inherit; }
+.sort-button:hover { color: var(--ink); }
+.sort-mark { width: .8rem; color: var(--muted); }
+td { padding: .85rem .7rem; border-top: 1px solid var(--line); vertical-align: top; }
+.source-row:first-child td { border-top: 0; }
+.source-row:hover td { background: #fbfbfb; }
+.source-row[hidden], .detail-row[hidden] { display: none; }
+.source-cell strong { display: block; line-height: 1.3; font-size: .95rem; font-weight: 620; }
+.source-cell small { display: block; margin-top: .3rem; max-width: 54ch; color: var(--muted); font-size: .78rem; line-height: 1.4; }
+.material-summary { margin: 0; padding-left: 1rem; font-size: .84rem; }
+.material-summary li + li { margin-top: .16rem; }
+.metrics-cell, .date-cell { color: var(--muted); font-size: .82rem; }
+.status-cell > small { display: block; margin-top: .28rem; color: var(--muted); font-size: .76rem; }
+.status-text { font-size: .84rem; font-weight: 600; text-decoration: underline dotted; text-underline-offset: .2rem; }
+.status-observable-complete, .status-bounded-complete { color: var(--complete); }
+.status-partial { color: var(--partial); }
+.status-planned, .status-not_started, .status-not-completable { color: var(--pending); }
+.action-cell { padding-left: .2rem; padding-right: .2rem; text-align: center; }
+.expand { width: 2rem; height: 2rem; padding: 0; border: 0; background: transparent; color: var(--muted); font-size: 1.1rem; line-height: 1; }
+.expand:hover { color: var(--ink); background: var(--soft); }
+.expand[aria-expanded="true"] span { display: inline-block; transform: rotate(45deg); }
+.detail-row > td { padding: 0; background: var(--soft); }
+.detail-panel { display: grid; grid-template-columns: minmax(30rem, 2fr) minmax(15rem, 1fr) minmax(12rem, .8fr); gap: 1.6rem; padding: 1.25rem 1.5rem 1.5rem; }
+.detail-panel h2 { margin: 0 0 .55rem; color: var(--muted); font-size: .76rem; font-weight: 650; letter-spacing: .045em; text-transform: uppercase; }
+.detail-panel p, .gap-list { margin: 0; font-size: .84rem; }
+.holdings-section { min-width: 0; }
+.subtable-wrap { overflow-x: auto; }
+.subtable { width: 100%; min-width: 34rem; border-collapse: collapse; table-layout: auto; background: var(--paper); }
+.subtable th { padding: .4rem .55rem; background: #f0f1f2; }
+.subtable td { padding: .55rem; font-size: .8rem; }
+.subtable td:first-child { width: 58%; }
+.subtable strong { display: block; font-weight: 600; }
+.subtable small { display: block; margin-top: .16rem; color: var(--muted); line-height: 1.35; }
+.row-links { display: flex; flex-wrap: wrap; gap: .45rem; }
+.facts { margin: 0; }
+.facts div + div { margin-top: .5rem; }
+dt { color: var(--muted); font-size: .7rem; letter-spacing: .04em; text-transform: uppercase; }
+dd { margin: .05rem 0 0; font-size: .82rem; overflow-wrap: anywhere; }
+.gap-list { padding-left: 1.1rem; }
+.gap-list li + li { margin-top: .3rem; }
+.clear { color: var(--complete); }
+.link-list { display: flex; flex-wrap: wrap; gap: .35rem .8rem; font-size: .84rem; }
+.link-list a, .link-list span, .detail-panel p, dd { overflow-wrap: anywhere; }
+.technical-details { grid-column: 1 / -1; border-top: 1px solid var(--line); padding-top: .8rem; }
+.technical-details summary { color: var(--muted); cursor: pointer; font-size: .8rem; }
+.technical-details[open] summary { margin-bottom: .8rem; }
+.technical-details .facts { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1rem; }
+.technical-links { margin-top: .8rem; }
+.empty-value { color: var(--muted); font-size: .82rem; }
+.empty { display: none; margin: 0; padding: 2rem .7rem; border-bottom: 1px solid var(--line); color: var(--muted); }
+.site-footer { display: flex; align-items: center; justify-content: space-between; gap: 1rem; margin-top: 1rem; padding-top: .85rem; border-top: 1px solid var(--line); color: var(--muted); font-size: .76rem; }
+.site-footer p { margin: 0; }
+.footer-nav { display: flex; flex-wrap: wrap; gap: .9rem; }
+.site-footer a { color: inherit; text-decoration: none; }
+.site-footer a:hover { color: var(--ink); text-decoration: underline; }
+@media (max-width: 860px) {
+  .shell { width: min(100% - 1.25rem, 1580px); padding-top: .75rem; }
+  .toolbar { grid-template-columns: 1fr 1fr; }
+  .control-search { grid-column: 1 / -1; }
+  .detail-panel { grid-template-columns: 1fr; }
+  .technical-details { grid-column: 1; }
+  .technical-details .facts { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .brand-context { display: none; }
+  .site-footer { align-items: flex-start; flex-direction: column; }
+}
+</style>
+</head>
+<body>
+<div class="shell">
+  <header class="site-header">
+    <a class="brand" href="corpus.html"><span class="brand-name">TEI P6</span><span class="brand-context">Research Vault</span></a>
+    <nav class="primary-nav" aria-label="Primary navigation">
+      <a class="nav-link" href="corpus.html" aria-current="page">Materials</a>
+      <a class="nav-link" href="index.html" data-project-link>About</a>
+    </nav>
+  </header>
+  <main>
+  <header class="page-head">
+    <h1 id="page-title">Materials</h1>
+    <p class="results-meta" role="status" aria-live="polite"><span id="result-count">16</span> sources</p>
+  </header>
+  <section aria-label="Source families">
+    <div class="toolbar">
+      <label class="control control-search"><span>Full-text search</span><input id="search" class="search" type="search" placeholder="Search sources and holdings"></label>
+      <label class="control"><span>Acquisition</span><select id="status-filter" class="select"><option value="all">All acquisition states</option><option value="observable-complete">Acquired</option><option value="partial">Partially acquired</option></select></label>
+      <label class="control"><span>Material type</span><select id="material-filter" class="select"><option value="all">All material types</option><option value="git tree inventory">Git tree inventory</option><option value="public git repositories">Public Git repositories</option><option value="release archive">Release archive</option><option value="repository census">Repository census</option><option value="ticket and discussion records">Ticket and discussion records</option><option value="web page census">Web page census</option><option value="zip member inventory">ZIP member inventory</option><option value="__none__">Not yet acquired</option></select></label>
+    </div>
+    <div class="table-wrap">
+      <table class="source-table">
+        <caption class="sr-only">Registered primary sources and their acquired holdings</caption>
+        <colgroup><col><col><col><col><col><col></colgroup>
+        <thead>
+          <tr>
+            <th data-sort-header="title" aria-sort="ascending"><button class="sort-button" type="button" data-sort="title">Source <span class="sort-mark" aria-hidden="true">↑</span></button></th>
+            <th data-sort-header="materials" aria-sort="none"><button class="sort-button" type="button" data-sort="materials">Holdings <span class="sort-mark" aria-hidden="true"></span></button></th>
+            <th>Extent</th>
+            <th data-sort-header="status" aria-sort="none"><button class="sort-button" type="button" data-sort="status">Acquisition <span class="sort-mark" aria-hidden="true"></span></button></th>
+            <th data-sort-header="date" aria-sort="none"><button class="sort-button" type="button" data-sort="date">As of <span class="sort-mark" aria-hidden="true"></span></button></th>
+            <th><span class="sr-only">Details</span></th>
+          </tr>
+        </thead>
+        <tbody id="source-body">
+<tr class="source-row" data-source-row data-detail-id="source-detail-1" data-status="partial" data-status-rank="2" data-materials="git tree inventory|web page census|release archive|zip member inventory" data-title="tei p5 4.12.0 — sources and published guidelines" data-date="2026-09-04" data-search="teic-tei-p5-4.12.0 tei p5 4.12.0 — sources and published guidelines tei p5 4.12.0 source and published guidelines normative odd sources, published guidelines, and the release package for the p5 baseline. normative p5 baseline primary-normative verified-upstream-license git tree inventory web page census release archive zip member inventory file and directory structure of a pinned git state. acquired web pages and responses within the locked crawl boundary. downloaded release archive with checksum verification. inventory of files contained in a release archive. reconciliation between the published guidelines and the release archive is pending">
+  <td class="source-cell"><strong>TEI P5 4.12.0 — Sources and published Guidelines</strong><small>Normative ODD sources, published Guidelines, and the release package for the P5 baseline.</small></td>
+  <td class="materials-cell"><ul class="material-summary"><li>Git tree inventory</li><li>Web page census</li><li>Release archive</li><li>ZIP member inventory</li></ul></td>
+  <td class="metrics-cell">1,965 tree entries · 27,184 commits across all observed refs · 15,211 ZIP files</td>
+  <td class="status-cell"><span class="status-text status-partial" title="Part of the locked holding was acquired; open gaps are recorded.">Partially acquired</span><small>1 open item</small></td>
+  <td class="date-cell"><time datetime="2026-09-04">2026-09-04</time></td>
+  <td class="action-cell"><button class="expand" type="button" aria-expanded="false" aria-controls="source-detail-1" aria-label="Show details for TEI P5 4.12.0 — Sources and published Guidelines"><span aria-hidden="true">+</span></button></td>
+</tr>
+<tr class="detail-row" id="source-detail-1" data-detail-row hidden>
+  <td colspan="6">
+    <div class="detail-panel">
+      <section class="holdings-section">
+        <h2>Holdings</h2>
+        <div class="subtable-wrap"><table class="subtable"><thead><tr><th>Holding</th><th>Acquisition</th><th>Open</th></tr></thead><tbody><tr><td><strong>Git tree inventory</strong><small>File and directory structure of a pinned Git state.</small></td><td>Acquired</td><td><span class="row-links"><a href="../corpus/normalized/git/teic-tei-p5-4.12.0.json" data-repo-path="corpus/normalized/git/teic-tei-p5-4.12.0.json">Data</a><a href="../sources/manifests/2026-09-04-teic-tei-p5-4.12.0.yaml" data-repo-path="sources/manifests/2026-09-04-teic-tei-p5-4.12.0.yaml">Manifest</a></span></td></tr><tr><td><strong>Web page census</strong><small>Acquired web pages and responses within the locked crawl boundary.</small></td><td>Partially acquired</td><td><span class="row-links"><a href="../corpus/normalized/web/tei-p5-4.12.0-published-html.jsonl" data-repo-path="corpus/normalized/web/tei-p5-4.12.0-published-html.jsonl">Data</a><a href="../sources/manifests/2026-09-04-tei-p5-4.12.0-published-html.yaml" data-repo-path="sources/manifests/2026-09-04-tei-p5-4.12.0-published-html.yaml">Manifest</a></span></td></tr><tr><td><strong>Release archive</strong><small>Downloaded release archive with checksum verification.</small></td><td>Acquired</td><td><span class="row-links"><a href="../corpus/normalized/assets/tei-p5-4.12.0-release.json" data-repo-path="corpus/normalized/assets/tei-p5-4.12.0-release.json">Data</a><a href="../sources/manifests/2026-09-04-tei-p5-4.12.0-release-asset.yaml" data-repo-path="sources/manifests/2026-09-04-tei-p5-4.12.0-release-asset.yaml">Manifest</a></span></td></tr><tr><td><strong>ZIP member inventory</strong><small>Inventory of files contained in a release archive.</small></td><td>Acquired</td><td><span class="row-links"><a href="../corpus/normalized/assets/tei-p5-4.12.0-release-members.json" data-repo-path="corpus/normalized/assets/tei-p5-4.12.0-release-members.json">Data</a><a href="../sources/manifests/2026-09-04-tei-p5-4.12.0-release-members.yaml" data-repo-path="sources/manifests/2026-09-04-tei-p5-4.12.0-release-members.yaml">Manifest</a></span></td></tr></tbody></table></div>
+      </section>
+      <section>
+        <h2>Open items</h2>
+        <ul class="gap-list"><li>Reconciliation between the published Guidelines and the release archive is pending</li></ul>
+      </section>
+      <section>
+        <h2>Sources</h2>
+        <div class="link-list"><a href="https://github.com/TEIC/TEI" rel="noreferrer">Repository</a><a href="https://github.com/TEIC/TEI/releases/tag/P5_Release_4.12.0" rel="noreferrer">Release page</a><a href="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/" rel="noreferrer">Published guidelines</a><a href="https://www.tei-c.org/Vault/P5/4.12.0/" rel="noreferrer">Vault release</a></div>
+      </section>
+      <details class="technical-details">
+        <summary>Technical details</summary>
+        <dl class="facts">
+          <div><dt>Identifier</dt><dd><code>teic-tei-p5-4.12.0</code></dd></div>
+          <div><dt>Material family</dt><dd>Normative P5 baseline</dd></div>
+          <div><dt>Rights</dt><dd>verified-upstream-license</dd></div>
+          <div><dt>Source types</dt><dd>document, data</dd></div>
+        </dl>
+        <div class="link-list technical-links"><a href="../sources/locks/tei-p5-4.12.0.yaml" data-repo-path="sources/locks/tei-p5-4.12.0.yaml">Source Lock</a><a href="../sources/manifests/2026-09-04-teic-tei-p5-4.12.0.yaml" data-repo-path="sources/manifests/2026-09-04-teic-tei-p5-4.12.0.yaml">Acquisition manifest 1</a><a href="../sources/manifests/2026-09-04-tei-p5-4.12.0-published-html.yaml" data-repo-path="sources/manifests/2026-09-04-tei-p5-4.12.0-published-html.yaml">Acquisition manifest 2</a><a href="../sources/manifests/2026-09-04-tei-p5-4.12.0-release-asset.yaml" data-repo-path="sources/manifests/2026-09-04-tei-p5-4.12.0-release-asset.yaml">Acquisition manifest 3</a><a href="../sources/manifests/2026-09-04-tei-p5-4.12.0-release-members.yaml" data-repo-path="sources/manifests/2026-09-04-tei-p5-4.12.0-release-members.yaml">Acquisition manifest 4</a></div>
+      </details>
+    </div>
+  </td>
+</tr>
+<tr class="source-row" data-source-row data-detail-id="source-detail-2" data-status="partial" data-status-rank="2" data-materials="__none__" data-title="teic/tei — issues and pull requests" data-date="2026-09-04" data-search="github-teic-tei-work-items teic/tei — issues and pull requests teic/tei github issues and pull requests issues, pull requests, comments, reviews, and event histories from the teic/tei repository. development discussions primary-process-record review-required github acquisition is waiting for authenticated read access">
+  <td class="source-cell"><strong>TEIC/TEI — Issues and pull requests</strong><small>Issues, pull requests, comments, reviews, and event histories from the TEIC/TEI repository.</small></td>
+  <td class="materials-cell"><span class="empty-value">Not yet acquired</span></td>
+  <td class="metrics-cell">—</td>
+  <td class="status-cell"><span class="status-text status-partial" title="Part of the locked holding was acquired; open gaps are recorded.">Partially acquired</span><small>1 open item</small></td>
+  <td class="date-cell"><time datetime="2026-09-04">2026-09-04</time></td>
+  <td class="action-cell"><button class="expand" type="button" aria-expanded="false" aria-controls="source-detail-2" aria-label="Show details for TEIC/TEI — Issues and pull requests"><span aria-hidden="true">+</span></button></td>
+</tr>
+<tr class="detail-row" id="source-detail-2" data-detail-row hidden>
+  <td colspan="6">
+    <div class="detail-panel">
+      <section class="holdings-section">
+        <h2>Holdings</h2>
+        <p class="empty-value">No completed acquisition run is available for this source.</p>
+      </section>
+      <section>
+        <h2>Open items</h2>
+        <ul class="gap-list"><li>GitHub acquisition is waiting for authenticated read access</li></ul>
+      </section>
+      <section>
+        <h2>Sources</h2>
+        <div class="link-list"><a href="https://github.com/TEIC/TEI" rel="noreferrer">Repository</a><a href="https://api.github.com/repos/TEIC/TEI" rel="noreferrer">Api repository</a></div>
+      </section>
+      <details class="technical-details">
+        <summary>Technical details</summary>
+        <dl class="facts">
+          <div><dt>Identifier</dt><dd><code>github-teic-tei-work-items</code></dd></div>
+          <div><dt>Material family</dt><dd>Development discussions</dd></div>
+          <div><dt>Rights</dt><dd>review-required</dd></div>
+          <div><dt>Source types</dt><dd>document, data</dd></div>
+        </dl>
+        <div class="link-list technical-links"><a href="../sources/locks/github-teic-tei.yaml" data-repo-path="sources/locks/github-teic-tei.yaml">Source Lock</a></div>
+      </details>
+    </div>
+  </td>
+</tr>
+<tr class="source-row" data-source-row data-detail-id="source-detail-3" data-status="observable-complete" data-status-rank="0" data-materials="repository census" data-title="teic on github — repository census" data-date="2026-09-04" data-search="teic-github-organization teic on github — repository census teic public github repository census a census of the tei consortium organization&#x27;s publicly visible repositories. development infrastructure primary-publication-record metadata-only repository census publicly visible repositories at the observation time.">
+  <td class="source-cell"><strong>TEIC on GitHub — Repository census</strong><small>A census of the TEI Consortium organization&#x27;s publicly visible repositories.</small></td>
+  <td class="materials-cell"><ul class="material-summary"><li>Repository census</li></ul></td>
+  <td class="metrics-cell">41 repositories</td>
+  <td class="status-cell"><span class="status-text status-observable-complete" title="All objects exposed by the locked public interface were acquired or recorded as a gap.">Acquired</span><small>No open items</small></td>
+  <td class="date-cell"><time datetime="2026-09-04">2026-09-04</time></td>
+  <td class="action-cell"><button class="expand" type="button" aria-expanded="false" aria-controls="source-detail-3" aria-label="Show details for TEIC on GitHub — Repository census"><span aria-hidden="true">+</span></button></td>
+</tr>
+<tr class="detail-row" id="source-detail-3" data-detail-row hidden>
+  <td colspan="6">
+    <div class="detail-panel">
+      <section class="holdings-section">
+        <h2>Holdings</h2>
+        <div class="subtable-wrap"><table class="subtable"><thead><tr><th>Holding</th><th>Acquisition</th><th>Open</th></tr></thead><tbody><tr><td><strong>Repository census</strong><small>Publicly visible repositories at the observation time.</small></td><td>Acquired</td><td><span class="row-links"><a href="../corpus/normalized/github/teic-repositories.jsonl" data-repo-path="corpus/normalized/github/teic-repositories.jsonl">Data</a><a href="../sources/manifests/2026-09-04-teic-github-organization.yaml" data-repo-path="sources/manifests/2026-09-04-teic-github-organization.yaml">Manifest</a></span></td></tr></tbody></table></div>
+      </section>
+      <section>
+        <h2>Open items</h2>
+        <p class="clear">No open items recorded.</p>
+      </section>
+      <section>
+        <h2>Sources</h2>
+        <div class="link-list"><a href="https://github.com/TEIC" rel="noreferrer">Organization</a><a href="https://api.github.com/orgs/TEIC/repos" rel="noreferrer">Api repositories</a></div>
+      </section>
+      <details class="technical-details">
+        <summary>Technical details</summary>
+        <dl class="facts">
+          <div><dt>Identifier</dt><dd><code>teic-github-organization</code></dd></div>
+          <div><dt>Material family</dt><dd>Development infrastructure</dd></div>
+          <div><dt>Rights</dt><dd>metadata-only</dd></div>
+          <div><dt>Source types</dt><dd>data</dd></div>
+        </dl>
+        <div class="link-list technical-links"><a href="../sources/locks/teic-github-organization.yaml" data-repo-path="sources/locks/teic-github-organization.yaml">Source Lock</a><a href="../sources/manifests/2026-09-04-teic-github-organization.yaml" data-repo-path="sources/manifests/2026-09-04-teic-github-organization.yaml">Acquisition manifest 1</a></div>
+      </details>
+    </div>
+  </td>
+</tr>
+<tr class="source-row" data-source-row data-detail-id="source-detail-4" data-status="observable-complete" data-status-rank="0" data-materials="public git repositories" data-title="public teic git repositories" data-date="2026-09-04" data-search="teic-public-git-repositories public teic git repositories complete public teic git repository corpus pinned git states of publicly registered teic repositories. source code and development mixed-primary-record per-repository-and-file-review-required public git repositories pinned git states of the registered public repositories.">
+  <td class="source-cell"><strong>Public TEIC Git repositories</strong><small>Pinned Git states of publicly registered TEIC repositories.</small></td>
+  <td class="materials-cell"><ul class="material-summary"><li>Public Git repositories</li></ul></td>
+  <td class="metrics-cell">41 repositories expected · 41 repositories · 25,415 tree entries</td>
+  <td class="status-cell"><span class="status-text status-observable-complete" title="All objects exposed by the locked public interface were acquired or recorded as a gap.">Acquired</span><small>No open items</small></td>
+  <td class="date-cell"><time datetime="2026-09-04">2026-09-04</time></td>
+  <td class="action-cell"><button class="expand" type="button" aria-expanded="false" aria-controls="source-detail-4" aria-label="Show details for Public TEIC Git repositories"><span aria-hidden="true">+</span></button></td>
+</tr>
+<tr class="detail-row" id="source-detail-4" data-detail-row hidden>
+  <td colspan="6">
+    <div class="detail-panel">
+      <section class="holdings-section">
+        <h2>Holdings</h2>
+        <div class="subtable-wrap"><table class="subtable"><thead><tr><th>Holding</th><th>Acquisition</th><th>Open</th></tr></thead><tbody><tr><td><strong>Public Git repositories</strong><small>Pinned Git states of the registered public repositories.</small></td><td>Acquired</td><td><span class="row-links"><a href="../sources/manifests/2026-09-04-teic-public-git-repositories.yaml" data-repo-path="sources/manifests/2026-09-04-teic-public-git-repositories.yaml">Manifest</a></span></td></tr></tbody></table></div>
+      </section>
+      <section>
+        <h2>Open items</h2>
+        <p class="clear">No open items recorded.</p>
+      </section>
+      <section>
+        <h2>Sources</h2>
+        <div class="link-list"><a href="https://github.com/TEIC" rel="noreferrer">Organization</a></div>
+      </section>
+      <details class="technical-details">
+        <summary>Technical details</summary>
+        <dl class="facts">
+          <div><dt>Identifier</dt><dd><code>teic-public-git-repositories</code></dd></div>
+          <div><dt>Material family</dt><dd>Source code and development</dd></div>
+          <div><dt>Rights</dt><dd>per-repository-and-file-review-required</dd></div>
+          <div><dt>Source types</dt><dd>document, data</dd></div>
+        </dl>
+        <div class="link-list technical-links"><a href="../sources/locks/teic-public-git-repositories.yaml" data-repo-path="sources/locks/teic-public-git-repositories.yaml">Source Lock</a><a href="../sources/manifests/2026-09-04-teic-public-git-repositories.yaml" data-repo-path="sources/manifests/2026-09-04-teic-public-git-repositories.yaml">Acquisition manifest 1</a></div>
+      </details>
+    </div>
+  </td>
+</tr>
+<tr class="source-row" data-source-row data-detail-id="source-detail-5" data-status="partial" data-status-rank="2" data-materials="web page census|release archive" data-title="tei technical council — meeting minutes" data-date="2026-09-04" data-search="tei-council-minutes tei technical council — meeting minutes tei technical council minutes and working-document sources meeting minutes and linked working materials of the technical council. governance primary-governance-record per-item-verification-required web page census release archive acquired web pages and responses within the locked crawl boundary. downloaded release archive with checksum verification. linked attachments and external working documents have not yet been reconciled">
+  <td class="source-cell"><strong>TEI Technical Council — Meeting minutes</strong><small>Meeting minutes and linked working materials of the Technical Council.</small></td>
+  <td class="materials-cell"><ul class="material-summary"><li>Web page census</li><li>Release archive</li></ul></td>
+  <td class="metrics-cell">206 Council pages · 2,473 inventoried external links · 10 unfetched binary links</td>
+  <td class="status-cell"><span class="status-text status-partial" title="Part of the locked holding was acquired; open gaps are recorded.">Partially acquired</span><small>1 open item</small></td>
+  <td class="date-cell"><time datetime="2026-09-04">2026-09-04</time></td>
+  <td class="action-cell"><button class="expand" type="button" aria-expanded="false" aria-controls="source-detail-5" aria-label="Show details for TEI Technical Council — Meeting minutes"><span aria-hidden="true">+</span></button></td>
+</tr>
+<tr class="detail-row" id="source-detail-5" data-detail-row hidden>
+  <td colspan="6">
+    <div class="detail-panel">
+      <section class="holdings-section">
+        <h2>Holdings</h2>
+        <div class="subtable-wrap"><table class="subtable"><thead><tr><th>Holding</th><th>Acquisition</th><th>Open</th></tr></thead><tbody><tr><td><strong>Web page census</strong><small>Acquired web pages and responses within the locked crawl boundary.</small></td><td>Partially acquired</td><td><span class="row-links"><a href="../corpus/normalized/web/tei-council-minutes.jsonl" data-repo-path="corpus/normalized/web/tei-council-minutes.jsonl">Data</a><a href="../sources/manifests/2026-09-04-tei-council-minutes-r2.yaml" data-repo-path="sources/manifests/2026-09-04-tei-council-minutes-r2.yaml">Manifest</a></span></td></tr><tr><td><strong>Release archive</strong><small>Downloaded release archive with checksum verification.</small></td><td>Partially acquired</td><td><span class="row-links"><a href="../corpus/normalized/assets/tei-council-assets.json" data-repo-path="corpus/normalized/assets/tei-council-assets.json">Data</a><a href="../sources/manifests/2026-09-04-tei-council-assets.yaml" data-repo-path="sources/manifests/2026-09-04-tei-council-assets.yaml">Manifest</a></span></td></tr></tbody></table></div>
+      </section>
+      <section>
+        <h2>Open items</h2>
+        <ul class="gap-list"><li>Linked attachments and external working documents have not yet been reconciled</li></ul>
+      </section>
+      <section>
+        <h2>Sources</h2>
+        <div class="link-list"><a href="https://www.tei-c.org/activities/council/meetings/" rel="noreferrer">Meeting index</a></div>
+      </section>
+      <details class="technical-details">
+        <summary>Technical details</summary>
+        <dl class="facts">
+          <div><dt>Identifier</dt><dd><code>tei-council-minutes</code></dd></div>
+          <div><dt>Material family</dt><dd>Governance</dd></div>
+          <div><dt>Rights</dt><dd>per-item-verification-required</dd></div>
+          <div><dt>Source types</dt><dd>document</dd></div>
+        </dl>
+        <div class="link-list technical-links"><a href="../sources/locks/council-minutes.yaml" data-repo-path="sources/locks/council-minutes.yaml">Source Lock</a><a href="../sources/manifests/2026-09-04-tei-council-minutes-r2.yaml" data-repo-path="sources/manifests/2026-09-04-tei-council-minutes-r2.yaml">Acquisition manifest 1</a><a href="../sources/manifests/2026-09-04-tei-council-assets.yaml" data-repo-path="sources/manifests/2026-09-04-tei-council-assets.yaml">Acquisition manifest 2</a></div>
+      </details>
+    </div>
+  </td>
+</tr>
+<tr class="source-row" data-source-row data-detail-id="source-detail-6" data-status="observable-complete" data-status-rank="0" data-materials="git tree inventory" data-title="tei technical council — working documents" data-date="2026-09-04" data-search="tei-council-working-documents tei technical council — working documents tei council technical working documents technical documents from the council&#x27;s public working repository. governance working documents primary-process-record review-required git tree inventory file and directory structure of a pinned git state.">
+  <td class="source-cell"><strong>TEI Technical Council — Working documents</strong><small>Technical documents from the Council&#x27;s public working repository.</small></td>
+  <td class="materials-cell"><ul class="material-summary"><li>Git tree inventory</li></ul></td>
+  <td class="metrics-cell">16 tree entries · 322 commits across all observed refs</td>
+  <td class="status-cell"><span class="status-text status-observable-complete" title="All objects exposed by the locked public interface were acquired or recorded as a gap.">Acquired</span><small>No open items</small></td>
+  <td class="date-cell"><time datetime="2026-09-04">2026-09-04</time></td>
+  <td class="action-cell"><button class="expand" type="button" aria-expanded="false" aria-controls="source-detail-6" aria-label="Show details for TEI Technical Council — Working documents"><span aria-hidden="true">+</span></button></td>
+</tr>
+<tr class="detail-row" id="source-detail-6" data-detail-row hidden>
+  <td colspan="6">
+    <div class="detail-panel">
+      <section class="holdings-section">
+        <h2>Holdings</h2>
+        <div class="subtable-wrap"><table class="subtable"><thead><tr><th>Holding</th><th>Acquisition</th><th>Open</th></tr></thead><tbody><tr><td><strong>Git tree inventory</strong><small>File and directory structure of a pinned Git state.</small></td><td>Acquired</td><td><span class="row-links"><a href="../corpus/normalized/git/teic-documentation.json" data-repo-path="corpus/normalized/git/teic-documentation.json">Data</a><a href="../sources/manifests/2026-09-04-teic-documentation.yaml" data-repo-path="sources/manifests/2026-09-04-teic-documentation.yaml">Manifest</a></span></td></tr></tbody></table></div>
+      </section>
+      <section>
+        <h2>Open items</h2>
+        <p class="clear">No open items recorded.</p>
+      </section>
+      <section>
+        <h2>Sources</h2>
+        <div class="link-list"><a href="https://github.com/TEIC/Documentation" rel="noreferrer">Repository</a></div>
+      </section>
+      <details class="technical-details">
+        <summary>Technical details</summary>
+        <dl class="facts">
+          <div><dt>Identifier</dt><dd><code>tei-council-working-documents</code></dd></div>
+          <div><dt>Material family</dt><dd>Governance working documents</dd></div>
+          <div><dt>Rights</dt><dd>review-required</dd></div>
+          <div><dt>Source types</dt><dd>document, publication</dd></div>
+        </dl>
+        <div class="link-list technical-links"><a href="../sources/locks/council-working-documents.yaml" data-repo-path="sources/locks/council-working-documents.yaml">Source Lock</a><a href="../sources/manifests/2026-09-04-teic-documentation.yaml" data-repo-path="sources/manifests/2026-09-04-teic-documentation.yaml">Acquisition manifest 1</a></div>
+      </details>
+    </div>
+  </td>
+</tr>
+<tr class="source-row" data-source-row data-detail-id="source-detail-7" data-status="partial" data-status-rank="2" data-materials="git tree inventory|web page census" data-title="official tei p6 process" data-date="2026-09-04" data-search="tei-official-p6-process official tei p6 process official tei technical council p6 process public materials and presentations from the official tei p6 process. official p6 process primary-process-record per-item-verification-required git tree inventory web page census file and directory structure of a pinned git state. acquired web pages and responses within the locked crawl boundary. the reported p6 sandbox is not publicly accessible p6-specific council records have not yet been projected separately">
+  <td class="source-cell"><strong>Official TEI P6 process</strong><small>Public materials and presentations from the official TEI P6 process.</small></td>
+  <td class="materials-cell"><ul class="material-summary"><li>Git tree inventory</li><li>Web page census</li></ul></td>
+  <td class="metrics-cell">21 P6 tree entries · 53 P6 commits across all refs · 206 Council pages</td>
+  <td class="status-cell"><span class="status-text status-partial" title="Part of the locked holding was acquired; open gaps are recorded.">Partially acquired</span><small>2 open items</small></td>
+  <td class="date-cell"><time datetime="2026-09-04">2026-09-04</time></td>
+  <td class="action-cell"><button class="expand" type="button" aria-expanded="false" aria-controls="source-detail-7" aria-label="Show details for Official TEI P6 process"><span aria-hidden="true">+</span></button></td>
+</tr>
+<tr class="detail-row" id="source-detail-7" data-detail-row hidden>
+  <td colspan="6">
+    <div class="detail-panel">
+      <section class="holdings-section">
+        <h2>Holdings</h2>
+        <div class="subtable-wrap"><table class="subtable"><thead><tr><th>Holding</th><th>Acquisition</th><th>Open</th></tr></thead><tbody><tr><td><strong>Git tree inventory</strong><small>File and directory structure of a pinned Git state.</small></td><td>Acquired</td><td><span class="row-links"><a href="../corpus/normalized/git/teic-time-for-p6.json" data-repo-path="corpus/normalized/git/teic-time-for-p6.json">Data</a><a href="../sources/manifests/2026-09-04-teic-time-for-p6.yaml" data-repo-path="sources/manifests/2026-09-04-teic-time-for-p6.yaml">Manifest</a></span></td></tr><tr><td><strong>Web page census</strong><small>Acquired web pages and responses within the locked crawl boundary.</small></td><td>Partially acquired</td><td><span class="row-links"><a href="../corpus/normalized/web/tei-council-minutes.jsonl" data-repo-path="corpus/normalized/web/tei-council-minutes.jsonl">Data</a><a href="../sources/manifests/2026-09-04-tei-council-minutes-r2.yaml" data-repo-path="sources/manifests/2026-09-04-tei-council-minutes-r2.yaml">Manifest</a></span></td></tr></tbody></table></div>
+      </section>
+      <section>
+        <h2>Open items</h2>
+        <ul class="gap-list"><li>The reported P6 sandbox is not publicly accessible</li><li>P6-specific Council records have not yet been projected separately</li></ul>
+      </section>
+      <section>
+        <h2>Sources</h2>
+        <div class="link-list"><a href="https://www.tei-c.org/activities/council/meetings/" rel="noreferrer">Council meetings</a><a href="https://github.com/TEIC/timeForP6" rel="noreferrer">Public presentation repository</a><a href="https://github.com/TEIC/p6-sandbox" rel="noreferrer">Reported sandbox</a></div>
+      </section>
+      <details class="technical-details">
+        <summary>Technical details</summary>
+        <dl class="facts">
+          <div><dt>Identifier</dt><dd><code>tei-official-p6-process</code></dd></div>
+          <div><dt>Material family</dt><dd>Official P6 process</dd></div>
+          <div><dt>Rights</dt><dd>per-item-verification-required</dd></div>
+          <div><dt>Source types</dt><dd>document, data</dd></div>
+        </dl>
+        <div class="link-list technical-links"><a href="../sources/locks/tei-p6-process.yaml" data-repo-path="sources/locks/tei-p6-process.yaml">Source Lock</a><a href="../sources/manifests/2026-09-04-teic-time-for-p6.yaml" data-repo-path="sources/manifests/2026-09-04-teic-time-for-p6.yaml">Acquisition manifest 1</a><a href="../sources/manifests/2026-09-04-tei-council-minutes-r2.yaml" data-repo-path="sources/manifests/2026-09-04-tei-council-minutes-r2.yaml">Acquisition manifest 2</a></div>
+      </details>
+    </div>
+  </td>
+</tr>
+<tr class="source-row" data-source-row data-detail-id="source-detail-8" data-status="partial" data-status-rank="2" data-materials="web page census" data-title="tei p5 release history" data-date="2026-09-04" data-search="tei-p5-release-history tei p5 release history official tei p5 release census and artifacts published p5 versions, release pages, and associated artifacts. release history primary-publication-record verified-upstream-license-with-item-review web page census acquired web pages and responses within the locked crawl boundary. individual p5 releases have not yet been pinned separately one historical backup file has not yet been fetched">
+  <td class="source-cell"><strong>TEI P5 release history</strong><small>Published P5 versions, release pages, and associated artifacts.</small></td>
+  <td class="materials-cell"><ul class="material-summary"><li>Web page census</li></ul></td>
+  <td class="metrics-cell">53 release-index responses · 50 observed version directories</td>
+  <td class="status-cell"><span class="status-text status-partial" title="Part of the locked holding was acquired; open gaps are recorded.">Partially acquired</span><small>2 open items</small></td>
+  <td class="date-cell"><time datetime="2026-09-04">2026-09-04</time></td>
+  <td class="action-cell"><button class="expand" type="button" aria-expanded="false" aria-controls="source-detail-8" aria-label="Show details for TEI P5 release history"><span aria-hidden="true">+</span></button></td>
+</tr>
+<tr class="detail-row" id="source-detail-8" data-detail-row hidden>
+  <td colspan="6">
+    <div class="detail-panel">
+      <section class="holdings-section">
+        <h2>Holdings</h2>
+        <div class="subtable-wrap"><table class="subtable"><thead><tr><th>Holding</th><th>Acquisition</th><th>Open</th></tr></thead><tbody><tr><td><strong>Web page census</strong><small>Acquired web pages and responses within the locked crawl boundary.</small></td><td>Partially acquired</td><td><span class="row-links"><a href="../corpus/normalized/web/tei-p5-releases.jsonl" data-repo-path="corpus/normalized/web/tei-p5-releases.jsonl">Data</a><a href="../sources/manifests/2026-09-04-tei-p5-releases-r2.yaml" data-repo-path="sources/manifests/2026-09-04-tei-p5-releases-r2.yaml">Manifest</a></span></td></tr></tbody></table></div>
+      </section>
+      <section>
+        <h2>Open items</h2>
+        <ul class="gap-list"><li>Individual P5 releases have not yet been pinned separately</li><li>One historical backup file has not yet been fetched</li></ul>
+      </section>
+      <section>
+        <h2>Sources</h2>
+        <div class="link-list"><a href="https://www.tei-c.org/guidelines/p5/" rel="noreferrer">Release index</a><a href="https://www.tei-c.org/Vault/P5/" rel="noreferrer">Vault index</a><a href="https://github.com/TEIC/TEI/releases" rel="noreferrer">Github releases</a><a href="https://doi.org/10.5281/zenodo.3413524" rel="noreferrer">Zenodo concept doi</a></div>
+      </section>
+      <details class="technical-details">
+        <summary>Technical details</summary>
+        <dl class="facts">
+          <div><dt>Identifier</dt><dd><code>tei-p5-release-history</code></dd></div>
+          <div><dt>Material family</dt><dd>Release history</dd></div>
+          <div><dt>Rights</dt><dd>verified-upstream-license-with-item-review</dd></div>
+          <div><dt>Source types</dt><dd>document, data</dd></div>
+        </dl>
+        <div class="link-list technical-links"><a href="../sources/locks/p5-releases.yaml" data-repo-path="sources/locks/p5-releases.yaml">Source Lock</a><a href="../sources/manifests/2026-09-04-tei-p5-releases-r2.yaml" data-repo-path="sources/manifests/2026-09-04-tei-p5-releases-r2.yaml">Acquisition manifest 1</a></div>
+      </details>
+    </div>
+  </td>
+</tr>
+<tr class="source-row" data-source-row data-detail-id="source-detail-9" data-status="partial" data-status-rank="2" data-materials="web page census" data-title="tei board — meetings and policies" data-date="2026-09-04" data-search="tei-board-records tei board — meetings and policies tei board meeting and policy records meeting and policy records of the tei board. governance primary-governance-record per-item-verification-required web page census acquired web pages and responses within the locked crawl boundary. some linked board records could not be retrieved">
+  <td class="source-cell"><strong>TEI Board — Meetings and policies</strong><small>Meeting and policy records of the TEI Board.</small></td>
+  <td class="materials-cell"><ul class="material-summary"><li>Web page census</li></ul></td>
+  <td class="metrics-cell">225 responses · 197 successful responses · 358 inventoried external links</td>
+  <td class="status-cell"><span class="status-text status-partial" title="Part of the locked holding was acquired; open gaps are recorded.">Partially acquired</span><small>1 open item</small></td>
+  <td class="date-cell"><time datetime="2026-09-04">2026-09-04</time></td>
+  <td class="action-cell"><button class="expand" type="button" aria-expanded="false" aria-controls="source-detail-9" aria-label="Show details for TEI Board — Meetings and policies"><span aria-hidden="true">+</span></button></td>
+</tr>
+<tr class="detail-row" id="source-detail-9" data-detail-row hidden>
+  <td colspan="6">
+    <div class="detail-panel">
+      <section class="holdings-section">
+        <h2>Holdings</h2>
+        <div class="subtable-wrap"><table class="subtable"><thead><tr><th>Holding</th><th>Acquisition</th><th>Open</th></tr></thead><tbody><tr><td><strong>Web page census</strong><small>Acquired web pages and responses within the locked crawl boundary.</small></td><td>Partially acquired</td><td><span class="row-links"><a href="../corpus/normalized/web/tei-board-records.jsonl" data-repo-path="corpus/normalized/web/tei-board-records.jsonl">Data</a><a href="../sources/manifests/2026-09-04-tei-board-records-r2.yaml" data-repo-path="sources/manifests/2026-09-04-tei-board-records-r2.yaml">Manifest</a></span></td></tr></tbody></table></div>
+      </section>
+      <section>
+        <h2>Open items</h2>
+        <ul class="gap-list"><li>Some linked Board records could not be retrieved</li></ul>
+      </section>
+      <section>
+        <h2>Sources</h2>
+        <div class="link-list"><a href="https://www.tei-c.org/activities/board/" rel="noreferrer">Board index</a></div>
+      </section>
+      <details class="technical-details">
+        <summary>Technical details</summary>
+        <dl class="facts">
+          <div><dt>Identifier</dt><dd><code>tei-board-records</code></dd></div>
+          <div><dt>Material family</dt><dd>Governance</dd></div>
+          <div><dt>Rights</dt><dd>per-item-verification-required</dd></div>
+          <div><dt>Source types</dt><dd>document</dd></div>
+        </dl>
+        <div class="link-list technical-links"><a href="../sources/locks/board-records.yaml" data-repo-path="sources/locks/board-records.yaml">Source Lock</a><a href="../sources/manifests/2026-09-04-tei-board-records-r2.yaml" data-repo-path="sources/manifests/2026-09-04-tei-board-records-r2.yaml">Acquisition manifest 1</a></div>
+      </details>
+    </div>
+  </td>
+</tr>
+<tr class="source-row" data-source-row data-detail-id="source-detail-10" data-status="partial" data-status-rank="2" data-materials="web page census" data-title="historical tei archive" data-date="2026-09-04" data-search="tei-historical-archive historical tei archive historical tei archive, committee papers, and p1-p4 guidelines historical guidelines, committee records, and other holdings from the tei archive. historical tei holdings primary-historical-record per-item-verification-required web page census acquired web pages and responses within the locked crawl boundary. linked archive files have not yet been fully reconciled part of the historical archive requires a deeper crawl the historical archive reports gaps in its own preservation">
+  <td class="source-cell"><strong>Historical TEI archive</strong><small>Historical Guidelines, committee records, and other holdings from the TEI archive.</small></td>
+  <td class="materials-cell"><ul class="material-summary"><li>Web page census</li></ul></td>
+  <td class="metrics-cell">394 responses · 394 successful responses · 221 inventoried external links</td>
+  <td class="status-cell"><span class="status-text status-partial" title="Part of the locked holding was acquired; open gaps are recorded.">Partially acquired</span><small>3 open items</small></td>
+  <td class="date-cell"><time datetime="2026-09-04">2026-09-04</time></td>
+  <td class="action-cell"><button class="expand" type="button" aria-expanded="false" aria-controls="source-detail-10" aria-label="Show details for Historical TEI archive"><span aria-hidden="true">+</span></button></td>
+</tr>
+<tr class="detail-row" id="source-detail-10" data-detail-row hidden>
+  <td colspan="6">
+    <div class="detail-panel">
+      <section class="holdings-section">
+        <h2>Holdings</h2>
+        <div class="subtable-wrap"><table class="subtable"><thead><tr><th>Holding</th><th>Acquisition</th><th>Open</th></tr></thead><tbody><tr><td><strong>Web page census</strong><small>Acquired web pages and responses within the locked crawl boundary.</small></td><td>Partially acquired</td><td><span class="row-links"><a href="../corpus/normalized/web/tei-historical-archive.jsonl" data-repo-path="corpus/normalized/web/tei-historical-archive.jsonl">Data</a><a href="../sources/manifests/2026-09-04-tei-historical-archive-r2.yaml" data-repo-path="sources/manifests/2026-09-04-tei-historical-archive-r2.yaml">Manifest</a></span></td></tr></tbody></table></div>
+      </section>
+      <section>
+        <h2>Open items</h2>
+        <ul class="gap-list"><li>Linked archive files have not yet been fully reconciled</li><li>Part of the historical archive requires a deeper crawl</li><li>The historical archive reports gaps in its own preservation</li></ul>
+      </section>
+      <section>
+        <h2>Sources</h2>
+        <div class="link-list"><a href="https://www.tei-c.org/Vault/" rel="noreferrer">Archive index</a><a href="https://www.tei-c.org/Vault/Vault-GL.html" rel="noreferrer">Guidelines index</a></div>
+      </section>
+      <details class="technical-details">
+        <summary>Technical details</summary>
+        <dl class="facts">
+          <div><dt>Identifier</dt><dd><code>tei-historical-archive</code></dd></div>
+          <div><dt>Material family</dt><dd>Historical TEI holdings</dd></div>
+          <div><dt>Rights</dt><dd>per-item-verification-required</dd></div>
+          <div><dt>Source types</dt><dd>document, data</dd></div>
+        </dl>
+        <div class="link-list technical-links"><a href="../sources/locks/tei-archive.yaml" data-repo-path="sources/locks/tei-archive.yaml">Source Lock</a><a href="../sources/manifests/2026-09-04-tei-historical-archive-r2.yaml" data-repo-path="sources/manifests/2026-09-04-tei-historical-archive-r2.yaml">Acquisition manifest 1</a></div>
+      </details>
+    </div>
+  </td>
+</tr>
+<tr class="source-row" data-source-row data-detail-id="source-detail-11" data-status="partial" data-status-rank="2" data-materials="ticket and discussion records" data-title="historical tei trackers on sourceforge" data-date="2026-09-04" data-search="tei-legacy-sourceforge historical tei trackers on sourceforge legacy tei sourceforge trackers and release files historical bug reports, feature requests, support tickets, and discussions. historical development primary-process-record review-required ticket and discussion records ticket metadata and discussion posts from the historical trackers. ticket metadata and discussion posts from the historical trackers. sourceforge acquisition was interrupted by access limits sourceforge files and version-control interfaces have not yet been reconciled an earlier partial run requires a controlled refetch">
+  <td class="source-cell"><strong>Historical TEI trackers on SourceForge</strong><small>Historical bug reports, feature requests, support tickets, and discussions.</small></td>
+  <td class="materials-cell"><ul class="material-summary"><li>Ticket and discussion records</li></ul></td>
+  <td class="metrics-cell">1,226 tickets · 7,925 discussion posts · 774 inventoried bug tickets</td>
+  <td class="status-cell"><span class="status-text status-partial" title="Part of the locked holding was acquired; open gaps are recorded.">Partially acquired</span><small>3 open items</small></td>
+  <td class="date-cell"><time datetime="2026-09-04">2026-09-04</time></td>
+  <td class="action-cell"><button class="expand" type="button" aria-expanded="false" aria-controls="source-detail-11" aria-label="Show details for Historical TEI trackers on SourceForge"><span aria-hidden="true">+</span></button></td>
+</tr>
+<tr class="detail-row" id="source-detail-11" data-detail-row hidden>
+  <td colspan="6">
+    <div class="detail-panel">
+      <section class="holdings-section">
+        <h2>Holdings</h2>
+        <div class="subtable-wrap"><table class="subtable"><thead><tr><th>Holding</th><th>Acquisition</th><th>Open</th></tr></thead><tbody><tr><td><strong>Ticket and discussion records</strong><small>Ticket metadata and discussion posts from the historical trackers.</small></td><td>Partially acquired</td><td><span class="row-links"><a href="../corpus/normalized/sourceforge/tei-legacy-trackers.jsonl" data-repo-path="corpus/normalized/sourceforge/tei-legacy-trackers.jsonl">Data</a><a href="../sources/manifests/2026-09-04-tei-legacy-sourceforge.yaml" data-repo-path="sources/manifests/2026-09-04-tei-legacy-sourceforge.yaml">Manifest</a></span></td></tr><tr><td><strong>Ticket and discussion records</strong><small>Ticket metadata and discussion posts from the historical trackers.</small></td><td>Partially acquired</td><td><span class="row-links"><a href="../corpus/normalized/sourceforge/tei-legacy-trackers-r2.jsonl" data-repo-path="corpus/normalized/sourceforge/tei-legacy-trackers-r2.jsonl">Data</a><a href="../sources/manifests/2026-09-04-tei-legacy-sourceforge-r2.yaml" data-repo-path="sources/manifests/2026-09-04-tei-legacy-sourceforge-r2.yaml">Manifest</a></span></td></tr></tbody></table></div>
+      </section>
+      <section>
+        <h2>Open items</h2>
+        <ul class="gap-list"><li>SourceForge acquisition was interrupted by access limits</li><li>SourceForge files and version-control interfaces have not yet been reconciled</li><li>An earlier partial run requires a controlled refetch</li></ul>
+      </section>
+      <section>
+        <h2>Sources</h2>
+        <div class="link-list"><a href="https://sourceforge.net/projects/tei/" rel="noreferrer">Project</a><a href="https://sourceforge.net/p/tei/bugs/" rel="noreferrer">Bugs</a><a href="https://sourceforge.net/p/tei/feature-requests/" rel="noreferrer">Feature requests</a><a href="https://sourceforge.net/projects/tei/files/" rel="noreferrer">Files</a></div>
+      </section>
+      <details class="technical-details">
+        <summary>Technical details</summary>
+        <dl class="facts">
+          <div><dt>Identifier</dt><dd><code>tei-legacy-sourceforge</code></dd></div>
+          <div><dt>Material family</dt><dd>Historical development</dd></div>
+          <div><dt>Rights</dt><dd>review-required</dd></div>
+          <div><dt>Source types</dt><dd>document, data</dd></div>
+        </dl>
+        <div class="link-list technical-links"><a href="../sources/locks/legacy-sourceforge.yaml" data-repo-path="sources/locks/legacy-sourceforge.yaml">Source Lock</a><a href="../sources/manifests/2026-09-04-tei-legacy-sourceforge.yaml" data-repo-path="sources/manifests/2026-09-04-tei-legacy-sourceforge.yaml">Acquisition manifest 1</a><a href="../sources/manifests/2026-09-04-tei-legacy-sourceforge-r2.yaml" data-repo-path="sources/manifests/2026-09-04-tei-legacy-sourceforge-r2.yaml">Acquisition manifest 2</a></div>
+      </details>
+    </div>
+  </td>
+</tr>
+<tr class="source-row" data-source-row data-detail-id="source-detail-12" data-status="partial" data-status-rank="2" data-materials="git tree inventory" data-title="tei xsl stylesheets" data-date="2026-09-04" data-search="teic-stylesheets tei xsl stylesheets tei xsl stylesheets source and development records source code and development history of the tei xsl stylesheets. reference implementation and tools primary-implementation-record review-required git tree inventory file and directory structure of a pinned git state. issues and pull requests have not yet been acquired">
+  <td class="source-cell"><strong>TEI XSL Stylesheets</strong><small>Source code and development history of the TEI XSL Stylesheets.</small></td>
+  <td class="materials-cell"><ul class="material-summary"><li>Git tree inventory</li></ul></td>
+  <td class="metrics-cell">986 tree entries · 7,449 commits across all observed refs</td>
+  <td class="status-cell"><span class="status-text status-partial" title="Part of the locked holding was acquired; open gaps are recorded.">Partially acquired</span><small>1 open item</small></td>
+  <td class="date-cell"><time datetime="2026-09-04">2026-09-04</time></td>
+  <td class="action-cell"><button class="expand" type="button" aria-expanded="false" aria-controls="source-detail-12" aria-label="Show details for TEI XSL Stylesheets"><span aria-hidden="true">+</span></button></td>
+</tr>
+<tr class="detail-row" id="source-detail-12" data-detail-row hidden>
+  <td colspan="6">
+    <div class="detail-panel">
+      <section class="holdings-section">
+        <h2>Holdings</h2>
+        <div class="subtable-wrap"><table class="subtable"><thead><tr><th>Holding</th><th>Acquisition</th><th>Open</th></tr></thead><tbody><tr><td><strong>Git tree inventory</strong><small>File and directory structure of a pinned Git state.</small></td><td>Acquired</td><td><span class="row-links"><a href="../corpus/normalized/git/teic-stylesheets.json" data-repo-path="corpus/normalized/git/teic-stylesheets.json">Data</a><a href="../sources/manifests/2026-09-04-teic-stylesheets.yaml" data-repo-path="sources/manifests/2026-09-04-teic-stylesheets.yaml">Manifest</a></span></td></tr></tbody></table></div>
+      </section>
+      <section>
+        <h2>Open items</h2>
+        <ul class="gap-list"><li>Issues and pull requests have not yet been acquired</li></ul>
+      </section>
+      <section>
+        <h2>Sources</h2>
+        <div class="link-list"><a href="https://github.com/TEIC/Stylesheets" rel="noreferrer">Repository</a><a href="https://api.github.com/repos/TEIC/Stylesheets" rel="noreferrer">Api repository</a></div>
+      </section>
+      <details class="technical-details">
+        <summary>Technical details</summary>
+        <dl class="facts">
+          <div><dt>Identifier</dt><dd><code>teic-stylesheets</code></dd></div>
+          <div><dt>Material family</dt><dd>Reference implementation and tools</dd></div>
+          <div><dt>Rights</dt><dd>review-required</dd></div>
+          <div><dt>Source types</dt><dd>document, data</dd></div>
+        </dl>
+        <div class="link-list technical-links"><a href="../sources/locks/stylesheets.yaml" data-repo-path="sources/locks/stylesheets.yaml">Source Lock</a><a href="../sources/manifests/2026-09-04-teic-stylesheets.yaml" data-repo-path="sources/manifests/2026-09-04-teic-stylesheets.yaml">Acquisition manifest 1</a></div>
+      </details>
+    </div>
+  </td>
+</tr>
+<tr class="source-row" data-source-row data-detail-id="source-detail-13" data-status="partial" data-status-rank="2" data-materials="git tree inventory" data-title="official tei tools" data-date="2026-09-04" data-search="teic-tooling official tei tools official tei customization, validation, and conversion tools public tools for customization, validation, and conversion. reference implementation and tools primary-implementation-record repository-and-item-review-required git tree inventory file and directory structure of a pinned git state. file and directory structure of a pinned git state. file and directory structure of a pinned git state. file and directory structure of a pinned git state. file and directory structure of a pinned git state. file and directory structure of a pinned git state. issues and pull requests have not yet been acquired">
+  <td class="source-cell"><strong>Official TEI tools</strong><small>Public tools for customization, validation, and conversion.</small></td>
+  <td class="materials-cell"><ul class="material-summary"><li>Git tree inventory</li></ul></td>
+  <td class="metrics-cell">6 repositories · 1,023 tree entries · 1,513 commits across all refs</td>
+  <td class="status-cell"><span class="status-text status-partial" title="Part of the locked holding was acquired; open gaps are recorded.">Partially acquired</span><small>1 open item</small></td>
+  <td class="date-cell"><time datetime="2026-09-04">2026-09-04</time></td>
+  <td class="action-cell"><button class="expand" type="button" aria-expanded="false" aria-controls="source-detail-13" aria-label="Show details for Official TEI tools"><span aria-hidden="true">+</span></button></td>
+</tr>
+<tr class="detail-row" id="source-detail-13" data-detail-row hidden>
+  <td colspan="6">
+    <div class="detail-panel">
+      <section class="holdings-section">
+        <h2>Holdings</h2>
+        <div class="subtable-wrap"><table class="subtable"><thead><tr><th>Holding</th><th>Acquisition</th><th>Open</th></tr></thead><tbody><tr><td><strong>Git tree inventory</strong><small>File and directory structure of a pinned Git state.</small></td><td>Acquired</td><td><span class="row-links"><a href="../corpus/normalized/git/teic-romajs.json" data-repo-path="corpus/normalized/git/teic-romajs.json">Data</a><a href="../sources/manifests/2026-09-04-teic-romajs.yaml" data-repo-path="sources/manifests/2026-09-04-teic-romajs.yaml">Manifest</a></span></td></tr><tr><td><strong>Git tree inventory</strong><small>File and directory structure of a pinned Git state.</small></td><td>Acquired</td><td><span class="row-links"><a href="../corpus/normalized/git/teic-teigarage.json" data-repo-path="corpus/normalized/git/teic-teigarage.json">Data</a><a href="../sources/manifests/2026-09-04-teic-teigarage.yaml" data-repo-path="sources/manifests/2026-09-04-teic-teigarage.yaml">Manifest</a></span></td></tr><tr><td><strong>Git tree inventory</strong><small>File and directory structure of a pinned Git state.</small></td><td>Acquired</td><td><span class="row-links"><a href="../corpus/normalized/git/teic-ege-validator.json" data-repo-path="corpus/normalized/git/teic-ege-validator.json">Data</a><a href="../sources/manifests/2026-09-04-teic-ege-validator.yaml" data-repo-path="sources/manifests/2026-09-04-teic-ege-validator.yaml">Manifest</a></span></td></tr><tr><td><strong>Git tree inventory</strong><small>File and directory structure of a pinned Git state.</small></td><td>Acquired</td><td><span class="row-links"><a href="../corpus/normalized/git/teic-ege-xsl-converter.json" data-repo-path="corpus/normalized/git/teic-ege-xsl-converter.json">Data</a><a href="../sources/manifests/2026-09-04-teic-ege-xsl-converter.yaml" data-repo-path="sources/manifests/2026-09-04-teic-ege-xsl-converter.yaml">Manifest</a></span></td></tr><tr><td><strong>Git tree inventory</strong><small>File and directory structure of a pinned Git state.</small></td><td>Acquired</td><td><span class="row-links"><a href="../corpus/normalized/git/teic-tei-converter.json" data-repo-path="corpus/normalized/git/teic-tei-converter.json">Data</a><a href="../sources/manifests/2026-09-04-teic-tei-converter.yaml" data-repo-path="sources/manifests/2026-09-04-teic-tei-converter.yaml">Manifest</a></span></td></tr><tr><td><strong>Git tree inventory</strong><small>File and directory structure of a pinned Git state.</small></td><td>Acquired</td><td><span class="row-links"><a href="../corpus/normalized/git/teic-oxygen-tei.json" data-repo-path="corpus/normalized/git/teic-oxygen-tei.json">Data</a><a href="../sources/manifests/2026-09-04-teic-oxygen-tei.yaml" data-repo-path="sources/manifests/2026-09-04-teic-oxygen-tei.yaml">Manifest</a></span></td></tr></tbody></table></div>
+      </section>
+      <section>
+        <h2>Open items</h2>
+        <ul class="gap-list"><li>Issues and pull requests have not yet been acquired</li></ul>
+      </section>
+      <section>
+        <h2>Sources</h2>
+        <div class="link-list"><a href="https://github.com/TEIC/romajs" rel="noreferrer">Source</a><a href="https://github.com/TEIC/TEIGarage" rel="noreferrer">Source</a><a href="https://github.com/TEIC/ege-validator" rel="noreferrer">Source</a><a href="https://github.com/TEIC/ege-xsl-converter" rel="noreferrer">Source</a><a href="https://github.com/TEIC/tei-converter" rel="noreferrer">Source</a><a href="https://github.com/TEIC/oxygen-tei" rel="noreferrer">Source</a></div>
+      </section>
+      <details class="technical-details">
+        <summary>Technical details</summary>
+        <dl class="facts">
+          <div><dt>Identifier</dt><dd><code>teic-tooling</code></dd></div>
+          <div><dt>Material family</dt><dd>Reference implementation and tools</dd></div>
+          <div><dt>Rights</dt><dd>repository-and-item-review-required</dd></div>
+          <div><dt>Source types</dt><dd>document, data</dd></div>
+        </dl>
+        <div class="link-list technical-links"><a href="../sources/locks/tooling.yaml" data-repo-path="sources/locks/tooling.yaml">Source Lock</a><a href="../sources/manifests/2026-09-04-teic-romajs.yaml" data-repo-path="sources/manifests/2026-09-04-teic-romajs.yaml">Acquisition manifest 1</a><a href="../sources/manifests/2026-09-04-teic-teigarage.yaml" data-repo-path="sources/manifests/2026-09-04-teic-teigarage.yaml">Acquisition manifest 2</a><a href="../sources/manifests/2026-09-04-teic-ege-validator.yaml" data-repo-path="sources/manifests/2026-09-04-teic-ege-validator.yaml">Acquisition manifest 3</a><a href="../sources/manifests/2026-09-04-teic-ege-xsl-converter.yaml" data-repo-path="sources/manifests/2026-09-04-teic-ege-xsl-converter.yaml">Acquisition manifest 4</a><a href="../sources/manifests/2026-09-04-teic-tei-converter.yaml" data-repo-path="sources/manifests/2026-09-04-teic-tei-converter.yaml">Acquisition manifest 5</a><a href="../sources/manifests/2026-09-04-teic-oxygen-tei.yaml" data-repo-path="sources/manifests/2026-09-04-teic-oxygen-tei.yaml">Acquisition manifest 6</a></div>
+      </details>
+    </div>
+  </td>
+</tr>
+<tr class="source-row" data-source-row data-detail-id="source-detail-14" data-status="partial" data-status-rank="2" data-materials="git tree inventory" data-title="official tei website" data-date="2026-09-04" data-search="tei-website-records official tei website official tei website source and publication records source code and published pages of the official tei website. publication infrastructure primary-publication-record repository-and-item-review-required git tree inventory file and directory structure of a pinned git state. published web pages have not yet been acquired as a separate holding">
+  <td class="source-cell"><strong>Official TEI website</strong><small>Source code and published pages of the official TEI website.</small></td>
+  <td class="materials-cell"><ul class="material-summary"><li>Git tree inventory</li></ul></td>
+  <td class="metrics-cell">851 tree entries · 560 commits across all observed refs</td>
+  <td class="status-cell"><span class="status-text status-partial" title="Part of the locked holding was acquired; open gaps are recorded.">Partially acquired</span><small>1 open item</small></td>
+  <td class="date-cell"><time datetime="2026-09-04">2026-09-04</time></td>
+  <td class="action-cell"><button class="expand" type="button" aria-expanded="false" aria-controls="source-detail-14" aria-label="Show details for Official TEI website"><span aria-hidden="true">+</span></button></td>
+</tr>
+<tr class="detail-row" id="source-detail-14" data-detail-row hidden>
+  <td colspan="6">
+    <div class="detail-panel">
+      <section class="holdings-section">
+        <h2>Holdings</h2>
+        <div class="subtable-wrap"><table class="subtable"><thead><tr><th>Holding</th><th>Acquisition</th><th>Open</th></tr></thead><tbody><tr><td><strong>Git tree inventory</strong><small>File and directory structure of a pinned Git state.</small></td><td>Acquired</td><td><span class="row-links"><a href="../corpus/normalized/git/teic-website.json" data-repo-path="corpus/normalized/git/teic-website.json">Data</a><a href="../sources/manifests/2026-09-04-teic-website.yaml" data-repo-path="sources/manifests/2026-09-04-teic-website.yaml">Manifest</a></span></td></tr></tbody></table></div>
+      </section>
+      <section>
+        <h2>Open items</h2>
+        <ul class="gap-list"><li>Published web pages have not yet been acquired as a separate holding</li></ul>
+      </section>
+      <section>
+        <h2>Sources</h2>
+        <div class="link-list"><a href="https://www.tei-c.org/" rel="noreferrer">Website</a><a href="https://github.com/TEIC/website" rel="noreferrer">Repository</a></div>
+      </section>
+      <details class="technical-details">
+        <summary>Technical details</summary>
+        <dl class="facts">
+          <div><dt>Identifier</dt><dd><code>tei-website-records</code></dd></div>
+          <div><dt>Material family</dt><dd>Publication infrastructure</dd></div>
+          <div><dt>Rights</dt><dd>repository-and-item-review-required</dd></div>
+          <div><dt>Source types</dt><dd>document, data</dd></div>
+        </dl>
+        <div class="link-list technical-links"><a href="../sources/locks/website.yaml" data-repo-path="sources/locks/website.yaml">Source Lock</a><a href="../sources/manifests/2026-09-04-teic-website.yaml" data-repo-path="sources/manifests/2026-09-04-teic-website.yaml">Acquisition manifest 1</a></div>
+      </details>
+    </div>
+  </td>
+</tr>
+<tr class="source-row" data-source-row data-detail-id="source-detail-15" data-status="partial" data-status-rank="2" data-materials="web page census" data-title="tei community, sigs, and working groups" data-date="2026-09-04" data-search="tei-community-records tei community, sigs, and working groups tei-l, sig, workgroup, and annual-meeting records records from tei-l, sigs, working groups, and annual meetings. community and working groups primary-community-record per-item-verification-required web page census acquired web pages and responses within the locked crawl boundary. access to the tei-l archive is not technically verified annual meetings and working groups are still being reconciled">
+  <td class="source-cell"><strong>TEI community, SIGs, and working groups</strong><small>Records from TEI-L, SIGs, working groups, and annual meetings.</small></td>
+  <td class="materials-cell"><ul class="material-summary"><li>Web page census</li></ul></td>
+  <td class="metrics-cell">3 SIG pages · 101 inventoried external SIG links</td>
+  <td class="status-cell"><span class="status-text status-partial" title="Part of the locked holding was acquired; open gaps are recorded.">Partially acquired</span><small>2 open items</small></td>
+  <td class="date-cell"><time datetime="2026-09-04">2026-09-04</time></td>
+  <td class="action-cell"><button class="expand" type="button" aria-expanded="false" aria-controls="source-detail-15" aria-label="Show details for TEI community, SIGs, and working groups"><span aria-hidden="true">+</span></button></td>
+</tr>
+<tr class="detail-row" id="source-detail-15" data-detail-row hidden>
+  <td colspan="6">
+    <div class="detail-panel">
+      <section class="holdings-section">
+        <h2>Holdings</h2>
+        <div class="subtable-wrap"><table class="subtable"><thead><tr><th>Holding</th><th>Acquisition</th><th>Open</th></tr></thead><tbody><tr><td><strong>Web page census</strong><small>Acquired web pages and responses within the locked crawl boundary.</small></td><td>Acquired</td><td><span class="row-links"><a href="../corpus/normalized/web/tei-sig-records.jsonl" data-repo-path="corpus/normalized/web/tei-sig-records.jsonl">Data</a><a href="../sources/manifests/2026-09-04-tei-sig-records.yaml" data-repo-path="sources/manifests/2026-09-04-tei-sig-records.yaml">Manifest</a></span></td></tr></tbody></table></div>
+      </section>
+      <section>
+        <h2>Open items</h2>
+        <ul class="gap-list"><li>Access to the TEI-L archive is not technically verified</li><li>Annual meetings and working groups are still being reconciled</li></ul>
+      </section>
+      <section>
+        <h2>Sources</h2>
+        <div class="link-list"><a href="https://www.tei-c.org/support/" rel="noreferrer">Support</a><a href="https://www.tei-c.org/activities/sig/" rel="noreferrer">Sig index</a><a href="https://www.tei-c.org/Vault/Workgroups/" rel="noreferrer">Concluded workgroups</a><a href="https://www.tei-c.org/Vault/" rel="noreferrer">Archive</a></div>
+      </section>
+      <details class="technical-details">
+        <summary>Technical details</summary>
+        <dl class="facts">
+          <div><dt>Identifier</dt><dd><code>tei-community-records</code></dd></div>
+          <div><dt>Material family</dt><dd>Community and working groups</dd></div>
+          <div><dt>Rights</dt><dd>per-item-verification-required</dd></div>
+          <div><dt>Source types</dt><dd>document, data, publication</dd></div>
+        </dl>
+        <div class="link-list technical-links"><a href="../sources/locks/community-records.yaml" data-repo-path="sources/locks/community-records.yaml">Source Lock</a><a href="../sources/manifests/2026-09-04-tei-sig-records.yaml" data-repo-path="sources/manifests/2026-09-04-tei-sig-records.yaml">Acquisition manifest 1</a></div>
+      </details>
+    </div>
+  </td>
+</tr>
+<tr class="source-row" data-source-row data-detail-id="source-detail-16" data-status="partial" data-status-rank="2" data-materials="web page census" data-title="real-world odd customizations and processing practice" data-date="2026-09-04" data-search="tei-real-world-customizations real-world odd customizations and processing practice real-world tei odd customizations and processing cases observed odd customizations and processing practice from real projects. documented practice primary-practice-record per-project web page census acquired web pages and responses within the locked crawl boundary. the sampling protocol for real-world projects has not yet been defined a historical lite customization is no longer reachable">
+  <td class="source-cell"><strong>Real-world ODD customizations and processing practice</strong><small>Observed ODD customizations and processing practice from real projects.</small></td>
+  <td class="materials-cell"><ul class="material-summary"><li>Web page census</li></ul></td>
+  <td class="metrics-cell">2 index pages · 122 inventoried artifact links</td>
+  <td class="status-cell"><span class="status-text status-partial" title="Part of the locked holding was acquired; open gaps are recorded.">Partially acquired</span><small>2 open items</small></td>
+  <td class="date-cell"><time datetime="2026-09-04">2026-09-04</time></td>
+  <td class="action-cell"><button class="expand" type="button" aria-expanded="false" aria-controls="source-detail-16" aria-label="Show details for Real-world ODD customizations and processing practice"><span aria-hidden="true">+</span></button></td>
+</tr>
+<tr class="detail-row" id="source-detail-16" data-detail-row hidden>
+  <td colspan="6">
+    <div class="detail-panel">
+      <section class="holdings-section">
+        <h2>Holdings</h2>
+        <div class="subtable-wrap"><table class="subtable"><thead><tr><th>Holding</th><th>Acquisition</th><th>Open</th></tr></thead><tbody><tr><td><strong>Web page census</strong><small>Acquired web pages and responses within the locked crawl boundary.</small></td><td>Partially acquired</td><td><span class="row-links"><a href="../corpus/normalized/web/tei-official-customizations.jsonl" data-repo-path="corpus/normalized/web/tei-official-customizations.jsonl">Data</a><a href="../sources/manifests/2026-09-04-tei-official-customizations.yaml" data-repo-path="sources/manifests/2026-09-04-tei-official-customizations.yaml">Manifest</a></span></td></tr></tbody></table></div>
+      </section>
+      <section>
+        <h2>Open items</h2>
+        <ul class="gap-list"><li>The sampling protocol for real-world projects has not yet been defined</li><li>A historical Lite Customization is no longer reachable</li></ul>
+      </section>
+      <section>
+        <h2>Sources</h2>
+        <div class="link-list"><a href="https://www.tei-c.org/guidelines/customization/" rel="noreferrer">Official customization index</a></div>
+      </section>
+      <details class="technical-details">
+        <summary>Technical details</summary>
+        <dl class="facts">
+          <div><dt>Identifier</dt><dd><code>tei-real-world-customizations</code></dd></div>
+          <div><dt>Material family</dt><dd>Documented practice</dd></div>
+          <div><dt>Rights</dt><dd>per-project</dd></div>
+          <div><dt>Source types</dt><dd>document, data, publication</dd></div>
+        </dl>
+        <div class="link-list technical-links"><a href="../sources/locks/real-world-customizations.yaml" data-repo-path="sources/locks/real-world-customizations.yaml">Source Lock</a><a href="../sources/manifests/2026-09-04-tei-official-customizations.yaml" data-repo-path="sources/manifests/2026-09-04-tei-official-customizations.yaml">Acquisition manifest 1</a></div>
+      </details>
+    </div>
+  </td>
+</tr></tbody>
+      </table>
+    </div>
+    <p id="empty" class="empty">No source matches the current selection.</p>
+  </section>
+  </main>
+  <footer class="site-footer">
+    <p>Independent research project · not officially affiliated with the TEI Consortium</p>
+    <nav class="footer-nav" aria-label="Further information">
+      <a href="index.html" data-project-link>About</a>
+    </nav>
+  </footer>
+</div>
+<script>
+const search = document.querySelector("#search");
+const statusFilter = document.querySelector("#status-filter");
+const materialFilter = document.querySelector("#material-filter");
+const rows = [...document.querySelectorAll("[data-source-row]")];
+const tableBody = document.querySelector("#source-body");
+const resultCount = document.querySelector("#result-count");
+const empty = document.querySelector("#empty");
+const repositoryBase = document.querySelector('meta[name="repository-base"]')?.content;
+let sortKey = "title";
+let sortDirection = "asc";
+
+if (repositoryBase) {
+  document.querySelectorAll("[data-repo-path]").forEach((link) => {
+    link.href = new URL(link.dataset.repoPath, repositoryBase).href;
+  });
+  document.querySelectorAll("[data-project-link]").forEach((link) => {
+    link.href = "project.html";
+  });
+}
+
+function closeDetails(row) {
+  const detail = document.querySelector(`#${row.dataset.detailId}`);
+  const button = row.querySelector(".expand");
+  if (detail) detail.hidden = true;
+  if (button) button.setAttribute("aria-expanded", "false");
+}
+
+function compareRows(left, right) {
+  let comparison = 0;
+  if (sortKey === "status") {
+    comparison = Number(left.dataset.statusRank) - Number(right.dataset.statusRank);
+  } else if (sortKey === "date") {
+    comparison = left.dataset.date.localeCompare(right.dataset.date);
+  } else if (sortKey === "materials") {
+    comparison = left.dataset.materials.localeCompare(right.dataset.materials, "en");
+  } else {
+    comparison = left.dataset.title.localeCompare(right.dataset.title, "en");
+  }
+  return sortDirection === "asc" ? comparison : -comparison;
+}
+
+function updateSortHeaders() {
+  document.querySelectorAll("[data-sort-header]").forEach((header) => {
+    const active = header.dataset.sortHeader === sortKey;
+    header.setAttribute("aria-sort", active ? (sortDirection === "asc" ? "ascending" : "descending") : "none");
+    const mark = header.querySelector(".sort-mark");
+    if (mark) mark.textContent = active ? (sortDirection === "asc" ? "↑" : "↓") : "";
+  });
+}
+
+function applyView() {
+  const query = search.value.trim().toLowerCase();
+  const selectedStatus = statusFilter.value;
+  const selectedMaterial = materialFilter.value;
+  let visible = 0;
+  rows.forEach((row) => {
+    const statusMatches = selectedStatus === "all" || row.dataset.status === selectedStatus;
+    const materialMatches = selectedMaterial === "all" || row.dataset.materials.split("|").includes(selectedMaterial);
+    const searchMatches = !query || row.dataset.search.includes(query);
+    const show = statusMatches && materialMatches && searchMatches;
+    row.hidden = !show;
+    const detail = document.querySelector(`#${row.dataset.detailId}`);
+    if (!show) closeDetails(row);
+    if (detail && row.hidden) detail.hidden = true;
+    if (show) visible += 1;
+  });
+  [...rows].sort(compareRows).forEach((row) => {
+    const detail = document.querySelector(`#${row.dataset.detailId}`);
+    tableBody.append(row);
+    if (detail) tableBody.append(detail);
+  });
+  resultCount.textContent = visible;
+  empty.style.display = visible ? "none" : "block";
+  updateSortHeaders();
+}
+
+document.querySelectorAll(".sort-button").forEach((button) => {
+  button.addEventListener("click", () => {
+    const nextKey = button.dataset.sort;
+    if (sortKey === nextKey) {
+      sortDirection = sortDirection === "asc" ? "desc" : "asc";
+    } else {
+      sortKey = nextKey;
+      sortDirection = nextKey === "date" ? "desc" : "asc";
+    }
+    applyView();
+  });
+});
+
+document.querySelectorAll(".expand").forEach((button) => {
+  button.addEventListener("click", () => {
+    const row = button.closest("[data-source-row]");
+    const detail = document.querySelector(`#${row.dataset.detailId}`);
+    const willOpen = button.getAttribute("aria-expanded") !== "true";
+    button.setAttribute("aria-expanded", String(willOpen));
+    detail.hidden = !willOpen;
+  });
+});
+
+search.addEventListener("input", applyView);
+statusFilter.addEventListener("change", applyView);
+materialFilter.addEventListener("change", applyView);
+applyView();
+</script>
+</body>
+</html>

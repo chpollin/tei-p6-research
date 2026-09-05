@@ -2,15 +2,15 @@
 title: Index
 project:
   name: "TEI P6 Research Vault"
-  repository: "tei-p6"
+  repository: "tei-p6-research"
 method:
   name: Promptotyping
   url: https://dhcraft.org/Promptotyping/
 status: draft
 language: en
 created: "2026-09-04"
-updated: "2026-09-04"
-related: [specification, schema, operations, state, journal]
+updated: "2026-09-05"
+related: [specification, design, schema, operations, state, journal]
 ---
 
 # Index
@@ -19,11 +19,12 @@ Navigation and terminology of the vault. Human readers start at [[HOME]]. Codex
 starts at `AGENTS.md`; Claude Code starts at `CLAUDE.md`. Both action layers
 route into this same declarative knowledge system.
 
-Together, the six files in `knowledge/` are the Promptotyping document of the
-project: specification describes what is being attempted, schema defines the
-artifacts, operations defines the executable method, state records present
-reality, journal preserves decisions, and this index connects them. Research
-claims do not live here; they enter the Grounded Vault production layers.
+Together, the seven files in `knowledge/` are the Promptotyping document of the
+project: specification describes what is being attempted, design governs the
+public research workbench, schema defines the artifacts, operations defines the
+executable method, state records present reality, journal preserves decisions,
+and this index connects them. Research claims do not live here; they enter the
+Grounded Vault production layers.
 
 ## Reading paths
 
@@ -32,6 +33,9 @@ claims do not live here; they enter the Grounded Vault production layers.
   [[knowledge/state]] for where work stands.
 - **Produce or check content**: [[knowledge/schema]] for what a well-formed artifact is, [[knowledge/operations]] for the chain that produces it.
 - **Understand a past decision**: [[knowledge/journal]], append-only, newest last.
+- **Design or change the research workbench**: [[knowledge/design]] for the
+  information architecture, content placement, interaction, accessibility,
+  provenance, generation, and publication contract.
 - **Plan acquisition**: `sources/registry.yaml`, `corpus/COMPLETENESS.md`, and
   `docs/multi-agent-acquisition-runbook.md` after the project contract.
 - **Understand the repository system**: `ARCHITECTURE.md` for planes, data
@@ -40,12 +44,13 @@ claims do not live here; they enter the Grounded Vault production layers.
   design dossier, then `workflows/evaluate-p6-proposal.md` for the grounded
   comparison procedure.
 
-## The six knowledge documents
+## The seven knowledge documents
 
 | Document | Holds | Changes |
 |---|---|---|
 | [[knowledge/index]] | navigation, terminology | rarely |
 | [[knowledge/specification]] | purpose, parameters, settled decisions | on decisions |
+| [[knowledge/design]] | research-workbench information architecture and interface contract | on product decisions |
 | [[knowledge/schema]] | layer model, document types, anchor mechanics, audit trail | rarely, by decision |
 | [[knowledge/operations]] | the chains: acquire, ingest, distill, assertions, chapters, query, check | rarely, by decision |
 | [[knowledge/state]] | source inventory, chapter register, everything volatile | constantly |
@@ -53,7 +58,7 @@ claims do not live here; they enter the Grounded Vault production layers.
 
 A document is split only when its sections develop divergent update rhythms or divergent readers.
 
-The design documents under `docs/p6/` are outside these six control documents
+The P6 architecture documents under `docs/p6/` are outside these seven control documents
 and outside the evidence chain. They organize provisional requirements,
 hypotheses, experiment contracts, and open research questions. They may not be
 used as evidence for P5 behavior or official TEI policy.

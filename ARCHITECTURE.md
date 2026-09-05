@@ -37,11 +37,12 @@ helps humans and agents retrieve only the material needed for a task.
 
 ## Project control
 
-The six documents in `knowledge/` form the executable Promptotyping contract:
+The seven documents in `knowledge/` form the executable Promptotyping contract:
 
 | File | Authority |
 |---|---|
 | `knowledge/specification.md` | purpose, research questions, scope, constraints, and success criteria |
+| `knowledge/design.md` | public research-workbench information architecture and interface contract |
 | `knowledge/schema.md` | artifact types, metadata, anchors, statuses, and layer invariants |
 | `knowledge/operations.md` | acquisition, ingestion, synthesis, review, and query procedures |
 | `knowledge/state.md` | current corpus, phase, gaps, blockers, and inventories |

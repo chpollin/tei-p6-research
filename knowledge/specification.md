@@ -2,7 +2,7 @@
 title: Specification
 project:
   name: "TEI P6 Research Vault"
-  repository: "tei-p6"
+  repository: "tei-p6-research"
 method:
   name: Promptotyping
   url: https://dhcraft.org/Promptotyping/
@@ -12,8 +12,8 @@ profile:
 status: draft
 language: en
 created: "2026-09-04"
-updated: "2026-09-04"
-related: [index, schema, operations, state, journal]
+updated: "2026-09-05"
+related: [index, design, schema, operations, state, journal]
 ---
 
 # Specification
@@ -23,7 +23,8 @@ defines the problem, research questions, boundaries, intended artifacts,
 evaluation dimensions, and success criteria of this instance. The invariant
 Grounded Vault mechanics live in [[knowledge/schema]] and
 [[knowledge/operations]]; volatile progress lives in [[knowledge/state]];
-decisions and changes of rationale are appended to [[knowledge/journal]].
+the public research-workbench contract lives in [[knowledge/design]]; decisions
+and changes of rationale are appended to [[knowledge/journal]].
 
 ## Project proposition
 
@@ -75,9 +76,17 @@ consisting of:
 8. an evaluation report linking each recommendation to P5 evidence,
    counterevidence, trade-offs, and open questions.
 
-The output genre is a German scholarly synthesis and design specification for
+The output genre is an English scholarly synthesis and design specification for
 researchers, scholarly editors, standards maintainers, educators, and tool
 builders.
+
+The project will also develop a public, static-first research workbench that
+supports the evidence-based exploration and evaluation of possible TEI P6
+architectures. Its first view is an inventory of acquired primary materials;
+later views may support evidence tracing, comparison, proposal evaluation, and
+migration experiments as their underlying canonical data become ready. The
+workbench is an interface over the vault, not a new evidence layer and not an
+official TEI decision system.
 
 ## Research questions
 
@@ -280,6 +289,7 @@ A gain on one dimension may be accepted only with its losses on others visible.
 | P6 option matrix | `40_output/` | alternatives compared across declared dimensions |
 | migration dossier | `40_output/` | mappings, affected artifacts, costs, gaps, and test results explicit |
 | agent context packs | `contexts/generated/` | deterministic, dependency-hashed, no new propositions |
+| research workbench | `docs/` | generated from declared vault state; public views preserve provenance, rights, and official-versus-independent distinctions |
 
 ## Success criteria
 
@@ -317,7 +327,7 @@ is not a design candidate.
 | Active source types | document, publication, data |
 | Primary baseline | TEI P5 4.12.0, commit `113e933e21f016e2655518321e9d10214b8d9fcb` |
 | Output genre | scholarly synthesis and design specification |
-| Working language of content | German; canonical English TEI identifiers remain unchanged |
+| Working language of content | English throughout; canonical TEI identifiers remain unchanged |
 | Verification role | project owner or explicitly designated TEI domain expert; no human verifier assigned |
 | Validation mechanism | `tools/validate.py` |
 | Machine review | adversarial review in a separate agent/model context under anti-anchoring |
@@ -325,15 +335,14 @@ is not a design candidate.
 
 ## Style sheet
 
-Output uses precise German scholarly and technical prose. English TEI element,
-attribute, class, module, macro, datatype, and ODD identifiers remain unchanged.
+Output uses precise English scholarly and technical prose. Canonical TEI
+element, attribute, class, module, macro, datatype, and ODD identifiers remain unchanged.
 Every load-bearing statement carries the provenance link required by
 [[knowledge/schema]] and names the release, commit, or snapshot when
 version-sensitive.
 
-Findings (*Befund*), interpretations (*Interpretation*), and proposals
-(*Vorschlag*) are separated structurally or by explicit sentence-level
-signalling. Quotations are verbatim and visibly distinct from paraphrase.
+Findings, interpretations, and proposals are separated structurally or by
+explicit sentence-level signalling. Quotations are verbatim and visibly distinct from paraphrase.
 Official TEI positions are attributed and dated. No machine judgment is
 described as human verification.
 
@@ -354,12 +363,13 @@ described as human verification.
 
 ## Settled decisions
 
-- 2026-09-04: The Grounded Vault was instantiated as the independent TEI P6
-  Research Vault in the local `tei-p6` repository.
+- 2026-09-05: The Grounded Vault is maintained as the independent TEI P6
+  Research Vault in the public `chpollin/tei-p6-research` repository.
 - 2026-09-04: The controlled topic set contains twelve P5-analysis and P6-design
   maps; all three source types are active.
-- 2026-09-04: The output is a German scholarly synthesis and design
-  specification; canonical TEI identifiers remain English.
+- 2026-09-05: Project knowledge, the public interface, and the scholarly
+  synthesis and design specification use English throughout; canonical TEI
+  identifiers remain unchanged.
 - 2026-09-04: Human verification is reserved for the project owner or an
   explicitly designated TEI domain expert.
 - 2026-09-04: Separate-context adversarial review establishes machine review

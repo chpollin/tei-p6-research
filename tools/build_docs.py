@@ -40,6 +40,7 @@ REPOSITORY_URL: str | None = None
 SECTIONS = [
     ("start", "Start", "README.md"),
     ("project", "Project", "knowledge/specification.md"),
+    ("design", "Interface design", "knowledge/design.md"),
     ("concept", "Concept", "docs/concept.md"),
     ("terminology", "Terminology", "knowledge/index.md"),
     ("schema", "Schema", "knowledge/schema.md"),
@@ -350,7 +351,7 @@ th { font-weight: 600; }
 
 
 def build_page(root: Path, date: str) -> str:
-    nav = "".join(
+    nav = '<li><a href="corpus.html">Primary data</a></li>' + "".join(
         f'<li><a href="#{anchor}">{html.escape(title)}</a></li>'
         for anchor, title, _ in SECTIONS
     )
@@ -366,7 +367,7 @@ def build_page(root: Path, date: str) -> str:
     else:
         source_label = "the local TEI P6 Research Vault documents"
     return f"""<!doctype html>
-<html lang="de">
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">

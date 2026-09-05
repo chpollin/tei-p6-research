@@ -2,14 +2,14 @@
 title: Journal
 project:
   name: "TEI P6 Research Vault"
-  repository: "tei-p6"
+  repository: "tei-p6-research"
 method:
   name: Promptotyping
   url: https://dhcraft.org/Promptotyping/
 status: draft
 language: en
 created: "2026-09-04"
-updated: "2026-09-04"
+updated: "2026-09-05"
 related: [specification, state]
 ---
 
@@ -60,3 +60,77 @@ manifests provide identity, counts, hashes, coverage, and failure evidence.
 Collectors for Git, GitHub organization and work-item APIs, bounded websites,
 SourceForge trackers, and release assets are therefore accepted as upstream
 corpus artifacts; none bypasses the canonical Grounded Vault evidence chain.
+
+## 2026-09-05 — Primary-data overview established as a generated projection
+
+The first research frontend is a compact static overview generated at
+`docs/corpus.html` from `sources/registry.yaml`, the source locks, and only the
+run manifests referenced by those locks. Its unit is the registered source
+family, not an individual API object, Git blob, ZIP member, or web response;
+secondary scholarly literature remains separately identified. The page exposes
+family status, bounded completion target, selected non-additive counts, rights,
+gaps, upstream interfaces, control records, and normalized data products
+without reading or publishing raw source bodies. It is a navigation projection,
+cannot appear in grounding, and creates no new evidence type, status, or anchor
+form. `docs/corpus.html` is generated and must not be edited by hand.
+
+## 2026-09-05 — Research frontend adopted as a public P6 support workbench
+
+The generated materials overview is the first surface of a gradually expanding
+research workbench for evidence-based TEI P6 development. It will begin with a
+plain inventory of what the vault has actually acquired and may later add
+evidence tracing, comparison, proposal evaluation, and migration experiments
+only when their canonical inputs are ready. The interface remains independent
+and unofficial, does not create evidence, and must preserve the distinction
+between official TEI P6 records and this project's analyses or proposals.
+GitHub Pages is the intended public host; deployment automation may be prepared
+before a remote exists, but publication remains blocked until repository owner
+and visibility are settled.
+
+## 2026-09-05 — Materials view aligned with the acquisition hierarchy
+
+The public working view now presents one sortable row per registered source
+family and lists each manifest-declared data object as a concrete subcollection
+beneath that source. Source titles and short material descriptions are primary;
+internal IDs, control vocabulary, rights metadata, and manifest names are kept
+under technical details. Full-text search, acquisition-status filtering,
+material-type filtering, and column sorting replace explanatory prose and
+aggregate number displays. Methodological qualifications remain in the project
+documentation or concise status help, while open gaps appear as short German
+work items linked to their complete control records.
+
+## 2026-09-05 — Interface design split into a seventh control document
+
+The research workbench now has a distinct audience, update rhythm, and set of
+invariants that no longer fit cleanly inside the research specification,
+evidence schema, or an implementation journal. `knowledge/design.md` therefore
+becomes the seventh Promptotyping control document. It records the stable
+information architecture, content placement, interaction, accessibility,
+provenance, generation, and publication contract for the public research
+workbench.
+
+This document is control meta-knowledge, not a source, representation,
+distillate, assertion, or output layer. It cannot ground research claims, create
+evidence statuses, or bypass the canonical
+`00_sources -> 10_markdown -> 20_distillates -> 30_assertions -> 40_output`
+chain. Volatile implementation state remains in `knowledge/state.md`. The
+working surface prioritizes materials and research tasks; About carries purpose,
+method, completion semantics, and the independent-versus-official boundary; raw
+control records remain secondary technical detail.
+
+## 2026-09-05 — Project working language unified as English
+
+English is now the sole working language for the control documents in
+`knowledge/`, the public research workbench, and the intended scholarly
+synthesis and design specification. This supersedes the earlier allowance for a
+German final output and the initial German materials-interface labels. Canonical
+TEI identifiers remain unchanged, while user-facing titles, descriptions,
+statuses, help text, navigation, and planned output names are all English.
+
+## 2026-09-05 — Public repository established for the research vault
+
+The canonical public repository is `chpollin/tei-p6-research`. The name keeps
+the project visibly independent and broad enough to contain acquisition,
+grounded knowledge, P6 design evaluation, and the research workbench without
+presenting itself as the official TEI P6 repository. GitHub Pages publishes the
+generated static workbench from this repository through the pinned workflow.

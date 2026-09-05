@@ -2,7 +2,7 @@
 title: Operations
 project:
   name: "TEI P6 Research Vault"
-  repository: "tei-p6"
+  repository: "tei-p6-research"
 method:
   name: Promptotyping
   url: https://dhcraft.org/Promptotyping/

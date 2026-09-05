@@ -360,11 +360,10 @@ After GitHub authentication and repository visibility are settled, dispatch:
    authenticated GitHub bootstrap runs under a single quota owner.
 6. Reconcile and promote manifests before any large-scale distillation begins.
 
-The public GitHub remote is created only after owner and visibility are explicit:
+The canonical public GitHub remote is:
 
 ```powershell
 gh auth login
-gh repo create OWNER/tei-p6 --source . --remote origin --push --public-or-private
+git remote add origin https://github.com/chpollin/tei-p6-research.git
+git push -u origin main
 ```
-
-`--public-or-private` is a decision placeholder, not a literal option.

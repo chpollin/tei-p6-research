@@ -19,6 +19,7 @@ verified quotation, or reproducible computation.
 - [One-page exposé](EXPOSE.md)
 - [Repository architecture](ARCHITECTURE.md)
 - [[knowledge/specification|Research contract]]
+- [[knowledge/design|Research workbench design]]
 - [[knowledge/state|Current state]]
 - [[knowledge/journal|Decision history]]
 - [P6 design dossier](docs/p6/README.md)
@@ -57,7 +58,7 @@ only a designated human expert may establish verification.
 
 ## Work with the vault
 
-The six documents under [[knowledge/index|knowledge]] define the executable
+The seven documents under [[knowledge/index|knowledge]] define the executable
 project contract. Human and agent workflows are in `workflows/`. Agents begin
 with [contexts/START.md](contexts/START.md), choose the narrowest route through
 [contexts/ROUTER.md](contexts/ROUTER.md), and expand context only when the task
