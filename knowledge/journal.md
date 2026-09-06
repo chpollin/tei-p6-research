@@ -570,3 +570,32 @@ retained its locator and an explicit gap. The wave fed the proposal outline
 `p5-spec-navigation` contract (now in `knowledge/experiments.md`). It chose no
 final ontology, demonstrated no migration, and did not replace the owner's pilot
 review.
+
+## 2026-09-06 — Claim pattern and identifier policy
+
+Section 13 of [[knowledge/text-model]] fixes, before any domain extension is
+built, the pattern every later assertion follows and the identifier policy
+for exchange. Every assertion about the world or the edition is a claim record
+with its own ID, agent, RFC 3339 creation instant, a status from `proposed`,
+`asserted` and `withdrawn`, an optional ordinal certainty, an optional validity
+scope of reduced-precision dates and a `supersedes` list. Revision is
+append-only supersession by the same agent about the same subject, withdrawal
+is a superseding claim with status `withdrawn`, and disagreement between
+agents is the coexistence of claims, as continuity claims already show.
+Certainty was decided as a field of the claim, because it is the claiming
+agent's own qualification made in the same act. Certainty as a claim about
+the claim was rejected for the common case and recorded as the open question.
+The four v0.1 claim kinds implement identity and attribution, and whether they
+receive the added fields is an additive change decided with the first
+extension. A package declares one `base` IRI, record IRIs are base plus the
+unchanged local ID, whose alphabet needs no escaping in IRI path segments or
+fragments, package identity is R11 equivalence witnessed by the hash of
+`canonical_bytes`, and a republication under a new base is a new package with
+the former bases recorded as claims in `former_bases`, so that nothing is
+rewritten. Alignment is a nested claim list on concept, agent and entity
+records with an external IRI and one of `exact`, `close`, `broader` and
+`narrower`, without inference. The RDF mapping direction towards Web
+Annotation, PROV or CIDOC CRM and SKOS is tabled as a binding to be specified,
+with version content, text, continuity, reading forests, unresolved candidates
+and the fields status, certainty and valid named as targetless. The v0.1 case
+report was regenerated; only the definition fingerprint changed.

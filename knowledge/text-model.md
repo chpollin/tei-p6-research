@@ -29,7 +29,8 @@ The definition in sections 1 to 9 is the contract that the case runner
 fingerprints and that the public model reference renders in full. The wider
 core-model sketch in sections 10 and 11 and the serialization and conformance
 contract in section 12 frame that bounded candidate. Neither is an
-implementation inventory.
+implementation inventory. Section 13 fixes the claim pattern and the
+identifier policy that every later domain extension of the model follows.
 
 ## 1. What the objects mean
 
@@ -768,3 +769,290 @@ denominator of all syntaxes. Ordered mixed text, multiple hierarchies, or typed
 relations remain part of the model even when a binding must encode them
 verbosely or declare them unsupported. This keeps serialization independence
 from becoming semantic impoverishment.
+
+## 13. Claim pattern and identifier policy
+
+Every later domain extension of the model, for entities, names, events,
+places and media, follows one pattern for the assertions it makes and one
+policy for the identifiers it exchanges. This section fixes both before any
+such extension is built. Its rules are project posits in the
+[statement roles](p6-evaluation.md#statement-roles) of the evaluation
+document, contracts for the prototype and hypotheses for comparison, and none
+of them records an official TEI decision. The v0.1 record contract of
+sections 1 to 5 stays unchanged.
+
+### Claim records
+
+An assertion that a package makes about the world or about the edition is a
+record of its own. That a mention denotes an entity, that an entity bears a
+name, that a person was born at a date, that two entities are related, that a
+version belongs to a text, each is a claim record with its own identity, a
+responsible agent, a creation instant, an optional certainty, an optional
+temporal scope of validity and a revisable status. No such assertion is a bare
+attribute of the record it is about. A record that is not a claim carries only
+what constitutes it, an identity, a display label, a definition or frozen
+technical construction data.
+
+| Field | Contract | In v0.1 |
+|---|---|---|
+| `id` | Package-local ID under the grammar of section 1, package-wide unique, nested claims included. | present |
+| `agent` | Agent ID of the record responsible for the claim. | present |
+| `created` | RFC 3339 date-time `YYYY-MM-DDTHH:MM:SS`, optional fraction, `Z` designator, checked for lexical form and calendar validity. It dates the record and orders nothing. | absent |
+| `status` | Exactly one of `proposed`, `asserted`, `withdrawn`. | absent, read as `asserted` |
+| `certainty` | Optional. Exactly one of `high`, `medium`, `low`, the agent's own qualification, without numeric comparison. | absent |
+| `valid` | Optional. Object with optional `from` and `until`, at least one present, each a proleptic Gregorian date at year, month or day precision matching `[0-9]{4}(-[0-9]{2}(-[0-9]{2})?)?`. With `from` read as the start and `until` as the end of its calendar unit, `from` is not after `until`. It bounds the claimed state of affairs. | absent |
+| `supersedes` | Duplicate-free array of IDs of earlier claims of the same kind, by the same agent, about the same subject; empty when nothing is revised. | `ep-supersedes` relations of the profile only |
+| subject fields | Kind-specific references to the records the claim is about, declared as subject fields in the kind's record contract. | present |
+| content fields | Kind-specific values the claim states about its subject, such as a criterion, a body, a name form or a date. | present |
+
+`created` is transaction time, `valid` is valid time, and a date inside the
+content of a claim, such as the date of a birth, is neither.
+
+Formally, a claim kind `K` declares its subject fields `s_1, …, s_n` and its
+content fields. A claim of kind `K` is a tuple
+`(id, agent, created, status, certainty, valid, supersedes, s_1, …, s_n, content)`
+with subject `(s_1, …, s_n)`. Two claims of one kind with equal subject and
+content under distinct IDs are two records, as R01 requires. Every record
+kind either constitutes an identity or a specification, as agent, concept,
+text, version and selection do, or asserts something about identified records
+or their referents. Every kind of the second sort is a claim kind and takes
+the fields above; a kind of the first sort admits no field that states
+something about the world, and a container of nested claim records, such as
+`alignments` below, is no such field, because each nested record carries the
+pattern. There is no third sort, so a later kind cannot bypass the pattern.
+
+A claim is never rewritten under its ID. Revising any field, the status
+included, appends a new claim of the same kind by the same agent about the
+same subject whose `supersedes` names the earlier record. Supersession is
+acyclic, a superseded claim stays in the package with its exact record, and a
+claim is current when no claim supersedes it. Currency follows this structure
+alone, because clocks and transcription make instants unreliable as an order.
+Withdrawal is a superseding claim with status `withdrawn` and therefore
+requires a nonempty `supersedes`. Removing a claim from a later package is a
+rewrite, as the profile's `E_CLAIM_REWRITE` already rules for derivation
+claims.
+
+Disagreement between agents needs no branch of the package. Two claims about
+one subject by different agents coexist as two records, neither supersedes
+the other, because supersession is confined to one agent, and the validator
+decides nothing between them. Two differently attributed continuity claims
+coexist the same way under section 1, and the case
+`contradictory_interpretations` keeps two agents' conflicting annotation
+bodies over the same extent valid. A view for a task filters by agent, status
+and currency over the package, which holds every claim.
+
+Certainty is a field of the claim. It is the claiming agent's own
+qualification, made in the same act and at the same instant as the claim; a
+separate record would split one act into two records that must agree on agent
+and instant and would double the record count in the common case. What a
+field cannot carry is a second agent's assessment of the claim and a
+certainty history separate from the claim history. Both remain expressible,
+since a claim is an identified record and any relation or later assessment
+kind can take it as its subject. The ordinal set stands in for a probability
+because the [bindings](text-model-bindings.md) exclude floating-point values.
+
+| Record kind | Subject fields | Present pattern fields | Added by the pattern |
+|---|---|---|---|
+| `continuities` | `text` | `id`, `agent`; `versions` and `criterion` are content | `created`, `status`, `certainty`, `valid`, `supersedes` |
+| `readings` | `version` | `id`, `agent`; `label` and the node forest are content | the same five |
+| `annotations` | `selection` | `id`, `agent`; `body` is content | the same five |
+| `relations` | `source` | `id`, `agent`; `type` and `target` are content | the same five |
+| `ep-derived-from` relations under the profile | `source` | `id`, `agent`, supersession through `ep-supersedes` under the same-agent, same-subject and acyclicity rules | `created`, `status`, `certainty`, `valid` |
+
+The profile realizes supersession as a reserved relation because the v0.1
+record shape admits no new field; the pattern fixes the field form for
+extensions and leaves the profile's form in place. Whether the four v0.1
+claim kinds receive the added fields is an additive change in the
+[change classes](p6-architecture.md#change-classes) of the architecture,
+decided with the first extension. Until then a v0.1 claim reads as
+`asserted`, undated and unqualified.
+
+Posit: one claim pattern with identity, agent, instant, status, optional
+certainty, optional validity and supersession makes every domain assertion
+revisable and every disagreement representable without a branch, and
+certainty belongs to the claim itself. Open evidence question: which real
+editorial workflows need a second agent's certainty about another agent's
+claim, or a certainty history separate from the claim history, so that
+certainty would have to become a claim about the claim?
+
+### Local identity and global identifiers
+
+Section 1 resolves every reference within one package and keeps IDs
+package-local. For exchange, a package declares exactly one base IRI in the
+package field `base`, next to `model_version`, and every record IRI is the
+base followed by the record's local ID. The local ID stays the canonical
+identifier; the base is a publication fact about the package. The field
+enters the package contract with the first extension that is exchanged,
+together with `former_bases` below, and the reference bindings carry both
+under their existing preservation laws.
+
+```text
+base    IRI under RFC 3987 with a scheme, without query component,
+        ending in "/" or "#", with "#" nowhere else
+id      [A-Za-z][A-Za-z0-9._:-]*          the section 1 grammar, unchanged
+IRI(r)  base ++ id(r)
+```
+
+The ID alphabet consists of unreserved characters and the colon, which RFC
+3986 admits in a path segment and in a fragment without percent-encoding, so
+no escaping exists in either direction. An ID contains neither `/`, `#`, `?`
+nor `%` and starts with a letter, so a record IRI splits uniquely at its last
+`/` or `#` into base and local ID and no local ID is a dot segment. Bases and
+IRIs compare code point by code point, without case folding, percent-decoding
+or Unicode normalization, in line with R11. A concrete RDF syntax may
+abbreviate a record IRI to a prefixed name only where the local ID is a legal
+local name there; an ID ending in `.` is none in Turtle and SPARQL, and the
+binding then writes the IRI in full. Abbreviation is lexical and changes no
+IRI.
+
+Two copies of a package are the same package if and only if their canonical
+serializations agree, which is R11 equivalence, witnessed by the SHA-256 of
+`canonical_bytes`. `base` and every field this section adds enter the
+canonical serialization; `supersedes` compares as a set, nested alignment
+claims sort by ID like reading nodes, and every other new field compares as
+an exact string. The package hash is a derived value; a package cannot
+contain its own hash, so none is stored. Three identities stay apart. A
+version's `sha256` identifies its content `c(v)`, and equal content under two
+version IDs yields two records with two IRIs and one hash, as R01 requires. A
+record IRI identifies the record. The package hash identifies the package.
+
+Republishing a package under a new base creates a new package, because the
+base is part of the canonical serialization, while every record keeps its
+local ID. The former IRIs are aliases, recorded as claims in the package
+field `former_bases`, an array of claim records whose subject is the package
+and whose one content field `base` holds the former base, so that the alias
+of any record `r` under a former base `b` is `b ++ id(r)` by the grammar
+alone. Nothing in the record set is
+rewritten, the earlier package remains what it was, and a record absent from
+the republished package has no alias in it. A local ID is never renamed on
+republication. A renamed record is a new record under R01, and a
+correspondence between the old and the new record is an alignment claim with
+relation `exact`, as defined below. References across packages remain
+outside this version; alignment claims are the only link a package makes
+beyond itself.
+
+Posit: base plus canonical local ID gives every record a global identifier
+without escaping or renaming, package identity is R11 equivalence witnessed
+by the hash of the canonical serialization, and a republication is a new
+package with recorded aliases rather than an edit of identifiers. Open
+evidence question: which exchange practices, such as merging packages,
+splitting a package or moving records between projects, require identifier
+operations that this policy leaves unrepresentable?
+
+### External alignment
+
+Section 1 excludes an ontology alignment language, and that exclusion
+stands. The minimal field that lets an RDF export interoperate is a list of
+alignment claims. A concept record, an agent record and, once defined, an
+entity record may carry an optional field `alignments`, an array of claim
+records with the pattern fields and two content fields. `iri` is an absolute
+IRI compared code point by code point. `relation` is exactly one of `exact`,
+`close`, `broader`, `narrower`, read from the record to the external
+resource. `exact` claims that both stand for the same thing for every purpose
+of the package, `close` that they are interchangeable for some purposes
+without stating which, `broader` that the external resource stands for
+something more general than the record, `narrower` for something more
+specific. The four kinds mirror the SKOS mapping properties and carry none of
+their semantics here; a part-whole or membership relation between the things
+themselves is a domain relation. Alignment claims nest in their carrier as
+reading nodes nest in readings, with package-wide unique IDs, and their
+subject is the carrier.
+
+No inference is defined. The validator checks the field forms and the claim
+rules and nothing about the external resource, neither its existence nor its
+meaning. It derives no symmetric, transitive or inherited alignment and does
+not propagate a concept's alignment to the nodes that carry the concept. Two
+alignments of one record to one IRI with different relation kinds, or by
+different agents, coexist as two claims. Consumers may use the alignments and
+answer for the inference they add. Extending the carrier set to a text or a
+version requires a recorded decision.
+
+The table states the direction of the mapping, from package record kinds to
+candidate target vocabularies, as a binding to be specified under section 12
+with its own loss matrix. Nothing in it is implemented.
+
+| Record kind | Candidate target | Without natural target |
+|---|---|---|
+| `agents` | PROV `prov:Agent`, CIDOC CRM `E39 Actor`; `label` as `rdfs:label`; the attribution of every claim as `prov:wasAttributedTo` | the identity of an outside person, which the record never asserts |
+| `concepts` with `alignments` | SKOS `skos:Concept` with `skos:prefLabel` and `skos:definition`; the four relation kinds as `skos:exactMatch`, `skos:closeMatch`, `skos:broadMatch`, `skos:narrowMatch` | the role `node` or `relation`; agent, instant and status of an alignment, which a plain mapping triple drops |
+| `versions` | none as a class; the record IRI serves as `oa:hasSource` | content, hash and technical parents |
+| `selections` | Web Annotation `oa:SpecificResource` with `oa:TextPositionSelector` for `point` and `ranges`, `oa:TextQuoteSelector` with `oa:exact`, `oa:prefix`, `oa:suffix` for `quote` | the `match` policy; one aggregate of several segments against separate targets, for which `oa:List` and `oa:Independents` are candidates; unresolved candidates |
+| `readings[].nodes[]` as mentions, `annotations`, denotation claims | Web Annotation `oa:Annotation`, motivated as classifying with the concept as body, with an `oa:TextualBody`, or as identifying with the entity IRI as body; `dcterms:creator` for `agent`, `dcterms:created` for `created` | the reading forest with its containment and sibling rules; certainty and status |
+| `relations` and the pattern fields of every claim | CIDOC CRM `E13 Attribute Assignment` with `P140`, `P141`, `P177`, `P14`, `P4`; PROV `prov:wasAttributedTo`, `prov:generatedAtTime`, `prov:wasRevisionOf` for `supersedes` | a plain triple, which loses identity, agent and instant, so the binding must choose a claim node, RDF-star or named graphs; `status`, `certainty` and `valid`, for which CRMinf belief values are one candidate |
+| `texts`, `continuities` | none | a grouping identity and an attributed membership under a criterion |
+| entity, name, event (planned) | CIDOC CRM `E21 Person`, `E53 Place`, `E74 Group`; `E41 Appellation` through `P1`; `E5 Event` or PROV `prov:Activity` | the claim wrapper of each; the validity scope of a name; the `exact` alignment of an entity, for which `skos:exactMatch` states nothing about identity and `owl:sameAs` entails it |
+| `former_bases` | PROV `prov:alternateOf` or OWL `owl:sameAs`, per record by the grammar | the choice between the two, whose entailments differ; the binding must state it |
+
+Version content and hash, text and continuity claim, the reading forest,
+unresolved candidates, the `match` policy and the fields `status`,
+`certainty` and `valid` have no natural target yet.
+
+Posit: a closed list of alignment claims with four relation kinds and no
+inference is the smallest addition that lets an RDF export interoperate with
+external vocabularies while the model stays free of an ontology language.
+Open evidence question: which external vocabularies and which inference
+expectations do consuming projects bring, and do four relation kinds cover
+the alignments editors make?
+
+### Record kinds of the entity extension
+
+The pattern implies the record kinds of the entity extension that follows.
+Their constraints are not defined here.
+
+- Entity, an identity record for a thing the edition speaks about, with an ID
+  and a display label and nothing about the world, motivated by the
+  [P6 Design](../40_output/12-p6-design.md#2-text-projections-and-occurrence-identity)
+  chapter's open question which additional objects real workflows require;
+  section 11 already separates a record describing a person from that person.
+- Name, a claim that an entity bears a name form, with the form, an optional
+  language and an optional validity scope as content.
+- Mention, a reading node whose concept marks it as a mention, or an
+  annotation over a selection; the pattern adds no third kind, because both
+  existing kinds already carry an occurrence in a text.
+- Denotation claim, a claim that a mention denotes an entity, the record in
+  which a retained responsibility marker such as the one discussed in the
+  chapter's [third section](../40_output/12-p6-design.md#3-structure-as-an-attributed-reading)
+  receives an attributed, revisable resolution.
+- Alignment claim, as defined above, carried by concept, agent and entity
+  records.
+
+Withdrawal and cross-agent disagreement, two parts of the open question in
+the chapter's
+[fifth section](../40_output/12-p6-design.md#5-version-identity-and-revision-of-claims),
+receive their representation from the pattern, withdrawal through a
+superseding claim with status `withdrawn` and disagreement through coexisting
+claims. A negative claim, that a mention does not denote an entity, is no
+status of a positive claim; it would need a content field or a kind of its
+own and stays open.
+
+Posit: entity, name, mention, denotation claim and alignment claim are the
+record kinds the pattern yields for the entity extension, and none of them
+needs a construct outside the pattern. Open evidence question: which
+independently selected editions with a named-entity practice show that these
+kinds, once constrained, preserve the distinctions their editors make, and
+which kinds are missing?
+
+### Conformance note
+
+The pattern reuses the checks of section 5, the ID grammar with `E_ID`,
+package-wide uniqueness with `E_DUPLICATE_ID` for nested claims as for
+reading nodes, closed references by category with `E_REFERENCE`, the concept
+roles with `E_TYPE`, nonmutation under R10, canonical comparison under R11,
+and acyclicity where a parent-like relation is declared, here for
+`supersedes` as for version parents and reading parents. The append-only
+claim check generalizes the profile's `E_CLAIM_REWRITE` from derivation
+claims to every claim kind. New are the lexical checks of `created`, `valid`,
+`base` and `iri`, the closed sets of `status`, `certainty` and `relation`,
+the order of validity bounds, the same-agent and same-subject rule of
+supersession, and `withdrawn` only with a nonempty `supersedes`.
+
+Finite synthetic checks demonstrate these rules on supplied instances. They
+cannot establish that the pattern is adequate for real editorial
+disagreement, in which two editors dispute a denotation over years or a claim
+is withdrawn on new evidence. The boundary that section 9 draws for the model
+as a whole applies to this section without exception.
+
+Posit: reusing the v0.1 checks and generalizing the profile's append-only
+rule keeps the pattern executable within the existing validator. Open
+evidence question: which recorded disagreements from real editions, replayed
+as packages, falsify the claim that no branch of a package is ever needed?
