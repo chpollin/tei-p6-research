@@ -2265,17 +2265,187 @@
   "inputs": {
     "experiments/entities_v02/cases.json": "db12d2e4df9995bc28fdf56770993c5fb92041141d33402bea067ebf967ee865",
     "experiments/entities_v02/examples/mentions-and-denotations.json": "7010f806d532b8ebcf64eeac00764c8de375f88d7bc09b2ce69b7f58fe24b7bf",
+    "experiments/entities_v02/examples/mentions-and-denotations.ttl": "b9daba55f7dcd2f0c6c874e3172fa748f56bf6cd7d02dfaad39ca32b4fe6ff82",
     "experiments/entities_v02/examples/statements-and-revision.json": "027d3c934f141d096b16bb303823b98cdbe4b1a1e855e1c1fc717cb4339a19e9",
+    "experiments/entities_v02/examples/statements-and-revision.ttl": "dca4b3b4d55d9d4a735454b83ffc36ee40355f22d8db0413ba0a51dde335d833",
     "experiments/entities_v02/spec.json": "ccda216f1372a82777aa6035124353e0e1e9a3ae458c987a7c851421f0b4c415",
-    "knowledge/text-model.md": "cb54c5418345df21f53c68167d70673337296507be38fcf57f99f8a9f14ad9c3",
-    "tools/check_entities_v02.py": "505fea863c72f901fcf7060d9d1f42696d17bb6fcc17d4fe307d5d2dc3ca1df7",
+    "knowledge/text-model.md": "bafa276e2e28d525687fe08c32f79e5976eb2fd33c56ceaef02a1a8e8eddd621",
+    "tools/check_entities_v02.py": "c190d5c01feaf3bc47c3e1269e6fb3ccb823cb8bbe219b44bc76a7f13ee56fdd",
     "tools/models/__init__.py": "24fcec930743dfdc176120f5dc7fb9056db911b40628634d8240cac1498414e1",
     "tools/models/abstract_text.py": "50ebb632e979da396acb0a87bf93b22ac88cc0a5b73481994220b606c6bfc7dc",
     "tools/models/bindings.py": "711b1cd37b78f62e53d6662f7555013a58b1faef91571ee3b8be48d060e8ae9c",
     "tools/models/editorial_profile.py": "9cc9f08f472f7c06e2011ddd07234ed177f9e87c2581fdd69d8826ee26efee75",
-    "tools/models/entities.py": "5867030ce52d2ffc67ef13b4501a2f933efc81fc79a348ae6ec0b6fb9a8b1f0c"
+    "tools/models/entities.py": "5867030ce52d2ffc67ef13b4501a2f933efc81fc79a348ae6ec0b6fb9a8b1f0c",
+    "tools/models/rdf_binding.py": "d7f2d4aef3c6289bf0c509e7bf18fd00655f9b35ff66a88cba1f9268333e5c6b"
   },
   "model_version": "0.2",
+  "rdf_checks": [
+    {
+      "package": "entity-kinds-all-six",
+      "passed": true,
+      "sha256": "cc8eabe93e222e8dd091ba5d7a2139e8420331c59043d7507b7995ec74a31d7a"
+    },
+    {
+      "package": "entity-only-identity-fields",
+      "passed": true,
+      "sha256": "80eab83ffc105435a5fbfbc56322cda4ee18566a8bd4731f85ce32e17e0d2631"
+    },
+    {
+      "package": "entity-without-name",
+      "passed": true,
+      "sha256": "7fae9ad4f5c14848d1afe281c03b72f9bb7eccc611424812f7ed7484bd7bb000"
+    },
+    {
+      "package": "name-parts-all-kinds",
+      "passed": true,
+      "sha256": "be3c6499b72c2cca9c780e36d49ba53013951cce3a638a00ed505c869673729f"
+    },
+    {
+      "package": "name-language-admitted-forms",
+      "passed": true,
+      "sha256": "c603f6aba8cae2bd01d8124645e0d95dd72b31cef5d191ff43064c24ca4970ef"
+    },
+    {
+      "package": "name-without-mention",
+      "passed": true,
+      "sha256": "3157cd356288a834e421d459c370fa9cba47d86c24b86154fb3039d6b79e05f2"
+    },
+    {
+      "package": "name-supersession-current",
+      "passed": true,
+      "sha256": "a887e0ee2e2af9dece304ef758cd4645aa7b445ceb35c79264549dfb133008a1"
+    },
+    {
+      "package": "names-of-validity-order",
+      "passed": true,
+      "sha256": "5714fce2e0dee644efab71e76244d99dfb914ef4c2e0481f285371b43de00a6e"
+    },
+    {
+      "package": "names-of-include-withdrawn",
+      "passed": true,
+      "sha256": "5a611bfe2016c51b0bb94f07d54e1524e7553a4f29b13a4591390f86b4496b63"
+    },
+    {
+      "package": "mention-nodes-proper-noun-and-pronoun",
+      "passed": true,
+      "sha256": "a8781ffa8f1637d9d14cfb12e7568840f4d115d5f4ce186acb966191befed908"
+    },
+    {
+      "package": "mention-annotation-discontinuous",
+      "passed": true,
+      "sha256": "3883fe156e3a6160770b04068bef6e8adfd3de9e3bc67e9c01e1d91fae9237be"
+    },
+    {
+      "package": "mention-annotation-ambiguous-quote",
+      "passed": true,
+      "sha256": "aa635339296d0081e053a116949f6ee9eb8afec84b42e6bc868b1cd798ecc5f9"
+    },
+    {
+      "package": "mention-undenoted",
+      "passed": true,
+      "sha256": "aa5d9287a702dd7f8a3d53e1f50a1e138701ce597a46aa028b289cd5c576eee0"
+    },
+    {
+      "package": "denotations-two-agents-one-mention",
+      "passed": true,
+      "sha256": "8ea9ccb2910bb35cf75c8e3a7699238550ca59939be3b45c75ef79f91489361b"
+    },
+    {
+      "package": "denotations-one-agent-two-certainties",
+      "passed": true,
+      "sha256": "7139c6026c69db4463034557ce2f5577bba005c72873ff62ee47261ffa50aba1"
+    },
+    {
+      "package": "denotation-superseded",
+      "passed": true,
+      "sha256": "752f145f2009210078e360308725d970f3a01a244ed67120191c91f1c4b0857b"
+    },
+    {
+      "package": "denotation-withdrawn",
+      "passed": true,
+      "sha256": "1437c858f75516a1205605a9a25b56c1eef39ccd5469ffcdea3e1a7bad192995"
+    },
+    {
+      "package": "denotation-status-proposed",
+      "passed": true,
+      "sha256": "75cbf45e79650d71383d4aa40067e729fb96dc3c522594cc3c9ac9e8cb85ea7a"
+    },
+    {
+      "package": "operations-on-unknown-subject",
+      "passed": true,
+      "sha256": "7fae9ad4f5c14848d1afe281c03b72f9bb7eccc611424812f7ed7484bd7bb000"
+    },
+    {
+      "package": "statement-kinds-all-four",
+      "passed": true,
+      "sha256": "bb299bf867de337f226533b9ae2ffd3fb65553584cb9c3bb80d7491c5b4cddac"
+    },
+    {
+      "package": "statement-participants-mixed-kinds",
+      "passed": true,
+      "sha256": "676ef901a8fe34b81f2d58b3e8402044f01c47d6df1e4b6fb1494d29d9138fee"
+    },
+    {
+      "package": "statement-participants-same-entity-two-roles",
+      "passed": true,
+      "sha256": "92230288cc5cb72ff0937dbc78a4f0b64f166ad398bd8de8aab402ffa79786a0"
+    },
+    {
+      "package": "alignment-relations-all-four",
+      "passed": true,
+      "sha256": "6decbb3a23943847d9a53b2631e675977f0007295c59b58cea1e5196de777e1e"
+    },
+    {
+      "package": "alignment-two-entities-one-iri",
+      "passed": true,
+      "sha256": "417c7c9550e302f0a3b2c886aebf19cfd673e509ddcd3aa210edf684bc58ebd0"
+    },
+    {
+      "package": "alignment-ref-with-several-uris",
+      "passed": true,
+      "sha256": "0e46e81b290e679aa1b4b0e68b4908424eeaadc74d3946bb713ad030a564d666"
+    },
+    {
+      "package": "alignment-on-concept-and-agent",
+      "passed": true,
+      "sha256": "1d937539c70d9471c1f24bd3c35ac3b059223233428233f61bea386292d10551"
+    },
+    {
+      "package": "claim-valid-mixed-precision",
+      "passed": true,
+      "sha256": "a9a7e617fe0c9cb08c5423bc69cf660e3268aaa02b574228bdc9b1012e2aa06e"
+    },
+    {
+      "package": "canonical-order-registry-sequence",
+      "passed": true,
+      "sha256": "ddc90fc6e8aefba64683adcbf918e53e197af1b11db5cf60653c8b014dc980fc"
+    },
+    {
+      "package": "canonical-order-permuted",
+      "passed": true,
+      "sha256": "ddc90fc6e8aefba64683adcbf918e53e197af1b11db5cf60653c8b014dc980fc"
+    },
+    {
+      "package": "package-base-and-former-bases",
+      "passed": true,
+      "sha256": "81f800b0b5ba27db40c6343082f568e075c1b591932325306c5bc32ee4616328"
+    },
+    {
+      "package": "valid-at-both-versions",
+      "passed": true,
+      "sha256": "bb4609dbcee1fc846bb0d05e202561322c7a23570b9cfb221e79bca3a19fe881"
+    },
+    {
+      "package": "mentions-and-denotations.json",
+      "passed": true,
+      "sha256": "b9daba55f7dcd2f0c6c874e3172fa748f56bf6cd7d02dfaad39ca32b4fe6ff82"
+    },
+    {
+      "package": "statements-and-revision.json",
+      "passed": true,
+      "sha256": "dca4b3b4d55d9d4a735454b83ffc36ee40355f22d8db0413ba0a51dde335d833"
+    }
+  ],
   "summary": {
     "canonical_checks": 33,
     "case_passes": 58,
@@ -2286,6 +2456,7 @@
       "denotations_of",
       "names_of"
     ],
-    "passed": true
+    "passed": true,
+    "rdf_checks": 33
   }
 }

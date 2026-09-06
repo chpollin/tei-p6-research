@@ -91,6 +91,29 @@ def test_every_standalone_example_is_a_valid_package():
     assert all(item["passed"] for item in report["canonical_checks"])
 
 
+def test_every_valid_case_and_example_reaches_the_rdf_export():
+    report = check.build_report()
+    valid = [case for case in report["cases"] if case["expected"]["valid"]]
+    assert report["summary"]["rdf_checks"] == len(valid) + len(report["examples"])
+    assert report["summary"]["rdf_checks"] == report["summary"]["canonical_checks"]
+    assert all(item["passed"] and len(item["sha256"]) == 64 for item in report["rdf_checks"])
+    # A case package without a base is exported under the runner's test base.
+    exported = {item["package"] for item in report["rdf_checks"]}
+    assert {case["id"] for case in valid} <= exported
+
+
+def test_a_tampered_turtle_example_fails_the_run(experiment):
+    store(experiment, synthetic_cases())
+    path = sorted((experiment / check.BASE / "examples").glob("*.ttl"))[0]
+    path.write_text(path.read_text(encoding="utf-8") + '\n<urn:x:s> <urn:x:p> "o" .\n',
+                    encoding="utf-8")
+    report = check.build_report(experiment)
+    assert not report["summary"]["passed"]
+    failed = [item for item in report["rdf_checks"] if not item["passed"]]
+    assert [item["package"] for item in failed] == [path.with_suffix(".json").name]
+    assert all(case["passed"] for case in report["cases"])
+
+
 def test_spec_mirrors_the_module_constants():
     spec = check.read_json(check.ROOT / check.BASE / "spec.json")
     assert tuple(spec["diagnostics"]) == model.DIAGNOSTICS

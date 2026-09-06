@@ -1,0 +1,425 @@
+@prefix crm: <http://www.cidoc-crm.org/cidoc-crm/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix oa: <http://www.w3.org/ns/oa#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix tei6: <urn:tei-p6-research:rdf:0.2:> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://example.org/packages/prosopography/> a tei6:Package ;
+    tei6:bindingVersion "0.2" ;
+    tei6:modelVersion "0.2" ;
+    tei6:recordKind "package" .
+
+<https://example.org/packages/prosopography/ag-editor> a prov:Agent ;
+    rdfs:label "Editor A" ;
+    tei6:recordKind "agents" .
+
+<https://example.org/packages/prosopography/ag-reviewer> a prov:Agent ;
+    rdfs:label "Editor B" ;
+    tei6:recordKind "agents" .
+
+<https://example.org/packages/prosopography/al-birth> a tei6:AlignmentClaim ;
+    dcterms:creator <https://example.org/packages/prosopography/ag-editor> ;
+    prov:generatedAtTime "2026-09-06T09:40:00Z"^^xsd:dateTime ;
+    tei6:alignmentRelation "close" ;
+    tei6:alignmentTarget <https://example.org/vocab/birth> ;
+    tei6:recordKind "alignments" ;
+    tei6:status "asserted" ;
+    tei6:subject <https://example.org/packages/prosopography/st-birth> .
+
+<https://example.org/packages/prosopography/al-british> a tei6:AlignmentClaim ;
+    dcterms:creator <https://example.org/packages/prosopography/ag-editor> ;
+    prov:generatedAtTime "2026-09-06T09:40:00Z"^^xsd:dateTime ;
+    tei6:alignmentRelation "exact" ;
+    tei6:alignmentTarget <https://example.org/vocab/british> ;
+    tei6:recordKind "alignments" ;
+    tei6:status "asserted" ;
+    tei6:subject <https://example.org/packages/prosopography/ent-coded-value> .
+
+<https://example.org/packages/prosopography/dn-ada-first> a oa:Annotation ;
+    dcterms:creator <https://example.org/packages/prosopography/ag-editor> ;
+    oa:hasBody <https://example.org/packages/prosopography/ent-society> ;
+    oa:hasTarget <https://example.org/packages/prosopography/nd-ada> ;
+    oa:motivatedBy oa:identifying ;
+    prov:generatedAtTime "2026-05-02T08:00:00Z"^^xsd:dateTime ;
+    tei6:certainty "low" ;
+    tei6:recordKind "denotations" ;
+    tei6:status "asserted" .
+
+<https://example.org/packages/prosopography/dn-ada-second> a oa:Annotation ;
+    dcterms:creator <https://example.org/packages/prosopography/ag-editor> ;
+    oa:hasBody <https://example.org/packages/prosopography/ent-ada> ;
+    oa:hasTarget <https://example.org/packages/prosopography/nd-ada> ;
+    oa:motivatedBy oa:identifying ;
+    prov:generatedAtTime "2026-09-06T09:40:00Z"^^xsd:dateTime ;
+    prov:wasRevisionOf <https://example.org/packages/prosopography/dn-ada-first> ;
+    tei6:certainty "high" ;
+    tei6:recordKind "denotations" ;
+    tei6:status "asserted" .
+
+<https://example.org/packages/prosopography/dn-engine-first> a oa:Annotation ;
+    dcterms:creator <https://example.org/packages/prosopography/ag-reviewer> ;
+    oa:hasBody <https://example.org/packages/prosopography/ent-engine> ;
+    oa:hasTarget <https://example.org/packages/prosopography/nd-engine> ;
+    oa:motivatedBy oa:identifying ;
+    prov:generatedAtTime "2026-05-02T08:00:00Z"^^xsd:dateTime ;
+    tei6:recordKind "denotations" ;
+    tei6:status "asserted" .
+
+<https://example.org/packages/prosopography/dn-engine-withdrawn> a oa:Annotation ;
+    dcterms:creator <https://example.org/packages/prosopography/ag-reviewer> ;
+    oa:hasBody <https://example.org/packages/prosopography/ent-engine> ;
+    oa:hasTarget <https://example.org/packages/prosopography/nd-engine> ;
+    oa:motivatedBy oa:identifying ;
+    prov:generatedAtTime "2026-09-06T09:40:00Z"^^xsd:dateTime ;
+    prov:wasRevisionOf <https://example.org/packages/prosopography/dn-engine-first> ;
+    tei6:recordKind "denotations" ;
+    tei6:status "withdrawn" .
+
+<https://example.org/packages/prosopography/dn-london> a oa:Annotation ;
+    dcterms:creator <https://example.org/packages/prosopography/ag-editor> ;
+    oa:hasBody <https://example.org/packages/prosopography/ent-london> ;
+    oa:hasTarget <https://example.org/packages/prosopography/nd-london> ;
+    oa:motivatedBy oa:identifying ;
+    prov:generatedAtTime "2026-09-06T09:40:00Z"^^xsd:dateTime ;
+    tei6:recordKind "denotations" ;
+    tei6:status "asserted" .
+
+<https://example.org/packages/prosopography/en-pronoun> a skos:Concept ;
+    skos:definition "The selected extent is a pronoun used to refer." ;
+    skos:prefLabel "Pronoun" ;
+    tei6:conceptRole "node" ;
+    tei6:recordKind "concepts" .
+
+<https://example.org/packages/prosopography/en-proper-noun> a skos:Concept ;
+    skos:definition "The selected extent is a proper noun or proper-noun phrase used to refer." ;
+    skos:prefLabel "Proper noun" ;
+    tei6:conceptRole "node" ;
+    tei6:recordKind "concepts" .
+
+<https://example.org/packages/prosopography/en-referring-string> a skos:Concept ;
+    skos:definition "The selected extent is a referring string that is no proper noun, such as a description or a title used to refer." ;
+    skos:prefLabel "Referring string" ;
+    tei6:conceptRole "node" ;
+    tei6:recordKind "concepts" .
+
+<https://example.org/packages/prosopography/ent-ada> a crm:E21_Person ;
+    crm:P1_is_identified_by <https://example.org/packages/prosopography/nm-ada> ;
+    rdfs:label "Ada Lovelace" ;
+    tei6:entityKind "person" ;
+    tei6:recordKind "entities" .
+
+<https://example.org/packages/prosopography/ent-birth-1815> a crm:E5_Event ;
+    rdfs:label "The birth of 1815" ;
+    tei6:entityKind "event" ;
+    tei6:recordKind "entities" .
+
+<https://example.org/packages/prosopography/ent-coded-value> a crm:E1_CRM_Entity ;
+    rdfs:label "British" ;
+    skos:exactMatch <https://example.org/vocab/british> ;
+    tei6:entityKind "other" ;
+    tei6:recordKind "entities" .
+
+<https://example.org/packages/prosopography/ent-engine> a crm:E22_Human-Made_Object ;
+    rdfs:label "Analytical Engine" ;
+    tei6:entityKind "object" ;
+    tei6:recordKind "entities" .
+
+<https://example.org/packages/prosopography/ent-london> a crm:E53_Place ;
+    crm:P1_is_identified_by <https://example.org/packages/prosopography/nm-london-latin> ;
+    crm:P1_is_identified_by <https://example.org/packages/prosopography/nm-london> ;
+    rdfs:label "London" ;
+    tei6:entityKind "place" ;
+    tei6:recordKind "entities" .
+
+<https://example.org/packages/prosopography/ent-society> a crm:E74_Group ;
+    rdfs:label "A learned society" ;
+    tei6:entityKind "group" ;
+    tei6:recordKind "entities" .
+
+<https://example.org/packages/prosopography/fb-1> a tei6:FormerBaseClaim ;
+    dcterms:creator <https://example.org/packages/prosopography/ag-editor> ;
+    prov:generatedAtTime "2026-09-06T09:40:00Z"^^xsd:dateTime ;
+    tei6:formerBase <https://old.example.org/packages/prosopography/> ;
+    tei6:recordKind "former_bases" ;
+    tei6:status "asserted" ;
+    tei6:subject <https://example.org/packages/prosopography/> .
+
+<https://example.org/packages/prosopography/nd-ada> a oa:Annotation ;
+    oa:hasBody <https://example.org/packages/prosopography/en-proper-noun> ;
+    oa:hasTarget <https://example.org/packages/prosopography/sel-ada> ;
+    oa:motivatedBy oa:classifying ;
+    tei6:inReading <https://example.org/packages/prosopography/rd-mentions> ;
+    tei6:recordKind "nodes" .
+
+<https://example.org/packages/prosopography/nd-engine> a oa:Annotation ;
+    oa:hasBody <https://example.org/packages/prosopography/en-referring-string> ;
+    oa:hasTarget <https://example.org/packages/prosopography/sel-engine> ;
+    oa:motivatedBy oa:classifying ;
+    tei6:inReading <https://example.org/packages/prosopography/rd-mentions> ;
+    tei6:recordKind "nodes" .
+
+<https://example.org/packages/prosopography/nd-london> a oa:Annotation ;
+    oa:hasBody <https://example.org/packages/prosopography/en-proper-noun> ;
+    oa:hasTarget <https://example.org/packages/prosopography/sel-london> ;
+    oa:motivatedBy oa:classifying ;
+    tei6:inReading <https://example.org/packages/prosopography/rd-mentions> ;
+    tei6:recordKind "nodes" .
+
+<https://example.org/packages/prosopography/nm-ada> a crm:E41_Appellation ;
+    dcterms:creator <https://example.org/packages/prosopography/ag-editor> ;
+    rdfs:label "Ada Lovelace"@en ;
+    prov:generatedAtTime "2026-09-06T09:40:00Z"^^xsd:dateTime ;
+    tei6:recordKind "names" ;
+    tei6:status "asserted" ;
+    tei6:subject <https://example.org/packages/prosopography/ent-ada> .
+
+<https://example.org/packages/prosopography/nm-london-latin> a crm:E41_Appellation ;
+    dcterms:creator <https://example.org/packages/prosopography/ag-editor> ;
+    rdfs:label "Londinium"@la ;
+    prov:generatedAtTime "2026-09-06T09:40:00Z"^^xsd:dateTime ;
+    tei6:recordKind "names" ;
+    tei6:status "asserted" ;
+    tei6:subject <https://example.org/packages/prosopography/ent-london> ;
+    tei6:validUntil "0500" .
+
+<https://example.org/packages/prosopography/nm-london> a crm:E41_Appellation ;
+    dcterms:creator <https://example.org/packages/prosopography/ag-editor> ;
+    rdfs:label "London"@en ;
+    prov:generatedAtTime "2026-09-06T09:40:00Z"^^xsd:dateTime ;
+    tei6:recordKind "names" ;
+    tei6:status "asserted" ;
+    tei6:subject <https://example.org/packages/prosopography/ent-london> ;
+    tei6:validFrom "1066" .
+
+<https://example.org/packages/prosopography/rd-mentions> a oa:Annotation ;
+    dcterms:creator <https://example.org/packages/prosopography/ag-editor> ;
+    rdfs:label "Mention layer" ;
+    oa:hasTarget <https://example.org/packages/prosopography/v1> ;
+    oa:motivatedBy oa:classifying ;
+    tei6:recordKind "readings" .
+
+<https://example.org/packages/prosopography/sel-ada/selector> a oa:TextPositionSelector ;
+    oa:end "12"^^xsd:nonNegativeInteger ;
+    oa:start "0"^^xsd:nonNegativeInteger ;
+    tei6:segmentQuote "Ada Lovelace" .
+
+<https://example.org/packages/prosopography/sel-ada> a oa:SpecificResource ;
+    oa:hasSelector <https://example.org/packages/prosopography/sel-ada/selector> ;
+    oa:hasSource <https://example.org/packages/prosopography/v1> ;
+    tei6:recordKind "selections" ;
+    tei6:resolutionStatus "resolved" .
+
+<https://example.org/packages/prosopography/sel-engine/selector> a oa:TextPositionSelector ;
+    oa:end "75"^^xsd:nonNegativeInteger ;
+    oa:start "54"^^xsd:nonNegativeInteger ;
+    tei6:segmentQuote "the Analytical Engine" .
+
+<https://example.org/packages/prosopography/sel-engine> a oa:SpecificResource ;
+    oa:hasSelector <https://example.org/packages/prosopography/sel-engine/selector> ;
+    oa:hasSource <https://example.org/packages/prosopography/v1> ;
+    tei6:recordKind "selections" ;
+    tei6:resolutionStatus "resolved" .
+
+<https://example.org/packages/prosopography/sel-london/selector> a oa:TextPositionSelector ;
+    oa:end "31"^^xsd:nonNegativeInteger ;
+    oa:start "25"^^xsd:nonNegativeInteger ;
+    tei6:segmentQuote "London" .
+
+<https://example.org/packages/prosopography/sel-london> a oa:SpecificResource ;
+    oa:hasSelector <https://example.org/packages/prosopography/sel-london/selector> ;
+    oa:hasSource <https://example.org/packages/prosopography/v1> ;
+    tei6:recordKind "selections" ;
+    tei6:resolutionStatus "resolved" .
+
+<https://example.org/packages/prosopography/st-birth> a skos:Concept ;
+    skos:closeMatch <https://example.org/vocab/birth> ;
+    skos:definition "The birth of a person." ;
+    skos:prefLabel "Birth" ;
+    tei6:conceptRole "statement" ;
+    tei6:recordKind "concepts" .
+
+<https://example.org/packages/prosopography/st-collaboration> a skos:Concept ;
+    skos:definition "A working relation between two entities." ;
+    skos:prefLabel "Collaboration" ;
+    tei6:conceptRole "statement" ;
+    tei6:recordKind "concepts" .
+
+<https://example.org/packages/prosopography/st-occupation> a skos:Concept ;
+    skos:definition "A trait ascribed to a person." ;
+    skos:prefLabel "Occupation" ;
+    tei6:conceptRole "statement" ;
+    tei6:recordKind "concepts" .
+
+<https://example.org/packages/prosopography/st-residence> a skos:Concept ;
+    skos:definition "Where a person resides." ;
+    skos:prefLabel "Residence" ;
+    tei6:conceptRole "statement" ;
+    tei6:recordKind "concepts" .
+
+<https://example.org/packages/prosopography/stm-birth/participant/1> tei6:participantEntity <https://example.org/packages/prosopography/ent-ada> ;
+    tei6:participantRole "born" .
+
+<https://example.org/packages/prosopography/stm-birth/participant/2> tei6:participantEntity <https://example.org/packages/prosopography/ent-birth-1815> ;
+    tei6:participantRole "event" .
+
+<https://example.org/packages/prosopography/stm-birth/participant/3> tei6:participantEntity <https://example.org/packages/prosopography/ent-london> ;
+    tei6:participantRole "place" .
+
+<https://example.org/packages/prosopography/stm-birth> a crm:E13_Attribute_Assignment ;
+    dcterms:creator <https://example.org/packages/prosopography/ag-editor> ;
+    crm:P140_assigned_attribute_to <https://example.org/packages/prosopography/ent-ada> ;
+    crm:P140_assigned_attribute_to <https://example.org/packages/prosopography/ent-birth-1815> ;
+    crm:P140_assigned_attribute_to <https://example.org/packages/prosopography/ent-london> ;
+    crm:P177_assigned_property_of_type <https://example.org/packages/prosopography/st-birth> ;
+    prov:generatedAtTime "2026-09-06T09:40:00Z"^^xsd:dateTime ;
+    tei6:hasParticipant <https://example.org/packages/prosopography/stm-birth/participant/1> ;
+    tei6:hasParticipant <https://example.org/packages/prosopography/stm-birth/participant/2> ;
+    tei6:hasParticipant <https://example.org/packages/prosopography/stm-birth/participant/3> ;
+    tei6:recordKind "statements" ;
+    tei6:statementKind "event" ;
+    tei6:status "asserted" ;
+    tei6:validFrom "1815" ;
+    tei6:validUntil "1815" .
+
+<https://example.org/packages/prosopography/stm-collaboration/participant/1> tei6:participantEntity <https://example.org/packages/prosopography/ent-ada> ;
+    tei6:participantRole "collaborator" .
+
+<https://example.org/packages/prosopography/stm-collaboration/participant/2> tei6:participantEntity <https://example.org/packages/prosopography/ent-engine> ;
+    tei6:participantRole "object" .
+
+<https://example.org/packages/prosopography/stm-collaboration> a crm:E13_Attribute_Assignment ;
+    dcterms:creator <https://example.org/packages/prosopography/ag-reviewer> ;
+    crm:P140_assigned_attribute_to <https://example.org/packages/prosopography/ent-ada> ;
+    crm:P140_assigned_attribute_to <https://example.org/packages/prosopography/ent-engine> ;
+    crm:P177_assigned_property_of_type <https://example.org/packages/prosopography/st-collaboration> ;
+    prov:generatedAtTime "2026-09-06T09:40:00Z"^^xsd:dateTime ;
+    tei6:certainty "low" ;
+    tei6:hasParticipant <https://example.org/packages/prosopography/stm-collaboration/participant/1> ;
+    tei6:hasParticipant <https://example.org/packages/prosopography/stm-collaboration/participant/2> ;
+    tei6:recordKind "statements" ;
+    tei6:statementKind "relation" ;
+    tei6:status "asserted" .
+
+<https://example.org/packages/prosopography/stm-nationality/participant/1> tei6:participantEntity <https://example.org/packages/prosopography/ent-ada> ;
+    tei6:participantRole "subject" .
+
+<https://example.org/packages/prosopography/stm-nationality/participant/2> tei6:participantEntity <https://example.org/packages/prosopography/ent-coded-value> ;
+    tei6:participantRole "value" .
+
+<https://example.org/packages/prosopography/stm-nationality> a crm:E13_Attribute_Assignment ;
+    dcterms:creator <https://example.org/packages/prosopography/ag-editor> ;
+    crm:P140_assigned_attribute_to <https://example.org/packages/prosopography/ent-ada> ;
+    crm:P140_assigned_attribute_to <https://example.org/packages/prosopography/ent-coded-value> ;
+    crm:P141_assigned "British" ;
+    crm:P177_assigned_property_of_type <https://example.org/packages/prosopography/st-occupation> ;
+    prov:generatedAtTime "2026-09-06T09:40:00Z"^^xsd:dateTime ;
+    tei6:hasParticipant <https://example.org/packages/prosopography/stm-nationality/participant/1> ;
+    tei6:hasParticipant <https://example.org/packages/prosopography/stm-nationality/participant/2> ;
+    tei6:recordKind "statements" ;
+    tei6:statementKind "trait" ;
+    tei6:status "asserted" .
+
+<https://example.org/packages/prosopography/stm-residence/participant/1> tei6:participantEntity <https://example.org/packages/prosopography/ent-ada> ;
+    tei6:participantRole "subject" .
+
+<https://example.org/packages/prosopography/stm-residence/participant/2> tei6:participantEntity <https://example.org/packages/prosopography/ent-london> ;
+    tei6:participantRole "place" .
+
+<https://example.org/packages/prosopography/stm-residence> a crm:E13_Attribute_Assignment ;
+    dcterms:creator <https://example.org/packages/prosopography/ag-editor> ;
+    crm:P140_assigned_attribute_to <https://example.org/packages/prosopography/ent-ada> ;
+    crm:P140_assigned_attribute_to <https://example.org/packages/prosopography/ent-london> ;
+    crm:P177_assigned_property_of_type <https://example.org/packages/prosopography/st-residence> ;
+    prov:generatedAtTime "2026-09-06T09:40:00Z"^^xsd:dateTime ;
+    tei6:certainty "medium" ;
+    tei6:hasParticipant <https://example.org/packages/prosopography/stm-residence/participant/1> ;
+    tei6:hasParticipant <https://example.org/packages/prosopography/stm-residence/participant/2> ;
+    tei6:recordKind "statements" ;
+    tei6:statementKind "state" ;
+    tei6:status "asserted" ;
+    tei6:validFrom "1815" ;
+    tei6:validUntil "1852" .
+
+<https://example.org/packages/prosopography/v1> a tei6:Version ;
+    tei6:contentHash "4f4ef5987cf8033c612bc9a60f5d3a0a5e641f66742cc7708bbec00b9016345e" ;
+    tei6:recordKind "versions" .
+
+<https://old.example.org/packages/prosopography/ag-editor> prov:alternateOf <https://example.org/packages/prosopography/ag-editor> .
+
+<https://old.example.org/packages/prosopography/ag-reviewer> prov:alternateOf <https://example.org/packages/prosopography/ag-reviewer> .
+
+<https://old.example.org/packages/prosopography/al-birth> prov:alternateOf <https://example.org/packages/prosopography/al-birth> .
+
+<https://old.example.org/packages/prosopography/al-british> prov:alternateOf <https://example.org/packages/prosopography/al-british> .
+
+<https://old.example.org/packages/prosopography/dn-ada-first> prov:alternateOf <https://example.org/packages/prosopography/dn-ada-first> .
+
+<https://old.example.org/packages/prosopography/dn-ada-second> prov:alternateOf <https://example.org/packages/prosopography/dn-ada-second> .
+
+<https://old.example.org/packages/prosopography/dn-engine-first> prov:alternateOf <https://example.org/packages/prosopography/dn-engine-first> .
+
+<https://old.example.org/packages/prosopography/dn-engine-withdrawn> prov:alternateOf <https://example.org/packages/prosopography/dn-engine-withdrawn> .
+
+<https://old.example.org/packages/prosopography/dn-london> prov:alternateOf <https://example.org/packages/prosopography/dn-london> .
+
+<https://old.example.org/packages/prosopography/en-pronoun> prov:alternateOf <https://example.org/packages/prosopography/en-pronoun> .
+
+<https://old.example.org/packages/prosopography/en-proper-noun> prov:alternateOf <https://example.org/packages/prosopography/en-proper-noun> .
+
+<https://old.example.org/packages/prosopography/en-referring-string> prov:alternateOf <https://example.org/packages/prosopography/en-referring-string> .
+
+<https://old.example.org/packages/prosopography/ent-ada> prov:alternateOf <https://example.org/packages/prosopography/ent-ada> .
+
+<https://old.example.org/packages/prosopography/ent-birth-1815> prov:alternateOf <https://example.org/packages/prosopography/ent-birth-1815> .
+
+<https://old.example.org/packages/prosopography/ent-coded-value> prov:alternateOf <https://example.org/packages/prosopography/ent-coded-value> .
+
+<https://old.example.org/packages/prosopography/ent-engine> prov:alternateOf <https://example.org/packages/prosopography/ent-engine> .
+
+<https://old.example.org/packages/prosopography/ent-london> prov:alternateOf <https://example.org/packages/prosopography/ent-london> .
+
+<https://old.example.org/packages/prosopography/ent-society> prov:alternateOf <https://example.org/packages/prosopography/ent-society> .
+
+<https://old.example.org/packages/prosopography/fb-1> prov:alternateOf <https://example.org/packages/prosopography/fb-1> .
+
+<https://old.example.org/packages/prosopography/nd-ada> prov:alternateOf <https://example.org/packages/prosopography/nd-ada> .
+
+<https://old.example.org/packages/prosopography/nd-engine> prov:alternateOf <https://example.org/packages/prosopography/nd-engine> .
+
+<https://old.example.org/packages/prosopography/nd-london> prov:alternateOf <https://example.org/packages/prosopography/nd-london> .
+
+<https://old.example.org/packages/prosopography/nm-ada> prov:alternateOf <https://example.org/packages/prosopography/nm-ada> .
+
+<https://old.example.org/packages/prosopography/nm-london-latin> prov:alternateOf <https://example.org/packages/prosopography/nm-london-latin> .
+
+<https://old.example.org/packages/prosopography/nm-london> prov:alternateOf <https://example.org/packages/prosopography/nm-london> .
+
+<https://old.example.org/packages/prosopography/rd-mentions> prov:alternateOf <https://example.org/packages/prosopography/rd-mentions> .
+
+<https://old.example.org/packages/prosopography/sel-ada> prov:alternateOf <https://example.org/packages/prosopography/sel-ada> .
+
+<https://old.example.org/packages/prosopography/sel-engine> prov:alternateOf <https://example.org/packages/prosopography/sel-engine> .
+
+<https://old.example.org/packages/prosopography/sel-london> prov:alternateOf <https://example.org/packages/prosopography/sel-london> .
+
+<https://old.example.org/packages/prosopography/st-birth> prov:alternateOf <https://example.org/packages/prosopography/st-birth> .
+
+<https://old.example.org/packages/prosopography/st-collaboration> prov:alternateOf <https://example.org/packages/prosopography/st-collaboration> .
+
+<https://old.example.org/packages/prosopography/st-occupation> prov:alternateOf <https://example.org/packages/prosopography/st-occupation> .
+
+<https://old.example.org/packages/prosopography/st-residence> prov:alternateOf <https://example.org/packages/prosopography/st-residence> .
+
+<https://old.example.org/packages/prosopography/stm-birth> prov:alternateOf <https://example.org/packages/prosopography/stm-birth> .
+
+<https://old.example.org/packages/prosopography/stm-collaboration> prov:alternateOf <https://example.org/packages/prosopography/stm-collaboration> .
+
+<https://old.example.org/packages/prosopography/stm-nationality> prov:alternateOf <https://example.org/packages/prosopography/stm-nationality> .
+
+<https://old.example.org/packages/prosopography/stm-residence> prov:alternateOf <https://example.org/packages/prosopography/stm-residence> .
+
+<https://old.example.org/packages/prosopography/v1> prov:alternateOf <https://example.org/packages/prosopography/v1> .

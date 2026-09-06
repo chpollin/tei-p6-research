@@ -1,0 +1,283 @@
+@prefix crm: <http://www.cidoc-crm.org/cidoc-crm/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix oa: <http://www.w3.org/ns/oa#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix tei6: <urn:tei-p6-research:rdf:0.2:> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://example.org/packages/mentions/> a tei6:Package ;
+    tei6:bindingVersion "0.2" ;
+    tei6:modelVersion "0.2" ;
+    tei6:recordKind "package" .
+
+<https://example.org/packages/mentions/ag-editor> a prov:Agent ;
+    rdfs:label "Editor A" ;
+    tei6:recordKind "agents" .
+
+<https://example.org/packages/mentions/ag-reviewer> a prov:Agent ;
+    rdfs:label "Editor B" ;
+    tei6:recordKind "agents" .
+
+<https://example.org/packages/mentions/al-ada-viaf> a tei6:AlignmentClaim ;
+    dcterms:creator <https://example.org/packages/mentions/ag-editor> ;
+    prov:generatedAtTime "2026-09-06T09:15:00Z"^^xsd:dateTime ;
+    tei6:alignmentRelation "exact" ;
+    tei6:alignmentTarget <https://example.org/authority/ada> ;
+    tei6:recordKind "alignments" ;
+    tei6:status "asserted" ;
+    tei6:subject <https://example.org/packages/mentions/ent-ada> .
+
+<https://example.org/packages/mentions/al-babbage-authority> a tei6:AlignmentClaim ;
+    dcterms:creator <https://example.org/packages/mentions/ag-editor> ;
+    prov:generatedAtTime "2026-09-06T09:15:00Z"^^xsd:dateTime ;
+    tei6:alignmentRelation "exact" ;
+    tei6:alignmentTarget <https://example.org/authority/babbage> ;
+    tei6:recordKind "alignments" ;
+    tei6:status "asserted" ;
+    tei6:subject <https://example.org/packages/mentions/ent-babbage> .
+
+<https://example.org/packages/mentions/al-babbage-related> a tei6:AlignmentClaim ;
+    dcterms:creator <https://example.org/packages/mentions/ag-reviewer> ;
+    prov:generatedAtTime "2026-09-06T09:15:00Z"^^xsd:dateTime ;
+    tei6:alignmentRelation "broader" ;
+    tei6:alignmentTarget <https://example.org/authority/babbage-family> ;
+    tei6:certainty "low" ;
+    tei6:recordKind "alignments" ;
+    tei6:status "asserted" ;
+    tei6:subject <https://example.org/packages/mentions/ent-babbage> .
+
+<https://example.org/packages/mentions/an-babbage/body> a oa:TextualBody ;
+    rdf:value "One discontinuous proper-noun mention across an inserted middle initial." .
+
+<https://example.org/packages/mentions/an-babbage> a oa:Annotation ;
+    dcterms:creator <https://example.org/packages/mentions/ag-editor> ;
+    oa:hasBody <https://example.org/packages/mentions/an-babbage/body> ;
+    oa:hasBody <https://example.org/packages/mentions/en-proper-noun> ;
+    oa:hasTarget <https://example.org/packages/mentions/sel-charles-babbage> ;
+    oa:motivatedBy oa:classifying ;
+    prov:generatedAtTime "2026-09-06T09:15:00Z"^^xsd:dateTime ;
+    tei6:recordKind "annotations" ;
+    tei6:status "asserted" .
+
+<https://example.org/packages/mentions/ct-1> a tei6:ContinuityClaim ;
+    dcterms:creator <https://example.org/packages/mentions/ag-editor> ;
+    prov:generatedAtTime "2026-09-06T09:15:00Z"^^xsd:dateTime ;
+    tei6:continuityVersion <https://example.org/packages/mentions/v1> ;
+    tei6:criterion "One transcription of one letter draft." ;
+    tei6:recordKind "continuities" ;
+    tei6:status "asserted" ;
+    tei6:subject <https://example.org/packages/mentions/tx-letter> .
+
+<https://example.org/packages/mentions/dn-ada> a oa:Annotation ;
+    dcterms:creator <https://example.org/packages/mentions/ag-editor> ;
+    oa:hasBody <https://example.org/packages/mentions/ent-ada> ;
+    oa:hasTarget <https://example.org/packages/mentions/nd-ada> ;
+    oa:motivatedBy oa:identifying ;
+    prov:generatedAtTime "2026-09-06T09:15:00Z"^^xsd:dateTime ;
+    tei6:recordKind "denotations" ;
+    tei6:status "asserted" .
+
+<https://example.org/packages/mentions/dn-babbage> a oa:Annotation ;
+    dcterms:creator <https://example.org/packages/mentions/ag-editor> ;
+    oa:hasBody <https://example.org/packages/mentions/ent-babbage> ;
+    oa:hasTarget <https://example.org/packages/mentions/an-babbage> ;
+    oa:motivatedBy oa:identifying ;
+    prov:generatedAtTime "2026-09-06T09:15:00Z"^^xsd:dateTime ;
+    tei6:recordKind "denotations" ;
+    tei6:status "asserted" .
+
+<https://example.org/packages/mentions/dn-him-reviewer> a oa:Annotation ;
+    dcterms:creator <https://example.org/packages/mentions/ag-reviewer> ;
+    oa:hasBody <https://example.org/packages/mentions/ent-ada> ;
+    oa:hasTarget <https://example.org/packages/mentions/nd-him> ;
+    oa:motivatedBy oa:identifying ;
+    prov:generatedAtTime "2026-09-06T09:15:00Z"^^xsd:dateTime ;
+    tei6:certainty "low" ;
+    tei6:recordKind "denotations" ;
+    tei6:status "asserted" .
+
+<https://example.org/packages/mentions/dn-him> a oa:Annotation ;
+    dcterms:creator <https://example.org/packages/mentions/ag-editor> ;
+    oa:hasBody <https://example.org/packages/mentions/ent-babbage> ;
+    oa:hasTarget <https://example.org/packages/mentions/nd-him> ;
+    oa:motivatedBy oa:identifying ;
+    prov:generatedAtTime "2026-09-06T09:15:00Z"^^xsd:dateTime ;
+    tei6:certainty "medium" ;
+    tei6:recordKind "denotations" ;
+    tei6:status "asserted" .
+
+<https://example.org/packages/mentions/dn-she> a oa:Annotation ;
+    dcterms:creator <https://example.org/packages/mentions/ag-editor> ;
+    oa:hasBody <https://example.org/packages/mentions/ent-ada> ;
+    oa:hasTarget <https://example.org/packages/mentions/nd-she> ;
+    oa:motivatedBy oa:identifying ;
+    prov:generatedAtTime "2026-09-06T09:15:00Z"^^xsd:dateTime ;
+    tei6:certainty "high" ;
+    tei6:recordKind "denotations" ;
+    tei6:status "asserted" .
+
+<https://example.org/packages/mentions/en-pronoun> a skos:Concept ;
+    skos:definition "The selected extent is a pronoun used to refer." ;
+    skos:prefLabel "Pronoun" ;
+    tei6:conceptRole "node" ;
+    tei6:recordKind "concepts" .
+
+<https://example.org/packages/mentions/en-proper-noun> a skos:Concept ;
+    skos:definition "The selected extent is a proper noun or proper-noun phrase used to refer." ;
+    skos:prefLabel "Proper noun" ;
+    tei6:conceptRole "node" ;
+    tei6:recordKind "concepts" .
+
+<https://example.org/packages/mentions/en-referring-string> a skos:Concept ;
+    skos:definition "The selected extent is a referring string that is no proper noun, such as a description or a title used to refer." ;
+    skos:prefLabel "Referring string" ;
+    tei6:conceptRole "node" ;
+    tei6:recordKind "concepts" .
+
+<https://example.org/packages/mentions/ent-ada> a crm:E21_Person ;
+    crm:P1_is_identified_by <https://example.org/packages/mentions/nm-ada-birth> ;
+    crm:P1_is_identified_by <https://example.org/packages/mentions/nm-ada-married> ;
+    rdfs:label "Ada Lovelace" ;
+    skos:exactMatch <https://example.org/authority/ada> ;
+    tei6:entityKind "person" ;
+    tei6:recordKind "entities" .
+
+<https://example.org/packages/mentions/ent-babbage> a crm:E21_Person ;
+    crm:P1_is_identified_by <https://example.org/packages/mentions/nm-babbage> ;
+    rdfs:label "Charles Babbage" ;
+    skos:broadMatch <https://example.org/authority/babbage-family> ;
+    skos:exactMatch <https://example.org/authority/babbage> ;
+    tei6:entityKind "person" ;
+    tei6:recordKind "entities" .
+
+<https://example.org/packages/mentions/nd-ada> a oa:Annotation ;
+    oa:hasBody <https://example.org/packages/mentions/en-proper-noun> ;
+    oa:hasTarget <https://example.org/packages/mentions/sel-ada> ;
+    oa:motivatedBy oa:classifying ;
+    tei6:inReading <https://example.org/packages/mentions/rd-mentions> ;
+    tei6:recordKind "nodes" .
+
+<https://example.org/packages/mentions/nd-him> a oa:Annotation ;
+    oa:hasBody <https://example.org/packages/mentions/en-pronoun> ;
+    oa:hasTarget <https://example.org/packages/mentions/sel-him> ;
+    oa:motivatedBy oa:classifying ;
+    tei6:inReading <https://example.org/packages/mentions/rd-mentions> ;
+    tei6:recordKind "nodes" .
+
+<https://example.org/packages/mentions/nd-she> a oa:Annotation ;
+    oa:hasBody <https://example.org/packages/mentions/en-pronoun> ;
+    oa:hasTarget <https://example.org/packages/mentions/sel-she> ;
+    oa:motivatedBy oa:classifying ;
+    tei6:inReading <https://example.org/packages/mentions/rd-mentions> ;
+    tei6:recordKind "nodes" .
+
+<https://example.org/packages/mentions/nm-ada-birth> a crm:E41_Appellation ;
+    dcterms:creator <https://example.org/packages/mentions/ag-editor> ;
+    rdfs:label "Ada Byron"@en ;
+    prov:generatedAtTime "2026-09-06T09:15:00Z"^^xsd:dateTime ;
+    tei6:recordKind "names" ;
+    tei6:status "asserted" ;
+    tei6:subject <https://example.org/packages/mentions/ent-ada> ;
+    tei6:validUntil "1835" .
+
+<https://example.org/packages/mentions/nm-ada-married/part/1> tei6:namePartForm "Ada" ;
+    tei6:namePartIndex "1"^^xsd:nonNegativeInteger ;
+    tei6:namePartKind "forename" .
+
+<https://example.org/packages/mentions/nm-ada-married/part/2> tei6:namePartForm "Lovelace" ;
+    tei6:namePartIndex "2"^^xsd:nonNegativeInteger ;
+    tei6:namePartKind "surname" .
+
+<https://example.org/packages/mentions/nm-ada-married> a crm:E41_Appellation ;
+    dcterms:creator <https://example.org/packages/mentions/ag-editor> ;
+    rdfs:label "Ada Lovelace"@en ;
+    prov:generatedAtTime "2026-09-06T09:15:00Z"^^xsd:dateTime ;
+    tei6:hasNamePart <https://example.org/packages/mentions/nm-ada-married/part/1> ;
+    tei6:hasNamePart <https://example.org/packages/mentions/nm-ada-married/part/2> ;
+    tei6:recordKind "names" ;
+    tei6:status "asserted" ;
+    tei6:subject <https://example.org/packages/mentions/ent-ada> ;
+    tei6:validFrom "1835" .
+
+<https://example.org/packages/mentions/nm-babbage> a crm:E41_Appellation ;
+    dcterms:creator <https://example.org/packages/mentions/ag-editor> ;
+    rdfs:label "Charles Babbage"@en ;
+    prov:generatedAtTime "2026-09-06T09:15:00Z"^^xsd:dateTime ;
+    tei6:recordKind "names" ;
+    tei6:status "asserted" ;
+    tei6:subject <https://example.org/packages/mentions/ent-babbage> .
+
+<https://example.org/packages/mentions/rd-mentions> a oa:Annotation ;
+    dcterms:creator <https://example.org/packages/mentions/ag-editor> ;
+    rdfs:label "Mention layer" ;
+    oa:hasTarget <https://example.org/packages/mentions/v1> ;
+    oa:motivatedBy oa:classifying ;
+    prov:generatedAtTime "2026-09-06T09:15:00Z"^^xsd:dateTime ;
+    tei6:recordKind "readings" ;
+    tei6:status "asserted" .
+
+<https://example.org/packages/mentions/sel-ada/selector> a oa:TextPositionSelector ;
+    oa:end "3"^^xsd:nonNegativeInteger ;
+    oa:start "0"^^xsd:nonNegativeInteger ;
+    tei6:segmentQuote "Ada" .
+
+<https://example.org/packages/mentions/sel-ada> a oa:SpecificResource ;
+    oa:hasSelector <https://example.org/packages/mentions/sel-ada/selector> ;
+    oa:hasSource <https://example.org/packages/mentions/v1> ;
+    tei6:recordKind "selections" ;
+    tei6:resolutionStatus "resolved" .
+
+<https://example.org/packages/mentions/sel-charles-babbage/selector/1> a oa:TextPositionSelector ;
+    oa:end "20"^^xsd:nonNegativeInteger ;
+    oa:start "13"^^xsd:nonNegativeInteger ;
+    tei6:segmentIndex "1"^^xsd:nonNegativeInteger ;
+    tei6:segmentQuote "Charles" .
+
+<https://example.org/packages/mentions/sel-charles-babbage/selector/2> a oa:TextPositionSelector ;
+    oa:end "31"^^xsd:nonNegativeInteger ;
+    oa:start "24"^^xsd:nonNegativeInteger ;
+    tei6:segmentIndex "2"^^xsd:nonNegativeInteger ;
+    tei6:segmentQuote "Babbage" .
+
+<https://example.org/packages/mentions/sel-charles-babbage/selector> a oa:List ;
+    oa:items <https://example.org/packages/mentions/sel-charles-babbage/selector/1> ;
+    oa:items <https://example.org/packages/mentions/sel-charles-babbage/selector/2> .
+
+<https://example.org/packages/mentions/sel-charles-babbage> a oa:SpecificResource ;
+    oa:hasSelector <https://example.org/packages/mentions/sel-charles-babbage/selector> ;
+    oa:hasSource <https://example.org/packages/mentions/v1> ;
+    tei6:recordKind "selections" ;
+    tei6:resolutionStatus "resolved" .
+
+<https://example.org/packages/mentions/sel-him/selector> a oa:TextPositionSelector ;
+    oa:end "47"^^xsd:nonNegativeInteger ;
+    oa:start "44"^^xsd:nonNegativeInteger ;
+    tei6:segmentQuote "him" .
+
+<https://example.org/packages/mentions/sel-him> a oa:SpecificResource ;
+    oa:hasSelector <https://example.org/packages/mentions/sel-him/selector> ;
+    oa:hasSource <https://example.org/packages/mentions/v1> ;
+    tei6:recordKind "selections" ;
+    tei6:resolutionStatus "resolved" .
+
+<https://example.org/packages/mentions/sel-she/selector> a oa:TextPositionSelector ;
+    oa:end "36"^^xsd:nonNegativeInteger ;
+    oa:start "33"^^xsd:nonNegativeInteger ;
+    tei6:segmentQuote "She" .
+
+<https://example.org/packages/mentions/sel-she> a oa:SpecificResource ;
+    oa:hasSelector <https://example.org/packages/mentions/sel-she/selector> ;
+    oa:hasSource <https://example.org/packages/mentions/v1> ;
+    tei6:recordKind "selections" ;
+    tei6:resolutionStatus "resolved" .
+
+<https://example.org/packages/mentions/tx-letter> a tei6:Text ;
+    rdfs:label "Letter draft" ;
+    tei6:recordKind "texts" .
+
+<https://example.org/packages/mentions/v1> a tei6:Version ;
+    tei6:contentHash "718b9c409d2ab1f6865e2a3de791f82116b8e186952682de4d0f30cd4e9d4883" ;
+    tei6:recordKind "versions" .

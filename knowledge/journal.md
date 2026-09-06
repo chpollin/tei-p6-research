@@ -718,3 +718,22 @@ pass, the check enters the completion gate and the CI workflow, and the v0.1
 report was regenerated because its input fingerprints now include the new
 module. Real cases from distinct editions, the RDF binding and the five
 acceptance items remain open.
+
+## 2026-09-06 — RDF binding of the extended model
+
+The RDF direction tables of sections 13 and 14 became an executable one-way
+export in `tools/models/rdf_binding.py`, documented in
+[[knowledge/text-model-rdf-binding]]. Every record IRI is the package base
+plus the local ID under the identifier policy, every claim stays a node with
+creator, generation instant, status, certainty, validity and revision edges,
+mentions with their denotations become identifying Web Annotations, entities
+take CIDOC CRM classes by kind, names become appellations with language-tagged
+forms and ordered parts, statements become attribute assignments, and
+alignments produce SKOS matches without any identity entailment, so `exact`
+never becomes `owl:sameAs`. The package, texts, versions, continuity claims,
+alignment claims and former-base claims have no external class and live in a
+project namespace. The preservation law holds for every valid case package and
+both examples: the set of record IRIs by kind and every reference edge can be
+read back from the triples alone. Reasoning, SHACL shapes and a decoder stay
+out of scope, and `created` admitting a leap second lies outside the
+`xsd:dateTime` value space, which the document records as a known limit.

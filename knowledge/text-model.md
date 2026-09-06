@@ -10,7 +10,7 @@ status: draft
 language: en
 created: "2026-09-06"
 updated: "2026-09-06"
-related: [text-model-bindings, p6-architecture, p6-evaluation, experiments, specification, state]
+related: [text-model-bindings, p6-architecture, p6-evaluation, experiments, specification, state, text-model-rdf-binding]
 ---
 
 # Text Model

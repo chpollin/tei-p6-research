@@ -10,7 +10,7 @@ status: draft
 language: en
 created: "2026-09-06"
 updated: "2026-09-06"
-related: [text-model, experiments, testing, state]
+related: [text-model, experiments, testing, state, text-model-rdf-binding]
 ---
 
 # Text Model Bindings

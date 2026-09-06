@@ -2979,13 +2979,14 @@
     "experiments/abstract_text_v01/examples/competing-readings.json": "bb2c1e74033b018ba6ab450be75d07f230fb0208df8e33dcacb28bf967304147",
     "experiments/abstract_text_v01/examples/identity-and-reanchoring.json": "b4c44be65d342374cd91458c3ebff8bf6d2c416b386233cf61ad1c4f2d76df90",
     "experiments/abstract_text_v01/spec.json": "fed61ae06e05c92408722410c8a09168825675f33fb0e917475192886820cd86",
-    "knowledge/text-model.md": "cb54c5418345df21f53c68167d70673337296507be38fcf57f99f8a9f14ad9c3",
+    "knowledge/text-model.md": "bafa276e2e28d525687fe08c32f79e5976eb2fd33c56ceaef02a1a8e8eddd621",
     "tools/check_abstract_text_v01.py": "4e84e31f7e13b3019d8d01d139aedba65cb9aea4fce43473ca69201fa290b26f",
     "tools/models/__init__.py": "24fcec930743dfdc176120f5dc7fb9056db911b40628634d8240cac1498414e1",
     "tools/models/abstract_text.py": "50ebb632e979da396acb0a87bf93b22ac88cc0a5b73481994220b606c6bfc7dc",
     "tools/models/bindings.py": "711b1cd37b78f62e53d6662f7555013a58b1faef91571ee3b8be48d060e8ae9c",
     "tools/models/editorial_profile.py": "9cc9f08f472f7c06e2011ddd07234ed177f9e87c2581fdd69d8826ee26efee75",
-    "tools/models/entities.py": "5867030ce52d2ffc67ef13b4501a2f933efc81fc79a348ae6ec0b6fb9a8b1f0c"
+    "tools/models/entities.py": "5867030ce52d2ffc67ef13b4501a2f933efc81fc79a348ae6ec0b6fb9a8b1f0c",
+    "tools/models/rdf_binding.py": "d7f2d4aef3c6289bf0c509e7bf18fd00655f9b35ff66a88cba1f9268333e5c6b"
   },
   "model_version": "0.1",
   "summary": {

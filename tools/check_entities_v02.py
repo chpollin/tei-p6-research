@@ -14,11 +14,14 @@ if __package__ in (None, ""):  # run as a script, so the package root is not on 
 
 from tools.check_abstract_text_v01 import json_bytes, read_json, text_sha256
 from tools.models import entities as model
+from tools.models import rdf_binding
 
 ROOT = Path(__file__).resolve().parents[1]
 BASE = Path("experiments/entities_v02")
 REPORT = BASE / "report.json"
 CASES = BASE / "cases.json"
+# A base is a publication fact, so a case that declares none is exported under this one.
+RDF_BASE = "https://example.org/entities-v02/"
 OPERATIONS = {"denotations_of": ("mention_id", "denotations"),
               "names_of": ("entity_id", "names")}
 CASE_FIELDS = ({"id", "description", "package", "expect"}, {"operations"})
@@ -116,6 +119,24 @@ def canonical_check(name: str, package: dict) -> dict:
         return {"package": name, "passed": False, "error": f"{type(exc).__name__}: {exc}"}
 
 
+def rdf_check(name: str, package: dict, turtle: Path | None = None) -> dict:
+    """The RDF export must be stable, and a committed Turtle example must reproduce.
+
+    Text comparison follows the fingerprint policy of the report, so a CRLF checkout
+    does not fail an example. The export is one way, so no round trip is checked.
+    """
+    exported = package if "base" in package else {**copy.deepcopy(package), "base": RDF_BASE}
+    try:
+        text = rdf_binding.to_turtle(exported)
+        passed = text == rdf_binding.to_turtle(exported)
+        if turtle is not None:
+            passed = passed and turtle.read_text(encoding="utf-8") == text
+        return {"package": name, "passed": passed,
+                "sha256": hashlib.sha256(text.encode("utf-8")).hexdigest()}
+    except (OSError, ValueError, KeyError, TypeError) as exc:
+        return {"package": name, "passed": False, "error": f"{type(exc).__name__}: {exc}"}
+
+
 def build_report(root: Path = ROOT) -> dict:
     spec = read_json(root / BASE / "spec.json")
     suite_path = root / CASES
@@ -128,8 +149,9 @@ def build_report(root: Path = ROOT) -> dict:
             outcome = {"error": f"{type(exc).__name__}: {exc}", "passed": False}
         results.append({"id": case["id"], "description": case["description"], **outcome})
 
-    canonical_checks = [canonical_check(case["id"], case["package"]) for case in cases
-                        if model.validate_extension(case["package"])["valid"]]
+    valid_cases = [case for case in cases if model.validate_extension(case["package"])["valid"]]
+    canonical_checks = [canonical_check(case["id"], case["package"]) for case in valid_cases]
+    rdf_checks = [rdf_check(case["id"], case["package"]) for case in valid_cases]
     example_paths = sorted((root / BASE / "examples").glob("*.json"))
     examples = []
     for path in example_paths:
@@ -138,14 +160,17 @@ def build_report(root: Path = ROOT) -> dict:
         examples.append({"path": path.relative_to(root).as_posix(), "valid": validation["valid"],
                          "diagnostics": validation["diagnostics"], "passed": validation["valid"]})
         canonical_checks.append(canonical_check(path.name, package))
+        rdf_checks.append(rdf_check(path.name, package, path.with_suffix(".ttl")))
 
-    # Contract, code, case and example changes invalidate the recorded report.
+    # Contract, code, case and example changes invalidate the recorded report. The
+    # example fingerprint covers the exported Turtle beside each JSON package.
     paths = [BASE / "spec.json", *([CASES] if suite_path.exists() else []),
              Path("knowledge/text-model.md"), Path("tools/check_entities_v02.py"),
              *[path.relative_to(root) for path in sorted((root / "tools/models").glob("*.py"))],
-             *[path.relative_to(root) for path in example_paths]]
+             *[path.relative_to(root) for path in sorted((root / BASE / "examples").glob("*"))
+               if path.is_file()]]
     covered = sorted({entry["name"] for case in cases for entry in case.get("operations", [])})
-    checks = [*results, *canonical_checks, *examples]
+    checks = [*results, *canonical_checks, *examples, *rdf_checks]
     passed = bool(cases) and covered == sorted(OPERATIONS) and all(item["passed"] for item in checks)
     return {
         "format_version": 1, "model_version": spec["model_version"],
@@ -155,8 +180,10 @@ def build_report(root: Path = ROOT) -> dict:
         "summary": {"passed": passed, "cases_present": bool(cases), "cases": len(results),
                     "case_passes": sum(item["passed"] for item in results),
                     "operations_covered": covered,
-                    "canonical_checks": len(canonical_checks), "examples": len(examples)},
+                    "canonical_checks": len(canonical_checks), "examples": len(examples),
+                    "rdf_checks": len(rdf_checks)},
         "cases": results, "canonical_checks": canonical_checks, "examples": examples,
+        "rdf_checks": rdf_checks,
     }
 
 

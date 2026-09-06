@@ -53,6 +53,7 @@ its reason matters.
 | [[knowledge/state]] | current reality | What exists now, what passed which check, and what is open? |
 | [[knowledge/text-model]] | formal definition of the abstract text model and its conformance rules | What exactly does the candidate model define, and when does an instance conform? |
 | [[knowledge/text-model-bindings]] | the JSON, XML and YAML bindings that preserve one model instance | How is one model instance written in each supported syntax without changing it? |
+| [[knowledge/text-model-rdf-binding]] | the one-way RDF export of an entity-extension 0.2 package | How does one package reach RDF, and what does the export drop? |
 | [[knowledge/p6-architecture]] | the candidate architecture beyond the text model, customization, versioning, migration, and the argument structure of the proposal | How do customization, versioning and migration surround the model, and how is the proposal argued? |
 | [[knowledge/p6-evaluation]] | design principles, evaluation dimensions, comparison protocol and acceptance criteria for P6 options | How are P6 options compared without presuming the answer? |
 | [[knowledge/experiments]] | experiment contracts, acceptance items and evidence entry points of the executed pilots | What did each executed pilot test, how is it reproduced, and what remains for human acceptance? |
