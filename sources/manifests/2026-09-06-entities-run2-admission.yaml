@@ -1,0 +1,231 @@
+schema_version: 1
+run_id: 2026-09-06-entities-run2-admission
+source_id: teic-tei-p5-4.12.0
+started_at: '2026-09-06T14:43:01Z'
+finished_at: '2026-09-06T14:43:01Z'
+status: bounded-complete
+scope:
+  boundary: Exactly att.personal.xml, att.global.responsibility.xml, att.global.source.xml,
+    att.editLike.xml, att.datable.xml, idno.xml, place.xml and state.xml from P5/Source/Specs,
+    and testnames.xml from P5/Test, at the locked release commit
+  status_applies_to: nine selected complete Git blobs and their immutable representations
+    only; neither the source family nor the topic Metadata and Entities
+adapter:
+  name: tools.ingest_git_blobs
+  version: 2
+lock_file: sources/locks/tei-p5-4.12.0.yaml
+upstream_manifest: sources/manifests/2026-09-04-teic-tei-p5-4.12.0.yaml
+upstream_inventory_sha256: b2ae1cc64d77027d3cd766a8aa532db08c30f276d07494c62eb6d43a5fdb6476
+requests:
+- kind: locked-git-blob-admission
+  commit: 113e933e21f016e2655518321e9d10214b8d9fcb
+  path: P5/Source/Specs/att.personal.xml
+  blob_id: da9ebd55d9ee07a9ecc0f5d7c6d066f9981585cd
+- kind: locked-git-blob-admission
+  commit: 113e933e21f016e2655518321e9d10214b8d9fcb
+  path: P5/Source/Specs/att.global.responsibility.xml
+  blob_id: 65688b68bc20ebdc18452ae2b285d581542e2363
+- kind: locked-git-blob-admission
+  commit: 113e933e21f016e2655518321e9d10214b8d9fcb
+  path: P5/Source/Specs/att.global.source.xml
+  blob_id: 99eff95e2ef18a407b64fb7f59932bc23334e664
+- kind: locked-git-blob-admission
+  commit: 113e933e21f016e2655518321e9d10214b8d9fcb
+  path: P5/Source/Specs/att.editLike.xml
+  blob_id: 125dd51d6ec3328982d02edc0740d71638ccfa2e
+- kind: locked-git-blob-admission
+  commit: 113e933e21f016e2655518321e9d10214b8d9fcb
+  path: P5/Source/Specs/att.datable.xml
+  blob_id: 0e2c292bc3d894906785e91eed96c327c3f06ef2
+- kind: locked-git-blob-admission
+  commit: 113e933e21f016e2655518321e9d10214b8d9fcb
+  path: P5/Source/Specs/idno.xml
+  blob_id: 2566cd875ae59e472cefee625ba5cb3602c61464
+- kind: locked-git-blob-admission
+  commit: 113e933e21f016e2655518321e9d10214b8d9fcb
+  path: P5/Source/Specs/place.xml
+  blob_id: 04fd590ffcf6f1ecd9e40d227b78407fdc1e0774
+- kind: locked-git-blob-admission
+  commit: 113e933e21f016e2655518321e9d10214b8d9fcb
+  path: P5/Source/Specs/state.xml
+  blob_id: b9e91d5cb159d59dfbd3ea9a6c08a9a395bc3f5b
+- kind: locked-git-blob-admission
+  commit: 113e933e21f016e2655518321e9d10214b8d9fcb
+  path: P5/Test/testnames.xml
+  blob_id: caee4124268148fd7504df39fb42f7760a568d20
+objects:
+- kind: markdown-representation
+  path: 10_markdown/documents/tei-p5-att.personal-4.12.0.md
+  sha256: 99597f1bd075a7098e1cad20ae8414aa845089863dcc0dcb34f9add63cdbef99
+- kind: markdown-representation
+  path: 10_markdown/documents/tei-p5-att.global.responsibility-4.12.0.md
+  sha256: f6ffbbcaef90b6cb9bb5338d02d9d1548cf26ede8d9bb25d4804f92f01115acd
+- kind: markdown-representation
+  path: 10_markdown/documents/tei-p5-att.global.source-4.12.0.md
+  sha256: 98875622540716041f90a0f99169140e2eb01a108184a51041af8d72a52fc447
+- kind: markdown-representation
+  path: 10_markdown/documents/tei-p5-att.editlike-4.12.0.md
+  sha256: da80f327bf1a193a83d82a26486f04c81c4758f8d8dea6ea16467200c85c8a31
+- kind: markdown-representation
+  path: 10_markdown/documents/tei-p5-att.datable-4.12.0.md
+  sha256: 4c887a30ab7f12598c5c844240edac378ec74baafdcfea941cfed13ab260587b
+- kind: markdown-representation
+  path: 10_markdown/documents/tei-p5-idno-4.12.0.md
+  sha256: 939b2f86f8dd03256a2e31189be962fea30b25a15a41cdd13904fc105157a16b
+- kind: markdown-representation
+  path: 10_markdown/documents/tei-p5-place-4.12.0.md
+  sha256: c267387ff40b294d468b8a819c8f09ad0b6c935cd5445b746ef1f3838c87695c
+- kind: markdown-representation
+  path: 10_markdown/documents/tei-p5-state-4.12.0.md
+  sha256: 5abbe568a86db3019a0b8feab1006b7608797cb5095e9444bec687fdfa62505b
+- kind: markdown-representation
+  path: 10_markdown/documents/tei-p5-test-testnames-4.12.0.md
+  sha256: de8835496d55dc39465040a1fb02310f661a5ff52860a5c5d5a48ccb3994277c
+counts:
+  admitted_sources: 9
+  representations: 9
+  original_bytes: 129728
+gaps: []
+rights_exceptions: []
+known_limits:
+- No claim of complete P5 source-family acquisition; the published-HTML reconciliation
+  remains separate.
+- The nine admitted files do not exhaust the P5 sources bearing on metadata and entities;
+  org.xml, trait.xml, event.xml, placeName.xml, orgName.xml, att.datable.w3c.xml,
+  testplace.xml, names-demo-en.xml, testnym.odd and the CE, HD and CO chapters stand
+  deferred under the admission budget of the run.
+- The three GitHub threads of the same run are citation-only publications and enter
+  through sources/manifests/2026-09-06-entities-run2-citations.yaml, not through this
+  manifest.
+- A test document records encoded practice of the release. It states no rule, and
+  its usage establishes neither a Guidelines statement nor editorial practice outside
+  the release.
+rights:
+  rights_status: storage-and-redistribution-permitted-with-attribution
+  selected_license: CC-BY-3.0
+  upstream_license_choice: CC-BY-3.0 OR BSD-2-Clause
+  license_url: https://creativecommons.org/licenses/by/3.0/
+  attribution: TEI Consortium; TEI P5 4.12.0; original source paths and pinned commit
+    recorded per admission
+  license_records:
+  - git_path: LICENSE.md
+    git_blob_id: 8611900a8f6deaf45b44c39541e1a9c874b7ee61
+    commit: 113e933e21f016e2655518321e9d10214b8d9fcb
+  - git_path: P5/COPYING.txt
+    git_blob_id: b5e5172a89b6dbffa557b9ba86c884a4ddbff493
+    commit: 113e933e21f016e2655518321e9d10214b8d9fcb
+instruction_trust: none
+admissions:
+- source_type: document
+  git_path: P5/Source/Specs/att.personal.xml
+  commit: 113e933e21f016e2655518321e9d10214b8d9fcb
+  original_path: 00_sources/tei-p5-att.personal-4.12.0.xml
+  original_bytes: 8885
+  original_sha256: 76e665622e70f3c34254e0caad7a511cdd1fd76143665da21d90830c19789d83
+  git_blob_id: da9ebd55d9ee07a9ecc0f5d7c6d066f9981585cd
+  representation_path: 10_markdown/documents/tei-p5-att.personal-4.12.0.md
+  representation_sha256: 99597f1bd075a7098e1cad20ae8414aa845089863dcc0dcb34f9add63cdbef99
+  english_reading_blocks: 6
+  content_authority: normative specification source at the pinned P5 4.12.0 release
+  instruction_trust: none
+- source_type: document
+  git_path: P5/Source/Specs/att.global.responsibility.xml
+  commit: 113e933e21f016e2655518321e9d10214b8d9fcb
+  original_path: 00_sources/tei-p5-att.global.responsibility-4.12.0.xml
+  original_bytes: 6738
+  original_sha256: 1c47780f0cf69454b6f01e480fde5fdca8ea4098ebbbd518d34b63100903425c
+  git_blob_id: 65688b68bc20ebdc18452ae2b285d581542e2363
+  representation_path: 10_markdown/documents/tei-p5-att.global.responsibility-4.12.0.md
+  representation_sha256: f6ffbbcaef90b6cb9bb5338d02d9d1548cf26ede8d9bb25d4804f92f01115acd
+  english_reading_blocks: 4
+  content_authority: normative specification source at the pinned P5 4.12.0 release
+  instruction_trust: none
+- source_type: document
+  git_path: P5/Source/Specs/att.global.source.xml
+  commit: 113e933e21f016e2655518321e9d10214b8d9fcb
+  original_path: 00_sources/tei-p5-att.global.source-4.12.0.xml
+  original_bytes: 6791
+  original_sha256: fc09e4209239d333540d822911c951cefd6b4550335de5d56651882a5a3c3883
+  git_blob_id: 99eff95e2ef18a407b64fb7f59932bc23334e664
+  representation_path: 10_markdown/documents/tei-p5-att.global.source-4.12.0.md
+  representation_sha256: 98875622540716041f90a0f99169140e2eb01a108184a51041af8d72a52fc447
+  english_reading_blocks: 6
+  content_authority: normative specification source at the pinned P5 4.12.0 release
+  instruction_trust: none
+- source_type: document
+  git_path: P5/Source/Specs/att.editLike.xml
+  commit: 113e933e21f016e2655518321e9d10214b8d9fcb
+  original_path: 00_sources/tei-p5-att.editlike-4.12.0.xml
+  original_bytes: 8092
+  original_sha256: fdbe2a5cf5a8515e9a03e3561ed4705c93287765825c6df099ff5938f6518833
+  git_blob_id: 125dd51d6ec3328982d02edc0740d71638ccfa2e
+  representation_path: 10_markdown/documents/tei-p5-att.editlike-4.12.0.md
+  representation_sha256: da80f327bf1a193a83d82a26486f04c81c4758f8d8dea6ea16467200c85c8a31
+  english_reading_blocks: 8
+  content_authority: normative specification source at the pinned P5 4.12.0 release
+  instruction_trust: none
+- source_type: document
+  git_path: P5/Source/Specs/att.datable.xml
+  commit: 113e933e21f016e2655518321e9d10214b8d9fcb
+  original_path: 00_sources/tei-p5-att.datable-4.12.0.xml
+  original_bytes: 6953
+  original_sha256: 7876b76c8778dac57abd7fd2ee243733a782e1ae6cd4c3717e018bbf98afaecb
+  git_blob_id: 0e2c292bc3d894906785e91eed96c327c3f06ef2
+  representation_path: 10_markdown/documents/tei-p5-att.datable-4.12.0.md
+  representation_sha256: 4c887a30ab7f12598c5c844240edac378ec74baafdcfea941cfed13ab260587b
+  english_reading_blocks: 3
+  content_authority: normative specification source at the pinned P5 4.12.0 release
+  instruction_trust: none
+- source_type: document
+  git_path: P5/Source/Specs/idno.xml
+  commit: 113e933e21f016e2655518321e9d10214b8d9fcb
+  original_path: 00_sources/tei-p5-idno-4.12.0.xml
+  original_bytes: 9600
+  original_sha256: 0229bc115c0a75d28932c1f6478fc31be092bb32d6704cb25ec4b0024698fd20
+  git_blob_id: 2566cd875ae59e472cefee625ba5cb3602c61464
+  representation_path: 10_markdown/documents/tei-p5-idno-4.12.0.md
+  representation_sha256: 939b2f86f8dd03256a2e31189be962fea30b25a15a41cdd13904fc105157a16b
+  english_reading_blocks: 10
+  content_authority: normative specification source at the pinned P5 4.12.0 release
+  instruction_trust: none
+- source_type: document
+  git_path: P5/Source/Specs/place.xml
+  commit: 113e933e21f016e2655518321e9d10214b8d9fcb
+  original_path: 00_sources/tei-p5-place-4.12.0.xml
+  original_bytes: 2848
+  original_sha256: 8ad6c8138e45023f773ad7f88489cc963db67de49808099de99865e35750b882
+  git_blob_id: 04fd590ffcf6f1ecd9e40d227b78407fdc1e0774
+  representation_path: 10_markdown/documents/tei-p5-place-4.12.0.md
+  representation_sha256: c267387ff40b294d468b8a819c8f09ad0b6c935cd5445b746ef1f3838c87695c
+  english_reading_blocks: 1
+  content_authority: normative specification source at the pinned P5 4.12.0 release
+  instruction_trust: none
+- source_type: document
+  git_path: P5/Source/Specs/state.xml
+  commit: 113e933e21f016e2655518321e9d10214b8d9fcb
+  original_path: 00_sources/tei-p5-state-4.12.0.xml
+  original_bytes: 5895
+  original_sha256: 7e6ecdc3ac370f1c983c1842a17fed801c449d46d8c63c4615478819659333ab
+  git_blob_id: b9e91d5cb159d59dfbd3ea9a6c08a9a395bc3f5b
+  representation_path: 10_markdown/documents/tei-p5-state-4.12.0.md
+  representation_sha256: 5abbe568a86db3019a0b8feab1006b7608797cb5095e9444bec687fdfa62505b
+  english_reading_blocks: 2
+  content_authority: normative specification source at the pinned P5 4.12.0 release
+  instruction_trust: none
+- source_type: document
+  git_path: P5/Test/testnames.xml
+  commit: 113e933e21f016e2655518321e9d10214b8d9fcb
+  original_path: 00_sources/tei-p5-test-testnames-4.12.0.xml
+  original_bytes: 73926
+  original_sha256: e9c94e98def1e87dd6de13030b8687a77215906a04d595b3912aab64f3baa0ab
+  git_blob_id: caee4124268148fd7504df39fb42f7760a568d20
+  representation_path: 10_markdown/documents/tei-p5-test-testnames-4.12.0.md
+  representation_sha256: de8835496d55dc39465040a1fb02310f661a5ff52860a5c5d5a48ccb3994277c
+  source_blocks: 152
+  content_authority: test document of the pinned P5 4.12.0 release; encoded practice
+    of the release, not a normative specification or Guidelines statement
+  instruction_trust: none
+  rights_review: 'Per-file review of 2026-09-06: the file carries no notice of its
+    own and stands inside the release the two license records cover, so the release
+    rights apply to it; its person, nym and place records are the release''s own test
+    material and name no rights holder beyond the TEI Consortium.'

@@ -84,18 +84,30 @@ replaces the region between the markers with the actual file state.
 | TEI P5 4.12.0 anchor specification | document | collection | [[10_markdown/documents/tei-p5-anchor-4.12.0]] | [[20_distillates/documents/tei-p5-anchor-4.12.0]] | distilled |
 | TEI P5 4.12.0 annotation specification | document | collection | [[10_markdown/documents/tei-p5-annotation-4.12.0]] | [[20_distillates/documents/tei-p5-annotation-4.12.0]] | distilled |
 | TEI P5 4.12.0 att.canonical specification | document | collection | [[10_markdown/documents/tei-p5-att.canonical-4.12.0]] | [[20_distillates/documents/tei-p5-att.canonical-4.12.0]] | distilled |
+| TEI P5 4.12.0 att.datable specification | document | collection | [[10_markdown/documents/tei-p5-att.datable-4.12.0]] | — | ingested |
+| TEI P5 4.12.0 att.editLike specification | document | collection | [[10_markdown/documents/tei-p5-att.editlike-4.12.0]] | — | ingested |
+| TEI P5 4.12.0 att.global.responsibility specification | document | collection | [[10_markdown/documents/tei-p5-att.global.responsibility-4.12.0]] | — | ingested |
+| TEI P5 4.12.0 att.global.source specification | document | collection | [[10_markdown/documents/tei-p5-att.global.source-4.12.0]] | — | ingested |
 | TEI P5 4.12.0 att.naming specification | document | collection | [[10_markdown/documents/tei-p5-att.naming-4.12.0]] | [[20_distillates/documents/tei-p5-att.naming-4.12.0]] | distilled |
+| TEI P5 4.12.0 att.personal specification | document | collection | [[10_markdown/documents/tei-p5-att.personal-4.12.0]] | — | ingested |
 | TEI P5 4.12.0 Guidelines chapter Names, Dates, People, and Places | document | collection | [[10_markdown/documents/tei-p5-guidelines-nd-4.12.0]] | [[20_distillates/documents/tei-p5-guidelines-nd-4.12.0]] | distilled |
+| TEI P5 4.12.0 idno specification | document | collection | [[10_markdown/documents/tei-p5-idno-4.12.0]] | — | ingested |
 | TEI P5 4.12.0 name specification | document | collection | [[10_markdown/documents/tei-p5-name-4.12.0]] | [[20_distillates/documents/tei-p5-name-4.12.0]] | distilled |
 | TEI P5 4.12.0 nym specification | document | collection | [[10_markdown/documents/tei-p5-nym-4.12.0]] | [[20_distillates/documents/tei-p5-nym-4.12.0]] | distilled |
 | TEI P5 4.12.0 persName specification | document | collection | [[10_markdown/documents/tei-p5-persname-4.12.0]] | [[20_distillates/documents/tei-p5-persname-4.12.0]] | distilled |
 | TEI P5 4.12.0 person specification | document | collection | [[10_markdown/documents/tei-p5-person-4.12.0]] | [[20_distillates/documents/tei-p5-person-4.12.0]] | distilled |
+| TEI P5 4.12.0 place specification | document | collection | [[10_markdown/documents/tei-p5-place-4.12.0]] | — | ingested |
 | TEI P5 4.12.0 relation specification | document | collection | [[10_markdown/documents/tei-p5-relation-4.12.0]] | [[20_distillates/documents/tei-p5-relation-4.12.0]] | distilled |
 | TEI P5 4.12.0 rs specification | document | collection | [[10_markdown/documents/tei-p5-rs-4.12.0]] | [[20_distillates/documents/tei-p5-rs-4.12.0]] | distilled |
 | TEI P5 4.12.0 span specification | document | collection | [[10_markdown/documents/tei-p5-span-4.12.0]] | [[20_distillates/documents/tei-p5-span-4.12.0]] | distilled |
+| TEI P5 4.12.0 state specification | document | collection | [[10_markdown/documents/tei-p5-state-4.12.0]] | — | ingested |
+| TEI P5 4.12.0 test document testnames.xml | document | collection | [[10_markdown/documents/tei-p5-test-testnames-4.12.0]] | — | ingested |
 | timeForP6 repository README at pinned commit eb924226 | document | collection | [[10_markdown/documents/tei-time-for-p6-readme-2026-07-16]] | [[20_distillates/documents/tei-time-for-p6-readme-2026-07-16]] | distilled |
 | <span>should be generalised to support discontinuous spans | publication | import | — | [[20_distillates/publications/tei-sourceforge-fr363]] | distilled |
+| att.personal, att.naming, and att.canonical: Error in ODD? | publication | import | — | — | new |
 | Hierarchies within range space: From LMNL to OHCO | publication | import | — | [[20_distillates/publications/piez2014range]] | distilled |
+| ogrophy elements should be in att.canonical | publication | import | — | — | new |
+| soft deprecation of @key | publication | import | — | — | new |
 | There are No Documents | publication | import | — | [[20_distillates/publications/renear-wickett2010documents]] | distilled |
 | Web Annotation Data Model | publication | import | — | [[20_distillates/publications/w3c-web-annotation-20170223]] | distilled |
 <!-- inventory:end -->

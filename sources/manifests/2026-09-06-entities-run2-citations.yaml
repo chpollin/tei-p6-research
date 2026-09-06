@@ -1,0 +1,217 @@
+schema_version: 1
+run_id: 2026-09-06-entities-run2-citations
+source_id: github-teic-tei-work-items
+started_at: '2026-09-06T14:44:00Z'
+finished_at: '2026-09-06T14:46:00Z'
+status: bounded-complete
+scope:
+  boundary: 'Three selected citation-only work-item threads of TEIC/TEI, issues 337,
+    2739 and 1414, each with the issue page and the single comment page of the locked
+    2026-09-06 REST snapshot.'
+  status_applies_to: the three named threads and the six recorded raw snapshots only;
+    neither the work-item family nor the topic Metadata and Entities
+adapter:
+  name: curated primary-metadata CSL import + tools.check_wave1_sources
+  version: 2
+references_path: references/entities-run2.json
+lock_file: sources/locks/github-teic-tei.yaml
+upstream_manifests:
+- sources/manifests/2026-09-06-github-teic-tei-work-items.yaml
+objects:
+- kind: csl-json-bibliography
+  path: references/entities-run2.json
+  sha256: f30cd48ecfcecc1184ac47e6bd7c46a6a4d0a54d6fd8fef80427b73c818362dc
+admissions:
+- reference_id: teic-tei-issue-337
+  source_type: publication
+  source_id: github-teic-tei-work-items
+  lock_file: sources/locks/github-teic-tei.yaml
+  work_item:
+    number: 337
+    kind: issue
+    state: closed
+    created_at: '2011-11-13T19:41:25Z'
+    closed_at: '2015-10-02T17:51:17Z'
+    comment_count: 21
+    labels:
+    - 'Type: FeatureRequest'
+    - sf-automigrated
+    - 'Status: Go'
+    html_url: https://github.com/TEIC/TEI/issues/337
+  snapshots:
+  - part: issue-body
+    response: &id001
+      byte_count: 6409
+      canonical_url: https://api.github.com/repos/TEIC/TEI/issues/337
+      final_url: https://api.github.com/repos/TEIC/TEI/issues/337
+      media_type: application/json
+      observed_at: '2026-09-06T09:32:48Z'
+      raw_path: sha256/9c/93e3a034c3c6872974e31178994edb83c7906544b9e0477e112aa71364c7a2
+      requested_url: https://api.github.com/repos/TEIC/TEI/issues/337
+      sha256: 9c93e3a034c3c6872974e31178994edb83c7906544b9e0477e112aa71364c7a2
+      status: 200
+    extraction:
+      kind: json-field
+      path:
+      - body
+  - part: comments-page-1
+    response: &id002
+      byte_count: 41330
+      canonical_url: https://api.github.com/repos/TEIC/TEI/issues/337/comments?per_page=100
+      final_url: https://api.github.com/repos/TEIC/TEI/issues/337/comments?per_page=100
+      media_type: application/json
+      observed_at: '2026-09-06T09:32:49Z'
+      raw_path: sha256/76/9961e6f0ed0a375f43523346c10ee8a4530decc810bbfc6d63f874ef7b60a1
+      requested_url: https://api.github.com/repos/TEIC/TEI/issues/337/comments?per_page=100
+      sha256: 769961e6f0ed0a375f43523346c10ee8a4530decc810bbfc6d63f874ef7b60a1
+      status: 200
+    extraction:
+      kind: json-field
+      path:
+      - '*'
+      - body
+  rights: Citation and checked short quotation only; the complete issue and comment
+    bodies stay in ignored local raw storage, because repository licensing does not
+    license participant discussion text.
+  authority: Historical participant proposal and discussion; no governance decision,
+    merge or release conclusion. Closure is closure only.
+  instruction_trust: none
+- reference_id: teic-tei-issue-2739
+  source_type: publication
+  source_id: github-teic-tei-work-items
+  lock_file: sources/locks/github-teic-tei.yaml
+  work_item:
+    number: 2739
+    kind: issue
+    state: closed
+    created_at: '2025-08-04T15:57:03Z'
+    closed_at: '2025-08-06T09:45:30Z'
+    comment_count: 4
+    labels: []
+    html_url: https://github.com/TEIC/TEI/issues/2739
+  snapshots:
+  - part: issue-body
+    response: &id003
+      byte_count: 3463
+      canonical_url: https://api.github.com/repos/TEIC/TEI/issues/2739
+      final_url: https://api.github.com/repos/TEIC/TEI/issues/2739
+      media_type: application/json
+      observed_at: '2026-09-06T10:57:59Z'
+      raw_path: sha256/29/74c8b06cbd0ee47783b9589daa8f459fbc2a70d80f52f0e8afd55122c0424e
+      requested_url: https://api.github.com/repos/TEIC/TEI/issues/2739
+      sha256: 2974c8b06cbd0ee47783b9589daa8f459fbc2a70d80f52f0e8afd55122c0424e
+      status: 200
+    extraction:
+      kind: json-field
+      path:
+      - body
+  - part: comments-page-1
+    response: &id004
+      byte_count: 8084
+      canonical_url: https://api.github.com/repos/TEIC/TEI/issues/2739/comments?per_page=100
+      final_url: https://api.github.com/repos/TEIC/TEI/issues/2739/comments?per_page=100
+      media_type: application/json
+      observed_at: '2026-09-06T10:57:59Z'
+      raw_path: sha256/77/0e68eb73f5d0e651103e51c4cc51e37aa789ce61132c96b4d2a607af421ce8
+      requested_url: https://api.github.com/repos/TEIC/TEI/issues/2739/comments?per_page=100
+      sha256: 770e68eb73f5d0e651103e51c4cc51e37aa789ce61132c96b4d2a607af421ce8
+      status: 200
+    extraction:
+      kind: json-field
+      path:
+      - '*'
+      - body
+  rights: Citation and checked short quotation only; the complete issue and comment
+    bodies stay in ignored local raw storage, because repository licensing does not
+    license participant discussion text.
+  authority: Participant bug report and discussion about the ODD declaration; the
+    declared class chain at the pinned release is read in the admitted blobs.
+  instruction_trust: none
+- reference_id: teic-tei-issue-1414
+  source_type: publication
+  source_id: github-teic-tei-work-items
+  lock_file: sources/locks/github-teic-tei.yaml
+  work_item:
+    number: 1414
+    kind: issue
+    state: closed
+    created_at: '2015-12-15T20:02:34Z'
+    closed_at: '2019-07-15T17:07:31Z'
+    comment_count: 16
+    labels:
+    - 'Type: FeatureRequest'
+    - 'Status: Go'
+    - 'TEI: Schema'
+    html_url: https://github.com/TEIC/TEI/issues/1414
+  snapshots:
+  - part: issue-body
+    response: &id005
+      byte_count: 8856
+      canonical_url: https://api.github.com/repos/TEIC/TEI/issues/1414
+      final_url: https://api.github.com/repos/TEIC/TEI/issues/1414
+      media_type: application/json
+      observed_at: '2026-09-06T09:50:00Z'
+      raw_path: sha256/93/0a6828c96ecf1137ab2c51af2ae0ddf0706785e2c331390fd7c0235b19fa31
+      requested_url: https://api.github.com/repos/TEIC/TEI/issues/1414
+      sha256: 930a6828c96ecf1137ab2c51af2ae0ddf0706785e2c331390fd7c0235b19fa31
+      status: 200
+    extraction:
+      kind: json-field
+      path:
+      - body
+  - part: comments-page-1
+    response: &id006
+      byte_count: 29182
+      canonical_url: https://api.github.com/repos/TEIC/TEI/issues/1414/comments?per_page=100
+      final_url: https://api.github.com/repos/TEIC/TEI/issues/1414/comments?per_page=100
+      media_type: application/json
+      observed_at: '2026-09-06T09:50:00Z'
+      raw_path: sha256/5c/b84f327bd936e18a5673b7ca612f4128d1024350ee53c2b3878f8b1114b259
+      requested_url: https://api.github.com/repos/TEIC/TEI/issues/1414/comments?per_page=100
+      sha256: 5cb84f327bd936e18a5673b7ca612f4128d1024350ee53c2b3878f8b1114b259
+      status: 200
+    extraction:
+      kind: json-field
+      path:
+      - '*'
+      - body
+  rights: Citation and checked short quotation only; the complete issue and comment
+    bodies stay in ignored local raw storage, because repository licensing does not
+    license participant discussion text.
+  authority: Historical participant proposal and discussion; the membership of the
+    record elements at the pinned release is read in the admitted blobs.
+  instruction_trust: none
+requests:
+- *id001
+- *id002
+- *id003
+- *id004
+- *id005
+- *id006
+counts:
+  selected_sources: 3
+  raw_snapshots: 6
+  short_quotations: 0
+gaps: []
+rights_exceptions:
+- No third-party discussion prose is published. The repository rights entry classifies
+  the work-item family as review-required with redistribution limited to metadata and
+  links, so the admitted manifestation is the reference record and the raw snapshot
+  stays local.
+known_limits:
+- code: distillates-not-yet-written
+  detail: The three threads are admitted and their raw snapshots reconcile; no distillate
+    exists yet, so no quotation has been checked and short_quotations is zero.
+- code: participant-identities-not-recorded
+  detail: Author logins and display names of the threads are deliberately absent from
+    the reference records and from this manifest. A distillate reports roles, never
+    names.
+- code: comment-pages-bounded-by-one-page
+  detail: Each thread's comments fit the single requested page of 100, so no pagination
+    beyond page one was recorded; reactions, timeline events and cross-references of
+    the same threads are outside this admission.
+- code: sourceforge-originals-not-admitted
+  detail: The migrated SourceForge original of issue 337 has no raw response in this
+    checkout, which is why the GitHub record is the admitted manifestation of the
+    thread.
+instruction_trust: none

@@ -37,6 +37,22 @@ CHAPTER_XML = '''<?xml version="1.0" encoding="UTF-8"?>
   <egXML xmlns="http://www.tei-c.org/ns/Examples"><persName ref="a &gt; b">Standalone</persName></egXML>
 </div>'''.encode()
 
+TEST_XML = '''<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt><title>Synthetic test document</title></titleStmt>
+      <sourceDesc>
+        <listPerson>
+          <person xml:id="p1"><persName key="K1">Α name</persName><listPerson><person xml:id="p1a"><persName>Nested record</persName></person></listPerson></person>
+          <person xml:id="p2"><persName ref="#p1">Another name</persName></person>
+        </listPerson>
+      </sourceDesc>
+    </fileDesc>
+  </teiHeader>
+  <text><body><p>A mention of <persName key="K1">the name</persName>.</p></body></text>
+</TEI>'''.encode()
+
 SPEC = Admission(
     git_path="P5/Source/Specs/anchor.xml",
     blob=ingest.blob_id(SPEC_XML),
@@ -184,6 +200,35 @@ def test_every_chapter_unit_is_the_verbatim_source_slice() -> None:
     for _, body in ingest.source_blocks(CHAPTER_XML):
         unit = body.removeprefix("```xml\n").removesuffix("\n```\n").encode()
         assert CHAPTER_XML.count(unit) == 1
+
+
+def test_test_document_units_are_records_and_body_elements() -> None:
+    """A P5 test document has no div, so the unit is the record or the body element."""
+    blocks = ingest.record_blocks(TEST_XML)
+    assert [locator for locator, _ in blocks] == [
+        "/TEI[1]/teiHeader[1]/fileDesc[1]/titleStmt[1]/title[1]",
+        "/TEI[1]/teiHeader[1]/fileDesc[1]/sourceDesc[1]/listPerson[1]/person[1]",
+        "/TEI[1]/teiHeader[1]/fileDesc[1]/sourceDesc[1]/listPerson[1]/person[2]",
+        "/TEI[1]/text[1]/body[1]/p[1]",
+    ]
+    bodies = [body for _, body in blocks]
+    # A list inside a record mints no unit of its own, so the units stay disjoint.
+    assert bodies[1].count("Nested record") == 1
+    assert not any("Nested record" in body for body in bodies if body is not bodies[1])
+    assert bodies[3] == (
+        '```xml\n<p>A mention of <persName key="K1">the name</persName>.</p>\n```\n')
+    for _, body in blocks:
+        unit = body.removeprefix("```xml\n").removesuffix("\n```\n").encode()
+        assert TEST_XML.count(unit) == 1
+
+
+def test_the_run_registry_keeps_the_two_entity_runs_disjoint() -> None:
+    """A shared slug or manifest would let one run overwrite the other's immutable output."""
+    assert set(ingest.RUNS) == {"entities", "entities-run2"}
+    slugs = [admission.slug for run in ingest.RUNS.values() for admission in run.admissions]
+    manifests = [run.manifest for run in ingest.RUNS.values()]
+    assert len(slugs) == len(set(slugs))
+    assert len(manifests) == len(set(manifests))
 
 
 def test_xml_entity_declarations_are_rejected_by_both_readers() -> None:

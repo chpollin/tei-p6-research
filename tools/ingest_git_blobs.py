@@ -4,12 +4,14 @@ One admission list drives the whole chain, so the pilot in
 ``tools.ingest_text_identity`` and every later topic run share this code. Run with
 ``python -m tools.ingest_git_blobs``; ``--check`` is read-only and works without
 the ignored originals and without the mirror, because it reads the complete
-source back out of the representation it checks.
+source back out of the representation it checks. ``--run`` selects one of the
+admission runs in ``RUNS``; without it the first entity run is reconciled.
 
-Two source forms are represented. A Spec file carries the complete XML plus
-English reading blocks. A Guidelines chapter carries the complete XML plus one
-verbatim source block per block-level unit, so that a distillate can anchor a
-statement to a single heading or paragraph.
+Three source forms are represented. A Spec file carries the complete XML plus
+English reading blocks. A Guidelines chapter and a Test document carry the
+complete XML plus one verbatim source block per unit, a heading or paragraph in
+the chapter and a record or body element in the test document, so that a
+distillate can anchor a statement to a single unit.
 """
 
 from __future__ import annotations
@@ -44,6 +46,14 @@ XML_LANG = "{http://www.w3.org/XML/1998/namespace}lang"
 SOURCE_MARKER = b"## Complete XML source\n\n```xml\n"
 # In the Guidelines a div holds the block-level units; every other child is one.
 BLOCK_CONTAINER = "div"
+GUIDELINES_CONTAINERS = frozenset({BLOCK_CONTAINER})
+# In a P5 test document these elements only group. Every other child of one is a
+# unit, so a person or nym record and a body paragraph are separately anchorable.
+TEST_CONTAINERS = frozenset({
+    "TEI", "teiHeader", "fileDesc", "titleStmt", "editionStmt", "publicationStmt",
+    "sourceDesc", "text", "body", "front", "back", "group", "div",
+    "listNym", "listPerson", "listPlace", "listOrg", "listEvent", "listRelation",
+})
 QUOTES = (0x22, 0x27)
 TAG_CLOSE = 0x3E
 
@@ -126,16 +136,19 @@ class _Open:
     counts: dict[str, int] = field(default_factory=dict)
 
 
-def source_blocks(payload: bytes) -> list[tuple[str, str]]:
-    """Block-level units of a Guidelines chapter, each as its verbatim source slice.
+def source_blocks(
+    payload: bytes, containers: frozenset[str] = GUIDELINES_CONTAINERS
+) -> list[tuple[str, str]]:
+    """Block-level units of one source file, each as its verbatim source slice.
 
     Byte offsets come from the expat parser, so a block is the exact source text
     of its unit rather than a re-serialization that would normalize namespaces,
-    entities and attribute whitespace. A unit is a non-div child of a div whose
-    own ancestors are all divs, which in the Guidelines is one heading or one
-    paragraph-level element. Nested examples and lists stay inside the paragraph
-    that carries them, and a div inside an encoded example mints no unit of its
-    own, so the units are disjoint and cover the chapter once.
+    entities and attribute whitespace. A unit is a child of a container whose own
+    ancestors are all containers and which is not itself a container, so in the
+    Guidelines it is one heading or one paragraph-level element and in a test
+    document one record or one body element. Nested examples and lists stay
+    inside the unit that carries them, and a container inside a unit mints no
+    unit of its own, so the units are disjoint and cover the file once.
     """
     if b"<!DOCTYPE" in payload or b"<!ENTITY" in payload:
         raise ValueError("DTD/entity declarations are outside this converter's scope")
@@ -150,12 +163,12 @@ def source_blocks(payload: bytes) -> list[tuple[str, str]]:
         counts = parent.counts if parent else root_counts
         counts[tag] = counts.get(tag, 0) + 1
         locator = f"{parent.locator if parent else ''}/{tag}[{counts[tag]}]"
-        structural = tag == BLOCK_CONTAINER and (parent is None or parent.structural)
+        structural = tag in containers and (parent is None or parent.structural)
         stack.append(_Open(tag, parser.CurrentByteIndex, locator, structural))
 
     def end(name: str) -> None:
         unit = stack.pop()
-        if unit.tag == BLOCK_CONTAINER or not stack or not stack[-1].structural:
+        if unit.tag in containers or not stack or not stack[-1].structural:
             return
         opened = _tag_end(payload, unit.begin)
         # Empty-element syntax ends with its own start tag; expat reports the end
@@ -175,6 +188,10 @@ def source_blocks(payload: bytes) -> list[tuple[str, str]]:
     parser.Parse(payload, True)
     found.sort()
     return [(locator, body) for _, locator, body in found]
+
+
+def record_blocks(payload: bytes) -> list[tuple[str, str]]:
+    return source_blocks(payload, TEST_CONTAINERS)
 
 
 @dataclass(frozen=True)
@@ -249,7 +266,35 @@ CHAPTER = Form(
     blocks=source_blocks,
 )
 
-FORMS = {"spec": SPEC, "spec-identified": SPEC_IDENTIFIED, "chapter": CHAPTER}
+# A P5 test document has no div at all, so the chapter form would find no unit in
+# it. The unit is the record or the body element the document's grouping elements
+# hold, which is what a distillate of encoded practice anchors a statement to.
+TEST_DOCUMENT = replace(
+    CHAPTER,
+    converter="complete XML plus verbatim source blocks for every record and body unit",
+    explanation=(
+        "The XML below is the complete source, preserved as inert text, including all encoded\n"
+        "records, declarations, and processing instructions. A separator newline before the closing\n"
+        "fence is not part of the source. The converter records the exact byte length. Source blocks\n"
+        "repeat the verbatim bytes of every unit the grouping elements of the document hold, one\n"
+        "block per record of a list and per element of the body in document order, so that a\n"
+        "distillate can anchor a statement to a single encoded record or paragraph. A nested list\n"
+        "stays inside the record that carries it. The blocks locate passages of this source and\n"
+        "carry no interpretation.\n"
+    ),
+    authority=(
+        "test document of the pinned P5 4.12.0 release; encoded practice of the release, "
+        "not a normative specification or Guidelines statement"
+    ),
+    blocks=record_blocks,
+)
+
+FORMS = {
+    "spec": SPEC,
+    "spec-identified": SPEC_IDENTIFIED,
+    "chapter": CHAPTER,
+    "test-document": TEST_DOCUMENT,
+}
 
 
 @dataclass(frozen=True)
@@ -263,6 +308,7 @@ class Admission:
     heading: str  # H1 of the representation, taken from the source
     title: str
     form: str
+    rights_note: str = ""  # per-file rights review, where the run recorded one
 
     @property
     def original(self) -> str:
@@ -397,6 +443,129 @@ ENTITIES = Run(
 )
 
 
+ENTITIES_RUN2 = Run(
+    run_id="2026-09-06-entities-run2-admission",
+    date="2026-09-06",
+    adapter="tools.ingest_git_blobs",
+    version=2,
+    manifest="sources/manifests/2026-09-06-entities-run2-admission.yaml",
+    boundary=(
+        "Exactly att.personal.xml, att.global.responsibility.xml, att.global.source.xml, "
+        "att.editLike.xml, att.datable.xml, idno.xml, place.xml and state.xml from "
+        "P5/Source/Specs, and testnames.xml from P5/Test, at the locked release commit"
+    ),
+    status_applies_to=(
+        "nine selected complete Git blobs and their immutable representations only; "
+        "neither the source family nor the topic Metadata and Entities"
+    ),
+    known_limits=(
+        "No claim of complete P5 source-family acquisition; the published-HTML reconciliation "
+        "remains separate.",
+        "The nine admitted files do not exhaust the P5 sources bearing on metadata and entities; "
+        "org.xml, trait.xml, event.xml, placeName.xml, orgName.xml, att.datable.w3c.xml, "
+        "testplace.xml, names-demo-en.xml, testnym.odd and the CE, HD and CO chapters stand "
+        "deferred under the admission budget of the run.",
+        "The three GitHub threads of the same run are citation-only publications and enter "
+        "through sources/manifests/2026-09-06-entities-run2-citations.yaml, not through this "
+        "manifest.",
+        "A test document records encoded practice of the release. It states no rule, and its "
+        "usage establishes neither a Guidelines statement nor editorial practice outside the "
+        "release.",
+    ),
+    admissions=(
+        Admission(
+            git_path="P5/Source/Specs/att.personal.xml",
+            blob="da9ebd55d9ee07a9ecc0f5d7c6d066f9981585cd",
+            size=8885,
+            slug="tei-p5-att.personal-4.12.0",
+            heading="att.personal",
+            title="TEI P5 4.12.0 att.personal specification",
+            form="spec-identified",
+        ),
+        Admission(
+            git_path="P5/Source/Specs/att.global.responsibility.xml",
+            blob="65688b68bc20ebdc18452ae2b285d581542e2363",
+            size=6738,
+            slug="tei-p5-att.global.responsibility-4.12.0",
+            heading="att.global.responsibility",
+            title="TEI P5 4.12.0 att.global.responsibility specification",
+            form="spec-identified",
+        ),
+        Admission(
+            git_path="P5/Source/Specs/att.global.source.xml",
+            blob="99eff95e2ef18a407b64fb7f59932bc23334e664",
+            size=6791,
+            slug="tei-p5-att.global.source-4.12.0",
+            heading="att.global.source",
+            title="TEI P5 4.12.0 att.global.source specification",
+            form="spec-identified",
+        ),
+        Admission(
+            git_path="P5/Source/Specs/att.editLike.xml",
+            blob="125dd51d6ec3328982d02edc0740d71638ccfa2e",
+            size=8092,
+            slug="tei-p5-att.editlike-4.12.0",
+            heading="att.editLike",
+            title="TEI P5 4.12.0 att.editLike specification",
+            form="spec-identified",
+        ),
+        Admission(
+            git_path="P5/Source/Specs/att.datable.xml",
+            blob="0e2c292bc3d894906785e91eed96c327c3f06ef2",
+            size=6953,
+            slug="tei-p5-att.datable-4.12.0",
+            heading="att.datable",
+            title="TEI P5 4.12.0 att.datable specification",
+            form="spec-identified",
+        ),
+        Admission(
+            git_path="P5/Source/Specs/idno.xml",
+            blob="2566cd875ae59e472cefee625ba5cb3602c61464",
+            size=9600,
+            slug="tei-p5-idno-4.12.0",
+            heading="idno",
+            title="TEI P5 4.12.0 idno specification",
+            form="spec-identified",
+        ),
+        Admission(
+            git_path="P5/Source/Specs/place.xml",
+            blob="04fd590ffcf6f1ecd9e40d227b78407fdc1e0774",
+            size=2848,
+            slug="tei-p5-place-4.12.0",
+            heading="place",
+            title="TEI P5 4.12.0 place specification",
+            form="spec-identified",
+        ),
+        Admission(
+            git_path="P5/Source/Specs/state.xml",
+            blob="b9e91d5cb159d59dfbd3ea9a6c08a9a395bc3f5b",
+            size=5895,
+            slug="tei-p5-state-4.12.0",
+            heading="state",
+            title="TEI P5 4.12.0 state specification",
+            form="spec-identified",
+        ),
+        Admission(
+            git_path="P5/Test/testnames.xml",
+            blob="caee4124268148fd7504df39fb42f7760a568d20",
+            size=73926,
+            slug="tei-p5-test-testnames-4.12.0",
+            heading="testnames",
+            title="TEI P5 4.12.0 test document testnames.xml",
+            form="test-document",
+            rights_note=(
+                "Per-file review of 2026-09-06: the file carries no notice of its own and stands "
+                "inside the release the two license records cover, so the release rights apply "
+                "to it; its person, nym and place records are the release's own test material "
+                "and name no rights holder beyond the TEI Consortium."
+            ),
+        ),
+    ),
+)
+
+RUNS = {"entities": ENTITIES, "entities-run2": ENTITIES_RUN2}
+
+
 def verify_payload(admission: Admission, payload: bytes) -> None:
     if len(payload) != admission.size or blob_id(payload) != admission.blob:
         raise ValueError(f"{admission.slug}: bytes do not match the admitted Git blob")
@@ -504,7 +673,7 @@ def admit(root: Path, run: Run, check: bool = False) -> None:
         immutable_output(rendered, output, check)
         requests.append({"kind": "locked-git-blob-admission", "commit": COMMIT, "path": admission.git_path, "blob_id": admission.blob})
         objects.append({"kind": "markdown-representation", "path": admission.rendered, "sha256": sha256(output)})
-        admissions.append({
+        entry = {
             "source_type": "document", "git_path": admission.git_path, "commit": COMMIT,
             "original_path": admission.original, "original_bytes": len(payload),
             "original_sha256": sha256(payload), "git_blob_id": admission.blob,
@@ -512,7 +681,10 @@ def admit(root: Path, run: Run, check: bool = False) -> None:
             form.count_field: len(form.blocks(payload)),
             "content_authority": form.authority,
             "instruction_trust": "none",
-        })
+        }
+        if admission.rights_note:
+            entry["rights_review"] = admission.rights_note
+        admissions.append(entry)
     finished = existing["finished_at"] if existing else _now()
     manifest = {
         "schema_version": 1, "run_id": run.run_id,
@@ -537,21 +709,28 @@ def admit(root: Path, run: Run, check: bool = False) -> None:
     immutable_output(manifest_path, yaml.safe_dump(manifest, sort_keys=False, allow_unicode=True).encode("utf-8"), check)
 
 
-def cli(run: Run, description: str | None) -> int:
+def cli(run: Run, description: str | None, runs: dict[str, Run] | None = None) -> int:
+    """One admission run; ``runs`` offers --run and ``run`` stays the default."""
     parser = argparse.ArgumentParser(description=description)
     parser.add_argument("root", nargs="?", type=Path, default=Path())
     parser.add_argument("--check", action="store_true")
+    if runs:
+        parser.add_argument("--run", choices=sorted(runs), help="admission run to reconcile")
     args = parser.parse_args()
+    selected = runs[args.run] if runs and args.run else run
     try:
-        admit(args.root.resolve(), run, args.check)
+        admit(args.root.resolve(), selected, args.check)
     except (ValueError, OSError, KeyError) as exc:
         parser.exit(1, f"ERROR: {exc}\n")
-    print(f"OK: {len(run.admissions)} immutable source admissions and representations reconcile")
+    print(
+        f"OK: {len(selected.admissions)} immutable source admissions and representations "
+        f"reconcile for {selected.run_id}"
+    )
     return 0
 
 
 def main() -> int:
-    return cli(ENTITIES, __doc__)
+    return cli(ENTITIES, __doc__, RUNS)
 
 
 if __name__ == "__main__":

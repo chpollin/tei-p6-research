@@ -1,0 +1,246 @@
+---
+type: representation
+source-type: document
+source: '[[00_sources/tei-p5-idno-4.12.0.xml]]'
+converter: tools.ingest_git_blobs v2; complete XML plus XML itertext English reading
+  blocks with whitespace normalized and identified locators
+channel: collection
+metadata:
+  title: TEI P5 4.12.0 idno specification
+  creator: TEI Consortium
+  date: '2026-07-28'
+  format: application/xml
+  identifier: https://github.com/TEIC/TEI/blob/113e933e21f016e2655518321e9d10214b8d9fcb/P5/Source/Specs/idno.xml
+  license: CC-BY-3.0
+  confidential: false
+created: '2026-09-06'
+updated: '2026-09-06'
+---
+
+# idno
+
+Copyright TEI Consortium. Source used under CC-BY-3.0; upstream also offers BSD-2-Clause.
+License records: `LICENSE.md` and `P5/COPYING.txt` at commit `113e933e21f016e2655518321e9d10214b8d9fcb`.
+
+The XML below is the complete source, preserved as inert text, including all languages,
+examples, declarations, and processing instructions. A separator newline before the
+closing fence is not part of the source. The converter records the exact byte length.
+Reading blocks reproduce English descriptions and English remarks paragraphs using
+XML `itertext`; whitespace runs become one space and surrounding whitespace is removed.
+They are reading projections of this source, not additional sources or interpretations.
+A locator names an element that carries an `ident` attribute by that ident, so the
+reading block of an attribute definition states which attribute it describes.
+
+Source byte length: 9600. Git blob: `2566cd875ae59e472cefee625ba5cb3602c61464`.
+
+## Complete XML source
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- © TEI Consortium. Dual-licensed under CC-by and BSD2 licenses; see the file COPYING.txt for details. -->
+<?xml-model href="https://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl" type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
+<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" module="header" xml:id="gi-idno" ident="idno">
+  <gloss versionDate="2010-04-30" xml:lang="en">identifier</gloss>
+  <gloss versionDate="2009-01-05" xml:lang="fr">identifiant</gloss>
+  <gloss versionDate="2007-12-20" xml:lang="ko">식별 숫자</gloss>
+  <gloss versionDate="2007-05-02" xml:lang="zh-TW">識別代碼</gloss>
+  <gloss versionDate="2016-11-17" xml:lang="de">Identifikator</gloss>
+  <gloss versionDate="2007-05-04" xml:lang="es">número identificativo</gloss>
+  <gloss versionDate="2007-01-21" xml:lang="it">numero identificatore</gloss>
+  <desc versionDate="2010-04-30" xml:lang="en">supplies any form of identifier used to identify some object, such as a bibliographic item, a person, a title, an organization, etc. in a standardized way.</desc>
+  <desc versionDate="2021-02-15" xml:lang="fr">donne un identifiant standardisé qui peut être utilisé pour identifier une référence bibliographique, une personne, un titre d'ouvrage ou une organisation.</desc>
+  <desc versionDate="2007-12-20" xml:lang="ko">서지 정보 항목을 식별하기 위해 사용되는 표준 또는 비표준 숫자를 제시한다.</desc>
+  <desc versionDate="2007-05-02" xml:lang="zh-TW">提供任何用來識別書目項目的標準或非標準編碼。</desc>
+  <desc versionDate="2021-02-15" xml:lang="ja">書誌項目、人物、タイトル、組織など、何らかのオブジェクトを標準化された方法で識別するために使用される任意の形式の識別子を提供する。</desc>
+  <desc versionDate="2016-11-17" xml:lang="de">enthält einen frei wählbaren Identifikator, der ein beliebiges Objekt, z. B. eine bibliografische Einheit, eine Person, einen Titel, eine Organisation, in standardisierter Weise identifiziert.</desc>
+  <desc versionDate="2021-02-15" xml:lang="es">proporciona un identificador estándar para un objecto; se usa parla la identificación de, por ejemplo, un elemento bibliográfico, una persona, un título o una organización.</desc>
+  <desc versionDate="2020-10-25" xml:lang="it">fornisce un identificatore, standard o meno, usato per identificare un oggetto, come per esempio un'unità bibliografica, una persona, un titolo, un'organizzazione, ecc.</desc>
+  <classes>
+    <memberOf key="att.global"/>
+    <memberOf key="att.cmc"/>
+    <memberOf key="att.datable"/>
+    <memberOf key="att.sortable"/>
+    <memberOf key="att.typed"/>
+    <memberOf key="model.msItemPart"/>
+    <memberOf key="model.nameLike"/>
+    <memberOf key="model.personPart"/>
+    <memberOf key="model.publicationStmtPart.detail"/>
+  </classes>
+  <content>
+    <alternate minOccurs="0" maxOccurs="unbounded">
+      <textNode/>
+      <classRef key="model.gLike"/>
+      <elementRef key="idno"/>
+    </alternate>
+  </content>
+  <attList>
+    <attDef ident="type" usage="opt" mode="change">
+      <desc versionDate="2010-04-30" xml:lang="en">categorizes the identifier, for example as an ISBN, Social Security number, etc.</desc>
+      <desc versionDate="2009-01-05" xml:lang="fr">classe un numéro dans une catégorie, par exemple comme étant un numéro ISBN ou comme appartenant une autre série normalisée.</desc>
+      <desc versionDate="2007-12-20" xml:lang="ko">예를 들어 ISBN 또는 기타 표준 일련번호로, 숫자를 범주화한다.</desc>
+      <desc versionDate="2007-05-02" xml:lang="zh-TW">表明編碼的種類，例如國際標準書號 (ISBN) 或其他標準系列編碼。</desc>
+      <desc versionDate="2008-04-05" xml:lang="ja">当該数値の分類を示す。例えば、ISBNなど。</desc>
+      <desc versionDate="2016-11-17" xml:lang="de">bestimmt die Art des Identifikators (z. B. ISBN, Sozialversicherungsnummer, URI)</desc>
+      <desc versionDate="2007-05-04" xml:lang="es">clasifica el número, por ejemplo como un ISBN o cualquier otro número estándard.</desc>
+      <desc versionDate="2007-01-21" xml:lang="it">classifica l'identificatore, ad esempio come codice ISBN o altri generi di identificatori standard.</desc>
+      <datatype>
+        <dataRef key="teidata.enumerated"/>
+      </datatype>
+      <valList type="semi">
+        <valItem ident="ISBN">
+          <desc versionDate="2016-07-02" xml:lang="en">International Standard Book Number: a 13- or
+            (if assigned prior to 2007) 10-digit identifying number assigned by the publishing
+            industry to a published book or similar item, registered with the <ref target="https://www.isbn-international.org"> International ISBN Agency.</ref></desc>
+        </valItem>
+        <valItem ident="ISSN">
+          <desc versionDate="2016-07-02" xml:lang="en">International Standard Serial Number: an
+            eight-digit number to uniquely identify a serial publication.</desc>
+        </valItem>
+        <valItem ident="DOI">
+          <desc versionDate="2016-07-02" xml:lang="en">Digital Object Identifier: a unique string of
+            letters and numbers assigned to an electronic document.</desc>
+        </valItem>
+        <valItem ident="URI">
+          <desc versionDate="2022-02-23" xml:lang="en">Uniform Resource Identifier: a string of
+            characters to uniquely identify a resource, following the syntax of <ref target="https://datatracker.ietf.org/doc/html/rfc3986">RFC 3986</ref>.</desc>
+        </valItem>
+        <valItem ident="VIAF">
+          <desc versionDate="2016-07-02" xml:lang="en">A data number in the Virtual Internet
+            Authority File assigned to link different names in catalogs around the world for the
+            same entity.</desc>
+        </valItem>
+        <valItem ident="ESTC">
+          <desc versionDate="2016-07-02" xml:lang="en">English Short-Title Catalogue number: an
+            identifying number assigned to a document in English printed in the British Isles or
+            North America before 1801.</desc>
+        </valItem>
+        <valItem ident="OCLC">
+          <desc versionDate="2016-07-02" xml:lang="en">OCLC control number (record number) for the
+            union catalog record in WorldCat, a union catalog for member libraries in the Online
+            Computer Library Center global cooperative.</desc>
+        </valItem>
+      </valList>
+    </attDef>
+  </attList>
+  <exemplum xml:lang="und">
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="gi-idno-egXML-ei">
+      <idno type="ISBN">978-1-906964-22-1</idno>
+      <idno type="ISSN">0143-3385</idno>
+      <idno type="DOI">10.1000/123</idno>
+      <idno type="URI">http://www.worldcat.org/oclc/185922478</idno>
+      <idno type="URI">http://authority.nzetc.org/463/</idno>
+      <idno type="LT">Thomason Tract E.537(17)</idno>
+      <idno type="Wing">C695</idno>
+      <idno type="oldCat"><g ref="#sym"/>345</idno>
+    </egXML>
+    <p>In the last case, the identifier includes a non-Unicode character which is defined elsewhere
+      by means of a <gi>glyph</gi> or <gi>char</gi> element referenced here as <code>#sym</code>.
+    </p>
+  </exemplum>
+  <exemplum versionDate="2017-06-25" xml:lang="de">
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="gi-idno-egXML-pu">
+      <idno type="ISBN">978-1-906964-22-1</idno>
+      <idno type="ISSN">0143-3385</idno>
+      <idno type="DOI">10.1000/123</idno>
+      <idno type="URI">http://www.worldcat.org/oclc/185922478</idno>
+      <idno type="URI">http://authority.nzetc.org/463/</idno>
+      <idno type="LT">Thomason Tract E.537(17)</idno>
+      <idno type="Wing">C695</idno>
+      <idno type="oldCat"><g ref="#sym"/>345</idno>
+    </egXML>
+    <p>In letztgenanntem Fall enthält der Identifikator ein Nicht-Unicode-Zeichen, das an anderer
+      Stelle mit Hilfe eines <gi>glyph</gi> oder <gi>char</gi>-Elements definiert ist und hier als
+        <code>#sym</code> referenziert wird.</p>
+  </exemplum>
+  <exemplum versionDate="2010-02-26" xml:lang="fr">
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="gi-idno-egXML-wc">
+      <idno type="ISSN">0143-3385</idno>
+      <idno type="OTA">116</idno>
+      <idno type="ISBN">1-896016-00-6</idno>
+    </egXML>
+  </exemplum>
+  <remarks ident="idno-remarks" versionDate="2017-05-11" xml:lang="en">
+    <p><gi>idno</gi> should be used for labels which identify an object or concept in a formal
+      cataloguing system such as a database or an RDF store, or in a distributed system such as the
+      World Wide Web. Some suggested values for <att>type</att> on <gi>idno</gi> are
+      <val>ISBN</val>, <val>ISSN</val>, <val>DOI</val>, and <val>URI</val>.</p>
+  </remarks>
+  <remarks ident="idno-remarks" versionDate="2017-06-25" xml:lang="de">
+    <p>
+      <gi>idno</gi> sollte für Identifikatoren genutzt werden, die ein Objekt oder Konzept in einem
+      formalen Katalogsystem wie z. B. einer Datenbank oder einem RDF store oder in einem verteilten
+      System wie dem World Wide Web eindeutig identifizieren. Als Werte für <att>type</att> von
+        <gi>idno</gi> bieten sich z. B. die <val>ISBN</val>, die <val>ISSN</val>, ein <val>DOI</val>
+      oder ein <val>URI</val> an. </p>
+  </remarks>
+  <listRef>
+    <ptr target="#NDPERSbp"/>
+    <ptr target="#HD24"/>
+    <ptr target="#HD26"/>
+    <ptr target="#COBICOI"/>
+  </listRef>
+</elementSpec>
+```
+
+## English reading blocks
+
+### Reading 1
+
+XML location: `/elementSpec[@ident='idno']/desc[1]`.
+
+supplies any form of identifier used to identify some object, such as a bibliographic item, a person, a title, an organization, etc. in a standardized way. ^r1
+
+### Reading 2
+
+XML location: `/elementSpec[@ident='idno']/attList[1]/attDef[@ident='type']/desc[1]`.
+
+categorizes the identifier, for example as an ISBN, Social Security number, etc. ^r2
+
+### Reading 3
+
+XML location: `/elementSpec[@ident='idno']/attList[1]/attDef[@ident='type']/valList[1]/valItem[@ident='ISBN']/desc[1]`.
+
+International Standard Book Number: a 13- or (if assigned prior to 2007) 10-digit identifying number assigned by the publishing industry to a published book or similar item, registered with the International ISBN Agency. ^r3
+
+### Reading 4
+
+XML location: `/elementSpec[@ident='idno']/attList[1]/attDef[@ident='type']/valList[1]/valItem[@ident='ISSN']/desc[1]`.
+
+International Standard Serial Number: an eight-digit number to uniquely identify a serial publication. ^r4
+
+### Reading 5
+
+XML location: `/elementSpec[@ident='idno']/attList[1]/attDef[@ident='type']/valList[1]/valItem[@ident='DOI']/desc[1]`.
+
+Digital Object Identifier: a unique string of letters and numbers assigned to an electronic document. ^r5
+
+### Reading 6
+
+XML location: `/elementSpec[@ident='idno']/attList[1]/attDef[@ident='type']/valList[1]/valItem[@ident='URI']/desc[1]`.
+
+Uniform Resource Identifier: a string of characters to uniquely identify a resource, following the syntax of RFC 3986. ^r6
+
+### Reading 7
+
+XML location: `/elementSpec[@ident='idno']/attList[1]/attDef[@ident='type']/valList[1]/valItem[@ident='VIAF']/desc[1]`.
+
+A data number in the Virtual Internet Authority File assigned to link different names in catalogs around the world for the same entity. ^r7
+
+### Reading 8
+
+XML location: `/elementSpec[@ident='idno']/attList[1]/attDef[@ident='type']/valList[1]/valItem[@ident='ESTC']/desc[1]`.
+
+English Short-Title Catalogue number: an identifying number assigned to a document in English printed in the British Isles or North America before 1801. ^r8
+
+### Reading 9
+
+XML location: `/elementSpec[@ident='idno']/attList[1]/attDef[@ident='type']/valList[1]/valItem[@ident='OCLC']/desc[1]`.
+
+OCLC control number (record number) for the union catalog record in WorldCat, a union catalog for member libraries in the Online Computer Library Center global cooperative. ^r9
+
+### Reading 10
+
+XML location: `/elementSpec[@ident='idno']/remarks[@ident='idno-remarks']/p[1]`.
+
+idno should be used for labels which identify an object or concept in a formal cataloguing system such as a database or an RDF store, or in a distributed system such as the World Wide Web. Some suggested values for type on idno are ISBN, ISSN, DOI, and URI. ^r10
+

@@ -1,0 +1,38 @@
+[
+  {
+    "id": "teic-tei-issue-337",
+    "type": "post",
+    "title": "soft deprecation of @key",
+    "number": "337",
+    "container-title": "TEIC/TEI GitHub issues",
+    "publisher": "TEI Consortium",
+    "issued": {"date-parts": [[2011, 11, 13]]},
+    "accessed": {"date-parts": [[2026, 9, 6]]},
+    "URL": "https://github.com/TEIC/TEI/issues/337",
+    "note": "Citation-only intake of a work-item thread of the TEIC/TEI repository, observed through the locked GitHub REST snapshot of 2026-09-06, one issue page and one comment page carrying 21 comments. Labels at the snapshot are Type: FeatureRequest, Status: Go and sf-automigrated; the selection table of run 2 of Metadata and Entities relates the thread to TEI SourceForge feature request 336. Closed 2015-10-02, which records closure only and establishes neither acceptance nor a released effect. Repository licensing does not license participant discussion text, so the bodies stay in the private raw store and only checked short quotations enter a distillate. Participant logins and names are not recorded here."
+  },
+  {
+    "id": "teic-tei-issue-1414",
+    "type": "post",
+    "title": "ogrophy elements should be in att.canonical",
+    "number": "1414",
+    "container-title": "TEIC/TEI GitHub issues",
+    "publisher": "TEI Consortium",
+    "issued": {"date-parts": [[2015, 12, 15]]},
+    "accessed": {"date-parts": [[2026, 9, 6]]},
+    "URL": "https://github.com/TEIC/TEI/issues/1414",
+    "note": "Citation-only intake of a work-item thread of the TEIC/TEI repository, observed through the locked GitHub REST snapshot of 2026-09-06, one issue page and one comment page carrying 16 comments. Labels at the snapshot are Type: FeatureRequest, Status: Go and TEI: Schema. Closed 2019-07-15, which records closure only; the released effect is read in the admitted class and element blobs at the pinned release. Repository licensing does not license participant discussion text, so the bodies stay in the private raw store and only checked short quotations enter a distillate. Participant logins and names are not recorded here."
+  },
+  {
+    "id": "teic-tei-issue-2739",
+    "type": "post",
+    "title": "att.personal, att.naming, and att.canonical: Error in ODD?",
+    "number": "2739",
+    "container-title": "TEIC/TEI GitHub issues",
+    "publisher": "TEI Consortium",
+    "issued": {"date-parts": [[2025, 8, 4]]},
+    "accessed": {"date-parts": [[2026, 9, 6]]},
+    "URL": "https://github.com/TEIC/TEI/issues/2739",
+    "note": "Citation-only intake of a work-item thread of the TEIC/TEI repository, observed through the locked GitHub REST snapshot of 2026-09-06, one issue page and one comment page carrying 4 comments. The thread carries no label at the snapshot. Closed 2025-08-06, which records closure only; whether the reported class chain holds is read in the admitted blobs at the pinned release. Repository licensing does not license participant discussion text, so the bodies stay in the private raw store and only checked short quotations enter a distillate. Participant logins and names are not recorded here."
+  }
+]

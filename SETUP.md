@@ -212,6 +212,18 @@ python tools/check_wave1_sources.py .
 python tools/check_wave1_sources.py . --review-only
 ```
 
+Run 2 of Metadata and Entities admits nine document sources and three
+citation-only threads:
+
+```powershell
+python -m tools.ingest_git_blobs . --run entities-run2 --check
+python tools/check_wave1_sources.py . --manifest sources/manifests/2026-09-06-entities-run2-citations.yaml --references references/entities-run2.json
+```
+
+`--run` selects an admission run and defaults to the first entity run. The
+citation check reconciles the six raw thread snapshots and reports the threads
+as pending until their distillates exist.
+
 The atlas check requires the locked local TEI Git mirror. Omit `--check` to
 regenerate the projection after an intentional generator or control-input
 change. The quotation check requires the local raw snapshots named in

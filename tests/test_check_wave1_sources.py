@@ -43,7 +43,7 @@ def write_manifest(root, data):
 
 def test_local_html_admission_and_cli_pass(tmp_path, capsys):
     fixture(tmp_path)
-    assert check(tmp_path, "manifest.yaml") == (1, 1)
+    assert check(tmp_path, "manifest.yaml") == (1, 1, ())
     assert main([str(tmp_path), "--manifest", "manifest.yaml"]) == 0
     assert "1 quotations match 1" in capsys.readouterr().out
 
@@ -108,7 +108,7 @@ def test_json_field_is_literal_and_path_must_resolve(tmp_path):
     distillate = tmp_path / "distillate.md"
     distillate.write_text(distillate.read_text().replace(" & ", " &amp; "))
     write_manifest(tmp_path, data)
-    assert check(tmp_path, "manifest.yaml") == (1, 1)
+    assert check(tmp_path, "manifest.yaml") == (1, 1, ())
     entry["quotes"][0]["text"] = text.replace("&amp;", "&")
     write_manifest(tmp_path, data)
     with pytest.raises(ValueError, match="quotation absent from extracted source"):
@@ -116,6 +116,80 @@ def test_json_field_is_literal_and_path_must_resolve(tmp_path):
     entry["extraction"]["path"] = ["ticket", "missing"]
     write_manifest(tmp_path, data)
     with pytest.raises(ValueError, match="JSON field path does not resolve"):
+        check(tmp_path, "manifest.yaml")
+
+
+def raw_record(name, payload):
+    return {"sha256": hashlib.sha256(payload).hexdigest(), "byte_count": len(payload),
+            "raw_path": name, "status": 200}
+
+
+def thread_fixture(tmp_path):
+    """One source spread over an issue page and a page of comment bodies."""
+    pages = {"issue": json.dumps({"body": "The opening statement."}).encode(),
+             "comments": json.dumps([{"body": "A reply."}, {"body": "The closing word."}]).encode()}
+    data = fixture(tmp_path)
+    entry = data["admissions"][0]
+    for name, payload in pages.items():
+        (tmp_path / "corpus/raw" / name).write_bytes(payload)
+    del entry["response"], entry["extraction"]
+    entry["snapshots"] = [
+        {"part": "issue", "response": raw_record("issue", pages["issue"]),
+         "extraction": {"kind": "json-field", "path": ["body"]}},
+        {"part": "comments", "response": raw_record("comments", pages["comments"]),
+         "extraction": {"kind": "json-field", "path": ["*", "body"]}},
+    ]
+    entry["quotes"] = [{"text": "The closing word.", "locator": "comment 2"}]
+    distillate = tmp_path / "distillate.md"
+    distillate.write_text(distillate.read_text(encoding="utf-8")
+                          + '> "The closing word." (sample, comment 2)\n', encoding="utf-8")
+    write_manifest(tmp_path, data)
+    return data
+
+
+def test_a_quotation_may_come_from_any_page_of_a_thread(tmp_path):
+    data = thread_fixture(tmp_path)
+    assert check(tmp_path, "manifest.yaml") == (1, 1, ())
+    data["admissions"][0]["quotes"][0]["text"] = "A statement nobody wrote."
+    write_manifest(tmp_path, data)
+    with pytest.raises(ValueError, match="quotation absent from extracted source"):
+        check(tmp_path, "manifest.yaml")
+
+
+def test_every_page_of_a_thread_is_reconciled(tmp_path):
+    thread_fixture(tmp_path)
+    page = tmp_path / "corpus/raw/comments"
+    page.write_bytes(page.read_bytes().replace(b"A reply.", b"An edit."))
+    with pytest.raises(ValueError, match="sha256 mismatch"):
+        check(tmp_path, "manifest.yaml")
+
+
+def test_an_admitted_source_without_a_distillate_is_pending(tmp_path, capsys):
+    data = fixture(tmp_path)
+    del data["admissions"][0]["distillate_path"], data["admissions"][0]["quotes"]
+    write_manifest(tmp_path, data)
+    assert check(tmp_path, "manifest.yaml") == (0, 0, ("sample",))
+    assert main([str(tmp_path), "--manifest", "manifest.yaml"]) == 0
+    assert "no distillate yet for 1 admitted source(s)" in capsys.readouterr().out
+    (tmp_path / "corpus/raw/source").unlink()
+    with pytest.raises(ValueError, match="local raw source unavailable"):
+        check(tmp_path, "manifest.yaml")
+
+
+def test_a_pending_admission_may_not_carry_quotes(tmp_path):
+    data = fixture(tmp_path)
+    del data["admissions"][0]["distillate_path"]
+    write_manifest(tmp_path, data)
+    with pytest.raises(ValueError, match="quotes need the distillate"):
+        check(tmp_path, "manifest.yaml")
+
+
+def test_a_named_references_file_replaces_the_default(tmp_path):
+    fixture(tmp_path)
+    (tmp_path / "references/entities-run2.json").write_text('[{"id":"sample"}]')
+    (tmp_path / "references/research-wave-1.json").write_text('[{"id":"other"}]')
+    assert check(tmp_path, "manifest.yaml", "references/entities-run2.json") == (1, 1, ())
+    with pytest.raises(ValueError, match="admission reference ID"):
         check(tmp_path, "manifest.yaml")
 
 
