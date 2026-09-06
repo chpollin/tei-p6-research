@@ -86,6 +86,17 @@ locator or XML ancestor labels is legitimate, because it changes neither the
 immutable representation nor the claim. A changed claim needs new prompts
 and a fresh review, and old verdicts do not apply to it.
 
+A change of the review instrument itself invalidates recorded source reviews
+in the same way as a changed passage. When the pair cutter began to show the
+source title, the heading path and the locator line with each block, and when
+a representation form gained identified locators, every stored source pair
+changed its prompt, so the affected runs were re-judged in fresh contexts and
+the superseded records stayed in the run directory as `*-cutter1.jsonl`.
+Assertion pairs are unaffected by such a change, because their prompts hold
+only the distillate statement and the assertion. A runner that enriches its
+prompts beyond the cutter, as the pilot runner does, must be judged from its
+stored pairs rather than from freshly cut ones, since a verdict binds to the
+prompt the reviewer saw.
 `python tools/check_wave1_sources.py . --review-only` and
 `python tools/check_text_identity_pilot.py` check the current scope, the
 unmodified canonical prompts and the passing verdict hashes of the recorded
@@ -100,7 +111,11 @@ and third condition with the same model family is recorded as a limitation
 in the run's README and in [[knowledge/state]], because independence of
 context does not imply independence of model errors. [[knowledge/governance]]
 assigns adversarial reading to Fable, and where the producer was Fable the
-reviewer comes from another family.
+reviewer comes from another family. Where only one family is available in a
+session, the producer and the reviewer are different models of that family
+(the entity run of 2026-09-06 paired Opus authors with a Fable reviewer and a
+Fable author with an Opus reviewer), the pairing is named in the verdict record
+itself, and the same-family limitation is recorded as above.
 
 ## Human verification
 
