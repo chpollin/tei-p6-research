@@ -1,0 +1,70 @@
+schema_version: 1
+run_id: 2026-09-06-tei-legacy-sourceforge-r4
+source_id: tei-legacy-sourceforge
+started_at: '2026-09-06T09:39:17Z'
+finished_at: '2026-09-06T09:39:23Z'
+status: observable-complete
+adapter:
+  name: tools.corpus.sourceforge_snapshot
+  version: 2
+requests:
+  project: https://sourceforge.net/rest/p/tei
+  project_response:
+    requested_url: https://sourceforge.net/rest/p/tei
+    canonical_url: https://sourceforge.net/rest/p/tei
+    final_url: https://sourceforge.net/rest/p/tei
+    observed_at: '2026-09-06T09:39:17Z'
+    status: 200
+    media_type: application/json
+    byte_count: 6348
+    sha256: 28e96e8db279aeccf68319807750c75e5d5639f3e1c1da830b919e5b70b02069
+    raw_path: sha256/28/e96e8db279aeccf68319807750c75e5d5639f3e1c1da830b919e5b70b02069
+    headers:
+      date: Sun, 06 Sep 2026 09:39:14 GMT
+      content-type: application/json; charset=utf-8
+      content-length: '6348'
+  trackers:
+    bugs: https://sourceforge.net/rest/p/tei/bugs
+    feature-requests: https://sourceforge.net/rest/p/tei/feature-requests
+    support-requests: https://sourceforge.net/rest/p/tei/support-requests
+  workers: 8
+  resume_from: corpus/normalized/sourceforge/tei-legacy-trackers-r3.jsonl
+  delay_seconds: 0.2
+  refresh_missing_raw_links: true
+objects:
+- kind: sourceforge-ticket-metadata
+  path: corpus/normalized/sourceforge/tei-legacy-trackers-r4.jsonl
+  sha256: f5024d3d04f23bf5be920476fc84ceab7b0fc044c55a6f8333601d2c5f32258c
+counts:
+  tickets_by_tracker:
+    bugs: 774
+    feature-requests: 567
+    support-requests: 8
+  tickets_reported_by_tracker:
+    bugs: 774
+    feature-requests: 567
+    support-requests: 8
+  tickets_expected: 1349
+  tickets: 1349
+  tickets_loaded_from_prior_run: 1349
+  tickets_reused_without_fetch: 1349
+  tickets_fetched_or_refetched: 0
+  tickets_reused_from_prior_run: 1349
+  comments: 8880
+  http_responses: 16
+  gaps: 0
+scope:
+  boundary: tracker-rest-interfaces
+  status_applies_to: requests.trackers
+  completion_rule: Every ticket exposed by the listed tracker REST interfaces, together
+    with its observable discussion pages.
+project:
+  shortname: tei
+  name: Text Encoding Initiative
+  status: active
+  moved_to_url: ''
+gaps: []
+rights_exceptions:
+- Ticket and discussion prose remain in local content-addressed raw storage.
+- Normalized output contains metadata, summaries, links, and relationship identifiers
+  only.

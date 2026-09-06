@@ -1,0 +1,61 @@
+schema_version: 1
+lock_id: tei-l-archive-three-part-boundary
+source_id: tei-l-archive
+as_of: "2026-09-06"
+retrieval_status: planned
+
+scope:
+  list: TEI-L
+  rule: No single interface holds the history of this list. Each part declares its own month interval, a month counts as covered only when one part retrieved it, and the family stays bounded-complete at best.
+  adapter: tools.corpus.listserv_snapshot
+  parts:
+    psu_archive:
+      order: 1
+      status: planned
+      command: psu
+      archive_index: https://lists.psu.edu/cgi-bin/wa?A0=TEI-L
+      month_index: https://lists.psu.edu/cgi-bin/wa?A1=ind<yymm>&L=TEI-L
+      message: https://lists.psu.edu/cgi-bin/wa?A2=TEI-L;<hex-id>.<yymm>
+      from_month: "2512"
+      to_month: snapshot-month
+      completion_target: bounded-complete
+      note: The Penn State archive was observed on 2026-09-06 to show messages from December 2025 onward. The first covered month is confirmed by the run rather than by this note.
+    wayback_brown_archive:
+      order: 2
+      status: planned
+      command: wayback-coverage, then wayback-fetch
+      retired_archive_index: https://listserv.brown.edu/cgi-bin/wa?A0=TEI-L
+      retired_month_index: https://listserv.brown.edu/cgi-bin/wa?A1=ind<yymm>&L=TEI-L
+      cdx_index: https://web.archive.org/cdx/search/cdx
+      capture_form: https://web.archive.org/web/<timestamp>id_/<original>
+      from_month: "9001"
+      to_month: "2512"
+      completion_target: bounded-complete
+      note: The Brown University LISTSERV service is retired and its archive is offline. A capture of the archive index from 2025-05-12 is known to exist. Coverage is a measurement per month; a month without a capture is a recorded result of that measurement.
+    consortium_export:
+      order: 3
+      status: planned
+      actor: operator
+      request: Export of every month that neither the Penn State archive nor a Wayback capture covers, requested from the TEI Consortium.
+      completion_target: bounded-complete
+      note: No retrieval interface exists for this part. It is a correspondence action and enters the corpus as a handover source.
+
+rights:
+  user_generated_content: true
+  per_item_verification_required: true
+  redistribution: metadata-and-links-until-reviewed
+  raw_bodies: local-only
+  sender_identity: raw-only
+  rule: Message bodies and sender identity stay in the local raw store. The normalized stream carries list, month, message identity, subject, the date the archive shows, thread pointers, and raw pointers. Threads are admitted as citation-only publication sources.
+
+counts: {}
+gaps:
+  - code: no-retrieval-run-yet
+    status: blocks-bounded-complete
+    detail: The collector is implemented and offline-tested; no live run has been recorded for any part.
+  - code: brown-archive-months-before-first-capture-unknown
+    status: open
+    detail: Whether the Wayback Machine holds any capture of a given retired month is unknown until the coverage run measures it.
+  - code: consortium-export-not-requested
+    status: open
+    detail: The third part has no retrieval interface and waits on an operator request.

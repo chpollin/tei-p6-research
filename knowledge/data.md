@@ -148,9 +148,21 @@ historically incomplete.
 | Annual meetings | programmes, AGM material, abstracts, slides, reports and published proceedings | official meeting indexes and archives | primary event and attributed proposal record |
 | Registered projects | project documentation, schemas, examples and processing code | explicit sample selected under a published protocol | observed practice within the sample |
 | Real-world ODDs | customization source, generated schemas, documentation, tests, release history and compatibility declarations | reproducible repository and registry census plus purposive domain sample | observed customization practice within the sample |
+| TEI-L archive (`tei-l-archive`) | month indexes and message pages of the Penn State archive, Wayback captures of the retired Brown month indexes and their messages, and a requested consortium export | three declared parts, each with its own month interval and its own completion state | primary record of community questions and practice, without establishing consensus |
 
 TEI-L and SIG material is user-generated content. Rights, privacy and
 redistribution are reviewed per collection under the rule below.
+
+The TEI-L archive is registered as its own source because no single interface
+holds the history of the list. The Penn State LISTSERV serves the months since
+the list moved there. The Internet Archive is measured month by month for
+captures of the retired Brown University month indexes, and a captured month is
+fetched from its capture. Months that neither part covers are requested from the
+TEI Consortium as an export, an operator action with no retrieval interface.
+Each part declares its own month interval, so a coverage claim holds for the
+months a run named and for no wider period. Threads from this archive enter the
+knowledge chain as citation-only publication sources under the rule below, with
+message bodies and sender identity kept in the local raw store.
 
 ### Secondary and interpretive sources
 

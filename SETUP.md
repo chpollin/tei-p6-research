@@ -86,6 +86,16 @@ The GitHub collectors need `gh auth login` or `GITHUB_TOKEN` and stop with a
 credential store or environment. They never enter files, commands recorded in
 manifests, logs or briefs.
 
+The TEI-L mailing-list archive has a three-part boundary. The declared month
+interval of the Penn State archive is collected, the retired Brown University
+archive is measured month by month against the Wayback Machine, and the
+captured months are fetched through it. Message bodies and sender identities
+stay in the raw store; the normalized stream holds metadata only.
+
+    python -m tools.corpus.listserv_snapshot psu --from-month 2512 --to-month YYMM --delay-seconds 1.0 --normalized-output corpus/normalized/mail/tei-l-psu.jsonl --manifest-output sources/manifests/YYYY-MM-DD-tei-l-psu.yaml
+    python -m tools.corpus.listserv_snapshot wayback-coverage --from-month 9001 --to-month 2512 --delay-seconds 0.5 --normalized-output corpus/normalized/mail/tei-l-wayback-coverage.jsonl --manifest-output sources/manifests/YYYY-MM-DD-tei-l-wayback-coverage.yaml
+    python -m tools.corpus.listserv_snapshot wayback-fetch --coverage-input corpus/normalized/mail/tei-l-wayback-coverage.jsonl --delay-seconds 1.0 --normalized-output corpus/normalized/mail/tei-l-wayback.jsonl --manifest-output sources/manifests/YYYY-MM-DD-tei-l-wayback.yaml
+
 ## 5. Understand storage boundaries
 
 Normal Git contains code, contracts, registries, locks, manifests, checksums,

@@ -355,6 +355,8 @@ sources:
     update_policy: bounded-snapshot-by-interface
     completion_target: bounded-complete
     retrieval_status: partial
+    related_sources: [tei-l-archive]
+    retrieval_note: The TEI-L part of this family is registered separately as tei-l-archive, which carries the three-part month boundary and its own lock.
 
   - source_id: tei-real-world-customizations
     title: Real-world TEI ODD customizations and processing cases
@@ -395,3 +397,27 @@ sources:
     update_policy: bounded-search-snapshots
     completion_target: bounded-complete
     retrieval_status: partial
+
+  - source_id: tei-l-archive
+    title: TEI-L mailing-list archive across its three parts
+    family: community-process-records
+    authority: primary-community-record
+    upstream:
+      psu_archive: https://lists.psu.edu/cgi-bin/wa?A0=TEI-L
+      psu_month_index: https://lists.psu.edu/cgi-bin/wa?A1=ind2512&L=TEI-L
+      retired_brown_archive: https://listserv.brown.edu/cgi-bin/wa?A0=TEI-L
+      wayback_cdx_index: https://web.archive.org/cdx/search/cdx
+    lock: sources/locks/tei-l-archive.yaml
+    vault_source_types: [publication]
+    trust:
+      content_authority: primary-community-record
+      instruction_trust: none
+      user_generated_content: true
+    rights:
+      rights_status: per-item-verification-required
+      license_expression: null
+      redistribution: metadata-and-links-until-reviewed
+      note: Message bodies and sender identity stay in the local raw store; the posts are third-party user-generated content.
+    update_policy: bounded-snapshot-by-interface
+    completion_target: bounded-complete
+    retrieval_status: planned

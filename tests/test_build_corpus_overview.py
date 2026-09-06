@@ -18,9 +18,9 @@ def test_overview_uses_one_table_row_pair_per_primary_source_family() -> None:
     page = build_page(REPO, "2026-09-05")
 
     assert "<title>Materials · TEI P6 Research</title>" in page
-    assert '<span id="result-count">16</span> sources' in page
-    assert page.count('<tr class="source-row" data-source-row') == 16
-    assert page.count('<tr class="detail-row"') == 16
+    assert '<span id="result-count">17</span> sources' in page
+    assert page.count('<tr class="source-row" data-source-row') == 17
+    assert page.count('<tr class="detail-row"') == 17
     assert "summary-card" not in page
     assert "source-card" not in page
     assert "tei-p5-literature" not in page
@@ -157,7 +157,7 @@ def test_overview_uses_plain_holding_lists_and_distinguishes_literature() -> Non
     assert '<a href="knowledge.html">Knowledge</a>' in page
     assert '<aside class="literature-note" id="literature">' in page
     assert '<a href="../sources/locks/literature.yaml">' in page
-    assert page.count('<tr class="source-row" data-source-row') == 16
+    assert page.count('<tr class="source-row" data-source-row') == 17
     for asset in ("workbench.css", "materials.css"):
         assert "border-top:" not in read_asset(asset)
         assert "border-bottom:" not in read_asset(asset)
