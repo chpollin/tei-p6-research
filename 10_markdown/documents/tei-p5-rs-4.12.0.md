@@ -1,0 +1,100 @@
+---
+type: representation
+source-type: document
+source: '[[00_sources/tei-p5-rs-4.12.0.xml]]'
+converter: tools.ingest_git_blobs v1; complete XML plus XML itertext English reading
+  blocks with whitespace normalized
+channel: collection
+metadata:
+  title: TEI P5 4.12.0 rs specification
+  creator: TEI Consortium
+  date: '2026-07-28'
+  format: application/xml
+  identifier: https://github.com/TEIC/TEI/blob/113e933e21f016e2655518321e9d10214b8d9fcb/P5/Source/Specs/rs.xml
+  license: CC-BY-3.0
+  confidential: false
+created: '2026-09-06'
+updated: '2026-09-06'
+---
+
+# rs
+
+Copyright TEI Consortium. Source used under CC-BY-3.0; upstream also offers BSD-2-Clause.
+License records: `LICENSE.md` and `P5/COPYING.txt` at commit `113e933e21f016e2655518321e9d10214b8d9fcb`.
+
+The XML below is the complete source, preserved as inert text, including all languages,
+examples, declarations, and processing instructions. A separator newline before the
+closing fence is not part of the source. The converter records the exact byte length.
+Reading blocks reproduce English descriptions and English remarks paragraphs using
+XML `itertext`; whitespace runs become one space and surrounding whitespace is removed.
+They are reading projections of this source, not additional sources or interpretations.
+
+Source byte length: 3384. Git blob: `77fb7d96af0c2294b541237bf17193fb7aa17c4f`.
+
+## Complete XML source
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- © TEI Consortium. Dual-licensed under CC-by and BSD2 licenses; see the file COPYING.txt for details. -->
+<?xml-model href="https://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl" type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
+<elementSpec xmlns="http://www.tei-c.org/ns/1.0" module="core" xml:id="gi-rs" ident="rs">
+  <gloss versionDate="2005-01-14" xml:lang="en">referencing string</gloss>
+  <gloss versionDate="2009-01-06" xml:lang="fr">chaîne de référence</gloss>
+  <gloss versionDate="2007-05-04" xml:lang="es">serie referencial</gloss>
+  <gloss versionDate="2007-05-02" xml:lang="zh-TW">參照字串</gloss>
+  <gloss versionDate="2007-01-21" xml:lang="it">stringa di riferimento</gloss>
+  <gloss versionDate="2006-10-28" xml:lang="ja">参照文字列</gloss>
+  <gloss versionDate="2016-11-24" xml:lang="de">verweisende Zeichenkette</gloss>
+  <desc versionDate="2005-01-14" xml:lang="en">contains a general purpose name or referring string.</desc>
+  <desc versionDate="2009-01-06" xml:lang="fr">contient un nom générique ou une chaîne permettant de
+        s'y référer.</desc>
+  <desc versionDate="2007-05-04" xml:lang="es">contiene un nombre de intención general o una serie
+        referencial.</desc>
+  <desc versionDate="2007-05-02" xml:lang="zh-TW">包含一般名稱或參照字串。</desc>
+  <desc versionDate="2007-01-21" xml:lang="it">contiene un nome generico o una stringa di riferimento.</desc>
+  <desc versionDate="2006-10-28" xml:lang="ja">一般的な意味での名前や参照文字列。</desc>
+  <desc versionDate="2016-11-24" xml:lang="de">enthält eine allgemeine Benennung oder eine verweisende Zeichenkette.</desc>
+  <classes>
+    <memberOf key="att.global"/>
+    <memberOf key="att.cmc"/>
+    <memberOf key="att.naming"/>
+    <memberOf key="att.typed"/>
+    <memberOf key="model.nameLike"/>
+  </classes>
+  <content>
+    <macroRef key="macro.phraseSeq"/>
+  </content>
+  <exemplum xml:lang="en">
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="gi-rs-egXML-pk"><q>My dear <rs type="person">Mr. Bennet</rs>, </q> said <rs type="person">his lady</rs>
+            to him one day, <q>have you heard that <rs type="place">Netherfield Park</rs> is let at
+                last?</q>
+      </egXML>
+  </exemplum>
+  <exemplum versionDate="2008-04-06" xml:lang="fr">
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="gi-rs-egXML-zh" source="#fr-ex-Ollagnier_Main">
+      <p>La famille s'était alors retirée en banlieue, à <rs type="place">Villemomble</rs>, mais
+            <rs type="person">Alfred </rs>aimait se rendre à <rs type="place">Paris</rs> et un jour de 1917 alors qu'il sortait de <rs type="place">la maison des
+            Arts et Métiers</rs> il était tombé inanimé dans la rue.</p>
+    </egXML>
+  </exemplum>
+  <exemplum xml:lang="zh-TW">
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="gi-rs-egXML-pq" source="#biblzh-tw_n19"><q>我親愛的 <rs type="person">
+      班納特先生</rs>，
+    </q>一天，<rs type="person">班納特太太</rs> 對她的丈夫說：<q>你聽說過<rs type="place">尼日斐花園</rs> 終於租出去了嗎?</q>
+      </egXML>
+  </exemplum>
+  <listRef>
+    <ptr target="#NDPER"/>
+    <ptr target="#CONARS"/>
+  </listRef>
+</elementSpec>
+```
+
+## English reading blocks
+
+### Reading 1
+
+XML location: `/elementSpec[1]/desc[1]`.
+
+contains a general purpose name or referring string. ^r1
+
