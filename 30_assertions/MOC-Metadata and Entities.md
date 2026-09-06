@@ -14,14 +14,26 @@ persons, places, organizations, events and their reference relations.
 
 <!-- distillates:begin -->
 - [[20_distillates/documents/tei-p5-att.canonical-4.12.0]]
+- [[20_distillates/documents/tei-p5-att.datable-4.12.0]]
+- [[20_distillates/documents/tei-p5-att.editlike-4.12.0]]
+- [[20_distillates/documents/tei-p5-att.global.responsibility-4.12.0]]
+- [[20_distillates/documents/tei-p5-att.global.source-4.12.0]]
 - [[20_distillates/documents/tei-p5-att.naming-4.12.0]]
+- [[20_distillates/documents/tei-p5-att.personal-4.12.0]]
 - [[20_distillates/documents/tei-p5-guidelines-nd-4.12.0]]
+- [[20_distillates/documents/tei-p5-idno-4.12.0]]
 - [[20_distillates/documents/tei-p5-name-4.12.0]]
 - [[20_distillates/documents/tei-p5-nym-4.12.0]]
 - [[20_distillates/documents/tei-p5-persname-4.12.0]]
 - [[20_distillates/documents/tei-p5-person-4.12.0]]
+- [[20_distillates/documents/tei-p5-place-4.12.0]]
 - [[20_distillates/documents/tei-p5-relation-4.12.0]]
 - [[20_distillates/documents/tei-p5-rs-4.12.0]]
+- [[20_distillates/documents/tei-p5-state-4.12.0]]
+- [[20_distillates/documents/tei-p5-test-testnames-4.12.0]]
+- [[20_distillates/publications/teic-tei-issue-1414]]
+- [[20_distillates/publications/teic-tei-issue-2739]]
+- [[20_distillates/publications/teic-tei-issue-337]]
 <!-- distillates:end -->
 
 ## Assertions

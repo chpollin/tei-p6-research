@@ -14,9 +14,15 @@ attribute classes, macros, datatypes and their inheritance relations.
 
 <!-- distillates:begin -->
 - [[20_distillates/documents/tei-p5-att.canonical-4.12.0]]
+- [[20_distillates/documents/tei-p5-att.datable-4.12.0]]
+- [[20_distillates/documents/tei-p5-att.editlike-4.12.0]]
+- [[20_distillates/documents/tei-p5-att.global.responsibility-4.12.0]]
+- [[20_distillates/documents/tei-p5-att.global.source-4.12.0]]
 - [[20_distillates/documents/tei-p5-att.naming-4.12.0]]
+- [[20_distillates/documents/tei-p5-att.personal-4.12.0]]
 - [[20_distillates/documents/tei-p5-guidelines-nd-4.12.0]]
 - [[20_distillates/documents/tei-p5-person-4.12.0]]
+- [[20_distillates/publications/teic-tei-issue-2739]]
 <!-- distillates:end -->
 
 ## Assertions

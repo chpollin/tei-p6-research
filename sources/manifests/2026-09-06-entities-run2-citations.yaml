@@ -5,11 +5,8 @@ started_at: '2026-09-06T14:44:00Z'
 finished_at: '2026-09-06T14:46:00Z'
 status: bounded-complete
 scope:
-  boundary: 'Three selected citation-only work-item threads of TEIC/TEI, issues 337,
-    2739 and 1414, each with the issue page and the single comment page of the locked
-    2026-09-06 REST snapshot.'
-  status_applies_to: the three named threads and the six recorded raw snapshots only;
-    neither the work-item family nor the topic Metadata and Entities
+  boundary: Three selected citation-only work-item threads of TEIC/TEI, issues 337, 2739 and 1414, each with the issue page and the single comment page of the locked 2026-09-06 REST snapshot.
+  status_applies_to: the three named threads and the six recorded raw snapshots only; neither the work-item family nor the topic Metadata and Entities
 adapter:
   name: curated primary-metadata CSL import + tools.check_wave1_sources
   version: 2
@@ -70,12 +67,63 @@ admissions:
       path:
       - '*'
       - body
-  rights: Citation and checked short quotation only; the complete issue and comment
-    bodies stay in ignored local raw storage, because repository licensing does not
-    license participant discussion text.
-  authority: Historical participant proposal and discussion; no governance decision,
-    merge or release conclusion. Closure is closure only.
+  rights: Citation and checked short quotation only; the complete issue and comment bodies stay in ignored local raw storage, because repository licensing does not license participant discussion text.
+  authority: Historical participant proposal and discussion; no governance decision, merge or release conclusion. Closure is closure only.
   instruction_trust: none
+  quotes:
+  - text: Per discussion at TEI Council meeting in Paris in November 2011
+    locator: issue description, 2011-11-13
+  - text: we agreed that uses of `@key` can all be handled by `@ref`
+    locator: issue description, 2011-11-13
+  - text: using ref="urn:&lt;NID&gt;:&lt;NSS&gt;"
+    locator: issue description, 2011-11-13
+  - text: deprecate `@key` some day but that it's too widely used today to do so
+    locator: issue description, 2011-11-13
+  - text: modify the Guidelines to make the point that people should switch to `@ref`
+    locator: issue description, 2011-11-13
+  - text: As an alternative to using a URN with a non-registered NID
+    locator: comment 3 of 21, 2011-11-13
+  - text: Need to find someone who better understands these things to know which is better
+    locator: comment 3 of 21, 2011-11-13
+  - text: a URI with a non-registered scheme was slightly less abusive
+    locator: comment 7 of 21, 2011-11-20
+  - text: not an http URL, so people who need to find out what the thing
+    locator: comment 9 of 21, 2011-12-04
+  - text: you are concerned about permanence, why not make it a PURL?
+    locator: comment 9 of 21, 2011-12-04
+  - text: I suggest that this get folded into the subcommittee
+    locator: comment 10 of 21, 2011-12-08
+  - text: I agree with the original ticket, for soft deprecation of `@key`
+    locator: comment 11 of 21, 2012-04-13
+  - text: recommending URIs vs URNs but lean towards unregulated URIs
+    locator: comment 11 of 21, 2012-04-13
+  - text: will choose URI or URN and carry out this ticket now
+    locator: comment 12 of 21, 2012-04-16
+  - text: should be left as key because it's not an internal scheme
+    locator: comment 12 of 21, 2012-04-16
+  - text: the bar for registration is fairly high
+    locator: comment 13 of 21, 2012-05-20
+  - text: most uses of `@key` would not satisfy these
+    locator: comment 13 of 21, 2012-05-20
+  - text: RFC 2141 never advanced beyond being a proposed standard
+    locator: comment 13 of 21, 2012-05-20
+  - text: URI scheme (as described in RFC 4151) -- appears to be exactly what we need
+    locator: comment 13 of 21, 2012-05-20
+  - text: change all uses of `@key` in examples in the Guidelines to use this format
+    locator: comment 13 of 21, 2012-05-20
+  - text: which already refer to a particular external vocabulary
+    locator: comment 13 of 21, 2012-05-20
+  - text: use of tag URIs does not prohibit any user of the TEI
+    locator: comment 13 of 21, 2012-05-20
+  - text: Implemented at revision 10374.
+    locator: comment 14 of 21, 2012-05-20
+  - text: This looks fine to me, so I am closing the ticket
+    locator: comment 19 of 21, 2012-06-17
+  - text: '**status**: open --> closed'
+    locator: comment 20 of 21, 2012-06-17
+  - text: Per http://www.tei-c.org/Activities/Council/Working/tcw27.xml, added text to `<remarks>`
+    locator: comment 21 of 21, 2013-06-21
+  distillate_path: 20_distillates/publications/teic-tei-issue-337.md
 - reference_id: teic-tei-issue-2739
   source_type: publication
   source_id: github-teic-tei-work-items
@@ -121,12 +169,43 @@ admissions:
       path:
       - '*'
       - body
-  rights: Citation and checked short quotation only; the complete issue and comment
-    bodies stay in ignored local raw storage, because repository licensing does not
-    license participant discussion text.
-  authority: Participant bug report and discussion about the ODD declaration; the
-    declared class chain at the pinned release is read in the admitted blobs.
+  rights: Citation and checked short quotation only; the complete issue and comment bodies stay in ignored local raw storage, because repository licensing does not license participant discussion text.
+  authority: Participant bug report and discussion about the ODD declaration; the declared class chain at the pinned release is read in the admitted blobs.
   instruction_trust: none
+  quotes:
+  - text: The technical declaration of elements such as persName list the attribute classes
+    locator: issue body, 2025-08-04
+  - text: as if they were subclasses of the previous one, which is not the case
+    locator: issue body, 2025-08-04
+  - text: Maybe this results from an error in the ODD?
+    locator: issue body, 2025-08-04
+  - text: att.personal is a member of att.naming, and att.naming is a member of att.canonical
+    locator: first comment, 2025-08-05
+  - text: as can be seen from their spec files
+    locator: first comment, 2025-08-05
+  - text: https://github.com/TEIC/TEI/blob/dev/P5/Source/Specs/att.personal.xml
+    locator: first comment, 2025-08-05
+  - text: If that were true, wouldn't the hierarchy have to be reverse?
+    locator: second comment, 2025-08-06
+  - text: Right now the display suggests that att.naming is a member of att.personal
+    locator: second comment, 2025-08-06
+  - text: Shouldn't att.naming really be called att.personal.naming then and att.canonical att.personal.naming.canonical?
+    locator: second comment, 2025-08-06
+  - text: Attribute classes dont behave in quite the same way as model classes
+    locator: third comment, 2025-08-06
+  - text: in neither case is the naming as systematic as you propose here
+    locator: third comment, 2025-08-06
+  - text: It would be a fairly major upheaval to make all class names reflect the hierarchy
+    locator: third comment, 2025-08-06
+  - text: there are some cases where a class inherits from more than one other class
+    locator: third comment, 2025-08-06
+  - text: so it's not a simple hierarchy anyway
+    locator: third comment, 2025-08-06
+  - text: I obviously still have problems understanding the attribute class hierarchy correctly
+    locator: fourth comment, 2025-08-06
+  - text: don't want to overdo the harmonisation of the class names
+    locator: fourth comment, 2025-08-06
+  distillate_path: 20_distillates/publications/teic-tei-issue-2739.md
 - reference_id: teic-tei-issue-1414
   source_type: publication
   source_id: github-teic-tei-work-items
@@ -175,12 +254,45 @@ admissions:
       path:
       - '*'
       - body
-  rights: Citation and checked short quotation only; the complete issue and comment
-    bodies stay in ignored local raw storage, because repository licensing does not
-    license participant discussion text.
-  authority: Historical participant proposal and discussion; the membership of the
-    record elements at the pinned release is read in the admitted blobs.
+  rights: Citation and checked short quotation only; the complete issue and comment bodies stay in ignored local raw storage, because repository licensing does not license participant discussion text.
+  authority: Historical participant proposal and discussion; the membership of the record elements at the pinned release is read in the admitted blobs.
   instruction_trust: none
+  quotes:
+  - text: should be able to refer (using `@ref` or `@key`) to some other data structure
+    locator: issue body, opening paragraph, 2015-12-15
+  - text: is to develop some local convention like using `@ref` of a `<placeName>` child
+    locator: issue body, second paragraph, 2015-12-15
+  - text: is by allowing `@ref` (and `@key` for the web-impaired) on `<person>` and `<place>`
+    locator: issue body, closing paragraph, 2015-12-15
+  - text: linking personographies to external authorities isn't as elegant as it could be
+    locator: comment 1, 2015-12-16
+  - text: used the corresponding attribute on place or person and private uri schemes
+    locator: comment 2, 2015-12-16
+  - text: you'd need a schema/grammar for link sequences, especially if you have more than one
+    locator: comment 3, 2015-12-16
+  - text: I just realised that `@ref` can hold multiple URIs separated by white-space
+    locator: comment 5, 2015-12-16
+  - text: We're using `<idno type="uri">http://lccn.loc.gov/n80051862</uri>` as a child of (structured)
+    locator: comment 6, 2015-12-16
+  - text: a more precise and scaleable way than does simply providing multiple URI values
+    locator: comment 7, 2015-12-16
+  - text: Council sub-group thinks conceptually the requirement for a single TEI Guidelines endorsed
+    locator: comment 8, 2016-04-25
+  - text: The details of implementation do require discussion.
+    locator: comment 8, 2016-04-25
+  - text: We lean towards permitting `<idno>` as a direct (probably 1st) child of `<person>`, `<place>`
+    locator: comment 8, 2016-04-25
+  - text: there are places in the content of some of those elements that `<idno>` cannot go
+    locator: comment 10, 2016-04-25
+  - text: short-term solution is to add `<idno>` as a first child for ogrophy elements
+    locator: comment 12, 2016-09-26
+  - text: '`person`, `place`, `org` and `bibl` all allow for `idno`. Missing from `event` and `nym`'
+    locator: comment 13, 2019-05-07
+  - text: can we close this? You added idno to event and nym on May 7
+    locator: comment 15, 2019-07-10
+  - text: I think we can close it, unless we think a passage about this use
+    locator: comment 16, 2019-07-15
+  distillate_path: 20_distillates/publications/teic-tei-issue-1414.md
 requests:
 - *id001
 - *id002
@@ -191,27 +303,15 @@ requests:
 counts:
   selected_sources: 3
   raw_snapshots: 6
-  short_quotations: 0
+  short_quotations: 59
 gaps: []
 rights_exceptions:
-- No third-party discussion prose is published. The repository rights entry classifies
-  the work-item family as review-required with redistribution limited to metadata and
-  links, so the admitted manifestation is the reference record and the raw snapshot
-  stays local.
+- No third-party discussion prose is published. The repository rights entry classifies the work-item family as review-required with redistribution limited to metadata and links, so the admitted manifestation is the reference record and the raw snapshot stays local.
 known_limits:
-- code: distillates-not-yet-written
-  detail: The three threads are admitted and their raw snapshots reconcile; no distillate
-    exists yet, so no quotation has been checked and short_quotations is zero.
 - code: participant-identities-not-recorded
-  detail: Author logins and display names of the threads are deliberately absent from
-    the reference records and from this manifest. A distillate reports roles, never
-    names.
+  detail: Author logins and display names of the threads are deliberately absent from the reference records and from this manifest. A distillate reports roles, never names.
 - code: comment-pages-bounded-by-one-page
-  detail: Each thread's comments fit the single requested page of 100, so no pagination
-    beyond page one was recorded; reactions, timeline events and cross-references of
-    the same threads are outside this admission.
+  detail: Each thread's comments fit the single requested page of 100, so no pagination beyond page one was recorded; reactions, timeline events and cross-references of the same threads are outside this admission.
 - code: sourceforge-originals-not-admitted
-  detail: The migrated SourceForge original of issue 337 has no raw response in this
-    checkout, which is why the GitHub record is the admitted manifestation of the
-    thread.
+  detail: The migrated SourceForge original of issue 337 has no raw response in this checkout, which is why the GitHub record is the admitted manifestation of the thread.
 instruction_trust: none
