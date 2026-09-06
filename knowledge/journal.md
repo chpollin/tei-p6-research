@@ -737,3 +737,20 @@ both examples: the set of record IRIs by kind and every reference edge can be
 read back from the triples alone. Reasoning, SHACL shapes and a decoder stay
 out of scope, and `created` admitting a leap second lies outside the
 `xsd:dateTime` value space, which the document records as a known limit.
+
+## 2026-09-06 — GraphQL relations stage of the GitHub collector
+
+The second stage of the work-item collector exists and ran. It reads every
+issue and pull-request number of the REST snapshot, asks the GraphQL API in
+batches for cross-references, commit references, connections, duplicates,
+closing events, mentions, closing-issue references and review threads,
+keeps bodies and logins out of the normalized stream, resumes after an
+interruption and waits for the rate-limit window. Project closers are not
+collected, because the live smoke run showed that they require a token scope
+the session does not hold, and the module records that limit. The full run
+resolved every item without a gap. The REST stage no longer records the
+missing stage as a gap, but the recorded REST manifest of the same day still
+carries it, and manifests are append-only, so the family label stays partial
+until the next REST snapshot under the two-stage collector rather than being
+rewritten. The material document states that the family is complete only
+with both run manifests.

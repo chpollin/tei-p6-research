@@ -150,7 +150,7 @@ pre { overflow: auto; white-space: pre; background: var(--soft); padding: 1rem; 
     <div class="toolbar">
       <label class="control control-search"><span>Full-text search</span><input id="search" class="search" type="search" placeholder="Search sources and holdings"></label>
       <label class="control"><span>Acquisition</span><select id="status-filter" class="select"><option value="all">All acquisition states</option><option value="observable-complete">Acquired</option><option value="partial">Partially acquired</option></select></label>
-      <label class="control"><span>Material type</span><select id="material-filter" class="select"><option value="all">All material types</option><option value="data holding">Data holding</option><option value="git tree inventory">Git tree inventory</option><option value="public git repositories">Public Git repositories</option><option value="release archive">Release archive</option><option value="repository census">Repository census</option><option value="tei l message metadata">Tei l message metadata</option><option value="tei l wayback month coverage">Tei l wayback month coverage</option><option value="ticket and discussion records">Ticket and discussion records</option><option value="web page census">Web page census</option><option value="zip member inventory">ZIP member inventory</option><option value="__none__">Not yet acquired</option></select></label>
+      <label class="control"><span>Material type</span><select id="material-filter" class="select"><option value="all">All material types</option><option value="data holding">Data holding</option><option value="git tree inventory">Git tree inventory</option><option value="github metadata stream">Github metadata stream</option><option value="github relation stream">Github relation stream</option><option value="public git repositories">Public Git repositories</option><option value="release archive">Release archive</option><option value="repository census">Repository census</option><option value="tei l message metadata">Tei l message metadata</option><option value="tei l wayback month coverage">Tei l wayback month coverage</option><option value="ticket and discussion records">Ticket and discussion records</option><option value="web page census">Web page census</option><option value="zip member inventory">ZIP member inventory</option></select></label>
     </div>
     <div class="table-wrap" tabindex="0" role="region" aria-label="Source holdings table">
       <table class="source-table">
@@ -203,11 +203,11 @@ pre { overflow: auto; white-space: pre; background: var(--soft); padding: 1rem; 
     </div>
   </td>
 </tr>
-<tr class="source-row" data-source-row data-detail-id="source-detail-2" data-status="partial" data-status-rank="2" data-materials="__none__" data-title="teic/tei — issues and pull requests" data-date="2026-09-04" data-search="github-teic-tei-work-items teic/tei — issues and pull requests teic/tei github issues and pull requests issues, pull requests, comments, reviews, and event histories from the teic/tei repository. development discussions primary-process-record review-required github acquisition is waiting for authenticated read access">
+<tr class="source-row" data-source-row data-detail-id="source-detail-2" data-status="partial" data-status-rank="2" data-materials="github metadata stream|github relation stream" data-title="teic/tei — issues and pull requests" data-date="2026-09-04" data-search="github-teic-tei-work-items teic/tei — issues and pull requests teic/tei github issues and pull requests issues, pull requests, comments, reviews, and event histories from the teic/tei repository. development discussions primary-process-record review-required github metadata stream github relation stream normalized holding from this acquisition run. normalized holding from this acquisition run.">
   <td class="source-cell"><strong>TEIC/TEI — Issues and pull requests</strong><small>Issues, pull requests, comments, reviews, and event histories from the TEIC/TEI repository.</small></td>
-  <td class="materials-cell"><span class="empty-value">Not yet acquired</span></td>
+  <td class="materials-cell"><ul class="material-summary"><li>Github metadata stream</li><li>Github relation stream</li></ul></td>
   <td class="metrics-cell">—</td>
-  <td class="status-cell"><span class="status-text status-partial" title="Part of the locked holding was acquired; open gaps are recorded.">Partially acquired</span><small>1 open item</small></td>
+  <td class="status-cell"><span class="status-text status-partial" title="Part of the locked holding was acquired; open gaps are recorded.">Partially acquired</span><small>No open items</small></td>
   <td class="date-cell"><time datetime="2026-09-04">2026-09-04</time></td>
   <td class="action-cell"><button class="expand" type="button" aria-expanded="false" aria-controls="source-detail-2" aria-label="Show details for TEIC/TEI — Issues and pull requests"><span aria-hidden="true">+</span></button></td>
 </tr>
@@ -216,11 +216,11 @@ pre { overflow: auto; white-space: pre; background: var(--soft); padding: 1rem; 
     <div class="detail-panel">
       <section class="holdings-section">
         <h2>Holdings</h2>
-        <p class="empty-value">No completed acquisition run is available for this source.</p>
+        <ul class="holding-list"><li class="holding-item"><div class="holding-title"><strong>Github metadata stream</strong><span class="holding-status">Partially acquired</span><span class="row-links"><a href="../corpus/normalized/github/teic-tei-work-items.jsonl">Data</a><a href="../sources/manifests/2026-09-06-github-teic-tei-work-items.yaml">Manifest</a></span></div><small>Normalized holding from this acquisition run.</small><small class="run-meta">Run <code>2026-09-06-github-teic-tei-work-items</code></small></li><li class="holding-item"><div class="holding-title"><strong>Github relation stream</strong><span class="holding-status">Acquired</span><span class="row-links"><a href="../corpus/normalized/github/teic-tei-relations.jsonl">Data</a><a href="../sources/manifests/2026-09-06-github-teic-tei-relations.yaml">Manifest</a></span></div><small>Normalized holding from this acquisition run.</small><small class="run-meta">Run <code>2026-09-06-github-teic-tei-relations</code></small></li></ul>
       </section>
       <section>
         <h2>Open items</h2>
-        <ul class="gap-list"><li>GitHub acquisition is waiting for authenticated read access</li></ul>
+        <p class="clear">No open items recorded.</p>
       </section>
       <section>
         <h2>Sources</h2>
@@ -234,7 +234,7 @@ pre { overflow: auto; white-space: pre; background: var(--soft); padding: 1rem; 
           <div><dt>Rights</dt><dd>review-required</dd></div>
           <div><dt>Source types</dt><dd>document, data</dd></div>
         </dl>
-        <div class="link-list technical-links"><a href="../sources/locks/github-teic-tei.yaml">Source Lock</a></div>
+        <div class="link-list technical-links"><a href="../sources/locks/github-teic-tei.yaml">Source Lock</a><a href="../sources/manifests/2026-09-06-github-teic-tei-work-items.yaml">Acquisition manifest 1</a><a href="../sources/manifests/2026-09-06-github-teic-tei-relations.yaml">Acquisition manifest 2</a></div>
       </details>
     </div>
   </td>

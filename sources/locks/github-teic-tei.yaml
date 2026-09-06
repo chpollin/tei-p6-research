@@ -25,6 +25,8 @@ required_collections:
   pull_requests: true
   pull_request_reviews: true
   pull_request_review_comments: true
+  pull_request_review_threads: true
+  graphql_relationship_fields: true
   pull_request_commits: true
   pull_request_file_relations: true
   labels: true
@@ -47,8 +49,8 @@ incremental_policy:
   reconciliation: periodic-full-identifier-census
   deletion_policy: soft-state-no-longer-observable
 
+manifests:
+  - sources/manifests/2026-09-06-github-teic-tei-work-items.yaml
+  - sources/manifests/2026-09-06-github-teic-tei-relations.yaml
 counts: {}
 gaps:
-  - code: authenticated-github-api-session-unavailable
-    status: blocks-observable-complete
-    remediation: Run gh auth login with read-only public-repository access; the collector reads the local gh credential without printing it.

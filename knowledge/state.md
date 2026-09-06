@@ -32,7 +32,7 @@ documents, the milestones in [[knowledge/plan]] and open handoff points in
 | Public TEIC Git corpus | observable-complete | all 41 repositories exposed by the organization census are mirrored at full HEAD commits; 25,415 tree entries inventoried |
 | TEI-L mailing-list archive | partial | Penn State archive `bounded-complete` for December 2025 to September 2026 on 2026-09-06 (267 messages, metadata only, no sender fields); Wayback coverage of the retired Brown archive measured for all 432 months from 1990 to 2025 (368 captured, 64 missing, each missing month recorded as a gap); the fetch of captured months through the Wayback Machine and the export request to the TEI Consortium remain open |
 | TEI website records | partial | the website Git repository is inventoried, but the registered page-snapshot boundary has not yet been acquired |
-| GitHub work-item corpus | partial | exhaustive REST run completed on 2026-09-06 under the authenticated session with adapter version 2 (`sources/manifests/2026-09-06-github-teic-tei-work-items.yaml`): 2,476 issues, 455 pull requests with 2,800 commits and 10,362 changed-file records, 19,565 issue comments, 1,258 reviews and 1,259 review comments, 74,981 timeline events, 42 labels, 22 milestones and 27 releases in 11,241 requests; bodies stay in the private raw store and the normalized stream holds metadata; the only recorded gap is the unimplemented GraphQL relations stage |
+| GitHub work-item corpus | partial | both stages ran on 2026-09-06 under the authenticated session: the REST snapshot (2,476 issues, 455 pull requests, 19,565 issue comments, 1,258 reviews, 1,259 review comments, 74,981 timeline events) and the GraphQL relations stage (16,003 relations and 674 review threads over all 2,931 items, no gap, 253 rate-limit points); the boundary is complete in substance, while the family label stays `partial` because the recorded REST manifest still names the relations stage as its gap, which the next REST snapshot removes; bodies stay in the private raw store |
 | Governance corpus | partial | 206 Council pages and 225 Board targets observed; inaccessible historical links and external working documents remain explicit gaps |
 | Historical TEI Archive | partial | 394 index/page responses acquired; 363 linked non-HTML artifacts are in reconciliation |
 | Legacy SourceForge | partial | tracker API boundary `observable-complete` on 2026-09-06 under adapter version 2: the 1,349 tickets and 8,880 discussion posts of the 2026-09-05 run reconcile against the tracker-reported counts (774 bugs, 567 feature requests, 8 support requests) in `sources/manifests/2026-09-06-tei-legacy-sourceforge-r4.yaml`; the raw responses of the earlier runs are not in this checkout; release-file and legacy version-control interfaces remain unreconciled |
@@ -131,8 +131,8 @@ One row per chapter of the output. Writing status mirrors the chapter's frontmat
 - Fetch the 368 Wayback-captured months of the Brown TEI-L archive through the
   Wayback Machine and request an export from the TEI Consortium for the 64
   months without capture.
-- Implement the GraphQL relations stage of the GitHub collector so the
-  work-item family can leave `partial`.
+- Take the next REST snapshot of `TEIC/TEI` under the two-stage collector so
+  the recorded manifests carry no stage gap and the family can leave `partial`.
 - Draw the stratified human verification sample over the entity run (nine
   distillates, thirty-five assertions, chapter 08) and record the quota.
 - Close the evidence gaps of the entity run: admit the class specifications
