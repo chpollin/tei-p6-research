@@ -2,7 +2,7 @@
 type: assertion
 topics: ["[[Metadata and Entities]]", "[[Abstract Model]]"]
 phenomena: ["[[glossary/entity-record]]", "[[glossary/mention-of-an-entity]]"]
-related: ["[[40_output/12-p6-design]]", "[[30_assertions/p5-namesdates-represents-the-referent-and-the-name-independently]]", "[[30_assertions/p5-person-provides-information-about-an-identifiable-individual]]"]
+related: ["[[40_output/12-p6-design]]", "[[30_assertions/p5-namesdates-represents-the-referent-and-the-name-independently]]", "[[30_assertions/p5-person-provides-information-about-an-identifiable-individual]]", "[[30_assertions/p5-guidelines-group-information-about-a-person-as-distinct-from-references-to-a-person-within-person]]", "[[30_assertions/p5-guidelines-distinguish-names-for-places-from-other-data-about-places-as-they-do-for-people]]"]
 status: validated
 checked:
   machine-review: 2026-09-06

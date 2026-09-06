@@ -2,7 +2,7 @@
 type: assertion
 topics: ["[[Metadata and Entities]]"]
 phenomena: ["[[glossary/entity-record]]"]
-related: ["[[30_assertions/p5-guidelines-separate-the-entity-record-from-references-to-the-entity]]", "[[30_assertions/p5-persname-contains-a-proper-noun-referring-to-a-person]]"]
+related: ["[[30_assertions/p5-guidelines-separate-the-entity-record-from-references-to-the-entity]]", "[[30_assertions/p5-persname-contains-a-proper-noun-referring-to-a-person]]", "[[30_assertions/p5-guidelines-group-information-about-a-person-as-distinct-from-references-to-a-person-within-person]]", "[[30_assertions/p5-place-contains-data-about-a-geographic-location]]"]
 status: validated
 checked:
   machine-review: 2026-09-06

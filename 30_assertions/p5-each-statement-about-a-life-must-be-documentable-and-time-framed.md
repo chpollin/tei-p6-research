@@ -2,7 +2,7 @@
 type: assertion
 topics: ["[[Metadata and Entities]]", "[[Abstract Model]]"]
 phenomena: ["[[glossary/statement-about-an-entity]]"]
-related: ["[[40_output/12-p6-design]]", "[[30_assertions/p5-generic-description-elements-carry-certainty-and-responsibility]]", "[[30_assertions/p5-person-description-elements-are-datable]]"]
+related: ["[[40_output/12-p6-design]]", "[[30_assertions/p5-generic-description-elements-carry-certainty-and-responsibility]]", "[[30_assertions/p5-person-description-elements-are-datable]]", "[[30_assertions/p5-nested-description-elements-inherit-type-and-responsibility-and-may-date-more-precisely]]", "[[30_assertions/p5-state-attributes-a-status-or-quality-often-at-a-specific-time-or-for-a-date-range]]"]
 status: validated
 checked:
   machine-review: 2026-09-06

@@ -2,7 +2,7 @@
 type: assertion
 topics: ["[[Metadata and Entities]]"]
 phenomena: ["[[glossary/statement-about-an-entity]]", "[[glossary/name-as-an-object]]"]
-related: ["[[30_assertions/p5-person-holds-variant-name-forms-without-prioritization]]", "[[30_assertions/p5-each-statement-about-a-life-must-be-documentable-and-time-framed]]"]
+related: ["[[30_assertions/p5-person-holds-variant-name-forms-without-prioritization]]", "[[30_assertions/p5-each-statement-about-a-life-must-be-documentable-and-time-framed]]", "[[30_assertions/p5-att-datable-provides-attributes-for-normalization-of-elements-that-contain-dates-times-or-datable-events]]"]
 status: validated
 checked:
   machine-review: 2026-09-06

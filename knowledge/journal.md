@@ -776,4 +776,37 @@ After the reformulation every thread pair passed, the twelve distillates of
 the run are validated, and the first-round records stay in the run directory.
 The remedy has a limit where a comment carries hard line breaks or a sentence
 continues into quoted third-party text, because the quotation then cannot be
-lengthened and only narrowing remains.
+lengthened and only narrowing remains; one fragment of that kind was removed
+from the distillate of issue 337. A third round followed on the same day,
+because the assertions built on the threads name the issue they come from and
+the assertion review sees the distillate statement alone, so every thread
+statement now opens with the issue it comes from, as the wave-one distillates
+already name their source in the statement, and the changed pairs were judged
+again.
+
+## 2026-09-06 — Second entity run closed
+
+The second run of the topic Metadata and Entities executed the selection
+procedure of [[knowledge/plan]] end to end. Twelve sources were admitted from
+the recorded selection, eight class and element specifications, the release's
+test document and three GitHub threads, and their distillates passed the
+fresh-context review after the reformulation rounds recorded above.
+Thirty-one assertions were built on them by Fable and judged by Opus, all
+passing in one round, because the builder kept every assertion to one anchor
+and to the statement's own wording, and two of them form a contested pair on
+the soft deprecation of `key`, the announced deprecation in issue 337 against
+the attribute retained at the pinned release. Five counterevidence searches
+were run for the chapter's claims and recorded under the open questions of
+the topic map, none with a finding against the claims. Chapter 08 was
+rewritten on the enlarged base. Two posits became premises, the separation
+of record and reference for persons, places and organizations, and the
+purpose of `idno` as the element for external identifiers. Four were
+narrowed, the reading of mentions, of the entity record, of the time frame of
+statements and of the inheritance of the naming attributes, and the
+identification posit now rests on the four attribution carriers by their
+class descriptions. Seven conclusions stay posits with sharper evidence
+questions, above all the travel of the class remarks with the attributes and
+the rule for a co-available key and URI, which no admitted source states. The
+run leaves the human verification sample over both entity runs and the
+deferred sources of its selection as the next steps of the topic, and the
+next topic run is the first run of Text and Document Structures.

@@ -2,7 +2,7 @@
 type: assertion
 topics: ["[[Metadata and Entities]]"]
 phenomena: ["[[glossary/entity-record]]", "[[glossary/entity-identification]]"]
-related: ["[[40_output/12-p6-design]]", "[[30_assertions/p5-ref-locates-a-definition-or-identity-for-the-entity-named-by-uris]]"]
+related: ["[[40_output/12-p6-design]]", "[[30_assertions/p5-ref-locates-a-definition-or-identity-for-the-entity-named-by-uris]]", "[[30_assertions/p5-idno-supplies-any-form-of-identifier-used-to-identify-some-object-in-a-standardized-way]]", "[[30_assertions/teic-tei-issue-1414-commenter-summarizes-idno-as-a-first-child-of-the-record-elements-as-the-short-term-solution]]"]
 status: validated
 checked:
   machine-review: 2026-09-06

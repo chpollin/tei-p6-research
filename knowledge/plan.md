@@ -458,6 +458,13 @@ of the three threads are present in the checkout of 2026-09-06; the raw
 responses of the SourceForge originals are not, which is why the GitHub
 records are the admitted manifestations.
 
+The run was executed on 2026-09-06 through admission, distillation, three
+rounds of source review, assertion building with a fresh-context review and
+the rewrite of chapter 08; [[knowledge/state]] holds its counts and
+[[knowledge/journal]] its outcomes, and the questions it left open stand in
+the entity topic map. The human verification sample over both entity runs
+remains an operator decision.
+
 ### Run 1 of Text and Document Structures
 
 The second topic is Text and Document Structures. In the order of the posits

@@ -87,8 +87,6 @@ admissions:
     locator: comment 3 of 21, 2011-11-13
   - text: at Oxford felt that a URI with a non-registered scheme was slightly less abusive.
     locator: comment 7 of 21, 2011-11-20
-  - text: not an http URL, so people who need to find out what the thing
-    locator: comment 9 of 21, 2011-12-04
   - text: you are concerned about permanence, why not make it a PURL?
     locator: comment 9 of 21, 2011-12-04
   - text: I suggest that this get folded into the subcommittee
@@ -303,7 +301,7 @@ requests:
 counts:
   selected_sources: 3
   raw_snapshots: 6
-  short_quotations: 59
+  short_quotations: 58
 gaps: []
 rights_exceptions:
 - No third-party discussion prose is published. The repository rights entry classifies the work-item family as review-required with redistribution limited to metadata and links, so the admitted manifestation is the reference record and the raw snapshot stays local.

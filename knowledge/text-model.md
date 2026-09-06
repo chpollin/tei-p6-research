@@ -1067,7 +1067,7 @@ for the extension, so that an implementer can build them test-first and an
 editor can judge whether they preserve the distinctions of a named-entity
 practice. Its evidence is the chapter
 [Metadata and Entities](../40_output/08-metadata-and-entities.md), whose
-grounded findings and thirteen posits are cited below by their footnote
+grounded findings and posits are cited below by their footnote
 keys, written as `[^synonym]` or `[^denotation]`. Every choice the chapter
 does not ground is marked as a posit with its open evidence question. In the
 [statement roles](p6-evaluation.md#statement-roles) of the evaluation
@@ -1405,12 +1405,12 @@ what stays uncovered.
 | `[^mention]` | mention concept; entity kind | Covered as in 14.1. The open question about mentions that denote no identified entity stays. |
 | `[^name]` | name claim; relation between name claims | Covered for forms with a bearer. The nym stays uncovered. |
 | `[^individuals]` | relation between name claims for every entity kind | The extension applies one rule to names of every kind, which is the chapter's extension of the detachment to places and organizations; no source supports it for them. |
-| `[^separation]` | entity against mention for every kind | The extension separates record and reference for every entity kind, as the chapter reads the Guidelines' statement about organizations. |
-| `[^idnoread]` | alignment claims | The mapping of `idno` to alignment claims rests on the chapter's reading of the specList. |
+| `[^separation]` | entity against mention for every kind | The extension separates record and reference for every entity kind; since the second entity run the chapter grounds the separation for organizations, persons and places in the Guidelines, so this row rests on premises. |
+| `[^idnoread]` | alignment claims | The mapping of `idno` to alignment claims rests on the specification's stated purpose of `idno` and the Guidelines' practice of external reference, which the chapter grounds since the second entity run; the mapping itself stays the extension's choice. |
 | `[^entity]` | entity holds identity only; name claims with `valid` | Covered. The reason two things count as one entity has no field. |
-| `[^extension]` | one statement kind for all four | The claim fields apply to traits, states, events and relations alike, which is the chapter's extension of the requirement stated for changes of state in a life. |
+| `[^extension]` | one statement kind for all four | The claim fields apply to traits, states, events and relations alike; the chapter grounds the time frame of `state` for persons, places and organizations and keeps the documentation and relatability requirement beyond changes of state in a life as a posit. |
 | `[^claims]` | pattern fields; coexistence; withdrawal by supersession | Agent, certainty and validity correspond to `resp`, `cert` and the dating attributes; withdrawal is a superseding claim with status `withdrawn`. Evidence and source stay uncovered, and the participant kinds stay open. |
-| `[^inheritance]` | mapping rule for every naming element | The mapping treats every member of `att.naming` alike; the sources state the rules for `att.canonical` only. |
+| `[^inheritance]` | mapping rule for every naming element | The mapping treats every member of `att.naming` alike; the sources state the rules for `att.canonical` only, and the chain from `att.personal` through `att.naming` stands in the vault as a commenter's dated statement about the development branch. |
 | `[^denotation]` | denotation claim; several alignments for several URIs | Covered. Whether several URIs are several alignments on one entity or several denotations to several entities is a declared mapping option; a `ref` to an element in another document stays uncovered. |
 | `[^alignment]` | minted local entity; alignments | Covered. The documentation obligation of `key` becomes the agent of the claim and the `base` of the package. |
 | `[^questions]` | entity; agent of the denotation; status `withdrawn` | The entity is the additional object the P6 design chapter asks for, the responsibility marker becomes the agent of a denotation claim in the mapping of 14.6, and withdrawal is a status. The test against the constructs is the ledger of 14.6. |

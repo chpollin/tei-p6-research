@@ -2,7 +2,7 @@
 type: assertion
 topics: ["[[Metadata and Entities]]"]
 phenomena: ["[[glossary/statement-about-an-entity]]"]
-related: ["[[30_assertions/p5-entity-information-comprises-statements-about-traits-states-and-events]]"]
+related: ["[[30_assertions/p5-entity-information-comprises-statements-about-traits-states-and-events]]", "[[30_assertions/p5-testnames-relation-to-another-person-is-a-state-with-a-ref-to-a-relationship-and-no-relation-element]]"]
 status: contested
 checked:
   machine-review: 2026-09-06

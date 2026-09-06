@@ -2,7 +2,7 @@
 type: assertion
 topics: ["[[Metadata and Entities]]", "[[Elements and Classes]]"]
 phenomena: ["[[glossary/entity-identification]]", "[[glossary/mention-of-an-entity]]"]
-related: ["[[40_output/12-p6-design]]", "[[30_assertions/p5-key-serves-cases-where-no-direct-link-is-required]]", "[[30_assertions/p5-att-canonical-gives-no-precedence-when-key-and-ref-co-occur]]"]
+related: ["[[40_output/12-p6-design]]", "[[30_assertions/p5-key-serves-cases-where-no-direct-link-is-required]]", "[[30_assertions/p5-att-canonical-gives-no-precedence-when-key-and-ref-co-occur]]", "[[30_assertions/teic-tei-issue-2739-commenter-states-att-personal-is-a-member-of-att-naming-and-att-naming-of-att-canonical]]", "[[30_assertions/p5-att-personal-provides-common-attributes-for-elements-forming-part-of-a-name]]"]
 status: validated
 checked:
   machine-review: 2026-09-06

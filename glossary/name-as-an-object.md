@@ -18,6 +18,8 @@ name regarded in this way.
 <!-- examples:begin -->
 - [[30_assertions/p5-att-naming-describes-nymref-through-the-object-named]] — In TEI P5 4.12.0, att.naming describes nymRef as locating the canonical form of the names associated with the object named by the element bearing it
   - [[20_distillates/documents/tei-p5-att.naming-4.12.0#^s3]]
+- [[30_assertions/p5-att-personal-provides-common-attributes-for-elements-forming-part-of-a-name]] — In TEI P5 4.12.0, the description of att.personal states that the class provides common attributes for those elements which form part of a name, usually but not necessarily a personal name
+  - [[20_distillates/documents/tei-p5-att.personal-4.12.0#^s1]]
 - [[30_assertions/p5-guidelines-detach-the-nymref-association-from-the-entity-named]] — In TEI P5 4.12.0, the Guidelines state that the association nymRef makes with a nym has nothing to do with any individual who might use the name
   - [[20_distillates/documents/tei-p5-guidelines-nd-4.12.0#^s56]]
 - [[30_assertions/p5-guidelines-distinguish-resolving-a-name-from-treating-it-as-an-object]] — In TEI P5 4.12.0, the Guidelines distinguish the resolution of a name or referring string to its referent through key or ref from the treatment of names as objects in their own right, for whose canonical or normalized form they use the term nym
@@ -36,4 +38,6 @@ name regarded in this way.
   - [[20_distillates/documents/tei-p5-guidelines-nd-4.12.0#^s32]]
 - [[30_assertions/p5-rs-and-name-cannot-mark-the-components-of-a-name]] — In TEI P5 4.12.0, the Guidelines state that rs and name are insufficiently powerful to mark the internal components or structure of names and provide persName, surname, forename, roleName, addName, nameLink and genName for these and related purposes
   - [[20_distillates/documents/tei-p5-guidelines-nd-4.12.0#^s7]]
+- [[30_assertions/p5-testnames-person-name-form-and-place-carry-three-separate-identifying-values]] — In the TEI P5 4.12.0 test document testnames.xml, a person record carries only an xml:id on the person element, gives its name form a key of its own beside a type value, and identifies the birthplace by a key on placeName that repeats the element text, so the person, the name form and the place carry three separate identifying values
+  - [[20_distillates/documents/tei-p5-test-testnames-4.12.0#^s14]]
 <!-- examples:end -->

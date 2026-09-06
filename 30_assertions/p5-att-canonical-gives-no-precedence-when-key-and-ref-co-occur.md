@@ -2,7 +2,7 @@
 type: assertion
 topics: ["[[Metadata and Entities]]", "[[Elements and Classes]]", "[[Abstract Model]]"]
 phenomena: ["[[glossary/entity-identification]]"]
-related: ["[[40_output/12-p6-design]]", "[[30_assertions/p5-simultaneous-key-and-ref-are-not-recommended-without-documentation]]", "[[30_assertions/p5-att-naming-inherits-key-and-ref-and-prefers-a-direct-link]]"]
+related: ["[[40_output/12-p6-design]]", "[[30_assertions/p5-simultaneous-key-and-ref-are-not-recommended-without-documentation]]", "[[30_assertions/p5-att-naming-inherits-key-and-ref-and-prefers-a-direct-link]]", "[[30_assertions/teic-tei-issue-337-author-reports-a-wish-to-deprecate-key-held-back-by-its-wide-use]]", "[[30_assertions/p5-guidelines-state-that-interchange-is-improved-by-tag-uris-in-ref-instead-of-key]]"]
 status: validated
 checked:
   machine-review: 2026-09-06

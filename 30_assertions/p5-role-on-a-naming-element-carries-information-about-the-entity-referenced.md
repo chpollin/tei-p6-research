@@ -2,7 +2,7 @@
 type: assertion
 topics: ["[[Metadata and Entities]]", "[[Elements and Classes]]"]
 phenomena: ["[[glossary/mention-of-an-entity]]", "[[glossary/statement-about-an-entity]]"]
-related: ["[[40_output/12-p6-design]]", "[[30_assertions/p5-rolename-excludes-the-role-a-person-has-in-a-context]]"]
+related: ["[[40_output/12-p6-design]]", "[[30_assertions/p5-rolename-excludes-the-role-a-person-has-in-a-context]]", "[[30_assertions/p5-testnames-person-record-carries-id-sex-and-role-while-its-persname-carries-only-a-language]]"]
 status: validated
 checked:
   machine-review: 2026-09-06

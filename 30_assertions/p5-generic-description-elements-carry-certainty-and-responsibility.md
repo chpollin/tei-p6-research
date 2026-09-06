@@ -2,7 +2,7 @@
 type: assertion
 topics: ["[[Metadata and Entities]]", "[[Abstract Model]]"]
 phenomena: ["[[glossary/statement-about-an-entity]]"]
-related: ["[[40_output/12-p6-design]]", "[[30_assertions/p5-each-statement-about-a-life-must-be-documentable-and-time-framed]]"]
+related: ["[[40_output/12-p6-design]]", "[[30_assertions/p5-each-statement-about-a-life-must-be-documentable-and-time-framed]]", "[[30_assertions/p5-att-global-responsibility-indicates-the-agent-responsible-for-something-asserted-by-the-markup]]", "[[30_assertions/p5-nested-description-elements-inherit-type-and-responsibility-and-may-date-more-precisely]]"]
 status: validated
 checked:
   machine-review: 2026-09-06

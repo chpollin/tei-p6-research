@@ -2,7 +2,7 @@
 type: assertion
 topics: ["[[Metadata and Entities]]", "[[Elements and Classes]]"]
 phenomena: ["[[glossary/entity-identification]]"]
-related: ["[[30_assertions/p5-key-serves-cases-where-no-direct-link-is-required]]", "[[30_assertions/p5-key-requires-resolution-documentation-for-interchange]]"]
+related: ["[[30_assertions/p5-key-serves-cases-where-no-direct-link-is-required]]", "[[30_assertions/p5-key-requires-resolution-documentation-for-interchange]]", "[[30_assertions/p5-key-remarks-propose-no-particular-syntax-because-its-form-depends-on-project-practice]]", "[[30_assertions/p5-testnames-name-of-type-person-in-a-note-carries-a-key-and-no-ref]]"]
 status: validated
 checked:
   machine-review: 2026-09-06
