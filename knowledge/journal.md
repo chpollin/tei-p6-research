@@ -668,3 +668,37 @@ why the chapter carries thirteen posits. The evidence gaps the run leaves are
 recorded in the state document: class membership stands only in XML, no
 admitted source is encoded practice, and no source states what applies when a
 local key and a URI are both available.
+
+## 2026-09-06 — Entity extension drafted for version 0.2
+
+Section 14 of [[knowledge/text-model]] drafts the entity extension on the
+claim pattern of section 13, for implementation test-first and for editorial
+judgment, with every choice the chapter `40_output/08-metadata-and-entities.md`
+does not ground marked as a posit with its open evidence question. A mention
+stays a reading node or an annotation, now with an optional `concept`, under
+three reserved mention concepts for proper noun, referring string and pronoun.
+The concept classifies the expression, and the kind of the referent moves to
+the entity. An entity holds ID, label and a constitutive kind from six values
+and nothing else. A name is a claim on the entity with form, required BCP 47
+language tag, optional ordered parts in six kinds taken from the P5 component
+elements, and validity. The `nymRef` correspondence becomes a relation between
+two name claims, and a name without bearer, the nym, stays without a kind as
+the contested gap. A denotation claim has the mention as subject and the
+entity as content, so a corrected identification supersedes and coexisting
+identifications by different agents, or by one agent with different
+certainties, are ranked by nothing. Statements are one record kind with the
+discriminator trait, state, event and relation, the participant entity set as
+subject and roles as content, admitting participants of any kind while the
+sources disagree. A P5 `ref` with several URIs becomes one minted entity with
+one alignment per URI, `key` becomes the local entity ID with the package as
+its documentation, and no inference follows from alignments or denotations.
+The coverage matrix sets all thirty-five findings and thirteen posits of the
+chapter against the constructs. Uncovered stay the nym, feature structures,
+the kind of a name form, evidence and source, the uncertain bounds of
+`att.datable`, cross-document `ref`, the identity reason of the Lyon case,
+negative denotation and second-agent certainty. Thirteen diagnostic codes,
+two reference operations, an RDF direction table and a ledger with rules R14
+to R20 and nine test cases, including a mapping of one diary paragraph with
+three `persName` occurrences and a round trip with loss report, are stated.
+The version 0.2 changes are additive and binding-only. The v0.1 case report
+was regenerated, and only the definition fingerprint changed.

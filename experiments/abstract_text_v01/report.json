@@ -2979,7 +2979,7 @@
     "experiments/abstract_text_v01/examples/competing-readings.json": "bb2c1e74033b018ba6ab450be75d07f230fb0208df8e33dcacb28bf967304147",
     "experiments/abstract_text_v01/examples/identity-and-reanchoring.json": "b4c44be65d342374cd91458c3ebff8bf6d2c416b386233cf61ad1c4f2d76df90",
     "experiments/abstract_text_v01/spec.json": "fed61ae06e05c92408722410c8a09168825675f33fb0e917475192886820cd86",
-    "knowledge/text-model.md": "52e3cbaef2199383592853221d1d402fbdb6c29d5af455ac8fbb5ca729803d74",
+    "knowledge/text-model.md": "38a8d040eb6ed598af49546d171e60839faee8b45972b7b57ebe58f2d533856e",
     "tools/check_abstract_text_v01.py": "4e84e31f7e13b3019d8d01d139aedba65cb9aea4fce43473ca69201fa290b26f",
     "tools/models/__init__.py": "24fcec930743dfdc176120f5dc7fb9056db911b40628634d8240cac1498414e1",
     "tools/models/abstract_text.py": "50ebb632e979da396acb0a87bf93b22ac88cc0a5b73481994220b606c6bfc7dc",

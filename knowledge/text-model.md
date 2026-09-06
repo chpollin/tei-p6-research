@@ -31,6 +31,8 @@ core-model sketch in sections 10 and 11 and the serialization and conformance
 contract in section 12 frame that bounded candidate. Neither is an
 implementation inventory. Section 13 fixes the claim pattern and the
 identifier policy that every later domain extension of the model follows.
+Section 14 drafts the first such extension, for entities, names, denotations
+and statements, as a candidate for version 0.2.
 
 ## 1. What the objects mean
 
@@ -1056,3 +1058,545 @@ Posit: reusing the v0.1 checks and generalizing the profile's append-only
 rule keeps the pattern executable within the existing validator. Open
 evidence question: which recorded disagreements from real editions, replayed
 as packages, falsify the claim that no branch of a package is ever needed?
+
+## 14. Entity extension, draft for version 0.2
+
+The entity extension is the first domain extension built on the claim
+pattern of section 13. It constrains the record kinds that section 13 lists
+for the extension, so that an implementer can build them test-first and an
+editor can judge whether they preserve the distinctions of a named-entity
+practice. Its evidence is the chapter
+[Metadata and Entities](../40_output/08-metadata-and-entities.md), whose
+grounded findings and thirteen posits are cited below by their footnote
+keys, written as `[^synonym]` or `[^denotation]`. Every choice the chapter
+does not ground is marked as a posit with its open evidence question. In the
+[statement roles](p6-evaluation.md#statement-roles) of the evaluation
+document the section is a contract for the prototype and a hypothesis for
+comparison, and none of it records an official TEI decision. Sections 1 to 13
+stay unchanged; what version 0.2 adds to them is listed at the end of 14.1 by
+change class.
+
+### 14.1 The five things and their record kinds
+
+The chapter keeps five things apart, the mention of an entity in a text, the
+name as a linguistic object, the record about the entity, the statements
+made about it and the identification of the entity meant (`[^boundary]`).
+The extension gives each its construct. Mention stays what the model has.
+Entity, name claim, denotation claim and statement are new record kinds, and
+the alignment claim is the section 13 kind carried by entity records.
+
+| Thing in the chapter | Construct | Sort under section 13 |
+|---|---|---|
+| Mention of an entity | Reading node or annotation with a mention concept | occurrence, as in v0.1 |
+| Entity record | Entity | identity |
+| Name as an object | Name claim | claim whose subject is the entity |
+| Identification of the entity meant | Denotation claim from a mention to an entity; alignment claims from an entity to external IRIs | claims whose subjects are the mention and the entity |
+| Statement about the entity | Statement of kind trait, state, event or relation | claim whose subject is the set of participant entities |
+
+**Mention.** A mention is a reading node whose `type` is a mention concept,
+or an annotation whose `concept` is a mention concept. The three mention
+concepts are reserved concept records with role `node`. Like the reserved
+concepts of the editorial provenance profile they are defined by their exact
+records, so that a package using them contains them unchanged.
+
+| Concept ID | Label | Definition |
+|---|---|---|
+| `en-proper-noun` | Proper noun | The selected extent is a proper noun or proper-noun phrase used to refer. |
+| `en-referring-string` | Referring string | The selected extent is a referring string that is no proper noun, such as a description or a title used to refer. |
+| `en-pronoun` | Pronoun | The selected extent is a pronoun used to refer. |
+
+The concept classifies the referring expression and states nothing about
+its referent. P5 carries the difference between a proper noun and a
+referring string in the choice between `persName` and `rs` (`[^rs]`,
+`[^persname]`) and loses it in the specialized element unless a `type`
+value restores it (`[^placename]`). Here the concept is mandatory for every
+mention, and the kind of the referent, which P5 states through `type` on
+the mention, sits on the entity record (`[^type]`, `[^mention]`). A reading
+node keeps every rule of section 3, so a mention node has one contiguous
+extent. A referring expression with a discontinuous extent, or one whose
+quotation selector is absent or ambiguous, is an annotation with a mention
+concept. A denotation claim on such an annotation stays valid under the
+warnings of section 2, so an editor can record whom an unlocated string
+denotes before it is located.
+
+Version 0.2 gives the annotation record the optional field `concept`, a
+concept ID with role `node`, because an annotation with a concept classifies
+the occurrence its selection picks out exactly as a reading node does,
+without entering a reading forest. An annotation without the field is what
+it was in v0.1.
+
+Posit: the two v0.1 occurrence kinds with three reserved concepts carry
+every mention, and the pronoun concept extends the chapter's pair of proper
+noun and referring string to the anaphoric case, which the admitted sources
+do not discuss. Open evidence question: which encoding workflows need a
+mention that denotes no identified entity to carry the kind of its referent
+or a role, as `type` and `role` on `att.naming` allow (`[^type]`,
+`[^role]`), and do they accept a minted entity without alignment in its
+place?
+
+**Entity.** An entity is an identity record for a thing the edition speaks
+about. It holds identity only, as section 13 requires of a record that is no
+claim; every fact about the thing is a claim carried elsewhere (`[^record]`,
+`[^entity]`).
+
+| Field | Contract |
+|---|---|
+| `id` | Package-local ID under the grammar of section 1. |
+| `label` | Nonempty display string for editors. It is no name claim and asserts nothing. |
+| `kind` | Exactly one of `person`, `group`, `place`, `event`, `object`, `other`. |
+| `alignments` | Optional array of alignment claims as defined in section 13. |
+
+The kind is the sortal under which the record is minted, the counterpart of
+P5's choice of `person`, `place` or `org` as the record element and of the
+`type` value that names the kind of referent on the mention (`[^type]`,
+`[^person]`). It belongs to the identity because it fixes which statements
+can take the record as subject and what counts as the same thing, the
+decision the Lyon example leaves to the encoder (`[^lyon]`). A change of
+kind is therefore a new entity under R01, and a dispute about the kind is
+two entities with two denotation claims. The set follows the participant
+kinds the `relation` specification names, places, events, persons and
+objects (`[^relationelement]`), with `group` for the organization record and
+`other` for what P5 leaves to a `type` value on `rs` or `name`.
+
+Posit: an identity record with ID, label and a constitutive kind from a
+closed set of six is enough identity for an entity, and the reason two
+things count as one entity is no field of it. Open evidence question: which
+editions record that reason, whether as content of the name and alignment
+claims or as a claim kind of its own, and which referents fall outside the
+six kinds or move between them?
+
+**Name claim.** A name claim states that an entity bears a name form. Its
+subject is the entity, so a name claim can exist for an entity that no text
+mentions, and an entity can exist without one.
+
+| Field | Contract |
+|---|---|
+| pattern fields | `id`, `agent`, `created`, `status`, `certainty`, `valid`, `supersedes` as in section 13. |
+| `entity` | Subject. Entity ID. |
+| `form` | Content. Nonempty string, the name form as written or regularized, uninterpreted. |
+| `language` | Content. Language tag in the lexical form `[A-Za-z]{2,3}(-[A-Za-z0-9]{1,8})*` of BCP 47, checked for form only, with `und` for an undetermined language. |
+| `parts` | Content, optional. Ordered array of components `{kind, form}` without IDs; `kind` is one of `surname`, `forename`, `role-name`, `add-name`, `name-link`, `gen-name`, `form` a nonempty string. |
+
+The forms inside a P5 `person` are repeatable, typed, language-tagged and
+unprioritized (`[^variants]`) and can be limited in time (`[^datable]`).
+Here they are several name claims on one entity, none of them a base form,
+each with its language tag and an optional validity. The part kinds are the
+six component elements the Guidelines provide beside `persName`
+(`[^components]`). Parts are claim-free components of one claim, because
+the Guidelines present them as the internal structure of one name. They
+carry no ID, so a part cannot be the subject of a claim, and they stay flat,
+so the feature structures the Guidelines recommend for highly complex or
+ambiguous names (`[^coverage]`) have no counterpart. A role that functions
+as part of a name is a part of kind `role-name`; a role the person holds is
+a statement about the entity, which keeps the line the Guidelines draw
+(`[^rolename]`).
+
+The correspondence between two name forms, which P5 encodes through
+`nymRef`, is a v0.1 relation between two name claims under a concept the
+package defines, because a name claim is an identified record and any two
+records can be linked. Where both forms belong to one entity, the reading of
+the class specification, which reaches the canonical form through the object
+named, and the reading of the Guidelines chapter, which detaches the
+association from any individual, coincide (`[^nymrefclass]`,
+`[^nymrefchapter]`, `[^inherit]`, `[^name]`). Where the canonical form
+belongs to no entity, as a nym does (`[^nym]`, `[^nymdist]`), the extension
+has no record to carry it, because every name claim needs an entity. That
+gap is the contested case and stays open in 14.3.
+
+Posit: a name claim with form, required language tag, optional ordered parts
+and validity covers the name forms P5 attaches to a record, and a
+name-to-name correspondence is a relation between name claims. Open evidence
+question: which editions with an onomastic practice relate name forms to one
+another independently of any bearer, so that a name-as-object kind would be
+missing, and do their forms need a kind of their own beside the language?
+
+**Denotation claim.** A denotation claim states that one mention denotes one
+entity.
+
+| Field | Contract |
+|---|---|
+| pattern fields | as in section 13; `certainty` is the agent's own qualification of the identification. |
+| `mention` | Subject. ID of a reading node or annotation that is a mention. |
+| `entity` | Content. Entity ID. |
+
+The subject is the mention alone, so an agent who first identified a mention
+with one entity and later with another supersedes the first claim by the
+second, as section 13 requires for a revised content. Two agents identifying
+one mention differently, or one agent holding two identifications with
+different certainties, are coexisting claims that nothing in the package
+ranks. P5 identifies a mention through `key` and `ref` without an agent, a
+date or a certainty (`[^denotation]`) and gives no precedence when both are
+present (`[^noprecedence]`, `[^simultaneous]`). Here the act of identifying
+is a dated, attributed and revisable record, and the missing precedence rule
+becomes coexistence.
+
+**Statement.** A statement is a claim of one record kind with a
+discriminator. Traits, states, events and relations share the requirements
+the Guidelines state for a statement about a life, that it be documentable,
+time-framed and relatable (`[^documentable]`), the responsibility and
+certainty attributes (`[^responsibility]`) and the dating class
+(`[^datable]`), and the nationality example presents one state encoded three
+ways as the same information, once with a coded value in place of text
+(`[^nationality]`). One record kind keeps one subject rule and one
+supersession rule for all four. Four kinds would repeat one shape under four
+contracts, and two kinds, one for a single entity and one for several, would
+split what differs only in arity. The discriminator carries P5's element
+choice as data, so a mapping keeps it.
+
+| Field | Contract |
+|---|---|
+| pattern fields | as in section 13. |
+| `kind` | Content. Exactly one of `trait`, `state`, `event`, `relation`. |
+| `type` | Content. Concept ID with role `statement`, the locally defined type of the statement, such as a nationality, a birth or a parentage. |
+| `participants` | Subject. Nonempty array of `{entity, role}`, `entity` an entity ID, `role` a nonempty string, without a repeated pair. |
+| `value` | Content, optional. Nonempty string, uninterpreted. |
+
+The subject of a statement is the set of its participant entities; the
+roles are content. A statement about one entity has one participant, whose
+role the package chooses, such as `subject`. A relation has several. Its
+participants are entities of any kind, following the element specification,
+which admits places, events, persons and objects, over the Guidelines
+chapter, which names persons, places and organizations
+(`[^relationelement]`, `[^relationchapter]`), and the extension leaves that
+disagreement open. Correcting the direction of a relation between the same
+entities is a supersession, because the entity set is unchanged; replacing a
+participant is a withdrawal and a new claim, because the subject has
+changed. The third nationality encoding, whose `key` stands in for the text
+of the statement, becomes a participant entity with alignment claims, or a
+`value` string where no entity is minted (`[^nationality]`, `[^claims]`).
+A statement of kind `relation` is no v0.1 relation record; the latter links
+any two records without roles and stays available beside it. Version 0.2
+adds `statement` to the concept roles of section 1 for the `type` field, so
+that a statement type has a definition and can carry alignments like every
+concept.
+
+Posit: one statement kind with the discriminator trait, state, event and
+relation, the participant entities as subject and roles as strings
+represents what P5 encodes in its description elements and in `relation`,
+and participants of any kind are admitted while the sources disagree. Open
+evidence question: which recorded prosopographies need a source pointer and
+an evidence kind on the statement, which participant kinds their relations
+take, and whether role labels need concepts of their own?
+
+**Alignment claim.** The alignment claim is the section 13 kind on the
+carrier `entities`, unchanged. It takes over what a P5 record states through
+`idno` (`[^idno]`, `[^idnoread]`) and what a `ref` states through a URI to a
+resource outside any TEI document (`[^ref]`, `[^refvalue]`,
+`[^alignment]`).
+
+**Changes to version 0.1 by change class.** Measured against the
+[change classes](p6-architecture.md#change-classes) of the architecture,
+version 0.2 makes the following changes. Each additive change leaves every
+valid 0.1 package valid once it declares `model_version: "0.2"` and the four
+new collections as empty arrays, without a change to any record.
+
+- Additive are the collections `entities`, `names`, `denotations` and
+  `statements`, the optional `alignments` field on `concepts`, `agents` and
+  `entities`, the package fields `base` and `former_bases`, the five pattern
+  fields as optional fields of the four v0.1 claim kinds, where an absent
+  field reads as section 13 states, the optional `concept` field of
+  annotations, and the concept role `statement`.
+- Binding-only are the collection and array names of the XML binding and
+  its `binding_version`.
+- The classes editorial, restrictive, semantic, structural and removal stay
+  unused, and no v0.1 identifier changes its meaning.
+
+### 14.2 Constraints
+
+The constraints use the sets below over one package. `MC` is the set of the
+three reserved mention concepts, present as exact records.
+
+```text
+E    entity records, kind(e) in {person, group, place, event, object, other}
+M    = { n in nodes | type(n) in MC } ∪ { a in annotations | concept(a) in MC }
+D    denotation claims d = (pattern, mention, entity)
+     with mention(d) in M, entity(d) in E, subject(d) = mention(d)
+N    name claims n = (pattern, entity, form, language, parts)
+     with entity(n) in E, subject(n) = entity(n)
+S    statements s = (pattern, kind, type, participants, value)
+     with role(type(s)) = statement, participants(s) nonempty,
+     subject(s) = { e | (e, r) in participants(s) }
+A    alignment claims nested in entities, concepts and agents, as in section 13
+```
+
+1. Every record ID, the nested alignment claims and reading nodes included,
+   is unique across the package. Parts and participants carry no ID and are
+   not addressable.
+2. References resolve by category. `mention` resolves to a reading node or
+   an annotation, `entity` and every participant entity to an entity,
+   `type` of a statement to a concept with role `statement`, `concept` of an
+   annotation to a concept with role `node`, and `supersedes` to claims of
+   the same kind. A denotation claim targets an entity only; an IRI, a
+   concept, a version or another mention in its `entity` field is a
+   reference failure.
+3. A denotation subject is in `M`. A node or annotation in `M` may carry no
+   denotation claim; that is a warning and leaves the package valid.
+4. No constraint limits the denotation claims per mention or per agent.
+   Several current claims by different agents, or by one agent with
+   different certainties, coexist, and validation derives no winner among
+   them.
+5. A name claim may exist for an entity no mention denotes. An entity may
+   exist without name, denotation, statement or alignment.
+6. A P5 `ref` with several URIs on one naming element becomes one mention,
+   one denotation claim to one minted entity and one alignment claim per
+   URI on that entity, as the chapter's posit `[^denotation]` states. A
+   mapping may instead be told that the URIs name distinct referents, in
+   which case it mints one entity and one denotation claim per URI and
+   records the choice in its loss report.
+7. The participants of a statement are entities of any kind. The recorded
+   disagreement between the element specification and the Guidelines
+   chapter stays open as a posit.
+8. Withdrawal and supersession follow section 13 for every claim kind of the
+   extension. Supersession stays within one kind, one agent and one subject
+   and is acyclic; a `withdrawn` claim supersedes at least one claim; a
+   claim of an earlier package that is missing or changed in a later package
+   is a rewrite.
+9. No inference follows from alignments or denotations. Two entities aligned
+   `exact` to one IRI stay two entities, an entity's alignments propagate to
+   none of its mentions, an `exact` alignment states nothing about identity
+   within the package, and the validator checks nothing about the external
+   resource.
+10. The reading forest rules of section 3 and the selection and resolution
+    rules of section 2 are untouched. A mention node has one contiguous
+    extent; a discontinuous or unresolved mention is an annotation.
+11. Every closed set and lexical form is checked, the kinds of entity,
+    statement and part, the language tag, and the pattern fields, `base`,
+    `iri` and `relation` as section 13 defines them, including the order of
+    validity bounds.
+
+### 14.3 Coverage matrix
+
+The table sets every grounded finding and every posit of chapter 08 against
+the construct that answers it. The first column names the footnote keys of
+the chapter; keys that one construct answers share a row. The third column
+states what P5 offers and what the extension changes. The last row lists
+what stays uncovered.
+
+| Finding or posit of chapter 08 | Construct | P5 offers, extension changes |
+|---|---|---|
+| `[^rs]`, `[^persname]` | mention concepts `en-referring-string`, `en-proper-noun` | P5 carries the difference between a referring string and a proper noun in the choice between `rs` and `persName`. The extension carries it in a mandatory concept on the mention and has no specialized element. |
+| `[^type]` | `kind` on the entity, concept on the mention | P5 states the kind of the referent through `type` on the mention. The extension states it on the entity a denotation claim reaches; a mention without denotation states no kind. |
+| `[^synonym]` | denotation claims to one entity | P5 treats four encodings of one name as equivalent under one `ref` value. The extension has one mention per occurrence and reads sameness of reference from denotation claims to one entity, a query over claims without string comparison of `ref`. |
+| `[^placename]` | mention concept | The specialized element drops the proper-noun distinction unless `type` restores it. The extension requires the concept on every mention. |
+| `[^role]` | statement of kind `trait` or `state` | P5 places information about the entity on the naming element through `role`. The extension places it in a statement about the entity; the mention carries none. |
+| `[^rolename]` | part kind `role-name`; statement | P5 separates a role that is part of a name from a role the person holds. The extension keeps the line as a part of a name claim against a statement. |
+| `[^components]` | `parts` of a name claim | P5 provides seven elements for personal names and their components. The extension has six part kinds inside one name claim, and the claim itself stands for the whole name. |
+| `[^coverage]` | `parts` optional and flat | P5 admits that component markup does not cover every name and recommends feature structures. The extension leaves parts optional and flat and has no counterpart for feature structures. |
+| `[^module]` | entity, name claim and mention as three records | P5 represents the referent and the name independently within one module. The extension separates entity, name claim and mention as records linked by claims only. |
+| `[^nymdist]` | denotation claim against name claim | P5 distinguishes resolving a name from treating it as an object. The extension distinguishes the denotation claim from the name claim and has no record for a name without bearer. |
+| `[^nym]` | none | P5 defines a canonical name or name component as a nym without a bearer. The extension has no kind for it. |
+| `[^variants]` | several name claims per entity, `language` | P5 holds any number of typed, language-tagged forms without prioritization. The extension holds them as coexisting claims with a required language tag and no base form; the kind of a form has no field. |
+| `[^datable]` | `valid` on name claims and statements | P5 dates name forms and description elements through `att.datable`. The extension dates them through the validity field of the claim with `from` and `until`; the bounds `notBefore` and `notAfter` and the point `when` have no field. |
+| `[^nymrefclass]`, `[^nymrefchapter]`, `[^inherit]` | v0.1 relation between name claims | P5 reaches a canonical form through `nymRef`, and the sources disagree whether from the object named or from the name. The extension links two name claims by a relation, which agrees with both readings when the forms hang on one entity and with neither when the canonical form has no bearer. |
+| `[^person]` | entity of kind `person` | `person` provides information about an identifiable individual. The entity holds identity, and the information becomes claims. |
+| `[^record]` | entity against mention | P5 separates the record from references to it and keeps the way an organization is named in a context in the naming element. The extension keeps the form in context as the mention's selected text and the knowledge as claims. |
+| `[^idno]` | alignment claims on the entity | P5 records refer to external authorities through `idno`. The extension records them as alignment claims with agent, instant and relation kind. |
+| `[^lyon]` | one entity, two name claims with `valid` | P5 lets an encoder regard a city and its predecessor as one place with two dated names. The extension has one entity with two dated name claims and no field for the reason. |
+| `[^statements]` | statement kinds; alignments | P5 describes entity information as statements about traits, states, events and external resources. The extension has one statement kind with the first three as discriminator values and alignments for the fourth. |
+| `[^documentable]` | `agent`, `created`, `valid`, `supersedes`, v0.1 relations | P5 requires a statement about a life to be documentable, time-framed and relatable. The extension gives every statement an agent and instant, a validity scope, supersession and typed relations to other records, and no source pointer. |
+| `[^responsibility]` | `agent`, `certainty`, coexisting claims | P5 offers `cert`, `resp`, `evidence` and `source` and the coexistence of conflicting views. The extension has agent and certainty as claim fields and coexistence by construction, and no field for evidence or source. |
+| `[^nationality]` | statement with `value` or a participant entity | P5 presents three encodings as the same information, one with a coded value. The extension has one statement whose value is a string or a participant entity with alignments, so a coded value becomes a local entity. |
+| `[^relationelement]`, `[^relationchapter]` | statement of kind `relation`, participants of any kind | The element admits places, events, persons and objects while the chapter names persons, places and organizations. The extension admits every entity kind and records the disagreement as open. |
+| `[^canonical]` | denotation and alignment | P5 associates a representation with canonical information about its object in one attribute class. The extension splits the association into the denotation of a mention and the alignment of an entity. |
+| `[^key]`, `[^keycases]`, `[^keydoc]` | denotation to a local entity | `key` is a coded value resolved by local convention, with a documentation obligation for interchange. The extension makes the local entity ID the resolved value, the closed reference rule the convention and the package with its `base` the documentation. |
+| `[^ref]`, `[^refvalue]` | denotation plus alignments | `ref` locates an identity by one or more URIs pointing to elements or resources. The extension mints a local entity between the mention and the URIs and records one alignment per URI; a `ref` to an element in another document has no counterpart. |
+| `[^noprecedence]`, `[^simultaneous]` | coexisting claims | P5 gives no precedence when `key` and `ref` co-occur and discourages their simultaneous use. The extension has no precedence question, because a `key` becomes the entity and a `ref` its alignments, and where they name different things two denotation claims coexist. |
+| `[^boundary]` | the five constructs of 14.1 | The five-way division is the chapter's frame and no source states it. The extension is built on that frame, so its adequacy stands or falls with the posit. |
+| `[^mention]` | mention concept; entity kind | Covered as in 14.1. The open question about mentions that denote no identified entity stays. |
+| `[^name]` | name claim; relation between name claims | Covered for forms with a bearer. The nym stays uncovered. |
+| `[^individuals]` | relation between name claims for every entity kind | The extension applies one rule to names of every kind, which is the chapter's extension of the detachment to places and organizations; no source supports it for them. |
+| `[^separation]` | entity against mention for every kind | The extension separates record and reference for every entity kind, as the chapter reads the Guidelines' statement about organizations. |
+| `[^idnoread]` | alignment claims | The mapping of `idno` to alignment claims rests on the chapter's reading of the specList. |
+| `[^entity]` | entity holds identity only; name claims with `valid` | Covered. The reason two things count as one entity has no field. |
+| `[^extension]` | one statement kind for all four | The claim fields apply to traits, states, events and relations alike, which is the chapter's extension of the requirement stated for changes of state in a life. |
+| `[^claims]` | pattern fields; coexistence; withdrawal by supersession | Agent, certainty and validity correspond to `resp`, `cert` and the dating attributes; withdrawal is a superseding claim with status `withdrawn`. Evidence and source stay uncovered, and the participant kinds stay open. |
+| `[^inheritance]` | mapping rule for every naming element | The mapping treats every member of `att.naming` alike; the sources state the rules for `att.canonical` only. |
+| `[^denotation]` | denotation claim; several alignments for several URIs | Covered. Whether several URIs are several alignments on one entity or several denotations to several entities is a declared mapping option; a `ref` to an element in another document stays uncovered. |
+| `[^alignment]` | minted local entity; alignments | Covered. The documentation obligation of `key` becomes the agent of the claim and the `base` of the package. |
+| `[^questions]` | entity; agent of the denotation; status `withdrawn` | The entity is the additional object the P6 design chapter asks for, the responsibility marker becomes the agent of a denotation claim in the mapping of 14.6, and withdrawal is a status. The test against the constructs is the ledger of 14.6. |
+| uncovered | none | A name without bearer (the nym); feature structures for complex names; the kind of a name form; `evidence` and `source` of a statement; `notBefore`, `notAfter` and `when` of `att.datable`; a `ref` to an element in another document, which the identifier policy does not reach; the reason two things count as one entity; a negative denotation claim; a second agent's certainty about a claim, as section 13 records. |
+
+### 14.4 Conformance and operations
+
+The checks of section 5 apply to the new collections without change. The ID
+grammar gives `E_ID`, package-wide uniqueness gives `E_DUPLICATE_ID` for an
+entity, name, denotation, statement or nested alignment as for a reading
+node, closed references by category give `E_REFERENCE`, and a concept in the
+wrong role gives `E_TYPE`, for a statement type with role `node` as for a
+node with a relation concept. Every operation leaves its inputs unchanged
+under R10. Canonical comparison under R11 extends to the new collections,
+which sort by ID like every registry; nested alignments sort by ID like
+reading nodes; `participants` compare as a set ordered by entity and role;
+`parts` keep their order; `supersedes` compares as a set; an absent optional
+field stays distinct from a present one; and every string compares exactly.
+The append-only claim check of section 13 generalizes the profile's
+`E_CLAIM_REWRITE` to every claim kind of the extension.
+
+The extension needs the following diagnostics, the first five for the
+pattern fields of section 13 and the rest for its own record kinds.
+
+| Diagnostics | Meaning |
+|---|---|
+| `E_CLAIM_FIELD` | A pattern field fails its lexical form, its closed set or the order of validity bounds |
+| `E_CLAIM_SUPERSESSION` | `supersedes` names a claim of another kind, agent or subject, or a `withdrawn` claim supersedes nothing |
+| `E_CLAIM_CYCLE` | Supersession is cyclic |
+| `E_CLAIM_REWRITE` | A claim of a valid earlier package is missing or changed in the later package |
+| `E_BASE`, `E_ALIGNMENT` | `base` or a former base fails its grammar; an alignment `iri` or `relation` fails its form or set |
+| `E_ENTITY_KIND`, `E_STATEMENT_KIND`, `E_NAME_PART` | A kind of an entity, a statement or a name part is outside its closed set, or a part is malformed |
+| `E_LANGUAGE` | A name claim's language tag fails its lexical form |
+| `E_MENTION` | A denotation subject is no mention, or a reserved mention concept deviates from its exact record |
+| `E_PARTICIPANTS` | Participants are empty, malformed or repeat an entity-role pair |
+| `W_UNDENOTED` | A mention carries no current denotation claim |
+
+Diagnostic paths name the record as in section 5, such as
+`/denotations/2/mention` or `/entities/0/alignments/1/iri`. The extension
+adds two reference operations to the five of section 5.
+
+```python
+denotations_of(package, mention_id, include_withdrawn=False) -> {diagnostics, denotations}
+names_of(package, entity_id, include_withdrawn=False) -> {diagnostics, names}
+```
+
+`denotations_of` requires a valid package and returns deep copies of the
+current denotation claims whose subject is the mention, each extended with
+the `label` and `kind` of its entity, ordered by agent ID and then by claim
+ID. A claim is current when no claim supersedes it. Claims with status
+`withdrawn` appear only on request. An ID that is no mention gives
+`E_MENTION` at `/operation/mention` and no list; an invalid package returns
+its validation diagnostics and no list. The order conveys no authority, and
+the result decides nothing between the agents.
+
+`names_of` returns deep copies of the current name claims of the entity in
+validity order. Claims without `valid` come first; among the others, the
+order is ascending by `from` with an absent `from` first, then ascending by
+`until` with an absent `until` last, then by claim ID. Dates compare as
+strings, which orders a calendar unit before its subunits and follows
+calendar order for the grammar of section 13. The order conveys no base
+form and no authority. Both operations are the first two views a task needs
+over coexisting claims; a filter by agent or status is a caller's
+composition over the same package.
+
+The reference bindings receive the new collections under the preservation
+laws of the bindings document, with the XML record names `entity`, `name`,
+`denotation` and `statement`, the array children `alignment`, `participant`
+and `part`, and `binding_version` `0.2`. Every valid 0.2 fixture passes all
+three bindings and every binding change. The implementation lives beside
+the existing modules, as a proposal for the integrator, in
+`tools/models/entities.py`, its case suite in `experiments/abstract_text_v02/`
+with its own specification, cases and deterministic report, and its tests in
+`tests/models/test_entities.py`.
+
+### 14.5 RDF direction
+
+The rows extend the section 13 table and replace its planned row for entity,
+name and event. They state the direction of a binding to be specified under
+section 12 with its own loss matrix. Nothing in them is implemented.
+
+| Record kind | Candidate target | Without natural target |
+|---|---|---|
+| `entities` by `kind` | CIDOC CRM `E21 Person`, `E74 Group`, `E53 Place`, `E5 Event`, `E22 Human-Made Object`, and `E1 CRM Entity` for `other`; PROV `prov:Agent` where a person or group acts; `label` as `rdfs:label`; the record IRI as the subject of every triple about the entity | whether the IRI stands for the record or for the thing, which section 11 keeps apart and which the binding must state; the constitutive `kind`, since an RDF class assertion is a statement |
+| `names` | `E41 Appellation` reached through `P1 is identified by`, or `E33_E41 Linguistic Appellation` with `P72 has language` for `language`; `form` as `P190 has symbolic content`; parts as `P106 is composed of` with `P2 has type` for the part kind; `valid` through an `E13 Attribute Assignment` with `P4 has time-span` | the order of parts, which `P106` drops; the claim wrapper unless every name is an `E13` node |
+| mention plus `denotations` | Web Annotation `oa:Annotation` with `oa:motivatedBy oa:identifying`, the selection's `oa:SpecificResource` as target and the entity IRI as body, a second body with `oa:classifying` for the mention concept; `dcterms:creator`, `dcterms:created`; `prov:wasRevisionOf` for `supersedes` | `certainty` and `status`, for which CRMinf `I2 Belief` with `J5 holds to be` is a candidate; several denotations of one mention become several annotations, which preserves the coexistence |
+| `statements` | `E13 Attribute Assignment` with `P140 assigned attribute to` for the subject participant, `P141 assigned` for a further participant or the value, `P177 assigned property of type` for the aligned type concept, `P14 carried out by` for the agent, `P4 has time-span` for `valid`; a statement of kind `event` also as `E5 Event` with `P11 had participant` and `P14.1 in the role of`; PROV `prov:Activity` | the discriminator `kind`; role strings, for which `P14.1` needs an `E55 Type`; `value` strings, for which `P3 has note` is a weak candidate |
+| `alignments` on entities | `skos:exactMatch`, `skos:closeMatch`, `skos:broadMatch`, `skos:narrowMatch` as in section 13 | `exact` on an entity, where `skos:exactMatch` states nothing about identity and `owl:sameAs` entails it; the binding must choose one and state the entailment it accepts |
+
+### 14.6 Human acceptance and ledger
+
+Review each item with a separate **accept / revise / defer** decision and an
+example or reason, as in section 9. These are editorial decisions, and none
+of them approves source truth.
+
+1. Does an entity record with ID, label and a constitutive kind from six
+   values express the intended identity, including the rule that a change
+   of kind is a new entity, and which referents of the intended editions
+   fall outside the six kinds?
+2. Does the split of `key` and `ref` into a denotation claim to a local
+   entity and alignment claims on that entity, with several URIs as several
+   alignments on one entity by default, preserve what editors mean, and
+   where do they need a denotation that targets an IRI directly?
+3. Do coexisting denotation claims by different agents, with certainty and
+   without a privileged claim, represent identification disputes usefully,
+   and do the two operations suffice to review them?
+4. Is one statement kind with the discriminator trait, state, event and
+   relation, the participant entities as subject and a string value right
+   for prosopographical statements, and where must evidence and source
+   pointers enter the claim?
+5. Does the name claim with form, language tag, ordered parts and validity,
+   together with the name-to-name correspondence as a relation between name
+   claims, cover the onomastic practice of the intended editions, or is a
+   name-as-object kind needed?
+
+The rules below extend the ledger of section 6. Each names the observable
+distinction the implementation must keep and the origin of the requirement.
+
+| Rule | Observable distinction or constraint | Origin of requirement |
+|---|---|---|
+| R14 | An entity is identified by its ID; label and kind neither collapse nor split it, and an entity may exist without name, mention or statement. | Identity posit of 14.1, motivated by `[^record]` and `[^lyon]`. |
+| R15 | A denotation subject is a mention, a node or annotation with a reserved mention concept, and the concept classifies the expression only. | Mention posit, motivated by `[^rs]`, `[^placename]` and `[^type]`. |
+| R16 | Several denotation claims per mention coexist, none privileged, each targeting an entity only. | Coexistence posit, motivated by `[^noprecedence]` and `[^denotation]`. |
+| R17 | Name forms, parts, language and validity are claim content; several names per entity coexist without a base form. | Name posit, motivated by `[^variants]`, `[^datable]` and `[^components]`. |
+| R18 | A statement's subject is its participant entity set; kind, type, roles and value are content. | Statement posit, motivated by `[^documentable]`, `[^responsibility]` and `[^relationelement]`. |
+| R19 | Alignments and denotations entail nothing; no entity merge, no propagation, no external check. | Alignment posit of section 13 and `[^alignment]`. |
+| R20 | The claim rules of section 13 hold across every claim kind, and a claim of an earlier package is never rewritten. | Claim pattern of section 13. |
+
+The test ledger names the cases the implementer must satisfy before the
+extension is reported as built. Each case names the rules it challenges, and
+the runner rejects a suite that leaves a rule or an operation uncovered, as
+the v0.1 runner does.
+
+1. Minimal package. One entity of each kind and every other new collection
+   empty; valid, no warning, canonical bytes reproduce (R14, R11).
+2. Names without mentions. One entity with three name claims, one without
+   validity and two with overlapping validity, and one with parts; valid;
+   `names_of` returns the declared order (R17).
+3. One mention, one denotation. A reading node with `en-proper-noun` and an
+   annotation with `en-referring-string` over a discontinuous selection,
+   each with one denotation claim; `denotations_of` returns the claim with
+   label and kind of the entity (R15, R16).
+4. Conflicting denotations. Two agents identify one mention with two
+   entities, and one agent holds two identifications with certainties `high`
+   and `low`; the package is valid, the operation lists every claim, and
+   nothing is chosen (R16).
+5. Revision. One agent supersedes a denotation by another, then withdraws
+   it; the current view follows the chain and shows the withdrawal only on
+   request. A supersession across agents or across subjects, a `withdrawn`
+   claim without `supersedes`, a cycle and a claim removed from a later
+   package fail with their codes (R20).
+6. Negative denotations. A denotation whose `entity` is a concept, a version,
+   another mention or an IRI string fails with `E_REFERENCE`; a subject
+   whose concept is no mention concept, and a package whose reserved concept
+   record deviates, fail with `E_MENTION`. A mention that an agent has
+   ceased to identify is represented by a withdrawn claim or by the absence
+   of a claim, and the suite records that a negative claim has no kind
+   (R15, R16, R20).
+7. Closed sets and shapes. Each of `E_ENTITY_KIND`, `E_STATEMENT_KIND`,
+   `E_NAME_PART`, `E_LANGUAGE`, `E_PARTICIPANTS`, `E_ALIGNMENT` and
+   `E_CLAIM_FIELD` from one malformed record; `E_DUPLICATE_ID` between an
+   entity and a reading node; `E_TYPE` for a statement type with role
+   `node`; `W_UNDENOTED` for a mention without a claim (R14 to R19).
+8. P5 mapping of one diary fragment. The fragment is the paragraph of the
+   pinned England diary XML at `/*/*[2]/*[1]/*[2]/*[56]/*[2]`, in the
+   locator style of the editorial case study, in which three `persName`
+   occurrences carry `ref` with an edition URI and a GND URI each, two of
+   them with the same `ref` value and two of them with `resp`. The mapping
+   yields three mention nodes with `en-proper-noun` in one reading, two
+   entities of kind `person`, three denotation claims of which two denote
+   one entity (`[^synonym]`), two `exact` alignment claims per entity with
+   the mapper as agent, an agent record minted from each `resp` pointer
+   without resolving the person and used as the agent of that occurrence's
+   denotation claim, the mapper as agent where `resp` is absent, the run
+   instant as `created`, status `asserted` and no certainty. The fixture
+   keeps the CC BY-SA 4.0 attribution of the case study (R14 to R16, R19).
+9. Round trip with loss. The mapped package returns to a P5 fragment under a
+   declared projection and comes back; the returned package is compared
+   under R11, and the loss report of section 12 lists at least the agent,
+   instant and status of every denotation, of which P5 keeps `resp` only,
+   the entity label and kind, of which P5 keeps the element choice, the
+   agent and instant of every alignment, the `base`, and the `und`
+   language tag. The P5 fragment returned reproduces every `ref` URI in its
+   order and every `resp` pointer (R11, R19).
+
+Finite synthetic cases and one mapped fragment demonstrate these rules on
+supplied instances. They do not establish that the extension is adequate for
+the named-entity practice of any edition, and the boundary that section 9
+draws applies to this section without exception.
