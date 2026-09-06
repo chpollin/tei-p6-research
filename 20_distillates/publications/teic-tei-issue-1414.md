@@ -3,8 +3,9 @@ type: distillate
 source-type: publication
 reference: teic-tei-issue-1414
 topics: ["[[Metadata and Entities]]"]
-status: grounded
+status: validated
 checked:
+  machine-review: 2026-09-06
   validation: 2026-09-06
   quote: 2026-09-06
 created: 2026-09-06
@@ -19,40 +20,40 @@ entity, and what its comments and its closure record about that proposal.
 
 ## Core statements
 
-- The issue proposes that an entry in a placeography, personography or bibliography be able to point at another data structure holding further information about the same entity. ^s1
-  > "should be able to refer (using `@ref` or `@key`) to some other data structure" (https://github.com/TEIC/TEI/issues/1414, issue body, opening paragraph, 2015-12-15)
-- The issue states that reaching such a structure requires a local convention, for instance `@ref` on a `<placeName>` child of `<place>`. ^s2
-  > "is to develop some local convention like using `@ref` of a `<placeName>` child" (https://github.com/TEIC/TEI/issues/1414, issue body, second paragraph, 2015-12-15)
-- The issue names allowing `@ref` and `@key` on the record elements `<person>` and `<place>` as the way it considers best. ^s3
-  > "is by allowing `@ref` (and `@key` for the web-impaired) on `<person>` and `<place>`" (https://github.com/TEIC/TEI/issues/1414, issue body, closing paragraph, 2015-12-15)
-- A commenter supports the request and states that the existing linking of personographies to external authorities is less elegant than it could be. ^s4
-  > "linking personographies to external authorities isn't as elegant as it could be" (https://github.com/TEIC/TEI/issues/1414, comment 1, 2015-12-16)
-- A commenter reports that they would have used the corresponding attribute on `place` or `person` together with private URI schemes. ^s5
-  > "used the corresponding attribute on place or person and private uri schemes" (https://github.com/TEIC/TEI/issues/1414, comment 2, 2015-12-16)
-- A commenter objects that this route needs a schema or grammar for link sequences as soon as more than one private URI of the same scheme occurs. ^s6
-  > "you'd need a schema/grammar for link sequences, especially if you have more than one" (https://github.com/TEIC/TEI/issues/1414, comment 3, 2015-12-16)
+- The issue author writes that an entry in a placeography, personography, bibliography or whatever should be able to refer, using `ref` or `key`, to some other data structure that has further information about the same entity. ^s1
+  > "An entry in a placeography, personography, bibliography, or whatever should be able to refer (using `@ref` or `@key`) to some other data structure that has further information about the same entity." (https://github.com/TEIC/TEI/issues/1414, issue body, opening paragraph, 2015-12-15)
+- The issue author writes of developing some local convention like using `ref` of a `<placeName>` child of `<place>`. ^s2
+  > "is to develop some local convention like using `@ref` of a `<placeName>` child of `<place>`" (https://github.com/TEIC/TEI/issues/1414, issue body, second paragraph, 2015-12-15)
+- The issue author writes that they think the best way to do this is by allowing `ref`, and `key` for the web-impaired, on `<person>` and `<place>`. ^s3
+  > "I think the best way to do this is by allowing `@ref` (and `@key` for the web-impaired) on `<person>` and `<place>`" (https://github.com/TEIC/TEI/issues/1414, issue body, closing paragraph, 2015-12-15)
+- A commenter writes a plus one and states that linking personographies to external authorities is not as elegant as it could be. ^s4
+  > "+1 linking personographies to external authorities isn't as elegant as it could be." (https://github.com/TEIC/TEI/issues/1414, comment 1, 2015-12-16)
+- A commenter writes that they would have used the corresponding attribute on `place` or `person` and private uri schemes. ^s5
+  > "I would have used the corresponding attribute on place or person and private uri schemes." (https://github.com/TEIC/TEI/issues/1414, comment 2, 2015-12-16)
+- A commenter writes that a schema or grammar for link sequences would be needed, especially where more than one private URI of the same scheme is present. ^s6
+  > "you'd need a schema/grammar for link sequences, especially if you have more than one private URI of the same scheme there." (https://github.com/TEIC/TEI/issues/1414, comment 3, 2015-12-16)
 - A commenter records that `@ref` can already hold several URIs separated by white-space. ^s7
   > "I just realised that `@ref` can hold multiple URIs separated by white-space" (https://github.com/TEIC/TEI/issues/1414, comment 5, 2015-12-16)
-- A commenter reports the practice of holding the external identifier in an `<idno>` of type uri inside the structured record element. ^s8
-  > "We're using `<idno type="uri">http://lccn.loc.gov/n80051862</uri>` as a child of (structured)" (https://github.com/TEIC/TEI/issues/1414, comment 6, 2015-12-16)
-- A commenter calls that route more precise and scalable than supplying several URI values in a single attribute. ^s9
-  > "a more precise and scaleable way than does simply providing multiple URI values" (https://github.com/TEIC/TEI/issues/1414, comment 7, 2015-12-16)
-- A comment attributes to a Council sub-group the position that a single TEI Guidelines endorsed mechanism for this purpose is required. ^s10
-  > "Council sub-group thinks conceptually the requirement for a single TEI Guidelines endorsed" (https://github.com/TEIC/TEI/issues/1414, comment 8, 2016-04-25)
-- The same comment states that the implementation of that mechanism remains to be discussed. ^s11
+- A commenter reports using an `<idno>` of type uri as a child of a structured `<place>` or `<person>`. ^s8
+  > "We're using `<idno type="uri">http://lccn.loc.gov/n80051862</uri>` as a child of (structured) `<place>`, `<person>` etc." (https://github.com/TEIC/TEI/issues/1414, comment 6, 2015-12-16)
+- A commenter writes that it allows multiple links to be represented in a more precise and scaleable way than does simply providing multiple URI values for a single attribute. ^s9
+  > "it allows you to represent multiple links in a more precise and scaleable way than does simply providing multiple URI values for a single attribute." (https://github.com/TEIC/TEI/issues/1414, comment 7, 2015-12-16)
+- A commenter reports that the Council sub-group thinks conceptually that the requirement for a single TEI Guidelines endorsed mechanism for this purpose is a Go and no longer needs discussion. ^s10
+  > "Council sub-group thinks conceptually the requirement for a single TEI Guidelines endorsed mechanism for this purpose is a "Go" (no longer "needs discussion")." (https://github.com/TEIC/TEI/issues/1414, comment 8, 2016-04-25)
+- A commenter writes that the details of implementation do require discussion. ^s11
   > "The details of implementation do require discussion." (https://github.com/TEIC/TEI/issues/1414, comment 8, 2016-04-25)
-- The same comment records a leaning towards permitting `<idno>` as a direct, probably first, child of `<person>` and `<place>`. ^s12
+- A comment records a leaning towards permitting `<idno>` as a direct, probably first, child of `<person>` and `<place>`. ^s12
   > "We lean towards permitting `<idno>` as a direct (probably 1st) child of `<person>`, `<place>`" (https://github.com/TEIC/TEI/issues/1414, comment 8, 2016-04-25)
 - A comment notes that the content of some of those elements has positions where `<idno>` cannot stand. ^s13
   > "there are places in the content of some of those elements that `<idno>` cannot go" (https://github.com/TEIC/TEI/issues/1414, comment 10, 2016-04-25)
-- A comment summarizes the discussion and names adding `<idno>` as a first child of the record elements the short-term solution. ^s14
-  > "short-term solution is to add `<idno>` as a first child for ogrophy elements" (https://github.com/TEIC/TEI/issues/1414, comment 12, 2016-09-26)
+- A commenter summarizes the discussion and names as the short-term solution adding `<idno>` as a first child for ogrophy elements. ^s14
+  > "To summarize the discussion: short-term solution is to add `<idno>` as a first child for ogrophy elements" (https://github.com/TEIC/TEI/issues/1414, comment 12, 2016-09-26)
 - A comment of 2019-05-07 states that `person`, `place`, `org` and `bibl` allow `idno` at that time and that `event` and `nym` do not. ^s15
   > "`person`, `place`, `org` and `bibl` all allow for `idno`. Missing from `event` and `nym`" (https://github.com/TEIC/TEI/issues/1414, comment 13, 2019-05-07)
 - A comment of 2019-07-10 asks whether the issue can be closed and reports that `idno` had been added to `event` and `nym` on 7 May. ^s16
   > "can we close this? You added idno to event and nym on May 7" (https://github.com/TEIC/TEI/issues/1414, comment 15, 2019-07-10)
-- The last recorded comment holds that the issue can be closed and raises whether a passage about this use of `idno` should be added to the Guidelines. ^s17
-  > "I think we can close it, unless we think a passage about this use" (https://github.com/TEIC/TEI/issues/1414, comment 16, 2019-07-15)
+- A commenter writes that they think it can be closed unless a passage about this use of `idno` should be added into GL. ^s17
+  > "I think we can close it, unless we think a passage about this use of `idno` should be added into GL?" (https://github.com/TEIC/TEI/issues/1414, comment 16, 2019-07-15)
 
 ## Terms
 

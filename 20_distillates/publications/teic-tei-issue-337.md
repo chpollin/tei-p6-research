@@ -3,8 +3,9 @@ type: distillate
 source-type: publication
 reference: teic-tei-issue-337
 topics: ["[[Metadata and Entities]]"]
-status: grounded
+status: validated
 checked:
+  machine-review: 2026-09-06
   validation: 2026-09-06
   quote: 2026-09-06
 created: 2026-09-06
@@ -21,51 +22,51 @@ This distillate reports the proposal, the discussion and the recorded outcome of
   > "Per discussion at TEI Council meeting in Paris in November 2011" (https://github.com/TEIC/TEI/issues/337, issue description, 2011-11-13)
 - The issue author reports an agreement that all uses of `key` can be handled by `ref`. ^s2
   > "we agreed that uses of `@key` can all be handled by `@ref`" (https://github.com/TEIC/TEI/issues/337, issue description, 2011-11-13)
-- The issue gives a URN as the value form of the replacing `ref` attribute. ^s3
+- The issue author gives a URN as the value form for `ref`. ^s3
   > "using ref="urn:&lt;NID&gt;:&lt;NSS&gt;"" (https://github.com/TEIC/TEI/issues/337, issue description, 2011-11-13)
 - The issue author reports a wish to deprecate `key` some day, held back by how widely the attribute is used at the time of writing. ^s4
   > "deprecate `@key` some day but that it's too widely used today to do so" (https://github.com/TEIC/TEI/issues/337, issue description, 2011-11-13)
-- The issue announces an interim measure that changes the Guidelines so that readers are told to switch to `ref`. ^s5
-  > "modify the Guidelines to make the point that people should switch to `@ref`" (https://github.com/TEIC/TEI/issues/337, issue description, 2011-11-13)
-- A commenter offers an alternative to the URN with a non-registered NID that the issue proposes. ^s6
-  > "As an alternative to using a URN with a non-registered NID" (https://github.com/TEIC/TEI/issues/337, comment 3 of 21, 2011-11-13)
-- The same commenter states that deciding between the two value forms needs someone with a better understanding of the matter. ^s7
+- The issue author writes that as an interim measure the Guidelines will be modified to make the point that people should switch to `ref` wherever `key` is mentioned. ^s5
+  > "As an interim measure, we will modify the Guidelines to make the point that people should switch to `@ref` wherever `@key` is mentioned." (https://github.com/TEIC/TEI/issues/337, issue description, 2011-11-13)
+- A commenter writes that as an alternative to using a URN with a non-registered NID one could use a `ref` value built from a scheme and a hierarchical part. ^s6
+  > "As an alternative to using a URN with a non-registered NID, you could use ref="&lt;scheme&gt;:&lt;hierarchicalpart&gt;"" (https://github.com/TEIC/TEI/issues/337, comment 3 of 21, 2011-11-13)
+- A commenter writes that someone who better understands these things must be found to know which is better. ^s7
   > "Need to find someone who better understands these things to know which is better" (https://github.com/TEIC/TEI/issues/337, comment 3 of 21, 2011-11-13)
-- A commenter relays a report that a URI with a non-registered scheme was judged slightly less abusive. ^s8
-  > "a URI with a non-registered scheme was slightly less abusive" (https://github.com/TEIC/TEI/issues/337, comment 7 of 21, 2011-11-20)
-- A commenter relays an emailed opinion that asks why an http URL is not used, so that people who need to find out what the referent is can do so. ^s9
+- A commenter reports that at Oxford a URI with a non-registered scheme was felt to be slightly less abusive. ^s8
+  > "at Oxford felt that a URI with a non-registered scheme was slightly less abusive." (https://github.com/TEIC/TEI/issues/337, comment 7 of 21, 2011-11-20)
+- A commenter connects not being an http URL with people who need to find out what the thing is. ^s9
   > "not an http URL, so people who need to find out what the thing" (https://github.com/TEIC/TEI/issues/337, comment 9 of 21, 2011-12-04)
-- The same relayed opinion names a PURL for the case where permanence is the concern. ^s10
+- A commenter asks why it is not made a PURL where permanence is the concern. ^s10
   > "you are concerned about permanence, why not make it a PURL?" (https://github.com/TEIC/TEI/issues/337, comment 9 of 21, 2011-12-04)
-- A commenter suggests folding the ticket into a proposed subcommittee. ^s11
+- A commenter suggests that this be folded into the subcommittee. ^s11
   > "I suggest that this get folded into the subcommittee" (https://github.com/TEIC/TEI/issues/337, comment 10 of 21, 2011-12-08)
 - A commenter agrees with the soft deprecation of `key` that the issue proposes. ^s12
   > "I agree with the original ticket, for soft deprecation of `@key`" (https://github.com/TEIC/TEI/issues/337, comment 11 of 21, 2012-04-13)
-- The same commenter records uncertainty between recommending URIs and URNs together with a leaning towards unregulated URIs. ^s13
-  > "recommending URIs vs URNs but lean towards unregulated URIs" (https://github.com/TEIC/TEI/issues/337, comment 11 of 21, 2012-04-13)
-- A commenter records that one participant would choose between URI and URN and carry the ticket out. ^s14
+- A commenter writes that they are less certain whether URIs or URNs should be recommended and lean towards unregulated URIs at the moment. ^s13
+  > "I'm less certain about whether we should be recommending URIs vs URNs but lean towards unregulated URIs at the moment." (https://github.com/TEIC/TEI/issues/337, comment 11 of 21, 2012-04-13)
+- A commenter writes that URI or URN will be chosen and this ticket carried out now. ^s14
   > "will choose URI or URN and carry out this ticket now" (https://github.com/TEIC/TEI/issues/337, comment 12 of 21, 2012-04-16)
-- The same commenter states that a value whose scheme is not internal is to be left as `key`. ^s15
-  > "should be left as key because it's not an internal scheme" (https://github.com/TEIC/TEI/issues/337, comment 12 of 21, 2012-04-16)
-- A commenter reports that the bar for registering a URI scheme is fairly high. ^s16
+- A commenter writes that `<country key="FR"/>` should be left as key because it is not an internal scheme. ^s15
+  > "&lt;country key="FR"/&gt; should be left as key because it's not an internal scheme." (https://github.com/TEIC/TEI/issues/337, comment 12 of 21, 2012-04-16)
+- A commenter writes that the bar for registration is fairly high. ^s16
   > "the bar for registration is fairly high" (https://github.com/TEIC/TEI/issues/337, comment 13 of 21, 2012-05-20)
-- The same commenter judges that most uses of `key` would not satisfy the stated requirements. ^s17
-  > "most uses of `@key` would not satisfy these" (https://github.com/TEIC/TEI/issues/337, comment 13 of 21, 2012-05-20)
-- The same commenter reports that RFC 2141 never advanced beyond being a proposed standard. ^s18
+- A commenter writes that it seems to them that most uses of `key` would not satisfy these. ^s17
+  > "It seems to me that most uses of `@key` would not satisfy these." (https://github.com/TEIC/TEI/issues/337, comment 13 of 21, 2012-05-20)
+- A commenter writes that RFC 2141 never advanced beyond being a proposed standard. ^s18
   > "RFC 2141 never advanced beyond being a proposed standard" (https://github.com/TEIC/TEI/issues/337, comment 13 of 21, 2012-05-20)
-- The same commenter identifies the URI scheme described in RFC 4151 as exactly what is needed. ^s19
-  > "URI scheme (as described in RFC 4151) -- appears to be exactly what we need" (https://github.com/TEIC/TEI/issues/337, comment 13 of 21, 2012-05-20)
-- The same commenter announces changing all uses of `key` in Guidelines examples to one format. ^s20
-  > "change all uses of `@key` in examples in the Guidelines to use this format" (https://github.com/TEIC/TEI/issues/337, comment 13 of 21, 2012-05-20)
-- That announced change excludes examples which already refer to a particular external vocabulary. ^s21
-  > "which already refer to a particular external vocabulary" (https://github.com/TEIC/TEI/issues/337, comment 13 of 21, 2012-05-20)
-- The same commenter states that the use of tag URIs does not prohibit any user of the TEI. ^s22
-  > "use of tag URIs does not prohibit any user of the TEI" (https://github.com/TEIC/TEI/issues/337, comment 13 of 21, 2012-05-20)
-- A commenter reports the change implemented at a named repository revision. ^s23
+- A commenter writes that the IANA-registered tag URI scheme described in RFC 4151 appears to be exactly what is needed as a replacement for a deprecated `key`. ^s19
+  > "IANA-registered "tag" URI scheme (as described in RFC 4151) -- appears to be exactly what we need as a replacement for a deprecated `@key`." (https://github.com/TEIC/TEI/issues/337, comment 13 of 21, 2012-05-20)
+- A commenter writes that they will change all uses of `key` in examples in the Guidelines to use this format. ^s20
+  > "So I will change all uses of `@key` in examples in the Guidelines to use this format" (https://github.com/TEIC/TEI/issues/337, comment 13 of 21, 2012-05-20)
+- A commenter excepts those like `<country key="FR"/>` which already refer to a particular external vocabulary. ^s21
+  > "except for those like &lt;country key="FR"/&gt; which already refer to a particular external vocabulary." (https://github.com/TEIC/TEI/issues/337, comment 13 of 21, 2012-05-20)
+- A commenter writes that the use of tag URIs does not prohibit any user of the TEI from using a registered or unregistered scheme on a URN or URI if they prefer. ^s22
+  > "Note that use of tag URIs does not prohibit any user of the TEI from using a registered or unregistered scheme on a URN or URI if they prefer." (https://github.com/TEIC/TEI/issues/337, comment 13 of 21, 2012-05-20)
+- A commenter writes that it was implemented at revision 10374. ^s23
   > "Implemented at revision 10374." (https://github.com/TEIC/TEI/issues/337, comment 14 of 21, 2012-05-20)
-- A commenter states that the result looks fine and that they are closing the ticket. ^s24
+- A commenter writes that this looks fine to them and that they are closing the ticket. ^s24
   > "This looks fine to me, so I am closing the ticket" (https://github.com/TEIC/TEI/issues/337, comment 19 of 21, 2012-06-17)
-- The migrated thread records a status change from open to closed. ^s25
+- A comment records a status change from open to closed. ^s25
   > "**status**: open --> closed" (https://github.com/TEIC/TEI/issues/337, comment 20 of 21, 2012-06-17)
 - The last comment reports, with reference to a Council working paper, that text was added to `<remarks>`. ^s26
   > "Per http://www.tei-c.org/Activities/Council/Working/tcw27.xml, added text to `<remarks>`" (https://github.com/TEIC/TEI/issues/337, comment 21 of 21, 2013-06-21)

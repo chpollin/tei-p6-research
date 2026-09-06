@@ -754,3 +754,26 @@ carries it, and manifests are append-only, so the family label stays partial
 until the next REST snapshot under the two-stage collector rather than being
 rewritten. The material document states that the family is complete only
 with both run manifests.
+
+## 2026-09-06 — Thread quotations lengthened to one sentence
+
+The second entity run admitted three GitHub threads as citation-only sources
+under a quotation cap of fifteen words, and the fresh-context review rejected
+about half of their judged pairs while every specification pair passed. The
+cause was the instrument. A fragment of fifteen words rarely carries the frame
+of a statement, meaning who writes, what a pronoun refers to and whether a
+commenter proposes, reports or agrees, so the statements supplied that frame
+from the surrounding comment, which the reviewer cannot see. Two remedies were
+applied together and are now the rule for thread distillates in
+[[knowledge/data]]. A quotation may run to one complete sentence of a comment,
+still an exact substring of the raw snapshot and starting after any personal
+name, and a statement carries only what its quotation shows, with anaphora
+left as the source gives them and every comment attributed to the issue author
+or to a commenter. The locator the reviewer sees carries the comment number
+and its date and no author identity, so a cross-pair identity such as "the
+same commenter" cannot be verified from one pair and was removed throughout.
+After the reformulation every thread pair passed, the twelve distillates of
+the run are validated, and the first-round records stay in the run directory.
+The remedy has a limit where a comment carries hard line breaks or a sentence
+continues into quoted third-party text, because the quotation then cannot be
+lengthened and only narrowing remains.

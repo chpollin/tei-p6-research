@@ -3,8 +3,9 @@ type: distillate
 source-type: document
 representation: "[[10_markdown/documents/tei-p5-state-4.12.0]]"
 topics: ["[[Metadata and Entities]]"]
-status: grounded
+status: validated
 checked:
+  machine-review: 2026-09-06
   validation: 2026-09-06
 created: 2026-09-06
 updated: 2026-09-06

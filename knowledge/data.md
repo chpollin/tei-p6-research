@@ -454,7 +454,13 @@ admitted as citation-only publication sources. The raw thread stays in the
 private raw store. The reference record in `references/` carries identifier,
 URL, dates and roles. The public distillate carries the structured account of
 the thread with short quotations checked against the raw snapshot, the same
-path the research-wave-one literature already uses. Personal names of third
+path the research-wave-one literature already uses. A quotation from a thread
+runs to at most one complete sentence of one comment, starts after any
+personal name and stays an exact substring of the raw snapshot, because a
+shorter fragment cannot carry the frame of the statement it supports
+(decision of 2026-09-06 in [[knowledge/journal]]); the statement itself
+carries only what the quotation shows and attributes each comment to the
+issue author or to a commenter. Personal names of third
 parties appear in that research data only, and documentation about the work
 names roles and institutions.
 

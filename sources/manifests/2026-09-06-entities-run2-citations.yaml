@@ -79,13 +79,13 @@ admissions:
     locator: issue description, 2011-11-13
   - text: deprecate `@key` some day but that it's too widely used today to do so
     locator: issue description, 2011-11-13
-  - text: modify the Guidelines to make the point that people should switch to `@ref`
+  - text: As an interim measure, we will modify the Guidelines to make the point that people should switch to `@ref` wherever `@key` is mentioned.
     locator: issue description, 2011-11-13
-  - text: As an alternative to using a URN with a non-registered NID
+  - text: As an alternative to using a URN with a non-registered NID, you could use ref="&lt;scheme&gt;:&lt;hierarchicalpart&gt;"
     locator: comment 3 of 21, 2011-11-13
   - text: Need to find someone who better understands these things to know which is better
     locator: comment 3 of 21, 2011-11-13
-  - text: a URI with a non-registered scheme was slightly less abusive
+  - text: at Oxford felt that a URI with a non-registered scheme was slightly less abusive.
     locator: comment 7 of 21, 2011-11-20
   - text: not an http URL, so people who need to find out what the thing
     locator: comment 9 of 21, 2011-12-04
@@ -95,25 +95,25 @@ admissions:
     locator: comment 10 of 21, 2011-12-08
   - text: I agree with the original ticket, for soft deprecation of `@key`
     locator: comment 11 of 21, 2012-04-13
-  - text: recommending URIs vs URNs but lean towards unregulated URIs
+  - text: I'm less certain about whether we should be recommending URIs vs URNs but lean towards unregulated URIs at the moment.
     locator: comment 11 of 21, 2012-04-13
   - text: will choose URI or URN and carry out this ticket now
     locator: comment 12 of 21, 2012-04-16
-  - text: should be left as key because it's not an internal scheme
+  - text: '&lt;country key="FR"/&gt; should be left as key because it''s not an internal scheme.'
     locator: comment 12 of 21, 2012-04-16
   - text: the bar for registration is fairly high
     locator: comment 13 of 21, 2012-05-20
-  - text: most uses of `@key` would not satisfy these
+  - text: It seems to me that most uses of `@key` would not satisfy these.
     locator: comment 13 of 21, 2012-05-20
   - text: RFC 2141 never advanced beyond being a proposed standard
     locator: comment 13 of 21, 2012-05-20
-  - text: URI scheme (as described in RFC 4151) -- appears to be exactly what we need
+  - text: IANA-registered "tag" URI scheme (as described in RFC 4151) -- appears to be exactly what we need as a replacement for a deprecated `@key`.
     locator: comment 13 of 21, 2012-05-20
-  - text: change all uses of `@key` in examples in the Guidelines to use this format
+  - text: So I will change all uses of `@key` in examples in the Guidelines to use this format
     locator: comment 13 of 21, 2012-05-20
-  - text: which already refer to a particular external vocabulary
+  - text: except for those like &lt;country key="FR"/&gt; which already refer to a particular external vocabulary.
     locator: comment 13 of 21, 2012-05-20
-  - text: use of tag URIs does not prohibit any user of the TEI
+  - text: Note that use of tag URIs does not prohibit any user of the TEI from using a registered or unregistered scheme on a URN or URI if they prefer.
     locator: comment 13 of 21, 2012-05-20
   - text: Implemented at revision 10374.
     locator: comment 14 of 21, 2012-05-20
@@ -175,7 +175,7 @@ admissions:
   quotes:
   - text: The technical declaration of elements such as persName list the attribute classes
     locator: issue body, 2025-08-04
-  - text: as if they were subclasses of the previous one, which is not the case
+  - text: list the attribute classes att.personal, att.naming, and att.canonical as if they were subclasses of the previous one, which is not the case.
     locator: issue body, 2025-08-04
   - text: Maybe this results from an error in the ODD?
     locator: issue body, 2025-08-04
@@ -197,7 +197,7 @@ admissions:
     locator: third comment, 2025-08-06
   - text: It would be a fairly major upheaval to make all class names reflect the hierarchy
     locator: third comment, 2025-08-06
-  - text: there are some cases where a class inherits from more than one other class
+  - text: And i suspect there are some cases where a class inherits from more than one other class
     locator: third comment, 2025-08-06
   - text: so it's not a simple hierarchy anyway
     locator: third comment, 2025-08-06
@@ -258,25 +258,25 @@ admissions:
   authority: Historical participant proposal and discussion; the membership of the record elements at the pinned release is read in the admitted blobs.
   instruction_trust: none
   quotes:
-  - text: should be able to refer (using `@ref` or `@key`) to some other data structure
+  - text: An entry in a placeography, personography, bibliography, or whatever should be able to refer (using `@ref` or `@key`) to some other data structure that has further information about the same entity.
     locator: issue body, opening paragraph, 2015-12-15
-  - text: is to develop some local convention like using `@ref` of a `<placeName>` child
+  - text: is to develop some local convention like using `@ref` of a `<placeName>` child of `<place>`
     locator: issue body, second paragraph, 2015-12-15
-  - text: is by allowing `@ref` (and `@key` for the web-impaired) on `<person>` and `<place>`
+  - text: I think the best way to do this is by allowing `@ref` (and `@key` for the web-impaired) on `<person>` and `<place>`
     locator: issue body, closing paragraph, 2015-12-15
-  - text: linking personographies to external authorities isn't as elegant as it could be
+  - text: +1 linking personographies to external authorities isn't as elegant as it could be.
     locator: comment 1, 2015-12-16
-  - text: used the corresponding attribute on place or person and private uri schemes
+  - text: I would have used the corresponding attribute on place or person and private uri schemes.
     locator: comment 2, 2015-12-16
-  - text: you'd need a schema/grammar for link sequences, especially if you have more than one
+  - text: you'd need a schema/grammar for link sequences, especially if you have more than one private URI of the same scheme there.
     locator: comment 3, 2015-12-16
   - text: I just realised that `@ref` can hold multiple URIs separated by white-space
     locator: comment 5, 2015-12-16
-  - text: We're using `<idno type="uri">http://lccn.loc.gov/n80051862</uri>` as a child of (structured)
+  - text: We're using `<idno type="uri">http://lccn.loc.gov/n80051862</uri>` as a child of (structured) `<place>`, `<person>` etc.
     locator: comment 6, 2015-12-16
-  - text: a more precise and scaleable way than does simply providing multiple URI values
+  - text: it allows you to represent multiple links in a more precise and scaleable way than does simply providing multiple URI values for a single attribute.
     locator: comment 7, 2015-12-16
-  - text: Council sub-group thinks conceptually the requirement for a single TEI Guidelines endorsed
+  - text: Council sub-group thinks conceptually the requirement for a single TEI Guidelines endorsed mechanism for this purpose is a "Go" (no longer "needs discussion").
     locator: comment 8, 2016-04-25
   - text: The details of implementation do require discussion.
     locator: comment 8, 2016-04-25
@@ -284,13 +284,13 @@ admissions:
     locator: comment 8, 2016-04-25
   - text: there are places in the content of some of those elements that `<idno>` cannot go
     locator: comment 10, 2016-04-25
-  - text: short-term solution is to add `<idno>` as a first child for ogrophy elements
+  - text: 'To summarize the discussion: short-term solution is to add `<idno>` as a first child for ogrophy elements'
     locator: comment 12, 2016-09-26
   - text: '`person`, `place`, `org` and `bibl` all allow for `idno`. Missing from `event` and `nym`'
     locator: comment 13, 2019-05-07
   - text: can we close this? You added idno to event and nym on May 7
     locator: comment 15, 2019-07-10
-  - text: I think we can close it, unless we think a passage about this use
+  - text: I think we can close it, unless we think a passage about this use of `idno` should be added into GL?
     locator: comment 16, 2019-07-15
   distillate_path: 20_distillates/publications/teic-tei-issue-1414.md
 requests:

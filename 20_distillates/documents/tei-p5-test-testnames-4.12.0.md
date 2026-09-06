@@ -3,8 +3,9 @@ type: distillate
 source-type: document
 representation: "[[10_markdown/documents/tei-p5-test-testnames-4.12.0]]"
 topics: ["[[Metadata and Entities]]"]
-status: grounded
+status: validated
 checked:
+  machine-review: 2026-09-06
   validation: 2026-09-06
 created: 2026-09-06
 updated: 2026-09-06
@@ -34,7 +35,7 @@ This distillate reports how the release's own test document for names and dates 
 - In the TEI P5 4.12.0 test document testnames.xml, the record at block 134 expresses a relation to another person as a `state` whose `ref` holds a fragment identifier naming a relationship, with the related person given inside a `label` by a `persName` that carries only `xml:lang` and points to no record, and the record carries no `relation` element. [[10_markdown/documents/tei-p5-test-testnames-4.12.0#^b134]] ^s16
 - In the TEI P5 4.12.0 test document testnames.xml, the record at block 135 dates birth and death by a `when` attribute on empty `birth` and `death` elements and states the person's age as a bare number in an `age` element that carries no attribute relating that number to either date. [[10_markdown/documents/tei-p5-test-testnames-4.12.0#^b135]] ^s17
 - In the TEI P5 4.12.0 test document testnames.xml, the place names inside `birth` and `death` of the record at block 137 consist of a `settlement` and a `country` element carrying neither `type` nor `key`, so those places are named without being identified, while the same record identifies a nationality by a `key` on an empty `nationality` element. [[10_markdown/documents/tei-p5-test-testnames-4.12.0#^b137]] ^s18
-- In the TEI P5 4.12.0 test document testnames.xml, the person record at block 143 carries neither `xml:id` nor `role`, splits the name into a `forename` and a `surname` inside a `persName` where none of the three elements carries an attribute, and holds a `birth` element that is present and empty, so nothing in the record identifies the person apart from the name components. [[10_markdown/documents/tei-p5-test-testnames-4.12.0#^b143]] ^s19
+- In the TEI P5 4.12.0 test document testnames.xml, the person record at block 143 carries neither `xml:id` nor `role`, splits the name into a `forename` and a `surname` inside a `persName` where none of the three elements carries an attribute, and holds a `birth` element that is present and empty. [[10_markdown/documents/tei-p5-test-testnames-4.12.0#^b143]] ^s19
 - In the TEI P5 4.12.0 test document testnames.xml, the paragraph at the location `/TEI[1]/text[1]/body[1]/p[1]`, recorded as block 152, is empty, so this location carries no running text in which a name could be marked. [[10_markdown/documents/tei-p5-test-testnames-4.12.0#^b152]] ^s20
 
 ## Terms
