@@ -1,6 +1,8 @@
 ---
 type: assertion
 topics: ["[[Abstract Model]]", "[[Annotation and Overlap]]"]
+phenomena: ["[[glossary/span-targeting]]"]
+related: ["[[40_output/02-abstract-model]]", "[[30_assertions/tei-fr363-proposes-target-on-span]]"]
 status: validated
 checked:
   validation: 2026-09-05

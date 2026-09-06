@@ -2,15 +2,27 @@
 type: moc
 topic: "Elements and Classes"
 created: 2026-09-04
-updated: 2026-09-04
+updated: 2026-09-06
 ---
 
 # MOC: Elements and Classes
 
-Diese Themenkarte bündelt belegte Aussagen zu Elementen, Attributen, model classes, attribute classes, Makros, Datentypen und ihren Vererbungsbeziehungen.
+This map gathers grounded statements about elements, attributes, model classes,
+attribute classes, macros, datatypes and their inheritance relations.
 
-Noch sind keine Assertions registriert.
+## Sources and distillates
+
+<!-- distillates:begin -->
+
+<!-- distillates:end -->
+
+## Assertions
+
+<!-- assertions:begin -->
+
+<!-- assertions:end -->
 
 ## Open questions
 
-- Wo erzeugt das Klassensystem von P5 semantisch begründete Wiederverwendung, und wo überträgt es historisch bedingte Komplexität?
+- Where does the P5 class system produce semantically motivated reuse, and where does
+  it carry forward historically contingent complexity?

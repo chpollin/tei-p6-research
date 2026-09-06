@@ -1,6 +1,8 @@
 ---
 type: assertion
 topics: ["[[Abstract Model]]", "[[Annotation and Overlap]]"]
+phenomena: ["[[glossary/quotation-selection-ambiguity]]", "[[glossary/stand-off-annotation]]"]
+related: ["[[40_output/06-annotation-and-overlap]]", "[[40_output/12-p6-design]]", "[[30_assertions/p5-annotation-refers-to-web-annotation-model]]"]
 status: validated
 checked:
   validation: 2026-09-05

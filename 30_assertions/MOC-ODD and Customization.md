@@ -2,15 +2,27 @@
 type: moc
 topic: "ODD and Customization"
 created: 2026-09-04
-updated: 2026-09-04
+updated: 2026-09-06
 ---
 
 # MOC: ODD and Customization
 
-Diese Themenkarte erschließt ODD als Spezifikations- und Anpassungssprache sowie die Regeln und Grenzen TEI-konformer Customization.
+This map covers ODD as a specification and customization language together with the
+rules and limits of TEI-conformant customization.
 
-Noch sind keine Assertions registriert.
+## Sources and distillates
+
+<!-- distillates:begin -->
+
+<!-- distillates:end -->
+
+## Assertions
+
+<!-- assertions:begin -->
+
+<!-- assertions:end -->
 
 ## Open questions
 
-- Welche semantischen Verpflichtungen einer Customization werden formal geprüft, und welche bleiben ausschließlich in Prosa dokumentiert?
+- Which semantic commitments of a customization are checked formally, and which
+  remain documented only in prose?

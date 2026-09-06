@@ -8,6 +8,8 @@ grounding:
   - "[[20_distillates/data/water-readings-2025#^s1]]"
   - "[[20_distillates/publications/example-2024-metering#^s1]]"
 contested-with: []
+phenomena: ["[[glossary/metering]]"]
+related: ["[[30_assertions/MOC-Water]]"]
 created: 2026-07-11
 updated: 2026-07-11
 ---

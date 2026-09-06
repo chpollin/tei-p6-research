@@ -2,7 +2,7 @@
 type: moc
 topic: "Abstract Model"
 created: 2026-09-04
-updated: 2026-09-05
+updated: 2026-09-06
 ---
 
 # MOC: Abstract Model
@@ -12,22 +12,26 @@ in the pinned P5 baseline. Independent definitions remain design hypotheses.
 
 ## Sources and distillates
 
-- [[20_distillates/documents/tei-p5-anchor-4.12.0]] — point identification.
-- [[20_distillates/documents/tei-p5-span-4.12.0]] — spans and node references.
-- [[20_distillates/documents/tei-p5-annotation-4.12.0]] — annotation definition.
-- [[20_distillates/publications/w3c-web-annotation-20170223]] — multiple quotation matches.
-- [[20_distillates/publications/piez2014range]] — optional hierarchy as a research choice.
-- [[20_distillates/publications/renear-wickett2010documents]] — string transformation and persistence.
+<!-- distillates:begin -->
+- [[20_distillates/documents/tei-p5-anchor-4.12.0]]
+- [[20_distillates/documents/tei-p5-annotation-4.12.0]]
+- [[20_distillates/documents/tei-p5-span-4.12.0]]
+- [[20_distillates/publications/piez2014range]]
+- [[20_distillates/publications/renear-wickett2010documents]]
+- [[20_distillates/publications/w3c-web-annotation-20170223]]
+<!-- distillates:end -->
 
 ## Assertions
 
-- [[30_assertions/p5-anchor-identifies-a-textual-point]] — point identification.
-- [[30_assertions/p5-span-associates-interpretation-with-text]] — annotation association.
-- [[30_assertions/p5-span-from-identifies-start-or-whole-node]] — two node addressing cases.
-- [[30_assertions/p5-annotation-refers-to-web-annotation-model]] — attributed definition.
-- [[30_assertions/w3c-quote-selection-can-match-multiple-sequences]] — a selector policy allowing plural matches.
-- [[30_assertions/piez-treats-optional-hierarchy-as-object-of-study]] — an attributed argument for studying hierarchy.
-- [[30_assertions/renear-wickett-distinguish-string-mapping-from-persistent-identity]] — an attributed distinction between strings and persistent objects.
+<!-- assertions:begin -->
+- [[30_assertions/p5-anchor-identifies-a-textual-point]] — In TEI P5 4.12.0, anchor identifies a point within a text
+- [[30_assertions/p5-annotation-refers-to-web-annotation-model]] — TEI P5 4.12.0 describes annotation as following the Web Annotation Data Model
+- [[30_assertions/p5-span-associates-interpretation-with-text]] — In TEI P5 4.12.0, span associates an interpretative annotation with a span of text
+- [[30_assertions/p5-span-from-identifies-start-or-whole-node]] — In TEI P5 4.12.0, span from identifies the starting node or, without to, the entire annotated node
+- [[30_assertions/piez-treats-optional-hierarchy-as-object-of-study]] — Piez treats optional hierarchy as an object of study
+- [[30_assertions/renear-wickett-distinguish-string-mapping-from-persistent-identity]] — Renear and Wickett describe editing strings as mapping rather than modifying a persistent entity
+- [[30_assertions/w3c-quote-selection-can-match-multiple-sequences]] — W3C quote selection can match multiple sequences
+<!-- assertions:end -->
 
 ## Open questions
 

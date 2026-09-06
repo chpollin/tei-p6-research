@@ -2,15 +2,27 @@
 type: moc
 topic: "Critical Apparatus"
 created: 2026-09-04
-updated: 2026-09-04
+updated: 2026-09-06
 ---
 
 # MOC: Critical Apparatus
 
-Diese Themenkarte erschließt die P5-Modellierung von Lemma, Lesarten, Textzeugen, Apparateinträgen, Lokalisierung und Variantenbeziehungen.
+This map covers the P5 modeling of lemma, readings, witnesses, apparatus entries,
+localization and relations between variants.
 
-Noch sind keine Assertions registriert.
+## Sources and distillates
+
+<!-- distillates:begin -->
+
+<!-- distillates:end -->
+
+## Assertions
+
+<!-- assertions:begin -->
+
+<!-- assertions:end -->
 
 ## Open questions
 
-- Welche konkurrierenden Apparatus-Methoden sind in P5 semantisch äquivalent, und wo unterscheiden sie sich im Informationsgehalt?
+- Which competing apparatus methods in P5 are semantically equivalent, and where do
+  they differ in information content?

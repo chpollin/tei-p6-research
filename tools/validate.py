@@ -9,8 +9,12 @@ against the anchors a document rests on, assertions that rest on the same
 anchors as another, footnote aliases that rename the assertion they cite, a
 production chain that holds no document at all, checks older than the content
 they judge, the source metadata of a representation, one representation and one
-distillate per source, and file names against the naming rule. The rules are
-defined in knowledge/schema.md; this script only enforces them.
+distillate per source, the navigation fields of an assertion, the generated
+regions of the state document, the topic maps and the glossary, and file names
+against the naming rule. The rules are defined in knowledge/schema.md; this
+script only enforces them. The generated regions are compared against what
+tools/inventory.py builds from the same files, which keeps their content in one
+place.
 
 Warnings report that a check found nothing to check, or found something that
 needs a human decision rather than a verdict. They are always printed and
@@ -24,8 +28,9 @@ Data anchors are re-run and compared by default; --no-computations skips that.
 
 --chapter narrows the run to one chapter of the output and, transitively, the
 assertions, distillates and representations it hangs on, so that the state of the
-rest of the vault does not enter its verdict. The checks that are decidable only
-over the whole vault stay out of that mode and are named in its closing lines.
+rest of the vault does not enter its verdict. The checks that speak about the
+vault rather than about this chapter's chain stay out of that mode and are named
+in its closing lines.
 
 Exit code 0 when no errors were found; warnings alone do not fail the run. In
 chapter mode any warning in scope fails the run as well, because there the run
@@ -44,6 +49,11 @@ from datetime import date
 from pathlib import Path
 
 import yaml
+
+if __package__ in (None, ""):  # run as a script, so the package root is off the path
+    sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+
+from tools.inventory import drift, regions
 
 CONTENT_FOLDERS = (
     "10_markdown",
@@ -75,6 +85,8 @@ FRONTMATTER_LINK_FIELDS = (
     "representation",
     "superseded-by",
     "contested-with",
+    "phenomena",
+    "related",
 )
 # The Dublin-Core-compatible source description every representation carries.
 # Presence is the contract; an empty value records that the source has none.
@@ -96,7 +108,9 @@ LAYER_BELOW = {
     "assertion": DISTILLATE_LAYER,
     "distillate": REPRESENTATION_LAYER,
 }
-VAULT_WIDE_CHECKS = ("W-EMPTY", "W-NO-OUTPUT")
+# Checks that speak about the vault rather than about one chapter's chain. The
+# generated regions navigate the whole vault and no chapter grounds in them.
+VAULT_WIDE_CHECKS = ("W-EMPTY", "W-NO-OUTPUT", "E-GENERATED")
 
 SOURCE_TYPES = frozenset({"document", "publication", "data"})
 CHANNELS = frozenset({"handover", "collection", "import", "deep-research"})
@@ -737,7 +751,30 @@ def _check_topics(doc: Doc, topic_names: set[str], report: Report) -> None:
             )
 
 
-def _check_assertion(doc: Doc, docs: dict[str, Doc], report: Report) -> None:
+def _check_phenomena(
+    doc: Doc, docs: dict[str, Doc], root: Path, report: Report
+) -> None:
+    """`phenomena` names the terms an assertion speaks about, and terms are glossary entries.
+
+    The field is navigation and carries no evidence, so the only thing to hold is
+    that its targets are the documents that define a term. A target that does not
+    exist at all is left to E-ANCHOR, which already speaks about it.
+    """
+    for target in _field_links(doc, "phenomena", report):
+        other = docs.get(target)
+        if other is None and not (
+            _exists_cased(root, f"{target}.md") or _exists_cased(root, target)
+        ):
+            continue
+        if other is None or other.fm.get("type") != "glossary":
+            report.error(
+                "E-PHENOMENON", doc.rel, f"phenomenon is no glossary entry: {target}"
+            )
+
+
+def _check_assertion(
+    doc: Doc, docs: dict[str, Doc], root: Path, report: Report
+) -> None:
     grounding = [
         (target, block)
         for raw in _list_field(doc, "grounding", report)
@@ -753,6 +790,7 @@ def _check_assertion(doc: Doc, docs: dict[str, Doc], report: Report) -> None:
                 "E-ANCHOR", doc.rel, f"grounding without statement anchor: {target}"
             )
         _check_layer(target, DISTILLATE_LAYER, "grounding", doc, report)
+    _check_phenomena(doc, docs, root, report)
     contested = _field_links(doc, "contested-with", report)
     if doc.fm.get("status") == "contested" and not contested:
         report.error(
@@ -1019,6 +1057,25 @@ def _check_chain_populated(docs: dict[str, Doc], report: Report) -> None:
         )
 
 
+def _check_generated(root: Path, report: Report) -> None:
+    """A generated region holds what the generator would write, or it is drift.
+
+    The generator in tools/inventory.py owns the content of these blocks, so the
+    comparison runs against what it yields from the current files rather than
+    against a second rule stated here. A region a document does not carry yet is
+    reported the same way, because an absent block navigates nothing.
+    """
+    for path, wanted in sorted(regions(root).items()):
+        text = path.read_text(encoding="utf-8")
+        for region in wanted:
+            if note := drift(text, region):
+                report.error(
+                    "E-GENERATED",
+                    path.relative_to(root).as_posix(),
+                    f"{note}; run tools/inventory.py --write",
+                )
+
+
 def _check_output_present(docs: dict[str, Doc], report: Report) -> None:
     """A validator must not report green on a contract that had no subject."""
     if not any(doc.fm.get("type") == "chapter" for doc in docs.values()):
@@ -1119,7 +1176,7 @@ def validate(
         if doctype == "distillate":
             _check_distillate(doc, reference_ids, root, report, run_computations)
         elif doctype == "assertion":
-            _check_assertion(doc, docs, report)
+            _check_assertion(doc, docs, root, report)
         elif doctype == "chapter":
             _check_chapter(doc, docs, report)
         for target, block in _link_targets(doc.body):
@@ -1132,6 +1189,7 @@ def validate(
         _check_placeholders(root, report)
         _check_chain_populated(docs, report)
         _check_output_present(docs, report)
+        _check_generated(root, report)
     else:
         _check_placeholders(root, report, [doc.path for doc in scope.values()])
     return report
@@ -1166,7 +1224,7 @@ def main() -> None:
         print(f"WARN {code} {rel}: {message}", file=sys.stderr)
     print(f"{len(report.errors)} error(s), {len(report.warnings)} warning(s)")
     if args.chapter:
-        print(f"not decidable per chapter, left out: {', '.join(VAULT_WIDE_CHECKS)}")
+        print(f"left out of the chapter mode: {', '.join(VAULT_WIDE_CHECKS)}")
         ready = not report.errors and not report.warnings
         verdict = "READY" if ready else "NOT READY"
         print(f"CHAPTER {verdict} {args.chapter}")

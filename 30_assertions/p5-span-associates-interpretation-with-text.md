@@ -1,6 +1,8 @@
 ---
 type: assertion
 topics: ["[[Abstract Model]]", "[[Annotation and Overlap]]"]
+phenomena: ["[[glossary/span-targeting]]"]
+related: ["[[40_output/02-abstract-model]]", "[[40_output/06-annotation-and-overlap]]", "[[40_output/12-p6-design]]", "[[30_assertions/p5-anchor-identifies-a-textual-point]]"]
 status: validated
 checked:
   validation: 2026-09-05

@@ -1,6 +1,8 @@
 ---
 type: assertion
 topics: ["[[Issues and Decisions]]", "[[Annotation and Overlap]]"]
+phenomena: ["[[glossary/span-targeting]]"]
+related: ["[[40_output/06-annotation-and-overlap]]", "[[40_output/12-p6-design]]", "[[30_assertions/p5-span-from-identifies-start-or-whole-node]]"]
 status: validated
 checked:
   validation: 2026-09-05

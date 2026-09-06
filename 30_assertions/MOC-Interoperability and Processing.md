@@ -2,15 +2,27 @@
 type: moc
 topic: "Interoperability and Processing"
 created: 2026-09-04
-updated: 2026-09-04
+updated: 2026-09-06
 ---
 
 # MOC: Interoperability and Processing
 
-Diese Themenkarte erschließt TEI-Konformität, Schemagenerierung, Validierung, Transformation, Austausch, Werkzeugketten und alternative Repräsentationen.
+This map covers TEI conformance, schema generation, validation, transformation,
+interchange, tool chains and alternative representations.
 
-Noch sind keine Assertions registriert.
+## Sources and distillates
+
+<!-- distillates:begin -->
+- [[20_distillates/documents/tei-p5-annotation-4.12.0]]
+<!-- distillates:end -->
+
+## Assertions
+
+<!-- assertions:begin -->
+
+<!-- assertions:end -->
 
 ## Open questions
 
-- Welche Interoperabilitätsprobleme entstehen aus dem Standard selbst, welche aus Customizations und welche aus konkreten Verarbeitungssystemen?
+- Which interoperability problems arise from the standard itself, which from
+  customizations and which from particular processing systems?

@@ -7,7 +7,8 @@ updated: 2026-07-11
 
 # MOC: Broken
 
-Fixture topic map. The orphan assertion is deliberately missing here.
+Fixture topic map. The orphan assertion is deliberately missing here, and the
+generated regions are deliberately absent (defect: missing generated region).
 
 - [[30_assertions/one-sided]] — one-sided contested fixture.
 - [[30_assertions/other-side]] — its counterpart.
@@ -18,3 +19,4 @@ Fixture topic map. The orphan assertion is deliberately missing here.
 - [[30_assertions/ladder-jump]] — status ladder fixture.
 - [[30_assertions/duplicate-grounding-a]] — duplicate grounding fixture.
 - [[30_assertions/duplicate-grounding-b]] — its counterpart on the same anchors.
+- [[30_assertions/bad-navigation]] — navigation fields fixture.

@@ -1,6 +1,8 @@
 ---
 type: assertion
 topics: ["[[Abstract Model]]", "[[Annotation and Overlap]]"]
+phenomena: ["[[glossary/overlapping-hierarchy]]"]
+related: ["[[40_output/06-annotation-and-overlap]]", "[[40_output/12-p6-design]]", "[[30_assertions/renear-wickett-distinguish-string-mapping-from-persistent-identity]]"]
 status: validated
 checked:
   validation: 2026-09-05

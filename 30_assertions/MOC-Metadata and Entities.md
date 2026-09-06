@@ -2,15 +2,27 @@
 type: moc
 topic: "Metadata and Entities"
 created: 2026-09-04
-updated: 2026-09-04
+updated: 2026-09-06
 ---
 
 # MOC: Metadata and Entities
 
-Diese Themenkarte bündelt belegte Aussagen zum teiHeader, zu Metadaten, Normdaten, Personen, Orten, Organisationen, Ereignissen und ihren Referenzbeziehungen.
+This map gathers grounded statements about the teiHeader, metadata, authority data,
+persons, places, organizations, events and their reference relations.
 
-Noch sind keine Assertions registriert.
+## Sources and distillates
+
+<!-- distillates:begin -->
+
+<!-- distillates:end -->
+
+## Assertions
+
+<!-- assertions:begin -->
+
+<!-- assertions:end -->
 
 ## Open questions
 
-- Wie konsistent trennt P5 Erwähnungen im Text, Entitätsbeschreibungen, Identifikation und externe Normdatenreferenzen?
+- How consistently does P5 separate mentions in the text, entity descriptions,
+  identification and external authority references?

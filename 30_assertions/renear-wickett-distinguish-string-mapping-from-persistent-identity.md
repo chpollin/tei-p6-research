@@ -1,6 +1,8 @@
 ---
 type: assertion
 topics: ["[[Abstract Model]]"]
+phenomena: ["[[glossary/text-identity-across-versions]]"]
+related: ["[[40_output/06-annotation-and-overlap]]", "[[40_output/12-p6-design]]", "[[30_assertions/piez-treats-optional-hierarchy-as-object-of-study]]"]
 status: validated
 checked:
   validation: 2026-09-05

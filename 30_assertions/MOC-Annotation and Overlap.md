@@ -2,7 +2,7 @@
 type: moc
 topic: "Annotation and Overlap"
 created: 2026-09-04
-updated: 2026-09-05
+updated: 2026-09-06
 ---
 
 # MOC: Annotation and Overlap
@@ -12,22 +12,28 @@ in the pinned P5 baseline. Independent definitions remain design hypotheses.
 
 ## Sources and distillates
 
-- [[20_distillates/documents/tei-p5-anchor-4.12.0]] — point identification.
-- [[20_distillates/documents/tei-p5-span-4.12.0]] — spans and node references.
-- [[20_distillates/documents/tei-p5-annotation-4.12.0]] — annotation definition.
-- [[20_distillates/publications/w3c-web-annotation-20170223]] — quotation-selector multiplicity.
-- [[20_distillates/publications/tei-sourceforge-fr363]] — a historical span extension proposal.
-- [[20_distillates/publications/piez2014range]] — hierarchy as a modeling question.
+<!-- distillates:begin -->
+- [[20_distillates/documents/humboldt-h0017682-7d174637]]
+- [[20_distillates/documents/tei-p5-anchor-4.12.0]]
+- [[20_distillates/documents/tei-p5-annotation-4.12.0]]
+- [[20_distillates/documents/tei-p5-span-4.12.0]]
+- [[20_distillates/publications/piez2014range]]
+- [[20_distillates/publications/tei-sourceforge-fr363]]
+- [[20_distillates/publications/w3c-web-annotation-20170223]]
+<!-- distillates:end -->
 
 ## Assertions
 
-- [[30_assertions/p5-anchor-identifies-a-textual-point]] — point identification.
-- [[30_assertions/p5-span-associates-interpretation-with-text]] — annotation association.
-- [[30_assertions/p5-span-from-identifies-start-or-whole-node]] — two node addressing cases.
-- [[30_assertions/p5-annotation-refers-to-web-annotation-model]] — attributed definition.
-- [[30_assertions/w3c-quote-selection-can-match-multiple-sequences]] — intentional plural selection as a comparison case.
-- [[30_assertions/tei-fr363-proposes-target-on-span]] — an attributed historical proposal.
-- [[30_assertions/piez-treats-optional-hierarchy-as-object-of-study]] — an attributed scholarly argument.
+<!-- assertions:begin -->
+- [[30_assertions/humboldt-diary-separates-an-unknown-hand-note-and-editorial-explanation]] — Humboldt diary H0017682 encodes an unknown-hand note and a nested editorial note
+- [[30_assertions/p5-anchor-identifies-a-textual-point]] — In TEI P5 4.12.0, anchor identifies a point within a text
+- [[30_assertions/p5-annotation-refers-to-web-annotation-model]] — TEI P5 4.12.0 describes annotation as following the Web Annotation Data Model
+- [[30_assertions/p5-span-associates-interpretation-with-text]] — In TEI P5 4.12.0, span associates an interpretative annotation with a span of text
+- [[30_assertions/p5-span-from-identifies-start-or-whole-node]] — In TEI P5 4.12.0, span from identifies the starting node or, without to, the entire annotated node
+- [[30_assertions/piez-treats-optional-hierarchy-as-object-of-study]] — Piez treats optional hierarchy as an object of study
+- [[30_assertions/tei-fr363-proposes-target-on-span]] — TEI feature request 363 proposes target on span
+- [[30_assertions/w3c-quote-selection-can-match-multiple-sequences]] — W3C quote selection can match multiple sequences
+<!-- assertions:end -->
 
 ## Open questions
 

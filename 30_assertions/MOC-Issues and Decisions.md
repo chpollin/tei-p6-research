@@ -2,15 +2,27 @@
 type: moc
 topic: "Issues and Decisions"
 created: 2026-09-04
-updated: 2026-09-05
+updated: 2026-09-06
 ---
 
 # MOC: Issues and Decisions
 
-Diese Themenkarte bündelt belegte Aussagen aus GitHub-Issues, Pull Requests und anderen dokumentierten Entscheidungsverläufen, ohne einen geschlossenen Vorgang automatisch als fachlich gelöst zu deuten.
+This map gathers grounded statements from GitHub issues, pull requests and other
+documented decision histories, without reading a closed item as a resolved matter.
 
-- [[30_assertions/tei-fr363-proposes-target-on-span]] — a historical attribute proposal, without an inferred governance or release outcome.
+## Sources and distillates
+
+<!-- distillates:begin -->
+- [[20_distillates/publications/tei-sourceforge-fr363]]
+<!-- distillates:end -->
+
+## Assertions
+
+<!-- assertions:begin -->
+- [[30_assertions/tei-fr363-proposes-target-on-span]] — TEI feature request 363 proposes target on span
+<!-- assertions:end -->
 
 ## Open questions
 
-- Welche wiederkehrenden Problemklassen lassen sich über historische und aktuelle Issues hinweg belastbar identifizieren?
+- Which recurring problem classes can be identified reliably across historical and
+  current issues?

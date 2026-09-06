@@ -2,15 +2,27 @@
 type: moc
 topic: "P5 Architecture"
 created: 2026-09-04
-updated: 2026-09-04
+updated: 2026-09-06
 ---
 
 # MOC: P5 Architecture
 
-Diese Themenkarte erschließt belegte Aussagen zur Gesamtarchitektur von TEI P5 und zu den Beziehungen zwischen Guidelines, ODD, Schemas, Modulen und Serialisierung.
+This map covers grounded statements about the overall architecture of TEI P5 and the
+relations between Guidelines, ODD, schemas, modules and serialization.
 
-Noch sind keine Assertions registriert.
+## Sources and distillates
+
+<!-- distillates:begin -->
+
+<!-- distillates:end -->
+
+## Assertions
+
+<!-- assertions:begin -->
+
+<!-- assertions:end -->
 
 ## Open questions
 
-- Welche Teile der P5-Architektur sind explizit spezifiziert, und welche ergeben sich nur aus Implementierung oder historischer Praxis?
+- Which parts of the P5 architecture are explicitly specified, and which follow only
+  from implementation or historical practice?

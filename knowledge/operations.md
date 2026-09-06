@@ -472,9 +472,19 @@ walk follows only immediate-layer anchors. Other branches and vault-wide
 warnings are excluded, and the closing output names the excluded checks.
 Any warning or error within chapter scope fails the run.
 
+`tools/inventory.py` builds the source inventory in [[knowledge/state]], the
+two lists of every topic map and the example list of every glossary entry from
+the files themselves. Validation compares each of these regions against that
+result and raises `E-GENERATED` for a region whose content differs and for one
+a document does not carry yet. Write them with
+`python tools/inventory.py . --write`; `--check` reports the same drift and
+changes nothing. Everything outside the markers is hand-written and survives
+every run. The regions navigate and never ground, so they stay out of a
+`--chapter` run.
+
 | Diagnostic | Condition |
 |---|---|
-| `E-ANCHOR` | An anchor or frontmatter target in `source`, `data`, `representation`, `superseded-by`, or `contested-with` does not resolve |
+| `E-ANCHOR` | An anchor or frontmatter target in `source`, `data`, `representation`, `superseded-by`, `contested-with`, `phenomena`, or `related` does not resolve |
 | `E-LAYER` | An anchor skips its direct predecessor layer |
 | `E-GROUNDING` | An artifact with a grounding obligation has empty grounding |
 | `E-DUPLICATE` | A block or statement ID occurs more than once within a file |
@@ -491,6 +501,8 @@ Any warning or error within chapter scope fails the run.
 | `E-QUOTE` | A publication distillate records no intake quotation check (`checked.quote`) |
 | `E-COMPUTATION` | A data computation names other than one script, passes an argument, lies outside `tools/analysis/`, is missing, fails, or yields another result than the stated one |
 | `E-TOPIC` | A `topics` value names no topic map of the controlled topic set |
+| `E-PHENOMENON` | A `phenomena` value names a document that is no glossary entry |
+| `E-GENERATED` | A generated region is missing or differs from what `tools/inventory.py` builds from the files |
 | `E-ORPHAN` | An assertion is reachable from no topic map |
 | `E-CONTESTED` | A contested assertion names no counterpart, or a contested relation is one-sided |
 | `E-FOOTNOTE` | A chapter footnote is used without definition, defined without use, defined twice, or opens with neither `Grounded in` nor `Posit:` |

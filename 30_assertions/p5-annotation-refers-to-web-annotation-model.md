@@ -1,6 +1,8 @@
 ---
 type: assertion
 topics: ["[[Abstract Model]]", "[[Annotation and Overlap]]"]
+phenomena: ["[[glossary/stand-off-annotation]]"]
+related: ["[[40_output/02-abstract-model]]", "[[30_assertions/w3c-quote-selection-can-match-multiple-sequences]]"]
 status: validated
 checked:
   validation: 2026-09-05

@@ -12,6 +12,7 @@ import subprocess
 import sys
 from pathlib import Path
 
+from tools.inventory import regenerate
 from tools.validate import VAULT_WIDE_CHECKS, validate
 
 REPO = Path(__file__).parents[1]
@@ -36,6 +37,8 @@ EXPECTED_BROKEN_CODES = {
     "E-COMPUTATION",  # computation script missing, argument passed, script outside tools/analysis
     "E-QUOTE",  # intake-time quotation check not recorded
     "E-SOURCE",  # several distillates on the same representation
+    "E-PHENOMENON",  # phenomena target that is no glossary entry
+    "E-GENERATED",  # missing and stale generated region
 }
 
 # Warnings the broken fixture carries; each has its own test below, because the
@@ -325,11 +328,15 @@ def test_a_topic_map_keeps_the_name_of_its_topic() -> None:
 
 
 def test_a_version_pinned_slug_keeps_its_release_number(tmp_path: Path) -> None:
-    """Admitted representations carry the release in the file name and are immutable."""
+    """Admitted representations carry the release in the file name and are immutable.
+
+    The chapter is the file under test because nothing anchors into it, so the
+    rename leaves the dotted slug itself as the only thing the run judges.
+    """
     root = tmp_path / "vault"
     shutil.copytree(MINIMAL, root)
-    entry = root / "glossary" / "metering.md"
-    entry.rename(entry.with_name("metering-4.12.0.md"))
+    chapter = root / "40_output" / "01-findings.md"
+    chapter.rename(chapter.with_name("01-findings-4.12.0.md"))
     report = validate(root)
     assert report.errors == [], report.errors
     assert _rels(report.warnings, "W-NAME") == set()
@@ -854,6 +861,84 @@ def test_the_vault_wide_checks_stay_out_of_the_chapter_mode(tmp_path: Path) -> N
     shutil.copytree(MINIMAL, root)
     report = validate(root, chapter=CHAPTER)
     assert not set(VAULT_WIDE_CHECKS) & {code for code, _, _ in report.warnings}
+
+
+def test_a_phenomena_target_that_is_no_glossary_entry_is_caught() -> None:
+    """`phenomena` names the term, so a link into another layer is a defect."""
+    report = validate(BROKEN)
+    assert _rels(report.errors, "E-PHENOMENON") == {"30_assertions/bad-navigation"}
+
+
+def test_an_unresolved_related_link_is_caught() -> None:
+    """`related` is navigation, and a navigation target still has to exist."""
+    report = validate(BROKEN)
+    assert any(
+        "30_assertions/nowhere" in message
+        for code, rel, message in report.errors
+        if code == "E-ANCHOR" and rel == "30_assertions/bad-navigation"
+    )
+
+
+def test_a_missing_generated_region_is_caught() -> None:
+    report = validate(BROKEN)
+    assert "30_assertions/MOC-Broken.md" in _rels(report.errors, "E-GENERATED")
+
+
+def test_a_stale_generated_region_is_caught() -> None:
+    report = validate(BROKEN)
+    assert [
+        message
+        for code, rel, message in report.errors
+        if code == "E-GENERATED" and rel == "glossary/stale-region.md"
+    ] == ["generated region examples is out of date; run tools/inventory.py --write"]
+
+
+def test_the_generator_clears_the_generated_finding(tmp_path: Path) -> None:
+    """The validator compares against what the generator would write, nothing else."""
+    root = tmp_path / "vault"
+    shutil.copytree(MINIMAL, root)
+    entry = root / "glossary" / "metering.md"
+    entry.write_text(
+        entry.read_text(encoding="utf-8").replace(
+            "<!-- examples:end -->", "- a line no assertion carries\n<!-- examples:end -->"
+        ),
+        encoding="utf-8",
+    )
+    assert _rels(validate(root).errors, "E-GENERATED") == {"glossary/metering.md"}
+    regenerate(root)
+    report = validate(root)
+    assert report.errors == [], report.errors
+    assert report.warnings == [], report.warnings
+
+
+def test_the_generated_regions_stay_out_of_the_chapter_mode(tmp_path: Path) -> None:
+    """Navigation structures lie outside every chapter's chain of evidence."""
+    root = tmp_path / "vault"
+    shutil.copytree(MINIMAL, root)
+    entry = root / "glossary" / "metering.md"
+    entry.write_text(
+        entry.read_text(encoding="utf-8").replace("<!-- examples:begin -->\n", ""),
+        encoding="utf-8",
+    )
+    assert "E-GENERATED" in validate(root).codes()
+    report = validate(root, chapter=CHAPTER)
+    assert report.errors == [], report.errors
+
+
+def test_a_phenomenon_in_grounding_stays_a_layer_violation(tmp_path: Path) -> None:
+    """Neither navigation field is evidence, so neither may enter `grounding`."""
+    root = tmp_path / "vault"
+    shutil.copytree(MINIMAL, root)
+    assertion = root / "30_assertions" / "metering-reduces-water-use.md"
+    assertion.write_text(
+        assertion.read_text(encoding="utf-8").replace(
+            '  - "[[20_distillates/data/water-readings-2025#^s1]]"',
+            '  - "[[glossary/metering]]"',
+        ),
+        encoding="utf-8",
+    )
+    report = validate(root)
+    assert "30_assertions/metering-reduces-water-use" in _rels(report.errors, "E-LAYER")
 
 
 def test_a_placeholder_under_the_chapter_is_reported(tmp_path: Path) -> None:

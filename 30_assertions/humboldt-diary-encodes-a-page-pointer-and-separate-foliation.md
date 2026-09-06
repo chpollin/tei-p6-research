@@ -1,6 +1,8 @@
 ---
 type: assertion
 topics: ["[[Text and Document Structures]]", "[[P6 Design]]"]
+phenomena: ["[[glossary/foliation-and-page-pointers]]"]
+related: ["[[40_output/12-p6-design]]"]
 status: validated
 checked:
   validation: 2026-09-05

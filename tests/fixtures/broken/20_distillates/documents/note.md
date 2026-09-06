@@ -23,6 +23,7 @@ Fixture: the first anchor below points to a block ID that does not exist (defect
 - Support for the counterpart specimen. [[10_markdown/documents/note#^ok01]] ^s6
 - First support of the duplicate grounding pair. [[10_markdown/documents/note#^ok01]] ^s7
 - Second support of the duplicate grounding pair. [[10_markdown/documents/note#^ok01]] ^s8
+- Support for the navigation specimen. [[10_markdown/documents/note#^ok01]] ^s9
 
 ## Open questions
 

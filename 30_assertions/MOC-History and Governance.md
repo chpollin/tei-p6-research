@@ -2,15 +2,27 @@
 type: moc
 topic: "History and Governance"
 created: 2026-09-04
-updated: 2026-09-04
+updated: 2026-09-06
 ---
 
 # MOC: History and Governance
 
-Diese Themenkarte erschließt die historische Entwicklung von TEI P5, Release-Entscheidungen, Gremienprozesse und dokumentierte Governance.
+This map covers the historical development of TEI P5, release decisions, committee
+processes and documented governance.
 
-Noch sind keine Assertions registriert.
+## Sources and distillates
+
+<!-- distillates:begin -->
+- [[20_distillates/documents/tei-time-for-p6-readme-2026-07-16]]
+<!-- distillates:end -->
+
+## Assertions
+
+<!-- assertions:begin -->
+
+<!-- assertions:end -->
 
 ## Open questions
 
-- Welche architektonischen Eigenschaften von P5 gehen nachweisbar auf Kompatibilitäts- oder Governance-Entscheidungen zurück?
+- Which architectural properties of P5 demonstrably go back to compatibility or
+  governance decisions?

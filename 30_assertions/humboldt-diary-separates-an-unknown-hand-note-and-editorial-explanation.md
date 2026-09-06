@@ -1,6 +1,8 @@
 ---
 type: assertion
 topics: ["[[Annotation and Overlap]]", "[[P6 Design]]"]
+phenomena: ["[[glossary/change-of-hand]]", "[[glossary/editorial-note]]"]
+related: ["[[40_output/12-p6-design]]"]
 status: validated
 checked:
   validation: 2026-09-05
