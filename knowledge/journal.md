@@ -702,3 +702,19 @@ to R20 and nine test cases, including a mapping of one diary paragraph with
 three `persName` occurrences and a round trip with loss report, are stated.
 The version 0.2 changes are additive and binding-only. The v0.1 case report
 was regenerated, and only the definition fingerprint changed.
+
+## 2026-09-06 — Entity extension implemented against independent cases
+
+The entity extension of section 14 became executable in `tools/models/entities.py`
+with a deterministic runner and a machine-readable contract, while a separate
+agent in a fresh context authored fifty-eight cases from the section alone,
+without sight of the implementation. Where the two first disagreed, the text
+decided and the decision was written back into section 14: the warning stage
+runs only over an error-free package, a withdrawn claim that nothing
+supersedes stays current for the mention rule, `created` and `status` are
+required on the new claim kinds, and diagnostic paths follow the examples the
+section itself gives. All fifty-eight cases and thirty-three canonical checks
+pass, the check enters the completion gate and the CI workflow, and the v0.1
+report was regenerated because its input fingerprints now include the new
+module. Real cases from distinct editions, the RDF binding and the five
+acceptance items remain open.
