@@ -10,7 +10,7 @@ status: draft
 language: en
 created: "2026-09-06"
 updated: "2026-09-06"
-related: [text-model-bindings, p6-architecture, p6-evaluation, experiments, specification, state, text-model-rdf-binding]
+related: [text-model-bindings, p6-architecture, p6-evaluation, experiments, specification, state]
 ---
 
 # Text Model
@@ -970,8 +970,9 @@ answer for the inference they add. Extending the carrier set to a text or a
 version requires a recorded decision.
 
 The table states the direction of the mapping, from package record kinds to
-candidate target vocabularies, as a binding to be specified under section 12
-with its own loss matrix. Nothing in it is implemented.
+candidate target vocabularies, as the one-way export that
+[[knowledge/text-model-bindings]] section 6 specifies and
+`tools/models/rdf_binding.py` implements, with its loss statement there.
 
 | Record kind | Candidate target | Without natural target |
 |---|---|---|
@@ -1513,8 +1514,9 @@ runner `tools/check_entities_v02.py`, the contract
 ### 14.5 RDF direction
 
 The rows extend the section 13 table and replace its planned row for entity,
-name and event. They state the direction of a binding to be specified under
-section 12 with its own loss matrix. Nothing in them is implemented.
+name and event. They state the direction of the one-way export that
+[[knowledge/text-model-bindings]] section 6 specifies and
+`tools/models/rdf_binding.py` implements, whose loss statement stands there.
 
 | Record kind | Candidate target | Without natural target |
 |---|---|---|

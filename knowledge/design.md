@@ -184,6 +184,25 @@ manually maintained page requires a recorded architecture decision.
 | `tools/build_knowledge.py` | Actual Vault artifacts and their provenance metadata | `docs/knowledge.html` |
 | `tools/build_docs.py` | README and the knowledge documents | `docs/project.html` |
 
+## Regeneration
+
+After changing `README.md` or any knowledge document consumed by the About
+page, and after changing registry, lock, manifest, model or proposal inputs,
+run the builders whose declared inputs changed:
+
+```powershell
+python tools/build_docs.py --date YYYY-MM-DD
+python tools/build_corpus_overview.py --date YYYY-MM-DD
+python tools/build_home.py --date YYYY-MM-DD
+python tools/build_knowledge.py --date YYYY-MM-DD
+python tools/build_model_reference.py --date YYYY-MM-DD
+```
+
+Every builder takes its build date as an argument and never reads the system
+clock, and it records that date in the page footer. A page regenerated on a
+later day therefore still rebuilds from the date it carries, which is what
+the reproduction check in [[knowledge/testing]] compares.
+
 ## Accessibility and responsive behavior
 
 Use semantic headings, forms, buttons, tables, and disclosure controls.

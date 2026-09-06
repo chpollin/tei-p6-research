@@ -2,7 +2,7 @@
 
 Section 14.5 of knowledge/text-model.md states the direction of the mapping and
 section 13 the identifier policy and the claim pattern; the contract this module
-implements is knowledge/text-model-rdf-binding.md. Unlike the JSON, XML and YAML
+implements is knowledge/text-model-bindings.md section 6 (RDF export). Unlike the JSON, XML and YAML
 bindings there is no decoder: the export carries record identity, the claim
 structure and every reference edge, and it drops version content and selection
 resolution, so no round trip is claimed.

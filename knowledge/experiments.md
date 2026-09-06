@@ -28,6 +28,72 @@ its run commands and its human acceptance items, is in
 [[knowledge/text-model]]. Current completion and human-review state belong
 only in [[knowledge/state]].
 
+## Reproduction
+
+Each contract below carries the run commands of its own experiment. This
+section collects the reproduction checks whose contracts live outside this
+document and the rules that hold for all of them. None of these commands
+assigns research status. On Windows with the Python launcher, `py -3` can
+replace `python`.
+
+Abstract Text Model 0.1, whose independent case gate needs no raw corpus,
+reproduces with these commands.
+
+```powershell
+python tools/check_abstract_text_v01.py --check
+python tools/check_entities_v02.py --check
+python tools/check_abstract_text_v01.py --validate experiments/abstract_text_v01/examples/competing-readings.json
+python -m pytest tests/models tests/test_check_abstract_text_v01.py
+```
+
+The first command checks frozen expectations, all declared rule and operation
+coverage, nonmutation, canonical reproduction, standalone examples and exact
+report reproduction, and it fails if the report is missing or stale. After
+reviewing an intentional model, contract or fixture change, regenerate with
+`python tools/check_abstract_text_v01.py` and rerun `--check`. Input
+fingerprints normalize checkout line endings, and strings inside model
+instances remain exact. The validation command prints machine-readable
+diagnostics and resolutions. The definitions and the separate human
+acceptance questions are in [[knowledge/text-model]].
+
+The first research wave provides three read-only reproduction checks.
+
+```powershell
+python -m tools.tei.build_atlas --output corpus/projections/p5-specs-4.12.0.json --check
+python tools/check_wave1_sources.py .
+python tools/check_wave1_sources.py . --review-only
+```
+
+Run 2 of Metadata and Entities admits nine document sources and three
+citation-only threads.
+
+```powershell
+python -m tools.ingest_git_blobs . --run entities-run2 --check
+python tools/check_wave1_sources.py . --manifest sources/manifests/2026-09-06-entities-run2-citations.yaml --references references/entities-run2.json
+```
+
+`--run` selects an admission run and defaults to the first entity run. The
+citation check reconciles the six raw thread snapshots and reports the threads
+as pending until their distillates exist.
+
+The atlas check requires the locked local TEI Git mirror. Omit `--check` to
+regenerate the projection after an intentional generator or control-input
+change. The quotation check requires the local raw snapshots named in
+`sources/manifests/2026-09-05-research-wave-1-citations.yaml`. It performs no
+network retrieval and fails clearly when a snapshot is unavailable, so a clean
+checkout without ignored raw data can inspect the recorded intake but cannot
+claim to have rerun quotation fidelity. `--review-only` needs no ignored
+originals. It checks the canonical source-support prompts recorded in
+`workbench/reviews/2026-09-05-wave1/pairs.jsonl`, their exact dependency
+coverage and their passing verdict hashes. Continuous integration runs this
+check separately from the local raw-source quotation check.
+
+After an intentional experiment or contract change, regenerate the text
+identity report with `python -m tools.pilots.text_identity`. Changed research
+claims require fresh review pairs from
+`python tools/check_text_identity_pilot.py --emit-review` and an independent
+reviewer under [[knowledge/verification]].
+
 ## Text identity and annotation pilot
 
 The pilot is an independent modeling experiment at contract version 1. It is

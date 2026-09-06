@@ -23,6 +23,26 @@ and the counterevidence search, is defined here. Together with validation,
 machine review permits `validated`. Only human verification permits
 `verified`.
 
+## What the checks establish
+
+Three checks divide the work, and each answers one question under its own
+authority.
+
+| Check | Question | Authority |
+|---|---|---|
+| Validation | Does the artifact satisfy its formal contract and do its anchors resolve? | records deterministic conformance |
+| Machine review | Does the cited passage support the statement? | with validation, permits `validated` |
+| Verification | Does this grounding hold as evidence? | the designated human expert may establish `verified` |
+
+Agents prepare the files and the review pairs, and their agreement establishes
+no truth. Evidence is relative to a claim rather than an intrinsic property of
+a document. Grounding is the structural relation, evidence is the grounding
+relation that passed human verification, and a posit is an authorial conclusion
+with an explicit rationale and an open evidence question. The intended result
+is an inspectable research record whose check outcomes carry their dates, so an
+unfinished vault stays useful because the review state of each artifact is
+explicit.
+
 ## Machine review
 
 Machine review judges source support for each passage and statement pair.

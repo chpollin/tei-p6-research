@@ -41,7 +41,7 @@ Read only what the task needs:
 |---|---|
 | Understand purpose or scope | `knowledge/project.md`, then `knowledge/specification.md` |
 | Report project status | `knowledge/state.md` plus actual files, locks and manifests |
-| Maintain repository documentation or structure | actual tree, `knowledge/architecture.md`, `README.md`, `SETUP.md`, then the affected document |
+| Maintain repository documentation or structure | actual tree, `knowledge/architecture.md`, `README.md`, then the affected document |
 | Build or change the research workbench | `knowledge/design.md`, the relevant generator and `.github/workflows/pages.yml` |
 | Acquire or ingest a source | `knowledge/data.md`, then `knowledge/operations.md` § Acquire and § Ingest |
 | Distill, synthesize, write or query | matching section of `knowledge/operations.md` and `knowledge/schema.md` |
@@ -121,7 +121,8 @@ python tools/build_docs.py --date YYYY-MM-DD
 ```
 
 After changing registry, lock, manifest, model, proposal or materials-overview
-inputs or code, run the corresponding builder documented in `SETUP.md`. All
+inputs or code, run the corresponding builder documented in
+`knowledge/design.md` § Regeneration. All
 public HTML is generated. The home builder owns `docs/index.html`, the other
 builders own `docs/project.html`, `docs/corpus.html`, `docs/knowledge.html`
 and `docs/model.html`. Never hand-edit these outputs. All pages share the

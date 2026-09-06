@@ -355,12 +355,12 @@ def test_placeholders_are_scanned_outside_the_content_folders(tmp_path: Path) ->
     (tmp_path / "knowledge").mkdir()
     (tmp_path / "knowledge" / "index.md").write_text("{{LANGUAGE}}", encoding="utf-8")
     (tmp_path / "CLAUDE.md").write_text("{{HARNESS_RULES}}", encoding="utf-8")
-    (tmp_path / "HOME.md").write_text("{{PROJECT_NAME}}", encoding="utf-8")
+    (tmp_path / "README.md").write_text("{{PROJECT_NAME}}", encoding="utf-8")
     report = validate(tmp_path)
     assert _rels(report.warnings, "W-PLACEHOLDER") == {
         "knowledge/index.md",
         "CLAUDE.md",
-        "HOME.md",
+        "README.md",
     }
 
 

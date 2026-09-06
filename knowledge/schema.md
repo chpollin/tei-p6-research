@@ -13,7 +13,7 @@ status: draft
 language: en
 created: "2026-09-04"
 updated: "2026-09-06"
-related: [INDEX, specification, design, operations, verification, state]
+related: [INDEX, specification, design, operations, verification, experiments, architecture, state]
 ---
 
 # Schema
@@ -21,6 +21,57 @@ related: [INDEX, specification, design, operations, verification, state]
 This schema defines artifact types, frontmatter, section skeletons, anchor
 forms, and status rules. Every content file follows these contracts.
 [[knowledge/operations]] defines how the files are produced and checked.
+
+## Rationale
+
+Grounded Vault organizes research claims so that a reader can follow them to
+source passages and inspect the checks behind them. It is a Promptotyping
+profile for work with explicit evidence obligations, and this section says why
+the contracts below take the form they do.
+
+A report may cite a source without showing which passage supports a particular
+claim, leaving the reader to reconstruct that connection and to judge whether
+the statement preserves the passage's meaning. Human-authored and generated
+research share this weakness. The profile makes the connection part of the
+document structure. Source material enters at the bottom of a layered
+repository, defined transformations produce source statements, assertions and
+output while preserving references between adjacent layers, and every
+load-bearing output statement cites an assertion or is marked as an authorial
+posit. A resolvable citation supplies a checkable path, and the checks in
+[[knowledge/verification]] decide what that path establishes.
+
+### One source per distillate, one claim per assertion
+
+A distillate preserves the scope of exactly one source and keeps appraisal
+apart from reported content, so a source-fidelity check can run before any
+judgment is applied. Cross-source synthesis waits for the assertion layer,
+where different sources and source types contribute to the same claim. Keeping
+the two steps apart leaves the provenance chain free of skipped layers.
+Irreconcilable assertions stay contested and link to one another in both
+directions, so an output account of the disagreement cites both sides.
+
+### Dual readability
+
+Humans and agents use the same Markdown files. Topic maps collect assertions,
+wikilinks connect related material, output footnotes lead toward source
+passages, and the files stay readable outside Obsidian. The agent adapters
+`AGENTS.md` and `CLAUDE.md` carry short harness-specific instructions that
+route into `knowledge/` without duplicating the contracts, so the architecture
+depends on no single vendor. The generated workbench renders the same
+artifacts under [[knowledge/design]] and creates no further knowledge layer.
+
+### The output as a parameter
+
+The reference output is continuous prose with one independently checkable file
+per chapter, and footnotes keep the inline marker, the support or posit keyword
+and the structured mirror readable in Markdown. A data sidecar alone would drop
+that human readability. Genre and style can change while the evidence
+obligations of the chapter contract stay as they are.
+
+Code and data-analysis output need an anchoring design that the inherited
+profile does not define. The executable experiments of this project therefore
+run under their own contracts in [[knowledge/experiments]], while grounded
+research conclusions continue through the layers below.
 
 ## Layer model
 

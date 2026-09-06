@@ -251,12 +251,13 @@ The consequences for storage are these.
 - Rights uncertainty sets a source to metadata and link only until it has
   been independently reviewed.
 
-Normal Git stores code, schemas, registries, locks, append-only run
+Normal Git stores code, contracts, schemas, registries, locks, append-only run
 manifests, checksums, small rights-cleared fixtures, reviewed Markdown
 representations, distillates, assertions, output and reproducible projections
-within declared size limits. Git mirrors, raw API dumps, third-party PDFs,
-mailing-list archives, large release bundles, unreviewed discussion full
-text, tokens and caches stay ignored and local. A larger accepted artifact
+within declared size limits. Git mirrors, raw API and web responses,
+third-party PDFs and attachments, mailing-list archives, large release
+bundles, unreviewed discussion full text, credentials, tokens, caches and
+temporary files stay ignored and local. A larger accepted artifact
 requires a checksummed external store, release asset or LFS policy plus a
 reproducible materialization command. Nobody uses `git add -f` on ignored raw
 data. When a reviewed original is approved for versioning, the integrator

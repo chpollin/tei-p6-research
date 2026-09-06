@@ -79,10 +79,19 @@ suite and closes with the text identity pilot gate.
 `.github/workflows/pages.yml` runs on `main` and on manual dispatch. It
 validates the vault and the control plane, runs the test suite, regenerates
 all five pages with the build date and the exact commit for source links,
-and publishes `docs/` to GitHub Pages. One deployment runs at a time, and a
-running deployment is never cancelled. The published site therefore always
+and publishes `docs/` to GitHub Pages at the routes declared in
+[[knowledge/design]]. Internal control and normalized data links resolve to
+the exact commit used for the deployment, and ignored raw source bodies never
+enter the Pages artifact. One deployment runs at a time, and a running
+deployment is never cancelled. The published site therefore always
 corresponds to one validated revision, and the deployment log identifies it.
 `tests/test_pages_workflow.py` holds both workflows to this contract.
+
+The canonical deployment is live at
+`https://chpollin.github.io/tei-p6-research/`. A change reaches it only after
+it has been reviewed, committed and pushed to `main`, and the workflow then
+rebuilds from the pushed revision. A fork must enable GitHub Pages with
+GitHub Actions as its source before its first deployment.
 
 ## Reproduction checks
 
@@ -116,8 +125,8 @@ emits new review pairs, which then need an independent reviewer under
 [[knowledge/verification]]. Emitting pairs alone is no review. On Windows
 with the Python launcher, `py -3` can replace `python`.
 
-The pages reproduce with the builders in `SETUP.md`, and
-`tests/test_build_pages_reproduce.py` rebuilds every committed page from the
+The pages reproduce with the builders in [[knowledge/design]] § Regeneration,
+and `tests/test_build_pages_reproduce.py` rebuilds every committed page from the
 build date in its own footer and compares it with the committed file, so a
 documented regeneration on another day stays reproducible. After changing
 `README.md` or any knowledge document, regenerate `docs/project.html` with

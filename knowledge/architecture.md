@@ -10,7 +10,7 @@ status: draft
 language: en
 created: "2026-09-04"
 updated: "2026-09-06"
-related: [INDEX, design, schema, operations, data, governance, testing, state]
+related: [INDEX, design, schema, operations, data, governance, testing, specification, state]
 ---
 
 # Architecture
@@ -28,14 +28,13 @@ need before linking there.
 
 | File | Owns |
 |---|---|
-| `README.md` | public landing page, objective, method in one paragraph, route table, licence statement, independence notice |
-| `HOME.md` | human navigation inside the Obsidian-compatible vault |
+| `README.md` | public landing page, objective, method in one paragraph, route table, attribution, licence statement, independence notice |
 | `CLAUDE.md`, `AGENTS.md` | harness-specific action layer with project identity, the hard research contracts, the route table and the generation commands, identical except for the harness paragraph |
-| `SETUP.md` | install, build, publish and acquisition commands |
 | `CONTRIBUTING.md` | contribution paths and the text-identity rule for contributions |
-| `NOTICE.md`, `LICENSE`, `LICENSE-CODE`, `CITATION.cff`, `codemeta.json` | attribution, licences and citation metadata |
+| `LICENSE`, `LICENSE-CODE`, `CITATION.cff`, `codemeta.json` | licences and citation metadata |
 | `knowledge/` | every durably maintained knowledge document, listed with its function in [[knowledge/INDEX]] |
 | `sources/registry.yaml`, `sources/locks/`, `sources/manifests/` | the acquisition control plane, described in [[knowledge/data]] |
+| `workbench/reviews/`, `workbench/selections/` | the audit records of a review run and the dated selection record of a topic run, records and never grounding targets |
 | `.claude/skills/` | thin Claude Code adapters that route into [[knowledge/operations]] |
 
 The rule families and their homes are these.
@@ -52,7 +51,7 @@ The rule families and their homes are these.
 | authority chain, untrusted content, transitions, source status ownership, publication boundary, roles, work packages, model policy | [[knowledge/governance]] |
 | public workbench information architecture and interaction contract | [[knowledge/design]] |
 | milestones, research packages, operator decisions | [[knowledge/plan]] |
-| method rationale | [[knowledge/methodology]] |
+| method rationale | [[knowledge/schema]] § Rationale |
 
 Git history records what changed. [[knowledge/state]] records what is true
 now, [[knowledge/handoff]] what the next session must pick up, and
@@ -103,7 +102,9 @@ local. `corpus/normalized/` contains loss-minimizing machine records.
 Every transformation is tied to a run manifest and a source hash. Nothing in
 `corpus/` is a grounding target. A selected item enters the numbered chain
 through source admission under [[knowledge/data]], and admission creates
-neither a finding nor human verification.
+neither a finding nor human verification. The dated selection table of a topic
+run stays as a record under `workbench/selections/`, which documents what was
+chosen and grounds nothing.
 
 ### Evidence plane
 
@@ -192,3 +193,34 @@ Architecture, rules and durable decisions belong in `knowledge/`. Corpus
 counts, acquisition progress, active blockers and milestone status belong
 only in [[knowledge/state]] and run manifests. Public entry points link to
 that state instead of repeating values that will drift.
+
+## Lineage
+
+A Grounded Vault project selects its purpose, controlled topics, source types,
+output genre, working language, human verification role and checking
+mechanisms. The layer model, source anchors, check contracts and status
+progression stay invariant across projects. The parameters chosen here are
+recorded in [[knowledge/specification]], and this project is maintained as an
+executable research specification.
+
+| Component | Project realization |
+|---|---|
+| Intent | understand P5 well enough to compare and test P6 architecture options |
+| Inputs | versioned normative, development, governance, historical, scholarly and practice sources |
+| Transformations | acquire, normalize, admit, distill, synthesize, review, prototype, evaluate |
+| Knowledge objects | representations, distillates, assertions, topic maps, glossary entries, chapters |
+| Control objects | registry, locks, run manifests, schemas, state, journal, tests |
+| Outputs | P5 model atlas, decision trails, problem taxonomy, P6 options, migration and evaluation dossier |
+| Feedback | deterministic validation, adversarial machine review, human verification, prototype results |
+
+The documents in `knowledge/` are part of the control system and are revised
+when the project learns something about its own method or scope. Research
+findings themselves enter the numbered layers of the evidence plane.
+
+The design draws on source criticism's attention to the source location,
+prosopography's distinction between a recorded statement and an asserted fact,
+and nanopublications' pairing of assertions with provenance. Schema validation
+in scholarly editing and explicit provenance in data management supply related
+technical practices. These connections explain the intellectual context of the
+design. Whether the profile is adequate for a research task depends on its
+applied contracts and review results.

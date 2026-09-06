@@ -47,7 +47,6 @@ SECTIONS = [
     ("project", "Project", "knowledge/project.md"),
     ("specification", "Specification", "knowledge/specification.md"),
     ("data", "Material", "knowledge/data.md"),
-    ("concept", "Concept", "knowledge/methodology.md"),
     ("terminology", "Terminology", "knowledge/INDEX.md"),
     ("architecture", "Architecture", "knowledge/architecture.md"),
     ("design", "Interface design", "knowledge/design.md"),

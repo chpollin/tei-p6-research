@@ -100,7 +100,7 @@ METADATA_FIELDS = (
     "confidential",
 )
 ANALYSIS_FOLDER = "tools/analysis"
-PLACEHOLDER_SCAN_FILES = ("CLAUDE.md", "HOME.md")
+PLACEHOLDER_SCAN_FILES = ("CLAUDE.md", "README.md")
 
 # The layer a document type grounds in; the chapter scope walks down this chain.
 LAYER_BELOW = {

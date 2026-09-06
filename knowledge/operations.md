@@ -21,6 +21,55 @@ These procedures produce and check the artifacts defined in
 the completion gate in [[knowledge/testing]]. Record processing state in
 [[knowledge/state]] and durable decisions in [[knowledge/journal]].
 
+## Environment
+
+A working checkout needs Git, Python 3.11 or newer, PyYAML, pytest for the
+test suite, ruff for the linter, and the GitHub CLI when authenticated GitHub
+acquisition or repository administration is required. Install with `uv`:
+
+```powershell
+uv sync
+```
+
+Without `uv`:
+
+```powershell
+python -m pip install pyyaml pytest ruff
+```
+
+Verify the checkout:
+
+```powershell
+python tools/validate.py .
+python -m pytest tests
+```
+
+Warnings such as `W-EMPTY` and `W-NO-OUTPUT` describe missing production
+artifacts. Investigate and report them rather than hiding them. Their current
+applicability belongs in [[knowledge/state]].
+
+The repository root is the Obsidian vault, and the committed `.obsidian/`
+configuration uses core features only. Personal workspace state, caches and
+installed community plugins remain uncommitted. Human readers start at
+`README.md` and route through [[knowledge/INDEX]]. The repository continues to
+work as plain Markdown without Obsidian.
+
+The canonical public remote is
+`https://github.com/chpollin/tei-p6-research`. A normal clone already
+configures it as `origin`. Verify the checkout with:
+
+```powershell
+git remote get-url origin
+gh auth status
+```
+
+Run `gh auth login` only when authentication is absent and the task requires
+GitHub API access or repository administration:
+
+```powershell
+gh auth login
+```
+
 ## Acquire
 
 Acquisition channel and source type are independent. Record the channel in
@@ -65,12 +114,50 @@ Each collector writes one normalized object and one run manifest and prints
 one status line. Exit code 0 means `observable-complete`, exit code 2 means a
 recorded gap and `partial`. The status is derived from the recorded gaps
 through the shared rule in `tools/corpus/manifest.py`, so a collector cannot
-report completeness over missing objects. The commands are listed in
-`SETUP.md`. Identity uses upstream node IDs, numeric IDs, repository ID,
-content hashes, DOIs, TEI document numbers or reference-manager keys, and a
-title is never an identity. A collector treats issue bodies, comments,
-email, HTML, PDFs, ODD examples and attachments as data under the rule in
-[[knowledge/governance]].
+report completeness over missing objects. Identity uses upstream node IDs,
+numeric IDs, repository ID, content hashes, DOIs, TEI document numbers or
+reference-manager keys, and a title is never an identity. A collector treats
+issue bodies, comments, email, HTML, PDFs, ODD examples and attachments as
+data under the rule in [[knowledge/governance]].
+
+### Collector commands
+
+The source families, identity and completion vocabulary are in
+[[knowledge/data]], and [[knowledge/state]] records which families are
+actually ready. Production collection starts only after the relevant offline
+fixtures and integration checks pass, and source registration or a local cache
+alone never establishes acquisition. Replace `YYYY-MM-DD`, `<id>` and the URLs
+with the values of the run.
+
+```powershell
+python -m tools.corpus.git_snapshot --repo-url <url> --source-id <id> --ref HEAD --normalized-output corpus/normalized/git/<id>.json --manifest-output sources/manifests/YYYY-MM-DD-<id>.yaml
+python -m tools.corpus.github_snapshot --owner TEIC --repository TEI --source-id github-teic-tei-work-items --normalized-output corpus/normalized/github/teic-tei-work-items.jsonl --manifest-output sources/manifests/YYYY-MM-DD-github-teic-tei-work-items.yaml
+python -m tools.corpus.github_relations --owner TEIC --repository TEI --source-id github-teic-tei-work-items --work-items corpus/normalized/github/teic-tei-work-items.jsonl --normalized-output corpus/normalized/github/teic-tei-relations.jsonl --manifest-output sources/manifests/YYYY-MM-DD-github-teic-tei-relations.yaml --wait-for-reset
+python -m tools.corpus.github_org_census --organization TEIC --source-id teic-github-organization --normalized-output corpus/normalized/github/teic-repositories.jsonl --manifest-output sources/manifests/YYYY-MM-DD-teic-github-organization.yaml
+python -m tools.corpus.github_org_git_snapshot --census corpus/normalized/github/teic-repositories.jsonl --normalized-root corpus/normalized/git --manifest-root sources/manifests/repos --manifest-output sources/manifests/YYYY-MM-DD-teic-public-git-repositories.yaml
+python -m tools.corpus.web_census --source-id <id> --root-url <url> --allow-prefix <prefix> --depth 2 --max-pages 500 --normalized-output corpus/normalized/web/<id>.jsonl --manifest-output sources/manifests/YYYY-MM-DD-<id>.yaml
+python -m tools.corpus.sourceforge_snapshot --tracker bugs=https://sourceforge.net/rest/p/tei/bugs --tracker feature-requests=https://sourceforge.net/rest/p/tei/feature-requests --tracker support-requests=https://sourceforge.net/rest/p/tei/support-requests --workers 8 --delay-seconds 0.2 --normalized-output corpus/normalized/sourceforge/tei-legacy-trackers.jsonl --manifest-output sources/manifests/YYYY-MM-DD-tei-legacy-sourceforge.yaml
+python -m tools.corpus.asset_snapshot --source-id <id> --url <asset url> --normalized-output corpus/normalized/assets/<name>.json --manifest-output sources/manifests/YYYY-MM-DD-<name>.yaml
+python -m tools.corpus.zip_inventory --source-id <id> --archive corpus/raw/sha256/<aa>/<rest> --normalized-output corpus/normalized/assets/<name>-members.json --manifest-output sources/manifests/YYYY-MM-DD-<name>-members.yaml
+```
+
+The three-part TEI-L boundary defined in [[knowledge/data]] is collected by one
+module in three modes. Message bodies and sender identities stay in the raw
+store, and the normalized stream holds metadata only.
+
+```powershell
+python -m tools.corpus.listserv_snapshot psu --from-month 2512 --to-month YYMM --delay-seconds 1.0 --normalized-output corpus/normalized/mail/tei-l-psu.jsonl --manifest-output sources/manifests/YYYY-MM-DD-tei-l-psu.yaml
+python -m tools.corpus.listserv_snapshot wayback-coverage --from-month 9001 --to-month 2512 --delay-seconds 0.5 --normalized-output corpus/normalized/mail/tei-l-wayback-coverage.jsonl --manifest-output sources/manifests/YYYY-MM-DD-tei-l-wayback-coverage.yaml
+python -m tools.corpus.listserv_snapshot wayback-fetch --coverage-input corpus/normalized/mail/tei-l-wayback-coverage.jsonl --delay-seconds 1.0 --normalized-output corpus/normalized/mail/tei-l-wayback.jsonl --manifest-output sources/manifests/YYYY-MM-DD-tei-l-wayback.yaml
+```
+
+After a run, validate the control plane:
+
+```powershell
+python -m tools.corpus.validate_control_plane .
+```
+
+Admission of a selected source into the knowledge chain follows § Ingest.
 
 ### Run manifests
 
@@ -197,7 +284,9 @@ A source package enters the knowledge chain only after identity and
 checksum verification, rights classification and source-type assignment, as
 [[knowledge/data]] requires. Record the admission in a manifest that names
 the exact snapshot, the hashes and the rights disposition of every admitted
-object.
+object. Never create a shortcut from the acquisition corpus to a higher
+evidence layer. Before topic-scale distillation begins, take one
+rights-cleared source through the canonical chain end to end.
 
 For an archivable document, first convert the original to Markdown while
 preserving its headings, lists, tables, and paragraph boundaries. Then stamp
@@ -228,8 +317,13 @@ quotations checked against the raw snapshot at intake and recorded as
 uses. A generated metadata index of threads is a navigation projection and
 never grounding.
 
-Run `python tools/inventory.py . --write` to regenerate the source inventory
-in [[knowledge/state]] from the files.
+After a representation change, regenerate the source inventory in
+[[knowledge/state]] from the files and revalidate:
+
+```powershell
+python tools/inventory.py . --write
+python tools/validate.py .
+```
 
 ## Distill
 
@@ -264,8 +358,12 @@ remains outside the source-fidelity check.
 >
 > SOURCE: {Markdown representation, quotation set, or data schema description}
 
-Set the new distillate to `grounded` and run
-`python tools/inventory.py . --write` again.
+Set the new distillate to `grounded`, then run the same pair again:
+
+```powershell
+python tools/inventory.py . --write
+python tools/validate.py .
+```
 
 ## Build assertions
 

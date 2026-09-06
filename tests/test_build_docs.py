@@ -14,7 +14,7 @@ REPO = Path(__file__).parents[1]
 def test_relative_links_resolve_from_their_source_document() -> None:
     rendered = _inline(
         "Read [the specification](../knowledge/specification.md#scope).",
-        Path("knowledge/methodology.md"),
+        Path("knowledge/schema.md"),
     )
 
     assert 'href="../knowledge/specification.md#scope"' in rendered
@@ -36,7 +36,7 @@ def test_deployed_source_link_preserves_revision_and_fragment(monkeypatch) -> No
     revision = "c682eb51eef0d437300274447d22bc1ee6455871"
     monkeypatch.setattr(build_docs, "REPOSITORY_URL", "https://github.com/chpollin/tei-p6-research")
     monkeypatch.setattr(build_docs, "REPOSITORY_REVISION", revision)
-    rendered = _inline("[Scope](../knowledge/specification.md#scope)", Path("knowledge/methodology.md"))
+    rendered = _inline("[Scope](../knowledge/specification.md#scope)", Path("knowledge/schema.md"))
     assert f'/blob/{revision}/knowledge/specification.md#scope"' in rendered
     assert "/blob/main/" not in rendered
 
@@ -46,9 +46,9 @@ def test_project_page_contains_promptotyping_project_documents() -> None:
 
     assert f"<title>About · {PROJECT_TITLE}</title>" in page
     assert '<html lang="en">' in page
-    assert len(SECTIONS) == 16
+    assert len(SECTIONS) == 15
     assert [anchor for anchor, _, _ in SECTIONS] == [
-        "start", "project", "specification", "data", "concept", "terminology",
+        "start", "project", "specification", "data", "terminology",
         "architecture", "design", "schema", "operations", "verification",
         "testing", "governance", "plan", "state", "journal",
     ]

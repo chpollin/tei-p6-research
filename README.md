@@ -39,7 +39,7 @@ statements, and each distillate addresses one source. Collections undergo
 controlled admission before entering this chain. Grounding establishes
 traceability, machine review tests source support, and only the designated
 human expert assigns `verified`. The rationale is in
-[`knowledge/methodology.md`](knowledge/methodology.md).
+[`knowledge/schema.md`](knowledge/schema.md).
 
 ## Where to start
 
@@ -53,16 +53,45 @@ human expert assigns `verified`. The rationale is in
 | Understand the repository structure | [`knowledge/architecture.md`](knowledge/architecture.md) |
 | Read the model definition | [`knowledge/text-model.md`](knowledge/text-model.md) |
 | Read the proposal source | [`40_output/12-p6-design.md`](40_output/12-p6-design.md) |
-| Set up, build, publish or acquire | [`SETUP.md`](SETUP.md) |
+| Set up a local environment and run the checks | [Quick start](#quick-start) and [`knowledge/operations.md`](knowledge/operations.md) |
+| Acquire a source, regenerate the site or publish | [`knowledge/operations.md`](knowledge/operations.md), [`knowledge/design.md`](knowledge/design.md) and [`knowledge/testing.md`](knowledge/testing.md) |
 | Contribute research or code | [`CONTRIBUTING.md`](CONTRIBUTING.md) |
-| Navigate the vault in Obsidian | [`HOME.md`](HOME.md) |
+| Enter the research topics in Obsidian | [`knowledge/INDEX.md`](knowledge/INDEX.md#topic-maps) |
+
+## Quick start
+
+```powershell
+uv sync
+python tools/validate.py .
+python -m pytest tests
+```
+
+`uv sync` installs the dependencies. Without `uv` use
+`python -m pip install pyyaml pytest ruff`. The environment, the collectors
+and the research procedures are in
+[`knowledge/operations.md`](knowledge/operations.md), the regeneration of the
+public site in [`knowledge/design.md`](knowledge/design.md), and the one
+completion gate that closes a change in
+[`knowledge/testing.md`](knowledge/testing.md).
 
 ## Licence and attribution
 
-Text, documentation and content are licensed under [CC BY 4.0](LICENSE).
-Code under `tools/`, `tests/`, `.github/` and the site assets is licensed
-under [MIT](LICENSE-CODE). Third-party material retains its own rights, and
-public access grants no permission to republish full text. Citation metadata
-is in [`CITATION.cff`](CITATION.cff) and [`codemeta.json`](codemeta.json),
-and the attribution of the inherited vault architecture in
-[`NOTICE.md`](NOTICE.md).
+Project-authored text, documentation and content are licensed under
+[CC BY 4.0](LICENSE). Project-authored code under `tools/`, `tests/`,
+`.github/` and the site assets is licensed under [MIT](LICENSE-CODE).
+Citation metadata is in [`CITATION.cff`](CITATION.cff) and
+[`codemeta.json`](codemeta.json).
+
+The vault architecture was instantiated from
+[DigitalHumanitiesCraft/grounded-vault](https://github.com/DigitalHumanitiesCraft/grounded-vault)
+at commit `e19231735832f486735f94250d2771441372667e`, licensed under
+CC BY 4.0. The original architecture, validation tools, tests, documentation
+and Claude-oriented skills remain attributable to Christopher Pollin /
+Digital Humanities Craft OG.
+
+TEI Guidelines, schemas, source files, repository discussions, scholarly
+publications and other third-party materials retain their own authorship and
+applicable rights. Public access grants no permission to republish full text,
+and inclusion in a source registry implies no permission to redistribute full
+content. Per-source rights and provenance are recorded under `sources/` and
+governed by [`knowledge/data.md`](knowledge/data.md).
