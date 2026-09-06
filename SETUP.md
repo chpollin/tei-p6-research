@@ -123,6 +123,7 @@ values of the run.
 ```powershell
 python -m tools.corpus.git_snapshot --repo-url <url> --source-id <id> --ref HEAD --normalized-output corpus/normalized/git/<id>.json --manifest-output sources/manifests/YYYY-MM-DD-<id>.yaml
 python -m tools.corpus.github_snapshot --owner TEIC --repository TEI --source-id github-teic-tei-work-items --normalized-output corpus/normalized/github/teic-tei-work-items.jsonl --manifest-output sources/manifests/YYYY-MM-DD-github-teic-tei-work-items.yaml
+    python -m tools.corpus.github_relations --owner TEIC --repository TEI --source-id github-teic-tei-work-items --work-items corpus/normalized/github/teic-tei-work-items.jsonl --normalized-output corpus/normalized/github/teic-tei-relations.jsonl --manifest-output sources/manifests/YYYY-MM-DD-github-teic-tei-relations.yaml --wait-for-reset
 python -m tools.corpus.github_org_census --organization TEIC --source-id teic-github-organization --normalized-output corpus/normalized/github/teic-repositories.jsonl --manifest-output sources/manifests/YYYY-MM-DD-teic-github-organization.yaml
 python -m tools.corpus.github_org_git_snapshot --census corpus/normalized/github/teic-repositories.jsonl --normalized-root corpus/normalized/git --manifest-root sources/manifests/repos --manifest-output sources/manifests/YYYY-MM-DD-teic-public-git-repositories.yaml
 python -m tools.corpus.web_census --source-id <id> --root-url <url> --allow-prefix <prefix> --depth 2 --max-pages 500 --normalized-output corpus/normalized/web/<id>.jsonl --manifest-output sources/manifests/YYYY-MM-DD-<id>.yaml

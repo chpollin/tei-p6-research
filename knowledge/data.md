@@ -375,7 +375,7 @@ the following.
 5. Labels, milestones, releases, redirects and transfers, pagination and API
    errors were recorded.
 6. A second enumeration reconciled identifiers and API-reported child counts.
-7. Missing, minimized, deleted or inaccessible objects are recorded as gaps.
+7. Missing, minimized, deleted or inaccessible objects are recorded as gaps. The work-item family is acquired in two stages, a REST snapshot of items and their children and a GraphQL stage for review threads and relationship fields, and `observable-complete` for the family requires both run manifests.
 
 The API exposes current representations rather than every historical edit.
 Periodic snapshots create a local observation history from the first

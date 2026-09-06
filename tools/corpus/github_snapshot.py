@@ -221,14 +221,8 @@ def collect(
         kind = str(row["kind"])
         counts[kind] = counts.get(kind, 0) + 1
 
-    # The GraphQL stage of the bootstrap is not implemented, so every run of
-    # this adapter is short of the declared boundary and stays partial.
-    gaps.append(
-        {
-            "code": "graphql-relations-not-yet-collected",
-            "detail": "Review-thread and GraphQL-only relationship fields require the second collector stage.",
-        }
-    )
+    # Review threads and GraphQL-only relationship fields come from the second
+    # stage, tools.corpus.github_relations; the family is complete only with both.
     manifest = build_manifest(
         run_id=manifest_output.stem,
         source_id=source_id,

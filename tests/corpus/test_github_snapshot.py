@@ -8,7 +8,6 @@ import pytest
 from tools.corpus import github_snapshot
 from tools.corpus.github_snapshot import api_url, collect, metadata, next_link
 
-GRAPHQL_GAP = "graphql-relations-not-yet-collected"
 ISSUE = {"id": 11, "node_id": "I_1", "number": 1, "title": "Issue", "state": "open"}
 PULL = {
     "id": 12,
@@ -89,13 +88,13 @@ def test_metadata_excludes_body_and_login() -> None:
     assert "login" not in record
 
 
-def test_a_clean_run_records_only_the_known_missing_stage(tmp_path, fake_http) -> None:
+def test_a_clean_run_is_observable_complete(tmp_path, fake_http) -> None:
     serve_repository(fake_http)
 
     manifest = run(tmp_path)
 
-    assert [gap["code"] for gap in manifest["gaps"]] == [GRAPHQL_GAP]
-    assert manifest["status"] == "partial"
+    assert [gap["code"] for gap in manifest["gaps"]] == []
+    assert manifest["status"] == "observable-complete"
     rows = [
         json.loads(line)
         for line in (tmp_path / "work-items.jsonl").read_text(encoding="utf-8").splitlines()
@@ -117,8 +116,8 @@ def test_the_max_items_gap_appears_only_when_the_limit_binds(tmp_path, fake_http
     unbounded = run(tmp_path, max_items=5)
     bounded = run(tmp_path, max_items=1)
 
-    assert [gap["code"] for gap in unbounded["gaps"]] == [GRAPHQL_GAP]
-    assert [gap["code"] for gap in bounded["gaps"]] == ["max-items-limit", GRAPHQL_GAP]
+    assert [gap["code"] for gap in unbounded["gaps"]] == []
+    assert [gap["code"] for gap in bounded["gaps"]] == ["max-items-limit"]
 
 
 def test_a_rate_limit_stop_is_recorded_as_its_own_gap(tmp_path, fake_http) -> None:
@@ -131,7 +130,7 @@ def test_a_rate_limit_stop_is_recorded_as_its_own_gap(tmp_path, fake_http) -> No
 
     manifest = run(tmp_path)
 
-    assert [gap["code"] for gap in manifest["gaps"]] == ["rate-limit-stop", GRAPHQL_GAP]
+    assert [gap["code"] for gap in manifest["gaps"]] == ["rate-limit-stop"]
     assert manifest["status"] == "partial"
 
 
@@ -141,7 +140,7 @@ def test_a_failed_request_is_recorded_as_a_collection_error(tmp_path, fake_http)
 
     manifest = run(tmp_path)
 
-    assert [gap["code"] for gap in manifest["gaps"]] == ["collection-error", GRAPHQL_GAP]
+    assert [gap["code"] for gap in manifest["gaps"]] == ["collection-error"]
     assert manifest["requests"][0]["status"] == 404
 
 
@@ -216,8 +215,8 @@ def test_main_exit_code_follows_the_recorded_gaps(tmp_path, fake_http, monkeypat
 
     exit_code = github_snapshot.main()
 
-    assert exit_code == 2
-    assert capsys.readouterr().out.startswith("partial: github-teic-tei-work-items ->")
+    assert exit_code == 0
+    assert capsys.readouterr().out.startswith("observable-complete: github-teic-tei-work-items ->")
     assert fake_http.headers_seen[0]["authorization"] == "Bearer gh-token"
 
 
