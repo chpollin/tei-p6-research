@@ -12,7 +12,6 @@ from typing import Any
 
 from tools.models.abstract_text import check_revision, validate_model
 
-
 PROFILE_VERSION = "editorial-provenance-0.1"
 BASE_MODEL_VERSION = "0.1"
 DERIVED_FROM = "ep-derived-from"
@@ -117,7 +116,7 @@ def check_profile_revision(before: Any, after: Any) -> dict:
     """
     diagnostics = list(check_revision(before, after)["diagnostics"])
     validations = [validate_profile(package) for package in (before, after)]
-    for prefix, validation in zip(("/before", "/after"), validations):
+    for prefix, validation in zip(("/before", "/after"), validations, strict=True):
         diagnostics.extend({"code": item["code"], "path": prefix + item["path"]}
                            for item in validation["diagnostics"])
 

@@ -1,15 +1,14 @@
 """Tests for the deterministic project-page generator."""
 
-import sys
 import subprocess
+import sys
 from pathlib import Path
 
-REPO = Path(__file__).parents[1]
-sys.path.insert(0, str(REPO / "tools"))
+from tools.build_docs import PROJECT_TITLE, SECTIONS, _inline, build_page
+from tools.sitegen.assets import read_asset
+from tools.sitegen.chrome import render_footer, render_header
 
-from build_docs import PROJECT_TITLE, SECTIONS, _inline, build_page  # noqa: E402
-from sitegen.assets import read_asset  # noqa: E402
-from sitegen.chrome import render_footer, render_header  # noqa: E402
+REPO = Path(__file__).parents[1]
 
 
 def test_relative_links_resolve_from_their_source_document() -> None:
@@ -32,7 +31,7 @@ def test_external_and_fragment_links_remain_unchanged() -> None:
 
 
 def test_deployed_source_link_preserves_revision_and_fragment(monkeypatch) -> None:
-    import build_docs
+    from tools import build_docs
 
     revision = "c682eb51eef0d437300274447d22bc1ee6455871"
     monkeypatch.setattr(build_docs, "REPOSITORY_URL", "https://github.com/chpollin/tei-p6-research")

@@ -4,26 +4,15 @@ from __future__ import annotations
 import json
 import re
 from pathlib import Path
-from urllib.parse import quote, urlsplit
+from urllib.parse import urlsplit
 
-import yaml
+from tools.sitegen import comparison_view
+from tools.sitegen.documents import WIKI, read_document
 
 PROPOSAL = "40_output/12-p6-design.md"
 MODEL = "docs/p6/abstract-text-model-v0.1.md"
 CASES = "experiments/editorial_cases/cases.json"
 SYNTHETIC = "experiments/abstract_text_v01/examples/competing-readings.json"
-WIKI = re.compile(r"\[\[([^\]|]+)(?:\|([^\]]+))?\]\]")
-
-
-def document(root: Path, path: str) -> tuple[dict, str]:
-    resolved = (root / path).resolve()
-    if not resolved.is_relative_to(root.resolve()):
-        raise ValueError(f"Input escapes repository: {path}")
-    text = resolved.read_text(encoding="utf-8")
-    if text.startswith("---\n"):
-        _, metadata, body = text.split("---\n", 2)
-        return yaml.safe_load(metadata) or {}, body.strip()
-    return {}, text.strip()
 
 
 def wiki_path(value: str) -> str:
@@ -33,14 +22,37 @@ def wiki_path(value: str) -> str:
     return path + ("" if Path(path).suffix in (".md", ".xml", ".pdf", ".json", ".yaml") else ".md") + (f"#{anchor}" if anchor else "")
 
 
-def repository_link(path: str, base: str | None) -> str:
-    target, _, anchor = path.partition("#")
-    href = (base or "../") + quote(target, safe="/")
-    # GitHub renders Obsidian block markers as text, not addressable IDs.
-    # Link to the actual file and preserve the precise anchor in the label.
-    if anchor and not anchor.startswith("^"):
-        href += "#" + quote(anchor, safe="-")
-    return href
+def check_editorial_excerpt(root: Path, cases: dict) -> None:
+    """Gate the build on the pinned, licensed excerpt the page attributes."""
+    case = next((c for c in cases["cases"] if c["case_id"] == "case-2-interrupted-heading" and not c.get("holdout")), None)
+    if case is None:
+        raise ValueError("Required development editorial case is missing")
+    for required in ("primary_text", "primary_segments", "unknown_hand_note_text", "editorial_note_text", "original_xml"):
+        if required not in case:
+            raise ValueError(f"Editorial case lacks {required}")
+    if len(case["primary_segments"]) != 2:
+        raise ValueError("Interrupted-heading presentation requires two primary segments")
+    metadata, _ = read_document(root, f"10_markdown/documents/{cases['source']}.md")
+    metadata = metadata.get("metadata", {})
+    if not metadata.get("identifier") or metadata.get("license") != "CC-BY-SA-4.0" or not cases.get("attribution"):
+        raise ValueError("Editorial excerpt lacks pinned source, attribution or expected license")
+
+
+def check_synthetic_illustration(synthetic: dict) -> None:
+    """Gate the build on extents that reconcile with the version they select."""
+    version = synthetic["versions"][0]
+    selections = {s["id"]: s for s in synthetic["selections"]}
+    agents = {a["id"] for a in synthetic["agents"]}
+    for reading in synthetic["readings"]:
+        if reading["agent"] not in agents:
+            raise ValueError("Synthetic illustration attributes a reading to an unknown agent")
+        for node in reading["nodes"]:
+            selection = selections[node["selection"]]
+            for segment in selection["selector"]["segments"]:
+                if not all(type(segment.get(key)) is int for key in ("start", "end")) or not 0 <= segment["start"] < segment["end"] <= len(version["content"]):
+                    raise ValueError("Synthetic illustration has an invalid extent")
+                if selection["version"] != version["id"] or version["content"][segment["start"]:segment["end"]] != segment["quote"]:
+                    raise ValueError("Synthetic illustration does not reconcile to its version")
 
 
 def statement(body: str) -> str:
@@ -51,15 +63,13 @@ def statement(body: str) -> str:
 
 
 def build_view(root: Path, date: str, repository_base: str | None = None) -> dict:
-    from sitegen.comparison_view import build_comparisons
-
     if repository_base:
         parsed = urlsplit(repository_base)
         if parsed.scheme != "https" or not parsed.netloc or parsed.query or parsed.fragment:
             raise ValueError("repository_base must be an HTTPS repository path")
         repository_base = repository_base.rstrip("/") + "/"
-    metadata, body = document(root, PROPOSAL)
-    _, model = document(root, MODEL)
+    _, body = read_document(root, PROPOSAL)
+    _, model = read_document(root, MODEL)
     cases = json.loads((root / CASES).read_text(encoding="utf-8"))
     synthetic = json.loads((root / SYNTHETIC).read_text(encoding="utf-8"))
     references = {}
@@ -106,7 +116,7 @@ def build_view(root: Path, date: str, repository_base: str | None = None) -> dic
                 assertion_path = wiki_path(target)
                 if not assertion_path.startswith("30_assertions/"):
                     raise ValueError("Premise must link directly to an assertion")
-                ameta, abody = document(root, assertion_path.split("#")[0])
+                ameta, abody = read_document(root, assertion_path.split("#")[0])
                 links = [{"label": "Assertion", "path": assertion_path}]
                 if not ameta.get("grounding"):
                     raise ValueError(f"Assertion has no grounding: {assertion_path}")
@@ -114,14 +124,14 @@ def build_view(root: Path, date: str, repository_base: str | None = None) -> dic
                     dist_path = wiki_path(grounding)
                     if not dist_path.startswith("20_distillates/"):
                         raise ValueError("Assertion grounding must target a distillate")
-                    dmeta, dbody = document(root, dist_path.split("#")[0])
+                    dmeta, dbody = read_document(root, dist_path.split("#")[0])
                     block = dist_path.partition("#")[2]
                     if block and not re.search(re.escape(block) + r"(?:\s|$)", dbody):
                         raise ValueError(f"Missing distillate block: {dist_path}")
                     links.append({"label": "Distillate " + block, "path": dist_path})
                     if dmeta.get("representation"):
                         rep_path = wiki_path(dmeta["representation"])
-                        rmeta, _ = document(root, rep_path.split("#")[0])
+                        rmeta, _ = read_document(root, rep_path.split("#")[0])
                         links.append({"label": "Source representation", "path": rep_path})
                         identifier = rmeta.get("metadata", {}).get("identifier")
                         if identifier:
@@ -144,29 +154,9 @@ def build_view(root: Path, date: str, repository_base: str | None = None) -> dic
     for required in ("Version", "Reading", "Annotation", "Relation"):
         if required not in object_definitions:
             raise ValueError(f"Model definition missing {required}")
-    case = next((c for c in cases["cases"] if c["case_id"] == "case-2-interrupted-heading" and not c.get("holdout")), None)
-    if case is None:
-        raise ValueError("Required development editorial case is missing")
-    for required in ("primary_text", "primary_segments", "unknown_hand_note_text", "editorial_note_text", "original_xml"):
-        if required not in case:
-            raise ValueError(f"Editorial case lacks {required}")
-    if len(case["primary_segments"]) != 2:
-        raise ValueError("Interrupted-heading presentation requires two primary segments")
-    rmeta, _ = document(root, f"10_markdown/documents/{cases['source']}.md")
-    source_url = rmeta.get("metadata", {}).get("identifier")
-    if not source_url or rmeta.get("metadata", {}).get("license") != "CC-BY-SA-4.0" or not cases.get("attribution"):
-        raise ValueError("Editorial excerpt lacks pinned source, attribution or expected license")
-    version = synthetic["versions"][0]
-    selections = {s["id"]: s for s in synthetic["selections"]}
-    agents = {a["id"]: a["label"] for a in synthetic["agents"]}
-    readings = []
-    for reading in synthetic["readings"]:
-        for node in reading["nodes"]:
-            selection = selections[node["selection"]]
-            for segment in selection["selector"]["segments"]:
-                if not all(type(segment.get(key)) is int for key in ("start", "end")) or not 0 <= segment["start"] < segment["end"] <= len(version["content"]):
-                    raise ValueError("Synthetic illustration has an invalid extent")
-                if selection["version"] != version["id"] or version["content"][segment["start"]:segment["end"]] != segment["quote"]:
-                    raise ValueError("Synthetic illustration does not reconcile to its version")
-                readings.append({"agent": agents[reading["agent"]], "start": segment["start"], "end": segment["end"], "quote": segment["quote"]})
-    return {"date": date, "base": repository_base, "body": body, "metadata": metadata, "notes": notes, "definitions": object_definitions, "case": case, "attribution": cases["attribution"], "source_url": source_url, "projection_policy": cases["projection_policy"], "version": version, "readings": readings, "comparisons": build_comparisons(root), "paths": {"proposal": PROPOSAL, "model": MODEL, "cases": CASES, "synthetic": SYNTHETIC}}
+    check_editorial_excerpt(root, cases)
+    check_synthetic_illustration(synthetic)
+    return {"date": date, "base": repository_base, "body": body, "notes": notes,
+            "definitions": object_definitions, "attribution": cases["attribution"],
+            "comparisons": comparison_view.build_comparisons(root),
+            "paths": {"proposal": PROPOSAL, "model": MODEL, "cases": CASES, "synthetic": SYNTHETIC}}

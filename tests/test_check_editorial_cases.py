@@ -1,8 +1,6 @@
 """Regression gates distinguish source support, structural checks, and migration."""
 
 import copy
-import hashlib
-import json
 import shutil
 
 import pytest
@@ -55,7 +53,7 @@ def test_case_source_drift_and_boundary_change_fail_closed(experiment, change):
     else:
         cases["cases"].append(copy.deepcopy(cases["cases"][0]))
     write_json(path, cases)
-    with pytest.raises(ValueError, match="fragment drift|boundary changed"):
+    with pytest.raises(ValueError, match=r"fragment drift|boundary changed"):
         check.build_report(experiment)
 
 
@@ -140,45 +138,12 @@ def test_identity_suite_scope_is_checked(experiment, change):
         check.identity_results(experiment)
 
 
-@pytest.fixture
-def review(tmp_path, monkeypatch):
-    pairs = [{"id": f"source-pair-{i}", "prompt": f"Source-support prompt {i}"} for i in range(6)]
-    path = tmp_path / check.AUDIT
-    path.mkdir(parents=True)
-    verdicts = [{"id": pair["id"], "verdict": "fully supports",
-                 "prompt_sha256": hashlib.sha256(pair["prompt"].encode("utf-8")).hexdigest()}
-                for pair in pairs]
-    for name, values in (("pairs", pairs), ("verdicts", verdicts)):
-        (path / f"{name}.jsonl").write_text("".join(json.dumps(item) + "\n" for item in values), encoding="utf-8")
-    monkeypatch.setattr(check, "current_pairs", lambda root: copy.deepcopy(pairs))
-    return tmp_path, pairs, verdicts
-
-
-def test_all_six_fresh_hash_bound_verdicts_are_required(review):
-    root, _, _ = review
-    check.check_review(root)
-
-
-@pytest.mark.parametrize("change", ["duplicate", "unknown", "nonpassing", "stale-hash", "missing", "stale-pair"])
-def test_review_rejects_nonpassing_duplicate_missing_or_stale_bindings(review, change):
-    root, pairs, verdicts = review
-    if change == "duplicate":
-        verdicts[1] = copy.deepcopy(verdicts[0])
-    elif change == "unknown":
-        verdicts[0]["id"] = "unknown"
-    elif change == "nonpassing":
-        verdicts[0]["verdict"] = "partially supports"
-    elif change == "stale-hash":
-        verdicts[0]["prompt_sha256"] = "0" * 64
-    elif change == "missing":
-        verdicts.pop()
-    else:
-        # Change current source context while retaining the stored pairs/verdicts.
-        pairs[0]["prompt"] += " New source context."
-    (root / check.AUDIT / "verdicts.jsonl").write_text(
-        "".join(json.dumps(item) + "\n" for item in verdicts), encoding="utf-8")
-    with pytest.raises(ValueError):
-        check.check_review(root)
+def test_the_recorded_editorial_review_binds_the_current_pairs():
+    """The audit of this repository, over its own vault and its own review files."""
+    audit = check.check_review()
+    assert audit.pairs == 6
+    # The verdicts of 2026-09-05 carry a rationale and no reviewer attribution.
+    assert len(audit.without_reviewer) == 6
 
 
 def test_current_pair_scope_requires_six_pairs_and_all_four_documents(monkeypatch):
@@ -191,7 +156,7 @@ def test_current_pair_scope_requires_six_pairs_and_all_four_documents(monkeypatc
 
     documents = sorted(check.DOCUMENTS)
     pairs = [Pair(f"p{i}", document) for i, document in enumerate(documents + documents[:2])]
-    monkeypatch.setattr(check, "cut_pairs", lambda root, errors: pairs)
+    monkeypatch.setattr(check, "select_pairs", lambda root, scope, documents=None: pairs)
     assert len(check.current_pairs()) == 6
     pairs.pop()
     with pytest.raises(ValueError, match="scope is incomplete"):

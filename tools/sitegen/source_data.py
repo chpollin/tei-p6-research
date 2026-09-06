@@ -7,6 +7,7 @@ from typing import Any
 
 import yaml
 
+from tools.sitegen.markup import repository_link
 
 _ALLOWED_OVERVIEW_PATHS = (
     ("sources", "locks"),
@@ -40,8 +41,8 @@ def manifest_references(lock: dict[str, Any]) -> list[str]:
     return list(dict.fromkeys(references))
 
 
-def local_href(path: str) -> str:
-    """Return a local docs-relative URL for an allowed repository record."""
+def allowed_control_path(path: str) -> PurePosixPath:
+    """Return the normalized path of a record the overview may link or read."""
     normalized = PurePosixPath(path.replace("\\", "/"))
     if normalized.is_absolute() or ".." in normalized.parts:
         raise ValueError(f"unsafe local overview link: {path}")
@@ -50,13 +51,17 @@ def local_href(path: str) -> str:
         for prefix in _ALLOWED_OVERVIEW_PATHS
     ):
         raise ValueError(f"unexpected local overview link: {path}")
-    return "../" + normalized.as_posix()
+    return normalized
+
+
+def control_href(path: str, base: str | None) -> str:
+    """Resolve an allowed record locally or against the deployment base."""
+    return repository_link(allowed_control_path(path).as_posix(), base)
 
 
 def resolve_repo_file(root: Path, reference: str) -> Path:
     """Resolve an allowed overview input and require it to exist below root."""
-    local_href(reference)
-    normalized = PurePosixPath(reference.replace("\\", "/"))
+    normalized = allowed_control_path(reference)
     resolved_root = root.resolve()
     candidate = (resolved_root / Path(*normalized.parts)).resolve()
     if not candidate.is_relative_to(resolved_root) or not candidate.is_file():

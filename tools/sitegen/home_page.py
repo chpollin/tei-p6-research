@@ -1,33 +1,20 @@
 """Render the proposal home from a validated view model, with no input reads."""
 from __future__ import annotations
 
-import html
 import json
 import posixpath
 import re
 from pathlib import PurePosixPath
 from urllib.parse import urlsplit
 
-from sitegen.assets import read_asset
-from sitegen.chrome import render_footer, render_header
-from sitegen.home_view import repository_link, wiki_path
-
-
-def esc(value: object) -> str:
-    return html.escape(str(value), quote=True)
+from tools.sitegen.assets import read_asset
+from tools.sitegen.chrome import render_footer, render_header
+from tools.sitegen.home_view import wiki_path
+from tools.sitegen.markup import doc_id, esc, link_href, repository_link, safe_url
 
 
 def slug(text: str) -> str:
     return re.sub(r"[^\w-]+", "-", text.lower()).strip("-")
-
-
-def safe_url(value: str) -> str:
-    parsed = urlsplit(value)
-    if parsed.scheme and parsed.scheme not in ("https", "http", "mailto"):
-        raise ValueError(f"Unsafe link scheme: {parsed.scheme}")
-    if value.startswith("//") or any(ord(c) < 32 for c in value):
-        raise ValueError("Unsafe link")
-    return value
 
 
 class Markdown:
@@ -120,7 +107,8 @@ class Markdown:
                 i += 1
                 continue
             if line.startswith("|") and i + 1 < len(lines) and re.match(r"^\s*\|[\s:|-]+\|\s*$", lines[i + 1]):
-                cells = lambda row: [c.strip() for c in row.strip().strip("|").split("|")]
+                def cells(row: str) -> list[str]:
+                    return [c.strip() for c in row.strip().strip("|").split("|")]
                 header = "".join(f'<th scope="col">{self.inline(c, source)}</th>' for c in cells(line))
                 i += 2
                 rows = []
@@ -181,7 +169,7 @@ def render_notes(view: dict, md: Markdown) -> str:
             content = '<p class="note-type">Source-grounded premise</p>' + md.blocks(note["text"], view["paths"]["proposal"])
             for assertion in note["assertions"]:
                 links = []
-                knowledge_id = "doc-" + re.sub(r"[^a-z0-9]+", "-", assertion["path"].split("#")[0].removesuffix(".md").lower()).strip("-")
+                knowledge_id = doc_id(assertion["path"].split("#")[0])
                 links.append(f'<li><a href="knowledge.html#{knowledge_id}">Inspect provenance</a></li>')
                 for link in assertion["links"]:
                     href = safe_url(link["url"]) if "url" in link else repository_link(link["path"], view["base"])
@@ -197,7 +185,7 @@ def render_notes(view: dict, md: Markdown) -> str:
 
 def link_list(links: list[dict]) -> str:
     return '<ul class="source-links">' + "".join(
-        f'<li><a href="{esc(safe_url(link["url"]))}">{esc(link["label"])}</a></li>'
+        f'<li><a href="{esc(link_href(link["url"]))}">{esc(link["label"])}</a></li>'
         for link in links
     ) + "</ul>"
 
@@ -306,7 +294,10 @@ def render_page(view: dict) -> str:
     article = md.blocks(view["body"], view["paths"]["proposal"], headings=True)
     toc = "".join(f'<li><a href="#{anchor}">{esc(label)}</a></li>' for anchor, label in md.headings)
     notes = render_notes(view, md)
-    repo = lambda key: esc(repository_link(view["paths"][key], view["base"]))
+
+    def repo(key: str) -> str:
+        return esc(repository_link(view["paths"][key], view["base"]))
+
     comparisons = view["comparisons"]
     case_links = "".join(f'<li><a href="#example={esc(case["id"])}" data-open-case="{esc(case["id"])}">{esc(case["title"])} <span aria-hidden="true">↗</span></a></li>' for case in comparisons["cases"])
     case_options = "".join(f'<option value="{esc(case["id"])}">{esc(case["title"])}</option>' for case in comparisons["cases"])

@@ -9,7 +9,7 @@ method:
 status: draft
 language: en
 created: "2026-09-04"
-updated: "2026-09-05"
+updated: "2026-09-06"
 related: [design, operations, journal]
 ---
 
@@ -30,10 +30,10 @@ documents.
 | P5 4.12.0 acquisition | partial | pinned Git tree and official release ZIP are complete; the published-HTML boundary still needs an explicit reconciliation against the ZIP before the family label can return to `observable-complete` |
 | Public TEIC Git corpus | observable-complete | all 41 repositories exposed by the organization census are mirrored at full HEAD commits; 25,415 tree entries inventoried |
 | TEI website records | partial | the website Git repository is inventoried, but the registered page-snapshot boundary has not yet been acquired |
-| GitHub work-item corpus | blocked | collector and tests are ready; a read-only authenticated GitHub session is required for exhaustive issues, PRs, comments, reviews, and timelines |
+| GitHub work-item corpus | partial | nothing acquired yet; an authenticated read-only `gh` session is available since 2026-09-06 and the collector derives its status from recorded gaps since adapter version 2; the exhaustive issues, PRs, comments, reviews, and timelines run has not been executed and the GraphQL relations stage remains unimplemented |
 | Governance corpus | partial | 206 Council pages and 225 Board targets observed; inaccessible historical links and external working documents remain explicit gaps |
 | Historical TEI Archive | partial | 394 index/page responses acquired; 363 linked non-HTML artifacts are in reconciliation |
-| Legacy SourceForge | partial | tracker API boundary observable-complete on 2026-09-05: all 1,349 enumerated bug, feature, and support tickets plus 8,880 discussion posts acquired; release-file and legacy version-control interfaces remain unreconciled |
+| Legacy SourceForge | partial | 1,349 enumerated bug, feature, and support tickets plus 8,880 discussion posts acquired on 2026-09-05; the recorded `observable-complete` tracker label rests on a count check that compared the enumeration with itself, exposed by the 2026-09-06 collector repair, so the tracker boundary must be re-run under adapter version 2 against the tracker-reported counts; release-file and legacy version-control interfaces remain unreconciled |
 | Literature corpus | partial | a bounded first reading records four candidates; W3C REC2017, Piez2014 and Renear/Wickett2010 have citation-only admissions; the Renear/Mylonas/Durand author-version full text returned HTTP 403; Zotero/JTEI and full seed census remain open |
 | Official P6 process | partial | public `TEIC/timeForP6` history acquired; relevant Council records inventoried; reported `TEIC/p6-sandbox` remains non-public or absent |
 | Independent P6 design dossier | bounded Abstract Text Model 0.1 implemented, human acceptance pending | Ten record kinds with formal constraints and five reference operations. JSON, XML and YAML bindings preserve the same model instance. Two real diary fragments have bounded mappings. Full TEI domain coverage, RDF and whole-document P5 conversion remain open. |
@@ -47,8 +47,8 @@ documents.
 | First research wave | bounded integration and technical checks complete | four citation-only sources have checked quotations and validated distillates; four validated assertions feed `40_output/06-annotation-and-overlap.md`; eight source-support pairs passed fresh-context review after narrowing one heading; atlas reproduction, quotation checks, chapter and full-vault validation, control-plane checks and 238 tests passed; human verification remains open |
 | Proposal for TEI P6 | continuous technical argument integrated | `40_output/12-p6-design.md` links nine grounded premises to thirteen explicit posits and seven comparative examples. Architecture ranking and adoption evidence remain open. |
 | Editorial comparison | bounded execution complete | three fragments of one pinned Humboldt diary; two development mappings preserve the declared observations; the frozen candidate refuses the page/foliation holdout and the baseline projection also misses its required prose result; 18 independent synthetic provenance-profile cases pass; CC BY-SA 4.0 attribution and source hashes reconcile; full RNG/ODD conformance and media alignment remain untested |
-| Research frontend | implemented and locally checked | The canonical proposal is `docs/index.html`, with `home.html` as a generated alias. Model, Materials, Knowledge and About use the same layout and the same local and published routes. No decorative horizontal rules. The model reference derives its ten classes and seventeen reference fields from the existing contract. Published revisions are identified by the Pages deployment log. |
-| Integrated release gate | passed on 2026-09-05 | 902 tests pass. Full-vault validation reports no errors or warnings. Source admissions, current support-review hashes, four quotation checks, the P5 declaration atlas, 68 model cases and the editorial comparison reproduce. Five pages pass desktop and 390-pixel browser checks with keyboard navigation and no page errors. |
+| Research frontend | implemented and locally checked | The canonical proposal is `docs/index.html`. Model, Materials, Knowledge and About use the same layout and the same local and published routes. No decorative horizontal rules. The model reference derives its ten classes and seventeen reference fields from the existing contract. Published revisions are identified by the Pages deployment log. |
+| Integrated release gate | passed on 2026-09-06 | 1,036 tests pass and ruff reports no finding. Full-vault validation reports no errors or warnings. Source admissions, current support-review hashes, 68 model cases and the editorial comparison reproduce; all five pages reproduce byte-for-byte from their recorded build date. The P5 declaration atlas and the four quotation checks need the local raw corpus, which this checkout does not hold. The 2026-09-05 browser checks were not repeated. |
 | Knowledge navigation | implemented | The browser inventories five source representations, nine distillates, eleven assertions and three chapters. Exact passage links and backreferences follow the immediate-layer chain. Citation-only admissions end at their checked quotation and citation. |
 | Materials navigation | implemented | Sixteen primary source families and a separate literature view describe locked holdings and gaps. The page does not enumerate every raw object or imply complete acquisition. |
 
@@ -107,8 +107,15 @@ One row per chapter of the output. Writing status mirrors the chapter's frontmat
 
 <!-- Short, current list; done items are deleted, decisions go to the journal. -->
 
-- Authenticate GitHub read access and complete the observable-complete issue,
-  pull-request, comment, review, and timeline bootstrap.
+- Run the exhaustive TEIC/TEI issue, pull-request, comment, review, and
+  timeline collection under the authenticated session, then implement the
+  GraphQL relations stage so the family can leave `partial`.
+- Re-run the SourceForge tracker collection under adapter version 2 so the
+  tracker boundary is reconciled against tracker-reported counts.
+- Register TEI-L as its own source family with a three-part boundary: the
+  Penn State LISTSERV archive since the list moved there, Wayback Machine
+  captures of the retired Brown University archive measured month by month, and
+  an export requested from the TEI Consortium for every month neither holds.
 - Reconcile the remaining Archive, SourceForge release-file and legacy
   version-control, external Council, and community-interface gaps.
 - Resolve the P5 published-HTML and website-snapshot coverage exceptions before relying on their family-level `observable-complete` labels.

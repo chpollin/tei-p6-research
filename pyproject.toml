@@ -7,8 +7,8 @@ dependencies = ["pyyaml"]
 # not an installable package
 
 [dependency-groups]
-dev = ["pytest"]
+dev = ["pytest", "ruff"]
 
 [tool.ruff.lint]
 select = ["E", "F", "W", "I", "UP", "B", "C4", "SIM", "PTH", "RUF"]
-ignore = ["E501"]
+ignore = ["E501", "RUF001", "RUF002", "RUF003"]  # E501 line length; RUF00x deliberate typographic characters

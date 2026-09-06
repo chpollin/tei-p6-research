@@ -7,14 +7,14 @@ Run from the repository root with ``py -3 -m tools.tei.build_atlas --output PATH
 from __future__ import annotations
 
 import argparse
-from collections import Counter
-from hashlib import sha1, sha256
-from io import BytesIO
 import json
-from pathlib import Path, PurePosixPath
 import re
 import subprocess
 import xml.etree.ElementTree as ET
+from collections import Counter
+from hashlib import sha1, sha256
+from io import BytesIO
+from pathlib import Path, PurePosixPath
 
 import yaml
 
@@ -264,7 +264,7 @@ def encoded(atlas: dict) -> bytes:
 
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--root", type=Path, default=Path("."))
+    parser.add_argument("--root", type=Path, default=Path())
     parser.add_argument("--git-dir", type=Path, default=Path("corpus/raw/git/TEIC-TEI.git"))
     parser.add_argument("--lock", default="sources/locks/tei-p5-4.12.0.yaml")
     parser.add_argument("--expected-version", default="4.12.0")

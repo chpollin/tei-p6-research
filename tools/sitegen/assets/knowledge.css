@@ -34,7 +34,6 @@
 .document-columns { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.5rem 3rem; }
 .document-columns h3 { font-size: .95rem; }
 .document-columns li { padding: .15rem 0; font-size: .875rem; }
-[hidden] { display: none !important; }
 @media (max-width: 650px) {
   .knowledge-main { padding: 20px 16px; }
   .knowledge-filters { align-items: stretch; }

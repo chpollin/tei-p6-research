@@ -6,18 +6,20 @@ import argparse
 import copy
 import hashlib
 import json
-from pathlib import Path
 import sys
+from itertools import pairwise
+from pathlib import Path
+
+if __package__ in (None, ""):  # run as a script, so the package root is not on the path
+    sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+
+from tools.check_abstract_text_v01 import json_bytes, read_json, text_sha256
+from tools.ingest_editorial_cases import embedded_source
+from tools.models import editorial_profile as profile
+from tools.review import Pair, ReviewAudit, check_support_review, select_pairs
+from tools.tei.editorial_cases import compare_fragment
 
 ROOT = Path(__file__).resolve().parents[1]
-sys.path.insert(0, str(ROOT))
-sys.path.insert(0, str(ROOT / "tools"))
-from review import cut_pairs  # noqa: E402
-from tools.check_abstract_text_v01 import json_bytes, read_json  # noqa: E402
-from tools.ingest_editorial_cases import embedded_source  # noqa: E402
-from tools.models import editorial_profile as profile  # noqa: E402
-from tools.tei.editorial_cases import compare_fragment  # noqa: E402
-
 BASE = Path("experiments/editorial_cases")
 REPORT = BASE / "report.json"
 AUDIT = Path("workbench/reviews/2026-09-05-editorial-cases")
@@ -29,30 +31,23 @@ DOCUMENTS = {
 }
 
 
+def in_scope(pair: Pair) -> bool:
+    return pair.document in DOCUMENTS
+
+
 def current_pairs(root: Path = ROOT) -> list[dict]:
-    errors = []
-    pairs = [pair.to_dict() for pair in cut_pairs(root, errors) if pair.document in DOCUMENTS]
-    if errors or len(pairs) != 6 or {pair["document"] for pair in pairs} != DOCUMENTS:
-        raise ValueError("editorial source-review scope is incomplete: " + "; ".join(errors))
+    """The six source-support pairs the editorial evidence closure cuts today."""
+    pairs = [pair.to_dict() for pair in select_pairs(root, in_scope, DOCUMENTS)]
+    if len(pairs) != 6 or {pair["document"] for pair in pairs} != DOCUMENTS:
+        raise ValueError("editorial source-review scope is incomplete")
     return pairs
 
 
-def check_review(root: Path = ROOT) -> None:
-    pairs = current_pairs(root)
-    stored = [json.loads(line) for line in (root / AUDIT / "pairs.jsonl").read_text(encoding="utf-8").splitlines()]
-    verdicts = [json.loads(line) for line in (root / AUDIT / "verdicts.jsonl").read_text(encoding="utf-8").splitlines()]
-    if stored != pairs or len(verdicts) != len(pairs):
-        raise ValueError("editorial source reviews are stale or incomplete")
-    by_id = {pair["id"]: pair for pair in pairs}
-    seen = set()
-    for verdict in verdicts:
-        identifier = verdict["id"]
-        if identifier not in by_id or identifier in seen:
-            raise ValueError("unknown or duplicate editorial review ID")
-        seen.add(identifier)
-        if (verdict["verdict"] != "fully supports"
-                or verdict["prompt_sha256"] != hashlib.sha256(by_id[identifier]["prompt"].encode("utf-8")).hexdigest()):
-            raise ValueError("nonpassing or stale editorial source verdict")
+def check_review(root: Path = ROOT) -> ReviewAudit:
+    """Audit the recorded editorial review against the current pairs."""
+    return check_support_review(
+        root, root / AUDIT, in_scope, expected=6, documents=DOCUMENTS
+    )
 
 
 def _codes(result: dict) -> list[str]:
@@ -96,7 +91,7 @@ def _development_checks(case: dict, observed: dict) -> dict:
         checks["nested_element_order"] = [element["tag"] for element in elements] == ["head", "date", "hi", "hi", "placeName"]
         checks["separate_equal_extents"] = len({element["id"] for element in elements}) == 5 and len(elements) == 5 and all(element["extent"] == [0, 19] for element in elements[:3])
         checks["date_and_place_metadata"] = any(element["attributes"] == {"when": "1790-06-15", "calendar": "#gregorian"} for element in elements) and any(element["attributes"].get("ref") == "https://edition-humboldt.de/H0005512 https://www.geonames.org/11609031" for element in elements)
-        checks["rendition_and_parentage"] = len(elements) == 5 and elements[2]["attributes"] == {"rendition": "#u"} and elements[3]["attributes"] == {"rendition": "#aq"} and all(child["parent"] == parent["id"] for parent, child in zip(elements, elements[1:]))
+        checks["rendition_and_parentage"] = len(elements) == 5 and elements[2]["attributes"] == {"rendition": "#u"} and elements[3]["attributes"] == {"rendition": "#aq"} and all(child["parent"] == parent["id"] for parent, child in pairwise(elements))
     elif case["case_id"] == "case-2-interrupted-heading":
         notes = observed["notes"]
         unknown = next((note for note in notes if note["attributes"].get("hand") == "#unknown"), None)
@@ -150,7 +145,8 @@ def build_report(root: Path = ROOT) -> dict:
              root / "tools/ingest_editorial_cases.py", root / "tools/check_editorial_cases.py",
              root / "tools/models/abstract_text.py", root / "tools/models/editorial_profile.py",
              root / "tools/tei/editorial_cases.py", root / "10_markdown/documents/humboldt-h0017682-7d174637.md"]
-    fingerprints = {path.relative_to(root).as_posix(): hashlib.sha256(path.read_bytes()).hexdigest()
+    # One fingerprint policy across the check scripts: see text_sha256.
+    fingerprints = {path.relative_to(root).as_posix(): text_sha256(path)
                     for path in paths if path.relative_to(root) != REPORT}
     return {"format_version": 1, "authority": "Bounded experiment; not a Vault grounding source or domain review.",
             "license": cases["license"], "attribution": cases["attribution"], "inputs": fingerprints,
@@ -160,6 +156,13 @@ def build_report(root: Path = ROOT) -> dict:
                         "holdout_migration_success": False},
             "identity": identity, "editorial": results,
             "limits": ["Single-document purposive sample", "No measured editor workflow or practical-adequacy verdict", "No full P5/ODD or whole-document conversion guarantee", "Tree retention, task observations, and media semantics are distinct", "Identity examples are synthetic; editorial source fragments are real"]}
+
+
+def _reviewer_note(audit: ReviewAudit) -> str:
+    """Attribution is recorded where it exists and named where it does not."""
+    if not audit.without_reviewer:
+        return ""
+    return f"; {len(audit.without_reviewer)} verdict(s) name no reviewer"
 
 
 def main() -> int:
@@ -177,8 +180,9 @@ def main() -> int:
             print("OK: six source-support pairs emitted; independent verdicts required")
             return 0
         if args.review_only:
-            check_review()
-            print("OK: six current editorial source-support pairs passed")
+            audit = check_review()
+            print(f"OK: {audit.pairs} current editorial source-support pairs passed"
+                  f"{_reviewer_note(audit)}")
             return 0
         report = build_report()
         encoded = json_bytes(report)

@@ -7,7 +7,10 @@ import pytest
 
 from tools.models.abstract_text import validate_model
 from tools.tei.editorial_cases import (
-    BINDING, MAPPING_RULES, candidate_observations, compare_fragment,
+    BINDING,
+    MAPPING_RULES,
+    candidate_observations,
+    compare_fragment,
 )
 
 

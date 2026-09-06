@@ -1,16 +1,23 @@
 """The acceptance audit must not silently reuse stale or incomplete reviews."""
 
+import shutil
 from copy import deepcopy
 from pathlib import Path
-import shutil
 
 import pytest
 
-from tools.check_text_identity_pilot import check_review, current_pairs, prompt_hash
+from tools.check_text_identity_pilot import check_review, current_pairs
+from tools.review import prompt_hash
 
 
 def records():
-    pairs = [{"id": "pair-1", "prompt": "PASSAGE: a. STATEMENT: a."}]
+    pairs = [
+        {
+            "id": "pair-1",
+            "document": "20_distillates/documents/a",
+            "prompt": "PASSAGE: a. STATEMENT: a.",
+        }
+    ]
     verdicts = [{
         "id": "pair-1", "verdict": "fully supports", "reason": "The passage states a.",
         "reviewer": "independent-reviewer", "prompt_sha256": prompt_hash(pairs[0]),
@@ -19,12 +26,13 @@ def records():
 
 
 def test_current_complete_review_passes():
-    check_review(*records())
+    audit = check_review(*records())
+    assert (audit.pairs, audit.without_reviewer) == (1, ())
 
 
 @pytest.mark.parametrize("mutation", [
     "stale-passage", "missing-verdict", "duplicate-verdict", "wrong-hash",
-    "overreaches", "missing-reason", "missing-reviewer", "unknown-pair",
+    "overreaches", "missing-reason", "unknown-pair",
 ])
 def test_acceptance_rejects_invalid_review(mutation):
     pairs, stored, verdicts = records()
@@ -40,12 +48,30 @@ def test_acceptance_rejects_invalid_review(mutation):
         verdicts[0]["verdict"] = "overreaches"
     elif mutation == "missing-reason":
         verdicts[0]["reason"] = ""
-    elif mutation == "missing-reviewer":
-        verdicts[0]["reviewer"] = ""
     else:
         verdicts[0]["id"] = "unrelated"
     with pytest.raises(ValueError):
         check_review(pairs, stored, verdicts)
+
+
+def test_a_verdict_without_a_reviewer_passes_and_is_named():
+    """Attribution is reported rather than required; one recorded review has none."""
+    pairs, stored, verdicts = records()
+    del verdicts[0]["reviewer"]
+    assert check_review(pairs, stored, verdicts).without_reviewer == ("pair-1",)
+
+
+def test_the_recorded_pilot_review_binds_the_current_pairs():
+    """The audit of this repository, over its own vault and its own review files."""
+    from tools.check_text_identity_pilot import AUDIT
+    from tools.review import read_jsonl
+
+    audit = check_review(
+        current_pairs(),
+        read_jsonl(AUDIT / "pairs.jsonl"),
+        read_jsonl(AUDIT / "verdicts.jsonl"),
+    )
+    assert audit.without_reviewer == ()
 
 
 def test_new_chapter_dependency_cannot_escape_review(tmp_path):

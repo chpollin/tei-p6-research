@@ -1688,11 +1688,11 @@
     "experiments/editorial_cases/mapping-freeze.json": "0e965501f0ee0cd86df5c86e77b24fe6b053cf421d482709b1ebc1c287f65d8b",
     "experiments/editorial_cases/profile.json": "454aa9416b334594aa24fc2e45695338c165fd1a2f555b141bfe4620c827ad5e",
     "experiments/editorial_cases/protocol.json": "c2254656433a146eba44f6d255097ceba7380ac452e83ade384b5b325bd18652",
-    "tools/check_editorial_cases.py": "1e42b8c94d128a6e1945df4cf0b7f67be3f5d3378a9ee70d9d58c24d0009fcc5",
-    "tools/ingest_editorial_cases.py": "281dce84ef2bd363a737a3b97b4b334a07a75b53985086477e4c6d3c45c60666",
-    "tools/models/abstract_text.py": "0a5206407f15518937a73a432087db0803fc89820c30c4f343226f0438c64aaf",
-    "tools/models/editorial_profile.py": "aecc4a9550ed80175c2104cd22b5d5f52f9d94441deb2dc4567d26999b602a13",
-    "tools/tei/editorial_cases.py": "3490633eb3233fadb1afe5dce2c25ced45ba47f9ed8f7109914ce24537c1d628"
+    "tools/check_editorial_cases.py": "0373b65147685aa482ee60e90f00b8803fbe1732c9f14f164a91ec647047a04f",
+    "tools/ingest_editorial_cases.py": "671c41b71fae744e842f7e92ec182882fe42623a4642aa592c94f104ebce806e",
+    "tools/models/abstract_text.py": "50ebb632e979da396acb0a87bf93b22ac88cc0a5b73481994220b606c6bfc7dc",
+    "tools/models/editorial_profile.py": "9cc9f08f472f7c06e2011ddd07234ed177f9e87c2581fdd69d8826ee26efee75",
+    "tools/tei/editorial_cases.py": "c94e524bc371c60829366378d5488e41e1d4a3f0cc5093237c8bcaa12a5ff9fc"
   },
   "license": "CC-BY-SA-4.0 for original XML and adapted source observations; original source attribution retained",
   "limits": [

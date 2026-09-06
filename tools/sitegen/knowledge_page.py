@@ -1,15 +1,10 @@
 """Escaping-first static view of vault artifacts and precise provenance."""
 from __future__ import annotations
 
-import html
-
-from sitegen.assets import read_asset
-from sitegen.chrome import render_header, render_footer
-from sitegen.knowledge_view import LAYERS, block_id, repository_link, safe_url
-
-
-def esc(value: object) -> str:
-    return html.escape(str(value), quote=True)
+from tools.sitegen.assets import read_asset
+from tools.sitegen.chrome import render_footer, render_header
+from tools.sitegen.knowledge_view import LAYERS, block_id
+from tools.sitegen.markup import esc, repository_link, safe_url
 
 
 def link(url: str, label: str) -> str:
@@ -94,7 +89,7 @@ def render_page(view: dict) -> str:
     css = read_asset('workbench.css') + '\n' + read_asset('knowledge.css')
     js = read_asset('knowledge.js')
     return f'''<!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Knowledge and provenance · TEI P6 Research</title><style>{css}</style></head>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="Source representations, distillates, assertions and output chapters in this repository, with their exact provenance links."><title>Knowledge and provenance · TEI P6 Research</title><style>{css}</style></head>
 <body><a class="skip-link" href="#main">Skip to content</a>{render_header('knowledge')}
 <main id="main" class="knowledge-main"><header class="page-heading"><h1>Knowledge and provenance</h1>
 <p>Actual source representations, distillates, assertions, and output chapters in this repository. Follow a claim to its exact source passage, or inspect where a passage is used.</p>

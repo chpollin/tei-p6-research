@@ -3,21 +3,28 @@
 from __future__ import annotations
 
 import argparse
-from dataclasses import replace
-import hashlib
 import json
 import subprocess
 import sys
-from pathlib import Path
 import xml.etree.ElementTree as ET
+from dataclasses import replace
+from pathlib import Path
+
+if __package__ in (None, ""):  # run as a script, so the package root is not on the path
+    sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+
+from tools.ingest_text_identity import XML_LANG, embedded_source
+from tools.review import (
+    Pair,
+    ReviewAudit,
+    _load_docs,
+    check_review_records,
+    read_jsonl,
+    select_pairs,
+)
+from tools.validate import Report, _chapter_scope, _parse_doc
 
 ROOT = Path(__file__).resolve().parents[1]
-sys.path.insert(0, str(ROOT))
-sys.path.insert(0, str(ROOT / "tools"))
-from review import _load_docs, cut_pairs  # noqa: E402
-from validate import Report, _chapter_scope, _parse_doc  # noqa: E402
-from tools.ingest_text_identity import XML_LANG, embedded_source  # noqa: E402
-
 DOCUMENTS = {
     "20_distillates/documents/tei-p5-anchor-4.12.0",
     "20_distillates/documents/tei-p5-span-4.12.0",
@@ -30,11 +37,7 @@ DOCUMENTS = {
 AUDIT = ROOT / "experiments/text_identity/review"
 
 
-def prompt_hash(pair: dict) -> str:
-    return hashlib.sha256(pair["prompt"].encode("utf-8")).hexdigest()
-
-
-def source_context(root: Path, pair, docs: dict) -> str:
+def source_context(pair: Pair, docs: dict) -> str:
     """Supply source identity and XML ancestor labels, never producer rationale."""
     representation, anchor = pair.anchor.split("#^", 1)
     name = representation.rsplit("/tei-p5-", 1)[1].removesuffix("-4.12.0")
@@ -56,9 +59,10 @@ def source_context(root: Path, pair, docs: dict) -> str:
             walk(child, chain, element)
 
     walk(source, [])
-    index = int(anchor.removeprefix("r")) - 1
-    if not anchor.startswith("r") or index < 0 or index >= len(contexts):
-        raise ValueError("unknown source reading-block context")
+    number = anchor.removeprefix("r") if anchor.startswith("r") else ""
+    index = int(number) - 1 if number.isdigit() else -1
+    if not 0 <= index < len(contexts):
+        raise ValueError(f"unknown source reading-block context: ^{anchor}")
     metadata = doc.fm["metadata"]
     return (f"Source identity: {metadata['title']}\n"
             f"Source locator: {metadata['identifier']}\n"
@@ -76,44 +80,19 @@ def current_pairs(root: Path = ROOT) -> list[dict]:
                 if doc.fm.get("type") in {"distillate", "assertion"}}
     if required != DOCUMENTS:
         raise ValueError("chapter review scope changed; update and review the complete evidence closure")
-    problems: list[str] = []
-    selected = [p for p in cut_pairs(root, problems) if p.document in required]
-    pairs = [replace(p, location=source_context(root, p, docs)).to_dict()
+    selected = select_pairs(root, lambda pair: pair.document in required, required)
+    pairs = [replace(p, location=source_context(p, docs)).to_dict()
              if p.kind == "source" else p.to_dict() for p in selected]
-    if problems:
-        raise ValueError("; ".join(problems))
     if {p["document"] for p in pairs} != DOCUMENTS:
         raise ValueError("pilot review document coverage is incomplete")
     return pairs
 
 
-def check_review(pairs: list[dict], stored: list[dict], verdicts: list[dict]) -> None:
+def check_review(
+    pairs: list[dict], stored: list[dict], verdicts: list[dict]
+) -> ReviewAudit:
     """Fail closed on stale prompts, omissions, duplicates, or nonpassing review."""
-    if stored != pairs:
-        raise ValueError("review pairs are stale; re-emit and independently review changes")
-    expected = {p["id"]: p for p in pairs}
-    if len(expected) != len(pairs) or not expected:
-        raise ValueError("review pairs must have unique IDs and be nonempty")
-    seen: set[str] = set()
-    for verdict in verdicts:
-        pair_id = verdict.get("id")
-        if not isinstance(pair_id, str) or pair_id not in expected or pair_id in seen:
-            raise ValueError("unknown or duplicate review verdict")
-        seen.add(pair_id)
-        if verdict.get("verdict") != "fully supports":
-            raise ValueError(f"nonpassing verdict: {pair_id}")
-        if verdict.get("prompt_sha256") != prompt_hash(expected[pair_id]):
-            raise ValueError(f"review input hash mismatch: {pair_id}")
-        if not isinstance(verdict.get("reason"), str) or not verdict["reason"].strip():
-            raise ValueError(f"review rationale missing: {pair_id}")
-        if not isinstance(verdict.get("reviewer"), str) or not verdict["reviewer"].strip():
-            raise ValueError(f"reviewer attribution missing: {pair_id}")
-    if seen != set(expected):
-        raise ValueError("unreviewed pairs remain")
-
-
-def read_jsonl(path: Path) -> list[dict]:
-    return [json.loads(line) for line in path.read_text(encoding="utf-8").splitlines() if line]
+    return check_review_records(pairs, stored, verdicts)
 
 
 def run(*args: str) -> None:
@@ -135,8 +114,12 @@ def main() -> int:
             (AUDIT / "pairs.jsonl").write_text(payload, encoding="utf-8", newline="\n")
             print(f"Emitted {len(pairs)} pairs; independent review is still required.")
             return 0
-        check_review(pairs, read_jsonl(AUDIT / "pairs.jsonl"), read_jsonl(AUDIT / "verdicts.jsonl"))
-        print(f"OK: {len(pairs)} source-support verdicts match current prompts.", flush=True)
+        audit = check_review(pairs, read_jsonl(AUDIT / "pairs.jsonl"),
+                             read_jsonl(AUDIT / "verdicts.jsonl"))
+        if audit.without_reviewer:
+            print(f"WARN: verdicts without a reviewer: {', '.join(audit.without_reviewer)}",
+                  file=sys.stderr)
+        print(f"OK: {audit.pairs} source-support verdicts match current prompts.", flush=True)
         run("-m", "tools.corpus.validate_control_plane", ".")
         run("-m", "tools.pilots.text_identity", "--check")
         run("-m", "pytest", "tests", "-q")

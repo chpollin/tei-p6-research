@@ -6,8 +6,15 @@ import json
 import pytest
 import yaml
 
-from tools.check_wave1_sources import check, extract_text, main
-from tools.check_wave1_sources import REVIEW_CHAPTER, REVIEW_DIRECTORY, check_review, current_review_pairs
+from tools.check_wave1_sources import (
+    REVIEW_CHAPTER,
+    REVIEW_DIRECTORY,
+    check,
+    check_review,
+    current_review_pairs,
+    extract_text,
+    main,
+)
 
 
 def fixture(root, raw=b"<p>A <em>quoted</em> passage &amp; its context.</p>"):
@@ -164,13 +171,13 @@ def write_chapter(root, assertions):
 def test_review_only_has_no_raw_prerequisite(tmp_path, capsys):
     review_fixture(tmp_path)
     assert not (tmp_path / "corpus/raw").exists()
-    assert check_review(tmp_path, "manifest.yaml") == 8
+    assert check_review(tmp_path, "manifest.yaml").pairs == 8
     assert main([str(tmp_path), "--manifest", "manifest.yaml", "--review-only"]) == 0
     assert "8 passing review verdicts" in capsys.readouterr().out
 
 
 @pytest.mark.parametrize("mutation, message", [
-    ("changed-claim", "stale against current canonical prompts"),
+    ("changed-claim", "stale against the current prompts"),
     ("missing-pair", "pair coverage"), ("extra-pair", "pair coverage"),
     ("stale-verdict-hash", "stale review verdict prompt hash"),
     ("nonpass", "nonpassing review verdict"),
@@ -188,7 +195,7 @@ def test_review_rejects_stale_or_incomplete_coverage(tmp_path, mutation, message
     elif mutation == "missing-pair":
         write_audit(audit / "pairs.jsonl", pairs[:-1])
     elif mutation == "extra-pair":
-        write_audit(audit / "pairs.jsonl", pairs + [{**pairs[0], "id": "extra"}])
+        write_audit(audit / "pairs.jsonl", [*pairs, {**pairs[0], "id": "extra"}])
     elif mutation == "stale-verdict-hash":
         verdicts[0]["prompt_sha256"] = "0" * 64
         write_audit(audit / "verdicts.jsonl", verdicts)
@@ -221,4 +228,4 @@ def test_unrelated_cross_source_synthesis_does_not_expand_historical_review(tmp_
         '  - "[[20_distillates/publications/source0#^s1]]"\n'
         '  - "[[20_distillates/publications/source1#^s1]]"\n'
         '---\n# A later cross-source synthesis\n', encoding="utf-8")
-    assert check_review(tmp_path, "manifest.yaml") == 8
+    assert check_review(tmp_path, "manifest.yaml").pairs == 8

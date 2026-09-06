@@ -3,10 +3,13 @@
 from __future__ import annotations
 
 import argparse
+import sys
 from pathlib import Path
 
-from sitegen.materials_page import build_page
-from sitegen.materials_view import prepare_sources
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))  # direct script run
+
+from tools.sitegen.materials_page import build_page
+from tools.sitegen.materials_view import prepare_sources
 
 __all__ = ["build_page", "prepare_sources"]
 

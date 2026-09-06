@@ -29,9 +29,10 @@ import sys
 from pathlib import Path
 from urllib.parse import quote, urlsplit, urlunsplit
 
-from sitegen.assets import read_asset
-from sitegen.chrome import render_footer, render_header
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))  # direct script run
 
+from tools.sitegen.assets import read_asset
+from tools.sitegen.chrome import render_footer, render_header
 
 PROJECT_TITLE = "TEI P6 Research"
 PROJECT_TAGLINE = (

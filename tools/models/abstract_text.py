@@ -9,10 +9,10 @@ from __future__ import annotations
 
 import copy
 import hashlib
+import itertools
 import json
 import re
 from typing import Any
-
 
 COLLECTIONS = (
     "agents", "concepts", "texts", "versions", "continuities", "selections",
@@ -145,9 +145,9 @@ class _Validator:
             return
         kind = obj["kind"]
         if kind == "point":
-            if self.shape(obj, {"kind", "offset"}, path, code="E_SELECTOR"):
-                if type(obj["offset"]) is not int:
-                    self.error("E_SELECTOR", path + "/offset")
+            if (self.shape(obj, {"kind", "offset"}, path, code="E_SELECTOR")
+                    and type(obj["offset"]) is not int):
+                self.error("E_SELECTOR", path + "/offset")
         elif kind == "ranges":
             if not self.shape(obj, {"kind", "segments"}, path, code="E_SELECTOR"):
                 return
@@ -304,7 +304,7 @@ class _Validator:
                     self.error("E_READING_TARGET", path + "/selection")
                     continue
                 segments = targets[0]["segments"]
-                if any(left["end"] != right["start"] for left, right in zip(segments, segments[1:])):
+                if any(left["end"] != right["start"] for left, right in itertools.pairwise(segments)):
                     self.error("E_READING_TARGET", path + "/selection")
                     continue
                 intervals[node["id"]] = (segments[0]["start"], segments[-1]["end"])
@@ -398,7 +398,7 @@ def check_revision(before: Any, after: Any) -> dict:
     """
     diagnostics = []
     results = [validate_model(package) for package in (before, after)]
-    for prefix, result in zip(("/before", "/after"), results):
+    for prefix, result in zip(("/before", "/after"), results, strict=True):
         diagnostics.extend({"code": item["code"], "path": prefix + item["path"]}
                            for item in result["diagnostics"])
     if all(result["valid"] for result in results):

@@ -8,12 +8,17 @@ from pathlib import Path
 
 import pytest
 
-ROOT = Path(__file__).parents[1]
-sys.path.insert(0, str(ROOT / "tools"))
+from tools import build_model_reference
+from tools.build_model_reference import build_page
+from tools.sitegen.model_reference import (
+    DEFINITION,
+    PROFILE,
+    REFERENCES,
+    SPEC,
+    build_view,
+)
 
-import build_model_reference  # noqa: E402
-from build_model_reference import build_page  # noqa: E402
-from sitegen.model_reference import DEFINITION, PROFILE, SPEC, REFERENCES, build_view  # noqa: E402
+ROOT = Path(__file__).parents[1]
 
 
 class Inspect(HTMLParser):
@@ -161,7 +166,7 @@ def test_invalid_repository_bases_rejected(base):
 def test_unsafe_link_in_canonical_text_fails_build(fixture_root):
     path = fixture_root / DEFINITION
     path.write_text(path.read_text(encoding="utf-8") + '\n\n[Bad](javascript:alert)\n', encoding="utf-8")
-    with pytest.raises(ValueError, match="Unsafe"):
+    with pytest.raises(ValueError, match="absolute HTTP"):
         build_page(fixture_root, "2026-09-05")
 
 

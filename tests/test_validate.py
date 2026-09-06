@@ -12,13 +12,12 @@ import subprocess
 import sys
 from pathlib import Path
 
+from tools.validate import VAULT_WIDE_CHECKS, validate
+
 REPO = Path(__file__).parents[1]
-sys.path.insert(0, str(REPO / "tools"))
-
-from validate import VAULT_WIDE_CHECKS, validate  # noqa: E402
-
 MINIMAL = REPO / "tests" / "fixtures" / "minimal"
 BROKEN = REPO / "tests" / "fixtures" / "broken"
+OPERATIONS = REPO / "knowledge" / "operations.md"
 
 EXPECTED_BROKEN_CODES = {
     "E-ANCHOR",  # dead block reference and dead frontmatter target
@@ -34,8 +33,9 @@ EXPECTED_BROKEN_CODES = {
     "E-LADDER",  # status above the status of the anchors it rests on
     "E-FOOTNOTE",  # wrong keyword and undefined marker
     "E-MIRROR",  # frontmatter mirror out of sync
-    "E-COMPUTATION",  # computation script missing
+    "E-COMPUTATION",  # computation script missing, argument passed, script outside tools/analysis
     "E-QUOTE",  # intake-time quotation check not recorded
+    "E-SOURCE",  # several distillates on the same representation
 }
 
 # Warnings the broken fixture carries; each has its own test below, because the
@@ -47,6 +47,7 @@ EXPECTED_BROKEN_WARNINGS = {
     "W-CONTESTED",  # test_a_chapter_taking_one_side_of_a_contested_pair_is_reported
     "W-DUPLICATE-GROUNDING",  # test_two_assertions_on_the_same_anchors_are_reported
     "W-ALIAS",  # test_a_footnote_alias_that_renames_its_assertion_is_reported
+    "W-NAME",  # test_a_file_name_outside_the_slug_rule_is_a_warning
 }
 
 # Codes no fixture can carry, because they need a vault state a conformant file
@@ -59,17 +60,14 @@ EXPECTED_TEMPORARY_VAULT_CODES = {
 
 EMITTED_CODE = re.compile(r"report\.(?:error|warn)\(\s*\"([EW]-[A-Z-]+)\"")
 
-
+# Codes the validator raises that knowledge/operations.md does not yet declare.
+# The table is a contract with its readers, so each of these needs a row there.
 def _rels(entries: list[tuple[str, str, str]], code: str) -> set[str]:
     return {rel for found, rel, _ in entries if found == code}
 
 
 def test_minimal_is_clean() -> None:
-    report = validate(MINIMAL)
-    assert report.errors == [], report.errors
-
-
-def test_minimal_computations_reproduce_by_default() -> None:
+    """Computations are re-run by default, so this covers the data anchor too."""
     report = validate(MINIMAL)
     assert report.errors == [], report.errors
 
@@ -118,6 +116,22 @@ def test_every_code_the_validator_emits_has_a_specimen() -> None:
     )
 
 
+def _undeclared_codes() -> set[str]:
+    source = (REPO / "tools" / "validate.py").read_text(encoding="utf-8")
+    declared = OPERATIONS.read_text(encoding="utf-8")
+    return {c for c in EMITTED_CODE.findall(source) if f"`{c}`" not in declared}
+
+
+def test_every_code_the_validator_emits_is_declared_in_operations() -> None:
+    """The diagnostics table is the contract a reader checks a finding against.
+
+    A code that fires without a row there leaves the reader with a name and no
+    condition, so the table and the validator have to hold the same set.
+    """
+    missing = _undeclared_codes()
+    assert missing == set(), f"codes without a row in {OPERATIONS.name}: {sorted(missing)}"
+
+
 def test_every_layer_violation_is_caught_at_its_own_layer() -> None:
     report = validate(BROKEN)
     assert _rels(report.errors, "E-LAYER") == {
@@ -148,6 +162,177 @@ def test_dead_frontmatter_targets_are_resolved() -> None:
         if code == "E-ANCHOR" and rel == "20_distillates/documents/dead-representation"
     ]
     assert len(messages) == 2, messages
+
+
+def test_a_frontmatter_that_is_not_a_map_is_a_finding_not_a_crash() -> None:
+    """A YAML list where a map belongs used to end the whole run in a traceback."""
+    report = validate(BROKEN)
+    assert "10_markdown/documents/list-frontmatter" in _rels(
+        report.errors, "E-FRONTMATTER"
+    )
+
+
+def test_a_list_field_given_as_a_string_is_a_finding() -> None:
+    """Iterating the string yields characters, so no topic is ever named."""
+    report = validate(BROKEN)
+    messages = [
+        message
+        for code, rel, message in report.errors
+        if code == "E-FRONTMATTER" and rel == "20_distillates/documents/string-topics"
+    ]
+    assert messages == ["topics must be a list, not a str"]
+
+
+def test_a_representation_without_the_declared_metadata_is_caught() -> None:
+    report = validate(BROKEN)
+    (message,) = [
+        m
+        for code, rel, m in report.errors
+        if code == "E-FRONTMATTER" and rel == "10_markdown/documents/thin-metadata"
+    ]
+    assert message == "metadata without creator, date, format, identifier, confidential"
+
+
+def test_an_empty_metadata_value_is_no_substitute_for_the_fields(
+    tmp_path: Path,
+) -> None:
+    root = tmp_path / "vault"
+    shutil.copytree(MINIMAL, root)
+    representation = root / "10_markdown" / "documents" / "report-garden-water-2026.md"
+    text = representation.read_text(encoding="utf-8")
+    head, tail = text.split("created: 2026-07-11", 1)
+    representation.write_text(
+        head[: head.index("metadata:")] + 'metadata: ""\ncreated: 2026-07-11' + tail,
+        encoding="utf-8",
+    )
+    report = validate(root)
+    assert "10_markdown/documents/report-garden-water-2026" in _rels(
+        report.errors, "E-FRONTMATTER"
+    )
+
+
+def test_a_dead_data_link_is_resolved() -> None:
+    """`source` and `data` name documents like every other frontmatter link."""
+    report = validate(BROKEN)
+    assert "10_markdown/data/dead-data" in _rels(report.errors, "E-ANCHOR")
+
+
+def test_a_wikilink_in_the_wrong_case_does_not_resolve(tmp_path: Path) -> None:
+    """A case-insensitive file system would let it pass here and fail on CI."""
+    root = tmp_path / "vault"
+    shutil.copytree(MINIMAL, root)
+    distillate = root / "20_distillates" / "documents" / "report-garden-water-2026.md"
+    distillate.write_text(
+        distillate.read_text(encoding="utf-8").replace(
+            "10_markdown/documents/report-garden-water-2026#^a1b2",
+            "10_markdown/Documents/report-garden-water-2026#^a1b2",
+        ),
+        encoding="utf-8",
+    )
+    report = validate(root)
+    assert "20_distillates/documents/report-garden-water-2026" in _rels(
+        report.errors, "E-ANCHOR"
+    )
+
+
+def test_a_statement_with_two_source_anchors_is_caught() -> None:
+    """Review cuts the pair against the first anchor, so the second is unread."""
+    report = validate(BROKEN)
+    assert "20_distillates/documents/two-anchors" in _rels(
+        report.errors, "E-STATEMENT"
+    )
+
+
+def test_a_computation_with_an_argument_is_caught() -> None:
+    report = validate(BROKEN)
+    messages = [
+        m
+        for code, rel, m in report.errors
+        if code == "E-COMPUTATION" and rel == "20_distillates/data/bad-computation"
+    ]
+    assert any("takes no arguments" in m for m in messages)
+    assert any("must live in tools/analysis/" in m for m in messages)
+
+
+def test_a_computation_outside_the_analysis_folder_is_never_run(
+    tmp_path: Path,
+) -> None:
+    """The declaration is executed, so its path is a trust boundary."""
+    root = tmp_path / "vault"
+    shutil.copytree(MINIMAL, root)
+    outside = tmp_path / "outside.py"
+    outside.write_text(
+        "from pathlib import Path\n"
+        f"Path({str(tmp_path / 'ran.txt')!r}).write_text('ran')\n"
+        "print('31.4')\n",
+        encoding="utf-8",
+    )
+    distillate = root / "20_distillates" / "data" / "water-readings-2025.md"
+    distillate.write_text(
+        distillate.read_text(encoding="utf-8").replace(
+            "python tools/analysis/reduction.py", f"python {outside.as_posix()}"
+        ),
+        encoding="utf-8",
+    )
+    report = validate(root)
+    assert "20_distillates/data/water-readings-2025" in _rels(
+        report.errors, "E-COMPUTATION"
+    )
+    assert not (tmp_path / "ran.txt").exists()
+
+
+def test_two_distillates_of_one_source_are_caught() -> None:
+    report = validate(BROKEN)
+    assert "20_distillates/documents/stale" in _rels(report.errors, "E-SOURCE")
+
+
+def test_a_copied_distillate_is_caught_next_to_its_original(tmp_path: Path) -> None:
+    """The copy is well formed on its own; only the pair is the defect."""
+    root = tmp_path / "vault"
+    shutil.copytree(MINIMAL, root)
+    original = root / "20_distillates" / "documents" / "report-garden-water-2026.md"
+    copy = original.with_name("report-garden-water-2026-copy.md")
+    copy.write_bytes(original.read_bytes())
+    report = validate(root)
+    assert _rels(report.errors, "E-SOURCE") == {
+        "20_distillates/documents/report-garden-water-2026-copy"
+    }
+
+
+def test_a_second_representation_of_one_source_is_caught(tmp_path: Path) -> None:
+    root = tmp_path / "vault"
+    shutil.copytree(MINIMAL, root)
+    original = root / "10_markdown" / "documents" / "report-garden-water-2026.md"
+    original.with_name("report-garden-water-2026-again.md").write_bytes(
+        original.read_bytes()
+    )
+    report = validate(root)
+    assert _rels(report.errors, "E-SOURCE") == {
+        "10_markdown/documents/report-garden-water-2026-again"
+    }
+
+
+def test_a_file_name_outside_the_slug_rule_is_a_warning() -> None:
+    report = validate(BROKEN)
+    assert _rels(report.warnings, "W-NAME") == {"glossary/Bad_Name"}
+
+
+def test_a_topic_map_keeps_the_name_of_its_topic() -> None:
+    """`MOC-<Topic>.md` is the schema's own exception to the slug rule."""
+    assert (BROKEN / "30_assertions" / "MOC-Broken.md").is_file()
+    report = validate(BROKEN)
+    assert "30_assertions/MOC-Broken" not in _rels(report.warnings, "W-NAME")
+
+
+def test_a_version_pinned_slug_keeps_its_release_number(tmp_path: Path) -> None:
+    """Admitted representations carry the release in the file name and are immutable."""
+    root = tmp_path / "vault"
+    shutil.copytree(MINIMAL, root)
+    entry = root / "glossary" / "metering.md"
+    entry.rename(entry.with_name("metering-4.12.0.md"))
+    report = validate(root)
+    assert report.errors == [], report.errors
+    assert _rels(report.warnings, "W-NAME") == set()
 
 
 def test_a_surviving_template_placeholder_is_a_warning() -> None:
@@ -294,6 +479,56 @@ def _raise_chain_to(tmp_path: Path, status: str) -> Path:
 def test_a_paragraph_without_a_footnote_marker_is_a_warning() -> None:
     report = validate(BROKEN)
     assert _rels(report.warnings, "W-UNANCHORED") == {"40_output/03-unanchored"}
+
+
+WRAPPED_FOOTNOTE = (
+    "[^1]: Grounded in\n      [[30_assertions/metering-reduces-water-use]].\n"
+)
+
+
+def _rewrite_chapter(tmp_path: Path, old: str, new: str) -> Path:
+    root = tmp_path / "vault"
+    shutil.copytree(MINIMAL, root)
+    chapter = root / "40_output" / "01-findings.md"
+    text = chapter.read_text(encoding="utf-8")
+    assert old in text, old
+    chapter.write_text(text.replace(old, new), encoding="utf-8")
+    return root
+
+
+def test_a_footnote_wrapped_over_two_lines_keeps_its_anchor(tmp_path: Path) -> None:
+    """schema.md shows the wrapped form as canonical, link position included."""
+    root = _rewrite_chapter(
+        tmp_path,
+        "[^1]: Grounded in [[30_assertions/metering-reduces-water-use]].\n",
+        WRAPPED_FOOTNOTE,
+    )
+    report = validate(root)
+    assert report.errors == [], report.errors
+    assert report.warnings == [], report.warnings
+
+
+def test_indented_prose_after_a_footnote_still_needs_a_marker(
+    tmp_path: Path,
+) -> None:
+    """Only a footnote definition runs on; indented prose is prose."""
+    root = _rewrite_chapter(
+        tmp_path,
+        "# Findings\n",
+        "# Findings\n\n   An indented claim that carries no marker at all.\n",
+    )
+    report = validate(root)
+    assert _rels(report.warnings, "W-UNANCHORED") == {"40_output/01-findings"}
+
+
+def test_a_footnote_defined_twice_is_reported() -> None:
+    """The later definition replaces the earlier one without a trace."""
+    report = validate(BROKEN)
+    assert [
+        message
+        for code, rel, message in report.errors
+        if code == "E-FOOTNOTE" and "defined more than once" in message
+    ] == ["footnote [^1] is defined more than once"]
 
 
 def test_an_id_minted_outside_the_core_statements_is_caught() -> None:

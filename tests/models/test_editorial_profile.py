@@ -8,11 +8,20 @@ from pathlib import Path
 import pytest
 
 from tools.models.abstract_text import (
-    COLLECTIONS, check_revision, propose_reanchor, validate_model,
+    COLLECTIONS,
+    check_revision,
+    propose_reanchor,
+    validate_model,
 )
 from tools.models.editorial_profile import (
-    BASE_MODEL_VERSION, DERIVED_FROM, PROFILE_VERSION, RESERVED_CONCEPTS,
-    SUPERSEDES, check_profile_revision, current_derivations, validate_profile,
+    BASE_MODEL_VERSION,
+    DERIVED_FROM,
+    PROFILE_VERSION,
+    RESERVED_CONCEPTS,
+    SUPERSEDES,
+    check_profile_revision,
+    current_derivations,
+    validate_profile,
 )
 
 
@@ -59,8 +68,8 @@ def test_constants_match_frozen_contract():
     path = Path(__file__).resolve().parents[2] / "experiments/editorial_cases/profile.json"
     contract = json.loads(path.read_text(encoding="utf-8"))
     assert list(RESERVED_CONCEPTS) == contract["concepts"]
-    assert PROFILE_VERSION == contract["profile_version"]
-    assert BASE_MODEL_VERSION == contract["base_model_version"]
+    assert contract["profile_version"] == PROFILE_VERSION
+    assert contract["base_model_version"] == BASE_MODEL_VERSION
 
 
 def test_optional_profile_does_not_change_core_acceptance_or_resolution():

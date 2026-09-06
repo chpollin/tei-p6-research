@@ -20,11 +20,18 @@ Booking is conservative: checked.machine-review is set on a document only when
 every one of its pairs came back *fully supports*. Deviating verdicts are
 reported and nothing is reformulated automatically.
 
+Audit of a recorded review is the fourth part. `check_review_records` holds the
+stored pairs of a review directory against the pairs the vault cuts today and
+the returned verdicts against both, so a changed passage, a changed claim or a
+reused verdict invalidates the review rather than passing unnoticed.
+
 Usage:
     python tools/review.py stats <vault-root>
     python tools/review.py emit  <vault-root> --out prompts.jsonl
     python tools/review.py judge <vault-root> --verdicts verdicts.jsonl [--apply]
     python tools/review.py run   <vault-root> --model <model> [--apply]
+
+Both `python tools/review.py …` and `python -m tools.review …` work.
 
 Parsing conventions are imported from tools/validate.py rather than restated;
 validation gates review, so a vault that reaches this script already conforms.
@@ -34,15 +41,20 @@ from __future__ import annotations
 
 import argparse
 import datetime
+import hashlib
 import json
 import re
 import shutil
 import subprocess
 import sys
+from collections.abc import Callable
 from dataclasses import dataclass, field
 from pathlib import Path
 
-from validate import (
+if __package__ in (None, ""):  # run as a script, so the package root is not on the path
+    sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+
+from tools.validate import (
     BLOCK_ID,
     COMPUTATION,
     WIKILINK,
@@ -61,6 +73,10 @@ VERDICTS = (
     "not in the text",
 )
 PASSING_VERDICT = "fully supports"
+# What a recorded verdict has to carry beside its pair ID. `reviewer` is not in
+# the set because the editorial review of 2026-09-05 was recorded without it;
+# the audit returns the pairs whose verdict names no reviewer instead.
+REQUIRED_VERDICT_FIELDS = ("verdict", "reason", "prompt_sha256")
 
 SOURCE_PROMPT = """You are an adversarial reviewer. Below are a source passage and a statement
 that claims to be supported by it. Your task is to refute the statement.
@@ -203,7 +219,6 @@ def _load_docs(root: Path) -> dict[str, Doc]:
 
 def _source_pairs(
     doc: Doc,
-    docs: dict[str, Doc],
     blocks: dict[str, dict[str, str]],
     problems: list[str],
 ) -> list[Pair]:
@@ -315,7 +330,7 @@ def cut_pairs(root: Path, problems: list[str] | None = None) -> list[Pair]:
         doc = docs[rel]
         if doc.fm.get("type") != "distillate":
             continue
-        for pair in _source_pairs(doc, docs, blocks, problems):
+        for pair in _source_pairs(doc, blocks, problems):
             pairs.append(pair)
             statements[pair.id] = pair.claim
     for rel in sorted(docs):
@@ -323,6 +338,152 @@ def cut_pairs(root: Path, problems: list[str] | None = None) -> list[Pair]:
         if doc.fm.get("type") == "assertion":
             pairs += _assertion_pairs(doc, statements, problems)
     return pairs
+
+
+@dataclass(frozen=True)
+class ReviewAudit:
+    """What a passed audit of a recorded review establishes."""
+
+    pairs: int
+    documents: tuple[str, ...]
+    without_reviewer: tuple[str, ...]
+
+
+def prompt_hash(pair: dict) -> str:
+    """The hash a verdict binds itself to: the prompt the reviewer was shown."""
+    return hashlib.sha256(pair["prompt"].encode("utf-8")).hexdigest()
+
+
+def read_jsonl(path: Path) -> list[dict]:
+    """One record per non-empty line; a blank line is separation, not a record."""
+    return [
+        json.loads(line)
+        for line in Path(path).read_text(encoding="utf-8").splitlines()
+        if line.strip()
+    ]
+
+
+def _record_ids(records: list[dict], what: str) -> dict[str, dict]:
+    by_id: dict[str, dict] = {}
+    for record in records:
+        identifier = record.get("id") if isinstance(record, dict) else None
+        if not isinstance(identifier, str) or not identifier or identifier in by_id:
+            raise ValueError(f"{what} contain a missing or duplicate pair ID")
+        by_id[identifier] = record
+    return by_id
+
+
+def check_review_records(
+    current: list[dict],
+    stored: list[dict],
+    verdicts: list[dict],
+    *,
+    expected: int | None = None,
+    documents: set[str] | None = None,
+    required_fields: tuple[str, ...] = REQUIRED_VERDICT_FIELDS,
+) -> ReviewAudit:
+    """Audit one recorded review against the pairs the vault cuts today.
+
+    Fails closed on a changed prompt, an unreviewed pair, a duplicated or unknown
+    verdict, a verdict below *fully supports* and a verdict bound to another
+    prompt. `expected` and `documents` state the scope the review claims to
+    cover, so a pair that silently appears or disappears is a failure rather
+    than a smaller review.
+    """
+    expected_by_id = _record_ids(current, "current review pairs")
+    if not expected_by_id:
+        raise ValueError("a review needs at least one current pair")
+    if expected is not None and len(current) != expected:
+        raise ValueError(
+            f"review scope requires exactly {expected} current pairs, found {len(current)}"
+        )
+    covered = {str(pair.get("document")) for pair in current}
+    if documents is not None and covered != documents:
+        raise ValueError(
+            f"review pair coverage does not match the declared documents: "
+            f"{sorted(covered ^ documents)}"
+        )
+    stored_by_id = _record_ids(stored, "stored review pairs")
+    if stored_by_id.keys() != expected_by_id.keys():
+        raise ValueError("stored review pair coverage does not match the current pairs")
+    if stored_by_id != expected_by_id:
+        raise ValueError("stored review pairs are stale against the current prompts")
+
+    seen: set[str] = set()
+    without_reviewer: list[str] = []
+    for verdict in verdicts:
+        identifier = verdict.get("id") if isinstance(verdict, dict) else None
+        if not isinstance(identifier, str) or identifier not in expected_by_id:
+            raise ValueError(f"review verdict for an unknown pair: {identifier!r}")
+        if identifier in seen:
+            raise ValueError(f"review verdict recorded twice: {identifier}")
+        seen.add(identifier)
+        if verdict.get("verdict") != PASSING_VERDICT:
+            raise ValueError(f"nonpassing review verdict: {identifier}")
+        if verdict.get("prompt_sha256") != prompt_hash(expected_by_id[identifier]):
+            raise ValueError(f"stale review verdict prompt hash: {identifier}")
+        for name in required_fields:
+            value = verdict.get(name)
+            if not isinstance(value, str) or not value.strip():
+                raise ValueError(f"review verdict missing {name}: {identifier}")
+        attribution = verdict.get("reviewer")
+        if not isinstance(attribution, str) or not attribution.strip():
+            without_reviewer.append(identifier)
+    if seen != expected_by_id.keys():
+        raise ValueError("review verdict coverage is incomplete")
+    return ReviewAudit(
+        pairs=len(current),
+        documents=tuple(sorted(covered)),
+        without_reviewer=tuple(without_reviewer),
+    )
+
+
+def select_pairs(
+    root: Path, scope: Callable[[Pair], bool], documents: set[str] | None = None
+) -> list[Pair]:
+    """The pairs of the vault a review set covers.
+
+    A cutting problem in an unrelated document says nothing about this review, so
+    only the ones naming a document in scope end the run. A statement that is
+    skipped mints no pair, so the declared documents are named as well.
+    """
+    problems: list[str] = []
+    pairs = [pair for pair in cut_pairs(root, problems) if scope(pair)]
+    selected = {pair.document for pair in pairs} | (documents or set())
+    relevant = [
+        problem
+        for problem in problems
+        if any(problem.startswith((f"{rel}:", f"{rel}#^")) for rel in selected)
+    ]
+    if relevant:
+        raise ValueError("review pair cutting failed: " + "; ".join(relevant))
+    return pairs
+
+
+def check_support_review(
+    root: Path,
+    review_dir: Path,
+    scope: Callable[[Pair], bool],
+    *,
+    expected: int | None = None,
+    documents: set[str] | None = None,
+    required_fields: tuple[str, ...] = REQUIRED_VERDICT_FIELDS,
+) -> ReviewAudit:
+    """Audit the review stored in `review_dir` against the pairs `scope` selects.
+
+    The entry point for a review set whose pairs need no further preparation;
+    where they do, cut them and call `check_review_records` directly.
+    """
+    review_dir = Path(review_dir)
+    current = select_pairs(root, scope, documents)
+    return check_review_records(
+        [pair.to_dict() for pair in current],
+        read_jsonl(review_dir / "pairs.jsonl"),
+        read_jsonl(review_dir / "verdicts.jsonl"),
+        expected=expected,
+        documents=documents,
+        required_fields=required_fields,
+    )
 
 
 def set_checked_date(text: str, check: str, date: str) -> str:

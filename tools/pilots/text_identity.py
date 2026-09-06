@@ -127,9 +127,9 @@ def validate_model(model: Any) -> dict:
             error("E_SHAPE", path + "/content")
         elif item.get("sha256") != text_hash(item["content"]):
             error("E_HASH", path + "/sha256")
-        if "parent" in item and reference(item["parent"], versions, path + "/parent"):
-            if versions[item["parent"]].get("text") != item.get("text"):
-                error("E_OWNERSHIP", path + "/parent")
+        if ("parent" in item and reference(item["parent"], versions, path + "/parent")
+                and versions[item["parent"]].get("text") != item.get("text")):
+            error("E_OWNERSHIP", path + "/parent")
     for identifier, item in regions.items():
         path = f"regions/{identifier}"
         if set(item) != {"id", "version", "selector"}:

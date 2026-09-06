@@ -3,14 +3,20 @@
 from __future__ import annotations
 
 import argparse
-import os
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
 
 import yaml
 
 from tools.corpus.http_store import HttpStore, canonical_url, utc_now
-from tools.corpus.manifest import sha256_file, write_json, write_yaml
+from tools.corpus.manifest import (
+    build_manifest,
+    report_status,
+    sha256_file,
+    status_from,
+    write_json,
+    write_yaml,
+)
 
 
 def snapshot(
@@ -31,6 +37,8 @@ def snapshot(
     records: list[dict[str, object]] = []
     gaps: list[dict[str, object]] = []
     if staged_file is not None:
+        if staged_url is None:
+            raise RuntimeError("a staged file needs its staged_url to stay attributable")
         staging_root = (raw_root / "staging").resolve()
         resolved_staged = staged_file.resolve()
         if not resolved_staged.is_relative_to(staging_root):
@@ -47,7 +55,7 @@ def snapshot(
         if destination.exists():
             resolved_staged.unlink()
         else:
-            os.replace(resolved_staged, destination)
+            resolved_staged.replace(destination)
         records.append(
             {
                 "requested_url": canonical_url(str(staged_url)),
@@ -74,34 +82,35 @@ def snapshot(
     requested_count = len(urls) + int(staged_file is not None)
     records.sort(key=lambda record: str(record["canonical_url"]))
     write_json(normalized_output, {"schema_version": 1, "source_id": source_id, "assets": records})
-    manifest: dict[str, object] = {
-        "schema_version": 1,
-        "run_id": manifest_output.stem,
-        "source_id": source_id,
-        "started_at": started_at,
-        "finished_at": utc_now(),
-        "status": "observable-complete" if not gaps and len(records) == requested_count else "partial",
-        "adapter": {"name": "tools.corpus.asset_snapshot", "version": 1},
-        "requests": ([{"url": staged_url, "transfer": "resumed"}] if staged_file else [])
+    manifest = build_manifest(
+        run_id=manifest_output.stem,
+        source_id=source_id,
+        adapter="tools.corpus.asset_snapshot",
+        started_at=started_at,
+        finished_at=utc_now(),
+        status=status_from(gaps, expected=requested_count, observed=len(records)),
+        requests=([{"url": staged_url, "transfer": "resumed"}] if staged_file else [])
         + [{"url": url, "transfer": "streamed"} for url in urls],
-        "derived_from_manifests": [input_manifest.as_posix()] if input_manifest else [],
-        "objects": [
+        objects=[
             {
                 "kind": "release-asset-inventory",
                 "path": normalized_output.as_posix(),
                 "sha256": sha256_file(normalized_output),
             }
         ],
-        "counts": {
+        counts={
             "requested_assets": requested_count,
             "retrieved_assets": len(records),
             "bytes": sum(int(record["byte_count"]) for record in records),
             "gaps": len(gaps),
         },
-        "assets": records,
-        "gaps": gaps,
-        "rights_exceptions": ["Release assets remain in ignored content-addressed raw storage."],
-    }
+        gaps=gaps,
+        rights_exceptions=["Release assets remain in ignored content-addressed raw storage."],
+        extra={
+            "derived_from_manifests": [input_manifest.as_posix()] if input_manifest else [],
+            "assets": records,
+        },
+    )
     write_yaml(manifest_output, manifest)
     return manifest
 
@@ -150,12 +159,8 @@ def main() -> int:
         workers=args.workers,
         input_manifest=args.gap_manifest,
     )
-    print(
-        f"{manifest['status']}: {manifest['source_id']} -> "
-        f"{manifest['counts']['retrieved_assets']} assets, "  # type: ignore[index]
-        f"{manifest['counts']['bytes']} bytes"  # type: ignore[index]
-    )
-    return 0 if manifest["status"] == "observable-complete" else 2
+    counts = manifest["counts"]
+    return report_status(manifest, f"{counts['retrieved_assets']} assets, {counts['bytes']} bytes")
 
 
 if __name__ == "__main__":

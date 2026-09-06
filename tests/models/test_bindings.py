@@ -3,14 +3,13 @@
 import copy
 import hashlib
 import json
-from pathlib import Path
 import xml.etree.ElementTree as ET
+from pathlib import Path
 
 import pytest
 
 from tools.models.abstract_text import COLLECTIONS, canonical_bytes, validate_model
 from tools.models.bindings import BINDINGS, XML_NAMESPACE, decode_model, encode_model
-
 
 ROOT = Path(__file__).resolve().parents[2]
 

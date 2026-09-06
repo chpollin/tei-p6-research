@@ -6,13 +6,15 @@ import argparse
 import copy
 import hashlib
 import json
-from pathlib import Path
 import sys
+from pathlib import Path
+
+if __package__ in (None, ""):  # run as a script, so the package root is not on the path
+    sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+
+from tools.models import abstract_text as model
 
 ROOT = Path(__file__).resolve().parents[1]
-sys.path.insert(0, str(ROOT))
-from tools.models import abstract_text as model  # noqa: E402
-
 BASE = Path("experiments/abstract_text_v01")
 REPORT = BASE / "report.json"
 OPERATIONS = {"validate", "equivalent", "revision", "reanchor"}
@@ -26,6 +28,15 @@ INPUT_FIELDS = {
 def json_bytes(value: object) -> bytes:
     return (json.dumps(value, ensure_ascii=False, sort_keys=True, indent=2,
                        allow_nan=False) + "\n").encode("utf-8")
+
+
+def text_sha256(path: Path) -> str:
+    """The input fingerprint of a text file, one policy for every check script.
+
+    SHA-256 of UTF-8 text with checkout CRLF/CR normalized to LF, so a report
+    reproduces on Windows and Linux alike. The content itself stays unchanged.
+    """
+    return hashlib.sha256(path.read_text(encoding="utf-8").encode("utf-8")).hexdigest()
 
 
 def _object(pairs: list[tuple]) -> dict:
@@ -175,16 +186,13 @@ def build_report(root: Path = ROOT) -> dict:
                                "valid": validation["valid"], "matches_case_model": matches,
                                "passed": validation["valid"] and matches})
 
-    # Contract/code/example changes invalidate the recorded report. Hash text with
-    # normalized checkout line endings so Windows and Linux reproduce identically.
+    # Contract/code/example changes invalidate the recorded report.
     paths = [BASE / "spec.json", BASE / "cases.json",
              Path("docs/p6/abstract-text-model-v0.1.md"),
              Path("tools/check_abstract_text_v01.py"),
              *[path.relative_to(root) for path in sorted((root / "tools/models").glob("*.py"))],
              *[path.relative_to(root) for path in example_paths]]
-    fingerprints = {path.as_posix(): hashlib.sha256(
-        (root / path).read_text(encoding="utf-8").encode("utf-8")).hexdigest()
-        for path in paths}
+    fingerprints = {path.as_posix(): text_sha256(root / path) for path in paths}
     passed = all(item["passed"] for item in results + canonical_checks + example_checks)
     return {
         "format_version": 1, "model_version": spec["model_version"],

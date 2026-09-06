@@ -38,8 +38,7 @@ The primary navigation has five destinations.
 | Knowledge | `knowledge.html` | Browse admitted sources, distillates, assertions, and output with provenance links |
 | About | `project.html` | Read project scope, method, repository contracts, and current state |
 
-`home.html` is a generated compatibility alias for Proposal. Local preview
-and GitHub Pages preserve the same routes. Page-local navigation addresses
+Local preview and GitHub Pages preserve the same routes. Page-local navigation addresses
 sections and examples within these views. Raw manifests and control files
 belong in contextual technical details, not global navigation.
 
@@ -179,7 +178,7 @@ manually maintained page requires a recorded architecture decision.
 
 | Generator | Canonical inputs | Generated pages |
 |---|---|---|
-| `tools/build_home.py` | Proposal, linked knowledge, model definition, and declared examples | `docs/index.html`, `docs/home.html` |
+| `tools/build_home.py` | Proposal, linked knowledge, model definition, and declared examples | `docs/index.html` |
 | `tools/build_model_reference.py` | Model definition and formal contracts | `docs/model.html` |
 | `tools/build_corpus_overview.py` | Source registry, locks, and selected manifests | `docs/corpus.html` |
 | `tools/build_knowledge.py` | Actual Vault artifacts and their provenance metadata | `docs/knowledge.html` |

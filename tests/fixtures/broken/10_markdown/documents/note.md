@@ -19,3 +19,5 @@ updated: 2026-07-11
 # Broken fixture note
 
 This paragraph carries the only existing block ID of this file. ^ok01
+
+A second paragraph so a statement can name two block anchors at once. ^ok02

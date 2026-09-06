@@ -190,7 +190,7 @@ Any warning or error within chapter scope fails the run.
 
 | Diagnostic | Condition |
 |---|---|
-| `E-ANCHOR` | An anchor or frontmatter target in `representation`, `superseded-by`, or `contested-with` does not resolve |
+| `E-ANCHOR` | An anchor or frontmatter target in `source`, `data`, `representation`, `superseded-by`, or `contested-with` does not resolve |
 | `E-LAYER` | An anchor skips its direct predecessor layer |
 | `E-GROUNDING` | An artifact with a grounding obligation has empty grounding |
 | `E-DUPLICATE` | A block or statement ID occurs more than once within a file |
@@ -201,6 +201,20 @@ Any warning or error within chapter scope fails the run.
 | `W-STALE` | `updated` is later than the most recent recorded check date. Artifacts without check dates do not trigger it |
 | `W-DUPLICATE-GROUNDING` | Two assertions have equal grounding sets or one set contains the other |
 | `W-ALIAS` | A chapter footnote alias differs from its assertion's H1 and may omit a qualifying clause |
+| `E-FRONTMATTER` | Frontmatter is unreadable or not a map, carries an unknown type, misses a required field, holds an illegal value, gives a list-valued field another type, or leaves a declared metadata field out |
+| `E-SOURCE` | A second representation or a second distillate names a source another one already holds |
+| `E-STATEMENT` | A core statement has no statement ID, has no source anchor or more than one, or mints an ID outside the Core statements section |
+| `E-QUOTE` | A publication distillate records no intake quotation check (`checked.quote`) |
+| `E-COMPUTATION` | A data computation names other than one script, passes an argument, lies outside `tools/analysis/`, is missing, fails, or yields another result than the stated one |
+| `E-TOPIC` | A `topics` value names no topic map of the controlled topic set |
+| `E-ORPHAN` | An assertion is reachable from no topic map |
+| `E-CONTESTED` | A contested assertion names no counterpart, or a contested relation is one-sided |
+| `E-FOOTNOTE` | A chapter footnote is used without definition, defined without use, defined twice, or opens with neither `Grounded in` nor `Posit:` |
+| `E-MIRROR` | A chapter's `assertions` mirror or `posits` count disagrees with its footnotes |
+| `E-SCOPE` | `--chapter` names no chapter document |
+| `W-NAME` | A file name is no ASCII-lowercase hyphen slug; `MOC-<Topic>.md` is the schema's exception |
+| `W-UNANCHORED` | A chapter paragraph carries no footnote marker |
+| `W-NO-OUTPUT` | The vault holds no chapter, so the footnote contract has no subject |
 
 Every warning must be investigated. Warnings identify either a check with no
 subject or a condition the schema does not classify as an error. They are

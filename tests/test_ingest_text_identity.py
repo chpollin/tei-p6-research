@@ -8,7 +8,6 @@ import yaml
 
 from tools import ingest_text_identity as ingest
 
-
 XML = '''<?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="https://example.invalid/never-fetch"?>
 <elementSpec xmlns="http://www.tei-c.org/ns/1.0" ident="anchor">

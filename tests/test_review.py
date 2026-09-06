@@ -1,30 +1,33 @@
 """Fixture tests for the deterministic parts of tools/review.py.
 
-Covered are pair cutting, prompt construction, verdict parsing and the booking
-of checked.machine-review, all against tests/fixtures/minimal. The judging
-mechanism itself is not exercised here: no test calls a model, and the batch
-path is driven with hand-written verdict records.
+Covered are pair cutting, prompt construction, verdict parsing, the booking of
+checked.machine-review and the audit of a recorded review, all against
+tests/fixtures/minimal. The judging mechanism itself is not exercised here: no
+test calls a model, and the batch path is driven with hand-written verdicts.
 """
 
+import json
 import shutil
-import sys
 from pathlib import Path
 
 import pytest
 
-REPO = Path(__file__).parents[1]
-sys.path.insert(0, str(REPO / "tools"))
-
-from review import (  # noqa: E402
+from tools.review import (
     VERDICTS,
     book_results,
     build_prompt,
+    check_review_records,
+    check_support_review,
     cut_pairs,
     parse_verdict,
+    prompt_hash,
+    read_jsonl,
     run_claude,
+    select_pairs,
     set_checked_date,
 )
 
+REPO = Path(__file__).parents[1]
 MINIMAL = REPO / "tests" / "fixtures" / "minimal"
 
 DOC_DISTILLATE = "20_distillates/documents/report-garden-water-2026"
@@ -268,8 +271,8 @@ def test_run_claude_passes_the_prompt_on_stdin(monkeypatch, pairs) -> None:
         calls.append((command, kwargs))
         return _Result()
 
-    monkeypatch.setattr("review.shutil.which", lambda name: "claude")
-    monkeypatch.setattr("review.subprocess.run", fake_run)
+    monkeypatch.setattr("tools.review.shutil.which", lambda name: "claude")
+    monkeypatch.setattr("tools.review.subprocess.run", fake_run)
 
     long_pair = pairs[0].__class__(
         id="x",
@@ -291,10 +294,167 @@ def test_run_claude_passes_the_prompt_on_stdin(monkeypatch, pairs) -> None:
 
 
 def test_booked_vault_still_validates(tmp_path) -> None:
-    from validate import validate
+    from tools.validate import validate
 
     vault = tmp_path / "vault"
     shutil.copytree(MINIMAL, vault)
     pairs = cut_pairs(vault)
     book_results(vault, pairs, _all_fully_supports(pairs), "2026-08-09", apply=True)
     assert validate(vault).errors == []
+
+
+def _audit_records(vault: Path, scope) -> tuple[list[dict], list[dict]]:
+    """The current pairs of `vault` in scope, with one passing verdict each."""
+    pairs = [pair.to_dict() for pair in select_pairs(vault, scope)]
+    verdicts = [
+        {
+            "id": pair["id"],
+            "verdict": "fully supports",
+            "reason": "The passage carries the statement.",
+            "reviewer": "fixture reviewer",
+            "prompt_sha256": prompt_hash(pair),
+        }
+        for pair in pairs
+    ]
+    return pairs, verdicts
+
+
+def _write_review(directory: Path, pairs: list[dict], verdicts: list[dict]) -> Path:
+    directory.mkdir(parents=True, exist_ok=True)
+    for name, records in (("pairs", pairs), ("verdicts", verdicts)):
+        (directory / f"{name}.jsonl").write_text(
+            "".join(json.dumps(record) + "\n" for record in records), encoding="utf-8"
+        )
+    return directory
+
+
+IN_DISTILLATES = "20_distillates/"
+
+
+def _distillate_scope(pair) -> bool:
+    return pair.document.startswith(IN_DISTILLATES)
+
+
+@pytest.fixture
+def review(tmp_path):
+    """A vault whose distillate pairs all carry a current passing verdict."""
+    vault = tmp_path / "vault"
+    shutil.copytree(MINIMAL, vault)
+    pairs, verdicts = _audit_records(vault, _distillate_scope)
+    return vault, _write_review(tmp_path / "review", pairs, verdicts), pairs, verdicts
+
+
+def test_a_complete_current_review_passes(review) -> None:
+    vault, directory, pairs, _ = review
+    audit = check_support_review(vault, directory, _distillate_scope, expected=len(pairs))
+    assert audit.pairs == len(pairs)
+    assert audit.documents == (DATA_DISTILLATE, DOC_DISTILLATE, PUB_DISTILLATE)
+    assert audit.without_reviewer == ()
+
+
+def test_a_changed_statement_makes_the_stored_review_stale(review) -> None:
+    vault, directory, _, _ = review
+    distillate = vault / f"{DATA_DISTILLATE}.md"
+    distillate.write_text(
+        distillate.read_text(encoding="utf-8").replace("31.4 percent", "a third"),
+        encoding="utf-8",
+    )
+    with pytest.raises(ValueError, match="stale against the current prompts"):
+        check_support_review(vault, directory, _distillate_scope)
+
+
+def test_a_new_statement_is_not_covered_by_the_stored_review(review) -> None:
+    vault, directory, _, _ = review
+    distillate = vault / f"{DOC_DISTILLATE}.md"
+    distillate.write_text(
+        distillate.read_text(encoding="utf-8").replace(
+            "\n## Terms",
+            "- A statement nobody reviewed."
+            " [[10_markdown/documents/report-garden-water-2026#^e5f6]] ^s9\n\n## Terms",
+        ),
+        encoding="utf-8",
+    )
+    with pytest.raises(ValueError, match="pair coverage"):
+        check_support_review(vault, directory, _distillate_scope)
+
+
+def test_the_declared_scope_is_held_against_the_pairs(review) -> None:
+    vault, directory, _, _ = review
+    with pytest.raises(ValueError, match="declared documents"):
+        check_support_review(
+            vault, directory, _distillate_scope, documents={DOC_DISTILLATE}
+        )
+
+
+def test_a_review_of_another_size_than_declared_is_refused(review) -> None:
+    vault, directory, _, _ = review
+    with pytest.raises(ValueError, match="exactly 99 current pairs"):
+        check_support_review(vault, directory, _distillate_scope, expected=99)
+
+
+@pytest.mark.parametrize(
+    ("mutation", "message"),
+    [
+        ("unknown", "unknown pair"),
+        ("duplicate", "recorded twice"),
+        ("nonpassing", "nonpassing review verdict"),
+        ("stale-hash", "stale review verdict prompt hash"),
+        ("missing-reason", "missing reason"),
+        ("missing-verdict", "coverage is incomplete"),
+    ],
+)
+def test_the_audit_refuses_a_defective_verdict_set(review, mutation, message) -> None:
+    vault, directory, pairs, verdicts = review
+    if mutation == "unknown":
+        verdicts[0]["id"] = "not-a-pair"
+    elif mutation == "duplicate":
+        verdicts[1] = dict(verdicts[0])
+    elif mutation == "nonpassing":
+        verdicts[0]["verdict"] = "overreaches"
+    elif mutation == "stale-hash":
+        verdicts[0]["prompt_sha256"] = "0" * 64
+    elif mutation == "missing-reason":
+        verdicts[0]["reason"] = "  "
+    else:
+        verdicts.pop()
+    _write_review(directory, pairs, verdicts)
+    with pytest.raises(ValueError, match=message):
+        check_support_review(vault, directory, _distillate_scope)
+
+
+def test_a_verdict_without_a_reviewer_passes_and_is_named(review) -> None:
+    """The editorial review of 2026-09-05 records no reviewer, so it is reported."""
+    vault, directory, pairs, verdicts = review
+    del verdicts[0]["reviewer"]
+    _write_review(directory, pairs, verdicts)
+    audit = check_support_review(vault, directory, _distillate_scope)
+    assert audit.without_reviewer == (verdicts[0]["id"],)
+
+
+def test_a_reviewer_can_be_demanded_where_the_records_carry_one(review) -> None:
+    vault, directory, pairs, verdicts = review
+    del verdicts[0]["reviewer"]
+    _write_review(directory, pairs, verdicts)
+    with pytest.raises(ValueError, match="missing reviewer"):
+        check_support_review(
+            vault,
+            directory,
+            _distillate_scope,
+            required_fields=("verdict", "reason", "prompt_sha256", "reviewer"),
+        )
+
+
+def test_a_blank_line_in_the_review_files_is_no_record(review) -> None:
+    vault, directory, _, _ = review
+    path = directory / "verdicts.jsonl"
+    path.write_text(path.read_text(encoding="utf-8") + "\n\n", encoding="utf-8")
+    assert check_support_review(vault, directory, _distillate_scope).pairs == len(
+        read_jsonl(directory / "pairs.jsonl")
+    )
+
+
+def test_an_empty_review_scope_is_refused(review) -> None:
+    vault, directory, _, _ = review
+    with pytest.raises(ValueError, match="at least one current pair"):
+        check_review_records([], [], [])
+    assert check_support_review(vault, directory, _distillate_scope).pairs

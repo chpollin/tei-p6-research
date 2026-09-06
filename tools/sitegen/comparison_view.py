@@ -8,16 +8,14 @@ from __future__ import annotations
 import copy
 import hashlib
 import json
-from pathlib import Path
-import sys
 import xml.etree.ElementTree as ET
+from pathlib import Path
 
-ROOT = Path(__file__).resolve().parents[2]
-sys.path.insert(0, str(ROOT))
+from tools.ingest_editorial_cases import embedded_source
 from tools.models.abstract_text import equivalent, propose_reanchor, validate_model
 from tools.models.bindings import decode_model, encode_model
+from tools.sitegen.markup import doc_id
 from tools.tei.editorial_cases import compare_fragment
-from tools.ingest_editorial_cases import embedded_source
 
 P5_COMMIT = "113e933e21f016e2655518321e9d10214b8d9fcb"
 P5_BASE = f"https://github.com/TEIC/TEI/blob/{P5_COMMIT}/P5/Source/"
@@ -121,9 +119,9 @@ def build_comparisons(root: Path) -> dict:
         {"id": "noun-phrase", "label": "Nominalgruppe", "definition": "Syntactic phrase asserted in this constructed example.", "applies_to": "node"},
         {"id": "verse-line", "label": "Verszeile", "definition": "Verse line proposed in this constructed example; not a source observation.", "applies_to": "node"},
     ]
-    for selection, start, end in zip(overlap["selections"], [0, 9], [13, 20]):
+    for selection, start, end in zip(overlap["selections"], [0, 9], [13, 20], strict=True):
         selection["selector"]["segments"] = [{"start": start, "end": end, "quote": content[start:end]}]
-    for reading, kind in zip(overlap["readings"], ["noun-phrase", "verse-line"]):
+    for reading, kind in zip(overlap["readings"], ["noun-phrase", "verse-line"], strict=True):
         reading["nodes"][0]["type"] = kind
         reading["label"] = kind
     overlap_p5 = [
@@ -184,7 +182,7 @@ def build_comparisons(root: Path) -> dict:
         variant = p5_variant("source-encoding", "Pinned edition XML", original["original_xml"],
             "Exact source fragment; inherited TEI namespace. " + editorial["attribution"] + " Original and adapted source observations: CC BY-SA 4.0. Full RNG/ODD conformance was not established.", [], "Real edition fragment at pinned commit")
         source_url = source_info["edition_url"] + f'#L{original["start_line"]}-L{original["end_line"]}'
-        provenance_url = "knowledge.html#doc-30-assertions-" + assertion
+        provenance_url = "knowledge.html#" + doc_id(f"30_assertions/{assertion}.md")
         variant["sources"] = [{"label": "Pinned diary passage", "url": source_url},
                               {"label": "Assertion and provenance chain", "url": provenance_url},
                               {"label": "CC BY-SA 4.0", "url": "https://creativecommons.org/licenses/by-sa/4.0/"}]
@@ -205,7 +203,7 @@ def build_comparisons(root: Path) -> dict:
                                   "validation": {"valid": False, "diagnostics": result["candidate"]["unsupported"]},
                                   "notes": "Explicit refusal is a passed failure-detection check, not a successful migration. The baseline tree retains markup but its primary prose projection also fails this task."},
                     "formal": ["Preserve the distinction between primary prose, page boundary, foliation and lexical image pointer.", "The current frozen mapper returns no package. No candidate binding or instance diagram exists for this fragment."],
-                    "limits": limits + ["No image alignment or full-document migration is established."], "graph": {"nodes": [], "edges": []}, "links": []}
+                    "limits": [*limits, "No image alignment or full-document migration is established."], "graph": {"nodes": [], "edges": []}, "links": []}
         case["links"] = [{"label": "Assertion and provenance chain", "url": provenance_url}]
         cases.append(case)
 

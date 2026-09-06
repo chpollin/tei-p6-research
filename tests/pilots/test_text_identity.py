@@ -1,15 +1,22 @@
 """Adversarial checks for the bounded hypothesis, not universal TEI claims."""
 
-from copy import deepcopy
 import json
+from copy import deepcopy
 from pathlib import Path
 
 import pytest
 
 import tools.pilots.text_identity as pilot
 from tools.pilots.text_identity import (
-    INPUTS, ROOT, build_report, evaluate_case, propose_reanchor,
-    quote_candidates, report_bytes, text_hash, validate_model,
+    INPUTS,
+    ROOT,
+    build_report,
+    evaluate_case,
+    propose_reanchor,
+    quote_candidates,
+    report_bytes,
+    text_hash,
+    validate_model,
 )
 
 

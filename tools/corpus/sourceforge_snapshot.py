@@ -3,7 +3,6 @@
 from __future__ import annotations
 
 import argparse
-import json
 import time
 import urllib.parse
 from concurrent.futures import ThreadPoolExecutor, as_completed
@@ -11,21 +10,31 @@ from pathlib import Path
 from typing import Any
 
 from tools.corpus.http_store import HttpStore, canonical_url, utc_now
-from tools.corpus.manifest import sha256_file, write_jsonl, write_yaml
+from tools.corpus.manifest import (
+    build_manifest,
+    read_jsonl,
+    report_status,
+    sha256_file,
+    status_from,
+    write_jsonl,
+    write_yaml,
+)
 
 
 def paged_url(base: str, page: int, limit: int = 100) -> str:
     return f"{base.rstrip('/')}?{urllib.parse.urlencode({'limit': limit, 'page': page})}"
 
 
-def public_ticket_metadata(ticket: dict[str, Any], tracker: str) -> dict[str, Any]:
+def public_ticket_metadata(
+    ticket: dict[str, Any], tracker: str, source_id: str
+) -> dict[str, Any]:
     """Return searchable metadata while keeping prose and comment bodies raw-only."""
 
     thread = ticket.get("discussion_thread") or {}
     attachments = ticket.get("attachments") or []
     return {
         "schema_version": 1,
-        "source_id": "tei-legacy-sourceforge",
+        "source_id": source_id,
         "object_type": "ticket",
         "tracker": tracker,
         "ticket_num": ticket.get("ticket_num"),
@@ -54,33 +63,36 @@ def public_ticket_metadata(ticket: dict[str, Any], tracker: str) -> dict[str, An
     }
 
 
-def fetch_json(store: HttpStore, url: str) -> tuple[dict[str, Any], dict[str, Any]]:
-    result, body = store.fetch(url)
-    if result.status >= 400:
-        raise RuntimeError(f"HTTP {result.status} for {canonical_url(url)}")
-    try:
-        data = json.loads(body)
-    except json.JSONDecodeError as error:
-        raise RuntimeError(f"invalid JSON for {canonical_url(url)}: {error}") from error
-    return data, result.as_record()
+def enumerate_tracker(
+    store: HttpStore, base: str
+) -> tuple[list[int], int | None, list[dict[str, Any]]]:
+    """Enumerate one tracker and return its numbers, reported count and responses.
 
+    Pages of the SourceForge tracker API overlap, so ticket numbers are
+    deduplicated while enumerating. The count the server reports is carried out
+    of the loop unchanged; it is the only independent quantity available for
+    reconciliation, and ``None`` means the tracker reported none.
+    """
 
-def enumerate_tracker(store: HttpStore, base: str) -> tuple[list[int], list[dict[str, Any]]]:
-    ticket_numbers: list[int] = []
+    ticket_numbers: set[int] = set()
     responses: list[dict[str, Any]] = []
     page = 0
-    expected: int | None = None
-    while expected is None or len(ticket_numbers) < expected:
-        data, response = fetch_json(store, paged_url(base, page))
-        rows = data.get("tickets") or []
-        if expected is None:
-            expected = int(data.get("count", 0))
+    reported: int | None = None
+    while reported is None or len(ticket_numbers) < reported:
+        data, response = store.fetch_json(paged_url(base, page))
         responses.append(response)
-        ticket_numbers.extend(int(row["ticket_num"]) for row in rows)
+        if reported is None and data.get("count") is not None:
+            reported = int(data["count"])
+        rows = data.get("tickets") or []
         if not rows:
             break
+        seen_before = len(ticket_numbers)
+        ticket_numbers.update(int(row["ticket_num"]) for row in rows)
+        if len(ticket_numbers) == seen_before:
+            # A page of pure duplicates means pagination stopped advancing.
+            break
         page += 1
-    return sorted(set(ticket_numbers)), responses
+    return sorted(ticket_numbers), reported, responses
 
 
 def fetch_thread(
@@ -90,7 +102,7 @@ def fetch_thread(
     responses: list[dict[str, Any]] = []
     page = 0
     while True:
-        data, response = fetch_json(store, paged_url(url, page))
+        data, response = store.fetch_json(paged_url(url, page))
         if delay_seconds:
             time.sleep(delay_seconds)
         responses.append(response)
@@ -109,9 +121,10 @@ def fetch_ticket(
     ticket_num: int,
     raw_root: Path,
     delay_seconds: float,
+    source_id: str,
 ) -> dict[str, Any]:
     store = HttpStore(raw_root)
-    data, detail_response = fetch_json(store, f"{base.rstrip('/')}/{ticket_num}")
+    data, detail_response = store.fetch_json(f"{base.rstrip('/')}/{ticket_num}")
     if delay_seconds:
         time.sleep(delay_seconds)
     ticket = data.get("ticket") or {}
@@ -121,7 +134,7 @@ def fetch_ticket(
         posts, thread_responses = fetch_thread(
             store, str(ticket["discussion_thread_url"]), delay_seconds
         )
-    record = public_ticket_metadata(ticket, tracker)
+    record = public_ticket_metadata(ticket, tracker, source_id)
     record["comment_count"] = len(posts)
     record["comment_metadata"] = [
         {
@@ -170,14 +183,10 @@ def snapshot(
 ) -> dict[str, object]:
     started_at = utc_now()
     store = HttpStore(raw_root)
-    project, project_response = fetch_json(store, project_url)
+    project, project_record = store.fetch_json(project_url)
     records: list[dict[str, Any]] = []
     if resume_from is not None and resume_from.exists():
-        records = [
-            json.loads(line)
-            for line in resume_from.read_text(encoding="utf-8").splitlines()
-            if line
-        ]
+        records = read_jsonl(resume_from)
     loaded_from_prior_count = len(records)
     records_by_key = {
         (str(row["tracker"]), int(row["ticket_num"])): row for row in records
@@ -190,14 +199,20 @@ def snapshot(
     response_count = 1
     gaps: list[dict[str, Any]] = []
     enumerated: dict[str, list[int]] = {}
+    reported_counts: dict[str, int] = {}
 
     for tracker, base in trackers.items():
         try:
-            enumerated[tracker], page_responses = enumerate_tracker(store, base)
+            enumerated[tracker], reported, page_responses = enumerate_tracker(store, base)
             response_count += len(page_responses)
         except RuntimeError as error:
             enumerated[tracker] = []
             gaps.append({"code": "tracker-enumeration-failed", "tracker": tracker, "detail": str(error)})
+            continue
+        if reported is None:
+            gaps.append({"code": "tracker-count-unavailable", "tracker": tracker})
+        else:
+            reported_counts[tracker] = reported
 
     enumerated_keys = {
         (tracker, number)
@@ -215,6 +230,7 @@ def snapshot(
                 number,
                 raw_root,
                 delay_seconds,
+                source_id,
             ): (tracker, number)
             for tracker, numbers in enumerated.items()
             for number in numbers
@@ -236,50 +252,41 @@ def snapshot(
     records = list(records_by_key.values())
     records.sort(key=lambda row: (str(row["tracker"]), int(row["ticket_num"])))
     write_jsonl(normalized_output, records)
-    expected = sum(len(numbers) for numbers in enumerated.values())
-    if len(records) != expected:
-        gaps.append({"code": "ticket-count-mismatch", "expected": expected, "observed": len(records)})
-    status = "observable-complete" if not gaps else "partial"
-    manifest: dict[str, object] = {
-        "schema_version": 1,
-        "run_id": manifest_output.stem,
-        "source_id": source_id,
-        "started_at": started_at,
-        "finished_at": utc_now(),
-        "status": status,
-        "scope": {
-            "boundary": "tracker-rest-interfaces",
-            "status_applies_to": "requests.trackers",
-            "completion_rule": (
-                "Every ticket exposed by the listed tracker REST interfaces, "
-                "together with its observable discussion pages."
-            ),
-        },
-        "adapter": {"name": "tools.corpus.sourceforge_snapshot", "version": 1},
-        "requests": {
+    # Only a count reported by every tracker reconciles the acquired tickets.
+    expected = (
+        sum(reported_counts.values()) if len(reported_counts) == len(trackers) else None
+    )
+    observed = len(records)
+    if expected is not None and observed != expected:
+        gaps.append({"code": "ticket-count-mismatch", "expected": expected, "observed": observed})
+    manifest = build_manifest(
+        run_id=manifest_output.stem,
+        source_id=source_id,
+        adapter="tools.corpus.sourceforge_snapshot",
+        started_at=started_at,
+        finished_at=utc_now(),
+        status=status_from(gaps, expected=expected, observed=observed),
+        requests={
             "project": canonical_url(project_url),
+            "project_response": project_record,
             "trackers": {name: canonical_url(url) for name, url in trackers.items()},
             "workers": workers,
             "resume_from": resume_from.as_posix() if resume_from else None,
             "delay_seconds": delay_seconds,
             "refresh_missing_raw_links": refresh_missing_raw_links,
         },
-        "project": {
-            "shortname": project.get("shortname"),
-            "name": project.get("name"),
-            "status": project.get("status"),
-            "moved_to_url": project.get("moved_to_url"),
-        },
-        "objects": [
+        objects=[
             {
                 "kind": "sourceforge-ticket-metadata",
                 "path": normalized_output.as_posix(),
                 "sha256": sha256_file(normalized_output),
             }
         ],
-        "counts": {
+        counts={
             "tickets_by_tracker": {name: len(numbers) for name, numbers in enumerated.items()},
-            "tickets": len(records),
+            "tickets_reported_by_tracker": reported_counts,
+            "tickets_expected": expected,
+            "tickets": observed,
             "tickets_loaded_from_prior_run": loaded_from_prior_count,
             "tickets_reused_without_fetch": reused_without_fetch_count,
             "tickets_fetched_or_refetched": fetched_or_refetched_count,
@@ -290,12 +297,28 @@ def snapshot(
             "http_responses": response_count,
             "gaps": len(gaps),
         },
-        "gaps": gaps,
-        "rights_exceptions": [
+        gaps=gaps,
+        rights_exceptions=[
             "Ticket and discussion prose remain in local content-addressed raw storage.",
             "Normalized output contains metadata, summaries, links, and relationship identifiers only.",
         ],
-    }
+        extra={
+            "scope": {
+                "boundary": "tracker-rest-interfaces",
+                "status_applies_to": "requests.trackers",
+                "completion_rule": (
+                    "Every ticket exposed by the listed tracker REST interfaces, "
+                    "together with its observable discussion pages."
+                ),
+            },
+            "project": {
+                "shortname": project.get("shortname"),
+                "name": project.get("name"),
+                "status": project.get("status"),
+                "moved_to_url": project.get("moved_to_url"),
+            },
+        },
+    )
     write_yaml(manifest_output, manifest)
     return manifest
 
@@ -327,8 +350,10 @@ def parse_args() -> argparse.Namespace:
 
 def main() -> int:
     args = parse_args()
-    if args.workers < 1 or args.workers > 32 or args.delay_seconds < 0:
+    if args.workers < 1 or args.workers > 32:
         raise SystemExit("workers must be between 1 and 32")
+    if args.delay_seconds < 0:
+        raise SystemExit("delay-seconds must be 0 or greater")
     manifest = snapshot(
         source_id=args.source_id,
         project_url=args.project_url,
@@ -341,13 +366,11 @@ def main() -> int:
         delay_seconds=args.delay_seconds,
         refresh_missing_raw_links=args.refresh_missing_raw_links,
     )
-    print(
-        f"{manifest['status']}: {manifest['source_id']} -> "
-        f"{manifest['counts']['tickets']} tickets, "  # type: ignore[index]
-        f"{manifest['counts']['comments']} comments, "  # type: ignore[index]
-        f"{manifest['counts']['gaps']} gaps"  # type: ignore[index]
+    counts = manifest["counts"]
+    return report_status(
+        manifest,
+        f"{counts['tickets']} tickets, {counts['comments']} comments, {counts['gaps']} gaps",
     )
-    return 0 if manifest["status"] == "observable-complete" else 2
 
 
 if __name__ == "__main__":

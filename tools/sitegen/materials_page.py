@@ -4,20 +4,20 @@ from __future__ import annotations
 
 import html
 from collections import Counter
-from pathlib import Path, PurePosixPath
+from pathlib import Path
 from typing import Any
 
-from sitegen.assets import read_asset
-from sitegen.chrome import render_footer, render_header
-from sitegen.materials_view import (
+from tools.sitegen.assets import read_asset
+from tools.sitegen.chrome import render_footer, render_header
+from tools.sitegen.markup import deployment_base
+from tools.sitegen.materials_view import (
     GAP_LABELS,
     STATUS_HELP,
     STATUS_LABELS,
     STATUS_ORDER,
     prepare_sources,
 )
-from sitegen.source_data import local_href
-
+from tools.sitegen.source_data import control_href
 
 CSS = "\n" + read_asset("workbench.css") + "\n" + read_asset("materials.css")
 SCRIPT = "\n" + read_asset("materials.js")
@@ -27,17 +27,12 @@ def display_number(value: int) -> str:
     return f"{value:,}"
 
 
-def link_attributes(path: str) -> str:
-    return (
-        'href="'
-        + html.escape(local_href(path), quote=True)
-        + '" data-repo-path="'
-        + html.escape(PurePosixPath(path.replace("\\", "/")).as_posix(), quote=True)
-        + '"'
-    )
+def control_link(path: str, base: str | None, label: str) -> str:
+    """Link one control record, resolved at build time so it works without JS."""
+    return f'<a href="{html.escape(control_href(path, base), quote=True)}">{html.escape(label)}</a>'
 
 
-def render_source(source: dict[str, Any], index: int) -> str:
+def render_source(source: dict[str, Any], index: int, base: str | None) -> str:
     status = source["status"]
     status_label = STATUS_LABELS.get(status, status)
     status_help = STATUS_HELP.get(status, "Acquisition status of this holding.")
@@ -80,11 +75,9 @@ def render_source(source: dict[str, Any], index: int) -> str:
     material_rows = []
     for record in source["materials"]:
         data_link = (
-            f'<a {link_attributes(record["path"])}>Data</a>'
-            if record["path"]
-            else ""
+            control_link(record["path"], base, "Data") if record["path"] else ""
         )
-        proof_link = f'<a {link_attributes(record["manifest_ref"])}>Manifest</a>'
+        proof_link = control_link(record["manifest_ref"], base, "Manifest")
         record_status = STATUS_LABELS.get(record["status"], record["status"] or "—")
         material_rows.append(
             '<li class="holding-item"><div class="holding-title"><strong>'
@@ -134,10 +127,10 @@ def render_source(source: dict[str, Any], index: int) -> str:
         for name, url in source["upstream"]
     )
     manifest_links = "".join(
-        f'<a {link_attributes(reference)}>Acquisition manifest {number}</a>'
+        control_link(reference, base, f"Acquisition manifest {number}")
         for number, reference in enumerate(source["manifest_refs"], start=1)
     )
-    lock_link_attributes = link_attributes(source["lock_ref"])
+    lock_link = control_link(source["lock_ref"], base, "Source Lock")
     detail_id = f"source-detail-{index}"
     status_rank = (
         STATUS_ORDER.index(status) if status in STATUS_ORDER else len(STATUS_ORDER)
@@ -178,7 +171,7 @@ def render_source(source: dict[str, Any], index: int) -> str:
           <div><dt>Rights</dt><dd>{html.escape(source["rights"])}</dd></div>
           <div><dt>Source types</dt><dd>{html.escape(source["source_types"])}</dd></div>
         </dl>
-        <div class="link-list technical-links"><a {lock_link_attributes}>Source Lock</a>{manifest_links}</div>
+        <div class="link-list technical-links">{lock_link}{manifest_links}</div>
       </details>
     </div>
   </td>
@@ -186,6 +179,7 @@ def render_source(source: dict[str, Any], index: int) -> str:
 
 
 def build_page(root: Path, date: str, repository_base: str | None = None) -> str:
+    base = deployment_base(repository_base)
     registered_sources = prepare_sources(root)
     sources = [
         source
@@ -194,8 +188,7 @@ def build_page(root: Path, date: str, repository_base: str | None = None) -> str
     ]
     literature = [source for source in registered_sources if source["authority"] == "secondary-scholarly"]
     literature_rows = "".join(
-        '<li><a ' + link_attributes(source["lock_ref"]) + '>'
-        + html.escape(source["title"]) + "</a> · "
+        "<li>" + control_link(source["lock_ref"], base, source["title"]) + " · "
         + html.escape(STATUS_LABELS.get(source["status"], source["status"])) + "</li>"
         for source in literature
     )
@@ -210,7 +203,8 @@ def build_page(root: Path, date: str, repository_base: str | None = None) -> str
     literature_link = ' · <a href="#literature">Registered literature</a>' if literature else ''
     statuses = Counter(source["status"] for source in sources)
     rows = "".join(
-        render_source(source, index) for index, source in enumerate(sources, start=1)
+        render_source(source, index, base)
+        for index, source in enumerate(sources, start=1)
     )
 
     status_options = ['<option value="all">All acquisition states</option>']
@@ -243,14 +237,11 @@ def build_page(root: Path, date: str, repository_base: str | None = None) -> str
     if any(not source["materials"] for source in sources):
         material_options.append('<option value="__none__">Not yet acquired</option>')
 
-    repository_base = repository_base.rstrip("/") + "/" if repository_base else ""
-
     return f"""<!doctype html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="repository-base" content="{html.escape(repository_base, quote=True)}">
 <title>Materials · TEI P6 Research</title>
 <meta name="description" content="Source families, recorded holdings, acquisition states and gaps in TEI P6 Research.">
 <style>{CSS}</style>

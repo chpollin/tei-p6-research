@@ -8,57 +8,20 @@ from __future__ import annotations
 import json
 import re
 from pathlib import Path
-from urllib.parse import quote, urlsplit
+from urllib.parse import urlsplit
 
 import yaml
 
+from tools.sitegen.documents import WIKI, read_document
+from tools.sitegen.markup import doc_id, safe_url
 
 LAYERS = {"representation": "10 · Source representation", "distillate": "20 · Distillate",
           "assertion": "30 · Assertion", "chapter": "40 · Output chapter"}
-WIKI = re.compile(r"\[\[([^\]|]+)(?:\|[^\]]*)?\]\]")
 BLOCK = re.compile(r"\^([A-Za-z0-9-]+)[ \t]*$", re.M)
-
-
-def doc_id(path: str) -> str:
-    """Public contract shared with the proposal's provenance links."""
-    return "doc-" + re.sub(r"[^a-z0-9]+", "-", path.removesuffix(".md").lower()).strip("-")
 
 
 def block_id(path: str, anchor: str) -> str:
     return doc_id(path) + "--" + anchor.removeprefix("^")
-
-
-def safe_url(value: str) -> str:
-    if not isinstance(value, str) or value != value.strip() or any(ord(c) < 32 for c in value) or "\\" in value:
-        raise ValueError("Unsafe URL")
-    parsed = urlsplit(value)
-    if parsed.scheme not in ("https", "http") or not parsed.netloc or parsed.username or parsed.password:
-        raise ValueError("Source URLs must be absolute HTTP(S) URLs")
-    return value
-
-
-def repository_link(path: str, base: str | None) -> str:
-    if path.startswith(("/", "00_sources/")) or ".." in Path(path).parts or "\\" in path:
-        raise ValueError("Unsafe or non-public repository path")
-    return (base or "../") + quote(path, safe="/")
-
-
-def read_document(root: Path, path: str) -> tuple[dict, str]:
-    file = (root / path).resolve()
-    if not file.is_relative_to(root.resolve()):
-        raise ValueError(f"Document escapes repository: {path}")
-    if not file.is_file():
-        raise ValueError(f"Missing document: {path}")
-    text = file.read_text(encoding="utf-8")
-    if text.startswith("---\n"):
-        pieces = text.split("---\n", 2)
-        if len(pieces) != 3:
-            raise ValueError(f"Incomplete frontmatter: {path}")
-        meta = yaml.safe_load(pieces[1]) or {}
-        if not isinstance(meta, dict):
-            raise ValueError(f"Invalid frontmatter: {path}")
-        return meta, pieces[2].strip()
-    return {}, text.strip()
 
 
 def section(body: str, name: str) -> str:

@@ -1,9 +1,9 @@
 """Offline checks of provenance, namespace handling and declaration-only scope."""
 
-from hashlib import sha256
 import json
-from pathlib import Path
 import subprocess
+from hashlib import sha256
+from pathlib import Path
 
 import pytest
 import yaml
@@ -103,7 +103,7 @@ def test_source_mismatch_rejected(source, change):
         (root / "inventory.json").write_text(json.dumps(data))
         if change == "blob":
             reconcile_inventory(root)
-    with pytest.raises(ValueError, match="mismatch|incomplete"):
+    with pytest.raises(ValueError, match=r"mismatch|incomplete"):
         build_atlas(root, mirror, "lock.yaml")
 
 

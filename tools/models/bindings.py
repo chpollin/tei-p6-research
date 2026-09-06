@@ -16,14 +16,13 @@ import yaml
 
 from tools.models.abstract_text import COLLECTIONS, validate_model
 
-
 BINDINGS = ("json", "xml", "yaml")
 XML_NAMESPACE = "urn:tei-p6-research:abstract-text:0.1"
 BINDING_VERSION = "0.1"
 _RECORD_NAMES = dict(zip(COLLECTIONS, (
     "agent", "concept", "text", "version", "continuity", "selection",
     "reading", "annotation", "relation",
-)))
+), strict=True))
 _ARRAY_NAMES = {"nodes": "node", "segments": "segment"}
 _INTEGER = re.compile(r"-?(?:0|[1-9][0-9]*)\Z")
 _FIELD = re.compile(r"[a-z][a-z_0-9]*\Z")
@@ -98,7 +97,8 @@ def _json(text: str) -> Any:
 class _Loader(yaml.SafeLoader):
     """Small YAML scalar vocabulary; no aliases, merge interpretation, or tags."""
 
-    yaml_implicit_resolvers: dict = {}
+    # Class-level empty dict deliberately hides SafeLoader resolvers for this subclass only.
+    yaml_implicit_resolvers: dict = {}  # noqa: RUF012
 
     def compose_node(self, parent, index):
         event = self.peek_event()

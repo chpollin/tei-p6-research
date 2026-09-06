@@ -5,10 +5,17 @@ from __future__ import annotations
 import argparse
 from collections import Counter
 from pathlib import Path
-from zipfile import ZipFile
+from zipfile import BadZipFile, ZipFile
 
 from tools.corpus.http_store import utc_now
-from tools.corpus.manifest import sha256_file, write_json, write_yaml
+from tools.corpus.manifest import (
+    build_manifest,
+    report_status,
+    sha256_file,
+    status_from,
+    write_json,
+    write_yaml,
+)
 
 
 def inventory(
@@ -20,18 +27,27 @@ def inventory(
 ) -> dict[str, object]:
     started_at = utc_now()
     entries: list[dict[str, object]] = []
-    with ZipFile(archive) as release:
-        bad_member = release.testzip()
-        for item in release.infolist():
-            entries.append(
-                {
-                    "path": item.filename,
-                    "directory": item.is_dir(),
-                    "uncompressed_bytes": item.file_size,
-                    "compressed_bytes": item.compress_size,
-                    "crc32": f"{item.CRC:08x}",
-                }
-            )
+    gaps: list[dict[str, object]] = []
+    # A truncated or damaged archive still produces a manifest: the run records
+    # what it could read and names the failure as a gap.
+    try:
+        with ZipFile(archive) as release:
+            bad_member = release.testzip()
+            for item in release.infolist():
+                entries.append(
+                    {
+                        "path": item.filename,
+                        "directory": item.is_dir(),
+                        "uncompressed_bytes": item.file_size,
+                        "compressed_bytes": item.compress_size,
+                        "crc32": f"{item.CRC:08x}",
+                    }
+                )
+    except BadZipFile as error:
+        bad_member = None
+        gaps.append({"code": "archive-unreadable", "detail": str(error)})
+    if bad_member is not None:
+        gaps.append({"code": "zip-crc-failure", "path": bad_member})
     entries.sort(key=lambda row: str(row["path"]))
     suffixes = Counter(
         Path(str(row["path"])).suffix.lower() or "[none]"
@@ -46,24 +62,22 @@ def inventory(
         "entries": entries,
     }
     write_json(normalized_output, normalized)
-    gaps = [] if bad_member is None else [{"code": "zip-crc-failure", "path": bad_member}]
-    manifest: dict[str, object] = {
-        "schema_version": 1,
-        "run_id": manifest_output.stem,
-        "source_id": source_id,
-        "started_at": started_at,
-        "finished_at": utc_now(),
-        "status": "observable-complete" if not gaps else "partial",
-        "adapter": {"name": "tools.corpus.zip_inventory", "version": 1},
-        "requests": [{"archive": archive.as_posix(), "sha256": archive_sha256}],
-        "objects": [
+    manifest = build_manifest(
+        run_id=manifest_output.stem,
+        source_id=source_id,
+        adapter="tools.corpus.zip_inventory",
+        started_at=started_at,
+        finished_at=utc_now(),
+        status=status_from(gaps),
+        requests=[{"archive": archive.as_posix(), "sha256": archive_sha256}],
+        objects=[
             {
                 "kind": "zip-member-inventory",
                 "path": normalized_output.as_posix(),
                 "sha256": sha256_file(normalized_output),
             }
         ],
-        "counts": {
+        counts={
             "members": len(entries),
             "files": sum(not bool(row["directory"]) for row in entries),
             "directories": sum(bool(row["directory"]) for row in entries),
@@ -71,8 +85,8 @@ def inventory(
             "suffixes": dict(sorted(suffixes.items())),
             "gaps": len(gaps),
         },
-        "gaps": gaps,
-    }
+        gaps=gaps,
+    )
     write_yaml(manifest_output, manifest)
     return manifest
 
@@ -94,11 +108,7 @@ def main() -> int:
         normalized_output=args.normalized_output,
         manifest_output=args.manifest_output,
     )
-    print(
-        f"{manifest['status']}: {manifest['source_id']} -> "
-        f"{manifest['counts']['files']} files"  # type: ignore[index]
-    )
-    return 0 if manifest["status"] == "observable-complete" else 2
+    return report_status(manifest, f"{manifest['counts']['files']} files")
 
 
 if __name__ == "__main__":

@@ -5,8 +5,7 @@ from __future__ import annotations
 from pathlib import Path
 from typing import Any
 
-from sitegen.source_data import load_source_records, resolve_repo_file
-
+from tools.sitegen.source_data import load_source_records, resolve_repo_file
 
 STATUS_LABELS = {
     "observable-complete": "Acquired",
@@ -291,23 +290,6 @@ def normalized_artifacts(manifests: list[dict[str, Any]]) -> list[str]:
     return list(dict.fromkeys(paths))
 
 
-def first_scope_rule(value: Any) -> str:
-    if isinstance(value, dict):
-        rule = value.get("rule")
-        if isinstance(rule, str):
-            return rule
-        for child in value.values():
-            found = first_scope_rule(child)
-            if found:
-                return found
-    elif isinstance(value, list):
-        for child in value:
-            found = first_scope_rule(child)
-            if found:
-                return found
-    return ""
-
-
 def material_records(
     manifests: list[dict[str, Any]], manifest_refs: list[str]
 ) -> list[dict[str, str]]:
@@ -373,9 +355,9 @@ def prepare_sources(root: Path) -> list[dict[str, Any]]:
         gaps = gap_records(lock, manifests)
         rights = source.get("rights") if isinstance(source.get("rights"), dict) else {}
         source_types = source.get("vault_source_types")
-        artifacts = normalized_artifacts(manifests)
         materials = material_records(manifests, manifest_refs)
-        for artifact in artifacts:
+        # Every normalized holding a manifest declares must exist below the root.
+        for artifact in normalized_artifacts(manifests):
             resolve_repo_file(root, artifact)
         prepared.append(
             {
@@ -392,30 +374,19 @@ def prepare_sources(root: Path) -> list[dict[str, Any]]:
                 ),
                 "authority": str(source.get("authority", "")),
                 "status": loaded["status"],
-                "completion_target": str(source.get("completion_target", "")),
                 "as_of": str(lock.get("as_of", "")),
                 "rights": str(rights.get("rights_status", "not specified")),
-                "redistribution": str(
-                    rights.get("redistribution") or "not specified"
-                ),
-                "license": str(
-                    rights.get("license_expression") or "not specified"
-                ),
                 "source_types": (
                     ", ".join(str(item) for item in source_types)
                     if isinstance(source_types, list)
                     else "not specified"
                 ),
-                "update_policy": str(source.get("update_policy", "not specified")),
-                "scope_rule": first_scope_rule(lock.get("scope", {})),
                 "metrics": selected_metrics(counts),
                 "materials": materials,
                 "gaps": gaps,
                 "gap_count": counts.get("gaps", len(gaps)),
                 "lock_ref": loaded["lock_ref"],
                 "manifest_refs": manifest_refs,
-                "manifests": manifests,
-                "artifacts": artifacts,
                 "upstream": upstream_links(source.get("upstream", {})),
             }
         )

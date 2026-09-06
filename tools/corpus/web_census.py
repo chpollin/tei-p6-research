@@ -10,7 +10,14 @@ from html.parser import HTMLParser
 from pathlib import Path
 
 from tools.corpus.http_store import HttpStore, canonical_url, utc_now
-from tools.corpus.manifest import sha256_file, write_jsonl, write_yaml
+from tools.corpus.manifest import (
+    build_manifest,
+    report_status,
+    sha256_file,
+    status_from,
+    write_jsonl,
+    write_yaml,
+)
 
 TEXT_EXTENSIONS = {
     "",
@@ -145,16 +152,14 @@ def crawl(
             if not any(link.startswith(prefix) for prefix in prefixes):
                 external_links.add(link)
                 continue
-            path = urllib.parse.urlsplit(link).path
-            suffix = "" if path.endswith("/") else Path(path).suffix.lower()
-            if not include_binary and suffix not in TEXT_EXTENSIONS:
+            if not is_allowed(link, prefixes, include_binary):
                 skipped_binary.add(link)
                 continue
             if current_depth >= depth:
                 if link not in queued:
                     boundary_links.add(link)
                 continue
-            if link not in queued and is_allowed(link, prefixes, include_binary):
+            if link not in queued:
                 queued.add(link)
                 queue.append((link, current_depth + 1))
 
@@ -172,16 +177,14 @@ def crawl(
     for link in sorted(skipped_binary):
         gaps.append({"code": "binary-link-inventoried-not-fetched", "url": link})
 
-    status = "observable-complete" if not gaps and not truncated else "partial"
-    manifest: dict[str, object] = {
-        "schema_version": 1,
-        "run_id": manifest_output.stem,
-        "source_id": source_id,
-        "started_at": started_at,
-        "finished_at": utc_now(),
-        "status": status,
-        "adapter": {"name": "tools.corpus.web_census", "version": 1},
-        "requests": [
+    manifest = build_manifest(
+        run_id=manifest_output.stem,
+        source_id=source_id,
+        adapter="tools.corpus.web_census",
+        started_at=started_at,
+        finished_at=utc_now(),
+        status=status_from(gaps),
+        requests=[
             {
                 "root_url": root,
                 "allow_prefixes": prefixes,
@@ -190,14 +193,14 @@ def crawl(
                 "include_binary": include_binary,
             }
         ],
-        "objects": [
+        objects=[
             {
                 "kind": "web-census",
                 "path": normalized_output.as_posix(),
                 "sha256": normalized_hash,
             }
         ],
-        "counts": {
+        counts={
             "responses": len(records),
             "successful_responses": sum(
                 1 for row in records if int(row["response"]["status"]) < 400  # type: ignore[index]
@@ -207,13 +210,15 @@ def crawl(
             "binary_links_inventoried_not_fetched": len(skipped_binary),
             "gaps": len(gaps),
         },
-        "external_links": sorted(external_links),
-        "depth_boundary_links": sorted(boundary_links),
-        "gaps": gaps,
-        "rights_exceptions": [
+        gaps=gaps,
+        rights_exceptions=[
             "Raw response bodies remain local until per-item redistribution rights are reviewed."
         ],
-    }
+        extra={
+            "external_links": sorted(external_links),
+            "depth_boundary_links": sorted(boundary_links),
+        },
+    )
     write_yaml(manifest_output, manifest)
     return manifest
 
@@ -247,12 +252,8 @@ def main() -> int:
         normalized_output=args.normalized_output,
         manifest_output=args.manifest_output,
     )
-    print(
-        f"{manifest['status']}: {manifest['source_id']} -> "
-        f"{manifest['counts']['responses']} responses, "  # type: ignore[index]
-        f"{manifest['counts']['gaps']} gaps"  # type: ignore[index]
-    )
-    return 0 if manifest["status"] == "observable-complete" else 2
+    counts = manifest["counts"]
+    return report_status(manifest, f"{counts['responses']} responses, {counts['gaps']} gaps")
 
 
 if __name__ == "__main__":

@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import hashlib
+import json
 import os
 import time
 import urllib.error
@@ -11,6 +12,7 @@ import urllib.request
 from dataclasses import dataclass
 from datetime import UTC, datetime
 from pathlib import Path
+from typing import Any
 from uuid import uuid4
 
 from tools.corpus.manifest import sha256_bytes
@@ -130,11 +132,31 @@ class HttpStore:
                 last_error = error
                 retry_after = error.headers.get("Retry-After")
                 delay = min(int(retry_after), 30) if retry_after and retry_after.isdigit() else 2**attempt
-                time.sleep(delay)
+                self._back_off(attempt, delay)
             except (OSError, urllib.error.URLError) as error:
                 last_error = error
-                time.sleep(2**attempt)
+                self._back_off(attempt, 2**attempt)
         raise RuntimeError(f"failed to fetch {requested}: {last_error}")
+
+    def fetch_json(
+        self, url: str, journal: list[dict[str, object]] | None = None
+    ) -> tuple[Any, dict[str, object]]:
+        """Fetch one JSON response, journal it, and parse it.
+
+        The response record reaches ``journal`` before an HTTP or parse failure
+        raises, so a request journal stays complete across a failed run.
+        """
+
+        result, body = self.fetch(url)
+        record = result.as_record()
+        if journal is not None:
+            journal.append(record)
+        if result.status >= 400:
+            raise RuntimeError(f"HTTP {result.status} for {result.canonical_url}")
+        try:
+            return json.loads(body), record
+        except json.JSONDecodeError as error:
+            raise RuntimeError(f"invalid JSON for {result.canonical_url}: {error}") from error
 
     def fetch_stream(self, url: str) -> FetchResult:
         """Fetch a large object without retaining its response body in memory."""
@@ -166,7 +188,7 @@ class HttpStore:
                 if destination.exists():
                     temporary.unlink()
                 else:
-                    os.replace(temporary, destination)
+                    temporary.replace(destination)
                 safe_headers = {
                     key.lower(): value
                     for key, value in headers.items()
@@ -187,8 +209,14 @@ class HttpStore:
             except (OSError, urllib.error.URLError) as error:
                 temporary.unlink(missing_ok=True)
                 last_error = error
-                time.sleep(2**attempt)
+                self._back_off(attempt, 2**attempt)
         raise RuntimeError(f"failed to fetch {requested}: {last_error}")
+
+    def _back_off(self, attempt: int, delay: float) -> None:
+        """Wait between attempts; the last attempt is never followed by a wait."""
+
+        if attempt + 1 < self.retries:
+            time.sleep(delay)
 
     def _store(
         self,
@@ -207,9 +235,9 @@ class HttpStore:
             if destination.read_bytes() != body:
                 raise RuntimeError(f"raw hash collision at {destination}")
         else:
-            temporary = destination.with_suffix(".tmp")
+            temporary = destination.parent / f"{destination.name}.{os.getpid()}-{uuid4().hex}.part"
             temporary.write_bytes(body)
-            os.replace(temporary, destination)
+            temporary.replace(destination)
 
         safe_headers = {
             key.lower(): value

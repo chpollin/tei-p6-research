@@ -2,10 +2,13 @@
 from __future__ import annotations
 
 import argparse
+import sys
 from datetime import date as calendar_date
 from pathlib import Path
 
-from sitegen.model_reference import build_view, render_page
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))  # direct script run
+
+from tools.sitegen.model_reference import build_view, render_page
 
 
 def build_page(root: Path, date: str, repository_base: str | None = None) -> str:

@@ -12,9 +12,13 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - run: pip install pyyaml pytest
+      - run: pip install pyyaml pytest ruff
+      - name: Lint with the configured rule set
+        run: python -m ruff check .
       - name: Validate the vault
         run: python tools/validate.py .
+      - name: Validate the corpus control plane
+        run: python -m tools.corpus.validate_control_plane .
       - name: Check current first-wave source-support review
         run: python tools/check_wave1_sources.py . --review-only
       - name: Reproduce Abstract Text Model 0.1
@@ -23,5 +27,7 @@ jobs:
         run: |
           python tools/ingest_editorial_cases.py --check
           python tools/check_editorial_cases.py --check
-      - name: Check the bounded pilot and run the full test suite
+      - name: Run the test suite
+        run: python -m pytest tests -q
+      - name: Check the bounded text identity and annotation pilot
         run: python tools/check_text_identity_pilot.py

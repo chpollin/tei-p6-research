@@ -2,7 +2,6 @@
 
 from pathlib import Path, PurePath
 
-
 ASSET_ROOT = Path(__file__).with_name("assets")
 
 

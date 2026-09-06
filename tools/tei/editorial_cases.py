@@ -15,7 +15,6 @@ from typing import Any
 
 from tools.models.abstract_text import COLLECTIONS, validate_model
 
-
 TEI = "http://www.tei-c.org/ns/1.0"
 XML = "http://www.w3.org/XML/1998/namespace"
 BINDING = "tei-fragment-0.1"

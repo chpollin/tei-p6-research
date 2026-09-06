@@ -3,7 +3,6 @@
 from __future__ import annotations
 
 import argparse
-import json
 import os
 import re
 import subprocess
@@ -12,7 +11,14 @@ from pathlib import Path
 from typing import Any
 
 from tools.corpus.http_store import HttpStore, utc_now
-from tools.corpus.manifest import sha256_file, write_jsonl, write_yaml
+from tools.corpus.manifest import (
+    build_manifest,
+    report_status,
+    sha256_file,
+    status_from,
+    write_jsonl,
+    write_yaml,
+)
 
 LINK_PATTERN = re.compile(r'<([^>]+)>;\s*rel="([^"]+)"')
 
@@ -67,15 +73,11 @@ class GitHubCollector:
         self.minimum_remaining = minimum_remaining
 
     def get_json(self, url: str) -> tuple[Any, dict[str, object]]:
-        result, body = self.store.fetch(url)
-        record = result.as_record()
-        self.requests.append(record)
-        if result.status >= 400:
-            raise RuntimeError(f"GitHub returned HTTP {result.status} for {url}")
-        remaining = result.headers.get("x-ratelimit-remaining")
+        payload, record = self.store.fetch_json(url, journal=self.requests)
+        remaining = record["headers"].get("x-ratelimit-remaining")  # type: ignore[union-attr]
         if remaining and int(remaining) < self.minimum_remaining:
             raise RateLimitStop(f"GitHub rate limit remaining={remaining}")
-        return json.loads(body), record
+        return payload, record
 
     def paginate(self, url: str) -> list[dict[str, Any]]:
         items: list[dict[str, Any]] = []
@@ -133,7 +135,6 @@ def collect(
     collector = GitHubCollector(raw_root, token=token)
     rows: list[dict[str, Any]] = []
     gaps: list[dict[str, object]] = []
-    complete = True
 
     try:
         repository_record, _ = collector.get_json(api_url(owner, repository, ""))
@@ -157,9 +158,8 @@ def collect(
                 per_page=100,
             )
         )
-        if max_items is not None:
+        if max_items is not None and len(work_items) > max_items:
             work_items = work_items[:max_items]
-            complete = False
             gaps.append({"code": "max-items-limit", "limit": max_items})
 
         for work_item in work_items:
@@ -192,10 +192,8 @@ def collect(
                     ):
                         rows.append(metadata(child_kind, item) | {"parent_number": number})
     except RateLimitStop as error:
-        complete = False
         gaps.append({"code": "rate-limit-stop", "detail": str(error)})
     except RuntimeError as error:
-        complete = False
         gaps.append({"code": "collection-error", "detail": str(error)})
 
     rows.sort(
@@ -212,35 +210,35 @@ def collect(
         kind = str(row["kind"])
         counts[kind] = counts.get(kind, 0) + 1
 
+    # The GraphQL stage of the bootstrap is not implemented, so every run of
+    # this adapter is short of the declared boundary and stays partial.
     gaps.append(
         {
             "code": "graphql-relations-not-yet-collected",
             "detail": "Review-thread and GraphQL-only relationship fields require the second collector stage.",
         }
     )
-    complete = False
-    manifest: dict[str, object] = {
-        "schema_version": 1,
-        "run_id": manifest_output.stem,
-        "source_id": source_id,
-        "started_at": started_at,
-        "finished_at": utc_now(),
-        "status": "observable-complete" if complete else "partial",
-        "adapter": {"name": "tools.corpus.github_snapshot", "version": 1},
-        "requests": collector.requests,
-        "objects": [
+    manifest = build_manifest(
+        run_id=manifest_output.stem,
+        source_id=source_id,
+        adapter="tools.corpus.github_snapshot",
+        started_at=started_at,
+        finished_at=utc_now(),
+        status=status_from(gaps),
+        requests=collector.requests,
+        objects=[
             {
                 "kind": "github-metadata-stream",
                 "path": normalized_output.as_posix(),
                 "sha256": normalized_hash,
             }
         ],
-        "counts": counts | {"http_requests": len(collector.requests)},
-        "gaps": gaps,
-        "rights_exceptions": [
+        counts=counts | {"http_requests": len(collector.requests)},
+        gaps=gaps,
+        rights_exceptions=[
             "User-generated bodies are retained only in the ignored raw store; the normalized stream contains metadata."
         ],
-    }
+    )
     write_yaml(manifest_output, manifest)
     return manifest
 
@@ -270,12 +268,10 @@ def main() -> int:
         max_items=args.max_items,
         allow_unauthenticated=args.allow_unauthenticated,
     )
-    print(
-        f"{manifest['status']}: {manifest['source_id']} -> "
-        f"{manifest['counts']['http_requests']} requests, "  # type: ignore[index]
-        f"{len(manifest['gaps'])} gaps"  # type: ignore[arg-type]
+    return report_status(
+        manifest,
+        f"{manifest['counts']['http_requests']} requests, {len(manifest['gaps'])} gaps",
     )
-    return 0 if manifest["status"] == "observable-complete" else 2
 
 
 if __name__ == "__main__":

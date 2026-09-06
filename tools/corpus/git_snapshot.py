@@ -8,7 +8,14 @@ from pathlib import Path
 from urllib.parse import urlsplit
 
 from tools.corpus.http_store import utc_now
-from tools.corpus.manifest import sha256_file, write_json, write_yaml
+from tools.corpus.manifest import (
+    build_manifest,
+    report_status,
+    sha256_file,
+    status_from,
+    write_json,
+    write_yaml,
+)
 
 
 def run_git(repository: Path | None, *arguments: str) -> str:
@@ -32,11 +39,18 @@ def run_git(repository: Path | None, *arguments: str) -> str:
 
 
 def repository_slug(url: str) -> str:
-    path = urlsplit(url).path.rstrip("/")
-    name = path.rsplit("/", 1)[-1]
+    """Return the ``owner-name`` mirror slug of a clone URL.
+
+    A clone URL without both path segments cannot address a mirror directory,
+    so it is a control error rather than a per-repository gap.
+    """
+
+    segments = [segment for segment in urlsplit(url).path.split("/") if segment]
+    if len(segments) < 2:
+        raise ValueError(f"clone URL names no owner and repository: {url}")
+    owner, name = segments[-2], segments[-1]
     if name.endswith(".git"):
         name = name[:-4]
-    owner = path.strip("/").split("/")[-2]
     return f"{owner}-{name}"
 
 
@@ -58,6 +72,18 @@ def parse_tree(raw: str) -> list[dict[str, str]]:
     return sorted(entries, key=lambda entry: entry["path"])
 
 
+def _git_or_gap(
+    gaps: list[dict[str, object]], code: str, repository: Path, *arguments: str
+) -> str | None:
+    """Run a git command whose failure degrades the run instead of ending it."""
+
+    try:
+        return run_git(repository, *arguments)
+    except RuntimeError as error:
+        gaps.append({"code": code, "detail": str(error)})
+        return None
+
+
 def snapshot(
     *,
     repo_url: str,
@@ -68,6 +94,7 @@ def snapshot(
     manifest_output: Path,
 ) -> dict[str, object]:
     observed_started = utc_now()
+    gaps: list[dict[str, object]] = []
     mirror = raw_root / "git" / f"{repository_slug(repo_url)}.git"
     mirror.parent.mkdir(parents=True, exist_ok=True)
 
@@ -75,7 +102,8 @@ def snapshot(
         if not (mirror / "HEAD").exists():
             raise RuntimeError(f"existing mirror path is not a bare repository: {mirror}")
         run_git(mirror, "remote", "set-url", "origin", repo_url)
-        run_git(mirror, "remote", "update")
+        # --prune removes refs deleted upstream; without it a re-run keeps them.
+        _git_or_gap(gaps, "mirror-update-failed", mirror, "remote", "update", "--prune")
         action = "updated"
     else:
         run_git(None, "clone", "--mirror", repo_url, str(mirror))
@@ -94,7 +122,7 @@ def snapshot(
         refname, object_type, object_id = line.split("\t", 2)
         refs.append({"name": refname, "object_type": object_type, "object_id": object_id})
     refs.sort(key=lambda item: item["name"])
-    run_git(mirror, "fsck", "--full", "--no-dangling")
+    _git_or_gap(gaps, "fsck-failed", mirror, "fsck", "--full", "--no-dangling")
 
     normalized = {
         "schema_version": 1,
@@ -109,15 +137,14 @@ def snapshot(
     normalized_hash = sha256_file(normalized_output)
     finished = utc_now()
 
-    manifest: dict[str, object] = {
-        "schema_version": 1,
-        "run_id": manifest_output.stem,
-        "source_id": source_id,
-        "started_at": observed_started,
-        "finished_at": finished,
-        "status": "observable-complete",
-        "adapter": {"name": "tools.corpus.git_snapshot", "version": 1},
-        "requests": [
+    manifest = build_manifest(
+        run_id=manifest_output.stem,
+        source_id=source_id,
+        adapter="tools.corpus.git_snapshot",
+        started_at=observed_started,
+        finished_at=finished,
+        status=status_from(gaps),
+        requests=[
             {
                 "kind": "git-mirror",
                 "repository": repo_url,
@@ -126,7 +153,7 @@ def snapshot(
                 "resolved_commit": resolved_ref,
             }
         ],
-        "objects": [
+        objects=[
             {
                 "kind": "git-tree-inventory",
                 "path": normalized_output.as_posix(),
@@ -134,18 +161,17 @@ def snapshot(
                 "root_tree": root_tree,
             }
         ],
-        "counts": {
+        counts={
             "commits_all_refs": commit_count,
             "refs": len(refs),
             "tree_entries": len(entries),
         },
-        "refs": refs,
-        "gaps": [],
-        "rights_exceptions": [
+        gaps=gaps,
+        rights_exceptions=[
             "The local mirror is not committed; redistribution follows the upstream repository license."
         ],
-        "raw_materialization": str(mirror),
-    }
+        extra={"refs": refs, "raw_materialization": str(mirror)},
+    )
     write_yaml(manifest_output, manifest)
     return manifest
 
@@ -171,12 +197,11 @@ def main() -> int:
         normalized_output=args.normalized_output,
         manifest_output=args.manifest_output,
     )
-    print(
-        f"OK: {manifest['source_id']} -> "
-        f"{manifest['counts']['tree_entries']} tree entries, "  # type: ignore[index]
-        f"{manifest['counts']['commits_all_refs']} commits"  # type: ignore[index]
+    counts = manifest["counts"]
+    return report_status(
+        manifest,
+        f"{counts['tree_entries']} tree entries, {counts['commits_all_refs']} commits",
     )
-    return 0
 
 
 if __name__ == "__main__":

@@ -10,10 +10,10 @@ import re
 from pathlib import Path
 from urllib.parse import urlsplit
 
-from sitegen.assets import read_asset
-from sitegen.chrome import render_footer, render_header
-from sitegen.home_page import Markdown, esc
-from sitegen.home_view import repository_link
+from tools.sitegen.assets import read_asset
+from tools.sitegen.chrome import render_footer, render_header
+from tools.sitegen.home_page import Markdown
+from tools.sitegen.markup import esc, repository_link
 
 DEFINITION = "docs/p6/abstract-text-model-v0.1.md"
 SPEC = "experiments/abstract_text_v01/spec.json"
@@ -111,7 +111,7 @@ def diagram(view: dict) -> str:
     paths = []
     # Every reference is included. Selecting a class isolates outgoing edges;
     # the adjacent textual list supplies the exact field and multiplicity.
-    for index, (source, field, target, count, _) in enumerate(REFERENCES):
+    for source, field, target, count, _ in REFERENCES:
         sx, sy = POSITIONS[source]
         tx, ty = POSITIONS[target]
         detours = {
@@ -152,7 +152,7 @@ def render_page(view: dict) -> str:
     md = Markdown({"notes": [], "base": view["base"], "comparisons": {"cases": []}})
     # Keep the full canonical text and hierarchy, under one page-level h1.
     canonical = re.sub(r"^(#{1,5}) ", r"#\1 ", view["definition"], flags=re.M)
-    definition = md.blocks(canonical, DEFINITION, headings=True)
+    definition = md.blocks(canonical, DEFINITION)
     class_buttons = "".join(f'<button type="button" data-select-class="{item["name"]}" aria-pressed="false">{item["name"]}</button>' for item in view["classes"])
     cards = []
     for item in view["classes"]:
@@ -161,10 +161,10 @@ def render_page(view: dict) -> str:
         refs = "".join(f'<li><code>{field}</code> → <a href="#{"record-union" if target == "IdentifiedRecord" else "class-" + target}">{target}</a> <span class="model-count">{count}</span>. {esc(rule)}</li>' for field, target, count, rule in references)
         cards.append(f'<section id="class-{name}" class="model-class" data-kind="{name}" tabindex="-1"><h3>{name}</h3><p>{md.inline(item["meaning"], DEFINITION)}</p><p class="model-location">Package location: <code>{"readings[].nodes[]" if name == "ReadingNode" else item["key"] + "[]"}</code></p>{fields_table(item["fields"])}<div class="model-class-references"><h4>References from one {name}</h4><ul>{refs or "<li>No outgoing record reference fields.</li>"}</ul></div></section>')
     ref_rows = "".join(f'<tr><th scope="row"><a href="#class-{source}">{source}</a>.<code>{field}</code></th><td><a href="#{"record-union" if target == "IdentifiedRecord" else "class-" + target}">{target}</a></td><td>{count}</td><td>{esc(rule)}</td></tr>' for source, field, target, count, rule in REFERENCES)
-    selectors = "".join(f'<section id="selector-{name}"><h3><code>{name}</code></h3>{fields_table(shape["required"])}' + (fields_table(shape["optional"], optional=True) if shape.get("optional") else "") + '</section>' for name, shape in spec["input"]["selectors"].items())
-    rules = "".join(f'<dt id="rule-{key}"><a href="#rule-{key}">{key}</a></dt><dd>{esc(value)}</dd>' for key, value in spec["rules"].items())
-    operations = "".join(f'<dt id="operation-{key}"><code>{key}</code></dt><dd>{esc(value)}</dd>' for key, value in spec["operations"].items())
-    profile_rules = "".join(f'<dt id="profile-{key}">{key}</dt><dd>{esc(value)}</dd>' for key, value in profile["rules"].items())
+    selectors = "".join(f'<section id="selector-{esc(name)}"><h3><code>{esc(name)}</code></h3>{fields_table(shape["required"])}' + (fields_table(shape["optional"], optional=True) if shape.get("optional") else "") + '</section>' for name, shape in spec["input"]["selectors"].items())
+    rules = "".join(f'<dt id="rule-{esc(key)}"><a href="#rule-{esc(key)}">{esc(key)}</a></dt><dd>{esc(value)}</dd>' for key, value in spec["rules"].items())
+    operations = "".join(f'<dt id="operation-{esc(key)}"><code>{esc(key)}</code></dt><dd>{esc(value)}</dd>' for key, value in spec["operations"].items())
+    profile_rules = "".join(f'<dt id="profile-{esc(key)}">{esc(key)}</dt><dd>{esc(value)}</dd>' for key, value in profile["rules"].items())
     profile_concepts = "".join(f'<dt><code>{esc(item["id"])}</code></dt><dd><pre><code>{esc(json.dumps(item, ensure_ascii=False, indent=2))}</code></pre></dd>' for item in profile["concepts"])
     profile_operations = "".join(f'<dt><code>{esc(key)}</code></dt><dd>{esc(value)}</dd>' for key, value in profile["operations"].items())
     profile_limits = "".join(f'<li>{esc(value)}</li>' for value in profile["limits"])

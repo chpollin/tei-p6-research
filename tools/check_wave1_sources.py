@@ -8,13 +8,26 @@ from __future__ import annotations
 
 import argparse
 import hashlib
-from html.parser import HTMLParser
 import json
-from pathlib import Path
 import re
 import sys
+from html.parser import HTMLParser
+from pathlib import Path
+from typing import ClassVar
 
 import yaml
+
+if __package__ in (None, ""):  # run as a script, so the package root is not on the path
+    sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+
+from tools.review import (
+    ReviewAudit,
+    _load_docs,
+    check_review_records,
+    read_jsonl,
+    select_pairs,
+)
+from tools.validate import _link_targets
 
 DEFAULT_MANIFEST = "sources/manifests/2026-09-05-research-wave-1-citations.yaml"
 REFERENCES = "references/research-wave-1.json"
@@ -25,8 +38,8 @@ REVIEW_CHAPTER = "40_output/06-annotation-and-overlap.md"
 class VisibleText(HTMLParser):
     """Join inline text without invented spaces; separate block boundaries."""
 
-    ignored = {"script", "style", "head", "template"}
-    blocks = {
+    ignored: ClassVar[set[str]] = {"script", "style", "head", "template"}
+    blocks: ClassVar[set[str]] = {
         "address", "article", "aside", "blockquote", "br", "dd", "div", "dl",
         "dt", "fieldset", "figcaption", "figure", "footer", "form", "h1",
         "h2", "h3", "h4", "h5", "h6", "header", "hr", "li", "main", "nav",
@@ -72,12 +85,11 @@ def extract_text(raw: bytes, extraction: dict) -> str:
             raise ValueError("JSON field path must be a nonempty list")
         value = json.loads(decoded)
         for key in path:
-            if isinstance(value, dict) and isinstance(key, str) and key in value:
-                value = value[key]
-            elif isinstance(value, list) and type(key) is int and 0 <= key < len(value):
-                value = value[key]
-            else:
+            addressable = (isinstance(value, dict) and isinstance(key, str) and key in value) or (
+                isinstance(value, list) and type(key) is int and 0 <= key < len(value))
+            if not addressable:
                 raise ValueError(f"JSON field path does not resolve: {path!r}")
+            value = value[key]
         if not isinstance(value, str):
             raise ValueError("JSON field path must resolve to a string")
         return value
@@ -189,13 +201,6 @@ def check(root: Path, manifest: str = DEFAULT_MANIFEST) -> tuple[int, int]:
 
 def current_review_pairs(root: Path, manifest: str = DEFAULT_MANIFEST) -> list[dict]:
     """Derive four source pairs and their reviewed chapter's direct assertions."""
-    # review.py uses sibling imports; keep its canonical cutter unchanged.
-    tools_directory = str(Path(__file__).resolve().parent)
-    if tools_directory not in sys.path:
-        sys.path.insert(0, tools_directory)
-    from review import _load_docs, cut_pairs
-    from validate import _link_targets
-
     root = root.resolve()
     data = yaml.safe_load(local_path(root, manifest, "manifest").read_text(encoding="utf-8"))
     admissions = data.get("admissions") if isinstance(data, dict) else None
@@ -254,13 +259,7 @@ def current_review_pairs(root: Path, manifest: str = DEFAULT_MANIFEST) -> list[d
     if len(assertions) != 4 or set(assertions.values()) != required_anchors:
         raise ValueError("wave-one review scope requires four assertions, one for each admitted s1")
     documents = set(sources) | set(assertions)
-    problems: list[str] = []
-    selected = [pair for pair in cut_pairs(root, problems) if pair.document in documents]
-    relevant_problems = [problem for problem in problems if any(
-        problem.startswith(relative + ":") or problem.startswith(relative + "#^")
-        for relative in documents)]
-    if relevant_problems:
-        raise ValueError("review pair cutting failed: " + "; ".join(relevant_problems))
+    selected = select_pairs(root, lambda pair: pair.document in documents, documents)
     expected_ids = required_anchors | {f"{doc}<-{anchor}" for doc, anchor in assertions.items()}
     if len(selected) != 8 or {pair.id for pair in selected} != expected_ids:
         raise ValueError("wave-one review requires exactly eight canonical pairs")
@@ -272,57 +271,30 @@ def current_review_pairs(root: Path, manifest: str = DEFAULT_MANIFEST) -> list[d
     return result
 
 
-def check_review_records(current: list[dict], saved: list[dict], verdicts: list[dict]) -> None:
-    """Require complete current prompts and independently returned passing verdicts."""
-    expected = {pair["id"]: pair for pair in current}
-    if len(current) != 8 or len(expected) != 8:
-        raise ValueError("review requires eight unique current pairs")
-    saved_by_id = {}
-    for pair in saved:
-        identifier = pair.get("id") if isinstance(pair, dict) else None
-        if not isinstance(identifier, str) or identifier in saved_by_id:
-            raise ValueError("saved review pairs contain missing or duplicate IDs")
-        saved_by_id[identifier] = pair
-    if saved_by_id.keys() != expected.keys():
-        raise ValueError("saved review pair coverage does not match all eight current pairs")
-    if saved_by_id != expected:
-        raise ValueError("saved review pairs are stale against current canonical prompts")
-    seen: set[str] = set()
-    for verdict in verdicts:
-        identifier = verdict.get("id") if isinstance(verdict, dict) else None
-        if not isinstance(identifier, str) or identifier not in expected or identifier in seen:
-            raise ValueError("review verdict has unknown, missing or duplicate pair ID")
-        seen.add(identifier)
-        if verdict.get("verdict") != "fully supports":
-            raise ValueError(f"nonpassing review verdict: {identifier}")
-        if verdict.get("prompt_sha256") != expected[identifier]["prompt_sha256"]:
-            raise ValueError(f"stale review verdict prompt hash: {identifier}")
-        for field in ("reason", "reviewer"):
-            if not isinstance(verdict.get(field), str) or not verdict[field].strip():
-                raise ValueError(f"review verdict missing {field}: {identifier}")
-    if seen != expected.keys():
-        raise ValueError("review verdict coverage is incomplete")
-
-
-def check_review(root: Path, manifest: str = DEFAULT_MANIFEST) -> int:
-    current = current_review_pairs(root, manifest)
+def check_review(root: Path, manifest: str = DEFAULT_MANIFEST) -> ReviewAudit:
+    """Audit the recorded wave-one review against the pairs the vault cuts today."""
     audit = root / REVIEW_DIRECTORY
-    saved = [json.loads(line) for line in (audit / "pairs.jsonl").read_text(encoding="utf-8").splitlines() if line.strip()]
-    verdicts = [json.loads(line) for line in (audit / "verdicts.jsonl").read_text(encoding="utf-8").splitlines() if line.strip()]
-    check_review_records(current, saved, verdicts)
-    return len(current)
+    return check_review_records(
+        current_review_pairs(root, manifest),
+        read_jsonl(audit / "pairs.jsonl"),
+        read_jsonl(audit / "verdicts.jsonl"),
+        expected=8,
+    )
 
 
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("root", type=Path, nargs="?", default=Path("."))
+    parser.add_argument("root", type=Path, nargs="?", default=Path())
     parser.add_argument("--manifest", default=DEFAULT_MANIFEST, help="manifest path relative to root")
     parser.add_argument("--review-only", action="store_true", help="check eight saved support reviews without local raw sources")
     args = parser.parse_args(argv)
     try:
         if args.review_only:
-            count = check_review(args.root, args.manifest)
-            print(f"OK: {count} passing review verdicts bind all current wave-one canonical pairs.")
+            audit = check_review(args.root, args.manifest)
+            if audit.without_reviewer:
+                print(f"WARN: verdicts without a reviewer: {', '.join(audit.without_reviewer)}",
+                      file=sys.stderr)
+            print(f"OK: {audit.pairs} passing review verdicts bind all current wave-one canonical pairs.")
             return 0
         sources, quotes = check(args.root, args.manifest)
     except (OSError, ValueError, yaml.YAMLError) as error:

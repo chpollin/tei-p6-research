@@ -10,10 +10,6 @@ permissions:
   pages: write
   id-token: write
 
-concurrency:
-  group: github-pages
-  cancel-in-progress: true
-
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -27,7 +23,7 @@ jobs:
         run: |
           python tools/validate.py .
           python -m tools.corpus.validate_control_plane .
-          python -m pytest tests/test_build_corpus_overview.py tests/test_build_docs.py tests/test_build_home.py tests/test_build_knowledge.py tests/test_build_model_reference.py tests/test_pages_workflow.py -q
+          python -m pytest tests -q
       - name: Generate the public static site
         run: |
           BUILD_DATE="$(date -u +%F)"
@@ -51,6 +47,10 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     needs: build
+    # One deployment at a time; a running production deployment is never cancelled.
+    concurrency:
+      group: github-pages
+      cancel-in-progress: false
     steps:
       - name: Publish to GitHub Pages
         id: deployment

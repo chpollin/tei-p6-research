@@ -30,7 +30,7 @@
 #model-selection-status { color: var(--muted); font-size: .85rem; }
 .model-inspector table { background: var(--paper); }
 .model-inspector .model-location { display: none; }
-.model-inspector-content p { max-width: 95ch; }
+#model-inspector-content p { max-width: 95ch; }
 .model-classes { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem 3rem; }
 .model-class { padding: .2rem 0 1rem; scroll-margin-top: 1rem; min-width: 0; }
 .model-class h3 { font-family: var(--mono); font-size: 1.07rem; }

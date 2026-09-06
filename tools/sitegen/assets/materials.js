@@ -5,18 +5,8 @@ const rows = [...document.querySelectorAll("[data-source-row]")];
 const tableBody = document.querySelector("#source-body");
 const resultCount = document.querySelector("#result-count");
 const empty = document.querySelector("#empty");
-const repositoryBase = document.querySelector('meta[name="repository-base"]')?.content;
 let sortKey = "title";
 let sortDirection = "asc";
-
-if (repositoryBase) {
-  document.querySelectorAll("[data-repo-path]").forEach((link) => {
-    link.href = new URL(link.dataset.repoPath, repositoryBase).href;
-  });
-  document.querySelectorAll("[data-project-link]").forEach((link) => {
-    link.href = "project.html";
-  });
-}
 
 function closeDetails(row) {
   const detail = document.querySelector(`#${row.dataset.detailId}`);

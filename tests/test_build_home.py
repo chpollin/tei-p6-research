@@ -7,14 +7,14 @@ from pathlib import Path
 
 import pytest
 
-REPO = Path(__file__).parents[1]
-sys.path.insert(0, str(REPO / "tools"))
+from tools import build_home
+from tools.build_home import build_page
+from tools.sitegen import comparison_view
+from tools.sitegen.assets import read_asset
+from tools.sitegen.chrome import render_footer, render_header
+from tools.sitegen.home_view import build_view, wiki_path
 
-from build_home import build_page  # noqa: E402
-import build_home  # noqa: E402
-from sitegen.assets import read_asset  # noqa: E402
-from sitegen.chrome import render_header, render_footer  # noqa: E402
-from sitegen.home_view import build_view, wiki_path  # noqa: E402
+REPO = Path(__file__).parents[1]
 
 
 class Inspect(HTMLParser):
@@ -101,7 +101,6 @@ Pinned edition fixture.
     write(tmp_path, "experiments/editorial_cases/cases.json", json.dumps(cases))
     synthetic = {"versions": [{"id": "v1", "content": "abcdef"}], "agents": [{"id": "ada", "label": "Editor Ada"}], "selections": [{"id": "selected", "version": "v1", "selector": {"segments": [{"start": 0, "end": 4, "quote": "abcd"}]}}], "readings": [{"agent": "ada", "nodes": [{"selection": "selected"}]}]}
     write(tmp_path, "experiments/abstract_text_v01/examples/competing-readings.json", json.dumps(synthetic))
-    from sitegen import comparison_view
     comparison = {"cases": [{"id": "fixture", "title": "Fixture example", "phenomenon": "crossing readings", "source_kind": "Synthetic fixture", "description": "An independently inspectable case.", "primary_text": "First. Last.", "p5": [{"id": "inline", "title": "Inline annotation", "xml": cases["cases"][0]["original_xml"], "status": "Authored illustration", "notes": ["Fixture editors, 2026; CC BY-SA 4.0"], "sources": [{"label": "Pinned XML", "url": "https://example.org/blob/01234567/edition.xml#L1-L2"}]}], "candidate": {"status": "Fixture model", "serializations": {"json": '{"id":"v1"}', "xml": '<version id="v1"/>', "yaml": 'id: v1'}, "validation": {"valid": True, "diagnostics": []}, "notes": ["Fixture binding"]}, "formal": ["Version v1 remains fixed."], "limits": ["No complete TEI conformance claim."], "graph": {"nodes": [{"id": "v1", "label": "Version v1", "kind": "Version"}], "edges": []}, "links": []}], "coverage": [{"module": "core", "title": "Core", "status": "Planned", "phenomena": ["note"], "document_types": ["letter"]}], "bindings": [{"id": "xml", "label": "XML", "status": "Implemented"}, {"id": "rdf", "label": "RDF", "status": "Planned"}]}
     monkeypatch.setattr(comparison_view, "build_comparisons", lambda root: comparison)
     return tmp_path
@@ -200,7 +199,7 @@ def test_missing_grounding_block_fails_closed(minimal):
 def test_unsafe_link_in_canonical_input_fails_closed(minimal):
     source = minimal / "40_output/12-p6-design.md"
     source.write_text(source.read_text().replace("Opening sentinel", "[Unsafe](javascript:alert) Opening sentinel"), encoding="utf-8")
-    with pytest.raises(ValueError, match="Unsafe link scheme"):
+    with pytest.raises(ValueError, match="absolute HTTP"):
         build_page(minimal, "2026-09-05")
 
 
@@ -241,7 +240,6 @@ def test_explicit_example_links_retain_deep_link_and_unknown_case_fails(minimal)
 
 
 def test_mapping_refusal_has_no_invented_serialization(minimal, monkeypatch):
-    from sitegen import comparison_view
     data = comparison_view.build_comparisons(minimal)
     data["cases"][0]["candidate"] = {"status": "Mapping refused", "serializations": {}, "validation": {"valid": False, "diagnostics": ["Unsupported pb"]}, "notes": []}
     monkeypatch.setattr(comparison_view, "build_comparisons", lambda root: data)
@@ -254,16 +252,15 @@ def test_mapping_refusal_has_no_invented_serialization(minimal, monkeypatch):
 
 
 def test_external_comparison_links_are_checked_and_source_markup_escaped(minimal, monkeypatch):
-    from sitegen import comparison_view
     data = comparison_view.build_comparisons(minimal)
     data["cases"][0]["links"] = [{"label": "unsafe", "url": "javascript:alert(1)"}]
     monkeypatch.setattr(comparison_view, "build_comparisons", lambda root: data)
-    with pytest.raises(ValueError, match="Unsafe link scheme"):
+    with pytest.raises(ValueError, match="absolute HTTP"):
         build_page(minimal, "2026-09-05")
 
 
 @pytest.mark.parametrize("explicit", [False, True])
-def test_cli_publishes_canonical_index_and_compatibility_alias(tmp_path, monkeypatch, explicit):
+def test_cli_publishes_exactly_one_canonical_home(tmp_path, monkeypatch, explicit):
     args = ["build_home.py", "--root", str(tmp_path), "--date", "2026-09-05"]
     custom = tmp_path / "preview.html"
     if explicit:
@@ -275,7 +272,8 @@ def test_cli_publishes_canonical_index_and_compatibility_alias(tmp_path, monkeyp
         assert custom.is_file()
         assert not (tmp_path / "docs/index.html").exists()
     else:
-        assert (tmp_path / "docs/index.html").read_bytes() == (tmp_path / "docs/home.html").read_bytes()
+        assert (tmp_path / "docs/index.html").read_text(encoding="utf-8") == "<p>Deterministic fixture</p>\n"
+    assert not (tmp_path / "docs/home.html").exists()
 
 
 def test_document_and_inspector_use_spacing_instead_of_decorative_rules(minimal):

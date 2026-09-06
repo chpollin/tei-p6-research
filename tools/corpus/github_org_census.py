@@ -6,9 +6,20 @@ import argparse
 from pathlib import Path
 from typing import Any
 
-from tools.corpus.github_snapshot import GitHubCollector
+from tools.corpus.github_snapshot import (
+    GitHubCollector,
+    RateLimitStop,
+    resolve_github_token,
+)
 from tools.corpus.http_store import utc_now
-from tools.corpus.manifest import sha256_file, write_jsonl, write_yaml
+from tools.corpus.manifest import (
+    build_manifest,
+    report_status,
+    sha256_file,
+    status_from,
+    write_jsonl,
+    write_yaml,
+)
 
 
 def repository_metadata(value: dict[str, Any]) -> dict[str, Any]:
@@ -45,7 +56,7 @@ def census(
     manifest_output: Path,
 ) -> dict[str, object]:
     started_at = utc_now()
-    collector = GitHubCollector(raw_root, minimum_remaining=0)
+    collector = GitHubCollector(raw_root, token=resolve_github_token())
     url = (
         f"https://api.github.com/orgs/{organization}/repos"
         "?type=all&sort=full_name&direction=asc&per_page=100"
@@ -54,6 +65,8 @@ def census(
     repositories: list[dict[str, Any]] = []
     try:
         repositories = collector.paginate(url)
+    except RateLimitStop as error:
+        gaps.append({"code": "rate-limit-stop", "detail": str(error)})
     except RuntimeError as error:
         gaps.append({"code": "collection-error", "detail": str(error)})
     records = sorted(
@@ -61,31 +74,30 @@ def census(
         key=lambda row: str(row["full_name"]).lower(),
     )
     write_jsonl(normalized_output, records)
-    manifest: dict[str, object] = {
-        "schema_version": 1,
-        "run_id": manifest_output.stem,
-        "source_id": source_id,
-        "started_at": started_at,
-        "finished_at": utc_now(),
-        "status": "observable-complete" if not gaps else "partial",
-        "adapter": {"name": "tools.corpus.github_org_census", "version": 1},
-        "requests": collector.requests,
-        "objects": [
+    manifest = build_manifest(
+        run_id=manifest_output.stem,
+        source_id=source_id,
+        adapter="tools.corpus.github_org_census",
+        started_at=started_at,
+        finished_at=utc_now(),
+        status=status_from(gaps),
+        requests=collector.requests,
+        objects=[
             {
                 "kind": "github-organization-repository-census",
                 "path": normalized_output.as_posix(),
                 "sha256": sha256_file(normalized_output),
             }
         ],
-        "counts": {
+        counts={
             "repositories": len(records),
             "archived": sum(bool(row["archived"]) for row in records),
             "forks": sum(bool(row["fork"]) for row in records),
             "http_requests": len(collector.requests),
             "gaps": len(gaps),
         },
-        "gaps": gaps,
-    }
+        gaps=gaps,
+    )
     write_yaml(manifest_output, manifest)
     return manifest
 
@@ -109,11 +121,7 @@ def main() -> int:
         normalized_output=args.normalized_output,
         manifest_output=args.manifest_output,
     )
-    print(
-        f"{manifest['status']}: {manifest['source_id']} -> "
-        f"{manifest['counts']['repositories']} repositories"  # type: ignore[index]
-    )
-    return 0 if manifest["status"] == "observable-complete" else 2
+    return report_status(manifest, f"{manifest['counts']['repositories']} repositories")
 
 
 if __name__ == "__main__":

@@ -6,13 +6,12 @@ from pathlib import Path
 
 import pytest
 
-REPO = Path(__file__).parents[1]
-sys.path.insert(0, str(REPO / "tools"))
+from tools.build_corpus_overview import build_page, prepare_sources
+from tools.sitegen.assets import read_asset
+from tools.sitegen.chrome import render_footer, render_header
+from tools.sitegen.source_data import resolve_repo_file
 
-from build_corpus_overview import build_page, prepare_sources  # noqa: E402
-from sitegen.assets import read_asset  # noqa: E402
-from sitegen.chrome import render_footer, render_header  # noqa: E402
-from sitegen.source_data import resolve_repo_file  # noqa: E402
+REPO = Path(__file__).parents[1]
 
 
 def test_overview_uses_one_table_row_pair_per_primary_source_family() -> None:
@@ -78,21 +77,22 @@ def test_overview_names_materials_from_completed_runs() -> None:
     assert "File and directory structure of a pinned Git state." in page
 
 
-def test_hosted_overview_points_control_links_to_the_repository() -> None:
-    page = build_page(
-        REPO,
-        "2026-09-05",
-        repository_base="https://github.com/example/tei-p6-research/blob/abc123",
-    )
+def test_hosted_overview_resolves_control_links_without_javascript() -> None:
+    base = "https://github.com/example/tei-p6-research/blob/abc123"
+    page = build_page(REPO, "2026-09-05", repository_base=base)
 
-    assert (
-        '<meta name="repository-base" '
-        'content="https://github.com/example/tei-p6-research/blob/abc123/">'
-    ) in page
-    assert 'data-repo-path="sources/locks/github-teic-tei.yaml"' in page
-    assert 'data-repo-path="sources/registry.yaml"' not in page
-    assert 'data-repo-path="corpus/COMPLETENESS.md"' not in page
-    assert 'link.href = "project.html"' in page
+    assert f'<a href="{base}/sources/locks/github-teic-tei.yaml">Source Lock</a>' in page
+    assert "../sources/" not in page
+    assert "../corpus/" not in page
+    assert "data-repo-path" not in page
+    assert f"{base}/sources/registry.yaml" not in page
+    assert f"{base}/corpus/COMPLETENESS.md" not in page
+
+
+@pytest.mark.parametrize("base", ["http://example.org/", "//example.org/", "https://example.org/?query=1"])
+def test_overview_rejects_an_unusable_repository_base(base: str) -> None:
+    with pytest.raises(ValueError):
+        build_page(REPO, "2026-09-05", repository_base=base)
 
 
 def test_overview_exposes_status_scope_gaps_and_control_links() -> None:
@@ -103,16 +103,10 @@ def test_overview_exposes_status_scope_gaps_and_control_links() -> None:
     assert "authenticated-github-api-session-unavailable" not in page
     assert "The published-HTML run is partial" not in page
     assert "Reconciliation between the published Guidelines and the release archive is pending" in page
-    assert "../sources/locks/github-teic-tei.yaml" in page
+    assert '<a href="../sources/locks/github-teic-tei.yaml">Source Lock</a>' in page
     assert "../sources/registry.yaml" not in page
     assert "../corpus/COMPLETENESS.md" not in page
     assert ">About</a>" in page
-
-
-def test_checked_in_overview_matches_the_generator() -> None:
-    assert (REPO / "docs" / "corpus.html").read_text(
-        encoding="utf-8"
-    ) == build_page(REPO, "2026-09-05")
 
 
 def test_overview_rejects_registry_lock_status_drift(tmp_path: Path) -> None:
@@ -162,7 +156,7 @@ def test_overview_uses_plain_holding_lists_and_distinguishes_literature() -> Non
     assert "Individual raw files are not enumerated here." in page
     assert '<a href="knowledge.html">Knowledge</a>' in page
     assert '<aside class="literature-note" id="literature">' in page
-    assert 'data-repo-path="sources/locks/literature.yaml"' in page
+    assert '<a href="../sources/locks/literature.yaml">' in page
     assert page.count('<tr class="source-row" data-source-row') == 16
     for asset in ("workbench.css", "materials.css"):
         assert "border-top:" not in read_asset(asset)

@@ -3,18 +3,19 @@
 from __future__ import annotations
 
 import argparse
-import json
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
 from typing import Any
 
 from tools.corpus.git_snapshot import repository_slug, snapshot
 from tools.corpus.http_store import utc_now
-from tools.corpus.manifest import write_yaml
-
-
-def load_repositories(path: Path) -> list[dict[str, Any]]:
-    return [json.loads(line) for line in path.read_text(encoding="utf-8").splitlines() if line]
+from tools.corpus.manifest import (
+    build_manifest,
+    read_jsonl,
+    report_status,
+    status_from,
+    write_yaml,
+)
 
 
 def mirror_repository(
@@ -25,7 +26,10 @@ def mirror_repository(
     manifest_root: Path,
     run_prefix: str,
 ) -> dict[str, object]:
-    url = str(repository["clone_url"])
+    url = repository.get("clone_url")
+    if not url:
+        raise ValueError(f"census row has no clone_url: {repository.get('full_name')}")
+    url = str(url)
     slug = repository_slug(url).lower()
     return snapshot(
         repo_url=url,
@@ -48,7 +52,7 @@ def snapshot_organization(
     manifest_output: Path,
 ) -> dict[str, object]:
     started_at = utc_now()
-    repositories = load_repositories(census)
+    repositories = read_jsonl(census)
     run_prefix = manifest_output.stem
     completed: list[dict[str, object]] = []
     gaps: list[dict[str, object]] = []
@@ -69,7 +73,9 @@ def snapshot_organization(
             repository = futures[future]
             try:
                 run = future.result()
-            except RuntimeError as error:
+            except (RuntimeError, ValueError) as error:
+                # One unusable repository is a per-repository gap; the run keeps
+                # every repository it did mirror.
                 gaps.append(
                     {
                         "code": "git-snapshot-failed",
@@ -86,39 +92,35 @@ def snapshot_organization(
                     "resolved_commit": request["resolved_commit"],  # type: ignore[index]
                     "tree_entries": counts["tree_entries"],  # type: ignore[index]
                     "commits_all_refs": counts["commits_all_refs"],  # type: ignore[index]
-                    "run_manifest": (
-                        manifest_root
-                        / f"{run_prefix}-{repository_slug(str(repository['clone_url'])).lower()}.yaml"
-                    ).as_posix(),
+                    "run_manifest": (manifest_root / f"{run['run_id']}.yaml").as_posix(),
                 }
             )
     completed.sort(key=lambda row: str(row["repository"]).lower())
-    manifest: dict[str, object] = {
-        "schema_version": 1,
-        "run_id": manifest_output.stem,
-        "source_id": source_id,
-        "started_at": started_at,
-        "finished_at": utc_now(),
-        "status": "observable-complete" if not gaps and len(completed) == len(repositories) else "partial",
-        "adapter": {"name": "tools.corpus.github_org_git_snapshot", "version": 1},
-        "requests": {
+    manifest = build_manifest(
+        run_id=manifest_output.stem,
+        source_id=source_id,
+        adapter="tools.corpus.github_org_git_snapshot",
+        started_at=started_at,
+        finished_at=utc_now(),
+        status=status_from(gaps, expected=len(repositories), observed=len(completed)),
+        requests={
             "repository_census": census.as_posix(),
             "requested_repositories": len(repositories),
             "workers": workers,
         },
-        "counts": {
+        counts={
             "repositories_requested": len(repositories),
             "repositories_mirrored": len(completed),
             "tree_entries": sum(int(row["tree_entries"]) for row in completed),
             "commits_all_refs_sum": sum(int(row["commits_all_refs"]) for row in completed),
             "gaps": len(gaps),
         },
-        "repositories": completed,
-        "gaps": gaps,
-        "rights_exceptions": [
+        gaps=gaps,
+        rights_exceptions=[
             "Local mirrors are ignored; redistribution follows each repository's license and file-level exceptions."
         ],
-    }
+        extra={"repositories": completed},
+    )
     write_yaml(manifest_output, manifest)
     return manifest
 
@@ -148,12 +150,11 @@ def main() -> int:
         manifest_root=args.manifest_root,
         manifest_output=args.manifest_output,
     )
-    print(
-        f"{manifest['status']}: {manifest['source_id']} -> "
-        f"{manifest['counts']['repositories_mirrored']}/"  # type: ignore[index]
-        f"{manifest['counts']['repositories_requested']} repositories"  # type: ignore[index]
+    counts = manifest["counts"]
+    return report_status(
+        manifest,
+        f"{counts['repositories_mirrored']}/{counts['repositories_requested']} repositories",
     )
-    return 0 if manifest["status"] == "observable-complete" else 2
 
 
 if __name__ == "__main__":

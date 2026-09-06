@@ -13,3 +13,5 @@ updated: 2026-07-11
 This sentence cites with the wrong keyword.[^1] This sentence uses a footnote that is never defined.[^2]
 
 [^1]: Supported by [[30_assertions/one-sided]].
+[^1]: Supported by [[30_assertions/one-sided]], said a second time under the
+      same key, so the first definition is silently replaced.

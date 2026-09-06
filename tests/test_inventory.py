@@ -7,16 +7,13 @@ has not been ingested and a state document without the markers.
 """
 
 import shutil
-import sys
 from pathlib import Path
 
 import pytest
 
+from tools.inventory import BEGIN, END, render, rows, write
+
 REPO = Path(__file__).parents[1]
-sys.path.insert(0, str(REPO / "tools"))
-
-from inventory import BEGIN, END, render, rows, write  # noqa: E402
-
 MINIMAL = REPO / "tests" / "fixtures" / "minimal"
 
 STATE = f"""---

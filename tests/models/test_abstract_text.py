@@ -7,7 +7,11 @@ import json
 import pytest
 
 from tools.models.abstract_text import (
-    COLLECTIONS, canonical_bytes, check_revision, equivalent, propose_reanchor,
+    COLLECTIONS,
+    canonical_bytes,
+    check_revision,
+    equivalent,
+    propose_reanchor,
     validate_model,
 )
 

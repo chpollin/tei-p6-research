@@ -8,8 +8,7 @@ import yaml
 
 from tools import ingest_editorial_cases as ingest
 
-
-XML = '<TEI xmlns="http://www.tei-c.org/ns/1.0"><text><head>Un café</head><p>A  B.</p><p>C.</p></text></TEI>'.encode("utf-8")
+XML = '<TEI xmlns="http://www.tei-c.org/ns/1.0"><text><head>Un café</head><p>A  B.</p><p>C.</p></text></TEI>'.encode()
 FRAGMENTS = ["<head>Un café</head>", "<p>A  B.</p>", "<p>C.</p>"]
 
 
@@ -21,7 +20,7 @@ def configuration(payload=XML):
                 "sha256": ingest.digest(body), "byte_count": len(body),
                 "requested_url": "https://example.invalid/" + path,
                 "observed_at": f"2026-09-05T12:00:0{i}Z", "status": 200}
-               for i, (body, role, path) in enumerate(zip(bodies, roles, paths))]
+               for i, (body, role, path) in enumerate(zip(bodies, roles, paths, strict=True))]
     fragments = []
     if payload == XML:
         for i, fragment in enumerate(FRAGMENTS):
@@ -43,7 +42,7 @@ def admitted(tmp_path):
     config_path = root / ingest.CONFIG
     config_path.parent.mkdir(parents=True)
     config_path.write_text(json.dumps(config, ensure_ascii=False), encoding="utf-8")
-    for item, body in zip(config["sources"], bodies):
+    for item, body in zip(config["sources"], bodies, strict=True):
         path = raw / item["raw_path"]
         path.parent.mkdir(parents=True, exist_ok=True)
         path.write_bytes(body)

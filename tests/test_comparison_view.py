@@ -6,15 +6,14 @@ P5 fragments remain authored illustrations; parsing is not ODD validation.
 import copy
 import hashlib
 import json
-from pathlib import Path
 import xml.etree.ElementTree as ET
+from pathlib import Path
 
 import pytest
 
 from tools.models.abstract_text import COLLECTIONS, equivalent, validate_model
 from tools.models.bindings import decode_model
 from tools.sitegen import comparison_view as comparisons
-
 
 ROOT = Path(__file__).resolve().parents[1]
 CASE_IDS = {

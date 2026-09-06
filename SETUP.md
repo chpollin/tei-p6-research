@@ -29,7 +29,7 @@ Requirements:
 - Git
 - Python 3.11 or newer
 - PyYAML
-- pytest for the test suite
+- pytest for the test suite and ruff for the linter
 - GitHub CLI when authenticated GitHub acquisition or repository administration
   is required
 
@@ -42,7 +42,7 @@ uv sync
 Without `uv`:
 
 ```powershell
-python -m pip install pyyaml pytest
+python -m pip install pyyaml pytest ruff
 ```
 
 Verify the scaffold:
@@ -205,10 +205,10 @@ python tools/build_knowledge.py --date YYYY-MM-DD
 python tools/build_model_reference.py --date YYYY-MM-DD
 ```
 
-Never hand-edit generated HTML. The home builder writes `docs/index.html` and
-the compatible `docs/home.html` alias; the project builder writes
-`docs/project.html`. Knowledge and Model builders write `docs/knowledge.html`
-and `docs/model.html`. These paths are identical locally and on GitHub Pages.
+Never hand-edit generated HTML. The home builder writes `docs/index.html`; the
+project builder writes `docs/project.html`. Knowledge and Model builders write
+`docs/knowledge.html` and `docs/model.html`. These paths are identical locally
+and on GitHub Pages.
 The home generator reads the complete canonical proposal in
 `40_output/12-p6-design.md`, its source links, model definitions and examples.
 
@@ -235,6 +235,7 @@ Before handing off a change:
 
 ```powershell
 git diff --check
+python -m ruff check .
 python tools/validate.py .
 python -m pytest tests
 ```

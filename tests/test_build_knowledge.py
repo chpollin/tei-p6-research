@@ -1,17 +1,15 @@
 """Knowledge navigation must preserve actual, immediate provenance boundaries."""
 import json
-import re
-import sys
 from html.parser import HTMLParser
 from pathlib import Path
 
 import pytest
 
-ROOT = Path(__file__).parents[1]
-sys.path.insert(0, str(ROOT / 'tools'))
+from tools.build_knowledge import build_page
+from tools.sitegen.knowledge_view import anchored_blocks, block_id, build_view
+from tools.sitegen.markup import doc_id
 
-from build_knowledge import build_page  # noqa: E402
-from sitegen.knowledge_view import anchored_blocks, block_id, build_view, doc_id  # noqa: E402
+ROOT = Path(__file__).parents[1]
 
 
 class Page(HTMLParser):
@@ -156,7 +154,7 @@ def test_output_is_deterministic_and_escaped(vault):
     assert '00_sources/original.xml' in page
     assert not any('00_sources/' in href for href in Page(page).links)
     assert 'human verification' in page
-    assert not any('verified' == e['status'] for e in build_view(vault, '2026-09-05')['entries'])
+    assert not any(e['status'] == 'verified' for e in build_view(vault, '2026-09-05')['entries'])
 
 
 @pytest.mark.parametrize(('path', 'before', 'after', 'message'), [
@@ -222,7 +220,7 @@ def test_repository_base_links_and_public_anchor_contract(vault):
 
 def test_no_js_accessibility_contract(vault):
     page = Page(build_page(vault, '2026-09-05'))
-    artifacts = [(tag, attrs) for tag, attrs in page.tags if 'artifact' == attrs.get('class')]
+    artifacts = [(tag, attrs) for tag, attrs in page.tags if attrs.get('class') == 'artifact']
     assert len(artifacts) == 4
     assert all(tag == 'details' and 'hidden' not in attrs for tag, attrs in artifacts)
     assert len([tag for tag, _ in page.tags if tag == 'summary']) == 4

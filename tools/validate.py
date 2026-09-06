@@ -7,9 +7,10 @@ computation declarations, MOC reachability, bidirectional contested links,
 chapter mirror and footnote keywords, status discipline including the ladder
 against the anchors a document rests on, assertions that rest on the same
 anchors as another, footnote aliases that rename the assertion they cite, a
-production chain that holds no document at all, and checks older than the
-content they judge. The rules are defined in knowledge/schema.md; this script
-only enforces them.
+production chain that holds no document at all, checks older than the content
+they judge, the source metadata of a representation, one representation and one
+distillate per source, and file names against the naming rule. The rules are
+defined in knowledge/schema.md; this script only enforces them.
 
 Warnings report that a check found nothing to check, or found something that
 needs a human decision rather than a verdict. They are always printed and
@@ -67,12 +68,26 @@ REPRESENTATION_LAYER = "10_markdown/"
 DISTILLATE_LAYER = "20_distillates/"
 ASSERTION_LAYER = "30_assertions/"
 FRONTMATTER_LINK_FIELDS = (
+    "source",
+    "data",
     "grounding",
     "assertions",
     "representation",
     "superseded-by",
     "contested-with",
 )
+# The Dublin-Core-compatible source description every representation carries.
+# Presence is the contract; an empty value records that the source has none.
+METADATA_FIELDS = (
+    "title",
+    "creator",
+    "date",
+    "format",
+    "identifier",
+    "license",
+    "confidential",
+)
+ANALYSIS_FOLDER = "tools/analysis"
 PLACEHOLDER_SCAN_FILES = ("CLAUDE.md", "HOME.md")
 
 # The layer a document type grounds in; the chapter scope walks down this chain.
@@ -144,6 +159,11 @@ FOOTNOTE_DEF = re.compile(r"^\[\^([A-Za-z0-9]+)\]:\s*(.*)$")
 FOOTNOTE_REF = re.compile(r"\[\^([A-Za-z0-9]+)\]")
 COMPUTATION = re.compile(r"computation:\s*`([^`]+)`\s*(?:→|->)\s*`([^`]+)`")
 PLACEHOLDER = re.compile(r"\{\{\s*([^{}]+?)\s*\}\}")
+# Speaking slugs, ASCII-lowercase with hyphens. A dot separates the segments of a
+# version-pinned slug (tei-p5-anchor-4.12.0), whose file name is fixed by the
+# admitted release and cannot be renamed once the representation is immutable.
+SLUG = re.compile(r"[a-z0-9]+(?:[-.][a-z0-9]+)*")
+MOC_PREFIX = "MOC-"
 
 
 @dataclass
@@ -181,10 +201,20 @@ def _parse_doc(path: Path, root: Path, report: Report) -> Doc | None:
         report.error("E-FRONTMATTER", rel, "unterminated frontmatter")
         return None
     try:
-        fm = yaml.safe_load(text[4:end]) or {}
+        loaded = yaml.safe_load(text[4:end])
     except yaml.YAMLError as exc:
         report.error("E-FRONTMATTER", rel, f"frontmatter is not valid YAML: {exc}")
         return None
+    if loaded is None:
+        loaded = {}
+    if not isinstance(loaded, dict):
+        report.error(
+            "E-FRONTMATTER",
+            rel,
+            f"frontmatter is a {type(loaded).__name__}, not a map of fields",
+        )
+        return None
+    fm = loaded
     body = text[end + 4 :]
     blocks = [m.group(1) for line in body.splitlines() if (m := BLOCK_ID.search(line))]
     return Doc(path=path, rel=rel, fm=fm, body=body, blocks=blocks)
@@ -208,6 +238,33 @@ def _load_reference_ids(root: Path) -> set[str]:
 
 def _link_targets(text: str) -> list[tuple[str, str | None]]:
     return [(m.group(1).strip(), m.group(2)) for m in WIKILINK.finditer(text)]
+
+
+def _list_field(doc: Doc, name: str, report: Report | None = None) -> list[str]:
+    """The raw values of a frontmatter field the schema declares as a list.
+
+    A bare string in one of these fields iterates character by character and
+    yields no link target at all, so the wrong type is a finding rather than an
+    empty result. Pass no report where the field of another document is read;
+    the finding belongs to the document that carries the field.
+    """
+    raw = doc.fm.get(name)
+    if raw is None:
+        return []
+    if not isinstance(raw, list):
+        if report is not None:
+            report.error(
+                "E-FRONTMATTER",
+                doc.rel,
+                f"{name} must be a list, not a {type(raw).__name__}",
+            )
+        return []
+    return [str(value) for value in raw]
+
+
+def _field_links(doc: Doc, name: str, report: Report | None = None) -> list[str]:
+    """The link targets of a list-valued frontmatter field."""
+    return [t for raw in _list_field(doc, name, report) for t, _ in _link_targets(raw)]
 
 
 def _check_frontmatter(doc: Doc, report: Report) -> None:
@@ -248,6 +305,42 @@ def _check_frontmatter(doc: Doc, report: Report) -> None:
     if doctype == "representation" and not (doc.fm.get("source") or doc.fm.get("data")):
         report.error(
             "E-FRONTMATTER", doc.rel, "representation needs a source or data field"
+        )
+    if doctype == "representation" and "metadata" in doc.fm:
+        _check_metadata(doc, report)
+
+
+def _check_metadata(doc: Doc, report: Report) -> None:
+    """A representation describes its source in the declared metadata fields.
+
+    The values may be empty where the source has none; the fields themselves are
+    what makes the description readable without opening the original.
+    """
+    metadata = doc.fm.get("metadata")
+    if not isinstance(metadata, dict):
+        report.error(
+            "E-FRONTMATTER",
+            doc.rel,
+            f"metadata is a {type(metadata).__name__}, not a map of source fields",
+        )
+        return
+    missing = [key for key in METADATA_FIELDS if key not in metadata]
+    if missing:
+        report.error(
+            "E-FRONTMATTER", doc.rel, f"metadata without {', '.join(missing)}"
+        )
+
+
+def _check_name(doc: Doc, report: Report) -> None:
+    """File names are speaking slugs; topic maps carry their topic instead."""
+    name = doc.rel.rsplit("/", 1)[-1]
+    if doc.fm.get("type") == "moc" and name.startswith(MOC_PREFIX):
+        return
+    if not SLUG.fullmatch(name):
+        report.warn(
+            "W-NAME",
+            doc.rel,
+            f"file name is no ASCII-lowercase hyphen slug: {name}",
         )
 
 
@@ -315,18 +408,37 @@ def _check_ladder(doc: Doc, docs: dict[str, Doc], report: Report) -> None:
     own = STATUS_RANK.get(doc.fm.get("status"), 0)
     if field_name is None or own == 0:
         return
-    for raw in doc.fm.get(field_name) or []:
-        for target, _ in _link_targets(str(raw)):
-            other = docs.get(target)
-            if other is None:
-                continue  # E-ANCHOR speaks about the target that does not exist
-            if STATUS_RANK.get(other.fm.get("status"), 0) < own:
-                report.error(
-                    "E-LADDER",
-                    doc.rel,
-                    f"status {doc.fm['status']} above its anchor {target} "
-                    f"at status {other.fm.get('status')!r}",
-                )
+    for target in _field_links(doc, field_name):
+        other = docs.get(target)
+        if other is None:
+            continue  # E-ANCHOR speaks about the target that does not exist
+        if STATUS_RANK.get(other.fm.get("status"), 0) < own:
+            report.error(
+                "E-LADDER",
+                doc.rel,
+                f"status {doc.fm['status']} above its anchor {target} "
+                f"at status {other.fm.get('status')!r}",
+            )
+
+
+def _exists_cased(root: Path, relative: str) -> bool:
+    """Existence of a path in the spelling the link uses.
+
+    A case-insensitive file system accepts a wrong-case wikilink that fails on a
+    case-sensitive one, so each segment is held against the name on disk.
+    """
+    current = root
+    for part in relative.split("/"):
+        if not part:
+            return False
+        try:
+            names = {entry.name for entry in current.iterdir()}
+        except OSError:
+            return False
+        if part not in names:
+            return False
+        current = current / part
+    return True
 
 
 def _resolve_anchor(
@@ -339,11 +451,19 @@ def _resolve_anchor(
 ) -> None:
     if target.startswith("00_sources/"):
         return  # originals are local-only and not resolvable on every clone
-    if target not in docs:
-        if not (root / f"{target}.md").exists() and not (root / target).exists():
-            report.error("E-ANCHOR", doc.rel, f"link target does not exist: {target}")
+    other = docs.get(target)
+    if other is None and not (
+        _exists_cased(root, f"{target}.md") or _exists_cased(root, target)
+    ):
+        report.error("E-ANCHOR", doc.rel, f"link target does not exist: {target}")
         return
-    if block is not None and block not in docs[target].blocks:
+    if block is None:
+        return
+    if other is None:
+        report.error(
+            "E-ANCHOR", doc.rel, f"block ^{block} is not addressable in {target}"
+        )
+    elif block not in other.blocks:
         report.error("E-ANCHOR", doc.rel, f"block ^{block} not found in {target}")
 
 
@@ -463,8 +583,28 @@ def _ids_outside_core_statements(body: str) -> list[str]:
     return stray
 
 
+def _check_one_anchor(
+    count: int, what: str, line: str, doc: Doc, report: Report
+) -> None:
+    """Exactly one source anchor per core statement.
+
+    A second anchor is never read: review cuts the pair against the first one, so
+    the evidence the statement claims and the evidence it is judged on differ.
+    """
+    if count == 1:
+        return
+    found = f"without {what}" if count == 0 else f"with {count} {what}s, one is read"
+    report.error(
+        "E-STATEMENT", doc.rel, f"core statement {found}: {line.strip()[:60]}"
+    )
+
+
 def _check_distillate(
-    doc: Doc, docs: dict[str, Doc], reference_ids: set[str], root: Path, report: Report
+    doc: Doc,
+    reference_ids: set[str],
+    root: Path,
+    report: Report,
+    run_computations: bool,
 ) -> None:
     source_type = doc.fm.get("source-type")
     statements = _statement_lines(doc.body)
@@ -501,13 +641,10 @@ def _check_distillate(
                     target, REPRESENTATION_LAYER, "distillate statement", doc, report
                 )
         if source_type == "document":
-            if not anchored:
-                report.error(
-                    "E-STATEMENT",
-                    doc.rel,
-                    f"core statement without block anchor: {line.strip()[:60]}",
-                )
+            _check_one_anchor(len(anchored), "block anchor", line, doc, report)
         elif source_type == "publication":
+            # A quotation may wrap over several lines, so the block of quoted
+            # lines is the one anchor and its line count says nothing.
             if not any(
                 f.lstrip().startswith(">") and '"' in f and "(" in f for f in follow
             ):
@@ -518,32 +655,57 @@ def _check_distillate(
                 )
         elif source_type == "data":
             declared = [m for f in follow if (m := COMPUTATION.search(f))]
-            if not declared:
-                report.error(
-                    "E-STATEMENT",
-                    doc.rel,
-                    f"core statement without computation: {line.strip()[:60]}",
-                )
+            _check_one_anchor(len(declared), "computation", line, doc, report)
             for m in declared:
-                _check_computation(m.group(1), m.group(2), root, doc, report)
+                _check_computation(
+                    m.group(1), m.group(2), root, doc, report, run_computations
+                )
 
 
 def _check_computation(
-    command: str, stated: str, root: Path, doc: Doc, report: Report
+    command: str,
+    stated: str,
+    root: Path,
+    doc: Doc,
+    report: Report,
+    run_computations: bool,
 ) -> None:
-    scripts = [part for part in command.split() if part.endswith(".py")]
-    if not scripts:
+    """A data anchor is one argument-free script under tools/analysis/.
+
+    The declaration is executed, so nothing outside that folder may be named and
+    nothing but the interpreter and the script may stand on the command line.
+    """
+    parts = command.split()
+    scripts = [part for part in parts if part.endswith(".py")]
+    if len(scripts) != 1:
         report.error(
-            "E-COMPUTATION", doc.rel, f"no script named in computation: {command}"
+            "E-COMPUTATION",
+            doc.rel,
+            f"computation names {len(scripts)} scripts, exactly one is run: {command}",
         )
         return
-    script = root / scripts[0]
+    if parts[-1] != scripts[0]:
+        report.error(
+            "E-COMPUTATION",
+            doc.rel,
+            f"computation script takes no arguments: {command}",
+        )
+        return
+    analysis = (root / ANALYSIS_FOLDER).resolve()
+    script = (root / scripts[0]).resolve()
+    if not script.is_relative_to(analysis):
+        report.error(
+            "E-COMPUTATION",
+            doc.rel,
+            f"computation script must live in {ANALYSIS_FOLDER}/: {scripts[0]}",
+        )
+        return
     if not script.exists():
         report.error(
             "E-COMPUTATION", doc.rel, f"computation script missing: {scripts[0]}"
         )
         return
-    if _RUN_COMPUTATIONS:
+    if run_computations:
         result = subprocess.run(
             [sys.executable, str(script)],
             cwd=root,
@@ -567,8 +729,8 @@ def _check_computation(
 
 
 def _check_topics(doc: Doc, topic_names: set[str], report: Report) -> None:
-    for raw in doc.fm.get("topics") or []:
-        topic = str(raw).strip("[] ")
+    for raw in _list_field(doc, "topics", report):
+        topic = raw.strip("[] ")
         if topic not in topic_names:
             report.error(
                 "E-TOPIC", doc.rel, f"topic outside the controlled topic set: {topic}"
@@ -578,8 +740,8 @@ def _check_topics(doc: Doc, topic_names: set[str], report: Report) -> None:
 def _check_assertion(doc: Doc, docs: dict[str, Doc], report: Report) -> None:
     grounding = [
         (target, block)
-        for raw in doc.fm.get("grounding") or []
-        for target, block in _link_targets(str(raw))
+        for raw in _list_field(doc, "grounding", report)
+        for target, block in _link_targets(raw)
     ]
     if not grounding:
         report.error(
@@ -591,11 +753,7 @@ def _check_assertion(doc: Doc, docs: dict[str, Doc], report: Report) -> None:
                 "E-ANCHOR", doc.rel, f"grounding without statement anchor: {target}"
             )
         _check_layer(target, DISTILLATE_LAYER, "grounding", doc, report)
-    contested = [
-        t
-        for raw in doc.fm.get("contested-with") or []
-        for t, _ in _link_targets(str(raw))
-    ]
+    contested = _field_links(doc, "contested-with", report)
     if doc.fm.get("status") == "contested" and not contested:
         report.error(
             "E-CONTESTED", doc.rel, "contested assertion without contested-with links"
@@ -607,12 +765,7 @@ def _check_assertion(doc: Doc, docs: dict[str, Doc], report: Report) -> None:
                 "E-CONTESTED", doc.rel, f"contested counterpart missing: {target}"
             )
             continue
-        back = [
-            t
-            for raw in other.fm.get("contested-with") or []
-            for t, _ in _link_targets(str(raw))
-        ]
-        if doc.rel not in back:
+        if doc.rel not in _field_links(other, "contested-with"):
             report.error(
                 "E-CONTESTED",
                 doc.rel,
@@ -633,11 +786,7 @@ def _check_contested_coverage(
         other = docs.get(target)
         if other is None or other.fm.get("status") != "contested":
             continue
-        counterparts = {
-            t
-            for raw in other.fm.get("contested-with") or []
-            for t, _ in _link_targets(str(raw))
-        }
+        counterparts = set(_field_links(other, "contested-with"))
         if counterparts and not counterparts & grounded:
             report.warn(
                 "W-CONTESTED",
@@ -647,14 +796,40 @@ def _check_contested_coverage(
             )
 
 
-def _check_chapter(doc: Doc, docs: dict[str, Doc], report: Report) -> None:
+def _footnote_definitions(body: str) -> tuple[dict[str, str], list[str], list[str]]:
+    """Footnote definitions with their wrapped continuation, the rest of the body.
+
+    schema.md shows the wrapped form as canonical, so a definition runs on while
+    the lines below it are indented; the anchor it cites may stand on any of
+    them. Everything else is prose and stays in the body, where the coverage
+    warning can see it. Keys are returned in reading order, duplicates apart,
+    because the later definition silently replaces the earlier one.
+    """
     defs: dict[str, str] = {}
-    body_lines = []
-    for line in doc.body.splitlines():
+    duplicates: list[str] = []
+    body_lines: list[str] = []
+    current: str | None = None
+    for line in body.splitlines():
         if m := FOOTNOTE_DEF.match(line):
-            defs[m.group(1)] = m.group(2)
-        elif not line.startswith((" ", "\t")) or not defs:
-            body_lines.append(line)
+            current = m.group(1)
+            if current in defs:
+                duplicates.append(current)
+            defs[current] = m.group(2)
+            continue
+        if current is not None and line.strip() and line.startswith((" ", "\t")):
+            defs[current] = f"{defs[current]} {line.strip()}"
+            continue
+        current = None
+        body_lines.append(line)
+    return defs, duplicates, body_lines
+
+
+def _check_chapter(doc: Doc, docs: dict[str, Doc], report: Report) -> None:
+    defs, duplicates, body_lines = _footnote_definitions(doc.body)
+    for key in duplicates:
+        report.error(
+            "E-FOOTNOTE", doc.rel, f"footnote [^{key}] is defined more than once"
+        )
     refs = {m.group(1) for line in body_lines for m in FOOTNOTE_REF.finditer(line)}
     for ref in sorted(refs - set(defs)):
         report.error("E-FOOTNOTE", doc.rel, f"footnote [^{ref}] used but never defined")
@@ -684,9 +859,7 @@ def _check_chapter(doc: Doc, docs: dict[str, Doc], report: Report) -> None:
                 f"footnote [^{key}] starts with neither 'Grounded in' nor 'Posit:'",
             )
 
-    mirror = {
-        t for raw in doc.fm.get("assertions") or [] for t, _ in _link_targets(str(raw))
-    }
+    mirror = set(_field_links(doc, "assertions", report))
     if mirror != grounded_assertions:
         report.error(
             "E-MIRROR",
@@ -727,15 +900,44 @@ def _check_moc_reachability(
             report.error("E-ORPHAN", doc.rel, "assertion reachable from no topic map")
 
 
-_RUN_COMPUTATIONS = False
-
-
 def _grounding_set(doc: Doc) -> frozenset[tuple[str, str | None]]:
     return frozenset(
         (target, block)
-        for raw in doc.fm.get("grounding") or []
-        for target, block in _link_targets(str(raw))
+        for raw in _list_field(doc, "grounding")
+        for target, block in _link_targets(raw)
     )
+
+
+def _source_claim(doc: Doc) -> str:
+    """What a representation or a distillate names as the source it holds."""
+    if doc.fm.get("type") == "representation":
+        claimed = doc.fm.get("source") or doc.fm.get("data")
+    else:
+        claimed = doc.fm.get("representation") or doc.fm.get("reference")
+    return str(claimed or "").strip()
+
+
+def _check_source_uniqueness(docs: dict[str, Doc], report: Report) -> None:
+    """One representation and one distillate per source.
+
+    Two artifacts on the same source split its evidence in two, and an anchor
+    into one of them then says nothing about what the other holds. A revised
+    source enters as a new file and takes a slug of its own with it.
+    """
+    holders: dict[tuple[str, str], list[str]] = {}
+    for rel in sorted(docs):
+        doctype = docs[rel].fm.get("type")
+        if doctype not in ("representation", "distillate"):
+            continue
+        if claimed := _source_claim(docs[rel]):
+            holders.setdefault((doctype, claimed), []).append(rel)
+    for (doctype, claimed), found in sorted(holders.items()):
+        for rel in found[1:]:
+            report.error(
+                "E-SOURCE",
+                rel,
+                f"second {doctype} of the source {claimed}, already held by {found[0]}",
+            )
 
 
 def _check_duplicate_grounding(docs: dict[str, Doc], report: Report) -> None:
@@ -874,8 +1076,6 @@ def _chapter_scope(chapter: Doc, docs: dict[str, Doc]) -> dict[str, Doc]:
 def validate(
     root: Path, run_computations: bool = True, chapter: str | None = None
 ) -> Report:
-    global _RUN_COMPUTATIONS
-    _RUN_COMPUTATIONS = run_computations
     report = Report()
     docs: dict[str, Doc] = {}
     for folder in CONTENT_FOLDERS:
@@ -908,6 +1108,7 @@ def validate(
         _check_frontmatter(doc, report)
         _check_frontmatter_links(doc, docs, root, report)
         _check_duplicate_ids(doc, report)
+        _check_name(doc, report)
         doctype = doc.fm.get("type")
         if doctype in ("distillate", "assertion", "chapter"):
             _check_status_discipline(doc, report)
@@ -916,7 +1117,7 @@ def validate(
         if doctype in ("distillate", "assertion"):
             _check_topics(doc, topic_names, report)
         if doctype == "distillate":
-            _check_distillate(doc, docs, reference_ids, root, report)
+            _check_distillate(doc, reference_ids, root, report, run_computations)
         elif doctype == "assertion":
             _check_assertion(doc, docs, report)
         elif doctype == "chapter":
@@ -926,6 +1127,7 @@ def validate(
                 _resolve_anchor(target, block, docs, root, doc, report)
     _check_moc_reachability(docs, report, scope)
     _check_duplicate_grounding(scope, report)
+    _check_source_uniqueness(scope, report)
     if chapter is None:
         _check_placeholders(root, report)
         _check_chain_populated(docs, report)
@@ -945,11 +1147,6 @@ def main() -> None:
         "--no-computations",
         action="store_true",
         help="skip re-running data anchors",
-    )
-    parser.add_argument(
-        "--run-computations",
-        action="store_true",
-        help="no-op, kept for documented invocations; computations run by default",
     )
     parser.add_argument(
         "--chapter",

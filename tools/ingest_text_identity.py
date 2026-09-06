@@ -9,9 +9,9 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
-from datetime import datetime, timezone
-from pathlib import Path
 import xml.etree.ElementTree as ET
+from datetime import UTC, datetime
+from pathlib import Path
 
 import yaml
 
@@ -114,7 +114,7 @@ def representation(name: str, payload: bytes) -> bytes:
     )
     result = header.encode("utf-8") + SOURCE_MARKER + payload + b"\n```\n\n## English reading blocks\n\n"
     for index, (locator, passage) in enumerate(reading_blocks(payload), 1):
-        result += f"### Reading {index}\n\nXML location: `{locator}`.\n\n{passage} ^r{index}\n\n".encode("utf-8")
+        result += f"### Reading {index}\n\nXML location: `{locator}`.\n\n{passage} ^r{index}\n\n".encode()
     return result
 
 
@@ -155,7 +155,7 @@ def run(root: Path, check: bool = False) -> None:
             raise ValueError(f"license blob mismatch: {path}")
     manifest_path = root / MANIFEST
     existing = yaml.safe_load(manifest_path.read_text(encoding="utf-8")) if manifest_path.exists() else None
-    started = existing["started_at"] if existing else datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+    started = existing["started_at"] if existing else datetime.now(UTC).strftime("%Y-%m-%dT%H:%M:%SZ")
     admissions = []
     objects = []
     requests = []
@@ -184,7 +184,7 @@ def run(root: Path, check: bool = False) -> None:
             "content_authority": "normative specification source at the pinned P5 4.12.0 release",
             "instruction_trust": "none",
         })
-    finished = existing["finished_at"] if existing else datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+    finished = existing["finished_at"] if existing else datetime.now(UTC).strftime("%Y-%m-%dT%H:%M:%SZ")
     manifest = {
         "schema_version": 1, "run_id": "2026-09-05-text-identity-pilot-admission",
         "source_id": "teic-tei-p5-4.12.0", "started_at": started, "finished_at": finished,
@@ -216,7 +216,7 @@ def run(root: Path, check: bool = False) -> None:
 
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("root", nargs="?", type=Path, default=Path("."))
+    parser.add_argument("root", nargs="?", type=Path, default=Path())
     parser.add_argument("--check", action="store_true")
     args = parser.parse_args()
     try:
