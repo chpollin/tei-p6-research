@@ -72,7 +72,7 @@ def test_overview_names_materials_from_completed_runs() -> None:
     assert "Run <code>2026-09-04-tei-legacy-sourceforge</code>" in page
     assert "Run <code>2026-09-04-tei-legacy-sourceforge-r2</code>" in page
     assert "Run <code>2026-09-05-tei-legacy-sourceforge-r3</code>" in page
-    assert "Not yet acquired" in page
+    assert "Run <code>2026-09-06-github-teic-tei-relations</code>" in page
     assert "Normative P5 baseline" in page
     assert "File and directory structure of a pinned Git state." in page
 
@@ -99,7 +99,7 @@ def test_overview_exposes_status_scope_gaps_and_control_links() -> None:
     page = build_page(REPO, "2026-09-05")
 
     assert "Acquired" in page
-    assert "GitHub acquisition is waiting for authenticated read access" in page
+    assert "GitHub acquisition is waiting for authenticated read access" not in page
     assert "authenticated-github-api-session-unavailable" not in page
     assert "The published-HTML run is partial" not in page
     assert "Reconciliation between the published Guidelines and the release archive is pending" in page
