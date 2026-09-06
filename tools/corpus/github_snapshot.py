@@ -6,6 +6,7 @@ import argparse
 import os
 import re
 import subprocess
+import time
 import urllib.parse
 from pathlib import Path
 from typing import Any
@@ -67,16 +68,23 @@ class GitHubCollector:
         *,
         minimum_remaining: int = 10,
         token: str | None = None,
+        wait_for_reset: bool = False,
     ):
         self.store = HttpStore(raw_root, github_token=token)
         self.requests: list[dict[str, object]] = []
         self.minimum_remaining = minimum_remaining
+        self.wait_for_reset = wait_for_reset
 
     def get_json(self, url: str) -> tuple[Any, dict[str, object]]:
         payload, record = self.store.fetch_json(url, journal=self.requests)
-        remaining = record["headers"].get("x-ratelimit-remaining")  # type: ignore[union-attr]
+        headers = record["headers"]
+        remaining = headers.get("x-ratelimit-remaining")  # type: ignore[union-attr]
         if remaining and int(remaining) < self.minimum_remaining:
-            raise RateLimitStop(f"GitHub rate limit remaining={remaining}")
+            reset = headers.get("x-ratelimit-reset")  # type: ignore[union-attr]
+            if not (self.wait_for_reset and reset):
+                raise RateLimitStop(f"GitHub rate limit remaining={remaining}")
+            # Sleep past the documented reset instant; the next request starts a fresh window.
+            time.sleep(max(0.0, int(reset) - time.time()) + 5.0)
         return payload, record
 
     def paginate(self, url: str) -> list[dict[str, Any]]:
@@ -92,7 +100,9 @@ class GitHubCollector:
 
 
 def api_url(owner: str, repository: str, path: str, **query: object) -> str:
-    base = f"https://api.github.com/repos/{owner}/{repository}/{path.lstrip('/')}"
+    base = f"https://api.github.com/repos/{owner}/{repository}"
+    if path.strip("/"):
+        base = f"{base}/{path.strip('/')}"
     return f"{base}?{urllib.parse.urlencode(query)}" if query else base
 
 
@@ -123,6 +133,7 @@ def collect(
     manifest_output: Path,
     max_items: int | None,
     allow_unauthenticated: bool,
+    wait_for_reset: bool = False,
 ) -> dict[str, object]:
     token = resolve_github_token()
     if not token and not allow_unauthenticated:
@@ -132,7 +143,7 @@ def collect(
         )
 
     started_at = utc_now()
-    collector = GitHubCollector(raw_root, token=token)
+    collector = GitHubCollector(raw_root, token=token, wait_for_reset=wait_for_reset)
     rows: list[dict[str, Any]] = []
     gaps: list[dict[str, object]] = []
 
@@ -253,6 +264,11 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--manifest-output", type=Path, required=True)
     parser.add_argument("--max-items", type=int)
     parser.add_argument("--allow-unauthenticated", action="store_true")
+    parser.add_argument(
+        "--wait-for-reset",
+        action="store_true",
+        help="sleep until the rate-limit window resets instead of stopping with a gap",
+    )
     return parser.parse_args()
 
 
@@ -267,6 +283,7 @@ def main() -> int:
         manifest_output=args.manifest_output,
         max_items=args.max_items,
         allow_unauthenticated=args.allow_unauthenticated,
+        wait_for_reset=args.wait_for_reset,
     )
     return report_status(
         manifest,

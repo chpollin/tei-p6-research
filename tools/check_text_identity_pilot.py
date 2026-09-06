@@ -34,7 +34,7 @@ DOCUMENTS = {
     "30_assertions/p5-span-from-identifies-start-or-whole-node",
     "30_assertions/p5-annotation-refers-to-web-annotation-model",
 }
-AUDIT = ROOT / "experiments/text_identity/review"
+AUDIT = ROOT / "workbench/reviews/2026-09-05-text-identity"
 
 
 def source_context(pair: Pair, docs: dict) -> str:

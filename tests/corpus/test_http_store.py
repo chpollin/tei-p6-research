@@ -279,3 +279,22 @@ def test_recorded_headers_exclude_authorization(tmp_path, monkeypatch, recorded_
     result, _ = HttpStore(tmp_path).fetch("https://example.org/resource")
 
     assert set(result.headers) == {"content-type", "etag"}
+
+
+def test_store_stages_temporaries_under_a_short_path(tmp_path, monkeypatch, recorded_sleeps) -> None:
+    """The temporary lives in raw_root/staging, never beside the digest-named destination."""
+    from pathlib import Path
+
+    seen: list[Path] = []
+    original = Path.write_bytes
+
+    def spy(self: Path, data: bytes) -> int:
+        seen.append(self)
+        return original(self, data)
+
+    monkeypatch.setattr(Path, "write_bytes", spy)
+    install_opener(monkeypatch, [FakeResponse(b"payload")])
+    store = HttpStore(tmp_path / "raw")
+    store.fetch("https://example.org/object")
+    assert seen and all(path.parent == tmp_path / "raw" / "staging" for path in seen)
+    assert not list((tmp_path / "raw" / "staging").iterdir())

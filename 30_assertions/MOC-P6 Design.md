@@ -26,8 +26,8 @@ source assertions do not logically determine an architecture.
 ## Design navigation
 
 - [[40_output/12-p6-design]] — bounded independent proposal and reversal conditions.
-- [Abstract Text Model 0.1](../docs/p6/abstract-text-model-v0.1.md) — definitions, implementation contract, and human acceptance.
-- [Proposal outline](../docs/p6/proposal-outline.md) — the wider synthesis and its evidence obligations.
+- [Abstract Text Model 0.1](../knowledge/text-model.md) — definitions, implementation contract, and human acceptance.
+- [Proposal argument structure](../knowledge/p6-evaluation.md#structure-of-the-proposal-argument) — the wider synthesis and its evidence obligations.
 
 ## Open questions
 

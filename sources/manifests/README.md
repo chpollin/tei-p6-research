@@ -7,7 +7,7 @@ run; corrections are new manifests related with `corrects`.
 File names use UTC and the source ID:
 
 ```text
-2026-09-04T020000Z--github-teic-tei-work-items.yaml
+2026-09-06-github-teic-tei-work-items.yaml
 ```
 
 An ingestion manifest records observed facts, including derived counts. A source

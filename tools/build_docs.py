@@ -1,6 +1,6 @@
 """Generate the About page docs/project.html from the repository's own documents.
 
-Data flow: README.md, docs/concept.md and the knowledge documents are read in a
+Data flow: README.md and the knowledge documents are read in a
 fixed order, their YAML frontmatter is stripped, their Markdown is converted to
 HTML and the sections are wrapped in one self-contained page with inline CSS.
 Repository-relative links are resolved against each source document. Without a
@@ -44,12 +44,19 @@ REPOSITORY_REVISION = "main"
 # (anchor id, section title, source file relative to the vault root)
 SECTIONS = [
     ("start", "Start", "README.md"),
-    ("project", "Project", "knowledge/specification.md"),
+    ("project", "Project", "knowledge/project.md"),
+    ("specification", "Specification", "knowledge/specification.md"),
+    ("data", "Material", "knowledge/data.md"),
+    ("concept", "Concept", "knowledge/methodology.md"),
+    ("terminology", "Terminology", "knowledge/INDEX.md"),
+    ("architecture", "Architecture", "knowledge/architecture.md"),
     ("design", "Interface design", "knowledge/design.md"),
-    ("concept", "Concept", "docs/concept.md"),
-    ("terminology", "Terminology", "knowledge/index.md"),
     ("schema", "Schema", "knowledge/schema.md"),
     ("operations", "Operations", "knowledge/operations.md"),
+    ("verification", "Verification", "knowledge/verification.md"),
+    ("testing", "Testing", "knowledge/testing.md"),
+    ("governance", "Governance", "knowledge/governance.md"),
+    ("plan", "Plan", "knowledge/plan.md"),
     ("state", "State", "knowledge/state.md"),
     ("journal", "Journal", "knowledge/journal.md"),
 ]

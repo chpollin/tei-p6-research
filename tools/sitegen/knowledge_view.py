@@ -226,7 +226,7 @@ def build_view(root: Path, date: str, repository_base: str | None = None) -> dic
                 if commit:
                     source["version"] = commit.group(1)
             entry["source"] = source
-    for directory, label in (("knowledge", "Project contract"), ("docs/p6", "Design dossier"), ("glossary", "Glossary")):
+    for directory, label in (("knowledge", "Project contract"), ("glossary", "Glossary")):
         for file in sorted((root / directory).glob("*.md")):
             path = file.relative_to(root).as_posix()
             meta, body = read_document(root, path)

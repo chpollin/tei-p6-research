@@ -188,7 +188,7 @@ def build_report(root: Path = ROOT) -> dict:
 
     # Contract/code/example changes invalidate the recorded report.
     paths = [BASE / "spec.json", BASE / "cases.json",
-             Path("docs/p6/abstract-text-model-v0.1.md"),
+             Path("knowledge/text-model.md"),
              Path("tools/check_abstract_text_v01.py"),
              *[path.relative_to(root) for path in sorted((root / "tools/models").glob("*.py"))],
              *[path.relative_to(root) for path in example_paths]]

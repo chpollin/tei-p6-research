@@ -10,22 +10,23 @@ status: draft
 language: en
 created: "2026-09-04"
 updated: "2026-09-06"
-related: [design, operations, journal]
+related: [INDEX, plan, handoff, operations, journal]
 ---
 
 # State
 
 This file records current holdings, checks and open work. Update it when those
 facts change. Stable contracts and historical decisions remain in their own
-documents.
+documents, the milestones in [[knowledge/plan]] and open handoff points in
+[[knowledge/handoff]].
 
 ## Current checkpoint
 
 | Area | State | Evidence |
 |---|---|---|
-| Local repository | ready | branch `main`; scaffold and acquisition-runbook commits exist |
+| Local repository | ready | branch `main`; scaffold, collector, workbench and repair commits exist |
 | GitHub remote | ready | public `chpollin/tei-p6-research` repository configured as `origin` |
-| Promptotyping contract | ready | specification, design, schema, operations, state, journal and index instantiated |
+| Knowledge base | restructured on 2026-09-06 | every knowledge document lives in `knowledge/` under the Promptotyping convention with `INDEX.md` as hub; `PLAN.md`, `EXPOSE.md`, `ARCHITECTURE.md`, `contexts/`, `workflows/`, the concept, runbook, corpus-profile, primary-source and completeness documents and `docs/p6/research-agenda.md` were absorbed and deleted; the case-only rename of `knowledge/index.md` to `knowledge/INDEX.md` still has to be recorded in Git and the About page regenerated |
 | P5 4.12.0 identity | resolved | full release commit recorded in `sources/locks/tei-p5-4.12.0.yaml` |
 | P5 4.12.0 acquisition | partial | pinned Git tree and official release ZIP are complete; the published-HTML boundary still needs an explicit reconciliation against the ZIP before the family label can return to `observable-complete` |
 | Public TEIC Git corpus | observable-complete | all 41 repositories exposed by the organization census are mirrored at full HEAD commits; 25,415 tree entries inventoried |
@@ -36,9 +37,9 @@ documents.
 | Legacy SourceForge | partial | 1,349 enumerated bug, feature, and support tickets plus 8,880 discussion posts acquired on 2026-09-05; the recorded `observable-complete` tracker label rests on a count check that compared the enumeration with itself, exposed by the 2026-09-06 collector repair, so the tracker boundary must be re-run under adapter version 2 against the tracker-reported counts; release-file and legacy version-control interfaces remain unreconciled |
 | Literature corpus | partial | a bounded first reading records four candidates; W3C REC2017, Piez2014 and Renear/Wickett2010 have citation-only admissions; the Renear/Mylonas/Durand author-version full text returned HTTP 403; Zotero/JTEI and full seed census remain open |
 | Official P6 process | partial | public `TEIC/timeForP6` history acquired; relevant Council records inventoried; reported `TEIC/p6-sandbox` remains non-public or absent |
-| Independent P6 design dossier | bounded Abstract Text Model 0.1 implemented, human acceptance pending | Ten record kinds with formal constraints and five reference operations. JSON, XML and YAML bindings preserve the same model instance. Two real diary fragments have bounded mappings. Full TEI domain coverage, RDF and whole-document P5 conversion remain open. |
+| Independent P6 design knowledge | bounded Abstract Text Model 0.1 implemented, human acceptance pending | Ten record kinds with formal constraints and five reference operations. JSON, XML and YAML bindings preserve the same model instance. Two real diary fragments have bounded mappings. Full TEI domain coverage, RDF and whole-document P5 conversion remain open. |
 | Grounded knowledge | three bounded chapters; source-support reviews passed | five document sources and four citation-only sources have distillates; eleven assertions are `validated`; the three chapters remain `grounded`; six new Humboldt support pairs passed fresh-context review after narrowing one assertion heading; human verification remains open |
-| Text identity pilot acceptance | awaiting owner review | nine support pairs passed independent fresh-context review on 2026-09-05 after source-context correction; same-model-family limitation remains; human decisions use the five items in `docs/p6/text-identity-pilot.md` |
+| Text identity pilot acceptance | awaiting owner review | nine support pairs passed independent fresh-context review on 2026-09-05 after source-context correction; same-model-family limitation remains; human decisions use the five items in `knowledge/experiments.md` |
 | Text identity pilot technical gate | passed on 2026-09-05 | 238 tests passed after first-wave integration; 38 synthetic cases reproduced; full-vault and chapter validation had no errors or warnings; source admission, control-plane integrity and current review hashes passed; generated HTML reproduced byte-for-byte |
 | Abstract Text Model 0.1 technical gate | passed on 2026-09-05 | all five reference operations implemented; 68 independently authored cases over 60 models, 38 canonical checks, and two standalone examples pass; deterministic report reproduces; 322 full-suite tests pass; full-vault and chapter 12 validation have no errors or warnings; current source-support audits, four quotation checks, and source control-plane checks pass |
 | Abstract Text Model 0.1 review | machine reviews complete; human acceptance open | separate GPT-6 agents authored the implementation and cases; independent ontology and code reviews found no remaining material contract contradiction; positive-only membership, adjacent segments and diagnostic distinctions were clarified; finite synthetic checks do not establish domain adequacy, usability, or P5 migration; five owner-review items are in the model definition |
@@ -52,17 +53,21 @@ documents.
 | Knowledge navigation | implemented | The browser inventories five source representations, nine distillates, eleven assertions and three chapters. Exact passage links and backreferences follow the immediate-layer chain. Citation-only admissions end at their checked quotation and citation. |
 | Materials navigation | implemented | Sixteen primary source families and a separate literature view describe locked holdings and gaps. The page does not enumerate every raw object or imply complete acquisition. |
 
-## Program phases
+## Milestones
 
-| Phase | Status | Exit condition |
+The milestones and their exit conditions are defined in [[knowledge/plan]].
+
+| Milestone | Status | Position |
 |---|---|---|
-| M0 Project contract and scaffold | complete | agent layers, Promptotyping documents, validation and acquisition contract present |
-| M1 Collector implementation | complete | Git, GitHub, bounded-web, SourceForge, release-asset, and ZIP-inventory collectors pass offline tests |
-| M2 Corpus bootstrap | in progress | source-family manifests reconcile and declare completion or explicit gaps |
-| M3 P5 formal model | in progress | direct-declaration atlas implemented; effective ODD-derived model and prose relations must still rebuild from the pinned baseline |
-| M4 Vertical grounding pilots | in progress | the bounded text-identity chapter traverses the chain; full normative-model coverage and the governance/release and official-P6 pilots remain open |
-| M5 Topic-scale P5 analysis | planned | central findings and counterevidence are grounded across the controlled topics |
-| M6 P6 option evaluation | in progress | bounded candidate and conceptual primary-tree-plus-stand-off comparison exist; comparable real workflows, implemented alternatives, and migration evidence remain open |
+| 1. Tools and gates repaired | complete | commit `1cfdb2e` on 2026-09-06 |
+| 2. Knowledge base restructured | in progress | knowledge documents restructured locally on 2026-09-06; Git rename record, page regeneration and integration of both restructuring packages pending |
+| 3. Vault structures | planned | glossary phenomena, generated topic maps and example lists, validated typed relations not started |
+| 4. Foundation closed | in progress | collectors implemented and offline-tested; the exhaustive GitHub run, the SourceForge re-run, the TEI-L family, the archive and website reconciliation and the sampling protocol remain open |
+| 5. Claim pattern and IRI policy | planned | Abstract Text Model 0.1 carries experiment-local IDs without a recorded IRI policy or claim pattern |
+| 6. Entity run and topic cycles | planned | three bounded pilot chapters exist; no selection-driven vertical cycle has run |
+| 7. Model extended phenomenon by phenomenon | in progress | ten record kinds, five operations and three bindings implemented; coverage matrix, cases from distinct editions and the RDF binding remain open |
+| 8. Proposal from assertions | in progress | chapter 12 links nine validated premises to thirteen posits; counter-reader review, option ranking, migration prototype and dated official-P6 comparison remain open |
+| 9. Publication | planned | no human verification sample recorded |
 
 ## Source inventory
 
@@ -126,11 +131,11 @@ One row per chapter of the output. Writing status mirrors the chapter's frontmat
   success is not proof of ontological adequacy, real-world usability, or P5
   migratability.
 - Extend the three-fragment, single-diary comparison in
-  `docs/p6/editorial-case-study.md` with independently selected editions and
+  `knowledge/experiments.md` with independently selected editions and
   domain reviewers. Test annotation review after actual editing and measure
   preservation, authoring, query, and teaching costs on comparable tasks.
 - Review Abstract Text Model 0.1 using the five accept/revise/defer items in
-  `docs/p6/abstract-text-model-v0.1.md`. Challenge the independently authored
+  `knowledge/text-model.md`. Challenge the independently authored
   synthetic requirements with real editorial cases, including negative identity
   claims, noncontiguous structural nodes, and nontextual entities or media.
 - Extend and measure the two bounded comparison implementations before ranking
@@ -140,3 +145,5 @@ One row per chapter of the output. Writing status mirrors the chapter's frontmat
 - Extend the direct-declaration atlas with inherited/effective ODD semantics and
   source-linked prose interpretation before treating it as the formal P5 model.
 - Assign the human verification role before any artifact can enter `verified` status.
+- Record the case-only rename of `knowledge/index.md` to `knowledge/INDEX.md` in
+  Git and regenerate all five pages after both restructuring packages land.

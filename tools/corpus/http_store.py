@@ -235,7 +235,11 @@ class HttpStore:
             if destination.read_bytes() != body:
                 raise RuntimeError(f"raw hash collision at {destination}")
         else:
-            temporary = destination.parent / f"{destination.name}.{os.getpid()}-{uuid4().hex}.part"
+            # Short staging name keeps the path under the Windows limit that a
+            # digest-length temporary name next to the destination can exceed.
+            staging = self.raw_root / "staging"
+            staging.mkdir(parents=True, exist_ok=True)
+            temporary = staging / f"{os.getpid()}-{uuid4().hex}.part"
             temporary.write_bytes(body)
             temporary.replace(destination)
 

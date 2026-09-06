@@ -9,8 +9,8 @@ method:
 status: draft
 language: en
 created: "2026-09-05"
-updated: "2026-09-05"
-related: [index, specification, schema, operations, state, journal]
+updated: "2026-09-06"
+related: [INDEX, specification, data, schema, operations, testing, state, journal]
 ---
 
 # Research Workbench Design
@@ -134,7 +134,7 @@ family matches. These controls change the view without modifying source data.
 
 The page reports only what its registry, locks, and manifests establish.
 A registered or planned source must not appear acquired. User-facing labels
-preserve the bounded completion meanings in `corpus/COMPLETENESS.md`.
+preserve the bounded completion meanings defined in [[knowledge/data]].
 Accessible help explains the applicable release, public interface, sample,
 query, or snapshot interval. The inventory does not serve ignored raw bodies
 or claim to enumerate every raw file individually.
@@ -182,7 +182,7 @@ manually maintained page requires a recorded architecture decision.
 | `tools/build_model_reference.py` | Model definition and formal contracts | `docs/model.html` |
 | `tools/build_corpus_overview.py` | Source registry, locks, and selected manifests | `docs/corpus.html` |
 | `tools/build_knowledge.py` | Actual Vault artifacts and their provenance metadata | `docs/knowledge.html` |
-| `tools/build_docs.py` | README, concept document, and knowledge contracts | `docs/project.html` |
+| `tools/build_docs.py` | README and the knowledge documents | `docs/project.html` |
 
 ## Accessibility and responsive behavior
 

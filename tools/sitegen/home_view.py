@@ -10,7 +10,7 @@ from tools.sitegen import comparison_view
 from tools.sitegen.documents import WIKI, read_document
 
 PROPOSAL = "40_output/12-p6-design.md"
-MODEL = "docs/p6/abstract-text-model-v0.1.md"
+MODEL = "knowledge/text-model.md"
 CASES = "experiments/editorial_cases/cases.json"
 SYNTHETIC = "experiments/abstract_text_v01/examples/competing-readings.json"
 

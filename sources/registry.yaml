@@ -25,7 +25,7 @@ global_policy:
     normative: false
     official_process_included: true
     rule: Keep official TEI P6 process records separate from this independent vault's analyses and proposals.
-  completeness_definition: corpus/COMPLETENESS.md
+  completeness_definition: knowledge/data.md
   canonical_chain:
     - 00_sources
     - 10_markdown

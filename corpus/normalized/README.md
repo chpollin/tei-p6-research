@@ -19,5 +19,3 @@ Each record must retain:
 Preferred serializations are UTF-8 JSONL for event streams and JSON for bounded
 objects. Records are sorted deterministically by stable identifier. Derived
 summaries and embeddings do not belong in this layer.
-
-No normalized dataset has been generated yet.

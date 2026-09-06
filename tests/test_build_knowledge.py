@@ -115,7 +115,7 @@ A grounded premise.[^fact] An explicit choice.[^choice]
 [^choice]: Posit: choose this. Open evidence question: Is it useful?
 ''')
     write(tmp_path, 'knowledge/state.md', '# State\n\nA planned chapter is not an artifact.')
-    write(tmp_path, 'docs/p6/model.md', '# Model\n\nProject reasoning.')
+    write(tmp_path, 'knowledge/text-model.md', '# Text model\n\nProject reasoning.')
     return tmp_path
 
 
@@ -125,8 +125,7 @@ def test_actual_vault_all_assertions_and_documents_are_present():
     actual = {p.relative_to(ROOT).as_posix() for p in (ROOT / '30_assertions').glob('*.md') if not p.name.startswith('MOC-')}
     assert actual <= found
     navigation = {entry['path'] for entry in view['navigation']}
-    for directory in ('knowledge', 'docs/p6'):
-        assert {p.relative_to(ROOT).as_posix() for p in (ROOT / directory).glob('*.md')} <= navigation
+    assert {p.relative_to(ROOT).as_posix() for p in (ROOT / 'knowledge').glob('*.md')} <= navigation
     assert '40_output/01-p5-architecture.md' not in found
     assert view['counts']['assertion'] == len(actual)
 

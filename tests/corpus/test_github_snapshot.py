@@ -219,3 +219,31 @@ def test_main_exit_code_follows_the_recorded_gaps(tmp_path, fake_http, monkeypat
     assert exit_code == 2
     assert capsys.readouterr().out.startswith("partial: github-teic-tei-work-items ->")
     assert fake_http.headers_seen[0]["authorization"] == "Bearer gh-token"
+
+
+def test_api_url_never_ends_with_a_slash_for_the_repository_itself() -> None:
+    """GitHub answers 404 to a trailing slash on the repository resource."""
+    assert api_url("TEIC", "TEI", "") == "https://api.github.com/repos/TEIC/TEI"
+    assert api_url("TEIC", "TEI", "/") == "https://api.github.com/repos/TEIC/TEI"
+    assert api_url("TEIC", "TEI", "issues/1") == "https://api.github.com/repos/TEIC/TEI/issues/1"
+    assert api_url("TEIC", "TEI", "labels", per_page=100).endswith("/labels?per_page=100")
+
+
+def test_wait_for_reset_sleeps_past_the_reset_instant_instead_of_stopping(tmp_path, monkeypatch) -> None:
+    collector = github_snapshot.GitHubCollector(tmp_path / "raw", wait_for_reset=True)
+    record = {"headers": {"x-ratelimit-remaining": "3", "x-ratelimit-reset": "1000"}}
+    monkeypatch.setattr(collector.store, "fetch_json", lambda url, journal=None: ({"ok": True}, record))
+    slept: list[float] = []
+    monkeypatch.setattr(github_snapshot.time, "time", lambda: 940.0)
+    monkeypatch.setattr(github_snapshot.time, "sleep", slept.append)
+    payload, _ = collector.get_json("https://api.github.com/repos/o/r")
+    assert payload == {"ok": True}
+    assert slept == [65.0]
+
+
+def test_without_wait_for_reset_the_low_quota_still_stops(tmp_path, monkeypatch) -> None:
+    collector = github_snapshot.GitHubCollector(tmp_path / "raw")
+    record = {"headers": {"x-ratelimit-remaining": "3", "x-ratelimit-reset": "1000"}}
+    monkeypatch.setattr(collector.store, "fetch_json", lambda url, journal=None: ({}, record))
+    with pytest.raises(github_snapshot.RateLimitStop):
+        collector.get_json("https://api.github.com/repos/o/r")

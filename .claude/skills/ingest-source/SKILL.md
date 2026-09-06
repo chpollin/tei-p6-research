@@ -5,7 +5,7 @@ description: Bring a source from 00_sources into 10_markdown as a Markdown repre
 
 # Ingest a source
 
-Follow `knowledge/operations.md` § Acquire and § Ingest; that section is authoritative for converter choice, the two-step conversion and the per-source-type handling. The hard rules in `CLAUDE.md` apply unchanged, in particular that anchors are minted only at their own layer and that a Markdown representation is never edited after ingest.
+Follow `knowledge/operations.md` § Acquire and § Ingest; that section is authoritative for converter choice, the two-step conversion, the per-source-type handling and the citation-only admission of threads. The rights rule and the admission steps are in `knowledge/data.md`. The hard rules in `CLAUDE.md` apply unchanged, in particular that anchors are minted only at their own layer and that a Markdown representation is never edited after ingest.
 
 1. Record the channel and place the original in `00_sources/`, or export the record into `references/` where the source is citable only.
 2. Convert to structure-preserving Markdown with the converter the decision list names, and record it in `converter`.

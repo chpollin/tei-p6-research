@@ -12,10 +12,11 @@ from urllib.parse import urlsplit
 
 from tools.sitegen.assets import read_asset
 from tools.sitegen.chrome import render_footer, render_header
+from tools.sitegen.documents import read_document
 from tools.sitegen.home_page import Markdown
 from tools.sitegen.markup import esc, repository_link
 
-DEFINITION = "docs/p6/abstract-text-model-v0.1.md"
+DEFINITION = "knowledge/text-model.md"
 SPEC = "experiments/abstract_text_v01/spec.json"
 PROFILE = "experiments/editorial_cases/profile.json"
 
@@ -72,7 +73,8 @@ def build_view(root: Path, date: str, repository_base: str | None = None) -> dic
         if any(ord(char) < 32 for char in repository_base):
             raise ValueError("Unsafe repository base")
         repository_base = repository_base.rstrip("/") + "/"
-    definition = (root / DEFINITION).read_text(encoding="utf-8")
+    # The definition is a knowledge document; its YAML frontmatter is metadata, not model text.
+    _, definition = read_document(root, DEFINITION)
     spec = json.loads((root / SPEC).read_text(encoding="utf-8"))
     profile = json.loads((root / PROFILE).read_text(encoding="utf-8"))
     if spec["model_version"] != "0.1" or profile["base_model_version"] != "0.1":

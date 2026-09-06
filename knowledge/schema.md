@@ -12,8 +12,8 @@ profile:
 status: draft
 language: en
 created: "2026-09-04"
-updated: "2026-09-05"
-related: [index, specification, design, operations, state]
+updated: "2026-09-06"
+related: [INDEX, specification, design, operations, verification, state]
 ---
 
 # Schema
@@ -49,7 +49,7 @@ distillate statements, and document distillates cite representation blocks.
 
 Anchor resolution establishes structural traceability. It does not establish
 that the passage supports the claim. Source-support review and human
-verification remain separate checks under [[knowledge/operations]].
+verification remain separate checks under [[knowledge/verification]].
 
 ## Controlled vocabularies
 
@@ -88,7 +88,7 @@ rank, so their dependents also remain `grounded`.
 
 Publication distillates record the intake quotation check as `checked.quote`
 because the full text may be unavailable later. No check may assign a status
-above its authority in [[knowledge/operations]].
+above its authority in [[knowledge/verification]].
 
 ## Source metadata
 
@@ -425,8 +425,8 @@ Citing one without any counterpart raises `W-CONTESTED`.
 
 ## Meta documents
 
-The seven documents in `knowledge/` carry the Promptotyping header (as at the top of this file) instead of a content `type`. They are meta-knowledge about the vault and are exempt from the content schema. `knowledge/design.md` governs the research workbench but creates no artifact type, status, or grounding target. A knowledge document is split only when its sections develop divergent update rhythms or divergent readers.
+The documents in `knowledge/` carry the Promptotyping header (as at the top of this file) instead of a content `type`. They are meta-knowledge about the vault and are exempt from the content schema, and [[knowledge/INDEX]] lists each of them with its function. `knowledge/design.md` governs the research workbench and the model documents record design hypotheses, and none of them creates an artifact type, status, or grounding target. A knowledge document is split only when its routing questions or update cycles differ.
 
 ## Naming
 
-File names are speaking slugs, ASCII-lowercase with hyphens, derived from genre and subject (`report-water-metering-2026-03`). Markdown representation and distillate of the same source share the same slug. Date suffixes distinguish version rows.
+File names are speaking slugs, ASCII-lowercase with hyphens, derived from genre and subject (`report-water-metering-2026-03`). A dot separates the segments of a version-pinned slug such as `tei-p5-anchor-4.12.0`. Markdown representation and distillate of the same source share the same slug. Date suffixes distinguish version rows. Topic maps are the one exception and are named `MOC-<Topic>.md`, which the validator accepts only for files of type `moc`.

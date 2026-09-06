@@ -13,7 +13,7 @@ from tools import check_abstract_text_v01 as check
 def experiment(tmp_path):
     for relative in ("experiments/abstract_text_v01", "tools/models"):
         shutil.copytree(check.ROOT / relative, tmp_path / relative)
-    for relative in ("tools/check_abstract_text_v01.py", "docs/p6/abstract-text-model-v0.1.md"):
+    for relative in ("tools/check_abstract_text_v01.py", "knowledge/text-model.md"):
         target = tmp_path / relative
         target.parent.mkdir(parents=True, exist_ok=True)
         shutil.copyfile(check.ROOT / relative, target)
@@ -115,7 +115,7 @@ def test_check_rejects_stale_contract_without_rewriting(experiment, monkeypatch)
     path = experiment / check.REPORT
     old = path.read_bytes()
     assert check.main(["--check"]) == 0
-    definition = experiment / "docs/p6/abstract-text-model-v0.1.md"
+    definition = experiment / "knowledge/text-model.md"
     definition.write_text(definition.read_text(encoding="utf-8") + "\nAn intentional edit.\n", encoding="utf-8")
     assert check.main(["--check"]) == 1
     assert path.read_bytes() == old

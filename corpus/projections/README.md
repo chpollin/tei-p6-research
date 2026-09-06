@@ -24,7 +24,7 @@ promoted into evidence. Downstream layers continue to
 reference only the layer directly beneath them.
 
 The P5 specification navigation projection has its bounded contract in
-`docs/p6/research-wave-1.md`. Build it with:
+`knowledge/experiments.md`. Build it with:
 
 ```powershell
 py -3 -m tools.tei.build_atlas --output corpus/projections/p5-specs-4.12.0.json

@@ -2,7 +2,7 @@ cff-version: 1.2.0
 message: "If you use TEI P6 Research, please cite it using these metadata."
 type: software
 title: "TEI P6 Research"
-abstract: "A provenance-complete analysis of TEI P5 and grounded research environment for designing a possible next generation of the Text Encoding Initiative."
+abstract: "An independent research vault that studies TEI P5 and the official TEI P6 process to develop evidence-grounded options for a possible next-generation architecture."
 authors:
   - family-names: Pollin
     given-names: Christopher
@@ -17,6 +17,8 @@ keywords:
   - knowledge-base
   - promptotyping
   - provenance
-license: CC-BY-4.0
+license:
+  - CC-BY-4.0
+  - MIT
 repository-code: "https://github.com/chpollin/tei-p6-research"
 url: "https://chpollin.github.io/tei-p6-research/"

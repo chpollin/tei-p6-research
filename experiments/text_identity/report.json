@@ -725,12 +725,12 @@
   ],
   "format_version": 1,
   "inputs": {
-    "docs/p6/text-identity-pilot.md": "5059f1f8f5b4a82c76188dbf6e84ce81bb869e4f3805ba597a8f51673035f6cc",
     "experiments/text_identity/cases.json": "a507ae84efdfcad8eb6ee791e001c37d5ed57b6e380b07e65453b99caebcbe4b",
     "experiments/text_identity/spec.json": "1b6b15c7d8a081fb4215be08f7b85b27ad7fb036f1aa2e4a43f661839efcb597",
+    "knowledge/experiments.md": "c6a8e18ce14808d6a41e7cc63a2e541768ef0bede89329f2cd32cec6cdce031f",
     "tools/__init__.py": "bfbe55a00528e6b1bfa94096c8eb7f6dee8bca831778732f8980475b94ce96b4",
     "tools/pilots/__init__.py": "4da824874df48464d31f4cd941d7b95d45446e3dea8fde213cc486795532d69f",
-    "tools/pilots/text_identity.py": "6c9e1cae3b1f258cc3b9075e19aa881c9e0868af1197e24bda78a663a4c02167"
+    "tools/pilots/text_identity.py": "ef38bf3c1934538a9ba8adca760229419ede2c5403932d91241c56a67b47cba8"
   },
   "scope": "Synthetic finite modeling experiment; not P5 conversion or ontological evidence.",
   "summary": {

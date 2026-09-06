@@ -75,7 +75,7 @@ def status_from(
     """Return the run status from the recorded gaps and the count reconciliation.
 
     This is the single completion rule of the acquisition layer, stated in
-    ``corpus/COMPLETENESS.md``: a run is ``observable-complete`` only when it
+    ``knowledge/data.md`` (Completion vocabulary): a run is ``observable-complete`` only when it
     recorded no gap and, where the boundary reports an expected count, acquired
     exactly that many objects. Every other outcome is ``partial``. Wider states
     (``planned``, ``bounded-complete``, ``not-completable``) describe a source

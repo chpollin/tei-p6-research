@@ -1,9 +1,26 @@
-# Abstract Text Model 0.1 reference bindings
+---
+title: Text Model Bindings
+project:
+  name: "TEI P6 Research"
+  repository: "tei-p6-research"
+method:
+  name: Promptotyping
+  url: https://dhcraft.org/Promptotyping/
+status: draft
+language: en
+created: "2026-09-06"
+updated: "2026-09-06"
+related: [text-model, experiments, testing, state]
+---
+
+# Text Model Bindings
 
 These independent project bindings encode the
-[Abstract Text Model 0.1](abstract-text-model-v0.1.md). They are neither official
+[[knowledge/text-model|Abstract Text Model 0.1]]. They are neither official
 TEI P6 syntax nor converters from TEI P5. Their vocabulary and preservation
-contract are project posits.
+contract are project posits. The candidate serialization and conformance
+contract they instantiate, with the bindings that remain candidates, is
+section 12 of the text model.
 
 ## 1. Model and encoding
 

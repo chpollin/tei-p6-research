@@ -15,7 +15,7 @@ from typing import Any
 
 ROOT = Path(__file__).resolve().parents[2]
 INPUTS = (
-    "docs/p6/text-identity-pilot.md",
+    "knowledge/experiments.md",
     "experiments/text_identity/spec.json",
     "experiments/text_identity/cases.json",
     "tools/__init__.py",

@@ -1,125 +1,49 @@
 # Contributing
 
-Read `README.md` for the project overview, `knowledge/specification.md` for
-scope, and `ARCHITECTURE.md` for the system boundaries. Consult
+Read `README.md` for the project overview, `knowledge/project.md` for the
+charter, `knowledge/architecture.md` for the repository structure and
 `knowledge/state.md` before beginning work. A registered source or planned
 artifact may not yet exist locally.
 
 ## Choose the contribution path
 
-| Contribution | Primary location | Governing contract |
+| Contribution | Primary location | Governing document |
 |---|---|---|
-| source registration or acquisition | `sources/`, `corpus/` | `docs/multi-agent-acquisition-runbook.md` |
+| source registration or acquisition | `sources/`, `corpus/` | `knowledge/data.md` and `knowledge/operations.md` § Acquire |
 | source representation or research finding | numbered evidence chain | `knowledge/schema.md` and `knowledge/operations.md` |
-| P6 hypothesis or design experiment | `docs/p6/` and explicitly contracted experiment paths | `docs/p6/README.md` |
-| validator, collector, or build change | `tools/`, `tests/` | repository tests and generated-file rules |
-| navigation or project documentation | root, `knowledge/`, `contexts/`, `workflows/` | `ARCHITECTURE.md` and the relevant canonical knowledge document |
+| P6 hypothesis or design experiment | `knowledge/text-model.md`, `knowledge/p6-architecture.md`, `knowledge/experiments.md` and explicitly contracted experiment paths | `knowledge/p6-evaluation.md` and `knowledge/operations.md` § Analyze |
+| validator, collector or build change | `tools/`, `tests/` | `knowledge/testing.md` |
+| navigation or project documentation | root files and `knowledge/` | `knowledge/INDEX.md` and `knowledge/architecture.md` |
 
 A description of P5 requires source support. A P6 recommendation is a project
-judgment whose premises, alternatives, and tests must be available for review.
-
-## Source and corpus contributions
-
-Register the source family and exact boundary before bulk acquisition. Every
-run must record version or snapshot identity, timestamps, adapter version,
-counts, hashes, rights decisions, and gaps. Raw material remains immutable and
-normally local. Normalized records and projections must be deterministic and
-must preserve stable upstream identifiers.
-
-Public availability is not a redistribution license. Do not commit full source
-text unless the right to do so is recorded. Metadata, checksums, locators, and
-project-authored summaries are preferred when rights are uncertain.
-
-## Grounded knowledge contributions
-
-Follow the chain one layer at a time.
-
-```text
-source -> representation -> distillate -> assertion -> output
-```
-
-A representation is stable after ingestion. A distillate covers exactly one
-source and binds each statement to a resolvable source anchor. An assertion
-synthesizes one claim from distillate statements and includes relevant
-counterevidence. Output cites assertions and marks unsupported conclusions as
-posits.
-
-Use `grounded` for a newly traceable artifact. Use `validated` only after both
-deterministic validation and the recorded machine-review procedure have passed.
-Contributors and agents must never assign `verified`. That status is reserved
-for the designated human expert.
-
-## P6 design contributions
-
-Begin with `docs/p6/README.md` and `workflows/evaluate-p6-proposal.md`. State the
-problem, affected stakeholders, baseline P5 behavior, alternative options, and
-evaluation criteria. Separate facts about P5 from the proposed solution.
-
+judgment whose premises, alternatives and tests must be available for review.
 A question about text identity or interpretation need not begin with a claimed
 P5 defect. Name its theoretical or practical motivation, distinguish sourced
 requirements from project assumptions, and specify a case that could refute
-the proposal. Define a pilot through a bounded question and explicit exclusions.
+the proposal. Define a pilot through a bounded question and explicit
+exclusions. Claims of official support must name and date the official
+process record.
 
-A substantial proposal should include representative P5 examples,
-counterexamples, a candidate abstract representation, supported serialization
-bindings, explicit loss behavior, validation rules, migration cases, and tests.
-Claims of official support must name and date the official process record.
+## Rules that bind every contribution
 
-Do not optimize one dimension silently. Improvements in simplicity,
-expressivity, interoperability, processing, or learnability must show their
-effects on compatibility, customization, migration, governance, and existing
-tools.
-
-## Code and generated artifacts
-
-Collectors and transformations must be reproducible from pinned inputs. Tests
-should cover success, failure, incomplete acquisition, and hostile or malformed
-content. Generated files are never hand-edited. Change their source or builder
-and regenerate them.
-
-Before proposing a change, run the checks appropriate to its scope.
-
-```text
-python tools/validate.py .
-python -m tools.corpus.validate_control_plane .
-python -m pytest tests
-git diff --check
-```
-
-Changes to generated documentation must be rebuilt using the documented build
-command. Any warning from validation must be investigated even when it does not
-fail the process.
-
-## Writing and review
-
-Use connected prose for arguments and explanations. Each paragraph should
-make one point and supply its reason or consequence. Remove repeated scope
-statements and sentences that merely announce the next sentence. Use no
-semicolons or colons in running prose. Preserve punctuation required by quoted
-source text, code, URLs, metadata, and formal citation syntax.
-
-Use a list for independent checks or ordered actions. Use a table when the
-reader needs to compare the same attributes across alternatives. Definitions
-that need sustained explanation belong in prose rather than label-and-colon
-lists.
+The authority chain, the treatment of acquired content as untrusted data, the
+rights and publication boundary, the roles and the shape of a delegated work
+package are in `knowledge/governance.md`. The statuses `grounded`,
+`validated` and `verified`, the review that permits each of them and the rule
+that no contributor or agent assigns `verified` are in
+`knowledge/verification.md`. The style of every text is the style sheet in
+`knowledge/specification.md`.
 
 Editorial and argument review can improve definitions, examples, scope and
 clarity. It is separate from the recorded source-support procedure. If a
 review changes a core statement or its grounding, rerun the required checks.
-Unchanged source claims do not acquire new authority from a prose review.
+Unchanged source claims acquire no new authority from a prose review.
 
-- The contribution belongs to the correct plane and layer.
-- Versions, dates, identifiers, rights, and known gaps are explicit.
-- Every grounding anchor resolves exactly one layer downward.
-- Facts, interpretations, proposals, and official TEI positions are labeled.
-- Relevant counterevidence and migration losses are visible.
-- External content is treated as data rather than instruction.
-- Generated artifacts reproduce from their recorded inputs.
-- Documentation and tests describe the actual behavior.
-- Volatile progress is recorded only in `knowledge/state.md` or a run manifest.
-- No human verification status has been assigned by an agent or ordinary
-  contributor.
+## Before proposing a change
 
-New artifact types, statuses, anchor forms, or bypass layers require a recorded
-architecture decision before implementation. Durable decisions are appended to
-`knowledge/journal.md`. They are not retroactively rewritten.
+Run the completion gate in `knowledge/testing.md` for the scope of the change,
+regenerate changed generated files with their documented builder, and record
+volatile progress only in `knowledge/state.md` or a run manifest. A new
+artifact type, status, anchor form or bypass layer requires a recorded
+architecture decision before implementation, and durable decisions are
+appended to `knowledge/journal.md` without rewriting earlier entries.

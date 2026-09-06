@@ -2,7 +2,7 @@
 type: chapter
 status: grounded
 checked:
-  validation: 2026-09-05
+  validation: 2026-09-06
 assertions:
   - "[[30_assertions/p5-anchor-identifies-a-textual-point]]"
   - "[[30_assertions/p5-span-associates-interpretation-with-text]]"
@@ -15,7 +15,7 @@ assertions:
   - "[[30_assertions/humboldt-diary-encodes-a-page-pointer-and-separate-foliation]]"
 posits: 13
 created: 2026-09-05
-updated: 2026-09-05
+updated: 2026-09-06
 ---
 
 # Abstract Text Model 0.1: technical proposal for TEI P6
@@ -169,7 +169,7 @@ distinction available for inspection.[^identity]
 
 ## 6. Formal model, bindings, and equivalence
 
-The [model definition](../docs/p6/abstract-text-model-v0.1.md) serves as
+The [model definition](../knowledge/text-model.md) serves as
 the explicit contract for identified objects, local references, selectors,
 attributed readings, and diagnostics. Its strict comparison rule must
 preserve identity, attribution, exact content, target policy, and segmentation
@@ -184,7 +184,7 @@ name its supported domain, rejected inputs, normalization rules, and comparison
 relation before the roundtrip is executed. Equality of generated files is a
 different test. JSON, XML, YAML, or a future RDF binding cannot be credited
 with equivalent semantics merely because each file parses. The
-[binding contract](../docs/p6/serialization-bindings-v0.1.md) supplies the
+[binding contract](../knowledge/text-model-bindings.md) supplies the
 versioned syntax rules and supported domain.[^formal]
 
 P5-to-model migration requires the observations of the P5 input and the decoded
@@ -225,7 +225,7 @@ A candidate unable to preserve the required page and foliation distinction
 must refuse that migration explicitly. A technically successful refusal
 does not count as a successfully migrated case. The
 [page and foliation example](#example=page-foliation) and
-[editorial case study](../docs/p6/editorial-case-study.md) make this
+[editorial case study](../knowledge/experiments.md#editorial-case-study-of-one-diary-and-three-fragments) make this
 distinction inspectable alongside development examples, source locators,
 projection choices, and comparison limits. Neither an image pointer alone
 nor a text-only model establishes demonstrated image alignment.[^evaluation]

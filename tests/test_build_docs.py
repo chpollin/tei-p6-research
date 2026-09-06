@@ -14,7 +14,7 @@ REPO = Path(__file__).parents[1]
 def test_relative_links_resolve_from_their_source_document() -> None:
     rendered = _inline(
         "Read [the specification](../knowledge/specification.md#scope).",
-        Path("docs/concept.md"),
+        Path("knowledge/methodology.md"),
     )
 
     assert 'href="../knowledge/specification.md#scope"' in rendered
@@ -36,7 +36,7 @@ def test_deployed_source_link_preserves_revision_and_fragment(monkeypatch) -> No
     revision = "c682eb51eef0d437300274447d22bc1ee6455871"
     monkeypatch.setattr(build_docs, "REPOSITORY_URL", "https://github.com/chpollin/tei-p6-research")
     monkeypatch.setattr(build_docs, "REPOSITORY_REVISION", revision)
-    rendered = _inline("[Scope](../knowledge/specification.md#scope)", Path("docs/concept.md"))
+    rendered = _inline("[Scope](../knowledge/specification.md#scope)", Path("knowledge/methodology.md"))
     assert f'/blob/{revision}/knowledge/specification.md#scope"' in rendered
     assert "/blob/main/" not in rendered
 
@@ -46,11 +46,15 @@ def test_project_page_contains_promptotyping_project_documents() -> None:
 
     assert f"<title>About · {PROJECT_TITLE}</title>" in page
     assert '<html lang="en">' in page
-    assert len(SECTIONS) == 9
-    assert 'id="project"' in page
-    assert 'id="design"' in page
-    assert 'id="state"' in page
-    assert 'id="journal"' in page
+    assert len(SECTIONS) == 16
+    assert [anchor for anchor, _, _ in SECTIONS] == [
+        "start", "project", "specification", "data", "concept", "terminology",
+        "architecture", "design", "schema", "operations", "verification",
+        "testing", "governance", "plan", "state", "journal",
+    ]
+    for anchor, _, _ in SECTIONS:
+        assert f'id="{anchor}"' in page
+    assert "docs/concept.md" not in [relative for _, _, relative in SECTIONS]
     assert render_header("about") in page
     assert render_footer("2026-09-04") in page
     assert '<nav class="project-toc" aria-label="Project documents">' in page
@@ -78,6 +82,7 @@ def test_default_about_output_preserves_the_proposal_home(tmp_path: Path) -> Non
         source.parent.mkdir(parents=True, exist_ok=True)
         source.write_text("# Document\n\nA source paragraph.\n", encoding="utf-8")
     home = tmp_path / "docs" / "index.html"
+    home.parent.mkdir(parents=True, exist_ok=True)
     home.write_text("proposal-home-sentinel", encoding="utf-8")
     result = subprocess.run(
         [sys.executable, str(REPO / "tools/build_docs.py"), "--root", str(tmp_path),

@@ -88,7 +88,7 @@ metadata:
 ---
 The original source.
 """)
-    write(tmp_path, "docs/p6/abstract-text-model-v0.1.md", "\n".join(f"| {name} | A definition of {name}. | ID |" for name in ("Version", "Reading", "Annotation", "Relation")))
+    write(tmp_path, "knowledge/text-model.md", "\n".join(f"| {name} | A definition of {name}. | ID |" for name in ("Version", "Reading", "Annotation", "Relation")))
     source = "edition-fixture"
     write(tmp_path, f"10_markdown/documents/{source}.md", """---
 metadata:
@@ -176,7 +176,7 @@ def test_page_uses_shared_workbench_chrome_and_design_system(minimal):
     assert page.index(read_asset("workbench.css")) < page.index(read_asset("home.css"))
 
 
-@pytest.mark.parametrize("path", ["40_output/12-p6-design.md", "30_assertions/premise.md", "20_distillates/documents/source-1.0.md", "docs/p6/abstract-text-model-v0.1.md", "experiments/editorial_cases/cases.json"])
+@pytest.mark.parametrize("path", ["40_output/12-p6-design.md", "30_assertions/premise.md", "20_distillates/documents/source-1.0.md", "knowledge/text-model.md", "experiments/editorial_cases/cases.json"])
 def test_missing_required_inputs_fail_closed(minimal, path):
     (minimal / path).unlink()
     with pytest.raises(FileNotFoundError):

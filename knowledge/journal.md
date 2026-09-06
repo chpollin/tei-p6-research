@@ -9,8 +9,8 @@ method:
 status: draft
 language: en
 created: "2026-09-04"
-updated: "2026-09-05"
-related: [specification, state]
+updated: "2026-09-06"
+related: [INDEX, specification, plan, state]
 ---
 
 # Journal
@@ -413,3 +413,160 @@ navigation, alternatives and procedures. Tables express comparable fields,
 constraints and results. Code, identifiers, quotations, source records and
 required anchor notation preserve their exact syntax. Historical journal entries
 remain unchanged so that earlier decisions can still be reconstructed.
+
+## 2026-09-06 — Review and repair of the tools
+
+An independent review of the tools found that two collectors could report
+`observable-complete` over missing objects, that the validator crashed on
+malformed frontmatter and left four schema rules unenforced, that the
+materials page depended on JavaScript for its source links, and that CI never
+ran the linter. The repair centralised the completeness rule in
+`tools/corpus/manifest.py` as adapter version 2, so that a run derives its
+status from its recorded gaps, hardened the validator with a specimen for
+every schema rule, made the source links static, added a reproduction test
+for all pages, and retired the migration tool and the alias page. The
+SourceForge tracker claim of 2026-09-05 rested on a count check that compared
+the enumeration with itself, so the tracker label is downgraded to `partial`
+until the collection is re-run under adapter version 2 against the
+tracker-reported counts. [[knowledge/state]] records the downgrade and
+[[knowledge/testing]] the gate that now includes the linter and the page
+reproduction test.
+
+## 2026-09-06 — Knowledge base restructured to the Promptotyping convention
+
+Every durably maintained knowledge document now lives in `knowledge/`, each
+with one function and each rule with one home, and `INDEX.md` is the hub. The
+charter left the specification for [[knowledge/project]], which also absorbed
+the exposé and the intended result of the plan. The source hierarchy, the
+identity syntax, the rights and redistribution rule, the update model, the
+acquisition boundary, the completion vocabulary and the primary-source census
+moved from the specification, the corpus profile, `corpus/COMPLETENESS.md`
+and `sources/PRIMARY-SOURCES.md` into [[knowledge/data]]. The authority chain,
+the untrusted-content rule, the transitions, the publication boundary, the
+roles, the work-package shape and the model policy moved from the adapters and
+the acquisition runbook into [[knowledge/governance]]. The runbook's collector
+rules moved into [[knowledge/operations]] § Acquire, the five workflow
+procedures into § Analyze, and its machine-review and verification contracts
+into [[knowledge/verification]]. The completion gate of `SETUP.md`,
+`CONTRIBUTING.md` and the adapters moved into [[knowledge/testing]], the
+repository map from `ARCHITECTURE.md` into [[knowledge/architecture]], the
+method rationale of `docs/concept.md` into [[knowledge/methodology]] and the
+plan with the research packages of `docs/p6/research-agenda.md` into
+[[knowledge/plan]], while [[knowledge/state]] keeps the status.
+[[knowledge/handoff]] is the mandatory process inbox. The design dossier under
+`docs/p6/` became [[knowledge/text-model]], [[knowledge/text-model-bindings]],
+[[knowledge/p6-architecture]], [[knowledge/p6-evaluation]] and
+[[knowledge/experiments]]. The deliverable of agent context packs was dropped
+because it was never built, and the runbook's planned module list and dispatch
+sequence were retired because they described software that never existed in
+that form. `PLAN.md`, `EXPOSE.md`, `ARCHITECTURE.md`, `contexts/`,
+`workflows/`, the concept, runbook, corpus-profile, primary-source and
+completeness documents and the research agenda were deleted after absorption.
+
+## 2026-09-06 — Verification rules
+
+A premise of the Proposal for TEI P6, and of any design requirement, rests on
+`validated` assertions, so a `grounded` assertion can be cited in a draft and
+cannot carry a requirement. Human verification runs as a stratified sample per
+chapter, with strata by source type and topic and the quota per stratum
+recorded here before the sample is drawn, which replaces the earlier
+allowance of sampling justified by the machine-review pass rate alone. A
+review is independent when the reviewer comes from a different model family,
+works in a fresh context and has no access to the author's rationale, and a
+same-family review is recorded as a limitation in the run's README and in
+[[knowledge/state]], as the wave-one and pilot reviews already are. A
+counterevidence search runs and is recorded before an assertion supports a
+design requirement, so that a requirement without one enters output as a
+posit. The contracts are in [[knowledge/verification]].
+
+## 2026-09-06 — Licensing
+
+Project-authored code under `tools/`, `tests/`, `.github/` and the site assets
+is licensed under MIT in `LICENSE-CODE`, following the operator default of MIT
+for code and CC BY 4.0 for text and documentation. `LICENSE` keeps CC BY 4.0
+for the documentation and content. No earlier decision on a code license
+existed, because the inherited template placed everything under CC BY 4.0.
+`CITATION.cff` and `codemeta.json` carry both licenses, and the rule has its
+home in [[knowledge/governance]].
+
+## 2026-09-06 — Vault navigation structures
+
+Textual phenomena become glossary entries under the existing glossary type
+and are referenced from the assertions that concern them. Topic maps and
+example lists are generated from assertion and experiment frontmatter around
+a protected hand-written region that carries the lead and the open questions,
+so that a registration can no longer be forgotten and the open questions
+still belong to a human. Element maps derive from the anchors that name an
+element. Typed relations between assertions, such as `contested-with`,
+`refines` or `depends-on`, are validated by the validator. These structures
+add no evidence layer and no status. Their implementation is milestone 3 of
+[[knowledge/plan]].
+
+## 2026-09-06 — Agent model policy
+
+Opus performs specified implementation and ingestion, meaning work whose
+acceptance criteria are written down before it starts. Fable performs the
+judgment tasks, meaning selection of sources and cases, synthesis, ontology
+work, adversarial reading and evaluation. A model name refers to the current
+version of its family. Every brief is a versioned file with a recorded
+SHA-256, so that a result can be tied to the exact instruction it followed.
+The policy has its home in [[knowledge/governance]] and its consequence for
+review independence in [[knowledge/verification]].
+
+## 2026-09-06 — Thread sources and the mailing list
+
+GitHub issue threads, pull-request threads and mailing-list threads are
+admitted as citation-only publication sources. The raw thread stays in the
+private raw store, the reference record carries identifier, URL, dates and
+roles, and the public distillate carries the structured account with short
+quotations checked against the raw snapshot, which is the path the
+research-wave-one literature already uses. A generated metadata index of all
+threads is a navigation projection and never grounding. TEI-L receives a
+three-part boundary, the Penn State LISTSERV archive since the list moved
+there, Wayback Machine captures of the retired Brown University archive
+measured month by month, and an export requested from the TEI Consortium for
+every month neither holds. The exhaustive GitHub work-item collection is
+unblocked by an authenticated read-only `gh` session. The rules are in
+[[knowledge/data]] and [[knowledge/operations]].
+
+## 2026-09-06 — Design dossier consolidated and first-wave run record
+
+The fourteen documents of `docs/p6/` were consolidated by moving and
+deduplicating into `knowledge/text-model.md`, `knowledge/text-model-bindings.md`,
+`knowledge/p6-architecture.md`, `knowledge/p6-evaluation.md` and
+`knowledge/experiments.md`. No definition, constraint, rule, table or acceptance
+item was rewritten. A statement made in two source documents is kept once, and
+where two documents used different words for one thing both terms stay with an
+explicit mapping (sketch primitives against v0.1 record kinds in the text model,
+candidate layers against the four modeling levels in the architecture). The
+Abstract Text Model 0.1 definition keeps its numbered sections 1 to 9, so the
+model checker, the home view and the model reference now fingerprint or read
+`knowledge/text-model.md`, and the pilot runner fingerprints
+`knowledge/experiments.md`. The model reference strips the knowledge document's
+frontmatter before rendering. The pilot's support-review audit moved
+byte-for-byte from `experiments/text_identity/review/` to
+`workbench/reviews/2026-09-05-text-identity/`, the review convention already
+used by the wave-one and editorial audits. Reports were regenerated; only input
+fingerprints and paths changed.
+
+The first research wave ran from base commit
+`c682eb51eef0d437300274447d22bc1ee6455871`, with the pre-existing uncommitted
+pilot and text revisions preserved as integration inputs. It asked how to
+reconstruct the declared P5 baseline and how evidence about annotation, text
+targeting and structure challenges the first model assumptions. Its
+source-reading sample does not stand for all P5 practices or all text theory.
+Four packages ran in parallel with exclusive write paths: a P5 navigation
+extractor (`tools/tei/**`, `tests/tei/**`), an issue reading over the acquired
+SourceForge records, a literature reading over the registered seeds, and the
+integration package that audited the worker outputs, admitted the selected
+sources through the existing source types, wrote the proposal outline and ran
+the repository gates. Workers never changed branches, staged, committed, edited
+another worker's paths or promoted research statuses. Scratch handoffs were
+navigation aids and never entered `grounding`. Source content was inert,
+untrusted data. The root scheduled any shared HTTP acquisition and owned
+persistent source and control changes; a source that could not be admitted
+retained its locator and an explicit gap. The wave fed the proposal outline
+(now the argument structure in `knowledge/p6-evaluation.md`) and the
+`p5-spec-navigation` contract (now in `knowledge/experiments.md`). It chose no
+final ontology, demonstrated no migration, and did not replace the owner's pilot
+review.

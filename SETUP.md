@@ -1,22 +1,20 @@
 # Project setup
 
-This repository contains TEI P6 Research and its Grounded Vault evidence
-system. This guide prepares a local environment; it is not a
-template-substitution workflow.
+This guide prepares a local environment for TEI P6 Research and lists the
+build, publication and acquisition commands. The rules behind the commands
+live in `knowledge/`, and `knowledge/INDEX.md` is the entry point.
 
-## 1. Read the project contract
+## 1. Read the project documents
 
 Before changing content or running acquisition:
 
 1. read `README.md` for the public overview;
-2. read `knowledge/index.md` and `knowledge/specification.md`;
-3. read `knowledge/state.md` for the actual data and phase status;
+2. read `knowledge/INDEX.md`, `knowledge/project.md` and
+   `knowledge/specification.md`;
+3. read `knowledge/state.md` for the actual data and milestone status;
 4. use `AGENTS.md` for Codex or `CLAUDE.md` for Claude Code;
-5. route a content task through `contexts/START.md` and
-   `contexts/ROUTER.md`.
-
-For research-frontend, About, or publication work, also read
-`knowledge/design.md`.
+5. read `knowledge/design.md` for research-frontend, About or publication
+   work.
 
 Do not assume that a source named in `sources/registry.yaml` has already been
 downloaded. A completed run manifest and matching local artifacts establish
@@ -45,7 +43,7 @@ Without `uv`:
 python -m pip install pyyaml pytest ruff
 ```
 
-Verify the scaffold:
+Verify the checkout:
 
 ```powershell
 python tools/validate.py .
@@ -53,8 +51,8 @@ python -m pytest tests
 ```
 
 Warnings such as `W-EMPTY` and `W-NO-OUTPUT` describe missing production
-artifacts. Investigate and report them rather than hiding them; their current
-applicability belongs in `knowledge/state.md`, not this setup guide.
+artifacts. Investigate and report them rather than hiding them. Their current
+applicability belongs in `knowledge/state.md`.
 
 ## 3. Open as an Obsidian vault
 
@@ -83,47 +81,62 @@ GitHub API access or repository administration:
 gh auth login
 ```
 
-Full GitHub corpus acquisition also requires authenticated read access. Tokens
-stay in the GitHub credential store or environment; they never enter files,
-commands recorded in manifests, logs, or context packs.
+The GitHub collectors need `gh auth login` or `GITHUB_TOKEN` and stop with a
+`rate-limit-stop` gap while quota remains. Tokens stay in the GitHub
+credential store or environment. They never enter files, commands recorded in
+manifests, logs or briefs.
 
 ## 5. Understand storage boundaries
 
 Normal Git contains code, contracts, registries, locks, manifests, checksums,
-small rights-cleared fixtures, and curated knowledge artifacts.
-
-The following remain ignored and local by default:
-
-- Git mirrors and checkouts;
-- raw API and web responses;
-- third-party PDFs and attachments;
-- mailing-list archives;
-- unreviewed user-generated discussion text;
-- caches, credentials, and temporary files.
-
-Do not use `git add -f` to bypass these boundaries. If a reviewed original is
-approved for versioning, the integrator adds a narrow per-file exception to
-`.gitignore` so the policy change is visible in review. Rights-cleared material
-is admitted explicitly according to `sources/README.md`,
-`corpus/COMPLETENESS.md`, and `knowledge/operations.md`.
+small rights-cleared fixtures, and curated knowledge artifacts. Git mirrors,
+raw API and web responses, third-party PDFs and attachments, mailing-list
+archives, unreviewed discussion text, caches, credentials and temporary files
+remain ignored and local. Do not use `git add -f` to bypass these boundaries.
+The complete rights and redistribution rule, including how a reviewed original
+is admitted to versioning, is in `knowledge/data.md`.
 
 ## 6. Acquire or admit material
 
-Follow `docs/multi-agent-acquisition-runbook.md` for collector work and the
-Acquire and Ingest sections of `knowledge/operations.md` for source admission.
-Those documents own the fetch, identity, rights, reconciliation, and provenance
-requirements; `knowledge/state.md` records which families are actually ready.
+The collectors are described in `knowledge/operations.md` § Acquire and the
+source families, identity and completion vocabulary in `knowledge/data.md`.
+`knowledge/state.md` records which families are actually ready. Production
+collection starts only after the relevant offline fixtures and integration
+checks pass, and source registration or a local cache alone never establishes
+acquisition.
 
-Production collection starts only after the relevant offline fixtures and
-integration checks pass. Source registration or a local cache alone never
-establishes acquisition.
+Each collector writes one normalized object and one run manifest and prints
+one status line. Exit code 0 means `observable-complete`, exit code 2 means a
+recorded gap and `partial`. Replace `YYYY-MM-DD`, `<id>` and the URLs with the
+values of the run.
+
+```powershell
+python -m tools.corpus.git_snapshot --repo-url <url> --source-id <id> --ref HEAD --normalized-output corpus/normalized/git/<id>.json --manifest-output sources/manifests/YYYY-MM-DD-<id>.yaml
+python -m tools.corpus.github_snapshot --owner TEIC --repository TEI --source-id github-teic-tei-work-items --normalized-output corpus/normalized/github/teic-tei-work-items.jsonl --manifest-output sources/manifests/YYYY-MM-DD-github-teic-tei-work-items.yaml
+python -m tools.corpus.github_org_census --organization TEIC --source-id teic-github-organization --normalized-output corpus/normalized/github/teic-repositories.jsonl --manifest-output sources/manifests/YYYY-MM-DD-teic-github-organization.yaml
+python -m tools.corpus.github_org_git_snapshot --census corpus/normalized/github/teic-repositories.jsonl --normalized-root corpus/normalized/git --manifest-root sources/manifests/repos --manifest-output sources/manifests/YYYY-MM-DD-teic-public-git-repositories.yaml
+python -m tools.corpus.web_census --source-id <id> --root-url <url> --allow-prefix <prefix> --depth 2 --max-pages 500 --normalized-output corpus/normalized/web/<id>.jsonl --manifest-output sources/manifests/YYYY-MM-DD-<id>.yaml
+python -m tools.corpus.sourceforge_snapshot --tracker bugs=https://sourceforge.net/rest/p/tei/bugs --tracker feature-requests=https://sourceforge.net/rest/p/tei/feature-requests --tracker support-requests=https://sourceforge.net/rest/p/tei/support-requests --workers 8 --delay-seconds 0.2 --normalized-output corpus/normalized/sourceforge/tei-legacy-trackers.jsonl --manifest-output sources/manifests/YYYY-MM-DD-tei-legacy-sourceforge.yaml
+python -m tools.corpus.asset_snapshot --source-id <id> --url <asset url> --normalized-output corpus/normalized/assets/<name>.json --manifest-output sources/manifests/YYYY-MM-DD-<name>.yaml
+python -m tools.corpus.zip_inventory --source-id <id> --archive corpus/raw/sha256/<aa>/<rest> --normalized-output corpus/normalized/assets/<name>-members.json --manifest-output sources/manifests/YYYY-MM-DD-<name>-members.yaml
+```
+
+After a run, validate the control plane:
+
+```powershell
+python -m tools.corpus.validate_control_plane .
+```
+
+Admission of a selected source into the knowledge chain follows
+`knowledge/operations.md` § Ingest.
 
 ## 7. Run a vertical research cycle
 
 Before topic-scale distillation, take one rights-cleared source through the
-canonical chain. Use `knowledge/operations.md` for the complete procedure and
-`workflows/` for TEI-specific analysis routes; do not create a shortcut from
-the acquisition corpus to a higher evidence layer.
+canonical chain. `knowledge/operations.md` holds the complete procedure and,
+under § Analyze, the procedures for an element, a module, a release
+comparison, an issue or decision and a P6 proposal. Never create a shortcut
+from the acquisition corpus to a higher evidence layer.
 
 Run after representation and distillate changes:
 
@@ -138,64 +151,72 @@ For one chapter acceptance:
 python tools/validate.py . --chapter 40_output/CHAPTER-SLUG.md
 ```
 
-For the bounded text identity and annotation pilot:
+## 8. Reproduce the experiments
+
+The bounded text identity and annotation pilot:
 
 ```powershell
 python tools/check_text_identity_pilot.py
 ```
 
-On Windows with the Python launcher, `py -3` can replace `python`. The combined
-gate checks source integrity, chapter provenance, current independent-review
-coverage, experiment reproduction, and the full test suite. Human acceptance
-uses `docs/p6/text-identity-pilot.md`; passing code does not approve an ontology.
-After an intentional experiment or contract change, regenerate its report with
+The combined gate checks source integrity, chapter provenance, current
+independent-review coverage, experiment reproduction and the full test suite.
+Human acceptance uses the items in `knowledge/experiments.md`. After an
+intentional experiment or contract change, regenerate the report with
 `python -m tools.pilots.text_identity`. Changed research claims require fresh
 review via `python tools/check_text_identity_pilot.py --emit-review` and an
-independent reviewer; generating pairs alone is not review.
+independent reviewer under `knowledge/verification.md`.
 
-For Abstract Text Model 0.1, the independent case gate needs no raw corpus:
+Abstract Text Model 0.1, whose independent case gate needs no raw corpus:
 
 ```powershell
-py -3 tools/check_abstract_text_v01.py --check
-py -3 tools/check_abstract_text_v01.py --validate experiments/abstract_text_v01/examples/competing-readings.json
-py -3 -m pytest tests/models tests/test_check_abstract_text_v01.py
+python tools/check_abstract_text_v01.py --check
+python tools/check_abstract_text_v01.py --validate experiments/abstract_text_v01/examples/competing-readings.json
+python -m pytest tests/models tests/test_check_abstract_text_v01.py
 ```
 
 The first command checks frozen expectations, all declared rule and operation
-coverage, nonmutation, canonical reproduction, standalone examples, and exact
-report reproduction. It fails if the report is missing or stale. After reviewing
-an intentional model, contract, or fixture change, regenerate with
-`py -3 tools/check_abstract_text_v01.py` and rerun `--check`. Input fingerprints
-normalize checkout line endings; strings inside model instances remain exact.
-The validation command prints machine-readable diagnostics and resolutions.
-Use `docs/p6/abstract-text-model-v0.1.md` for the definitions and separate human
-acceptance questions. A passing gate does not establish real P5 migration or
-practical adequacy.
+coverage, nonmutation, canonical reproduction, standalone examples and exact
+report reproduction, and it fails if the report is missing or stale. After
+reviewing an intentional model, contract or fixture change, regenerate with
+`python tools/check_abstract_text_v01.py` and rerun `--check`. Input
+fingerprints normalize checkout line endings, and strings inside model
+instances remain exact. The validation command prints machine-readable
+diagnostics and resolutions. The definitions and the separate human
+acceptance questions are in `knowledge/text-model.md`.
 
-## 8. Regenerate documentation
-
-The first research wave also provides two read-only reproduction checks:
+The editorial cases:
 
 ```powershell
-py -3 -m tools.tei.build_atlas --output corpus/projections/p5-specs-4.12.0.json --check
-py -3 tools/check_wave1_sources.py .
-py -3 tools/check_wave1_sources.py . --review-only
+python tools/ingest_editorial_cases.py --check
+python tools/check_editorial_cases.py --check
+```
+
+The first research wave provides three read-only reproduction checks:
+
+```powershell
+python -m tools.tei.build_atlas --output corpus/projections/p5-specs-4.12.0.json --check
+python tools/check_wave1_sources.py .
+python tools/check_wave1_sources.py . --review-only
 ```
 
 The atlas check requires the locked local TEI Git mirror. Omit `--check` to
 regenerate the projection after an intentional generator or control-input
-change. The quotation check requires the four local raw snapshots named in
-`sources/manifests/2026-09-05-research-wave-1-citations.yaml`; it performs no
-network retrieval and fails clearly when a snapshot is unavailable. A clean
+change. The quotation check requires the local raw snapshots named in
+`sources/manifests/2026-09-05-research-wave-1-citations.yaml`. It performs no
+network retrieval and fails clearly when a snapshot is unavailable, so a clean
 checkout without ignored raw data can inspect the recorded intake but cannot
-claim to have rerun quotation fidelity. Neither command assigns research status.
+claim to have rerun quotation fidelity. `--review-only` needs no ignored
+originals. It checks the canonical source-support prompts recorded in
+`workbench/reviews/2026-09-05-wave1/pairs.jsonl`, their exact dependency
+coverage and their passing verdict hashes. CI runs this check separately from
+the local raw-source quotation check. None of these commands assigns research
+status. On Windows with the Python launcher, `py -3` can replace `python`.
 
-`--review-only` needs no ignored originals. It checks the current eight canonical
-source-support prompts, exact dependency coverage, and their passing verdict
-hashes. CI runs this check separately from the local raw-source quotation check.
+## 9. Regenerate the site
 
-After changing `README.md`, `docs/concept.md`, or knowledge documents consumed
-by the site builder:
+After changing `README.md` or any knowledge document consumed by the About
+page, and after changing registry, lock, manifest, model or proposal inputs:
 
 ```powershell
 python tools/build_docs.py --date YYYY-MM-DD
@@ -205,43 +226,31 @@ python tools/build_knowledge.py --date YYYY-MM-DD
 python tools/build_model_reference.py --date YYYY-MM-DD
 ```
 
-Never hand-edit generated HTML. The home builder writes `docs/index.html`; the
-project builder writes `docs/project.html`. Knowledge and Model builders write
+Never hand-edit generated HTML. The home builder writes `docs/index.html`, the
+project builder `docs/project.html`, and the Knowledge and Model builders
 `docs/knowledge.html` and `docs/model.html`. These paths are identical locally
-and on GitHub Pages.
-The home generator reads the complete canonical proposal in
-`40_output/12-p6-design.md`, its source links, model definitions and examples.
+and on GitHub Pages. The home generator reads the complete canonical proposal
+in `40_output/12-p6-design.md`, its source links, model definitions and
+examples. The builders and their declared inputs are listed in
+`knowledge/architecture.md`.
 
-## 9. Publish the research workbench
+## 10. Publish the research workbench
 
 `.github/workflows/pages.yml` validates and regenerates the static site on
-`main`, publishes the proposal home at the GitHub Pages root, the materials
-overview at `corpus.html`, and the full project documentation at `project.html`.
-The formal model reference is `model.html`; `knowledge.html` inventories the
-actual Vault artifacts and exposes their precise provenance links.
-Internal control and normalized
-data links resolve to the exact GitHub commit used for the deployment; ignored
-raw source bodies are never included in the Pages artifact.
+`main` and publishes the proposal home at the GitHub Pages root, the
+materials overview at `corpus.html`, the project documents at
+`project.html`, the formal model reference at `model.html` and the knowledge
+browser at `knowledge.html`. Internal control and normalized data links
+resolve to the exact GitHub commit used for the deployment, and ignored raw
+source bodies are never included in the Pages artifact.
 
 The canonical deployment is live at
-`https://chpollin.github.io/tei-p6-research/`. Changes reach it only after they
-are reviewed, committed, and pushed to `main`; the workflow then rebuilds from
-the pushed revision. A fork must enable GitHub Pages with GitHub Actions as its
-source before its first deployment.
+`https://chpollin.github.io/tei-p6-research/`. Changes reach it only after
+they are reviewed, committed and pushed to `main`; the workflow then rebuilds
+from the pushed revision. A fork must enable GitHub Pages with GitHub Actions
+as its source before its first deployment.
 
-## 10. Completion gate
+## 11. Completion gate
 
-Before handing off a change:
-
-```powershell
-git diff --check
-python -m ruff check .
-python tools/validate.py .
-python -m pytest tests
-```
-
-Also verify that generated files reproduce, no ignored raw data or secret is
-staged, source rights and gaps are explicit, and `knowledge/state.md` describes
-the actual repository rather than intended future work. Run
-`python -m tools.corpus.validate_control_plane .` whenever registry, lock,
-manifest, or normalized-corpus controls change.
+The one completion gate for every change, what each check establishes and
+the layout of the tests are in `knowledge/testing.md`.

@@ -2,7 +2,7 @@
 
 These are project-defined encodings, not official TEI syntax or P5 converters.
 Every public operation validates the core package and does not mutate inputs.
-See docs/p6/serialization-bindings-v0.1.md for the accepted lexical subset.
+See knowledge/text-model-bindings.md for the accepted lexical subset.
 """
 
 from __future__ import annotations

@@ -9,15 +9,17 @@ method:
 status: draft
 language: en
 created: "2026-09-04"
-updated: "2026-09-05"
-related: [schema, state, journal]
+updated: "2026-09-06"
+related: [INDEX, schema, data, verification, testing, governance, state, journal]
 ---
 
 # Operations
 
 These procedures produce and check the artifacts defined in
-[[knowledge/schema]]. Record processing state in [[knowledge/state]] and
-durable decisions in [[knowledge/journal]].
+[[knowledge/schema]]. The material they operate on is described in
+[[knowledge/data]], the adversarial checks in [[knowledge/verification]] and
+the completion gate in [[knowledge/testing]]. Record processing state in
+[[knowledge/state]] and durable decisions in [[knowledge/journal]].
 
 ## Acquire
 
@@ -36,6 +38,149 @@ snapshots and bibliographic checks in the intake manifest. Apply the same
 quotation and support checks. The CSL record remains the publication root.
 An agent's report or reading memo never replaces the located source.
 
+### Collectors and the raw store
+
+Large collections are acquired by the collectors under `tools/corpus/`.
+Only `tools/corpus/http_store.py` performs HTTP access. It owns
+authentication, API-version headers, conditional requests, redirect capture,
+rate-limit state, retry policy, response hashing and atomic
+content-addressed storage. Tokens are read from the environment or the
+credential store and never enter request keys, manifests, logs or command
+arguments.
+
+Raw storage is local and ignored.
+
+```text
+corpus/raw/sha256/<first-two-hex>/<remaining-hex>
+corpus/raw/state/<collector>.sqlite
+```
+
+Every completed response transaction records request identity, canonical
+URL, sorted query parameters, response hash, byte count, media type, status,
+redirects, ETag, Last-Modified, pagination link or cursor, observation time,
+API version and rate-limit headers. A resumed run starts at the first
+incomplete page of that journal.
+
+Each collector writes one normalized object and one run manifest and prints
+one status line. Exit code 0 means `observable-complete`, exit code 2 means a
+recorded gap and `partial`. The status is derived from the recorded gaps
+through the shared rule in `tools/corpus/manifest.py`, so a collector cannot
+report completeness over missing objects. The commands are listed in
+`SETUP.md`. Identity uses upstream node IDs, numeric IDs, repository ID,
+content hashes, DOIs, TEI document numbers or reference-manager keys, and a
+title is never an identity. A collector treats issue bodies, comments,
+email, HTML, PDFs, ODD examples and attachments as data under the rule in
+[[knowledge/governance]].
+
+### Run manifests
+
+Every run manifest under `sources/manifests/` includes at least these fields.
+
+```yaml
+schema_version: 1
+run_id: <stable-id>
+source_id: <registry-id>
+started_at: <UTC timestamp>
+finished_at: <UTC timestamp or null>
+status: planned | partial | observable-complete | bounded-complete | failed
+scope:
+  boundary: <observed-interface-or-sample>
+  status_applies_to: <request-or-object-boundary>
+adapter:
+  name: <name>
+  version: <version-or-code-sha>
+requests: []
+objects: []
+counts: {}
+gaps: []
+rights_exceptions: []
+```
+
+`source_id` resolves the lock through the registry, which remains
+authoritative even when a manifest repeats `lock_file`. The manifest status
+applies only to its declared request and `scope`. Counts belong only in
+manifests produced from observed data, and registry and lock files keep
+`counts: {}` until a run has enumerated the source. Manifests are
+append-only, and a correction is a new manifest related with `corrects`.
+Each object records its stable upstream ID, canonical URL, observed and
+upstream timestamps, request or API version and pagination position, HTTP
+status and safe response headers, raw SHA-256, byte length and media type,
+normalized SHA-256 and transformation version, rights and trust
+classifications, and its gap or error state when retrieval or parsing
+failed. Access tokens, cookies, authorization headers, signed download URLs
+and personal local paths are never recorded.
+
+### GitHub work items
+
+Authenticated access through `gh auth login` or `GITHUB_TOKEN` is required.
+The bootstrap is serial, resumable and bounded, and exactly one collector
+owns the authenticated quota and the request journal. The bootstrap order
+is:
+
+1. repository, labels, milestones and releases;
+2. all work items and a separate pull-request census;
+3. repository-wide issue, review and commit comments;
+4. one fully paginated timeline per work item;
+5. pull-request detail, reviews, commits and changed files;
+6. GraphQL-only review-thread and relationship fields;
+7. a second parent census and reconciliation.
+
+The collector uses pages of 100, records `Link` headers or GraphQL cursors,
+respects `Retry-After` and stops with a `rate-limit-stop` gap while quota
+remains. A partially completed crawl is `partial`. An observable-complete
+manifest requires exhausted pagination for every declared collection, issue
+and pull-request totals reconciled independently, every pull request present
+in both the work-item and the pull-request census, every work item with a
+completed timeline or an explicit gap, every pull request with reviews,
+commits, changed files and explicit API-limit gaps, unique stable IDs for
+every object family, a start and end census reconciling the non-atomic
+snapshot interval, verified raw and normalized hashes, and every error,
+rights restriction and inaccessible record represented. The family
+definition of `observable-complete` is in [[knowledge/data]].
+
+Incremental runs start from the last successful finish time minus 24 hours,
+fully rehydrate changed parents and retain prior body versions. They never
+overwrite history. A periodic full identifier and timeline reconciliation
+checks for missed changes. The issue endpoint contains issue-shaped pull
+requests, which are separated by the `pull_request` field and reconciled
+against the pull-request census.
+
+### Governance, history and literature
+
+Governance documents distinguish meeting events from agendas, draft minutes,
+approved minutes, attachments and reports. Website, XML, PDF and repository
+copies are manifestations rather than automatic duplicates. Reported and
+parsed dates remain separate when the official index is inconsistent.
+
+The literature boundary starts with:
+
+1. the official TEI Zotero group, paginated with library and item versions;
+2. all Journal of the TEI metadata exposed by the OpenEdition OAI-PMH set
+   `journals:jtei`;
+3. the bibliography in the pinned Guidelines release;
+4. declared TEI conference proceedings;
+5. at most one recorded citation-chaining pass for selected design topics.
+
+Every discovered work receives a disposition, one of `included`,
+`duplicate`, `excluded-with-reason`, `unavailable` or `pending-review`. Full
+text is committed only after per-item rights review under the rule in
+[[knowledge/data]].
+
+### Recovery
+
+- An interrupted API run resumes from the request journal and remains
+  `partial`.
+- Source-hash drift quarantines the new observation and never rewrites a
+  lock.
+- A failed count reconciliation leaves the previous accepted manifest active.
+- A schema change pauses dependent work and is integrated before workers
+  rebase.
+- Generated drift is repaired by rebuilding from accepted inputs.
+- Rights uncertainty sets the source to metadata and link only until it is
+  independently reviewed.
+- A post-merge failure is undone with `git revert`, which keeps the history
+  intact.
+
 ### Deep research prompt skeleton
 
 > Research the topic **{topic from the controlled topic set}** for the project **{project}**.
@@ -47,6 +192,12 @@ An agent's report or reading memo never replaces the located source.
 > topic, quoted verbatim. Do not deliver synthesis; the vault synthesizes.
 
 ## Ingest
+
+A source package enters the knowledge chain only after identity and
+checksum verification, rights classification and source-type assignment, as
+[[knowledge/data]] requires. Record the admission in a manifest that names
+the exact snapshot, the hashes and the rights disposition of every admitted
+object.
 
 For an archivable document, first convert the original to Markdown while
 preserving its headings, lists, tables, and paragraph boundaries. Then stamp
@@ -67,6 +218,15 @@ Choose the converter by source structure and record it in `converter`.
 | `document` | Markdown in `10_markdown/documents/`, with converter, original H1, and metadata |
 | `data` | Data file in `10_markdown/data/` and a schema description with the same slug and metadata |
 | `publication` | CSL JSON in `references/`, with no Markdown representation |
+
+GitHub issue threads, pull-request threads and mailing-list threads are
+admitted as citation-only publication sources. The raw thread stays in the
+private raw store, the CSL record carries identifier, URL, dates and roles,
+and the distillate carries the structured account of the thread with short
+quotations checked against the raw snapshot at intake and recorded as
+`checked.quote`. This is the path the research-wave-one literature already
+uses. A generated metadata index of threads is a navigation projection and
+never grounding.
 
 Run `python tools/inventory.py . --write` to regenerate the source inventory
 in [[knowledge/state]] from the files.
@@ -124,9 +284,12 @@ Work by topic, with one file per assertion.
 7. Register each assertion in its topic map with a short orientation and
    record unresolved questions under Open questions.
 
-Machine-review every assertion against each supporting statement. Only
-*fully supports* passes. Narrow a failed assertion or replace its unsupported
-anchor with one that carries the claim, then review the changed pair again.
+Machine-review every assertion against each supporting statement under the
+protocol in [[knowledge/verification]]. Only *fully supports* passes. Narrow
+a failed assertion or replace its unsupported anchor with one that carries
+the claim, then review the changed pair again. Before an assertion supports
+a design requirement, run and record the counterevidence search defined
+there.
 
 ### Assertion review prompt skeleton
 
@@ -157,6 +320,125 @@ drawn from the map's open questions enters as a posit with its evidence
 question. A synthesis chapter remains an ordinary chapter even when it later
 informs another chapter.
 
+## Analyze
+
+Five recurring analysis tasks specialize the operations above without adding
+an artifact type. Each enters through the matching topic map, follows
+load-bearing statements down to their distillate statements and, where
+exactness matters, to source passages, and reports the absence of support as
+an open question instead of completing a gap from model memory. Persistent
+knowledge from any of them enters through acquire, ingest, distill and
+assertion building. A chat answer may report what the present vault does and
+does not support and points to canonical anchors. Every task separates source
+observation, cross-source assertion and author posit, preserves release,
+repository, date and source-state qualifiers, and runs the checks in
+[[knowledge/testing]] when the vault was edited.
+
+### Analyze an element
+
+Fix the exact element name, with namespace where ambiguity is possible, and
+the P5 release or commit, defaulting to the pinned baseline. Establish the
+formal identity from the pinned ODD or generated schema, meaning owning
+module, classes, inherited attributes, content model, datatype or
+constraints and documented availability. Establish the prose semantics
+separately from the formal declaration, because a name alone carries no
+intended meaning. Inspect examples only for the behavior they demonstrate.
+Trace deprecation, replacement or historical rationale through the issue and
+decision procedure when such a claim matters. Test boundary cases against the
+pinned schema when validation behavior is part of the question and record
+the exact schema and command. Report identity, semantic purpose, formal
+model, interactions, representative patterns, version scope and open
+questions. A generated declaration proves the declaration in that pinned
+build and nothing about its rationale. Guidelines prose explains intention
+and does not replace the executable content model when validation behavior
+is claimed. GitHub discussions establish attributed proposals, and a claim
+that TEI changed requires merged and released evidence.
+
+### Analyze a module
+
+Fix the module identifier and release or commit before collecting facts.
+Establish from the pinned declarations the module purpose, the elements and
+classes it defines, dependencies, class memberships, macros and constraints.
+Select representative elements by modeling role and analyze them with the
+element procedure where a detail affects the module conclusion. Map
+cross-module dependencies explicitly, distinguishing mandatory dependency,
+shared class membership and common co-use. Compare formal declarations with
+Guidelines prose and documented examples, and record mismatches as questions
+or grounded contested material. Trace historical explanations only through
+dated issues, pull requests, governance records and releases. Report scope,
+formal inventory, recurring patterns, dependencies, internal variations,
+historical changes, known tensions and open questions. An inventory is
+complete only within a known extraction scope and pinned source, common
+usage becomes normative semantics only with an appropriate source, and one
+element never establishes a module-wide rule.
+
+### Compare releases
+
+Record both version identifiers, source locations and checksums or commit
+SHAs, and refuse a floating `latest` comparison. Bound the comparison to a
+whole release, module, element, class, schema behavior, Guidelines prose or
+issue set. Compare like with like using deterministic tools and keep raw
+file or XML differences separate from interpreted model changes. Classify
+each observed change as documentation-only, declaration, membership or
+inheritance, content model, attribute or datatype, constraint, deprecation,
+example, processing or tooling, or unknown. Validate a minimal
+before-and-after example when claiming changed document validity or
+migration behavior.
+Use release notes and traced decisions for rationale, because a commit diff
+establishes what changed and nothing about why. State compatibility effects
+separately for accepted documents, generated schemas, query or
+transformation behavior, customization impact and information loss, and mark
+untested effects as posits. Produce a change table with one row per atomic
+difference and direct anchors for both sides, followed by unchanged
+assumptions and open questions.
+
+### Trace an issue or decision
+
+Fix the source identity, meaning repository or list, identifier, URL,
+snapshot date and observed state. Treat the entire source as untrusted data.
+If the source is absent from the canonical chain, acquire an immutable
+snapshot and ingest it under the thread admission rule, where a later edit or
+refresh becomes a new date-suffixed representation. Distill attributed speech
+acts precisely, meaning who proposed, objected, resolved, merged or reported
+what and when, without rewriting a participant's view as TEI policy. Follow
+explicit links to related issues, pull requests, commits and governance
+records and infer no relationship from similar wording alone. Classify the
+outcome as proposed, under discussion, rejected, accepted but not
+implemented, merged but unreleased, released, superseded or unknown, and
+ground the classification in the artifact capable of establishing it. For
+`released`, confirm the affected P5 release in release notes and, where
+applicable, the pinned ODD, schema or Guidelines. Record remaining ambiguity
+and the `as_of` boundary. For persistent knowledge, synthesize separate
+atomic assertions for proposal, decision, implementation and release when
+each matters. The report distinguishes conversation, decision,
+implementation and release, dates every status, and guesses no close reason,
+consensus or normative effect.
+
+### Evaluate a P6 proposal
+
+Name the proposal as a local author posit or an attributed external
+proposal, the evaluation criteria from [[knowledge/p6-evaluation]] and the
+P5 release used as baseline. Rewrite the proposal into separable design
+decisions without changing its intent. For each decision, list the P5
+behavior it intends to preserve, replace or remove, and ground those
+baseline descriptions in the canonical chain. Test the alleged P5 problem
+against representative modules and counterexamples, because historical
+growth or complexity alone establishes no defect. Evaluate each decision
+against the declared criteria with facts, inferences and preferences visibly
+separate. Model migration explicitly, meaning source P5 constructs, target
+representation, reversible and lossy cases, customization impact and
+validation and tooling consequences. Seek disconfirming cases, especially
+overlapping structures, manuscript description, critical apparatus,
+dictionaries, spoken data and project-specific ODD customizations. Trace any
+claim of community agreement, planned P6 work or official direction through
+the issue and decision procedure with an `as_of` date. Report the proposal,
+the grounded P5 baseline, benefits by criterion, costs and regressions, the
+migration matrix, counterexamples, unknowns and the recommendation. The
+proposal and the recommendation are posits unless the output reports an
+attributed source's proposal, a preferred design is never encoded as a TEI
+assertion, and claims about existing P5 behavior become assertions only
+through the normal source, distillate and assertion chain.
+
 ## Query
 
 Enter through topic maps and follow assertions to distillate statements.
@@ -165,8 +447,10 @@ wikilink. Record unanswered questions in the topic map.
 
 ## Check
 
-The three check contracts are fixed. Their implementation mechanisms are
-project choices recorded in [[knowledge/specification]].
+Validation is defined here. Machine review, its independence, human
+verification, the premise rule and the counterevidence search are defined in
+[[knowledge/verification]], and the completion gate that runs all checks in
+[[knowledge/testing]].
 
 ### Contract: validation
 
@@ -221,51 +505,6 @@ subject or a condition the schema does not classify as an error. They are
 printed and counted. Vault-wide warnings preserve a successful exit code for
 work in progress. Chapter warnings fail the run because it judges readiness
 for acceptance.
-
-### Contract: machine review
-
-Machine review judges source support for each passage and statement pair.
-Its fixed verdicts are **fully supports**, **partially supports**,
-**overreaches**, **contradicts**, and **not in the text**. Only *fully supports*
-passes. Together with validation, this permits `validated` status and no higher.
-
-Anti-anchoring is mandatory. The reviewer sees the source location and bare
-statement, without the producing agent's reasoning. A reviewer from a different
-model family is recommended to reduce correlated errors.
-
-A document pair contains the anchored block and heading path. A publication
-pair contains the quotation. A data pair contains the computation and its
-result. Each is paired only with the statement being judged.
-
-Record `checked.machine-review: <date>`. Failed verdicts require rework.
-Record systematic failure patterns in the journal.
-
-  > You are an adversarial reviewer. Below are a source passage and a statement
-  > that claims to be supported by it. Your task is to refute the statement.
-  > Judge only whether this passage supports this statement. Answer with exactly
-  > one verdict: fully supports | partially supports | overreaches | contradicts
-  > | not in the text. Then give one sentence of justification.
-  >
-  > PASSAGE: {source location, with its heading path}
-  > STATEMENT: {statement}
-
-The reviewer must add a line when the statement displaces the passage's subject.
-For a self-report, *fully supports* applies when the statement attributes the
-claim to the source. Asserting the claimed achievement itself is *overreaches*.
-For a state report, the statement must retain the state and date shown by the
-source. Extending that observation into an unqualified property of the object
-is *overreaches*. Examples include restored objects, dated inventories, and plans.
-
-### Contract: verification
-
-The human verification role named in [[knowledge/specification]] judges
-whether grounding holds as evidence. Only this role may establish `verified`.
-Machine checks prepare the material without replacing that judgment.
-
-Verification proceeds passage by passage over the prepared pairs. Sampling is
-permitted where the machine-review pass rate justifies it, with the sampling
-rule recorded in the journal. Record `checked.verification: <date>` by or on
-behalf of the verifying role.
 
 ### Status discipline
 

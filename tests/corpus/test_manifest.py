@@ -13,7 +13,7 @@ from tools.corpus.manifest import (
     write_jsonl,
 )
 
-# The only completion states corpus/COMPLETENESS.md permits.
+# The only completion states knowledge/data.md permits.
 COMPLETION_STATES = {
     "planned",
     "partial",
