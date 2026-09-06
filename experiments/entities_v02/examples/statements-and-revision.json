@@ -1,0 +1,377 @@
+{
+  "agents": [
+    {
+      "id": "ag-editor",
+      "label": "Editor A"
+    },
+    {
+      "id": "ag-reviewer",
+      "label": "Editor B"
+    }
+  ],
+  "annotations": [],
+  "base": "https://example.org/packages/prosopography/",
+  "concepts": [
+    {
+      "applies_to": "node",
+      "definition": "The selected extent is a proper noun or proper-noun phrase used to refer.",
+      "id": "en-proper-noun",
+      "label": "Proper noun"
+    },
+    {
+      "applies_to": "node",
+      "definition": "The selected extent is a referring string that is no proper noun, such as a description or a title used to refer.",
+      "id": "en-referring-string",
+      "label": "Referring string"
+    },
+    {
+      "applies_to": "node",
+      "definition": "The selected extent is a pronoun used to refer.",
+      "id": "en-pronoun",
+      "label": "Pronoun"
+    },
+    {
+      "alignments": [
+        {
+          "agent": "ag-editor",
+          "created": "2026-09-06T09:40:00Z",
+          "id": "al-birth",
+          "iri": "https://example.org/vocab/birth",
+          "relation": "close",
+          "status": "asserted"
+        }
+      ],
+      "applies_to": "statement",
+      "definition": "The birth of a person.",
+      "id": "st-birth",
+      "label": "Birth"
+    },
+    {
+      "applies_to": "statement",
+      "definition": "Where a person resides.",
+      "id": "st-residence",
+      "label": "Residence"
+    },
+    {
+      "applies_to": "statement",
+      "definition": "A trait ascribed to a person.",
+      "id": "st-occupation",
+      "label": "Occupation"
+    },
+    {
+      "applies_to": "statement",
+      "definition": "A working relation between two entities.",
+      "id": "st-collaboration",
+      "label": "Collaboration"
+    }
+  ],
+  "continuities": [],
+  "denotations": [
+    {
+      "agent": "ag-editor",
+      "certainty": "low",
+      "created": "2026-05-02T08:00:00Z",
+      "entity": "ent-society",
+      "id": "dn-ada-first",
+      "mention": "nd-ada",
+      "status": "asserted"
+    },
+    {
+      "agent": "ag-editor",
+      "certainty": "high",
+      "created": "2026-09-06T09:40:00Z",
+      "entity": "ent-ada",
+      "id": "dn-ada-second",
+      "mention": "nd-ada",
+      "status": "asserted",
+      "supersedes": [
+        "dn-ada-first"
+      ]
+    },
+    {
+      "agent": "ag-editor",
+      "created": "2026-09-06T09:40:00Z",
+      "entity": "ent-london",
+      "id": "dn-london",
+      "mention": "nd-london",
+      "status": "asserted"
+    },
+    {
+      "agent": "ag-reviewer",
+      "created": "2026-05-02T08:00:00Z",
+      "entity": "ent-engine",
+      "id": "dn-engine-first",
+      "mention": "nd-engine",
+      "status": "asserted"
+    },
+    {
+      "agent": "ag-reviewer",
+      "created": "2026-09-06T09:40:00Z",
+      "entity": "ent-engine",
+      "id": "dn-engine-withdrawn",
+      "mention": "nd-engine",
+      "status": "withdrawn",
+      "supersedes": [
+        "dn-engine-first"
+      ]
+    }
+  ],
+  "entities": [
+    {
+      "id": "ent-ada",
+      "kind": "person",
+      "label": "Ada Lovelace"
+    },
+    {
+      "id": "ent-london",
+      "kind": "place",
+      "label": "London"
+    },
+    {
+      "id": "ent-engine",
+      "kind": "object",
+      "label": "Analytical Engine"
+    },
+    {
+      "id": "ent-society",
+      "kind": "group",
+      "label": "A learned society"
+    },
+    {
+      "id": "ent-birth-1815",
+      "kind": "event",
+      "label": "The birth of 1815"
+    },
+    {
+      "alignments": [
+        {
+          "agent": "ag-editor",
+          "created": "2026-09-06T09:40:00Z",
+          "id": "al-british",
+          "iri": "https://example.org/vocab/british",
+          "relation": "exact",
+          "status": "asserted"
+        }
+      ],
+      "id": "ent-coded-value",
+      "kind": "other",
+      "label": "British"
+    }
+  ],
+  "former_bases": [
+    {
+      "agent": "ag-editor",
+      "base": "https://old.example.org/packages/prosopography/",
+      "created": "2026-09-06T09:40:00Z",
+      "id": "fb-1",
+      "status": "asserted"
+    }
+  ],
+  "model_version": "0.2",
+  "names": [
+    {
+      "agent": "ag-editor",
+      "created": "2026-09-06T09:40:00Z",
+      "entity": "ent-ada",
+      "form": "Ada Lovelace",
+      "id": "nm-ada",
+      "language": "en",
+      "status": "asserted"
+    },
+    {
+      "agent": "ag-editor",
+      "created": "2026-09-06T09:40:00Z",
+      "entity": "ent-london",
+      "form": "Londinium",
+      "id": "nm-london-latin",
+      "language": "la",
+      "status": "asserted",
+      "valid": {
+        "until": "0500"
+      }
+    },
+    {
+      "agent": "ag-editor",
+      "created": "2026-09-06T09:40:00Z",
+      "entity": "ent-london",
+      "form": "London",
+      "id": "nm-london",
+      "language": "en",
+      "status": "asserted",
+      "valid": {
+        "from": "1066"
+      }
+    }
+  ],
+  "readings": [
+    {
+      "agent": "ag-editor",
+      "id": "rd-mentions",
+      "label": "Mention layer",
+      "nodes": [
+        {
+          "id": "nd-ada",
+          "parent": null,
+          "selection": "sel-ada",
+          "type": "en-proper-noun"
+        },
+        {
+          "id": "nd-london",
+          "parent": null,
+          "selection": "sel-london",
+          "type": "en-proper-noun"
+        },
+        {
+          "id": "nd-engine",
+          "parent": null,
+          "selection": "sel-engine",
+          "type": "en-referring-string"
+        }
+      ],
+      "version": "v1"
+    }
+  ],
+  "relations": [],
+  "selections": [
+    {
+      "id": "sel-ada",
+      "selector": {
+        "kind": "ranges",
+        "segments": [
+          {
+            "end": 12,
+            "quote": "Ada Lovelace",
+            "start": 0
+          }
+        ]
+      },
+      "version": "v1"
+    },
+    {
+      "id": "sel-london",
+      "selector": {
+        "kind": "ranges",
+        "segments": [
+          {
+            "end": 31,
+            "quote": "London",
+            "start": 25
+          }
+        ]
+      },
+      "version": "v1"
+    },
+    {
+      "id": "sel-engine",
+      "selector": {
+        "kind": "ranges",
+        "segments": [
+          {
+            "end": 75,
+            "quote": "the Analytical Engine",
+            "start": 54
+          }
+        ]
+      },
+      "version": "v1"
+    }
+  ],
+  "statements": [
+    {
+      "agent": "ag-editor",
+      "created": "2026-09-06T09:40:00Z",
+      "id": "stm-birth",
+      "kind": "event",
+      "participants": [
+        {
+          "entity": "ent-ada",
+          "role": "born"
+        },
+        {
+          "entity": "ent-london",
+          "role": "place"
+        },
+        {
+          "entity": "ent-birth-1815",
+          "role": "event"
+        }
+      ],
+      "status": "asserted",
+      "type": "st-birth",
+      "valid": {
+        "from": "1815",
+        "until": "1815"
+      }
+    },
+    {
+      "agent": "ag-editor",
+      "certainty": "medium",
+      "created": "2026-09-06T09:40:00Z",
+      "id": "stm-residence",
+      "kind": "state",
+      "participants": [
+        {
+          "entity": "ent-ada",
+          "role": "subject"
+        },
+        {
+          "entity": "ent-london",
+          "role": "place"
+        }
+      ],
+      "status": "asserted",
+      "type": "st-residence",
+      "valid": {
+        "from": "1815",
+        "until": "1852"
+      }
+    },
+    {
+      "agent": "ag-editor",
+      "created": "2026-09-06T09:40:00Z",
+      "id": "stm-nationality",
+      "kind": "trait",
+      "participants": [
+        {
+          "entity": "ent-ada",
+          "role": "subject"
+        },
+        {
+          "entity": "ent-coded-value",
+          "role": "value"
+        }
+      ],
+      "status": "asserted",
+      "type": "st-occupation",
+      "value": "British"
+    },
+    {
+      "agent": "ag-reviewer",
+      "certainty": "low",
+      "created": "2026-09-06T09:40:00Z",
+      "id": "stm-collaboration",
+      "kind": "relation",
+      "participants": [
+        {
+          "entity": "ent-ada",
+          "role": "collaborator"
+        },
+        {
+          "entity": "ent-engine",
+          "role": "object"
+        }
+      ],
+      "status": "asserted",
+      "type": "st-collaboration"
+    }
+  ],
+  "texts": [],
+  "versions": [
+    {
+      "content": "Ada Lovelace was born in London in 1815 and worked on the Analytical Engine.",
+      "id": "v1",
+      "parents": [],
+      "sha256": "4f4ef5987cf8033c612bc9a60f5d3a0a5e641f66742cc7708bbec00b9016345e"
+    }
+  ]
+}

@@ -181,6 +181,7 @@ Abstract Text Model 0.1, whose independent case gate needs no raw corpus:
 
 ```powershell
 python tools/check_abstract_text_v01.py --check
+python tools/check_entities_v02.py --check
 python tools/check_abstract_text_v01.py --validate experiments/abstract_text_v01/examples/competing-readings.json
 python -m pytest tests/models tests/test_check_abstract_text_v01.py
 ```

@@ -1,0 +1,298 @@
+{
+  "agents": [
+    {
+      "id": "ag-editor",
+      "label": "Editor A"
+    },
+    {
+      "id": "ag-reviewer",
+      "label": "Editor B"
+    }
+  ],
+  "annotations": [
+    {
+      "agent": "ag-editor",
+      "body": "One discontinuous proper-noun mention across an inserted middle initial.",
+      "concept": "en-proper-noun",
+      "created": "2026-09-06T09:15:00Z",
+      "id": "an-babbage",
+      "selection": "sel-charles-babbage",
+      "status": "asserted"
+    }
+  ],
+  "base": "https://example.org/packages/mentions/",
+  "concepts": [
+    {
+      "applies_to": "node",
+      "definition": "The selected extent is a proper noun or proper-noun phrase used to refer.",
+      "id": "en-proper-noun",
+      "label": "Proper noun"
+    },
+    {
+      "applies_to": "node",
+      "definition": "The selected extent is a referring string that is no proper noun, such as a description or a title used to refer.",
+      "id": "en-referring-string",
+      "label": "Referring string"
+    },
+    {
+      "applies_to": "node",
+      "definition": "The selected extent is a pronoun used to refer.",
+      "id": "en-pronoun",
+      "label": "Pronoun"
+    }
+  ],
+  "continuities": [
+    {
+      "agent": "ag-editor",
+      "created": "2026-09-06T09:15:00Z",
+      "criterion": "One transcription of one letter draft.",
+      "id": "ct-1",
+      "status": "asserted",
+      "text": "tx-letter",
+      "versions": [
+        "v1"
+      ]
+    }
+  ],
+  "denotations": [
+    {
+      "agent": "ag-editor",
+      "created": "2026-09-06T09:15:00Z",
+      "entity": "ent-ada",
+      "id": "dn-ada",
+      "mention": "nd-ada",
+      "status": "asserted"
+    },
+    {
+      "agent": "ag-editor",
+      "certainty": "high",
+      "created": "2026-09-06T09:15:00Z",
+      "entity": "ent-ada",
+      "id": "dn-she",
+      "mention": "nd-she",
+      "status": "asserted"
+    },
+    {
+      "agent": "ag-editor",
+      "created": "2026-09-06T09:15:00Z",
+      "entity": "ent-babbage",
+      "id": "dn-babbage",
+      "mention": "an-babbage",
+      "status": "asserted"
+    },
+    {
+      "agent": "ag-editor",
+      "certainty": "medium",
+      "created": "2026-09-06T09:15:00Z",
+      "entity": "ent-babbage",
+      "id": "dn-him",
+      "mention": "nd-him",
+      "status": "asserted"
+    },
+    {
+      "agent": "ag-reviewer",
+      "certainty": "low",
+      "created": "2026-09-06T09:15:00Z",
+      "entity": "ent-ada",
+      "id": "dn-him-reviewer",
+      "mention": "nd-him",
+      "status": "asserted"
+    }
+  ],
+  "entities": [
+    {
+      "alignments": [
+        {
+          "agent": "ag-editor",
+          "created": "2026-09-06T09:15:00Z",
+          "id": "al-ada-viaf",
+          "iri": "https://example.org/authority/ada",
+          "relation": "exact",
+          "status": "asserted"
+        }
+      ],
+      "id": "ent-ada",
+      "kind": "person",
+      "label": "Ada Lovelace"
+    },
+    {
+      "alignments": [
+        {
+          "agent": "ag-editor",
+          "created": "2026-09-06T09:15:00Z",
+          "id": "al-babbage-authority",
+          "iri": "https://example.org/authority/babbage",
+          "relation": "exact",
+          "status": "asserted"
+        },
+        {
+          "agent": "ag-reviewer",
+          "certainty": "low",
+          "created": "2026-09-06T09:15:00Z",
+          "id": "al-babbage-related",
+          "iri": "https://example.org/authority/babbage-family",
+          "relation": "broader",
+          "status": "asserted"
+        }
+      ],
+      "id": "ent-babbage",
+      "kind": "person",
+      "label": "Charles Babbage"
+    }
+  ],
+  "model_version": "0.2",
+  "names": [
+    {
+      "agent": "ag-editor",
+      "created": "2026-09-06T09:15:00Z",
+      "entity": "ent-ada",
+      "form": "Ada Lovelace",
+      "id": "nm-ada-married",
+      "language": "en",
+      "parts": [
+        {
+          "form": "Ada",
+          "kind": "forename"
+        },
+        {
+          "form": "Lovelace",
+          "kind": "surname"
+        }
+      ],
+      "status": "asserted",
+      "valid": {
+        "from": "1835"
+      }
+    },
+    {
+      "agent": "ag-editor",
+      "created": "2026-09-06T09:15:00Z",
+      "entity": "ent-ada",
+      "form": "Ada Byron",
+      "id": "nm-ada-birth",
+      "language": "en",
+      "status": "asserted",
+      "valid": {
+        "until": "1835"
+      }
+    },
+    {
+      "agent": "ag-editor",
+      "created": "2026-09-06T09:15:00Z",
+      "entity": "ent-babbage",
+      "form": "Charles Babbage",
+      "id": "nm-babbage",
+      "language": "en",
+      "status": "asserted"
+    }
+  ],
+  "readings": [
+    {
+      "agent": "ag-editor",
+      "created": "2026-09-06T09:15:00Z",
+      "id": "rd-mentions",
+      "label": "Mention layer",
+      "nodes": [
+        {
+          "id": "nd-ada",
+          "parent": null,
+          "selection": "sel-ada",
+          "type": "en-proper-noun"
+        },
+        {
+          "id": "nd-she",
+          "parent": null,
+          "selection": "sel-she",
+          "type": "en-pronoun"
+        },
+        {
+          "id": "nd-him",
+          "parent": null,
+          "selection": "sel-him",
+          "type": "en-pronoun"
+        }
+      ],
+      "status": "asserted",
+      "version": "v1"
+    }
+  ],
+  "relations": [],
+  "selections": [
+    {
+      "id": "sel-ada",
+      "selector": {
+        "kind": "ranges",
+        "segments": [
+          {
+            "end": 3,
+            "quote": "Ada",
+            "start": 0
+          }
+        ]
+      },
+      "version": "v1"
+    },
+    {
+      "id": "sel-charles-babbage",
+      "selector": {
+        "kind": "ranges",
+        "segments": [
+          {
+            "end": 20,
+            "quote": "Charles",
+            "start": 13
+          },
+          {
+            "end": 31,
+            "quote": "Babbage",
+            "start": 24
+          }
+        ]
+      },
+      "version": "v1"
+    },
+    {
+      "id": "sel-she",
+      "selector": {
+        "kind": "ranges",
+        "segments": [
+          {
+            "end": 36,
+            "quote": "She",
+            "start": 33
+          }
+        ]
+      },
+      "version": "v1"
+    },
+    {
+      "id": "sel-him",
+      "selector": {
+        "kind": "ranges",
+        "segments": [
+          {
+            "end": 47,
+            "quote": "him",
+            "start": 44
+          }
+        ]
+      },
+      "version": "v1"
+    }
+  ],
+  "statements": [],
+  "texts": [
+    {
+      "id": "tx-letter",
+      "label": "Letter draft"
+    }
+  ],
+  "versions": [
+    {
+      "content": "Ada wrote to Charles B. Babbage. She called him a friend.",
+      "id": "v1",
+      "parents": [],
+      "sha256": "718b9c409d2ab1f6865e2a3de791f82116b8e186952682de4d0f30cd4e9d4883"
+    }
+  ]
+}

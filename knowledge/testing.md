@@ -91,6 +91,7 @@ unless stated.
 
 ```powershell
 python tools/check_abstract_text_v01.py --check
+python tools/check_entities_v02.py --check
 python tools/ingest_editorial_cases.py --check
 python tools/check_editorial_cases.py --check
 python tools/check_text_identity_pilot.py

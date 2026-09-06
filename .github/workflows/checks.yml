@@ -23,6 +23,8 @@ jobs:
         run: python tools/check_wave1_sources.py . --review-only
       - name: Reproduce Abstract Text Model 0.1
         run: python tools/check_abstract_text_v01.py --check
+      - name: Reproduce entity extension 0.2
+        run: python tools/check_entities_v02.py --check
       - name: Reproduce editorial cases and current source review
         run: |
           python tools/ingest_editorial_cases.py --check

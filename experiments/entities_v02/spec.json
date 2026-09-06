@@ -1,0 +1,92 @@
+{
+  "format_version": 1,
+  "model_version": "0.2",
+  "authority": "Independent experimental extension; section 14 of knowledge/text-model.md is a project posit and a contract for the prototype, not an official TEI standard or an adopted decision.",
+  "input": {
+    "package": "Exactly model_version='0.2', the nine v0.1 collections and the four collections below, all arrays and possibly empty, plus the optional package fields base and former_bases. No unknown fields. Every valid 0.1 package is valid at 0.2 once it declares the version and the four empty arrays.",
+    "id": "Package-local identifier matching [A-Za-z][A-Za-z0-9._:-]*; unique across the package, nested alignment claims and reading nodes included. Parts and participants carry no ID.",
+    "string": "Nonempty UTF-8-encodable Unicode string unless explicitly stated otherwise.",
+    "claim": {
+      "required": {"id": "id", "agent": "agent ID", "created": "RFC 3339 date-time YYYY-MM-DDTHH:MM:SS with optional fraction and the Z designator, lexically and calendrically valid", "status": "proposed|asserted|withdrawn"},
+      "optional": {"certainty": "high|medium|low", "valid": "object with optional from and until, at least one present, each [0-9]{4}(-[0-9]{2}(-[0-9]{2})?)?; from read as the start and until as the end of its calendar unit, from not after until", "supersedes": "duplicate-free array of IDs of earlier claims of the same kind, by the same agent, about the same subject; absent reads as empty"}
+    },
+    "entities": {"required": {"id": "id", "label": "string, no name claim", "kind": "person|group|place|event|object|other, constitutive"}, "optional": {"alignments": "array of alignment claims"}},
+    "names": {"required": {"claim fields": "as above", "entity": "subject; entity ID", "form": "string", "language": "[A-Za-z]{2,3}(-[A-Za-z0-9]{1,8})* of BCP 47, form only, und for undetermined"}, "optional": {"parts": "ordered array of {kind,form} without IDs; kind one of surname|forename|role-name|add-name|name-link|gen-name; form a string"}},
+    "denotations": {"required": {"claim fields": "as above", "mention": "subject; ID of a reading node or annotation with a mention concept", "entity": "entity ID; an IRI, concept, version or mention is a reference failure"}},
+    "statements": {"required": {"claim fields": "as above", "kind": "trait|state|event|relation", "type": "concept ID with applies_to=statement", "participants": "subject; nonempty array of {entity,role} without a repeated pair; entity an entity ID of any kind, role a string"}, "optional": {"value": "string, uninterpreted"}},
+    "alignments": {"required": {"claim fields": "as above", "iri": "absolute IRI, form only, compared code point by code point", "relation": "exact|close|broader|narrower, read from the record to the external resource"}, "carriers": ["concepts", "agents", "entities"], "subject": "the carrier record"},
+    "package_fields": {"base": "IRI with a scheme, without query, ending in / or #, with # nowhere else", "former_bases": "array of claim records whose subject is the package and whose one content field base holds a former base"},
+    "additive_v01_fields": {"concepts.applies_to": "the third role statement", "annotations.concept": "optional concept ID with role node", "continuities|readings|annotations|relations": "the five claim fields as optional fields; an absent field reads as section 13 states, status as asserted"}
+  },
+  "closed_sets": {
+    "entity_kind": ["person", "group", "place", "event", "object", "other"],
+    "statement_kind": ["trait", "state", "event", "relation"],
+    "name_part_kind": ["surname", "forename", "role-name", "add-name", "name-link", "gen-name"],
+    "alignment_relation": ["exact", "close", "broader", "narrower"],
+    "claim_status": ["proposed", "asserted", "withdrawn"],
+    "certainty": ["high", "medium", "low"],
+    "concept_role": ["node", "relation", "statement"],
+    "mention_concept": ["en-proper-noun", "en-referring-string", "en-pronoun"]
+  },
+  "mention_concepts": [
+    {"id": "en-proper-noun", "label": "Proper noun", "definition": "The selected extent is a proper noun or proper-noun phrase used to refer.", "applies_to": "node"},
+    {"id": "en-referring-string", "label": "Referring string", "definition": "The selected extent is a referring string that is no proper noun, such as a description or a title used to refer.", "applies_to": "node"},
+    {"id": "en-pronoun", "label": "Pronoun", "definition": "The selected extent is a pronoun used to refer.", "applies_to": "node"}
+  ],
+  "rules": {
+    "R14": "An entity is identified by its ID; label and kind neither collapse nor split it, and an entity may exist without name, mention or statement.",
+    "R15": "A denotation subject is a mention, a node or annotation with a reserved mention concept, and the concept classifies the expression only.",
+    "R16": "Several denotation claims per mention coexist, none privileged, each targeting an entity only.",
+    "R17": "Name forms, parts, language and validity are claim content; several names per entity coexist without a base form.",
+    "R18": "A statement's subject is its participant entity set; kind, type, roles and value are content.",
+    "R19": "Alignments and denotations entail nothing; no entity merge, no propagation, no external check.",
+    "R20": "The claim rules of section 13 hold across every claim kind, and a claim of an earlier package is never rewritten."
+  },
+  "inherited_rules": "R01 to R13 of the v0.1 specification hold unchanged; the reading forest of section 3 and the selection and resolution rules of section 2 are untouched.",
+  "validation_result": {
+    "valid": "true iff no E_ diagnostic",
+    "all_selections_resolved": "false on any structural error or any absent/ambiguous selection; true otherwise",
+    "diagnostics": "sorted unique {code,path} objects",
+    "resolutions": "selection ID -> resolution as in v0.1; suppressed on any error"
+  },
+  "diagnostics": ["E_ALIGNMENT", "E_BASE", "E_BOUNDS", "E_CLAIM_CYCLE", "E_CLAIM_FIELD", "E_CLAIM_REWRITE", "E_CLAIM_SUPERSESSION", "E_CONTAINMENT", "E_CONTINUITY", "E_DUPLICATE_ID", "E_ENTITY_KIND", "E_HASH", "E_ID", "E_LANGUAGE", "E_MENTION", "E_NAME_PART", "E_PARTICIPANTS", "E_QUOTE", "E_READING_CYCLE", "E_READING_PARENT", "E_READING_TARGET", "E_REFERENCE", "E_SELECTOR", "E_SHAPE", "E_SIBLING_OVERLAP", "E_STATEMENT_KIND", "E_TYPE", "E_VERSION_CYCLE", "E_VERSION_REWRITE", "W_ABSENT", "W_AMBIGUOUS", "W_UNDENOTED"],
+  "extension_diagnostics": {
+    "E_CLAIM_FIELD": "A pattern field fails its lexical form, its closed set or the order of validity bounds",
+    "E_CLAIM_SUPERSESSION": "supersedes names a claim of another kind, agent or subject, or a withdrawn claim supersedes nothing",
+    "E_CLAIM_CYCLE": "Supersession is cyclic; reported at the container of the claims involved",
+    "E_CLAIM_REWRITE": "A claim of a valid earlier package is missing or changed in the later package; check_claim_revision only",
+    "E_BASE": "base or a former base fails its grammar",
+    "E_ALIGNMENT": "An alignment iri or relation fails its form or set",
+    "E_ENTITY_KIND": "An entity kind is outside its closed set",
+    "E_STATEMENT_KIND": "A statement kind is outside its closed set",
+    "E_NAME_PART": "A name part kind is outside its closed set, or a part is malformed",
+    "E_LANGUAGE": "A name claim's language tag fails its lexical form",
+    "E_MENTION": "A denotation subject is no mention, or a reserved mention concept deviates from its exact record",
+    "E_PARTICIPANTS": "Participants are empty, malformed or repeat an entity-role pair",
+    "W_UNDENOTED": "A mention carries no current denotation claim; a warning that leaves the package valid"
+  },
+  "paths": {
+    "record": "/entities/0, /names/0, /denotations/2/mention, /entities/0/alignments/1/iri, /former_bases/0/base",
+    "convention": "A failing field is named by its own path and a failing record by the record path; a missing required field is a record shape failure. E_CLAIM_SUPERSESSION names the supersedes field of the claim, for a wrong target as for a withdrawal that supersedes nothing, while an entry of that field which resolves to no claim is a reference failure at the entry, as v0.1 reports a version parent. E_CLAIM_CYCLE names the container of the cycle, such as /denotations or /entities/0/alignments. Operation errors use /operation/mention and /operation/entity."
+  },
+  "operations": {
+    "validate_extension": "package -> validation_result; runs the v0.1 validator over the base projection of the package, then the section 14 checks",
+    "canonical_bytes": "valid package -> deterministic UTF-8 JSON bytes; new collections and nested alignments sort by ID, participants sort as a set by entity and role, parts keep their order, supersedes compares as a set, an absent optional field stays distinct from a present one",
+    "equivalent": "two valid packages -> bool under R11",
+    "check_claim_revision": "two packages in a caller-declared shared ID scope -> {valid,diagnostics}; a claim of a valid earlier package that is missing or changed later gives E_CLAIM_REWRITE, a rewritten version record E_VERSION_REWRITE",
+    "denotations_of": "package, mention ID, include_withdrawn=False -> {diagnostics,denotations}; deep copies of the current denotation claims of the mention, each extended with the label and kind of its entity, ordered by agent ID and then by claim ID; withdrawn claims only on request; E_MENTION at /operation/mention for an ID that is no mention; an invalid package returns its diagnostics and no list",
+    "names_of": "package, entity ID, include_withdrawn=False -> {diagnostics,names}; deep copies of the current name claims of the entity, claims without valid first, then ascending by from with an absent from first, then ascending by until with an absent until last, then by claim ID; dates compare as strings; E_REFERENCE at /operation/entity for an ID that is no entity"
+  },
+  "case_format": {
+    "suite": "{format_version:1, model_version:'0.2', authority, cases}",
+    "case": "{id, description, package, expect:{valid, diagnostics:[{code,path}]}, operations?:[{name, arguments, expect}]}",
+    "comparison": "Expected and actual diagnostics compare as sorted unique {code,path} pairs; an operation result compares exactly; every case package must survive its run unchanged."
+  },
+  "limits": [
+    "No inference: an exact alignment merges nothing, an entity's alignments propagate to no mention, and no external resource is retrieved or checked.",
+    "Uncovered by construction: a name without bearer, feature structures for complex names, the kind of a name form, evidence and source of a statement, notBefore/notAfter/when, a reference to an element in another document, the reason two things count as one entity, a negative denotation claim, and a second agent's certainty about a claim.",
+    "Validity bounds are proleptic Gregorian dates from year 0001; a year 0000 fails the calendar check.",
+    "No P5 mapping, RDF binding or loss report is implemented here; sections 14.5 and the ledger cases 8 and 9 remain open.",
+    "Finite synthetic packages demonstrate the rules on supplied instances and establish no adequacy for the named-entity practice of any edition."
+  ]
+}

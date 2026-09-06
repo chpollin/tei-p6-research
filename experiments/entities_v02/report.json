@@ -1,0 +1,2291 @@
+{
+  "authority": "Synthetic experimental observations; not a Vault grounding source or human acceptance.",
+  "canonical_checks": [
+    {
+      "package": "entity-kinds-all-six",
+      "passed": true,
+      "sha256": "6e073f6aa51ee8308f53e0d84161a7d429dd9fdc9a22760f318f778418c6fe5c"
+    },
+    {
+      "package": "entity-only-identity-fields",
+      "passed": true,
+      "sha256": "485db328ec25709ea8f1e6c3e90497caaf2279c65f7931aa75beb83099f8ee13"
+    },
+    {
+      "package": "entity-without-name",
+      "passed": true,
+      "sha256": "03a9b7d2f5d6640c5dd9b0fdc51ead95c40f37c064f1087f78e4facee6f880c8"
+    },
+    {
+      "package": "name-parts-all-kinds",
+      "passed": true,
+      "sha256": "4462e82fcaa4021318f14216fdafb798d3e2bfda93e6e774f09470b956a44223"
+    },
+    {
+      "package": "name-language-admitted-forms",
+      "passed": true,
+      "sha256": "2f5114bb8e6489d03f57d732593ec84b51694e4444d79d6d4670a3076f85b0ca"
+    },
+    {
+      "package": "name-without-mention",
+      "passed": true,
+      "sha256": "372a316abb3daf10510f2df303b221c26b587c87cd52f62a48ae91bb4afeede2"
+    },
+    {
+      "package": "name-supersession-current",
+      "passed": true,
+      "sha256": "79051c87156bc89f8c02f8124a86ac9265bc4fcd0cb16f65c77214ced699a36e"
+    },
+    {
+      "package": "names-of-validity-order",
+      "passed": true,
+      "sha256": "3b89fca48a8aa75223da7f206f8ec64bb6e0bda1b33c3f5a91be54588192ea14"
+    },
+    {
+      "package": "names-of-include-withdrawn",
+      "passed": true,
+      "sha256": "0491bf88961cd67bf3ebca4aa0ebadd40b33ff9215323d832324e338c8d6cc46"
+    },
+    {
+      "package": "mention-nodes-proper-noun-and-pronoun",
+      "passed": true,
+      "sha256": "ff4be23d28ddbc03ff15d797d5e9402d9a9d9f15084e2bd4306771396b0bbb8c"
+    },
+    {
+      "package": "mention-annotation-discontinuous",
+      "passed": true,
+      "sha256": "4180967fa8441437fa44821e98c82b38af3d7d4fc9c2d6a55fd0471768192945"
+    },
+    {
+      "package": "mention-annotation-ambiguous-quote",
+      "passed": true,
+      "sha256": "f65df288db90158df4e5d85a8ee0115ddfdf6d04745488308817509794fe9f17"
+    },
+    {
+      "package": "mention-undenoted",
+      "passed": true,
+      "sha256": "f8df0032d8d63e2527d179239453dc1257aa68ec3aa15222dcba17ed80cf1236"
+    },
+    {
+      "package": "denotations-two-agents-one-mention",
+      "passed": true,
+      "sha256": "d098eacfb106ed3b4a8c7a5cdfeebddb1ce354e8c1d3b33339ed515f253861f5"
+    },
+    {
+      "package": "denotations-one-agent-two-certainties",
+      "passed": true,
+      "sha256": "3d8f02de998d908b8376ee12e82f907df95989e2c2a2c925e2c9411ccc7ce00b"
+    },
+    {
+      "package": "denotation-superseded",
+      "passed": true,
+      "sha256": "4947838fef7907126193bcc3d89e32a8fc8cedcb8dfd1533e2a06f2a83e48cec"
+    },
+    {
+      "package": "denotation-withdrawn",
+      "passed": true,
+      "sha256": "96bcc18f1bf17bf0d7f0a798154ed0e1a9dc277d2ad5af8008e37f4fff7862c3"
+    },
+    {
+      "package": "denotation-status-proposed",
+      "passed": true,
+      "sha256": "f2545a054f2d34ec33e830abe83ac5d19bf5d3080ee577a8fcae11f714cce8fc"
+    },
+    {
+      "package": "operations-on-unknown-subject",
+      "passed": true,
+      "sha256": "03a9b7d2f5d6640c5dd9b0fdc51ead95c40f37c064f1087f78e4facee6f880c8"
+    },
+    {
+      "package": "statement-kinds-all-four",
+      "passed": true,
+      "sha256": "479083849bee650d658bcb3191b8f8254289a1d7620e119abafbeb1601cc369a"
+    },
+    {
+      "package": "statement-participants-mixed-kinds",
+      "passed": true,
+      "sha256": "c40002debd7fb335e67a723d887f653e5e19b441999e993c294e565214bca0a5"
+    },
+    {
+      "package": "statement-participants-same-entity-two-roles",
+      "passed": true,
+      "sha256": "f1181339fc39223e0955a9aa962a168274008612b4029d609d75c857cf986128"
+    },
+    {
+      "package": "alignment-relations-all-four",
+      "passed": true,
+      "sha256": "a718cfd2301808eb0262a547735f4ae3c3473f1cfb39a1d2d0bef6c60ab013eb"
+    },
+    {
+      "package": "alignment-two-entities-one-iri",
+      "passed": true,
+      "sha256": "a16592953867134ab64aa0310d93c2eef15a39d7f785e6d052ddf949f63b36c5"
+    },
+    {
+      "package": "alignment-ref-with-several-uris",
+      "passed": true,
+      "sha256": "0a2df6438b48a970e06faa733af8157e4a6e70ac4da7a342cc9a39c659ed805c"
+    },
+    {
+      "package": "alignment-on-concept-and-agent",
+      "passed": true,
+      "sha256": "76c494c3f94cb181757dfe7fccfa6261e52999943b5aa7f1e96e48f1670c2c77"
+    },
+    {
+      "package": "claim-valid-mixed-precision",
+      "passed": true,
+      "sha256": "cff03650a1895dcd924778b467038139b2a9a447275c911401ca45497e1d6ef5"
+    },
+    {
+      "package": "canonical-order-registry-sequence",
+      "passed": true,
+      "sha256": "1197c663e530959546673affb15d616ec9321bc2f0437e09e233f4c37492da44"
+    },
+    {
+      "package": "canonical-order-permuted",
+      "passed": true,
+      "sha256": "1197c663e530959546673affb15d616ec9321bc2f0437e09e233f4c37492da44"
+    },
+    {
+      "package": "package-base-and-former-bases",
+      "passed": true,
+      "sha256": "0276a4dde1f174dc5e00f4db6159eadf00807a337132c7ec49d880e7322e09a8"
+    },
+    {
+      "package": "valid-at-both-versions",
+      "passed": true,
+      "sha256": "55335c3870f5d134e549362004cda466fb9ce76ea2ee8c95fb1bbd1928b84d29"
+    },
+    {
+      "package": "mentions-and-denotations.json",
+      "passed": true,
+      "sha256": "81368098bc8433ac39fb92e361237af0a7326cf91a13999d1ae3cbb6c1f36235"
+    },
+    {
+      "package": "statements-and-revision.json",
+      "passed": true,
+      "sha256": "e526393a6108d318538f983de30aff5f3c16038cd31a21a2e8d3675a69baf8ac"
+    }
+  ],
+  "cases": [
+    {
+      "actual": {
+        "diagnostics": [],
+        "valid": true
+      },
+      "codes_match": true,
+      "description": "R14 admits an entity record of each of the six kinds person, group, place, event, object and other while every other new collection stays empty.",
+      "expected": {
+        "diagnostics": [],
+        "valid": true
+      },
+      "id": "entity-kinds-all-six",
+      "nonmutating": true,
+      "operations": [],
+      "passed": true
+    },
+    {
+      "actual": {
+        "diagnostics": [
+          {
+            "code": "E_ENTITY_KIND",
+            "path": "/entities/0/kind"
+          }
+        ],
+        "valid": false
+      },
+      "codes_match": true,
+      "description": "A kind outside the closed set of six fails the closed-set check of constraint 11 with E_ENTITY_KIND on the kind field.",
+      "expected": {
+        "diagnostics": [
+          {
+            "code": "E_ENTITY_KIND",
+            "path": "/entities/0/kind"
+          }
+        ],
+        "valid": false
+      },
+      "id": "entity-kind-invalid",
+      "nonmutating": true,
+      "operations": [],
+      "passed": true
+    },
+    {
+      "actual": {
+        "diagnostics": [],
+        "valid": true
+      },
+      "codes_match": true,
+      "description": "R14 lets an entity carry nothing but id, label and kind, since every fact about the thing is a claim carried elsewhere.",
+      "expected": {
+        "diagnostics": [],
+        "valid": true
+      },
+      "id": "entity-only-identity-fields",
+      "nonmutating": true,
+      "operations": [],
+      "passed": true
+    },
+    {
+      "actual": {
+        "diagnostics": [
+          {
+            "code": "E_SHAPE",
+            "path": "/entities/0/label"
+          }
+        ],
+        "valid": false
+      },
+      "codes_match": true,
+      "description": "An empty label fails the nonempty-string shape check that section 5 applies to the new collections without change.",
+      "expected": {
+        "diagnostics": [
+          {
+            "code": "E_SHAPE",
+            "path": "/entities/0/label"
+          }
+        ],
+        "valid": false
+      },
+      "id": "entity-label-empty",
+      "nonmutating": true,
+      "operations": [],
+      "passed": true
+    },
+    {
+      "actual": {
+        "diagnostics": [],
+        "valid": true
+      },
+      "codes_match": true,
+      "description": "Constraint 5 keeps an entity valid that a mention denotes while no name claim exists for it.",
+      "expected": {
+        "diagnostics": [],
+        "valid": true
+      },
+      "id": "entity-without-name",
+      "nonmutating": true,
+      "operations": [],
+      "passed": true
+    },
+    {
+      "actual": {
+        "diagnostics": [],
+        "valid": true
+      },
+      "codes_match": true,
+      "description": "R17 admits an ordered parts array with one component of each of the six part kinds surname, forename, role-name, add-name, name-link and gen-name.",
+      "expected": {
+        "diagnostics": [],
+        "valid": true
+      },
+      "id": "name-parts-all-kinds",
+      "nonmutating": true,
+      "operations": [],
+      "passed": true
+    },
+    {
+      "actual": {
+        "diagnostics": [
+          {
+            "code": "E_NAME_PART",
+            "path": "/names/0/parts/0/form"
+          },
+          {
+            "code": "E_NAME_PART",
+            "path": "/names/0/parts/1/kind"
+          }
+        ],
+        "valid": false
+      },
+      "codes_match": true,
+      "description": "A part kind outside the closed set and a part with an empty form both fail with E_NAME_PART under constraint 11.",
+      "expected": {
+        "diagnostics": [
+          {
+            "code": "E_NAME_PART",
+            "path": "/names/0/parts/0/form"
+          },
+          {
+            "code": "E_NAME_PART",
+            "path": "/names/0/parts/1/kind"
+          }
+        ],
+        "valid": false
+      },
+      "id": "name-parts-malformed",
+      "nonmutating": true,
+      "operations": [],
+      "passed": true
+    },
+    {
+      "actual": {
+        "diagnostics": [],
+        "valid": true
+      },
+      "codes_match": true,
+      "description": "R17 requires a language tag on every name claim and admits a bare subtag, a tag with further subtags and the undetermined tag und.",
+      "expected": {
+        "diagnostics": [],
+        "valid": true
+      },
+      "id": "name-language-admitted-forms",
+      "nonmutating": true,
+      "operations": [],
+      "passed": true
+    },
+    {
+      "actual": {
+        "diagnostics": [
+          {
+            "code": "E_LANGUAGE",
+            "path": "/names/0/language"
+          }
+        ],
+        "valid": false
+      },
+      "codes_match": true,
+      "description": "A language tag outside the lexical form of BCP 47 fails with E_LANGUAGE on the language field.",
+      "expected": {
+        "diagnostics": [
+          {
+            "code": "E_LANGUAGE",
+            "path": "/names/0/language"
+          }
+        ],
+        "valid": false
+      },
+      "id": "name-language-invalid",
+      "nonmutating": true,
+      "operations": [],
+      "passed": true
+    },
+    {
+      "actual": {
+        "diagnostics": [
+          {
+            "code": "E_SHAPE",
+            "path": "/names/0"
+          }
+        ],
+        "valid": false
+      },
+      "codes_match": true,
+      "description": "The language tag is a required content field of the name claim, so its absence is a missing field under section 5 and gives E_SHAPE on the record.",
+      "expected": {
+        "diagnostics": [
+          {
+            "code": "E_SHAPE",
+            "path": "/names/0"
+          }
+        ],
+        "valid": false
+      },
+      "id": "name-language-missing",
+      "nonmutating": true,
+      "operations": [],
+      "passed": true
+    },
+    {
+      "actual": {
+        "diagnostics": [],
+        "valid": true
+      },
+      "codes_match": true,
+      "description": "Constraint 5 keeps a name claim valid for an entity that no text mentions, and the optional fraction of created is admitted.",
+      "expected": {
+        "diagnostics": [],
+        "valid": true
+      },
+      "id": "name-without-mention",
+      "nonmutating": true,
+      "operations": [],
+      "passed": true
+    },
+    {
+      "actual": {
+        "diagnostics": [],
+        "valid": true
+      },
+      "codes_match": true,
+      "description": "R20 makes a superseding name claim of the same agent about the same entity the current one, and names_of returns it alone.",
+      "expected": {
+        "diagnostics": [],
+        "valid": true
+      },
+      "id": "name-supersession-current",
+      "nonmutating": true,
+      "operations": [
+        {
+          "actual": {
+            "diagnostics": [],
+            "names": [
+              {
+                "agent": "ag-x",
+                "created": "2026-05-04T10:00:00Z",
+                "entity": "ent-a",
+                "form": "Person A die Ältere",
+                "id": "nm-2",
+                "language": "de",
+                "status": "asserted",
+                "supersedes": [
+                  "nm-1"
+                ]
+              }
+            ]
+          },
+          "arguments": {
+            "entity_id": "ent-a",
+            "include_withdrawn": false
+          },
+          "expected": {
+            "diagnostics": [],
+            "names": [
+              {
+                "agent": "ag-x",
+                "created": "2026-05-04T10:00:00Z",
+                "entity": "ent-a",
+                "form": "Person A die Ältere",
+                "id": "nm-2",
+                "language": "de",
+                "status": "asserted",
+                "supersedes": [
+                  "nm-1"
+                ]
+              }
+            ]
+          },
+          "name": "names_of",
+          "passed": true
+        }
+      ],
+      "passed": true
+    },
+    {
+      "actual": {
+        "diagnostics": [],
+        "valid": true
+      },
+      "codes_match": true,
+      "description": "names_of returns the current name claims in validity order, claims without valid first, then ascending by from with an absent from first, then ascending by until with an absent until last, then by claim ID.",
+      "expected": {
+        "diagnostics": [],
+        "valid": true
+      },
+      "id": "names-of-validity-order",
+      "nonmutating": true,
+      "operations": [
+        {
+          "actual": {
+            "diagnostics": [],
+            "names": [
+              {
+                "agent": "ag-x",
+                "created": "2026-05-04T10:00:00Z",
+                "entity": "ent-a",
+                "form": "Person A",
+                "id": "nm-plain",
+                "language": "de",
+                "status": "asserted",
+                "supersedes": []
+              },
+              {
+                "agent": "ag-x",
+                "created": "2026-05-04T10:00:00Z",
+                "entity": "ent-a",
+                "form": "Person A die Jüngere",
+                "id": "nm-until",
+                "language": "de",
+                "status": "asserted",
+                "supersedes": [],
+                "valid": {
+                  "until": "1500"
+                }
+              },
+              {
+                "agent": "ag-x",
+                "created": "2026-05-04T10:00:00Z",
+                "entity": "ent-a",
+                "form": "Person A die Ältere",
+                "id": "nm-from-until",
+                "language": "de",
+                "status": "asserted",
+                "supersedes": [],
+                "valid": {
+                  "from": "1400",
+                  "until": "1450"
+                }
+              },
+              {
+                "agent": "ag-x",
+                "created": "2026-05-04T10:00:00Z",
+                "entity": "ent-a",
+                "form": "Person A von Ort B",
+                "id": "nm-from",
+                "language": "de",
+                "status": "asserted",
+                "supersedes": [],
+                "valid": {
+                  "from": "1400"
+                }
+              },
+              {
+                "agent": "ag-x",
+                "created": "2026-05-04T10:00:00Z",
+                "entity": "ent-a",
+                "form": "Person A zu Ort B",
+                "id": "nm-from-month",
+                "language": "de",
+                "status": "asserted",
+                "supersedes": [],
+                "valid": {
+                  "from": "1400-06"
+                }
+              }
+            ]
+          },
+          "arguments": {
+            "entity_id": "ent-a",
+            "include_withdrawn": false
+          },
+          "expected": {
+            "diagnostics": [],
+            "names": [
+              {
+                "agent": "ag-x",
+                "created": "2026-05-04T10:00:00Z",
+                "entity": "ent-a",
+                "form": "Person A",
+                "id": "nm-plain",
+                "language": "de",
+                "status": "asserted",
+                "supersedes": []
+              },
+              {
+                "agent": "ag-x",
+                "created": "2026-05-04T10:00:00Z",
+                "entity": "ent-a",
+                "form": "Person A die Jüngere",
+                "id": "nm-until",
+                "language": "de",
+                "status": "asserted",
+                "supersedes": [],
+                "valid": {
+                  "until": "1500"
+                }
+              },
+              {
+                "agent": "ag-x",
+                "created": "2026-05-04T10:00:00Z",
+                "entity": "ent-a",
+                "form": "Person A die Ältere",
+                "id": "nm-from-until",
+                "language": "de",
+                "status": "asserted",
+                "supersedes": [],
+                "valid": {
+                  "from": "1400",
+                  "until": "1450"
+                }
+              },
+              {
+                "agent": "ag-x",
+                "created": "2026-05-04T10:00:00Z",
+                "entity": "ent-a",
+                "form": "Person A von Ort B",
+                "id": "nm-from",
+                "language": "de",
+                "status": "asserted",
+                "supersedes": [],
+                "valid": {
+                  "from": "1400"
+                }
+              },
+              {
+                "agent": "ag-x",
+                "created": "2026-05-04T10:00:00Z",
+                "entity": "ent-a",
+                "form": "Person A zu Ort B",
+                "id": "nm-from-month",
+                "language": "de",
+                "status": "asserted",
+                "supersedes": [],
+                "valid": {
+                  "from": "1400-06"
+                }
+              }
+            ]
+          },
+          "name": "names_of",
+          "passed": true
+        }
+      ],
+      "passed": true
+    },
+    {
+      "actual": {
+        "diagnostics": [],
+        "valid": true
+      },
+      "codes_match": true,
+      "description": "A withdrawn name claim is current under section 13 and appears in names_of only when include_withdrawn is true.",
+      "expected": {
+        "diagnostics": [],
+        "valid": true
+      },
+      "id": "names-of-include-withdrawn",
+      "nonmutating": true,
+      "operations": [
+        {
+          "actual": {
+            "diagnostics": [],
+            "names": [
+              {
+                "agent": "ag-x",
+                "created": "2026-05-04T10:00:00Z",
+                "entity": "ent-a",
+                "form": "Person A",
+                "id": "nm-1",
+                "language": "de",
+                "status": "asserted",
+                "supersedes": []
+              }
+            ]
+          },
+          "arguments": {
+            "entity_id": "ent-a",
+            "include_withdrawn": false
+          },
+          "expected": {
+            "diagnostics": [],
+            "names": [
+              {
+                "agent": "ag-x",
+                "created": "2026-05-04T10:00:00Z",
+                "entity": "ent-a",
+                "form": "Person A",
+                "id": "nm-1",
+                "language": "de",
+                "status": "asserted",
+                "supersedes": []
+              }
+            ]
+          },
+          "name": "names_of",
+          "passed": true
+        },
+        {
+          "actual": {
+            "diagnostics": [],
+            "names": [
+              {
+                "agent": "ag-x",
+                "created": "2026-05-04T10:00:00Z",
+                "entity": "ent-a",
+                "form": "Person A",
+                "id": "nm-1",
+                "language": "de",
+                "status": "asserted",
+                "supersedes": []
+              },
+              {
+                "agent": "ag-x",
+                "created": "2026-05-04T10:00:00Z",
+                "entity": "ent-a",
+                "form": "Persona A",
+                "id": "nm-3",
+                "language": "de",
+                "status": "withdrawn",
+                "supersedes": [
+                  "nm-2"
+                ]
+              }
+            ]
+          },
+          "arguments": {
+            "entity_id": "ent-a",
+            "include_withdrawn": true
+          },
+          "expected": {
+            "diagnostics": [],
+            "names": [
+              {
+                "agent": "ag-x",
+                "created": "2026-05-04T10:00:00Z",
+                "entity": "ent-a",
+                "form": "Person A",
+                "id": "nm-1",
+                "language": "de",
+                "status": "asserted",
+                "supersedes": []
+              },
+              {
+                "agent": "ag-x",
+                "created": "2026-05-04T10:00:00Z",
+                "entity": "ent-a",
+                "form": "Persona A",
+                "id": "nm-3",
+                "language": "de",
+                "status": "withdrawn",
+                "supersedes": [
+                  "nm-2"
+                ]
+              }
+            ]
+          },
+          "name": "names_of",
+          "passed": true
+        }
+      ],
+      "passed": true
+    },
+    {
+      "actual": {
+        "diagnostics": [],
+        "valid": true
+      },
+      "codes_match": true,
+      "description": "R15 accepts a reading node with the reserved proper-noun concept and one with the reserved pronoun concept as denotation subjects.",
+      "expected": {
+        "diagnostics": [],
+        "valid": true
+      },
+      "id": "mention-nodes-proper-noun-and-pronoun",
+      "nonmutating": true,
+      "operations": [
+        {
+          "actual": {
+            "denotations": [
+              {
+                "agent": "ag-x",
+                "created": "2026-05-04T10:00:00Z",
+                "entity": "ent-a",
+                "id": "dn-1",
+                "kind": "person",
+                "label": "Person A",
+                "mention": "nd-1",
+                "status": "asserted",
+                "supersedes": []
+              }
+            ],
+            "diagnostics": []
+          },
+          "arguments": {
+            "include_withdrawn": false,
+            "mention_id": "nd-1"
+          },
+          "expected": {
+            "denotations": [
+              {
+                "agent": "ag-x",
+                "created": "2026-05-04T10:00:00Z",
+                "entity": "ent-a",
+                "id": "dn-1",
+                "kind": "person",
+                "label": "Person A",
+                "mention": "nd-1",
+                "status": "asserted",
+                "supersedes": []
+              }
+            ],
+            "diagnostics": []
+          },
+          "name": "denotations_of",
+          "passed": true
+        }
+      ],
+      "passed": true
+    },
+    {
+      "actual": {
+        "diagnostics": [],
+        "valid": true
+      },
+      "codes_match": true,
+      "description": "A referring expression with a discontinuous extent is an annotation with a mention concept under constraint 10, and its denotation stays valid.",
+      "expected": {
+        "diagnostics": [],
+        "valid": true
+      },
+      "id": "mention-annotation-discontinuous",
+      "nonmutating": true,
+      "operations": [
+        {
+          "actual": {
+            "denotations": [
+              {
+                "agent": "ag-x",
+                "created": "2026-05-04T10:00:00Z",
+                "entity": "ent-a",
+                "id": "dn-1",
+                "kind": "person",
+                "label": "Person A",
+                "mention": "an-1",
+                "status": "asserted",
+                "supersedes": []
+              }
+            ],
+            "diagnostics": []
+          },
+          "arguments": {
+            "include_withdrawn": false,
+            "mention_id": "an-1"
+          },
+          "expected": {
+            "denotations": [
+              {
+                "agent": "ag-x",
+                "created": "2026-05-04T10:00:00Z",
+                "entity": "ent-a",
+                "id": "dn-1",
+                "kind": "person",
+                "label": "Person A",
+                "mention": "an-1",
+                "status": "asserted",
+                "supersedes": []
+              }
+            ],
+            "diagnostics": []
+          },
+          "name": "denotations_of",
+          "passed": true
+        }
+      ],
+      "passed": true
+    },
+    {
+      "actual": {
+        "diagnostics": [
+          {
+            "code": "W_AMBIGUOUS",
+            "path": "/selections/0/selector"
+          }
+        ],
+        "valid": true
+      },
+      "codes_match": true,
+      "description": "A mention annotation whose quotation selector is ambiguous keeps its denotation valid under the warnings of section 2.",
+      "expected": {
+        "diagnostics": [
+          {
+            "code": "W_AMBIGUOUS",
+            "path": "/selections/0/selector"
+          }
+        ],
+        "valid": true
+      },
+      "id": "mention-annotation-ambiguous-quote",
+      "nonmutating": true,
+      "operations": [],
+      "passed": true
+    },
+    {
+      "actual": {
+        "diagnostics": [
+          {
+            "code": "W_UNDENOTED",
+            "path": "/annotations/0"
+          },
+          {
+            "code": "W_UNDENOTED",
+            "path": "/readings/0/nodes/0"
+          }
+        ],
+        "valid": true
+      },
+      "codes_match": true,
+      "description": "Constraint 3 warns with W_UNDENOTED for a mention node and for a mention annotation that carry no current denotation claim, and leaves the package valid.",
+      "expected": {
+        "diagnostics": [
+          {
+            "code": "W_UNDENOTED",
+            "path": "/annotations/0"
+          },
+          {
+            "code": "W_UNDENOTED",
+            "path": "/readings/0/nodes/0"
+          }
+        ],
+        "valid": true
+      },
+      "id": "mention-undenoted",
+      "nonmutating": true,
+      "operations": [],
+      "passed": true
+    },
+    {
+      "actual": {
+        "diagnostics": [
+          {
+            "code": "E_MENTION",
+            "path": "/concepts/0"
+          }
+        ],
+        "valid": false
+      },
+      "codes_match": true,
+      "description": "A package that uses a reserved mention concept but changes its exact record fails with E_MENTION on the concept record.",
+      "expected": {
+        "diagnostics": [
+          {
+            "code": "E_MENTION",
+            "path": "/concepts/0"
+          }
+        ],
+        "valid": false
+      },
+      "id": "mention-concept-record-deviates",
+      "nonmutating": true,
+      "operations": [],
+      "passed": true
+    },
+    {
+      "actual": {
+        "diagnostics": [
+          {
+            "code": "E_REFERENCE",
+            "path": "/denotations/0/entity"
+          },
+          {
+            "code": "E_REFERENCE",
+            "path": "/denotations/1/entity"
+          },
+          {
+            "code": "E_REFERENCE",
+            "path": "/denotations/2/entity"
+          },
+          {
+            "code": "E_REFERENCE",
+            "path": "/denotations/3/entity"
+          }
+        ],
+        "valid": false
+      },
+      "codes_match": true,
+      "description": "Constraint 2 rejects a denotation whose entity field names a concept, a version, another mention or an IRI string, each with E_REFERENCE; the error suppresses the warning stage of section 5, so no W_UNDENOTED accompanies it.",
+      "expected": {
+        "diagnostics": [
+          {
+            "code": "E_REFERENCE",
+            "path": "/denotations/0/entity"
+          },
+          {
+            "code": "E_REFERENCE",
+            "path": "/denotations/1/entity"
+          },
+          {
+            "code": "E_REFERENCE",
+            "path": "/denotations/2/entity"
+          },
+          {
+            "code": "E_REFERENCE",
+            "path": "/denotations/3/entity"
+          }
+        ],
+        "valid": false
+      },
+      "id": "denotation-entity-non-entity-targets",
+      "nonmutating": true,
+      "operations": [],
+      "passed": true
+    },
+    {
+      "actual": {
+        "diagnostics": [
+          {
+            "code": "E_REFERENCE",
+            "path": "/denotations/0/mention"
+          }
+        ],
+        "valid": false
+      },
+      "codes_match": true,
+      "description": "Constraint 2 rejects a denotation whose mention field names a record of another category with E_REFERENCE; the error suppresses the warning stage of section 5, so no W_UNDENOTED accompanies it.",
+      "expected": {
+        "diagnostics": [
+          {
+            "code": "E_REFERENCE",
+            "path": "/denotations/0/mention"
+          }
+        ],
+        "valid": false
+      },
+      "id": "denotation-mention-unresolvable",
+      "nonmutating": true,
+      "operations": [],
+      "passed": true
+    },
+    {
+      "actual": {
+        "diagnostics": [
+          {
+            "code": "E_MENTION",
+            "path": "/denotations/0/mention"
+          }
+        ],
+        "valid": false
+      },
+      "codes_match": true,
+      "description": "Constraint 3 rejects a denotation whose subject is a reading node carrying a node concept that is no reserved mention concept, with E_MENTION.",
+      "expected": {
+        "diagnostics": [
+          {
+            "code": "E_MENTION",
+            "path": "/denotations/0/mention"
+          }
+        ],
+        "valid": false
+      },
+      "id": "denotation-from-non-mention-node",
+      "nonmutating": true,
+      "operations": [],
+      "passed": true
+    },
+    {
+      "actual": {
+        "diagnostics": [
+          {
+            "code": "E_MENTION",
+            "path": "/denotations/0/mention"
+          }
+        ],
+        "valid": false
+      },
+      "codes_match": true,
+      "description": "An annotation without the optional concept field is what it was in v0.1 and is therefore no mention, so a denotation on it fails with E_MENTION.",
+      "expected": {
+        "diagnostics": [
+          {
+            "code": "E_MENTION",
+            "path": "/denotations/0/mention"
+          }
+        ],
+        "valid": false
+      },
+      "id": "denotation-from-annotation-without-concept",
+      "nonmutating": true,
+      "operations": [],
+      "passed": true
+    },
+    {
+      "actual": {
+        "diagnostics": [],
+        "valid": true
+      },
+      "codes_match": true,
+      "description": "R16 lets two agents identify one mention with two entities as coexisting claims that denotations_of lists by agent ID and then by claim ID.",
+      "expected": {
+        "diagnostics": [],
+        "valid": true
+      },
+      "id": "denotations-two-agents-one-mention",
+      "nonmutating": true,
+      "operations": [
+        {
+          "actual": {
+            "denotations": [
+              {
+                "agent": "ag-x",
+                "created": "2026-05-04T10:00:00Z",
+                "entity": "ent-a",
+                "id": "dn-x",
+                "kind": "person",
+                "label": "Person A",
+                "mention": "nd-1",
+                "status": "asserted",
+                "supersedes": []
+              },
+              {
+                "agent": "ag-y",
+                "created": "2026-05-04T10:00:00Z",
+                "entity": "ent-b",
+                "id": "dn-y",
+                "kind": "place",
+                "label": "Ort B",
+                "mention": "nd-1",
+                "status": "asserted",
+                "supersedes": []
+              }
+            ],
+            "diagnostics": []
+          },
+          "arguments": {
+            "include_withdrawn": false,
+            "mention_id": "nd-1"
+          },
+          "expected": {
+            "denotations": [
+              {
+                "agent": "ag-x",
+                "created": "2026-05-04T10:00:00Z",
+                "entity": "ent-a",
+                "id": "dn-x",
+                "kind": "person",
+                "label": "Person A",
+                "mention": "nd-1",
+                "status": "asserted",
+                "supersedes": []
+              },
+              {
+                "agent": "ag-y",
+                "created": "2026-05-04T10:00:00Z",
+                "entity": "ent-b",
+                "id": "dn-y",
+                "kind": "place",
+                "label": "Ort B",
+                "mention": "nd-1",
+                "status": "asserted",
+                "supersedes": []
+              }
+            ],
+            "diagnostics": []
+          },
+          "name": "denotations_of",
+          "passed": true
+        }
+      ],
+      "passed": true
+    },
+    {
+      "actual": {
+        "diagnostics": [],
+        "valid": true
+      },
+      "codes_match": true,
+      "description": "Constraint 4 lets one agent hold two identifications of one mention with different certainties, and validation derives no winner among them.",
+      "expected": {
+        "diagnostics": [],
+        "valid": true
+      },
+      "id": "denotations-one-agent-two-certainties",
+      "nonmutating": true,
+      "operations": [
+        {
+          "actual": {
+            "denotations": [
+              {
+                "agent": "ag-x",
+                "certainty": "high",
+                "created": "2026-05-04T10:00:00Z",
+                "entity": "ent-a",
+                "id": "dn-high",
+                "kind": "person",
+                "label": "Person A",
+                "mention": "nd-1",
+                "status": "asserted",
+                "supersedes": []
+              },
+              {
+                "agent": "ag-x",
+                "certainty": "low",
+                "created": "2026-05-04T10:00:00Z",
+                "entity": "ent-b",
+                "id": "dn-low",
+                "kind": "place",
+                "label": "Ort B",
+                "mention": "nd-1",
+                "status": "asserted",
+                "supersedes": []
+              }
+            ],
+            "diagnostics": []
+          },
+          "arguments": {
+            "include_withdrawn": false,
+            "mention_id": "nd-1"
+          },
+          "expected": {
+            "denotations": [
+              {
+                "agent": "ag-x",
+                "certainty": "high",
+                "created": "2026-05-04T10:00:00Z",
+                "entity": "ent-a",
+                "id": "dn-high",
+                "kind": "person",
+                "label": "Person A",
+                "mention": "nd-1",
+                "status": "asserted",
+                "supersedes": []
+              },
+              {
+                "agent": "ag-x",
+                "certainty": "low",
+                "created": "2026-05-04T10:00:00Z",
+                "entity": "ent-b",
+                "id": "dn-low",
+                "kind": "place",
+                "label": "Ort B",
+                "mention": "nd-1",
+                "status": "asserted",
+                "supersedes": []
+              }
+            ],
+            "diagnostics": []
+          },
+          "name": "denotations_of",
+          "passed": true
+        }
+      ],
+      "passed": true
+    },
+    {
+      "actual": {
+        "diagnostics": [],
+        "valid": true
+      },
+      "codes_match": true,
+      "description": "R20 makes the superseding denotation of the same agent about the same mention the current one, and denotations_of follows the chain.",
+      "expected": {
+        "diagnostics": [],
+        "valid": true
+      },
+      "id": "denotation-superseded",
+      "nonmutating": true,
+      "operations": [
+        {
+          "actual": {
+            "denotations": [
+              {
+                "agent": "ag-x",
+                "created": "2026-05-04T10:00:00Z",
+                "entity": "ent-b",
+                "id": "dn-2",
+                "kind": "place",
+                "label": "Ort B",
+                "mention": "nd-1",
+                "status": "asserted",
+                "supersedes": [
+                  "dn-1"
+                ]
+              }
+            ],
+            "diagnostics": []
+          },
+          "arguments": {
+            "include_withdrawn": false,
+            "mention_id": "nd-1"
+          },
+          "expected": {
+            "denotations": [
+              {
+                "agent": "ag-x",
+                "created": "2026-05-04T10:00:00Z",
+                "entity": "ent-b",
+                "id": "dn-2",
+                "kind": "place",
+                "label": "Ort B",
+                "mention": "nd-1",
+                "status": "asserted",
+                "supersedes": [
+                  "dn-1"
+                ]
+              }
+            ],
+            "diagnostics": []
+          },
+          "name": "denotations_of",
+          "passed": true
+        }
+      ],
+      "passed": true
+    },
+    {
+      "actual": {
+        "diagnostics": [],
+        "valid": true
+      },
+      "codes_match": true,
+      "description": "A withdrawal is a superseding claim with status withdrawn that stays current under section 13, so denotations_of shows it only on request and no W_UNDENOTED is reported for the mention; a ceased identification has no negative claim kind, as the ledger of 14.6 records.",
+      "expected": {
+        "diagnostics": [],
+        "valid": true
+      },
+      "id": "denotation-withdrawn",
+      "nonmutating": true,
+      "operations": [
+        {
+          "actual": {
+            "denotations": [],
+            "diagnostics": []
+          },
+          "arguments": {
+            "include_withdrawn": false,
+            "mention_id": "nd-1"
+          },
+          "expected": {
+            "denotations": [],
+            "diagnostics": []
+          },
+          "name": "denotations_of",
+          "passed": true
+        },
+        {
+          "actual": {
+            "denotations": [
+              {
+                "agent": "ag-x",
+                "created": "2026-05-04T10:00:00Z",
+                "entity": "ent-a",
+                "id": "dn-2",
+                "kind": "person",
+                "label": "Person A",
+                "mention": "nd-1",
+                "status": "withdrawn",
+                "supersedes": [
+                  "dn-1"
+                ]
+              }
+            ],
+            "diagnostics": []
+          },
+          "arguments": {
+            "include_withdrawn": true,
+            "mention_id": "nd-1"
+          },
+          "expected": {
+            "denotations": [
+              {
+                "agent": "ag-x",
+                "created": "2026-05-04T10:00:00Z",
+                "entity": "ent-a",
+                "id": "dn-2",
+                "kind": "person",
+                "label": "Person A",
+                "mention": "nd-1",
+                "status": "withdrawn",
+                "supersedes": [
+                  "dn-1"
+                ]
+              }
+            ],
+            "diagnostics": []
+          },
+          "name": "denotations_of",
+          "passed": true
+        }
+      ],
+      "passed": true
+    },
+    {
+      "actual": {
+        "diagnostics": [
+          {
+            "code": "E_CLAIM_SUPERSESSION",
+            "path": "/denotations/0/supersedes"
+          }
+        ],
+        "valid": false
+      },
+      "codes_match": true,
+      "description": "A withdrawn claim that supersedes nothing fails with E_CLAIM_SUPERSESSION under constraint 8; the error suppresses the warning stage of section 5, so no W_UNDENOTED accompanies it.",
+      "expected": {
+        "diagnostics": [
+          {
+            "code": "E_CLAIM_SUPERSESSION",
+            "path": "/denotations/0/supersedes"
+          }
+        ],
+        "valid": false
+      },
+      "id": "denotation-withdrawn-without-supersedes",
+      "nonmutating": true,
+      "operations": [],
+      "passed": true
+    },
+    {
+      "actual": {
+        "diagnostics": [
+          {
+            "code": "E_CLAIM_CYCLE",
+            "path": "/denotations"
+          }
+        ],
+        "valid": false
+      },
+      "codes_match": true,
+      "description": "Two denotation claims that supersede each other fail with E_CLAIM_CYCLE, reported on the collection as version and reading cycles are in section 5; the error suppresses the warning stage of section 5, so no W_UNDENOTED accompanies it.",
+      "expected": {
+        "diagnostics": [
+          {
+            "code": "E_CLAIM_CYCLE",
+            "path": "/denotations"
+          }
+        ],
+        "valid": false
+      },
+      "id": "supersession-cycle",
+      "nonmutating": true,
+      "operations": [],
+      "passed": true
+    },
+    {
+      "actual": {
+        "diagnostics": [
+          {
+            "code": "E_CLAIM_SUPERSESSION",
+            "path": "/denotations/1/supersedes"
+          },
+          {
+            "code": "E_CLAIM_SUPERSESSION",
+            "path": "/denotations/2/supersedes"
+          },
+          {
+            "code": "E_CLAIM_SUPERSESSION",
+            "path": "/names/0/supersedes"
+          }
+        ],
+        "valid": false
+      },
+      "codes_match": true,
+      "description": "Constraint 8 confines supersession to one agent, one subject and one kind, so a cross-agent, a cross-subject and a cross-kind supersedes each fail with E_CLAIM_SUPERSESSION; the error suppresses the warning stage of section 5, so no W_UNDENOTED accompanies it.",
+      "expected": {
+        "diagnostics": [
+          {
+            "code": "E_CLAIM_SUPERSESSION",
+            "path": "/denotations/1/supersedes"
+          },
+          {
+            "code": "E_CLAIM_SUPERSESSION",
+            "path": "/denotations/2/supersedes"
+          },
+          {
+            "code": "E_CLAIM_SUPERSESSION",
+            "path": "/names/0/supersedes"
+          }
+        ],
+        "valid": false
+      },
+      "id": "supersession-rejected-shapes",
+      "nonmutating": true,
+      "operations": [],
+      "passed": true
+    },
+    {
+      "actual": {
+        "diagnostics": [],
+        "valid": true
+      },
+      "codes_match": true,
+      "description": "Only the status withdrawn is filtered from the reference operations, so a proposed denotation is current and appears by default.",
+      "expected": {
+        "diagnostics": [],
+        "valid": true
+      },
+      "id": "denotation-status-proposed",
+      "nonmutating": true,
+      "operations": [
+        {
+          "actual": {
+            "denotations": [
+              {
+                "agent": "ag-x",
+                "created": "2026-05-04T10:00:00Z",
+                "entity": "ent-a",
+                "id": "dn-1",
+                "kind": "person",
+                "label": "Person A",
+                "mention": "nd-1",
+                "status": "proposed",
+                "supersedes": []
+              }
+            ],
+            "diagnostics": []
+          },
+          "arguments": {
+            "include_withdrawn": false,
+            "mention_id": "nd-1"
+          },
+          "expected": {
+            "denotations": [
+              {
+                "agent": "ag-x",
+                "created": "2026-05-04T10:00:00Z",
+                "entity": "ent-a",
+                "id": "dn-1",
+                "kind": "person",
+                "label": "Person A",
+                "mention": "nd-1",
+                "status": "proposed",
+                "supersedes": []
+              }
+            ],
+            "diagnostics": []
+          },
+          "name": "denotations_of",
+          "passed": true
+        }
+      ],
+      "passed": true
+    },
+    {
+      "actual": {
+        "diagnostics": [],
+        "valid": true
+      },
+      "codes_match": true,
+      "description": "An ID that is no mention gives E_MENTION at /operation/mention and no list, and by the same reading an ID that is no entity gives E_REFERENCE at /operation/entity.",
+      "expected": {
+        "diagnostics": [],
+        "valid": true
+      },
+      "id": "operations-on-unknown-subject",
+      "nonmutating": true,
+      "operations": [
+        {
+          "actual": {
+            "denotations": null,
+            "diagnostics": [
+              {
+                "code": "E_MENTION",
+                "path": "/operation/mention"
+              }
+            ]
+          },
+          "arguments": {
+            "include_withdrawn": false,
+            "mention_id": "ent-a"
+          },
+          "expected": {
+            "denotations": null,
+            "diagnostics": [
+              {
+                "code": "E_MENTION",
+                "path": "/operation/mention"
+              }
+            ]
+          },
+          "name": "denotations_of",
+          "passed": true
+        },
+        {
+          "actual": {
+            "diagnostics": [
+              {
+                "code": "E_REFERENCE",
+                "path": "/operation/entity"
+              }
+            ],
+            "names": null
+          },
+          "arguments": {
+            "entity_id": "nd-1",
+            "include_withdrawn": false
+          },
+          "expected": {
+            "diagnostics": [
+              {
+                "code": "E_REFERENCE",
+                "path": "/operation/entity"
+              }
+            ],
+            "names": null
+          },
+          "name": "names_of",
+          "passed": true
+        }
+      ],
+      "passed": true
+    },
+    {
+      "actual": {
+        "diagnostics": [
+          {
+            "code": "E_ENTITY_KIND",
+            "path": "/entities/0/kind"
+          }
+        ],
+        "valid": false
+      },
+      "codes_match": true,
+      "description": "An invalid package returns its validation diagnostics and no list from denotations_of, since both operations require a valid package.",
+      "expected": {
+        "diagnostics": [
+          {
+            "code": "E_ENTITY_KIND",
+            "path": "/entities/0/kind"
+          }
+        ],
+        "valid": false
+      },
+      "id": "operation-on-invalid-package",
+      "nonmutating": true,
+      "operations": [
+        {
+          "actual": {
+            "denotations": null,
+            "diagnostics": [
+              {
+                "code": "E_ENTITY_KIND",
+                "path": "/entities/0/kind"
+              }
+            ]
+          },
+          "arguments": {
+            "include_withdrawn": false,
+            "mention_id": "nd-1"
+          },
+          "expected": {
+            "denotations": null,
+            "diagnostics": [
+              {
+                "code": "E_ENTITY_KIND",
+                "path": "/entities/0/kind"
+              }
+            ]
+          },
+          "name": "denotations_of",
+          "passed": true
+        }
+      ],
+      "passed": true
+    },
+    {
+      "actual": {
+        "diagnostics": [],
+        "valid": true
+      },
+      "codes_match": true,
+      "description": "R18 admits the four discriminator values trait, state, event and relation on one statement record kind.",
+      "expected": {
+        "diagnostics": [],
+        "valid": true
+      },
+      "id": "statement-kinds-all-four",
+      "nonmutating": true,
+      "operations": [],
+      "passed": true
+    },
+    {
+      "actual": {
+        "diagnostics": [
+          {
+            "code": "E_STATEMENT_KIND",
+            "path": "/statements/0/kind"
+          }
+        ],
+        "valid": false
+      },
+      "codes_match": true,
+      "description": "A discriminator outside the closed set of four fails with E_STATEMENT_KIND under constraint 11.",
+      "expected": {
+        "diagnostics": [
+          {
+            "code": "E_STATEMENT_KIND",
+            "path": "/statements/0/kind"
+          }
+        ],
+        "valid": false
+      },
+      "id": "statement-kind-invalid",
+      "nonmutating": true,
+      "operations": [],
+      "passed": true
+    },
+    {
+      "actual": {
+        "diagnostics": [],
+        "valid": true
+      },
+      "codes_match": true,
+      "description": "Constraint 7 admits participants of any entity kind in a statement of kind relation while the sources disagree about the admitted kinds.",
+      "expected": {
+        "diagnostics": [],
+        "valid": true
+      },
+      "id": "statement-participants-mixed-kinds",
+      "nonmutating": true,
+      "operations": [],
+      "passed": true
+    },
+    {
+      "actual": {
+        "diagnostics": [],
+        "valid": true
+      },
+      "codes_match": true,
+      "description": "R18 forbids a repeated entity-role pair only, so one entity may take two different roles in one statement.",
+      "expected": {
+        "diagnostics": [],
+        "valid": true
+      },
+      "id": "statement-participants-same-entity-two-roles",
+      "nonmutating": true,
+      "operations": [],
+      "passed": true
+    },
+    {
+      "actual": {
+        "diagnostics": [
+          {
+            "code": "E_PARTICIPANTS",
+            "path": "/statements/0/participants"
+          },
+          {
+            "code": "E_PARTICIPANTS",
+            "path": "/statements/1/participants/1"
+          }
+        ],
+        "valid": false
+      },
+      "codes_match": true,
+      "description": "An empty participants array and a repeated entity-role pair both fail with E_PARTICIPANTS.",
+      "expected": {
+        "diagnostics": [
+          {
+            "code": "E_PARTICIPANTS",
+            "path": "/statements/0/participants"
+          },
+          {
+            "code": "E_PARTICIPANTS",
+            "path": "/statements/1/participants/1"
+          }
+        ],
+        "valid": false
+      },
+      "id": "statement-participants-rejected-shapes",
+      "nonmutating": true,
+      "operations": [],
+      "passed": true
+    },
+    {
+      "actual": {
+        "diagnostics": [
+          {
+            "code": "E_REFERENCE",
+            "path": "/statements/0/participants/0/entity"
+          }
+        ],
+        "valid": false
+      },
+      "codes_match": true,
+      "description": "Constraint 2 resolves every participant entity to an entity, so a participant naming a concept fails with E_REFERENCE.",
+      "expected": {
+        "diagnostics": [
+          {
+            "code": "E_REFERENCE",
+            "path": "/statements/0/participants/0/entity"
+          }
+        ],
+        "valid": false
+      },
+      "id": "statement-participant-not-entity",
+      "nonmutating": true,
+      "operations": [],
+      "passed": true
+    },
+    {
+      "actual": {
+        "diagnostics": [
+          {
+            "code": "E_TYPE",
+            "path": "/statements/0/type"
+          }
+        ],
+        "valid": false
+      },
+      "codes_match": true,
+      "description": "A statement type must be a concept with the new role statement, so a concept with role node fails with E_TYPE as in section 5.",
+      "expected": {
+        "diagnostics": [
+          {
+            "code": "E_TYPE",
+            "path": "/statements/0/type"
+          }
+        ],
+        "valid": false
+      },
+      "id": "statement-type-role-node",
+      "nonmutating": true,
+      "operations": [],
+      "passed": true
+    },
+    {
+      "actual": {
+        "diagnostics": [],
+        "valid": true
+      },
+      "codes_match": true,
+      "description": "Section 13 admits the four relation kinds exact, close, broader and narrower on the alignment claims of an entity.",
+      "expected": {
+        "diagnostics": [],
+        "valid": true
+      },
+      "id": "alignment-relations-all-four",
+      "nonmutating": true,
+      "operations": [],
+      "passed": true
+    },
+    {
+      "actual": {
+        "diagnostics": [
+          {
+            "code": "E_ALIGNMENT",
+            "path": "/entities/0/alignments/0/relation"
+          },
+          {
+            "code": "E_ALIGNMENT",
+            "path": "/entities/0/alignments/1/iri"
+          }
+        ],
+        "valid": false
+      },
+      "codes_match": true,
+      "description": "A relation kind outside the closed set and an IRI that is not absolute both fail with E_ALIGNMENT under constraint 11.",
+      "expected": {
+        "diagnostics": [
+          {
+            "code": "E_ALIGNMENT",
+            "path": "/entities/0/alignments/0/relation"
+          },
+          {
+            "code": "E_ALIGNMENT",
+            "path": "/entities/0/alignments/1/iri"
+          }
+        ],
+        "valid": false
+      },
+      "id": "alignment-malformed",
+      "nonmutating": true,
+      "operations": [],
+      "passed": true
+    },
+    {
+      "actual": {
+        "diagnostics": [],
+        "valid": true
+      },
+      "codes_match": true,
+      "description": "R19 derives nothing from alignments, so two entities aligned exact to one IRI stay two entities and the package carries no diagnostic.",
+      "expected": {
+        "diagnostics": [],
+        "valid": true
+      },
+      "id": "alignment-two-entities-one-iri",
+      "nonmutating": true,
+      "operations": [],
+      "passed": true
+    },
+    {
+      "actual": {
+        "diagnostics": [],
+        "valid": true
+      },
+      "codes_match": true,
+      "description": "Constraint 6 maps a P5 ref with several URIs on one naming element to one mention, one denotation claim and one alignment claim per URI on one entity.",
+      "expected": {
+        "diagnostics": [],
+        "valid": true
+      },
+      "id": "alignment-ref-with-several-uris",
+      "nonmutating": true,
+      "operations": [],
+      "passed": true
+    },
+    {
+      "actual": {
+        "diagnostics": [],
+        "valid": true
+      },
+      "codes_match": true,
+      "description": "Section 13 names concept, agent and entity as the carriers of alignment claims, and the extension leaves that carrier set unchanged.",
+      "expected": {
+        "diagnostics": [],
+        "valid": true
+      },
+      "id": "alignment-on-concept-and-agent",
+      "nonmutating": true,
+      "operations": [],
+      "passed": true
+    },
+    {
+      "actual": {
+        "diagnostics": [
+          {
+            "code": "E_DUPLICATE_ID",
+            "path": "/entities/0/alignments/0/id"
+          }
+        ],
+        "valid": false
+      },
+      "codes_match": true,
+      "description": "Constraint 1 makes every nested alignment ID unique across the package, so an alignment repeating the ID of its carrier fails with E_DUPLICATE_ID.",
+      "expected": {
+        "diagnostics": [
+          {
+            "code": "E_DUPLICATE_ID",
+            "path": "/entities/0/alignments/0/id"
+          }
+        ],
+        "valid": false
+      },
+      "id": "alignment-duplicate-id",
+      "nonmutating": true,
+      "operations": [],
+      "passed": true
+    },
+    {
+      "actual": {
+        "diagnostics": [
+          {
+            "code": "E_CLAIM_FIELD",
+            "path": "/names/0/created"
+          }
+        ],
+        "valid": false
+      },
+      "codes_match": true,
+      "description": "A created value that fails the RFC 3339 lexical form or the calendar check gives E_CLAIM_FIELD on the field.",
+      "expected": {
+        "diagnostics": [
+          {
+            "code": "E_CLAIM_FIELD",
+            "path": "/names/0/created"
+          }
+        ],
+        "valid": false
+      },
+      "id": "claim-created-not-rfc3339",
+      "nonmutating": true,
+      "operations": [],
+      "passed": true
+    },
+    {
+      "actual": {
+        "diagnostics": [
+          {
+            "code": "E_SHAPE",
+            "path": "/names/0"
+          }
+        ],
+        "valid": false
+      },
+      "codes_match": true,
+      "description": "The created instant is a required pattern field of an extension claim, so its absence is a missing field under section 5 and gives E_SHAPE.",
+      "expected": {
+        "diagnostics": [
+          {
+            "code": "E_SHAPE",
+            "path": "/names/0"
+          }
+        ],
+        "valid": false
+      },
+      "id": "claim-created-missing",
+      "nonmutating": true,
+      "operations": [],
+      "passed": true
+    },
+    {
+      "actual": {
+        "diagnostics": [
+          {
+            "code": "E_CLAIM_FIELD",
+            "path": "/names/0/status"
+          },
+          {
+            "code": "E_CLAIM_FIELD",
+            "path": "/names/1/certainty"
+          }
+        ],
+        "valid": false
+      },
+      "codes_match": true,
+      "description": "A status outside proposed, asserted and withdrawn and a certainty outside high, medium and low both give E_CLAIM_FIELD.",
+      "expected": {
+        "diagnostics": [
+          {
+            "code": "E_CLAIM_FIELD",
+            "path": "/names/0/status"
+          },
+          {
+            "code": "E_CLAIM_FIELD",
+            "path": "/names/1/certainty"
+          }
+        ],
+        "valid": false
+      },
+      "id": "claim-status-and-certainty-outside-set",
+      "nonmutating": true,
+      "operations": [],
+      "passed": true
+    },
+    {
+      "actual": {
+        "diagnostics": [
+          {
+            "code": "E_CLAIM_FIELD",
+            "path": "/names/0/valid"
+          },
+          {
+            "code": "E_CLAIM_FIELD",
+            "path": "/names/1/valid"
+          }
+        ],
+        "valid": false
+      },
+      "codes_match": true,
+      "description": "A validity scope whose from lies after its until and one that carries neither bound both give E_CLAIM_FIELD on the valid field.",
+      "expected": {
+        "diagnostics": [
+          {
+            "code": "E_CLAIM_FIELD",
+            "path": "/names/0/valid"
+          },
+          {
+            "code": "E_CLAIM_FIELD",
+            "path": "/names/1/valid"
+          }
+        ],
+        "valid": false
+      },
+      "id": "claim-valid-malformed",
+      "nonmutating": true,
+      "operations": [],
+      "passed": true
+    },
+    {
+      "actual": {
+        "diagnostics": [],
+        "valid": true
+      },
+      "codes_match": true,
+      "description": "Section 13 reads from as the start and until as the end of its calendar unit, so a year bound before a day bound of the same year is in order.",
+      "expected": {
+        "diagnostics": [],
+        "valid": true
+      },
+      "id": "claim-valid-mixed-precision",
+      "nonmutating": true,
+      "operations": [],
+      "passed": true
+    },
+    {
+      "actual": {
+        "diagnostics": [],
+        "valid": true
+      },
+      "codes_match": true,
+      "description": "R11 ignores registry order, so this package and its permutation canonical-order-permuted carry the same validity and the same diagnostics.",
+      "expected": {
+        "diagnostics": [],
+        "valid": true
+      },
+      "id": "canonical-order-registry-sequence",
+      "nonmutating": true,
+      "operations": [],
+      "passed": true
+    },
+    {
+      "actual": {
+        "diagnostics": [],
+        "valid": true
+      },
+      "codes_match": true,
+      "description": "The permutation of canonical-order-registry-sequence differs in the order of agents, entities and name claims only and is valid with the same diagnostics.",
+      "expected": {
+        "diagnostics": [],
+        "valid": true
+      },
+      "id": "canonical-order-permuted",
+      "nonmutating": true,
+      "operations": [],
+      "passed": true
+    },
+    {
+      "actual": {
+        "diagnostics": [
+          {
+            "code": "E_DUPLICATE_ID",
+            "path": "/entities/0/id"
+          }
+        ],
+        "valid": false
+      },
+      "codes_match": true,
+      "description": "Constraint 1 makes every record ID unique across the package, and the new collections follow the nine of v0.1, so the entity repeating a reading node ID carries the E_DUPLICATE_ID; the error suppresses the warning stage of section 5, so no W_UNDENOTED accompanies it.",
+      "expected": {
+        "diagnostics": [
+          {
+            "code": "E_DUPLICATE_ID",
+            "path": "/entities/0/id"
+          }
+        ],
+        "valid": false
+      },
+      "id": "duplicate-id-entity-and-reading-node",
+      "nonmutating": true,
+      "operations": [],
+      "passed": true
+    },
+    {
+      "actual": {
+        "diagnostics": [],
+        "valid": true
+      },
+      "codes_match": true,
+      "description": "Section 13 admits one base IRI ending in a slash and an array of former-base claims, and 14.1 keeps both optional in a 0.2 package.",
+      "expected": {
+        "diagnostics": [],
+        "valid": true
+      },
+      "id": "package-base-and-former-bases",
+      "nonmutating": true,
+      "operations": [],
+      "passed": true
+    },
+    {
+      "actual": {
+        "diagnostics": [
+          {
+            "code": "E_BASE",
+            "path": "/base"
+          }
+        ],
+        "valid": false
+      },
+      "codes_match": true,
+      "description": "A base with a query component and without a trailing slash or hash fails its grammar with E_BASE.",
+      "expected": {
+        "diagnostics": [
+          {
+            "code": "E_BASE",
+            "path": "/base"
+          }
+        ],
+        "valid": false
+      },
+      "id": "package-base-malformed",
+      "nonmutating": true,
+      "operations": [],
+      "passed": true
+    },
+    {
+      "actual": {
+        "diagnostics": [
+          {
+            "code": "E_REFERENCE",
+            "path": "/denotations/0/entity"
+          }
+        ],
+        "valid": false
+      },
+      "codes_match": true,
+      "description": "The v0.1 layer of this package validates while the extension rejects the denotation whose entity is undeclared, which is the additive change class of 14.1; the error suppresses the warning stage of section 5, so no W_UNDENOTED accompanies it.",
+      "expected": {
+        "diagnostics": [
+          {
+            "code": "E_REFERENCE",
+            "path": "/denotations/0/entity"
+          }
+        ],
+        "valid": false
+      },
+      "id": "valid-at-v01-fails-extension",
+      "nonmutating": true,
+      "operations": [],
+      "passed": true
+    },
+    {
+      "actual": {
+        "diagnostics": [],
+        "valid": true
+      },
+      "codes_match": true,
+      "description": "A package that carries the v0.1 layer together with every new collection, the three reserved mention concepts and one alignment is valid at both versions.",
+      "expected": {
+        "diagnostics": [],
+        "valid": true
+      },
+      "id": "valid-at-both-versions",
+      "nonmutating": true,
+      "operations": [
+        {
+          "actual": {
+            "denotations": [
+              {
+                "agent": "ag-x",
+                "certainty": "high",
+                "created": "2026-05-04T10:00:00Z",
+                "entity": "ent-a",
+                "id": "dn-1",
+                "kind": "person",
+                "label": "Person A",
+                "mention": "nd-1",
+                "status": "asserted",
+                "supersedes": []
+              }
+            ],
+            "diagnostics": []
+          },
+          "arguments": {
+            "include_withdrawn": false,
+            "mention_id": "nd-1"
+          },
+          "expected": {
+            "denotations": [
+              {
+                "agent": "ag-x",
+                "certainty": "high",
+                "created": "2026-05-04T10:00:00Z",
+                "entity": "ent-a",
+                "id": "dn-1",
+                "kind": "person",
+                "label": "Person A",
+                "mention": "nd-1",
+                "status": "asserted",
+                "supersedes": []
+              }
+            ],
+            "diagnostics": []
+          },
+          "name": "denotations_of",
+          "passed": true
+        }
+      ],
+      "passed": true
+    }
+  ],
+  "examples": [
+    {
+      "diagnostics": [],
+      "passed": true,
+      "path": "experiments/entities_v02/examples/mentions-and-denotations.json",
+      "valid": true
+    },
+    {
+      "diagnostics": [],
+      "passed": true,
+      "path": "experiments/entities_v02/examples/statements-and-revision.json",
+      "valid": true
+    }
+  ],
+  "fingerprint_policy": "SHA-256 of UTF-8 text with checkout CRLF/CR normalized to LF; model content is unchanged.",
+  "format_version": 1,
+  "inputs": {
+    "experiments/entities_v02/cases.json": "db12d2e4df9995bc28fdf56770993c5fb92041141d33402bea067ebf967ee865",
+    "experiments/entities_v02/examples/mentions-and-denotations.json": "7010f806d532b8ebcf64eeac00764c8de375f88d7bc09b2ce69b7f58fe24b7bf",
+    "experiments/entities_v02/examples/statements-and-revision.json": "027d3c934f141d096b16bb303823b98cdbe4b1a1e855e1c1fc717cb4339a19e9",
+    "experiments/entities_v02/spec.json": "ccda216f1372a82777aa6035124353e0e1e9a3ae458c987a7c851421f0b4c415",
+    "knowledge/text-model.md": "cb54c5418345df21f53c68167d70673337296507be38fcf57f99f8a9f14ad9c3",
+    "tools/check_entities_v02.py": "505fea863c72f901fcf7060d9d1f42696d17bb6fcc17d4fe307d5d2dc3ca1df7",
+    "tools/models/__init__.py": "24fcec930743dfdc176120f5dc7fb9056db911b40628634d8240cac1498414e1",
+    "tools/models/abstract_text.py": "50ebb632e979da396acb0a87bf93b22ac88cc0a5b73481994220b606c6bfc7dc",
+    "tools/models/bindings.py": "711b1cd37b78f62e53d6662f7555013a58b1faef91571ee3b8be48d060e8ae9c",
+    "tools/models/editorial_profile.py": "9cc9f08f472f7c06e2011ddd07234ed177f9e87c2581fdd69d8826ee26efee75",
+    "tools/models/entities.py": "5867030ce52d2ffc67ef13b4501a2f933efc81fc79a348ae6ec0b6fb9a8b1f0c"
+  },
+  "model_version": "0.2",
+  "summary": {
+    "canonical_checks": 33,
+    "case_passes": 58,
+    "cases": 58,
+    "cases_present": true,
+    "examples": 2,
+    "operations_covered": [
+      "denotations_of",
+      "names_of"
+    ],
+    "passed": true
+  }
+}

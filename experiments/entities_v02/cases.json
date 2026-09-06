@@ -1,0 +1,5297 @@
+{
+  "format_version": 1,
+  "model_version": "0.2",
+  "authority": "Independent experimental model; the entity extension of section 14 is a project posit and a contract for the prototype. It records no official TEI standard and no adopted decision.",
+  "cases": [
+    {
+      "id": "entity-kinds-all-six",
+      "description": "R14 admits an entity record of each of the six kinds person, group, place, event, object and other while every other new collection stays empty.",
+      "package": {
+        "model_version": "0.2",
+        "agents": [],
+        "concepts": [],
+        "texts": [],
+        "versions": [],
+        "continuities": [],
+        "selections": [],
+        "readings": [],
+        "annotations": [],
+        "relations": [],
+        "entities": [
+          {
+            "id": "ent-person",
+            "label": "Person A",
+            "kind": "person"
+          },
+          {
+            "id": "ent-group",
+            "label": "Gruppe C",
+            "kind": "group"
+          },
+          {
+            "id": "ent-place",
+            "label": "Ort B",
+            "kind": "place"
+          },
+          {
+            "id": "ent-event",
+            "label": "Ereignis D",
+            "kind": "event"
+          },
+          {
+            "id": "ent-object",
+            "label": "Objekt E",
+            "kind": "object"
+          },
+          {
+            "id": "ent-other",
+            "label": "Referent F",
+            "kind": "other"
+          }
+        ],
+        "names": [],
+        "denotations": [],
+        "statements": []
+      },
+      "expect": {
+        "valid": true,
+        "diagnostics": []
+      }
+    },
+    {
+      "id": "entity-kind-invalid",
+      "description": "A kind outside the closed set of six fails the closed-set check of constraint 11 with E_ENTITY_KIND on the kind field.",
+      "package": {
+        "model_version": "0.2",
+        "agents": [],
+        "concepts": [],
+        "texts": [],
+        "versions": [],
+        "continuities": [],
+        "selections": [],
+        "readings": [],
+        "annotations": [],
+        "relations": [],
+        "entities": [
+          {
+            "id": "ent-a",
+            "label": "Gruppe C",
+            "kind": "organisation"
+          }
+        ],
+        "names": [],
+        "denotations": [],
+        "statements": []
+      },
+      "expect": {
+        "valid": false,
+        "diagnostics": [
+          {
+            "code": "E_ENTITY_KIND",
+            "path": "/entities/0/kind"
+          }
+        ]
+      }
+    },
+    {
+      "id": "entity-only-identity-fields",
+      "description": "R14 lets an entity carry nothing but id, label and kind, since every fact about the thing is a claim carried elsewhere.",
+      "package": {
+        "model_version": "0.2",
+        "agents": [],
+        "concepts": [],
+        "texts": [],
+        "versions": [],
+        "continuities": [],
+        "selections": [],
+        "readings": [],
+        "annotations": [],
+        "relations": [],
+        "entities": [
+          {
+            "id": "ent-a",
+            "label": "Person A",
+            "kind": "person"
+          }
+        ],
+        "names": [],
+        "denotations": [],
+        "statements": []
+      },
+      "expect": {
+        "valid": true,
+        "diagnostics": []
+      }
+    },
+    {
+      "id": "entity-label-empty",
+      "description": "An empty label fails the nonempty-string shape check that section 5 applies to the new collections without change.",
+      "package": {
+        "model_version": "0.2",
+        "agents": [],
+        "concepts": [],
+        "texts": [],
+        "versions": [],
+        "continuities": [],
+        "selections": [],
+        "readings": [],
+        "annotations": [],
+        "relations": [],
+        "entities": [
+          {
+            "id": "ent-a",
+            "label": "",
+            "kind": "person"
+          }
+        ],
+        "names": [],
+        "denotations": [],
+        "statements": []
+      },
+      "expect": {
+        "valid": false,
+        "diagnostics": [
+          {
+            "code": "E_SHAPE",
+            "path": "/entities/0/label"
+          }
+        ]
+      }
+    },
+    {
+      "id": "entity-without-name",
+      "description": "Constraint 5 keeps an entity valid that a mention denotes while no name claim exists for it.",
+      "package": {
+        "model_version": "0.2",
+        "agents": [
+          {
+            "id": "ag-x",
+            "label": "Editor A"
+          }
+        ],
+        "concepts": [
+          {
+            "id": "en-proper-noun",
+            "label": "Proper noun",
+            "definition": "The selected extent is a proper noun or proper-noun phrase used to refer.",
+            "applies_to": "node"
+          }
+        ],
+        "texts": [],
+        "versions": [
+          {
+            "id": "v1",
+            "content": "Person A besuchte Ort B.",
+            "sha256": "3e5d383a50b7383b7483a15897dd3e391342d617fe8eeba03aef4c30eea5316b",
+            "parents": []
+          }
+        ],
+        "continuities": [],
+        "selections": [
+          {
+            "id": "sel-person",
+            "version": "v1",
+            "selector": {
+              "kind": "ranges",
+              "segments": [
+                {
+                  "start": 0,
+                  "end": 8,
+                  "quote": "Person A"
+                }
+              ]
+            }
+          }
+        ],
+        "readings": [
+          {
+            "id": "rd-1",
+            "version": "v1",
+            "agent": "ag-x",
+            "label": "Mention layer",
+            "nodes": [
+              {
+                "id": "nd-1",
+                "type": "en-proper-noun",
+                "selection": "sel-person",
+                "parent": null
+              }
+            ]
+          }
+        ],
+        "annotations": [],
+        "relations": [],
+        "entities": [
+          {
+            "id": "ent-a",
+            "label": "Person A",
+            "kind": "person"
+          }
+        ],
+        "names": [],
+        "denotations": [
+          {
+            "id": "dn-1",
+            "agent": "ag-x",
+            "created": "2026-05-04T10:00:00Z",
+            "status": "asserted",
+            "supersedes": [],
+            "mention": "nd-1",
+            "entity": "ent-a"
+          }
+        ],
+        "statements": []
+      },
+      "expect": {
+        "valid": true,
+        "diagnostics": []
+      }
+    },
+    {
+      "id": "name-parts-all-kinds",
+      "description": "R17 admits an ordered parts array with one component of each of the six part kinds surname, forename, role-name, add-name, name-link and gen-name.",
+      "package": {
+        "model_version": "0.2",
+        "agents": [
+          {
+            "id": "ag-x",
+            "label": "Editor A"
+          }
+        ],
+        "concepts": [],
+        "texts": [],
+        "versions": [],
+        "continuities": [],
+        "selections": [],
+        "readings": [],
+        "annotations": [],
+        "relations": [],
+        "entities": [
+          {
+            "id": "ent-a",
+            "label": "Person A",
+            "kind": "person"
+          }
+        ],
+        "names": [
+          {
+            "id": "nm-1",
+            "agent": "ag-x",
+            "created": "2026-05-04T10:00:00Z",
+            "status": "asserted",
+            "supersedes": [],
+            "entity": "ent-a",
+            "form": "Person A der Zweite",
+            "language": "de",
+            "parts": [
+              {
+                "kind": "forename",
+                "form": "Person"
+              },
+              {
+                "kind": "name-link",
+                "form": "von"
+              },
+              {
+                "kind": "surname",
+                "form": "A"
+              },
+              {
+                "kind": "role-name",
+                "form": "Verwalterin"
+              },
+              {
+                "kind": "add-name",
+                "form": "die Ältere"
+              },
+              {
+                "kind": "gen-name",
+                "form": "die Zweite"
+              }
+            ]
+          }
+        ],
+        "denotations": [],
+        "statements": []
+      },
+      "expect": {
+        "valid": true,
+        "diagnostics": []
+      }
+    },
+    {
+      "id": "name-parts-malformed",
+      "description": "A part kind outside the closed set and a part with an empty form both fail with E_NAME_PART under constraint 11.",
+      "package": {
+        "model_version": "0.2",
+        "agents": [
+          {
+            "id": "ag-x",
+            "label": "Editor A"
+          }
+        ],
+        "concepts": [],
+        "texts": [],
+        "versions": [],
+        "continuities": [],
+        "selections": [],
+        "readings": [],
+        "annotations": [],
+        "relations": [],
+        "entities": [
+          {
+            "id": "ent-a",
+            "label": "Person A",
+            "kind": "person"
+          }
+        ],
+        "names": [
+          {
+            "id": "nm-1",
+            "agent": "ag-x",
+            "created": "2026-05-04T10:00:00Z",
+            "status": "asserted",
+            "supersedes": [],
+            "entity": "ent-a",
+            "form": "Person A",
+            "language": "de",
+            "parts": [
+              {
+                "kind": "surname",
+                "form": ""
+              },
+              {
+                "kind": "nickname",
+                "form": "A"
+              }
+            ]
+          }
+        ],
+        "denotations": [],
+        "statements": []
+      },
+      "expect": {
+        "valid": false,
+        "diagnostics": [
+          {
+            "code": "E_NAME_PART",
+            "path": "/names/0/parts/0/form"
+          },
+          {
+            "code": "E_NAME_PART",
+            "path": "/names/0/parts/1/kind"
+          }
+        ]
+      }
+    },
+    {
+      "id": "name-language-admitted-forms",
+      "description": "R17 requires a language tag on every name claim and admits a bare subtag, a tag with further subtags and the undetermined tag und.",
+      "package": {
+        "model_version": "0.2",
+        "agents": [
+          {
+            "id": "ag-x",
+            "label": "Editor A"
+          }
+        ],
+        "concepts": [],
+        "texts": [],
+        "versions": [],
+        "continuities": [],
+        "selections": [],
+        "readings": [],
+        "annotations": [],
+        "relations": [],
+        "entities": [
+          {
+            "id": "ent-a",
+            "label": "Person A",
+            "kind": "person"
+          }
+        ],
+        "names": [
+          {
+            "id": "nm-1",
+            "agent": "ag-x",
+            "created": "2026-05-04T10:00:00Z",
+            "status": "asserted",
+            "supersedes": [],
+            "entity": "ent-a",
+            "form": "Person A",
+            "language": "de"
+          },
+          {
+            "id": "nm-2",
+            "agent": "ag-x",
+            "created": "2026-05-04T10:00:00Z",
+            "status": "asserted",
+            "supersedes": [],
+            "entity": "ent-a",
+            "form": "Persona A",
+            "language": "de-Latn-AT"
+          },
+          {
+            "id": "nm-3",
+            "agent": "ag-x",
+            "created": "2026-05-04T10:00:00Z",
+            "status": "asserted",
+            "supersedes": [],
+            "entity": "ent-a",
+            "form": "P. A.",
+            "language": "und"
+          }
+        ],
+        "denotations": [],
+        "statements": []
+      },
+      "expect": {
+        "valid": true,
+        "diagnostics": []
+      }
+    },
+    {
+      "id": "name-language-invalid",
+      "description": "A language tag outside the lexical form of BCP 47 fails with E_LANGUAGE on the language field.",
+      "package": {
+        "model_version": "0.2",
+        "agents": [
+          {
+            "id": "ag-x",
+            "label": "Editor A"
+          }
+        ],
+        "concepts": [],
+        "texts": [],
+        "versions": [],
+        "continuities": [],
+        "selections": [],
+        "readings": [],
+        "annotations": [],
+        "relations": [],
+        "entities": [
+          {
+            "id": "ent-a",
+            "label": "Person A",
+            "kind": "person"
+          }
+        ],
+        "names": [
+          {
+            "id": "nm-1",
+            "agent": "ag-x",
+            "created": "2026-05-04T10:00:00Z",
+            "status": "asserted",
+            "supersedes": [],
+            "entity": "ent-a",
+            "form": "Person A",
+            "language": "de_AT"
+          }
+        ],
+        "denotations": [],
+        "statements": []
+      },
+      "expect": {
+        "valid": false,
+        "diagnostics": [
+          {
+            "code": "E_LANGUAGE",
+            "path": "/names/0/language"
+          }
+        ]
+      }
+    },
+    {
+      "id": "name-language-missing",
+      "description": "The language tag is a required content field of the name claim, so its absence is a missing field under section 5 and gives E_SHAPE on the record.",
+      "package": {
+        "model_version": "0.2",
+        "agents": [
+          {
+            "id": "ag-x",
+            "label": "Editor A"
+          }
+        ],
+        "concepts": [],
+        "texts": [],
+        "versions": [],
+        "continuities": [],
+        "selections": [],
+        "readings": [],
+        "annotations": [],
+        "relations": [],
+        "entities": [
+          {
+            "id": "ent-a",
+            "label": "Person A",
+            "kind": "person"
+          }
+        ],
+        "names": [
+          {
+            "id": "nm-1",
+            "agent": "ag-x",
+            "created": "2026-05-04T10:00:00Z",
+            "status": "asserted",
+            "supersedes": [],
+            "entity": "ent-a",
+            "form": "Person A"
+          }
+        ],
+        "denotations": [],
+        "statements": []
+      },
+      "expect": {
+        "valid": false,
+        "diagnostics": [
+          {
+            "code": "E_SHAPE",
+            "path": "/names/0"
+          }
+        ]
+      }
+    },
+    {
+      "id": "name-without-mention",
+      "description": "Constraint 5 keeps a name claim valid for an entity that no text mentions, and the optional fraction of created is admitted.",
+      "package": {
+        "model_version": "0.2",
+        "agents": [
+          {
+            "id": "ag-x",
+            "label": "Editor A"
+          }
+        ],
+        "concepts": [],
+        "texts": [],
+        "versions": [],
+        "continuities": [],
+        "selections": [],
+        "readings": [],
+        "annotations": [],
+        "relations": [],
+        "entities": [
+          {
+            "id": "ent-a",
+            "label": "Person A",
+            "kind": "person"
+          }
+        ],
+        "names": [
+          {
+            "id": "nm-1",
+            "agent": "ag-x",
+            "created": "2026-05-04T10:00:00.250Z",
+            "status": "asserted",
+            "supersedes": [],
+            "entity": "ent-a",
+            "form": "Person A",
+            "language": "de"
+          }
+        ],
+        "denotations": [],
+        "statements": []
+      },
+      "expect": {
+        "valid": true,
+        "diagnostics": []
+      }
+    },
+    {
+      "id": "name-supersession-current",
+      "description": "R20 makes a superseding name claim of the same agent about the same entity the current one, and names_of returns it alone.",
+      "package": {
+        "model_version": "0.2",
+        "agents": [
+          {
+            "id": "ag-x",
+            "label": "Editor A"
+          }
+        ],
+        "concepts": [],
+        "texts": [],
+        "versions": [],
+        "continuities": [],
+        "selections": [],
+        "readings": [],
+        "annotations": [],
+        "relations": [],
+        "entities": [
+          {
+            "id": "ent-a",
+            "label": "Person A",
+            "kind": "person"
+          }
+        ],
+        "names": [
+          {
+            "id": "nm-1",
+            "agent": "ag-x",
+            "created": "2026-05-04T10:00:00Z",
+            "status": "asserted",
+            "supersedes": [],
+            "entity": "ent-a",
+            "form": "Person A",
+            "language": "de"
+          },
+          {
+            "id": "nm-2",
+            "agent": "ag-x",
+            "created": "2026-05-04T10:00:00Z",
+            "status": "asserted",
+            "supersedes": [
+              "nm-1"
+            ],
+            "entity": "ent-a",
+            "form": "Person A die Ältere",
+            "language": "de"
+          }
+        ],
+        "denotations": [],
+        "statements": []
+      },
+      "expect": {
+        "valid": true,
+        "diagnostics": []
+      },
+      "operations": [
+        {
+          "name": "names_of",
+          "arguments": {
+            "entity_id": "ent-a",
+            "include_withdrawn": false
+          },
+          "expect": {
+            "diagnostics": [],
+            "names": [
+              {
+                "id": "nm-2",
+                "agent": "ag-x",
+                "created": "2026-05-04T10:00:00Z",
+                "status": "asserted",
+                "supersedes": [
+                  "nm-1"
+                ],
+                "entity": "ent-a",
+                "form": "Person A die Ältere",
+                "language": "de"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "names-of-validity-order",
+      "description": "names_of returns the current name claims in validity order, claims without valid first, then ascending by from with an absent from first, then ascending by until with an absent until last, then by claim ID.",
+      "package": {
+        "model_version": "0.2",
+        "agents": [
+          {
+            "id": "ag-x",
+            "label": "Editor A"
+          }
+        ],
+        "concepts": [],
+        "texts": [],
+        "versions": [],
+        "continuities": [],
+        "selections": [],
+        "readings": [],
+        "annotations": [],
+        "relations": [],
+        "entities": [
+          {
+            "id": "ent-a",
+            "label": "Person A",
+            "kind": "person"
+          }
+        ],
+        "names": [
+          {
+            "id": "nm-from",
+            "agent": "ag-x",
+            "created": "2026-05-04T10:00:00Z",
+            "status": "asserted",
+            "supersedes": [],
+            "entity": "ent-a",
+            "form": "Person A von Ort B",
+            "language": "de",
+            "valid": {
+              "from": "1400"
+            }
+          },
+          {
+            "id": "nm-plain",
+            "agent": "ag-x",
+            "created": "2026-05-04T10:00:00Z",
+            "status": "asserted",
+            "supersedes": [],
+            "entity": "ent-a",
+            "form": "Person A",
+            "language": "de"
+          },
+          {
+            "id": "nm-from-month",
+            "agent": "ag-x",
+            "created": "2026-05-04T10:00:00Z",
+            "status": "asserted",
+            "supersedes": [],
+            "entity": "ent-a",
+            "form": "Person A zu Ort B",
+            "language": "de",
+            "valid": {
+              "from": "1400-06"
+            }
+          },
+          {
+            "id": "nm-until",
+            "agent": "ag-x",
+            "created": "2026-05-04T10:00:00Z",
+            "status": "asserted",
+            "supersedes": [],
+            "entity": "ent-a",
+            "form": "Person A die Jüngere",
+            "language": "de",
+            "valid": {
+              "until": "1500"
+            }
+          },
+          {
+            "id": "nm-from-until",
+            "agent": "ag-x",
+            "created": "2026-05-04T10:00:00Z",
+            "status": "asserted",
+            "supersedes": [],
+            "entity": "ent-a",
+            "form": "Person A die Ältere",
+            "language": "de",
+            "valid": {
+              "from": "1400",
+              "until": "1450"
+            }
+          }
+        ],
+        "denotations": [],
+        "statements": []
+      },
+      "expect": {
+        "valid": true,
+        "diagnostics": []
+      },
+      "operations": [
+        {
+          "name": "names_of",
+          "arguments": {
+            "entity_id": "ent-a",
+            "include_withdrawn": false
+          },
+          "expect": {
+            "diagnostics": [],
+            "names": [
+              {
+                "id": "nm-plain",
+                "agent": "ag-x",
+                "created": "2026-05-04T10:00:00Z",
+                "status": "asserted",
+                "supersedes": [],
+                "entity": "ent-a",
+                "form": "Person A",
+                "language": "de"
+              },
+              {
+                "id": "nm-until",
+                "agent": "ag-x",
+                "created": "2026-05-04T10:00:00Z",
+                "status": "asserted",
+                "supersedes": [],
+                "entity": "ent-a",
+                "form": "Person A die Jüngere",
+                "language": "de",
+                "valid": {
+                  "until": "1500"
+                }
+              },
+              {
+                "id": "nm-from-until",
+                "agent": "ag-x",
+                "created": "2026-05-04T10:00:00Z",
+                "status": "asserted",
+                "supersedes": [],
+                "entity": "ent-a",
+                "form": "Person A die Ältere",
+                "language": "de",
+                "valid": {
+                  "from": "1400",
+                  "until": "1450"
+                }
+              },
+              {
+                "id": "nm-from",
+                "agent": "ag-x",
+                "created": "2026-05-04T10:00:00Z",
+                "status": "asserted",
+                "supersedes": [],
+                "entity": "ent-a",
+                "form": "Person A von Ort B",
+                "language": "de",
+                "valid": {
+                  "from": "1400"
+                }
+              },
+              {
+                "id": "nm-from-month",
+                "agent": "ag-x",
+                "created": "2026-05-04T10:00:00Z",
+                "status": "asserted",
+                "supersedes": [],
+                "entity": "ent-a",
+                "form": "Person A zu Ort B",
+                "language": "de",
+                "valid": {
+                  "from": "1400-06"
+                }
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "names-of-include-withdrawn",
+      "description": "A withdrawn name claim is current under section 13 and appears in names_of only when include_withdrawn is true.",
+      "package": {
+        "model_version": "0.2",
+        "agents": [
+          {
+            "id": "ag-x",
+            "label": "Editor A"
+          }
+        ],
+        "concepts": [],
+        "texts": [],
+        "versions": [],
+        "continuities": [],
+        "selections": [],
+        "readings": [],
+        "annotations": [],
+        "relations": [],
+        "entities": [
+          {
+            "id": "ent-a",
+            "label": "Person A",
+            "kind": "person"
+          }
+        ],
+        "names": [
+          {
+            "id": "nm-1",
+            "agent": "ag-x",
+            "created": "2026-05-04T10:00:00Z",
+            "status": "asserted",
+            "supersedes": [],
+            "entity": "ent-a",
+            "form": "Person A",
+            "language": "de"
+          },
+          {
+            "id": "nm-2",
+            "agent": "ag-x",
+            "created": "2026-05-04T10:00:00Z",
+            "status": "asserted",
+            "supersedes": [],
+            "entity": "ent-a",
+            "form": "Persona A",
+            "language": "de"
+          },
+          {
+            "id": "nm-3",
+            "agent": "ag-x",
+            "created": "2026-05-04T10:00:00Z",
+            "status": "withdrawn",
+            "supersedes": [
+              "nm-2"
+            ],
+            "entity": "ent-a",
+            "form": "Persona A",
+            "language": "de"
+          }
+        ],
+        "denotations": [],
+        "statements": []
+      },
+      "expect": {
+        "valid": true,
+        "diagnostics": []
+      },
+      "operations": [
+        {
+          "name": "names_of",
+          "arguments": {
+            "entity_id": "ent-a",
+            "include_withdrawn": false
+          },
+          "expect": {
+            "diagnostics": [],
+            "names": [
+              {
+                "id": "nm-1",
+                "agent": "ag-x",
+                "created": "2026-05-04T10:00:00Z",
+                "status": "asserted",
+                "supersedes": [],
+                "entity": "ent-a",
+                "form": "Person A",
+                "language": "de"
+              }
+            ]
+          }
+        },
+        {
+          "name": "names_of",
+          "arguments": {
+            "entity_id": "ent-a",
+            "include_withdrawn": true
+          },
+          "expect": {
+            "diagnostics": [],
+            "names": [
+              {
+                "id": "nm-1",
+                "agent": "ag-x",
+                "created": "2026-05-04T10:00:00Z",
+                "status": "asserted",
+                "supersedes": [],
+                "entity": "ent-a",
+                "form": "Person A",
+                "language": "de"
+              },
+              {
+                "id": "nm-3",
+                "agent": "ag-x",
+                "created": "2026-05-04T10:00:00Z",
+                "status": "withdrawn",
+                "supersedes": [
+                  "nm-2"
+                ],
+                "entity": "ent-a",
+                "form": "Persona A",
+                "language": "de"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "mention-nodes-proper-noun-and-pronoun",
+      "description": "R15 accepts a reading node with the reserved proper-noun concept and one with the reserved pronoun concept as denotation subjects.",
+      "package": {
+        "model_version": "0.2",
+        "agents": [
+          {
+            "id": "ag-x",
+            "label": "Editor A"
+          }
+        ],
+        "concepts": [
+          {
+            "id": "en-proper-noun",
+            "label": "Proper noun",
+            "definition": "The selected extent is a proper noun or proper-noun phrase used to refer.",
+            "applies_to": "node"
+          },
+          {
+            "id": "en-pronoun",
+            "label": "Pronoun",
+            "definition": "The selected extent is a pronoun used to refer.",
+            "applies_to": "node"
+          }
+        ],
+        "texts": [],
+        "versions": [
+          {
+            "id": "v1",
+            "content": "Person A besuchte Ort B.",
+            "sha256": "3e5d383a50b7383b7483a15897dd3e391342d617fe8eeba03aef4c30eea5316b",
+            "parents": []
+          }
+        ],
+        "continuities": [],
+        "selections": [
+          {
+            "id": "sel-person",
+            "version": "v1",
+            "selector": {
+              "kind": "ranges",
+              "segments": [
+                {
+                  "start": 0,
+                  "end": 8,
+                  "quote": "Person A"
+                }
+              ]
+            }
+          },
+          {
+            "id": "sel-ort",
+            "version": "v1",
+            "selector": {
+              "kind": "ranges",
+              "segments": [
+                {
+                  "start": 18,
+                  "end": 23,
+                  "quote": "Ort B"
+                }
+              ]
+            }
+          }
+        ],
+        "readings": [
+          {
+            "id": "rd-1",
+            "version": "v1",
+            "agent": "ag-x",
+            "label": "Mention layer",
+            "nodes": [
+              {
+                "id": "nd-1",
+                "type": "en-proper-noun",
+                "selection": "sel-person",
+                "parent": null
+              },
+              {
+                "id": "nd-2",
+                "type": "en-pronoun",
+                "selection": "sel-ort",
+                "parent": null
+              }
+            ]
+          }
+        ],
+        "annotations": [],
+        "relations": [],
+        "entities": [
+          {
+            "id": "ent-a",
+            "label": "Person A",
+            "kind": "person"
+          },
+          {
+            "id": "ent-b",
+            "label": "Ort B",
+            "kind": "place"
+          }
+        ],
+        "names": [],
+        "denotations": [
+          {
+            "id": "dn-1",
+            "agent": "ag-x",
+            "created": "2026-05-04T10:00:00Z",
+            "status": "asserted",
+            "supersedes": [],
+            "mention": "nd-1",
+            "entity": "ent-a"
+          },
+          {
+            "id": "dn-2",
+            "agent": "ag-x",
+            "created": "2026-05-04T10:00:00Z",
+            "status": "asserted",
+            "supersedes": [],
+            "mention": "nd-2",
+            "entity": "ent-b"
+          }
+        ],
+        "statements": []
+      },
+      "expect": {
+        "valid": true,
+        "diagnostics": []
+      },
+      "operations": [
+        {
+          "name": "denotations_of",
+          "arguments": {
+            "mention_id": "nd-1",
+            "include_withdrawn": false
+          },
+          "expect": {
+            "diagnostics": [],
+            "denotations": [
+              {
+                "id": "dn-1",
+                "agent": "ag-x",
+                "created": "2026-05-04T10:00:00Z",
+                "status": "asserted",
+                "supersedes": [],
+                "mention": "nd-1",
+                "entity": "ent-a",
+                "label": "Person A",
+                "kind": "person"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "mention-annotation-discontinuous",
+      "description": "A referring expression with a discontinuous extent is an annotation with a mention concept under constraint 10, and its denotation stays valid.",
+      "package": {
+        "model_version": "0.2",
+        "agents": [
+          {
+            "id": "ag-x",
+            "label": "Editor A"
+          }
+        ],
+        "concepts": [
+          {
+            "id": "en-referring-string",
+            "label": "Referring string",
+            "definition": "The selected extent is a referring string that is no proper noun, such as a description or a title used to refer.",
+            "applies_to": "node"
+          }
+        ],
+        "texts": [],
+        "versions": [
+          {
+            "id": "v1",
+            "content": "Person A besuchte Ort B.",
+            "sha256": "3e5d383a50b7383b7483a15897dd3e391342d617fe8eeba03aef4c30eea5316b",
+            "parents": []
+          }
+        ],
+        "continuities": [],
+        "selections": [
+          {
+            "id": "sel-split",
+            "version": "v1",
+            "selector": {
+              "kind": "ranges",
+              "segments": [
+                {
+                  "start": 0,
+                  "end": 6,
+                  "quote": "Person"
+                },
+                {
+                  "start": 22,
+                  "end": 23,
+                  "quote": "B"
+                }
+              ]
+            }
+          }
+        ],
+        "readings": [],
+        "annotations": [
+          {
+            "id": "an-1",
+            "agent": "ag-x",
+            "selection": "sel-split",
+            "body": "Discontinuous referring string.",
+            "concept": "en-referring-string"
+          }
+        ],
+        "relations": [],
+        "entities": [
+          {
+            "id": "ent-a",
+            "label": "Person A",
+            "kind": "person"
+          }
+        ],
+        "names": [],
+        "denotations": [
+          {
+            "id": "dn-1",
+            "agent": "ag-x",
+            "created": "2026-05-04T10:00:00Z",
+            "status": "asserted",
+            "supersedes": [],
+            "mention": "an-1",
+            "entity": "ent-a"
+          }
+        ],
+        "statements": []
+      },
+      "expect": {
+        "valid": true,
+        "diagnostics": []
+      },
+      "operations": [
+        {
+          "name": "denotations_of",
+          "arguments": {
+            "mention_id": "an-1",
+            "include_withdrawn": false
+          },
+          "expect": {
+            "diagnostics": [],
+            "denotations": [
+              {
+                "id": "dn-1",
+                "agent": "ag-x",
+                "created": "2026-05-04T10:00:00Z",
+                "status": "asserted",
+                "supersedes": [],
+                "mention": "an-1",
+                "entity": "ent-a",
+                "label": "Person A",
+                "kind": "person"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "mention-annotation-ambiguous-quote",
+      "description": "A mention annotation whose quotation selector is ambiguous keeps its denotation valid under the warnings of section 2.",
+      "package": {
+        "model_version": "0.2",
+        "agents": [
+          {
+            "id": "ag-x",
+            "label": "Editor A"
+          }
+        ],
+        "concepts": [
+          {
+            "id": "en-proper-noun",
+            "label": "Proper noun",
+            "definition": "The selected extent is a proper noun or proper-noun phrase used to refer.",
+            "applies_to": "node"
+          }
+        ],
+        "texts": [],
+        "versions": [
+          {
+            "id": "v1",
+            "content": "Ort B und Ort B.",
+            "sha256": "b06181811c085be506101f94ba08cec0c6675d86ae9dab0cb41d90099c9d6068",
+            "parents": []
+          }
+        ],
+        "continuities": [],
+        "selections": [
+          {
+            "id": "sel-q",
+            "version": "v1",
+            "selector": {
+              "kind": "quote",
+              "exact": "Ort B",
+              "match": "one"
+            }
+          }
+        ],
+        "readings": [],
+        "annotations": [
+          {
+            "id": "an-1",
+            "agent": "ag-x",
+            "selection": "sel-q",
+            "body": "Unlocated proper noun.",
+            "concept": "en-proper-noun"
+          }
+        ],
+        "relations": [],
+        "entities": [
+          {
+            "id": "ent-b",
+            "label": "Ort B",
+            "kind": "place"
+          }
+        ],
+        "names": [],
+        "denotations": [
+          {
+            "id": "dn-1",
+            "agent": "ag-x",
+            "created": "2026-05-04T10:00:00Z",
+            "status": "asserted",
+            "supersedes": [],
+            "mention": "an-1",
+            "entity": "ent-b"
+          }
+        ],
+        "statements": []
+      },
+      "expect": {
+        "valid": true,
+        "diagnostics": [
+          {
+            "code": "W_AMBIGUOUS",
+            "path": "/selections/0/selector"
+          }
+        ]
+      }
+    },
+    {
+      "id": "mention-undenoted",
+      "description": "Constraint 3 warns with W_UNDENOTED for a mention node and for a mention annotation that carry no current denotation claim, and leaves the package valid.",
+      "package": {
+        "model_version": "0.2",
+        "agents": [
+          {
+            "id": "ag-x",
+            "label": "Editor A"
+          }
+        ],
+        "concepts": [
+          {
+            "id": "en-proper-noun",
+            "label": "Proper noun",
+            "definition": "The selected extent is a proper noun or proper-noun phrase used to refer.",
+            "applies_to": "node"
+          },
+          {
+            "id": "en-referring-string",
+            "label": "Referring string",
+            "definition": "The selected extent is a referring string that is no proper noun, such as a description or a title used to refer.",
+            "applies_to": "node"
+          }
+        ],
+        "texts": [],
+        "versions": [
+          {
+            "id": "v1",
+            "content": "Person A besuchte Ort B.",
+            "sha256": "3e5d383a50b7383b7483a15897dd3e391342d617fe8eeba03aef4c30eea5316b",
+            "parents": []
+          }
+        ],
+        "continuities": [],
+        "selections": [
+          {
+            "id": "sel-person",
+            "version": "v1",
+            "selector": {
+              "kind": "ranges",
+              "segments": [
+                {
+                  "start": 0,
+                  "end": 8,
+                  "quote": "Person A"
+                }
+              ]
+            }
+          },
+          {
+            "id": "sel-split",
+            "version": "v1",
+            "selector": {
+              "kind": "ranges",
+              "segments": [
+                {
+                  "start": 0,
+                  "end": 6,
+                  "quote": "Person"
+                },
+                {
+                  "start": 22,
+                  "end": 23,
+                  "quote": "B"
+                }
+              ]
+            }
+          }
+        ],
+        "readings": [
+          {
+            "id": "rd-1",
+            "version": "v1",
+            "agent": "ag-x",
+            "label": "Mention layer",
+            "nodes": [
+              {
+                "id": "nd-1",
+                "type": "en-proper-noun",
+                "selection": "sel-person",
+                "parent": null
+              }
+            ]
+          }
+        ],
+        "annotations": [
+          {
+            "id": "an-1",
+            "agent": "ag-x",
+            "selection": "sel-split",
+            "body": "Unclaimed extent.",
+            "concept": "en-referring-string"
+          }
+        ],
+        "relations": [],
+        "entities": [],
+        "names": [],
+        "denotations": [],
+        "statements": []
+      },
+      "expect": {
+        "valid": true,
+        "diagnostics": [
+          {
+            "code": "W_UNDENOTED",
+            "path": "/annotations/0"
+          },
+          {
+            "code": "W_UNDENOTED",
+            "path": "/readings/0/nodes/0"
+          }
+        ]
+      }
+    },
+    {
+      "id": "mention-concept-record-deviates",
+      "description": "A package that uses a reserved mention concept but changes its exact record fails with E_MENTION on the concept record.",
+      "package": {
+        "model_version": "0.2",
+        "agents": [
+          {
+            "id": "ag-x",
+            "label": "Editor A"
+          }
+        ],
+        "concepts": [
+          {
+            "id": "en-proper-noun",
+            "label": "Proper noun",
+            "definition": "The selected extent names a person.",
+            "applies_to": "node"
+          }
+        ],
+        "texts": [],
+        "versions": [
+          {
+            "id": "v1",
+            "content": "Person A besuchte Ort B.",
+            "sha256": "3e5d383a50b7383b7483a15897dd3e391342d617fe8eeba03aef4c30eea5316b",
+            "parents": []
+          }
+        ],
+        "continuities": [],
+        "selections": [
+          {
+            "id": "sel-person",
+            "version": "v1",
+            "selector": {
+              "kind": "ranges",
+              "segments": [
+                {
+                  "start": 0,
+                  "end": 8,
+                  "quote": "Person A"
+                }
+              ]
+            }
+          }
+        ],
+        "readings": [
+          {
+            "id": "rd-1",
+            "version": "v1",
+            "agent": "ag-x",
+            "label": "Mention layer",
+            "nodes": [
+              {
+                "id": "nd-1",
+                "type": "en-proper-noun",
+                "selection": "sel-person",
+                "parent": null
+              }
+            ]
+          }
+        ],
+        "annotations": [],
+        "relations": [],
+        "entities": [
+          {
+            "id": "ent-a",
+            "label": "Person A",
+            "kind": "person"
+          }
+        ],
+        "names": [],
+        "denotations": [
+          {
+            "id": "dn-1",
+            "agent": "ag-x",
+            "created": "2026-05-04T10:00:00Z",
+            "status": "asserted",
+            "supersedes": [],
+            "mention": "nd-1",
+            "entity": "ent-a"
+          }
+        ],
+        "statements": []
+      },
+      "expect": {
+        "valid": false,
+        "diagnostics": [
+          {
+            "code": "E_MENTION",
+            "path": "/concepts/0"
+          }
+        ]
+      }
+    },
+    {
+      "id": "denotation-entity-non-entity-targets",
+      "description": "Constraint 2 rejects a denotation whose entity field names a concept, a version, another mention or an IRI string, each with E_REFERENCE; the error suppresses the warning stage of section 5, so no W_UNDENOTED accompanies it.",
+      "package": {
+        "model_version": "0.2",
+        "agents": [
+          {
+            "id": "ag-x",
+            "label": "Editor A"
+          }
+        ],
+        "concepts": [
+          {
+            "id": "en-proper-noun",
+            "label": "Proper noun",
+            "definition": "The selected extent is a proper noun or proper-noun phrase used to refer.",
+            "applies_to": "node"
+          }
+        ],
+        "texts": [],
+        "versions": [
+          {
+            "id": "v1",
+            "content": "Person A besuchte Ort B.",
+            "sha256": "3e5d383a50b7383b7483a15897dd3e391342d617fe8eeba03aef4c30eea5316b",
+            "parents": []
+          }
+        ],
+        "continuities": [],
+        "selections": [
+          {
+            "id": "sel-person",
+            "version": "v1",
+            "selector": {
+              "kind": "ranges",
+              "segments": [
+                {
+                  "start": 0,
+                  "end": 8,
+                  "quote": "Person A"
+                }
+              ]
+            }
+          },
+          {
+            "id": "sel-ort",
+            "version": "v1",
+            "selector": {
+              "kind": "ranges",
+              "segments": [
+                {
+                  "start": 18,
+                  "end": 23,
+                  "quote": "Ort B"
+                }
+              ]
+            }
+          }
+        ],
+        "readings": [
+          {
+            "id": "rd-1",
+            "version": "v1",
+            "agent": "ag-x",
+            "label": "Mention layer",
+            "nodes": [
+              {
+                "id": "nd-1",
+                "type": "en-proper-noun",
+                "selection": "sel-person",
+                "parent": null
+              },
+              {
+                "id": "nd-2",
+                "type": "en-proper-noun",
+                "selection": "sel-ort",
+                "parent": null
+              }
+            ]
+          }
+        ],
+        "annotations": [],
+        "relations": [],
+        "entities": [
+          {
+            "id": "ent-a",
+            "label": "Person A",
+            "kind": "person"
+          }
+        ],
+        "names": [],
+        "denotations": [
+          {
+            "id": "dn-1",
+            "agent": "ag-x",
+            "created": "2026-05-04T10:00:00Z",
+            "status": "asserted",
+            "supersedes": [],
+            "mention": "nd-1",
+            "entity": "en-proper-noun"
+          },
+          {
+            "id": "dn-2",
+            "agent": "ag-x",
+            "created": "2026-05-04T10:00:00Z",
+            "status": "asserted",
+            "supersedes": [],
+            "mention": "nd-1",
+            "entity": "v1"
+          },
+          {
+            "id": "dn-3",
+            "agent": "ag-x",
+            "created": "2026-05-04T10:00:00Z",
+            "status": "asserted",
+            "supersedes": [],
+            "mention": "nd-1",
+            "entity": "nd-2"
+          },
+          {
+            "id": "dn-4",
+            "agent": "ag-x",
+            "created": "2026-05-04T10:00:00Z",
+            "status": "asserted",
+            "supersedes": [],
+            "mention": "nd-1",
+            "entity": "https://example.org/entity/a"
+          }
+        ],
+        "statements": []
+      },
+      "expect": {
+        "valid": false,
+        "diagnostics": [
+          {
+            "code": "E_REFERENCE",
+            "path": "/denotations/0/entity"
+          },
+          {
+            "code": "E_REFERENCE",
+            "path": "/denotations/1/entity"
+          },
+          {
+            "code": "E_REFERENCE",
+            "path": "/denotations/2/entity"
+          },
+          {
+            "code": "E_REFERENCE",
+            "path": "/denotations/3/entity"
+          }
+        ]
+      }
+    },
+    {
+      "id": "denotation-mention-unresolvable",
+      "description": "Constraint 2 rejects a denotation whose mention field names a record of another category with E_REFERENCE; the error suppresses the warning stage of section 5, so no W_UNDENOTED accompanies it.",
+      "package": {
+        "model_version": "0.2",
+        "agents": [
+          {
+            "id": "ag-x",
+            "label": "Editor A"
+          }
+        ],
+        "concepts": [
+          {
+            "id": "en-proper-noun",
+            "label": "Proper noun",
+            "definition": "The selected extent is a proper noun or proper-noun phrase used to refer.",
+            "applies_to": "node"
+          }
+        ],
+        "texts": [],
+        "versions": [
+          {
+            "id": "v1",
+            "content": "Person A besuchte Ort B.",
+            "sha256": "3e5d383a50b7383b7483a15897dd3e391342d617fe8eeba03aef4c30eea5316b",
+            "parents": []
+          }
+        ],
+        "continuities": [],
+        "selections": [
+          {
+            "id": "sel-person",
+            "version": "v1",
+            "selector": {
+              "kind": "ranges",
+              "segments": [
+                {
+                  "start": 0,
+                  "end": 8,
+                  "quote": "Person A"
+                }
+              ]
+            }
+          }
+        ],
+        "readings": [
+          {
+            "id": "rd-1",
+            "version": "v1",
+            "agent": "ag-x",
+            "label": "Mention layer",
+            "nodes": [
+              {
+                "id": "nd-1",
+                "type": "en-proper-noun",
+                "selection": "sel-person",
+                "parent": null
+              }
+            ]
+          }
+        ],
+        "annotations": [],
+        "relations": [],
+        "entities": [
+          {
+            "id": "ent-a",
+            "label": "Person A",
+            "kind": "person"
+          }
+        ],
+        "names": [],
+        "denotations": [
+          {
+            "id": "dn-1",
+            "agent": "ag-x",
+            "created": "2026-05-04T10:00:00Z",
+            "status": "asserted",
+            "supersedes": [],
+            "mention": "sel-person",
+            "entity": "ent-a"
+          }
+        ],
+        "statements": []
+      },
+      "expect": {
+        "valid": false,
+        "diagnostics": [
+          {
+            "code": "E_REFERENCE",
+            "path": "/denotations/0/mention"
+          }
+        ]
+      }
+    },
+    {
+      "id": "denotation-from-non-mention-node",
+      "description": "Constraint 3 rejects a denotation whose subject is a reading node carrying a node concept that is no reserved mention concept, with E_MENTION.",
+      "package": {
+        "model_version": "0.2",
+        "agents": [
+          {
+            "id": "ag-x",
+            "label": "Editor A"
+          }
+        ],
+        "concepts": [
+          {
+            "id": "c-paragraph",
+            "label": "Paragraph",
+            "definition": "A paragraph of the reading.",
+            "applies_to": "node"
+          }
+        ],
+        "texts": [],
+        "versions": [
+          {
+            "id": "v1",
+            "content": "Person A besuchte Ort B.",
+            "sha256": "3e5d383a50b7383b7483a15897dd3e391342d617fe8eeba03aef4c30eea5316b",
+            "parents": []
+          }
+        ],
+        "continuities": [],
+        "selections": [
+          {
+            "id": "sel-person",
+            "version": "v1",
+            "selector": {
+              "kind": "ranges",
+              "segments": [
+                {
+                  "start": 0,
+                  "end": 8,
+                  "quote": "Person A"
+                }
+              ]
+            }
+          }
+        ],
+        "readings": [
+          {
+            "id": "rd-1",
+            "version": "v1",
+            "agent": "ag-x",
+            "label": "Mention layer",
+            "nodes": [
+              {
+                "id": "nd-1",
+                "type": "c-paragraph",
+                "selection": "sel-person",
+                "parent": null
+              }
+            ]
+          }
+        ],
+        "annotations": [],
+        "relations": [],
+        "entities": [
+          {
+            "id": "ent-a",
+            "label": "Person A",
+            "kind": "person"
+          }
+        ],
+        "names": [],
+        "denotations": [
+          {
+            "id": "dn-1",
+            "agent": "ag-x",
+            "created": "2026-05-04T10:00:00Z",
+            "status": "asserted",
+            "supersedes": [],
+            "mention": "nd-1",
+            "entity": "ent-a"
+          }
+        ],
+        "statements": []
+      },
+      "expect": {
+        "valid": false,
+        "diagnostics": [
+          {
+            "code": "E_MENTION",
+            "path": "/denotations/0/mention"
+          }
+        ]
+      }
+    },
+    {
+      "id": "denotation-from-annotation-without-concept",
+      "description": "An annotation without the optional concept field is what it was in v0.1 and is therefore no mention, so a denotation on it fails with E_MENTION.",
+      "package": {
+        "model_version": "0.2",
+        "agents": [
+          {
+            "id": "ag-x",
+            "label": "Editor A"
+          }
+        ],
+        "concepts": [],
+        "texts": [],
+        "versions": [
+          {
+            "id": "v1",
+            "content": "Person A besuchte Ort B.",
+            "sha256": "3e5d383a50b7383b7483a15897dd3e391342d617fe8eeba03aef4c30eea5316b",
+            "parents": []
+          }
+        ],
+        "continuities": [],
+        "selections": [
+          {
+            "id": "sel-person",
+            "version": "v1",
+            "selector": {
+              "kind": "ranges",
+              "segments": [
+                {
+                  "start": 0,
+                  "end": 8,
+                  "quote": "Person A"
+                }
+              ]
+            }
+          }
+        ],
+        "readings": [],
+        "annotations": [
+          {
+            "id": "an-1",
+            "agent": "ag-x",
+            "selection": "sel-person",
+            "body": "Plain annotation."
+          }
+        ],
+        "relations": [],
+        "entities": [
+          {
+            "id": "ent-a",
+            "label": "Person A",
+            "kind": "person"
+          }
+        ],
+        "names": [],
+        "denotations": [
+          {
+            "id": "dn-1",
+            "agent": "ag-x",
+            "created": "2026-05-04T10:00:00Z",
+            "status": "asserted",
+            "supersedes": [],
+            "mention": "an-1",
+            "entity": "ent-a"
+          }
+        ],
+        "statements": []
+      },
+      "expect": {
+        "valid": false,
+        "diagnostics": [
+          {
+            "code": "E_MENTION",
+            "path": "/denotations/0/mention"
+          }
+        ]
+      }
+    },
+    {
+      "id": "denotations-two-agents-one-mention",
+      "description": "R16 lets two agents identify one mention with two entities as coexisting claims that denotations_of lists by agent ID and then by claim ID.",
+      "package": {
+        "model_version": "0.2",
+        "agents": [
+          {
+            "id": "ag-x",
+            "label": "Editor A"
+          },
+          {
+            "id": "ag-y",
+            "label": "Editor B"
+          }
+        ],
+        "concepts": [
+          {
+            "id": "en-proper-noun",
+            "label": "Proper noun",
+            "definition": "The selected extent is a proper noun or proper-noun phrase used to refer.",
+            "applies_to": "node"
+          }
+        ],
+        "texts": [],
+        "versions": [
+          {
+            "id": "v1",
+            "content": "Person A besuchte Ort B.",
+            "sha256": "3e5d383a50b7383b7483a15897dd3e391342d617fe8eeba03aef4c30eea5316b",
+            "parents": []
+          }
+        ],
+        "continuities": [],
+        "selections": [
+          {
+            "id": "sel-person",
+            "version": "v1",
+            "selector": {
+              "kind": "ranges",
+              "segments": [
+                {
+                  "start": 0,
+                  "end": 8,
+                  "quote": "Person A"
+                }
+              ]
+            }
+          }
+        ],
+        "readings": [
+          {
+            "id": "rd-1",
+            "version": "v1",
+            "agent": "ag-x",
+            "label": "Mention layer",
+            "nodes": [
+              {
+                "id": "nd-1",
+                "type": "en-proper-noun",
+                "selection": "sel-person",
+                "parent": null
+              }
+            ]
+          }
+        ],
+        "annotations": [],
+        "relations": [],
+        "entities": [
+          {
+            "id": "ent-a",
+            "label": "Person A",
+            "kind": "person"
+          },
+          {
+            "id": "ent-b",
+            "label": "Ort B",
+            "kind": "place"
+          }
+        ],
+        "names": [],
+        "denotations": [
+          {
+            "id": "dn-y",
+            "agent": "ag-y",
+            "created": "2026-05-04T10:00:00Z",
+            "status": "asserted",
+            "supersedes": [],
+            "mention": "nd-1",
+            "entity": "ent-b"
+          },
+          {
+            "id": "dn-x",
+            "agent": "ag-x",
+            "created": "2026-05-04T10:00:00Z",
+            "status": "asserted",
+            "supersedes": [],
+            "mention": "nd-1",
+            "entity": "ent-a"
+          }
+        ],
+        "statements": []
+      },
+      "expect": {
+        "valid": true,
+        "diagnostics": []
+      },
+      "operations": [
+        {
+          "name": "denotations_of",
+          "arguments": {
+            "mention_id": "nd-1",
+            "include_withdrawn": false
+          },
+          "expect": {
+            "diagnostics": [],
+            "denotations": [
+              {
+                "id": "dn-x",
+                "agent": "ag-x",
+                "created": "2026-05-04T10:00:00Z",
+                "status": "asserted",
+                "supersedes": [],
+                "mention": "nd-1",
+                "entity": "ent-a",
+                "label": "Person A",
+                "kind": "person"
+              },
+              {
+                "id": "dn-y",
+                "agent": "ag-y",
+                "created": "2026-05-04T10:00:00Z",
+                "status": "asserted",
+                "supersedes": [],
+                "mention": "nd-1",
+                "entity": "ent-b",
+                "label": "Ort B",
+                "kind": "place"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "denotations-one-agent-two-certainties",
+      "description": "Constraint 4 lets one agent hold two identifications of one mention with different certainties, and validation derives no winner among them.",
+      "package": {
+        "model_version": "0.2",
+        "agents": [
+          {
+            "id": "ag-x",
+            "label": "Editor A"
+          }
+        ],
+        "concepts": [
+          {
+            "id": "en-proper-noun",
+            "label": "Proper noun",
+            "definition": "The selected extent is a proper noun or proper-noun phrase used to refer.",
+            "applies_to": "node"
+          }
+        ],
+        "texts": [],
+        "versions": [
+          {
+            "id": "v1",
+            "content": "Person A besuchte Ort B.",
+            "sha256": "3e5d383a50b7383b7483a15897dd3e391342d617fe8eeba03aef4c30eea5316b",
+            "parents": []
+          }
+        ],
+        "continuities": [],
+        "selections": [
+          {
+            "id": "sel-person",
+            "version": "v1",
+            "selector": {
+              "kind": "ranges",
+              "segments": [
+                {
+                  "start": 0,
+                  "end": 8,
+                  "quote": "Person A"
+                }
+              ]
+            }
+          }
+        ],
+        "readings": [
+          {
+            "id": "rd-1",
+            "version": "v1",
+            "agent": "ag-x",
+            "label": "Mention layer",
+            "nodes": [
+              {
+                "id": "nd-1",
+                "type": "en-proper-noun",
+                "selection": "sel-person",
+                "parent": null
+              }
+            ]
+          }
+        ],
+        "annotations": [],
+        "relations": [],
+        "entities": [
+          {
+            "id": "ent-a",
+            "label": "Person A",
+            "kind": "person"
+          },
+          {
+            "id": "ent-b",
+            "label": "Ort B",
+            "kind": "place"
+          }
+        ],
+        "names": [],
+        "denotations": [
+          {
+            "id": "dn-high",
+            "agent": "ag-x",
+            "created": "2026-05-04T10:00:00Z",
+            "status": "asserted",
+            "supersedes": [],
+            "mention": "nd-1",
+            "entity": "ent-a",
+            "certainty": "high"
+          },
+          {
+            "id": "dn-low",
+            "agent": "ag-x",
+            "created": "2026-05-04T10:00:00Z",
+            "status": "asserted",
+            "supersedes": [],
+            "mention": "nd-1",
+            "entity": "ent-b",
+            "certainty": "low"
+          }
+        ],
+        "statements": []
+      },
+      "expect": {
+        "valid": true,
+        "diagnostics": []
+      },
+      "operations": [
+        {
+          "name": "denotations_of",
+          "arguments": {
+            "mention_id": "nd-1",
+            "include_withdrawn": false
+          },
+          "expect": {
+            "diagnostics": [],
+            "denotations": [
+              {
+                "id": "dn-high",
+                "agent": "ag-x",
+                "created": "2026-05-04T10:00:00Z",
+                "status": "asserted",
+                "supersedes": [],
+                "mention": "nd-1",
+                "entity": "ent-a",
+                "certainty": "high",
+                "label": "Person A",
+                "kind": "person"
+              },
+              {
+                "id": "dn-low",
+                "agent": "ag-x",
+                "created": "2026-05-04T10:00:00Z",
+                "status": "asserted",
+                "supersedes": [],
+                "mention": "nd-1",
+                "entity": "ent-b",
+                "certainty": "low",
+                "label": "Ort B",
+                "kind": "place"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "denotation-superseded",
+      "description": "R20 makes the superseding denotation of the same agent about the same mention the current one, and denotations_of follows the chain.",
+      "package": {
+        "model_version": "0.2",
+        "agents": [
+          {
+            "id": "ag-x",
+            "label": "Editor A"
+          }
+        ],
+        "concepts": [
+          {
+            "id": "en-proper-noun",
+            "label": "Proper noun",
+            "definition": "The selected extent is a proper noun or proper-noun phrase used to refer.",
+            "applies_to": "node"
+          }
+        ],
+        "texts": [],
+        "versions": [
+          {
+            "id": "v1",
+            "content": "Person A besuchte Ort B.",
+            "sha256": "3e5d383a50b7383b7483a15897dd3e391342d617fe8eeba03aef4c30eea5316b",
+            "parents": []
+          }
+        ],
+        "continuities": [],
+        "selections": [
+          {
+            "id": "sel-person",
+            "version": "v1",
+            "selector": {
+              "kind": "ranges",
+              "segments": [
+                {
+                  "start": 0,
+                  "end": 8,
+                  "quote": "Person A"
+                }
+              ]
+            }
+          }
+        ],
+        "readings": [
+          {
+            "id": "rd-1",
+            "version": "v1",
+            "agent": "ag-x",
+            "label": "Mention layer",
+            "nodes": [
+              {
+                "id": "nd-1",
+                "type": "en-proper-noun",
+                "selection": "sel-person",
+                "parent": null
+              }
+            ]
+          }
+        ],
+        "annotations": [],
+        "relations": [],
+        "entities": [
+          {
+            "id": "ent-a",
+            "label": "Person A",
+            "kind": "person"
+          },
+          {
+            "id": "ent-b",
+            "label": "Ort B",
+            "kind": "place"
+          }
+        ],
+        "names": [],
+        "denotations": [
+          {
+            "id": "dn-1",
+            "agent": "ag-x",
+            "created": "2026-05-04T10:00:00Z",
+            "status": "asserted",
+            "supersedes": [],
+            "mention": "nd-1",
+            "entity": "ent-a"
+          },
+          {
+            "id": "dn-2",
+            "agent": "ag-x",
+            "created": "2026-05-04T10:00:00Z",
+            "status": "asserted",
+            "supersedes": [
+              "dn-1"
+            ],
+            "mention": "nd-1",
+            "entity": "ent-b"
+          }
+        ],
+        "statements": []
+      },
+      "expect": {
+        "valid": true,
+        "diagnostics": []
+      },
+      "operations": [
+        {
+          "name": "denotations_of",
+          "arguments": {
+            "mention_id": "nd-1",
+            "include_withdrawn": false
+          },
+          "expect": {
+            "diagnostics": [],
+            "denotations": [
+              {
+                "id": "dn-2",
+                "agent": "ag-x",
+                "created": "2026-05-04T10:00:00Z",
+                "status": "asserted",
+                "supersedes": [
+                  "dn-1"
+                ],
+                "mention": "nd-1",
+                "entity": "ent-b",
+                "label": "Ort B",
+                "kind": "place"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "denotation-withdrawn",
+      "description": "A withdrawal is a superseding claim with status withdrawn that stays current under section 13, so denotations_of shows it only on request and no W_UNDENOTED is reported for the mention; a ceased identification has no negative claim kind, as the ledger of 14.6 records.",
+      "package": {
+        "model_version": "0.2",
+        "agents": [
+          {
+            "id": "ag-x",
+            "label": "Editor A"
+          }
+        ],
+        "concepts": [
+          {
+            "id": "en-proper-noun",
+            "label": "Proper noun",
+            "definition": "The selected extent is a proper noun or proper-noun phrase used to refer.",
+            "applies_to": "node"
+          }
+        ],
+        "texts": [],
+        "versions": [
+          {
+            "id": "v1",
+            "content": "Person A besuchte Ort B.",
+            "sha256": "3e5d383a50b7383b7483a15897dd3e391342d617fe8eeba03aef4c30eea5316b",
+            "parents": []
+          }
+        ],
+        "continuities": [],
+        "selections": [
+          {
+            "id": "sel-person",
+            "version": "v1",
+            "selector": {
+              "kind": "ranges",
+              "segments": [
+                {
+                  "start": 0,
+                  "end": 8,
+                  "quote": "Person A"
+                }
+              ]
+            }
+          }
+        ],
+        "readings": [
+          {
+            "id": "rd-1",
+            "version": "v1",
+            "agent": "ag-x",
+            "label": "Mention layer",
+            "nodes": [
+              {
+                "id": "nd-1",
+                "type": "en-proper-noun",
+                "selection": "sel-person",
+                "parent": null
+              }
+            ]
+          }
+        ],
+        "annotations": [],
+        "relations": [],
+        "entities": [
+          {
+            "id": "ent-a",
+            "label": "Person A",
+            "kind": "person"
+          }
+        ],
+        "names": [],
+        "denotations": [
+          {
+            "id": "dn-1",
+            "agent": "ag-x",
+            "created": "2026-05-04T10:00:00Z",
+            "status": "asserted",
+            "supersedes": [],
+            "mention": "nd-1",
+            "entity": "ent-a"
+          },
+          {
+            "id": "dn-2",
+            "agent": "ag-x",
+            "created": "2026-05-04T10:00:00Z",
+            "status": "withdrawn",
+            "supersedes": [
+              "dn-1"
+            ],
+            "mention": "nd-1",
+            "entity": "ent-a"
+          }
+        ],
+        "statements": []
+      },
+      "expect": {
+        "valid": true,
+        "diagnostics": []
+      },
+      "operations": [
+        {
+          "name": "denotations_of",
+          "arguments": {
+            "mention_id": "nd-1",
+            "include_withdrawn": false
+          },
+          "expect": {
+            "diagnostics": [],
+            "denotations": []
+          }
+        },
+        {
+          "name": "denotations_of",
+          "arguments": {
+            "mention_id": "nd-1",
+            "include_withdrawn": true
+          },
+          "expect": {
+            "diagnostics": [],
+            "denotations": [
+              {
+                "id": "dn-2",
+                "agent": "ag-x",
+                "created": "2026-05-04T10:00:00Z",
+                "status": "withdrawn",
+                "supersedes": [
+                  "dn-1"
+                ],
+                "mention": "nd-1",
+                "entity": "ent-a",
+                "label": "Person A",
+                "kind": "person"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "denotation-withdrawn-without-supersedes",
+      "description": "A withdrawn claim that supersedes nothing fails with E_CLAIM_SUPERSESSION under constraint 8; the error suppresses the warning stage of section 5, so no W_UNDENOTED accompanies it.",
+      "package": {
+        "model_version": "0.2",
+        "agents": [
+          {
+            "id": "ag-x",
+            "label": "Editor A"
+          }
+        ],
+        "concepts": [
+          {
+            "id": "en-proper-noun",
+            "label": "Proper noun",
+            "definition": "The selected extent is a proper noun or proper-noun phrase used to refer.",
+            "applies_to": "node"
+          }
+        ],
+        "texts": [],
+        "versions": [
+          {
+            "id": "v1",
+            "content": "Person A besuchte Ort B.",
+            "sha256": "3e5d383a50b7383b7483a15897dd3e391342d617fe8eeba03aef4c30eea5316b",
+            "parents": []
+          }
+        ],
+        "continuities": [],
+        "selections": [
+          {
+            "id": "sel-person",
+            "version": "v1",
+            "selector": {
+              "kind": "ranges",
+              "segments": [
+                {
+                  "start": 0,
+                  "end": 8,
+                  "quote": "Person A"
+                }
+              ]
+            }
+          }
+        ],
+        "readings": [
+          {
+            "id": "rd-1",
+            "version": "v1",
+            "agent": "ag-x",
+            "label": "Mention layer",
+            "nodes": [
+              {
+                "id": "nd-1",
+                "type": "en-proper-noun",
+                "selection": "sel-person",
+                "parent": null
+              }
+            ]
+          }
+        ],
+        "annotations": [],
+        "relations": [],
+        "entities": [
+          {
+            "id": "ent-a",
+            "label": "Person A",
+            "kind": "person"
+          }
+        ],
+        "names": [],
+        "denotations": [
+          {
+            "id": "dn-1",
+            "agent": "ag-x",
+            "created": "2026-05-04T10:00:00Z",
+            "status": "withdrawn",
+            "supersedes": [],
+            "mention": "nd-1",
+            "entity": "ent-a"
+          }
+        ],
+        "statements": []
+      },
+      "expect": {
+        "valid": false,
+        "diagnostics": [
+          {
+            "code": "E_CLAIM_SUPERSESSION",
+            "path": "/denotations/0/supersedes"
+          }
+        ]
+      }
+    },
+    {
+      "id": "supersession-cycle",
+      "description": "Two denotation claims that supersede each other fail with E_CLAIM_CYCLE, reported on the collection as version and reading cycles are in section 5; the error suppresses the warning stage of section 5, so no W_UNDENOTED accompanies it.",
+      "package": {
+        "model_version": "0.2",
+        "agents": [
+          {
+            "id": "ag-x",
+            "label": "Editor A"
+          }
+        ],
+        "concepts": [
+          {
+            "id": "en-proper-noun",
+            "label": "Proper noun",
+            "definition": "The selected extent is a proper noun or proper-noun phrase used to refer.",
+            "applies_to": "node"
+          }
+        ],
+        "texts": [],
+        "versions": [
+          {
+            "id": "v1",
+            "content": "Person A besuchte Ort B.",
+            "sha256": "3e5d383a50b7383b7483a15897dd3e391342d617fe8eeba03aef4c30eea5316b",
+            "parents": []
+          }
+        ],
+        "continuities": [],
+        "selections": [
+          {
+            "id": "sel-person",
+            "version": "v1",
+            "selector": {
+              "kind": "ranges",
+              "segments": [
+                {
+                  "start": 0,
+                  "end": 8,
+                  "quote": "Person A"
+                }
+              ]
+            }
+          }
+        ],
+        "readings": [
+          {
+            "id": "rd-1",
+            "version": "v1",
+            "agent": "ag-x",
+            "label": "Mention layer",
+            "nodes": [
+              {
+                "id": "nd-1",
+                "type": "en-proper-noun",
+                "selection": "sel-person",
+                "parent": null
+              }
+            ]
+          }
+        ],
+        "annotations": [],
+        "relations": [],
+        "entities": [
+          {
+            "id": "ent-a",
+            "label": "Person A",
+            "kind": "person"
+          }
+        ],
+        "names": [],
+        "denotations": [
+          {
+            "id": "dn-1",
+            "agent": "ag-x",
+            "created": "2026-05-04T10:00:00Z",
+            "status": "asserted",
+            "supersedes": [
+              "dn-2"
+            ],
+            "mention": "nd-1",
+            "entity": "ent-a"
+          },
+          {
+            "id": "dn-2",
+            "agent": "ag-x",
+            "created": "2026-05-04T10:00:00Z",
+            "status": "asserted",
+            "supersedes": [
+              "dn-1"
+            ],
+            "mention": "nd-1",
+            "entity": "ent-a"
+          }
+        ],
+        "statements": []
+      },
+      "expect": {
+        "valid": false,
+        "diagnostics": [
+          {
+            "code": "E_CLAIM_CYCLE",
+            "path": "/denotations"
+          }
+        ]
+      }
+    },
+    {
+      "id": "supersession-rejected-shapes",
+      "description": "Constraint 8 confines supersession to one agent, one subject and one kind, so a cross-agent, a cross-subject and a cross-kind supersedes each fail with E_CLAIM_SUPERSESSION; the error suppresses the warning stage of section 5, so no W_UNDENOTED accompanies it.",
+      "package": {
+        "model_version": "0.2",
+        "agents": [
+          {
+            "id": "ag-x",
+            "label": "Editor A"
+          },
+          {
+            "id": "ag-y",
+            "label": "Editor B"
+          }
+        ],
+        "concepts": [
+          {
+            "id": "en-proper-noun",
+            "label": "Proper noun",
+            "definition": "The selected extent is a proper noun or proper-noun phrase used to refer.",
+            "applies_to": "node"
+          }
+        ],
+        "texts": [],
+        "versions": [
+          {
+            "id": "v1",
+            "content": "Person A besuchte Ort B.",
+            "sha256": "3e5d383a50b7383b7483a15897dd3e391342d617fe8eeba03aef4c30eea5316b",
+            "parents": []
+          }
+        ],
+        "continuities": [],
+        "selections": [
+          {
+            "id": "sel-person",
+            "version": "v1",
+            "selector": {
+              "kind": "ranges",
+              "segments": [
+                {
+                  "start": 0,
+                  "end": 8,
+                  "quote": "Person A"
+                }
+              ]
+            }
+          },
+          {
+            "id": "sel-ort",
+            "version": "v1",
+            "selector": {
+              "kind": "ranges",
+              "segments": [
+                {
+                  "start": 18,
+                  "end": 23,
+                  "quote": "Ort B"
+                }
+              ]
+            }
+          }
+        ],
+        "readings": [
+          {
+            "id": "rd-1",
+            "version": "v1",
+            "agent": "ag-x",
+            "label": "Mention layer",
+            "nodes": [
+              {
+                "id": "nd-1",
+                "type": "en-proper-noun",
+                "selection": "sel-person",
+                "parent": null
+              },
+              {
+                "id": "nd-2",
+                "type": "en-proper-noun",
+                "selection": "sel-ort",
+                "parent": null
+              }
+            ]
+          }
+        ],
+        "annotations": [],
+        "relations": [],
+        "entities": [
+          {
+            "id": "ent-a",
+            "label": "Person A",
+            "kind": "person"
+          },
+          {
+            "id": "ent-b",
+            "label": "Ort B",
+            "kind": "place"
+          }
+        ],
+        "names": [
+          {
+            "id": "nm-1",
+            "agent": "ag-x",
+            "created": "2026-05-04T10:00:00Z",
+            "status": "asserted",
+            "supersedes": [
+              "dn-1"
+            ],
+            "entity": "ent-a",
+            "form": "Person A",
+            "language": "de"
+          }
+        ],
+        "denotations": [
+          {
+            "id": "dn-1",
+            "agent": "ag-x",
+            "created": "2026-05-04T10:00:00Z",
+            "status": "asserted",
+            "supersedes": [],
+            "mention": "nd-1",
+            "entity": "ent-a"
+          },
+          {
+            "id": "dn-2",
+            "agent": "ag-y",
+            "created": "2026-05-04T10:00:00Z",
+            "status": "asserted",
+            "supersedes": [
+              "dn-1"
+            ],
+            "mention": "nd-1",
+            "entity": "ent-b"
+          },
+          {
+            "id": "dn-3",
+            "agent": "ag-x",
+            "created": "2026-05-04T10:00:00Z",
+            "status": "asserted",
+            "supersedes": [
+              "dn-1"
+            ],
+            "mention": "nd-2",
+            "entity": "ent-b"
+          }
+        ],
+        "statements": []
+      },
+      "expect": {
+        "valid": false,
+        "diagnostics": [
+          {
+            "code": "E_CLAIM_SUPERSESSION",
+            "path": "/denotations/1/supersedes"
+          },
+          {
+            "code": "E_CLAIM_SUPERSESSION",
+            "path": "/denotations/2/supersedes"
+          },
+          {
+            "code": "E_CLAIM_SUPERSESSION",
+            "path": "/names/0/supersedes"
+          }
+        ]
+      }
+    },
+    {
+      "id": "denotation-status-proposed",
+      "description": "Only the status withdrawn is filtered from the reference operations, so a proposed denotation is current and appears by default.",
+      "package": {
+        "model_version": "0.2",
+        "agents": [
+          {
+            "id": "ag-x",
+            "label": "Editor A"
+          }
+        ],
+        "concepts": [
+          {
+            "id": "en-proper-noun",
+            "label": "Proper noun",
+            "definition": "The selected extent is a proper noun or proper-noun phrase used to refer.",
+            "applies_to": "node"
+          }
+        ],
+        "texts": [],
+        "versions": [
+          {
+            "id": "v1",
+            "content": "Person A besuchte Ort B.",
+            "sha256": "3e5d383a50b7383b7483a15897dd3e391342d617fe8eeba03aef4c30eea5316b",
+            "parents": []
+          }
+        ],
+        "continuities": [],
+        "selections": [
+          {
+            "id": "sel-person",
+            "version": "v1",
+            "selector": {
+              "kind": "ranges",
+              "segments": [
+                {
+                  "start": 0,
+                  "end": 8,
+                  "quote": "Person A"
+                }
+              ]
+            }
+          }
+        ],
+        "readings": [
+          {
+            "id": "rd-1",
+            "version": "v1",
+            "agent": "ag-x",
+            "label": "Mention layer",
+            "nodes": [
+              {
+                "id": "nd-1",
+                "type": "en-proper-noun",
+                "selection": "sel-person",
+                "parent": null
+              }
+            ]
+          }
+        ],
+        "annotations": [],
+        "relations": [],
+        "entities": [
+          {
+            "id": "ent-a",
+            "label": "Person A",
+            "kind": "person"
+          }
+        ],
+        "names": [],
+        "denotations": [
+          {
+            "id": "dn-1",
+            "agent": "ag-x",
+            "created": "2026-05-04T10:00:00Z",
+            "status": "proposed",
+            "supersedes": [],
+            "mention": "nd-1",
+            "entity": "ent-a"
+          }
+        ],
+        "statements": []
+      },
+      "expect": {
+        "valid": true,
+        "diagnostics": []
+      },
+      "operations": [
+        {
+          "name": "denotations_of",
+          "arguments": {
+            "mention_id": "nd-1",
+            "include_withdrawn": false
+          },
+          "expect": {
+            "diagnostics": [],
+            "denotations": [
+              {
+                "id": "dn-1",
+                "agent": "ag-x",
+                "created": "2026-05-04T10:00:00Z",
+                "status": "proposed",
+                "supersedes": [],
+                "mention": "nd-1",
+                "entity": "ent-a",
+                "label": "Person A",
+                "kind": "person"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "operations-on-unknown-subject",
+      "description": "An ID that is no mention gives E_MENTION at /operation/mention and no list, and by the same reading an ID that is no entity gives E_REFERENCE at /operation/entity.",
+      "package": {
+        "model_version": "0.2",
+        "agents": [
+          {
+            "id": "ag-x",
+            "label": "Editor A"
+          }
+        ],
+        "concepts": [
+          {
+            "id": "en-proper-noun",
+            "label": "Proper noun",
+            "definition": "The selected extent is a proper noun or proper-noun phrase used to refer.",
+            "applies_to": "node"
+          }
+        ],
+        "texts": [],
+        "versions": [
+          {
+            "id": "v1",
+            "content": "Person A besuchte Ort B.",
+            "sha256": "3e5d383a50b7383b7483a15897dd3e391342d617fe8eeba03aef4c30eea5316b",
+            "parents": []
+          }
+        ],
+        "continuities": [],
+        "selections": [
+          {
+            "id": "sel-person",
+            "version": "v1",
+            "selector": {
+              "kind": "ranges",
+              "segments": [
+                {
+                  "start": 0,
+                  "end": 8,
+                  "quote": "Person A"
+                }
+              ]
+            }
+          }
+        ],
+        "readings": [
+          {
+            "id": "rd-1",
+            "version": "v1",
+            "agent": "ag-x",
+            "label": "Mention layer",
+            "nodes": [
+              {
+                "id": "nd-1",
+                "type": "en-proper-noun",
+                "selection": "sel-person",
+                "parent": null
+              }
+            ]
+          }
+        ],
+        "annotations": [],
+        "relations": [],
+        "entities": [
+          {
+            "id": "ent-a",
+            "label": "Person A",
+            "kind": "person"
+          }
+        ],
+        "names": [],
+        "denotations": [
+          {
+            "id": "dn-1",
+            "agent": "ag-x",
+            "created": "2026-05-04T10:00:00Z",
+            "status": "asserted",
+            "supersedes": [],
+            "mention": "nd-1",
+            "entity": "ent-a"
+          }
+        ],
+        "statements": []
+      },
+      "expect": {
+        "valid": true,
+        "diagnostics": []
+      },
+      "operations": [
+        {
+          "name": "denotations_of",
+          "arguments": {
+            "mention_id": "ent-a",
+            "include_withdrawn": false
+          },
+          "expect": {
+            "diagnostics": [
+              {
+                "code": "E_MENTION",
+                "path": "/operation/mention"
+              }
+            ],
+            "denotations": null
+          }
+        },
+        {
+          "name": "names_of",
+          "arguments": {
+            "entity_id": "nd-1",
+            "include_withdrawn": false
+          },
+          "expect": {
+            "diagnostics": [
+              {
+                "code": "E_REFERENCE",
+                "path": "/operation/entity"
+              }
+            ],
+            "names": null
+          }
+        }
+      ]
+    },
+    {
+      "id": "operation-on-invalid-package",
+      "description": "An invalid package returns its validation diagnostics and no list from denotations_of, since both operations require a valid package.",
+      "package": {
+        "model_version": "0.2",
+        "agents": [
+          {
+            "id": "ag-x",
+            "label": "Editor A"
+          }
+        ],
+        "concepts": [
+          {
+            "id": "en-proper-noun",
+            "label": "Proper noun",
+            "definition": "The selected extent is a proper noun or proper-noun phrase used to refer.",
+            "applies_to": "node"
+          }
+        ],
+        "texts": [],
+        "versions": [
+          {
+            "id": "v1",
+            "content": "Person A besuchte Ort B.",
+            "sha256": "3e5d383a50b7383b7483a15897dd3e391342d617fe8eeba03aef4c30eea5316b",
+            "parents": []
+          }
+        ],
+        "continuities": [],
+        "selections": [
+          {
+            "id": "sel-person",
+            "version": "v1",
+            "selector": {
+              "kind": "ranges",
+              "segments": [
+                {
+                  "start": 0,
+                  "end": 8,
+                  "quote": "Person A"
+                }
+              ]
+            }
+          }
+        ],
+        "readings": [
+          {
+            "id": "rd-1",
+            "version": "v1",
+            "agent": "ag-x",
+            "label": "Mention layer",
+            "nodes": [
+              {
+                "id": "nd-1",
+                "type": "en-proper-noun",
+                "selection": "sel-person",
+                "parent": null
+              }
+            ]
+          }
+        ],
+        "annotations": [],
+        "relations": [],
+        "entities": [
+          {
+            "id": "ent-a",
+            "label": "Person A",
+            "kind": "organisation"
+          }
+        ],
+        "names": [],
+        "denotations": [
+          {
+            "id": "dn-1",
+            "agent": "ag-x",
+            "created": "2026-05-04T10:00:00Z",
+            "status": "asserted",
+            "supersedes": [],
+            "mention": "nd-1",
+            "entity": "ent-a"
+          }
+        ],
+        "statements": []
+      },
+      "expect": {
+        "valid": false,
+        "diagnostics": [
+          {
+            "code": "E_ENTITY_KIND",
+            "path": "/entities/0/kind"
+          }
+        ]
+      },
+      "operations": [
+        {
+          "name": "denotations_of",
+          "arguments": {
+            "mention_id": "nd-1",
+            "include_withdrawn": false
+          },
+          "expect": {
+            "diagnostics": [
+              {
+                "code": "E_ENTITY_KIND",
+                "path": "/entities/0/kind"
+              }
+            ],
+            "denotations": null
+          }
+        }
+      ]
+    },
+    {
+      "id": "statement-kinds-all-four",
+      "description": "R18 admits the four discriminator values trait, state, event and relation on one statement record kind.",
+      "package": {
+        "model_version": "0.2",
+        "agents": [
+          {
+            "id": "ag-x",
+            "label": "Editor A"
+          }
+        ],
+        "concepts": [
+          {
+            "id": "c-height",
+            "label": "Height",
+            "definition": "A recorded body height.",
+            "applies_to": "statement"
+          },
+          {
+            "id": "c-nationality",
+            "label": "Nationality",
+            "definition": "A recorded nationality.",
+            "applies_to": "statement"
+          },
+          {
+            "id": "c-birth",
+            "label": "Birth",
+            "definition": "The event of being born.",
+            "applies_to": "statement"
+          },
+          {
+            "id": "c-parentage",
+            "label": "Parentage",
+            "definition": "A parent-child relation.",
+            "applies_to": "statement"
+          }
+        ],
+        "texts": [],
+        "versions": [],
+        "continuities": [],
+        "selections": [],
+        "readings": [],
+        "annotations": [],
+        "relations": [],
+        "entities": [
+          {
+            "id": "ent-a",
+            "label": "Person A",
+            "kind": "person"
+          },
+          {
+            "id": "ent-c",
+            "label": "Person C",
+            "kind": "person"
+          }
+        ],
+        "names": [],
+        "denotations": [],
+        "statements": [
+          {
+            "id": "st-1",
+            "agent": "ag-x",
+            "created": "2026-05-04T10:00:00Z",
+            "status": "asserted",
+            "supersedes": [],
+            "kind": "trait",
+            "type": "c-height",
+            "participants": [
+              {
+                "entity": "ent-a",
+                "role": "subject"
+              }
+            ],
+            "value": "mittelgroß"
+          },
+          {
+            "id": "st-2",
+            "agent": "ag-x",
+            "created": "2026-05-04T10:00:00Z",
+            "status": "asserted",
+            "supersedes": [],
+            "kind": "state",
+            "type": "c-nationality",
+            "participants": [
+              {
+                "entity": "ent-a",
+                "role": "subject"
+              }
+            ],
+            "value": "Land G"
+          },
+          {
+            "id": "st-3",
+            "agent": "ag-x",
+            "created": "2026-05-04T10:00:00Z",
+            "status": "asserted",
+            "supersedes": [],
+            "kind": "event",
+            "type": "c-birth",
+            "participants": [
+              {
+                "entity": "ent-a",
+                "role": "subject"
+              }
+            ],
+            "valid": {
+              "from": "1400",
+              "until": "1400"
+            }
+          },
+          {
+            "id": "st-4",
+            "agent": "ag-x",
+            "created": "2026-05-04T10:00:00Z",
+            "status": "asserted",
+            "supersedes": [],
+            "kind": "relation",
+            "type": "c-parentage",
+            "participants": [
+              {
+                "entity": "ent-a",
+                "role": "parent"
+              },
+              {
+                "entity": "ent-c",
+                "role": "child"
+              }
+            ]
+          }
+        ]
+      },
+      "expect": {
+        "valid": true,
+        "diagnostics": []
+      }
+    },
+    {
+      "id": "statement-kind-invalid",
+      "description": "A discriminator outside the closed set of four fails with E_STATEMENT_KIND under constraint 11.",
+      "package": {
+        "model_version": "0.2",
+        "agents": [
+          {
+            "id": "ag-x",
+            "label": "Editor A"
+          }
+        ],
+        "concepts": [
+          {
+            "id": "c-nationality",
+            "label": "Nationality",
+            "definition": "A recorded nationality.",
+            "applies_to": "statement"
+          }
+        ],
+        "texts": [],
+        "versions": [],
+        "continuities": [],
+        "selections": [],
+        "readings": [],
+        "annotations": [],
+        "relations": [],
+        "entities": [
+          {
+            "id": "ent-a",
+            "label": "Person A",
+            "kind": "person"
+          }
+        ],
+        "names": [],
+        "denotations": [],
+        "statements": [
+          {
+            "id": "st-1",
+            "agent": "ag-x",
+            "created": "2026-05-04T10:00:00Z",
+            "status": "asserted",
+            "supersedes": [],
+            "kind": "belief",
+            "type": "c-nationality",
+            "participants": [
+              {
+                "entity": "ent-a",
+                "role": "subject"
+              }
+            ]
+          }
+        ]
+      },
+      "expect": {
+        "valid": false,
+        "diagnostics": [
+          {
+            "code": "E_STATEMENT_KIND",
+            "path": "/statements/0/kind"
+          }
+        ]
+      }
+    },
+    {
+      "id": "statement-participants-mixed-kinds",
+      "description": "Constraint 7 admits participants of any entity kind in a statement of kind relation while the sources disagree about the admitted kinds.",
+      "package": {
+        "model_version": "0.2",
+        "agents": [
+          {
+            "id": "ag-x",
+            "label": "Editor A"
+          }
+        ],
+        "concepts": [
+          {
+            "id": "c-parentage",
+            "label": "Parentage",
+            "definition": "A parent-child relation.",
+            "applies_to": "statement"
+          }
+        ],
+        "texts": [],
+        "versions": [],
+        "continuities": [],
+        "selections": [],
+        "readings": [],
+        "annotations": [],
+        "relations": [],
+        "entities": [
+          {
+            "id": "ent-a",
+            "label": "Person A",
+            "kind": "person"
+          },
+          {
+            "id": "ent-b",
+            "label": "Ort B",
+            "kind": "place"
+          },
+          {
+            "id": "ent-d",
+            "label": "Objekt E",
+            "kind": "object"
+          },
+          {
+            "id": "ent-e",
+            "label": "Ereignis D",
+            "kind": "event"
+          }
+        ],
+        "names": [],
+        "denotations": [],
+        "statements": [
+          {
+            "id": "st-1",
+            "agent": "ag-x",
+            "created": "2026-05-04T10:00:00Z",
+            "status": "asserted",
+            "supersedes": [],
+            "kind": "relation",
+            "type": "c-parentage",
+            "participants": [
+              {
+                "entity": "ent-a",
+                "role": "person"
+              },
+              {
+                "entity": "ent-b",
+                "role": "place"
+              },
+              {
+                "entity": "ent-d",
+                "role": "object"
+              },
+              {
+                "entity": "ent-e",
+                "role": "event"
+              }
+            ]
+          }
+        ]
+      },
+      "expect": {
+        "valid": true,
+        "diagnostics": []
+      }
+    },
+    {
+      "id": "statement-participants-same-entity-two-roles",
+      "description": "R18 forbids a repeated entity-role pair only, so one entity may take two different roles in one statement.",
+      "package": {
+        "model_version": "0.2",
+        "agents": [
+          {
+            "id": "ag-x",
+            "label": "Editor A"
+          }
+        ],
+        "concepts": [
+          {
+            "id": "c-parentage",
+            "label": "Parentage",
+            "definition": "A parent-child relation.",
+            "applies_to": "statement"
+          }
+        ],
+        "texts": [],
+        "versions": [],
+        "continuities": [],
+        "selections": [],
+        "readings": [],
+        "annotations": [],
+        "relations": [],
+        "entities": [
+          {
+            "id": "ent-a",
+            "label": "Person A",
+            "kind": "person"
+          }
+        ],
+        "names": [],
+        "denotations": [],
+        "statements": [
+          {
+            "id": "st-1",
+            "agent": "ag-x",
+            "created": "2026-05-04T10:00:00Z",
+            "status": "asserted",
+            "supersedes": [],
+            "kind": "relation",
+            "type": "c-parentage",
+            "participants": [
+              {
+                "entity": "ent-a",
+                "role": "parent"
+              },
+              {
+                "entity": "ent-a",
+                "role": "child"
+              }
+            ]
+          }
+        ]
+      },
+      "expect": {
+        "valid": true,
+        "diagnostics": []
+      }
+    },
+    {
+      "id": "statement-participants-rejected-shapes",
+      "description": "An empty participants array and a repeated entity-role pair both fail with E_PARTICIPANTS.",
+      "package": {
+        "model_version": "0.2",
+        "agents": [
+          {
+            "id": "ag-x",
+            "label": "Editor A"
+          }
+        ],
+        "concepts": [
+          {
+            "id": "c-parentage",
+            "label": "Parentage",
+            "definition": "A parent-child relation.",
+            "applies_to": "statement"
+          },
+          {
+            "id": "c-nationality",
+            "label": "Nationality",
+            "definition": "A recorded nationality.",
+            "applies_to": "statement"
+          }
+        ],
+        "texts": [],
+        "versions": [],
+        "continuities": [],
+        "selections": [],
+        "readings": [],
+        "annotations": [],
+        "relations": [],
+        "entities": [
+          {
+            "id": "ent-a",
+            "label": "Person A",
+            "kind": "person"
+          }
+        ],
+        "names": [],
+        "denotations": [],
+        "statements": [
+          {
+            "id": "st-1",
+            "agent": "ag-x",
+            "created": "2026-05-04T10:00:00Z",
+            "status": "asserted",
+            "supersedes": [],
+            "kind": "state",
+            "type": "c-nationality",
+            "participants": []
+          },
+          {
+            "id": "st-2",
+            "agent": "ag-x",
+            "created": "2026-05-04T10:00:00Z",
+            "status": "asserted",
+            "supersedes": [],
+            "kind": "relation",
+            "type": "c-parentage",
+            "participants": [
+              {
+                "entity": "ent-a",
+                "role": "parent"
+              },
+              {
+                "entity": "ent-a",
+                "role": "parent"
+              }
+            ]
+          }
+        ]
+      },
+      "expect": {
+        "valid": false,
+        "diagnostics": [
+          {
+            "code": "E_PARTICIPANTS",
+            "path": "/statements/0/participants"
+          },
+          {
+            "code": "E_PARTICIPANTS",
+            "path": "/statements/1/participants/1"
+          }
+        ]
+      }
+    },
+    {
+      "id": "statement-participant-not-entity",
+      "description": "Constraint 2 resolves every participant entity to an entity, so a participant naming a concept fails with E_REFERENCE.",
+      "package": {
+        "model_version": "0.2",
+        "agents": [
+          {
+            "id": "ag-x",
+            "label": "Editor A"
+          }
+        ],
+        "concepts": [
+          {
+            "id": "c-nationality",
+            "label": "Nationality",
+            "definition": "A recorded nationality.",
+            "applies_to": "statement"
+          }
+        ],
+        "texts": [],
+        "versions": [],
+        "continuities": [],
+        "selections": [],
+        "readings": [],
+        "annotations": [],
+        "relations": [],
+        "entities": [
+          {
+            "id": "ent-a",
+            "label": "Person A",
+            "kind": "person"
+          }
+        ],
+        "names": [],
+        "denotations": [],
+        "statements": [
+          {
+            "id": "st-1",
+            "agent": "ag-x",
+            "created": "2026-05-04T10:00:00Z",
+            "status": "asserted",
+            "supersedes": [],
+            "kind": "state",
+            "type": "c-nationality",
+            "participants": [
+              {
+                "entity": "c-nationality",
+                "role": "subject"
+              }
+            ]
+          }
+        ]
+      },
+      "expect": {
+        "valid": false,
+        "diagnostics": [
+          {
+            "code": "E_REFERENCE",
+            "path": "/statements/0/participants/0/entity"
+          }
+        ]
+      }
+    },
+    {
+      "id": "statement-type-role-node",
+      "description": "A statement type must be a concept with the new role statement, so a concept with role node fails with E_TYPE as in section 5.",
+      "package": {
+        "model_version": "0.2",
+        "agents": [
+          {
+            "id": "ag-x",
+            "label": "Editor A"
+          }
+        ],
+        "concepts": [
+          {
+            "id": "c-paragraph",
+            "label": "Paragraph",
+            "definition": "A paragraph of the reading.",
+            "applies_to": "node"
+          }
+        ],
+        "texts": [],
+        "versions": [],
+        "continuities": [],
+        "selections": [],
+        "readings": [],
+        "annotations": [],
+        "relations": [],
+        "entities": [
+          {
+            "id": "ent-a",
+            "label": "Person A",
+            "kind": "person"
+          }
+        ],
+        "names": [],
+        "denotations": [],
+        "statements": [
+          {
+            "id": "st-1",
+            "agent": "ag-x",
+            "created": "2026-05-04T10:00:00Z",
+            "status": "asserted",
+            "supersedes": [],
+            "kind": "state",
+            "type": "c-paragraph",
+            "participants": [
+              {
+                "entity": "ent-a",
+                "role": "subject"
+              }
+            ]
+          }
+        ]
+      },
+      "expect": {
+        "valid": false,
+        "diagnostics": [
+          {
+            "code": "E_TYPE",
+            "path": "/statements/0/type"
+          }
+        ]
+      }
+    },
+    {
+      "id": "alignment-relations-all-four",
+      "description": "Section 13 admits the four relation kinds exact, close, broader and narrower on the alignment claims of an entity.",
+      "package": {
+        "model_version": "0.2",
+        "agents": [
+          {
+            "id": "ag-x",
+            "label": "Editor A"
+          }
+        ],
+        "concepts": [],
+        "texts": [],
+        "versions": [],
+        "continuities": [],
+        "selections": [],
+        "readings": [],
+        "annotations": [],
+        "relations": [],
+        "entities": [
+          {
+            "id": "ent-a",
+            "label": "Person A",
+            "kind": "person",
+            "alignments": [
+              {
+                "id": "al-1",
+                "agent": "ag-x",
+                "created": "2026-05-04T10:00:00Z",
+                "status": "asserted",
+                "supersedes": [],
+                "iri": "https://example.org/authority/a1",
+                "relation": "exact"
+              },
+              {
+                "id": "al-2",
+                "agent": "ag-x",
+                "created": "2026-05-04T10:00:00Z",
+                "status": "asserted",
+                "supersedes": [],
+                "iri": "https://example.org/authority/a2",
+                "relation": "close"
+              },
+              {
+                "id": "al-3",
+                "agent": "ag-x",
+                "created": "2026-05-04T10:00:00Z",
+                "status": "asserted",
+                "supersedes": [],
+                "iri": "https://example.org/authority/a3",
+                "relation": "broader"
+              },
+              {
+                "id": "al-4",
+                "agent": "ag-x",
+                "created": "2026-05-04T10:00:00Z",
+                "status": "asserted",
+                "supersedes": [],
+                "iri": "https://example.org/authority/a4",
+                "relation": "narrower"
+              }
+            ]
+          }
+        ],
+        "names": [],
+        "denotations": [],
+        "statements": []
+      },
+      "expect": {
+        "valid": true,
+        "diagnostics": []
+      }
+    },
+    {
+      "id": "alignment-malformed",
+      "description": "A relation kind outside the closed set and an IRI that is not absolute both fail with E_ALIGNMENT under constraint 11.",
+      "package": {
+        "model_version": "0.2",
+        "agents": [
+          {
+            "id": "ag-x",
+            "label": "Editor A"
+          }
+        ],
+        "concepts": [],
+        "texts": [],
+        "versions": [],
+        "continuities": [],
+        "selections": [],
+        "readings": [],
+        "annotations": [],
+        "relations": [],
+        "entities": [
+          {
+            "id": "ent-a",
+            "label": "Person A",
+            "kind": "person",
+            "alignments": [
+              {
+                "id": "al-1",
+                "agent": "ag-x",
+                "created": "2026-05-04T10:00:00Z",
+                "status": "asserted",
+                "supersedes": [],
+                "iri": "https://example.org/authority/a1",
+                "relation": "related"
+              },
+              {
+                "id": "al-2",
+                "agent": "ag-x",
+                "created": "2026-05-04T10:00:00Z",
+                "status": "asserted",
+                "supersedes": [],
+                "iri": "example.org/authority/a2",
+                "relation": "exact"
+              }
+            ]
+          }
+        ],
+        "names": [],
+        "denotations": [],
+        "statements": []
+      },
+      "expect": {
+        "valid": false,
+        "diagnostics": [
+          {
+            "code": "E_ALIGNMENT",
+            "path": "/entities/0/alignments/0/relation"
+          },
+          {
+            "code": "E_ALIGNMENT",
+            "path": "/entities/0/alignments/1/iri"
+          }
+        ]
+      }
+    },
+    {
+      "id": "alignment-two-entities-one-iri",
+      "description": "R19 derives nothing from alignments, so two entities aligned exact to one IRI stay two entities and the package carries no diagnostic.",
+      "package": {
+        "model_version": "0.2",
+        "agents": [
+          {
+            "id": "ag-x",
+            "label": "Editor A"
+          }
+        ],
+        "concepts": [],
+        "texts": [],
+        "versions": [],
+        "continuities": [],
+        "selections": [],
+        "readings": [],
+        "annotations": [],
+        "relations": [],
+        "entities": [
+          {
+            "id": "ent-a",
+            "label": "Person A",
+            "kind": "person",
+            "alignments": [
+              {
+                "id": "al-1",
+                "agent": "ag-x",
+                "created": "2026-05-04T10:00:00Z",
+                "status": "asserted",
+                "supersedes": [],
+                "iri": "https://example.org/authority/a1",
+                "relation": "exact"
+              }
+            ]
+          },
+          {
+            "id": "ent-b",
+            "label": "Person A der Quelle",
+            "kind": "person",
+            "alignments": [
+              {
+                "id": "al-2",
+                "agent": "ag-x",
+                "created": "2026-05-04T10:00:00Z",
+                "status": "asserted",
+                "supersedes": [],
+                "iri": "https://example.org/authority/a1",
+                "relation": "exact"
+              }
+            ]
+          }
+        ],
+        "names": [],
+        "denotations": [],
+        "statements": []
+      },
+      "expect": {
+        "valid": true,
+        "diagnostics": []
+      }
+    },
+    {
+      "id": "alignment-ref-with-several-uris",
+      "description": "Constraint 6 maps a P5 ref with several URIs on one naming element to one mention, one denotation claim and one alignment claim per URI on one entity.",
+      "package": {
+        "model_version": "0.2",
+        "agents": [
+          {
+            "id": "ag-z",
+            "label": "Mapping processor"
+          }
+        ],
+        "concepts": [
+          {
+            "id": "en-proper-noun",
+            "label": "Proper noun",
+            "definition": "The selected extent is a proper noun or proper-noun phrase used to refer.",
+            "applies_to": "node"
+          }
+        ],
+        "texts": [],
+        "versions": [
+          {
+            "id": "v1",
+            "content": "Person A besuchte Ort B.",
+            "sha256": "3e5d383a50b7383b7483a15897dd3e391342d617fe8eeba03aef4c30eea5316b",
+            "parents": []
+          }
+        ],
+        "continuities": [],
+        "selections": [
+          {
+            "id": "sel-person",
+            "version": "v1",
+            "selector": {
+              "kind": "ranges",
+              "segments": [
+                {
+                  "start": 0,
+                  "end": 8,
+                  "quote": "Person A"
+                }
+              ]
+            }
+          }
+        ],
+        "readings": [
+          {
+            "id": "rd-1",
+            "version": "v1",
+            "agent": "ag-z",
+            "label": "Mapping layer",
+            "nodes": [
+              {
+                "id": "nd-1",
+                "type": "en-proper-noun",
+                "selection": "sel-person",
+                "parent": null
+              }
+            ]
+          }
+        ],
+        "annotations": [],
+        "relations": [],
+        "entities": [
+          {
+            "id": "ent-a",
+            "label": "Person A",
+            "kind": "person",
+            "alignments": [
+              {
+                "id": "al-1",
+                "agent": "ag-z",
+                "created": "2026-05-04T10:00:00Z",
+                "status": "asserted",
+                "supersedes": [],
+                "iri": "https://example.org/edition/person-a",
+                "relation": "exact"
+              },
+              {
+                "id": "al-2",
+                "agent": "ag-z",
+                "created": "2026-05-04T10:00:00Z",
+                "status": "asserted",
+                "supersedes": [],
+                "iri": "https://example.org/authority/a1",
+                "relation": "exact"
+              },
+              {
+                "id": "al-3",
+                "agent": "ag-z",
+                "created": "2026-05-04T10:00:00Z",
+                "status": "asserted",
+                "supersedes": [],
+                "iri": "https://example.org/authority/a2",
+                "relation": "exact"
+              }
+            ]
+          }
+        ],
+        "names": [],
+        "denotations": [
+          {
+            "id": "dn-1",
+            "agent": "ag-z",
+            "created": "2026-05-04T10:00:00Z",
+            "status": "asserted",
+            "supersedes": [],
+            "mention": "nd-1",
+            "entity": "ent-a"
+          }
+        ],
+        "statements": []
+      },
+      "expect": {
+        "valid": true,
+        "diagnostics": []
+      }
+    },
+    {
+      "id": "alignment-on-concept-and-agent",
+      "description": "Section 13 names concept, agent and entity as the carriers of alignment claims, and the extension leaves that carrier set unchanged.",
+      "package": {
+        "model_version": "0.2",
+        "agents": [
+          {
+            "id": "ag-x",
+            "label": "Editor A",
+            "alignments": [
+              {
+                "id": "al-1",
+                "agent": "ag-x",
+                "created": "2026-05-04T10:00:00Z",
+                "status": "asserted",
+                "supersedes": [],
+                "iri": "https://example.org/authority/editor-a",
+                "relation": "close"
+              }
+            ]
+          }
+        ],
+        "concepts": [
+          {
+            "id": "c-paragraph",
+            "label": "Paragraph",
+            "definition": "A paragraph of the reading.",
+            "applies_to": "node",
+            "alignments": [
+              {
+                "id": "al-2",
+                "agent": "ag-x",
+                "created": "2026-05-04T10:00:00Z",
+                "status": "asserted",
+                "supersedes": [],
+                "iri": "https://example.org/vocab/paragraph",
+                "relation": "exact"
+              }
+            ]
+          }
+        ],
+        "texts": [],
+        "versions": [],
+        "continuities": [],
+        "selections": [],
+        "readings": [],
+        "annotations": [],
+        "relations": [],
+        "entities": [
+          {
+            "id": "ent-a",
+            "label": "Person A",
+            "kind": "person"
+          }
+        ],
+        "names": [],
+        "denotations": [],
+        "statements": []
+      },
+      "expect": {
+        "valid": true,
+        "diagnostics": []
+      }
+    },
+    {
+      "id": "alignment-duplicate-id",
+      "description": "Constraint 1 makes every nested alignment ID unique across the package, so an alignment repeating the ID of its carrier fails with E_DUPLICATE_ID.",
+      "package": {
+        "model_version": "0.2",
+        "agents": [
+          {
+            "id": "ag-x",
+            "label": "Editor A"
+          }
+        ],
+        "concepts": [],
+        "texts": [],
+        "versions": [],
+        "continuities": [],
+        "selections": [],
+        "readings": [],
+        "annotations": [],
+        "relations": [],
+        "entities": [
+          {
+            "id": "ent-a",
+            "label": "Person A",
+            "kind": "person",
+            "alignments": [
+              {
+                "id": "ent-a",
+                "agent": "ag-x",
+                "created": "2026-05-04T10:00:00Z",
+                "status": "asserted",
+                "supersedes": [],
+                "iri": "https://example.org/authority/a1",
+                "relation": "exact"
+              }
+            ]
+          }
+        ],
+        "names": [],
+        "denotations": [],
+        "statements": []
+      },
+      "expect": {
+        "valid": false,
+        "diagnostics": [
+          {
+            "code": "E_DUPLICATE_ID",
+            "path": "/entities/0/alignments/0/id"
+          }
+        ]
+      }
+    },
+    {
+      "id": "claim-created-not-rfc3339",
+      "description": "A created value that fails the RFC 3339 lexical form or the calendar check gives E_CLAIM_FIELD on the field.",
+      "package": {
+        "model_version": "0.2",
+        "agents": [
+          {
+            "id": "ag-x",
+            "label": "Editor A"
+          }
+        ],
+        "concepts": [],
+        "texts": [],
+        "versions": [],
+        "continuities": [],
+        "selections": [],
+        "readings": [],
+        "annotations": [],
+        "relations": [],
+        "entities": [
+          {
+            "id": "ent-a",
+            "label": "Person A",
+            "kind": "person"
+          }
+        ],
+        "names": [
+          {
+            "id": "nm-1",
+            "agent": "ag-x",
+            "created": "2026-13-05T10:00:00Z",
+            "status": "asserted",
+            "supersedes": [],
+            "entity": "ent-a",
+            "form": "Person A",
+            "language": "de"
+          }
+        ],
+        "denotations": [],
+        "statements": []
+      },
+      "expect": {
+        "valid": false,
+        "diagnostics": [
+          {
+            "code": "E_CLAIM_FIELD",
+            "path": "/names/0/created"
+          }
+        ]
+      }
+    },
+    {
+      "id": "claim-created-missing",
+      "description": "The created instant is a required pattern field of an extension claim, so its absence is a missing field under section 5 and gives E_SHAPE.",
+      "package": {
+        "model_version": "0.2",
+        "agents": [
+          {
+            "id": "ag-x",
+            "label": "Editor A"
+          }
+        ],
+        "concepts": [],
+        "texts": [],
+        "versions": [],
+        "continuities": [],
+        "selections": [],
+        "readings": [],
+        "annotations": [],
+        "relations": [],
+        "entities": [
+          {
+            "id": "ent-a",
+            "label": "Person A",
+            "kind": "person"
+          }
+        ],
+        "names": [
+          {
+            "id": "nm-1",
+            "agent": "ag-x",
+            "status": "asserted",
+            "supersedes": [],
+            "entity": "ent-a",
+            "form": "Person A",
+            "language": "de"
+          }
+        ],
+        "denotations": [],
+        "statements": []
+      },
+      "expect": {
+        "valid": false,
+        "diagnostics": [
+          {
+            "code": "E_SHAPE",
+            "path": "/names/0"
+          }
+        ]
+      }
+    },
+    {
+      "id": "claim-status-and-certainty-outside-set",
+      "description": "A status outside proposed, asserted and withdrawn and a certainty outside high, medium and low both give E_CLAIM_FIELD.",
+      "package": {
+        "model_version": "0.2",
+        "agents": [
+          {
+            "id": "ag-x",
+            "label": "Editor A"
+          }
+        ],
+        "concepts": [],
+        "texts": [],
+        "versions": [],
+        "continuities": [],
+        "selections": [],
+        "readings": [],
+        "annotations": [],
+        "relations": [],
+        "entities": [
+          {
+            "id": "ent-a",
+            "label": "Person A",
+            "kind": "person"
+          }
+        ],
+        "names": [
+          {
+            "id": "nm-1",
+            "agent": "ag-x",
+            "created": "2026-05-04T10:00:00Z",
+            "status": "retracted",
+            "supersedes": [],
+            "entity": "ent-a",
+            "form": "Person A",
+            "language": "de"
+          },
+          {
+            "id": "nm-2",
+            "agent": "ag-x",
+            "created": "2026-05-04T10:00:00Z",
+            "status": "asserted",
+            "supersedes": [],
+            "entity": "ent-a",
+            "form": "Persona A",
+            "language": "de",
+            "certainty": "certain"
+          }
+        ],
+        "denotations": [],
+        "statements": []
+      },
+      "expect": {
+        "valid": false,
+        "diagnostics": [
+          {
+            "code": "E_CLAIM_FIELD",
+            "path": "/names/0/status"
+          },
+          {
+            "code": "E_CLAIM_FIELD",
+            "path": "/names/1/certainty"
+          }
+        ]
+      }
+    },
+    {
+      "id": "claim-valid-malformed",
+      "description": "A validity scope whose from lies after its until and one that carries neither bound both give E_CLAIM_FIELD on the valid field.",
+      "package": {
+        "model_version": "0.2",
+        "agents": [
+          {
+            "id": "ag-x",
+            "label": "Editor A"
+          }
+        ],
+        "concepts": [],
+        "texts": [],
+        "versions": [],
+        "continuities": [],
+        "selections": [],
+        "readings": [],
+        "annotations": [],
+        "relations": [],
+        "entities": [
+          {
+            "id": "ent-a",
+            "label": "Person A",
+            "kind": "person"
+          }
+        ],
+        "names": [
+          {
+            "id": "nm-1",
+            "agent": "ag-x",
+            "created": "2026-05-04T10:00:00Z",
+            "status": "asserted",
+            "supersedes": [],
+            "entity": "ent-a",
+            "form": "Person A",
+            "language": "de",
+            "valid": {
+              "from": "1500",
+              "until": "1400"
+            }
+          },
+          {
+            "id": "nm-2",
+            "agent": "ag-x",
+            "created": "2026-05-04T10:00:00Z",
+            "status": "asserted",
+            "supersedes": [],
+            "entity": "ent-a",
+            "form": "Persona A",
+            "language": "de",
+            "valid": {}
+          }
+        ],
+        "denotations": [],
+        "statements": []
+      },
+      "expect": {
+        "valid": false,
+        "diagnostics": [
+          {
+            "code": "E_CLAIM_FIELD",
+            "path": "/names/0/valid"
+          },
+          {
+            "code": "E_CLAIM_FIELD",
+            "path": "/names/1/valid"
+          }
+        ]
+      }
+    },
+    {
+      "id": "claim-valid-mixed-precision",
+      "description": "Section 13 reads from as the start and until as the end of its calendar unit, so a year bound before a day bound of the same year is in order.",
+      "package": {
+        "model_version": "0.2",
+        "agents": [
+          {
+            "id": "ag-x",
+            "label": "Editor A"
+          }
+        ],
+        "concepts": [],
+        "texts": [],
+        "versions": [],
+        "continuities": [],
+        "selections": [],
+        "readings": [],
+        "annotations": [],
+        "relations": [],
+        "entities": [
+          {
+            "id": "ent-a",
+            "label": "Person A",
+            "kind": "person"
+          }
+        ],
+        "names": [
+          {
+            "id": "nm-1",
+            "agent": "ag-x",
+            "created": "2026-05-04T10:00:00Z",
+            "status": "asserted",
+            "supersedes": [],
+            "entity": "ent-a",
+            "form": "Person A",
+            "language": "de",
+            "valid": {
+              "from": "1400",
+              "until": "1400-06-30"
+            }
+          }
+        ],
+        "denotations": [],
+        "statements": []
+      },
+      "expect": {
+        "valid": true,
+        "diagnostics": []
+      }
+    },
+    {
+      "id": "canonical-order-registry-sequence",
+      "description": "R11 ignores registry order, so this package and its permutation canonical-order-permuted carry the same validity and the same diagnostics.",
+      "package": {
+        "model_version": "0.2",
+        "agents": [
+          {
+            "id": "ag-x",
+            "label": "Editor A"
+          },
+          {
+            "id": "ag-y",
+            "label": "Editor B"
+          }
+        ],
+        "concepts": [
+          {
+            "id": "en-proper-noun",
+            "label": "Proper noun",
+            "definition": "The selected extent is a proper noun or proper-noun phrase used to refer.",
+            "applies_to": "node"
+          }
+        ],
+        "texts": [],
+        "versions": [
+          {
+            "id": "v1",
+            "content": "Person A besuchte Ort B.",
+            "sha256": "3e5d383a50b7383b7483a15897dd3e391342d617fe8eeba03aef4c30eea5316b",
+            "parents": []
+          }
+        ],
+        "continuities": [],
+        "selections": [
+          {
+            "id": "sel-person",
+            "version": "v1",
+            "selector": {
+              "kind": "ranges",
+              "segments": [
+                {
+                  "start": 0,
+                  "end": 8,
+                  "quote": "Person A"
+                }
+              ]
+            }
+          }
+        ],
+        "readings": [
+          {
+            "id": "rd-1",
+            "version": "v1",
+            "agent": "ag-x",
+            "label": "Mention layer",
+            "nodes": [
+              {
+                "id": "nd-1",
+                "type": "en-proper-noun",
+                "selection": "sel-person",
+                "parent": null
+              }
+            ]
+          }
+        ],
+        "annotations": [],
+        "relations": [],
+        "entities": [
+          {
+            "id": "ent-a",
+            "label": "Person A",
+            "kind": "person"
+          },
+          {
+            "id": "ent-b",
+            "label": "Ort B",
+            "kind": "place"
+          }
+        ],
+        "names": [
+          {
+            "id": "nm-1",
+            "agent": "ag-x",
+            "created": "2026-05-04T10:00:00Z",
+            "status": "asserted",
+            "supersedes": [],
+            "entity": "ent-a",
+            "form": "Person A",
+            "language": "de"
+          },
+          {
+            "id": "nm-2",
+            "agent": "ag-x",
+            "created": "2026-05-04T10:00:00Z",
+            "status": "asserted",
+            "supersedes": [],
+            "entity": "ent-b",
+            "form": "Ort B",
+            "language": "de"
+          }
+        ],
+        "denotations": [
+          {
+            "id": "dn-1",
+            "agent": "ag-x",
+            "created": "2026-05-04T10:00:00Z",
+            "status": "asserted",
+            "supersedes": [],
+            "mention": "nd-1",
+            "entity": "ent-a"
+          }
+        ],
+        "statements": []
+      },
+      "expect": {
+        "valid": true,
+        "diagnostics": []
+      }
+    },
+    {
+      "id": "canonical-order-permuted",
+      "description": "The permutation of canonical-order-registry-sequence differs in the order of agents, entities and name claims only and is valid with the same diagnostics.",
+      "package": {
+        "model_version": "0.2",
+        "agents": [
+          {
+            "id": "ag-y",
+            "label": "Editor B"
+          },
+          {
+            "id": "ag-x",
+            "label": "Editor A"
+          }
+        ],
+        "concepts": [
+          {
+            "id": "en-proper-noun",
+            "label": "Proper noun",
+            "definition": "The selected extent is a proper noun or proper-noun phrase used to refer.",
+            "applies_to": "node"
+          }
+        ],
+        "texts": [],
+        "versions": [
+          {
+            "id": "v1",
+            "content": "Person A besuchte Ort B.",
+            "sha256": "3e5d383a50b7383b7483a15897dd3e391342d617fe8eeba03aef4c30eea5316b",
+            "parents": []
+          }
+        ],
+        "continuities": [],
+        "selections": [
+          {
+            "id": "sel-person",
+            "version": "v1",
+            "selector": {
+              "kind": "ranges",
+              "segments": [
+                {
+                  "start": 0,
+                  "end": 8,
+                  "quote": "Person A"
+                }
+              ]
+            }
+          }
+        ],
+        "readings": [
+          {
+            "id": "rd-1",
+            "version": "v1",
+            "agent": "ag-x",
+            "label": "Mention layer",
+            "nodes": [
+              {
+                "id": "nd-1",
+                "type": "en-proper-noun",
+                "selection": "sel-person",
+                "parent": null
+              }
+            ]
+          }
+        ],
+        "annotations": [],
+        "relations": [],
+        "entities": [
+          {
+            "id": "ent-b",
+            "label": "Ort B",
+            "kind": "place"
+          },
+          {
+            "id": "ent-a",
+            "label": "Person A",
+            "kind": "person"
+          }
+        ],
+        "names": [
+          {
+            "id": "nm-2",
+            "agent": "ag-x",
+            "created": "2026-05-04T10:00:00Z",
+            "status": "asserted",
+            "supersedes": [],
+            "entity": "ent-b",
+            "form": "Ort B",
+            "language": "de"
+          },
+          {
+            "id": "nm-1",
+            "agent": "ag-x",
+            "created": "2026-05-04T10:00:00Z",
+            "status": "asserted",
+            "supersedes": [],
+            "entity": "ent-a",
+            "form": "Person A",
+            "language": "de"
+          }
+        ],
+        "denotations": [
+          {
+            "id": "dn-1",
+            "agent": "ag-x",
+            "created": "2026-05-04T10:00:00Z",
+            "status": "asserted",
+            "supersedes": [],
+            "mention": "nd-1",
+            "entity": "ent-a"
+          }
+        ],
+        "statements": []
+      },
+      "expect": {
+        "valid": true,
+        "diagnostics": []
+      }
+    },
+    {
+      "id": "duplicate-id-entity-and-reading-node",
+      "description": "Constraint 1 makes every record ID unique across the package, and the new collections follow the nine of v0.1, so the entity repeating a reading node ID carries the E_DUPLICATE_ID; the error suppresses the warning stage of section 5, so no W_UNDENOTED accompanies it.",
+      "package": {
+        "model_version": "0.2",
+        "agents": [
+          {
+            "id": "ag-x",
+            "label": "Editor A"
+          }
+        ],
+        "concepts": [
+          {
+            "id": "en-proper-noun",
+            "label": "Proper noun",
+            "definition": "The selected extent is a proper noun or proper-noun phrase used to refer.",
+            "applies_to": "node"
+          }
+        ],
+        "texts": [],
+        "versions": [
+          {
+            "id": "v1",
+            "content": "Person A besuchte Ort B.",
+            "sha256": "3e5d383a50b7383b7483a15897dd3e391342d617fe8eeba03aef4c30eea5316b",
+            "parents": []
+          }
+        ],
+        "continuities": [],
+        "selections": [
+          {
+            "id": "sel-person",
+            "version": "v1",
+            "selector": {
+              "kind": "ranges",
+              "segments": [
+                {
+                  "start": 0,
+                  "end": 8,
+                  "quote": "Person A"
+                }
+              ]
+            }
+          }
+        ],
+        "readings": [
+          {
+            "id": "rd-1",
+            "version": "v1",
+            "agent": "ag-x",
+            "label": "Mention layer",
+            "nodes": [
+              {
+                "id": "nd-1",
+                "type": "en-proper-noun",
+                "selection": "sel-person",
+                "parent": null
+              }
+            ]
+          }
+        ],
+        "annotations": [],
+        "relations": [],
+        "entities": [
+          {
+            "id": "nd-1",
+            "label": "Person A",
+            "kind": "person"
+          }
+        ],
+        "names": [],
+        "denotations": [],
+        "statements": []
+      },
+      "expect": {
+        "valid": false,
+        "diagnostics": [
+          {
+            "code": "E_DUPLICATE_ID",
+            "path": "/entities/0/id"
+          }
+        ]
+      }
+    },
+    {
+      "id": "package-base-and-former-bases",
+      "description": "Section 13 admits one base IRI ending in a slash and an array of former-base claims, and 14.1 keeps both optional in a 0.2 package.",
+      "package": {
+        "model_version": "0.2",
+        "agents": [
+          {
+            "id": "ag-x",
+            "label": "Editor A"
+          }
+        ],
+        "concepts": [],
+        "texts": [],
+        "versions": [],
+        "continuities": [],
+        "selections": [],
+        "readings": [],
+        "annotations": [],
+        "relations": [],
+        "entities": [
+          {
+            "id": "ent-a",
+            "label": "Person A",
+            "kind": "person"
+          }
+        ],
+        "names": [
+          {
+            "id": "nm-1",
+            "agent": "ag-x",
+            "created": "2026-05-04T10:00:00Z",
+            "status": "asserted",
+            "supersedes": [],
+            "entity": "ent-a",
+            "form": "Person A",
+            "language": "de"
+          }
+        ],
+        "denotations": [],
+        "statements": [],
+        "base": "https://example.org/package/p1/",
+        "former_bases": [
+          {
+            "id": "fb-1",
+            "agent": "ag-x",
+            "created": "2026-05-04T10:00:00Z",
+            "status": "asserted",
+            "supersedes": [],
+            "base": "https://example.org/package/p0/"
+          }
+        ]
+      },
+      "expect": {
+        "valid": true,
+        "diagnostics": []
+      }
+    },
+    {
+      "id": "package-base-malformed",
+      "description": "A base with a query component and without a trailing slash or hash fails its grammar with E_BASE.",
+      "package": {
+        "model_version": "0.2",
+        "agents": [
+          {
+            "id": "ag-x",
+            "label": "Editor A"
+          }
+        ],
+        "concepts": [],
+        "texts": [],
+        "versions": [],
+        "continuities": [],
+        "selections": [],
+        "readings": [],
+        "annotations": [],
+        "relations": [],
+        "entities": [
+          {
+            "id": "ent-a",
+            "label": "Person A",
+            "kind": "person"
+          }
+        ],
+        "names": [],
+        "denotations": [],
+        "statements": [],
+        "base": "https://example.org/package/p1?view=all"
+      },
+      "expect": {
+        "valid": false,
+        "diagnostics": [
+          {
+            "code": "E_BASE",
+            "path": "/base"
+          }
+        ]
+      }
+    },
+    {
+      "id": "valid-at-v01-fails-extension",
+      "description": "The v0.1 layer of this package validates while the extension rejects the denotation whose entity is undeclared, which is the additive change class of 14.1; the error suppresses the warning stage of section 5, so no W_UNDENOTED accompanies it.",
+      "package": {
+        "model_version": "0.2",
+        "agents": [
+          {
+            "id": "ag-x",
+            "label": "Editor A"
+          }
+        ],
+        "concepts": [
+          {
+            "id": "en-proper-noun",
+            "label": "Proper noun",
+            "definition": "The selected extent is a proper noun or proper-noun phrase used to refer.",
+            "applies_to": "node"
+          }
+        ],
+        "texts": [],
+        "versions": [
+          {
+            "id": "v1",
+            "content": "Person A besuchte Ort B.",
+            "sha256": "3e5d383a50b7383b7483a15897dd3e391342d617fe8eeba03aef4c30eea5316b",
+            "parents": []
+          }
+        ],
+        "continuities": [],
+        "selections": [
+          {
+            "id": "sel-person",
+            "version": "v1",
+            "selector": {
+              "kind": "ranges",
+              "segments": [
+                {
+                  "start": 0,
+                  "end": 8,
+                  "quote": "Person A"
+                }
+              ]
+            }
+          }
+        ],
+        "readings": [
+          {
+            "id": "rd-1",
+            "version": "v1",
+            "agent": "ag-x",
+            "label": "Mention layer",
+            "nodes": [
+              {
+                "id": "nd-1",
+                "type": "en-proper-noun",
+                "selection": "sel-person",
+                "parent": null
+              }
+            ]
+          }
+        ],
+        "annotations": [],
+        "relations": [],
+        "entities": [],
+        "names": [],
+        "denotations": [
+          {
+            "id": "dn-1",
+            "agent": "ag-x",
+            "created": "2026-05-04T10:00:00Z",
+            "status": "asserted",
+            "supersedes": [],
+            "mention": "nd-1",
+            "entity": "ent-a"
+          }
+        ],
+        "statements": []
+      },
+      "expect": {
+        "valid": false,
+        "diagnostics": [
+          {
+            "code": "E_REFERENCE",
+            "path": "/denotations/0/entity"
+          }
+        ]
+      }
+    },
+    {
+      "id": "valid-at-both-versions",
+      "description": "A package that carries the v0.1 layer together with every new collection, the three reserved mention concepts and one alignment is valid at both versions.",
+      "package": {
+        "model_version": "0.2",
+        "agents": [
+          {
+            "id": "ag-x",
+            "label": "Editor A"
+          },
+          {
+            "id": "ag-y",
+            "label": "Editor B"
+          }
+        ],
+        "concepts": [
+          {
+            "id": "en-proper-noun",
+            "label": "Proper noun",
+            "definition": "The selected extent is a proper noun or proper-noun phrase used to refer.",
+            "applies_to": "node"
+          },
+          {
+            "id": "en-referring-string",
+            "label": "Referring string",
+            "definition": "The selected extent is a referring string that is no proper noun, such as a description or a title used to refer.",
+            "applies_to": "node"
+          },
+          {
+            "id": "en-pronoun",
+            "label": "Pronoun",
+            "definition": "The selected extent is a pronoun used to refer.",
+            "applies_to": "node"
+          },
+          {
+            "id": "c-birth",
+            "label": "Birth",
+            "definition": "The event of being born.",
+            "applies_to": "statement"
+          }
+        ],
+        "texts": [
+          {
+            "id": "tx-1",
+            "label": "Synthetic text"
+          }
+        ],
+        "versions": [
+          {
+            "id": "v1",
+            "content": "Person A besuchte Ort B.",
+            "sha256": "3e5d383a50b7383b7483a15897dd3e391342d617fe8eeba03aef4c30eea5316b",
+            "parents": []
+          }
+        ],
+        "continuities": [
+          {
+            "id": "co-1",
+            "text": "tx-1",
+            "versions": [
+              "v1"
+            ],
+            "agent": "ag-x",
+            "criterion": "One synthetic version of one grouping."
+          }
+        ],
+        "selections": [
+          {
+            "id": "sel-person",
+            "version": "v1",
+            "selector": {
+              "kind": "ranges",
+              "segments": [
+                {
+                  "start": 0,
+                  "end": 8,
+                  "quote": "Person A"
+                }
+              ]
+            }
+          },
+          {
+            "id": "sel-ort",
+            "version": "v1",
+            "selector": {
+              "kind": "ranges",
+              "segments": [
+                {
+                  "start": 18,
+                  "end": 23,
+                  "quote": "Ort B"
+                }
+              ]
+            }
+          },
+          {
+            "id": "sel-split",
+            "version": "v1",
+            "selector": {
+              "kind": "ranges",
+              "segments": [
+                {
+                  "start": 0,
+                  "end": 6,
+                  "quote": "Person"
+                },
+                {
+                  "start": 22,
+                  "end": 23,
+                  "quote": "B"
+                }
+              ]
+            }
+          }
+        ],
+        "readings": [
+          {
+            "id": "rd-1",
+            "version": "v1",
+            "agent": "ag-x",
+            "label": "Mention layer",
+            "nodes": [
+              {
+                "id": "nd-1",
+                "type": "en-proper-noun",
+                "selection": "sel-person",
+                "parent": null
+              },
+              {
+                "id": "nd-2",
+                "type": "en-pronoun",
+                "selection": "sel-ort",
+                "parent": null
+              }
+            ]
+          }
+        ],
+        "annotations": [
+          {
+            "id": "an-1",
+            "agent": "ag-y",
+            "selection": "sel-split",
+            "body": "Discontinuous reference.",
+            "concept": "en-referring-string"
+          }
+        ],
+        "relations": [],
+        "entities": [
+          {
+            "id": "ent-a",
+            "label": "Person A",
+            "kind": "person",
+            "alignments": [
+              {
+                "id": "al-1",
+                "agent": "ag-x",
+                "created": "2026-05-04T10:00:00Z",
+                "status": "asserted",
+                "supersedes": [],
+                "iri": "https://example.org/authority/a1",
+                "relation": "exact"
+              }
+            ]
+          },
+          {
+            "id": "ent-b",
+            "label": "Ort B",
+            "kind": "place"
+          }
+        ],
+        "names": [
+          {
+            "id": "nm-1",
+            "agent": "ag-x",
+            "created": "2026-05-04T10:00:00Z",
+            "status": "asserted",
+            "supersedes": [],
+            "entity": "ent-a",
+            "form": "Person A",
+            "language": "de",
+            "parts": [
+              {
+                "kind": "forename",
+                "form": "Person"
+              },
+              {
+                "kind": "surname",
+                "form": "A"
+              }
+            ]
+          }
+        ],
+        "denotations": [
+          {
+            "id": "dn-1",
+            "agent": "ag-x",
+            "created": "2026-05-04T10:00:00Z",
+            "status": "asserted",
+            "supersedes": [],
+            "mention": "nd-1",
+            "entity": "ent-a",
+            "certainty": "high"
+          },
+          {
+            "id": "dn-2",
+            "agent": "ag-y",
+            "created": "2026-05-04T10:00:00Z",
+            "status": "asserted",
+            "supersedes": [],
+            "mention": "nd-2",
+            "entity": "ent-b"
+          },
+          {
+            "id": "dn-3",
+            "agent": "ag-y",
+            "created": "2026-05-04T10:00:00Z",
+            "status": "asserted",
+            "supersedes": [],
+            "mention": "an-1",
+            "entity": "ent-a"
+          }
+        ],
+        "statements": [
+          {
+            "id": "st-1",
+            "agent": "ag-x",
+            "created": "2026-05-04T10:00:00Z",
+            "status": "asserted",
+            "supersedes": [],
+            "kind": "event",
+            "type": "c-birth",
+            "participants": [
+              {
+                "entity": "ent-a",
+                "role": "subject"
+              }
+            ],
+            "valid": {
+              "from": "1400",
+              "until": "1400"
+            }
+          }
+        ]
+      },
+      "expect": {
+        "valid": true,
+        "diagnostics": []
+      },
+      "operations": [
+        {
+          "name": "denotations_of",
+          "arguments": {
+            "mention_id": "nd-1",
+            "include_withdrawn": false
+          },
+          "expect": {
+            "diagnostics": [],
+            "denotations": [
+              {
+                "id": "dn-1",
+                "agent": "ag-x",
+                "created": "2026-05-04T10:00:00Z",
+                "status": "asserted",
+                "supersedes": [],
+                "mention": "nd-1",
+                "entity": "ent-a",
+                "certainty": "high",
+                "label": "Person A",
+                "kind": "person"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1482,9 +1482,33 @@ laws of the bindings document, with the XML record names `entity`, `name`,
 and `part`, and `binding_version` `0.2`. Every valid 0.2 fixture passes all
 three bindings and every binding change. The implementation lives beside
 the existing modules, as a proposal for the integrator, in
-`tools/models/entities.py`, its case suite in `experiments/abstract_text_v02/`
+`tools/models/entities.py`, its case suite in `experiments/entities_v02/`
 with its own specification, cases and deterministic report, and its tests in
 `tests/models/test_entities.py`.
+
+Implementation notes settled from this text on 2026-09-06, when the
+independently authored case suite and the implementation first met. The
+warning stage runs only over an otherwise error-free package, as section 5
+orders the stages. A withdrawn claim that no claim supersedes is current, so
+it satisfies the mention rule while `denotations_of` hides it unless asked.
+On the new claim kinds `created` and `status` are required and their absence
+is a shape failure, while `certainty`, `valid` and `supersedes` stay
+optional and an absent `supersedes` reads as empty. `E_CLAIM_SUPERSESSION`
+names the `supersedes` field of the claim, so several bad entries of one
+claim collapse into one diagnostic, an entry that resolves to no claim stays a
+reference failure at the entry, and `E_CLAIM_CYCLE` names the collection that
+holds the cycle. `E_NAME_PART` names the failing field of a part and the part
+itself only when the part is structurally malformed. A malformed or
+unresolvable value in a reference field is a reference failure, and `E_ID`
+stays for a record's own identifier. The reserved mention concepts are
+compared on their four defining fields, may carry alignments, and need not be
+present in a package without mentions. `created` admits second 60 as RFC 3339
+does, and validity bounds follow the proleptic Gregorian calendar, so year
+0000 is rejected. The executable form is `tools/models/entities.py`, the
+runner `tools/check_entities_v02.py`, the contract
+`experiments/entities_v02/spec.json`, the independently authored suite
+`experiments/entities_v02/cases.json` and the deterministic report
+`experiments/entities_v02/report.json`.
 
 ### 14.5 RDF direction
 
