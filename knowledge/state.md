@@ -61,11 +61,11 @@ The milestones and their exit conditions are defined in [[knowledge/plan]].
 | Milestone | Status | Position |
 |---|---|---|
 | 1. Tools and gates repaired | complete | commit `1cfdb2e` on 2026-09-06 |
-| 2. Knowledge base restructured | in progress | knowledge documents restructured locally on 2026-09-06; Git rename record, page regeneration and integration of both restructuring packages pending |
-| 3. Vault structures | planned | glossary phenomena, generated topic maps and example lists, validated typed relations not started |
-| 4. Foundation closed | in progress | collectors implemented and offline-tested; the exhaustive GitHub run, the SourceForge re-run, the TEI-L family, the archive and website reconciliation and the sampling protocol remain open |
-| 5. Claim pattern and IRI policy | planned | Abstract Text Model 0.1 carries experiment-local IDs without a recorded IRI policy or claim pattern |
-| 6. Entity run and topic cycles | planned | three bounded pilot chapters exist; no selection-driven vertical cycle has run |
+| 2. Knowledge base restructured | complete | commit `021b633` on 2026-09-06; every knowledge document lives in `knowledge/` with one function |
+| 3. Vault structures | complete | commit `82bce81` on 2026-09-06; topic maps and glossary example lists are generated regions, phenomena are glossary entries, `phenomena` and `related` are validated |
+| 4. Foundation closed | in progress | the exhaustive GitHub REST run, the SourceForge reconciliation, the local P5 mirror, the Penn State TEI-L months and the Wayback coverage measurement are done (commits `2a481dc`, `0ac8964`); the Wayback fetch of the Brown archive runs, and the GraphQL relations stage, the archive and website reconciliation, the export request to the Consortium and the sampling protocol remain open |
+| 5. Claim pattern and IRI policy | complete | commit `0419968` on 2026-09-06; section 13 of the text model fixes the claim record, the IRI grammar and the alignment field |
+| 6. Entity run and topic cycles | in progress | the first selection-driven vertical cycle ran on the topic Metadata and Entities (commit `0ac8964`): nine sources, nine validated distillates, thirty-five reviewed assertions, chapter 08 grounded; the next topics follow the order of the posits of chapter 12 |
 | 7. Model extended phenomenon by phenomenon | in progress | ten record kinds, five operations and three bindings implemented; coverage matrix, cases from distinct editions and the RDF binding remain open |
 | 8. Proposal from assertions | in progress | chapter 12 links nine validated premises to thirteen posits; counter-reader review, option ranking, migration prototype and dated official-P6 comparison remain open |
 | 9. Publication | planned | no human verification sample recorded |
