@@ -14,7 +14,12 @@ implements the two that are machine-retrievable:
     capture is its result, not a failed request.
 ``wayback-fetch``
     Fetch the captured Brown month indexes and their messages through the
-    Wayback Machine, using the ``id_`` form that serves the original bytes.
+    Wayback Machine, using the ``id_`` form that serves the original bytes. The
+    retired archive ran an older LISTSERV whose indexes address a message by its
+    byte position inside the monthly log, so both published link forms are read
+    and an uncaptured message reaches us as the Wayback error page under HTTP
+    200 rather than as a status. A message the Wayback index does not hold at all
+    still leaves the row the month index observed, marked ``wayback-index``.
 
 The third lock part, a consortium export for the months neither archive holds,
 is an operator action with no interface to call.
@@ -39,6 +44,7 @@ Usage:
 from __future__ import annotations
 
 import argparse
+import html
 import re
 import time
 import urllib.parse
@@ -99,7 +105,25 @@ MESSAGE_HREF = re.compile(r"[?&]A2=([^;&]+);([0-9a-fA-F]+\.\d{4})")
 HREF_ATTRIBUTE = re.compile(r"""(?i)\bhref\s*=\s*["']([^"']+)["']""")
 POSITION_HREF = re.compile(r"[?&]P=(\d+)")
 MONTH_LABEL = re.compile(r"^\d{4}$")
+INDEX_MONTH = re.compile(r"ind(\d{4})")
+LIST_PARAMETER = re.compile(r"(?i)([?&]L=)([^&;]+)")
+THREAD_ANCHOR = re.compile(r"#(\d+)")
 NAVIGATION_NAMES = {"first", "prev", "next", "last"}
+
+# Response fields of a normalized row. A row the index alone supports carries
+# them as null, so the absence of a fetch is visible in the row itself.
+FETCH_FIELDS = (
+    "requested_url",
+    "http_status",
+    "observed_at",
+    "media_type",
+    "byte_count",
+    "raw_sha256",
+    "raw_path",
+)
+
+TITLE_TAG = re.compile(r"(?is)<title[^>]*>(.*?)</title>")
+WAYBACK_PLACEHOLDER_TITLE = "wayback machine"
 
 
 def month_ordinal(month: str) -> int:
@@ -147,11 +171,31 @@ def list_variants(list_name: str) -> list[str]:
 def message_url_variants(resolved: str) -> list[str]:
     """Return the spellings under which one message may have been archived.
 
-    The index publishes message links with a trailing empty ``S`` parameter that
-    the archive itself drops in other views, so both forms are looked up.
+    The Penn State index publishes message links with a trailing empty ``S``
+    parameter that the archive itself drops in other views. The older form
+    carries the list name in an ``L`` parameter that the archive wrote in either
+    case, so the lower-case spelling is asked for as well. The URL is otherwise
+    left exactly as the index published it, because the Wayback index knows a
+    message under that spelling and not under a rewritten one.
     """
 
-    return list(dict.fromkeys([resolved, resolved.removesuffix("&S=")]))
+    forms = [resolved, resolved.removesuffix("&S=")]
+    lowered = [
+        LIST_PARAMETER.sub(lambda found: found.group(1) + found.group(2).lower(), form)
+        for form in forms
+    ]
+    return list(dict.fromkeys(forms + lowered))
+
+
+def is_wayback_placeholder(body: bytes) -> bool:
+    """Report whether the Wayback Machine served its own page instead of a capture.
+
+    A URL the archive does not hold answers under HTTP 200 with the archive's
+    error page, so the absence shows in the body rather than in the status line.
+    """
+
+    found = TITLE_TAG.search(body.decode("utf-8", errors="replace"))
+    return found is not None and collapse(found.group(1)).lower() == WAYBACK_PLACEHOLDER_TITLE
 
 
 def bounded_status(gaps: list[dict[str, Any]]) -> str:
@@ -269,45 +313,92 @@ def parse_rows(body: bytes) -> list[list[Cell]]:
     return parser.rows
 
 
+def message_from_href(href: str) -> tuple[str, str, str] | None:
+    """Return list, message id and message URL for one archive link.
+
+    LISTSERV published two message-link forms. The Penn State archive addresses a
+    message by list name and hexadecimal id (``A2=TEI-L;<hex>.<yymm>``). The
+    retired Brown archive ran an older LISTSERV that addresses it by month index
+    and byte position inside the monthly log
+    (``A2=ind<yymm>&L=TEI-L&P=<n>``), whose identity becomes ``P<n>.<yymm>`` so
+    that both forms carry the month the boundary check reads. The sort and view
+    links of an index address the index itself through ``A1=`` and match neither
+    form. The href is read as it stands in the markup, so a link the raw scan
+    finds with its character references intact yields the same URL and the same
+    identity as the one the row reader takes from the parsed attribute.
+    """
+
+    url = urllib.parse.unquote(html.unescape(href))
+    listed = MESSAGE_HREF.search(url)
+    if listed:
+        return listed.group(1), listed.group(2), url
+    query = dict(urllib.parse.parse_qsl(urllib.parse.urlsplit(url).query))
+    month = INDEX_MONTH.fullmatch(query.get("A2", ""))
+    position = query.get("P", "")
+    list_name = query.get("L", "")
+    if month is None or not list_name or not position.isdigit():
+        return None
+    return list_name, f"P{position}.{month.group(1)}", url
+
+
 def scan_message_links(body: bytes) -> list[tuple[str, str, str]]:
-    """Return every message link on a page as list, message id and href."""
+    """Return every message link on a page as list, message id and URL."""
 
     found: list[tuple[str, str, str]] = []
     for match in HREF_ATTRIBUTE.finditer(body.decode("utf-8", errors="replace")):
-        href = urllib.parse.unquote(match.group(1))
-        message = MESSAGE_HREF.search(href)
-        if message:
-            found.append((message.group(1), message.group(2), href))
+        message = message_from_href(match.group(1))
+        if message is not None:
+            found.append(message)
     return found
 
 
 def _row_message(row: list[Cell]) -> tuple[str, str, str, str] | None:
-    """Return list, message id, href and anchor text of the first message link."""
+    """Return list, message id, URL and anchor text of the first message link."""
 
     for cell in row:
         for text, href in cell.links:
-            unquoted = urllib.parse.unquote(href)
-            match = MESSAGE_HREF.search(unquoted)
-            if match:
-                return match.group(1), match.group(2), unquoted, text
+            message = message_from_href(href)
+            if message is not None:
+                return (*message, text)
     return None
+
+
+def _row_thread(row: list[Cell]) -> str:
+    """Return the thread ordinal a grouping row of the older index opens.
+
+    That archive opens each thread with a row whose anchor names the thread's
+    place in the index, and the message rows that follow belong to it. The Penn
+    State index carries no such row, so its entries stay ungrouped.
+    """
+
+    for cell in row:
+        for _text, href in cell.links:
+            match = THREAD_ANCHOR.fullmatch(href)
+            if match:
+                return match.group(1)
+    return ""
 
 
 def parse_month_index(body: bytes, month: str, base_url: str) -> list[dict[str, str]]:
     """Return one entry per message the month index lists.
 
-    The index table holds subject, sender and date in that order, so the subject
-    comes from the message anchor and the date from the third cell. The sender
-    cell is never read. A message whose row cannot be read is still returned from
-    a plain href scan, so a table surprise never drops a message from the
-    boundary.
+    Both archive generations open a row with subject, sender and date in that
+    order, so the subject comes from the message anchor and the date from the
+    third cell, and the older archive's trailing size cell is ignored along with
+    the sender cell, which is never read. Either published link form identifies a
+    message (``message_from_href``), and the grouping rows of the older index
+    give each message the thread it was filed under. A message whose row cannot
+    be read is still returned from a plain href scan, ungrouped, so a table
+    surprise never drops a message from the boundary.
     """
 
     suffix = f".{month}"
     listed: dict[str, dict[str, str]] = {}
+    thread = ""
     for row in parse_rows(body):
         found = _row_message(row)
         if found is None:
+            thread = _row_thread(row) or thread
             continue
         list_name, message_id, href, subject = found
         if not message_id.endswith(suffix):
@@ -319,6 +410,7 @@ def parse_month_index(body: bytes, month: str, base_url: str) -> list[dict[str, 
             "url": urllib.parse.urljoin(base_url, href),
             "index_subject": subject,
             "index_date": row[2].text if len(row) > 2 else "",
+            "index_thread": thread,
         }
     for list_name, message_id, href in scan_message_links(body):
         if message_id.endswith(suffix) and message_id not in listed:
@@ -329,6 +421,7 @@ def parse_month_index(body: bytes, month: str, base_url: str) -> list[dict[str, 
                 "url": urllib.parse.urljoin(base_url, href),
                 "index_subject": "",
                 "index_date": "",
+                "index_thread": "",
             }
     return [listed[key] for key in sorted(listed)]
 
@@ -433,14 +526,38 @@ def first_captures(
     return [], tried, failure
 
 
-def latest_capture(captures: list[dict[str, str]]) -> dict[str, str] | None:
-    return max(captures, key=lambda row: row.get("timestamp", ""), default=None)
+def preferred_capture(captures: list[dict[str, str]]) -> dict[str, str] | None:
+    """Return the capture worth fetching from a CDX listing.
+
+    A listing mixes captures the crawl served with captures of an error page, so
+    the newest row is not necessarily a usable one. The newest served capture
+    wins, and the newest row decides only where the crawl never served the URL.
+    """
+
+    served = [row for row in captures if row.get("statuscode") == "200"]
+    return max(served or captures, key=lambda row: row.get("timestamp", ""), default=None)
+
+
+def fetch_fields(result: FetchResult | None) -> dict[str, Any]:
+    """Return what the response contributes to a row, all null where none was made."""
+
+    if result is None:
+        return dict.fromkeys(FETCH_FIELDS)
+    return {
+        "requested_url": result.canonical_url,
+        "http_status": result.status,
+        "observed_at": result.observed_at,
+        "media_type": result.media_type,
+        "byte_count": result.byte_count,
+        "raw_sha256": result.sha256,
+        "raw_path": result.raw_path,
+    }
 
 
 def message_record(
     entry: dict[str, str],
     parsed: dict[str, Any],
-    result: FetchResult,
+    result: FetchResult | None,
     *,
     via: str,
     extra: dict[str, Any] | None = None,
@@ -449,7 +566,9 @@ def message_record(
 
     The row carries message identity, the subject and date the archive shows,
     thread pointers and the raw pointer. Nothing about the sender enters it; the
-    sender stays in the raw page under the rights rule in knowledge/data.md.
+    sender stays in the raw page under the rights rule in knowledge/data.md. A
+    row the month index alone supports keeps the same shape and states the
+    absence of a response through null response fields.
     """
 
     headers = parsed["headers"]
@@ -471,16 +590,27 @@ def message_record(
         "references": headers.get("references"),
         "thread_position": parsed["thread_position"] or None,
         "archive_url": entry["url"],
-        "requested_url": result.canonical_url,
-        "http_status": result.status,
-        "observed_at": result.observed_at,
-        "media_type": result.media_type,
-        "byte_count": result.byte_count,
-        "raw_sha256": result.sha256,
-        "raw_path": result.raw_path,
+        **fetch_fields(result),
     }
     record.update(extra or {})
     return record
+
+
+def wayback_fields(
+    entry: dict[str, str], *, capture_timestamp: str | None, message_capture: str | None
+) -> dict[str, Any]:
+    """Return what a row owes to the Wayback Machine and to the month index.
+
+    Both kinds of row of a wayback run carry these fields, so a row the index
+    alone supports differs from a fetched one in their values and not in shape.
+    """
+
+    return {
+        "capture_timestamp": capture_timestamp,
+        "month_capture_timestamp": entry["month_capture_timestamp"],
+        "wayback_url": message_capture,
+        "index_thread": entry["index_thread"] or None,
+    }
 
 
 def bound_messages(
@@ -644,7 +774,7 @@ def measure_wayback_coverage(
         if failure is not None and not captures:
             gaps.append({"code": "wayback-cdx-query-failed", "month": month, "detail": failure})
             continue
-        newest = latest_capture(captures)
+        newest = preferred_capture(captures)
         records.append(
             {
                 "schema_version": 1,
@@ -742,6 +872,7 @@ def snapshot_wayback(
     responses = 0
     indexed_months = 0
     missing_messages = 0
+    index_only_messages = 0
 
     for row in coverage:
         month = str(row["month"])
@@ -770,9 +901,13 @@ def snapshot_wayback(
     for entry in bound_messages(listed, max_messages, gaps):
         targets = message_url_variants(entry["url"])
         captures, tried, failure = first_captures(store, targets, delay_seconds)
-        newest = latest_capture(captures)
+        newest = preferred_capture(captures)
         if newest is None:
+            # The Wayback index holds the month but not this message. What the
+            # month index observed is the whole record then, so the row states
+            # the observation and its null response fields state the absence.
             missing_messages += 1
+            index_only_messages += 1
             gaps.append(
                 {
                     "code": "wayback-message-missing",
@@ -781,6 +916,15 @@ def snapshot_wayback(
                     "queried_urls": tried,
                     "detail": failure,
                 }
+            )
+            records.append(
+                message_record(
+                    entry,
+                    {"headers": {}, "thread_position": {}},
+                    None,
+                    via="wayback-index",
+                    extra=wayback_fields(entry, capture_timestamp=None, message_capture=None),
+                )
             )
             continue
         message_capture = wayback_url(newest["timestamp"], newest["original"])
@@ -800,13 +944,21 @@ def snapshot_wayback(
             )
             continue
         parsed = parse_message(body)
-        if not parsed["headers"]:
+        if is_wayback_placeholder(body) or not parsed["headers"]:
+            # The archive answers an uncaptured message with its own page under
+            # HTTP 200, and an older message view may carry no header block the
+            # parser recognises. Neither is stored as a message: the page
+            # contributes nothing to the row, which keeps the index observation
+            # and the status of the attempt.
+            parsed = {"headers": {}, "thread_position": {}}
+            missing_messages += 1
             gaps.append(
                 {
-                    "code": "message-parse-failed",
+                    "code": "wayback-message-missing",
                     "month": entry["month"],
                     "message_id": entry["message_id"],
                     "url": canonical_url(message_capture),
+                    "capture_timestamp": newest["timestamp"],
                 }
             )
         records.append(
@@ -815,11 +967,11 @@ def snapshot_wayback(
                 parsed,
                 result,
                 via="wayback",
-                extra={
-                    "capture_timestamp": newest["timestamp"],
-                    "month_capture_timestamp": entry["month_capture_timestamp"],
-                    "wayback_url": message_capture,
-                },
+                extra=wayback_fields(
+                    entry,
+                    capture_timestamp=newest["timestamp"],
+                    message_capture=message_capture,
+                ),
             )
         )
 
@@ -854,6 +1006,7 @@ def snapshot_wayback(
             "messages_listed": len(listed),
             "messages": len(records),
             "messages_missing": missing_messages,
+            "messages_index_only": index_only_messages,
             "http_responses": responses,
             "gaps": len(gaps),
         },

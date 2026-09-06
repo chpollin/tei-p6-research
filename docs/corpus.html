@@ -149,8 +149,8 @@ pre { overflow: auto; white-space: pre; background: var(--soft); padding: 1rem; 
   <section aria-label="Source families">
     <div class="toolbar">
       <label class="control control-search"><span>Full-text search</span><input id="search" class="search" type="search" placeholder="Search sources and holdings"></label>
-      <label class="control"><span>Acquisition</span><select id="status-filter" class="select"><option value="all">All acquisition states</option><option value="observable-complete">Acquired</option><option value="partial">Partially acquired</option><option value="planned">Planned</option></select></label>
-      <label class="control"><span>Material type</span><select id="material-filter" class="select"><option value="all">All material types</option><option value="data holding">Data holding</option><option value="git tree inventory">Git tree inventory</option><option value="public git repositories">Public Git repositories</option><option value="release archive">Release archive</option><option value="repository census">Repository census</option><option value="ticket and discussion records">Ticket and discussion records</option><option value="web page census">Web page census</option><option value="zip member inventory">ZIP member inventory</option><option value="__none__">Not yet acquired</option></select></label>
+      <label class="control"><span>Acquisition</span><select id="status-filter" class="select"><option value="all">All acquisition states</option><option value="observable-complete">Acquired</option><option value="partial">Partially acquired</option></select></label>
+      <label class="control"><span>Material type</span><select id="material-filter" class="select"><option value="all">All material types</option><option value="data holding">Data holding</option><option value="git tree inventory">Git tree inventory</option><option value="public git repositories">Public Git repositories</option><option value="release archive">Release archive</option><option value="repository census">Repository census</option><option value="tei l message metadata">Tei l message metadata</option><option value="tei l wayback month coverage">Tei l wayback month coverage</option><option value="ticket and discussion records">Ticket and discussion records</option><option value="web page census">Web page census</option><option value="zip member inventory">ZIP member inventory</option><option value="__none__">Not yet acquired</option></select></label>
     </div>
     <div class="table-wrap" tabindex="0" role="region" aria-label="Source holdings table">
       <table class="source-table">
@@ -743,11 +743,11 @@ pre { overflow: auto; white-space: pre; background: var(--soft); padding: 1rem; 
     </div>
   </td>
 </tr>
-<tr class="source-row" data-source-row data-detail-id="source-detail-17" data-status="planned" data-status-rank="3" data-materials="__none__" data-title="tei-l mailing-list archive across its three parts" data-date="2026-09-06" data-search="tei-l-archive tei-l mailing-list archive across its three parts tei-l mailing-list archive across its three parts registered primary-source holding of the research project. community and working groups primary-community-record per-item-verification-required no retrieval run yet brown archive months before first capture unknown consortium export not requested">
+<tr class="source-row" data-source-row data-detail-id="source-detail-17" data-status="partial" data-status-rank="2" data-materials="tei l message metadata|tei l wayback month coverage" data-title="tei-l mailing-list archive across its three parts" data-date="2026-09-06" data-search="tei-l-archive tei-l mailing-list archive across its three parts tei-l mailing-list archive across its three parts registered primary-source holding of the research project. community and working groups primary-community-record per-item-verification-required tei l message metadata tei l wayback month coverage normalized holding from this acquisition run. normalized holding from this acquisition run. no retrieval run yet brown archive months before first capture unknown consortium export not requested">
   <td class="source-cell"><strong>TEI-L mailing-list archive across its three parts</strong><small>Registered primary-source holding of the research project.</small></td>
-  <td class="materials-cell"><span class="empty-value">Not yet acquired</span></td>
+  <td class="materials-cell"><ul class="material-summary"><li>Tei l message metadata</li><li>Tei l wayback month coverage</li></ul></td>
   <td class="metrics-cell">—</td>
-  <td class="status-cell"><span class="status-text status-planned" title="The source family is registered but has not yet been acquired.">Planned</span><small>3 open items</small></td>
+  <td class="status-cell"><span class="status-text status-partial" title="Part of the locked holding was acquired; open gaps are recorded.">Partially acquired</span><small>3 open items</small></td>
   <td class="date-cell"><time datetime="2026-09-06">2026-09-06</time></td>
   <td class="action-cell"><button class="expand" type="button" aria-expanded="false" aria-controls="source-detail-17" aria-label="Show details for TEI-L mailing-list archive across its three parts"><span aria-hidden="true">+</span></button></td>
 </tr>
@@ -756,7 +756,7 @@ pre { overflow: auto; white-space: pre; background: var(--soft); padding: 1rem; 
     <div class="detail-panel">
       <section class="holdings-section">
         <h2>Holdings</h2>
-        <p class="empty-value">No completed acquisition run is available for this source.</p>
+        <ul class="holding-list"><li class="holding-item"><div class="holding-title"><strong>Tei l message metadata</strong><span class="holding-status">Acquired</span><span class="row-links"><a href="../corpus/normalized/mail/tei-l-psu.jsonl">Data</a><a href="../sources/manifests/2026-09-06-tei-l-psu.yaml">Manifest</a></span></div><small>Normalized holding from this acquisition run.</small><small class="run-meta">Run <code>2026-09-06-tei-l-psu</code></small></li><li class="holding-item"><div class="holding-title"><strong>Tei l wayback month coverage</strong><span class="holding-status">Acquired</span><span class="row-links"><a href="../corpus/normalized/mail/tei-l-wayback-coverage.jsonl">Data</a><a href="../sources/manifests/2026-09-06-tei-l-wayback-coverage.yaml">Manifest</a></span></div><small>Normalized holding from this acquisition run.</small><small class="run-meta">Run <code>2026-09-06-tei-l-wayback-coverage</code></small></li></ul>
       </section>
       <section>
         <h2>Open items</h2>
@@ -774,7 +774,7 @@ pre { overflow: auto; white-space: pre; background: var(--soft); padding: 1rem; 
           <div><dt>Rights</dt><dd>per-item-verification-required</dd></div>
           <div><dt>Source types</dt><dd>publication</dd></div>
         </dl>
-        <div class="link-list technical-links"><a href="../sources/locks/tei-l-archive.yaml">Source Lock</a></div>
+        <div class="link-list technical-links"><a href="../sources/locks/tei-l-archive.yaml">Source Lock</a><a href="../sources/manifests/2026-09-06-tei-l-psu.yaml">Acquisition manifest 1</a><a href="../sources/manifests/2026-09-06-tei-l-wayback-coverage.yaml">Acquisition manifest 2</a></div>
       </details>
     </div>
   </td>

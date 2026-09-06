@@ -2,8 +2,8 @@
 type: representation
 source-type: document
 source: '[[00_sources/tei-p5-att.canonical-4.12.0.xml]]'
-converter: tools.ingest_git_blobs v1; complete XML plus XML itertext English reading
-  blocks with whitespace normalized
+converter: tools.ingest_git_blobs v2; complete XML plus XML itertext English reading
+  blocks with whitespace normalized and identified locators
 channel: collection
 metadata:
   title: TEI P5 4.12.0 att.canonical specification
@@ -28,6 +28,8 @@ closing fence is not part of the source. The converter records the exact byte le
 Reading blocks reproduce English descriptions and English remarks paragraphs using
 XML `itertext`; whitespace runs become one space and surrounding whitespace is removed.
 They are reading projections of this source, not additional sources or interpretations.
+A locator names an element that carries an `ident` attribute by that ident, so the
+reading block of an attribute definition states which attribute it describes.
 
 Source byte length: 9162. Git blob: `2682bdddfa0d9223aeffd45566b825f895b050c5`.
 
@@ -156,43 +158,43 @@ Source byte length: 9162. Git blob: `2682bdddfa0d9223aeffd45566b825f895b050c5`.
 
 ### Reading 1
 
-XML location: `/classSpec[1]/desc[1]`.
+XML location: `/classSpec[@ident='att.canonical']/desc[1]`.
 
 provides attributes that can be used to associate a representation such as a name or title with canonical information about the object being named or referenced. ^r1
 
 ### Reading 2
 
-XML location: `/classSpec[1]/attList[1]/attDef[1]/desc[1]`.
+XML location: `/classSpec[@ident='att.canonical']/attList[1]/attDef[@ident='key']/desc[1]`.
 
 provides an externally-defined means of identifying the entity (or entities) being named, using a coded value of some kind. ^r2
 
 ### Reading 3
 
-XML location: `/classSpec[1]/attList[1]/attDef[1]/remarks[1]/p[1]`.
+XML location: `/classSpec[@ident='att.canonical']/attList[1]/attDef[@ident='key']/remarks[@ident='att.canonical-attr.key-remarks']/p[1]`.
 
 The value may be a unique identifier from a database, or any other externally-defined string identifying the referent. No particular syntax is proposed for the values of the key attribute, since its form will depend entirely on practice within a given project. ^r3
 
 ### Reading 4
 
-XML location: `/classSpec[1]/attList[1]/attDef[2]/desc[1]`.
+XML location: `/classSpec[@ident='att.canonical']/attList[1]/attDef[@ident='ref']/desc[1]`.
 
 provides an explicit means of locating a full definition or identity for the entity being named by means of one or more URIs. ^r4
 
 ### Reading 5
 
-XML location: `/classSpec[1]/attList[1]/attDef[2]/remarks[1]/p[1]`.
+XML location: `/classSpec[@ident='att.canonical']/attList[1]/attDef[@ident='ref']/remarks[@ident='att.canonical-attr.ref-remarks']/p[1]`.
 
 The value must point directly to one or more XML elements or other resources by means of one or more URIs, separated by whitespace. If more than one is supplied the implication is that the name identifies several distinct entities. ^r5
 
 ### Reading 6
 
-XML location: `/classSpec[1]/remarks[1]/p[1]`.
+XML location: `/classSpec[@ident='att.canonical']/remarks[@ident='att.canonical-remarks']/p[1]`.
 
 The key attribute is more flexible and general-purpose, but its use in interchange requires that documentation about how the key is to be resolved be sent to the recipient of the TEI document. In contrast values of the ref attribute are resolved using the widely accepted protocols for a URI, and thus less documentation, if any, is likely required by the recipient in data interchange. ^r6
 
 ### Reading 7
 
-XML location: `/classSpec[1]/remarks[1]/p[2]`.
+XML location: `/classSpec[@ident='att.canonical']/remarks[@ident='att.canonical-remarks']/p[2]`.
 
 These guidelines provide no semantic basis or suggested precedence when both key and ref are provided. For this reason simultaneous use of both is not recommended unless documentation explaining the use is provided, probably in an ODD customization, for interchange. ^r7
 

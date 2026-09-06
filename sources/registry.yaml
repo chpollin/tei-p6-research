@@ -420,4 +420,4 @@ sources:
       note: Message bodies and sender identity stay in the local raw store; the posts are third-party user-generated content.
     update_policy: bounded-snapshot-by-interface
     completion_target: bounded-complete
-    retrieval_status: planned
+    retrieval_status: partial

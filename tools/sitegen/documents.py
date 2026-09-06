@@ -26,3 +26,25 @@ def read_document(root: Path, path: str) -> tuple[dict, str]:
     if not isinstance(meta, dict):
         raise ValueError(f"Invalid frontmatter: {path}")
     return meta, pieces[2].strip()
+
+
+def first_table_rows(text: str) -> list[list[str]]:
+    """Cells of the body rows of the first Markdown table in ``text``.
+
+    Later tables (for example a mapping table in a subsequent section) must not
+    feed a reader that expects the document's defining table.
+    """
+
+    rows: list[list[str]] = []
+    started = False
+    for line in text.splitlines():
+        stripped = line.strip()
+        if stripped.startswith("|"):
+            started = True
+            cells = [cell.strip() for cell in stripped.strip("|").split("|")]
+            if all(set(cell) <= set("-: ") for cell in cells):
+                continue
+            rows.append(cells)
+        elif started:
+            break
+    return rows

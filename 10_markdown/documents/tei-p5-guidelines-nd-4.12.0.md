@@ -2,7 +2,7 @@
 type: representation
 source-type: document
 source: '[[00_sources/tei-p5-guidelines-nd-4.12.0.xml]]'
-converter: tools.ingest_git_blobs v1; complete XML plus verbatim source blocks for
+converter: tools.ingest_git_blobs v2; complete XML plus verbatim source blocks for
   every block-level unit
 channel: collection
 metadata:

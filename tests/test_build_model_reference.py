@@ -208,3 +208,24 @@ def test_deterministic_build_and_cli_output(fixture_root, monkeypatch):
 def test_invalid_date_rejected():
     with pytest.raises(ValueError):
         build_page(ROOT, "2026-99-01")
+
+
+def test_a_later_table_cannot_override_a_class_meaning(fixture_root):
+    path = fixture_root / DEFINITION
+    canonical = path.read_text(encoding="utf-8")
+    newline = chr(10)
+    later = newline.join(
+        [
+            "",
+            "",
+            "## Later mapping",
+            "",
+            "| Record kind | Target | Note |",
+            "|---|---|---|",
+            "| Version | Overridden meaning | x |",
+            "",
+        ]
+    )
+    path.write_text(canonical + later, encoding="utf-8")
+    view = build_view(fixture_root, "2026-09-06")
+    assert all(item["meaning"] != "Overridden meaning" for item in view["classes"])

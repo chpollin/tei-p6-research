@@ -2,8 +2,8 @@
 type: representation
 source-type: document
 source: '[[00_sources/tei-p5-persname-4.12.0.xml]]'
-converter: tools.ingest_git_blobs v1; complete XML plus XML itertext English reading
-  blocks with whitespace normalized
+converter: tools.ingest_git_blobs v2; complete XML plus XML itertext English reading
+  blocks with whitespace normalized and identified locators
 channel: collection
 metadata:
   title: TEI P5 4.12.0 persName specification
@@ -28,6 +28,8 @@ closing fence is not part of the source. The converter records the exact byte le
 Reading blocks reproduce English descriptions and English remarks paragraphs using
 XML `itertext`; whitespace runs become one space and surrounding whitespace is removed.
 They are reading projections of this source, not additional sources or interpretations.
+A locator names an element that carries an `ident` attribute by that ident, so the
+reading block of an attribute definition states which attribute it describes.
 
 Source byte length: 4600. Git blob: `ffbe47c37070e255c1c7fa0238bbdcaf7aa97646`.
 
@@ -104,7 +106,7 @@ Source byte length: 4600. Git blob: `ffbe47c37070e255c1c7fa0238bbdcaf7aa97646`.
 
 ### Reading 1
 
-XML location: `/elementSpec[1]/desc[1]`.
+XML location: `/elementSpec[@ident='persName']/desc[1]`.
 
 contains a proper noun or proper-noun phrase referring to a person, possibly including one or more of the person's forenames, surnames, honorifics, added names, etc. ^r1
 

@@ -40,6 +40,7 @@ validation gates review, so a vault that reaches this script already conforms.
 from __future__ import annotations
 
 import argparse
+import contextlib
 import datetime
 import hashlib
 import json
@@ -182,9 +183,18 @@ def _statement_text(line: str) -> str:
 
 
 def _block_locations(doc: Doc) -> dict[str, str]:
-    """Per block ID the passage text with the heading path it sits under."""
-    stack: list[tuple[int, str]] = []
-    paragraph: list[str] = []
+    """Per block ID the passage as a reader of the representation sees it.
+
+    The passage carries the source title from the frontmatter metadata, the
+    heading path, and every non-blank line since the last heading or the last
+    block ID. That keeps a locator line such as ``XML location: ...`` with the
+    block it introduces and lets a block ID standing alone after a fenced source
+    block (the chapter representation form) carry the block's text.
+    """
+    metadata = doc.fm.get("metadata")
+    title = metadata.get("title") if isinstance(metadata, dict) else None
+    stack: list[tuple[int, str]] = [(0, str(title))] if title else []
+    section: list[str] = []
     locations: dict[str, str] = {}
     for raw in doc.body.splitlines():
         line = raw.strip()
@@ -193,17 +203,17 @@ def _block_locations(doc: Doc) -> dict[str, str]:
             while stack and stack[-1][0] >= level:
                 stack.pop()
             stack.append((level, line[level:].strip()))
-            paragraph = []
+            section = []
             continue
         if not line:
-            paragraph = []
             continue
-        paragraph.append(line)
+        if not BLOCK_ID.fullmatch(line) and not line.startswith("```"):
+            section.append(line)
         if m := BLOCK_ID.search(line):
-            text = BLOCK_ID.sub("", " ".join(paragraph).strip()).strip()
-            path = " > ".join(title for _, title in stack)
+            text = BLOCK_ID.sub("", " ".join(section).strip()).strip()
+            path = " > ".join(name for _, name in stack)
             locations[m.group(1)] = f"{path}\n{text}" if path else text
-            paragraph = []
+            section = []
     return locations
 
 
@@ -607,16 +617,37 @@ def run_claude(
         if result.returncode != 0:
             problems.append(f"{pair.id}: claude failed: {result.stderr.strip()[:120]}")
             continue
-        record = {"id": pair.id, "response": result.stdout.strip()}
-        if model:
-            record["model"] = model
-        try:
-            record["verdict"] = parse_verdict(result.stdout)
-        except ValueError as exc:
-            problems.append(f"{pair.id}: {exc}")
+        record = audit_record(pair, result.stdout.strip(), model)
+        if "verdict" not in record:
+            problems.append(f"{pair.id}: no verdict found in the response")
         records.append(record)
         print(f"OK {pair.id}: {record.get('verdict', 'unparsed')}")
     return records
+
+
+def audit_record(pair: Pair, response: str, model: str | None) -> dict[str, str]:
+    """One judgement in the audit shape the support-review checks read.
+
+    The verdict binds to the SHA-256 of the unmodified prompt, the reason is the
+    reviewer's justification after the verdict line, and the reviewer field
+    names the model and the fresh-context, one-call-per-pair procedure.
+    """
+    record: dict[str, str] = {"id": pair.id}
+    with contextlib.suppress(ValueError):
+        record["verdict"] = parse_verdict(response)
+    lines = [line.strip() for line in response.splitlines() if line.strip()]
+    reason = " ".join(
+        line for line in lines[1:] if not line.lower().startswith("verdict")
+    ) if len(lines) > 1 else ""
+    record["reason"] = reason or response.strip()
+    record["prompt_sha256"] = prompt_hash(pair.to_dict())
+    record["reviewer"] = (
+        f"{model or 'claude default model'}; fresh context per pair via claude -p"
+    )
+    if model:
+        record["model"] = model
+    record["response"] = response.strip()
+    return record
 
 
 def _select(pairs: list[Pair], scope: str, prefix: str | None) -> list[Pair]:
@@ -703,6 +734,10 @@ def main() -> None:
         help="judge with `claude -p`, one call per pair",
     )
     run.add_argument("--model", help="model passed to claude -p")
+    run.add_argument(
+        "--only-missing",
+        help="JSONL of recorded verdicts; pairs whose verdict already binds to the current prompt are skipped",
+    )
     run.add_argument("--out", type=Path, help="write the judgements as JSONL as well")
     args = parser.parse_args()
 
@@ -724,6 +759,15 @@ def main() -> None:
         outcome.problems = problems + outcome.problems
         sys.exit(_report(outcome, pairs))
     elif args.command == "run":
+        if args.only_missing:
+            bound = {
+                record["id"]: record.get("prompt_sha256")
+                for record in read_jsonl(Path(args.only_missing))
+            }
+            pairs = [
+                pair for pair in pairs
+                if bound.get(pair.id) != prompt_hash(pair.to_dict())
+            ]
         records = run_claude(pairs, args.model, problems)
         if args.out:
             _write_jsonl(args.out, records)

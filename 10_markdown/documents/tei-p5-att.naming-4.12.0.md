@@ -2,8 +2,8 @@
 type: representation
 source-type: document
 source: '[[00_sources/tei-p5-att.naming-4.12.0.xml]]'
-converter: tools.ingest_git_blobs v1; complete XML plus XML itertext English reading
-  blocks with whitespace normalized
+converter: tools.ingest_git_blobs v2; complete XML plus XML itertext English reading
+  blocks with whitespace normalized and identified locators
 channel: collection
 metadata:
   title: TEI P5 4.12.0 att.naming specification
@@ -28,6 +28,8 @@ closing fence is not part of the source. The converter records the exact byte le
 Reading blocks reproduce English descriptions and English remarks paragraphs using
 XML `itertext`; whitespace runs become one space and surrounding whitespace is removed.
 They are reading projections of this source, not additional sources or interpretations.
+A locator names an element that carries an `ident` attribute by that ident, so the
+reading block of an attribute definition states which attribute it describes.
 
 Source byte length: 5936. Git blob: `43887df614b32c49625a2fabfd7ecb4e6521c8ad`.
 
@@ -108,25 +110,25 @@ this name in the form of a set of whitespace-separated values, for example the o
 
 ### Reading 1
 
-XML location: `/classSpec[1]/desc[1]`.
+XML location: `/classSpec[@ident='att.naming']/desc[1]`.
 
 provides attributes common to elements which refer to named persons, places, organizations etc. ^r1
 
 ### Reading 2
 
-XML location: `/classSpec[1]/attList[1]/attDef[1]/desc[1]`.
+XML location: `/classSpec[@ident='att.naming']/attList[1]/attDef[@ident='role']/desc[1]`.
 
 may be used to specify further information about the entity referenced by this name in the form of a set of whitespace-separated values, for example the occupation of a person, or the status of a place. ^r2
 
 ### Reading 3
 
-XML location: `/classSpec[1]/attList[1]/attDef[2]/desc[1]`.
+XML location: `/classSpec[@ident='att.naming']/attList[1]/attDef[@ident='nymRef']/desc[1]`.
 
 provides a means of locating the canonical form (nym) of the names associated with the object named by the element bearing it. ^r3
 
 ### Reading 4
 
-XML location: `/classSpec[1]/attList[1]/attDef[2]/remarks[1]/p[1]`.
+XML location: `/classSpec[@ident='att.naming']/attList[1]/attDef[@ident='nymRef']/remarks[@ident='att.naming-attr.nymRef-remarks']/p[1]`.
 
 The value must point directly to one or more XML elements by means of one or more URIs, separated by whitespace. If more than one is supplied, the implication is that the name is associated with several distinct canonical names. ^r4
 

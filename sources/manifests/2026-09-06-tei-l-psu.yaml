@@ -1,0 +1,50 @@
+schema_version: 1
+run_id: 2026-09-06-tei-l-psu
+source_id: tei-l-archive
+started_at: '2026-09-06T10:00:27Z'
+finished_at: '2026-09-06T10:08:18Z'
+status: bounded-complete
+adapter:
+  name: tools.corpus.listserv_snapshot
+  version: 2
+requests:
+  archive: https://lists.psu.edu/cgi-bin/wa
+  list: TEI-L
+  from_month: '2512'
+  to_month: '2609'
+  months:
+  - '2512'
+  - '2601'
+  - '2602'
+  - '2603'
+  - '2604'
+  - '2605'
+  - '2606'
+  - '2607'
+  - '2608'
+  - '2609'
+  delay_seconds: 1.0
+  max_messages: null
+objects:
+- kind: tei-l-message-metadata
+  path: corpus/normalized/mail/tei-l-psu.jsonl
+  sha256: c65c07bc9ecb5cf8af57cdfdc4f2d4b7fc6b8b7e793fe58e7f3180547c8a6cb4
+counts:
+  months_requested: 10
+  months_indexed: 10
+  messages_listed: 267
+  messages: 267
+  http_responses: 277
+  gaps: 0
+scope:
+  boundary: declared-month-interval-on-the-penn-state-archive
+  status_applies_to: requests.months
+  completion_rule: Every message the month indexes of the declared interval list,
+    retrieved or recorded as a gap.
+gaps: []
+rights_exceptions:
+- Message bodies and sender identity remain in local content-addressed raw storage.
+- The normalized stream carries list, month, message identity, subject, date, thread
+  pointers, and raw pointers only.
+- TEI-L posts are user-generated content; redistribution stays metadata and links
+  until per-item rights review.

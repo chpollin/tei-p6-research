@@ -599,3 +599,72 @@ Annotation, PROV or CIDOC CRM and SKOS is tabled as a binding to be specified,
 with version content, text, continuity, reading forests, unresolved candidates
 and the fields status, certainty and valid named as targetless. The v0.1 case
 report was regenerated; only the definition fingerprint changed.
+## 2026-09-06 — Foundation acquisitions completed
+
+The exhaustive GitHub work-item collection of `TEIC/TEI` ran under the
+authenticated session with adapter version 2 and recorded every issue, pull
+request, comment, review, review comment, timeline event and changed-file
+record the REST interface exposes, with the unimplemented GraphQL relations
+stage as its only gap. Bodies stay in the private raw store and the normalized
+stream carries metadata. The first live run exposed two collector defects that
+offline tests could not see, a Windows path limit on the temporary raw file and
+a trailing slash on the repository resource, and the collector gained a
+wait-for-reset option so an hourly quota no longer ends a run with a gap. The
+SourceForge tracker boundary was re-run under the repaired status rule and now
+reconciles against the tracker-reported counts. The TEIC/TEI mirror was
+re-acquired locally at the locked release commit. TEI-L became its own source
+family with a three-part boundary after the Brown University LISTSERV was found
+retired and the list relocated to Penn State: the Penn State months since the
+move are bounded-complete, the Wayback coverage of the Brown archive was
+measured for every month from 1990 to 2025 with each missing month recorded as
+a gap, and the fetch of captured months and the export request to the
+Consortium remain open. Sender identities never enter the normalized stream.
+
+## 2026-09-06 — Entity sources admitted and the review instrument corrected
+
+Eight namesdates specifications and the Guidelines chapter on names, dates,
+people and places were admitted through one admission engine that the
+text-identity pilot now shares, and nine distillates were produced by nine
+agents in fresh contexts, the chapter by a different model than the
+specifications. The first machine review of the specification distillates
+returned twenty partial verdicts on one ground: the passage the pair cutter
+showed named neither the attribute an attribute-definition block describes nor
+the release, because both stood only in the locator line and the document
+title that the cutter dropped. The instrument was corrected rather than the
+rule relaxed. The nine representations were regenerated under converter
+version 2, whose locators name identified elements by their ident, and the
+cutter now shows the source title, the heading path and the locator line with
+the block. The pilot representations keep converter version 1 and their passed
+review. The second round returned one substantive deviation, a relation
+statement that had dropped the scope qualifier of its source, which was
+reformulated. Verdicts now bind to the prompt hash and name the reviewing
+model and procedure in the record itself. Seven distillates are validated;
+the chapter and relation reviews continue after a model session limit
+interrupted them.
+
+## 2026-09-06 — Entity assertions and the chapter on metadata and entities
+
+Thirty-five assertions for the topic Metadata and Entities were synthesized
+from the nine entity distillates, with five new glossary phenomena (mention of
+an entity, name as an object, entity record, statement about an entity, entity
+identification) and two contested pairs recorded where the chapter and a class
+specification disagree, on what the association through `nymRef` is
+independent of and on which kinds of participant a relation admits. The
+adversarial review of the assertion pairs by a different model in fresh
+contexts rejected twenty-one of forty-one pairs on one pattern, a generalization
+beyond the cited statement, for example an entity where the statement speaks of
+a person or a place, a rule where it gives an example, or `key` and `ref`
+without the scope of `att.canonical`. Eighteen assertions were narrowed to what
+their statements carry, three of them twice, and the fourteen chapter
+statements the source review had rejected were reformulated first, so that
+every gloss from outside the anchored block, every hardened modality and every
+antecedent lying in another block left the distillate. The chapter
+`40_output/08-metadata-and-entities.md` argues from these assertions how P5
+treats the mention in the text, the name as an object, the entity record,
+statements about the entity and identification, and where it folds two of them
+into one construct. Every widening the argument needed beyond a narrowed
+assertion became an explicit posit with its open evidence question, which is
+why the chapter carries thirteen posits. The evidence gaps the run leaves are
+recorded in the state document: class membership stands only in XML, no
+admitted source is encoded practice, and no source states what applies when a
+local key and a URI are both available.

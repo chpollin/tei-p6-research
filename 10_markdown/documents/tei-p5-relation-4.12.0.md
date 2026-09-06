@@ -2,8 +2,8 @@
 type: representation
 source-type: document
 source: '[[00_sources/tei-p5-relation-4.12.0.xml]]'
-converter: tools.ingest_git_blobs v1; complete XML plus XML itertext English reading
-  blocks with whitespace normalized
+converter: tools.ingest_git_blobs v2; complete XML plus XML itertext English reading
+  blocks with whitespace normalized and identified locators
 channel: collection
 metadata:
   title: TEI P5 4.12.0 relation specification
@@ -28,6 +28,8 @@ closing fence is not part of the source. The converter records the exact byte le
 Reading blocks reproduce English descriptions and English remarks paragraphs using
 XML `itertext`; whitespace runs become one space and surrounding whitespace is removed.
 They are reading projections of this source, not additional sources or interpretations.
+A locator names an element that carries an `ident` attribute by that ident, so the
+reading block of an attribute definition states which attribute it describes.
 
 Source byte length: 11422. Git blob: `5500905fd424e5f31a8199b62d72793f91e1f2de`.
 
@@ -194,37 +196,37 @@ Source byte length: 11422. Git blob: `5500905fd424e5f31a8199b62d72793f91e1f2de`.
 
 ### Reading 1
 
-XML location: `/elementSpec[1]/desc[1]`.
+XML location: `/elementSpec[@ident='relation']/desc[1]`.
 
 describes any kind of relationship or linkage amongst a specified group of places, events, persons, objects or other items. ^r1
 
 ### Reading 2
 
-XML location: `/elementSpec[1]/attList[1]/attDef[1]/desc[1]`.
+XML location: `/elementSpec[@ident='relation']/attList[1]/attDef[@ident='name']/desc[1]`.
 
 supplies a name for the kind of relationship of which this is an instance. ^r2
 
 ### Reading 3
 
-XML location: `/elementSpec[1]/attList[1]/attList[1]/attDef[1]/desc[1]`.
+XML location: `/elementSpec[@ident='relation']/attList[1]/attList[1]/attDef[@ident='active']/desc[1]`.
 
 identifies the active participants in a non-mutual relationship, or all the participants in a mutual one. ^r3
 
 ### Reading 4
 
-XML location: `/elementSpec[1]/attList[1]/attList[1]/attDef[2]/desc[1]`.
+XML location: `/elementSpec[@ident='relation']/attList[1]/attList[1]/attDef[@ident='mutual']/desc[1]`.
 
 supplies a list of participants amongst all of whom the relationship holds equally. ^r4
 
 ### Reading 5
 
-XML location: `/elementSpec[1]/attList[1]/attDef[2]/desc[1]`.
+XML location: `/elementSpec[@ident='relation']/attList[1]/attDef[@ident='passive']/desc[1]`.
 
 identifies the passive participants in a non-mutual relationship. ^r5
 
 ### Reading 6
 
-XML location: `/elementSpec[1]/remarks[1]/p[1]`.
+XML location: `/elementSpec[@ident='relation']/remarks[@ident='relation-remarks']/p[1]`.
 
 Only one of the attributes active and mutual may be supplied; the attribute passive may be supplied only if the attribute active is supplied. Not all of these constraints can be enforced in all schema languages. ^r6
 

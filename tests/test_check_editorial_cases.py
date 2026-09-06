@@ -142,8 +142,9 @@ def test_the_recorded_editorial_review_binds_the_current_pairs():
     """The audit of this repository, over its own vault and its own review files."""
     audit = check.check_review()
     assert audit.pairs == 6
-    # The verdicts of 2026-09-05 carry a rationale and no reviewer attribution.
-    assert len(audit.without_reviewer) == 6
+    # The three assertion verdicts of 2026-09-05 carry no reviewer attribution;
+    # the three source verdicts were re-judged on 2026-09-06 with one.
+    assert len(audit.without_reviewer) == 3
 
 
 def test_current_pair_scope_requires_six_pairs_and_all_four_documents(monkeypatch):

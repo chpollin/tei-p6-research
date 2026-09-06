@@ -2,7 +2,7 @@ schema_version: 1
 lock_id: tei-l-archive-three-part-boundary
 source_id: tei-l-archive
 as_of: "2026-09-06"
-retrieval_status: planned
+retrieval_status: partial
 
 scope:
   list: TEI-L
@@ -59,3 +59,6 @@ gaps:
   - code: consortium-export-not-requested
     status: open
     detail: The third part has no retrieval interface and waits on an operator request.
+manifests:
+  - sources/manifests/2026-09-06-tei-l-psu.yaml
+  - sources/manifests/2026-09-06-tei-l-wayback-coverage.yaml

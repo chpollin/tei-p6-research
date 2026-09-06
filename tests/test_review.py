@@ -14,6 +14,9 @@ import pytest
 
 from tools.review import (
     VERDICTS,
+    Pair,
+    _block_locations,
+    audit_record,
     book_results,
     build_prompt,
     check_review_records,
@@ -26,6 +29,7 @@ from tools.review import (
     select_pairs,
     set_checked_date,
 )
+from tools.validate import Doc
 
 REPO = Path(__file__).parents[1]
 MINIMAL = REPO / "tests" / "fixtures" / "minimal"
@@ -458,3 +462,49 @@ def test_an_empty_review_scope_is_refused(review) -> None:
     with pytest.raises(ValueError, match="at least one current pair"):
         check_review_records([], [], [])
     assert check_support_review(vault, directory, _distillate_scope).pairs
+
+
+def test_a_standalone_block_id_after_a_fence_keeps_the_block_text(tmp_path):
+    """The chapter representation form puts the ID on its own line after the source fence."""
+    body = chr(10).join([
+        "# Chapter",
+        "",
+        "## Source blocks",
+        "",
+        "### Block 1",
+        "",
+        "XML location: `/div[1]/p[1]`.",
+        "",
+        "```xml",
+        "<p>Hello block</p>",
+        "```",
+        "",
+        "^b1",
+        "",
+        "Inline paragraph with its own id. ^b2",
+    ])
+    fm = {"metadata": {"title": "TEI P5 4.12.0 x specification"}}
+    doc = Doc(path=tmp_path, rel="10_markdown/documents/x", fm=fm, body=body, blocks=["b1", "b2"])
+    locations = _block_locations(doc)
+    assert "<p>Hello block</p>" in locations["b1"]
+    assert "XML location" in locations["b1"]
+    assert "```" not in locations["b1"]
+    assert locations["b2"].endswith("Inline paragraph with its own id.")
+    assert locations["b1"].startswith("TEI P5 4.12.0 x specification > Chapter > Source blocks > Block 1")
+
+
+def test_audit_record_binds_the_verdict_to_the_prompt_hash(tmp_path):
+    pair = Pair(
+        id="20_distillates/documents/x#^s1",
+        kind="source",
+        document="20_distillates/documents/x",
+        anchor="10_markdown/documents/x#^r1",
+        location="Heading > text",
+        claim="The claim.",
+    )
+    response = "**Verdict: fully supports**" + chr(10) + chr(10) + "The passage says exactly that."
+    record = audit_record(pair, response, "claude-fable-5-1")
+    assert record["verdict"] == "fully supports"
+    assert record["reason"] == "The passage says exactly that."
+    assert record["prompt_sha256"] == prompt_hash(pair.to_dict())
+    assert record["reviewer"].startswith("claude-fable-5-1; fresh context per pair")

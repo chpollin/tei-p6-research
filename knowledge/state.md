@@ -30,15 +30,16 @@ documents, the milestones in [[knowledge/plan]] and open handoff points in
 | P5 4.12.0 identity | resolved | full release commit recorded in `sources/locks/tei-p5-4.12.0.yaml` |
 | P5 4.12.0 acquisition | partial | pinned Git tree and official release ZIP are complete; the TEIC/TEI mirror was re-acquired locally on 2026-09-06 (`sources/manifests/2026-09-06-teic-tei-p5-4.12.0-r2.yaml`, tag `P5_Release_4.12.0` resolves to the locked commit); the published-HTML boundary still needs an explicit reconciliation against the ZIP before the family label can return to `observable-complete` |
 | Public TEIC Git corpus | observable-complete | all 41 repositories exposed by the organization census are mirrored at full HEAD commits; 25,415 tree entries inventoried |
+| TEI-L mailing-list archive | partial | Penn State archive `bounded-complete` for December 2025 to September 2026 on 2026-09-06 (267 messages, metadata only, no sender fields); Wayback coverage of the retired Brown archive measured for all 432 months from 1990 to 2025 (368 captured, 64 missing, each missing month recorded as a gap); the fetch of captured months through the Wayback Machine and the export request to the TEI Consortium remain open |
 | TEI website records | partial | the website Git repository is inventoried, but the registered page-snapshot boundary has not yet been acquired |
-| GitHub work-item corpus | partial | the exhaustive issues, PRs, comments, reviews and timelines run started on 2026-09-06 under the authenticated `gh` session with adapter version 2 (a three-item smoke run reproduced 43 authenticated requests without error); its manifest lands when the run completes; the GraphQL relations stage remains unimplemented |
+| GitHub work-item corpus | partial | exhaustive REST run completed on 2026-09-06 under the authenticated session with adapter version 2 (`sources/manifests/2026-09-06-github-teic-tei-work-items.yaml`): 2,476 issues, 455 pull requests with 2,800 commits and 10,362 changed-file records, 19,565 issue comments, 1,258 reviews and 1,259 review comments, 74,981 timeline events, 42 labels, 22 milestones and 27 releases in 11,241 requests; bodies stay in the private raw store and the normalized stream holds metadata; the only recorded gap is the unimplemented GraphQL relations stage |
 | Governance corpus | partial | 206 Council pages and 225 Board targets observed; inaccessible historical links and external working documents remain explicit gaps |
 | Historical TEI Archive | partial | 394 index/page responses acquired; 363 linked non-HTML artifacts are in reconciliation |
 | Legacy SourceForge | partial | tracker API boundary `observable-complete` on 2026-09-06 under adapter version 2: the 1,349 tickets and 8,880 discussion posts of the 2026-09-05 run reconcile against the tracker-reported counts (774 bugs, 567 feature requests, 8 support requests) in `sources/manifests/2026-09-06-tei-legacy-sourceforge-r4.yaml`; the raw responses of the earlier runs are not in this checkout; release-file and legacy version-control interfaces remain unreconciled |
 | Literature corpus | partial | a bounded first reading records four candidates; W3C REC2017, Piez2014 and Renear/Wickett2010 have citation-only admissions; the Renear/Mylonas/Durand author-version full text returned HTTP 403; Zotero/JTEI and full seed census remain open |
 | Official P6 process | partial | public `TEIC/timeForP6` history acquired; relevant Council records inventoried; reported `TEIC/p6-sandbox` remains non-public or absent |
 | Independent P6 design knowledge | bounded Abstract Text Model 0.1 implemented, human acceptance pending | Ten record kinds with formal constraints and five reference operations. JSON, XML and YAML bindings preserve the same model instance. Two real diary fragments have bounded mappings. Full TEI domain coverage, RDF and whole-document P5 conversion remain open. |
-| Grounded knowledge | three bounded chapters; source-support reviews passed | five document sources and four citation-only sources have distillates; eleven assertions are `validated`; the three chapters remain `grounded`; six new Humboldt support pairs passed fresh-context review after narrowing one assertion heading; human verification remains open |
+| Grounded knowledge | four bounded chapters; entity run reviewed | fourteen document sources and four citation-only sources have distillates; the nine entity distillates of 2026-09-06 are `validated` after fresh-context review under a different model (101 source pairs, all passing after two reformulation rounds); forty-six assertions carry a passing machine review, of which forty-two are `validated` and four stay `contested` as recorded disagreements between the Guidelines chapter and the class specifications; the four chapters are `grounded`; human verification remains open |
 | Text identity pilot acceptance | awaiting owner review | nine support pairs passed independent fresh-context review on 2026-09-05 after source-context correction; same-model-family limitation remains; human decisions use the five items in `knowledge/experiments.md` |
 | Text identity pilot technical gate | passed on 2026-09-05 | 238 tests passed after first-wave integration; 38 synthetic cases reproduced; full-vault and chapter validation had no errors or warnings; source admission, control-plane integrity and current review hashes passed; generated HTML reproduced byte-for-byte |
 | Abstract Text Model 0.1 technical gate | passed on 2026-09-05 | all five reference operations implemented; 68 independently authored cases over 60 models, 38 canonical checks, and two standalone examples pass; deterministic report reproduces; 322 full-suite tests pass; full-vault and chapter 12 validation have no errors or warnings; current source-support audits, four quotation checks, and source control-plane checks pass |
@@ -49,7 +50,7 @@ documents, the milestones in [[knowledge/plan]] and open handoff points in
 | Proposal for TEI P6 | continuous technical argument integrated | `40_output/12-p6-design.md` links nine grounded premises to thirteen explicit posits and seven comparative examples. Architecture ranking and adoption evidence remain open. |
 | Editorial comparison | bounded execution complete | three fragments of one pinned Humboldt diary; two development mappings preserve the declared observations; the frozen candidate refuses the page/foliation holdout and the baseline projection also misses its required prose result; 18 independent synthetic provenance-profile cases pass; CC BY-SA 4.0 attribution and source hashes reconcile; full RNG/ODD conformance and media alignment remain untested |
 | Research frontend | implemented and locally checked | The canonical proposal is `docs/index.html`. Model, Materials, Knowledge and About use the same layout and the same local and published routes. No decorative horizontal rules. The model reference derives its ten classes and seventeen reference fields from the existing contract. Published revisions are identified by the Pages deployment log. |
-| Integrated release gate | passed on 2026-09-06 | 1,036 tests pass and ruff reports no finding. Full-vault validation reports no errors or warnings. Source admissions, current support-review hashes, 68 model cases and the editorial comparison reproduce; all five pages reproduce byte-for-byte from their recorded build date. The P5 declaration atlas and the four quotation checks need the local raw corpus, which this checkout does not hold. The 2026-09-05 browser checks were not repeated. |
+| Integrated release gate | passed on 2026-09-06 | 1,108 tests pass and ruff reports no finding. Full-vault validation reports no errors or warnings. Source admissions, current support-review hashes, 68 model cases and the editorial comparison reproduce; all five pages reproduce byte-for-byte from their recorded build date. The P5 declaration atlas and the four quotation checks need the local raw corpus, which this checkout does not hold. The 2026-09-05 browser checks were not repeated. |
 | Knowledge navigation | implemented | The browser inventories five source representations, nine distillates, eleven assertions and three chapters. Exact passage links and backreferences follow the immediate-layer chain. Citation-only admissions end at their checked quotation and citation. |
 | Materials navigation | implemented | Sixteen primary source families and a separate literature view describe locked holdings and gaps. The page does not enumerate every raw object or imply complete acquisition. |
 
@@ -81,15 +82,15 @@ replaces the region between the markers with the actual file state.
 | edition humboldt digital: England travel diary H0017682 | document | collection | [[10_markdown/documents/humboldt-h0017682-7d174637]] | [[20_distillates/documents/humboldt-h0017682-7d174637]] | distilled |
 | TEI P5 4.12.0 anchor specification | document | collection | [[10_markdown/documents/tei-p5-anchor-4.12.0]] | [[20_distillates/documents/tei-p5-anchor-4.12.0]] | distilled |
 | TEI P5 4.12.0 annotation specification | document | collection | [[10_markdown/documents/tei-p5-annotation-4.12.0]] | [[20_distillates/documents/tei-p5-annotation-4.12.0]] | distilled |
-| TEI P5 4.12.0 att.canonical specification | document | collection | [[10_markdown/documents/tei-p5-att.canonical-4.12.0]] | — | ingested |
-| TEI P5 4.12.0 att.naming specification | document | collection | [[10_markdown/documents/tei-p5-att.naming-4.12.0]] | — | ingested |
-| TEI P5 4.12.0 Guidelines chapter Names, Dates, People, and Places | document | collection | [[10_markdown/documents/tei-p5-guidelines-nd-4.12.0]] | — | ingested |
-| TEI P5 4.12.0 name specification | document | collection | [[10_markdown/documents/tei-p5-name-4.12.0]] | — | ingested |
-| TEI P5 4.12.0 nym specification | document | collection | [[10_markdown/documents/tei-p5-nym-4.12.0]] | — | ingested |
-| TEI P5 4.12.0 persName specification | document | collection | [[10_markdown/documents/tei-p5-persname-4.12.0]] | — | ingested |
-| TEI P5 4.12.0 person specification | document | collection | [[10_markdown/documents/tei-p5-person-4.12.0]] | — | ingested |
-| TEI P5 4.12.0 relation specification | document | collection | [[10_markdown/documents/tei-p5-relation-4.12.0]] | — | ingested |
-| TEI P5 4.12.0 rs specification | document | collection | [[10_markdown/documents/tei-p5-rs-4.12.0]] | — | ingested |
+| TEI P5 4.12.0 att.canonical specification | document | collection | [[10_markdown/documents/tei-p5-att.canonical-4.12.0]] | [[20_distillates/documents/tei-p5-att.canonical-4.12.0]] | distilled |
+| TEI P5 4.12.0 att.naming specification | document | collection | [[10_markdown/documents/tei-p5-att.naming-4.12.0]] | [[20_distillates/documents/tei-p5-att.naming-4.12.0]] | distilled |
+| TEI P5 4.12.0 Guidelines chapter Names, Dates, People, and Places | document | collection | [[10_markdown/documents/tei-p5-guidelines-nd-4.12.0]] | [[20_distillates/documents/tei-p5-guidelines-nd-4.12.0]] | distilled |
+| TEI P5 4.12.0 name specification | document | collection | [[10_markdown/documents/tei-p5-name-4.12.0]] | [[20_distillates/documents/tei-p5-name-4.12.0]] | distilled |
+| TEI P5 4.12.0 nym specification | document | collection | [[10_markdown/documents/tei-p5-nym-4.12.0]] | [[20_distillates/documents/tei-p5-nym-4.12.0]] | distilled |
+| TEI P5 4.12.0 persName specification | document | collection | [[10_markdown/documents/tei-p5-persname-4.12.0]] | [[20_distillates/documents/tei-p5-persname-4.12.0]] | distilled |
+| TEI P5 4.12.0 person specification | document | collection | [[10_markdown/documents/tei-p5-person-4.12.0]] | [[20_distillates/documents/tei-p5-person-4.12.0]] | distilled |
+| TEI P5 4.12.0 relation specification | document | collection | [[10_markdown/documents/tei-p5-relation-4.12.0]] | [[20_distillates/documents/tei-p5-relation-4.12.0]] | distilled |
+| TEI P5 4.12.0 rs specification | document | collection | [[10_markdown/documents/tei-p5-rs-4.12.0]] | [[20_distillates/documents/tei-p5-rs-4.12.0]] | distilled |
 | TEI P5 4.12.0 span specification | document | collection | [[10_markdown/documents/tei-p5-span-4.12.0]] | [[20_distillates/documents/tei-p5-span-4.12.0]] | distilled |
 | timeForP6 repository README at pinned commit eb924226 | document | collection | [[10_markdown/documents/tei-time-for-p6-readme-2026-07-16]] | [[20_distillates/documents/tei-time-for-p6-readme-2026-07-16]] | distilled |
 | <span>should be generalised to support discontinuous spans | publication | import | — | [[20_distillates/publications/tei-sourceforge-fr363]] | distilled |
@@ -111,7 +112,7 @@ One row per chapter of the output. Writing status mirrors the chapter's frontmat
 | Text and Document Structures | `40_output/05-text-and-document-structures.md` | planned | Scope topic: Text and Document Structures. |
 | Annotation and Overlap | `40_output/06-annotation-and-overlap.md` | grounded | First synthesis: five grounded premises and four explicit proposed tests; source-support review and owner review remain distinct. |
 | Critical Apparatus | `40_output/07-critical-apparatus.md` | planned | Scope topic: Critical Apparatus. |
-| Metadata and Entities | `40_output/08-metadata-and-entities.md` | planned | Scope topic: Metadata and Entities. |
+| Metadata and Entities | `40_output/08-metadata-and-entities.md` | grounded | First topic-scale synthesis from thirty-five assertions over nine entity sources; thirteen explicit posits connect the findings to the record kinds of the claim pattern; human verification and encoded practice remain open. |
 | History and Governance | `40_output/09-history-and-governance.md` | planned | Scope topic: History and Governance. |
 | Issues and Decisions | `40_output/10-issues-and-decisions.md` | planned | Scope topic: Issues and Decisions. |
 | Interoperability and Processing | `40_output/11-interoperability-and-processing.md` | planned | Scope topic: Interoperability and Processing. |
@@ -126,10 +127,17 @@ One row per chapter of the output. Writing status mirrors the chapter's frontmat
   GraphQL relations stage so the family can leave `partial`.
 - Re-run the SourceForge tracker collection under adapter version 2 so the
   tracker boundary is reconciled against tracker-reported counts.
-- Register TEI-L as its own source family with a three-part boundary: the
-  Penn State LISTSERV archive since the list moved there, Wayback Machine
-  captures of the retired Brown University archive measured month by month, and
-  an export requested from the TEI Consortium for every month neither holds.
+- Fetch the 368 Wayback-captured months of the Brown TEI-L archive through the
+  Wayback Machine and request an export from the TEI Consortium for the 64
+  months without capture.
+- Implement the GraphQL relations stage of the GitHub collector so the
+  work-item family can leave `partial`.
+- Draw the stratified human verification sample over the entity run (nine
+  distillates, thirty-five assertions, chapter 08) and record the quota.
+- Close the evidence gaps of the entity run: admit the class specifications
+  that carry `key`, `ref`, `nymRef` and `role` to the naming elements, select
+  encoded practice and the GitHub threads on `att.canonical`, and settle what
+  applies when a local key and a URI are both available.
 - Reconcile the remaining Archive, SourceForge release-file and legacy
   version-control, external Council, and community-interface gaps.
 - Resolve the P5 published-HTML and website-snapshot coverage exceptions before relying on their family-level `observable-complete` labels.

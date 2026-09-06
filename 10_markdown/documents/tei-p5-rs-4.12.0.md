@@ -2,8 +2,8 @@
 type: representation
 source-type: document
 source: '[[00_sources/tei-p5-rs-4.12.0.xml]]'
-converter: tools.ingest_git_blobs v1; complete XML plus XML itertext English reading
-  blocks with whitespace normalized
+converter: tools.ingest_git_blobs v2; complete XML plus XML itertext English reading
+  blocks with whitespace normalized and identified locators
 channel: collection
 metadata:
   title: TEI P5 4.12.0 rs specification
@@ -28,6 +28,8 @@ closing fence is not part of the source. The converter records the exact byte le
 Reading blocks reproduce English descriptions and English remarks paragraphs using
 XML `itertext`; whitespace runs become one space and surrounding whitespace is removed.
 They are reading projections of this source, not additional sources or interpretations.
+A locator names an element that carries an `ident` attribute by that ident, so the
+reading block of an attribute definition states which attribute it describes.
 
 Source byte length: 3384. Git blob: `77fb7d96af0c2294b541237bf17193fb7aa17c4f`.
 
@@ -94,7 +96,7 @@ Source byte length: 3384. Git blob: `77fb7d96af0c2294b541237bf17193fb7aa17c4f`.
 
 ### Reading 1
 
-XML location: `/elementSpec[1]/desc[1]`.
+XML location: `/elementSpec[@ident='rs']/desc[1]`.
 
 contains a general purpose name or referring string. ^r1
 

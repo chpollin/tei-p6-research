@@ -198,3 +198,19 @@ def test_check_requires_the_representation_without_creating_it(tmp_path: Path) -
     with pytest.raises(FileNotFoundError):
         ingest.immutable_output(target, b"new", check=True)
     assert not target.exists()
+
+
+def test_identified_locators_name_elements_by_ident():
+    xml = (
+        b"<elementSpec xmlns='http://www.tei-c.org/ns/1.0' ident='person'>"
+        b"<desc xml:lang='en'>describes a person</desc>"
+        b"<attList><attDef ident='role'><desc xml:lang='en'>a role</desc></attDef>"
+        b"<attDef ident='sex'><desc xml:lang='en'>a sex</desc></attDef></attList>"
+        b"</elementSpec>"
+    )
+    positional = ingest.reading_blocks(xml)
+    identified = ingest.identified_reading_blocks(xml)
+    assert positional[1][0] == "/elementSpec[1]/attList[1]/attDef[1]/desc[1]"
+    assert identified[1][0] == "/elementSpec[@ident='person']/attList[1]/attDef[@ident='role']/desc[1]"
+    assert identified[2][0].endswith("attDef[@ident='sex']/desc[1]")
+    assert [text for _, text in identified] == [text for _, text in positional]

@@ -12,7 +12,7 @@ from urllib.parse import urlsplit
 
 from tools.sitegen.assets import read_asset
 from tools.sitegen.chrome import render_footer, render_header
-from tools.sitegen.documents import read_document
+from tools.sitegen.documents import first_table_rows, read_document
 from tools.sitegen.home_page import Markdown
 from tools.sitegen.markup import esc, repository_link
 
@@ -79,12 +79,7 @@ def build_view(root: Path, date: str, repository_base: str | None = None) -> dic
     profile = json.loads((root / PROFILE).read_text(encoding="utf-8"))
     if spec["model_version"] != "0.1" or profile["base_model_version"] != "0.1":
         raise ValueError("Model reference supports the explicit 0.1 contract")
-    meanings = {}
-    for line in definition.splitlines():
-        if line.startswith("| "):
-            cells = [cell.strip() for cell in line.strip().strip("|").split("|")]
-            if len(cells) == 3:
-                meanings[cells[0]] = cells[1]
+    meanings = {cells[0]: cells[1] for cells in first_table_rows(definition) if len(cells) == 3}
     classes = []
     for name, key, canonical_name in KINDS:
         if canonical_name not in meanings:

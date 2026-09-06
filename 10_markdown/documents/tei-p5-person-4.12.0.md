@@ -2,8 +2,8 @@
 type: representation
 source-type: document
 source: '[[00_sources/tei-p5-person-4.12.0.xml]]'
-converter: tools.ingest_git_blobs v1; complete XML plus XML itertext English reading
-  blocks with whitespace normalized
+converter: tools.ingest_git_blobs v2; complete XML plus XML itertext English reading
+  blocks with whitespace normalized and identified locators
 channel: collection
 metadata:
   title: TEI P5 4.12.0 person specification
@@ -28,6 +28,8 @@ closing fence is not part of the source. The converter records the exact byte le
 Reading blocks reproduce English descriptions and English remarks paragraphs using
 XML `itertext`; whitespace runs become one space and surrounding whitespace is removed.
 They are reading projections of this source, not additional sources or interpretations.
+A locator names an element that carries an `ident` attribute by that ident, so the
+reading block of an attribute definition states which attribute it describes.
 
 Source byte length: 13105. Git blob: `8aff4c8dd02eb6b8d5609f62eb9e6e03000fcd4d`.
 
@@ -247,61 +249,61 @@ Source byte length: 13105. Git blob: `8aff4c8dd02eb6b8d5609f62eb9e6e03000fcd4d`.
 
 ### Reading 1
 
-XML location: `/elementSpec[1]/desc[1]`.
+XML location: `/elementSpec[@ident='person']/desc[1]`.
 
 provides information about an identifiable individual, for example a participant in a language interaction, or a person referred to in a historical source. ^r1
 
 ### Reading 2
 
-XML location: `/elementSpec[1]/attList[1]/attDef[1]/desc[1]`.
+XML location: `/elementSpec[@ident='person']/attList[1]/attDef[@ident='role']/desc[1]`.
 
 specifies a primary role or classification for the person. ^r2
 
 ### Reading 3
 
-XML location: `/elementSpec[1]/attList[1]/attDef[1]/remarks[1]/p[1]`.
+XML location: `/elementSpec[@ident='person']/attList[1]/attDef[@ident='role']/remarks[@ident='person-attr.role-remarks']/p[1]`.
 
 Values for this attribute may be locally defined by a project, using arbitrary keywords such as artist, employer, author, relative, or servant, each of which should be associated with a definition. Such local definitions will typically be provided by a valList element in the project schema specification. ^r3
 
 ### Reading 4
 
-XML location: `/elementSpec[1]/attList[1]/attDef[2]/desc[1]`.
+XML location: `/elementSpec[@ident='person']/attList[1]/attDef[@ident='sex']/desc[1]`.
 
 specifies the sex of the person. ^r4
 
 ### Reading 5
 
-XML location: `/elementSpec[1]/attList[1]/attDef[2]/remarks[1]/p[1]`.
+XML location: `/elementSpec[@ident='person']/attList[1]/attDef[@ident='sex']/remarks[@ident='person-attr.sex-remarks']/p[1]`.
 
 Values for this attribute may be defined locally by a project, or they may refer to an external standard. ^r5
 
 ### Reading 6
 
-XML location: `/elementSpec[1]/attList[1]/attDef[3]/desc[1]`.
+XML location: `/elementSpec[@ident='person']/attList[1]/attDef[@ident='gender']/desc[1]`.
 
 specifies the gender of the person. ^r6
 
 ### Reading 7
 
-XML location: `/elementSpec[1]/attList[1]/attDef[3]/remarks[1]/p[1]`.
+XML location: `/elementSpec[@ident='person']/attList[1]/attDef[@ident='gender']/remarks[@ident='person-attr.gender-remarks']/p[1]`.
 
 Values for this attribute may be defined locally by a project, or they may refer to an external standard. ^r7
 
 ### Reading 8
 
-XML location: `/elementSpec[1]/attList[1]/attDef[4]/desc[1]`.
+XML location: `/elementSpec[@ident='person']/attList[1]/attDef[@ident='age']/desc[1]`.
 
 specifies an age group for the person. ^r8
 
 ### Reading 9
 
-XML location: `/elementSpec[1]/attList[1]/attDef[4]/remarks[1]/p[1]`.
+XML location: `/elementSpec[@ident='person']/attList[1]/attDef[@ident='age']/remarks[@ident='person-attr.age-remarks']/p[1]`.
 
 Values for this attribute may be locally defined by a project, using arbitrary keywords such as infant, child, teen, adult, or senior, each of which should be associated with a definition. Such local definitions will typically be provided by a valList element in the project schema specification. ^r9
 
 ### Reading 10
 
-XML location: `/elementSpec[1]/remarks[1]/p[1]`.
+XML location: `/elementSpec[@ident='person']/remarks[@ident='person-remarks']/p[1]`.
 
 May contain either a prose description organized as paragraphs, or a sequence of more specific demographic elements drawn from the model.personPart class. ^r10
 

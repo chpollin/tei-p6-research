@@ -1,8 +1,8 @@
 schema_version: 1
 run_id: 2026-09-06-entities-admission
 source_id: teic-tei-p5-4.12.0
-started_at: '2026-09-06T09:57:52Z'
-finished_at: '2026-09-06T09:57:52Z'
+started_at: '2026-09-06T10:38:05Z'
+finished_at: '2026-09-06T10:38:06Z'
 status: bounded-complete
 scope:
   boundary: Exactly persName.xml, name.xml, rs.xml, person.xml, nym.xml, att.canonical.xml,
@@ -12,7 +12,7 @@ scope:
     only; neither the source family nor the topic Metadata and Entities
 adapter:
   name: tools.ingest_git_blobs
-  version: 1
+  version: 2
 lock_file: sources/locks/tei-p5-4.12.0.yaml
 upstream_manifest: sources/manifests/2026-09-04-teic-tei-p5-4.12.0.yaml
 upstream_inventory_sha256: b2ae1cc64d77027d3cd766a8aa532db08c30f276d07494c62eb6d43a5fdb6476
@@ -56,31 +56,31 @@ requests:
 objects:
 - kind: markdown-representation
   path: 10_markdown/documents/tei-p5-persname-4.12.0.md
-  sha256: 80c90325137bdd08339e637a4e9a8d8f0c261e245c6c371fc27be7b099d30248
+  sha256: 73bfed4f75c409c5e740f4b8003d0013b5eaca49681d6a284e4af58f4987c34d
 - kind: markdown-representation
   path: 10_markdown/documents/tei-p5-name-4.12.0.md
-  sha256: ea95921ac975cbaa57a1797f4d80e010a6d620956c0005a146fd2ff8fba7225f
+  sha256: 1851315db978149cf0b06befbf42ebe3da240ad214f6ee7ba3694834008ae496
 - kind: markdown-representation
   path: 10_markdown/documents/tei-p5-rs-4.12.0.md
-  sha256: 6817421b479ffe1e33baa3548d2c86302ac107789e4176709878bd69c4d400df
+  sha256: eb5d3dc71be886088c35147670ef23d2e729dbf4358ab740fdb0f6932a3f2bc7
 - kind: markdown-representation
   path: 10_markdown/documents/tei-p5-person-4.12.0.md
-  sha256: b7b0d1b5d9e5620abef707bd2f59eaeac447a7feca3ddebf04c1d0408ae3d225
+  sha256: a84ba5f05a080f8f81afd3e390314ea6fa92222eade358e2ec2156e656a48281
 - kind: markdown-representation
   path: 10_markdown/documents/tei-p5-nym-4.12.0.md
-  sha256: a38e2f57e8c6b30e746a7c65c2c2f580a287ea385a0087be3d094197d815af18
+  sha256: 49cf34dbbdf15314d23eed1a0c717fe4915a938002a68b9b16c544ccafaa74c4
 - kind: markdown-representation
   path: 10_markdown/documents/tei-p5-att.canonical-4.12.0.md
-  sha256: 5e5bf92a912ae7ecdcbe94370e8eb2596b37aba7d4ebb3022eabdf346e6beb77
+  sha256: 6525c12dc18dd1173a225ea7a7831018976af43df68e4a5530982c1ac830de87
 - kind: markdown-representation
   path: 10_markdown/documents/tei-p5-att.naming-4.12.0.md
-  sha256: 4dd85546fec0a557305c97b8d16c55dae4d1e24d6eff2d063466b4fb27bc29d3
+  sha256: db60fd6e7864bfc69a0ebcb15d8a67a043abf04490d6263bff0fe7ee035e2e01
 - kind: markdown-representation
   path: 10_markdown/documents/tei-p5-relation-4.12.0.md
-  sha256: 9f5bbb06df69d22fe9966b8c2f320d3b6c754ebeca70b2c1d1cab16b6f133028
+  sha256: 618f05a55356cf0cbe0def625172219e402798d6182c2d94370aecd6d70940e8
 - kind: markdown-representation
   path: 10_markdown/documents/tei-p5-guidelines-nd-4.12.0.md
-  sha256: ec8f238d6ead45b375a0ec9f55cf7c1b32d27ee44f493cbee2bd890de8eab1a5
+  sha256: 0ce938c495f75d1fd24561cdde235ca5d3554e68015638af375417eb5c369140
 counts:
   admitted_sources: 9
   representations: 9
@@ -118,7 +118,7 @@ admissions:
   original_sha256: 3f5a4e5cba70a95796bc5997ae80f7fb067ae64cb14beb579ae91b9ec67fe1bc
   git_blob_id: ffbe47c37070e255c1c7fa0238bbdcaf7aa97646
   representation_path: 10_markdown/documents/tei-p5-persname-4.12.0.md
-  representation_sha256: 80c90325137bdd08339e637a4e9a8d8f0c261e245c6c371fc27be7b099d30248
+  representation_sha256: 73bfed4f75c409c5e740f4b8003d0013b5eaca49681d6a284e4af58f4987c34d
   english_reading_blocks: 1
   content_authority: normative specification source at the pinned P5 4.12.0 release
   instruction_trust: none
@@ -130,7 +130,7 @@ admissions:
   original_sha256: 2db9072fd133f54e44b9c751adef854008828257f48c66a31ab7878ace24b7c2
   git_blob_id: 57c610d9430e9a48113d4e9f994bc0bbb9ca2486
   representation_path: 10_markdown/documents/tei-p5-name-4.12.0.md
-  representation_sha256: ea95921ac975cbaa57a1797f4d80e010a6d620956c0005a146fd2ff8fba7225f
+  representation_sha256: 1851315db978149cf0b06befbf42ebe3da240ad214f6ee7ba3694834008ae496
   english_reading_blocks: 2
   content_authority: normative specification source at the pinned P5 4.12.0 release
   instruction_trust: none
@@ -142,7 +142,7 @@ admissions:
   original_sha256: 48dcdac015e101447117df5f715d3f524f67be7327bdc8d1eb463a0acf1fda47
   git_blob_id: 77fb7d96af0c2294b541237bf17193fb7aa17c4f
   representation_path: 10_markdown/documents/tei-p5-rs-4.12.0.md
-  representation_sha256: 6817421b479ffe1e33baa3548d2c86302ac107789e4176709878bd69c4d400df
+  representation_sha256: eb5d3dc71be886088c35147670ef23d2e729dbf4358ab740fdb0f6932a3f2bc7
   english_reading_blocks: 1
   content_authority: normative specification source at the pinned P5 4.12.0 release
   instruction_trust: none
@@ -154,7 +154,7 @@ admissions:
   original_sha256: 5fadb2016cc7e87f512645e4144ce2cf2e0a7371c9d9aaac365ce7787737cf89
   git_blob_id: 8aff4c8dd02eb6b8d5609f62eb9e6e03000fcd4d
   representation_path: 10_markdown/documents/tei-p5-person-4.12.0.md
-  representation_sha256: b7b0d1b5d9e5620abef707bd2f59eaeac447a7feca3ddebf04c1d0408ae3d225
+  representation_sha256: a84ba5f05a080f8f81afd3e390314ea6fa92222eade358e2ec2156e656a48281
   english_reading_blocks: 10
   content_authority: normative specification source at the pinned P5 4.12.0 release
   instruction_trust: none
@@ -166,7 +166,7 @@ admissions:
   original_sha256: 2da4c78f09556563b425339cdc2dc6eb5e60745253016d8b5132d7811652baad
   git_blob_id: 16a0f11f5fa5202048d2b93e204e60bd0e03530f
   representation_path: 10_markdown/documents/tei-p5-nym-4.12.0.md
-  representation_sha256: a38e2f57e8c6b30e746a7c65c2c2f580a287ea385a0087be3d094197d815af18
+  representation_sha256: 49cf34dbbdf15314d23eed1a0c717fe4915a938002a68b9b16c544ccafaa74c4
   english_reading_blocks: 2
   content_authority: normative specification source at the pinned P5 4.12.0 release
   instruction_trust: none
@@ -178,7 +178,7 @@ admissions:
   original_sha256: e693ebc2df46bbd1d2618dcaefbd3c05ccfe9468124f00e10b7ba10c2c24b972
   git_blob_id: 2682bdddfa0d9223aeffd45566b825f895b050c5
   representation_path: 10_markdown/documents/tei-p5-att.canonical-4.12.0.md
-  representation_sha256: 5e5bf92a912ae7ecdcbe94370e8eb2596b37aba7d4ebb3022eabdf346e6beb77
+  representation_sha256: 6525c12dc18dd1173a225ea7a7831018976af43df68e4a5530982c1ac830de87
   english_reading_blocks: 7
   content_authority: normative specification source at the pinned P5 4.12.0 release
   instruction_trust: none
@@ -190,7 +190,7 @@ admissions:
   original_sha256: 691b28886078f433f210eab337aa4b60b4c2651278505bc756b7591058049aac
   git_blob_id: 43887df614b32c49625a2fabfd7ecb4e6521c8ad
   representation_path: 10_markdown/documents/tei-p5-att.naming-4.12.0.md
-  representation_sha256: 4dd85546fec0a557305c97b8d16c55dae4d1e24d6eff2d063466b4fb27bc29d3
+  representation_sha256: db60fd6e7864bfc69a0ebcb15d8a67a043abf04490d6263bff0fe7ee035e2e01
   english_reading_blocks: 4
   content_authority: normative specification source at the pinned P5 4.12.0 release
   instruction_trust: none
@@ -202,7 +202,7 @@ admissions:
   original_sha256: 5bab9264240a27ccfe77dcf88134448285b733c30c9428ed0c75b8be03c9d0e2
   git_blob_id: 5500905fd424e5f31a8199b62d72793f91e1f2de
   representation_path: 10_markdown/documents/tei-p5-relation-4.12.0.md
-  representation_sha256: 9f5bbb06df69d22fe9966b8c2f320d3b6c754ebeca70b2c1d1cab16b6f133028
+  representation_sha256: 618f05a55356cf0cbe0def625172219e402798d6182c2d94370aecd6d70940e8
   english_reading_blocks: 6
   content_authority: normative specification source at the pinned P5 4.12.0 release
   instruction_trust: none
@@ -214,7 +214,7 @@ admissions:
   original_sha256: 4d04b6344b532da0d788600d458299cbbade28c191ec3b7abb1f6b00045a425a
   git_blob_id: dffadd4774bec9cfa6337b089446e3c94c3b0c2a
   representation_path: 10_markdown/documents/tei-p5-guidelines-nd-4.12.0.md
-  representation_sha256: ec8f238d6ead45b375a0ec9f55cf7c1b32d27ee44f493cbee2bd890de8eab1a5
+  representation_sha256: 0ce938c495f75d1fd24561cdde235ca5d3554e68015638af375417eb5c369140
   source_blocks: 243
   content_authority: normative Guidelines prose chapter at the pinned P5 4.12.0 release
   instruction_trust: none

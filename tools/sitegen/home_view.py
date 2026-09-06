@@ -7,7 +7,7 @@ from pathlib import Path
 from urllib.parse import urlsplit
 
 from tools.sitegen import comparison_view
-from tools.sitegen.documents import WIKI, read_document
+from tools.sitegen.documents import WIKI, first_table_rows, read_document
 
 PROPOSAL = "40_output/12-p6-design.md"
 MODEL = "knowledge/text-model.md"
@@ -145,12 +145,7 @@ def build_view(root: Path, date: str, repository_base: str | None = None) -> dic
                         raise ValueError(f"Distillate lacks source: {dist_path}")
                 note["assertions"].append({"statement": statement(abody), "path": assertion_path, "links": links})
         notes.append(note)
-    object_definitions = {}
-    for line in model.splitlines():
-        if line.startswith("| "):
-            cells = [c.strip() for c in line.strip("|").split("|")]
-            if len(cells) >= 2:
-                object_definitions[cells[0]] = cells[1]
+    object_definitions = {cells[0]: cells[1] for cells in first_table_rows(model) if len(cells) >= 2}
     for required in ("Version", "Reading", "Annotation", "Relation"):
         if required not in object_definitions:
             raise ValueError(f"Model definition missing {required}")

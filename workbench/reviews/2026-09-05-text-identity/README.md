@@ -38,3 +38,12 @@ usability, real-world migration, or the chapter as a whole. The chapter remains
 `grounded`; its structural validation is recorded separately. No artifact is
 human-verified by this workflow. Current human acceptance state is recorded only
 in `knowledge/state.md`.
+
+The `*-cutter1.jsonl` files preserve the pairs and verdicts recorded under the
+first pair cutter, which showed only the heading path and the block text. On
+2026-09-06 the cutter began to show the source title, the heading path and the
+locator line with each block, so the five source pairs were re-judged in fresh
+contexts by a different model (`claude-fable-5-1`, one `claude -p` call per
+pair) against the current prompts; the four assertion pairs keep their earlier
+verdicts, whose prompts did not change. `pairs.jsonl` and `verdicts.jsonl`
+hold the current binding.

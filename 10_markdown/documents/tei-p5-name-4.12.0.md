@@ -2,8 +2,8 @@
 type: representation
 source-type: document
 source: '[[00_sources/tei-p5-name-4.12.0.xml]]'
-converter: tools.ingest_git_blobs v1; complete XML plus XML itertext English reading
-  blocks with whitespace normalized
+converter: tools.ingest_git_blobs v2; complete XML plus XML itertext English reading
+  blocks with whitespace normalized and identified locators
 channel: collection
 metadata:
   title: TEI P5 4.12.0 name specification
@@ -28,6 +28,8 @@ closing fence is not part of the source. The converter records the exact byte le
 Reading blocks reproduce English descriptions and English remarks paragraphs using
 XML `itertext`; whitespace runs become one space and surrounding whitespace is removed.
 They are reading projections of this source, not additional sources or interpretations.
+A locator names an element that carries an `ident` attribute by that ident, so the
+reading block of an attribute definition states which attribute it describes.
 
 Source byte length: 4047. Git blob: `57c610d9430e9a48113d4e9f994bc0bbb9ca2486`.
 
@@ -104,13 +106,13 @@ Source byte length: 4047. Git blob: `57c610d9430e9a48113d4e9f994bc0bbb9ca2486`.
 
 ### Reading 1
 
-XML location: `/elementSpec[1]/desc[1]`.
+XML location: `/elementSpec[@ident='name']/desc[1]`.
 
 contains a proper noun or noun phrase. ^r1
 
 ### Reading 2
 
-XML location: `/elementSpec[1]/remarks[1]/p[1]`.
+XML location: `/elementSpec[@ident='name']/remarks[@ident='name-remarks']/p[1]`.
 
 Proper nouns referring to people, places, and organizations may be tagged instead with persName, placeName, or orgName, when the TEI module for names and dates is included. ^r2
 

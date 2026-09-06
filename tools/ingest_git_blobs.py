@@ -19,7 +19,7 @@ import hashlib
 import json
 import xml.etree.ElementTree as ET
 from collections.abc import Callable
-from dataclasses import dataclass, field
+from dataclasses import dataclass, field, replace
 from datetime import UTC, datetime
 from pathlib import Path
 from xml.parsers import expat
@@ -60,12 +60,21 @@ def _local(name: str) -> str:
     return name.rsplit("}", 1)[-1]
 
 
-def reading_blocks(payload: bytes) -> list[tuple[str, str]]:
-    """Read XML as inert data; no entities, external schemas, or code run."""
+def reading_blocks(payload: bytes, *, identified: bool = False) -> list[tuple[str, str]]:
+    """Read XML as inert data; no entities, external schemas, or code run.
+
+    With ``identified`` the locator names an element carrying an ``ident``
+    attribute by that ident instead of by position, so a reading block of an
+    attribute definition says which attribute it describes.
+    """
     if b"<!DOCTYPE" in payload or b"<!ENTITY" in payload:
         raise ValueError("DTD/entity declarations are outside this converter's scope")
     root = ET.fromstring(payload)
     blocks: list[tuple[str, str]] = []
+
+    def step(element: ET.Element, tag: str, position: int) -> str:
+        ident = element.get("ident") if identified else None
+        return f"{tag}[@ident='{ident}']" if ident else f"{tag}[{position}]"
 
     def walk(element: ET.Element, locator: str, parent: ET.Element | None = None) -> None:
         tag = _local(element.tag)
@@ -81,10 +90,14 @@ def reading_blocks(payload: bytes) -> list[tuple[str, str]]:
         for child in element:
             child_tag = _local(child.tag)
             counts[child_tag] = counts.get(child_tag, 0) + 1
-            walk(child, f"{locator}/{child_tag}[{counts[child_tag]}]", element)
+            walk(child, f"{locator}/{step(child, child_tag, counts[child_tag])}", element)
 
-    walk(root, f"/{_local(root.tag)}[1]")
+    walk(root, f"/{step(root, _local(root.tag), 1)}")
     return blocks
+
+
+def identified_reading_blocks(payload: bytes) -> list[tuple[str, str]]:
+    return reading_blocks(payload, identified=True)
 
 
 def _tag_end(payload: bytes, start: int) -> int:
@@ -198,6 +211,23 @@ SPEC = Form(
     blocks=reading_blocks,
 )
 
+# Converter version 2 of the specification form: locators name identified
+# elements by their ident, so a reading block of an attribute definition says
+# which attribute it describes without recourse to the complete XML.
+SPEC_IDENTIFIED = replace(
+    SPEC,
+    converter=(
+        "complete XML plus XML itertext English reading blocks with whitespace normalized "
+        "and identified locators"
+    ),
+    explanation=SPEC.explanation
+    + (
+        "A locator names an element that carries an `ident` attribute by that ident, so the\n"
+        "reading block of an attribute definition states which attribute it describes.\n"
+    ),
+    blocks=identified_reading_blocks,
+)
+
 CHAPTER = Form(
     converter="complete XML plus verbatim source blocks for every block-level unit",
     explanation=(
@@ -219,7 +249,7 @@ CHAPTER = Form(
     blocks=source_blocks,
 )
 
-FORMS = {"spec": SPEC, "chapter": CHAPTER}
+FORMS = {"spec": SPEC, "spec-identified": SPEC_IDENTIFIED, "chapter": CHAPTER}
 
 
 @dataclass(frozen=True)
@@ -262,7 +292,7 @@ ENTITIES = Run(
     run_id="2026-09-06-entities-admission",
     date="2026-09-06",
     adapter="tools.ingest_git_blobs",
-    version=1,
+    version=2,
     manifest="sources/manifests/2026-09-06-entities-admission.yaml",
     boundary=(
         "Exactly persName.xml, name.xml, rs.xml, person.xml, nym.xml, att.canonical.xml, "
@@ -289,7 +319,7 @@ ENTITIES = Run(
             slug="tei-p5-persname-4.12.0",
             heading="persName",
             title="TEI P5 4.12.0 persName specification",
-            form="spec",
+            form="spec-identified",
         ),
         Admission(
             git_path="P5/Source/Specs/name.xml",
@@ -298,7 +328,7 @@ ENTITIES = Run(
             slug="tei-p5-name-4.12.0",
             heading="name",
             title="TEI P5 4.12.0 name specification",
-            form="spec",
+            form="spec-identified",
         ),
         Admission(
             git_path="P5/Source/Specs/rs.xml",
@@ -307,7 +337,7 @@ ENTITIES = Run(
             slug="tei-p5-rs-4.12.0",
             heading="rs",
             title="TEI P5 4.12.0 rs specification",
-            form="spec",
+            form="spec-identified",
         ),
         Admission(
             git_path="P5/Source/Specs/person.xml",
@@ -316,7 +346,7 @@ ENTITIES = Run(
             slug="tei-p5-person-4.12.0",
             heading="person",
             title="TEI P5 4.12.0 person specification",
-            form="spec",
+            form="spec-identified",
         ),
         Admission(
             git_path="P5/Source/Specs/nym.xml",
@@ -325,7 +355,7 @@ ENTITIES = Run(
             slug="tei-p5-nym-4.12.0",
             heading="nym",
             title="TEI P5 4.12.0 nym specification",
-            form="spec",
+            form="spec-identified",
         ),
         Admission(
             git_path="P5/Source/Specs/att.canonical.xml",
@@ -334,7 +364,7 @@ ENTITIES = Run(
             slug="tei-p5-att.canonical-4.12.0",
             heading="att.canonical",
             title="TEI P5 4.12.0 att.canonical specification",
-            form="spec",
+            form="spec-identified",
         ),
         Admission(
             git_path="P5/Source/Specs/att.naming.xml",
@@ -343,7 +373,7 @@ ENTITIES = Run(
             slug="tei-p5-att.naming-4.12.0",
             heading="att.naming",
             title="TEI P5 4.12.0 att.naming specification",
-            form="spec",
+            form="spec-identified",
         ),
         Admission(
             git_path="P5/Source/Specs/relation.xml",
@@ -352,7 +382,7 @@ ENTITIES = Run(
             slug="tei-p5-relation-4.12.0",
             heading="relation",
             title="TEI P5 4.12.0 relation specification",
-            form="spec",
+            form="spec-identified",
         ),
         Admission(
             git_path="P5/Source/Guidelines/en/ND-NamesDates.xml",
