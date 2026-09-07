@@ -3,13 +3,14 @@
 from __future__ import annotations
 
 import html
+import json
 from collections import Counter
 from pathlib import Path
 from typing import Any
 
 from tools.sitegen.assets import read_asset
 from tools.sitegen.chrome import render_footer, render_header
-from tools.sitegen.markup import deployment_base
+from tools.sitegen.markup import deployment_base, doc_id
 from tools.sitegen.materials_view import (
     GAP_LABELS,
     STATUS_HELP,
@@ -178,8 +179,38 @@ def render_source(source: dict[str, Any], index: int, base: str | None) -> str:
 </tr>"""
 
 
+def guidelines_reference(root: Path, base: str | None) -> str:
+    path = root / "corpus/projections/guidelines-4.12.0.json"
+    if not path.exists():
+        if (root / "sources/manifests/2026-09-07-guidelines-4.12.0-admission.yaml").exists():
+            raise ValueError("Guidelines admission exists without its coverage projection")
+        return ""
+    view = json.loads(path.read_text(encoding="utf-8"))
+    counts = view["counts"]
+    rows = []
+    for row in view["contents"]:
+        source = '<a href="knowledge.html#' + html.escape(doc_id(row["representation"]), quote=True) + '">Read source</a>'
+        processing = "Imported; no distillate"
+        if row["distillate"]:
+            processing = '<a href="knowledge.html#' + html.escape(doc_id(row["distillate"]), quote=True) + '">Distillate available</a>'
+        rows.append('<tr><td>' + html.escape(row["part"].title() + " " + row["number"])
+                    + '</td><td>' + html.escape(row["title"]) + '</td><td>' + source
+                    + '</td><td>' + processing + '</td></tr>')
+    full = control_link("corpus/projections/guidelines-4.12.0.md", base, "All source files and dependencies")
+    return ('<section id="guidelines" aria-labelledby="guidelines-title"><h2 id="guidelines-title">English Guidelines 4.12.0</h2>'
+            f'<p>{counts["ingested"]} source representations cover the 24 main chapters, front and back matter, '
+            f'{counts["specifications"]} specifications and supporting XML. {counts["distilled"]} sources have a distillate. '
+            'Import establishes availability for citation. Exhaustive section review and human verification remain open.</p>'
+            '<details><summary>Coverage of the published contents</summary><div class="table-wrap"><table class="guidelines-coverage">'
+            '<caption>Source admission and distillation are separate processing steps.</caption>'
+            '<thead><tr><th scope="col">Part</th><th scope="col">Entry</th><th scope="col">Source</th>'
+            '<th scope="col">Processing</th></tr></thead><tbody>' + ''.join(rows)
+            + '</tbody></table></div></details><p>' + full + '</p></section>')
+
+
 def build_page(root: Path, date: str, repository_base: str | None = None) -> str:
     base = deployment_base(repository_base)
+    guidelines = guidelines_reference(root, base)
     registered_sources = prepare_sources(root)
     sources = [
         source
@@ -255,6 +286,7 @@ def build_page(root: Path, date: str, repository_base: str | None = None) -> str
     <p class="results-meta" role="status" aria-live="polite"><span id="result-count">{len(sources)}</span> sources</p>
   </header>
   <p class="wb-description materials-scope">Source families and recorded holdings. Individual raw files are not enumerated here.<br><a href="knowledge.html">Knowledge</a>{literature_link}</p>
+  {guidelines}
   <section aria-label="Source families">
     <div class="toolbar">
       <label class="control control-search"><span>Full-text search</span><input id="search" class="search" type="search" placeholder="Search sources and holdings"></label>

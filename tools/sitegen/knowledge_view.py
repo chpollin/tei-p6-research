@@ -35,30 +35,42 @@ def anchored_blocks(body: str, kind: str) -> dict[str, str]:
         paragraphs = re.findall(r"^- .*?(?=^- |\Z)", core, re.M | re.S)
     else:
         paragraphs, paragraph, fence = [], [], None
+        fenced, pending = [], []
         for line in body.splitlines():
             marker = re.match(r"^\s*(`{3,}|~{3,})", line)
-            if marker:
-                if fence is None:
-                    if paragraph:
-                        paragraphs.append("\n".join(paragraph))
-                        paragraph = []
-                    fence = marker.group(1)[0]
-                elif marker.group(1)[0] == fence:
-                    fence = None
-                continue
             if fence:
+                fenced.append(line)
+                if marker and marker.group(1)[0] == fence[0] and len(marker.group(1)) >= len(fence):
+                    fence = None
+                    pending = fenced
+                    fenced = []
+                continue
+            if marker:
+                if paragraph:
+                    paragraphs.append("\n".join(paragraph))
+                    paragraph = []
+                fence = marker.group(1)
+                fenced = [line]
+                pending = []
+                continue
+            if pending and re.fullmatch(r"\^[A-Za-z0-9-]+\s*", line):
+                paragraphs.append("\n".join([*pending, "", line]))
+                pending = []
                 continue
             if not line.strip() or line.startswith("#"):
                 if paragraph:
                     paragraphs.append("\n".join(paragraph))
                     paragraph = []
+                if line.startswith("#"):
+                    pending = []
             else:
+                pending = []
                 paragraph.append(line)
         if paragraph:
             paragraphs.append("\n".join(paragraph))
     result = {}
     for paragraph in paragraphs:
-        anchors = BLOCK.findall(paragraph)
+        anchors = BLOCK.findall(paragraph.splitlines()[-1]) if paragraph.lstrip().startswith(("```", "~~~")) else BLOCK.findall(paragraph)
         if len(anchors) > 1:
             raise ValueError("Multiple block anchors in one passage")
         if anchors:

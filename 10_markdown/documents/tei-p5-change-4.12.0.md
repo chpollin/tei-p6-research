@@ -1,0 +1,579 @@
+---
+type: representation
+source-type: document
+source: '[[00_sources/tei-p5-change-4.12.0.xml]]'
+converter: tools.ingest_guidelines v1; complete XML plus verbatim blocks of prose,
+  specifications and support files
+channel: collection
+metadata:
+  title: TEI P5 4.12.0 change
+  creator: TEI Consortium
+  date: '2026-07-28'
+  format: application/xml
+  identifier: https://github.com/TEIC/TEI/blob/113e933e21f016e2655518321e9d10214b8d9fcb/P5/Source/Specs/change.xml
+  license: CC-BY-3.0
+  confidential: false
+created: '2026-09-07'
+updated: '2026-09-07'
+---
+
+# change
+
+Copyright TEI Consortium. Source used under CC-BY-3.0; upstream also offers BSD-2-Clause.
+License records: `LICENSE.md` and `P5/COPYING.txt` at commit `113e933e21f016e2655518321e9d10214b8d9fcb`.
+
+The complete XML is preserved as inert text. The source blocks repeat exact XML
+units in document order, including examples, lists, tables and constraints. The
+locator identifies each unit inside this file; the complete XML preserves its
+surrounding structure. Includes and processing instructions remain unexecuted.
+The Guidelines coverage projection locates their separate source dependencies.
+Presence of a representation establishes neither distillation nor verification.
+
+Source byte length: 8429. Git blob: `4a5f703f14aec2bd3bddfb7671df99d637836bb9`.
+
+## Complete XML source
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- © TEI Consortium. Dual-licensed under CC-by and BSD2 licenses; see the file COPYING.txt for details. -->
+<?xml-model href="https://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl" type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
+<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" module="header" xml:id="gi-change" ident="change">
+  <gloss versionDate="2016-11-25" xml:lang="en">change</gloss>
+  <gloss versionDate="2016-11-25" xml:lang="de">Änderung</gloss>
+  <gloss versionDate="2023-10-02" xml:lang="ja">変更</gloss>
+  <desc versionDate="2011-10-31" xml:lang="en">documents a change or set of changes made during the production of a source document, or during the revision of an electronic file.</desc>
+  <desc versionDate="2009-01-05" xml:lang="fr">résume une modification ou une correction apportée à une version particulière d’un texte électronique partagé entre plusieurs chercheurs.</desc>
+  <desc versionDate="2007-12-20" xml:lang="ko">몇몇 연구자들 사이에 공유된 전자 텍스트의 특정 버전에 대한 특정 변경 또는 수정 사항을 요약한다.</desc>
+  <desc versionDate="2007-05-02" xml:lang="zh-TW">概述多位研究者共享的某版本電子文本當中，某特定的內容變更或修正。</desc>
+  <desc versionDate="2023-10-02" xml:lang="ja">元文書の作成や電子ファイルの改訂においてなされた一つあるいは一連の変更を記述する。</desc>
+  <desc versionDate="2016-11-25" xml:lang="de">verzeichnet Änderungen oder Korrekturen während der Erstellung eines Basisdokuments oder während der Überarbeitung einer elektronischen Datei.</desc>
+  <desc versionDate="2007-05-04" xml:lang="es">resume un cambio o corrección determinada llevada a cabo en una versión dada de un texto electrónico en el que trabajan diversos investigadores.</desc>
+  <desc versionDate="2007-01-21" xml:lang="it">sintetizza un particolare cambiamento o correzione effettuato ad una particolare versione di un documento elettronico, condivisa da più ricercatori.</desc>
+  <classes>
+    <memberOf key="att.global"/>
+    <memberOf key="att.ascribed"/>
+    <memberOf key="att.datable"/>
+    <memberOf key="att.docStatus"/>
+    <memberOf key="att.typed"/>
+  </classes>
+  <content>
+    <!--    <zeroOrMore xmlns="http://relaxng.org/ns/structure/1.0">
+      <choice>
+        <text/>
+        <ref name="model.limitedPhrase"/>
+        <ref name="model.inter"/>
+        <ref name="model.global"/>
+      </choice>
+    </zeroOrMore>-->
+    <macroRef key="macro.specialPara"/>
+  </content>
+  <attList>
+    <attDef ident="target">
+      <gloss versionDate="2016-11-25" xml:lang="en">target</gloss>
+      <gloss versionDate="2016-11-25" xml:lang="de">Ziel</gloss>
+      <gloss versionDate="2023-10-02" xml:lang="ja">対象</gloss>
+      <desc versionDate="2011-10-31" xml:lang="en">points to one or more elements that belong to this change.</desc>
+      <desc versionDate="2016-11-25" xml:lang="de">verweist auf ein oder mehrere Elemente, die zu dieser Änderung gehören.</desc>
+      <desc versionDate="2023-10-02" xml:lang="ja">この変更の対象となる一つ以上の要素を指す。</desc>
+      <datatype minOccurs="1" maxOccurs="unbounded"><dataRef key="teidata.pointer"/></datatype>
+    </attDef>
+  </attList>
+  <exemplum xml:lang="en">
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="gi-change-egXML-tk">
+      <titleStmt>
+        <title> ... </title>
+        <editor xml:id="LDB">Lou Burnard</editor>
+        <respStmt xml:id="BZ">
+          <resp>copy editing</resp>
+          <name>Brett Zamir</name>
+        </respStmt>
+      </titleStmt>
+      <!-- ... -->
+      <revisionDesc status="published">
+        <change who="#BZ" when="2008-02-02" status="public">Finished chapter 23</change>
+        <change who="#BZ" when="2008-01-02" status="draft">Finished chapter 2</change>
+        <change n="P2.2" when="1991-12-21" who="#LDB">Added examples to section 3</change>
+        <change when="1991-11-11" who="#MSM">Deleted chapter 10</change>
+      </revisionDesc>
+    </egXML>
+  </exemplum>
+  <exemplum xml:lang="en">
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="gi-change-egXML-ys">
+      <profileDesc>
+        <creation>
+          <listChange>
+            <change xml:id="DRAFT1">First draft in pencil</change>
+            <change xml:id="DRAFT2" notBefore="1880-12-09">First revision, mostly
+using green ink</change>
+            <change xml:id="DRAFT3" notBefore="1881-02-13">Final corrections as
+supplied to printer.</change>
+          </listChange>
+        </creation>
+      </profileDesc>
+    </egXML>
+  </exemplum>
+  <exemplum versionDate="2008-04-06" xml:lang="fr">
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="gi-change-egXML-gp">
+      <titleStmt>
+        <title> ... </title>
+        <editor xml:id="fr_GK">G.K.</editor>
+        <respStmt xml:id="fr_RT">
+          <resp>copie</resp>
+          <name>R.T.</name>
+        </respStmt>
+      </titleStmt>
+      <revisionDesc>
+        <change who="#fr_RT" when="2008-02-02">Fin du chapitre 23</change>
+        <change who="#fr_RT" when="2008-01-02">FIn du chapitre 2</change>
+        <change n="P2.2" when="1991-12-21" who="#fr_GK">Ajout d'exemples dans la section 3</change>
+        <change when="1991-11-11" who="#fr_MSM">Suppression du chapitre 10</change>
+      </revisionDesc>
+    </egXML>
+  </exemplum>
+  <exemplum xml:lang="zh-TW">
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="gi-change-egXML-rq">
+      <change n="P2.2" when="1991-12-21">張三新增範例於第三節</change>
+      <change when="1991-11-11">李四刪除第十章</change>
+    </egXML>
+  </exemplum>
+  <remarks ident="change-remarks" versionDate="2010-05-06" xml:lang="en">
+    <p>The <att>who</att> attribute may be used to point to any other element, but will typically
+      specify a <gi>respStmt</gi> or <gi>person</gi> element elsewhere in the header, identifying
+      the person responsible for the change and their role in making it.</p>
+    <p>It is recommended that changes be recorded with the most recent
+    first. The <att>status</att> attribute may be used to indicate the
+    status of a document following the change documented.  </p>
+  </remarks>
+  <remarks ident="change-remarks" versionDate="2007-06-12" xml:lang="fr">
+    <p>Les modifications doivent être enregistrées dans l'ordre, par exemple la plus récente en
+      premier.</p>
+  </remarks>
+  <remarks ident="change-remarks" versionDate="2008-04-06" xml:lang="es">
+    <p>El atributo <att>quién</att> (who) se puede utilizar para señalar a cualquier otro elemento,
+      pero especificará típicamente a <gi>respStmt</gi> o al elemento <gi>persona</gi> de cualquier
+      parte del encabezado, identificando a la persona responsable del cambio y de su papel en la
+      producciónl.</p>
+    <p>Se recomienda que los cambios se registren con el primero más reciente.</p>
+  </remarks>
+  <remarks ident="change-remarks" versionDate="2023-10-02" xml:lang="ja">
+    <p><att>who</att>属性は、他の任意の要素を指すことができるが、典型的には、ヘッダ内の他の場所にある、変更に関わった人物とその役割を示す<gi>respStmt</gi>または<gi>person</gi>要素を指定する。最新のものを最初に書くことを推奨する。<att>status</att>属性を、変更が適用された後の文書の状態を示すために使用してもよい。</p>
+  </remarks>
+  <remarks ident="change-remarks" versionDate="2016-11-25" xml:lang="de">
+    <p>Das <att>who</att>-Attribut kann dafür verwendet werden, um zu einem beliebigen anderen 
+      Element zu verweisen, sollte aber typischerweise auf ein <gi>respStmt</gi>- oder 
+      <gi>person</gi>-Element innerhalb des TEI-Headers zeigen, um die für die Änderungen 
+      Verantwortlichen und deren Rolle zu identifizieren.</p>
+    <p>Es wird empfohlen, Änderungen so aufzuzeichnen, dass die neuesten am Anfang eingetragen werden. 
+      Das <att>status</att>-Attribut kann dafür verwendet werden, 
+      um den Zustand des Dokuments nach erfolgter Änderung zu beschreiben.</p>
+  </remarks>
+  <listRef>
+    <ptr target="#HD6"/>
+    <ptr target="#HD4C"/>
+    <ptr target="#PH-changes"/>
+  </listRef>
+</elementSpec>
+```
+
+## Source blocks
+
+### Block 1
+
+XML location: `/elementSpec[1]/gloss[1]`.
+
+```xml
+<gloss versionDate="2016-11-25" xml:lang="en">change</gloss>
+```
+
+^b1
+
+### Block 2
+
+XML location: `/elementSpec[1]/gloss[2]`.
+
+```xml
+<gloss versionDate="2016-11-25" xml:lang="de">Änderung</gloss>
+```
+
+^b2
+
+### Block 3
+
+XML location: `/elementSpec[1]/gloss[3]`.
+
+```xml
+<gloss versionDate="2023-10-02" xml:lang="ja">変更</gloss>
+```
+
+^b3
+
+### Block 4
+
+XML location: `/elementSpec[1]/desc[1]`.
+
+```xml
+<desc versionDate="2011-10-31" xml:lang="en">documents a change or set of changes made during the production of a source document, or during the revision of an electronic file.</desc>
+```
+
+^b4
+
+### Block 5
+
+XML location: `/elementSpec[1]/desc[2]`.
+
+```xml
+<desc versionDate="2009-01-05" xml:lang="fr">résume une modification ou une correction apportée à une version particulière d’un texte électronique partagé entre plusieurs chercheurs.</desc>
+```
+
+^b5
+
+### Block 6
+
+XML location: `/elementSpec[1]/desc[3]`.
+
+```xml
+<desc versionDate="2007-12-20" xml:lang="ko">몇몇 연구자들 사이에 공유된 전자 텍스트의 특정 버전에 대한 특정 변경 또는 수정 사항을 요약한다.</desc>
+```
+
+^b6
+
+### Block 7
+
+XML location: `/elementSpec[1]/desc[4]`.
+
+```xml
+<desc versionDate="2007-05-02" xml:lang="zh-TW">概述多位研究者共享的某版本電子文本當中，某特定的內容變更或修正。</desc>
+```
+
+^b7
+
+### Block 8
+
+XML location: `/elementSpec[1]/desc[5]`.
+
+```xml
+<desc versionDate="2023-10-02" xml:lang="ja">元文書の作成や電子ファイルの改訂においてなされた一つあるいは一連の変更を記述する。</desc>
+```
+
+^b8
+
+### Block 9
+
+XML location: `/elementSpec[1]/desc[6]`.
+
+```xml
+<desc versionDate="2016-11-25" xml:lang="de">verzeichnet Änderungen oder Korrekturen während der Erstellung eines Basisdokuments oder während der Überarbeitung einer elektronischen Datei.</desc>
+```
+
+^b9
+
+### Block 10
+
+XML location: `/elementSpec[1]/desc[7]`.
+
+```xml
+<desc versionDate="2007-05-04" xml:lang="es">resume un cambio o corrección determinada llevada a cabo en una versión dada de un texto electrónico en el que trabajan diversos investigadores.</desc>
+```
+
+^b10
+
+### Block 11
+
+XML location: `/elementSpec[1]/desc[8]`.
+
+```xml
+<desc versionDate="2007-01-21" xml:lang="it">sintetizza un particolare cambiamento o correzione effettuato ad una particolare versione di un documento elettronico, condivisa da più ricercatori.</desc>
+```
+
+^b11
+
+### Block 12
+
+XML location: `/elementSpec[1]/classes[1]`.
+
+```xml
+<classes>
+    <memberOf key="att.global"/>
+    <memberOf key="att.ascribed"/>
+    <memberOf key="att.datable"/>
+    <memberOf key="att.docStatus"/>
+    <memberOf key="att.typed"/>
+  </classes>
+```
+
+^b12
+
+### Block 13
+
+XML location: `/elementSpec[1]/content[1]`.
+
+```xml
+<content>
+    <!--    <zeroOrMore xmlns="http://relaxng.org/ns/structure/1.0">
+      <choice>
+        <text/>
+        <ref name="model.limitedPhrase"/>
+        <ref name="model.inter"/>
+        <ref name="model.global"/>
+      </choice>
+    </zeroOrMore>-->
+    <macroRef key="macro.specialPara"/>
+  </content>
+```
+
+^b13
+
+### Block 14
+
+XML location: `/elementSpec[1]/attList[1]/attDef[1]/gloss[1]`.
+
+```xml
+<gloss versionDate="2016-11-25" xml:lang="en">target</gloss>
+```
+
+^b14
+
+### Block 15
+
+XML location: `/elementSpec[1]/attList[1]/attDef[1]/gloss[2]`.
+
+```xml
+<gloss versionDate="2016-11-25" xml:lang="de">Ziel</gloss>
+```
+
+^b15
+
+### Block 16
+
+XML location: `/elementSpec[1]/attList[1]/attDef[1]/gloss[3]`.
+
+```xml
+<gloss versionDate="2023-10-02" xml:lang="ja">対象</gloss>
+```
+
+^b16
+
+### Block 17
+
+XML location: `/elementSpec[1]/attList[1]/attDef[1]/desc[1]`.
+
+```xml
+<desc versionDate="2011-10-31" xml:lang="en">points to one or more elements that belong to this change.</desc>
+```
+
+^b17
+
+### Block 18
+
+XML location: `/elementSpec[1]/attList[1]/attDef[1]/desc[2]`.
+
+```xml
+<desc versionDate="2016-11-25" xml:lang="de">verweist auf ein oder mehrere Elemente, die zu dieser Änderung gehören.</desc>
+```
+
+^b18
+
+### Block 19
+
+XML location: `/elementSpec[1]/attList[1]/attDef[1]/desc[3]`.
+
+```xml
+<desc versionDate="2023-10-02" xml:lang="ja">この変更の対象となる一つ以上の要素を指す。</desc>
+```
+
+^b19
+
+### Block 20
+
+XML location: `/elementSpec[1]/attList[1]/attDef[1]/datatype[1]`.
+
+```xml
+<datatype minOccurs="1" maxOccurs="unbounded"><dataRef key="teidata.pointer"/></datatype>
+```
+
+^b20
+
+### Block 21
+
+XML location: `/elementSpec[1]/exemplum[1]`.
+
+```xml
+<exemplum xml:lang="en">
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="gi-change-egXML-tk">
+      <titleStmt>
+        <title> ... </title>
+        <editor xml:id="LDB">Lou Burnard</editor>
+        <respStmt xml:id="BZ">
+          <resp>copy editing</resp>
+          <name>Brett Zamir</name>
+        </respStmt>
+      </titleStmt>
+      <!-- ... -->
+      <revisionDesc status="published">
+        <change who="#BZ" when="2008-02-02" status="public">Finished chapter 23</change>
+        <change who="#BZ" when="2008-01-02" status="draft">Finished chapter 2</change>
+        <change n="P2.2" when="1991-12-21" who="#LDB">Added examples to section 3</change>
+        <change when="1991-11-11" who="#MSM">Deleted chapter 10</change>
+      </revisionDesc>
+    </egXML>
+  </exemplum>
+```
+
+^b21
+
+### Block 22
+
+XML location: `/elementSpec[1]/exemplum[2]`.
+
+```xml
+<exemplum xml:lang="en">
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="gi-change-egXML-ys">
+      <profileDesc>
+        <creation>
+          <listChange>
+            <change xml:id="DRAFT1">First draft in pencil</change>
+            <change xml:id="DRAFT2" notBefore="1880-12-09">First revision, mostly
+using green ink</change>
+            <change xml:id="DRAFT3" notBefore="1881-02-13">Final corrections as
+supplied to printer.</change>
+          </listChange>
+        </creation>
+      </profileDesc>
+    </egXML>
+  </exemplum>
+```
+
+^b22
+
+### Block 23
+
+XML location: `/elementSpec[1]/exemplum[3]`.
+
+```xml
+<exemplum versionDate="2008-04-06" xml:lang="fr">
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="gi-change-egXML-gp">
+      <titleStmt>
+        <title> ... </title>
+        <editor xml:id="fr_GK">G.K.</editor>
+        <respStmt xml:id="fr_RT">
+          <resp>copie</resp>
+          <name>R.T.</name>
+        </respStmt>
+      </titleStmt>
+      <revisionDesc>
+        <change who="#fr_RT" when="2008-02-02">Fin du chapitre 23</change>
+        <change who="#fr_RT" when="2008-01-02">FIn du chapitre 2</change>
+        <change n="P2.2" when="1991-12-21" who="#fr_GK">Ajout d'exemples dans la section 3</change>
+        <change when="1991-11-11" who="#fr_MSM">Suppression du chapitre 10</change>
+      </revisionDesc>
+    </egXML>
+  </exemplum>
+```
+
+^b23
+
+### Block 24
+
+XML location: `/elementSpec[1]/exemplum[4]`.
+
+```xml
+<exemplum xml:lang="zh-TW">
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="gi-change-egXML-rq">
+      <change n="P2.2" when="1991-12-21">張三新增範例於第三節</change>
+      <change when="1991-11-11">李四刪除第十章</change>
+    </egXML>
+  </exemplum>
+```
+
+^b24
+
+### Block 25
+
+XML location: `/elementSpec[1]/remarks[1]`.
+
+```xml
+<remarks ident="change-remarks" versionDate="2010-05-06" xml:lang="en">
+    <p>The <att>who</att> attribute may be used to point to any other element, but will typically
+      specify a <gi>respStmt</gi> or <gi>person</gi> element elsewhere in the header, identifying
+      the person responsible for the change and their role in making it.</p>
+    <p>It is recommended that changes be recorded with the most recent
+    first. The <att>status</att> attribute may be used to indicate the
+    status of a document following the change documented.  </p>
+  </remarks>
+```
+
+^b25
+
+### Block 26
+
+XML location: `/elementSpec[1]/remarks[2]`.
+
+```xml
+<remarks ident="change-remarks" versionDate="2007-06-12" xml:lang="fr">
+    <p>Les modifications doivent être enregistrées dans l'ordre, par exemple la plus récente en
+      premier.</p>
+  </remarks>
+```
+
+^b26
+
+### Block 27
+
+XML location: `/elementSpec[1]/remarks[3]`.
+
+```xml
+<remarks ident="change-remarks" versionDate="2008-04-06" xml:lang="es">
+    <p>El atributo <att>quién</att> (who) se puede utilizar para señalar a cualquier otro elemento,
+      pero especificará típicamente a <gi>respStmt</gi> o al elemento <gi>persona</gi> de cualquier
+      parte del encabezado, identificando a la persona responsable del cambio y de su papel en la
+      producciónl.</p>
+    <p>Se recomienda que los cambios se registren con el primero más reciente.</p>
+  </remarks>
+```
+
+^b27
+
+### Block 28
+
+XML location: `/elementSpec[1]/remarks[4]`.
+
+```xml
+<remarks ident="change-remarks" versionDate="2023-10-02" xml:lang="ja">
+    <p><att>who</att>属性は、他の任意の要素を指すことができるが、典型的には、ヘッダ内の他の場所にある、変更に関わった人物とその役割を示す<gi>respStmt</gi>または<gi>person</gi>要素を指定する。最新のものを最初に書くことを推奨する。<att>status</att>属性を、変更が適用された後の文書の状態を示すために使用してもよい。</p>
+  </remarks>
+```
+
+^b28
+
+### Block 29
+
+XML location: `/elementSpec[1]/remarks[5]`.
+
+```xml
+<remarks ident="change-remarks" versionDate="2016-11-25" xml:lang="de">
+    <p>Das <att>who</att>-Attribut kann dafür verwendet werden, um zu einem beliebigen anderen 
+      Element zu verweisen, sollte aber typischerweise auf ein <gi>respStmt</gi>- oder 
+      <gi>person</gi>-Element innerhalb des TEI-Headers zeigen, um die für die Änderungen 
+      Verantwortlichen und deren Rolle zu identifizieren.</p>
+    <p>Es wird empfohlen, Änderungen so aufzuzeichnen, dass die neuesten am Anfang eingetragen werden. 
+      Das <att>status</att>-Attribut kann dafür verwendet werden, 
+      um den Zustand des Dokuments nach erfolgter Änderung zu beschreiben.</p>
+  </remarks>
+```
+
+^b29
+
+### Block 30
+
+XML location: `/elementSpec[1]/listRef[1]`.
+
+```xml
+<listRef>
+    <ptr target="#HD6"/>
+    <ptr target="#HD4C"/>
+    <ptr target="#PH-changes"/>
+  </listRef>
+```
+
+^b30
+

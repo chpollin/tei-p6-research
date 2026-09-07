@@ -147,7 +147,8 @@ def test_overview_inlines_its_source_assets() -> None:
 
 def test_overview_uses_plain_holding_lists_and_distinguishes_literature() -> None:
     page = build_page(REPO, "2026-09-05")
-    assert page.count("<table ") == 1
+    assert page.count('<table class="source-table">') == 1
+    assert page.count('<table class="guidelines-coverage">') == 1
     assert '<ul class="holding-list">' in page
     assert '<li class="holding-item">' in page
     assert 'class="holding-status"' in page

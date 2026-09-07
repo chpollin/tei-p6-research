@@ -9,7 +9,7 @@ method:
 status: draft
 language: en
 created: "2026-09-04"
-updated: "2026-09-06"
+updated: "2026-09-07"
 related: [INDEX, specification, plan, state]
 ---
 
@@ -659,3 +659,25 @@ progress counts belong in [[knowledge/state]] and in the Git history.
   is read for the decision and its reason.
 - **Supersedes.** The free-form entry format.
 - **Carried by.** This document.
+
+## 2026-09-07 — Vollständige Guidelines-Aufnahme als Referenzbasis
+
+- **Decision.** Die englischen Guidelines des festgelegten Releases 4.12.0
+  werden vollständig auf Quellenebene aufgenommen. Die Grenze umfasst das
+  englische Masterdokument, seine Front-, Haupt- und Anhangsteile, sämtliche
+  Spezifikationen und lokale XML-Einbindungen. Bereits aufgenommene Quellen
+  und ihre Anker bleiben unverändert. Ein generierter Abdeckungsbericht unter
+  `corpus/projections/` verbindet Inhaltsverzeichnis, Quellen, Abhängigkeiten
+  und tatsächliche Destillationsstände. Er bleibt eine Navigationsprojektion
+  außerhalb der Grounding-Kette. Bilder und externe Verweise erhalten einen
+  expliziten Nachweis ihres Bestands oder ihrer Grenze. Die Aufnahme erzeugt
+  keine Destillate, Assertions oder fachlichen Prüfstände.
+- **Why.** Die bisherige thematische Auswahl lässt große Teile der
+  P5-Referenzbasis unberücksichtigt. Vollständige Quellenaufnahme und
+  überschaubare fachliche Prüfung benötigen unterschiedliche Grenzen.
+- **Supersedes.** Die Begrenzung auf zwölf Quellen und zwei Kapitel gilt
+  weiterhin für fachliche Themenläufe; die deterministische Aufnahme der
+  vollständigen Referenzbasis erhält den hier definierten eigenen Umfang.
+- **Carried by.** `tools/ingest_guidelines.py`, [[knowledge/data]],
+  [[knowledge/operations]], [[knowledge/plan]], [[knowledge/testing]],
+  [[knowledge/design]], [[knowledge/state]].

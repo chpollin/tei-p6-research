@@ -43,6 +43,11 @@ human expert assigns `verified`. The rationale is in
 
 ## Where to start
 
+The [English Guidelines coverage](corpus/projections/guidelines-4.12.0.md)
+maps the complete pinned source intake to the published contents and the
+actual distillates. Imported sources are available for citation; systematic
+interpretation and human verification have their own recorded scope.
+
 | Goal | Start here |
 |---|---|
 | Read the proposal and explore the model | [Research home](https://chpollin.github.io/tei-p6-research/) |

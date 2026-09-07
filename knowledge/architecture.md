@@ -9,7 +9,7 @@ method:
 status: draft
 language: en
 created: "2026-09-04"
-updated: "2026-09-06"
+updated: "2026-09-07"
 related: [INDEX, design, schema, operations, data, governance, testing, specification, state]
 ---
 
@@ -91,6 +91,14 @@ develops and tests P6 hypotheses without presenting them as findings. The
 publication surface renders all of it as generated views.
 
 ### Acquisition plane
+
+The full English Guidelines reference reuses the existing document admission
+type and evidence chain. `tools/ingest_guidelines.py` owns its immutable
+admission manifest and the generated JSON/Markdown coverage pair under
+`corpus/projections/`. The latter records source availability, section
+locators, dependencies and actual distillate presence for navigation only.
+It creates no additional grounding layer. The Materials and Knowledge
+builders expose this baseline through their existing pages.
 
 ```text
 registered source -> raw observation -> normalized record -> projection

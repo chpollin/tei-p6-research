@@ -1,6 +1,8 @@
 """Escaping-first static view of vault artifacts and precise provenance."""
 from __future__ import annotations
 
+import re
+
 from tools.sitegen.assets import read_asset
 from tools.sitegen.chrome import render_footer, render_header
 from tools.sitegen.knowledge_view import LAYERS, block_id
@@ -9,6 +11,13 @@ from tools.sitegen.markup import esc, repository_link, safe_url
 
 def link(url: str, label: str) -> str:
     return f'<a href="{esc(url)}">{esc(label)}</a>'
+
+
+def literal(text: str) -> str:
+    """Preserve source whitespace in the DOM without trailing HTML-file spaces."""
+    return re.sub(r"[ \t]+(?=\r?$)",
+                  lambda match: ''.join('&#32;' if char == ' ' else '&#9;' for char in match[0]),
+                  esc(text).replace('\t', '&#9;'), flags=re.M)
 
 
 def _edges(edges: list[dict], label: str) -> str:
@@ -64,7 +73,7 @@ def render_entry(entry: dict, base: str | None) -> str:
     blocks = []
     for anchor, text in entry['blocks'].items():
         edges = [edge for edge in entry['edges'] if edge['from_anchor'] == anchor]
-        blocks.append(f'<section id="{esc(block_id(path, anchor))}" class="anchored-passage" tabindex="-1"><h4>{link("#" + block_id(path, anchor), "^" + anchor)}</h4><pre class="passage">{esc(text)}</pre>{_edges(edges, "Grounding passage")}</section>')
+        blocks.append(f'<section id="{esc(block_id(path, anchor))}" class="anchored-passage" tabindex="-1"><h4>{link("#" + block_id(path, anchor), "^" + anchor)}</h4><pre class="passage">{literal(text)}</pre>{_edges(edges, "Grounding passage")}</section>')
     direct = [edge for edge in entry['edges'] if not edge['from_anchor']]
     canonical = link(repository_link(path, base), 'Canonical Markdown')
     if path == '40_output/12-p6-design.md':
@@ -72,7 +81,7 @@ def render_entry(entry: dict, base: str | None) -> str:
     posit = ''
     if kind == 'chapter':
         posit = '<p class="muted">The chapter records ' + esc(entry['metadata'].get('posits', 'an unspecified number of')) + ' explicit project posits. These express authorial proposals.</p>'
-    return f'''<details class="artifact" id="{esc(entry['id'])}" data-kind="{esc(kind)}" data-search="{esc(search)}">
+    return f'''<details class="artifact" id="{esc(entry['id'])}" data-kind="{esc(kind)}" data-search="{literal(search)}">
 <summary><span class="artifact-title">{esc(entry['title'])}</span><span class="artifact-state">{esc(status)}</span></summary>
 <div class="artifact-content"><p class="artifact-path"><code>{esc(path)}</code> · {canonical}</p>{excerpt}{posit}{_edges(direct, 'Grounding')}{''.join(blocks)}{_metadata(entry, base)}{_edges(entry['backlinks'], 'Used by')}</div></details>'''
 

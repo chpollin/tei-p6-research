@@ -1,0 +1,548 @@
+---
+type: representation
+source-type: document
+source: '[[00_sources/tei-p5-att.entrylike-4.12.0.xml]]'
+converter: tools.ingest_guidelines v1; complete XML plus verbatim blocks of prose,
+  specifications and support files
+channel: collection
+metadata:
+  title: TEI P5 4.12.0 att.entryLike
+  creator: TEI Consortium
+  date: '2026-07-28'
+  format: application/xml
+  identifier: https://github.com/TEIC/TEI/blob/113e933e21f016e2655518321e9d10214b8d9fcb/P5/Source/Specs/att.entryLike.xml
+  license: CC-BY-3.0
+  confidential: false
+created: '2026-09-07'
+updated: '2026-09-07'
+---
+
+# att.entryLike
+
+Copyright TEI Consortium. Source used under CC-BY-3.0; upstream also offers BSD-2-Clause.
+License records: `LICENSE.md` and `P5/COPYING.txt` at commit `113e933e21f016e2655518321e9d10214b8d9fcb`.
+
+The complete XML is preserved as inert text. The source blocks repeat exact XML
+units in document order, including examples, lists, tables and constraints. The
+locator identifies each unit inside this file; the complete XML preserves its
+surrounding structure. Includes and processing instructions remain unexecuted.
+The Guidelines coverage projection locates their separate source dependencies.
+Presence of a representation establishes neither distillation nor verification.
+
+Source byte length: 13001. Git blob: `a66b30b8e372115d027d757e8342c3e82c04d672`.
+
+## Complete XML source
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- © TEI Consortium. Dual-licensed under CC-by and BSD2 licenses; see the file COPYING.txt for details. -->
+<?xml-model href="https://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl" type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
+<classSpec xmlns="http://www.tei-c.org/ns/1.0" module="dictionaries" xml:id="ENTRIES" type="atts" ident="att.entryLike">
+  <desc versionDate="2021-08-22" xml:lang="en">provides attributes used to distinguish 
+    different styles of dictionary entries.</desc>
+  <desc versionDate="2007-12-20" xml:lang="ko">사전 표제 항목의 다른 형식을 모아 놓는다.</desc>
+  <desc versionDate="2007-05-02" xml:lang="zh-TW">匯集不同格式的字典辭條</desc>
+  <desc versionDate="2019-06-08" xml:lang="ja">辞書項目における異なった様式を区別するための属性を提供する。</desc>
+  <desc versionDate="2007-06-12" xml:lang="fr">regroupe les différents types d’entrées de dictionnaire.</desc>
+  <desc versionDate="2007-05-04" xml:lang="es">agrupa las diferentes modalidades de entradas de diccionarios</desc>
+  <desc versionDate="2007-01-21" xml:lang="it">raggruppa differenti stili di voci di dizionario.</desc>
+  <!-- Seems we can't just use:
+  <classes>
+    <memberOf key="att.typed"/>
+  </classes>
+  and then modify @type with <attDef>, below, as the Stylesheets
+  generate RELAX NG with 2 @types defined. See Stylesheets ticket
+  #370. Note that same problems is present in att.textCritical. -->
+  <attList>
+    <attRef class="att.typed" key="subtype"/>
+    <attDef ident="type" usage="opt">
+      <desc versionDate="2005-10-10" xml:lang="en">indicates type of entry, in dictionaries with multiple types.</desc>
+      <desc versionDate="2007-12-20" xml:lang="ko">다중 유형을 포함하는 사전에서, 표제 항목 유형을 나타낸다.</desc>
+      <desc versionDate="2007-05-02" xml:lang="zh-TW">指出複合類型字典中的辭條類型。</desc>
+      <desc versionDate="2008-04-05" xml:lang="ja">辞書項目の種類を示す。</desc>
+      <desc versionDate="2007-06-12" xml:lang="fr">dans des dictionnaires multi-types, indique le type
+        d'entrée</desc>
+      <desc versionDate="2007-05-04" xml:lang="es">indica el tipo de entrada en diccionarios que
+        contienen de diferentes tipos.</desc>
+      <desc versionDate="2007-01-21" xml:lang="it">indica il tipo di voce, nei dizionari con tipi
+        multipli.</desc>
+      <datatype><dataRef key="teidata.enumerated"/></datatype>
+      <defaultVal>main</defaultVal>
+      <valList type="semi">
+        <valItem ident="main">
+          <desc versionDate="2007-06-27" xml:lang="en">a main entry (default).</desc>
+          <desc versionDate="2007-12-20" xml:lang="ko">주 표제 항목 (기본값).</desc>
+          <desc versionDate="2007-05-02" xml:lang="zh-TW">主要辭條 (預設) 。</desc>
+          <desc versionDate="2008-04-06" xml:lang="es">una entrada principal (valor por defecto).</desc>
+          <desc versionDate="2008-04-05" xml:lang="ja">主項目(デフォルト値)。</desc>
+          <desc versionDate="2008-03-30" xml:lang="fr">une entrée principale (par défaut)</desc>
+          <desc versionDate="2007-01-21" xml:lang="it">una voce principale (valore predefinito).</desc>
+        </valItem>
+        <valItem ident="hom">
+          <gloss versionDate="2007-07-04" xml:lang="en">homograph</gloss>
+          <gloss versionDate="2007-12-20" xml:lang="ko">동형이의어</gloss>
+          <gloss versionDate="2009-05-25" xml:lang="fr">homographe.</gloss>
+          <gloss versionDate="2007-11-06" xml:lang="it">omografo</gloss>
+          <gloss versionDate="2018-09-08" xml:lang="es">homógrafo</gloss>
+          <gloss versionDate="2019-06-16" xml:lang="ja">同形異義語</gloss>
+          <desc versionDate="2008-02-01" xml:lang="en">groups information relating to one homograph within an entry.</desc>
+          <desc versionDate="2007-12-20" xml:lang="ko">표제 항목 내에 하나의 동형이의어와 관련된 정보를 모아 놓는다.</desc>
+          <desc versionDate="2007-05-02" xml:lang="zh-TW">個別的同形義異字辭條。</desc>
+          <desc versionDate="2008-04-06" xml:lang="es">agrupa la información referente a un homógrafo
+            dentro de una entrada.</desc>
+          <desc versionDate="2019-06-16" xml:lang="ja">同形異義語に関する情報をまとめる。</desc>
+          <desc versionDate="2008-03-30" xml:lang="fr">regroupe des informations relatifs à un
+            homographe dans une entrée.</desc>
+          <desc versionDate="2007-01-21" xml:lang="it">un omografo con una voce separata.</desc>
+        </valItem>
+        <valItem ident="xref">
+          <gloss versionDate="2007-07-04" xml:lang="en">cross reference</gloss>
+          <gloss versionDate="2007-12-20" xml:lang="ko">교차 참조</gloss>
+          <gloss versionDate="2009-05-25" xml:lang="fr">référence croisée</gloss>
+          <gloss versionDate="2007-11-06" xml:lang="it">riferimento incrociato</gloss>
+          <gloss versionDate="2018-09-08" xml:lang="es">referencia cruzada</gloss>
+          <gloss versionDate="2019-06-08" xml:lang="ja">相互参照</gloss>
+          <desc versionDate="2007-06-27" xml:lang="en">a reduced entry whose only function is to point to another main
+            entry (e.g. for forms of an irregular verb or for variant spellings:
+            <mentioned>was</mentioned> pointing to <mentioned>be</mentioned>, or
+            <mentioned>esthete</mentioned> to <mentioned>aesthete</mentioned>).</desc>
+          <desc versionDate="2007-12-20" xml:lang="ko">다른 주 표제 항목을 지시하는 기능만을 수행하도록 제한된 표제 항목(예를 들어, 불규칙
+            동사형 또는 다양한 철자법; <mentioned>be</mentioned>를 지시하는 <mentioned>was</mentioned>, 또는
+              <mentioned>aesthete</mentioned>를 지시하는 <mentioned>esthete</mentioned></desc>
+          <desc versionDate="2007-05-02" xml:lang="zh-TW">縮減的辭條，其唯一作用為指向另一個主要辭條 (例如不規則動辭形式或不同拼法的字)</desc>
+          <desc versionDate="2018-09-08" xml:lang="es">una breve entrada cuya única función es apuntar a otra entrada principal (p.ej. para formas de un verbo irregular o para otras variantes ortográficas: <mentioned>was</mentioned> señala a <mentioned>be</mentioned>, o <mentioned>esthete</mentioned> a <mentioned>aesthete</mentioned>).</desc>
+          <desc versionDate="2008-04-05" xml:lang="ja">相互参照。主項目への参照。例えば、不規則変化動詞の場合には、
+              <mentioned>was</mentioned>から<mentioned>be</mentioned>を参照
+              したり、異なる綴りの場合には、<mentioned>esthete</mentioned>か ら<mentioned>aesthete</mentioned>を参照する。</desc>
+          <desc versionDate="2009-05-29" xml:lang="fr">courte entrée qui ne sert qu’à pointer vers une entrée principale (par exemple, pour les formes d'un verbe irrégulier ou pour des variantes orthographiques :
+              <mentioned>était</mentioned> pointant vers <mentioned>être</mentioned>, ou
+              <mentioned>clef</mentioned> pointant vers <mentioned>clé</mentioned>).</desc>
+          <desc versionDate="2007-01-21" xml:lang="it">una voce ridotta la cui sola funzione è di
+            indirizzare ad una voce principale (ad esempio per le forme di un verbo irregolare o per
+            varianti ortografiche: <mentioned>was</mentioned> che indirizza a
+            <mentioned>be</mentioned>, o <mentioned>esthete</mentioned> per
+            <mentioned>aesthete</mentioned>).</desc>
+        </valItem>
+        <valItem ident="affix">
+          <desc versionDate="2007-06-27" xml:lang="en">an entry for a prefix, infix, or suffix.</desc>
+          <desc versionDate="2007-12-20" xml:lang="ko">접미사, 접요사, 또는 접미사 표제 항목</desc>
+          <desc versionDate="2007-05-02" xml:lang="zh-TW">字首、字中或字尾的辭條</desc>
+          <desc versionDate="2008-04-06" xml:lang="es">una entrada para un prefijo, un infijo, o un
+            sufijo.</desc>
+          <desc versionDate="2008-04-05" xml:lang="ja">接頭辞、接中辞、接尾辞を示す。</desc>
+          <desc versionDate="2008-03-30" xml:lang="fr">entrée pour un préfixe, un infixe ou un suffixe.</desc>
+          <desc versionDate="2007-01-21" xml:lang="it">una voce per un prefisso, infisso o
+          suffisso.</desc>
+        </valItem>
+        <valItem ident="abbr">
+          <gloss versionDate="2007-07-04" xml:lang="en">abbreviation</gloss>
+          <gloss versionDate="2007-12-20" xml:lang="ko">생략형</gloss>
+          <gloss versionDate="2009-05-25" xml:lang="fr">abréviation.</gloss>
+          <gloss versionDate="2007-11-06" xml:lang="it">abbreviazione</gloss>
+          <gloss versionDate="2018-09-08" xml:lang="es">abreviatura</gloss>
+          <gloss versionDate="2019-06-08" xml:lang="ja">省略</gloss>
+          <desc versionDate="2007-06-27" xml:lang="en">an entry for an abbreviation.</desc>
+          <desc versionDate="2007-12-20" xml:lang="ko">생략형에 대한 표제 항목</desc>
+          <desc versionDate="2007-05-02" xml:lang="zh-TW">縮寫辭條</desc>
+          <desc versionDate="2008-04-06" xml:lang="es">una entrada para una abreviatura.</desc>
+          <desc versionDate="2008-04-05" xml:lang="ja">省略を示す。</desc>
+          <desc versionDate="2008-03-30" xml:lang="fr">entrée pour une abréviation.</desc>
+          <desc versionDate="2007-01-21" xml:lang="it">una voce per un'abbreviazione.</desc>
+        </valItem>
+        <valItem ident="supplemental">
+          <desc versionDate="2007-06-27" xml:lang="en">a supplemental entry (for use in dictionaries which issue supplements to their main
+            work in which they include updated information about entries).</desc>
+          <desc versionDate="2007-12-20" xml:lang="ko">(표제 항목들에 대한 업데이트 정보를 포함하는 보충판을 발행하는 사전에서 사용되는) 보충
+            표제 항목</desc>
+          <desc versionDate="2007-05-02" xml:lang="zh-TW">補充辭條 ()</desc>
+          <desc versionDate="2008-04-06" xml:lang="es">una entrada suplementaria (para el uso en
+            diccionarios que presentan una edición complementaria al trabajo principal, en el cual
+            la cual se incluye la información actualizada sobre las entradas).</desc>
+          <desc versionDate="2008-04-05" xml:lang="ja">補遺を示す。例えば、項目情報を更新するような補遺が出されてい た場合に使用する。</desc>
+          <desc versionDate="2008-03-30" xml:lang="fr">entrée supplémentaire (utilisée dans les
+            dictionnaires qui publient des suppléments contenant des informations mises à jour sur
+            des entrées).</desc>
+          <desc versionDate="2007-01-21" xml:lang="it">una voce supplementare (in uso nei dizionari che
+            pubblicano supplementi alle opere principali in cui includono informazioni aggiornate
+            sulle voci).)</desc>
+        </valItem>
+        <valItem ident="foreign">
+          <desc versionDate="2007-06-27" xml:lang="en">an entry for a foreign word in a monolingual dictionary.</desc>
+          <desc versionDate="2007-12-20" xml:lang="ko">단일어 사전에서 외래어 표제 항목</desc>
+          <desc versionDate="2007-05-02" xml:lang="zh-TW">單語字典中的外來語辭條。</desc>
+          <desc versionDate="2008-04-06" xml:lang="es">una entrada para una palabra extranjera en un
+            diccionario monolingüe.</desc>
+          <desc versionDate="2008-04-05" xml:lang="ja">単一言語による辞書において、外国語を示す。</desc>
+          <desc versionDate="2008-03-30" xml:lang="fr">entrée pour un mot étranger dans un dictionnaire
+            monolingue.</desc>
+          <desc versionDate="2007-01-21" xml:lang="it">una voce per una parola starniera in un
+            dizionario monolingue.</desc>
+        </valItem>
+      </valList>
+    </attDef>
+  </attList>
+  <remarks ident="att.entryLike-remarks" versionDate="2008-02-01" xml:lang="en">
+    <p>The global <att>n</att> attribute may be used to encode the homograph numbers attached to
+      entries for homographs.</p>
+  </remarks>
+  <remarks ident="att.entryLike-remarks" versionDate="2007-06-12" xml:lang="fr">
+    <p>Pour des homographes, l'attribut global <att>n</att>peut être utilisé pour encoder des
+      numéros d'homographes attachés aux entrées.</p>
+  </remarks>
+  <remarks ident="att.entryLike-remarks" versionDate="2008-04-05" xml:lang="ja">
+    <p> グローバル属性<att>n</att>を使い、同綴異義語の番号としてもよい。 </p>
+  </remarks>
+  <listRef>
+    <ptr target="#DIBO"/>
+    <ptr target="#DIEN"/>
+  </listRef>
+</classSpec>
+```
+
+## Source blocks
+
+### Block 1
+
+XML location: `/classSpec[1]/desc[1]`.
+
+```xml
+<desc versionDate="2021-08-22" xml:lang="en">provides attributes used to distinguish 
+    different styles of dictionary entries.</desc>
+```
+
+^b1
+
+### Block 2
+
+XML location: `/classSpec[1]/desc[2]`.
+
+```xml
+<desc versionDate="2007-12-20" xml:lang="ko">사전 표제 항목의 다른 형식을 모아 놓는다.</desc>
+```
+
+^b2
+
+### Block 3
+
+XML location: `/classSpec[1]/desc[3]`.
+
+```xml
+<desc versionDate="2007-05-02" xml:lang="zh-TW">匯集不同格式的字典辭條</desc>
+```
+
+^b3
+
+### Block 4
+
+XML location: `/classSpec[1]/desc[4]`.
+
+```xml
+<desc versionDate="2019-06-08" xml:lang="ja">辞書項目における異なった様式を区別するための属性を提供する。</desc>
+```
+
+^b4
+
+### Block 5
+
+XML location: `/classSpec[1]/desc[5]`.
+
+```xml
+<desc versionDate="2007-06-12" xml:lang="fr">regroupe les différents types d’entrées de dictionnaire.</desc>
+```
+
+^b5
+
+### Block 6
+
+XML location: `/classSpec[1]/desc[6]`.
+
+```xml
+<desc versionDate="2007-05-04" xml:lang="es">agrupa las diferentes modalidades de entradas de diccionarios</desc>
+```
+
+^b6
+
+### Block 7
+
+XML location: `/classSpec[1]/desc[7]`.
+
+```xml
+<desc versionDate="2007-01-21" xml:lang="it">raggruppa differenti stili di voci di dizionario.</desc>
+```
+
+^b7
+
+### Block 8
+
+XML location: `/classSpec[1]/attList[1]/attRef[1]`.
+
+```xml
+<attRef class="att.typed" key="subtype"/>
+```
+
+^b8
+
+### Block 9
+
+XML location: `/classSpec[1]/attList[1]/attDef[1]/desc[1]`.
+
+```xml
+<desc versionDate="2005-10-10" xml:lang="en">indicates type of entry, in dictionaries with multiple types.</desc>
+```
+
+^b9
+
+### Block 10
+
+XML location: `/classSpec[1]/attList[1]/attDef[1]/desc[2]`.
+
+```xml
+<desc versionDate="2007-12-20" xml:lang="ko">다중 유형을 포함하는 사전에서, 표제 항목 유형을 나타낸다.</desc>
+```
+
+^b10
+
+### Block 11
+
+XML location: `/classSpec[1]/attList[1]/attDef[1]/desc[3]`.
+
+```xml
+<desc versionDate="2007-05-02" xml:lang="zh-TW">指出複合類型字典中的辭條類型。</desc>
+```
+
+^b11
+
+### Block 12
+
+XML location: `/classSpec[1]/attList[1]/attDef[1]/desc[4]`.
+
+```xml
+<desc versionDate="2008-04-05" xml:lang="ja">辞書項目の種類を示す。</desc>
+```
+
+^b12
+
+### Block 13
+
+XML location: `/classSpec[1]/attList[1]/attDef[1]/desc[5]`.
+
+```xml
+<desc versionDate="2007-06-12" xml:lang="fr">dans des dictionnaires multi-types, indique le type
+        d'entrée</desc>
+```
+
+^b13
+
+### Block 14
+
+XML location: `/classSpec[1]/attList[1]/attDef[1]/desc[6]`.
+
+```xml
+<desc versionDate="2007-05-04" xml:lang="es">indica el tipo de entrada en diccionarios que
+        contienen de diferentes tipos.</desc>
+```
+
+^b14
+
+### Block 15
+
+XML location: `/classSpec[1]/attList[1]/attDef[1]/desc[7]`.
+
+```xml
+<desc versionDate="2007-01-21" xml:lang="it">indica il tipo di voce, nei dizionari con tipi
+        multipli.</desc>
+```
+
+^b15
+
+### Block 16
+
+XML location: `/classSpec[1]/attList[1]/attDef[1]/datatype[1]`.
+
+```xml
+<datatype><dataRef key="teidata.enumerated"/></datatype>
+```
+
+^b16
+
+### Block 17
+
+XML location: `/classSpec[1]/attList[1]/attDef[1]/defaultVal[1]`.
+
+```xml
+<defaultVal>main</defaultVal>
+```
+
+^b17
+
+### Block 18
+
+XML location: `/classSpec[1]/attList[1]/attDef[1]/valList[1]`.
+
+```xml
+<valList type="semi">
+        <valItem ident="main">
+          <desc versionDate="2007-06-27" xml:lang="en">a main entry (default).</desc>
+          <desc versionDate="2007-12-20" xml:lang="ko">주 표제 항목 (기본값).</desc>
+          <desc versionDate="2007-05-02" xml:lang="zh-TW">主要辭條 (預設) 。</desc>
+          <desc versionDate="2008-04-06" xml:lang="es">una entrada principal (valor por defecto).</desc>
+          <desc versionDate="2008-04-05" xml:lang="ja">主項目(デフォルト値)。</desc>
+          <desc versionDate="2008-03-30" xml:lang="fr">une entrée principale (par défaut)</desc>
+          <desc versionDate="2007-01-21" xml:lang="it">una voce principale (valore predefinito).</desc>
+        </valItem>
+        <valItem ident="hom">
+          <gloss versionDate="2007-07-04" xml:lang="en">homograph</gloss>
+          <gloss versionDate="2007-12-20" xml:lang="ko">동형이의어</gloss>
+          <gloss versionDate="2009-05-25" xml:lang="fr">homographe.</gloss>
+          <gloss versionDate="2007-11-06" xml:lang="it">omografo</gloss>
+          <gloss versionDate="2018-09-08" xml:lang="es">homógrafo</gloss>
+          <gloss versionDate="2019-06-16" xml:lang="ja">同形異義語</gloss>
+          <desc versionDate="2008-02-01" xml:lang="en">groups information relating to one homograph within an entry.</desc>
+          <desc versionDate="2007-12-20" xml:lang="ko">표제 항목 내에 하나의 동형이의어와 관련된 정보를 모아 놓는다.</desc>
+          <desc versionDate="2007-05-02" xml:lang="zh-TW">個別的同形義異字辭條。</desc>
+          <desc versionDate="2008-04-06" xml:lang="es">agrupa la información referente a un homógrafo
+            dentro de una entrada.</desc>
+          <desc versionDate="2019-06-16" xml:lang="ja">同形異義語に関する情報をまとめる。</desc>
+          <desc versionDate="2008-03-30" xml:lang="fr">regroupe des informations relatifs à un
+            homographe dans une entrée.</desc>
+          <desc versionDate="2007-01-21" xml:lang="it">un omografo con una voce separata.</desc>
+        </valItem>
+        <valItem ident="xref">
+          <gloss versionDate="2007-07-04" xml:lang="en">cross reference</gloss>
+          <gloss versionDate="2007-12-20" xml:lang="ko">교차 참조</gloss>
+          <gloss versionDate="2009-05-25" xml:lang="fr">référence croisée</gloss>
+          <gloss versionDate="2007-11-06" xml:lang="it">riferimento incrociato</gloss>
+          <gloss versionDate="2018-09-08" xml:lang="es">referencia cruzada</gloss>
+          <gloss versionDate="2019-06-08" xml:lang="ja">相互参照</gloss>
+          <desc versionDate="2007-06-27" xml:lang="en">a reduced entry whose only function is to point to another main
+            entry (e.g. for forms of an irregular verb or for variant spellings:
+            <mentioned>was</mentioned> pointing to <mentioned>be</mentioned>, or
+            <mentioned>esthete</mentioned> to <mentioned>aesthete</mentioned>).</desc>
+          <desc versionDate="2007-12-20" xml:lang="ko">다른 주 표제 항목을 지시하는 기능만을 수행하도록 제한된 표제 항목(예를 들어, 불규칙
+            동사형 또는 다양한 철자법; <mentioned>be</mentioned>를 지시하는 <mentioned>was</mentioned>, 또는
+              <mentioned>aesthete</mentioned>를 지시하는 <mentioned>esthete</mentioned></desc>
+          <desc versionDate="2007-05-02" xml:lang="zh-TW">縮減的辭條，其唯一作用為指向另一個主要辭條 (例如不規則動辭形式或不同拼法的字)</desc>
+          <desc versionDate="2018-09-08" xml:lang="es">una breve entrada cuya única función es apuntar a otra entrada principal (p.ej. para formas de un verbo irregular o para otras variantes ortográficas: <mentioned>was</mentioned> señala a <mentioned>be</mentioned>, o <mentioned>esthete</mentioned> a <mentioned>aesthete</mentioned>).</desc>
+          <desc versionDate="2008-04-05" xml:lang="ja">相互参照。主項目への参照。例えば、不規則変化動詞の場合には、
+              <mentioned>was</mentioned>から<mentioned>be</mentioned>を参照
+              したり、異なる綴りの場合には、<mentioned>esthete</mentioned>か ら<mentioned>aesthete</mentioned>を参照する。</desc>
+          <desc versionDate="2009-05-29" xml:lang="fr">courte entrée qui ne sert qu’à pointer vers une entrée principale (par exemple, pour les formes d'un verbe irrégulier ou pour des variantes orthographiques :
+              <mentioned>était</mentioned> pointant vers <mentioned>être</mentioned>, ou
+              <mentioned>clef</mentioned> pointant vers <mentioned>clé</mentioned>).</desc>
+          <desc versionDate="2007-01-21" xml:lang="it">una voce ridotta la cui sola funzione è di
+            indirizzare ad una voce principale (ad esempio per le forme di un verbo irregolare o per
+            varianti ortografiche: <mentioned>was</mentioned> che indirizza a
+            <mentioned>be</mentioned>, o <mentioned>esthete</mentioned> per
+            <mentioned>aesthete</mentioned>).</desc>
+        </valItem>
+        <valItem ident="affix">
+          <desc versionDate="2007-06-27" xml:lang="en">an entry for a prefix, infix, or suffix.</desc>
+          <desc versionDate="2007-12-20" xml:lang="ko">접미사, 접요사, 또는 접미사 표제 항목</desc>
+          <desc versionDate="2007-05-02" xml:lang="zh-TW">字首、字中或字尾的辭條</desc>
+          <desc versionDate="2008-04-06" xml:lang="es">una entrada para un prefijo, un infijo, o un
+            sufijo.</desc>
+          <desc versionDate="2008-04-05" xml:lang="ja">接頭辞、接中辞、接尾辞を示す。</desc>
+          <desc versionDate="2008-03-30" xml:lang="fr">entrée pour un préfixe, un infixe ou un suffixe.</desc>
+          <desc versionDate="2007-01-21" xml:lang="it">una voce per un prefisso, infisso o
+          suffisso.</desc>
+        </valItem>
+        <valItem ident="abbr">
+          <gloss versionDate="2007-07-04" xml:lang="en">abbreviation</gloss>
+          <gloss versionDate="2007-12-20" xml:lang="ko">생략형</gloss>
+          <gloss versionDate="2009-05-25" xml:lang="fr">abréviation.</gloss>
+          <gloss versionDate="2007-11-06" xml:lang="it">abbreviazione</gloss>
+          <gloss versionDate="2018-09-08" xml:lang="es">abreviatura</gloss>
+          <gloss versionDate="2019-06-08" xml:lang="ja">省略</gloss>
+          <desc versionDate="2007-06-27" xml:lang="en">an entry for an abbreviation.</desc>
+          <desc versionDate="2007-12-20" xml:lang="ko">생략형에 대한 표제 항목</desc>
+          <desc versionDate="2007-05-02" xml:lang="zh-TW">縮寫辭條</desc>
+          <desc versionDate="2008-04-06" xml:lang="es">una entrada para una abreviatura.</desc>
+          <desc versionDate="2008-04-05" xml:lang="ja">省略を示す。</desc>
+          <desc versionDate="2008-03-30" xml:lang="fr">entrée pour une abréviation.</desc>
+          <desc versionDate="2007-01-21" xml:lang="it">una voce per un'abbreviazione.</desc>
+        </valItem>
+        <valItem ident="supplemental">
+          <desc versionDate="2007-06-27" xml:lang="en">a supplemental entry (for use in dictionaries which issue supplements to their main
+            work in which they include updated information about entries).</desc>
+          <desc versionDate="2007-12-20" xml:lang="ko">(표제 항목들에 대한 업데이트 정보를 포함하는 보충판을 발행하는 사전에서 사용되는) 보충
+            표제 항목</desc>
+          <desc versionDate="2007-05-02" xml:lang="zh-TW">補充辭條 ()</desc>
+          <desc versionDate="2008-04-06" xml:lang="es">una entrada suplementaria (para el uso en
+            diccionarios que presentan una edición complementaria al trabajo principal, en el cual
+            la cual se incluye la información actualizada sobre las entradas).</desc>
+          <desc versionDate="2008-04-05" xml:lang="ja">補遺を示す。例えば、項目情報を更新するような補遺が出されてい た場合に使用する。</desc>
+          <desc versionDate="2008-03-30" xml:lang="fr">entrée supplémentaire (utilisée dans les
+            dictionnaires qui publient des suppléments contenant des informations mises à jour sur
+            des entrées).</desc>
+          <desc versionDate="2007-01-21" xml:lang="it">una voce supplementare (in uso nei dizionari che
+            pubblicano supplementi alle opere principali in cui includono informazioni aggiornate
+            sulle voci).)</desc>
+        </valItem>
+        <valItem ident="foreign">
+          <desc versionDate="2007-06-27" xml:lang="en">an entry for a foreign word in a monolingual dictionary.</desc>
+          <desc versionDate="2007-12-20" xml:lang="ko">단일어 사전에서 외래어 표제 항목</desc>
+          <desc versionDate="2007-05-02" xml:lang="zh-TW">單語字典中的外來語辭條。</desc>
+          <desc versionDate="2008-04-06" xml:lang="es">una entrada para una palabra extranjera en un
+            diccionario monolingüe.</desc>
+          <desc versionDate="2008-04-05" xml:lang="ja">単一言語による辞書において、外国語を示す。</desc>
+          <desc versionDate="2008-03-30" xml:lang="fr">entrée pour un mot étranger dans un dictionnaire
+            monolingue.</desc>
+          <desc versionDate="2007-01-21" xml:lang="it">una voce per una parola starniera in un
+            dizionario monolingue.</desc>
+        </valItem>
+      </valList>
+```
+
+^b18
+
+### Block 19
+
+XML location: `/classSpec[1]/remarks[1]`.
+
+```xml
+<remarks ident="att.entryLike-remarks" versionDate="2008-02-01" xml:lang="en">
+    <p>The global <att>n</att> attribute may be used to encode the homograph numbers attached to
+      entries for homographs.</p>
+  </remarks>
+```
+
+^b19
+
+### Block 20
+
+XML location: `/classSpec[1]/remarks[2]`.
+
+```xml
+<remarks ident="att.entryLike-remarks" versionDate="2007-06-12" xml:lang="fr">
+    <p>Pour des homographes, l'attribut global <att>n</att>peut être utilisé pour encoder des
+      numéros d'homographes attachés aux entrées.</p>
+  </remarks>
+```
+
+^b20
+
+### Block 21
+
+XML location: `/classSpec[1]/remarks[3]`.
+
+```xml
+<remarks ident="att.entryLike-remarks" versionDate="2008-04-05" xml:lang="ja">
+    <p> グローバル属性<att>n</att>を使い、同綴異義語の番号としてもよい。 </p>
+  </remarks>
+```
+
+^b21
+
+### Block 22
+
+XML location: `/classSpec[1]/listRef[1]`.
+
+```xml
+<listRef>
+    <ptr target="#DIBO"/>
+    <ptr target="#DIEN"/>
+  </listRef>
+```
+
+^b22
+

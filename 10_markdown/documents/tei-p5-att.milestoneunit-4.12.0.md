@@ -1,0 +1,560 @@
+---
+type: representation
+source-type: document
+source: '[[00_sources/tei-p5-att.milestoneunit-4.12.0.xml]]'
+converter: tools.ingest_guidelines v1; complete XML plus verbatim blocks of prose,
+  specifications and support files
+channel: collection
+metadata:
+  title: TEI P5 4.12.0 att.milestoneUnit
+  creator: TEI Consortium
+  date: '2026-07-28'
+  format: application/xml
+  identifier: https://github.com/TEIC/TEI/blob/113e933e21f016e2655518321e9d10214b8d9fcb/P5/Source/Specs/att.milestoneUnit.xml
+  license: CC-BY-3.0
+  confidential: false
+created: '2026-09-07'
+updated: '2026-09-07'
+---
+
+# att.milestoneUnit
+
+Copyright TEI Consortium. Source used under CC-BY-3.0; upstream also offers BSD-2-Clause.
+License records: `LICENSE.md` and `P5/COPYING.txt` at commit `113e933e21f016e2655518321e9d10214b8d9fcb`.
+
+The complete XML is preserved as inert text. The source blocks repeat exact XML
+units in document order, including examples, lists, tables and constraints. The
+locator identifies each unit inside this file; the complete XML preserves its
+surrounding structure. Includes and processing instructions remain unexecuted.
+The Guidelines coverage projection locates their separate source dependencies.
+Presence of a representation establishes neither distillation nor verification.
+
+Source byte length: 14670. Git blob: `0fed4688cf4e1a7e45d3c866c683593c339faf33`.
+
+## Complete XML source
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- © TEI Consortium. Dual-licensed under CC-by and BSD2 licenses; see the file COPYING.txt for details. --><!-- MDH 2012-07-15: Created this file. Attribute @unit moved to att.milestoneUnit; milestone and refState are now members of 
+     that attribute class. This centralizes the definition of the attribute and its suggested values. 
+     SF ticket http://purl.org/tei/bugs/3537452. -->
+<?xml-model href="https://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl" type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
+<classSpec xmlns="http://www.tei-c.org/ns/1.0" module="core" type="atts" xml:id="class-attr-milestoneUnit" ident="att.milestoneUnit">
+  <desc versionDate="2021-08-22" xml:lang="en">provides attributes to indicate the type of section which is changing at a specific milestone.</desc>
+  <attList>
+    <attDef ident="unit" usage="req">
+      <desc versionDate="2012-07-16" xml:lang="en">provides a conventional name for the kind of section changing at this milestone.</desc>
+      <desc versionDate="2007-12-20" xml:lang="ko">이 이정표에서 단락 변경을 위한 관례적 이름을 제공한다.</desc>
+      <desc versionDate="2007-05-02" xml:lang="zh-TW">提供此分界段落所使用的通用單位名稱。</desc>
+      <desc versionDate="2008-04-05" xml:lang="ja">当該標石要素がある、変化が起きるセクションの種類の名前を示す。</desc>
+      <desc versionDate="2009-01-06" xml:lang="fr">fournit un nom conventionnel pour le type de section
+        qui change à partir de cette balise de bornage.</desc>
+      <desc versionDate="2007-05-04" xml:lang="es">proporciona un nombre convencional para el tipo de
+        sección que cambia en este hito.</desc>
+      <desc versionDate="2007-01-21" xml:lang="it">fornisce un nome convenzionale per il tipo di sezione
+        che cambia con l'elemento milestone.</desc>
+      <datatype><dataRef key="teidata.enumerated"/></datatype>
+      <valList type="semi">
+        <valItem ident="page">
+          <desc versionDate="2012-07-16" xml:lang="en">physical page beginnings (synonymous with the <gi>pb</gi> element).</desc>
+          <desc versionDate="2007-12-20" xml:lang="ko">물리적 페이지 바꿈</desc>
+          <desc versionDate="2007-05-02" xml:lang="zh-TW">分頁 (和元素<gi>pb</gi>同義) 。</desc>
+          <desc versionDate="2008-04-06" xml:lang="es">cambio físico de página (sinónimo del elemento
+            <gi>Pb</gi>).</desc>
+          <desc versionDate="2008-04-05" xml:lang="ja">物理的な改ページ(要素<gi>pb</gi>と同義)。</desc>
+          <desc versionDate="2008-03-30" xml:lang="fr">sauts de page matériels (synonymes de l'élément
+            <gi>pb</gi>)</desc>
+          <desc versionDate="2007-01-21" xml:lang="it">interruzione di pagina (sininimo dell'elemento
+            <gi>pb</gi>)</desc>
+        </valItem>
+        <valItem ident="column">
+          <desc versionDate="2012-07-16" xml:lang="en">column beginnings.</desc>
+          <desc versionDate="2007-12-20" xml:lang="ko">열 바꿈</desc>
+          <desc versionDate="2007-05-02" xml:lang="zh-TW">分段。</desc>
+          <desc versionDate="2008-04-06" xml:lang="es">cambio de columna.</desc>
+          <desc versionDate="2008-04-05" xml:lang="ja">段替え。</desc>
+          <desc versionDate="2008-03-30" xml:lang="fr">sauts de colonnes</desc>
+          <desc versionDate="2007-01-21" xml:lang="it">interruzione di colonna.</desc>
+        </valItem>
+        <valItem ident="line">
+          <desc versionDate="2012-07-16" xml:lang="en">line beginnings (synonymous with the <gi>lb</gi> element).</desc>
+          <desc versionDate="2007-12-20" xml:lang="ko">행 바꿈</desc>
+          <desc versionDate="2007-05-02" xml:lang="zh-TW">分行 (和元素<gi>lb</gi>同義) 。</desc>
+          <desc versionDate="2008-04-06" xml:lang="es">salto de línea (sinónimo del elemento <gi>libra</gi>).</desc>
+          <desc versionDate="2008-04-05" xml:lang="ja">改行(要素<gi>lb</gi>と同義)。</desc>
+          <desc versionDate="2008-03-30" xml:lang="fr">sauts de ligne (synonymes de l'élément<gi>lb</gi>)</desc>
+          <desc versionDate="2007-01-21" xml:lang="it">interruzione di colonna (sinonimo dell'elemento <gi>lb</gi>).</desc>
+        </valItem>
+        <valItem ident="book">
+          <desc versionDate="2012-07-16" xml:lang="en">any units termed book, liber, etc.</desc>
+          <desc versionDate="2007-12-20" xml:lang="ko">책, 서책 등의 구분 단위</desc>
+          <desc versionDate="2007-05-02" xml:lang="zh-TW">所有稱為書、冊、或函等的單位。</desc>
+          <desc versionDate="2008-04-06" xml:lang="es">cualquier unidad llamada libro, pliego, etc.</desc>
+          <desc versionDate="2008-04-05" xml:lang="ja">冊子などの単位。</desc>
+          <desc versionDate="2008-03-30" xml:lang="fr">n'importe quel unité  désignée par les termes livre, liber, etc.</desc>
+          <desc versionDate="2007-01-21" xml:lang="it">qualsiasi unità indicata come libro, libretto, ecc.</desc>
+        </valItem>
+        <valItem ident="poem">
+          <desc versionDate="2012-07-16" xml:lang="en">individual poems in a collection.</desc>
+          <desc versionDate="2007-12-20" xml:lang="ko">모음집에서 각각의 시</desc>
+          <desc versionDate="2007-05-02" xml:lang="zh-TW">詩集中的單首詩。</desc>
+          <desc versionDate="2008-04-06" xml:lang="es">poemas individuales de una colección.</desc>
+          <desc versionDate="2008-04-05" xml:lang="ja">叢書にある独立した詩。</desc>
+          <desc versionDate="2008-03-30" xml:lang="fr">poèmes séparés dans une collection</desc>
+          <desc versionDate="2007-01-21" xml:lang="it">singole poesie di una raccolta.</desc>
+        </valItem>
+        <valItem ident="canto">
+          <desc versionDate="2012-07-16" xml:lang="en">cantos or other major sections of a poem.</desc>
+          <desc versionDate="2007-12-20" xml:lang="ko">시의 편 또는 다른 주요 단락</desc>
+          <desc versionDate="2007-05-02" xml:lang="zh-TW">長詩的詩篇，或詩的大段落。</desc>
+          <desc versionDate="2008-04-06" xml:lang="es">cantos u otras secciones importantes de un poema.</desc>
+          <desc versionDate="2008-04-05" xml:lang="ja">韻文の編や節。</desc>
+          <desc versionDate="2008-03-30" xml:lang="fr">chants ou autres parties principales dans une
+            poésie</desc>
+          <desc versionDate="2007-01-21" xml:lang="it">canti o altre sezioni principali di una
+            poesia.</desc>
+        </valItem>
+        <valItem ident="speaker">
+          <desc versionDate="2012-07-16" xml:lang="en">changes of speaker or narrator.</desc>
+          <desc versionDate="2009-03-12" xml:lang="fr">changement de locuteur ou de narrateur</desc>
+        </valItem>
+        <valItem ident="stanza">
+          <desc versionDate="2012-07-16" xml:lang="en">stanzas within a poem, book, or canto.</desc>
+          <desc versionDate="2007-12-20" xml:lang="ko">시, 책, 또는 시편에서 연</desc>
+          <desc versionDate="2007-05-02" xml:lang="zh-TW">一首詩、一本書、或一詩篇中的詩節。</desc>
+          <desc versionDate="2008-04-06" xml:lang="es">estrofas dentro de un poema, de un libro, o de un
+            canto.</desc>
+          <desc versionDate="2008-04-05" xml:lang="ja">詩、冊子、編中にある連。</desc>
+          <desc versionDate="2008-03-30" xml:lang="fr">strophes dans une poésie, livre, ou chant</desc>
+          <desc versionDate="2007-01-21" xml:lang="it">stanze di una poesia, libro o canti.</desc>
+        </valItem>
+        <valItem ident="act">
+          <desc versionDate="2012-07-16" xml:lang="en">acts within a play.</desc>
+          <desc versionDate="2007-12-20" xml:lang="ko">희곡에서 막</desc>
+          <desc versionDate="2007-05-02" xml:lang="zh-TW">劇本中的幕。</desc>
+          <desc versionDate="2008-04-06" xml:lang="es">actos dentro de un drama.</desc>
+          <desc versionDate="2008-04-05" xml:lang="ja">芝居中の幕。</desc>
+          <desc versionDate="2008-03-30" xml:lang="fr">actes dans une pièce</desc>
+          <desc versionDate="2007-01-21" xml:lang="it">atti di un'opera teatrale.</desc>
+        </valItem>
+        <valItem ident="scene">
+          <desc versionDate="2012-07-16" xml:lang="en">scenes within a play or act.</desc>
+          <desc versionDate="2007-12-20" xml:lang="ko">희곡 또는 막에서 장</desc>
+          <desc versionDate="2007-05-02" xml:lang="zh-TW">劇本中的景。</desc>
+          <desc versionDate="2008-04-06" xml:lang="es">escenas dentro de un drama o de un acto.</desc>
+          <desc versionDate="2008-04-05" xml:lang="ja">芝居または幕中の場。</desc>
+          <desc versionDate="2008-03-30" xml:lang="fr">scènes dans une pièce ou dans un acte</desc>
+          <desc versionDate="2007-01-21" xml:lang="it">scene di un'opera teatrale o di un atto.</desc>
+        </valItem>
+        <valItem ident="section">
+          <desc versionDate="2012-07-16" xml:lang="en">sections of any kind.</desc>
+          <desc versionDate="2007-12-20" xml:lang="ko">어떤 종류에서 절</desc>
+          <desc versionDate="2007-05-02" xml:lang="zh-TW">任何種類的段落。</desc>
+          <desc versionDate="2008-04-06" xml:lang="es">secciones de cualquier tipo.</desc>
+          <desc versionDate="2008-04-05" xml:lang="ja">各種のセクション。</desc>
+          <desc versionDate="2008-03-30" xml:lang="fr">parties de toute catégorie.</desc>
+          <desc versionDate="2007-01-21" xml:lang="it">sezioni di qualsiasi natura.</desc>
+        </valItem>
+        <valItem ident="absent">
+          <desc versionDate="2012-07-16" xml:lang="en">passages not present in the reference edition.</desc>
+          <desc versionDate="2007-12-20" xml:lang="ko">참조 판에 단락이 표시되어 있지 않다.</desc>
+          <desc versionDate="2007-05-02" xml:lang="zh-TW">該段文字未在參照版本中出現。</desc>
+          <desc versionDate="2008-04-06" xml:lang="es">pasajes no presentes en la edición de referencia.</desc>
+          <desc versionDate="2008-04-05" xml:lang="ja">参照版中にはない一節。</desc>
+          <desc versionDate="2008-03-30" xml:lang="fr">passages qui ne sont pas présents dans l'édition
+            de référence.</desc>
+          <desc versionDate="2007-01-21" xml:lang="it">passaggi non presenti nell'edizione di
+            riferimento.</desc>
+        </valItem>
+        <valItem ident="unnumbered">
+          <desc versionDate="2012-07-16" xml:lang="en">passages present in the text, but not to be included as part of the reference.</desc>
+          <desc versionDate="2009-03-12" xml:lang="fr">passages figurant dans le texte, mais qui ne sont
+            pas destinés à être inclus comme élément de référence.</desc>
+        </valItem>
+      </valList>
+      <exemplum xml:lang="mul">
+        <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="class-attr-milestoneUnit-egXML-zq"><milestone n="23" ed="La" unit="Dreissiger"/>
+          ... <milestone n="24" ed="AV" unit="verse"/> ...</egXML>
+      </exemplum>
+      <exemplum versionDate="2008-04-06" xml:lang="fr">
+        <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="class-attr-milestoneUnit-egXML-ej"><milestone n="23" ed="La" unit="Dreissiger"/> ... <milestone n="24" ed="AV" unit="verse"/>
+          ...</egXML>
+      </exemplum>
+      <exemplum xml:lang="zh-TW">
+        <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="class-attr-milestoneUnit-egXML-gp"><milestone n="23" ed="拉丁文版本" unit="三十"/> ...
+          <milestone n="24" ed="聖經欽定版本" unit="韻文"/> ...</egXML>
+      </exemplum>
+      <remarks ident="att.milestoneUnit-attr.unit-remarks" versionDate="2012-07-16" xml:lang="en">
+        <p>If the milestone marks the beginning of a piece of text not present in the reference
+          edition, the special value <term>absent</term> may be used as the value of
+          <att>unit</att>. The normal interpretation is that the reference edition does not contain
+          the text which follows, until the next <gi>milestone</gi> tag for the edition in question
+          is encountered.</p>
+        <p>In addition to the values suggested, other terms may be appropriate (e.g.
+          <term>Stephanus</term> for the Stephanus numbers in Plato).</p>
+        
+        <p>The <att>type</att> attribute may be used to characterize the unit boundary in any
+          respect other than simply identifying the type of unit, for example as word-breaking or
+          not. </p>
+      </remarks>
+      <remarks ident="att.milestoneUnit-attr.unit-remarks" versionDate="2007-06-12" xml:lang="fr">
+        <p>Si l'élément <gi>milestone</gi> marque le début d'un fragment de texte qui n'est pas
+          présent dans l'édition de référence, la valeur <term>absent</term> peut être donnée à
+          l'attribut <att>unit</att>. On comprendra alors que l'édition de référence ne contient pas
+          le fragment de texte qui suit et qui s'achève à la balise <gi>milestone</gi> suivante dans
+          le texte.</p>
+        <p>En plus des valeurs proposées pour cet attribut, d'autres termes peuvent être appropriés
+          (par ex. <term>Stephanus</term> pour les numéros dits de Henri Estienne dans les éditions
+          de Platon).</p>
+        <p>L'attribut <att>type</att> sera utilisé pour caractériser l’unité de bornage sans autre
+          précaution d’emploi que celle de l'identification du type d'unité, par exemple s’il s’agit
+          d’un mot coupé ou pas.</p>
+      </remarks>
+      <remarks ident="att.milestoneUnit-attr.unit-remarks" versionDate="2008-04-05" xml:lang="ja">
+        <p> 標石要素が参照版中にはないテキスト部分の始点を示す場合、属性 <att>unit</att>には、特別な値<term>absent</term>が付与されるか
+          もしれない。一般的な解釈では、等が版に対応する次の要素 <gi>milestone</gi>が出現するまで、当該参照版はテキストを含まな い。 </p>
+        <p> ここに挙げた属性値以外にも適切なものはあるだろう(例えば、プラ トンの作品を表すステファヌス番号を示す値<term>Stephanus</term> など。 </p>
+      </remarks>
+    </attDef>
+  </attList>
+  <listRef>
+    <ptr target="#CORS5" type="div3"/>
+    <ptr target="#HD54M"/>
+    <ptr target="#HD54"/>
+  </listRef>
+</classSpec>
+```
+
+## Source blocks
+
+### Block 1
+
+XML location: `/classSpec[1]/desc[1]`.
+
+```xml
+<desc versionDate="2021-08-22" xml:lang="en">provides attributes to indicate the type of section which is changing at a specific milestone.</desc>
+```
+
+^b1
+
+### Block 2
+
+XML location: `/classSpec[1]/attList[1]/attDef[1]/desc[1]`.
+
+```xml
+<desc versionDate="2012-07-16" xml:lang="en">provides a conventional name for the kind of section changing at this milestone.</desc>
+```
+
+^b2
+
+### Block 3
+
+XML location: `/classSpec[1]/attList[1]/attDef[1]/desc[2]`.
+
+```xml
+<desc versionDate="2007-12-20" xml:lang="ko">이 이정표에서 단락 변경을 위한 관례적 이름을 제공한다.</desc>
+```
+
+^b3
+
+### Block 4
+
+XML location: `/classSpec[1]/attList[1]/attDef[1]/desc[3]`.
+
+```xml
+<desc versionDate="2007-05-02" xml:lang="zh-TW">提供此分界段落所使用的通用單位名稱。</desc>
+```
+
+^b4
+
+### Block 5
+
+XML location: `/classSpec[1]/attList[1]/attDef[1]/desc[4]`.
+
+```xml
+<desc versionDate="2008-04-05" xml:lang="ja">当該標石要素がある、変化が起きるセクションの種類の名前を示す。</desc>
+```
+
+^b5
+
+### Block 6
+
+XML location: `/classSpec[1]/attList[1]/attDef[1]/desc[5]`.
+
+```xml
+<desc versionDate="2009-01-06" xml:lang="fr">fournit un nom conventionnel pour le type de section
+        qui change à partir de cette balise de bornage.</desc>
+```
+
+^b6
+
+### Block 7
+
+XML location: `/classSpec[1]/attList[1]/attDef[1]/desc[6]`.
+
+```xml
+<desc versionDate="2007-05-04" xml:lang="es">proporciona un nombre convencional para el tipo de
+        sección que cambia en este hito.</desc>
+```
+
+^b7
+
+### Block 8
+
+XML location: `/classSpec[1]/attList[1]/attDef[1]/desc[7]`.
+
+```xml
+<desc versionDate="2007-01-21" xml:lang="it">fornisce un nome convenzionale per il tipo di sezione
+        che cambia con l'elemento milestone.</desc>
+```
+
+^b8
+
+### Block 9
+
+XML location: `/classSpec[1]/attList[1]/attDef[1]/datatype[1]`.
+
+```xml
+<datatype><dataRef key="teidata.enumerated"/></datatype>
+```
+
+^b9
+
+### Block 10
+
+XML location: `/classSpec[1]/attList[1]/attDef[1]/valList[1]`.
+
+```xml
+<valList type="semi">
+        <valItem ident="page">
+          <desc versionDate="2012-07-16" xml:lang="en">physical page beginnings (synonymous with the <gi>pb</gi> element).</desc>
+          <desc versionDate="2007-12-20" xml:lang="ko">물리적 페이지 바꿈</desc>
+          <desc versionDate="2007-05-02" xml:lang="zh-TW">分頁 (和元素<gi>pb</gi>同義) 。</desc>
+          <desc versionDate="2008-04-06" xml:lang="es">cambio físico de página (sinónimo del elemento
+            <gi>Pb</gi>).</desc>
+          <desc versionDate="2008-04-05" xml:lang="ja">物理的な改ページ(要素<gi>pb</gi>と同義)。</desc>
+          <desc versionDate="2008-03-30" xml:lang="fr">sauts de page matériels (synonymes de l'élément
+            <gi>pb</gi>)</desc>
+          <desc versionDate="2007-01-21" xml:lang="it">interruzione di pagina (sininimo dell'elemento
+            <gi>pb</gi>)</desc>
+        </valItem>
+        <valItem ident="column">
+          <desc versionDate="2012-07-16" xml:lang="en">column beginnings.</desc>
+          <desc versionDate="2007-12-20" xml:lang="ko">열 바꿈</desc>
+          <desc versionDate="2007-05-02" xml:lang="zh-TW">分段。</desc>
+          <desc versionDate="2008-04-06" xml:lang="es">cambio de columna.</desc>
+          <desc versionDate="2008-04-05" xml:lang="ja">段替え。</desc>
+          <desc versionDate="2008-03-30" xml:lang="fr">sauts de colonnes</desc>
+          <desc versionDate="2007-01-21" xml:lang="it">interruzione di colonna.</desc>
+        </valItem>
+        <valItem ident="line">
+          <desc versionDate="2012-07-16" xml:lang="en">line beginnings (synonymous with the <gi>lb</gi> element).</desc>
+          <desc versionDate="2007-12-20" xml:lang="ko">행 바꿈</desc>
+          <desc versionDate="2007-05-02" xml:lang="zh-TW">分行 (和元素<gi>lb</gi>同義) 。</desc>
+          <desc versionDate="2008-04-06" xml:lang="es">salto de línea (sinónimo del elemento <gi>libra</gi>).</desc>
+          <desc versionDate="2008-04-05" xml:lang="ja">改行(要素<gi>lb</gi>と同義)。</desc>
+          <desc versionDate="2008-03-30" xml:lang="fr">sauts de ligne (synonymes de l'élément<gi>lb</gi>)</desc>
+          <desc versionDate="2007-01-21" xml:lang="it">interruzione di colonna (sinonimo dell'elemento <gi>lb</gi>).</desc>
+        </valItem>
+        <valItem ident="book">
+          <desc versionDate="2012-07-16" xml:lang="en">any units termed book, liber, etc.</desc>
+          <desc versionDate="2007-12-20" xml:lang="ko">책, 서책 등의 구분 단위</desc>
+          <desc versionDate="2007-05-02" xml:lang="zh-TW">所有稱為書、冊、或函等的單位。</desc>
+          <desc versionDate="2008-04-06" xml:lang="es">cualquier unidad llamada libro, pliego, etc.</desc>
+          <desc versionDate="2008-04-05" xml:lang="ja">冊子などの単位。</desc>
+          <desc versionDate="2008-03-30" xml:lang="fr">n'importe quel unité  désignée par les termes livre, liber, etc.</desc>
+          <desc versionDate="2007-01-21" xml:lang="it">qualsiasi unità indicata come libro, libretto, ecc.</desc>
+        </valItem>
+        <valItem ident="poem">
+          <desc versionDate="2012-07-16" xml:lang="en">individual poems in a collection.</desc>
+          <desc versionDate="2007-12-20" xml:lang="ko">모음집에서 각각의 시</desc>
+          <desc versionDate="2007-05-02" xml:lang="zh-TW">詩集中的單首詩。</desc>
+          <desc versionDate="2008-04-06" xml:lang="es">poemas individuales de una colección.</desc>
+          <desc versionDate="2008-04-05" xml:lang="ja">叢書にある独立した詩。</desc>
+          <desc versionDate="2008-03-30" xml:lang="fr">poèmes séparés dans une collection</desc>
+          <desc versionDate="2007-01-21" xml:lang="it">singole poesie di una raccolta.</desc>
+        </valItem>
+        <valItem ident="canto">
+          <desc versionDate="2012-07-16" xml:lang="en">cantos or other major sections of a poem.</desc>
+          <desc versionDate="2007-12-20" xml:lang="ko">시의 편 또는 다른 주요 단락</desc>
+          <desc versionDate="2007-05-02" xml:lang="zh-TW">長詩的詩篇，或詩的大段落。</desc>
+          <desc versionDate="2008-04-06" xml:lang="es">cantos u otras secciones importantes de un poema.</desc>
+          <desc versionDate="2008-04-05" xml:lang="ja">韻文の編や節。</desc>
+          <desc versionDate="2008-03-30" xml:lang="fr">chants ou autres parties principales dans une
+            poésie</desc>
+          <desc versionDate="2007-01-21" xml:lang="it">canti o altre sezioni principali di una
+            poesia.</desc>
+        </valItem>
+        <valItem ident="speaker">
+          <desc versionDate="2012-07-16" xml:lang="en">changes of speaker or narrator.</desc>
+          <desc versionDate="2009-03-12" xml:lang="fr">changement de locuteur ou de narrateur</desc>
+        </valItem>
+        <valItem ident="stanza">
+          <desc versionDate="2012-07-16" xml:lang="en">stanzas within a poem, book, or canto.</desc>
+          <desc versionDate="2007-12-20" xml:lang="ko">시, 책, 또는 시편에서 연</desc>
+          <desc versionDate="2007-05-02" xml:lang="zh-TW">一首詩、一本書、或一詩篇中的詩節。</desc>
+          <desc versionDate="2008-04-06" xml:lang="es">estrofas dentro de un poema, de un libro, o de un
+            canto.</desc>
+          <desc versionDate="2008-04-05" xml:lang="ja">詩、冊子、編中にある連。</desc>
+          <desc versionDate="2008-03-30" xml:lang="fr">strophes dans une poésie, livre, ou chant</desc>
+          <desc versionDate="2007-01-21" xml:lang="it">stanze di una poesia, libro o canti.</desc>
+        </valItem>
+        <valItem ident="act">
+          <desc versionDate="2012-07-16" xml:lang="en">acts within a play.</desc>
+          <desc versionDate="2007-12-20" xml:lang="ko">희곡에서 막</desc>
+          <desc versionDate="2007-05-02" xml:lang="zh-TW">劇本中的幕。</desc>
+          <desc versionDate="2008-04-06" xml:lang="es">actos dentro de un drama.</desc>
+          <desc versionDate="2008-04-05" xml:lang="ja">芝居中の幕。</desc>
+          <desc versionDate="2008-03-30" xml:lang="fr">actes dans une pièce</desc>
+          <desc versionDate="2007-01-21" xml:lang="it">atti di un'opera teatrale.</desc>
+        </valItem>
+        <valItem ident="scene">
+          <desc versionDate="2012-07-16" xml:lang="en">scenes within a play or act.</desc>
+          <desc versionDate="2007-12-20" xml:lang="ko">희곡 또는 막에서 장</desc>
+          <desc versionDate="2007-05-02" xml:lang="zh-TW">劇本中的景。</desc>
+          <desc versionDate="2008-04-06" xml:lang="es">escenas dentro de un drama o de un acto.</desc>
+          <desc versionDate="2008-04-05" xml:lang="ja">芝居または幕中の場。</desc>
+          <desc versionDate="2008-03-30" xml:lang="fr">scènes dans une pièce ou dans un acte</desc>
+          <desc versionDate="2007-01-21" xml:lang="it">scene di un'opera teatrale o di un atto.</desc>
+        </valItem>
+        <valItem ident="section">
+          <desc versionDate="2012-07-16" xml:lang="en">sections of any kind.</desc>
+          <desc versionDate="2007-12-20" xml:lang="ko">어떤 종류에서 절</desc>
+          <desc versionDate="2007-05-02" xml:lang="zh-TW">任何種類的段落。</desc>
+          <desc versionDate="2008-04-06" xml:lang="es">secciones de cualquier tipo.</desc>
+          <desc versionDate="2008-04-05" xml:lang="ja">各種のセクション。</desc>
+          <desc versionDate="2008-03-30" xml:lang="fr">parties de toute catégorie.</desc>
+          <desc versionDate="2007-01-21" xml:lang="it">sezioni di qualsiasi natura.</desc>
+        </valItem>
+        <valItem ident="absent">
+          <desc versionDate="2012-07-16" xml:lang="en">passages not present in the reference edition.</desc>
+          <desc versionDate="2007-12-20" xml:lang="ko">참조 판에 단락이 표시되어 있지 않다.</desc>
+          <desc versionDate="2007-05-02" xml:lang="zh-TW">該段文字未在參照版本中出現。</desc>
+          <desc versionDate="2008-04-06" xml:lang="es">pasajes no presentes en la edición de referencia.</desc>
+          <desc versionDate="2008-04-05" xml:lang="ja">参照版中にはない一節。</desc>
+          <desc versionDate="2008-03-30" xml:lang="fr">passages qui ne sont pas présents dans l'édition
+            de référence.</desc>
+          <desc versionDate="2007-01-21" xml:lang="it">passaggi non presenti nell'edizione di
+            riferimento.</desc>
+        </valItem>
+        <valItem ident="unnumbered">
+          <desc versionDate="2012-07-16" xml:lang="en">passages present in the text, but not to be included as part of the reference.</desc>
+          <desc versionDate="2009-03-12" xml:lang="fr">passages figurant dans le texte, mais qui ne sont
+            pas destinés à être inclus comme élément de référence.</desc>
+        </valItem>
+      </valList>
+```
+
+^b10
+
+### Block 11
+
+XML location: `/classSpec[1]/attList[1]/attDef[1]/exemplum[1]`.
+
+```xml
+<exemplum xml:lang="mul">
+        <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="class-attr-milestoneUnit-egXML-zq"><milestone n="23" ed="La" unit="Dreissiger"/>
+          ... <milestone n="24" ed="AV" unit="verse"/> ...</egXML>
+      </exemplum>
+```
+
+^b11
+
+### Block 12
+
+XML location: `/classSpec[1]/attList[1]/attDef[1]/exemplum[2]`.
+
+```xml
+<exemplum versionDate="2008-04-06" xml:lang="fr">
+        <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="class-attr-milestoneUnit-egXML-ej"><milestone n="23" ed="La" unit="Dreissiger"/> ... <milestone n="24" ed="AV" unit="verse"/>
+          ...</egXML>
+      </exemplum>
+```
+
+^b12
+
+### Block 13
+
+XML location: `/classSpec[1]/attList[1]/attDef[1]/exemplum[3]`.
+
+```xml
+<exemplum xml:lang="zh-TW">
+        <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="class-attr-milestoneUnit-egXML-gp"><milestone n="23" ed="拉丁文版本" unit="三十"/> ...
+          <milestone n="24" ed="聖經欽定版本" unit="韻文"/> ...</egXML>
+      </exemplum>
+```
+
+^b13
+
+### Block 14
+
+XML location: `/classSpec[1]/attList[1]/attDef[1]/remarks[1]`.
+
+```xml
+<remarks ident="att.milestoneUnit-attr.unit-remarks" versionDate="2012-07-16" xml:lang="en">
+        <p>If the milestone marks the beginning of a piece of text not present in the reference
+          edition, the special value <term>absent</term> may be used as the value of
+          <att>unit</att>. The normal interpretation is that the reference edition does not contain
+          the text which follows, until the next <gi>milestone</gi> tag for the edition in question
+          is encountered.</p>
+        <p>In addition to the values suggested, other terms may be appropriate (e.g.
+          <term>Stephanus</term> for the Stephanus numbers in Plato).</p>
+        
+        <p>The <att>type</att> attribute may be used to characterize the unit boundary in any
+          respect other than simply identifying the type of unit, for example as word-breaking or
+          not. </p>
+      </remarks>
+```
+
+^b14
+
+### Block 15
+
+XML location: `/classSpec[1]/attList[1]/attDef[1]/remarks[2]`.
+
+```xml
+<remarks ident="att.milestoneUnit-attr.unit-remarks" versionDate="2007-06-12" xml:lang="fr">
+        <p>Si l'élément <gi>milestone</gi> marque le début d'un fragment de texte qui n'est pas
+          présent dans l'édition de référence, la valeur <term>absent</term> peut être donnée à
+          l'attribut <att>unit</att>. On comprendra alors que l'édition de référence ne contient pas
+          le fragment de texte qui suit et qui s'achève à la balise <gi>milestone</gi> suivante dans
+          le texte.</p>
+        <p>En plus des valeurs proposées pour cet attribut, d'autres termes peuvent être appropriés
+          (par ex. <term>Stephanus</term> pour les numéros dits de Henri Estienne dans les éditions
+          de Platon).</p>
+        <p>L'attribut <att>type</att> sera utilisé pour caractériser l’unité de bornage sans autre
+          précaution d’emploi que celle de l'identification du type d'unité, par exemple s’il s’agit
+          d’un mot coupé ou pas.</p>
+      </remarks>
+```
+
+^b15
+
+### Block 16
+
+XML location: `/classSpec[1]/attList[1]/attDef[1]/remarks[3]`.
+
+```xml
+<remarks ident="att.milestoneUnit-attr.unit-remarks" versionDate="2008-04-05" xml:lang="ja">
+        <p> 標石要素が参照版中にはないテキスト部分の始点を示す場合、属性 <att>unit</att>には、特別な値<term>absent</term>が付与されるか
+          もしれない。一般的な解釈では、等が版に対応する次の要素 <gi>milestone</gi>が出現するまで、当該参照版はテキストを含まな い。 </p>
+        <p> ここに挙げた属性値以外にも適切なものはあるだろう(例えば、プラ トンの作品を表すステファヌス番号を示す値<term>Stephanus</term> など。 </p>
+      </remarks>
+```
+
+^b16
+
+### Block 17
+
+XML location: `/classSpec[1]/listRef[1]`.
+
+```xml
+<listRef>
+    <ptr target="#CORS5" type="div3"/>
+    <ptr target="#HD54M"/>
+    <ptr target="#HD54"/>
+  </listRef>
+```
+
+^b17
+

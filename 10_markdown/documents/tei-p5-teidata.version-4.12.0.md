@@ -1,0 +1,166 @@
+---
+type: representation
+source-type: document
+source: '[[00_sources/tei-p5-teidata.version-4.12.0.xml]]'
+converter: tools.ingest_guidelines v1; complete XML plus verbatim blocks of prose,
+  specifications and support files
+channel: collection
+metadata:
+  title: TEI P5 4.12.0 teidata.version
+  creator: TEI Consortium
+  date: '2026-07-28'
+  format: application/xml
+  identifier: https://github.com/TEIC/TEI/blob/113e933e21f016e2655518321e9d10214b8d9fcb/P5/Source/Specs/teidata.version.xml
+  license: CC-BY-3.0
+  confidential: false
+created: '2026-09-07'
+updated: '2026-09-07'
+---
+
+# teidata.version
+
+Copyright TEI Consortium. Source used under CC-BY-3.0; upstream also offers BSD-2-Clause.
+License records: `LICENSE.md` and `P5/COPYING.txt` at commit `113e933e21f016e2655518321e9d10214b8d9fcb`.
+
+The complete XML is preserved as inert text. The source blocks repeat exact XML
+units in document order, including examples, lists, tables and constraints. The
+locator identifies each unit inside this file; the complete XML preserves its
+surrounding structure. Includes and processing instructions remain unexecuted.
+The Guidelines coverage projection locates their separate source dependencies.
+Presence of a representation establishes neither distillation nor verification.
+
+Source byte length: 2626. Git blob: `60e60f5b41ed581fa47d3d906ef63fc6f613dfbc`.
+
+## Complete XML source
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- © TEI Consortium. Dual-licensed under CC-by and BSD2 licenses; see the file COPYING.txt for details. -->
+<?xml-model href="https://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl" type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
+<dataSpec xmlns="http://www.tei-c.org/ns/1.0" module="tei" ident="teidata.version">
+  <desc versionDate="2013-11-20" xml:lang="en">defines the range of attribute values which may be used to
+  specify a TEI or Unicode version number.</desc>
+  <desc versionDate="2007-06-12" xml:lang="fr">définit la gamme des valeurs d'attribut
+  exprimant un numéro de version TEI.</desc>
+  <desc versionDate="2024-09-02" xml:lang="ja">TEIあるいはUnicodeのバージョン番号を指定するために使用できる属性値の範囲を定義する。</desc>
+  <content>
+      <dataRef name="token" restriction="[\d]+(\.[\d]+){0,2}"/>
+   </content>
+  <remarks ident="teidata.version-remarks" versionDate="2012-06-17" xml:lang="en">
+      <p>The value of this attribute follows the pattern specified by
+    the Unicode consortium for its version number (<ptr target="https://unicode.org/versions/"/>). A version number
+    contains digits and fullstop characters only. The first number
+    supplied identifies the major version number. A second and third
+    number, for minor and sub-minor version numbers, may also be
+    supplied.
+</p>
+  </remarks>
+  <remarks ident="teidata.version-remarks" versionDate="2007-06-12" xml:lang="fr">
+      <p>La valeur de cet attribut devrait suivre le format proposé par
+    le Consortium Unicode pour identifier les versions (<ptr target="https://unicode.org/versions/"/>). Un numéro de version
+    ne contient que des chiffres et des points. Le numéro
+    initiale identifie le numéro majeur de la version. Un deuxième et
+    un troisième numéro sont aussi disponibles pour la numérotation
+    facultative des versions mineures ou sous-mineurs.
+</p>
+  </remarks>
+  <remarks ident="teidata.version-remarks" versionDate="2024-09-02" xml:lang="ja">
+    <p>この属性の値はUnicodeコンソーシアムがバージョン番号のために定めた書式 (<ptr target="http://unicode.org/versions/"/>) に従う。一つのバージョン番号は数字とピリオドのみからなる。与えられた1番目の数字がメジャーバージョンを示す。2番目と3番目の数字をマイナーバージョンとサブマイナーバージョンを示すために付加することができる。</p>
+  </remarks>
+</dataSpec>
+```
+
+## Source blocks
+
+### Block 1
+
+XML location: `/dataSpec[1]/desc[1]`.
+
+```xml
+<desc versionDate="2013-11-20" xml:lang="en">defines the range of attribute values which may be used to
+  specify a TEI or Unicode version number.</desc>
+```
+
+^b1
+
+### Block 2
+
+XML location: `/dataSpec[1]/desc[2]`.
+
+```xml
+<desc versionDate="2007-06-12" xml:lang="fr">définit la gamme des valeurs d'attribut
+  exprimant un numéro de version TEI.</desc>
+```
+
+^b2
+
+### Block 3
+
+XML location: `/dataSpec[1]/desc[3]`.
+
+```xml
+<desc versionDate="2024-09-02" xml:lang="ja">TEIあるいはUnicodeのバージョン番号を指定するために使用できる属性値の範囲を定義する。</desc>
+```
+
+^b3
+
+### Block 4
+
+XML location: `/dataSpec[1]/content[1]`.
+
+```xml
+<content>
+      <dataRef name="token" restriction="[\d]+(\.[\d]+){0,2}"/>
+   </content>
+```
+
+^b4
+
+### Block 5
+
+XML location: `/dataSpec[1]/remarks[1]`.
+
+```xml
+<remarks ident="teidata.version-remarks" versionDate="2012-06-17" xml:lang="en">
+      <p>The value of this attribute follows the pattern specified by
+    the Unicode consortium for its version number (<ptr target="https://unicode.org/versions/"/>). A version number
+    contains digits and fullstop characters only. The first number
+    supplied identifies the major version number. A second and third
+    number, for minor and sub-minor version numbers, may also be
+    supplied.
+</p>
+  </remarks>
+```
+
+^b5
+
+### Block 6
+
+XML location: `/dataSpec[1]/remarks[2]`.
+
+```xml
+<remarks ident="teidata.version-remarks" versionDate="2007-06-12" xml:lang="fr">
+      <p>La valeur de cet attribut devrait suivre le format proposé par
+    le Consortium Unicode pour identifier les versions (<ptr target="https://unicode.org/versions/"/>). Un numéro de version
+    ne contient que des chiffres et des points. Le numéro
+    initiale identifie le numéro majeur de la version. Un deuxième et
+    un troisième numéro sont aussi disponibles pour la numérotation
+    facultative des versions mineures ou sous-mineurs.
+</p>
+  </remarks>
+```
+
+^b6
+
+### Block 7
+
+XML location: `/dataSpec[1]/remarks[3]`.
+
+```xml
+<remarks ident="teidata.version-remarks" versionDate="2024-09-02" xml:lang="ja">
+    <p>この属性の値はUnicodeコンソーシアムがバージョン番号のために定めた書式 (<ptr target="http://unicode.org/versions/"/>) に従う。一つのバージョン番号は数字とピリオドのみからなる。与えられた1番目の数字がメジャーバージョンを示す。2番目と3番目の数字をマイナーバージョンとサブマイナーバージョンを示すために付加することができる。</p>
+  </remarks>
+```
+
+^b7
+

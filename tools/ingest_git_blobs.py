@@ -150,9 +150,12 @@ def source_blocks(
     inside the unit that carries them, and a container inside a unit mints no
     unit of its own, so the units are disjoint and cover the file once.
     """
-    if b"<!DOCTYPE" in payload or b"<!ENTITY" in payload:
-        raise ValueError("DTD/entity declarations are outside this converter's scope")
     parser = expat.ParserCreate(namespace_separator="}")
+    def reject_declaration(*args: object) -> None:
+        raise ValueError("DTD/entity declarations are outside this converter's scope")
+
+    parser.StartDoctypeDeclHandler = reject_declaration
+    parser.EntityDeclHandler = reject_declaration
     stack: list[_Open] = []
     root_counts: dict[str, int] = {}
     found: list[tuple[int, str, str]] = []
@@ -625,7 +628,9 @@ def immutable_output(path: Path, payload: bytes, check: bool) -> None:
         raise FileNotFoundError(f"missing immutable artifact: {path}")
     else:
         path.parent.mkdir(parents=True, exist_ok=True)
-        path.write_bytes(payload)
+        temporary = path.with_suffix(path.suffix + ".tmp")
+        temporary.write_bytes(payload)
+        temporary.replace(path)
 
 
 def pinned_inventory(root: Path) -> dict[str, str]:

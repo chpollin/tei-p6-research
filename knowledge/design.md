@@ -9,7 +9,7 @@ method:
 status: draft
 language: en
 created: "2026-09-05"
-updated: "2026-09-06"
+updated: "2026-09-07"
 related: [INDEX, specification, data, schema, operations, testing, state, journal]
 ---
 
@@ -185,6 +185,26 @@ manually maintained page requires a recorded architecture decision.
 | `tools/build_docs.py` | README and the knowledge documents | `docs/project.html` |
 
 ## Regeneration
+
+The Materials page includes the English Guidelines reference coverage from
+`corpus/projections/guidelines-4.12.0.json`. Its contents table links to the
+actual representations and distillates in Knowledge, labels imported sources
+without implying scholarly review, and links the complete file inventory.
+The JSON and Markdown projections are regenerated with
+`python -m tools.ingest_guidelines`; `--check` reconciles them without ignored
+originals. `--refresh-coverage` updates only the projections from the tracked
+sources after distillation changes, also without originals or a mirror.
+After changing admission or distillation inputs, regenerate
+the projections, the source inventory, and the Materials, Knowledge and
+About pages. All five public HTML pages remain owned by their existing builders.
+
+An anchored XML code block in Knowledge displays its complete escaped source
+passage with its external block ID. Apparent anchors inside the quoted XML
+never become navigation or grounding anchors.
+Trailing whitespace in a displayed source passage is encoded as HTML
+character references, preserving its DOM text while keeping generated HTML
+free of trailing file whitespace. Immutable source representations retain
+their original line endings and whitespace under `.gitattributes`.
 
 After changing `README.md` or any knowledge document consumed by the About
 page, and after changing registry, lock, manifest, model or proposal inputs,

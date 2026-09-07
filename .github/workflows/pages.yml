@@ -23,6 +23,7 @@ jobs:
         run: |
           python tools/validate.py .
           python -m tools.corpus.validate_control_plane .
+          python -m tools.ingest_guidelines --check
           python -m pytest tests -q
       - name: Generate the public static site
         run: |

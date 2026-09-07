@@ -19,6 +19,8 @@ jobs:
         run: python tools/validate.py .
       - name: Validate the corpus control plane
         run: python -m tools.corpus.validate_control_plane .
+      - name: Reconcile the complete Guidelines reference and processing coverage
+        run: python -m tools.ingest_guidelines --check
       - name: Check current first-wave source-support review
         run: python tools/check_wave1_sources.py . --review-only
       - name: Reproduce Abstract Text Model 0.1

@@ -9,7 +9,7 @@ method:
 status: draft
 language: en
 created: "2026-09-06"
-updated: "2026-09-06"
+updated: "2026-09-07"
 related: [INDEX, project, specification, state, handoff, journal, testing, verification, experiments, p6-evaluation]
 ---
 
@@ -302,6 +302,16 @@ named snapshot and every hit carries a disposition; the label says nothing
 about the completeness of a family, which its manifests hold.
 
 #### 6. Admission budget
+
+The following budget governs scholarly topic runs, including their
+distillation and source-support reviews. The full deterministic Guidelines
+reference intake has the separate finite boundary in [[knowledge/data]] and
+does not consume this budget or assign reviewed status. Sources already
+admitted by that intake are reused in a topic run with their existing
+representations and anchors. Every Guidelines chapter and specification
+remains in scope for systematic source-specific distillation; the generated
+[coverage](../corpus/projections/guidelines-4.12.0.md) identifies the actual
+processing position. Source availability does not close a topic cycle.
 
 A run admits at most twelve sources, among them at most two Guidelines
 chapters and at most four threads. The entity run of 2026-09-06 admitted nine

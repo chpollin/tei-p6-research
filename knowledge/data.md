@@ -9,7 +9,7 @@ method:
 status: draft
 language: en
 created: "2026-09-06"
-updated: "2026-09-06"
+updated: "2026-09-07"
 related: [INDEX, project, specification, governance, operations, schema, state]
 ---
 
@@ -315,6 +315,47 @@ lock and no projection is a grounding target, and no shortcut leads from
 `corpus/` to a distillate, assertion or chapter. Admission creates neither a
 research finding nor human verification. The procedure is in
 [[knowledge/operations]].
+
+## Complete English Guidelines reference
+
+The technical admission boundary for P5 4.12.0 is the English master
+`P5/Source/guidelines-en.xml`, every XML file under
+`P5/Source/Guidelines/en/`, every immediate `P5/Source/Specs/*.xml` file,
+and their transitive local XML XIncludes outside quoted examples, all at
+the locked release commit. Front matter, the body and back matter follow
+the master's inclusion order. Shared specification files retain all their
+languages. Other translated Guidelines editions, historical versions and
+the full texts of works named in the bibliography remain outside this
+boundary.
+
+Each documentary source has one immutable representation. Existing
+admissions are reused with their original bytes, slugs, converter versions
+and anchors. The complete XML preserves surrounding structure; source
+blocks make prose units, examples, tables and specification components
+individually citable. XML examples are inert content. Actual DTD/entity
+declarations are rejected, while their literal appearance inside CDATA is
+preserved. XIncludes are recorded as edges to separate sources and never
+expanded in an existing representation. Graphic references are matched to
+the pinned Git inventory; their assets stay in the local Git store and are
+not republished or admitted as documentary evidence by this import.
+
+`corpus/projections/guidelines-4.12.0.json` and its Markdown companion are
+generated navigation projections. They connect the published contents to
+representations, every source to its actual distillate when present, and
+section headings to XML locations and source block anchors. The distinction
+between `ingested` and `distilled` is a processing fact. A distillate's
+status comes from that artifact and never establishes exhaustive review of
+the source. This intake records no section-level scholarly review and
+assigns no research status.
+
+The projection also checks the contents-page filenames against the
+hash-checked release-ZIP member inventory and records unmatched expected
+specification pages. Filename membership does not establish equivalence
+between XML source and rendered HTML, effective ODD semantics, or present
+availability of the ignored ZIP. The source-family completion label remains
+governed by its lock and recorded gaps. The finite source admission may be
+`bounded-complete` while the family and its scholarly interpretation remain
+partial.
 
 ## Completion vocabulary
 

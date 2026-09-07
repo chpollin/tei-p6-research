@@ -9,7 +9,7 @@ method:
 status: draft
 language: en
 created: "2026-09-04"
-updated: "2026-09-06"
+updated: "2026-09-07"
 related: [INDEX, schema, data, verification, testing, governance, state, journal]
 ---
 
@@ -325,7 +325,61 @@ python tools/inventory.py . --write
 python tools/validate.py .
 ```
 
+### Full Guidelines reference intake
+
+The complete technical boundary in [[knowledge/data]] is admitted with:
+
+```powershell
+python -m tools.ingest_guidelines
+python -m tools.ingest_guidelines --check
+python -m tools.ingest_guidelines --refresh-coverage
+```
+
+The first command requires the pinned local Git mirror, reuses existing
+admissions without changing them, and resumes an interrupted intake by
+checking already written immutable files. It writes the admission manifest
+only after every declared source is reconciled. It then regenerates the
+JSON and Markdown coverage projections from the admitted files and actual
+distillates. A repeat run may update those navigation projections; it never
+overwrites changed source representations or an incompatible admission.
+
+`--check` needs neither the mirror nor ignored originals. It reads the exact
+XML embedded in the tracked representations, checks Git blob identities,
+reproduces their converter output, proves the declared source and include
+boundary, checks the admission record, and compares both coverage outputs.
+Missing sources, modified bytes and stale processing counts fail the check.
+If local originals exist, their bytes must also reconcile.
+
+After adding or changing a distillate, regenerate the coverage with
+`--refresh-coverage`, regenerate the inventory and affected pages, and run
+the check. This mode verifies the tracked admission and updates only the
+projections; it needs neither ignored originals nor a Git mirror.
+The public Materials view exposes contents-level processing; Knowledge
+exposes the individual sources and their precise anchored passages.
+
 ## Distill
+
+### Systematic Guidelines distillation
+
+Technical availability is followed by source-specific scholarly extraction.
+Keep one distillate per source and process large sources by their actual
+section boundaries before reconciling the result into that distillate.
+The review record under `workbench/reviews/<run-id>/` must identify each
+examined section by source path and XML location, what was extracted, and
+any exclusion or remaining section with its reason. A short summary or a
+passing support review of selected statements does not establish that the
+whole chapter was examined.
+
+For each substantive section, examine its concepts, normative rules,
+encoding alternatives, examples, exceptions, dependencies and capabilities
+that an evolution must preserve. Front matter and bibliography may warrant
+descriptive extraction or a reasoned exclusion from a particular research
+question. Assertions are selected for the research question after source
+distillation; no fixed number of statements per paragraph is required.
+Compare prose, formal declarations and practice at the assertion layer,
+and preserve disagreements and their release identities.
+
+### Extraction and fidelity
 
 Produce one distillate per source through three steps.
 

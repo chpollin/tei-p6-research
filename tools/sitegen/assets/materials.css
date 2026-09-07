@@ -2,6 +2,13 @@
 .page-head { display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; }
 .results-meta { margin: 0; color: var(--muted); font-size: .84rem; white-space: nowrap; }
 .materials-scope { margin-bottom: .8rem; }
+#guidelines { margin-bottom: 1.4rem; }
+.guidelines-coverage { width: 100%; min-width: 44rem; border-collapse: collapse; margin: .6rem 0; }
+.guidelines-coverage caption { text-align: left; color: var(--muted); padding: .5rem .7rem; }
+.guidelines-coverage th, .guidelines-coverage td { padding: .55rem .7rem; text-align: left; vertical-align: top; }
+.guidelines-coverage th { color: var(--muted); font-size: .8rem; }
+.guidelines-coverage td:first-child, .guidelines-coverage td:nth-child(3) { white-space: nowrap; }
+.guidelines-coverage tbody tr:hover { background: var(--soft); }
 .toolbar { position: sticky; top: 0; z-index: 5; display: grid; grid-template-columns: minmax(18rem, 1fr) minmax(11rem, auto) minmax(13rem, auto); gap: .65rem; padding: .7rem 0 1rem; background: var(--paper); }
 .control { display: grid; gap: .22rem; min-width: 0; }
 .control span { color: var(--muted); font-size: .76rem; }

@@ -1,0 +1,467 @@
+---
+type: representation
+source-type: document
+source: '[[00_sources/tei-p5-linkgrp-4.12.0.xml]]'
+converter: tools.ingest_guidelines v1; complete XML plus verbatim blocks of prose,
+  specifications and support files
+channel: collection
+metadata:
+  title: TEI P5 4.12.0 linkGrp
+  creator: TEI Consortium
+  date: '2026-07-28'
+  format: application/xml
+  identifier: https://github.com/TEIC/TEI/blob/113e933e21f016e2655518321e9d10214b8d9fcb/P5/Source/Specs/linkGrp.xml
+  license: CC-BY-3.0
+  confidential: false
+created: '2026-09-07'
+updated: '2026-09-07'
+---
+
+# linkGrp
+
+Copyright TEI Consortium. Source used under CC-BY-3.0; upstream also offers BSD-2-Clause.
+License records: `LICENSE.md` and `P5/COPYING.txt` at commit `113e933e21f016e2655518321e9d10214b8d9fcb`.
+
+The complete XML is preserved as inert text. The source blocks repeat exact XML
+units in document order, including examples, lists, tables and constraints. The
+locator identifies each unit inside this file; the complete XML preserves its
+surrounding structure. Includes and processing instructions remain unexecuted.
+The Guidelines coverage projection locates their separate source dependencies.
+Presence of a representation establishes neither distillation nor verification.
+
+Source byte length: 6491. Git blob: `aefe38c4a432fa98f60c81023af644c9273ca65c`.
+
+## Complete XML source
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- © TEI Consortium. Dual-licensed under CC-by and BSD2 licenses; see the file COPYING.txt for details. -->
+<?xml-model href="https://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl" type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
+<elementSpec xmlns="http://www.tei-c.org/ns/1.0" module="linking" xml:id="gi-linkGrp" ident="linkGrp">
+  <gloss versionDate="2007-07-04" xml:lang="en">link group</gloss>
+  <gloss versionDate="2007-12-20" xml:lang="ko">연결군</gloss>
+  <gloss versionDate="2007-05-02" xml:lang="zh-TW"/>
+  <gloss versionDate="2008-04-06" xml:lang="es">grupo de enlace</gloss>
+  <gloss versionDate="2007-06-12" xml:lang="fr">groupe de liens</gloss>
+  <gloss versionDate="2007-11-06" xml:lang="it">gruppo di collegamenti</gloss>
+  <desc versionDate="2005-01-14" xml:lang="en">defines a collection of associations or hypertextual links.</desc>
+  <desc versionDate="2007-12-20" xml:lang="ko">연관 또는 하이퍼텍스트 연결의 집합을 정의한다.</desc>
+  <desc versionDate="2007-05-02" xml:lang="zh-TW">定義一群關連或超文字連結的集合。</desc>
+  <desc versionDate="2008-04-05" xml:lang="ja">関連性やハイパーテキストリンクの集合を定義する。</desc>
+  <desc versionDate="2007-06-12" xml:lang="fr">définit un ensemble d'associations ou de liens hypertextuels.</desc>
+  <desc versionDate="2007-05-04" xml:lang="es">define un conjunto de asociaciones o de vínculos hipertextuales.</desc>
+  <desc versionDate="2007-01-21" xml:lang="it">definisce una raccolta di associazioni o legami ipertestuali.</desc>
+  <classes>
+    <memberOf key="att.global"/>
+    <memberOf key="att.cmc"/>
+    <memberOf key="att.pointing.group"/>
+    <memberOf key="model.global.meta"/>
+  </classes>
+  <content>
+    <sequence>
+      <classRef key="model.descLike" minOccurs="0" maxOccurs="unbounded"/>
+      <alternate minOccurs="1" maxOccurs="unbounded">
+        <elementRef key="link"/>
+        <elementRef key="ptr"/>
+      </alternate>
+    </sequence>
+  </content>
+  <exemplum xml:lang="mul">
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="gi-linkGrp-egXML-da">
+      <linkGrp type="translation">
+        <link target="#CCS1 #SW1"/>
+        <link target="#CCS2 #SW2"/>
+        <link target="#CCS #SW"/>
+      </linkGrp>
+      <div type="volume" xml:id="CCS" xml:lang="fr">
+        <p>
+          <s xml:id="CCS1">Longtemps, je me suis couché de bonne heure.</s>
+          <s xml:id="CCS2">Parfois, à peine ma bougie éteinte, mes yeux se fermaient si vite que je n'avais pas le temps de me dire : "Je m'endors."</s>
+        </p>
+        <!-- ... -->
+      </div>
+      <div type="volume" xml:id="SW" xml:lang="en">
+        <p>
+          <s xml:id="SW1">For a long time I used to go to bed early.</s>
+          <s xml:id="SW2">Sometimes, when I had put out my candle, my eyes would close so quickly that I had not even time to say "I'm going to sleep."</s>
+        </p>
+        <!-- ... -->
+      </div>
+    </egXML>
+  </exemplum>
+  <exemplum versionDate="2008-04-06" xml:lang="fr">
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="gi-linkGrp-egXML-ez" source="#fr-ex-Proust-Swann">
+      <linkGrp type="translation">
+        <link target="#fr_CCS1 #fr_SW1"/>
+        <link target="#fr_CCS2 #fr_SW2"/>
+        <link target="#fr_CCS #fr_SW"/>
+      </linkGrp>
+      <div type="volume" xml:id="fr_CCS" xml:lang="fr">
+        <p>
+          <s xml:id="fr_CCS1">Longtemps, je me suis couché de bonne heure.</s>
+          <s xml:id="fr_CCS2">Parfois, à peine ma bougie éteinte, mes yeux se fermaient si vite que
+              je n'avais pas le temps de me dire : "Je m'endors."</s>
+        </p>
+      </div>
+      <div type="volume" xml:id="fr_SW" xml:lang="en">
+        <p>
+          <s xml:id="fr_SW1">For a long time I used to go to bed early.</s>
+          <s xml:id="fr_SW2">Sometimes, when I had put out my candle, my eyes would close so quickly
+              that I had not even time to say "I'm going to sleep."</s>
+        </p>
+      </div>
+    </egXML>
+  </exemplum>
+  <exemplum xml:lang="zh-TW">
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="gi-linkGrp-egXML-pd" source="#biblzh-tw_n37">
+      <linkGrp type="translation">
+        <link target="#zh-tw_CCS1 #zh-tw_SW1"/>
+        <link target="#zh-tw_CCS2 #zh-tw_SW2"/>
+        <link target="#zh-tw_CCS #zh-tw_SW"/>
+      </linkGrp>
+      <div type="volume" xml:id="zh-tw_CCS">
+        <p>
+          <s xml:id="zh-tw_CCS1">床前明月光，疑似地上霜；</s>
+          <s xml:id="zh-tw_CCS2">舉頭望明月，低頭思故鄉。</s>
+        </p>
+        <!-- ... -->
+      </div>
+      <div type="volume" xml:id="zh-tw_SW">
+        <p>
+          <s xml:id="zh-tw_SW1">月光照的床前一片潔白，看起來像是地上結滿的白霜；</s>
+          <s xml:id="zh-tw_SW2">抬起頭來，望著明月，低下頭來，思念起故鄉。</s>
+        </p>
+        <!-- ... -->
+      </div>
+    </egXML>
+  </exemplum>
+  <remarks ident="linkGrp-remarks" versionDate="2017-12-06" xml:lang="en">
+    <p rend="dataDesc">May contain one or more <gi>link</gi> or <gi>ptr</gi> elements.</p>
+    <p>A web or link group is an administrative convenience, which should be used to collect a set of links together for any purpose, not simply to supply a default value for the <att>type</att> attribute.</p>
+  </remarks>
+  <remarks ident="linkGrp-remarks" versionDate="2017-12-06" xml:lang="fr">
+    <p rend="dataDesc">Ne peut contenir qu’un ou plusieurs éléments <gi>link</gi> ou <gi>ptr</gi>.</p>
+    <p> Un groupe de liens facilite les opérations de gestion de ces liens ; on devrait l'utiliser pour regrouper un ensemble de liens dans un but précis, et non pas simplement pour donner une valeur par défaut à l'attribut <att>type</att>.</p>
+  </remarks>
+  <remarks ident="linkGrp-remarks" versionDate="2008-04-05" xml:lang="ja">
+    <p rend="dataDesc"> ひとつ以上の要素<gi>link</gi>のみを含む。場合によっては、ポインタ 要素が挟まることもある。 </p>
+    <p> webグループまたはリンクグループは、管理上便利なものである。これに より、属性<att>type</att>のデフォルト値を与えるためだけではなく、各 種の目的でリンクをまとめることができる。 </p>
+  </remarks>
+  <listRef>
+    <ptr target="#SAPT"/>
+  </listRef>
+</elementSpec>
+```
+
+## Source blocks
+
+### Block 1
+
+XML location: `/elementSpec[1]/gloss[1]`.
+
+```xml
+<gloss versionDate="2007-07-04" xml:lang="en">link group</gloss>
+```
+
+^b1
+
+### Block 2
+
+XML location: `/elementSpec[1]/gloss[2]`.
+
+```xml
+<gloss versionDate="2007-12-20" xml:lang="ko">연결군</gloss>
+```
+
+^b2
+
+### Block 3
+
+XML location: `/elementSpec[1]/gloss[3]`.
+
+```xml
+<gloss versionDate="2007-05-02" xml:lang="zh-TW"/>
+```
+
+^b3
+
+### Block 4
+
+XML location: `/elementSpec[1]/gloss[4]`.
+
+```xml
+<gloss versionDate="2008-04-06" xml:lang="es">grupo de enlace</gloss>
+```
+
+^b4
+
+### Block 5
+
+XML location: `/elementSpec[1]/gloss[5]`.
+
+```xml
+<gloss versionDate="2007-06-12" xml:lang="fr">groupe de liens</gloss>
+```
+
+^b5
+
+### Block 6
+
+XML location: `/elementSpec[1]/gloss[6]`.
+
+```xml
+<gloss versionDate="2007-11-06" xml:lang="it">gruppo di collegamenti</gloss>
+```
+
+^b6
+
+### Block 7
+
+XML location: `/elementSpec[1]/desc[1]`.
+
+```xml
+<desc versionDate="2005-01-14" xml:lang="en">defines a collection of associations or hypertextual links.</desc>
+```
+
+^b7
+
+### Block 8
+
+XML location: `/elementSpec[1]/desc[2]`.
+
+```xml
+<desc versionDate="2007-12-20" xml:lang="ko">연관 또는 하이퍼텍스트 연결의 집합을 정의한다.</desc>
+```
+
+^b8
+
+### Block 9
+
+XML location: `/elementSpec[1]/desc[3]`.
+
+```xml
+<desc versionDate="2007-05-02" xml:lang="zh-TW">定義一群關連或超文字連結的集合。</desc>
+```
+
+^b9
+
+### Block 10
+
+XML location: `/elementSpec[1]/desc[4]`.
+
+```xml
+<desc versionDate="2008-04-05" xml:lang="ja">関連性やハイパーテキストリンクの集合を定義する。</desc>
+```
+
+^b10
+
+### Block 11
+
+XML location: `/elementSpec[1]/desc[5]`.
+
+```xml
+<desc versionDate="2007-06-12" xml:lang="fr">définit un ensemble d'associations ou de liens hypertextuels.</desc>
+```
+
+^b11
+
+### Block 12
+
+XML location: `/elementSpec[1]/desc[6]`.
+
+```xml
+<desc versionDate="2007-05-04" xml:lang="es">define un conjunto de asociaciones o de vínculos hipertextuales.</desc>
+```
+
+^b12
+
+### Block 13
+
+XML location: `/elementSpec[1]/desc[7]`.
+
+```xml
+<desc versionDate="2007-01-21" xml:lang="it">definisce una raccolta di associazioni o legami ipertestuali.</desc>
+```
+
+^b13
+
+### Block 14
+
+XML location: `/elementSpec[1]/classes[1]`.
+
+```xml
+<classes>
+    <memberOf key="att.global"/>
+    <memberOf key="att.cmc"/>
+    <memberOf key="att.pointing.group"/>
+    <memberOf key="model.global.meta"/>
+  </classes>
+```
+
+^b14
+
+### Block 15
+
+XML location: `/elementSpec[1]/content[1]`.
+
+```xml
+<content>
+    <sequence>
+      <classRef key="model.descLike" minOccurs="0" maxOccurs="unbounded"/>
+      <alternate minOccurs="1" maxOccurs="unbounded">
+        <elementRef key="link"/>
+        <elementRef key="ptr"/>
+      </alternate>
+    </sequence>
+  </content>
+```
+
+^b15
+
+### Block 16
+
+XML location: `/elementSpec[1]/exemplum[1]`.
+
+```xml
+<exemplum xml:lang="mul">
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="gi-linkGrp-egXML-da">
+      <linkGrp type="translation">
+        <link target="#CCS1 #SW1"/>
+        <link target="#CCS2 #SW2"/>
+        <link target="#CCS #SW"/>
+      </linkGrp>
+      <div type="volume" xml:id="CCS" xml:lang="fr">
+        <p>
+          <s xml:id="CCS1">Longtemps, je me suis couché de bonne heure.</s>
+          <s xml:id="CCS2">Parfois, à peine ma bougie éteinte, mes yeux se fermaient si vite que je n'avais pas le temps de me dire : "Je m'endors."</s>
+        </p>
+        <!-- ... -->
+      </div>
+      <div type="volume" xml:id="SW" xml:lang="en">
+        <p>
+          <s xml:id="SW1">For a long time I used to go to bed early.</s>
+          <s xml:id="SW2">Sometimes, when I had put out my candle, my eyes would close so quickly that I had not even time to say "I'm going to sleep."</s>
+        </p>
+        <!-- ... -->
+      </div>
+    </egXML>
+  </exemplum>
+```
+
+^b16
+
+### Block 17
+
+XML location: `/elementSpec[1]/exemplum[2]`.
+
+```xml
+<exemplum versionDate="2008-04-06" xml:lang="fr">
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="gi-linkGrp-egXML-ez" source="#fr-ex-Proust-Swann">
+      <linkGrp type="translation">
+        <link target="#fr_CCS1 #fr_SW1"/>
+        <link target="#fr_CCS2 #fr_SW2"/>
+        <link target="#fr_CCS #fr_SW"/>
+      </linkGrp>
+      <div type="volume" xml:id="fr_CCS" xml:lang="fr">
+        <p>
+          <s xml:id="fr_CCS1">Longtemps, je me suis couché de bonne heure.</s>
+          <s xml:id="fr_CCS2">Parfois, à peine ma bougie éteinte, mes yeux se fermaient si vite que
+              je n'avais pas le temps de me dire : "Je m'endors."</s>
+        </p>
+      </div>
+      <div type="volume" xml:id="fr_SW" xml:lang="en">
+        <p>
+          <s xml:id="fr_SW1">For a long time I used to go to bed early.</s>
+          <s xml:id="fr_SW2">Sometimes, when I had put out my candle, my eyes would close so quickly
+              that I had not even time to say "I'm going to sleep."</s>
+        </p>
+      </div>
+    </egXML>
+  </exemplum>
+```
+
+^b17
+
+### Block 18
+
+XML location: `/elementSpec[1]/exemplum[3]`.
+
+```xml
+<exemplum xml:lang="zh-TW">
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="gi-linkGrp-egXML-pd" source="#biblzh-tw_n37">
+      <linkGrp type="translation">
+        <link target="#zh-tw_CCS1 #zh-tw_SW1"/>
+        <link target="#zh-tw_CCS2 #zh-tw_SW2"/>
+        <link target="#zh-tw_CCS #zh-tw_SW"/>
+      </linkGrp>
+      <div type="volume" xml:id="zh-tw_CCS">
+        <p>
+          <s xml:id="zh-tw_CCS1">床前明月光，疑似地上霜；</s>
+          <s xml:id="zh-tw_CCS2">舉頭望明月，低頭思故鄉。</s>
+        </p>
+        <!-- ... -->
+      </div>
+      <div type="volume" xml:id="zh-tw_SW">
+        <p>
+          <s xml:id="zh-tw_SW1">月光照的床前一片潔白，看起來像是地上結滿的白霜；</s>
+          <s xml:id="zh-tw_SW2">抬起頭來，望著明月，低下頭來，思念起故鄉。</s>
+        </p>
+        <!-- ... -->
+      </div>
+    </egXML>
+  </exemplum>
+```
+
+^b18
+
+### Block 19
+
+XML location: `/elementSpec[1]/remarks[1]`.
+
+```xml
+<remarks ident="linkGrp-remarks" versionDate="2017-12-06" xml:lang="en">
+    <p rend="dataDesc">May contain one or more <gi>link</gi> or <gi>ptr</gi> elements.</p>
+    <p>A web or link group is an administrative convenience, which should be used to collect a set of links together for any purpose, not simply to supply a default value for the <att>type</att> attribute.</p>
+  </remarks>
+```
+
+^b19
+
+### Block 20
+
+XML location: `/elementSpec[1]/remarks[2]`.
+
+```xml
+<remarks ident="linkGrp-remarks" versionDate="2017-12-06" xml:lang="fr">
+    <p rend="dataDesc">Ne peut contenir qu’un ou plusieurs éléments <gi>link</gi> ou <gi>ptr</gi>.</p>
+    <p> Un groupe de liens facilite les opérations de gestion de ces liens ; on devrait l'utiliser pour regrouper un ensemble de liens dans un but précis, et non pas simplement pour donner une valeur par défaut à l'attribut <att>type</att>.</p>
+  </remarks>
+```
+
+^b20
+
+### Block 21
+
+XML location: `/elementSpec[1]/remarks[3]`.
+
+```xml
+<remarks ident="linkGrp-remarks" versionDate="2008-04-05" xml:lang="ja">
+    <p rend="dataDesc"> ひとつ以上の要素<gi>link</gi>のみを含む。場合によっては、ポインタ 要素が挟まることもある。 </p>
+    <p> webグループまたはリンクグループは、管理上便利なものである。これに より、属性<att>type</att>のデフォルト値を与えるためだけではなく、各 種の目的でリンクをまとめることができる。 </p>
+  </remarks>
+```
+
+^b21
+
+### Block 22
+
+XML location: `/elementSpec[1]/listRef[1]`.
+
+```xml
+<listRef>
+    <ptr target="#SAPT"/>
+  </listRef>
+```
+
+^b22
+

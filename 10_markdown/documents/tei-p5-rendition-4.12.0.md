@@ -1,0 +1,446 @@
+---
+type: representation
+source-type: document
+source: '[[00_sources/tei-p5-rendition-4.12.0.xml]]'
+converter: tools.ingest_guidelines v1; complete XML plus verbatim blocks of prose,
+  specifications and support files
+channel: collection
+metadata:
+  title: TEI P5 4.12.0 rendition
+  creator: TEI Consortium
+  date: '2026-07-28'
+  format: application/xml
+  identifier: https://github.com/TEIC/TEI/blob/113e933e21f016e2655518321e9d10214b8d9fcb/P5/Source/Specs/rendition.xml
+  license: CC-BY-3.0
+  confidential: false
+created: '2026-09-07'
+updated: '2026-09-07'
+---
+
+# rendition
+
+Copyright TEI Consortium. Source used under CC-BY-3.0; upstream also offers BSD-2-Clause.
+License records: `LICENSE.md` and `P5/COPYING.txt` at commit `113e933e21f016e2655518321e9d10214b8d9fcb`.
+
+The complete XML is preserved as inert text. The source blocks repeat exact XML
+units in document order, including examples, lists, tables and constraints. The
+locator identifies each unit inside this file; the complete XML preserves its
+surrounding structure. Includes and processing instructions remain unexecuted.
+The Guidelines coverage projection locates their separate source dependencies.
+Presence of a representation establishes neither distillation nor verification.
+
+Source byte length: 7351. Git blob: `04b590a16e02a08342dbf31a45abaa0915c554b6`.
+
+## Complete XML source
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- © TEI Consortium. Dual-licensed under CC-by and BSD2 licenses; see the file COPYING.txt for details. -->
+<?xml-model href="https://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl" type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
+<elementSpec xmlns="http://www.tei-c.org/ns/1.0" module="header" xml:id="gi-rendition" ident="rendition">
+  <gloss versionDate="2007-06-12" xml:lang="en">rendition</gloss>
+  <gloss versionDate="2007-06-12" xml:lang="fr">rendu</gloss>
+  <desc versionDate="2007-09-22" xml:lang="en">supplies information about the rendition or appearance of one or more elements in the source
+    text.</desc>
+  <desc versionDate="2009-01-05" xml:lang="fr">donne des informations sur le rendu ou sur l'apparence
+    d'un ou de plusieurs éléments dans le texte source.</desc>
+  <desc versionDate="2007-12-20" xml:lang="ko">원본 텍스트에서 요소의 모양에 대한 정보를 제공한다.</desc>
+  <desc versionDate="2007-05-02" xml:lang="zh-TW">提供關於一個或多個元素預定呈現方式的資訊。</desc>
+  <desc versionDate="2008-04-05" xml:lang="ja">元資料テキスト中にある、ひとつ以上の要素の描出や現れ方に関する情報を 示す。</desc>
+  <desc versionDate="2018-07-18" xml:lang="de">liefert Informationen über die Darstellung oder das Aussehen eines oder mehrerer Elemente im Quelltext.</desc>
+  <desc versionDate="2007-05-04" xml:lang="es">proporciona información sobre la interpretación ideada
+    para uno o más elementos.</desc>
+  <desc versionDate="2007-01-21" xml:lang="it">fornisce informazioni circa la resa prevista di uno o più
+    elementi.</desc>
+  <classes>
+    <memberOf key="att.global"/>
+    <memberOf key="att.styleDef"/>
+  </classes>
+  <content>
+    <macroRef key="macro.limitedContent"/>
+  </content>
+  <attList>
+    <attDef ident="scope">
+      <desc versionDate="2009-05-29" xml:lang="en">where CSS is used, provides a way of defining
+<soCalled>pseudo-elements</soCalled>, that is, styling rules
+applicable to specific sub-portions of an element.</desc>
+      <datatype><dataRef key="teidata.enumerated"/></datatype>
+      <valList type="open">
+        <valItem ident="first-line">
+          <desc versionDate="2009-05-29" xml:lang="en">styling applies to the first line of
+the target element</desc>
+        </valItem>
+        <valItem ident="first-letter">
+          <desc versionDate="2009-05-29" xml:lang="en">styling applies to the first letter of
+the target element</desc>
+        </valItem>
+        <valItem ident="before">
+          <desc versionDate="2009-05-29" xml:lang="en">styling should be applied immediately before
+the content of the target element</desc>
+        </valItem>
+        <valItem ident="after">
+          <desc versionDate="2009-05-29" xml:lang="en">styling  should be applied immediately after
+the content of
+the target element</desc>
+        </valItem>
+      </valList>
+    </attDef>
+    <attDef ident="selector">
+      <desc versionDate="2015-06-14" xml:lang="en">
+        contains a selector or series of selectors specifying the elements to which the contained style 
+        description applies, expressed in the language specified in the <att>scheme</att> attribute.
+      </desc>
+      <datatype maxOccurs="1"><dataRef key="teidata.text"/></datatype>
+      <exemplum xml:lang="en">
+        <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="gi-rendition-egXML-hy">
+          <rendition scheme="css" selector="text, front, back, body, div, p, ab">  
+            display: block;
+          </rendition>
+        </egXML>
+      </exemplum>
+      <exemplum xml:lang="en">
+        <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="gi-rendition-egXML-fd">  
+          <rendition scheme="css" selector="*[rend*=italic]">
+            font-style: italic;
+          </rendition>
+        </egXML>
+      </exemplum>
+      <remarks ident="rendition-attr.selector-remarks" versionDate="2015-06-14" xml:lang="en">
+        <p>Since the default value of the <att>scheme</att> attribute is assumed to be CSS, the default 
+        expectation for this attribute, in the absence of <att>scheme</att>, is that CSS selector
+        syntax will be used.</p>
+        <p>While <att>rendition</att> is used to point from an element in the transcribed source to a 
+        <gi>rendition</gi> element in the header which describes how it appears, the <att>selector</att>
+        attribute allows the encoder to point in the other direction: from a <gi>rendition</gi> in the
+        header to a collection of elements which all share the same renditional features. In both cases,
+        the intention is to record the appearance of the source text, not to prescribe any particular 
+        output rendering.</p>
+      </remarks>
+    </attDef>
+  </attList>
+  <exemplum xml:lang="und">
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="gi-rendition-egXML-re">
+      <tagsDecl>
+        <rendition xml:id="r-center" scheme="css">text-align: center;</rendition>
+        <rendition xml:id="r-small" scheme="css">font-size: small;</rendition>
+        <rendition xml:id="r-large" scheme="css">font-size: large;</rendition>
+        <rendition xml:id="initcaps" scope="first-letter" scheme="css">font-size: xx-large</rendition>
+      </tagsDecl>
+    </egXML>
+  </exemplum>
+  <!-- Removed 2016-12-05 by SB, as it is clearly no longer true. Perhaps it would be better re-written,-->
+  <!-- but at least it should imply other than the default <att>scheme</att> is CSS -->
+  <!-- <remarks versionDate="2006-02-07" xml:lang="en"> -->
+  <!--   <p>The present release of these Guidelines does not specify the content of this element in any -->
+  <!--     further detail. It may be used to hold a description of the default rendition to be associated -->
+  <!--     with the specified element, expressed in running prose, or in some more formal language such -->
+  <!--     as CSS.</p> -->
+  <!-- </remarks> -->
+  <!-- <remarks versionDate="2007-06-12" xml:lang="fr"> -->
+  <!--   <p>La présente édition de ces Principes directeurs ne donne pas de spécifications détaillées sur -->
+  <!--     le contenu de cet élément. On peut l'utiliser pour donner une description du rendu devant être -->
+  <!--     associé par défaut à l'élément indiqué, rédigé en texte libre ou dans un langage plus formel -->
+  <!--     tel que CSS. </p> -->
+  <!-- </remarks> -->
+  <!-- <remarks versionDate="2008-04-06" xml:lang="es"> -->
+  <!--   <p>la actual versión de estas guías de consulta no especifica el contenido de este elemento con -->
+  <!--     más detalle. Puede ser utilizado para llevar a cabo una descripción de la interpretación del -->
+  <!--     valor por defecto que se asociará al elemento especificado, expresado en prosa, o en un -->
+  <!--     lenguaje formal tal como CSS.</p> -->
+  <!-- </remarks> -->
+  <!-- <remarks versionDate="2008-04-05" xml:lang="ja"> -->
+  <!--   <p> 現行ガイドラインでは，当該要素に関してこれ以上の詳細は規定しない． 既定値としての描出情報は，散文またはCSSのような形式言語により示さ れるかもしれない． </p> -->
+  <!-- </remarks> -->
+  <listRef>
+    <ptr target="#HD57"/>
+  </listRef>
+</elementSpec>
+```
+
+## Source blocks
+
+### Block 1
+
+XML location: `/elementSpec[1]/gloss[1]`.
+
+```xml
+<gloss versionDate="2007-06-12" xml:lang="en">rendition</gloss>
+```
+
+^b1
+
+### Block 2
+
+XML location: `/elementSpec[1]/gloss[2]`.
+
+```xml
+<gloss versionDate="2007-06-12" xml:lang="fr">rendu</gloss>
+```
+
+^b2
+
+### Block 3
+
+XML location: `/elementSpec[1]/desc[1]`.
+
+```xml
+<desc versionDate="2007-09-22" xml:lang="en">supplies information about the rendition or appearance of one or more elements in the source
+    text.</desc>
+```
+
+^b3
+
+### Block 4
+
+XML location: `/elementSpec[1]/desc[2]`.
+
+```xml
+<desc versionDate="2009-01-05" xml:lang="fr">donne des informations sur le rendu ou sur l'apparence
+    d'un ou de plusieurs éléments dans le texte source.</desc>
+```
+
+^b4
+
+### Block 5
+
+XML location: `/elementSpec[1]/desc[3]`.
+
+```xml
+<desc versionDate="2007-12-20" xml:lang="ko">원본 텍스트에서 요소의 모양에 대한 정보를 제공한다.</desc>
+```
+
+^b5
+
+### Block 6
+
+XML location: `/elementSpec[1]/desc[4]`.
+
+```xml
+<desc versionDate="2007-05-02" xml:lang="zh-TW">提供關於一個或多個元素預定呈現方式的資訊。</desc>
+```
+
+^b6
+
+### Block 7
+
+XML location: `/elementSpec[1]/desc[5]`.
+
+```xml
+<desc versionDate="2008-04-05" xml:lang="ja">元資料テキスト中にある、ひとつ以上の要素の描出や現れ方に関する情報を 示す。</desc>
+```
+
+^b7
+
+### Block 8
+
+XML location: `/elementSpec[1]/desc[6]`.
+
+```xml
+<desc versionDate="2018-07-18" xml:lang="de">liefert Informationen über die Darstellung oder das Aussehen eines oder mehrerer Elemente im Quelltext.</desc>
+```
+
+^b8
+
+### Block 9
+
+XML location: `/elementSpec[1]/desc[7]`.
+
+```xml
+<desc versionDate="2007-05-04" xml:lang="es">proporciona información sobre la interpretación ideada
+    para uno o más elementos.</desc>
+```
+
+^b9
+
+### Block 10
+
+XML location: `/elementSpec[1]/desc[8]`.
+
+```xml
+<desc versionDate="2007-01-21" xml:lang="it">fornisce informazioni circa la resa prevista di uno o più
+    elementi.</desc>
+```
+
+^b10
+
+### Block 11
+
+XML location: `/elementSpec[1]/classes[1]`.
+
+```xml
+<classes>
+    <memberOf key="att.global"/>
+    <memberOf key="att.styleDef"/>
+  </classes>
+```
+
+^b11
+
+### Block 12
+
+XML location: `/elementSpec[1]/content[1]`.
+
+```xml
+<content>
+    <macroRef key="macro.limitedContent"/>
+  </content>
+```
+
+^b12
+
+### Block 13
+
+XML location: `/elementSpec[1]/attList[1]/attDef[1]/desc[1]`.
+
+```xml
+<desc versionDate="2009-05-29" xml:lang="en">where CSS is used, provides a way of defining
+<soCalled>pseudo-elements</soCalled>, that is, styling rules
+applicable to specific sub-portions of an element.</desc>
+```
+
+^b13
+
+### Block 14
+
+XML location: `/elementSpec[1]/attList[1]/attDef[1]/datatype[1]`.
+
+```xml
+<datatype><dataRef key="teidata.enumerated"/></datatype>
+```
+
+^b14
+
+### Block 15
+
+XML location: `/elementSpec[1]/attList[1]/attDef[1]/valList[1]`.
+
+```xml
+<valList type="open">
+        <valItem ident="first-line">
+          <desc versionDate="2009-05-29" xml:lang="en">styling applies to the first line of
+the target element</desc>
+        </valItem>
+        <valItem ident="first-letter">
+          <desc versionDate="2009-05-29" xml:lang="en">styling applies to the first letter of
+the target element</desc>
+        </valItem>
+        <valItem ident="before">
+          <desc versionDate="2009-05-29" xml:lang="en">styling should be applied immediately before
+the content of the target element</desc>
+        </valItem>
+        <valItem ident="after">
+          <desc versionDate="2009-05-29" xml:lang="en">styling  should be applied immediately after
+the content of
+the target element</desc>
+        </valItem>
+      </valList>
+```
+
+^b15
+
+### Block 16
+
+XML location: `/elementSpec[1]/attList[1]/attDef[2]/desc[1]`.
+
+```xml
+<desc versionDate="2015-06-14" xml:lang="en">
+        contains a selector or series of selectors specifying the elements to which the contained style 
+        description applies, expressed in the language specified in the <att>scheme</att> attribute.
+      </desc>
+```
+
+^b16
+
+### Block 17
+
+XML location: `/elementSpec[1]/attList[1]/attDef[2]/datatype[1]`.
+
+```xml
+<datatype maxOccurs="1"><dataRef key="teidata.text"/></datatype>
+```
+
+^b17
+
+### Block 18
+
+XML location: `/elementSpec[1]/attList[1]/attDef[2]/exemplum[1]`.
+
+```xml
+<exemplum xml:lang="en">
+        <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="gi-rendition-egXML-hy">
+          <rendition scheme="css" selector="text, front, back, body, div, p, ab">  
+            display: block;
+          </rendition>
+        </egXML>
+      </exemplum>
+```
+
+^b18
+
+### Block 19
+
+XML location: `/elementSpec[1]/attList[1]/attDef[2]/exemplum[2]`.
+
+```xml
+<exemplum xml:lang="en">
+        <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="gi-rendition-egXML-fd">  
+          <rendition scheme="css" selector="*[rend*=italic]">
+            font-style: italic;
+          </rendition>
+        </egXML>
+      </exemplum>
+```
+
+^b19
+
+### Block 20
+
+XML location: `/elementSpec[1]/attList[1]/attDef[2]/remarks[1]`.
+
+```xml
+<remarks ident="rendition-attr.selector-remarks" versionDate="2015-06-14" xml:lang="en">
+        <p>Since the default value of the <att>scheme</att> attribute is assumed to be CSS, the default 
+        expectation for this attribute, in the absence of <att>scheme</att>, is that CSS selector
+        syntax will be used.</p>
+        <p>While <att>rendition</att> is used to point from an element in the transcribed source to a 
+        <gi>rendition</gi> element in the header which describes how it appears, the <att>selector</att>
+        attribute allows the encoder to point in the other direction: from a <gi>rendition</gi> in the
+        header to a collection of elements which all share the same renditional features. In both cases,
+        the intention is to record the appearance of the source text, not to prescribe any particular 
+        output rendering.</p>
+      </remarks>
+```
+
+^b20
+
+### Block 21
+
+XML location: `/elementSpec[1]/exemplum[1]`.
+
+```xml
+<exemplum xml:lang="und">
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="gi-rendition-egXML-re">
+      <tagsDecl>
+        <rendition xml:id="r-center" scheme="css">text-align: center;</rendition>
+        <rendition xml:id="r-small" scheme="css">font-size: small;</rendition>
+        <rendition xml:id="r-large" scheme="css">font-size: large;</rendition>
+        <rendition xml:id="initcaps" scope="first-letter" scheme="css">font-size: xx-large</rendition>
+      </tagsDecl>
+    </egXML>
+  </exemplum>
+```
+
+^b21
+
+### Block 22
+
+XML location: `/elementSpec[1]/listRef[1]`.
+
+```xml
+<listRef>
+    <ptr target="#HD57"/>
+  </listRef>
+```
+
+^b22
+

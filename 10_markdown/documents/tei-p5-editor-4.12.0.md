@@ -1,0 +1,334 @@
+---
+type: representation
+source-type: document
+source: '[[00_sources/tei-p5-editor-4.12.0.xml]]'
+converter: tools.ingest_guidelines v1; complete XML plus verbatim blocks of prose,
+  specifications and support files
+channel: collection
+metadata:
+  title: TEI P5 4.12.0 editor
+  creator: TEI Consortium
+  date: '2026-07-28'
+  format: application/xml
+  identifier: https://github.com/TEIC/TEI/blob/113e933e21f016e2655518321e9d10214b8d9fcb/P5/Source/Specs/editor.xml
+  license: CC-BY-3.0
+  confidential: false
+created: '2026-09-07'
+updated: '2026-09-07'
+---
+
+# editor
+
+Copyright TEI Consortium. Source used under CC-BY-3.0; upstream also offers BSD-2-Clause.
+License records: `LICENSE.md` and `P5/COPYING.txt` at commit `113e933e21f016e2655518321e9d10214b8d9fcb`.
+
+The complete XML is preserved as inert text. The source blocks repeat exact XML
+units in document order, including examples, lists, tables and constraints. The
+locator identifies each unit inside this file; the complete XML preserves its
+surrounding structure. Includes and processing instructions remain unexecuted.
+The Guidelines coverage projection locates their separate source dependencies.
+Presence of a representation establishes neither distillation nor verification.
+
+Source byte length: 4998. Git blob: `950b573db28e176b5b7842233a4521b2f4d1ce91`.
+
+## Complete XML source
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- © TEI Consortium. Dual-licensed under CC-by and BSD2 licenses; see the file COPYING.txt for details. -->
+<?xml-model href="https://jenkins.tei-c.org/job/TEIP5-dev/lastSuccessfulBuild/artifact/P5/release/xml/tei/odd/p5.nvdl" type="application/xml" schematypens="http://purl.oclc.org/dsdl/nvdl/ns/structure/1.0"?>
+<elementSpec xmlns="http://www.tei-c.org/ns/1.0" xmlns:sch="http://purl.oclc.org/dsdl/schematron" module="core" xml:id="gi-editor" ident="editor">
+  <!--gloss>editor</gloss-->
+  <desc versionDate="2012-12-27" xml:lang="en">contains a secondary statement of responsibility for a bibliographic item, for example the name of an individual, institution or organization, (or of several such) acting as editor, compiler, translator, etc.</desc>
+  <desc versionDate="2007-12-20" xml:lang="ko">서지 항목의 책임에 관한 2차적 진술, 예를 들어, 편집, 번역 등의 작업을 한 편집, 개인, 기관,
+    또는 기구의 이름</desc>
+  <desc versionDate="2007-05-02" xml:lang="zh-TW">書目項目的次要責任歸屬，例如扮演編輯、編譯、翻譯等角色的個人、機構或組織 (或其他類似者) 的名稱。</desc>
+  <desc versionDate="2008-04-05" xml:lang="ja">書誌情報における、第二位の責任者を示す。個人、団体、組織、編集者、編 纂者、翻訳者の名前など。</desc>
+  <desc versionDate="2009-01-06" xml:lang="fr">mention de responsabilité secondaire pour un item
+    bibliographique, par exemple le nom d'une personne, d'une institution ou d'un organisme (ou de
+    plusieurs d'entre eux) comme éditeur scientifique, compilateur, traducteur, etc.</desc>
+  <desc versionDate="2007-05-04" xml:lang="es">declaración secundaria de responsabilidad para un ítem bibliográfico, por ejemplo un nombre particular, o institucional (o cualquier otro) que ha actuado como editor, compilador, traductor, etc.</desc>
+  <desc versionDate="2007-01-21" xml:lang="it">è la dichiarazione di responsabilità secondaria di ciascuna unità bibliografica, ad esempio il nome di un individuo, di un'istituzione o organizzazione che agisce come curatore, compilatore, traduttore, ecc.</desc>
+  <desc versionDate="2017-06-04" xml:lang="de">beinhaltet zusätzliche Angaben zur Verantwortlichkeit für ein bibliografisches Objekt, z. B. den Namen einer Person, Institution oder Organisation (oder mehreren davon), welche als Herausgeber, Kompilator, Übersetzer etc. fungiert.</desc>
+  <classes>
+    <memberOf key="att.global"/>
+    <memberOf key="att.datable"/>
+    <memberOf key="att.naming"/>
+    <memberOf key="model.respLike"/>
+  </classes>
+  <content>
+    <macroRef key="macro.phraseSeq"/>
+  </content>
+  <exemplum xml:lang="en">
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="gi-editor-egXML-fr">
+      <editor role="Technical_Editor">Ron Van den Branden</editor>
+      <editor role="Editor-in-Chief">John Walsh</editor>
+      <editor role="Managing_Editor">Anne Baillot</editor>
+    </egXML>
+  </exemplum>
+  <exemplum versionDate="2008-04-06" xml:lang="fr">
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="gi-editor-egXML-kx">
+      <editor> Pierre-Jules Hetzel</editor>
+      <editor role="illustrator">George Roux</editor>
+    </egXML>
+  </exemplum>
+  <exemplum xml:lang="zh-TW">
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="gi-editor-egXML-ij">
+      <editor>王大明</editor>
+      <editor role="繪圖者">陳紅</editor>
+    </egXML>
+  </exemplum>
+  <remarks ident="editor-remarks" versionDate="2009-01-13" xml:lang="en">
+    <p rend="dataDesc">A consistent format should be adopted.</p>
+    <p>Particularly where cataloguing is likely to be based on the content of the header, it is
+      advisable to use generally recognized authority lists for the exact form of personal names.
+    </p>
+  </remarks>
+  <remarks ident="editor-remarks" versionDate="2007-06-12" xml:lang="fr">
+    <p rend="dataDesc"> Il est conseillé d'adopter un format cohérent.</p>
+    <p>Particulièrement lorsque le catalogage repose sur le contenu de l'en-tête TEI, il est
+      conseillé d'utiliser des listes d'autorité reconnues pour trouver la forme exacte des noms de
+      personnes.</p>
+  </remarks>
+  <remarks ident="editor-remarks" versionDate="2008-04-05" xml:lang="ja">
+    <p rend="dataDesc"> 一貫した形式で記述されるべきである。 </p>
+    <p> 特に、書誌情報をヘダー内容に依存する際には、個人名の正確な形のリス トを使用した方がよい。 </p>
+  </remarks>
+  <remarks ident="editor-remarks" versionDate="2017-06-04" xml:lang="de">
+    <p rend="dataDesc">Es sollte auf ein einheitliches Format geachtet werden.</p>
+    <p>Vor allem wenn die Katalogisierung auf dem Inhalt des TEI-Headers aufbauen soll, wird die
+      Verwendung allgemein gebräuchlicher Normdateien für die Namensansetzung empfohlen.</p>
+  </remarks>
+  <listRef>
+    <ptr target="#COBICOR"/>
+  </listRef>
+</elementSpec>
+```
+
+## Source blocks
+
+### Block 1
+
+XML location: `/elementSpec[1]/desc[1]`.
+
+```xml
+<desc versionDate="2012-12-27" xml:lang="en">contains a secondary statement of responsibility for a bibliographic item, for example the name of an individual, institution or organization, (or of several such) acting as editor, compiler, translator, etc.</desc>
+```
+
+^b1
+
+### Block 2
+
+XML location: `/elementSpec[1]/desc[2]`.
+
+```xml
+<desc versionDate="2007-12-20" xml:lang="ko">서지 항목의 책임에 관한 2차적 진술, 예를 들어, 편집, 번역 등의 작업을 한 편집, 개인, 기관,
+    또는 기구의 이름</desc>
+```
+
+^b2
+
+### Block 3
+
+XML location: `/elementSpec[1]/desc[3]`.
+
+```xml
+<desc versionDate="2007-05-02" xml:lang="zh-TW">書目項目的次要責任歸屬，例如扮演編輯、編譯、翻譯等角色的個人、機構或組織 (或其他類似者) 的名稱。</desc>
+```
+
+^b3
+
+### Block 4
+
+XML location: `/elementSpec[1]/desc[4]`.
+
+```xml
+<desc versionDate="2008-04-05" xml:lang="ja">書誌情報における、第二位の責任者を示す。個人、団体、組織、編集者、編 纂者、翻訳者の名前など。</desc>
+```
+
+^b4
+
+### Block 5
+
+XML location: `/elementSpec[1]/desc[5]`.
+
+```xml
+<desc versionDate="2009-01-06" xml:lang="fr">mention de responsabilité secondaire pour un item
+    bibliographique, par exemple le nom d'une personne, d'une institution ou d'un organisme (ou de
+    plusieurs d'entre eux) comme éditeur scientifique, compilateur, traducteur, etc.</desc>
+```
+
+^b5
+
+### Block 6
+
+XML location: `/elementSpec[1]/desc[6]`.
+
+```xml
+<desc versionDate="2007-05-04" xml:lang="es">declaración secundaria de responsabilidad para un ítem bibliográfico, por ejemplo un nombre particular, o institucional (o cualquier otro) que ha actuado como editor, compilador, traductor, etc.</desc>
+```
+
+^b6
+
+### Block 7
+
+XML location: `/elementSpec[1]/desc[7]`.
+
+```xml
+<desc versionDate="2007-01-21" xml:lang="it">è la dichiarazione di responsabilità secondaria di ciascuna unità bibliografica, ad esempio il nome di un individuo, di un'istituzione o organizzazione che agisce come curatore, compilatore, traduttore, ecc.</desc>
+```
+
+^b7
+
+### Block 8
+
+XML location: `/elementSpec[1]/desc[8]`.
+
+```xml
+<desc versionDate="2017-06-04" xml:lang="de">beinhaltet zusätzliche Angaben zur Verantwortlichkeit für ein bibliografisches Objekt, z. B. den Namen einer Person, Institution oder Organisation (oder mehreren davon), welche als Herausgeber, Kompilator, Übersetzer etc. fungiert.</desc>
+```
+
+^b8
+
+### Block 9
+
+XML location: `/elementSpec[1]/classes[1]`.
+
+```xml
+<classes>
+    <memberOf key="att.global"/>
+    <memberOf key="att.datable"/>
+    <memberOf key="att.naming"/>
+    <memberOf key="model.respLike"/>
+  </classes>
+```
+
+^b9
+
+### Block 10
+
+XML location: `/elementSpec[1]/content[1]`.
+
+```xml
+<content>
+    <macroRef key="macro.phraseSeq"/>
+  </content>
+```
+
+^b10
+
+### Block 11
+
+XML location: `/elementSpec[1]/exemplum[1]`.
+
+```xml
+<exemplum xml:lang="en">
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="gi-editor-egXML-fr">
+      <editor role="Technical_Editor">Ron Van den Branden</editor>
+      <editor role="Editor-in-Chief">John Walsh</editor>
+      <editor role="Managing_Editor">Anne Baillot</editor>
+    </egXML>
+  </exemplum>
+```
+
+^b11
+
+### Block 12
+
+XML location: `/elementSpec[1]/exemplum[2]`.
+
+```xml
+<exemplum versionDate="2008-04-06" xml:lang="fr">
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="gi-editor-egXML-kx">
+      <editor> Pierre-Jules Hetzel</editor>
+      <editor role="illustrator">George Roux</editor>
+    </egXML>
+  </exemplum>
+```
+
+^b12
+
+### Block 13
+
+XML location: `/elementSpec[1]/exemplum[3]`.
+
+```xml
+<exemplum xml:lang="zh-TW">
+    <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="gi-editor-egXML-ij">
+      <editor>王大明</editor>
+      <editor role="繪圖者">陳紅</editor>
+    </egXML>
+  </exemplum>
+```
+
+^b13
+
+### Block 14
+
+XML location: `/elementSpec[1]/remarks[1]`.
+
+```xml
+<remarks ident="editor-remarks" versionDate="2009-01-13" xml:lang="en">
+    <p rend="dataDesc">A consistent format should be adopted.</p>
+    <p>Particularly where cataloguing is likely to be based on the content of the header, it is
+      advisable to use generally recognized authority lists for the exact form of personal names.
+    </p>
+  </remarks>
+```
+
+^b14
+
+### Block 15
+
+XML location: `/elementSpec[1]/remarks[2]`.
+
+```xml
+<remarks ident="editor-remarks" versionDate="2007-06-12" xml:lang="fr">
+    <p rend="dataDesc"> Il est conseillé d'adopter un format cohérent.</p>
+    <p>Particulièrement lorsque le catalogage repose sur le contenu de l'en-tête TEI, il est
+      conseillé d'utiliser des listes d'autorité reconnues pour trouver la forme exacte des noms de
+      personnes.</p>
+  </remarks>
+```
+
+^b15
+
+### Block 16
+
+XML location: `/elementSpec[1]/remarks[3]`.
+
+```xml
+<remarks ident="editor-remarks" versionDate="2008-04-05" xml:lang="ja">
+    <p rend="dataDesc"> 一貫した形式で記述されるべきである。 </p>
+    <p> 特に、書誌情報をヘダー内容に依存する際には、個人名の正確な形のリス トを使用した方がよい。 </p>
+  </remarks>
+```
+
+^b16
+
+### Block 17
+
+XML location: `/elementSpec[1]/remarks[4]`.
+
+```xml
+<remarks ident="editor-remarks" versionDate="2017-06-04" xml:lang="de">
+    <p rend="dataDesc">Es sollte auf ein einheitliches Format geachtet werden.</p>
+    <p>Vor allem wenn die Katalogisierung auf dem Inhalt des TEI-Headers aufbauen soll, wird die
+      Verwendung allgemein gebräuchlicher Normdateien für die Namensansetzung empfohlen.</p>
+  </remarks>
+```
+
+^b17
+
+### Block 18
+
+XML location: `/elementSpec[1]/listRef[1]`.
+
+```xml
+<listRef>
+    <ptr target="#COBICOR"/>
+  </listRef>
+```
+
+^b18
+

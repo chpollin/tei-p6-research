@@ -9,7 +9,7 @@ method:
 status: draft
 language: en
 created: "2026-09-06"
-updated: "2026-09-06"
+updated: "2026-09-07"
 related: [INDEX, operations, verification, architecture, design, governance, state]
 ---
 
@@ -31,6 +31,10 @@ the repository root.
 3. `python tools/validate.py .` with every warning investigated.
 4. `python -m tools.corpus.validate_control_plane .` after any change to the
    registry, a lock, a manifest or a normalized corpus record.
+   For Guidelines admissions, distillates, the coverage projection or its
+   converter, also run `python -m tools.ingest_guidelines --check`. This checks
+   finite source coverage, preserved identities and current processing facts;
+   it grants no scholarly status.
 5. `python -m pytest tests -q` when shared behavior, tools, schemas or
    fixtures changed, otherwise the focused tests of the changed module.
 6. The reproduction checks below for every experiment and page the change
@@ -94,6 +98,15 @@ rebuilds from the pushed revision. A fork must enable GitHub Pages with
 GitHub Actions as its source before its first deployment.
 
 ## Reproduction checks
+
+The full English Guidelines intake and its coverage projections reproduce
+with `python -m tools.ingest_guidelines --check`. It works in a clean checkout
+without ignored source files, a raw release ZIP or the Git mirror. The
+tracked representations contain the exact XML used for their checks.
+`tests/test_ingest_guidelines.py` exercises that clean-checkout path, missing
+and modified sources, literal DTD examples versus live declarations,
+dependency boundaries, publication-member matching and escaped public
+coverage links. Both CI and the Pages build run the intake check.
 
 The experiments reproduce with these commands, which need no raw corpus
 unless stated.
