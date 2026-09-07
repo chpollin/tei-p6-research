@@ -681,3 +681,14 @@ progress counts belong in [[knowledge/state]] and in the Git history.
 - **Carried by.** `tools/ingest_guidelines.py`, [[knowledge/data]],
   [[knowledge/operations]], [[knowledge/plan]], [[knowledge/testing]],
   [[knowledge/design]], [[knowledge/state]].
+
+## 2026-09-07 — Plattformunabhängige Sortierung der Wissensnavigation
+
+- **Decision.** Die Navigation sortiert Dateinamen explizit ohne Beachtung
+  der Großschreibung und verwendet den originalen Namen als zweiten Schlüssel.
+- **Why.** Windows und Linux vergleichen Path-Objekte unterschiedlich. Nach
+  der Umbenennung von `index.md` zu `INDEX.md` reproduzierte die Knowledge-Seite
+  deshalb in GitHub Actions die unter Windows erzeugte Reihenfolge nicht.
+- **Supersedes.** Die implizite Sortierung nach dem Path-Vergleich des Systems.
+- **Carried by.** `tools/sitegen/knowledge_view.py` und
+  `tests/test_build_knowledge.py`.

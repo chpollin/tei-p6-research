@@ -12,6 +12,20 @@ from tools.sitegen.markup import doc_id
 ROOT = Path(__file__).parents[1]
 
 
+def test_navigation_order_is_independent_of_platform_path_order(vault):
+    write(vault, 'knowledge/INDEX.md', '# Index\n')
+    write(vault, 'knowledge/architecture.md', '# Architecture\n')
+    write(vault, 'glossary/Zeta.md', '# Zeta\n')
+    write(vault, 'glossary/alpha.md', '# Alpha\n')
+    navigation = build_view(vault, '2026-09-07')['navigation']
+    assert [item['path'] for item in navigation] == [
+        '30_assertions/MOC-Test.md',
+        'knowledge/architecture.md', 'knowledge/INDEX.md',
+        'knowledge/state.md', 'knowledge/text-model.md',
+        'glossary/alpha.md', 'glossary/Zeta.md',
+    ]
+
+
 class Page(HTMLParser):
     def __init__(self, text):
         super().__init__()

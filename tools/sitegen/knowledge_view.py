@@ -239,7 +239,7 @@ def build_view(root: Path, date: str, repository_base: str | None = None) -> dic
                     source["version"] = commit.group(1)
             entry["source"] = source
     for directory, label in (("knowledge", "Project contract"), ("glossary", "Glossary")):
-        for file in sorted((root / directory).glob("*.md")):
+        for file in sorted((root / directory).glob("*.md"), key=lambda p: (p.name.casefold(), p.name)):
             path = file.relative_to(root).as_posix()
             meta, body = read_document(root, path)
             navigation.append({"path": path, "title": _title(meta, body, path), "kind": label})
