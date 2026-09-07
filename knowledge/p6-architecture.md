@@ -9,14 +9,14 @@ method:
 status: draft
 language: en
 created: "2026-09-06"
-updated: "2026-09-06"
-related: [text-model, text-model-bindings, p6-evaluation, experiments, design, plan, state]
+updated: "2026-09-07"
+related: [model-design, text-model, text-model-bindings, p6-evaluation, experiments, design, plan, state]
 ---
 
 # P6 Architecture
 
 This document holds the candidate architecture around the
-[[knowledge/text-model|text model]]. It states how shared models can be
+[[knowledge/model-design|model design]]. It states how shared models can be
 selected, constrained and extended, how identifiers, releases, compatibility
 and decisions evolve, and how examples and migration make P5 and candidate
 comparisons executable. Everything here is an independent project proposal.
@@ -83,9 +83,11 @@ defines concepts and their intended semantics. A blueprint selects and
 organizes a coherent contract for a domain or document family. A project
 customization restricts or extends a declared blueprint. An instance names the
 exact model, blueprint, customization, and binding versions against which it
-claims conformance. The four modeling levels of the text model's wider sketch
-name the same stack without the project customization step
-([text model, section 11](text-model.md#four-modeling-levels)).
+claims conformance. The four levels in
+[[knowledge/model-design#modeling-levels|Modeling levels]] distinguish the
+metamodel, domain model, blueprint and instance. Project customization is the
+versioned operation that derives a more specific blueprint contract before an
+instance claims conformance.
 
 ### Blueprint responsibilities
 
@@ -117,6 +119,34 @@ Whether a particular operation is allowed depends on the invariant being
 modified. Core invariants may be non-overridable; blueprint rules may declare
 controlled variation points; local additions must use stable identities and
 must not impersonate shared concepts.
+
+### Classification and specialization
+
+Open descriptive categories use repeatable relations to identified vocabulary
+concepts. A binding may expose such a relation as a typed attribute, but the
+mapping must retain the concept identifier, classification dimension and any
+scope or qualification. Multiple values remain possible unless a blueprint
+declares a narrower cardinality.
+
+A subclass requires a semantic consequence beyond a convenient label. Its
+definition states distinct identity criteria, additional constraints or valid
+inferences that apply to every instance. Function, purpose, legal form and
+contextual significance therefore remain properties unless the declared domain
+model justifies stronger semantics.
+
+### External ontology mappings
+
+External ontologies supply comparison targets and reusable definitions for
+named functions. A mapping record identifies the external ontology and
+version, its class or property, the local model object, the asserted mapping
+relation, supporting rationale and known mismatch. Exact equivalence requires
+compatible identity conditions and formal consequences. Similar labels justify
+only investigation.
+
+A blueprint imports an external definition only when the imported semantics
+and dependencies form part of its declared contract. Otherwise it records a
+qualified alignment or uses the comparison to test a local distinction. The
+current function-based comparison frame is in [[knowledge/model-design]].
 
 ### Composition and conflict
 
@@ -170,6 +200,14 @@ objects and constraints from which they were produced.
 An instance validator should report the model stack it used and the origin of
 each failing rule. Reproducibility requires immutable version identifiers or
 content hashes for every dependency.
+
+An authoring profile may provide compact inline syntax for simple annotations.
+Its versioned expansion maps the source selection, typed values and references
+to the same explicit objects and claims used by advanced authoring. The mapping
+lists every permitted default and inference. Unknown identity, provenance,
+certainty and context remain unasserted unless the input or a separately
+identified enrichment provides them. A processor can display the compact form
+while retaining access to the expanded records and their origins.
 
 ### Open design choices
 
@@ -316,12 +354,22 @@ declared selection protocol.
 
 ### Selection and coverage
 
-The inventory scope is every module of the pinned P5 baseline. It provides a
-finite starting point for locating declarations and their dependencies, not a
-finished taxonomy of textual phenomena. Read effective constraints, Guidelines
-prose, examples, and project customizations before deriving a requirement from
-a declaration. Issues and literature can introduce requirements or challenge
-the interpretation, but do not themselves prove current P5 behavior.
+The inventory scope is every module of TEI P5 4.12.0 at the pinned commit. It
+provides a finite starting point for locating declarations and their
+dependencies, not a finished taxonomy of textual phenomena. Functional
+coverage also examines inherited and effective attributes and classes,
+datatype and content-model restrictions, formal constraints, Guidelines prose,
+examples, ODD mechanisms and representative project customizations. Real cases
+test whether the resulting interpretation accounts for deployed practice.
+Declaration inventory, interpreted P5 behavior, candidate-model mapping and
+executed-case coverage remain separately reported.
+
+The importer and comparison record preserve distinctions left open by the P5
+source or its customization. An absent identifier, unknown referent, uncertain
+value or context-dependent interpretation remains absent, unknown, uncertain
+or scoped unless a separate enrichment claim supplies evidence. Issues and
+literature can introduce requirements or challenge the interpretation, but do
+not themselves prove current P5 behavior.
 
 A case records module and specification references separately from document
 or text type, transmission or media form, and phenomenon. For example, letter,
@@ -356,14 +404,23 @@ evidence layer or require those directories to be reorganized.
 | P5 alternatives | One or more variants, each with a stable ID, rationale, full relevant input context, processor assumptions, and separately reported validity and preservation checks |
 | Candidate instance | Exact model version and records, mapping policy, profiles and processor dependencies, unresolved objects and references |
 | Formal description | Object meanings and identities, relation domains and ranges, cardinalities, order, invariants, operations, and expected valid and invalid behavior |
-| Serializations | Binding version, generated syntax, supported domain, parser and decoder results, comparison relation, and unsupported formats |
+| Serializations | XML, JSON and RDF views with the same case ID, scope and meaning; binding version or proposal status; generated syntax; supported domain; parser and decoder results; comparison relation; and unsupported features |
 | Evaluation | Required observations, discrepancies, losses, unknowns, manual decisions, and reverse-mapping tests for each alternative |
 
-P6 XML denotes a binding of this independent candidate. Only bindings with a
-declared contract may be presented as supported. The
-[[knowledge/text-model-bindings|version 0.1 binding contract]] names the
-bounded interchange definitions. RDF, JSON-LD, and any other unimplemented
-binding remain open work rather than selectable equivalent outputs.
+Every worked example presents XML, JSON and RDF views. RDF may use Turtle.
+These views share the canonical case records and may not change IDs, scope or
+meaning between serializations. Each view is labeled `implemented`, `proposed`
+or `unsupported`, and its preservation table states what the view represents,
+normalizes, omits or cannot express. A proposed view is inspectable design
+material and supplies no implementation result.
+
+Only bindings with a declared contract may be presented as supported. The
+[[knowledge/text-model-bindings|version 0.1 binding contract]] retains the
+existing bounded YAML interchange. XML, JSON and RDF views add comparison
+surfaces without removing that contract. An RDF export establishes no lossless
+or reversible binding until an encoder, decoder and comparison relation have
+passed the required checks. XML and JSON projections of narrative or
+tradition-scoped claims must carry that scope explicitly.
 
 ### P5 variants and model alternatives
 
@@ -408,8 +465,10 @@ requirements is [[knowledge/design]].
 A complete case contains a minimal example that isolates one rule, a realistic
 example that preserves domain complexity, a boundary or adversarial example,
 an invalid example with an expected diagnostic, and a migration example from
-the pinned P5 baseline. When multiple serializations are in scope, the case also
-defines their expected semantic equivalence or declared loss.
+the pinned P5 baseline. Each case has XML, JSON and RDF views derived from the
+same canonical case definition. Their status and preservation results remain
+separate. Roundtrip validation runs only for an implemented binding with a
+declared encoder, decoder and comparison relation.
 
 Negative cases test the model's constraints and expected diagnostics.
 
@@ -477,15 +536,23 @@ exclusive label would hide those combinations.
 
 | Axis | Required distinction |
 |---|---|
-| coverage | all in-scope constructs mapped, only a named subset mapped, or unsupported |
-| model preservation | all required distinctions preserved, a named task-equivalence preserved, or explicit losses/unknowns |
-| lexical change | none, or an enumerated set of normalizations and other changes |
+| functional coverage | all in-scope P5 constructs and effective rules accounted for, only a named subset accounted for, or unsupported |
+| unchanged input | accepted and interpreted as supplied, accepted only in a named compatibility mode, or requires source transformation |
+| semantic preservation | all required distinctions preserved, a named task-equivalence preserved, or explicit losses and unknowns |
+| P5 reverse mapping | reconstructable under a named comparison relation and package context, reconstructable only for a declared subset, not reconstructable, or untested |
+| lexical identity | identical lexical XML, or an enumerated set of prefix, ordering, whitespace, quoting and other lexical changes |
+| byte identity | identical bytes, changed bytes, or untested, with encoding and line-ending policy named |
+| legacy processing | tested processor behavior preserved, changed, unsupported, or untested for each named processor and workflow |
 | dependency | deterministic from declared inputs, policy-dependent, externally enriched, or unresolved, with combined dependencies recorded |
-| reversibility | reconstructable under a named comparison relation and package context, not reconstructable, or untested |
 
 Migration reports identify the source object, target object, applied rule,
 confidence or determinism, warnings, information loss, manual intervention, and
 reverse-mapping behavior.
+
+Candidate features with no P5 representation remain outside the declared
+reverse-mapping domain. A converter must refuse them, preserve them through an
+explicit extension mechanism or report a defined loss. Success on the P5
+subset does not establish reversibility for these features.
 
 Each axis needs a decision rule and case-level evidence before a machine-readable
 schema is introduced. Use the comparison distinctions of the serialization and
@@ -526,17 +593,30 @@ dimensions and coverage reported separately for inventory, interpretation,
 requirements and executed cases, is stated in section 1 of the
 [P6 Design chapter](../40_output/12-p6-design.md).
 
-P5 Architecture, Elements and Classes, and ODD and Customization establish the
-baseline. Text and Document Structures, Annotation and Overlap, Critical
-Apparatus, and Metadata and Entities develop the required distinctions. History
-and Governance and Issues and Decisions establish the dated problem and
-decision context. Abstract Model develops the conceptual alternatives.
-Interoperability and Processing evaluates their executable consequences. P6
-Design brings those arguments together without treating their recommendations
-as externally established facts.
+The output documents have distinct reader-facing functions. The following
+table assigns those functions without making the twelve topic maps a
+requirement for twelve separate manuscripts. Current existence and review
+state belong in [[knowledge/state]].
 
-Reading entry points are the [text identity pilot](../40_output/02-abstract-model.md)
-and [selection, hierarchy, and identity](../40_output/06-annotation-and-overlap.md).
-Their grounding stays with assertions. These links provide navigation only.
-The nine-part structure that these chapters serve is in the
-[[knowledge/p6-evaluation|P6 evaluation]].
+| Output | Function and boundary |
+|---|---|
+| `01-p5-architecture.md` | Explain the P5 baseline, its effective architecture, established capabilities, and demonstrated problems. Elements, classes, and ODD enter this synthesis when their evidence is ready. |
+| `02-abstract-model.md` | Define and justify the bounded model in independently readable prose, including identity, selection, structure, claims, extensions, invariants, examples, and limits. Exact implementation grammars remain in the model and binding contracts. |
+| `06-annotation-and-overlap.md` | Preserve the separately checkable source argument about selection, hierarchy, and identity. It supplies requirements for the model. |
+| `08-metadata-and-entities.md` | Preserve the source argument distinguishing mentions, names, entity records, statements, and identification. It supplies requirements for the entity extension. |
+| `11-interoperability-and-processing.md` | Evaluate binding preservation and P5 migration, with declared mappings, refusals, losses, policy dependencies, reversibility, and processing consequences. Model roundtrips and P5 conversion have separate results. |
+| `12-p6-design.md` | Assemble the architecture proposal and option matrix, including customization, versioning, governance, adoption consequences, recommendation, and reversal conditions. It uses the definition in chapter 02 without duplicating the complete contract. |
+
+Additional topic chapters are justified when they sustain an independently
+checkable argument that would otherwise obscure these functions. Text and
+Document Structures is a possible such chapter. Customization, critical
+apparatus, and history can likewise merit separate syntheses once their
+evidence and argument require them. Topic registration alone supplies no
+reason to create a placeholder output or to synthesize unreviewed claims.
+
+The [Abstract Model proposal](../40_output/02-abstract-model.md) is the entry
+point for the definition. The [architecture proposal](../40_output/12-p6-design.md)
+is the entry point for the whole argument. Their factual premises cite
+assertions directly. Links between chapters and Knowledge Documents provide
+navigation and do not replace grounding. The nine-part argument structure
+remains in [[knowledge/p6-evaluation|P6 evaluation]].

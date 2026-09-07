@@ -28,7 +28,7 @@ need before linking there.
 
 | File | Owns |
 |---|---|
-| `README.md` | public landing page, objective, method in one paragraph, route table, attribution, licence statement, independence notice |
+| `README.md` | public entry point for research goals, central results, human and agent workflows, local execution, licences and a brief provenance link |
 | `CLAUDE.md`, `AGENTS.md` | harness-specific action layer with project identity, the hard research contracts, the route table and the generation commands, identical except for the harness paragraph |
 | `CONTRIBUTING.md` | contribution paths and the text-identity rule for contributions |
 | `LICENSE`, `LICENSE-CODE`, `CITATION.cff`, `codemeta.json` | licences and citation metadata |
@@ -50,14 +50,29 @@ The rule families and their homes are these.
 | completion gate, continuous integration, reproduction commands, test layout | [[knowledge/testing]] |
 | authority chain, untrusted content, transitions, source status ownership, publication boundary, roles, work packages, model policy | [[knowledge/governance]] |
 | public workbench information architecture and interaction contract | [[knowledge/design]] |
+| executable text and entity record contracts | [[knowledge/text-model]] and [[knowledge/text-model-bindings]] |
+| proposed model development and ontology comparison | [[knowledge/model-design]] |
+| complete illustrative instances in XML, JSON and RDF | [[knowledge/model-examples]] |
+| documentary ontology, external comparison register and generated class hierarchy | [[knowledge/ontology]] |
+| source-specific HSA instance profile, bindings and semantic coverage boundary | [[knowledge/hsa-profile]]; the case README explains the editorial comparison |
+| P5 preservation and pragmatic acceptance criteria | [[knowledge/p6-evaluation]] |
 | milestones, research packages, operator decisions | [[knowledge/plan]] |
 | method rationale | [[knowledge/schema]] § Rationale |
 
 Git history records what changed. [[knowledge/state]] records what is true
 now, [[knowledge/handoff]] what the next session must pick up, and
 [[knowledge/journal]] only durable decisions and their rationale. A
-release-oriented changelog is deferred until the project publishes named
-versions.
+named research baseline is described in [[knowledge/releases]] and identified
+by an annotated Git tag. Its publication state belongs in [[knowledge/state]].
+
+The model design and executable contract have different change boundaries.
+The former consolidates proposed concepts and the wider metamodel requirements;
+the latter preserves the meaning of the record versions that validators read.
+Chapter 02 explains both with explicit scope. A design discussion does not
+change package conformance. The examples have a separate home because their
+resource definitions and syntax comparisons require their own consistency
+checks; the design document owns the conceptual decisions. Source analyses remain in the research chain and
+are linked from the design rather than copied into it.
 
 ## System planes
 
@@ -100,6 +115,24 @@ locators, dependencies and actual distillate presence for navigation only.
 It creates no additional grounding layer. The Materials and Knowledge
 builders expose this baseline through their existing pages.
 
+`tools/export_guidelines.py` reconstructs admitted XML bytes in an explicitly
+selected export directory using the original upstream paths. Its inventory
+records source identities and the export boundary; it is not a new admission
+or grounding layer. Export never expands external entities or includes.
+
+`tools/build_guidelines_navigation.py` owns
+`corpus/projections/guidelines-navigation-4.12.0.json`. This generated navigation
+joins the admitted sources and the existing specification atlas. Each source
+retains its representation path and receives rule-attributed topic suggestions
+or an explicit unclassified reason. Topic identifiers must resolve to existing
+MOCs. Specification records expose declared modules, categories and references;
+reverse references preserve the same declared edge meaning. Unresolved targets
+remain visible. Source hashes and the pinned release identify the inputs.
+The projection asserts neither effective inheritance nor compiled ODD semantics,
+and its suggestions do not assign scholarly status or alter immutable sources.
+The Knowledge page may use it for navigation and filters. It is never a
+grounding target.
+
 ```text
 registered source -> raw observation -> normalized record -> projection
 ```
@@ -136,6 +169,14 @@ The design plane consists of the model documents in `knowledge/`,
 library lives in `tools/models/`, the pilot runners in `tools/pilots/` and
 `tools/tei/`, the hand-authored inputs and generated reports under
 `experiments/`, and the review audit records under `workbench/reviews/`.
+
+The separate `ontology/` experiment has a curated Turtle core and annotated
+external comparison register. `tools/check_ontology.py` owns its RDF/XML,
+JSON-LD and Mermaid projections. [[knowledge/ontology]] defines their authority,
+generation and bounded structural checks. The instance examples retain their
+own illustrative contract in [[knowledge/model-examples]], checked across all
+three syntaxes by `tests/test_model_design_examples.py`. Neither artifact set
+replaces an existing package or binding version.
 
 ```text
 grounded source findings + explicit requirement or model posit
@@ -203,6 +244,13 @@ only in [[knowledge/state]] and run manifests. Public entry points link to
 that state instead of repeating values that will drift.
 
 ## Lineage
+
+The research infrastructure was adapted from
+[DigitalHumanitiesCraft/grounded-vault](https://github.com/DigitalHumanitiesCraft/grounded-vault)
+at commit `e19231735832f486735f94250d2771441372667e`, licensed under CC BY 4.0.
+Its original architecture, validation tools, tests, documentation, and
+Claude-oriented skills remain attributable to Christopher Pollin /
+Digital Humanities Craft OG. The README links here for this attribution.
 
 A Grounded Vault project selects its purpose, controlled topics, source types,
 output genre, working language, human verification role and checking

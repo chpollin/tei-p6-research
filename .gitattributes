@@ -13,3 +13,13 @@
 10_markdown/documents/tei-p5-span-4.12.0.md -whitespace
 10_markdown/documents/tei-p5-annotation-4.12.0.md -whitespace
 10_markdown/documents/humboldt-h0017682-7d174637.md -whitespace
+10_markdown/documents/szd-werke-2026-09-07.md -text -whitespace
+10_markdown/documents/hsa-letter-4493-2026-09-07.md -text -whitespace
+
+# Reconstructed HSA originals keep their admitted bytes and whitespace.
+experiments/hsa_letter_4493/p5.xml -text -whitespace
+# These generated literals preserve source whitespace inside XML/Turtle values.
+experiments/hsa_letter_4493/p6.xml -whitespace
+experiments/hsa_letter_4493/p6.ttl -whitespace
+experiments/hsa_letter_4493/preservation.xml -whitespace
+experiments/hsa_letter_4493/preservation.ttl -whitespace

@@ -15,6 +15,28 @@ related: [INDEX, specification, plan, state]
 
 # Journal
 
+## 2026-09-07 — Source-context review and structure-run boundary
+
+The bounded structure run uses a local review runner to recover XML ancestor
+identities from the immutable embedded source and bibliographic identities
+from the citation register. This makes attribute names and issue identities
+visible in the bare passage/statement prompt without adding author reasoning.
+The global cutter and the source representations remain unchanged. Verdicts
+bind to the enriched prompts, and changed claims or source context require
+fresh review. Emitted pairs alone establish no research status.
+
+The user authorized GPT-6 workers for all three implementation areas. New
+distillates and assertions remain `grounded` until source-support review;
+the chapter draft stays in the review directory until the assertions qualify
+for synthesis under the governance contract. The differing explanations of
+fragment positions in DS and att.fragmentable are retained as source-qualified
+statements and an open interpretation question. They do not establish an
+accepted correction or a P6 requirement.
+
+The text-identity report's sole input-fingerprint change records a previously
+unregenerated knowledge/experiments.md edit. Its 38 case results are unchanged.
+A regression check now compares the committed report against current inputs.
+
 Chronological decision record of the vault, append-only, newest entry last. The
 knowledge documents carry the current state, and every entry here carries one
 dated decision in a fixed form, what was decided, why, what it replaces and
@@ -692,3 +714,253 @@ progress counts belong in [[knowledge/state]] and in the Git history.
 - **Supersedes.** Die implizite Sortierung nach dem Path-Vergleich des Systems.
 - **Carried by.** `tools/sitegen/knowledge_view.py` und
   `tests/test_build_knowledge.py`.
+
+## 2026-09-07 — Export und Erschließung der aufgenommenen Guidelines
+
+- **Decision.** Die unveränderlichen Repräsentationen bleiben die Quellenbasis.
+  Ein Export rekonstruiert daraus die XML-Dateien im ursprünglichen Git-Pfadlayout.
+  Eine zusätzliche generierte Navigationsprojektion verbindet alle aufgenommenen
+  Quellen mit Themenvorschlägen, Modulen, Spezifikationsarten und deklarierten
+  Beziehungen des vorhandenen Atlas. Automatische Themenzuordnungen nennen ihre
+  Regel; fehlende Zuordnungen bleiben sichtbar. Der vorbereitete Struktur-Durchlauf
+  erschließt seine Quellen separat und führt Vergleiche erst in Assertions zusammen.
+- **Why.** Mitarbeitende benötigen exportierbare Quelldateien und fachliche
+  Einstiegspunkte vor der vollständigen Auswertung. Navigationszuordnung und
+  deklarierte Beziehungen begründen keine wissenschaftlichen Aussagen.
+- **Supersedes.** Keine Quellenrepräsentation, kein Anker und kein Forschungsstatus
+  werden durch Export oder Navigation verändert.
+- **Carried by.** `tools/export_guidelines.py`, `tools/build_guidelines_navigation.py`,
+  [[knowledge/architecture]], [[knowledge/operations]] und die getrennten
+  Artefakte des Struktur-Durchlaufs in der bestehenden Evidenzkette.
+
+## 2026-09-07 — Identität und Quellenbezug an Katalog und Korrespondenz
+
+- **Decision.** Der vom Nutzer benannte Zweig-Werkkatalog und ein ausgewählter
+  Schuchardt-Brief bilden eine gezielte Zweiquellenstudie. Die vollständigen
+  XML-Antworten werden als datierte, unveränderliche Quellen aufgenommen.
+  Quellenbefunde durchlaufen die bestehende Kette bis zu vorläufigen Assertions.
+  Ein experimentelles Profil auf Modell 0.2 verwendet vorhandene Entitäten,
+  Aussagen, Annotationen, Selektionen und Beziehungen. Sein Dossier enthält
+  zusätzlich technische Herkunftsangaben für die ausgewählten XML-Ausschnitte.
+  Diese Angaben und der Versuchsbericht bleiben unter `experiments/`; sie
+  bilden keine neue Grounding-Ebene. Die Profilregeln erhalten ein eigenes
+  Knowledge Document, weil Quellenprüfung und fachliche Identitätsbeziehungen
+  eine andere Änderungsgrenze als der allgemeine Textmodellvertrag haben.
+- **Why.** Eine gemeinsame Werkreferenz begründet noch keine Fassungsidentität.
+  Übernommene Zuschreibungen benötigen ihre genaue Quellenstelle und ihre
+  ursprüngliche Qualifikation. Die Autorität einer Quelle, die Verantwortung
+  für eine Übernahme und eine eigene fachliche Bewertung müssen unterscheidbar
+  bleiben. Das lässt sich zunächst ohne neue Record-Kinds im Kern prüfen.
+- **Supersedes.** Die pauschale Entscheidungsfrage nach demselben Text wird
+  durch konkrete Kriterien für Werkzugehörigkeit, Textzeugen und
+  Transkriptionsversionen ersetzt. Die bisherigen Modellverträge und die
+  eingefrorene Humboldt-Studie bleiben gültig. Nutzerdelegation erlaubt die
+  Ausarbeitung der Entscheidungen; sie erteilt keine menschliche Verifikation.
+- **Carried by.** [[knowledge/identity-evidence]], [[knowledge/experiments]],
+  `experiments/identity_evidence/`, `tools/models/identity_evidence.py` und die
+  datierten Quellenartefakte. Autor und Implementierer arbeiten in dieser
+  Ausarbeitung im selben GPT-6-Kontext; unabhängige Prüfung wird nicht behauptet.
+
+## 2026-09-07 — Eigenständige Modell-Proposal und Output-Funktionen
+
+- **Decision.** Kapitel 02 definiert und begründet den erklärten Umfang des
+  abstrakten Modells einschließlich Erweiterung 0.2 und optionalem Quellenprofil.
+  Kapitel 12 trägt das Gesamtargument zur P6-Architektur. Die formalen
+  Detailverträge bleiben in den Knowledge Documents. Weitere Outputs entstehen
+  nach fachlicher Funktion und Beleglage. Die zwölf Themenkarten erzwingen
+  keine zwölf ausgearbeiteten Kapitel.
+- **Why.** Der ursprüngliche Pilottext beantwortete die Frage nach einer
+  zusammenhängenden Modelldefinition nicht. Die Ausarbeitung trennt
+  Modellentscheidung, ausgeführte Regel und noch nicht abgesicherte Garantie.
+  Bei der Prüfung wurden Grenzen des Revisionsschutzes und eine Kollision
+  reservierter IDs bei der Übernahme von 0.1 nach 0.2 beobachtet.
+- **Review boundary.** Die alte Pilot-Review bleibt auf ihre vier Assertions
+  und drei Distillate beschränkt. Ihr Checker ermittelt deren eigene
+  Grounding-Abhängigkeiten. Eine Erweiterung von Kapitel 02 vergrößert diese
+  historische Prüfung nicht. Geänderte Pilot-Abhängigkeiten oder Prompts
+  bleiben Fehler. Das erweiterte Kapitel erhält eine separate Struktur- und
+  Implementierungskonsistenzprüfung. Seine fachliche Abnahme bleibt offen.
+- **Carried by.** `40_output/02-abstract-model.md`, [[knowledge/p6-architecture]],
+  [[knowledge/specification]], die präzisierten Modellverträge und
+  `tools/check_text_identity_pilot.py`. Der Integrator schreibt den Text.
+  Auf ausdrücklichen Nutzerwunsch prüft GPT-6 Astra die Modellsemantik und
+  GPT-5.6 Sol den Output-Bestand. Der gemeinsame read-only Brief liegt in
+  `workbench/reviews/2026-09-07-abstract-proposal/brief.md`, SHA-256
+  `b54862a7eede32802e58d4a6e7d1dc145ca46174891aff03d9b7b96d15a71479`.
+  Beide Beiträge sind Konsistenzprüfungen und keine unabhängige
+  Source-Support-Review nach dem Forschungsprotokoll.
+
+## 2026-09-07 — README als Einstieg in die Forschungsarbeit
+
+- **Decision.** Die README erläutert Forschungsziele und zentrale Ergebnisse
+  vor den Arbeitswegen für Menschen und AI-Harnesses. Claude Code und Codex
+  verweisen auf ihre vorhandenen Adapter. Für pi und weitere Harnesses wird
+  das ausdrückliche Einlesen von `AGENTS.md` beschrieben.
+- **Why.** Der Repository-Einstieg soll die gemeinsame inhaltliche Arbeit
+  ermöglichen. Die ausführliche Quellenmethodik bleibt in den verantwortlichen
+  Knowledge Documents. Grounded Vault erhält in der README einen kurzen
+  Repository-Link. Die vollständige bisherige Attribution steht verlustfrei
+  unter [[knowledge/architecture]] im Abschnitt Lineage.
+- **Carried by.** `README.md`, [[knowledge/architecture]] und die daraus
+  generierte About-Seite. Es wird keine beobachtete pi-Integration behauptet.
+
+## 2026-09-07 — Modellwissen und Beispiele konsolidieren
+
+- **Decision.** Die Modellentwicklung berücksichtigt Editionen, Sprachkorpora
+  und Dokumentkataloge. Der Entwurf trennt Referent, beschreibenden Datensatz,
+  eigenständige Namensform, Erwähnung und zugeschriebene Aussage. Organisations-
+  klassifikationen bleiben entlang getrennter Dimensionen erweiterbar. Bei
+  Orten werden Identität, Lokalisierung, historische Geltung, kulturelle oder
+  religiöse Zuschreibung, Erzählkontext und fachliche Einschätzung unterschieden.
+  Jedes ausgearbeitete Beispiel wird in XML, JSON und RDF mit denselben
+  Ressourcen und Aussagekontexten beschrieben. P5-Funktionsabdeckung,
+  Rückwärtskompatibilität und einfacher Eingabeaufwand bleiben eigenständige
+  Prüfanforderungen.
+- **Why.** Die benannten Aufgaben verlangen Textbegriffe über editorische
+  Fassungsgruppen hinaus und offenere Beschreibungen als eine geschlossene
+  Liste von Organisationstypen oder ein einzelnes Fiktionalitätsattribut.
+  Vollständige Beispielregistries erlauben, die Unterschiede zwischen den
+  Syntaxansichten konkret zu prüfen. Die Ontologien werden nach ihren
+  jeweiligen Funktionen verglichen; die Linkliste begründet keine Übernahme.
+- **Supersedes.** Die verstreuten Entwicklungsskizzen in den Abschnitten 10
+  und 11 des Textmodells werden in ein kanonisches Designdokument überführt.
+  Ihre weiterführenden Struktur- und Metamodellanforderungen bleiben erhalten.
+  Die ausführbaren Bedeutungen der Versionen 0.1 und 0.2 werden dadurch nicht
+  geändert. Die frühere Behauptung von XML/JSON/YAML-Roundtrips für 0.2 wird
+  korrigiert: Diese Codecs akzeptieren ausschließlich 0.1. Für 0.2 bestehen
+  JSON-Pakete, Entity-Operationen und ein separater einseitiger RDF-Export.
+- **Carried by.** [[knowledge/model-design]] enthält die Begriffe und Gründe;
+  [[knowledge/model-examples]] enthält die vollständigen Fälle. Kapitel 02
+  argumentiert die Erweiterungen ausdrücklich als Posits. Spezifikation,
+  Architektur, Bewertung, Arbeitswege und Modellverträge verweisen auf diese
+  Zuständigkeiten. GPT-6 Astra bearbeitete auf ausdrücklichen Nutzerwunsch die
+  Modellsemantik, GPT-5.6 Sol die P5-Kriterien und Dokumentationsprüfung.
+  Der unveränderte Brief liegt unter
+  `workbench/reviews/2026-09-07-model-consolidation/brief.md`, SHA-256
+  `1eaa034cb2314d6d1e1404b999f995d0754ade9a81301e4f940400c997cb626e`.
+  Die Prüfung ist eine Konsistenzprüfung des Entwurfs; sie vergibt keinen
+  Forschungsstatus und ersetzt keine unabhängige Quellenprüfung.
+
+## 2026-09-07 — Dokumentarischer Ontologiekern als prüfbarer Entwurf
+
+- **Decision.** Ein begrenztes Ontologieexperiment unter `ontology/` definiert
+  dokumentarische Record-Klassen und ihre Beziehungen. `core.ttl` ist die
+  kuratierte Begriffsdefinition. Externe Verbindungen werden in
+  `alignment-candidates.ttl` als begründete Prüfkandidaten dokumentiert.
+  RDF/XML, JSON-LD und die Record-Klassenhierarchie werden daraus erzeugt.
+  Die begriffliche Hierarchie beschriebener Gegenstände bleibt separat.
+  Der Vertrag liegt in [[knowledge/ontology]].
+- **Why.** Die bisherige Skizze vermischt stellenweise Gegenstände mit ihren
+  Records und Namensformen mit Verwendungskategorien. Eine explizite
+  Record-Ontologie kann solche Kategorien prüfen. Externe Klassenaxiome
+  erfordern zusätzlich begründete Identitäts- und Interpretationsverträge.
+  Das Experiment importiert daher keine fremden Ontologien und behauptet
+  keine Klassenäquivalenzen. Es erhält eigene Artefakt- und Prüfgrenzen.
+- **Supersedes.** Die bloße Ontologielinkliste wird um maschinenlesbare
+  Vergleichskandidaten ergänzt. Die ausführbaren Modellversionen 0.1 und
+  0.2 sowie deren bisherigen RDF-Export ersetzt dieser Versuch nicht.
+- **Carried by.** [[knowledge/ontology]], `ontology/`, ein begrenztes Prüf-
+  und Generierungswerkzeug und dessen Tests. Der Architekturentscheid wird
+  vor der Anlage dieser neuen Artefakte festgehalten. Die Prüfung beansprucht
+  keine vollständige OWL-Konsistenz, P5-Abdeckung oder fachliche Abnahme.
+
+## 2026-09-07 — Form, Gebrauch, Aussageinhalt und Haltung präzisieren
+
+- **Decision.** `NameFormRecord` ersetzt im neuen Entwurf die unpräzise
+  Mischung aus Name und Form. Personen-, Orts- und Organisationsname
+  klassifizieren die Verwendung. `TextRecord` dokumentiert sprachliche
+  Inhaltsidentität; Zuordnung einer Repräsentation, Sammlungsmitgliedschaft
+  und technische Paketmitgliedschaft erhalten getrennte Bedeutungen.
+  Proposition, Haltung des Verantwortlichen und Annotation werden getrennt.
+  Prädikate deklarieren, wie ihre Referenzen interpretiert werden.
+- **Why.** Die Namensform Victoria kann in zwei Vorkommen verschiedene
+  Referenten und Verwendungskategorien haben. Drei Verantwortliche können
+  denselben Inhalt behaupten, berichten und bestreiten. Die frühere Definition
+  einer Identifikationsproposition als Vorschlagsakt ließ die Bedeutung einer
+  Verneinung offen. Eine gemeinsame Inhaltsbelegstelle begründet zudem nicht
+  automatisch jede Haltung zu diesem Inhalt. Diese Gegenfälle präzisieren
+  den bisherigen Entwurf und dessen Grenzen.
+- **Supersedes.** Intrinsische `nameType`-Felder auf Namensformen, das
+  `TextGroupingRecord` des Satzbeispiels, uneindeutige Prädikatsargumente und
+  die Zusammenfassung von Inhalt und Haltung in einem Claim werden in den
+  illustrativen Fällen ersetzt. Bestehende 0.1/0.2-Datenverträge bleiben
+  unverändert. Die Beschreibung des alten RDF-Exports behauptet keine
+  Abwesenheit standardisierter Inferenzfolgen mehr.
+- **Carried by.** [[knowledge/model-design]], [[knowledge/model-examples]],
+  [[knowledge/ontology]], Kapitel 02, das Ontologieexperiment und die
+  jeweiligen Tests. Die Entwicklungsabhängigkeiten werden über `uv.lock`
+  reproduziert; beide Workflows verwenden sie. Vorhandene pytest- und
+  Ruff-Versionen bleiben gepinnt, RDFLib ergänzt die Graphprüfung.
+  Der Brief des kritischen Reviews hat SHA-256
+  `30b3251e1afeb04d9bcf87f55200d73e4a7cd9d56da4072c1dc90ca07a09fc25`,
+  sein Implementierungsfolgeauftrag
+  `6d23c6d2dfabca2d17cbcb084ef4bb93d0660594170902714117fa85ffecf060`.
+
+## 2026-09-07 — Einen vollständigen HSA-Brief als begrenzten P5/P6-Fall erproben
+
+- **Decision.** `experiments/hsa_letter_4493/` erhält ein aus dem bereits
+  aufgenommenen XML-Snapshot reproduzierbares Fallpaket in XML, JSON und RDF,
+  ein Instanzdiagramm und einen expliziten Abdeckungsbericht. Der Versuch
+  verwendet die dokumentarische Kernontologie und ein lokal definiertes
+  Fallvokabular für Herkunft und P5-Strukturübernahme. Der Generator besitzt
+  die erzeugten Dateien; ein handgeschriebenes README erklärt den Vergleich.
+- **Why.** Der reale Brief verbindet Metadaten, Text, Personenverweise und
+  editorische Anmerkungen. An ihm sollen Quellenerhaltung, semantische
+  Übernahme und eigene Interpretation getrennt geprüft werden. Die
+  Textprojektion braucht eine ausdrückliche Regel für XML-Leerraum und
+  Anmerkungen. Ein erhaltener Quellsnapshot allein beweist keine semantische
+  Migration sämtlicher P5-Auszeichnungen.
+- **Supersedes.** Der bisherige Datierungsversuch bleibt erhalten. Dieser
+  zusätzliche Fall erweitert den Betrachtungsumfang auf den ganzen Brief,
+  ohne einen allgemeinen P5-Konverter oder einen offiziellen P6-Standard
+  einzuführen.
+- **Carried by.** `experiments/hsa_letter_4493/`, `tools/build_hsa_case.py`,
+  die zugehörigen Tests und die Verweise in den Modellwissensdokumenten.
+  Die aufgenommenen Quellen und ihre bestehenden Prüfstatus bleiben die
+  Grundlage; der Versuch ist ein Entwurfsartefakt außerhalb der Quellenkette.
+
+## 2026-09-07 — HSA-Profil und Prüfgrenzen konsolidieren
+
+- **Decision.** Der gepflegte Vertrag des HSA-Falls liegt in
+  [[knowledge/hsa-profile]]. Quellenauswertung, deklarative Zuordnungen,
+  Austauschsyntax und Validierung erhalten getrennte Python-Module. Jede
+  gemappte Proposition wird einschließlich Prädikat, Gegenstand, Datentyp,
+  Kontext, Belegstelle und Claim-Haltung geprüft. Unbekannte oder mehrdeutige
+  Eingabefelder werden zurückgewiesen.
+- **Why.** Gegenproben konnten den Absender austauschen, ein Datumsprädikat
+  umdeuten und den Datentyp eines Datums durch eine Zeichenkette ersetzen,
+  ohne dass die semantische Prüfung scheiterte. Die Dateireproduktion erkannte
+  solche Änderungen bereits. Beide Prüfaufgaben bleiben ausdrücklich getrennt.
+- **Decision.** Binding 2 verwendet kurze, fest definierte IRI-Präfixe.
+  `p6.*` enthält den semantischen Teilgraphen, `preservation.*` den ergänzenden
+  Erhaltungsteil. Ihre Vereinigung erhält sämtliche Tripel des bisherigen
+  vollständigen Fallgraphen. Die unveränderte P5-Datei bleibt die Grundlage
+  der Byteerhaltung. Der Leser unterstützt auch das bisherige vollständige
+  Binding 1. Neue Teilgraphdateien und ihr Vertrag werden vor ihrer Erzeugung
+  durch diesen Entscheid eingeführt; das Modellprofil bleibt Version 1.
+- **Decision.** Der Textidentität-Prüfer reproduziert den abgegrenzten Versuch
+  und prüft dessen Quellenreview. Der zentrale Abschluss und CI führen die
+  gesamte Testsuite aus. Der Bericht bindet nur seinen eigenen Vertragsabschnitt
+  in [[knowledge/experiments]] sowie seine ausführbaren Eingaben.
+- **Carried by.** [[knowledge/hsa-profile]], HSA-Generator und Fallpaket,
+  Textidentität-Prüfer, zugehörige Tests und [[knowledge/testing]]. Vorhandene
+  Quellen, Forschungsstatus und die Datenverträge der Modelle 0.1/0.2 werden
+  durch dieses Refactoring nicht geändert.
+
+## 2026-09-07 — Ersten Forschungsstand als Version 0.1.0 sichern
+
+- **Decision.** Der Auftrag zum kontrollierten Sessionabschluss und zu einer
+  sauberen Version 0 wird als lokaler Forschungsstand `v0.1.0` umgesetzt.
+  Ein Commit hält den zusammengehörigen Repository-Stand fest; ein annotierter
+  Git-Tag benennt ihn. Die Versionsnummer bezeichnet das gesamte
+  Forschungsrepository. Modell 0.1, Erweiterung 0.2 und HSA-Binding 2 behalten
+  ihre bisherigen Bedeutungen.
+- **Why.** Proposal, Ontologie, reale Beispiele, ausführbare Prüfungen und
+  bereits vorbereitete P5-Strukturarbeiten brauchen einen gemeinsamen,
+  wiederauffindbaren Ausgangspunkt. Offene Quellenreviews und bekannte
+  Modellgrenzen gehören ausdrücklich zu diesem Entwurfsstand.
+- **Carried by.** [[knowledge/releases]] wird als knapper Versionsnachweis
+  eingeführt; README, Paket- und Zitationsmetadaten verweisen auf denselben
+  Stand. [[knowledge/state]] hält den Abschluss und [[knowledge/handoff]]
+  nur die konkreten Fortsetzungspunkte. Eine Veröffentlichung oder ein
+  Push wird durch die lokale Sicherung nicht vorgenommen.

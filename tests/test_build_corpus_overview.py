@@ -9,9 +9,18 @@ import pytest
 from tools.build_corpus_overview import build_page, prepare_sources
 from tools.sitegen.assets import read_asset
 from tools.sitegen.chrome import render_footer, render_header
-from tools.sitegen.source_data import resolve_repo_file
+from tools.sitegen.source_data import allowed_control_path, resolve_repo_file
 
 REPO = Path(__file__).parents[1]
+
+
+def test_overview_accepts_only_the_declared_identity_intake() -> None:
+    path = "experiments/identity_evidence/intake.json"
+    assert allowed_control_path(path).as_posix() == path
+    assert resolve_repo_file(REPO, path).is_file()
+    for unexpected in ("experiments/identity_evidence/dossier.json", "experiments/other/intake.json"):
+        with pytest.raises(ValueError, match="unexpected local overview link"):
+            allowed_control_path(unexpected)
 
 
 def test_overview_uses_one_table_row_pair_per_primary_source_family() -> None:
@@ -169,6 +178,29 @@ def test_overview_rejects_unsafe_or_unexpected_repository_paths() -> None:
         resolve_repo_file(REPO, "../README.md")
     with pytest.raises(ValueError, match="unexpected local overview link"):
         resolve_repo_file(REPO, "README.md")
+
+
+def test_overview_links_admitted_csl_bibliography() -> None:
+    reference = "references/text-structures-run1.json"
+    assert resolve_repo_file(REPO, reference).is_file()
+    page = build_page(REPO, "2026-09-07")
+    assert f'href="../{reference}"' in page
+    assert "2026-09-07-text-structures-citations.yaml" in page
+    assert page == build_page(REPO, "2026-09-07")
+
+
+@pytest.mark.parametrize("reference", ["references/raw.xml", "references/private/raw.json", "corpus/raw/record.json", "00_sources/source.json"])
+def test_bibliography_permission_does_not_expose_other_paths(reference: str) -> None:
+    with pytest.raises(ValueError, match="unexpected local overview link"):
+        resolve_repo_file(REPO, reference)
+
+
+def test_bibliography_permission_requires_csl_records(tmp_path: Path) -> None:
+    directory = tmp_path / "references"
+    directory.mkdir()
+    (directory / "raw.json").write_text('{"body": "private raw text"}', encoding="utf-8")
+    with pytest.raises(ValueError, match="expected CSL JSON bibliography"):
+        resolve_repo_file(tmp_path, "references/raw.json")
 
 
 def test_overview_build_is_deterministic() -> None:

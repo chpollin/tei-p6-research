@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import json
 from pathlib import Path, PurePosixPath
 from typing import Any
 
@@ -46,7 +47,9 @@ def allowed_control_path(path: str) -> PurePosixPath:
     normalized = PurePosixPath(path.replace("\\", "/"))
     if normalized.is_absolute() or ".." in normalized.parts:
         raise ValueError(f"unsafe local overview link: {path}")
-    if not any(
+    bibliography = len(normalized.parts) == 2 and normalized.parts[0] == "references" and normalized.suffix == ".json"
+    experiment_intake = normalized.parts == ("experiments", "identity_evidence", "intake.json")
+    if not (bibliography or experiment_intake) and not any(
         normalized.parts[: len(prefix)] == prefix
         for prefix in _ALLOWED_OVERVIEW_PATHS
     ):
@@ -66,6 +69,13 @@ def resolve_repo_file(root: Path, reference: str) -> Path:
     candidate = (resolved_root / Path(*normalized.parts)).resolve()
     if not candidate.is_relative_to(resolved_root) or not candidate.is_file():
         raise FileNotFoundError(f"missing or unsafe overview input: {reference}")
+    if normalized.parts[0] == "references":
+        records = json.loads(candidate.read_text(encoding="utf-8"))
+        if not isinstance(records, list) or not records or any(
+            not isinstance(record, dict) or not all(isinstance(record.get(key), str) and record[key] for key in ("id", "type"))
+            for record in records
+        ):
+            raise ValueError(f"expected CSL JSON bibliography: {reference}")
     return candidate
 
 

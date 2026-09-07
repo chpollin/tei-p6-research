@@ -160,10 +160,34 @@ def test_report_reproduction_and_input_fingerprint_change(tmp_path: Path):
     first = build_report(tmp_path)
     assert report_bytes(first) == report_bytes(build_report(tmp_path))
     contract = tmp_path / INPUTS[0]
-    contract.write_bytes(contract.read_bytes() + b"\n")
+    contract.write_bytes(contract.read_bytes().replace(
+        b"### Candidate definitions", b"### Candidate definitions\n\nChanged pilot contract.", 1))
     changed = build_report(tmp_path)
     assert first["inputs"][INPUTS[0]] != changed["inputs"][INPUTS[0]]
     assert first["cases"] == changed["cases"]
+
+
+def test_unrelated_experiment_prose_does_not_change_pilot_fingerprint(tmp_path):
+    for name in INPUTS:
+        target = tmp_path / name
+        target.parent.mkdir(parents=True, exist_ok=True)
+        target.write_bytes((ROOT / name).read_bytes())
+    first = build_report(tmp_path)
+    path = tmp_path / INPUTS[0]
+    original = path.read_bytes()
+    path.write_bytes(original + b"\n## Unrelated later experiment\nNew findings.\n")
+    assert build_report(tmp_path) == first
+    path.write_bytes(original.replace(b"## Text identity and annotation pilot", b"## Lost contract"))
+    with pytest.raises(ValueError, match="heading missing"):
+        build_report(tmp_path)
+    path.write_bytes(original + b"\n## Text identity and annotation pilot\nDuplicate.\n")
+    with pytest.raises(ValueError, match="heading missing or ambiguous"):
+        build_report(tmp_path)
+
+
+def test_checked_in_report_matches_current_inputs():
+    """Catch stale contract fingerprints in the ordinary test-suite gate."""
+    assert report_bytes(build_report(ROOT)) == (ROOT / pilot.REPORT).read_bytes()
 
 
 def test_case_suite_identity_is_validated(tmp_path: Path):

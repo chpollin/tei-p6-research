@@ -12,7 +12,7 @@ profile:
 status: draft
 language: en
 created: "2026-09-06"
-updated: "2026-09-06"
+updated: "2026-09-07"
 related: [INDEX, specification, data, governance, plan, state, journal]
 ---
 
@@ -27,6 +27,12 @@ problems together with the capabilities that a redesign must preserve.
 Textual scholarship and alternative models challenge the proposed categories.
 Repair within P5, compatible evolution, architectural replacement and
 deferral face the same evaluation criteria.
+
+The target includes editions, language corpora, and documentary catalogues.
+Editorial identity is one application of the broader identity question. A
+catalogue must describe a document without requiring its transcription; a
+corpus must distinguish resource membership from sameness of text. The
+proposed distinctions and comparison cases are in [[knowledge/model-design]].
 
 The project is unofficial and has no standing within the TEI Consortium.
 Official TEI P6 records are research sources for it, and the proposals

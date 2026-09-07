@@ -1,0 +1,58 @@
+[
+  {
+    "id": "teic-tei-issue-1400",
+    "type": "post",
+    "title": "Remove numbered divisions",
+    "number": "1400",
+    "container-title": "TEIC/TEI GitHub issues",
+    "publisher": "TEI Consortium",
+    "issued": {
+      "date-parts": [
+        [
+          2015,
+          11,
+          10
+        ]
+      ]
+    },
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          9,
+          6
+        ]
+      ]
+    },
+    "URL": "https://github.com/TEIC/TEI/issues/1400",
+    "note": "Citation-only thread admission from the locked 2026-09-06 REST snapshot; 20 comments. Participant statements and issue labels are dated records, not evidence of adoption or released effect. Citation and checked short quotation only. Full issue and comment bodies remain in ignored raw storage; repository licensing does not license participant discussion text."
+  },
+  {
+    "id": "teic-tei-issue-1505",
+    "type": "post",
+    "title": "Use of `@next/@prev` versus `<join>` with `@scope/@result` and `@exclude` needs clarification",
+    "number": "1505",
+    "container-title": "TEIC/TEI GitHub issues",
+    "publisher": "TEI Consortium",
+    "issued": {
+      "date-parts": [
+        [
+          2016,
+          9,
+          22
+        ]
+      ]
+    },
+    "accessed": {
+      "date-parts": [
+        [
+          2026,
+          9,
+          6
+        ]
+      ]
+    },
+    "URL": "https://github.com/TEIC/TEI/issues/1505",
+    "note": "Citation-only thread admission from the locked 2026-09-06 REST snapshot; 14 comments. Participant statements and issue labels are dated records, not evidence of adoption or released effect. Citation and checked short quotation only. Full issue and comment bodies remain in ignored raw storage; repository licensing does not license participant discussion text."
+  }
+]

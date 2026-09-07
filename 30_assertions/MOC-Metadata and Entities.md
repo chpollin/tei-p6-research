@@ -13,6 +13,8 @@ persons, places, organizations, events and their reference relations.
 ## Sources and distillates
 
 <!-- distillates:begin -->
+- [[20_distillates/documents/hsa-letter-4493-2026-09-07]]
+- [[20_distillates/documents/szd-werke-2026-09-07]]
 - [[20_distillates/documents/tei-p5-att.canonical-4.12.0]]
 - [[20_distillates/documents/tei-p5-att.datable-4.12.0]]
 - [[20_distillates/documents/tei-p5-att.editlike-4.12.0]]
@@ -39,6 +41,8 @@ persons, places, organizations, events and their reference relations.
 ## Assertions
 
 <!-- assertions:begin -->
+- [[30_assertions/hsa-dateline-retains-short-year]] — Die Datumszeile in Schuchardt-Brief 4493 verwendet eine zweistellige Jahresangabe
+- [[30_assertions/hsa-origin-and-sent-dates-have-distinct-contexts]] — Schuchardt-Brief 4493 enthält denselben Datumswert in Entstehungs- und Versandmetadaten
 - [[30_assertions/p5-att-canonical-associates-a-name-with-canonical-information-about-its-object]] — In TEI P5 4.12.0, att.canonical associates a representation such as a name or title with canonical information about the object being named or referenced
 - [[30_assertions/p5-att-canonical-gives-no-precedence-when-key-and-ref-co-occur]] — In TEI P5 4.12.0, att.canonical provides no semantic basis and suggests no precedence when both key and ref are supplied
 - [[30_assertions/p5-att-datable-provides-attributes-for-normalization-of-elements-that-contain-dates-times-or-datable-events]] — In TEI P5 4.12.0, the description of att.datable states that the class provides attributes for normalization of elements that contain dates, times, or datable events
@@ -97,6 +101,10 @@ persons, places, organizations, events and their reference relations.
 - [[30_assertions/p5-testnames-person-record-carries-id-sex-and-role-while-its-persname-carries-only-a-language]] — In the TEI P5 4.12.0 test document testnames.xml, a person record identifies the person by an xml:id on the person element and carries sex and role there, while its single persName child carries only xml:lang and no identifying attribute
 - [[30_assertions/p5-testnames-places-in-birth-and-death-are-named-without-identification-while-a-nationality-is-identified-by-key]] — In the TEI P5 4.12.0 test document testnames.xml, the place names inside birth and death of one record consist of a settlement and a country carrying neither type nor key, so the places are named without being identified, while the same record identifies a nationality by a key on an empty nationality element
 - [[30_assertions/p5-testnames-relation-to-another-person-is-a-state-with-a-ref-to-a-relationship-and-no-relation-element]] — In the TEI P5 4.12.0 test document testnames.xml, a record expresses a relation to another person as a state whose ref holds a fragment identifier naming a relationship, gives the related person inside a label by a persName that carries only xml:lang and points to no record, and carries no relation element
+- [[30_assertions/szd-contributor-and-hand-description-are-distinct]] — SZDMSK.3 erfasst Mitwirkung und Handschriftenangabe in getrennten Feldern
+- [[30_assertions/szd-hand-attribution-retains-question-mark]] — Die Handschriftenangabe in SZDMSK.3 enthält ein Fragezeichen
+- [[30_assertions/szd-records-have-distinct-shelfmarks]] — Die Zweig-Katalogeinträge SZDMSK.3 und SZDMSK.4 tragen unterschiedliche Signaturen und PIDs
+- [[30_assertions/szd-records-share-work-reference]] — Die Zweig-Katalogeinträge SZDMSK.3 und SZDMSK.4 teilen einen Werkverweis
 - [[30_assertions/teic-tei-issue-1414-author-proposes-ref-and-key-on-person-and-place]] — In TEIC/TEI issue 1414, the issue author wrote that they thought the best way was to allow ref, and key for the web-impaired, on person and place
 - [[30_assertions/teic-tei-issue-1414-author-proposes-that-a-record-entry-refer-through-ref-or-key-to-further-information-about-the-same-entity]] — In TEIC/TEI issue 1414, the issue author wrote that an entry in a placeography, personography, bibliography or whatever should be able to refer, using ref or key, to some other data structure that has further information about the same entity
 - [[30_assertions/teic-tei-issue-1414-comment-of-2019-reports-that-person-place-org-and-bibl-allow-idno-while-event-and-nym-do-not]] — In TEIC/TEI issue 1414, a comment of 2019-05-07 stated that person, place, org and bibl allowed idno at that time and that event and nym did not

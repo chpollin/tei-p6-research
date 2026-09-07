@@ -1,0 +1,125 @@
+@prefix m: <https://example.org/tei-p6-research/ontology/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+m:MappingCandidate a owl:Class ;
+    rdfs:label "Mapping comparison record" ;
+    rdfs:comment "A documented comparison for review. Its annotations add no class, identity or import axiom. An ontology-level target may be a documented repository rather than a class IRI." .
+m:localTerm a owl:AnnotationProperty .
+m:externalTerm a owl:AnnotationProperty .
+m:relation a owl:AnnotationProperty .
+m:sourceDocument a owl:AnnotationProperty .
+m:rationale a owl:AnnotationProperty .
+m:reviewState a owl:AnnotationProperty .
+
+m:compare-record-crm a m:MappingCandidate ;
+    m:localTerm m:Record ;
+    m:externalTerm <http://www.cidoc-crm.org/cidoc-crm/E73_Information_Object> ;
+    m:relation "candidate-specialization" ;
+    m:sourceDocument <https://cidoc-crm.org/html/cidoc_crm_v7.1.3.html> ;
+    m:rationale "Compare the identity of each documentary record with an identifiable immaterial information unit. Establish that this applies to every local instance before asserting inheritance." ;
+    m:reviewState "candidate" .
+
+m:compare-claim-prov a m:MappingCandidate ;
+    m:localTerm m:ClaimRecord ;
+    m:externalTerm <http://www.w3.org/ns/prov#Entity> ;
+    m:relation "candidate-specialization" ;
+    m:sourceDocument <https://www.w3.org/TR/prov-o/#Entity> ;
+    m:rationale "A stable claim artifact may fit the provenance entity notion. Distinguish it from the activity that created the assertion and define which record aspects remain fixed." ;
+    m:reviewState "candidate" .
+
+m:compare-claim-assignment a m:MappingCandidate ;
+    m:localTerm m:ClaimRecord ;
+    m:externalTerm <http://www.cidoc-crm.org/cidoc-crm/E13_Attribute_Assignment> ;
+    m:relation "incompatible-direct-classification" ;
+    m:sourceDocument <https://cidoc-crm.org/html/cidoc_crm_v7.1.3.html> ;
+    m:rationale "The documentary claim artifact is distinct from an assignment activity. A future bridge may introduce a separate activity; it must not classify the claim record itself as that activity." ;
+    m:reviewState "candidate" .
+
+m:compare-annotation-oa a m:MappingCandidate ;
+    m:localTerm m:AnnotationRecord ;
+    m:externalTerm <http://www.w3.org/ns/oa#Annotation> ;
+    m:relation "candidate-profile" ;
+    m:sourceDocument <https://www.w3.org/TR/annotation-model/#annotations> ;
+    m:rationale "Compare the local target and body contract with Web Annotation. Local discourse scope and stance need their own preservation rules; oa:scope alone does not restrict validity to a fictional world." ;
+    m:reviewState "candidate" .
+
+m:compare-concept-skos a m:MappingCandidate ;
+    m:localTerm m:ConceptRecord ;
+    m:externalTerm <http://www.w3.org/2004/02/skos/core#Concept> ;
+    m:relation "candidate-profile" ;
+    m:sourceDocument <https://www.w3.org/TR/skos-reference/> ;
+    m:rationale "Check whether the record identifies a knowledge-organization concept or describes one. A mapping must settle that identity boundary. Candidate links are not skos:exactMatch assertions." ;
+    m:reviewState "candidate" .
+
+m:compare-proposition-crm a m:MappingCandidate ;
+    m:localTerm m:PropositionRecord ;
+    m:externalTerm <http://www.cidoc-crm.org/cidoc-crm/E89_Propositional_Object> ;
+    m:relation "candidate-profile" ;
+    m:sourceDocument <https://cidoc-crm.org/html/cidoc_crm_v7.1.3.html> ;
+    m:rationale "Compare a structured propositional-content record with the external propositional object. Preserve reference interpretation, content identity and discourse context, including propositions about imaginary objects." ;
+    m:reviewState "candidate" .
+
+m:compare-text-crm a m:MappingCandidate ;
+    m:localTerm m:TextRecord ;
+    m:externalTerm <http://www.cidoc-crm.org/cidoc-crm/E33_Linguistic_Object> ;
+    m:relation "requires-content-identity-bridge" ;
+    m:sourceDocument <https://cidoc-crm.org/html/cidoc_crm_v7.1.3.html> ;
+    m:rationale "The local record documents a linguistic-content identity. Determine whether a bridge targets that content or its metadata record before adding any class axiom." ;
+    m:reviewState "candidate" .
+
+m:compare-name-ontolex a m:MappingCandidate ;
+    m:localTerm m:NameFormRecord ;
+    m:externalTerm <http://www.w3.org/ns/lemon/ontolex#Form> ;
+    m:relation "requires-lexical-profile" ;
+    m:sourceDocument <https://www.w3.org/2016/04/ontolex/#form-variation> ;
+    m:rationale "A local independent name form has no required lexical-entry or grammatical-realization contract. Compare lexical forms within an explicit profile; direct equivalence is unsupported." ;
+    m:reviewState "candidate" .
+
+m:compare-handle-org a m:MappingCandidate ;
+    m:localTerm m:ReferentRecord ;
+    m:externalTerm <http://www.w3.org/ns/org#Organization> ;
+    m:relation "incompatible-direct-classification" ;
+    m:sourceDocument <https://www.w3.org/TR/vocab-org/> ;
+    m:rationale "The handle is a documentary record and can describe an organization. The described organization would need a separate, context-qualified identity bridge. org:classification on the handle would impose an unintended organization type." ;
+    m:reviewState "candidate" .
+
+m:compare-predicate-rdf a m:MappingCandidate ;
+    m:localTerm m:PredicateRecord ;
+    m:externalTerm <http://www.w3.org/1999/02/22-rdf-syntax-ns#Property> ;
+    m:relation "incompatible-direct-classification" ;
+    m:sourceDocument <https://www.w3.org/TR/rdf-schema/#ch_property> ;
+    m:rationale "A documentary predicate definition and the property applied in a world graph have separate identity and interpretation contracts. The record IRI must not become an executable world predicate by label substitution." ;
+    m:reviewState "candidate" .
+
+m:compare-text-lrmoo a m:MappingCandidate ;
+    m:localTerm m:TextRecord ;
+    m:externalTerm <http://iflastandards.info/ns/lrm/lrmoo/F2_Expression> ;
+    m:relation "requires-bibliographic-profile" ;
+    m:sourceDocument <https://cidoc-crm.org/extensions/lrmoo/html/LRMoo_v1.1.1.html> ;
+    m:rationale "An expression has bibliographic realization and identity commitments. Define work, expression and local text relationships for an actual use case before adopting this target." ;
+    m:reviewState "candidate" .
+
+m:compare-record-rico a m:MappingCandidate ;
+    m:localTerm m:Record ;
+    m:externalTerm <https://www.ica.org/standards/RiC/ontology#Record> ;
+    m:relation "requires-archival-profile" ;
+    m:sourceDocument <https://www.ica.org/standards/RiC/RiC-O_1-1.html> ;
+    m:rationale "The generic local information record does not impose the archival creation, reception, retention and activity-evidence conditions. Compare those within an archival profile rather than equating the two uses of Record." ;
+    m:reviewState "candidate" .
+
+m:compare-record-bfo a m:MappingCandidate ;
+    m:localTerm m:Record ;
+    m:externalTerm <http://purl.obolibrary.org/obo/BFO_0000031> ;
+    m:relation "foundational-comparison" ;
+    m:sourceDocument <https://github.com/BFO-ontology/BFO-2020/blob/master/21838-2/owl/bfo-core.ttl> ;
+    m:rationale "Examine dependence and multiple concretizations of information artifacts. A BFO comparison concerns the documentary artifact and does not settle the existence or identity of narrative referents." ;
+    m:reviewState "candidate" .
+
+m:compare-context-dolce a m:MappingCandidate ;
+    m:localTerm m:ContextRecord ;
+    m:externalTerm <https://github.com/appliedontolab/DOLCE> ;
+    m:relation "ontology-level-comparison" ;
+    m:sourceDocument <https://github.com/appliedontolab/DOLCE> ;
+    m:rationale "Compare foundational accounts of dependence and description after selecting a specific DOLCE module and version. This target identifies the published ontology repository, not an asserted class correspondence. DOLCE and DUL are not interchangeable version labels." ;
+    m:reviewState "candidate" .

@@ -18,22 +18,31 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - run: pip install pyyaml pytest
+      - run: pip install uv
+      - run: uv sync --locked
       - name: Validate research data and frontend
         run: |
-          python tools/validate.py .
-          python -m tools.corpus.validate_control_plane .
-          python -m tools.ingest_guidelines --check
-          python -m pytest tests -q
+          uv run --locked python tools/validate.py .
+          uv run --locked python -m tools.corpus.validate_control_plane .
+          uv run --locked python -m tools.ingest_guidelines --check
+          uv run --locked python -m pytest tests -q
+      - name: Reproduce Guidelines navigation and text structures admission
+        run: |
+          uv run --locked python -m tools.build_guidelines_navigation --check
+          uv run --locked python -m tools.ingest_text_structures --check
+      - name: Export and verify all admitted Guidelines XML
+        run: |
+          uv run --locked python -m tools.export_guidelines --output "${RUNNER_TEMP}/guidelines-xml"
+          uv run --locked python -m tools.export_guidelines --output "${RUNNER_TEMP}/guidelines-xml" --check
       - name: Generate the public static site
         run: |
           BUILD_DATE="$(date -u +%F)"
           REPOSITORY_BASE="${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/blob/${GITHUB_SHA}/"
-          python tools/build_docs.py --date "${BUILD_DATE}" --repository-url "${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}" --repository-revision "${GITHUB_SHA}"
-          python tools/build_corpus_overview.py --date "${BUILD_DATE}" --repository-base "${REPOSITORY_BASE}"
-          python tools/build_home.py --date "${BUILD_DATE}" --repository-base "${REPOSITORY_BASE}"
-          python tools/build_knowledge.py --date "${BUILD_DATE}" --repository-base "${REPOSITORY_BASE}"
-          python tools/build_model_reference.py --date "${BUILD_DATE}" --repository-base "${REPOSITORY_BASE}"
+          uv run --locked python tools/build_docs.py --date "${BUILD_DATE}" --repository-url "${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}" --repository-revision "${GITHUB_SHA}"
+          uv run --locked python tools/build_corpus_overview.py --date "${BUILD_DATE}" --repository-base "${REPOSITORY_BASE}"
+          uv run --locked python tools/build_home.py --date "${BUILD_DATE}" --repository-base "${REPOSITORY_BASE}"
+          uv run --locked python tools/build_knowledge.py --date "${BUILD_DATE}" --repository-base "${REPOSITORY_BASE}"
+          uv run --locked python tools/build_model_reference.py --date "${BUILD_DATE}" --repository-base "${REPOSITORY_BASE}"
           mkdir -p _site
           cp -R docs/. _site/
           touch _site/.nojekyll

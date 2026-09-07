@@ -74,18 +74,40 @@ def test_the_recorded_pilot_review_binds_the_current_pairs():
     assert audit.without_reviewer == ()
 
 
-def test_new_chapter_dependency_cannot_escape_review(tmp_path):
+def test_new_pilot_dependency_cannot_escape_review(tmp_path):
     root = Path(__file__).resolve().parents[1]
     for folder in ("10_markdown", "20_distillates", "30_assertions", "40_output"):
         shutil.copytree(root / folder, tmp_path / folder)
     current_pairs(tmp_path)
     original = tmp_path / "30_assertions/p5-anchor-identifies-a-textual-point.md"
-    extra = tmp_path / "30_assertions/additional-anchor-requirement.md"
-    extra.write_text(original.read_text(encoding="utf-8").replace("#^s1", "#^s2"), encoding="utf-8")
-    chapter = tmp_path / "40_output/02-abstract-model.md"
-    chapter.write_text(chapter.read_text(encoding="utf-8") +
-                       "\nAdditional point requirement.[^extra]\n\n"
-                       "[^extra]: Grounded in [[30_assertions/additional-anchor-requirement]].\n",
-                       encoding="utf-8")
+    distillate = tmp_path / "20_distillates/documents/tei-p5-anchor-4.12.0.md"
+    extra = distillate.with_name("additional-anchor-requirement.md")
+    extra.write_text(distillate.read_text(encoding="utf-8"), encoding="utf-8")
+    original.write_text(original.read_text(encoding="utf-8").replace(
+        "20_distillates/documents/tei-p5-anchor-4.12.0#^s1",
+        "20_distillates/documents/additional-anchor-requirement#^s1"), encoding="utf-8")
     with pytest.raises(ValueError, match="scope changed"):
         current_pairs(tmp_path)
+
+
+def test_expanded_chapter_does_not_inherit_the_pilot_review(tmp_path):
+    root = Path(__file__).resolve().parents[1]
+    for folder in ("10_markdown", "20_distillates", "30_assertions", "40_output"):
+        shutil.copytree(root / folder, tmp_path / folder)
+    before = current_pairs(tmp_path)
+    chapter = tmp_path / "40_output/02-abstract-model.md"
+    chapter.write_text("A changed proposal outside the bounded source review.\n", encoding="utf-8")
+    assert current_pairs(tmp_path) == before
+
+
+def test_pilot_checker_does_not_launch_repository_gate(monkeypatch):
+    from tools import check_text_identity_pilot as checker
+
+    calls = []
+    monkeypatch.setattr(checker, "run", lambda *args: calls.append(args))
+    monkeypatch.setattr("sys.argv", ["check_text_identity_pilot"])
+    assert checker.main() == 0
+    assert calls == [
+        ("-m", "tools.ingest_text_identity", "--check"),
+        ("-m", "tools.pilots.text_identity", "--check"),
+    ]

@@ -1,0 +1,1380 @@
+{
+  "@context": {
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  },
+  "@graph": [
+    {
+      "@id": "https://example.org/tei-p6-research/ontology/",
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": [
+        {
+          "@id": "http://www.w3.org/2002/07/owl#Ontology"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#comment": [
+        {
+          "@language": "en",
+          "@value": "Independent research draft for documentary records. The namespace is provisional. Structured proposition content and recorded stances license no world-fact materialization. This graph defines no exchange-package validation profile."
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#label": [
+        {
+          "@language": "en",
+          "@value": "Experimental documentary vocabulary"
+        }
+      ],
+      "http://www.w3.org/2002/07/owl#versionIRI": [
+        {
+          "@id": "https://example.org/tei-p6-research/ontology/2026-09-07"
+        }
+      ],
+      "http://www.w3.org/2002/07/owl#versionInfo": [
+        {
+          "@value": "2026-09-07 draft"
+        }
+      ]
+    },
+    {
+      "@id": "https://example.org/tei-p6-research/ontology/AgentRecord",
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": [
+        {
+          "@id": "http://www.w3.org/2002/07/owl#Class"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#comment": [
+        {
+          "@language": "en",
+          "@value": "A documentary responsibility handle for an attributed person, organization or process. Its record identity does not establish a world agent's identity or equate it with a provenance ontology's Agent class."
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#label": [
+        {
+          "@language": "en",
+          "@value": "Agent record"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+        {
+          "@id": "https://example.org/tei-p6-research/ontology/Record"
+        }
+      ]
+    },
+    {
+      "@id": "https://example.org/tei-p6-research/ontology/AnnotationRecord",
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": [
+        {
+          "@id": "http://www.w3.org/2002/07/owl#Class"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#comment": [
+        {
+          "@language": "en",
+          "@value": "An identified association of a selection with documentary body content or a claim. Identity belongs to the association and its responsibility context, rather than to the selected characters."
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#label": [
+        {
+          "@language": "en",
+          "@value": "Annotation record"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+        {
+          "@id": "https://example.org/tei-p6-research/ontology/Record"
+        }
+      ]
+    },
+    {
+      "@id": "https://example.org/tei-p6-research/ontology/ClaimRecord",
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": [
+        {
+          "@id": "http://www.w3.org/2002/07/owl#Class"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#comment": [
+        {
+          "@language": "en",
+          "@value": "An identified attribution of an agent's stance toward a proposition. Separate claims can assert, report, question or deny the same recorded content. Withdrawal changes claim lifecycle and does not deny the content."
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#label": [
+        {
+          "@language": "en",
+          "@value": "Claim record"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+        {
+          "@id": "https://example.org/tei-p6-research/ontology/Record"
+        }
+      ]
+    },
+    {
+      "@id": "https://example.org/tei-p6-research/ontology/CollectionRecord",
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": [
+        {
+          "@id": "http://www.w3.org/2002/07/owl#Class"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#comment": [
+        {
+          "@language": "en",
+          "@value": "A description of a corpus or another collection under stated membership criteria. Its documentary identity can persist across exchange packages that describe it."
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#label": [
+        {
+          "@language": "en",
+          "@value": "Collection record"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+        {
+          "@id": "https://example.org/tei-p6-research/ontology/Record"
+        }
+      ]
+    },
+    {
+      "@id": "https://example.org/tei-p6-research/ontology/ConceptRecord",
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": [
+        {
+          "@id": "http://www.w3.org/2002/07/owl#Class"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#comment": [
+        {
+          "@language": "en",
+          "@value": "A documentary vocabulary entry describing a classification value. Its definition governs use; the entry is not automatically an OWL class or a SKOS concept."
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#label": [
+        {
+          "@language": "en",
+          "@value": "Concept record"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+        {
+          "@id": "https://example.org/tei-p6-research/ontology/VocabularyRecord"
+        }
+      ]
+    },
+    {
+      "@id": "https://example.org/tei-p6-research/ontology/ContextRecord",
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": [
+        {
+          "@id": "http://www.w3.org/2002/07/owl#Class"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#comment": [
+        {
+          "@language": "en",
+          "@value": "A documented interpretation frame, such as a narrative or catalogue perspective, with explicitly stated scope. Its identity separates contextual readings without asserting that any described world exists."
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#label": [
+        {
+          "@language": "en",
+          "@value": "Context record"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+        {
+          "@id": "https://example.org/tei-p6-research/ontology/Record"
+        }
+      ]
+    },
+    {
+      "@id": "https://example.org/tei-p6-research/ontology/MentionRecord",
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": [
+        {
+          "@id": "http://www.w3.org/2002/07/owl#Class"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#comment": [
+        {
+          "@language": "en",
+          "@value": "An annotation interpreting selected text as a mention. A referential assignment is expressed through its body or claim and may remain questioned or unresolved."
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#label": [
+        {
+          "@language": "en",
+          "@value": "Mention record"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+        {
+          "@id": "https://example.org/tei-p6-research/ontology/AnnotationRecord"
+        }
+      ]
+    },
+    {
+      "@id": "https://example.org/tei-p6-research/ontology/NameFormRecord",
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": [
+        {
+          "@id": "http://www.w3.org/2002/07/owl#Class"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#comment": [
+        {
+          "@language": "en",
+          "@value": "A description of a name form with its adopted spelling and language criteria. The same form can occur in several name assignments; its identity alone identifies no bearer."
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#label": [
+        {
+          "@language": "en",
+          "@value": "Name form record"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+        {
+          "@id": "https://example.org/tei-p6-research/ontology/Record"
+        }
+      ]
+    },
+    {
+      "@id": "https://example.org/tei-p6-research/ontology/Package",
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": [
+        {
+          "@id": "http://www.w3.org/2002/07/owl#Class"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#comment": [
+        {
+          "@language": "en",
+          "@value": "An identified exchange grouping of documentary records. Package membership states inclusion in this exchange and has no implication for membership in a corpus described by a collection record."
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#label": [
+        {
+          "@language": "en",
+          "@value": "Package"
+        }
+      ]
+    },
+    {
+      "@id": "https://example.org/tei-p6-research/ontology/PredicateRecord",
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": [
+        {
+          "@id": "http://www.w3.org/2002/07/owl#Class"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#comment": [
+        {
+          "@language": "en",
+          "@value": "A documentary definition of a relation used inside propositions, including subject and object interpretation modes. The record is not itself an RDF predicate and authorizes no unqualified external triple."
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#label": [
+        {
+          "@language": "en",
+          "@value": "Predicate record"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+        {
+          "@id": "https://example.org/tei-p6-research/ontology/VocabularyRecord"
+        }
+      ]
+    },
+    {
+      "@id": "https://example.org/tei-p6-research/ontology/PropositionRecord",
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": [
+        {
+          "@id": "http://www.w3.org/2002/07/owl#Class"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#comment": [
+        {
+          "@language": "en",
+          "@value": "An identified structured content with subject, predicate, object and interpretation context. Reuse shares this explicitly recorded content; it establishes neither semantic equivalence with another formulation nor truth."
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#label": [
+        {
+          "@language": "en",
+          "@value": "Proposition record"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+        {
+          "@id": "https://example.org/tei-p6-research/ontology/Record"
+        }
+      ]
+    },
+    {
+      "@id": "https://example.org/tei-p6-research/ontology/Record",
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": [
+        {
+          "@id": "http://www.w3.org/2002/07/owl#Class"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#comment": [
+        {
+          "@language": "en",
+          "@value": "An identified documentary description whose identity is assigned and maintained by a describing practice. Its identifier denotes this record; references to a described object require an explicit interpretation."
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#label": [
+        {
+          "@language": "en",
+          "@value": "Record"
+        }
+      ]
+    },
+    {
+      "@id": "https://example.org/tei-p6-research/ontology/ReferentRecord",
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": [
+        {
+          "@id": "http://www.w3.org/2002/07/owl#Class"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#comment": [
+        {
+          "@language": "en",
+          "@value": "A documentary handle for a referential intention, which may concern a historical, uncertain or fictional object. Identity follows that intention within the description; an expected referent type is revisable and does not classify the handle as a world entity."
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#label": [
+        {
+          "@language": "en",
+          "@value": "Referent record"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+        {
+          "@id": "https://example.org/tei-p6-research/ontology/Record"
+        }
+      ]
+    },
+    {
+      "@id": "https://example.org/tei-p6-research/ontology/RepresentationRecord",
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": [
+        {
+          "@id": "http://www.w3.org/2002/07/owl#Class"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#comment": [
+        {
+          "@language": "en",
+          "@value": "A description of one fixed textual content used as a coordinate basis. A changed content requires a distinct representation identity before existing selections can be reused."
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#label": [
+        {
+          "@language": "en",
+          "@value": "Representation record"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+        {
+          "@id": "https://example.org/tei-p6-research/ontology/Record"
+        }
+      ]
+    },
+    {
+      "@id": "https://example.org/tei-p6-research/ontology/SelectionRecord",
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": [
+        {
+          "@id": "http://www.w3.org/2002/07/owl#Class"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#comment": [
+        {
+          "@language": "en",
+          "@value": "An identified documentary selection under an explicitly stated selector contract. Its scope can include continuous, discontinuous, point-like or ambiguous selections. This general class supplies no single coordinate or ambiguity-resolution contract."
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#label": [
+        {
+          "@language": "en",
+          "@value": "Selection record"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+        {
+          "@id": "https://example.org/tei-p6-research/ontology/Record"
+        }
+      ]
+    },
+    {
+      "@id": "https://example.org/tei-p6-research/ontology/StructuralNodeRecord",
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": [
+        {
+          "@id": "http://www.w3.org/2002/07/owl#Class"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#comment": [
+        {
+          "@language": "en",
+          "@value": "An identified component within a structural reading, scoped by that reading's node-identity criteria. Its identifier does not independently identify a universal textual unit."
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#label": [
+        {
+          "@language": "en",
+          "@value": "Structural node record"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+        {
+          "@id": "https://example.org/tei-p6-research/ontology/StructureRecord"
+        }
+      ]
+    },
+    {
+      "@id": "https://example.org/tei-p6-research/ontology/StructuralReadingRecord",
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": [
+        {
+          "@id": "http://www.w3.org/2002/07/owl#Class"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#comment": [
+        {
+          "@language": "en",
+          "@value": "An identified structural interpretation of a text or representation, such as an editorial segmentation. Several readings can coexist with independently stated organization criteria."
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#label": [
+        {
+          "@language": "en",
+          "@value": "Structural reading record"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+        {
+          "@id": "https://example.org/tei-p6-research/ontology/StructureRecord"
+        }
+      ]
+    },
+    {
+      "@id": "https://example.org/tei-p6-research/ontology/StructureRecord",
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": [
+        {
+          "@id": "http://www.w3.org/2002/07/owl#Class"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#comment": [
+        {
+          "@language": "en",
+          "@value": "A documentary account of an adopted text organization. Its identity belongs to the structural description and its explicit scope."
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#label": [
+        {
+          "@language": "en",
+          "@value": "Structure record"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+        {
+          "@id": "https://example.org/tei-p6-research/ontology/Record"
+        }
+      ]
+    },
+    {
+      "@id": "https://example.org/tei-p6-research/ontology/TextRangeSelectionRecord",
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": [
+        {
+          "@id": "http://www.w3.org/2002/07/owl#Class"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#comment": [
+        {
+          "@language": "en",
+          "@value": "A selection of one contiguous Unicode code-point interval in a fixed representation, with zero-based inclusive start and exclusive end. Equal boundaries select a point. A quote can witness the interval; this subtype specifies no discontinuous or ambiguous selector."
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#label": [
+        {
+          "@language": "en",
+          "@value": "Text range selection record"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+        {
+          "@id": "https://example.org/tei-p6-research/ontology/SelectionRecord"
+        }
+      ]
+    },
+    {
+      "@id": "https://example.org/tei-p6-research/ontology/TextRecord",
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": [
+        {
+          "@id": "http://www.w3.org/2002/07/owl#Class"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#comment": [
+        {
+          "@language": "en",
+          "@value": "A documentary description of linguistic content under an explicit identity and delimitation criterion adopted for an edition, corpus or catalogue. An assignment of a representation to this text is a descriptive assertion governed by that criterion. Merely grouping representations supplies no text-identity criterion."
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#label": [
+        {
+          "@language": "en",
+          "@value": "Text record"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+        {
+          "@id": "https://example.org/tei-p6-research/ontology/Record"
+        }
+      ]
+    },
+    {
+      "@id": "https://example.org/tei-p6-research/ontology/VocabularyRecord",
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": [
+        {
+          "@id": "http://www.w3.org/2002/07/owl#Class"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#comment": [
+        {
+          "@language": "en",
+          "@value": "An identified vocabulary entry whose scope and definition are maintained by a named descriptive practice. A matching label alone does not establish identical meaning."
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#label": [
+        {
+          "@language": "en",
+          "@value": "Vocabulary record"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+        {
+          "@id": "https://example.org/tei-p6-research/ontology/Record"
+        }
+      ]
+    },
+    {
+      "@id": "https://example.org/tei-p6-research/ontology/annotationBody",
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": [
+        {
+          "@id": "http://www.w3.org/2002/07/owl#ObjectProperty"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#comment": [
+        {
+          "@language": "en",
+          "@value": "References a documentary body record, including a proposition, concept or referent handle. A literal body requires its own content-bearing record."
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#domain": [
+        {
+          "@id": "https://example.org/tei-p6-research/ontology/AnnotationRecord"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#label": [
+        {
+          "@language": "en",
+          "@value": "annotation body"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#range": [
+        {
+          "@id": "https://example.org/tei-p6-research/ontology/Record"
+        }
+      ]
+    },
+    {
+      "@id": "https://example.org/tei-p6-research/ontology/annotationClaim",
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": [
+        {
+          "@id": "http://www.w3.org/2002/07/owl#ObjectProperty"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#comment": [
+        {
+          "@language": "en",
+          "@value": "References a separately identified attributed stance relevant to the annotation."
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#domain": [
+        {
+          "@id": "https://example.org/tei-p6-research/ontology/AnnotationRecord"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#label": [
+        {
+          "@language": "en",
+          "@value": "annotation claim"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#range": [
+        {
+          "@id": "https://example.org/tei-p6-research/ontology/ClaimRecord"
+        }
+      ]
+    },
+    {
+      "@id": "https://example.org/tei-p6-research/ontology/claimAgent",
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": [
+        {
+          "@id": "http://www.w3.org/2002/07/owl#ObjectProperty"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#comment": [
+        {
+          "@language": "en",
+          "@value": "References the documentary agent handle to which the stance is attributed. This may differ from the agent responsible for encoding the claim."
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#domain": [
+        {
+          "@id": "https://example.org/tei-p6-research/ontology/ClaimRecord"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#label": [
+        {
+          "@language": "en",
+          "@value": "claim agent"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#range": [
+        {
+          "@id": "https://example.org/tei-p6-research/ontology/AgentRecord"
+        }
+      ]
+    },
+    {
+      "@id": "https://example.org/tei-p6-research/ontology/claimContent",
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": [
+        {
+          "@id": "http://www.w3.org/2002/07/owl#ObjectProperty"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#comment": [
+        {
+          "@language": "en",
+          "@value": "References the proposition toward which this claim records a stance."
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#domain": [
+        {
+          "@id": "https://example.org/tei-p6-research/ontology/ClaimRecord"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#label": [
+        {
+          "@language": "en",
+          "@value": "claim content"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#range": [
+        {
+          "@id": "https://example.org/tei-p6-research/ontology/PropositionRecord"
+        }
+      ]
+    },
+    {
+      "@id": "https://example.org/tei-p6-research/ontology/content",
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": [
+        {
+          "@id": "http://www.w3.org/2002/07/owl#DatatypeProperty"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#comment": [
+        {
+          "@language": "en",
+          "@value": "Records the fixed Unicode text whose code-point positions are addressed by selections. RDF string parsing preserves the value; source byte identity requires a separate source record."
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#domain": [
+        {
+          "@id": "https://example.org/tei-p6-research/ontology/RepresentationRecord"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#label": [
+        {
+          "@language": "en",
+          "@value": "content"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#range": [
+        {
+          "@id": "http://www.w3.org/2001/XMLSchema#string"
+        }
+      ]
+    },
+    {
+      "@id": "https://example.org/tei-p6-research/ontology/context",
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": [
+        {
+          "@id": "http://www.w3.org/2002/07/owl#ObjectProperty"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#comment": [
+        {
+          "@language": "en",
+          "@value": "References a documented interpretation frame. Proposition interpretation and the context of an agent's claim remain separately attachable to their respective records."
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#label": [
+        {
+          "@language": "en",
+          "@value": "context"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#range": [
+        {
+          "@id": "https://example.org/tei-p6-research/ontology/ContextRecord"
+        }
+      ]
+    },
+    {
+      "@id": "https://example.org/tei-p6-research/ontology/definition",
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": [
+        {
+          "@id": "http://www.w3.org/2002/07/owl#DatatypeProperty"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#comment": [
+        {
+          "@language": "en",
+          "@value": "Records the entry's explicit meaning and usage boundary, with a language tag where supplied."
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#domain": [
+        {
+          "@id": "https://example.org/tei-p6-research/ontology/VocabularyRecord"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#label": [
+        {
+          "@language": "en",
+          "@value": "definition"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#range": [
+        {
+          "@id": "http://www.w3.org/2000/01/rdf-schema#Literal"
+        }
+      ]
+    },
+    {
+      "@id": "https://example.org/tei-p6-research/ontology/end",
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": [
+        {
+          "@id": "http://www.w3.org/2002/07/owl#DatatypeProperty"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#comment": [
+        {
+          "@language": "en",
+          "@value": "Records the zero-based exclusive Unicode code-point boundary in the referenced representation. Equality with start describes an empty interval."
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#domain": [
+        {
+          "@id": "https://example.org/tei-p6-research/ontology/TextRangeSelectionRecord"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#label": [
+        {
+          "@language": "en",
+          "@value": "end"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#range": [
+        {
+          "@id": "http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        }
+      ]
+    },
+    {
+      "@id": "https://example.org/tei-p6-research/ontology/expectedReferentType",
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": [
+        {
+          "@id": "http://www.w3.org/2002/07/owl#ObjectProperty"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#comment": [
+        {
+          "@language": "en",
+          "@value": "References a revisable concept entry describing the expected kind of referent. It introduces no rdf:type assertion about the record's referent and no foreign class membership for the record."
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#domain": [
+        {
+          "@id": "https://example.org/tei-p6-research/ontology/ReferentRecord"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#label": [
+        {
+          "@language": "en",
+          "@value": "expected referent type"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#range": [
+        {
+          "@id": "https://example.org/tei-p6-research/ontology/ConceptRecord"
+        }
+      ]
+    },
+    {
+      "@id": "https://example.org/tei-p6-research/ontology/form",
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": [
+        {
+          "@id": "http://www.w3.org/2002/07/owl#DatatypeProperty"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#comment": [
+        {
+          "@language": "en",
+          "@value": "Records the spelling or verbal form described by a name-form record, retaining a supplied language tag."
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#domain": [
+        {
+          "@id": "https://example.org/tei-p6-research/ontology/NameFormRecord"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#label": [
+        {
+          "@language": "en",
+          "@value": "form"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#range": [
+        {
+          "@id": "http://www.w3.org/2000/01/rdf-schema#Literal"
+        }
+      ]
+    },
+    {
+      "@id": "https://example.org/tei-p6-research/ontology/identityCriteria",
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": [
+        {
+          "@id": "http://www.w3.org/2002/07/owl#DatatypeProperty"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#comment": [
+        {
+          "@language": "en",
+          "@value": "Documents the criteria used to preserve or distinguish this record's identity. This explanatory text introduces no OWL key."
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#domain": [
+        {
+          "@id": "https://example.org/tei-p6-research/ontology/Record"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#label": [
+        {
+          "@language": "en",
+          "@value": "identity criteria"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#range": [
+        {
+          "@id": "http://www.w3.org/2000/01/rdf-schema#Literal"
+        }
+      ]
+    },
+    {
+      "@id": "https://example.org/tei-p6-research/ontology/language",
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": [
+        {
+          "@id": "http://www.w3.org/2002/07/owl#DatatypeProperty"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#comment": [
+        {
+          "@language": "en",
+          "@value": "Records a language identifier relevant to the description. The describing profile must state the identifier scheme and its scope."
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#domain": [
+        {
+          "@id": "https://example.org/tei-p6-research/ontology/Record"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#label": [
+        {
+          "@language": "en",
+          "@value": "language"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#range": [
+        {
+          "@id": "http://www.w3.org/2001/XMLSchema#string"
+        }
+      ]
+    },
+    {
+      "@id": "https://example.org/tei-p6-research/ontology/lifecycle",
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": [
+        {
+          "@id": "http://www.w3.org/2002/07/owl#DatatypeProperty"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#comment": [
+        {
+          "@language": "en",
+          "@value": "Documentary controlled value: active or withdrawn. Withdrawal marks the record's lifecycle; a withdrawn claim's stance and content remain separately recorded."
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#domain": [
+        {
+          "@id": "https://example.org/tei-p6-research/ontology/Record"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#label": [
+        {
+          "@language": "en",
+          "@value": "lifecycle"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#range": [
+        {
+          "@id": "http://www.w3.org/2001/XMLSchema#string"
+        }
+      ]
+    },
+    {
+      "@id": "https://example.org/tei-p6-research/ontology/member",
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": [
+        {
+          "@id": "http://www.w3.org/2002/07/owl#ObjectProperty"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#comment": [
+        {
+          "@language": "en",
+          "@value": "Includes a documentary record in an exchange package. This property expresses package inclusion only."
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#domain": [
+        {
+          "@id": "https://example.org/tei-p6-research/ontology/Package"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#label": [
+        {
+          "@language": "en",
+          "@value": "member"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#range": [
+        {
+          "@id": "https://example.org/tei-p6-research/ontology/Record"
+        }
+      ]
+    },
+    {
+      "@id": "https://example.org/tei-p6-research/ontology/objectInterpretation",
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": [
+        {
+          "@id": "http://www.w3.org/2002/07/owl#DatatypeProperty"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#comment": [
+        {
+          "@language": "en",
+          "@value": "Documents how an object reference is read using record, referent, concept or proposition. For proposition object literal, the literal is read as its typed or language-tagged value under the predicate definition; reference modes do not dereference literals."
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#domain": [
+        {
+          "@id": "https://example.org/tei-p6-research/ontology/PredicateRecord"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#label": [
+        {
+          "@language": "en",
+          "@value": "object interpretation"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#range": [
+        {
+          "@id": "http://www.w3.org/2001/XMLSchema#string"
+        }
+      ]
+    },
+    {
+      "@id": "https://example.org/tei-p6-research/ontology/preferredLabel",
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": [
+        {
+          "@id": "http://www.w3.org/2002/07/owl#DatatypeProperty"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#comment": [
+        {
+          "@language": "en",
+          "@value": "Records a display label for the documentary record. Label identity is not an identity criterion for its referent."
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#domain": [
+        {
+          "@id": "https://example.org/tei-p6-research/ontology/Record"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#label": [
+        {
+          "@language": "en",
+          "@value": "preferred label"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#range": [
+        {
+          "@id": "http://www.w3.org/2000/01/rdf-schema#Literal"
+        }
+      ]
+    },
+    {
+      "@id": "https://example.org/tei-p6-research/ontology/propositionObjectLiteral",
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": [
+        {
+          "@id": "http://www.w3.org/2002/07/owl#DatatypeProperty"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#comment": [
+        {
+          "@language": "en",
+          "@value": "Stores a literal object with its RDF datatype or language tag preserved. Interpretation as a value follows the predicate definition. References use proposition object reference."
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#domain": [
+        {
+          "@id": "https://example.org/tei-p6-research/ontology/PropositionRecord"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#label": [
+        {
+          "@language": "en",
+          "@value": "proposition object literal"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#range": [
+        {
+          "@id": "http://www.w3.org/2000/01/rdf-schema#Literal"
+        }
+      ]
+    },
+    {
+      "@id": "https://example.org/tei-p6-research/ontology/propositionObjectReference",
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": [
+        {
+          "@id": "http://www.w3.org/2002/07/owl#ObjectProperty"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#comment": [
+        {
+          "@language": "en",
+          "@value": "References an object handle, interpreted by the predicate definition. Literal objects use proposition object literal; no identity between a literal and a referenced record is inferred."
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#domain": [
+        {
+          "@id": "https://example.org/tei-p6-research/ontology/PropositionRecord"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#label": [
+        {
+          "@language": "en",
+          "@value": "proposition object reference"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#range": [
+        {
+          "@id": "https://example.org/tei-p6-research/ontology/Record"
+        }
+      ]
+    },
+    {
+      "@id": "https://example.org/tei-p6-research/ontology/propositionPredicate",
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": [
+        {
+          "@id": "http://www.w3.org/2002/07/owl#ObjectProperty"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#comment": [
+        {
+          "@language": "en",
+          "@value": "References a documentary predicate definition that determines how subject and object are interpreted. It does not use that record as an RDF property."
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#domain": [
+        {
+          "@id": "https://example.org/tei-p6-research/ontology/PropositionRecord"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#label": [
+        {
+          "@language": "en",
+          "@value": "proposition predicate"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#range": [
+        {
+          "@id": "https://example.org/tei-p6-research/ontology/PredicateRecord"
+        }
+      ]
+    },
+    {
+      "@id": "https://example.org/tei-p6-research/ontology/propositionSubject",
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": [
+        {
+          "@id": "http://www.w3.org/2002/07/owl#ObjectProperty"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#comment": [
+        {
+          "@language": "en",
+          "@value": "References the subject handle. The predicate record's subject interpretation determines whether the handle is read as a record, its referent, a concept or a proposition."
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#domain": [
+        {
+          "@id": "https://example.org/tei-p6-research/ontology/PropositionRecord"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#label": [
+        {
+          "@language": "en",
+          "@value": "proposition subject"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#range": [
+        {
+          "@id": "https://example.org/tei-p6-research/ontology/Record"
+        }
+      ]
+    },
+    {
+      "@id": "https://example.org/tei-p6-research/ontology/quote",
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": [
+        {
+          "@id": "http://www.w3.org/2002/07/owl#DatatypeProperty"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#comment": [
+        {
+          "@language": "en",
+          "@value": "Records text expected at the selected interval. Consistency with content and coordinates requires a separate data check."
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#domain": [
+        {
+          "@id": "https://example.org/tei-p6-research/ontology/TextRangeSelectionRecord"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#label": [
+        {
+          "@language": "en",
+          "@value": "quote"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#range": [
+        {
+          "@id": "http://www.w3.org/2001/XMLSchema#string"
+        }
+      ]
+    },
+    {
+      "@id": "https://example.org/tei-p6-research/ontology/representation",
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": [
+        {
+          "@id": "http://www.w3.org/2002/07/owl#ObjectProperty"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#comment": [
+        {
+          "@language": "en",
+          "@value": "References a fixed representation, from a text description or selection. The source remains explicitly typed; this property imposes no shared domain on those distinct record kinds."
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#label": [
+        {
+          "@language": "en",
+          "@value": "representation"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#range": [
+        {
+          "@id": "https://example.org/tei-p6-research/ontology/RepresentationRecord"
+        }
+      ]
+    },
+    {
+      "@id": "https://example.org/tei-p6-research/ontology/responsibleAgent",
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": [
+        {
+          "@id": "http://www.w3.org/2002/07/owl#ObjectProperty"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#comment": [
+        {
+          "@language": "en",
+          "@value": "References the documentary responsibility handle for a record or package. The domain is intentionally open so using this property does not classify a package as a record."
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#label": [
+        {
+          "@language": "en",
+          "@value": "responsible agent"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#range": [
+        {
+          "@id": "https://example.org/tei-p6-research/ontology/AgentRecord"
+        }
+      ]
+    },
+    {
+      "@id": "https://example.org/tei-p6-research/ontology/scope",
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": [
+        {
+          "@id": "http://www.w3.org/2002/07/owl#DatatypeProperty"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#comment": [
+        {
+          "@language": "en",
+          "@value": "Records the interpretation scope using a documented open controlled vocabulary, with values such as narrative, tradition-report, assessment or geographic-hypothesis. The adopting profile defines each value and any extension. This ontology supplies no OWL value or presence validation and derives no world facts from a scope."
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#domain": [
+        {
+          "@id": "https://example.org/tei-p6-research/ontology/ContextRecord"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#label": [
+        {
+          "@language": "en",
+          "@value": "scope"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#range": [
+        {
+          "@id": "http://www.w3.org/2001/XMLSchema#string"
+        }
+      ]
+    },
+    {
+      "@id": "https://example.org/tei-p6-research/ontology/stance",
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": [
+        {
+          "@id": "http://www.w3.org/2002/07/owl#DatatypeProperty"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#comment": [
+        {
+          "@language": "en",
+          "@value": "Documentary controlled value: assert, report, question or deny. A value records an attributed attitude and triggers no materialization of the proposition as a world fact. This vocabulary does not enforce value or presence constraints."
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#domain": [
+        {
+          "@id": "https://example.org/tei-p6-research/ontology/ClaimRecord"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#label": [
+        {
+          "@language": "en",
+          "@value": "stance"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#range": [
+        {
+          "@id": "http://www.w3.org/2001/XMLSchema#string"
+        }
+      ]
+    },
+    {
+      "@id": "https://example.org/tei-p6-research/ontology/start",
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": [
+        {
+          "@id": "http://www.w3.org/2002/07/owl#DatatypeProperty"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#comment": [
+        {
+          "@language": "en",
+          "@value": "Records the zero-based inclusive Unicode code-point boundary in the referenced representation. This ontology performs no bounds or interval-order validation."
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#domain": [
+        {
+          "@id": "https://example.org/tei-p6-research/ontology/TextRangeSelectionRecord"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#label": [
+        {
+          "@language": "en",
+          "@value": "start"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#range": [
+        {
+          "@id": "http://www.w3.org/2001/XMLSchema#nonNegativeInteger"
+        }
+      ]
+    },
+    {
+      "@id": "https://example.org/tei-p6-research/ontology/subjectInterpretation",
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": [
+        {
+          "@id": "http://www.w3.org/2002/07/owl#DatatypeProperty"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#comment": [
+        {
+          "@language": "en",
+          "@value": "Documents how a subject reference is read: record for the handle, referent for the described object, concept for a vocabulary value, or proposition for recorded content. An unfamiliar predicate has no licensed interpretation."
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#domain": [
+        {
+          "@id": "https://example.org/tei-p6-research/ontology/PredicateRecord"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#label": [
+        {
+          "@language": "en",
+          "@value": "subject interpretation"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#range": [
+        {
+          "@id": "http://www.w3.org/2001/XMLSchema#string"
+        }
+      ]
+    },
+    {
+      "@id": "https://example.org/tei-p6-research/ontology/targetSelection",
+      "http://www.w3.org/1999/02/22-rdf-syntax-ns#type": [
+        {
+          "@id": "http://www.w3.org/2002/07/owl#ObjectProperty"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#comment": [
+        {
+          "@language": "en",
+          "@value": "References the documentary selection targeted by an annotation; its selector contract is determined by the selection's explicitly stated kind."
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#domain": [
+        {
+          "@id": "https://example.org/tei-p6-research/ontology/AnnotationRecord"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#label": [
+        {
+          "@language": "en",
+          "@value": "target selection"
+        }
+      ],
+      "http://www.w3.org/2000/01/rdf-schema#range": [
+        {
+          "@id": "https://example.org/tei-p6-research/ontology/SelectionRecord"
+        }
+      ]
+    }
+  ]
+}

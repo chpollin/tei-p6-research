@@ -2,7 +2,7 @@
 type: chapter
 status: grounded
 checked:
-  validation: 2026-09-06
+  validation: 2026-09-07
 assertions:
   - "[[30_assertions/p5-anchor-identifies-a-textual-point]]"
   - "[[30_assertions/p5-span-associates-interpretation-with-text]]"
@@ -15,16 +15,23 @@ assertions:
   - "[[30_assertions/humboldt-diary-encodes-a-page-pointer-and-separate-foliation]]"
 posits: 13
 created: 2026-09-05
-updated: 2026-09-06
+updated: 2026-09-07
 ---
 
-# Abstract Text Model 0.1: technical proposal for TEI P6
+# A possible TEI P6 architecture and its evaluation
 
-This proposal defines an experimental model of textual identity, selection,
-structure, and interpretation for evaluation as a possible TEI P6 foundation.
-Its objects and rules are independent project decisions. Formal conformance,
-preservation of editorial distinctions, and practical usability require
-separate evaluation.[^scope]
+This chapter develops the architecture argument around the experimental text
+model as a possible TEI P6 foundation. The companion
+[Abstract Model proposal](02-abstract-model.md) defines and justifies the
+model's objects, identities, and constraints, including the 0.2 extension.
+Its final section and the maintained [model design](../knowledge/model-design.md)
+develop application-neutral identity, independent names, open classifications
+and context-qualified referents as further proposals. Those extensions do not
+alter the executable scope of the examples in this chapter.
+The comparisons below retain their explicitly bounded 0.1 scope. They
+connect modeling choices to projections, exchange, migration, and evaluation.
+The recommendations are independent project decisions. Formal conformance,
+editorial preservation, and practical usability require separate evaluation.[^scope]
 
 ## 1. Scope and coverage method
 
@@ -253,9 +260,9 @@ candidate. If both preserve the required distinctions, the decision should
 turn on additional evidence about authoring, querying, maintenance, migration,
 and teaching costs rather than a preferred diagram.[^recommendation]
 
-The next recommendation should depend on independently selected editions and
-text forms, effective customization constraints, explicit loss reports, and
-observed editorial work. The profile needs challenges involving withdrawal,
+The next recommendation should depend on independently selected edition,
+corpus and catalogue workflows, effective customization constraints, explicit
+loss reports, and observed work. The profile needs challenges involving withdrawal,
 negative claims, and disagreements across agents. The model needs challenges
 involving carriers, images, spoken time, and noncontiguous structures. Evidence
 that an existing workflow preserves the required distinctions at lower total

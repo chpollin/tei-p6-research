@@ -1,0 +1,176 @@
+schema_version: 1
+run_id: 2026-09-07-text-structures-citations
+source_id: github-teic-tei-work-items
+status: bounded-complete
+started_at: '2026-09-07T06:10:01Z'
+finished_at: '2026-09-07T06:10:01Z'
+scope:
+  boundary: Issues 1400 and 1505, issue bodies, labels and their single comment pages
+    from the locked REST snapshot.
+  status_applies_to: the two selected citation-only admissions and four raw responses
+    only
+adapter:
+  name: tools.admit_text_structure_citations
+  version: 1
+references_path: references/text-structures-run1.json
+lock_file: sources/locks/github-teic-tei.yaml
+upstream_manifests:
+- sources/manifests/2026-09-06-github-teic-tei-work-items.yaml
+objects:
+- kind: csl-json-bibliography
+  path: references/text-structures-run1.json
+  sha256: 74a794ff698927112f6eb764c9b0b0cd51ce8b35a8fe252f9e9b36b34d61b201
+admissions:
+- reference_id: teic-tei-issue-1400
+  source_type: publication
+  source_id: github-teic-tei-work-items
+  lock_file: sources/locks/github-teic-tei.yaml
+  work_item:
+    number: 1400
+    kind: issue
+    state: open
+    created_at: '2015-11-10T18:33:54Z'
+    closed_at: null
+    comment_count: 20
+    labels:
+    - 'Type: FeatureRequest'
+    - 'TEI: Guidelines & Documentation'
+    - 'TEI: Schema'
+    - 'Status: Reconsider for P6'
+    html_url: https://github.com/TEIC/TEI/issues/1400
+  snapshots:
+  - part: issue-body
+    response: &id001
+      requested_url: https://api.github.com/repos/TEIC/TEI/issues/1400
+      canonical_url: https://api.github.com/repos/TEIC/TEI/issues/1400
+      final_url: https://api.github.com/repos/TEIC/TEI/issues/1400
+      observed_at: '2026-09-06T09:49:41Z'
+      status: 200
+      media_type: application/json
+      byte_count: 5650
+      sha256: 709a304213a1d99ebc2c40f0f88f12fbcf1def6c5d51bcbe864b3da391166706
+      raw_path: sha256/70/9a304213a1d99ebc2c40f0f88f12fbcf1def6c5d51bcbe864b3da391166706
+    extraction:
+      kind: json-field
+      path:
+      - body
+  - part: comments-page-1
+    response: &id003
+      requested_url: https://api.github.com/repos/TEIC/TEI/issues/1400/comments?per_page=100
+      canonical_url: https://api.github.com/repos/TEIC/TEI/issues/1400/comments?per_page=100
+      final_url: https://api.github.com/repos/TEIC/TEI/issues/1400/comments?per_page=100
+      observed_at: '2026-09-06T09:49:41Z'
+      status: 200
+      media_type: application/json
+      byte_count: 43795
+      sha256: 353f14b878797d99214dc96697bd164ee766c02b2274ce91ccf585b2f89becea
+      raw_path: sha256/35/3f14b878797d99214dc96697bd164ee766c02b2274ce91ccf585b2f89becea
+    extraction:
+      kind: json-field
+      path:
+      - '*'
+      - body
+  - part: issue-labels
+    response: *id001
+    extraction:
+      kind: json-field
+      path:
+      - labels
+      - '*'
+      - name
+  rights: Citation and checked short quotation only. Full issue and comment bodies
+    remain in ignored raw storage; repository licensing does not license participant
+    discussion text.
+  authority: Participant proposals and implementation self-reports; source-state labels
+    establish only their recorded state.
+  instruction_trust: none
+  quotes:
+  - text: I propose that it be removed in the next major release.
+    locator: issue description, 2015-11-10
+  - text: Makes human editing much much easier
+    locator: comment 4, 2015-11-10, issuecomment-155582272
+  - text: 'Status: Reconsider for P6'
+    locator: issue labels at the 2026-09-06 snapshot
+  distillate_path: 20_distillates/publications/teic-tei-issue-1400.md
+- reference_id: teic-tei-issue-1505
+  source_type: publication
+  source_id: github-teic-tei-work-items
+  lock_file: sources/locks/github-teic-tei.yaml
+  work_item:
+    number: 1505
+    kind: issue
+    state: closed
+    created_at: '2016-09-22T15:49:54Z'
+    closed_at: '2017-05-03T17:12:19Z'
+    comment_count: 14
+    labels:
+    - 'Type: Bug'
+    - 'Status: Go'
+    - 'TEI: Guidelines & Documentation'
+    - 'TEI: Schema'
+    - 'Priority: Medium'
+    html_url: https://github.com/TEIC/TEI/issues/1505
+  snapshots:
+  - part: issue-body
+    response: &id002
+      requested_url: https://api.github.com/repos/TEIC/TEI/issues/1505
+      canonical_url: https://api.github.com/repos/TEIC/TEI/issues/1505
+      final_url: https://api.github.com/repos/TEIC/TEI/issues/1505
+      observed_at: '2026-09-06T09:52:18Z'
+      status: 200
+      media_type: application/json
+      byte_count: 8229
+      sha256: 8d022744959aa659ab5728500e55b0a758a15dc0a38d553a3167c97cf648f643
+      raw_path: sha256/8d/022744959aa659ab5728500e55b0a758a15dc0a38d553a3167c97cf648f643
+    extraction:
+      kind: json-field
+      path:
+      - body
+  - part: comments-page-1
+    response: &id004
+      requested_url: https://api.github.com/repos/TEIC/TEI/issues/1505/comments?per_page=100
+      canonical_url: https://api.github.com/repos/TEIC/TEI/issues/1505/comments?per_page=100
+      final_url: https://api.github.com/repos/TEIC/TEI/issues/1505/comments?per_page=100
+      observed_at: '2026-09-06T09:52:19Z'
+      status: 200
+      media_type: application/json
+      byte_count: 28589
+      sha256: 2687ed9729186eb5de58681ddcbb283797959861e26203c1c71951b1b07a1aa2
+      raw_path: sha256/26/87ed9729186eb5de58681ddcbb283797959861e26203c1c71951b1b07a1aa2
+    extraction:
+      kind: json-field
+      path:
+      - '*'
+      - body
+  - part: issue-labels
+    response: *id002
+    extraction:
+      kind: json-field
+      path:
+      - labels
+      - '*'
+      - name
+  rights: Citation and checked short quotation only. Full issue and comment bodies
+    remain in ignored raw storage; repository licensing does not license participant
+    discussion text.
+  authority: Participant proposals and implementation self-reports; source-state labels
+    establish only their recorded state.
+  instruction_trust: none
+  quotes:
+  - text: they must always point to elements of the same type
+    locator: comment 2, 2016-09-26, issuecomment-249580507
+  - text: Have added recommendation in the classSpec and in the text of the Guidelines.
+    locator: comment 14, 2017-05-03, issuecomment-298975299
+  distillate_path: 20_distillates/publications/teic-tei-issue-1505.md
+requests:
+- *id001
+- *id003
+- *id002
+- *id004
+counts:
+  admitted_sources: 2
+  raw_snapshots: 4
+  checked_quotes: 5
+gaps: []
+rights_exceptions: []
+instruction_trust: none

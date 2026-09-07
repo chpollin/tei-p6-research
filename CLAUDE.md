@@ -47,7 +47,8 @@ Read only what the task needs:
 | Distill, synthesize, write or query | matching section of `knowledge/operations.md` and `knowledge/schema.md` |
 | Analyze an element, module, decision or release | matching procedure in `knowledge/operations.md` § Analyze |
 | Evaluate a P6 proposal | `knowledge/p6-evaluation.md`, then `knowledge/operations.md` § Analyze |
-| Work on the model or an experiment | `knowledge/text-model.md`, `knowledge/text-model-bindings.md`, `knowledge/experiments.md` |
+| Work on the model or an experiment | `knowledge/model-design.md` for proposed extensions, `knowledge/text-model.md` for executable contracts, then `knowledge/text-model-bindings.md` and `knowledge/experiments.md` |
+| Work on the documentary ontology or class hierarchy | `knowledge/ontology.md`, `ontology/core.ttl`, then `knowledge/model-design.md` for the separate domain hierarchy |
 | Review or verify | `knowledge/verification.md` |
 | Validate or close a change | `knowledge/operations.md` § Check and `knowledge/testing.md` |
 | Plan the next step | `knowledge/plan.md` |

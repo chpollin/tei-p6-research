@@ -35,10 +35,27 @@ the repository root.
    converter, also run `python -m tools.ingest_guidelines --check`. This checks
    finite source coverage, preserved identities and current processing facts;
    it grants no scholarly status.
+   Navigation changes additionally require
+   `python -m tools.build_guidelines_navigation --check`. For the Text and
+   Document Structures source admission, run
+   `python -m tools.ingest_text_structures --check`. Export changes require
+   a complete export to a temporary directory followed by its `--check`.
 5. `python -m pytest tests -q` when shared behavior, tools, schemas or
    fixtures changed, otherwise the focused tests of the changed module.
 6. The reproduction checks below for every experiment and page the change
    touches.
+   Ontology changes additionally require `python tools/check_ontology.py --check`
+   and `python -m pytest tests/test_check_ontology.py -q`. Changes to the
+   illustrative model examples require
+   `python -m pytest tests/test_model_design_examples.py -q`.
+   HSA case changes require `python tools/build_hsa_case.py --check` and
+   `python -m pytest tests/test_build_hsa_case.py tests/test_hsa_bindings.py -q`.
+   A full suite already run in step 5 includes these tests; do not repeat them.
+   These check the fixed
+   snapshot and its declared case binding, including preservation-only fields;
+   they do not establish general P5 migration or HSA-ODD conformance.
+   The semantic and preservation components, their exact union and both
+   binding versions follow [[knowledge/hsa-profile]].
 7. `python tools/validate.py . --chapter 40_output/<slug>` for a chapter
    that is being accepted, where any warning fails the run.
 
@@ -60,6 +77,9 @@ gate on the real file state.
 | `ruff` | the code conforms to the configured lint rules | correctness |
 | `tools/validate.py` | frontmatter, anchors, statement IDs, quotation checks, computations, topic-map reachability, contested links, chapter mirrors and status discipline conform to [[knowledge/schema]] | whether a passage supports a claim |
 | `tools.corpus.validate_control_plane` | registry-to-lock identity, manifest source IDs, normalized object existence and recorded SHA-256 values reconcile | completeness of a family beyond its recorded gaps |
+| Guidelines navigation reproduction | rule-based topic suggestions and declaration links reproduce from tracked inputs | scholarly classification or source support |
+| Guidelines XML export and verification | every admitted XML byte and its original Git path survive a mirror-free export; the export inventory reconciles | images, generated HTML, schemas and scientific interpretation |
+| Text structures admission check | the admitted overlap test and its representation reproduce without ignored originals | source-support review of the twelve-source research run |
 | `pytest tests` | builders, validator, collectors, models and pilots behave as their tests specify, on offline fixtures | behavior on live network interfaces |
 | experiment reproduction | reports and cases reproduce byte for byte from declared inputs | ontological adequacy, usability, P5 migratability |
 | page reproduction | every committed page rebuilds from its recorded build date | design quality beyond the acceptance checklist in [[knowledge/design]] |
@@ -74,11 +94,33 @@ procedures in [[knowledge/verification]] and the acceptance items in
 
 ## Continuous integration
 
+Both workflows install the declared development dependencies from `uv.lock`
+and run project commands through `uv run --locked`. RDFLib is pinned for the
+ontology and example graph checks. These checks compare explicit graphs and
+structural policy; they do not perform OWL reasoning. The RDFLib 7.6 JSON-LD
+parser emits an upstream `ConjunctiveGraph` deprecation warning without
+changing the compared graph.
+
 `.github/workflows/checks.yml` runs on every push and pull request. It lints
 with the configured rule set, validates the vault and the corpus control
 plane, runs the wave-one review-only check, reproduces Abstract Text Model
 0.1 and the editorial cases with their current source review, runs the test
 suite and closes with the text identity pilot gate.
+
+The completion gate and each workflow run the full test suite once.
+`tools/check_text_identity_pilot.py` checks only its admitted sources,
+bounded source-support review and report reproduction. It starts neither
+pytest nor repository-wide validation. Those checks belong to the completion
+gate above. The pilot report fingerprints its own contract section; changes
+to unrelated experiments do not invalidate it.
+
+Both workflows also reproduce the Guidelines navigation and the Text and
+Document Structures admission, then export all 888 admitted Guidelines XML
+sources into the runner's temporary directory and verify the result. These
+checks need only tracked files and perform no acquisition. The temporary
+export remains outside the published Pages artifact. The structure research
+review checker is separate: its required independent verdicts remain open,
+so it is not a mandatory CI gate and no passing review is implied.
 
 `.github/workflows/pages.yml` runs on `main` and on manual dispatch. It
 validates the vault and the control plane, runs the test suite, regenerates
@@ -108,12 +150,43 @@ and modified sources, literal DTD examples versus live declarations,
 dependency boundaries, publication-member matching and escaped public
 coverage links. Both CI and the Pages build run the intake check.
 
+Navigation, the additional overlap test admission and the XML export use:
+
+```powershell
+uv run python -m tools.build_guidelines_navigation --check
+uv run python -m tools.ingest_text_structures --check
+uv run python -m tools.export_guidelines --output ../tei-p5-4.12.0-xml
+uv run python -m tools.export_guidelines --output ../tei-p5-4.12.0-xml --check
+```
+
+Choose an export directory whose existing files are either absent or byte
+identical. Export preserves the original upstream path layout and rejects
+conflicting files, traversal and symlink destinations. Atomic publication
+requires a filesystem supporting hardlinks. `tests/test_export_guidelines.py`
+checks the complete export without a mirror, repeatability and failure cases.
+The navigation builder uses the tracked declaration atlas; its check does
+not regenerate that atlas from an unavailable Git mirror.
+
+`python -m tools.check_text_structures` checks source and assertion review
+records only after independent verdicts exist. Emitting its review pairs
+with `--emit` establishes no source support. An unfinished review remains an
+explicit research limitation even when all technical checks pass.
+
 The experiments reproduce with these commands, which need no raw corpus
 unless stated.
+
+The text-identity support checker retains the original pilot's four assertions
+and three distillates as its review boundary and follows their current
+grounding dependencies. Changed dependencies or prompts require a new review.
+Chapter 02 has a broader definition and is structurally checked separately.
+Passing the pilot audit confers no support review on that expanded chapter.
+The pilot checker does not run chapter validation as a side effect.
 
 ```powershell
 python tools/check_abstract_text_v01.py --check
 python tools/check_entities_v02.py --check
+python -m tools.ingest_identity_evidence --check
+python -m tools.check_identity_evidence --check
 python tools/ingest_editorial_cases.py --check
 python tools/check_editorial_cases.py --check
 python tools/check_text_identity_pilot.py

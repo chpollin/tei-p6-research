@@ -4,7 +4,7 @@ Generated navigation only. Ground claims through the linked representations and 
 
 Release commit: `113e933e21f016e2655518321e9d10214b8d9fcb`. [Admission manifest](../../sources/manifests/2026-09-07-guidelines-4.12.0-admission.yaml).
 
-888 source representations; 20 sources with a distillate.
+888 source representations; 29 sources with a distillate.
 
 A distillate's presence does not establish exhaustive section review. No section-level review has been recorded by this import.
 
@@ -22,7 +22,7 @@ A distillate's presence does not establish exhaustive section review. No section
 | body 1 | [The TEI Infrastructure](https://tei-c.org/Vault/P5/4.12.0/doc/tei-p5-doc/en/html/ST.html) | [Source](../../10_markdown/documents/tei-p5-guidelines-st-infrastructure-4.12.0.md) | ingested | — |
 | body 2 | [The TEI Header](https://tei-c.org/Vault/P5/4.12.0/doc/tei-p5-doc/en/html/HD.html) | [Source](../../10_markdown/documents/tei-p5-guidelines-hd-header-4.12.0.md) | ingested | — |
 | body 3 | [Elements Available in All TEI Documents](https://tei-c.org/Vault/P5/4.12.0/doc/tei-p5-doc/en/html/CO.html) | [Source](../../10_markdown/documents/tei-p5-guidelines-co-coreelements-4.12.0.md) | ingested | — |
-| body 4 | [Default Text Structure](https://tei-c.org/Vault/P5/4.12.0/doc/tei-p5-doc/en/html/DS.html) | [Source](../../10_markdown/documents/tei-p5-guidelines-ds-defaulttextstructure-4.12.0.md) | ingested | — |
+| body 4 | [Default Text Structure](https://tei-c.org/Vault/P5/4.12.0/doc/tei-p5-doc/en/html/DS.html) | [Source](../../10_markdown/documents/tei-p5-guidelines-ds-defaulttextstructure-4.12.0.md) | distilled | [distilled / grounded](../../20_distillates/documents/tei-p5-guidelines-ds-defaulttextstructure-4.12.0.md) |
 | body 5 | [Characters, Glyphs, and Writing Modes](https://tei-c.org/Vault/P5/4.12.0/doc/tei-p5-doc/en/html/WD.html) | [Source](../../10_markdown/documents/tei-p5-guidelines-wd-nonstandardcharacters-4.12.0.md) | ingested | — |
 | body 6 | [Verse](https://tei-c.org/Vault/P5/4.12.0/doc/tei-p5-doc/en/html/VE.html) | [Source](../../10_markdown/documents/tei-p5-guidelines-ve-verse-4.12.0.md) | ingested | — |
 | body 7 | [Performance Texts](https://tei-c.org/Vault/P5/4.12.0/doc/tei-p5-doc/en/html/DR.html) | [Source](../../10_markdown/documents/tei-p5-guidelines-dr-performancetexts-4.12.0.md) | ingested | — |
@@ -39,7 +39,7 @@ A distillate's presence does not establish exhaustive section review. No section
 | body 18 | [Simple Analytic Mechanisms](https://tei-c.org/Vault/P5/4.12.0/doc/tei-p5-doc/en/html/AI.html) | [Source](../../10_markdown/documents/tei-p5-guidelines-ai-analyticmechanisms-4.12.0.md) | ingested | — |
 | body 19 | [Feature Structures](https://tei-c.org/Vault/P5/4.12.0/doc/tei-p5-doc/en/html/FS.html) | [Source](../../10_markdown/documents/tei-p5-guidelines-fs-featurestructures-4.12.0.md) | ingested | — |
 | body 20 | [Graphs, Networks, and Trees](https://tei-c.org/Vault/P5/4.12.0/doc/tei-p5-doc/en/html/GD.html) | [Source](../../10_markdown/documents/tei-p5-guidelines-gd-graphsnetworkstrees-4.12.0.md) | ingested | — |
-| body 21 | [Non-hierarchical Structures](https://tei-c.org/Vault/P5/4.12.0/doc/tei-p5-doc/en/html/NH.html) | [Source](../../10_markdown/documents/tei-p5-guidelines-nh-non-hierarchical-4.12.0.md) | ingested | — |
+| body 21 | [Non-hierarchical Structures](https://tei-c.org/Vault/P5/4.12.0/doc/tei-p5-doc/en/html/NH.html) | [Source](../../10_markdown/documents/tei-p5-guidelines-nh-non-hierarchical-4.12.0.md) | distilled | [distilled / grounded](../../20_distillates/documents/tei-p5-guidelines-nh-non-hierarchical-4.12.0.md) |
 | body 22 | [Certainty, Precision, and Responsibility](https://tei-c.org/Vault/P5/4.12.0/doc/tei-p5-doc/en/html/CE.html) | [Source](../../10_markdown/documents/tei-p5-guidelines-ce-certaintyresponsibility-4.12.0.md) | ingested | — |
 | body 23 | [Documentation Elements](https://tei-c.org/Vault/P5/4.12.0/doc/tei-p5-doc/en/html/TD.html) | [Source](../../10_markdown/documents/tei-p5-guidelines-td-documentationelements-4.12.0.md) | ingested | — |
 | body 24 | [Using the TEI](https://tei-c.org/Vault/P5/4.12.0/doc/tei-p5-doc/en/html/USE.html) | [Source](../../10_markdown/documents/tei-p5-guidelines-use-4.12.0.md) | ingested | — |
@@ -69,7 +69,7 @@ A distillate's presence does not establish exhaustive section review. No section
 | `P5/Source/Guidelines/en/DEPRECATIONS.xml` | [Read](../../10_markdown/documents/tei-p5-guidelines-deprecations-4.12.0.md) | ingested |
 | `P5/Source/Guidelines/en/DI-PrintDictionaries.xml` | [Read](../../10_markdown/documents/tei-p5-guidelines-di-printdictionaries-4.12.0.md) | ingested |
 | `P5/Source/Guidelines/en/DR-PerformanceTexts.xml` | [Read](../../10_markdown/documents/tei-p5-guidelines-dr-performancetexts-4.12.0.md) | ingested |
-| `P5/Source/Guidelines/en/DS-DefaultTextStructure.xml` | [Read](../../10_markdown/documents/tei-p5-guidelines-ds-defaulttextstructure-4.12.0.md) | ingested |
+| `P5/Source/Guidelines/en/DS-DefaultTextStructure.xml` | [Read](../../10_markdown/documents/tei-p5-guidelines-ds-defaulttextstructure-4.12.0.md) | distilled |
 | `P5/Source/Guidelines/en/Dedication.xml` | [Read](../../10_markdown/documents/tei-p5-guidelines-dedication-4.12.0.md) | ingested |
 | `P5/Source/Guidelines/en/FM1-IntroductoryNote.xml` | [Read](../../10_markdown/documents/tei-p5-guidelines-fm1-introductorynote-4.12.0.md) | ingested |
 | `P5/Source/Guidelines/en/FS-FeatureStructures.xml` | [Read](../../10_markdown/documents/tei-p5-guidelines-fs-featurestructures-4.12.0.md) | ingested |
@@ -79,7 +79,7 @@ A distillate's presence does not establish exhaustive section review. No section
 | `P5/Source/Guidelines/en/Images/poems.xml` | [Read](../../10_markdown/documents/tei-p5-guidelines-poems-4.12.0.md) | ingested |
 | `P5/Source/Guidelines/en/MS-ManuscriptDescription.xml` | [Read](../../10_markdown/documents/tei-p5-guidelines-ms-manuscriptdescription-4.12.0.md) | ingested |
 | `P5/Source/Guidelines/en/ND-NamesDates.xml` | [Read](../../10_markdown/documents/tei-p5-guidelines-nd-4.12.0.md) | distilled |
-| `P5/Source/Guidelines/en/NH-Non-hierarchical.xml` | [Read](../../10_markdown/documents/tei-p5-guidelines-nh-non-hierarchical-4.12.0.md) | ingested |
+| `P5/Source/Guidelines/en/NH-Non-hierarchical.xml` | [Read](../../10_markdown/documents/tei-p5-guidelines-nh-non-hierarchical-4.12.0.md) | distilled |
 | `P5/Source/Guidelines/en/PARTIND.xml` | [Read](../../10_markdown/documents/tei-p5-guidelines-partind-4.12.0.md) | ingested |
 | `P5/Source/Guidelines/en/PH-PrimarySources.xml` | [Read](../../10_markdown/documents/tei-p5-guidelines-ph-primarysources-4.12.0.md) | ingested |
 | `P5/Source/Guidelines/en/PrefatoryNote.xml` | [Read](../../10_markdown/documents/tei-p5-guidelines-prefatorynote-4.12.0.md) | ingested |
@@ -164,12 +164,12 @@ A distillate's presence does not establish exhaustive section review. No section
 | `P5/Source/Specs/att.enjamb.xml` | [Read](../../10_markdown/documents/tei-p5-att.enjamb-4.12.0.md) | ingested |
 | `P5/Source/Specs/att.entryLike.xml` | [Read](../../10_markdown/documents/tei-p5-att.entrylike-4.12.0.md) | ingested |
 | `P5/Source/Specs/att.formula.xml` | [Read](../../10_markdown/documents/tei-p5-att.formula-4.12.0.md) | ingested |
-| `P5/Source/Specs/att.fragmentable.xml` | [Read](../../10_markdown/documents/tei-p5-att.fragmentable-4.12.0.md) | ingested |
+| `P5/Source/Specs/att.fragmentable.xml` | [Read](../../10_markdown/documents/tei-p5-att.fragmentable-4.12.0.md) | distilled |
 | `P5/Source/Specs/att.gaijiProp.xml` | [Read](../../10_markdown/documents/tei-p5-att.gaijiprop-4.12.0.md) | ingested |
 | `P5/Source/Specs/att.global.analytic.xml` | [Read](../../10_markdown/documents/tei-p5-att.global.analytic-4.12.0.md) | ingested |
 | `P5/Source/Specs/att.global.change.xml` | [Read](../../10_markdown/documents/tei-p5-att.global.change-4.12.0.md) | ingested |
 | `P5/Source/Specs/att.global.facs.xml` | [Read](../../10_markdown/documents/tei-p5-att.global.facs-4.12.0.md) | ingested |
-| `P5/Source/Specs/att.global.linking.xml` | [Read](../../10_markdown/documents/tei-p5-att.global.linking-4.12.0.md) | ingested |
+| `P5/Source/Specs/att.global.linking.xml` | [Read](../../10_markdown/documents/tei-p5-att.global.linking-4.12.0.md) | distilled |
 | `P5/Source/Specs/att.global.rendition.xml` | [Read](../../10_markdown/documents/tei-p5-att.global.rendition-4.12.0.md) | ingested |
 | `P5/Source/Specs/att.global.responsibility.xml` | [Read](../../10_markdown/documents/tei-p5-att.global.responsibility-4.12.0.md) | distilled |
 | `P5/Source/Specs/att.global.source.xml` | [Read](../../10_markdown/documents/tei-p5-att.global.source-4.12.0.md) | distilled |
@@ -322,7 +322,7 @@ A distillate's presence does not establish exhaustive section review. No section
 | `P5/Source/Specs/distinct.xml` | [Read](../../10_markdown/documents/tei-p5-distinct-4.12.0.md) | ingested |
 | `P5/Source/Specs/distributor.xml` | [Read](../../10_markdown/documents/tei-p5-distributor-4.12.0.md) | ingested |
 | `P5/Source/Specs/district.xml` | [Read](../../10_markdown/documents/tei-p5-district-4.12.0.md) | ingested |
-| `P5/Source/Specs/div.xml` | [Read](../../10_markdown/documents/tei-p5-div-4.12.0.md) | ingested |
+| `P5/Source/Specs/div.xml` | [Read](../../10_markdown/documents/tei-p5-div-4.12.0.md) | distilled |
 | `P5/Source/Specs/div1.xml` | [Read](../../10_markdown/documents/tei-p5-div1-4.12.0.md) | ingested |
 | `P5/Source/Specs/div2.xml` | [Read](../../10_markdown/documents/tei-p5-div2-4.12.0.md) | ingested |
 | `P5/Source/Specs/div3.xml` | [Read](../../10_markdown/documents/tei-p5-div3-4.12.0.md) | ingested |
@@ -447,7 +447,7 @@ A distillate's presence does not establish exhaustive section review. No section
 | `P5/Source/Specs/interpGrp.xml` | [Read](../../10_markdown/documents/tei-p5-interpgrp-4.12.0.md) | ingested |
 | `P5/Source/Specs/interpretation.xml` | [Read](../../10_markdown/documents/tei-p5-interpretation-4.12.0.md) | ingested |
 | `P5/Source/Specs/item.xml` | [Read](../../10_markdown/documents/tei-p5-item-4.12.0.md) | ingested |
-| `P5/Source/Specs/join.xml` | [Read](../../10_markdown/documents/tei-p5-join-4.12.0.md) | ingested |
+| `P5/Source/Specs/join.xml` | [Read](../../10_markdown/documents/tei-p5-join-4.12.0.md) | distilled |
 | `P5/Source/Specs/joinGrp.xml` | [Read](../../10_markdown/documents/tei-p5-joingrp-4.12.0.md) | ingested |
 | `P5/Source/Specs/keywords.xml` | [Read](../../10_markdown/documents/tei-p5-keywords-4.12.0.md) | ingested |
 | `P5/Source/Specs/kinesic.xml` | [Read](../../10_markdown/documents/tei-p5-kinesic-4.12.0.md) | ingested |
@@ -515,7 +515,7 @@ A distillate's presence does not establish exhaustive section review. No section
 | `P5/Source/Specs/metDecl.xml` | [Read](../../10_markdown/documents/tei-p5-metdecl-4.12.0.md) | ingested |
 | `P5/Source/Specs/metSym.xml` | [Read](../../10_markdown/documents/tei-p5-metsym-4.12.0.md) | ingested |
 | `P5/Source/Specs/metamark.xml` | [Read](../../10_markdown/documents/tei-p5-metamark-4.12.0.md) | ingested |
-| `P5/Source/Specs/milestone.xml` | [Read](../../10_markdown/documents/tei-p5-milestone-4.12.0.md) | ingested |
+| `P5/Source/Specs/milestone.xml` | [Read](../../10_markdown/documents/tei-p5-milestone-4.12.0.md) | distilled |
 | `P5/Source/Specs/mod.xml` | [Read](../../10_markdown/documents/tei-p5-mod-4.12.0.md) | ingested |
 | `P5/Source/Specs/model.addrPart.xml` | [Read](../../10_markdown/documents/tei-p5-model.addrpart-4.12.0.md) | ingested |
 | `P5/Source/Specs/model.addressLike.xml` | [Read](../../10_markdown/documents/tei-p5-model.addresslike-4.12.0.md) | ingested |
@@ -668,7 +668,7 @@ A distillate's presence does not establish exhaustive section review. No section
 | `P5/Source/Specs/node.xml` | [Read](../../10_markdown/documents/tei-p5-node-4.12.0.md) | ingested |
 | `P5/Source/Specs/normalization.xml` | [Read](../../10_markdown/documents/tei-p5-normalization-4.12.0.md) | ingested |
 | `P5/Source/Specs/notatedMusic.xml` | [Read](../../10_markdown/documents/tei-p5-notatedmusic-4.12.0.md) | ingested |
-| `P5/Source/Specs/note.xml` | [Read](../../10_markdown/documents/tei-p5-note-4.12.0.md) | ingested |
+| `P5/Source/Specs/note.xml` | [Read](../../10_markdown/documents/tei-p5-note-4.12.0.md) | distilled |
 | `P5/Source/Specs/noteGrp.xml` | [Read](../../10_markdown/documents/tei-p5-notegrp-4.12.0.md) | ingested |
 | `P5/Source/Specs/notesStmt.xml` | [Read](../../10_markdown/documents/tei-p5-notesstmt-4.12.0.md) | ingested |
 | `P5/Source/Specs/num.xml` | [Read](../../10_markdown/documents/tei-p5-num-4.12.0.md) | ingested |
@@ -700,7 +700,7 @@ A distillate's presence does not establish exhaustive section review. No section
 | `P5/Source/Specs/particDesc.xml` | [Read](../../10_markdown/documents/tei-p5-particdesc-4.12.0.md) | ingested |
 | `P5/Source/Specs/path.xml` | [Read](../../10_markdown/documents/tei-p5-path-4.12.0.md) | ingested |
 | `P5/Source/Specs/pause.xml` | [Read](../../10_markdown/documents/tei-p5-pause-4.12.0.md) | ingested |
-| `P5/Source/Specs/pb.xml` | [Read](../../10_markdown/documents/tei-p5-pb-4.12.0.md) | ingested |
+| `P5/Source/Specs/pb.xml` | [Read](../../10_markdown/documents/tei-p5-pb-4.12.0.md) | distilled |
 | `P5/Source/Specs/pc.xml` | [Read](../../10_markdown/documents/tei-p5-pc-4.12.0.md) | ingested |
 | `P5/Source/Specs/per.xml` | [Read](../../10_markdown/documents/tei-p5-per-4.12.0.md) | ingested |
 | `P5/Source/Specs/performance.xml` | [Read](../../10_markdown/documents/tei-p5-performance-4.12.0.md) | ingested |

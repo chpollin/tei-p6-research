@@ -9,8 +9,8 @@ method:
 status: draft
 language: en
 created: "2026-09-06"
-updated: "2026-09-06"
-related: [text-model, text-model-bindings, p6-architecture, testing, verification, state]
+updated: "2026-09-07"
+related: [text-model, model-design, model-examples, ontology, text-model-bindings, p6-architecture, testing, verification, state]
 ---
 
 # Experiments
@@ -20,6 +20,11 @@ artifact contracts before dedicated directories are created. Those contracts
 must state canonical inputs, generated outputs, authority, versioning,
 validation, and whether an artifact is hand-authored or derived. Experiment
 reports are not Vault grounding sources.
+The documentary ontology and its syntax/hierarchy checks have a separate
+contract in [[knowledge/ontology]]. The six illustrative instance cases have
+cross-view tests under [[knowledge/model-examples]]; those tests establish the
+specified record correspondence and selected counterexamples, without adding
+P5 migration coverage or an ontology-to-instance binding.
 
 This document holds the contracts of the text identity pilot, the editorial
 case study of one diary, and the P5 specification navigation projection. The
@@ -27,6 +32,13 @@ contract of Abstract Text Model 0.1, with its requirement and test ledger,
 its run commands and its human acceptance items, is in
 [[knowledge/text-model]]. Current completion and human-review state belong
 only in [[knowledge/state]].
+
+The illustrative sentence and the historical, cultural and fictional place
+cases in [[knowledge/model-examples]] apply [[knowledge/model-design]] as
+design walkthroughs. They specify
+distinctions to challenge with future experiments and are not executed fixtures
+or observations about named people's lives. Their source leads and conceptual
+diagrams add no cases to the existing experiment reports.
 
 ## Reproduction
 
@@ -110,9 +122,11 @@ real-world P5 migration. All example instances are explicitly synthetic.
 The evidence branch reports only what selected specification files in TEI P5
 4.12.0 say. The experiment branch proposes independent semantics. Similar names
 do not establish equivalence between P5 constructs and pilot objects. The
-[pilot chapter](../40_output/02-abstract-model.md) states what the admitted
-P5 passages establish and what the pilot proposes independently of them,
-including the exclusion of empty regions and therefore of textual points.
+[model proposal](../40_output/02-abstract-model.md) now incorporates these
+source findings into the broader 0.1 and 0.2 definition. The initial pilot
+defined here retains its own narrower contract, including the exclusion of
+empty regions and textual points. Its support audit covers only the original
+four assertions and three distillates, regardless of later chapter growth.
 
 ### Candidate definitions
 
@@ -178,6 +192,12 @@ declared expected diagnostics or resolution. All report inputs, including the
 implementation and contract, are identified by SHA-256; wall-clock times and
 machine-specific absolute paths are excluded from generated output.
 
+The documentation fingerprint covers only this second-level section, from
+`Text identity and annotation pilot` to the next second-level heading.
+Its line endings are normalized; unrelated experiment descriptions do not
+invalidate this report. A missing or duplicated section heading fails the
+check. The report names this scope explicitly in `input_scopes`.
+
 Required constraints include unique IDs, resolvable references, text/version
 ownership, hash fidelity, acyclic version ancestry, selector type and bounds,
 exact-quote fidelity, and explicit quotation ambiguity. Malformed objects must
@@ -194,8 +214,9 @@ assumptions of both alternatives, not merely the implementation's happy path.
 
 ### Acceptance procedure
 
-Start with the [pilot chapter](../40_output/02-abstract-model.md), then the
-four definitions above and the cases below. The machine-readable
+Start with the four pilot definitions above and the cases below. The
+[model proposal](../40_output/02-abstract-model.md) provides the broader
+conceptual context and has a separate acceptance scope. The machine-readable
 [report](../experiments/text_identity/report.json) gives actual results by
 case ID; [cases.json](../experiments/text_identity/cases.json) supplies the
 hand-authored expected outcomes independently of report generation.
@@ -270,7 +291,7 @@ Accepting the experiment does not choose selector A or B.
 
 ### Evidence and audit entry points
 
-- [Pilot chapter](../40_output/02-abstract-model.md) separates grounded P5 statements and model posits.
+- [Model proposal](../40_output/02-abstract-model.md) separates grounded premises and model posits, with a broader scope than this pilot audit.
 - [Source admission manifest](../sources/manifests/2026-09-05-text-identity-pilot-admission.yaml) records exact source, rights, hashes and scope.
 - [Support-review audit](../workbench/reviews/2026-09-05-text-identity/README.md) describes review inputs, verdicts and limitations.
 - [Experiment specification](../experiments/text_identity/spec.json) defines object fields and diagnostic codes.
@@ -471,3 +492,97 @@ partial artifact labeled complete.
 Build the projection with `py -3 -m tools.tei.build_atlas --output
 corpus/projections/p5-specs-4.12.0.json` and append `--check` for a read-only
 byte comparison. Both require the locked local Git mirror.
+
+## Identität und Quellenbezug an Katalog und Korrespondenz
+
+Der Nutzer benannte Stefan Zweig Digital und das Hugo Schuchardt Archiv als
+reale Prüfumgebungen und delegierte die Beantwortung der fachlichen Fragen.
+Die Auswahl umfasst zwei Einträge des Zweig-Werkkatalogs und drei Kontexte
+des Schuchardt-Briefs 4493. Das Protokoll unter
+`experiments/identity_evidence/protocol.json` hält Auswahl, Anforderungen und
+Grenzen fest. Beide Quelldokumente wurden vor der Implementierung eingesehen.
+Es gibt keinen verdeckten Prüffall und keinen unabhängigen Quellenleser.
+
+Die Aufnahme unter `sources/manifests/2026-09-07-identity-evidence.yaml`
+fixiert zwei vollständige XML-Antworten mit Prüfsummen und fünf exakten
+Byteintervallen. Die Repräsentationen enthalten die unveränderten Originale.
+Beide XML-Header erklären CC BY-NC 4.0. Die vollständigen Header bleiben als
+Attribution erhalten; die Projektlizenzen ersetzen diese Quellenlizenz nicht.
+Bilddaten, Personenregister, weitere Briefe und ODDs gehören nicht zur Aufnahme.
+
+Die fachlichen Arbeitsentscheidungen und der Profilvertrag stehen in
+[[knowledge/identity-evidence]]. Der Versuch erhält zwei materielle
+Katalogobjekte mit gemeinsamer berichteter Werkzuordnung, die unsichere
+Handschriftzuschreibung und die gesonderte Mitwirkungsangabe. Datumszeile,
+Entstehungsmetadaten und Korrespondenzmetadaten erhalten eigene Belegstellen.
+Die Importverantwortung bezeichnet die Übernahme durch den Agenten und
+behauptet keine persönliche Urheberschaft am ursprünglichen Katalogbefund.
+
+`tools/check_identity_evidence.py` erzeugt aus den festgelegten Ausschnitten
+ein Dossier auf Modell 0.2 und prüfbare Ansichten der Quellenberichte. Vier
+synthetische Fälle führen die Arbeitsentscheidungen für korrigierte und
+normalisierte Transkriptionen, gleiche Zeichen in getrennten Versionen und
+die fehlende automatische Gruppierung von Entwurf und Ausfertigung aus.
+Sie dokumentieren gewählte Modellpolitik und keine Überlieferungsbefunde
+über die aufgenommenen Quellen. Im dritten Fall beweist eine unveränderte
+Versionsanzahl keine Identität der Textzeugen; sie zeigt das Ausbleiben
+einer automatischen Zusammenlegung im konstruierten Beispiel.
+
+Ein absichtlich unzutreffender Aussageinhalt bleibt bei exaktem Quellenzitat
+formal gültig. Dieser Gegenfall begrenzt den Anspruch des Validators.
+Weitere Tests verändern Quellenhash, Ausschnitt, Belegwortlaut,
+Verantwortlichkeit und Revisionsgeschichte. Eine synthetische Bewertung
+durch einen zweiten Agenten lässt die Quellenzuschreibung unverändert.
+
+Die wissenschaftlichen Befunde gehen separat durch zwei Destillate und sechs
+Assertions. Sie behalten `grounded`, bis unabhängige Quellenprüfung und die
+erforderliche formale Prüfung eine höhere Stufe tragen. Die vorbereiteten
+Prüfpaare liegen unter `workbench/reviews/2026-09-07-identity-evidence/`.
+Das Experiment selbst steht außerhalb dieser Grounding-Kette.
+
+```powershell
+python -m tools.ingest_identity_evidence --check
+python -m tools.check_identity_evidence --check
+python -m pytest tests/models/test_identity_evidence.py -q
+```
+
+Diese Reproduktion benötigt keinen Netzwerkzugriff und keine ignorierten
+Originaldateien. Umfang, aktuelle Resultate und offene Prüfstände stehen in
+[[knowledge/state]]. Vollständige Editionsmigration, historische
+Handidentifizierung, tatsächlicher Versandtag und allgemeine Werkontologie
+bleiben außerhalb des belegten Ergebnisses.
+
+## Ein vollständiger HSA-Brief als P5/P6-Fall
+
+Der [HSA-Fall 4493](../experiments/hsa_letter_4493/README.md) wendet die
+dokumentarische Ontologie auf den bereits aufgenommenen Brief an. Sein
+in [[knowledge/hsa-profile]] gepflegtes Profil beschreibt die vollständige Zeichenprojektion des Briefs,
+separate editorische Notes, ausgewählte Metadaten und Personenverweise.
+Die Quellenfassung wird aus der unveränderlichen Repräsentation reproduziert.
+Die Übernahme erfordert keinen erneuten Netzwerkabruf.
+
+Der Generator `tools/build_hsa_case.py` besitzt die XML-/JSON-/RDF-Instanzen,
+die rekonstruierte P5-Quelle, das ergänzende Fallvokabular, den
+Abdeckungsbericht und das Instanzdiagramm. `p6.*` enthält die semantischen
+Records; `preservation.*` ergänzt die Erhaltungsdaten. Ihre Vereinigung
+rekonstruiert den vollständigen Fallgraphen. Die handgeschriebene Fall-README
+erklärt die Abgrenzung und fachliche Bewertung. Die XML-/JSON-Bindings dieses
+Falls und die Ontologie-Serialisierungen sind unterschiedliche Verträge.
+
+Die Prüfung unterscheidet exakte Dateierhaltung, die erklärte Übernahme von
+P5-Strukturen und die Interpretation ausgewählter Angaben als Propositionen.
+Quellenhash, XPath, Verantwortlichkeit und `report`-Haltung machen die
+Übernahme nachprüfbar. Die Herkunft des beschriebenen Trägers begründet keine
+automatische Zuschreibung eines Schreibereignisses. Leere Empfangsangaben,
+unklare Hervorhebungen und unterschiedliche Identifikatoren werden erhalten.
+
+```powershell
+python tools/build_hsa_case.py --check
+python -m pytest tests/test_build_hsa_case.py -q
+```
+
+HSA-ODD-Validierung, Quellenregisterauflösung, Faksimileprüfung und eine
+allgemeine Rückkonvertierung bleiben außerhalb des Fallvertrags. Die
+aufgenommenen Quellen behalten ihren bisherigen Prüfstatus. Der Fall und sein
+technischer Bericht sind Entwurfsartefakte außerhalb der Grounding-Kette.
+Tatsächlich ausgeführte Prüfungen stehen in [[knowledge/state]].

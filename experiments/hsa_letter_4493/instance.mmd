@@ -1,0 +1,17 @@
+%% Complete case overview; combine p6.* with preservation.* for the full graph.
+flowchart LR
+    source["HSA 4493 source snapshot"] -. source description .-> letter["letter document"]
+    letter -->|import construction| carrier["material carrier"]
+    origin["carrier-origin context + 1878-04-17"] -. import report .-> carrier
+    sending["sending context + 1878-04-17"] -. import report .-> letter
+    sending -. import report .-> sender["Schuchardt: sender role"]
+    correspondence["correspondence recipient role"] -. import report .-> recipient["Hasdeu; no receipt date/place"]
+    text["text identity criterion"] --> representation["letter character data; notes excluded"]
+    text -->|import construction| letter
+    representation --> mentions["Diez / Frollo / H. Schuchardt mentions"]
+    representation --> anchors["11 source insertion points"]
+    anchors --> notes["11 separate editorial-note representations"]
+    notes --> frollo["G.L. Frollo mention in note 8"]
+    source --> structure["all body XML nodes, attributes, hierarchy"]
+    source --> archive["byte-identical P5 XML including remaining header"]
+    source -. publicationStmt report .-> publication["XML edition publication: 2022; distinct from snapshot date"]

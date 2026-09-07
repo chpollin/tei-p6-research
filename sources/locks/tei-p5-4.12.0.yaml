@@ -55,3 +55,4 @@ manifests:
   - sources/manifests/2026-09-04-tei-p5-4.12.0-release-asset.yaml
   - sources/manifests/2026-09-04-tei-p5-4.12.0-release-members.yaml
   - sources/manifests/2026-09-07-guidelines-4.12.0-admission.yaml
+  - sources/manifests/2026-09-07-text-structures-admission.yaml

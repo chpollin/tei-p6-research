@@ -1,0 +1,582 @@
+{
+  "package": {
+    "agents": [
+      {
+        "id": "ie-importer",
+        "label": "GPT-6 source import; no individual source authorship inferred"
+      }
+    ],
+    "annotations": [
+      {
+        "agent": "ie-importer",
+        "body": "<term ref=\"#SZDWRK.2\" type=\"work\">Rausch der Verwandlung</term>",
+        "concept": "ie-source-passage",
+        "created": "2026-09-07T10:17:48Z",
+        "id": "passage-szd-work-3",
+        "selection": "selection-passage-szd-work-3",
+        "status": "asserted"
+      },
+      {
+        "agent": "ie-importer",
+        "body": "<term ref=\"#SZDWRK.2\" type=\"work\">Rausch der Verwandlung</term>",
+        "concept": "ie-source-passage",
+        "created": "2026-09-07T10:17:48Z",
+        "id": "passage-szd-work-4",
+        "selection": "selection-passage-szd-work-4",
+        "status": "asserted"
+      },
+      {
+        "agent": "ie-importer",
+        "body": "<handDesc>\n                    <ab xml:lang=\"de\">Lotte Zweig (?)</ab>\n                    <ab xml:lang=\"en\">Lotte Zweig (?)</ab>\n                  </handDesc>",
+        "concept": "ie-source-passage",
+        "created": "2026-09-07T10:17:48Z",
+        "id": "passage-szd-hand",
+        "selection": "selection-passage-szd-hand",
+        "status": "asserted"
+      },
+      {
+        "agent": "ie-importer",
+        "body": "<editor ref=\"#SZDPER.1555\" role=\"contributor\">\n                <persName ref=\"http://d-nb.info/gnd/116001151\">\n                  <surname>Zweig</surname>\n                  <forename>Lotte</forename>\n                </persName>\n              </editor>",
+        "concept": "ie-source-passage",
+        "created": "2026-09-07T10:17:48Z",
+        "id": "passage-szd-contributor",
+        "selection": "selection-passage-szd-contributor",
+        "status": "asserted"
+      },
+      {
+        "agent": "ie-importer",
+        "body": "(?)",
+        "concept": "ie-source-qualification",
+        "created": "2026-09-07T10:17:48Z",
+        "id": "qualification-hand",
+        "selection": "selection-qualification-hand",
+        "status": "asserted"
+      },
+      {
+        "agent": "ie-importer",
+        "body": "<origDate ana=\"dcterms:created\" when=\"1878-04-17\">1878-04-17</origDate>",
+        "concept": "ie-source-passage",
+        "created": "2026-09-07T10:17:48Z",
+        "id": "passage-hsa-origin",
+        "selection": "selection-passage-hsa-origin",
+        "status": "asserted"
+      },
+      {
+        "agent": "ie-importer",
+        "body": "<date when=\"1878-04-17\">1878-04-17</date>",
+        "concept": "ie-source-passage",
+        "created": "2026-09-07T10:17:48Z",
+        "id": "passage-hsa-sent",
+        "selection": "selection-passage-hsa-sent",
+        "status": "asserted"
+      },
+      {
+        "agent": "ie-importer",
+        "body": "<dateline> Graz 17. 4. 78. </dateline>",
+        "concept": "ie-source-passage",
+        "created": "2026-09-07T10:17:48Z",
+        "id": "passage-hsa-dateline-report",
+        "selection": "selection-passage-hsa-dateline-report",
+        "status": "asserted"
+      }
+    ],
+    "concepts": [
+      {
+        "applies_to": "node",
+        "definition": "An exact selected passage from a frozen source snapshot.",
+        "id": "ie-source-passage",
+        "label": "Exact source passage"
+      },
+      {
+        "applies_to": "node",
+        "definition": "The source's literal qualification, without assigning the importer a certainty.",
+        "id": "ie-source-qualification",
+        "label": "Source qualification"
+      },
+      {
+        "applies_to": "node",
+        "definition": "An agent's reasoned assessment of a reported claim; it leaves the report unchanged.",
+        "id": "ie-assessment",
+        "label": "Separate assessment"
+      },
+      {
+        "applies_to": "relation",
+        "definition": "The source claim cites the target passage; this link does not establish semantic support.",
+        "id": "ie-supported-by",
+        "label": "Has source passage"
+      },
+      {
+        "applies_to": "relation",
+        "definition": "The source claim retains the target source qualification verbatim.",
+        "id": "ie-qualified-by",
+        "label": "Has source qualification"
+      },
+      {
+        "applies_to": "relation",
+        "definition": "The source assessment addresses the target reported claim under the assessment agent's responsibility.",
+        "id": "ie-assesses",
+        "label": "Assesses report"
+      },
+      {
+        "applies_to": "statement",
+        "definition": "The catalogue assigns an artifact to a work; no text or artifact identity follows.",
+        "id": "ie-work-assignment",
+        "label": "Reported work assignment"
+      },
+      {
+        "applies_to": "statement",
+        "definition": "The source attributes a described hand; the importer does not authenticate it.",
+        "id": "ie-hand-attribution",
+        "label": "Reported hand attribution"
+      },
+      {
+        "applies_to": "statement",
+        "definition": "The source records a person's contribution independently of hand identification.",
+        "id": "ie-contributor",
+        "label": "Reported contribution"
+      },
+      {
+        "applies_to": "statement",
+        "definition": "The source encodes an origin date; no independent historical dating follows.",
+        "id": "ie-origin-date",
+        "label": "Reported origin date"
+      },
+      {
+        "applies_to": "statement",
+        "definition": "The source encodes a date in sent-action metadata; actual dispatch is not independently established.",
+        "id": "ie-sent-date",
+        "label": "Reported sent-action date"
+      },
+      {
+        "applies_to": "statement",
+        "definition": "The edition transcribes a dateline whose spelling is retained.",
+        "id": "ie-dateline",
+        "label": "Reported dateline"
+      }
+    ],
+    "continuities": [],
+    "denotations": [],
+    "entities": [
+      {
+        "id": "artifact-w21",
+        "kind": "object",
+        "label": "SZ-AAP/W2.1"
+      },
+      {
+        "id": "artifact-w22",
+        "kind": "object",
+        "label": "SZ-AAP/W2.2"
+      },
+      {
+        "id": "work-szdwrk2",
+        "kind": "other",
+        "label": "Catalogue work reference #SZDWRK.2"
+      },
+      {
+        "id": "person-lotte",
+        "kind": "person",
+        "label": "Lotte Zweig, as named in the selected record"
+      },
+      {
+        "id": "hsa-letter",
+        "kind": "object",
+        "label": "HSA letter 4493"
+      }
+    ],
+    "model_version": "0.2",
+    "names": [],
+    "readings": [],
+    "relations": [
+      {
+        "agent": "ie-importer",
+        "created": "2026-09-07T10:17:48Z",
+        "id": "support-szd-work-3",
+        "source": "szd-work-3",
+        "status": "asserted",
+        "target": "passage-szd-work-3",
+        "type": "ie-supported-by"
+      },
+      {
+        "agent": "ie-importer",
+        "created": "2026-09-07T10:17:48Z",
+        "id": "support-szd-work-4",
+        "source": "szd-work-4",
+        "status": "asserted",
+        "target": "passage-szd-work-4",
+        "type": "ie-supported-by"
+      },
+      {
+        "agent": "ie-importer",
+        "created": "2026-09-07T10:17:48Z",
+        "id": "support-szd-hand",
+        "source": "szd-hand",
+        "status": "asserted",
+        "target": "passage-szd-hand",
+        "type": "ie-supported-by"
+      },
+      {
+        "agent": "ie-importer",
+        "created": "2026-09-07T10:17:48Z",
+        "id": "support-szd-contributor",
+        "source": "szd-contributor",
+        "status": "asserted",
+        "target": "passage-szd-contributor",
+        "type": "ie-supported-by"
+      },
+      {
+        "agent": "ie-importer",
+        "created": "2026-09-07T10:17:48Z",
+        "id": "qualifies-hand",
+        "source": "szd-hand",
+        "status": "asserted",
+        "target": "qualification-hand",
+        "type": "ie-qualified-by"
+      },
+      {
+        "agent": "ie-importer",
+        "created": "2026-09-07T10:17:48Z",
+        "id": "support-hsa-origin",
+        "source": "hsa-origin",
+        "status": "asserted",
+        "target": "passage-hsa-origin",
+        "type": "ie-supported-by"
+      },
+      {
+        "agent": "ie-importer",
+        "created": "2026-09-07T10:17:48Z",
+        "id": "support-hsa-sent",
+        "source": "hsa-sent",
+        "status": "asserted",
+        "target": "passage-hsa-sent",
+        "type": "ie-supported-by"
+      },
+      {
+        "agent": "ie-importer",
+        "created": "2026-09-07T10:17:48Z",
+        "id": "support-hsa-dateline-report",
+        "source": "hsa-dateline-report",
+        "status": "asserted",
+        "target": "passage-hsa-dateline-report",
+        "type": "ie-supported-by"
+      }
+    ],
+    "selections": [
+      {
+        "id": "selection-passage-szd-work-3",
+        "selector": {
+          "kind": "ranges",
+          "segments": [
+            {
+              "end": 4885,
+              "quote": "<term ref=\"#SZDWRK.2\" type=\"work\">Rausch der Verwandlung</term>",
+              "start": 4822
+            }
+          ]
+        },
+        "version": "szd-record-3"
+      },
+      {
+        "id": "selection-passage-szd-work-4",
+        "selector": {
+          "kind": "ranges",
+          "segments": [
+            {
+              "end": 5184,
+              "quote": "<term ref=\"#SZDWRK.2\" type=\"work\">Rausch der Verwandlung</term>",
+              "start": 5121
+            }
+          ]
+        },
+        "version": "szd-record-4"
+      },
+      {
+        "id": "selection-passage-szd-hand",
+        "selector": {
+          "kind": "ranges",
+          "segments": [
+            {
+              "end": 3244,
+              "quote": "<handDesc>\n                    <ab xml:lang=\"de\">Lotte Zweig (?)</ab>\n                    <ab xml:lang=\"en\">Lotte Zweig (?)</ab>\n                  </handDesc>",
+              "start": 3086
+            }
+          ]
+        },
+        "version": "szd-record-3"
+      },
+      {
+        "id": "selection-passage-szd-contributor",
+        "selector": {
+          "kind": "ranges",
+          "segments": [
+            {
+              "end": 874,
+              "quote": "<editor ref=\"#SZDPER.1555\" role=\"contributor\">\n                <persName ref=\"http://d-nb.info/gnd/116001151\">\n                  <surname>Zweig</surname>\n                  <forename>Lotte</forename>\n                </persName>\n              </editor>",
+              "start": 624
+            }
+          ]
+        },
+        "version": "szd-record-3"
+      },
+      {
+        "id": "selection-qualification-hand",
+        "selector": {
+          "kind": "ranges",
+          "segments": [
+            {
+              "end": 3150,
+              "quote": "(?)",
+              "start": 3147
+            }
+          ]
+        },
+        "version": "szd-record-3"
+      },
+      {
+        "id": "selection-passage-hsa-origin",
+        "selector": {
+          "kind": "ranges",
+          "segments": [
+            {
+              "end": 1112,
+              "quote": "<origDate ana=\"dcterms:created\" when=\"1878-04-17\">1878-04-17</origDate>",
+              "start": 1041
+            }
+          ]
+        },
+        "version": "hsa-source-description"
+      },
+      {
+        "id": "selection-passage-hsa-sent",
+        "selector": {
+          "kind": "ranges",
+          "segments": [
+            {
+              "end": 508,
+              "quote": "<date when=\"1878-04-17\">1878-04-17</date>",
+              "start": 467
+            }
+          ]
+        },
+        "version": "hsa-correspondence"
+      },
+      {
+        "id": "selection-passage-hsa-dateline-report",
+        "selector": {
+          "kind": "ranges",
+          "segments": [
+            {
+              "end": 38,
+              "quote": "<dateline> Graz 17. 4. 78. </dateline>",
+              "start": 0
+            }
+          ]
+        },
+        "version": "hsa-dateline"
+      }
+    ],
+    "statements": [
+      {
+        "agent": "ie-importer",
+        "created": "2026-09-07T10:17:48Z",
+        "id": "szd-work-3",
+        "kind": "relation",
+        "participants": [
+          {
+            "entity": "artifact-w21",
+            "role": "artifact"
+          },
+          {
+            "entity": "work-szdwrk2",
+            "role": "work"
+          }
+        ],
+        "status": "asserted",
+        "type": "ie-work-assignment",
+        "value": "#SZDWRK.2"
+      },
+      {
+        "agent": "ie-importer",
+        "created": "2026-09-07T10:17:48Z",
+        "id": "szd-work-4",
+        "kind": "relation",
+        "participants": [
+          {
+            "entity": "artifact-w22",
+            "role": "artifact"
+          },
+          {
+            "entity": "work-szdwrk2",
+            "role": "work"
+          }
+        ],
+        "status": "asserted",
+        "type": "ie-work-assignment",
+        "value": "#SZDWRK.2"
+      },
+      {
+        "agent": "ie-importer",
+        "created": "2026-09-07T10:17:48Z",
+        "id": "szd-hand",
+        "kind": "relation",
+        "participants": [
+          {
+            "entity": "artifact-w21",
+            "role": "artifact"
+          },
+          {
+            "entity": "person-lotte",
+            "role": "attributed-person"
+          }
+        ],
+        "status": "asserted",
+        "type": "ie-hand-attribution",
+        "value": "Lotte Zweig (?)"
+      },
+      {
+        "agent": "ie-importer",
+        "created": "2026-09-07T10:17:48Z",
+        "id": "szd-contributor",
+        "kind": "relation",
+        "participants": [
+          {
+            "entity": "artifact-w21",
+            "role": "artifact"
+          },
+          {
+            "entity": "person-lotte",
+            "role": "contributor"
+          }
+        ],
+        "status": "asserted",
+        "type": "ie-contributor",
+        "value": "contributor"
+      },
+      {
+        "agent": "ie-importer",
+        "created": "2026-09-07T10:17:48Z",
+        "id": "hsa-origin",
+        "kind": "relation",
+        "participants": [
+          {
+            "entity": "hsa-letter",
+            "role": "letter"
+          }
+        ],
+        "status": "asserted",
+        "type": "ie-origin-date",
+        "value": "1878-04-17"
+      },
+      {
+        "agent": "ie-importer",
+        "created": "2026-09-07T10:17:48Z",
+        "id": "hsa-sent",
+        "kind": "relation",
+        "participants": [
+          {
+            "entity": "hsa-letter",
+            "role": "letter"
+          }
+        ],
+        "status": "asserted",
+        "type": "ie-sent-date",
+        "value": "1878-04-17"
+      },
+      {
+        "agent": "ie-importer",
+        "created": "2026-09-07T10:17:48Z",
+        "id": "hsa-dateline-report",
+        "kind": "relation",
+        "participants": [
+          {
+            "entity": "hsa-letter",
+            "role": "letter"
+          }
+        ],
+        "status": "asserted",
+        "type": "ie-dateline",
+        "value": "Graz 17. 4. 78."
+      }
+    ],
+    "texts": [],
+    "versions": [
+      {
+        "content": "<biblFull ana=\"01_Rausch\" xml:id=\"SZDMSK.3\">\n          <fileDesc>\n            <titleStmt>\n              <title ana=\"supplied/verified\" ref=\"http://d-nb.info/gnd/7756961-1\">Rausch der Verwandlung</title>\n              <title type=\"Einheitssachtitel\">Rausch der Verwandlung</title>\n              <title type=\"Gesamttitel\">Stefan Zweig - Archiv Atrium Press</title>\n              <author ref=\"#SZDPER.1560\">\n                <persName ref=\"http://d-nb.info/gnd/118637479\">\n                  <surname>Zweig</surname>\n                  <forename>Stefan</forename>\n                </persName>\n              </author>\n              <editor ref=\"#SZDPER.1555\" role=\"contributor\">\n                <persName ref=\"http://d-nb.info/gnd/116001151\">\n                  <surname>Zweig</surname>\n                  <forename>Lotte</forename>\n                </persName>\n              </editor>\n            </titleStmt>\n            <publicationStmt>\n              <ab>Archivmaterial</ab>\n            </publicationStmt>\n            <sourceDesc>\n              <msDesc>\n                <msIdentifier>\n                  <country>Österreich</country>\n                  <settlement>Salzburg</settlement>\n                  <repository ref=\"http://d-nb.info/gnd/1047605287\">Literaturarchiv Salzburg</repository>\n                  <idno type=\"signature\">SZ-AAP/W2.1</idno>\n                  <altIdentifier>\n                    <idno type=\"PID\">o:szd.268</idno>\n                  </altIdentifier>\n                </msIdentifier>\n                <msContents>\n                  <textLang>\n                    <lang xml:lang=\"ger\">Deutsch</lang>\n                  </textLang>\n                  <msItem>\n                    <incipit>„Ein Dorfpostamt in Oesterreich unterscheidet sich\n                                            wenig vom andern: Wer eines gesehen, …“</incipit>\n                  </msItem>\n                </msContents>\n                <physDesc>\n                  <objectDesc>\n                    <supportDesc>\n                      <support>\n                        <material ana=\"szdg:WritingInstrument\" xml:lang=\"de\">Schwarze Tinte, blauer Buntstift</material>\n                        <material ana=\"szdg:WritingInstrument\" xml:lang=\"en\">Black ink, blue pencil</material>                \n      </support>\n                      <extent>\n                        <span xml:lang=\"de\">\n                          <term type=\"objecttyp\">Typoskriptdurchschlag</term>, <measure ana=\"corrected\" type=\"leaf\">159 Blatt, korrigiert;\n                                                  1 Deckblatt</measure>\n                        </span>\n                        <span xml:lang=\"en\">\n                          <term type=\"objecttyp\">Typescript (carbon\n                                                  copy)</term>, <measure ana=\"corrected\" type=\"leaf\">159 leaves, corrected; 1 cover sheet</measure>\n                        </span>\n                        <measure type=\"format\">34x21 cm</measure>\n                      </extent>\n                    </supportDesc>\n                  </objectDesc>\n                  <handDesc>\n                    <ab xml:lang=\"de\">Lotte Zweig (?)</ab>\n                    <ab xml:lang=\"en\">Lotte Zweig (?)</ab>\n                  </handDesc>\n                  <accMat>\n                    <list>\n                      <item ana=\"szdg:Enclosures\">\n                        <desc xml:lang=\"de\">Deckblatt mit Aufschrift „Roman\n                                                  I Teil“ von Lotte Zweigs Hand in blauem\n                                                  Buntstift</desc>\n                        <desc xml:lang=\"en\">Cover sheet inscribed „Roman I\n                                                  Teil“ in Lotte Zweig&apos;s hand in blue pencil</desc>\n                        <measure type=\"format\">31x19 cm</measure>\n                      </item>\n                    </list>\n                  </accMat>\n                </physDesc>\n                <history>\n                  <provenance>\n                    <ab xml:lang=\"de\">Archiv Atrium Press</ab>\n                    <ab xml:lang=\"en\">Atrium Press</ab>\n                  </provenance>\n                  <acquisition>\n                    <ab xml:lang=\"de\">Ankauf Christie&apos;s London\n                                            2014</ab>\n                    <ab xml:lang=\"en\">Acquisition from Christie&apos;s London\n                                            2014</ab>\n                  </acquisition>\n                </history>\n              </msDesc>\n            </sourceDesc>\n          </fileDesc>\n          <profileDesc>\n            <textClass>\n              <keywords>\n                <term type=\"classification\" xml:lang=\"de\">Romane/Erzählungen</term>\n                <term type=\"classification\" xml:lang=\"en\">Novels/Stories</term>\n                <term ref=\"#SZDWRK.2\" type=\"work\">Rausch der Verwandlung</term>\n              </keywords>\n            </textClass>\n          </profileDesc>\n        </biblFull>",
+        "id": "szd-record-3",
+        "parents": [],
+        "sha256": "2b15cb711973860c4697b6da207de9d08aa09b56328ca0e15260e26563ad6656"
+      },
+      {
+        "content": "<biblFull ana=\"02_Rausch\" xml:id=\"SZDMSK.4\">\n          <fileDesc>\n            <titleStmt>\n              <title ana=\"supplied/verified\" ref=\"http://d-nb.info/gnd/7756961-1\">Rausch der Verwandlung</title>\n              <title type=\"Einheitssachtitel\">Rausch der Verwandlung</title>\n              <title type=\"Gesamttitel\">Stefan Zweig - Archiv Atrium Press</title>\n              <author ref=\"#SZDPER.1560\">\n                <persName ref=\"http://d-nb.info/gnd/118637479\">\n                  <surname>Zweig</surname>\n                  <forename>Stefan</forename>\n                </persName>\n              </author>\n            </titleStmt>\n            <publicationStmt>\n              <ab>Archivmaterial</ab>\n            </publicationStmt>\n            <notesStmt>\n              <note xml:lang=\"de\">1 Blatt mit Anmerkungen in Bleistift auf der\n                                Rückseite, Seite 117 doppelt</note>\n              <note xml:lang=\"en\">1 leaf has pencil annotations on verso, page 117 in\n                                duplicate</note>\n            </notesStmt>\n            <sourceDesc>\n              <msDesc>\n                <msIdentifier>\n                  <country>Österreich</country>\n                  <settlement>Salzburg</settlement>\n                  <repository ref=\"http://d-nb.info/gnd/1047605287\">Literaturarchiv Salzburg</repository>\n                  <idno type=\"signature\">SZ-AAP/W2.2</idno>\n                  <altIdentifier>\n                    <idno type=\"PID\">o:szd.948</idno>\n                  </altIdentifier>\n                </msIdentifier>\n                <msContents>\n                  <textLang>\n                    <lang xml:lang=\"ger\">Deutsch</lang>\n                  </textLang>\n                  <msItem>\n                    <incipit>„Vier Wochen lang erträgt Christine diesen\n                                            grausamen, krankhaft überreizten Zustand gewaltsamer\n                                            Einsamkeit …“</incipit>\n                    <docEdition ana=\"szdg:IdentifyingInscription\" xml:lang=\"de\">„II Teil noch nicht copiert“ eigenhändig</docEdition>\n                    <docEdition ana=\"szdg:IdentifyingInscription\" xml:lang=\"en\">„II Teil noch nicht copiert“ holograph</docEdition>\n                  </msItem>\n                </msContents>\n                <physDesc>\n                  <objectDesc>\n                    <supportDesc>\n                      <support>\n                        <material ana=\"szdg:WritingMaterial\" xml:lang=\"de\">Überwiegend Doppelbögen</material>\n                        <material ana=\"szdg:WritingMaterial\" xml:lang=\"en\">Mainly bifolia</material>\n                        <material ana=\"szdg:WritingInstrument\" xml:lang=\"de\">Violettes Farbband, violette und schwarze Tinte,\n                                                  Bleistift, blauer Kugelschreiber</material>\n                        <material ana=\"szdg:WritingInstrument\" xml:lang=\"en\">Purple ribbon, purple and black ink, pencil, blue\n                                                  ballpoint</material>\n                      </support>\n                      <extent>\n                        <span xml:lang=\"de\">\n                          <term type=\"objecttyp\">Typoskript</term>, <measure ana=\"corrected\" type=\"leaf\">87 Blatt,\n                                                  korrigiert</measure>\n                        </span>\n                        <span xml:lang=\"en\">\n                          <term type=\"objecttyp\">Typescript</term>, <measure ana=\"corrected\" type=\"leaf\">87 leaves,\n                                                  corrected</measure>\n                        </span>\n                        <measure type=\"format\">42x26 cm</measure>\n                      </extent>\n                      <foliation>\n                        <ab xml:lang=\"de\">durchgehend paginiert</ab>\n                        <ab xml:lang=\"en\">paginated throughout</ab>\n                      </foliation>\n                    </supportDesc>\n                  </objectDesc>\n                  <handDesc>\n                    <ab xml:lang=\"de\">Stefan Zweig, fremde Hand</ab>\n                    <ab xml:lang=\"en\">Stefan Zweig, unidentified hand</ab>\n                  </handDesc>\n                </physDesc>\n                <history>\n                  <provenance>\n                    <ab xml:lang=\"de\">Archiv Atrium Press</ab>\n                    <ab xml:lang=\"en\">Atrium Press</ab>\n                  </provenance>\n                  <acquisition>\n                    <ab xml:lang=\"de\">Ankauf Christie&apos;s London\n                                            2014</ab>\n                    <ab xml:lang=\"en\">Acquisition from Christie&apos;s London\n                                            2014</ab>\n                  </acquisition>\n                </history>\n              </msDesc>\n            </sourceDesc>\n          </fileDesc>\n          <profileDesc>\n            <textClass>\n              <keywords>\n                <term type=\"classification\" xml:lang=\"de\">Romane/Erzählungen</term>\n                <term type=\"classification\" xml:lang=\"en\">Novels/Stories</term>\n                <term ref=\"#SZDWRK.2\" type=\"work\">Rausch der Verwandlung</term>\n              </keywords>\n            </textClass>\n          </profileDesc>\n        </biblFull>",
+        "id": "szd-record-4",
+        "parents": [],
+        "sha256": "68771b574a5d0d72ab75532749f2fa0f13789ec0d2a923c7ea915ff8e3d1fd4d"
+      },
+      {
+        "content": "<sourceDesc>\n        <msDesc>\n          <msIdentifier>\n            <repository>Unbekannt</repository>\n            <idno type=\"shelfmark\">1179</idno>\n          </msIdentifier>\n          <msContents>\n            <textLang mainLang=\"de\"/>\n            <msItem>\n              <author ref=\"https://gams.uni-graz.at/o:hsa.persons#P.109\">\n                <forename>Hugo</forename>\n                <surname>Schuchardt</surname>\n              </author>\n            </msItem>\n          </msContents>\n          <physDesc>\n            <objectDesc>\n              <supportDesc>\n                <support>\n                  <material ref=\"http://vocab.getty.edu/aat/300014109\">Papier</material>\n                  <objectType>Brief</objectType>\n                </support>\n              </supportDesc>\n            </objectDesc>\n          </physDesc>\n          <history>\n            <origin>\n              <origPlace ana=\"marcrelator:prp\" corresp=\"https://gams.uni-graz.at/o:hsa.places#PL.6\" ref=\"http://sws.geonames.org/2778067\">Graz</origPlace>\n              <origDate ana=\"dcterms:created\" when=\"1878-04-17\">1878-04-17</origDate>\n            </origin>\n          </history>\n        </msDesc>\n        <bibl type=\"online\">\n          <author ana=\"marcrelator:aut\">\n            <persName>\n              <forename>Bruno</forename>\n              <surname>Mazzoni</surname>\n            </persName>\n          </author>\n          <date when=\"2016\">2016</date>\n          <title>Die Korrespondenz zwischen Hugo Schuchardt und Bogdan Petriceicu Hasdeu</title>\n          <series>\n            <title>Hugo Schuchardt Archiv</title>\n            <editor>\n              <forename>Bernhard</forename>\n              <surname>Hurch</surname>\n            </editor>\n          </series>\n          <ref target=\"http://schuchardt.uni-graz.at/id/letters/1720\"/>\n        </bibl>\n      </sourceDesc>",
+        "id": "hsa-source-description",
+        "parents": [],
+        "sha256": "b9354f254dcef40780e7bb2ee48907191aeec2409ef8a1f49d65afdd462697b6"
+      },
+      {
+        "content": "<correspDesc ref=\"https://gams.uni-graz.at/o:hsa.letter.4493\">\n        <correspAction type=\"sent\">\n          <persName corresp=\"https://gams.uni-graz.at/o:hsa.persons#P.109\" ref=\"https://viaf.org/viaf/261931943\">\n            <forename>Hugo</forename>\n            <surname>Schuchardt</surname>\n          </persName>\n          <placeName corresp=\"https://gams.uni-graz.at/o:hsa.places#PL.6\" key=\"#GID.1\" ref=\"http://sws.geonames.org/2778067\">Graz</placeName>\n          <date when=\"1878-04-17\">1878-04-17</date>\n        </correspAction>\n        <correspAction type=\"received\">\n          <persName corresp=\"https://gams.uni-graz.at/o:hsa.persons#P.1720\" ref=\"https://viaf.org/viaf/65406496\">\n            <forename>Bogdan Petriceicu</forename>\n            <surname>Hasdeu</surname>\n          </persName>\n        </correspAction>\n      </correspDesc>",
+        "id": "hsa-correspondence",
+        "parents": [],
+        "sha256": "4a131550d9fd453501bfd789b110d027403762c5b2d129f556bef120c2e8a371"
+      },
+      {
+        "content": "<dateline> Graz 17. 4. 78. </dateline>",
+        "id": "hsa-dateline",
+        "parents": [],
+        "sha256": "9829b241b4d8e54639eebd47778a7d30da366558c231404274ad92cef55cb741"
+      }
+    ]
+  },
+  "profile": "identity-evidence-0.1",
+  "sources": [
+    {
+      "end_byte": 15086,
+      "sha256": "d8c4860957d71e0a2ea0a455a53fb3c68a942099f408c5c87997d91c0e0bc5ec",
+      "snapshot": "szd-werke-2026-09-07",
+      "start_byte": 10089,
+      "uri": "https://stefanzweig.digital/o:szd.werke/TEI_SOURCE",
+      "version": "szd-record-3",
+      "xpath": "//tei:biblFull[@xml:id='SZDMSK.3']"
+    },
+    {
+      "end_byte": 20397,
+      "sha256": "d8c4860957d71e0a2ea0a455a53fb3c68a942099f408c5c87997d91c0e0bc5ec",
+      "snapshot": "szd-werke-2026-09-07",
+      "start_byte": 15095,
+      "uri": "https://stefanzweig.digital/o:szd.werke/TEI_SOURCE",
+      "version": "szd-record-4",
+      "xpath": "//tei:biblFull[@xml:id='SZDMSK.4']"
+    },
+    {
+      "end_byte": 4194,
+      "sha256": "f37ff85df57405753aa0b6d1db63f3a24fcbd33ab1ef7fb54b68844e556e2438",
+      "snapshot": "hsa-letter-4493-2026-09-07",
+      "start_byte": 2342,
+      "uri": "https://gams.uni-graz.at/o:hsa.letter.4493/TEI_SOURCE",
+      "version": "hsa-source-description",
+      "xpath": "//tei:teiHeader/tei:fileDesc/tei:sourceDesc"
+    },
+    {
+      "end_byte": 6879,
+      "sha256": "f37ff85df57405753aa0b6d1db63f3a24fcbd33ab1ef7fb54b68844e556e2438",
+      "snapshot": "hsa-letter-4493-2026-09-07",
+      "start_byte": 6035,
+      "uri": "https://gams.uni-graz.at/o:hsa.letter.4493/TEI_SOURCE",
+      "version": "hsa-correspondence",
+      "xpath": "//tei:correspDesc"
+    },
+    {
+      "end_byte": 9100,
+      "sha256": "f37ff85df57405753aa0b6d1db63f3a24fcbd33ab1ef7fb54b68844e556e2438",
+      "snapshot": "hsa-letter-4493-2026-09-07",
+      "start_byte": 9062,
+      "uri": "https://gams.uni-graz.at/o:hsa.letter.4493/TEI_SOURCE",
+      "version": "hsa-dateline",
+      "xpath": "//tei:body//tei:dateline"
+    }
+  ]
+}

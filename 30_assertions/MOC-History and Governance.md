@@ -14,6 +14,7 @@ processes and documented governance.
 
 <!-- distillates:begin -->
 - [[20_distillates/documents/tei-time-for-p6-readme-2026-07-16]]
+- [[20_distillates/publications/teic-tei-issue-1400]]
 <!-- distillates:end -->
 
 ## Assertions

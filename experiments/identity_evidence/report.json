@@ -1,0 +1,601 @@
+{
+  "authority": "Source fidelity and contract execution; no independent source-support review or human verification.",
+  "claims": {
+    "hsa-dateline-report": {
+      "assessments": [],
+      "claim": {
+        "agent": "ie-importer",
+        "created": "2026-09-07T10:17:48Z",
+        "id": "hsa-dateline-report",
+        "kind": "relation",
+        "participants": [
+          {
+            "entity": "hsa-letter",
+            "role": "letter"
+          }
+        ],
+        "status": "asserted",
+        "type": "ie-dateline",
+        "value": "Graz 17. 4. 78."
+      },
+      "passages": [
+        {
+          "annotation": {
+            "agent": "ie-importer",
+            "body": "<dateline> Graz 17. 4. 78. </dateline>",
+            "concept": "ie-source-passage",
+            "created": "2026-09-07T10:17:48Z",
+            "id": "passage-hsa-dateline-report",
+            "selection": "selection-passage-hsa-dateline-report",
+            "status": "asserted"
+          },
+          "link": {
+            "agent": "ie-importer",
+            "created": "2026-09-07T10:17:48Z",
+            "id": "support-hsa-dateline-report",
+            "source": "hsa-dateline-report",
+            "status": "asserted",
+            "target": "passage-hsa-dateline-report",
+            "type": "ie-supported-by"
+          },
+          "origin": {
+            "end_byte": 9100,
+            "sha256": "f37ff85df57405753aa0b6d1db63f3a24fcbd33ab1ef7fb54b68844e556e2438",
+            "snapshot": "hsa-letter-4493-2026-09-07",
+            "start_byte": 9062,
+            "uri": "https://gams.uni-graz.at/o:hsa.letter.4493/TEI_SOURCE",
+            "version": "hsa-dateline",
+            "xpath": "//tei:body//tei:dateline"
+          },
+          "selection": {
+            "id": "selection-passage-hsa-dateline-report",
+            "selector": {
+              "kind": "ranges",
+              "segments": [
+                {
+                  "end": 38,
+                  "quote": "<dateline> Graz 17. 4. 78. </dateline>",
+                  "start": 0
+                }
+              ]
+            },
+            "version": "hsa-dateline"
+          }
+        }
+      ],
+      "qualifications": [],
+      "record_agent": {
+        "id": "ie-importer",
+        "label": "GPT-6 source import; no individual source authorship inferred"
+      },
+      "source_support_review": "not-established-by-this-operation"
+    },
+    "hsa-origin": {
+      "assessments": [],
+      "claim": {
+        "agent": "ie-importer",
+        "created": "2026-09-07T10:17:48Z",
+        "id": "hsa-origin",
+        "kind": "relation",
+        "participants": [
+          {
+            "entity": "hsa-letter",
+            "role": "letter"
+          }
+        ],
+        "status": "asserted",
+        "type": "ie-origin-date",
+        "value": "1878-04-17"
+      },
+      "passages": [
+        {
+          "annotation": {
+            "agent": "ie-importer",
+            "body": "<origDate ana=\"dcterms:created\" when=\"1878-04-17\">1878-04-17</origDate>",
+            "concept": "ie-source-passage",
+            "created": "2026-09-07T10:17:48Z",
+            "id": "passage-hsa-origin",
+            "selection": "selection-passage-hsa-origin",
+            "status": "asserted"
+          },
+          "link": {
+            "agent": "ie-importer",
+            "created": "2026-09-07T10:17:48Z",
+            "id": "support-hsa-origin",
+            "source": "hsa-origin",
+            "status": "asserted",
+            "target": "passage-hsa-origin",
+            "type": "ie-supported-by"
+          },
+          "origin": {
+            "end_byte": 4194,
+            "sha256": "f37ff85df57405753aa0b6d1db63f3a24fcbd33ab1ef7fb54b68844e556e2438",
+            "snapshot": "hsa-letter-4493-2026-09-07",
+            "start_byte": 2342,
+            "uri": "https://gams.uni-graz.at/o:hsa.letter.4493/TEI_SOURCE",
+            "version": "hsa-source-description",
+            "xpath": "//tei:teiHeader/tei:fileDesc/tei:sourceDesc"
+          },
+          "selection": {
+            "id": "selection-passage-hsa-origin",
+            "selector": {
+              "kind": "ranges",
+              "segments": [
+                {
+                  "end": 1112,
+                  "quote": "<origDate ana=\"dcterms:created\" when=\"1878-04-17\">1878-04-17</origDate>",
+                  "start": 1041
+                }
+              ]
+            },
+            "version": "hsa-source-description"
+          }
+        }
+      ],
+      "qualifications": [],
+      "record_agent": {
+        "id": "ie-importer",
+        "label": "GPT-6 source import; no individual source authorship inferred"
+      },
+      "source_support_review": "not-established-by-this-operation"
+    },
+    "hsa-sent": {
+      "assessments": [],
+      "claim": {
+        "agent": "ie-importer",
+        "created": "2026-09-07T10:17:48Z",
+        "id": "hsa-sent",
+        "kind": "relation",
+        "participants": [
+          {
+            "entity": "hsa-letter",
+            "role": "letter"
+          }
+        ],
+        "status": "asserted",
+        "type": "ie-sent-date",
+        "value": "1878-04-17"
+      },
+      "passages": [
+        {
+          "annotation": {
+            "agent": "ie-importer",
+            "body": "<date when=\"1878-04-17\">1878-04-17</date>",
+            "concept": "ie-source-passage",
+            "created": "2026-09-07T10:17:48Z",
+            "id": "passage-hsa-sent",
+            "selection": "selection-passage-hsa-sent",
+            "status": "asserted"
+          },
+          "link": {
+            "agent": "ie-importer",
+            "created": "2026-09-07T10:17:48Z",
+            "id": "support-hsa-sent",
+            "source": "hsa-sent",
+            "status": "asserted",
+            "target": "passage-hsa-sent",
+            "type": "ie-supported-by"
+          },
+          "origin": {
+            "end_byte": 6879,
+            "sha256": "f37ff85df57405753aa0b6d1db63f3a24fcbd33ab1ef7fb54b68844e556e2438",
+            "snapshot": "hsa-letter-4493-2026-09-07",
+            "start_byte": 6035,
+            "uri": "https://gams.uni-graz.at/o:hsa.letter.4493/TEI_SOURCE",
+            "version": "hsa-correspondence",
+            "xpath": "//tei:correspDesc"
+          },
+          "selection": {
+            "id": "selection-passage-hsa-sent",
+            "selector": {
+              "kind": "ranges",
+              "segments": [
+                {
+                  "end": 508,
+                  "quote": "<date when=\"1878-04-17\">1878-04-17</date>",
+                  "start": 467
+                }
+              ]
+            },
+            "version": "hsa-correspondence"
+          }
+        }
+      ],
+      "qualifications": [],
+      "record_agent": {
+        "id": "ie-importer",
+        "label": "GPT-6 source import; no individual source authorship inferred"
+      },
+      "source_support_review": "not-established-by-this-operation"
+    },
+    "szd-contributor": {
+      "assessments": [],
+      "claim": {
+        "agent": "ie-importer",
+        "created": "2026-09-07T10:17:48Z",
+        "id": "szd-contributor",
+        "kind": "relation",
+        "participants": [
+          {
+            "entity": "artifact-w21",
+            "role": "artifact"
+          },
+          {
+            "entity": "person-lotte",
+            "role": "contributor"
+          }
+        ],
+        "status": "asserted",
+        "type": "ie-contributor",
+        "value": "contributor"
+      },
+      "passages": [
+        {
+          "annotation": {
+            "agent": "ie-importer",
+            "body": "<editor ref=\"#SZDPER.1555\" role=\"contributor\">\n                <persName ref=\"http://d-nb.info/gnd/116001151\">\n                  <surname>Zweig</surname>\n                  <forename>Lotte</forename>\n                </persName>\n              </editor>",
+            "concept": "ie-source-passage",
+            "created": "2026-09-07T10:17:48Z",
+            "id": "passage-szd-contributor",
+            "selection": "selection-passage-szd-contributor",
+            "status": "asserted"
+          },
+          "link": {
+            "agent": "ie-importer",
+            "created": "2026-09-07T10:17:48Z",
+            "id": "support-szd-contributor",
+            "source": "szd-contributor",
+            "status": "asserted",
+            "target": "passage-szd-contributor",
+            "type": "ie-supported-by"
+          },
+          "origin": {
+            "end_byte": 15086,
+            "sha256": "d8c4860957d71e0a2ea0a455a53fb3c68a942099f408c5c87997d91c0e0bc5ec",
+            "snapshot": "szd-werke-2026-09-07",
+            "start_byte": 10089,
+            "uri": "https://stefanzweig.digital/o:szd.werke/TEI_SOURCE",
+            "version": "szd-record-3",
+            "xpath": "//tei:biblFull[@xml:id='SZDMSK.3']"
+          },
+          "selection": {
+            "id": "selection-passage-szd-contributor",
+            "selector": {
+              "kind": "ranges",
+              "segments": [
+                {
+                  "end": 874,
+                  "quote": "<editor ref=\"#SZDPER.1555\" role=\"contributor\">\n                <persName ref=\"http://d-nb.info/gnd/116001151\">\n                  <surname>Zweig</surname>\n                  <forename>Lotte</forename>\n                </persName>\n              </editor>",
+                  "start": 624
+                }
+              ]
+            },
+            "version": "szd-record-3"
+          }
+        }
+      ],
+      "qualifications": [],
+      "record_agent": {
+        "id": "ie-importer",
+        "label": "GPT-6 source import; no individual source authorship inferred"
+      },
+      "source_support_review": "not-established-by-this-operation"
+    },
+    "szd-hand": {
+      "assessments": [],
+      "claim": {
+        "agent": "ie-importer",
+        "created": "2026-09-07T10:17:48Z",
+        "id": "szd-hand",
+        "kind": "relation",
+        "participants": [
+          {
+            "entity": "artifact-w21",
+            "role": "artifact"
+          },
+          {
+            "entity": "person-lotte",
+            "role": "attributed-person"
+          }
+        ],
+        "status": "asserted",
+        "type": "ie-hand-attribution",
+        "value": "Lotte Zweig (?)"
+      },
+      "passages": [
+        {
+          "annotation": {
+            "agent": "ie-importer",
+            "body": "<handDesc>\n                    <ab xml:lang=\"de\">Lotte Zweig (?)</ab>\n                    <ab xml:lang=\"en\">Lotte Zweig (?)</ab>\n                  </handDesc>",
+            "concept": "ie-source-passage",
+            "created": "2026-09-07T10:17:48Z",
+            "id": "passage-szd-hand",
+            "selection": "selection-passage-szd-hand",
+            "status": "asserted"
+          },
+          "link": {
+            "agent": "ie-importer",
+            "created": "2026-09-07T10:17:48Z",
+            "id": "support-szd-hand",
+            "source": "szd-hand",
+            "status": "asserted",
+            "target": "passage-szd-hand",
+            "type": "ie-supported-by"
+          },
+          "origin": {
+            "end_byte": 15086,
+            "sha256": "d8c4860957d71e0a2ea0a455a53fb3c68a942099f408c5c87997d91c0e0bc5ec",
+            "snapshot": "szd-werke-2026-09-07",
+            "start_byte": 10089,
+            "uri": "https://stefanzweig.digital/o:szd.werke/TEI_SOURCE",
+            "version": "szd-record-3",
+            "xpath": "//tei:biblFull[@xml:id='SZDMSK.3']"
+          },
+          "selection": {
+            "id": "selection-passage-szd-hand",
+            "selector": {
+              "kind": "ranges",
+              "segments": [
+                {
+                  "end": 3244,
+                  "quote": "<handDesc>\n                    <ab xml:lang=\"de\">Lotte Zweig (?)</ab>\n                    <ab xml:lang=\"en\">Lotte Zweig (?)</ab>\n                  </handDesc>",
+                  "start": 3086
+                }
+              ]
+            },
+            "version": "szd-record-3"
+          }
+        }
+      ],
+      "qualifications": [
+        {
+          "annotation": {
+            "agent": "ie-importer",
+            "body": "(?)",
+            "concept": "ie-source-qualification",
+            "created": "2026-09-07T10:17:48Z",
+            "id": "qualification-hand",
+            "selection": "selection-qualification-hand",
+            "status": "asserted"
+          },
+          "link": {
+            "agent": "ie-importer",
+            "created": "2026-09-07T10:17:48Z",
+            "id": "qualifies-hand",
+            "source": "szd-hand",
+            "status": "asserted",
+            "target": "qualification-hand",
+            "type": "ie-qualified-by"
+          },
+          "origin": {
+            "end_byte": 15086,
+            "sha256": "d8c4860957d71e0a2ea0a455a53fb3c68a942099f408c5c87997d91c0e0bc5ec",
+            "snapshot": "szd-werke-2026-09-07",
+            "start_byte": 10089,
+            "uri": "https://stefanzweig.digital/o:szd.werke/TEI_SOURCE",
+            "version": "szd-record-3",
+            "xpath": "//tei:biblFull[@xml:id='SZDMSK.3']"
+          },
+          "selection": {
+            "id": "selection-qualification-hand",
+            "selector": {
+              "kind": "ranges",
+              "segments": [
+                {
+                  "end": 3150,
+                  "quote": "(?)",
+                  "start": 3147
+                }
+              ]
+            },
+            "version": "szd-record-3"
+          }
+        }
+      ],
+      "record_agent": {
+        "id": "ie-importer",
+        "label": "GPT-6 source import; no individual source authorship inferred"
+      },
+      "source_support_review": "not-established-by-this-operation"
+    },
+    "szd-work-3": {
+      "assessments": [],
+      "claim": {
+        "agent": "ie-importer",
+        "created": "2026-09-07T10:17:48Z",
+        "id": "szd-work-3",
+        "kind": "relation",
+        "participants": [
+          {
+            "entity": "artifact-w21",
+            "role": "artifact"
+          },
+          {
+            "entity": "work-szdwrk2",
+            "role": "work"
+          }
+        ],
+        "status": "asserted",
+        "type": "ie-work-assignment",
+        "value": "#SZDWRK.2"
+      },
+      "passages": [
+        {
+          "annotation": {
+            "agent": "ie-importer",
+            "body": "<term ref=\"#SZDWRK.2\" type=\"work\">Rausch der Verwandlung</term>",
+            "concept": "ie-source-passage",
+            "created": "2026-09-07T10:17:48Z",
+            "id": "passage-szd-work-3",
+            "selection": "selection-passage-szd-work-3",
+            "status": "asserted"
+          },
+          "link": {
+            "agent": "ie-importer",
+            "created": "2026-09-07T10:17:48Z",
+            "id": "support-szd-work-3",
+            "source": "szd-work-3",
+            "status": "asserted",
+            "target": "passage-szd-work-3",
+            "type": "ie-supported-by"
+          },
+          "origin": {
+            "end_byte": 15086,
+            "sha256": "d8c4860957d71e0a2ea0a455a53fb3c68a942099f408c5c87997d91c0e0bc5ec",
+            "snapshot": "szd-werke-2026-09-07",
+            "start_byte": 10089,
+            "uri": "https://stefanzweig.digital/o:szd.werke/TEI_SOURCE",
+            "version": "szd-record-3",
+            "xpath": "//tei:biblFull[@xml:id='SZDMSK.3']"
+          },
+          "selection": {
+            "id": "selection-passage-szd-work-3",
+            "selector": {
+              "kind": "ranges",
+              "segments": [
+                {
+                  "end": 4885,
+                  "quote": "<term ref=\"#SZDWRK.2\" type=\"work\">Rausch der Verwandlung</term>",
+                  "start": 4822
+                }
+              ]
+            },
+            "version": "szd-record-3"
+          }
+        }
+      ],
+      "qualifications": [],
+      "record_agent": {
+        "id": "ie-importer",
+        "label": "GPT-6 source import; no individual source authorship inferred"
+      },
+      "source_support_review": "not-established-by-this-operation"
+    },
+    "szd-work-4": {
+      "assessments": [],
+      "claim": {
+        "agent": "ie-importer",
+        "created": "2026-09-07T10:17:48Z",
+        "id": "szd-work-4",
+        "kind": "relation",
+        "participants": [
+          {
+            "entity": "artifact-w22",
+            "role": "artifact"
+          },
+          {
+            "entity": "work-szdwrk2",
+            "role": "work"
+          }
+        ],
+        "status": "asserted",
+        "type": "ie-work-assignment",
+        "value": "#SZDWRK.2"
+      },
+      "passages": [
+        {
+          "annotation": {
+            "agent": "ie-importer",
+            "body": "<term ref=\"#SZDWRK.2\" type=\"work\">Rausch der Verwandlung</term>",
+            "concept": "ie-source-passage",
+            "created": "2026-09-07T10:17:48Z",
+            "id": "passage-szd-work-4",
+            "selection": "selection-passage-szd-work-4",
+            "status": "asserted"
+          },
+          "link": {
+            "agent": "ie-importer",
+            "created": "2026-09-07T10:17:48Z",
+            "id": "support-szd-work-4",
+            "source": "szd-work-4",
+            "status": "asserted",
+            "target": "passage-szd-work-4",
+            "type": "ie-supported-by"
+          },
+          "origin": {
+            "end_byte": 20397,
+            "sha256": "d8c4860957d71e0a2ea0a455a53fb3c68a942099f408c5c87997d91c0e0bc5ec",
+            "snapshot": "szd-werke-2026-09-07",
+            "start_byte": 15095,
+            "uri": "https://stefanzweig.digital/o:szd.werke/TEI_SOURCE",
+            "version": "szd-record-4",
+            "xpath": "//tei:biblFull[@xml:id='SZDMSK.4']"
+          },
+          "selection": {
+            "id": "selection-passage-szd-work-4",
+            "selector": {
+              "kind": "ranges",
+              "segments": [
+                {
+                  "end": 5184,
+                  "quote": "<term ref=\"#SZDWRK.2\" type=\"work\">Rausch der Verwandlung</term>",
+                  "start": 5121
+                }
+              ]
+            },
+            "version": "szd-record-4"
+          }
+        }
+      ],
+      "qualifications": [],
+      "record_agent": {
+        "id": "ie-importer",
+        "label": "GPT-6 source import; no individual source authorship inferred"
+      },
+      "source_support_review": "not-established-by-this-operation"
+    }
+  },
+  "inputs": {
+    "experiments/identity_evidence/protocol.json": "cc32da76fddc816c1bfb8a049319ddc7279650b74864f01448504c5c6efee5bc",
+    "knowledge/identity-evidence.md": "e057b22334d39245b04c2c71f455c18268e37adf35e8e85d7d1e4d40428eefe4",
+    "tools/check_identity_evidence.py": "385e6a6ad1214a930118c25f32181b16807be3b5094a5e4c5d1b284c69d2a770",
+    "tools/ingest_identity_evidence.py": "6740c2e3e0eb7bd6c8305cad330cb865d22105197d3ad529354ef7663fbd538f",
+    "tools/models/identity_evidence.py": "de5ad8010ef123e718bdfc5271bb713786fcf0dbb944dcde5893592c4b722fce"
+  },
+  "limits": [
+    "No images, external registers, complete ODD, or full correspondence corpus acquired.",
+    "The paired catalogue records do not establish a textual version relationship.",
+    "No manuscript hand comparison or actual mailing date established.",
+    "Both sources retain CC BY-NC 4.0 as declared in their XML headers; project licences do not replace source licences."
+  ],
+  "observations": {
+    "contribution_and_hand_have_separate_claims_and_passages": true,
+    "dateline_origin_and_sent_have_separate_contexts": true,
+    "dates_are_present_in_their_own_source_passages": true,
+    "distinct_artifacts_share_only_a_reported_work": true,
+    "hand_question_mark_preserved_without_importer_certainty": true,
+    "structural_validity_does_not_detect_false_interpretation": true
+  },
+  "passed": true,
+  "profile": "identity-evidence-0.1",
+  "source_snapshots": {
+    "hsa-letter-4493-2026-09-07": "f37ff85df57405753aa0b6d1db63f3a24fcbd33ab1ef7fb54b68844e556e2438",
+    "szd-werke-2026-09-07": "d8c4860957d71e0a2ea0a455a53fb3c68a942099f408c5c87997d91c0e0bc5ec"
+  },
+  "synthetic_identity_cases": [
+    {
+      "expected_grouped": true,
+      "id": "corrected-transcription",
+      "passed": true,
+      "synthetic": true
+    },
+    {
+      "expected_grouped": true,
+      "id": "diplomatic-and-normalized",
+      "passed": true,
+      "synthetic": true
+    },
+    {
+      "expected_grouped": false,
+      "id": "equal-content-distinct-witnesses",
+      "passed": true,
+      "synthetic": true
+    },
+    {
+      "expected_grouped": false,
+      "id": "draft-and-sent-not-automatically-grouped",
+      "passed": true,
+      "synthetic": true
+    }
+  ]
+}

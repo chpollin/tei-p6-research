@@ -1,0 +1,74 @@
+{
+  "profile": "https://example.org/tei-p6-research/profile/hsa-4493/1",
+  "source_sha256": "f37ff85df57405753aa0b6d1db63f3a24fcbd33ab1ef7fb54b68844e556e2438",
+  "source_url": "https://gams.uni-graz.at/o:hsa.letter.4493/TEI_SOURCE",
+  "license": "https://creativecommons.org/licenses/by-nc/4.0/",
+  "attribution": "Hugo Schuchardt Archiv, Universität Graz; detailed editorial and institutional attribution retained in p5.xml",
+  "projection": "ElementTree XML character data in document order, retaining parsed XML whitespace and child tails; note subtrees excluded from letter, each separately projected; no separators inserted for markup. XML line-end normalization differs from archival bytes.",
+  "counts": {
+    "body_elements": 118,
+    "editorial_notes": 11,
+    "named_mentions": 4,
+    "triples": 4266
+  },
+  "semantic_map": [
+    "document and carrier",
+    "text and fixed representation",
+    "author, sender and recipient roles",
+    "separate carrier-origin and sending events, places and dates",
+    "XML publication year 2022",
+    "exact dateline",
+    "four encoded person mentions and independent exact forms",
+    "reported source URI fields",
+    "eleven note bodies and insertion anchors"
+  ],
+  "preservation_only": [
+    "all body element names, attributes, hierarchy, text and tails",
+    "uninterpreted rend/rendition, references, page and line milestones",
+    "entire remaining header and trailing xml-model instructions in the byte-identical source",
+    "bibl year 2016 as cited-edition metadata",
+    "normalized-place country Austria without a historical-country assertion"
+  ],
+  "source_observations": {
+    "pid": "o:hsa.letter.4493",
+    "div_xml_id": "L.4492",
+    "repository": "Unbekannt",
+    "geo": "15.45,47.06667",
+    "unknown_rendition": {
+      "rend": "unknown",
+      "rendition": "#none"
+    }
+  },
+  "limits": [
+    "No full P5 semantic roundtrip, OWL reasoning or P5 schema validation.",
+    "Imported claims report source metadata under importer responsibility; no independent historical verification.",
+    "No receipt date/place, writing-agent attribution, residence, historical country, geographic axis normalization or manuscript image evidence inferred.",
+    "No note language inferred from inherited xml:lang; encoding metadata are preserved.",
+    "The Frollo professorship passage is preserved without inferring appointment.",
+    "Archival byte recovery and parsed Unicode projection are separate preservation guarantees."
+  ],
+  "components": {
+    "p6": {
+      "component": "semantic",
+      "triples": 1856
+    },
+    "preservation": {
+      "component": "preservation",
+      "triples": 2459
+    },
+    "union_triples": 4266,
+    "shared_type_triples": 49,
+    "rule": "Set union reconstructs the complete graph; preservation adds source values, source XML and body structure."
+  },
+  "artifact_bytes": {
+    "instance.mmd": 1236,
+    "p5.xml": 20184,
+    "p6.json": 235542,
+    "p6.ttl": 148557,
+    "p6.xml": 206763,
+    "preservation.json": 344255,
+    "preservation.ttl": 202270,
+    "preservation.xml": 313618,
+    "vocabulary.ttl": 5068
+  }
+}

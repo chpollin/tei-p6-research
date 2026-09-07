@@ -1,102 +1,158 @@
 # TEI P6 Research
 
-An independent research vault that studies TEI P5 and the official TEI P6
-process to develop evidence-grounded options for a possible next-generation
-architecture.
+An independent research repository for developing and evaluating an abstract
+text model for a possible next generation of the Text Encoding Initiative
+(TEI). It brings source-based analysis of P5 together with model proposals,
+executable examples, and tests of their consequences for editions, language
+corpora, and documentary catalogues.
 
-> This is an independent, unofficial project without standing in the TEI
-> Consortium. Official TEI P6 records are research sources here, and the
-> proposals developed here are the project's own recommendations.
+The repository supports shared research by people and AI agents. It is
+designed for use with a harness such as Claude Code, Codex, or pi, and for
+direct reading, inspection, and contribution through Markdown and the web
+workbench. Official TEI P6 records are sources for this independent project.
+Its proposals are its own research contributions.
 
-[Read the proposal](https://chpollin.github.io/tei-p6-research/)
-· [Model](https://chpollin.github.io/tei-p6-research/model.html)
-· [Materials](https://chpollin.github.io/tei-p6-research/corpus.html)
-· [Knowledge](https://chpollin.github.io/tei-p6-research/knowledge.html)
-· [About](https://chpollin.github.io/tei-p6-research/project.html)
-· [Current research state](knowledge/state.md)
+[Model proposal](40_output/02-abstract-model.md)
+· [Architecture proposal](40_output/12-p6-design.md)
+· [Web workbench](https://chpollin.github.io/tei-p6-research/)
+· [Research state](knowledge/state.md)
+· [Knowledge index](knowledge/INDEX.md)
 
-## Objective
+Version `0.1.0` is the first consolidated research baseline. Its
+[version record](knowledge/releases.md) identifies the included results,
+model and binding versions, and known limits.
 
-The project asks which concepts, identities, relations and rules a text model
-needs for practical encoding and processing. P5's formal properties, history
-and use provide the baseline, and textual scholarship and editorial cases
-challenge the proposed categories. Repair within P5, compatible evolution,
-architectural replacement and deferral are compared under the same
-dimensions, including their migration, tooling, teaching, interoperability
-and governance costs. The charter with the research questions is
-[`knowledge/project.md`](knowledge/project.md).
+## Research goals
 
-## Method
+The central question is which objects, identities, relationships, and rules
+a text model needs to support encoding, description, and interpretation across
+editions, language corpora, and documentary catalogues.
 
-Research claims follow the Grounded Vault chain.
+- Understand P5's architecture and encoding practices, including the
+  capabilities a successor must preserve and the problems supported by sources.
+- Define an abstract model whose concepts and constraints can be explained,
+  implemented, and challenged through concrete cases.
+- Compare ways of exchanging and processing the same information, including
+  their preservation limits and the decisions required to migrate P5 data.
+- Evaluate repair within P5, compatible evolution, architectural replacement,
+  and deferral under the same requirements and user tasks.
 
-```text
-00_sources -> 10_markdown -> 20_distillates -> 30_assertions -> 40_output
-```
+The [research charter](knowledge/project.md) develops these questions.
+The [evaluation contract](knowledge/p6-evaluation.md) explains how alternatives
+are compared, including customization, tooling, teaching, and governance.
+Developed examples are compared in XML, JSON, and RDF. Each view states whether
+it is an implemented binding, a proposed representation, or has explicit gaps.
 
-Each output claim cites an assertion, each assertion cites distillate
-statements, and each distillate addresses one source. Collections undergo
-controlled admission before entering this chain. Grounding establishes
-traceability, machine review tests source support, and only the designated
-human expert assigns `verified`. The rationale is in
-[`knowledge/schema.md`](knowledge/schema.md).
+## Central results
 
-## Where to start
+| Result | What it provides | Entry point |
+|---|---|---|
+| Abstract model proposal | A reasoned definition of text identity, fixed versions, selections, structural readings, and attributed claims, including the entity extension. | [Abstract Model](40_output/02-abstract-model.md) |
+| Further model design | Proposed distinctions for text, name forms and uses, mentions, open classifications, proposition content and attributed stances. Six complete cases in XML, JSON and RDF. | [Model design](knowledge/model-design.md) · [Examples](knowledge/model-examples.md) |
+| Documentary ontology | A small experimental record vocabulary, a generated class hierarchy and a separate external-mapping register. RDF/XML and JSON-LD reproduce the core RDF graph. | [Ontology contract](knowledge/ontology.md) · [Turtle](ontology/core.ttl) · [Class hierarchy](ontology/record-hierarchy.mmd) |
+| Real P5/P6 letter case | An admitted HSA letter with its complete text and editorial notes, qualified metadata reports, and matching XML/JSON/RDF records. Compact semantic data and optional preservation data reconstruct one complete graph. | [HSA letter comparison](experiments/hsa_letter_4493/README.md) · [Profile and bindings](knowledge/hsa-profile.md) |
+| Executable models and bindings | Validators, examples, and comparison rules for models 0.1 and 0.2. Version 0.1 has JSON/XML/YAML roundtrips; 0.2 has JSON packages and a separate one-way RDF export. | [Model contract](knowledge/text-model.md) · [Bindings](knowledge/text-model-bindings.md) |
+| P5 analyses | Source-supported arguments about annotation, overlap, names, entities, and identification that motivate and challenge model decisions. | [Annotation and Overlap](40_output/06-annotation-and-overlap.md) · [Metadata and Entities](40_output/08-metadata-and-entities.md) |
+| Editorial experiments | Synthetic counterexamples and bounded studies of edition fragments, catalogue records, and correspondence, with explicit mappings and unresolved cases. | [Experiments](knowledge/experiments.md) · [Identity and Evidence](knowledge/identity-evidence.md) |
+| P5 source reference | Version-pinned Guidelines sources with declaration navigation and links to their research interpretation. | [Guidelines coverage](corpus/projections/guidelines-4.12.0.md) · [Knowledge browser](https://chpollin.github.io/tei-p6-research/knowledge.html) |
+| Architecture proposal | An argument connecting model choices to customization, exchange, migration, and the comparison of P6 options. | [P6 Design](40_output/12-p6-design.md) |
 
-The [English Guidelines coverage](corpus/projections/guidelines-4.12.0.md)
-maps the complete pinned source intake to the published contents and the
-actual distillates. Imported sources are available for citation; systematic
-interpretation and human verification have their own recorded scope.
+These results have explicit research and test boundaries. Source availability,
+formal validation, and domain acceptance are assessed separately.
+Representative P5 migration and a justified architecture recommendation remain
+open research requirements. The [current state](knowledge/state.md) records
+completed checks, known model limitations, and gaps in the source corpus.
 
-| Goal | Start here |
+## Work with the repository
+
+### Read, inspect, and contribute
+
+Start with the [model proposal](40_output/02-abstract-model.md) to understand
+what is being modeled and why. Read the
+[architecture proposal](40_output/12-p6-design.md) for the wider argument.
+The [model design](knowledge/model-design.md) collects the proposed extensions
+and the distinctions that still require formalization and P5 comparison.
+
+Use the [web workbench](https://chpollin.github.io/tei-p6-research/) to explore
+comparative examples and follow claims to their sources. For local work,
+browse the Markdown files or open the repository folder as an Obsidian vault.
+The [knowledge index](knowledge/INDEX.md) connects research topics, definitions,
+and working procedures. Reading the repository requires no AI harness.
+
+Contributions can question a definition, supply a counterexample, examine a
+source, or test a mapping. Begin with a concrete encoding or research question and the
+relevant evidence or example. [CONTRIBUTING.md](CONTRIBUTING.md) explains
+where the resulting work belongs and which checks apply.
+
+### Work with an AI harness
+
+Use the repository root as the harness's working directory. The agent should
+read the repository instructions and consult the maintained knowledge before
+working on a question.
+
+| Harness | Repository entry point |
 |---|---|
-| Read the proposal and explore the model | [Research home](https://chpollin.github.io/tei-p6-research/) |
-| Browse the acquired material | [Materials](https://chpollin.github.io/tei-p6-research/corpus.html) |
-| Find any document, term or folder | [`knowledge/INDEX.md`](knowledge/INDEX.md) |
-| Understand the charter and scope | [`knowledge/project.md`](knowledge/project.md) |
-| Check what actually exists now | [`knowledge/state.md`](knowledge/state.md) |
-| Understand the repository structure | [`knowledge/architecture.md`](knowledge/architecture.md) |
-| Read the model definition | [`knowledge/text-model.md`](knowledge/text-model.md) |
-| Read the proposal source | [`40_output/12-p6-design.md`](40_output/12-p6-design.md) |
-| Set up a local environment and run the checks | [Quick start](#quick-start) and [`knowledge/operations.md`](knowledge/operations.md) |
-| Acquire a source, regenerate the site or publish | [`knowledge/operations.md`](knowledge/operations.md), [`knowledge/design.md`](knowledge/design.md) and [`knowledge/testing.md`](knowledge/testing.md) |
-| Contribute research or code | [`CONTRIBUTING.md`](CONTRIBUTING.md) |
-| Enter the research topics in Obsidian | [`knowledge/INDEX.md`](knowledge/INDEX.md#topic-maps) |
+| Claude Code | [CLAUDE.md](CLAUDE.md), with research adapters under [.claude/skills/](.claude/skills/) |
+| Codex | [AGENTS.md](AGENTS.md) |
+| pi or another harness | Explicitly ask the agent to read [AGENTS.md](AGENTS.md) and follow its routes into [knowledge/INDEX.md](knowledge/INDEX.md). |
 
-## Quick start
+A starting task can be given directly in the conversation.
 
-```powershell
+> Read AGENTS.md, knowledge/INDEX.md, and knowledge/state.md. Examine how
+> the model distinguishes a corrected transcription from a different text.
+> Trace the relevant definitions to their source premises and executable
+> examples. Identify a counterexample or an unresolved editorial decision.
+> Keep source findings and proposed model changes explicit.
+
+For implementation work, name the intended change and the case it must handle.
+The agent can inspect sources, revise arguments, implement a bounded model
+change, and run the relevant checks. Research findings retain their source
+links, while model decisions and experiment results are written back to their
+designated repository documents. This allows another agent or a human reader
+to continue from inspectable files.
+
+Scientific review and editorial acceptance remain explicit contributions by
+the responsible researchers. Generated prose and passing tests establish
+neither by themselves.
+
+### Run the examples and checks
+
+Local execution needs Git, Python 3.11 or newer, and `uv`.
+
+```sh
+git clone https://github.com/chpollin/tei-p6-research.git
+cd tei-p6-research
 uv sync
-python tools/validate.py .
-python -m pytest tests
+uv run python tools/validate.py .
+uv run python tools/check_abstract_text_v01.py --check
+uv run python tools/check_entities_v02.py --check
 ```
 
-`uv sync` installs the dependencies. Without `uv` use
-`python -m pip install pyyaml pytest ruff`. The environment, the collectors
-and the research procedures are in
-[`knowledge/operations.md`](knowledge/operations.md), the regeneration of the
-public site in [`knowledge/design.md`](knowledge/design.md), and the one
-completion gate that closes a change in
-[`knowledge/testing.md`](knowledge/testing.md).
+These commands validate the repository's research structure and reproduce the
+bounded model reports. The [experiment guide](knowledge/experiments.md)
+connects each runner to its question, examples, and limitations.
+[Operations](knowledge/operations.md#environment) documents setup alternatives,
+and [Testing](knowledge/testing.md) defines the checks required after a change.
 
-## Licence and attribution
+The admitted Guidelines XML can also be reconstructed from the source
+representations in a clone.
 
-Project-authored text, documentation and content are licensed under
-[CC BY 4.0](LICENSE). Project-authored code under `tools/`, `tests/`,
-`.github/` and the site assets is licensed under [MIT](LICENSE-CODE).
-Citation metadata is in [`CITATION.cff`](CITATION.cff) and
-[`codemeta.json`](codemeta.json).
+```sh
+uv run python -m tools.export_guidelines --output ../tei-p5-4.12.0-xml
+uv run python -m tools.export_guidelines --output ../tei-p5-4.12.0-xml --check
+```
 
-The vault architecture was instantiated from
-[DigitalHumanitiesCraft/grounded-vault](https://github.com/DigitalHumanitiesCraft/grounded-vault)
-at commit `e19231735832f486735f94250d2771441372667e`, licensed under
-CC BY 4.0. The original architecture, validation tools, tests, documentation
-and Claude-oriented skills remain attributable to Christopher Pollin /
-Digital Humanities Craft OG.
+This export preserves the admitted XML bytes and upstream paths. Images and
+schemas are outside its scope. [Export and discovery](knowledge/operations.md#export-and-discovery)
+describes the source boundary, export behavior, and navigation.
 
-TEI Guidelines, schemas, source files, repository discussions, scholarly
-publications and other third-party materials retain their own authorship and
-applicable rights. Public access grants no permission to republish full text,
-and inclusion in a source registry implies no permission to redistribute full
-content. Per-source rights and provenance are recorded under `sources/` and
-governed by [`knowledge/data.md`](knowledge/data.md).
+## Licence and provenance
+
+Project-authored text and documentation use [CC BY 4.0](LICENSE), and
+project-authored code uses [MIT](LICENSE-CODE).
+[CITATION.cff](CITATION.cff) provides citation metadata. Third-party material
+retains its own authorship and rights, recorded with its source provenance
+under [sources/](sources/) and described in [Data](knowledge/data.md).
+
+Research provenance uses [Grounded Vault](https://github.com/DigitalHumanitiesCraft/grounded-vault),
+with [upstream attribution](knowledge/architecture.md#lineage).

@@ -1,0 +1,60 @@
+schema_version: 1
+run_id: 2026-09-07-identity-evidence
+source_id: tei-real-world-customizations
+started_at: '2026-09-07T10:17:48Z'
+finished_at: '2026-09-07T10:17:48Z'
+status: bounded-complete
+lock_file: sources/locks/real-world-customizations.yaml
+scope:
+  boundary: Exactly the two declared XML responses and five selected byte intervals
+  protocol: experiments/identity_evidence/protocol.json
+adapter:
+  name: tools.ingest_identity_evidence
+  version: 1
+requests:
+- requested_url: https://stefanzweig.digital/o:szd.werke/TEI_SOURCE
+  final_url: https://stefanzweig.digital/o:szd.werke/TEI_SOURCE
+  observed_at: '2026-09-07T10:17:48Z'
+  sha256: d8c4860957d71e0a2ea0a455a53fb3c68a942099f408c5c87997d91c0e0bc5ec
+  byte_count: 1641144
+  status: 200
+- requested_url: https://gams.uni-graz.at/o:hsa.letter.4493/TEI_SOURCE
+  final_url: https://gams.uni-graz.at/o:hsa.letter.4493/TEI_SOURCE
+  observed_at: '2026-09-07T10:17:48Z'
+  sha256: f37ff85df57405753aa0b6d1db63f3a24fcbd33ab1ef7fb54b68844e556e2438
+  byte_count: 20184
+  status: 200
+objects:
+- path: 10_markdown/documents/szd-werke-2026-09-07.md
+  sha256: 0af3fb0a7e3e1ac0e3ace05be40abbc834ddb99c95b715db6c8e6afafbcb1306
+- path: 10_markdown/documents/hsa-letter-4493-2026-09-07.md
+  sha256: c23b1ca43738047cd6b59e5c94028e7b4208cac980305beaab81de6c40bdc41a
+- path: experiments/identity_evidence/intake.json
+  sha256: 589770198d8c48e842b7f9b495c612e95e5d9f1166bcaaed67d0f92638458355
+counts:
+  admitted_sources: 2
+  selected_fragments: 5
+admissions:
+- source_type: document
+  original_path: 00_sources/szd-werke-2026-09-07.xml
+  representation_path: 10_markdown/documents/szd-werke-2026-09-07.md
+  original_sha256: d8c4860957d71e0a2ea0a455a53fb3c68a942099f408c5c87997d91c0e0bc5ec
+- source_type: document
+  original_path: 00_sources/hsa-letter-4493-2026-09-07.xml
+  representation_path: 10_markdown/documents/hsa-letter-4493-2026-09-07.md
+  original_sha256: f37ff85df57405753aa0b6d1db63f3a24fcbd33ab1ef7fb54b68844e556e2438
+rights:
+  license: CC-BY-NC-4.0
+  attribution:
+  - Literaturarchiv Salzburg; Zentrum für Informationsmodellierung, Universität Graz
+  - Hugo Schuchardt Archiv, Universität Graz
+  license_source: publicationStmt/availability/licence in each acquired XML header
+instruction_trust: none
+content_authority: sampled-practice-record
+gaps: []
+known_limits:
+- No images, external registers, complete ODD, or full correspondence corpus acquired.
+- The paired catalogue records do not establish a textual version relationship.
+- No manuscript hand comparison or actual mailing date established.
+- Both sources retain CC BY-NC 4.0 as declared in their XML headers; project licences
+  do not replace source licences.

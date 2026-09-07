@@ -1,12 +1,13 @@
 """Escaping-first static view of vault artifacts and precise provenance."""
 from __future__ import annotations
 
+import json
 import re
 
 from tools.sitegen.assets import read_asset
 from tools.sitegen.chrome import render_footer, render_header
 from tools.sitegen.knowledge_view import LAYERS, block_id
-from tools.sitegen.markup import esc, repository_link, safe_url
+from tools.sitegen.markup import doc_id, esc, repository_link, safe_url
 
 
 def link(url: str, label: str) -> str:
@@ -62,10 +63,41 @@ def _metadata(entry: dict, base: str | None) -> str:
     return '<dl class="artifact-metadata">' + ''.join('<div><dt>' + esc(label) + '</dt><dd>' + value + '</dd></div>' for label, value in values) + '</dl>'
 
 
+def _guidelines(row: dict, base: str | None) -> str:
+    if not row:
+        return ''
+    suggestions = ', '.join(link(repository_link(s['moc'], base), s['topic']) + ' (' + esc(s['rule']) + ')' for s in row['topic_suggestions'])
+    result = '<section class="guidelines-navigation"><h3>Guidelines navigation</h3><p>Topic suggestions: ' + (suggestions or esc(row['unclassified_reason'])) + '.</p><p class="muted">Rule-based navigation; no scholarly classification or research status is assigned. Relations describe direct declarations only.</p>'
+    result += '<p>Source kind: ' + esc(row['kind']) + '. Module: ' + esc(row.get('module') or 'not assigned') + ' (' + esc(row['module_basis']) + ').</p>'
+    for key, label in (('references', 'Declared references'), ('referenced_by', 'Referenced by declarations')):
+        items = []
+        for edge in row[key]:
+            if key == 'references':
+                destination = edge['target_representation']
+                item = esc(edge['relation']) + ' → ' + (link('#' + doc_id(destination), edge['target']) if destination else esc(edge['target'] or '(unnamed target)') + ' — unresolved: ' + esc(edge['reason']))
+                if edge.get('anchor'):
+                    item += ' · ' + link('#' + block_id(row['representation'], edge['anchor']), 'declaration passage')
+                else:
+                    item += ' · ' + esc(edge['anchor_reason'])
+            else:
+                destination = '#' + (block_id(edge['representation'], edge['anchor']) if edge.get('anchor') else doc_id(edge['representation']))
+                item = link(destination, edge['ident']) + ' · ' + esc(edge['relation'])
+            items.append('<li>' + item + '<br><code>' + esc(edge['xml_location']) + '</code></li>')
+        if items:
+            result += '<details class="spec-relations"><summary>' + label + ' (' + str(len(items)) + ')</summary><ul>' + ''.join(items) + '</ul></details>'
+    return result + '</section>'
+
+
 def render_entry(entry: dict, base: str | None) -> str:
     kind, path = entry['kind'], entry['path']
     status = entry['status'] or 'No research status assigned'
     search = ' '.join((entry['title'], path, status, str(entry['metadata'].get('topics', [])), entry['excerpt'], ' '.join(entry['blocks'].values())))
+    guidelines = entry.get('guidelines', {})
+    topics = [s['topic'] for s in guidelines.get('topic_suggestions', [])]
+    topics += [value.removeprefix('[[').removesuffix(']]').split('/')[-1].removeprefix('MOC-') for value in entry['metadata'].get('topics', [])]
+    if guidelines and not topics:
+        topics = ['Unclassified']
+    search += ' ' + ' '.join(topics) + ' ' + str(guidelines.get('module') or '')
     if kind == 'representation':
         excerpt = '<p class="muted">Anchored passages appear below. The repository holds the complete representation. Local originals are not published here.</p>'
     else:
@@ -81,9 +113,9 @@ def render_entry(entry: dict, base: str | None) -> str:
     posit = ''
     if kind == 'chapter':
         posit = '<p class="muted">The chapter records ' + esc(entry['metadata'].get('posits', 'an unspecified number of')) + ' explicit project posits. These express authorial proposals.</p>'
-    return f'''<details class="artifact" id="{esc(entry['id'])}" data-kind="{esc(kind)}" data-search="{literal(search)}">
+    return f'''<details class="artifact" id="{esc(entry['id'])}" data-kind="{esc(kind)}" data-topics="{esc(json.dumps(topics))}" data-module="{esc(guidelines.get('module') or '')}" data-source-kind="{esc(guidelines.get('kind') or '')}" data-search="{literal(search)}">
 <summary><span class="artifact-title">{esc(entry['title'])}</span><span class="artifact-state">{esc(status)}</span></summary>
-<div class="artifact-content"><p class="artifact-path"><code>{esc(path)}</code> · {canonical}</p>{excerpt}{posit}{_edges(direct, 'Grounding')}{''.join(blocks)}{_metadata(entry, base)}{_edges(entry['backlinks'], 'Used by')}</div></details>'''
+<div class="artifact-content"><p class="artifact-path"><code>{esc(path)}</code> · {canonical}</p>{excerpt}{posit}{_guidelines(guidelines, base)}{_edges(direct, 'Grounding')}{''.join(blocks)}{_metadata(entry, base)}{_edges(entry['backlinks'], 'Used by')}</div></details>'''
 
 
 def render_page(view: dict) -> str:
@@ -95,6 +127,15 @@ def render_page(view: dict) -> str:
     for kind in dict.fromkeys(item['kind'] for item in view['navigation']):
         nav.append('<section><h3>' + esc(kind) + '</h3><ul>' + ''.join('<li>' + link(repository_link(item['path'], view['base']), item['title']) + '</li>' for item in view['navigation'] if item['kind'] == kind) + '</ul></section>')
     options = ''.join(f'<option value="{kind}">{esc(label)}</option>' for kind, label in LAYERS.items())
+    guideline_filters = ''
+    guideline_navigation = view.get('guidelines_navigation')
+    if guideline_navigation:
+        for name, label, values in (
+            ('topic', 'Topic / suggestion', sorted([*guideline_navigation['topics'], 'Unclassified'])),
+            ('module', 'Guidelines module', sorted({r['module'] for r in guideline_navigation['sources'] if r['module']})),
+            ('source-kind', 'Guidelines source kind', sorted({r['kind'] for r in guideline_navigation['sources']})),
+        ):
+            guideline_filters += '<label>' + label + '<select id="knowledge-' + name + '"><option value="">All</option>' + ''.join('<option value="' + esc(value) + '">' + esc(value) + '</option>' for value in values) + '</select></label>'
     css = read_asset('workbench.css') + '\n' + read_asset('knowledge.css')
     js = read_asset('knowledge.js')
     return f'''<!doctype html>
@@ -104,7 +145,7 @@ def render_page(view: dict) -> str:
 <p>Actual source representations, distillates, assertions, and output chapters in this repository. Follow a claim to its exact source passage, or inspect where a passage is used.</p>
 <p class="muted">Browse admitted sources, distillates, assertions and output. <a href="corpus.html">Materials</a> records the broader acquired and planned holdings. Citation-only admissions end at a checked quotation and citation. Grounded means traceable. Validated records machine checks. Verified requires recorded human verification.</p></header>
 <nav class="layer-navigation" aria-label="Vault layers">{''.join(link('#group-' + kind, label + ' (' + str(view['counts'][kind]) + ')') for kind, label in LAYERS.items())}{link('#documents', 'Project documents')}</nav>
-<form class="knowledge-filters" role="search"><label>Search the vault<input id="knowledge-search" type="search" placeholder="Title, statement, topic, or path" autocomplete="off"></label><label>Layer<select id="knowledge-layer"><option value="">All layers</option>{options}</select></label><button type="reset">Clear filters</button><output id="knowledge-results" aria-live="polite">{len(view['entries'])} artifacts</output></form>
+<form class="knowledge-filters" role="search"><label>Search the vault<input id="knowledge-search" type="search" placeholder="Title, statement, topic, or path" autocomplete="off"></label><label>Layer<select id="knowledge-layer"><option value="">All layers</option>{options}</select></label>{guideline_filters}<button type="reset">Clear filters</button><output id="knowledge-results" aria-live="polite">{len(view['entries'])} artifacts</output></form>
 <p id="knowledge-empty" hidden>No artifacts match these filters.</p>{''.join(groups)}
 <section id="documents" class="document-navigation"><h2>Project documents</h2><p class="muted">Control contracts, topic maps, and provisional design documents are navigation and project reasoning. They are not substitutes for the evidence chain.</p><div class="document-columns">{''.join(nav)}</div></section>
 </main>{render_footer(view['date'])}<script>{js}</script></body></html>'''

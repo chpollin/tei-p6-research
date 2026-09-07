@@ -1,0 +1,178 @@
+[
+  {
+    "expected_grouped": true,
+    "id": "corrected-transcription",
+    "package": {
+      "agents": [
+        {
+          "id": "editor",
+          "label": "Synthetic editor"
+        }
+      ],
+      "annotations": [],
+      "concepts": [],
+      "continuities": [
+        {
+          "agent": "editor",
+          "criterion": "Same selected editorial unit and witness; a documented transcription correction.",
+          "id": "continuity",
+          "text": "text",
+          "versions": [
+            "v0",
+            "v1"
+          ]
+        }
+      ],
+      "model_version": "0.1",
+      "readings": [],
+      "relations": [],
+      "selections": [],
+      "texts": [
+        {
+          "id": "text",
+          "label": "Declared editorial unit"
+        }
+      ],
+      "versions": [
+        {
+          "content": "Wortlaut A",
+          "id": "v0",
+          "parents": [],
+          "sha256": "2f6892b9407bfd5980c53139ac0ab367d826ffb62449487d1e98466092198bfe"
+        },
+        {
+          "content": "Wortlaut B",
+          "id": "v1",
+          "parents": [],
+          "sha256": "e6c212997b93cd1e2d1859e2bcba2b57948ddf6482f916554ceaf051e8bffff9"
+        }
+      ]
+    },
+    "passed": true,
+    "synthetic": true
+  },
+  {
+    "expected_grouped": true,
+    "id": "diplomatic-and-normalized",
+    "package": {
+      "agents": [
+        {
+          "id": "editor",
+          "label": "Synthetic editor"
+        }
+      ],
+      "annotations": [],
+      "concepts": [],
+      "continuities": [
+        {
+          "agent": "editor",
+          "criterion": "Same selected editorial unit and witness under two declared rendering policies.",
+          "id": "continuity",
+          "text": "text",
+          "versions": [
+            "v0",
+            "v1"
+          ]
+        }
+      ],
+      "model_version": "0.1",
+      "readings": [],
+      "relations": [],
+      "selections": [],
+      "texts": [
+        {
+          "id": "text",
+          "label": "Declared editorial unit"
+        }
+      ],
+      "versions": [
+        {
+          "content": "daß",
+          "id": "v0",
+          "parents": [],
+          "sha256": "84df486b04005381377cf695433368050eb489cf34f02d79b1c6a76b702075df"
+        },
+        {
+          "content": "dass",
+          "id": "v1",
+          "parents": [],
+          "sha256": "d717f800853afcf7897c5b9389d16bc78ab75e5759faec6ac08325e9b20ef80d"
+        }
+      ]
+    },
+    "passed": true,
+    "synthetic": true
+  },
+  {
+    "expected_grouped": false,
+    "id": "equal-content-distinct-witnesses",
+    "package": {
+      "agents": [
+        {
+          "id": "editor",
+          "label": "Synthetic editor"
+        }
+      ],
+      "annotations": [],
+      "concepts": [],
+      "continuities": [],
+      "model_version": "0.1",
+      "readings": [],
+      "relations": [],
+      "selections": [],
+      "texts": [],
+      "versions": [
+        {
+          "content": "gleiche Zeichen",
+          "id": "v0",
+          "parents": [],
+          "sha256": "d102f77f8ba6639ff132bc2ea0f89fc0da3c557e66e9e02c43e5ebe4f4bcc1f9"
+        },
+        {
+          "content": "gleiche Zeichen",
+          "id": "v1",
+          "parents": [],
+          "sha256": "d102f77f8ba6639ff132bc2ea0f89fc0da3c557e66e9e02c43e5ebe4f4bcc1f9"
+        }
+      ]
+    },
+    "passed": true,
+    "synthetic": true
+  },
+  {
+    "expected_grouped": false,
+    "id": "draft-and-sent-not-automatically-grouped",
+    "package": {
+      "agents": [
+        {
+          "id": "editor",
+          "label": "Synthetic editor"
+        }
+      ],
+      "annotations": [],
+      "concepts": [],
+      "continuities": [],
+      "model_version": "0.1",
+      "readings": [],
+      "relations": [],
+      "selections": [],
+      "texts": [],
+      "versions": [
+        {
+          "content": "Entwurf",
+          "id": "v0",
+          "parents": [],
+          "sha256": "2ba46e35bdfb6aff02b84727859c391a90560c737243b219852fd79c9b0fe4ea"
+        },
+        {
+          "content": "Ausfertigung",
+          "id": "v1",
+          "parents": [],
+          "sha256": "cc41e28ce7166506c231aecaddc78a62c9d578223edac86e3828597cac5b9036"
+        }
+      ]
+    },
+    "passed": true,
+    "synthetic": true
+  }
+]

@@ -3,12 +3,19 @@
   const form = document.querySelector('.knowledge-filters');
   const search = document.getElementById('knowledge-search');
   const layer = document.getElementById('knowledge-layer');
+  const topic = document.getElementById('knowledge-topic');
+  const moduleFilter = document.getElementById('knowledge-module');
+  const sourceKind = document.getElementById('knowledge-source-kind');
   const entries = Array.from(document.querySelectorAll('.artifact'));
   function filter() {
     const terms = search.value.toLocaleLowerCase().trim().split(/\s+/).filter(Boolean);
     let count = 0;
     for (const entry of entries) {
-      const matches = (!layer.value || entry.dataset.kind === layer.value) && terms.every(term => entry.dataset.search.toLocaleLowerCase().includes(term));
+      const matches = (!layer.value || entry.dataset.kind === layer.value)
+        && (!topic?.value || JSON.parse(entry.dataset.topics || '[]').includes(topic.value))
+        && (!moduleFilter?.value || entry.dataset.module === moduleFilter.value)
+        && (!sourceKind?.value || entry.dataset.sourceKind === sourceKind.value)
+        && terms.every(term => entry.dataset.search.toLocaleLowerCase().includes(term));
       entry.hidden = !matches;
       if (matches) count++;
     }
@@ -23,8 +30,13 @@
     if (!target) return;
     const entry = target.closest('.artifact');
     if (entry) {
-      search.value = ''; layer.value = ''; filter();
+      search.value = ''; layer.value = '';
+      for (const control of [topic, moduleFilter, sourceKind]) if (control) control.value = '';
+      filter();
       entry.open = true;
+      for (let parent = target.parentElement; parent; parent = parent.parentElement) {
+        if (parent.tagName === 'DETAILS') parent.open = true;
+      }
       requestAnimationFrame(() => {
         target.scrollIntoView({block: 'start'});
         (target === entry ? entry.querySelector('summary') : target).focus({preventScroll: true});

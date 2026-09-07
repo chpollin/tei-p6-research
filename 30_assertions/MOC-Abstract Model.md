@@ -13,6 +13,8 @@ in the pinned P5 baseline. Independent definitions remain design hypotheses.
 ## Sources and distillates
 
 <!-- distillates:begin -->
+- [[20_distillates/documents/hsa-letter-4493-2026-09-07]]
+- [[20_distillates/documents/szd-werke-2026-09-07]]
 - [[20_distillates/documents/tei-p5-anchor-4.12.0]]
 - [[20_distillates/documents/tei-p5-annotation-4.12.0]]
 - [[20_distillates/documents/tei-p5-att.canonical-4.12.0]]
@@ -27,6 +29,8 @@ in the pinned P5 baseline. Independent definitions remain design hypotheses.
 ## Assertions
 
 <!-- assertions:begin -->
+- [[30_assertions/hsa-dateline-retains-short-year]] — Die Datumszeile in Schuchardt-Brief 4493 verwendet eine zweistellige Jahresangabe
+- [[30_assertions/hsa-origin-and-sent-dates-have-distinct-contexts]] — Schuchardt-Brief 4493 enthält denselben Datumswert in Entstehungs- und Versandmetadaten
 - [[30_assertions/p5-anchor-identifies-a-textual-point]] — In TEI P5 4.12.0, anchor identifies a point within a text
 - [[30_assertions/p5-annotation-refers-to-web-annotation-model]] — TEI P5 4.12.0 describes annotation as following the Web Annotation Data Model
 - [[30_assertions/p5-att-canonical-gives-no-precedence-when-key-and-ref-co-occur]] — In TEI P5 4.12.0, att.canonical provides no semantic basis and suggests no precedence when both key and ref are supplied
@@ -43,6 +47,10 @@ in the pinned P5 baseline. Independent definitions remain design hypotheses.
 - [[30_assertions/p5-span-from-identifies-start-or-whole-node]] — In TEI P5 4.12.0, span from identifies the starting node or, without to, the entire annotated node
 - [[30_assertions/piez-treats-optional-hierarchy-as-object-of-study]] — Piez treats optional hierarchy as an object of study
 - [[30_assertions/renear-wickett-distinguish-string-mapping-from-persistent-identity]] — Renear and Wickett describe editing strings as mapping rather than modifying a persistent entity
+- [[30_assertions/szd-contributor-and-hand-description-are-distinct]] — SZDMSK.3 erfasst Mitwirkung und Handschriftenangabe in getrennten Feldern
+- [[30_assertions/szd-hand-attribution-retains-question-mark]] — Die Handschriftenangabe in SZDMSK.3 enthält ein Fragezeichen
+- [[30_assertions/szd-records-have-distinct-shelfmarks]] — Die Zweig-Katalogeinträge SZDMSK.3 und SZDMSK.4 tragen unterschiedliche Signaturen und PIDs
+- [[30_assertions/szd-records-share-work-reference]] — Die Zweig-Katalogeinträge SZDMSK.3 und SZDMSK.4 teilen einen Werkverweis
 - [[30_assertions/w3c-quote-selection-can-match-multiple-sequences]] — W3C quote selection can match multiple sequences
 <!-- assertions:end -->
 

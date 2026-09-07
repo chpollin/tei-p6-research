@@ -1,0 +1,42 @@
+%% Generated from ontology/core.ttl by tools/check_ontology.py
+classDiagram
+    class AgentRecord
+    class AnnotationRecord
+    class ClaimRecord
+    class CollectionRecord
+    class ConceptRecord
+    class ContextRecord
+    class MentionRecord
+    class NameFormRecord
+    class Package
+    class PredicateRecord
+    class PropositionRecord
+    class Record
+    class ReferentRecord
+    class RepresentationRecord
+    class SelectionRecord
+    class StructuralNodeRecord
+    class StructuralReadingRecord
+    class StructureRecord
+    class TextRangeSelectionRecord
+    class TextRecord
+    class VocabularyRecord
+    Record <|-- AgentRecord
+    Record <|-- AnnotationRecord
+    Record <|-- ClaimRecord
+    Record <|-- CollectionRecord
+    VocabularyRecord <|-- ConceptRecord
+    Record <|-- ContextRecord
+    AnnotationRecord <|-- MentionRecord
+    Record <|-- NameFormRecord
+    VocabularyRecord <|-- PredicateRecord
+    Record <|-- PropositionRecord
+    Record <|-- ReferentRecord
+    Record <|-- RepresentationRecord
+    Record <|-- SelectionRecord
+    StructureRecord <|-- StructuralNodeRecord
+    StructureRecord <|-- StructuralReadingRecord
+    Record <|-- StructureRecord
+    SelectionRecord <|-- TextRangeSelectionRecord
+    Record <|-- TextRecord
+    Record <|-- VocabularyRecord

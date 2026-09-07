@@ -357,7 +357,44 @@ projections; it needs neither ignored originals nor a Git mirror.
 The public Materials view exposes contents-level processing; Knowledge
 exposes the individual sources and their precise anchored passages.
 
+### Export and discovery
+
+The admitted Guidelines can be exported without a local mirror or originals:
+
+```powershell
+uv run python -m tools.export_guidelines --output ../tei-p5-4.12.0-xml
+uv run python -m tools.export_guidelines --output ../tei-p5-4.12.0-xml --check
+```
+
+The output retains upstream `P5/...` paths and exact XML bytes. The export
+inventory records hashes, attribution and non-exported assets. Identical
+existing files are reusable; conflicting files, path escapes and reparse points
+fail before known conflicts can cause writes. Atomic publication requires
+hardlink support. Generated HTML, schemas and images remain outside the export.
+
+Rebuild the separate discovery projection after a coverage or topic-map change
+with `python -m tools.build_guidelines_navigation`; `--check` compares its
+recorded inputs and output. It joins declared atlas relations to source passages
+and records rule-based topic suggestions. It never changes source metadata or
+establishes scholarly classification.
+
 ## Distill
+
+The bounded structure run uses `python -m tools.check_text_structures --emit
+--scope source` and the corresponding `--scope assertion` to freeze its review
+pairs. The source runner recovers XML ancestor identities from the exact
+embedded source and adds bibliographic identities for citation-only sources;
+it leaves the global cutter and immutable representations unchanged. Running
+`python -m tools.check_text_structures` audits both recorded verdict batches
+against the current pairs. Missing verdicts fail the audit. Emission assigns
+no review status, and the runner never books a status automatically.
+
+The five quotations in this run can be checked against local raw snapshots
+with `python tools/check_wave1_sources.py --manifest
+sources/manifests/2026-09-07-text-structures-citations.yaml --references
+references/text-structures-run1.json`. A clean clone can inspect the admitted
+quotations and their hashes; repeating that fidelity check requires the named
+local snapshots.
 
 ### Systematic Guidelines distillation
 

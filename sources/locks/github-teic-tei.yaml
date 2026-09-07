@@ -52,5 +52,6 @@ incremental_policy:
 manifests:
   - sources/manifests/2026-09-06-github-teic-tei-work-items.yaml
   - sources/manifests/2026-09-06-github-teic-tei-relations.yaml
+  - sources/manifests/2026-09-07-text-structures-citations.yaml
 counts: {}
 gaps:

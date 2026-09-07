@@ -11,7 +11,7 @@ artifact may not yet exist locally.
 |---|---|---|
 | source registration or acquisition | `sources/`, `corpus/` | `knowledge/data.md` and `knowledge/operations.md` § Acquire |
 | source representation or research finding | numbered evidence chain | `knowledge/schema.md` and `knowledge/operations.md` |
-| P6 hypothesis or design experiment | `knowledge/text-model.md`, `knowledge/p6-architecture.md`, `knowledge/experiments.md` and explicitly contracted experiment paths | `knowledge/p6-evaluation.md` and `knowledge/operations.md` § Analyze |
+| P6 hypothesis or design experiment | `knowledge/model-design.md` for proposed semantics, `knowledge/text-model.md` for executable contracts, `knowledge/p6-architecture.md`, `knowledge/experiments.md` and explicitly contracted experiment paths | `knowledge/p6-evaluation.md` and `knowledge/operations.md` § Analyze |
 | validator, collector or build change | `tools/`, `tests/` | `knowledge/testing.md` |
 | navigation or project documentation | root files and `knowledge/` | `knowledge/INDEX.md` and `knowledge/architecture.md` |
 
@@ -23,6 +23,12 @@ requirements from project assumptions, and specify a case that could refute
 the proposal. Define a pilot through a bounded question and explicit
 exclusions. Claims of official support must name and date the official
 process record.
+
+Develop examples in XML, JSON and RDF against one conceptual case, with the
+same identities, claim scopes and preservation expectations. State which views
+are proposed, implemented or unsupported. Begin with a practical encoding task
+from an edition, corpus or catalogue and preserve its uncertainty. Follow the
+comparison and compatibility criteria in `knowledge/p6-evaluation.md`.
 
 ## Rules that bind every contribution
 

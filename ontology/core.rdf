@@ -1,0 +1,327 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#" xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+  <rdf:Description rdf:about="https://example.org/tei-p6-research/ontology/">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Ontology"/>
+    <rdfs:comment xml:lang="en">Independent research draft for documentary records. The namespace is provisional. Structured proposition content and recorded stances license no world-fact materialization. This graph defines no exchange-package validation profile.</rdfs:comment>
+    <rdfs:label xml:lang="en">Experimental documentary vocabulary</rdfs:label>
+    <owl:versionIRI rdf:resource="https://example.org/tei-p6-research/ontology/2026-09-07"/>
+    <owl:versionInfo>2026-09-07 draft</owl:versionInfo>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/tei-p6-research/ontology/AgentRecord">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:comment xml:lang="en">A documentary responsibility handle for an attributed person, organization or process. Its record identity does not establish a world agent's identity or equate it with a provenance ontology's Agent class.</rdfs:comment>
+    <rdfs:label xml:lang="en">Agent record</rdfs:label>
+    <rdfs:subClassOf rdf:resource="https://example.org/tei-p6-research/ontology/Record"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/tei-p6-research/ontology/AnnotationRecord">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:comment xml:lang="en">An identified association of a selection with documentary body content or a claim. Identity belongs to the association and its responsibility context, rather than to the selected characters.</rdfs:comment>
+    <rdfs:label xml:lang="en">Annotation record</rdfs:label>
+    <rdfs:subClassOf rdf:resource="https://example.org/tei-p6-research/ontology/Record"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/tei-p6-research/ontology/ClaimRecord">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:comment xml:lang="en">An identified attribution of an agent's stance toward a proposition. Separate claims can assert, report, question or deny the same recorded content. Withdrawal changes claim lifecycle and does not deny the content.</rdfs:comment>
+    <rdfs:label xml:lang="en">Claim record</rdfs:label>
+    <rdfs:subClassOf rdf:resource="https://example.org/tei-p6-research/ontology/Record"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/tei-p6-research/ontology/CollectionRecord">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:comment xml:lang="en">A description of a corpus or another collection under stated membership criteria. Its documentary identity can persist across exchange packages that describe it.</rdfs:comment>
+    <rdfs:label xml:lang="en">Collection record</rdfs:label>
+    <rdfs:subClassOf rdf:resource="https://example.org/tei-p6-research/ontology/Record"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/tei-p6-research/ontology/ConceptRecord">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:comment xml:lang="en">A documentary vocabulary entry describing a classification value. Its definition governs use; the entry is not automatically an OWL class or a SKOS concept.</rdfs:comment>
+    <rdfs:label xml:lang="en">Concept record</rdfs:label>
+    <rdfs:subClassOf rdf:resource="https://example.org/tei-p6-research/ontology/VocabularyRecord"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/tei-p6-research/ontology/ContextRecord">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:comment xml:lang="en">A documented interpretation frame, such as a narrative or catalogue perspective, with explicitly stated scope. Its identity separates contextual readings without asserting that any described world exists.</rdfs:comment>
+    <rdfs:label xml:lang="en">Context record</rdfs:label>
+    <rdfs:subClassOf rdf:resource="https://example.org/tei-p6-research/ontology/Record"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/tei-p6-research/ontology/MentionRecord">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:comment xml:lang="en">An annotation interpreting selected text as a mention. A referential assignment is expressed through its body or claim and may remain questioned or unresolved.</rdfs:comment>
+    <rdfs:label xml:lang="en">Mention record</rdfs:label>
+    <rdfs:subClassOf rdf:resource="https://example.org/tei-p6-research/ontology/AnnotationRecord"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/tei-p6-research/ontology/NameFormRecord">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:comment xml:lang="en">A description of a name form with its adopted spelling and language criteria. The same form can occur in several name assignments; its identity alone identifies no bearer.</rdfs:comment>
+    <rdfs:label xml:lang="en">Name form record</rdfs:label>
+    <rdfs:subClassOf rdf:resource="https://example.org/tei-p6-research/ontology/Record"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/tei-p6-research/ontology/Package">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:comment xml:lang="en">An identified exchange grouping of documentary records. Package membership states inclusion in this exchange and has no implication for membership in a corpus described by a collection record.</rdfs:comment>
+    <rdfs:label xml:lang="en">Package</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/tei-p6-research/ontology/PredicateRecord">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:comment xml:lang="en">A documentary definition of a relation used inside propositions, including subject and object interpretation modes. The record is not itself an RDF predicate and authorizes no unqualified external triple.</rdfs:comment>
+    <rdfs:label xml:lang="en">Predicate record</rdfs:label>
+    <rdfs:subClassOf rdf:resource="https://example.org/tei-p6-research/ontology/VocabularyRecord"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/tei-p6-research/ontology/PropositionRecord">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:comment xml:lang="en">An identified structured content with subject, predicate, object and interpretation context. Reuse shares this explicitly recorded content; it establishes neither semantic equivalence with another formulation nor truth.</rdfs:comment>
+    <rdfs:label xml:lang="en">Proposition record</rdfs:label>
+    <rdfs:subClassOf rdf:resource="https://example.org/tei-p6-research/ontology/Record"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/tei-p6-research/ontology/Record">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:comment xml:lang="en">An identified documentary description whose identity is assigned and maintained by a describing practice. Its identifier denotes this record; references to a described object require an explicit interpretation.</rdfs:comment>
+    <rdfs:label xml:lang="en">Record</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/tei-p6-research/ontology/ReferentRecord">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:comment xml:lang="en">A documentary handle for a referential intention, which may concern a historical, uncertain or fictional object. Identity follows that intention within the description; an expected referent type is revisable and does not classify the handle as a world entity.</rdfs:comment>
+    <rdfs:label xml:lang="en">Referent record</rdfs:label>
+    <rdfs:subClassOf rdf:resource="https://example.org/tei-p6-research/ontology/Record"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/tei-p6-research/ontology/RepresentationRecord">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:comment xml:lang="en">A description of one fixed textual content used as a coordinate basis. A changed content requires a distinct representation identity before existing selections can be reused.</rdfs:comment>
+    <rdfs:label xml:lang="en">Representation record</rdfs:label>
+    <rdfs:subClassOf rdf:resource="https://example.org/tei-p6-research/ontology/Record"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/tei-p6-research/ontology/SelectionRecord">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:comment xml:lang="en">An identified documentary selection under an explicitly stated selector contract. Its scope can include continuous, discontinuous, point-like or ambiguous selections. This general class supplies no single coordinate or ambiguity-resolution contract.</rdfs:comment>
+    <rdfs:label xml:lang="en">Selection record</rdfs:label>
+    <rdfs:subClassOf rdf:resource="https://example.org/tei-p6-research/ontology/Record"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/tei-p6-research/ontology/StructuralNodeRecord">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:comment xml:lang="en">An identified component within a structural reading, scoped by that reading's node-identity criteria. Its identifier does not independently identify a universal textual unit.</rdfs:comment>
+    <rdfs:label xml:lang="en">Structural node record</rdfs:label>
+    <rdfs:subClassOf rdf:resource="https://example.org/tei-p6-research/ontology/StructureRecord"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/tei-p6-research/ontology/StructuralReadingRecord">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:comment xml:lang="en">An identified structural interpretation of a text or representation, such as an editorial segmentation. Several readings can coexist with independently stated organization criteria.</rdfs:comment>
+    <rdfs:label xml:lang="en">Structural reading record</rdfs:label>
+    <rdfs:subClassOf rdf:resource="https://example.org/tei-p6-research/ontology/StructureRecord"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/tei-p6-research/ontology/StructureRecord">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:comment xml:lang="en">A documentary account of an adopted text organization. Its identity belongs to the structural description and its explicit scope.</rdfs:comment>
+    <rdfs:label xml:lang="en">Structure record</rdfs:label>
+    <rdfs:subClassOf rdf:resource="https://example.org/tei-p6-research/ontology/Record"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/tei-p6-research/ontology/TextRangeSelectionRecord">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:comment xml:lang="en">A selection of one contiguous Unicode code-point interval in a fixed representation, with zero-based inclusive start and exclusive end. Equal boundaries select a point. A quote can witness the interval; this subtype specifies no discontinuous or ambiguous selector.</rdfs:comment>
+    <rdfs:label xml:lang="en">Text range selection record</rdfs:label>
+    <rdfs:subClassOf rdf:resource="https://example.org/tei-p6-research/ontology/SelectionRecord"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/tei-p6-research/ontology/TextRecord">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:comment xml:lang="en">A documentary description of linguistic content under an explicit identity and delimitation criterion adopted for an edition, corpus or catalogue. An assignment of a representation to this text is a descriptive assertion governed by that criterion. Merely grouping representations supplies no text-identity criterion.</rdfs:comment>
+    <rdfs:label xml:lang="en">Text record</rdfs:label>
+    <rdfs:subClassOf rdf:resource="https://example.org/tei-p6-research/ontology/Record"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/tei-p6-research/ontology/VocabularyRecord">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:comment xml:lang="en">An identified vocabulary entry whose scope and definition are maintained by a named descriptive practice. A matching label alone does not establish identical meaning.</rdfs:comment>
+    <rdfs:label xml:lang="en">Vocabulary record</rdfs:label>
+    <rdfs:subClassOf rdf:resource="https://example.org/tei-p6-research/ontology/Record"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/tei-p6-research/ontology/annotationBody">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:comment xml:lang="en">References a documentary body record, including a proposition, concept or referent handle. A literal body requires its own content-bearing record.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://example.org/tei-p6-research/ontology/AnnotationRecord"/>
+    <rdfs:label xml:lang="en">annotation body</rdfs:label>
+    <rdfs:range rdf:resource="https://example.org/tei-p6-research/ontology/Record"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/tei-p6-research/ontology/annotationClaim">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:comment xml:lang="en">References a separately identified attributed stance relevant to the annotation.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://example.org/tei-p6-research/ontology/AnnotationRecord"/>
+    <rdfs:label xml:lang="en">annotation claim</rdfs:label>
+    <rdfs:range rdf:resource="https://example.org/tei-p6-research/ontology/ClaimRecord"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/tei-p6-research/ontology/claimAgent">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:comment xml:lang="en">References the documentary agent handle to which the stance is attributed. This may differ from the agent responsible for encoding the claim.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://example.org/tei-p6-research/ontology/ClaimRecord"/>
+    <rdfs:label xml:lang="en">claim agent</rdfs:label>
+    <rdfs:range rdf:resource="https://example.org/tei-p6-research/ontology/AgentRecord"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/tei-p6-research/ontology/claimContent">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:comment xml:lang="en">References the proposition toward which this claim records a stance.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://example.org/tei-p6-research/ontology/ClaimRecord"/>
+    <rdfs:label xml:lang="en">claim content</rdfs:label>
+    <rdfs:range rdf:resource="https://example.org/tei-p6-research/ontology/PropositionRecord"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/tei-p6-research/ontology/content">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:comment xml:lang="en">Records the fixed Unicode text whose code-point positions are addressed by selections. RDF string parsing preserves the value; source byte identity requires a separate source record.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://example.org/tei-p6-research/ontology/RepresentationRecord"/>
+    <rdfs:label xml:lang="en">content</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/tei-p6-research/ontology/context">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:comment xml:lang="en">References a documented interpretation frame. Proposition interpretation and the context of an agent's claim remain separately attachable to their respective records.</rdfs:comment>
+    <rdfs:label xml:lang="en">context</rdfs:label>
+    <rdfs:range rdf:resource="https://example.org/tei-p6-research/ontology/ContextRecord"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/tei-p6-research/ontology/definition">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:comment xml:lang="en">Records the entry's explicit meaning and usage boundary, with a language tag where supplied.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://example.org/tei-p6-research/ontology/VocabularyRecord"/>
+    <rdfs:label xml:lang="en">definition</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/tei-p6-research/ontology/end">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:comment xml:lang="en">Records the zero-based exclusive Unicode code-point boundary in the referenced representation. Equality with start describes an empty interval.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://example.org/tei-p6-research/ontology/TextRangeSelectionRecord"/>
+    <rdfs:label xml:lang="en">end</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/tei-p6-research/ontology/expectedReferentType">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:comment xml:lang="en">References a revisable concept entry describing the expected kind of referent. It introduces no rdf:type assertion about the record's referent and no foreign class membership for the record.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://example.org/tei-p6-research/ontology/ReferentRecord"/>
+    <rdfs:label xml:lang="en">expected referent type</rdfs:label>
+    <rdfs:range rdf:resource="https://example.org/tei-p6-research/ontology/ConceptRecord"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/tei-p6-research/ontology/form">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:comment xml:lang="en">Records the spelling or verbal form described by a name-form record, retaining a supplied language tag.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://example.org/tei-p6-research/ontology/NameFormRecord"/>
+    <rdfs:label xml:lang="en">form</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/tei-p6-research/ontology/identityCriteria">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:comment xml:lang="en">Documents the criteria used to preserve or distinguish this record's identity. This explanatory text introduces no OWL key.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://example.org/tei-p6-research/ontology/Record"/>
+    <rdfs:label xml:lang="en">identity criteria</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/tei-p6-research/ontology/language">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:comment xml:lang="en">Records a language identifier relevant to the description. The describing profile must state the identifier scheme and its scope.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://example.org/tei-p6-research/ontology/Record"/>
+    <rdfs:label xml:lang="en">language</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/tei-p6-research/ontology/lifecycle">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:comment xml:lang="en">Documentary controlled value: active or withdrawn. Withdrawal marks the record's lifecycle; a withdrawn claim's stance and content remain separately recorded.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://example.org/tei-p6-research/ontology/Record"/>
+    <rdfs:label xml:lang="en">lifecycle</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/tei-p6-research/ontology/member">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:comment xml:lang="en">Includes a documentary record in an exchange package. This property expresses package inclusion only.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://example.org/tei-p6-research/ontology/Package"/>
+    <rdfs:label xml:lang="en">member</rdfs:label>
+    <rdfs:range rdf:resource="https://example.org/tei-p6-research/ontology/Record"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/tei-p6-research/ontology/objectInterpretation">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:comment xml:lang="en">Documents how an object reference is read using record, referent, concept or proposition. For proposition object literal, the literal is read as its typed or language-tagged value under the predicate definition; reference modes do not dereference literals.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://example.org/tei-p6-research/ontology/PredicateRecord"/>
+    <rdfs:label xml:lang="en">object interpretation</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/tei-p6-research/ontology/preferredLabel">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:comment xml:lang="en">Records a display label for the documentary record. Label identity is not an identity criterion for its referent.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://example.org/tei-p6-research/ontology/Record"/>
+    <rdfs:label xml:lang="en">preferred label</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/tei-p6-research/ontology/propositionObjectLiteral">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:comment xml:lang="en">Stores a literal object with its RDF datatype or language tag preserved. Interpretation as a value follows the predicate definition. References use proposition object reference.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://example.org/tei-p6-research/ontology/PropositionRecord"/>
+    <rdfs:label xml:lang="en">proposition object literal</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/tei-p6-research/ontology/propositionObjectReference">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:comment xml:lang="en">References an object handle, interpreted by the predicate definition. Literal objects use proposition object literal; no identity between a literal and a referenced record is inferred.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://example.org/tei-p6-research/ontology/PropositionRecord"/>
+    <rdfs:label xml:lang="en">proposition object reference</rdfs:label>
+    <rdfs:range rdf:resource="https://example.org/tei-p6-research/ontology/Record"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/tei-p6-research/ontology/propositionPredicate">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:comment xml:lang="en">References a documentary predicate definition that determines how subject and object are interpreted. It does not use that record as an RDF property.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://example.org/tei-p6-research/ontology/PropositionRecord"/>
+    <rdfs:label xml:lang="en">proposition predicate</rdfs:label>
+    <rdfs:range rdf:resource="https://example.org/tei-p6-research/ontology/PredicateRecord"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/tei-p6-research/ontology/propositionSubject">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:comment xml:lang="en">References the subject handle. The predicate record's subject interpretation determines whether the handle is read as a record, its referent, a concept or a proposition.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://example.org/tei-p6-research/ontology/PropositionRecord"/>
+    <rdfs:label xml:lang="en">proposition subject</rdfs:label>
+    <rdfs:range rdf:resource="https://example.org/tei-p6-research/ontology/Record"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/tei-p6-research/ontology/quote">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:comment xml:lang="en">Records text expected at the selected interval. Consistency with content and coordinates requires a separate data check.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://example.org/tei-p6-research/ontology/TextRangeSelectionRecord"/>
+    <rdfs:label xml:lang="en">quote</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/tei-p6-research/ontology/representation">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:comment xml:lang="en">References a fixed representation, from a text description or selection. The source remains explicitly typed; this property imposes no shared domain on those distinct record kinds.</rdfs:comment>
+    <rdfs:label xml:lang="en">representation</rdfs:label>
+    <rdfs:range rdf:resource="https://example.org/tei-p6-research/ontology/RepresentationRecord"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/tei-p6-research/ontology/responsibleAgent">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:comment xml:lang="en">References the documentary responsibility handle for a record or package. The domain is intentionally open so using this property does not classify a package as a record.</rdfs:comment>
+    <rdfs:label xml:lang="en">responsible agent</rdfs:label>
+    <rdfs:range rdf:resource="https://example.org/tei-p6-research/ontology/AgentRecord"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/tei-p6-research/ontology/scope">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:comment xml:lang="en">Records the interpretation scope using a documented open controlled vocabulary, with values such as narrative, tradition-report, assessment or geographic-hypothesis. The adopting profile defines each value and any extension. This ontology supplies no OWL value or presence validation and derives no world facts from a scope.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://example.org/tei-p6-research/ontology/ContextRecord"/>
+    <rdfs:label xml:lang="en">scope</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/tei-p6-research/ontology/stance">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:comment xml:lang="en">Documentary controlled value: assert, report, question or deny. A value records an attributed attitude and triggers no materialization of the proposition as a world fact. This vocabulary does not enforce value or presence constraints.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://example.org/tei-p6-research/ontology/ClaimRecord"/>
+    <rdfs:label xml:lang="en">stance</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/tei-p6-research/ontology/start">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:comment xml:lang="en">Records the zero-based inclusive Unicode code-point boundary in the referenced representation. This ontology performs no bounds or interval-order validation.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://example.org/tei-p6-research/ontology/TextRangeSelectionRecord"/>
+    <rdfs:label xml:lang="en">start</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/tei-p6-research/ontology/subjectInterpretation">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:comment xml:lang="en">Documents how a subject reference is read: record for the handle, referent for the described object, concept for a vocabulary value, or proposition for recorded content. An unfamiliar predicate has no licensed interpretation.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://example.org/tei-p6-research/ontology/PredicateRecord"/>
+    <rdfs:label xml:lang="en">subject interpretation</rdfs:label>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/tei-p6-research/ontology/targetSelection">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:comment xml:lang="en">References the documentary selection targeted by an annotation; its selector contract is determined by the selection's explicitly stated kind.</rdfs:comment>
+    <rdfs:domain rdf:resource="https://example.org/tei-p6-research/ontology/AnnotationRecord"/>
+    <rdfs:label xml:lang="en">target selection</rdfs:label>
+    <rdfs:range rdf:resource="https://example.org/tei-p6-research/ontology/SelectionRecord"/>
+  </rdf:Description>
+</rdf:RDF>

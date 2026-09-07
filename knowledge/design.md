@@ -198,6 +198,20 @@ After changing admission or distillation inputs, regenerate
 the projections, the source inventory, and the Materials, Knowledge and
 About pages. All five public HTML pages remain owned by their existing builders.
 
+The Knowledge page also consumes
+`corpus/projections/guidelines-navigation-4.12.0.json`. After coverage,
+declaration-atlas or topic-routing inputs change, regenerate it with
+`python -m tools.build_guidelines_navigation`, then run the same command with
+`--check` before rebuilding Knowledge. The projection supplies rule-based
+topic suggestions and declaration links; it supplies no grounding or review
+status. Both modes read tracked inputs and need no Git mirror.
+
+The separate `python -m tools.export_guidelines --output <directory>` command
+reconstructs admitted XML in its upstream path layout and writes an export
+inventory. Its `--check` verifies the exported files and inventory. The export
+is a local handover product outside the public page builders; CI creates and
+checks it in temporary storage without adding it to the Pages artifact.
+
 An anchored XML code block in Knowledge displays its complete escaped source
 passage with its external block ID. Apparent anchors inside the quoted XML
 never become navigation or grounding anchors.

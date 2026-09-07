@@ -41,9 +41,26 @@ def test_a_running_pages_deployment_is_never_cancelled() -> None:
 def test_checks_workflow_lints_validates_and_runs_the_suite() -> None:
     workflow = read("checks.yml")
 
-    assert "pip install pyyaml pytest ruff" in workflow
+    assert "uv sync --locked" in workflow
+    assert "uv run --locked python -m pytest tests -q" in workflow
     assert "python -m ruff check ." in workflow
     assert "python tools/validate.py ." in workflow
     assert "python -m tools.corpus.validate_control_plane ." in workflow
     assert "python -m pytest tests -q" in workflow
     assert "python tools/check_text_identity_pilot.py" in workflow
+
+
+def test_offline_handover_checks_precede_publication_and_preserve_review_boundary() -> None:
+    for name in ("checks.yml", "pages.yml"):
+        workflow = read(name)
+        for command in (
+            "python -m tools.build_guidelines_navigation --check",
+            "python -m tools.ingest_text_structures --check",
+            'python -m tools.export_guidelines --output "${RUNNER_TEMP}/guidelines-xml"',
+        ):
+            assert command in workflow
+        assert '"${RUNNER_TEMP}/guidelines-xml" --check' in workflow
+        assert "tools.check_text_structures" not in workflow
+        assert "tools/check_text_structures.py" not in workflow
+        if name == "pages.yml":
+            assert workflow.index("tools.export_guidelines") < workflow.index("tools/build_docs.py")

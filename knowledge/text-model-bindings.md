@@ -9,22 +9,36 @@ method:
 status: draft
 language: en
 created: "2026-09-06"
-updated: "2026-09-06"
-related: [text-model, experiments, testing, state]
+updated: "2026-09-07"
+related: [text-model, model-design, model-examples, experiments, testing, state]
 ---
 
 # Text Model Bindings
 
 These independent project bindings encode the
-[[knowledge/text-model|Abstract Text Model 0.1]]. They are neither official
+[[knowledge/text-model|Abstract Text Model 0.1]], with a separate RDF export for
+the entity extension 0.2. They are neither official
 TEI P6 syntax nor converters from TEI P5. Their vocabulary and preservation
 contract are project posits. The candidate serialization and conformance
 contract they instantiate, with the bindings that remain candidates, is
 section 12 of the text model.
 
-Sections 2 to 4 hold the JSON, XML and YAML bindings, which encode and decode
-one package under an equality law. Section 6 holds the RDF export of an
+Sections 2 to 4 hold the JSON, XML and YAML bindings for 0.1, which encode and
+decode one package under an equality law. Version 0.2 has JSON data, validation
+and canonical comparison through the entity module; the general binding
+encoder and decoders do not accept 0.2 packages. Section 6 holds the RDF export of an
 entity-extension 0.2 package, which runs one way and has no decoder.
+
+The proposed record distinctions in [[knowledge/model-design]] have no binding
+contract here. In particular, independent names and context-qualified
+referents must not be serialized as if adding an external ontology type
+implemented their semantics. The existing RDF export cannot establish
+preservation of the new narrative or cultural scopes.
+
+The example-comparison requirement in [[knowledge/p6-evaluation]] calls for
+XML, JSON and RDF views of every developed case. The draft views in
+[[knowledge/model-examples]] are proposed syntax. Parser success alone would
+not make them conform to these executable bindings or establish a roundtrip.
 
 ## 1. Model and encoding
 
@@ -216,7 +230,7 @@ record no ontology commitment of the TEI.
 
 ### 6.1 What the export is
 
-The JSON, XML and YAML bindings of sections 2 to 4 encode one package and
+The JSON, XML and YAML bindings of sections 2 to 4 encode one 0.1 package and
 decode it again under an equality law. The RDF export carries record identity,
 the claim structure and every reference edge into RDF and leaves version
 content and selection targets in the package.
@@ -497,12 +511,20 @@ absolute IRIs and escaped control characters.
 
 ### 6.6 Limits
 
-The export asserts no inference. It runs no reasoner, publishes no SHACL shape,
-no OWL ontology and no RDFS schema, and validates nothing about an external
-resource. Two alignments of one entity to one IRI stay two claims, and an
-entity's alignment reaches none of its mentions. Every entailment a consumer
-draws from PROV, SKOS, CIDOC CRM or the Web Annotation vocabulary is the
-consumer's.
+The export runs no reasoner and validates nothing about an external resource.
+It supplies no SHACL shapes or ontology schema of its own. Its use of external
+RDF and ontology terms still carries the semantics of those terms; absence
+of a local reasoning step does not remove their inference consequences.
+Two alignments of one entity to one IRI remain two claim records, and the
+exporter does not copy an entity's alignment to its mentions.
+
+The documentary ontology experiment in [[knowledge/ontology]] deliberately
+uses separate record classes. The 0.2 export below instead types some record
+IRIs as their described entities and represents assignment claims using an
+activity vocabulary. These choices need a revised, versioned mapping before
+this export can serve the new record/referent and content/stance distinctions.
+Its preservation tests establish record and edge survival under its existing
+contract; they do not establish the ontological adequacy of these alignments.
 
 Three choices that sections 13 and 14.5 leave open are settled here.
 
@@ -512,8 +534,9 @@ Three choices that sections 13 and 14.5 leave open are settled here.
    Section 11 keeps the record and the thing apart, and the export offers no
    second IRI for the record as an object of discourse.
 2. An `exact` alignment is `skos:exactMatch`. The export never writes
-   `owl:sameAs`, so no identity entailment enters RDF, and a consumer that needs
-   identity states it under its own responsibility.
+   `owl:sameAs`. The standard semantics of the emitted SKOS relation still
+   apply, including its transitivity. A candidate alignment register therefore
+   uses separate documentary annotations instead of this shortcut.
 3. A former base yields `prov:alternateOf`, which presents two IRIs as aspects
    of one thing without entailing that the two packages are the same package.
 

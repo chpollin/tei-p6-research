@@ -1,0 +1,1926 @@
+@prefix case: <https://example.org/tei-p6-research/case/hsa-4493/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix p6: <https://example.org/tei-p6-research/ontology/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix v: <https://example.org/tei-p6-research/case-vocabulary/hsa-4493/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+case:carrier p6:expectedReferentType case:concept-MaterialCarrier .
+case:carrier p6:preferredLabel "Material carrier described in msDesc"^^xsd:string .
+case:carrier p6:responsibleAgent case:importer .
+case:carrier rdf:type p6:ReferentRecord .
+case:carrier v:construction "Revisable expected referent type assigned by this bounded import profile from the stated source context; no foreign class membership or independent historical verification."^^xsd:string .
+case:claim-author p6:claimAgent case:importer .
+case:claim-author p6:claimContent case:proposition-author .
+case:claim-author p6:lifecycle "active"^^xsd:string .
+case:claim-author p6:preferredLabel "author"^^xsd:string .
+case:claim-author p6:responsibleAgent case:importer .
+case:claim-author p6:stance "report"^^xsd:string .
+case:claim-author rdf:type p6:ClaimRecord .
+case:claim-author v:sourceLocation case:source-location-c5c4145f495e44e8 .
+case:claim-carrier-material p6:claimAgent case:importer .
+case:claim-carrier-material p6:claimContent case:proposition-carrier-material .
+case:claim-carrier-material p6:lifecycle "active"^^xsd:string .
+case:claim-carrier-material p6:preferredLabel "carrier-material"^^xsd:string .
+case:claim-carrier-material p6:responsibleAgent case:importer .
+case:claim-carrier-material p6:stance "report"^^xsd:string .
+case:claim-carrier-material rdf:type p6:ClaimRecord .
+case:claim-carrier-material v:sourceLocation case:source-location-0d7f9513fa446b6b .
+case:claim-carrier-repository p6:claimAgent case:importer .
+case:claim-carrier-repository p6:claimContent case:proposition-carrier-repository .
+case:claim-carrier-repository p6:lifecycle "active"^^xsd:string .
+case:claim-carrier-repository p6:preferredLabel "carrier-repository"^^xsd:string .
+case:claim-carrier-repository p6:responsibleAgent case:importer .
+case:claim-carrier-repository p6:stance "report"^^xsd:string .
+case:claim-carrier-repository rdf:type p6:ClaimRecord .
+case:claim-carrier-repository v:sourceLocation case:source-location-27ad4b89d10cb4d3 .
+case:claim-carrier-shelfmark p6:claimAgent case:importer .
+case:claim-carrier-shelfmark p6:claimContent case:proposition-carrier-shelfmark .
+case:claim-carrier-shelfmark p6:lifecycle "active"^^xsd:string .
+case:claim-carrier-shelfmark p6:preferredLabel "carrier-shelfmark"^^xsd:string .
+case:claim-carrier-shelfmark p6:responsibleAgent case:importer .
+case:claim-carrier-shelfmark p6:stance "report"^^xsd:string .
+case:claim-carrier-shelfmark rdf:type p6:ClaimRecord .
+case:claim-carrier-shelfmark v:sourceLocation case:source-location-40db9b98239ce112 .
+case:claim-dateline p6:claimAgent case:importer .
+case:claim-dateline p6:claimContent case:proposition-dateline .
+case:claim-dateline p6:lifecycle "active"^^xsd:string .
+case:claim-dateline p6:preferredLabel "dateline"^^xsd:string .
+case:claim-dateline p6:responsibleAgent case:importer .
+case:claim-dateline p6:stance "report"^^xsd:string .
+case:claim-dateline rdf:type p6:ClaimRecord .
+case:claim-dateline v:sourceLocation case:source-location-2f59188d69770ec7 .
+case:claim-denotation-diez p6:claimAgent case:importer .
+case:claim-denotation-diez p6:claimContent case:proposition-denotation-diez .
+case:claim-denotation-diez p6:lifecycle "active"^^xsd:string .
+case:claim-denotation-diez p6:preferredLabel "denotation-diez"^^xsd:string .
+case:claim-denotation-diez p6:responsibleAgent case:importer .
+case:claim-denotation-diez p6:stance "report"^^xsd:string .
+case:claim-denotation-diez rdf:type p6:ClaimRecord .
+case:claim-denotation-diez v:sourceLocation case:source-location-6caedde52bf635fb .
+case:claim-denotation-frollo p6:claimAgent case:importer .
+case:claim-denotation-frollo p6:claimContent case:proposition-denotation-frollo .
+case:claim-denotation-frollo p6:lifecycle "active"^^xsd:string .
+case:claim-denotation-frollo p6:preferredLabel "denotation-frollo"^^xsd:string .
+case:claim-denotation-frollo p6:responsibleAgent case:importer .
+case:claim-denotation-frollo p6:stance "report"^^xsd:string .
+case:claim-denotation-frollo rdf:type p6:ClaimRecord .
+case:claim-denotation-frollo v:sourceLocation case:source-location-3bbe1ff4e394c1aa .
+case:claim-denotation-frollo-note p6:claimAgent case:importer .
+case:claim-denotation-frollo-note p6:claimContent case:proposition-denotation-frollo-note .
+case:claim-denotation-frollo-note p6:lifecycle "active"^^xsd:string .
+case:claim-denotation-frollo-note p6:preferredLabel "denotation-frollo-note"^^xsd:string .
+case:claim-denotation-frollo-note p6:responsibleAgent case:importer .
+case:claim-denotation-frollo-note p6:stance "report"^^xsd:string .
+case:claim-denotation-frollo-note rdf:type p6:ClaimRecord .
+case:claim-denotation-frollo-note v:sourceLocation case:source-location-ca8b555bbb1d6586 .
+case:claim-denotation-signature p6:claimAgent case:importer .
+case:claim-denotation-signature p6:claimContent case:proposition-denotation-signature .
+case:claim-denotation-signature p6:lifecycle "active"^^xsd:string .
+case:claim-denotation-signature p6:preferredLabel "denotation-signature"^^xsd:string .
+case:claim-denotation-signature p6:responsibleAgent case:importer .
+case:claim-denotation-signature p6:stance "report"^^xsd:string .
+case:claim-denotation-signature rdf:type p6:ClaimRecord .
+case:claim-denotation-signature v:sourceLocation case:source-location-4293da327e111c73 .
+case:claim-document-carrier p6:claimAgent case:importer .
+case:claim-document-carrier p6:claimContent case:proposition-document-carrier .
+case:claim-document-carrier p6:lifecycle "active"^^xsd:string .
+case:claim-document-carrier p6:preferredLabel "document-carrier"^^xsd:string .
+case:claim-document-carrier p6:responsibleAgent case:importer .
+case:claim-document-carrier p6:stance "assert"^^xsd:string .
+case:claim-document-carrier rdf:type p6:ClaimRecord .
+case:claim-document-carrier v:construction "The importer distinguishes the document described by the edition from the material carrier described in msDesc and relates these two handles within this single-source case."^^xsd:string .
+case:claim-document-carrier v:sourceLocation case:source-location-a72a1550972add93 .
+case:claim-geo-lexical p6:claimAgent case:importer .
+case:claim-geo-lexical p6:claimContent case:proposition-geo-lexical .
+case:claim-geo-lexical p6:lifecycle "active"^^xsd:string .
+case:claim-geo-lexical p6:preferredLabel "geo-lexical"^^xsd:string .
+case:claim-geo-lexical p6:responsibleAgent case:importer .
+case:claim-geo-lexical p6:stance "report"^^xsd:string .
+case:claim-geo-lexical rdf:type p6:ClaimRecord .
+case:claim-geo-lexical v:sourceLocation case:source-location-066c93f71aaddb20 .
+case:claim-name-author p6:claimAgent case:importer .
+case:claim-name-author p6:claimContent case:proposition-name-author .
+case:claim-name-author p6:lifecycle "active"^^xsd:string .
+case:claim-name-author p6:preferredLabel "name-author"^^xsd:string .
+case:claim-name-author p6:responsibleAgent case:importer .
+case:claim-name-author p6:stance "report"^^xsd:string .
+case:claim-name-author rdf:type p6:ClaimRecord .
+case:claim-name-author v:sourceLocation case:source-location-c5c4145f495e44e8 .
+case:claim-name-diez p6:claimAgent case:importer .
+case:claim-name-diez p6:claimContent case:proposition-name-diez .
+case:claim-name-diez p6:lifecycle "active"^^xsd:string .
+case:claim-name-diez p6:preferredLabel "name-diez"^^xsd:string .
+case:claim-name-diez p6:responsibleAgent case:importer .
+case:claim-name-diez p6:stance "report"^^xsd:string .
+case:claim-name-diez rdf:type p6:ClaimRecord .
+case:claim-name-diez v:sourceLocation case:source-location-3f07faa1a1fee660 .
+case:claim-name-frollo p6:claimAgent case:importer .
+case:claim-name-frollo p6:claimContent case:proposition-name-frollo .
+case:claim-name-frollo p6:lifecycle "active"^^xsd:string .
+case:claim-name-frollo p6:preferredLabel "name-frollo"^^xsd:string .
+case:claim-name-frollo p6:responsibleAgent case:importer .
+case:claim-name-frollo p6:stance "report"^^xsd:string .
+case:claim-name-frollo rdf:type p6:ClaimRecord .
+case:claim-name-frollo v:sourceLocation case:source-location-76deffd4dda2fce4 .
+case:claim-name-frollo-note p6:claimAgent case:importer .
+case:claim-name-frollo-note p6:claimContent case:proposition-name-frollo-note .
+case:claim-name-frollo-note p6:lifecycle "active"^^xsd:string .
+case:claim-name-frollo-note p6:preferredLabel "name-frollo-note"^^xsd:string .
+case:claim-name-frollo-note p6:responsibleAgent case:importer .
+case:claim-name-frollo-note p6:stance "report"^^xsd:string .
+case:claim-name-frollo-note rdf:type p6:ClaimRecord .
+case:claim-name-frollo-note v:sourceLocation case:source-location-b5fdb45e81716582 .
+case:claim-name-graz-origin p6:claimAgent case:importer .
+case:claim-name-graz-origin p6:claimContent case:proposition-name-graz-origin .
+case:claim-name-graz-origin p6:lifecycle "active"^^xsd:string .
+case:claim-name-graz-origin p6:preferredLabel "name-graz-origin"^^xsd:string .
+case:claim-name-graz-origin p6:responsibleAgent case:importer .
+case:claim-name-graz-origin p6:stance "report"^^xsd:string .
+case:claim-name-graz-origin rdf:type p6:ClaimRecord .
+case:claim-name-graz-origin v:sourceLocation case:source-location-717bf8de60922c23 .
+case:claim-name-graz-sending p6:claimAgent case:importer .
+case:claim-name-graz-sending p6:claimContent case:proposition-name-graz-sending .
+case:claim-name-graz-sending p6:lifecycle "active"^^xsd:string .
+case:claim-name-graz-sending p6:preferredLabel "name-graz-sending"^^xsd:string .
+case:claim-name-graz-sending p6:responsibleAgent case:importer .
+case:claim-name-graz-sending p6:stance "report"^^xsd:string .
+case:claim-name-graz-sending rdf:type p6:ClaimRecord .
+case:claim-name-graz-sending v:sourceLocation case:source-location-0eba4d42fbac41d0 .
+case:claim-name-recipient p6:claimAgent case:importer .
+case:claim-name-recipient p6:claimContent case:proposition-name-recipient .
+case:claim-name-recipient p6:lifecycle "active"^^xsd:string .
+case:claim-name-recipient p6:preferredLabel "name-recipient"^^xsd:string .
+case:claim-name-recipient p6:responsibleAgent case:importer .
+case:claim-name-recipient p6:stance "report"^^xsd:string .
+case:claim-name-recipient rdf:type p6:ClaimRecord .
+case:claim-name-recipient v:sourceLocation case:source-location-d8133af46553dc91 .
+case:claim-name-sender p6:claimAgent case:importer .
+case:claim-name-sender p6:claimContent case:proposition-name-sender .
+case:claim-name-sender p6:lifecycle "active"^^xsd:string .
+case:claim-name-sender p6:preferredLabel "name-sender"^^xsd:string .
+case:claim-name-sender p6:responsibleAgent case:importer .
+case:claim-name-sender p6:stance "report"^^xsd:string .
+case:claim-name-sender rdf:type p6:ClaimRecord .
+case:claim-name-sender v:sourceLocation case:source-location-58923ad3d6bfac9a .
+case:claim-name-signature p6:claimAgent case:importer .
+case:claim-name-signature p6:claimContent case:proposition-name-signature .
+case:claim-name-signature p6:lifecycle "active"^^xsd:string .
+case:claim-name-signature p6:preferredLabel "name-signature"^^xsd:string .
+case:claim-name-signature p6:responsibleAgent case:importer .
+case:claim-name-signature p6:stance "report"^^xsd:string .
+case:claim-name-signature rdf:type p6:ClaimRecord .
+case:claim-name-signature v:sourceLocation case:source-location-24e8905c6183b66a .
+case:claim-origin-carrier p6:claimAgent case:importer .
+case:claim-origin-carrier p6:claimContent case:proposition-origin-carrier .
+case:claim-origin-carrier p6:lifecycle "active"^^xsd:string .
+case:claim-origin-carrier p6:preferredLabel "origin-carrier"^^xsd:string .
+case:claim-origin-carrier p6:responsibleAgent case:importer .
+case:claim-origin-carrier p6:stance "report"^^xsd:string .
+case:claim-origin-carrier rdf:type p6:ClaimRecord .
+case:claim-origin-carrier v:sourceLocation case:source-location-1fb2513682d00de5 .
+case:claim-origin-date p6:claimAgent case:importer .
+case:claim-origin-date p6:claimContent case:proposition-origin-date .
+case:claim-origin-date p6:lifecycle "active"^^xsd:string .
+case:claim-origin-date p6:preferredLabel "origin-date"^^xsd:string .
+case:claim-origin-date p6:responsibleAgent case:importer .
+case:claim-origin-date p6:stance "report"^^xsd:string .
+case:claim-origin-date rdf:type p6:ClaimRecord .
+case:claim-origin-date v:sourceLocation case:source-location-0ea869afb66e7f28 .
+case:claim-origin-place p6:claimAgent case:importer .
+case:claim-origin-place p6:claimContent case:proposition-origin-place .
+case:claim-origin-place p6:lifecycle "active"^^xsd:string .
+case:claim-origin-place p6:preferredLabel "origin-place"^^xsd:string .
+case:claim-origin-place p6:responsibleAgent case:importer .
+case:claim-origin-place p6:stance "report"^^xsd:string .
+case:claim-origin-place rdf:type p6:ClaimRecord .
+case:claim-origin-place v:sourceLocation case:source-location-717bf8de60922c23 .
+case:claim-publication-year p6:claimAgent case:importer .
+case:claim-publication-year p6:claimContent case:proposition-publication-year .
+case:claim-publication-year p6:lifecycle "active"^^xsd:string .
+case:claim-publication-year p6:preferredLabel "publication-year"^^xsd:string .
+case:claim-publication-year p6:responsibleAgent case:importer .
+case:claim-publication-year p6:stance "report"^^xsd:string .
+case:claim-publication-year rdf:type p6:ClaimRecord .
+case:claim-publication-year v:sourceLocation case:source-location-0e71020d6f5e7c67 .
+case:claim-realization-diez p6:claimAgent case:importer .
+case:claim-realization-diez p6:claimContent case:proposition-realization-diez .
+case:claim-realization-diez p6:lifecycle "active"^^xsd:string .
+case:claim-realization-diez p6:preferredLabel "realization-diez"^^xsd:string .
+case:claim-realization-diez p6:responsibleAgent case:importer .
+case:claim-realization-diez p6:stance "report"^^xsd:string .
+case:claim-realization-diez rdf:type p6:ClaimRecord .
+case:claim-realization-diez v:sourceLocation case:source-location-3f07faa1a1fee660 .
+case:claim-realization-frollo p6:claimAgent case:importer .
+case:claim-realization-frollo p6:claimContent case:proposition-realization-frollo .
+case:claim-realization-frollo p6:lifecycle "active"^^xsd:string .
+case:claim-realization-frollo p6:preferredLabel "realization-frollo"^^xsd:string .
+case:claim-realization-frollo p6:responsibleAgent case:importer .
+case:claim-realization-frollo p6:stance "report"^^xsd:string .
+case:claim-realization-frollo rdf:type p6:ClaimRecord .
+case:claim-realization-frollo v:sourceLocation case:source-location-76deffd4dda2fce4 .
+case:claim-realization-frollo-note p6:claimAgent case:importer .
+case:claim-realization-frollo-note p6:claimContent case:proposition-realization-frollo-note .
+case:claim-realization-frollo-note p6:lifecycle "active"^^xsd:string .
+case:claim-realization-frollo-note p6:preferredLabel "realization-frollo-note"^^xsd:string .
+case:claim-realization-frollo-note p6:responsibleAgent case:importer .
+case:claim-realization-frollo-note p6:stance "report"^^xsd:string .
+case:claim-realization-frollo-note rdf:type p6:ClaimRecord .
+case:claim-realization-frollo-note v:sourceLocation case:source-location-b5fdb45e81716582 .
+case:claim-realization-signature p6:claimAgent case:importer .
+case:claim-realization-signature p6:claimContent case:proposition-realization-signature .
+case:claim-realization-signature p6:lifecycle "active"^^xsd:string .
+case:claim-realization-signature p6:preferredLabel "realization-signature"^^xsd:string .
+case:claim-realization-signature p6:responsibleAgent case:importer .
+case:claim-realization-signature p6:stance "report"^^xsd:string .
+case:claim-realization-signature rdf:type p6:ClaimRecord .
+case:claim-realization-signature v:sourceLocation case:source-location-24e8905c6183b66a .
+case:claim-recipient p6:claimAgent case:importer .
+case:claim-recipient p6:claimContent case:proposition-recipient .
+case:claim-recipient p6:lifecycle "active"^^xsd:string .
+case:claim-recipient p6:preferredLabel "recipient"^^xsd:string .
+case:claim-recipient p6:responsibleAgent case:importer .
+case:claim-recipient p6:stance "report"^^xsd:string .
+case:claim-recipient rdf:type p6:ClaimRecord .
+case:claim-recipient v:sourceLocation case:source-location-d8133af46553dc91 .
+case:claim-reference-author-ref p6:claimAgent case:importer .
+case:claim-reference-author-ref p6:claimContent case:proposition-reference-author-ref .
+case:claim-reference-author-ref p6:lifecycle "active"^^xsd:string .
+case:claim-reference-author-ref p6:preferredLabel "reference-author-ref"^^xsd:string .
+case:claim-reference-author-ref p6:responsibleAgent case:importer .
+case:claim-reference-author-ref p6:stance "report"^^xsd:string .
+case:claim-reference-author-ref rdf:type p6:ClaimRecord .
+case:claim-reference-author-ref v:sourceLocation case:source-location-f263e2ec5e44226f .
+case:claim-reference-diez p6:claimAgent case:importer .
+case:claim-reference-diez p6:claimContent case:proposition-reference-diez .
+case:claim-reference-diez p6:lifecycle "active"^^xsd:string .
+case:claim-reference-diez p6:preferredLabel "reference-diez"^^xsd:string .
+case:claim-reference-diez p6:responsibleAgent case:importer .
+case:claim-reference-diez p6:stance "report"^^xsd:string .
+case:claim-reference-diez rdf:type p6:ClaimRecord .
+case:claim-reference-diez v:sourceLocation case:source-location-6caedde52bf635fb .
+case:claim-reference-frollo p6:claimAgent case:importer .
+case:claim-reference-frollo p6:claimContent case:proposition-reference-frollo .
+case:claim-reference-frollo p6:lifecycle "active"^^xsd:string .
+case:claim-reference-frollo p6:preferredLabel "reference-frollo"^^xsd:string .
+case:claim-reference-frollo p6:responsibleAgent case:importer .
+case:claim-reference-frollo p6:stance "report"^^xsd:string .
+case:claim-reference-frollo rdf:type p6:ClaimRecord .
+case:claim-reference-frollo v:sourceLocation case:source-location-3bbe1ff4e394c1aa .
+case:claim-reference-frollo-note p6:claimAgent case:importer .
+case:claim-reference-frollo-note p6:claimContent case:proposition-reference-frollo-note .
+case:claim-reference-frollo-note p6:lifecycle "active"^^xsd:string .
+case:claim-reference-frollo-note p6:preferredLabel "reference-frollo-note"^^xsd:string .
+case:claim-reference-frollo-note p6:responsibleAgent case:importer .
+case:claim-reference-frollo-note p6:stance "report"^^xsd:string .
+case:claim-reference-frollo-note rdf:type p6:ClaimRecord .
+case:claim-reference-frollo-note v:sourceLocation case:source-location-ca8b555bbb1d6586 .
+case:claim-reference-graz-origin-corresp p6:claimAgent case:importer .
+case:claim-reference-graz-origin-corresp p6:claimContent case:proposition-reference-graz-origin-corresp .
+case:claim-reference-graz-origin-corresp p6:lifecycle "active"^^xsd:string .
+case:claim-reference-graz-origin-corresp p6:preferredLabel "reference-graz-origin-corresp"^^xsd:string .
+case:claim-reference-graz-origin-corresp p6:responsibleAgent case:importer .
+case:claim-reference-graz-origin-corresp p6:stance "report"^^xsd:string .
+case:claim-reference-graz-origin-corresp rdf:type p6:ClaimRecord .
+case:claim-reference-graz-origin-corresp v:sourceLocation case:source-location-fd1201196f5be770 .
+case:claim-reference-graz-origin-ref p6:claimAgent case:importer .
+case:claim-reference-graz-origin-ref p6:claimContent case:proposition-reference-graz-origin-ref .
+case:claim-reference-graz-origin-ref p6:lifecycle "active"^^xsd:string .
+case:claim-reference-graz-origin-ref p6:preferredLabel "reference-graz-origin-ref"^^xsd:string .
+case:claim-reference-graz-origin-ref p6:responsibleAgent case:importer .
+case:claim-reference-graz-origin-ref p6:stance "report"^^xsd:string .
+case:claim-reference-graz-origin-ref rdf:type p6:ClaimRecord .
+case:claim-reference-graz-origin-ref v:sourceLocation case:source-location-67326d3d963a262d .
+case:claim-reference-graz-sending-corresp p6:claimAgent case:importer .
+case:claim-reference-graz-sending-corresp p6:claimContent case:proposition-reference-graz-sending-corresp .
+case:claim-reference-graz-sending-corresp p6:lifecycle "active"^^xsd:string .
+case:claim-reference-graz-sending-corresp p6:preferredLabel "reference-graz-sending-corresp"^^xsd:string .
+case:claim-reference-graz-sending-corresp p6:responsibleAgent case:importer .
+case:claim-reference-graz-sending-corresp p6:stance "report"^^xsd:string .
+case:claim-reference-graz-sending-corresp rdf:type p6:ClaimRecord .
+case:claim-reference-graz-sending-corresp v:sourceLocation case:source-location-780387c636c4c516 .
+case:claim-reference-graz-sending-ref p6:claimAgent case:importer .
+case:claim-reference-graz-sending-ref p6:claimContent case:proposition-reference-graz-sending-ref .
+case:claim-reference-graz-sending-ref p6:lifecycle "active"^^xsd:string .
+case:claim-reference-graz-sending-ref p6:preferredLabel "reference-graz-sending-ref"^^xsd:string .
+case:claim-reference-graz-sending-ref p6:responsibleAgent case:importer .
+case:claim-reference-graz-sending-ref p6:stance "report"^^xsd:string .
+case:claim-reference-graz-sending-ref rdf:type p6:ClaimRecord .
+case:claim-reference-graz-sending-ref v:sourceLocation case:source-location-67a23c0c8dc26683 .
+case:claim-reference-recipient-corresp p6:claimAgent case:importer .
+case:claim-reference-recipient-corresp p6:claimContent case:proposition-reference-recipient-corresp .
+case:claim-reference-recipient-corresp p6:lifecycle "active"^^xsd:string .
+case:claim-reference-recipient-corresp p6:preferredLabel "reference-recipient-corresp"^^xsd:string .
+case:claim-reference-recipient-corresp p6:responsibleAgent case:importer .
+case:claim-reference-recipient-corresp p6:stance "report"^^xsd:string .
+case:claim-reference-recipient-corresp rdf:type p6:ClaimRecord .
+case:claim-reference-recipient-corresp v:sourceLocation case:source-location-3a5ab3446617c12d .
+case:claim-reference-recipient-ref p6:claimAgent case:importer .
+case:claim-reference-recipient-ref p6:claimContent case:proposition-reference-recipient-ref .
+case:claim-reference-recipient-ref p6:lifecycle "active"^^xsd:string .
+case:claim-reference-recipient-ref p6:preferredLabel "reference-recipient-ref"^^xsd:string .
+case:claim-reference-recipient-ref p6:responsibleAgent case:importer .
+case:claim-reference-recipient-ref p6:stance "report"^^xsd:string .
+case:claim-reference-recipient-ref rdf:type p6:ClaimRecord .
+case:claim-reference-recipient-ref v:sourceLocation case:source-location-ed9403bddb18f915 .
+case:claim-reference-sender-corresp p6:claimAgent case:importer .
+case:claim-reference-sender-corresp p6:claimContent case:proposition-reference-sender-corresp .
+case:claim-reference-sender-corresp p6:lifecycle "active"^^xsd:string .
+case:claim-reference-sender-corresp p6:preferredLabel "reference-sender-corresp"^^xsd:string .
+case:claim-reference-sender-corresp p6:responsibleAgent case:importer .
+case:claim-reference-sender-corresp p6:stance "report"^^xsd:string .
+case:claim-reference-sender-corresp rdf:type p6:ClaimRecord .
+case:claim-reference-sender-corresp v:sourceLocation case:source-location-5620d7057a950a75 .
+case:claim-reference-sender-ref p6:claimAgent case:importer .
+case:claim-reference-sender-ref p6:claimContent case:proposition-reference-sender-ref .
+case:claim-reference-sender-ref p6:lifecycle "active"^^xsd:string .
+case:claim-reference-sender-ref p6:preferredLabel "reference-sender-ref"^^xsd:string .
+case:claim-reference-sender-ref p6:responsibleAgent case:importer .
+case:claim-reference-sender-ref p6:stance "report"^^xsd:string .
+case:claim-reference-sender-ref rdf:type p6:ClaimRecord .
+case:claim-reference-sender-ref v:sourceLocation case:source-location-dff6bafb2a3b4a13 .
+case:claim-reference-signature p6:claimAgent case:importer .
+case:claim-reference-signature p6:claimContent case:proposition-reference-signature .
+case:claim-reference-signature p6:lifecycle "active"^^xsd:string .
+case:claim-reference-signature p6:preferredLabel "reference-signature"^^xsd:string .
+case:claim-reference-signature p6:responsibleAgent case:importer .
+case:claim-reference-signature p6:stance "report"^^xsd:string .
+case:claim-reference-signature rdf:type p6:ClaimRecord .
+case:claim-reference-signature v:sourceLocation case:source-location-4293da327e111c73 .
+case:claim-representation-assignment p6:claimAgent case:importer .
+case:claim-representation-assignment p6:claimContent case:proposition-representation-assignment .
+case:claim-representation-assignment p6:lifecycle "active"^^xsd:string .
+case:claim-representation-assignment p6:preferredLabel "representation-assignment"^^xsd:string .
+case:claim-representation-assignment p6:responsibleAgent case:importer .
+case:claim-representation-assignment p6:stance "assert"^^xsd:string .
+case:claim-representation-assignment rdf:type p6:ClaimRecord .
+case:claim-representation-assignment v:construction "ElementTree XML character data in document order, retaining parsed XML whitespace and child tails; note subtrees excluded from letter, each separately projected; no separators inserted for markup. XML line-end normalization differs from archival bytes. Assignment follows text-letter's explicit delimitation criterion."^^xsd:string .
+case:claim-sender p6:claimAgent case:importer .
+case:claim-sender p6:claimContent case:proposition-sender .
+case:claim-sender p6:lifecycle "active"^^xsd:string .
+case:claim-sender p6:preferredLabel "sender"^^xsd:string .
+case:claim-sender p6:responsibleAgent case:importer .
+case:claim-sender p6:stance "report"^^xsd:string .
+case:claim-sender rdf:type p6:ClaimRecord .
+case:claim-sender v:sourceLocation case:source-location-58923ad3d6bfac9a .
+case:claim-sending-date p6:claimAgent case:importer .
+case:claim-sending-date p6:claimContent case:proposition-sending-date .
+case:claim-sending-date p6:lifecycle "active"^^xsd:string .
+case:claim-sending-date p6:preferredLabel "sending-date"^^xsd:string .
+case:claim-sending-date p6:responsibleAgent case:importer .
+case:claim-sending-date p6:stance "report"^^xsd:string .
+case:claim-sending-date rdf:type p6:ClaimRecord .
+case:claim-sending-date v:sourceLocation case:source-location-b2f008319fe9f70a .
+case:claim-sending-place p6:claimAgent case:importer .
+case:claim-sending-place p6:claimContent case:proposition-sending-place .
+case:claim-sending-place p6:lifecycle "active"^^xsd:string .
+case:claim-sending-place p6:preferredLabel "sending-place"^^xsd:string .
+case:claim-sending-place p6:responsibleAgent case:importer .
+case:claim-sending-place p6:stance "report"^^xsd:string .
+case:claim-sending-place rdf:type p6:ClaimRecord .
+case:claim-sending-place v:sourceLocation case:source-location-0eba4d42fbac41d0 .
+case:claim-sent-document p6:claimAgent case:importer .
+case:claim-sent-document p6:claimContent case:proposition-sent-document .
+case:claim-sent-document p6:lifecycle "active"^^xsd:string .
+case:claim-sent-document p6:preferredLabel "sent-document"^^xsd:string .
+case:claim-sent-document p6:responsibleAgent case:importer .
+case:claim-sent-document p6:stance "report"^^xsd:string .
+case:claim-sent-document rdf:type p6:ClaimRecord .
+case:claim-sent-document v:sourceLocation case:source-location-716fe562476ee93b .
+case:claim-source-div-id p6:claimAgent case:importer .
+case:claim-source-div-id p6:claimContent case:proposition-source-div-id .
+case:claim-source-div-id p6:lifecycle "active"^^xsd:string .
+case:claim-source-div-id p6:preferredLabel "source-div-id"^^xsd:string .
+case:claim-source-div-id p6:responsibleAgent case:importer .
+case:claim-source-div-id p6:stance "report"^^xsd:string .
+case:claim-source-div-id rdf:type p6:ClaimRecord .
+case:claim-source-div-id v:sourceLocation case:source-location-d34b9806fe8a7258 .
+case:claim-source-pid p6:claimAgent case:importer .
+case:claim-source-pid p6:claimContent case:proposition-source-pid .
+case:claim-source-pid p6:lifecycle "active"^^xsd:string .
+case:claim-source-pid p6:preferredLabel "source-pid"^^xsd:string .
+case:claim-source-pid p6:responsibleAgent case:importer .
+case:claim-source-pid p6:stance "report"^^xsd:string .
+case:claim-source-pid rdf:type p6:ClaimRecord .
+case:claim-source-pid v:sourceLocation case:source-location-aed6ee601718ab0e .
+case:claim-text-document p6:claimAgent case:importer .
+case:claim-text-document p6:claimContent case:proposition-text-document .
+case:claim-text-document p6:lifecycle "active"^^xsd:string .
+case:claim-text-document p6:preferredLabel "text-document"^^xsd:string .
+case:claim-text-document p6:responsibleAgent case:importer .
+case:claim-text-document p6:stance "assert"^^xsd:string .
+case:claim-text-document rdf:type p6:ClaimRecord .
+case:claim-text-document v:construction "The importer assigns the delimited linguistic content of the source's original-letter div to its described letter document, retaining dateline, opener, signature and postscript while excluding editorial note subtrees. This is an explicit mapping construction supported by that source container."^^xsd:string .
+case:claim-text-document v:sourceLocation case:source-location-a0978affd822896b .
+case:concept-CarrierOrigin p6:definition "Revisable expectation of an origin occurrence for the carrier as framed by msDesc/history/origin; no writing action or actor is implied."^^xsd:string .
+case:concept-CarrierOrigin p6:preferredLabel "CarrierOrigin"^^xsd:string .
+case:concept-CarrierOrigin p6:responsibleAgent case:importer .
+case:concept-CarrierOrigin rdf:type p6:ConceptRecord .
+case:concept-LetterDocument p6:definition "Revisable expectation of the letter as a documentary object distinguished from its linguistic content and material carrier."^^xsd:string .
+case:concept-LetterDocument p6:preferredLabel "LetterDocument"^^xsd:string .
+case:concept-LetterDocument p6:responsibleAgent case:importer .
+case:concept-LetterDocument rdf:type p6:ConceptRecord .
+case:concept-MaterialCarrier p6:definition "Revisable expectation of the material carrier described by msDesc; neither physical inspection nor image evidence is supplied."^^xsd:string .
+case:concept-MaterialCarrier p6:preferredLabel "MaterialCarrier"^^xsd:string .
+case:concept-MaterialCarrier p6:responsibleAgent case:importer .
+case:concept-MaterialCarrier rdf:type p6:ConceptRecord .
+case:concept-Person p6:definition "Revisable expectation that this source handle concerns a person; documentary records remain distinct from any externally identified person."^^xsd:string .
+case:concept-Person p6:preferredLabel "Person"^^xsd:string .
+case:concept-Person p6:responsibleAgent case:importer .
+case:concept-Person rdf:type p6:ConceptRecord .
+case:concept-Place p6:definition "Revisable expectation of a place described in the source; historical country and coordinate interpretation remain unspecified."^^xsd:string .
+case:concept-Place p6:preferredLabel "Place"^^xsd:string .
+case:concept-Place p6:responsibleAgent case:importer .
+case:concept-Place rdf:type p6:ConceptRecord .
+case:concept-Publication p6:definition "Revisable expectation of the XML edition publication described by publicationStmt, distinct from snapshot acquisition and cited bibliography."^^xsd:string .
+case:concept-Publication p6:preferredLabel "Publication"^^xsd:string .
+case:concept-Publication p6:responsibleAgent case:importer .
+case:concept-Publication rdf:type p6:ConceptRecord .
+case:concept-SendingEvent p6:definition "Revisable expectation of a sending occurrence described by the source correspondence action; source metadata remain reports."^^xsd:string .
+case:concept-SendingEvent p6:preferredLabel "SendingEvent"^^xsd:string .
+case:concept-SendingEvent p6:responsibleAgent case:importer .
+case:concept-SendingEvent rdf:type p6:ConceptRecord .
+case:context-catalogue p6:preferredLabel "source-description"^^xsd:string .
+case:context-catalogue p6:responsibleAgent case:importer .
+case:context-catalogue p6:scope "source-description"^^xsd:string .
+case:context-catalogue rdf:type p6:ContextRecord .
+case:context-construction p6:preferredLabel "importer-construction"^^xsd:string .
+case:context-construction p6:responsibleAgent case:importer .
+case:context-construction p6:scope "importer-construction"^^xsd:string .
+case:context-construction rdf:type p6:ContextRecord .
+case:context-correspondence p6:preferredLabel "source-correspondence-roles"^^xsd:string .
+case:context-correspondence p6:responsibleAgent case:importer .
+case:context-correspondence p6:scope "source-correspondence-roles"^^xsd:string .
+case:context-correspondence rdf:type p6:ContextRecord .
+case:context-letter p6:preferredLabel "source-letter-transcription"^^xsd:string .
+case:context-letter p6:responsibleAgent case:importer .
+case:context-letter p6:scope "source-letter-transcription"^^xsd:string .
+case:context-letter rdf:type p6:ContextRecord .
+case:context-normalized-place p6:preferredLabel "source-normalized-place-metadata"^^xsd:string .
+case:context-normalized-place p6:responsibleAgent case:importer .
+case:context-normalized-place p6:scope "source-normalized-place-metadata"^^xsd:string .
+case:context-normalized-place rdf:type p6:ContextRecord .
+case:context-notes p6:preferredLabel "source-editorial-annotation"^^xsd:string .
+case:context-notes p6:responsibleAgent case:importer .
+case:context-notes p6:scope "source-editorial-annotation"^^xsd:string .
+case:context-notes rdf:type p6:ContextRecord .
+case:context-origin p6:preferredLabel "source-carrier-origin"^^xsd:string .
+case:context-origin p6:responsibleAgent case:importer .
+case:context-origin p6:scope "source-carrier-origin"^^xsd:string .
+case:context-origin rdf:type p6:ContextRecord .
+case:context-publication p6:preferredLabel "source-xml-publication"^^xsd:string .
+case:context-publication p6:responsibleAgent case:importer .
+case:context-publication p6:scope "source-xml-publication"^^xsd:string .
+case:context-publication rdf:type p6:ContextRecord .
+case:context-sending p6:preferredLabel "source-correspondence-sent"^^xsd:string .
+case:context-sending p6:responsibleAgent case:importer .
+case:context-sending p6:scope "source-correspondence-sent"^^xsd:string .
+case:context-sending rdf:type p6:ContextRecord .
+case:event-origin p6:expectedReferentType case:concept-CarrierOrigin .
+case:event-origin p6:preferredLabel "Carrier origin context recorded by msDesc/history/origin"^^xsd:string .
+case:event-origin p6:responsibleAgent case:importer .
+case:event-origin rdf:type p6:ReferentRecord .
+case:event-origin v:construction "Revisable expected referent type assigned by this bounded import profile from the stated source context; no foreign class membership or independent historical verification."^^xsd:string .
+case:event-sending p6:expectedReferentType case:concept-SendingEvent .
+case:event-sending p6:preferredLabel "Sending event described by correspAction sent"^^xsd:string .
+case:event-sending p6:responsibleAgent case:importer .
+case:event-sending rdf:type p6:ReferentRecord .
+case:event-sending v:construction "Revisable expected referent type assigned by this bounded import profile from the stated source context; no foreign class membership or independent historical verification."^^xsd:string .
+case:form-author p6:form """
+            Hugo
+            Schuchardt
+          """^^xsd:string .
+case:form-author p6:preferredLabel "Exact source name character data: author"^^xsd:string .
+case:form-author p6:responsibleAgent case:importer .
+case:form-author rdf:type p6:NameFormRecord .
+case:form-author v:sourceLocation case:source-location-c5c4145f495e44e8 .
+case:form-diez p6:form """
+Diez"""^^xsd:string .
+case:form-diez p6:preferredLabel "Exact source name form: diez"^^xsd:string .
+case:form-diez p6:responsibleAgent case:importer .
+case:form-diez rdf:type p6:NameFormRecord .
+case:form-diez v:sourceLocation case:source-location-3f07faa1a1fee660 .
+case:form-frollo p6:form "Frollo"^^xsd:string .
+case:form-frollo p6:preferredLabel "Exact source name form: frollo"^^xsd:string .
+case:form-frollo p6:responsibleAgent case:importer .
+case:form-frollo rdf:type p6:NameFormRecord .
+case:form-frollo v:sourceLocation case:source-location-76deffd4dda2fce4 .
+case:form-frollo-note p6:form "G.L. Frollo"^^xsd:string .
+case:form-frollo-note p6:preferredLabel "Exact source name form: frollo-note"^^xsd:string .
+case:form-frollo-note p6:responsibleAgent case:importer .
+case:form-frollo-note rdf:type p6:NameFormRecord .
+case:form-frollo-note v:sourceLocation case:source-location-b5fdb45e81716582 .
+case:form-graz-origin p6:form "Graz"^^xsd:string .
+case:form-graz-origin p6:preferredLabel "Exact source name character data: graz-origin"^^xsd:string .
+case:form-graz-origin p6:responsibleAgent case:importer .
+case:form-graz-origin rdf:type p6:NameFormRecord .
+case:form-graz-origin v:sourceLocation case:source-location-717bf8de60922c23 .
+case:form-graz-sending p6:form "Graz"^^xsd:string .
+case:form-graz-sending p6:preferredLabel "Exact source name character data: graz-sending"^^xsd:string .
+case:form-graz-sending p6:responsibleAgent case:importer .
+case:form-graz-sending rdf:type p6:NameFormRecord .
+case:form-graz-sending v:sourceLocation case:source-location-0eba4d42fbac41d0 .
+case:form-recipient p6:form """
+            Bogdan Petriceicu
+            Hasdeu
+          """^^xsd:string .
+case:form-recipient p6:preferredLabel "Exact source name character data: recipient"^^xsd:string .
+case:form-recipient p6:responsibleAgent case:importer .
+case:form-recipient rdf:type p6:NameFormRecord .
+case:form-recipient v:sourceLocation case:source-location-d8133af46553dc91 .
+case:form-sender p6:form """
+            Hugo
+            Schuchardt
+          """^^xsd:string .
+case:form-sender p6:preferredLabel "Exact source name character data: sender"^^xsd:string .
+case:form-sender p6:responsibleAgent case:importer .
+case:form-sender rdf:type p6:NameFormRecord .
+case:form-sender v:sourceLocation case:source-location-58923ad3d6bfac9a .
+case:form-signature p6:form "H. Schuchardt"^^xsd:string .
+case:form-signature p6:preferredLabel "Exact source name form: signature"^^xsd:string .
+case:form-signature p6:responsibleAgent case:importer .
+case:form-signature rdf:type p6:NameFormRecord .
+case:form-signature v:sourceLocation case:source-location-24e8905c6183b66a .
+case:importer p6:preferredLabel "Deterministic HSA 4493 importer; source metadata reports, no historical verification"^^xsd:string .
+case:importer p6:responsibleAgent case:importer .
+case:importer rdf:type p6:AgentRecord .
+case:letter p6:expectedReferentType case:concept-LetterDocument .
+case:letter p6:preferredLabel "Letter document described by HSA PID 4493"^^xsd:string .
+case:letter p6:responsibleAgent case:importer .
+case:letter rdf:type p6:ReferentRecord .
+case:letter v:construction "Revisable expected referent type assigned by this bounded import profile from the stated source context; no foreign class membership or independent historical verification."^^xsd:string .
+case:mention-diez p6:annotationBody case:form-diez .
+case:mention-diez p6:annotationClaim case:claim-denotation-diez .
+case:mention-diez p6:preferredLabel "diez"^^xsd:string .
+case:mention-diez p6:responsibleAgent case:importer .
+case:mention-diez p6:targetSelection case:selection-mention-diez .
+case:mention-diez rdf:type p6:MentionRecord .
+case:mention-diez v:sourceLocation case:source-location-3f07faa1a1fee660 .
+case:mention-frollo p6:annotationBody case:form-frollo .
+case:mention-frollo p6:annotationClaim case:claim-denotation-frollo .
+case:mention-frollo p6:preferredLabel "frollo"^^xsd:string .
+case:mention-frollo p6:responsibleAgent case:importer .
+case:mention-frollo p6:targetSelection case:selection-mention-frollo .
+case:mention-frollo rdf:type p6:MentionRecord .
+case:mention-frollo v:sourceLocation case:source-location-76deffd4dda2fce4 .
+case:mention-frollo-note p6:annotationBody case:form-frollo-note .
+case:mention-frollo-note p6:annotationClaim case:claim-denotation-frollo-note .
+case:mention-frollo-note p6:preferredLabel "frollo-note"^^xsd:string .
+case:mention-frollo-note p6:responsibleAgent case:importer .
+case:mention-frollo-note p6:targetSelection case:selection-mention-frollo-note .
+case:mention-frollo-note rdf:type p6:MentionRecord .
+case:mention-frollo-note v:sourceLocation case:source-location-b5fdb45e81716582 .
+case:mention-signature p6:annotationBody case:form-signature .
+case:mention-signature p6:annotationClaim case:claim-denotation-signature .
+case:mention-signature p6:preferredLabel "signature"^^xsd:string .
+case:mention-signature p6:responsibleAgent case:importer .
+case:mention-signature p6:targetSelection case:selection-mention-signature .
+case:mention-signature rdf:type p6:MentionRecord .
+case:mention-signature v:sourceLocation case:source-location-24e8905c6183b66a .
+case:note-01 p6:annotationBody case:representation-note-01 .
+case:note-01 p6:preferredLabel "Editorial note 01"^^xsd:string .
+case:note-01 p6:responsibleAgent case:importer .
+case:note-01 p6:targetSelection case:selection-note-insertion-01 .
+case:note-01 rdf:type p6:AnnotationRecord .
+case:note-01 v:construction "Anchor is the source note's insertion point in the letter projection; no entire semantic target is inferred."^^xsd:string .
+case:note-01 v:sourceLocation case:source-location-9f5390547f3e2a82 .
+case:note-02 p6:annotationBody case:representation-note-02 .
+case:note-02 p6:preferredLabel "Editorial note 02"^^xsd:string .
+case:note-02 p6:responsibleAgent case:importer .
+case:note-02 p6:targetSelection case:selection-note-insertion-02 .
+case:note-02 rdf:type p6:AnnotationRecord .
+case:note-02 v:construction "Anchor is the source note's insertion point in the letter projection; no entire semantic target is inferred."^^xsd:string .
+case:note-02 v:sourceLocation case:source-location-de8b5f45aaaa001e .
+case:note-03 p6:annotationBody case:representation-note-03 .
+case:note-03 p6:preferredLabel "Editorial note 03"^^xsd:string .
+case:note-03 p6:responsibleAgent case:importer .
+case:note-03 p6:targetSelection case:selection-note-insertion-03 .
+case:note-03 rdf:type p6:AnnotationRecord .
+case:note-03 v:construction "Anchor is the source note's insertion point in the letter projection; no entire semantic target is inferred."^^xsd:string .
+case:note-03 v:sourceLocation case:source-location-bf072a77c76980ac .
+case:note-04 p6:annotationBody case:representation-note-04 .
+case:note-04 p6:preferredLabel "Editorial note 04"^^xsd:string .
+case:note-04 p6:responsibleAgent case:importer .
+case:note-04 p6:targetSelection case:selection-note-insertion-04 .
+case:note-04 rdf:type p6:AnnotationRecord .
+case:note-04 v:construction "Anchor is the source note's insertion point in the letter projection; no entire semantic target is inferred."^^xsd:string .
+case:note-04 v:sourceLocation case:source-location-2e1d536cc5a210a6 .
+case:note-05 p6:annotationBody case:representation-note-05 .
+case:note-05 p6:preferredLabel "Editorial note 05"^^xsd:string .
+case:note-05 p6:responsibleAgent case:importer .
+case:note-05 p6:targetSelection case:selection-note-insertion-05 .
+case:note-05 rdf:type p6:AnnotationRecord .
+case:note-05 v:construction "Anchor is the source note's insertion point in the letter projection; no entire semantic target is inferred."^^xsd:string .
+case:note-05 v:sourceLocation case:source-location-eca2d672afc40c0f .
+case:note-06 p6:annotationBody case:representation-note-06 .
+case:note-06 p6:preferredLabel "Editorial note 06"^^xsd:string .
+case:note-06 p6:responsibleAgent case:importer .
+case:note-06 p6:targetSelection case:selection-note-insertion-06 .
+case:note-06 rdf:type p6:AnnotationRecord .
+case:note-06 v:construction "Anchor is the source note's insertion point in the letter projection; no entire semantic target is inferred."^^xsd:string .
+case:note-06 v:sourceLocation case:source-location-68190ae3756461c7 .
+case:note-07 p6:annotationBody case:representation-note-07 .
+case:note-07 p6:preferredLabel "Editorial note 07"^^xsd:string .
+case:note-07 p6:responsibleAgent case:importer .
+case:note-07 p6:targetSelection case:selection-note-insertion-07 .
+case:note-07 rdf:type p6:AnnotationRecord .
+case:note-07 v:construction "Anchor is the source note's insertion point in the letter projection; no entire semantic target is inferred."^^xsd:string .
+case:note-07 v:sourceLocation case:source-location-bb1625ba4d405667 .
+case:note-08 p6:annotationBody case:representation-note-08 .
+case:note-08 p6:preferredLabel "Editorial note 08"^^xsd:string .
+case:note-08 p6:responsibleAgent case:importer .
+case:note-08 p6:targetSelection case:selection-note-insertion-08 .
+case:note-08 rdf:type p6:AnnotationRecord .
+case:note-08 v:construction "Anchor is the source note's insertion point in the letter projection; no entire semantic target is inferred."^^xsd:string .
+case:note-08 v:sourceLocation case:source-location-2c218523d4a3658b .
+case:note-09 p6:annotationBody case:representation-note-09 .
+case:note-09 p6:preferredLabel "Editorial note 09"^^xsd:string .
+case:note-09 p6:responsibleAgent case:importer .
+case:note-09 p6:targetSelection case:selection-note-insertion-09 .
+case:note-09 rdf:type p6:AnnotationRecord .
+case:note-09 v:construction "Anchor is the source note's insertion point in the letter projection; no entire semantic target is inferred."^^xsd:string .
+case:note-09 v:sourceLocation case:source-location-f91db689995985b4 .
+case:note-10 p6:annotationBody case:representation-note-10 .
+case:note-10 p6:preferredLabel "Editorial note 10"^^xsd:string .
+case:note-10 p6:responsibleAgent case:importer .
+case:note-10 p6:targetSelection case:selection-note-insertion-10 .
+case:note-10 rdf:type p6:AnnotationRecord .
+case:note-10 v:construction "Anchor is the source note's insertion point in the letter projection; no entire semantic target is inferred."^^xsd:string .
+case:note-10 v:sourceLocation case:source-location-30be50261d67e809 .
+case:note-11 p6:annotationBody case:representation-note-11 .
+case:note-11 p6:preferredLabel "Editorial note 11"^^xsd:string .
+case:note-11 p6:responsibleAgent case:importer .
+case:note-11 p6:targetSelection case:selection-note-insertion-11 .
+case:note-11 rdf:type p6:AnnotationRecord .
+case:note-11 v:construction "Anchor is the source note's insertion point in the letter projection; no entire semantic target is inferred."^^xsd:string .
+case:note-11 v:sourceLocation case:source-location-bf067cce11214383 .
+case:package p6:member case:carrier .
+case:package p6:member case:claim-author .
+case:package p6:member case:claim-carrier-material .
+case:package p6:member case:claim-carrier-repository .
+case:package p6:member case:claim-carrier-shelfmark .
+case:package p6:member case:claim-dateline .
+case:package p6:member case:claim-denotation-diez .
+case:package p6:member case:claim-denotation-frollo .
+case:package p6:member case:claim-denotation-frollo-note .
+case:package p6:member case:claim-denotation-signature .
+case:package p6:member case:claim-document-carrier .
+case:package p6:member case:claim-geo-lexical .
+case:package p6:member case:claim-name-author .
+case:package p6:member case:claim-name-diez .
+case:package p6:member case:claim-name-frollo .
+case:package p6:member case:claim-name-frollo-note .
+case:package p6:member case:claim-name-graz-origin .
+case:package p6:member case:claim-name-graz-sending .
+case:package p6:member case:claim-name-recipient .
+case:package p6:member case:claim-name-sender .
+case:package p6:member case:claim-name-signature .
+case:package p6:member case:claim-origin-carrier .
+case:package p6:member case:claim-origin-date .
+case:package p6:member case:claim-origin-place .
+case:package p6:member case:claim-publication-year .
+case:package p6:member case:claim-realization-diez .
+case:package p6:member case:claim-realization-frollo .
+case:package p6:member case:claim-realization-frollo-note .
+case:package p6:member case:claim-realization-signature .
+case:package p6:member case:claim-recipient .
+case:package p6:member case:claim-reference-author-ref .
+case:package p6:member case:claim-reference-diez .
+case:package p6:member case:claim-reference-frollo .
+case:package p6:member case:claim-reference-frollo-note .
+case:package p6:member case:claim-reference-graz-origin-corresp .
+case:package p6:member case:claim-reference-graz-origin-ref .
+case:package p6:member case:claim-reference-graz-sending-corresp .
+case:package p6:member case:claim-reference-graz-sending-ref .
+case:package p6:member case:claim-reference-recipient-corresp .
+case:package p6:member case:claim-reference-recipient-ref .
+case:package p6:member case:claim-reference-sender-corresp .
+case:package p6:member case:claim-reference-sender-ref .
+case:package p6:member case:claim-reference-signature .
+case:package p6:member case:claim-representation-assignment .
+case:package p6:member case:claim-sender .
+case:package p6:member case:claim-sending-date .
+case:package p6:member case:claim-sending-place .
+case:package p6:member case:claim-sent-document .
+case:package p6:member case:claim-source-div-id .
+case:package p6:member case:claim-source-pid .
+case:package p6:member case:claim-text-document .
+case:package p6:member case:concept-CarrierOrigin .
+case:package p6:member case:concept-LetterDocument .
+case:package p6:member case:concept-MaterialCarrier .
+case:package p6:member case:concept-Person .
+case:package p6:member case:concept-Place .
+case:package p6:member case:concept-Publication .
+case:package p6:member case:concept-SendingEvent .
+case:package p6:member case:context-catalogue .
+case:package p6:member case:context-construction .
+case:package p6:member case:context-correspondence .
+case:package p6:member case:context-letter .
+case:package p6:member case:context-normalized-place .
+case:package p6:member case:context-notes .
+case:package p6:member case:context-origin .
+case:package p6:member case:context-publication .
+case:package p6:member case:context-sending .
+case:package p6:member case:event-origin .
+case:package p6:member case:event-sending .
+case:package p6:member case:form-author .
+case:package p6:member case:form-diez .
+case:package p6:member case:form-frollo .
+case:package p6:member case:form-frollo-note .
+case:package p6:member case:form-graz-origin .
+case:package p6:member case:form-graz-sending .
+case:package p6:member case:form-recipient .
+case:package p6:member case:form-sender .
+case:package p6:member case:form-signature .
+case:package p6:member case:importer .
+case:package p6:member case:letter .
+case:package p6:member case:mention-diez .
+case:package p6:member case:mention-frollo .
+case:package p6:member case:mention-frollo-note .
+case:package p6:member case:mention-signature .
+case:package p6:member case:note-01 .
+case:package p6:member case:note-02 .
+case:package p6:member case:note-03 .
+case:package p6:member case:note-04 .
+case:package p6:member case:note-05 .
+case:package p6:member case:note-06 .
+case:package p6:member case:note-07 .
+case:package p6:member case:note-08 .
+case:package p6:member case:note-09 .
+case:package p6:member case:note-10 .
+case:package p6:member case:note-11 .
+case:package p6:member case:person-diez .
+case:package p6:member case:person-frollo .
+case:package p6:member case:person-hasdeu .
+case:package p6:member case:person-schuchardt .
+case:package p6:member case:place-graz .
+case:package p6:member case:predicate-author .
+case:package p6:member case:predicate-carrier .
+case:package p6:member case:predicate-date .
+case:package p6:member case:predicate-dateline .
+case:package p6:member case:predicate-denotes .
+case:package p6:member case:predicate-geo-lexical .
+case:package p6:member case:predicate-material .
+case:package p6:member case:predicate-name-use .
+case:package p6:member case:predicate-origin-of .
+case:package p6:member case:predicate-place .
+case:package p6:member case:predicate-publication-year .
+case:package p6:member case:predicate-realizes-form .
+case:package p6:member case:predicate-recipient .
+case:package p6:member case:predicate-repository .
+case:package p6:member case:predicate-representation-of .
+case:package p6:member case:predicate-sender .
+case:package p6:member case:predicate-sent-document .
+case:package p6:member case:predicate-shelfmark .
+case:package p6:member case:predicate-source-identifier .
+case:package p6:member case:predicate-source-reference .
+case:package p6:member case:predicate-text-of-document .
+case:package p6:member case:proposition-author .
+case:package p6:member case:proposition-carrier-material .
+case:package p6:member case:proposition-carrier-repository .
+case:package p6:member case:proposition-carrier-shelfmark .
+case:package p6:member case:proposition-dateline .
+case:package p6:member case:proposition-denotation-diez .
+case:package p6:member case:proposition-denotation-frollo .
+case:package p6:member case:proposition-denotation-frollo-note .
+case:package p6:member case:proposition-denotation-signature .
+case:package p6:member case:proposition-document-carrier .
+case:package p6:member case:proposition-geo-lexical .
+case:package p6:member case:proposition-name-author .
+case:package p6:member case:proposition-name-diez .
+case:package p6:member case:proposition-name-frollo .
+case:package p6:member case:proposition-name-frollo-note .
+case:package p6:member case:proposition-name-graz-origin .
+case:package p6:member case:proposition-name-graz-sending .
+case:package p6:member case:proposition-name-recipient .
+case:package p6:member case:proposition-name-sender .
+case:package p6:member case:proposition-name-signature .
+case:package p6:member case:proposition-origin-carrier .
+case:package p6:member case:proposition-origin-date .
+case:package p6:member case:proposition-origin-place .
+case:package p6:member case:proposition-publication-year .
+case:package p6:member case:proposition-realization-diez .
+case:package p6:member case:proposition-realization-frollo .
+case:package p6:member case:proposition-realization-frollo-note .
+case:package p6:member case:proposition-realization-signature .
+case:package p6:member case:proposition-recipient .
+case:package p6:member case:proposition-reference-author-ref .
+case:package p6:member case:proposition-reference-diez .
+case:package p6:member case:proposition-reference-frollo .
+case:package p6:member case:proposition-reference-frollo-note .
+case:package p6:member case:proposition-reference-graz-origin-corresp .
+case:package p6:member case:proposition-reference-graz-origin-ref .
+case:package p6:member case:proposition-reference-graz-sending-corresp .
+case:package p6:member case:proposition-reference-graz-sending-ref .
+case:package p6:member case:proposition-reference-recipient-corresp .
+case:package p6:member case:proposition-reference-recipient-ref .
+case:package p6:member case:proposition-reference-sender-corresp .
+case:package p6:member case:proposition-reference-sender-ref .
+case:package p6:member case:proposition-reference-signature .
+case:package p6:member case:proposition-representation-assignment .
+case:package p6:member case:proposition-sender .
+case:package p6:member case:proposition-sending-date .
+case:package p6:member case:proposition-sending-place .
+case:package p6:member case:proposition-sent-document .
+case:package p6:member case:proposition-source-div-id .
+case:package p6:member case:proposition-source-pid .
+case:package p6:member case:proposition-text-document .
+case:package p6:member case:publication .
+case:package p6:member case:representation-letter .
+case:package p6:member case:representation-note-01 .
+case:package p6:member case:representation-note-02 .
+case:package p6:member case:representation-note-03 .
+case:package p6:member case:representation-note-04 .
+case:package p6:member case:representation-note-05 .
+case:package p6:member case:representation-note-06 .
+case:package p6:member case:representation-note-07 .
+case:package p6:member case:representation-note-08 .
+case:package p6:member case:representation-note-09 .
+case:package p6:member case:representation-note-10 .
+case:package p6:member case:representation-note-11 .
+case:package p6:member case:selection-mention-diez .
+case:package p6:member case:selection-mention-frollo .
+case:package p6:member case:selection-mention-frollo-note .
+case:package p6:member case:selection-mention-signature .
+case:package p6:member case:selection-note-insertion-01 .
+case:package p6:member case:selection-note-insertion-02 .
+case:package p6:member case:selection-note-insertion-03 .
+case:package p6:member case:selection-note-insertion-04 .
+case:package p6:member case:selection-note-insertion-05 .
+case:package p6:member case:selection-note-insertion-06 .
+case:package p6:member case:selection-note-insertion-07 .
+case:package p6:member case:selection-note-insertion-08 .
+case:package p6:member case:selection-note-insertion-09 .
+case:package p6:member case:selection-note-insertion-10 .
+case:package p6:member case:selection-note-insertion-11 .
+case:package p6:member case:source-location-066c93f71aaddb20 .
+case:package p6:member case:source-location-0d7f9513fa446b6b .
+case:package p6:member case:source-location-0e71020d6f5e7c67 .
+case:package p6:member case:source-location-0ea869afb66e7f28 .
+case:package p6:member case:source-location-0eba4d42fbac41d0 .
+case:package p6:member case:source-location-1fb2513682d00de5 .
+case:package p6:member case:source-location-24e8905c6183b66a .
+case:package p6:member case:source-location-27ad4b89d10cb4d3 .
+case:package p6:member case:source-location-2c218523d4a3658b .
+case:package p6:member case:source-location-2e1d536cc5a210a6 .
+case:package p6:member case:source-location-2f59188d69770ec7 .
+case:package p6:member case:source-location-30be50261d67e809 .
+case:package p6:member case:source-location-3a5ab3446617c12d .
+case:package p6:member case:source-location-3bbe1ff4e394c1aa .
+case:package p6:member case:source-location-3f07faa1a1fee660 .
+case:package p6:member case:source-location-40db9b98239ce112 .
+case:package p6:member case:source-location-4293da327e111c73 .
+case:package p6:member case:source-location-5620d7057a950a75 .
+case:package p6:member case:source-location-58923ad3d6bfac9a .
+case:package p6:member case:source-location-67326d3d963a262d .
+case:package p6:member case:source-location-67a23c0c8dc26683 .
+case:package p6:member case:source-location-68190ae3756461c7 .
+case:package p6:member case:source-location-6caedde52bf635fb .
+case:package p6:member case:source-location-716fe562476ee93b .
+case:package p6:member case:source-location-717bf8de60922c23 .
+case:package p6:member case:source-location-76deffd4dda2fce4 .
+case:package p6:member case:source-location-780387c636c4c516 .
+case:package p6:member case:source-location-9f5390547f3e2a82 .
+case:package p6:member case:source-location-a0978affd822896b .
+case:package p6:member case:source-location-a72a1550972add93 .
+case:package p6:member case:source-location-aed6ee601718ab0e .
+case:package p6:member case:source-location-b2f008319fe9f70a .
+case:package p6:member case:source-location-b5fdb45e81716582 .
+case:package p6:member case:source-location-bb1625ba4d405667 .
+case:package p6:member case:source-location-bf067cce11214383 .
+case:package p6:member case:source-location-bf072a77c76980ac .
+case:package p6:member case:source-location-c5c4145f495e44e8 .
+case:package p6:member case:source-location-ca8b555bbb1d6586 .
+case:package p6:member case:source-location-d34b9806fe8a7258 .
+case:package p6:member case:source-location-d8133af46553dc91 .
+case:package p6:member case:source-location-de8b5f45aaaa001e .
+case:package p6:member case:source-location-dff6bafb2a3b4a13 .
+case:package p6:member case:source-location-eca2d672afc40c0f .
+case:package p6:member case:source-location-ed9403bddb18f915 .
+case:package p6:member case:source-location-f263e2ec5e44226f .
+case:package p6:member case:source-location-f91db689995985b4 .
+case:package p6:member case:source-location-fd1201196f5be770 .
+case:package p6:member case:source-snapshot .
+case:package p6:member case:text-letter .
+case:package p6:responsibleAgent case:importer .
+case:package rdf:type p6:Package .
+case:package v:attribution "Hugo Schuchardt Archiv, Universität Graz; detailed editorial and institutional attribution retained in p5.xml"^^xsd:string .
+case:package v:license "https://creativecommons.org/licenses/by-nc/4.0/"^^xsd:anyURI .
+case:package v:profile "https://example.org/tei-p6-research/profile/hsa-4493/1"^^xsd:anyURI .
+case:package v:projection "ElementTree XML character data in document order, retaining parsed XML whitespace and child tails; note subtrees excluded from letter, each separately projected; no separators inserted for markup. XML line-end normalization differs from archival bytes."^^xsd:string .
+case:package v:sha256 "f37ff85df57405753aa0b6d1db63f3a24fcbd33ab1ef7fb54b68844e556e2438"^^xsd:string .
+case:package v:sourceURL "https://gams.uni-graz.at/o:hsa.letter.4493/TEI_SOURCE"^^xsd:anyURI .
+case:person-diez p6:expectedReferentType case:concept-Person .
+case:person-diez p6:preferredLabel "Diez, source referential handle"^^xsd:string .
+case:person-diez p6:responsibleAgent case:importer .
+case:person-diez rdf:type p6:ReferentRecord .
+case:person-diez v:construction "Revisable expected referent type assigned by this bounded import profile from the stated source context; no foreign class membership or independent historical verification."^^xsd:string .
+case:person-frollo p6:expectedReferentType case:concept-Person .
+case:person-frollo p6:preferredLabel "Frollo, shared source reference P.1537"^^xsd:string .
+case:person-frollo p6:responsibleAgent case:importer .
+case:person-frollo rdf:type p6:ReferentRecord .
+case:person-frollo v:construction "Revisable expected referent type assigned by this bounded import profile from the stated source context; no foreign class membership or independent historical verification."^^xsd:string .
+case:person-hasdeu p6:expectedReferentType case:concept-Person .
+case:person-hasdeu p6:preferredLabel "Bogdan Petriceicu Hasdeu, source referential handle"^^xsd:string .
+case:person-hasdeu p6:responsibleAgent case:importer .
+case:person-hasdeu rdf:type p6:ReferentRecord .
+case:person-hasdeu v:construction "Revisable expected referent type assigned by this bounded import profile from the stated source context; no foreign class membership or independent historical verification."^^xsd:string .
+case:person-schuchardt p6:expectedReferentType case:concept-Person .
+case:person-schuchardt p6:preferredLabel "Hugo Schuchardt, source referential handle"^^xsd:string .
+case:person-schuchardt p6:responsibleAgent case:importer .
+case:person-schuchardt rdf:type p6:ReferentRecord .
+case:person-schuchardt v:construction "Revisable expected referent type assigned by this bounded import profile from the stated source context; no foreign class membership or independent historical verification."^^xsd:string .
+case:place-graz p6:expectedReferentType case:concept-Place .
+case:place-graz p6:preferredLabel "Graz, source referential handle"^^xsd:string .
+case:place-graz p6:responsibleAgent case:importer .
+case:place-graz rdf:type p6:ReferentRecord .
+case:place-graz v:construction "Revisable expected referent type assigned by this bounded import profile from the stated source context; no foreign class membership or independent historical verification."^^xsd:string .
+case:predicate-author p6:definition "The source names this person as author of the described letter."^^xsd:string .
+case:predicate-author p6:objectInterpretation "referent"^^xsd:string .
+case:predicate-author p6:preferredLabel "author"^^xsd:string .
+case:predicate-author p6:responsibleAgent case:importer .
+case:predicate-author p6:subjectInterpretation "referent"^^xsd:string .
+case:predicate-author rdf:type p6:PredicateRecord .
+case:predicate-carrier p6:definition "The bounded mapping distinguishes the letter document from the material carrier described in msDesc."^^xsd:string .
+case:predicate-carrier p6:objectInterpretation "referent"^^xsd:string .
+case:predicate-carrier p6:preferredLabel "carrier"^^xsd:string .
+case:predicate-carrier p6:responsibleAgent case:importer .
+case:predicate-carrier p6:subjectInterpretation "referent"^^xsd:string .
+case:predicate-carrier rdf:type p6:PredicateRecord .
+case:predicate-date p6:definition "The source supplies this literal date within the specifically identified event context."^^xsd:string .
+case:predicate-date p6:objectInterpretation "record"^^xsd:string .
+case:predicate-date p6:preferredLabel "date"^^xsd:string .
+case:predicate-date p6:responsibleAgent case:importer .
+case:predicate-date p6:subjectInterpretation "referent"^^xsd:string .
+case:predicate-date rdf:type p6:PredicateRecord .
+case:predicate-dateline p6:definition "The source records this literal dateline within the letter body; its short year is retained without reconciliation to metadata dates."^^xsd:string .
+case:predicate-dateline p6:objectInterpretation "record"^^xsd:string .
+case:predicate-dateline p6:preferredLabel "dateline"^^xsd:string .
+case:predicate-dateline p6:responsibleAgent case:importer .
+case:predicate-dateline p6:subjectInterpretation "record"^^xsd:string .
+case:predicate-dateline rdf:type p6:PredicateRecord .
+case:predicate-denotes p6:definition "The source's encoded person reference supports an import report assigning this mention to the described referent handle."^^xsd:string .
+case:predicate-denotes p6:objectInterpretation "referent"^^xsd:string .
+case:predicate-denotes p6:preferredLabel "denotes"^^xsd:string .
+case:predicate-denotes p6:responsibleAgent case:importer .
+case:predicate-denotes p6:subjectInterpretation "record"^^xsd:string .
+case:predicate-denotes rdf:type p6:PredicateRecord .
+case:predicate-geo-lexical p6:definition "The source's normalized-place metadata contains this exact geo string. Axis order and historical geography remain uninterpreted."^^xsd:string .
+case:predicate-geo-lexical p6:objectInterpretation "record"^^xsd:string .
+case:predicate-geo-lexical p6:preferredLabel "geo-lexical"^^xsd:string .
+case:predicate-geo-lexical p6:responsibleAgent case:importer .
+case:predicate-geo-lexical p6:subjectInterpretation "record"^^xsd:string .
+case:predicate-geo-lexical rdf:type p6:PredicateRecord .
+case:predicate-material p6:definition "The source records the literal material description for the carrier; the object is a literal value."^^xsd:string .
+case:predicate-material p6:objectInterpretation "record"^^xsd:string .
+case:predicate-material p6:preferredLabel "material"^^xsd:string .
+case:predicate-material p6:responsibleAgent case:importer .
+case:predicate-material p6:subjectInterpretation "referent"^^xsd:string .
+case:predicate-material rdf:type p6:PredicateRecord .
+case:predicate-name-use p6:definition "The source uses the exact character-data form documented by the NameFormRecord for the subject referent in this context."^^xsd:string .
+case:predicate-name-use p6:objectInterpretation "record"^^xsd:string .
+case:predicate-name-use p6:preferredLabel "name-use"^^xsd:string .
+case:predicate-name-use p6:responsibleAgent case:importer .
+case:predicate-name-use p6:subjectInterpretation "referent"^^xsd:string .
+case:predicate-name-use rdf:type p6:PredicateRecord .
+case:predicate-origin-of p6:definition "The source history/origin supplies an origin context for the described carrier; no writing action or agent is inferred."^^xsd:string .
+case:predicate-origin-of p6:objectInterpretation "referent"^^xsd:string .
+case:predicate-origin-of p6:preferredLabel "origin-of"^^xsd:string .
+case:predicate-origin-of p6:responsibleAgent case:importer .
+case:predicate-origin-of p6:subjectInterpretation "referent"^^xsd:string .
+case:predicate-origin-of rdf:type p6:PredicateRecord .
+case:predicate-place p6:definition "The source supplies this place in the specifically identified origin or sending context."^^xsd:string .
+case:predicate-place p6:objectInterpretation "referent"^^xsd:string .
+case:predicate-place p6:preferredLabel "place"^^xsd:string .
+case:predicate-place p6:responsibleAgent case:importer .
+case:predicate-place p6:subjectInterpretation "referent"^^xsd:string .
+case:predicate-place rdf:type p6:PredicateRecord .
+case:predicate-publication-year p6:definition "The publicationStmt supplies the year of the XML edition's publication, as a literal gYear."^^xsd:string .
+case:predicate-publication-year p6:objectInterpretation "record"^^xsd:string .
+case:predicate-publication-year p6:preferredLabel "publication-year"^^xsd:string .
+case:predicate-publication-year p6:responsibleAgent case:importer .
+case:predicate-publication-year p6:subjectInterpretation "referent"^^xsd:string .
+case:predicate-publication-year rdf:type p6:PredicateRecord .
+case:predicate-realizes-form p6:definition "The mention's exact projected character data realizes the form documented by the NameFormRecord."^^xsd:string .
+case:predicate-realizes-form p6:objectInterpretation "record"^^xsd:string .
+case:predicate-realizes-form p6:preferredLabel "realizes-form"^^xsd:string .
+case:predicate-realizes-form p6:responsibleAgent case:importer .
+case:predicate-realizes-form p6:subjectInterpretation "record"^^xsd:string .
+case:predicate-realizes-form rdf:type p6:PredicateRecord .
+case:predicate-recipient p6:definition "The correspondence source's received action names this recipient; no receipt date or place is inferred."^^xsd:string .
+case:predicate-recipient p6:objectInterpretation "referent"^^xsd:string .
+case:predicate-recipient p6:preferredLabel "recipient"^^xsd:string .
+case:predicate-recipient p6:responsibleAgent case:importer .
+case:predicate-recipient p6:subjectInterpretation "referent"^^xsd:string .
+case:predicate-recipient rdf:type p6:PredicateRecord .
+case:predicate-repository p6:definition "The source records the literal repository field for the carrier, including an explicit unknown value."^^xsd:string .
+case:predicate-repository p6:objectInterpretation "record"^^xsd:string .
+case:predicate-repository p6:preferredLabel "repository"^^xsd:string .
+case:predicate-repository p6:responsibleAgent case:importer .
+case:predicate-repository p6:subjectInterpretation "referent"^^xsd:string .
+case:predicate-repository rdf:type p6:PredicateRecord .
+case:predicate-representation-of p6:definition "The importer assigns this constructed representation to the delimited linguistic content recorded by this TextRecord."^^xsd:string .
+case:predicate-representation-of p6:objectInterpretation "record"^^xsd:string .
+case:predicate-representation-of p6:preferredLabel "representation-of"^^xsd:string .
+case:predicate-representation-of p6:responsibleAgent case:importer .
+case:predicate-representation-of p6:subjectInterpretation "record"^^xsd:string .
+case:predicate-representation-of rdf:type p6:PredicateRecord .
+case:predicate-sender p6:definition "The source correspAction of type sent names this person in the sender role."^^xsd:string .
+case:predicate-sender p6:objectInterpretation "referent"^^xsd:string .
+case:predicate-sender p6:preferredLabel "sender"^^xsd:string .
+case:predicate-sender p6:responsibleAgent case:importer .
+case:predicate-sender p6:subjectInterpretation "referent"^^xsd:string .
+case:predicate-sender rdf:type p6:PredicateRecord .
+case:predicate-sent-document p6:definition "The source correspAction of type sent concerns the described letter."^^xsd:string .
+case:predicate-sent-document p6:objectInterpretation "referent"^^xsd:string .
+case:predicate-sent-document p6:preferredLabel "sent-document"^^xsd:string .
+case:predicate-sent-document p6:responsibleAgent case:importer .
+case:predicate-sent-document p6:subjectInterpretation "referent"^^xsd:string .
+case:predicate-sent-document rdf:type p6:PredicateRecord .
+case:predicate-shelfmark p6:definition "The source records a shelfmark string for the carrier."^^xsd:string .
+case:predicate-shelfmark p6:objectInterpretation "record"^^xsd:string .
+case:predicate-shelfmark p6:preferredLabel "shelfmark"^^xsd:string .
+case:predicate-shelfmark p6:responsibleAgent case:importer .
+case:predicate-shelfmark p6:subjectInterpretation "referent"^^xsd:string .
+case:predicate-shelfmark rdf:type p6:PredicateRecord .
+case:predicate-source-identifier p6:definition "The named source context supplies this identifier string; distinct source fields are not silently reconciled."^^xsd:string .
+case:predicate-source-identifier p6:objectInterpretation "record"^^xsd:string .
+case:predicate-source-identifier p6:preferredLabel "source-identifier"^^xsd:string .
+case:predicate-source-identifier p6:responsibleAgent case:importer .
+case:predicate-source-identifier p6:subjectInterpretation "record"^^xsd:string .
+case:predicate-source-identifier rdf:type p6:PredicateRecord .
+case:predicate-source-reference p6:definition "An identified source field supplies this URI value for the described record; no equivalence, external identity or retrieval is inferred."^^xsd:string .
+case:predicate-source-reference p6:objectInterpretation "record"^^xsd:string .
+case:predicate-source-reference p6:preferredLabel "source-reference"^^xsd:string .
+case:predicate-source-reference p6:responsibleAgent case:importer .
+case:predicate-source-reference p6:subjectInterpretation "record"^^xsd:string .
+case:predicate-source-reference rdf:type p6:PredicateRecord .
+case:predicate-text-of-document p6:definition "The linguistic content described by this TextRecord is the content of the described document under the record's explicit boundary and identity criterion."^^xsd:string .
+case:predicate-text-of-document p6:objectInterpretation "referent"^^xsd:string .
+case:predicate-text-of-document p6:preferredLabel "text-of-document"^^xsd:string .
+case:predicate-text-of-document p6:responsibleAgent case:importer .
+case:predicate-text-of-document p6:subjectInterpretation "record"^^xsd:string .
+case:predicate-text-of-document rdf:type p6:PredicateRecord .
+case:proposition-author p6:context case:context-catalogue .
+case:proposition-author p6:preferredLabel "author"^^xsd:string .
+case:proposition-author p6:propositionObjectReference case:person-schuchardt .
+case:proposition-author p6:propositionPredicate case:predicate-author .
+case:proposition-author p6:propositionSubject case:letter .
+case:proposition-author p6:responsibleAgent case:importer .
+case:proposition-author rdf:type p6:PropositionRecord .
+case:proposition-author v:sourceLocation case:source-location-c5c4145f495e44e8 .
+case:proposition-carrier-material p6:context case:context-catalogue .
+case:proposition-carrier-material p6:preferredLabel "carrier-material"^^xsd:string .
+case:proposition-carrier-material p6:propositionObjectLiteral "Papier"^^xsd:string .
+case:proposition-carrier-material p6:propositionPredicate case:predicate-material .
+case:proposition-carrier-material p6:propositionSubject case:carrier .
+case:proposition-carrier-material p6:responsibleAgent case:importer .
+case:proposition-carrier-material rdf:type p6:PropositionRecord .
+case:proposition-carrier-material v:sourceLocation case:source-location-0d7f9513fa446b6b .
+case:proposition-carrier-repository p6:context case:context-catalogue .
+case:proposition-carrier-repository p6:preferredLabel "carrier-repository"^^xsd:string .
+case:proposition-carrier-repository p6:propositionObjectLiteral "Unbekannt"^^xsd:string .
+case:proposition-carrier-repository p6:propositionPredicate case:predicate-repository .
+case:proposition-carrier-repository p6:propositionSubject case:carrier .
+case:proposition-carrier-repository p6:responsibleAgent case:importer .
+case:proposition-carrier-repository rdf:type p6:PropositionRecord .
+case:proposition-carrier-repository v:sourceLocation case:source-location-27ad4b89d10cb4d3 .
+case:proposition-carrier-shelfmark p6:context case:context-catalogue .
+case:proposition-carrier-shelfmark p6:preferredLabel "carrier-shelfmark"^^xsd:string .
+case:proposition-carrier-shelfmark p6:propositionObjectLiteral "1179"^^xsd:string .
+case:proposition-carrier-shelfmark p6:propositionPredicate case:predicate-shelfmark .
+case:proposition-carrier-shelfmark p6:propositionSubject case:carrier .
+case:proposition-carrier-shelfmark p6:responsibleAgent case:importer .
+case:proposition-carrier-shelfmark rdf:type p6:PropositionRecord .
+case:proposition-carrier-shelfmark v:sourceLocation case:source-location-40db9b98239ce112 .
+case:proposition-dateline p6:context case:context-letter .
+case:proposition-dateline p6:preferredLabel "dateline"^^xsd:string .
+case:proposition-dateline p6:propositionObjectLiteral " Graz 17. 4. 78. "^^xsd:string .
+case:proposition-dateline p6:propositionPredicate case:predicate-dateline .
+case:proposition-dateline p6:propositionSubject case:text-letter .
+case:proposition-dateline p6:responsibleAgent case:importer .
+case:proposition-dateline rdf:type p6:PropositionRecord .
+case:proposition-dateline v:sourceLocation case:source-location-2f59188d69770ec7 .
+case:proposition-denotation-diez p6:context case:context-letter .
+case:proposition-denotation-diez p6:preferredLabel "denotation-diez"^^xsd:string .
+case:proposition-denotation-diez p6:propositionObjectReference case:person-diez .
+case:proposition-denotation-diez p6:propositionPredicate case:predicate-denotes .
+case:proposition-denotation-diez p6:propositionSubject case:mention-diez .
+case:proposition-denotation-diez p6:responsibleAgent case:importer .
+case:proposition-denotation-diez rdf:type p6:PropositionRecord .
+case:proposition-denotation-diez v:sourceLocation case:source-location-6caedde52bf635fb .
+case:proposition-denotation-frollo p6:context case:context-letter .
+case:proposition-denotation-frollo p6:preferredLabel "denotation-frollo"^^xsd:string .
+case:proposition-denotation-frollo p6:propositionObjectReference case:person-frollo .
+case:proposition-denotation-frollo p6:propositionPredicate case:predicate-denotes .
+case:proposition-denotation-frollo p6:propositionSubject case:mention-frollo .
+case:proposition-denotation-frollo p6:responsibleAgent case:importer .
+case:proposition-denotation-frollo rdf:type p6:PropositionRecord .
+case:proposition-denotation-frollo v:sourceLocation case:source-location-3bbe1ff4e394c1aa .
+case:proposition-denotation-frollo-note p6:context case:context-notes .
+case:proposition-denotation-frollo-note p6:preferredLabel "denotation-frollo-note"^^xsd:string .
+case:proposition-denotation-frollo-note p6:propositionObjectReference case:person-frollo .
+case:proposition-denotation-frollo-note p6:propositionPredicate case:predicate-denotes .
+case:proposition-denotation-frollo-note p6:propositionSubject case:mention-frollo-note .
+case:proposition-denotation-frollo-note p6:responsibleAgent case:importer .
+case:proposition-denotation-frollo-note rdf:type p6:PropositionRecord .
+case:proposition-denotation-frollo-note v:sourceLocation case:source-location-ca8b555bbb1d6586 .
+case:proposition-denotation-signature p6:context case:context-letter .
+case:proposition-denotation-signature p6:preferredLabel "denotation-signature"^^xsd:string .
+case:proposition-denotation-signature p6:propositionObjectReference case:person-schuchardt .
+case:proposition-denotation-signature p6:propositionPredicate case:predicate-denotes .
+case:proposition-denotation-signature p6:propositionSubject case:mention-signature .
+case:proposition-denotation-signature p6:responsibleAgent case:importer .
+case:proposition-denotation-signature rdf:type p6:PropositionRecord .
+case:proposition-denotation-signature v:sourceLocation case:source-location-4293da327e111c73 .
+case:proposition-document-carrier p6:context case:context-construction .
+case:proposition-document-carrier p6:preferredLabel "document-carrier"^^xsd:string .
+case:proposition-document-carrier p6:propositionObjectReference case:carrier .
+case:proposition-document-carrier p6:propositionPredicate case:predicate-carrier .
+case:proposition-document-carrier p6:propositionSubject case:letter .
+case:proposition-document-carrier p6:responsibleAgent case:importer .
+case:proposition-document-carrier rdf:type p6:PropositionRecord .
+case:proposition-document-carrier v:sourceLocation case:source-location-a72a1550972add93 .
+case:proposition-geo-lexical p6:context case:context-normalized-place .
+case:proposition-geo-lexical p6:preferredLabel "geo-lexical"^^xsd:string .
+case:proposition-geo-lexical p6:propositionObjectLiteral "15.45,47.06667"^^xsd:string .
+case:proposition-geo-lexical p6:propositionPredicate case:predicate-geo-lexical .
+case:proposition-geo-lexical p6:propositionSubject case:place-graz .
+case:proposition-geo-lexical p6:responsibleAgent case:importer .
+case:proposition-geo-lexical rdf:type p6:PropositionRecord .
+case:proposition-geo-lexical v:sourceLocation case:source-location-066c93f71aaddb20 .
+case:proposition-name-author p6:context case:context-catalogue .
+case:proposition-name-author p6:preferredLabel "name-author"^^xsd:string .
+case:proposition-name-author p6:propositionObjectReference case:form-author .
+case:proposition-name-author p6:propositionPredicate case:predicate-name-use .
+case:proposition-name-author p6:propositionSubject case:person-schuchardt .
+case:proposition-name-author p6:responsibleAgent case:importer .
+case:proposition-name-author rdf:type p6:PropositionRecord .
+case:proposition-name-author v:sourceLocation case:source-location-c5c4145f495e44e8 .
+case:proposition-name-diez p6:context case:context-letter .
+case:proposition-name-diez p6:preferredLabel "name-diez"^^xsd:string .
+case:proposition-name-diez p6:propositionObjectReference case:form-diez .
+case:proposition-name-diez p6:propositionPredicate case:predicate-name-use .
+case:proposition-name-diez p6:propositionSubject case:person-diez .
+case:proposition-name-diez p6:responsibleAgent case:importer .
+case:proposition-name-diez rdf:type p6:PropositionRecord .
+case:proposition-name-diez v:sourceLocation case:source-location-3f07faa1a1fee660 .
+case:proposition-name-frollo p6:context case:context-letter .
+case:proposition-name-frollo p6:preferredLabel "name-frollo"^^xsd:string .
+case:proposition-name-frollo p6:propositionObjectReference case:form-frollo .
+case:proposition-name-frollo p6:propositionPredicate case:predicate-name-use .
+case:proposition-name-frollo p6:propositionSubject case:person-frollo .
+case:proposition-name-frollo p6:responsibleAgent case:importer .
+case:proposition-name-frollo rdf:type p6:PropositionRecord .
+case:proposition-name-frollo v:sourceLocation case:source-location-76deffd4dda2fce4 .
+case:proposition-name-frollo-note p6:context case:context-notes .
+case:proposition-name-frollo-note p6:preferredLabel "name-frollo-note"^^xsd:string .
+case:proposition-name-frollo-note p6:propositionObjectReference case:form-frollo-note .
+case:proposition-name-frollo-note p6:propositionPredicate case:predicate-name-use .
+case:proposition-name-frollo-note p6:propositionSubject case:person-frollo .
+case:proposition-name-frollo-note p6:responsibleAgent case:importer .
+case:proposition-name-frollo-note rdf:type p6:PropositionRecord .
+case:proposition-name-frollo-note v:sourceLocation case:source-location-b5fdb45e81716582 .
+case:proposition-name-graz-origin p6:context case:context-origin .
+case:proposition-name-graz-origin p6:preferredLabel "name-graz-origin"^^xsd:string .
+case:proposition-name-graz-origin p6:propositionObjectReference case:form-graz-origin .
+case:proposition-name-graz-origin p6:propositionPredicate case:predicate-name-use .
+case:proposition-name-graz-origin p6:propositionSubject case:place-graz .
+case:proposition-name-graz-origin p6:responsibleAgent case:importer .
+case:proposition-name-graz-origin rdf:type p6:PropositionRecord .
+case:proposition-name-graz-origin v:sourceLocation case:source-location-717bf8de60922c23 .
+case:proposition-name-graz-sending p6:context case:context-sending .
+case:proposition-name-graz-sending p6:preferredLabel "name-graz-sending"^^xsd:string .
+case:proposition-name-graz-sending p6:propositionObjectReference case:form-graz-sending .
+case:proposition-name-graz-sending p6:propositionPredicate case:predicate-name-use .
+case:proposition-name-graz-sending p6:propositionSubject case:place-graz .
+case:proposition-name-graz-sending p6:responsibleAgent case:importer .
+case:proposition-name-graz-sending rdf:type p6:PropositionRecord .
+case:proposition-name-graz-sending v:sourceLocation case:source-location-0eba4d42fbac41d0 .
+case:proposition-name-recipient p6:context case:context-correspondence .
+case:proposition-name-recipient p6:preferredLabel "name-recipient"^^xsd:string .
+case:proposition-name-recipient p6:propositionObjectReference case:form-recipient .
+case:proposition-name-recipient p6:propositionPredicate case:predicate-name-use .
+case:proposition-name-recipient p6:propositionSubject case:person-hasdeu .
+case:proposition-name-recipient p6:responsibleAgent case:importer .
+case:proposition-name-recipient rdf:type p6:PropositionRecord .
+case:proposition-name-recipient v:sourceLocation case:source-location-d8133af46553dc91 .
+case:proposition-name-sender p6:context case:context-sending .
+case:proposition-name-sender p6:preferredLabel "name-sender"^^xsd:string .
+case:proposition-name-sender p6:propositionObjectReference case:form-sender .
+case:proposition-name-sender p6:propositionPredicate case:predicate-name-use .
+case:proposition-name-sender p6:propositionSubject case:person-schuchardt .
+case:proposition-name-sender p6:responsibleAgent case:importer .
+case:proposition-name-sender rdf:type p6:PropositionRecord .
+case:proposition-name-sender v:sourceLocation case:source-location-58923ad3d6bfac9a .
+case:proposition-name-signature p6:context case:context-letter .
+case:proposition-name-signature p6:preferredLabel "name-signature"^^xsd:string .
+case:proposition-name-signature p6:propositionObjectReference case:form-signature .
+case:proposition-name-signature p6:propositionPredicate case:predicate-name-use .
+case:proposition-name-signature p6:propositionSubject case:person-schuchardt .
+case:proposition-name-signature p6:responsibleAgent case:importer .
+case:proposition-name-signature rdf:type p6:PropositionRecord .
+case:proposition-name-signature v:sourceLocation case:source-location-24e8905c6183b66a .
+case:proposition-origin-carrier p6:context case:context-origin .
+case:proposition-origin-carrier p6:preferredLabel "origin-carrier"^^xsd:string .
+case:proposition-origin-carrier p6:propositionObjectReference case:carrier .
+case:proposition-origin-carrier p6:propositionPredicate case:predicate-origin-of .
+case:proposition-origin-carrier p6:propositionSubject case:event-origin .
+case:proposition-origin-carrier p6:responsibleAgent case:importer .
+case:proposition-origin-carrier rdf:type p6:PropositionRecord .
+case:proposition-origin-carrier v:sourceLocation case:source-location-1fb2513682d00de5 .
+case:proposition-origin-date p6:context case:context-origin .
+case:proposition-origin-date p6:preferredLabel "origin-date"^^xsd:string .
+case:proposition-origin-date p6:propositionObjectLiteral "1878-04-17"^^xsd:date .
+case:proposition-origin-date p6:propositionPredicate case:predicate-date .
+case:proposition-origin-date p6:propositionSubject case:event-origin .
+case:proposition-origin-date p6:responsibleAgent case:importer .
+case:proposition-origin-date rdf:type p6:PropositionRecord .
+case:proposition-origin-date v:sourceLocation case:source-location-0ea869afb66e7f28 .
+case:proposition-origin-place p6:context case:context-origin .
+case:proposition-origin-place p6:preferredLabel "origin-place"^^xsd:string .
+case:proposition-origin-place p6:propositionObjectReference case:place-graz .
+case:proposition-origin-place p6:propositionPredicate case:predicate-place .
+case:proposition-origin-place p6:propositionSubject case:event-origin .
+case:proposition-origin-place p6:responsibleAgent case:importer .
+case:proposition-origin-place rdf:type p6:PropositionRecord .
+case:proposition-origin-place v:sourceLocation case:source-location-717bf8de60922c23 .
+case:proposition-publication-year p6:context case:context-publication .
+case:proposition-publication-year p6:preferredLabel "publication-year"^^xsd:string .
+case:proposition-publication-year p6:propositionObjectLiteral "2022"^^xsd:gYear .
+case:proposition-publication-year p6:propositionPredicate case:predicate-publication-year .
+case:proposition-publication-year p6:propositionSubject case:publication .
+case:proposition-publication-year p6:responsibleAgent case:importer .
+case:proposition-publication-year rdf:type p6:PropositionRecord .
+case:proposition-publication-year v:sourceLocation case:source-location-0e71020d6f5e7c67 .
+case:proposition-realization-diez p6:context case:context-letter .
+case:proposition-realization-diez p6:preferredLabel "realization-diez"^^xsd:string .
+case:proposition-realization-diez p6:propositionObjectReference case:form-diez .
+case:proposition-realization-diez p6:propositionPredicate case:predicate-realizes-form .
+case:proposition-realization-diez p6:propositionSubject case:mention-diez .
+case:proposition-realization-diez p6:responsibleAgent case:importer .
+case:proposition-realization-diez rdf:type p6:PropositionRecord .
+case:proposition-realization-diez v:sourceLocation case:source-location-3f07faa1a1fee660 .
+case:proposition-realization-frollo p6:context case:context-letter .
+case:proposition-realization-frollo p6:preferredLabel "realization-frollo"^^xsd:string .
+case:proposition-realization-frollo p6:propositionObjectReference case:form-frollo .
+case:proposition-realization-frollo p6:propositionPredicate case:predicate-realizes-form .
+case:proposition-realization-frollo p6:propositionSubject case:mention-frollo .
+case:proposition-realization-frollo p6:responsibleAgent case:importer .
+case:proposition-realization-frollo rdf:type p6:PropositionRecord .
+case:proposition-realization-frollo v:sourceLocation case:source-location-76deffd4dda2fce4 .
+case:proposition-realization-frollo-note p6:context case:context-notes .
+case:proposition-realization-frollo-note p6:preferredLabel "realization-frollo-note"^^xsd:string .
+case:proposition-realization-frollo-note p6:propositionObjectReference case:form-frollo-note .
+case:proposition-realization-frollo-note p6:propositionPredicate case:predicate-realizes-form .
+case:proposition-realization-frollo-note p6:propositionSubject case:mention-frollo-note .
+case:proposition-realization-frollo-note p6:responsibleAgent case:importer .
+case:proposition-realization-frollo-note rdf:type p6:PropositionRecord .
+case:proposition-realization-frollo-note v:sourceLocation case:source-location-b5fdb45e81716582 .
+case:proposition-realization-signature p6:context case:context-letter .
+case:proposition-realization-signature p6:preferredLabel "realization-signature"^^xsd:string .
+case:proposition-realization-signature p6:propositionObjectReference case:form-signature .
+case:proposition-realization-signature p6:propositionPredicate case:predicate-realizes-form .
+case:proposition-realization-signature p6:propositionSubject case:mention-signature .
+case:proposition-realization-signature p6:responsibleAgent case:importer .
+case:proposition-realization-signature rdf:type p6:PropositionRecord .
+case:proposition-realization-signature v:sourceLocation case:source-location-24e8905c6183b66a .
+case:proposition-recipient p6:context case:context-correspondence .
+case:proposition-recipient p6:preferredLabel "recipient"^^xsd:string .
+case:proposition-recipient p6:propositionObjectReference case:person-hasdeu .
+case:proposition-recipient p6:propositionPredicate case:predicate-recipient .
+case:proposition-recipient p6:propositionSubject case:letter .
+case:proposition-recipient p6:responsibleAgent case:importer .
+case:proposition-recipient rdf:type p6:PropositionRecord .
+case:proposition-recipient v:sourceLocation case:source-location-d8133af46553dc91 .
+case:proposition-reference-author-ref p6:context case:context-catalogue .
+case:proposition-reference-author-ref p6:preferredLabel "reference-author-ref"^^xsd:string .
+case:proposition-reference-author-ref p6:propositionObjectLiteral "https://gams.uni-graz.at/o:hsa.persons#P.109"^^xsd:anyURI .
+case:proposition-reference-author-ref p6:propositionPredicate case:predicate-source-reference .
+case:proposition-reference-author-ref p6:propositionSubject case:person-schuchardt .
+case:proposition-reference-author-ref p6:responsibleAgent case:importer .
+case:proposition-reference-author-ref rdf:type p6:PropositionRecord .
+case:proposition-reference-author-ref v:sourceLocation case:source-location-f263e2ec5e44226f .
+case:proposition-reference-diez p6:context case:context-letter .
+case:proposition-reference-diez p6:preferredLabel "reference-diez"^^xsd:string .
+case:proposition-reference-diez p6:propositionObjectLiteral "https://gams.uni-graz.at/o:hsa.persons#P.1394"^^xsd:anyURI .
+case:proposition-reference-diez p6:propositionPredicate case:predicate-source-reference .
+case:proposition-reference-diez p6:propositionSubject case:person-diez .
+case:proposition-reference-diez p6:responsibleAgent case:importer .
+case:proposition-reference-diez rdf:type p6:PropositionRecord .
+case:proposition-reference-diez v:sourceLocation case:source-location-6caedde52bf635fb .
+case:proposition-reference-frollo p6:context case:context-letter .
+case:proposition-reference-frollo p6:preferredLabel "reference-frollo"^^xsd:string .
+case:proposition-reference-frollo p6:propositionObjectLiteral "https://gams.uni-graz.at/o:hsa.persons#P.1537"^^xsd:anyURI .
+case:proposition-reference-frollo p6:propositionPredicate case:predicate-source-reference .
+case:proposition-reference-frollo p6:propositionSubject case:person-frollo .
+case:proposition-reference-frollo p6:responsibleAgent case:importer .
+case:proposition-reference-frollo rdf:type p6:PropositionRecord .
+case:proposition-reference-frollo v:sourceLocation case:source-location-3bbe1ff4e394c1aa .
+case:proposition-reference-frollo-note p6:context case:context-notes .
+case:proposition-reference-frollo-note p6:preferredLabel "reference-frollo-note"^^xsd:string .
+case:proposition-reference-frollo-note p6:propositionObjectLiteral "https://gams.uni-graz.at/o:hsa.persons#P.1537"^^xsd:anyURI .
+case:proposition-reference-frollo-note p6:propositionPredicate case:predicate-source-reference .
+case:proposition-reference-frollo-note p6:propositionSubject case:person-frollo .
+case:proposition-reference-frollo-note p6:responsibleAgent case:importer .
+case:proposition-reference-frollo-note rdf:type p6:PropositionRecord .
+case:proposition-reference-frollo-note v:sourceLocation case:source-location-ca8b555bbb1d6586 .
+case:proposition-reference-graz-origin-corresp p6:context case:context-origin .
+case:proposition-reference-graz-origin-corresp p6:preferredLabel "reference-graz-origin-corresp"^^xsd:string .
+case:proposition-reference-graz-origin-corresp p6:propositionObjectLiteral "https://gams.uni-graz.at/o:hsa.places#PL.6"^^xsd:anyURI .
+case:proposition-reference-graz-origin-corresp p6:propositionPredicate case:predicate-source-reference .
+case:proposition-reference-graz-origin-corresp p6:propositionSubject case:place-graz .
+case:proposition-reference-graz-origin-corresp p6:responsibleAgent case:importer .
+case:proposition-reference-graz-origin-corresp rdf:type p6:PropositionRecord .
+case:proposition-reference-graz-origin-corresp v:sourceLocation case:source-location-fd1201196f5be770 .
+case:proposition-reference-graz-origin-ref p6:context case:context-origin .
+case:proposition-reference-graz-origin-ref p6:preferredLabel "reference-graz-origin-ref"^^xsd:string .
+case:proposition-reference-graz-origin-ref p6:propositionObjectLiteral "http://sws.geonames.org/2778067"^^xsd:anyURI .
+case:proposition-reference-graz-origin-ref p6:propositionPredicate case:predicate-source-reference .
+case:proposition-reference-graz-origin-ref p6:propositionSubject case:place-graz .
+case:proposition-reference-graz-origin-ref p6:responsibleAgent case:importer .
+case:proposition-reference-graz-origin-ref rdf:type p6:PropositionRecord .
+case:proposition-reference-graz-origin-ref v:sourceLocation case:source-location-67326d3d963a262d .
+case:proposition-reference-graz-sending-corresp p6:context case:context-sending .
+case:proposition-reference-graz-sending-corresp p6:preferredLabel "reference-graz-sending-corresp"^^xsd:string .
+case:proposition-reference-graz-sending-corresp p6:propositionObjectLiteral "https://gams.uni-graz.at/o:hsa.places#PL.6"^^xsd:anyURI .
+case:proposition-reference-graz-sending-corresp p6:propositionPredicate case:predicate-source-reference .
+case:proposition-reference-graz-sending-corresp p6:propositionSubject case:place-graz .
+case:proposition-reference-graz-sending-corresp p6:responsibleAgent case:importer .
+case:proposition-reference-graz-sending-corresp rdf:type p6:PropositionRecord .
+case:proposition-reference-graz-sending-corresp v:sourceLocation case:source-location-780387c636c4c516 .
+case:proposition-reference-graz-sending-ref p6:context case:context-sending .
+case:proposition-reference-graz-sending-ref p6:preferredLabel "reference-graz-sending-ref"^^xsd:string .
+case:proposition-reference-graz-sending-ref p6:propositionObjectLiteral "http://sws.geonames.org/2778067"^^xsd:anyURI .
+case:proposition-reference-graz-sending-ref p6:propositionPredicate case:predicate-source-reference .
+case:proposition-reference-graz-sending-ref p6:propositionSubject case:place-graz .
+case:proposition-reference-graz-sending-ref p6:responsibleAgent case:importer .
+case:proposition-reference-graz-sending-ref rdf:type p6:PropositionRecord .
+case:proposition-reference-graz-sending-ref v:sourceLocation case:source-location-67a23c0c8dc26683 .
+case:proposition-reference-recipient-corresp p6:context case:context-correspondence .
+case:proposition-reference-recipient-corresp p6:preferredLabel "reference-recipient-corresp"^^xsd:string .
+case:proposition-reference-recipient-corresp p6:propositionObjectLiteral "https://gams.uni-graz.at/o:hsa.persons#P.1720"^^xsd:anyURI .
+case:proposition-reference-recipient-corresp p6:propositionPredicate case:predicate-source-reference .
+case:proposition-reference-recipient-corresp p6:propositionSubject case:person-hasdeu .
+case:proposition-reference-recipient-corresp p6:responsibleAgent case:importer .
+case:proposition-reference-recipient-corresp rdf:type p6:PropositionRecord .
+case:proposition-reference-recipient-corresp v:sourceLocation case:source-location-3a5ab3446617c12d .
+case:proposition-reference-recipient-ref p6:context case:context-correspondence .
+case:proposition-reference-recipient-ref p6:preferredLabel "reference-recipient-ref"^^xsd:string .
+case:proposition-reference-recipient-ref p6:propositionObjectLiteral "https://viaf.org/viaf/65406496"^^xsd:anyURI .
+case:proposition-reference-recipient-ref p6:propositionPredicate case:predicate-source-reference .
+case:proposition-reference-recipient-ref p6:propositionSubject case:person-hasdeu .
+case:proposition-reference-recipient-ref p6:responsibleAgent case:importer .
+case:proposition-reference-recipient-ref rdf:type p6:PropositionRecord .
+case:proposition-reference-recipient-ref v:sourceLocation case:source-location-ed9403bddb18f915 .
+case:proposition-reference-sender-corresp p6:context case:context-sending .
+case:proposition-reference-sender-corresp p6:preferredLabel "reference-sender-corresp"^^xsd:string .
+case:proposition-reference-sender-corresp p6:propositionObjectLiteral "https://gams.uni-graz.at/o:hsa.persons#P.109"^^xsd:anyURI .
+case:proposition-reference-sender-corresp p6:propositionPredicate case:predicate-source-reference .
+case:proposition-reference-sender-corresp p6:propositionSubject case:person-schuchardt .
+case:proposition-reference-sender-corresp p6:responsibleAgent case:importer .
+case:proposition-reference-sender-corresp rdf:type p6:PropositionRecord .
+case:proposition-reference-sender-corresp v:sourceLocation case:source-location-5620d7057a950a75 .
+case:proposition-reference-sender-ref p6:context case:context-sending .
+case:proposition-reference-sender-ref p6:preferredLabel "reference-sender-ref"^^xsd:string .
+case:proposition-reference-sender-ref p6:propositionObjectLiteral "https://viaf.org/viaf/261931943"^^xsd:anyURI .
+case:proposition-reference-sender-ref p6:propositionPredicate case:predicate-source-reference .
+case:proposition-reference-sender-ref p6:propositionSubject case:person-schuchardt .
+case:proposition-reference-sender-ref p6:responsibleAgent case:importer .
+case:proposition-reference-sender-ref rdf:type p6:PropositionRecord .
+case:proposition-reference-sender-ref v:sourceLocation case:source-location-dff6bafb2a3b4a13 .
+case:proposition-reference-signature p6:context case:context-letter .
+case:proposition-reference-signature p6:preferredLabel "reference-signature"^^xsd:string .
+case:proposition-reference-signature p6:propositionObjectLiteral "https://gams.uni-graz.at/o:hsa.persons#P.109"^^xsd:anyURI .
+case:proposition-reference-signature p6:propositionPredicate case:predicate-source-reference .
+case:proposition-reference-signature p6:propositionSubject case:person-schuchardt .
+case:proposition-reference-signature p6:responsibleAgent case:importer .
+case:proposition-reference-signature rdf:type p6:PropositionRecord .
+case:proposition-reference-signature v:sourceLocation case:source-location-4293da327e111c73 .
+case:proposition-representation-assignment p6:context case:context-construction .
+case:proposition-representation-assignment p6:preferredLabel "representation-assignment"^^xsd:string .
+case:proposition-representation-assignment p6:propositionObjectReference case:text-letter .
+case:proposition-representation-assignment p6:propositionPredicate case:predicate-representation-of .
+case:proposition-representation-assignment p6:propositionSubject case:representation-letter .
+case:proposition-representation-assignment p6:responsibleAgent case:importer .
+case:proposition-representation-assignment rdf:type p6:PropositionRecord .
+case:proposition-sender p6:context case:context-sending .
+case:proposition-sender p6:preferredLabel "sender"^^xsd:string .
+case:proposition-sender p6:propositionObjectReference case:person-schuchardt .
+case:proposition-sender p6:propositionPredicate case:predicate-sender .
+case:proposition-sender p6:propositionSubject case:event-sending .
+case:proposition-sender p6:responsibleAgent case:importer .
+case:proposition-sender rdf:type p6:PropositionRecord .
+case:proposition-sender v:sourceLocation case:source-location-58923ad3d6bfac9a .
+case:proposition-sending-date p6:context case:context-sending .
+case:proposition-sending-date p6:preferredLabel "sending-date"^^xsd:string .
+case:proposition-sending-date p6:propositionObjectLiteral "1878-04-17"^^xsd:date .
+case:proposition-sending-date p6:propositionPredicate case:predicate-date .
+case:proposition-sending-date p6:propositionSubject case:event-sending .
+case:proposition-sending-date p6:responsibleAgent case:importer .
+case:proposition-sending-date rdf:type p6:PropositionRecord .
+case:proposition-sending-date v:sourceLocation case:source-location-b2f008319fe9f70a .
+case:proposition-sending-place p6:context case:context-sending .
+case:proposition-sending-place p6:preferredLabel "sending-place"^^xsd:string .
+case:proposition-sending-place p6:propositionObjectReference case:place-graz .
+case:proposition-sending-place p6:propositionPredicate case:predicate-place .
+case:proposition-sending-place p6:propositionSubject case:event-sending .
+case:proposition-sending-place p6:responsibleAgent case:importer .
+case:proposition-sending-place rdf:type p6:PropositionRecord .
+case:proposition-sending-place v:sourceLocation case:source-location-0eba4d42fbac41d0 .
+case:proposition-sent-document p6:context case:context-sending .
+case:proposition-sent-document p6:preferredLabel "sent-document"^^xsd:string .
+case:proposition-sent-document p6:propositionObjectReference case:letter .
+case:proposition-sent-document p6:propositionPredicate case:predicate-sent-document .
+case:proposition-sent-document p6:propositionSubject case:event-sending .
+case:proposition-sent-document p6:responsibleAgent case:importer .
+case:proposition-sent-document rdf:type p6:PropositionRecord .
+case:proposition-sent-document v:sourceLocation case:source-location-716fe562476ee93b .
+case:proposition-source-div-id p6:context case:context-letter .
+case:proposition-source-div-id p6:preferredLabel "source-div-id"^^xsd:string .
+case:proposition-source-div-id p6:propositionObjectLiteral "L.4492"^^xsd:string .
+case:proposition-source-div-id p6:propositionPredicate case:predicate-source-identifier .
+case:proposition-source-div-id p6:propositionSubject case:letter .
+case:proposition-source-div-id p6:responsibleAgent case:importer .
+case:proposition-source-div-id rdf:type p6:PropositionRecord .
+case:proposition-source-div-id v:sourceLocation case:source-location-d34b9806fe8a7258 .
+case:proposition-source-pid p6:context case:context-publication .
+case:proposition-source-pid p6:preferredLabel "source-pid"^^xsd:string .
+case:proposition-source-pid p6:propositionObjectLiteral "o:hsa.letter.4493"^^xsd:string .
+case:proposition-source-pid p6:propositionPredicate case:predicate-source-identifier .
+case:proposition-source-pid p6:propositionSubject case:letter .
+case:proposition-source-pid p6:responsibleAgent case:importer .
+case:proposition-source-pid rdf:type p6:PropositionRecord .
+case:proposition-source-pid v:sourceLocation case:source-location-aed6ee601718ab0e .
+case:proposition-text-document p6:context case:context-construction .
+case:proposition-text-document p6:preferredLabel "text-document"^^xsd:string .
+case:proposition-text-document p6:propositionObjectReference case:letter .
+case:proposition-text-document p6:propositionPredicate case:predicate-text-of-document .
+case:proposition-text-document p6:propositionSubject case:text-letter .
+case:proposition-text-document p6:responsibleAgent case:importer .
+case:proposition-text-document rdf:type p6:PropositionRecord .
+case:proposition-text-document v:sourceLocation case:source-location-a0978affd822896b .
+case:publication p6:expectedReferentType case:concept-Publication .
+case:publication p6:preferredLabel "XML edition publication described in publicationStmt"^^xsd:string .
+case:publication p6:responsibleAgent case:importer .
+case:publication rdf:type p6:ReferentRecord .
+case:publication v:construction "Revisable expected referent type assigned by this bounded import profile from the stated source context; no foreign class membership or independent historical verification."^^xsd:string .
+case:representation-letter p6:content """
+        
+         Graz 17. 4. 78. 
+         Verehrter Freund! 
+        Es ist mir sehr angenehm, dass Sie meinen kürzesten Brief wahrhaft freundschaftlich gefunden haben; es wäre mir aber lieb gewesen, wenn Sie auch in meinen beiden langen Briefen
+ Spuren wahrer Freundschaft entdeckt hätten. Ich bin im Ganzen kein Freund vom Briefschreiben und solche lange gar lasse ich nur im äussersten Nothfall vom Stapel. Hätten Sie nur eine Andeutung darüber gegeben wie weit Sie den von mir dargelegten Gründen Anerkennung gewähren! Ihnen kommt es vor Allem auf das Ergebniss an, mir auf den 
+Modus. Und so auch in der Wissenschaft selbst. Wie viele Bücher, an deren Ergebnissen ich absolut Nichts auszusetzen habe, langweilen mich! und umgekehrt interessiren mich viele, wo ich gegen einzelne Ergebnisse Einwendungen zu machen habe, im allerhöchsten Grade. Es kommt doch überall nur auf den Weg an, der uns zu Etwas führt! Der schalste Kopf kann einen glücklichen Fund thun und der scharfsinnigste Kopf kann das Ziel verfehlen, zu dem er gelangen wollte; aber sein Spaziergang wird so mannigfache Veduten nach allen Seiten eröffnen, dass man dadurch auf’s Lebhafteste angeregt und erfreut wird. Und wenn er das Gewollte nicht findet, wird er unterwegs vielleicht Wichtigeres finden.
+        Wie werden wir uns über die strittigen Punkte verständigen? Mündlich ginge das sehr rasch; aber schriftlich wird das länger dauern, als Ihnen und mir lieb sein würde. Ich sage: mir; denn ich hätte sehr gern meine Einleitung gegen Mitte Mai fertig in Händen gehabt. Eines macht mir 
+ernste Bedenken, dass Sie nämlich meine Gleichung -lla : -o nicht annehmen. Ich gestehe Ihnen offen, ich halte dieselbe sicherer, als Alles was Sie oder ich je aufgestellt haben. Ich weiss nicht, welche Lücke in der Beweisführung ist. Die Analogie der Formen in -oa mit alban. in -ia und 
+-ua wird man auf’s Entschiedenste bestreiten müssen, da ja das o zum Wortstamm gehört, wie 
+
+makedorum. steao = stella, šao = s
+ella u.s.w. unwiderleglich zeigen. Und wie erklären Sie stea = stiella? Wegfall von -lla!
+        Sie fragen, ob 
+makedor. sté-o-lĭi = sté-la-lĭi, also illa zweimal differenzirt sei. Das ist ja gerade nicht meine Meinung; sondern stéo-lĭi ist = stella illae (Nominativ des Nomens mit Dativ des Artikels, wie auch in andern Fällen verbunden). Sie sprechen auch von oa = la; ich meine ja aber 
+o = lla. Auch in Bezug auf fughicel verstehen Sie mich immer noch nicht; ich verlange ein Beispiel für n = ngh (funicel = 
+funghicel). Für u = i nach Palatalen kommt 
+giur allerdings in Betracht; ich verzichte sogar darauf, u aus 
+y abzuleiten, wie 
+Diez thut; denn vor u = y bleibt der Guttural. + Aber 
+acioae = it. ačaio (das i nach dem c ist ja nur graphisch) verstehe ich nicht. In aciuare ist auch die Endung are bedenklich und, mir wenigstens, der Bedeutungsübergang. Wie dem aber auch sein mag, diese phonetischen Auseinandersetzungen 
+durften Sie sich nicht ersparen; denn Sie können unmöglich behaupten, dass es sich um selbstverständliche Dinge handelt.
+        Schicken Sie mir Ihre Liste möglichst bald; ich werde entweder Ihre Gründe widerlegen, resp. meine Auffassung durch weitere Gründe stützen oder mich besiegt bekennen. Dann aber müssen die Verhandlungen ein Ende haben. Wir dürfen die Schwierigkeiten, die wegen des Friedens von S. Stefano entstehen, nicht nachahmen. Wir könnten ja die Sache so machen. In Bezug auf Vieles werden wir uns vollkommen verständigen, in Bezug auf Anderes uns wenigstens annähern; was dann von Meinungsdifferenzen zwischen uns übrig bleibt, legen wir dem Publikum in der Gestalt vor, dass Sie Anmerkungen unmittelbar unter den Text meiner Einleitung geben sei es in 
+rumänischer, sei es in französischer Sprache. Gefällt Ihnen dieser Vorschlag?
+        Das Frollo die Jassier Professur erhalten möge, wünsche ich ihm von Herzen; bitte, grüssen Sie ihn bestens von mir.
+        
+          Mit der Hoffnung auf glückliches rasches Einvernehmen
+          
+          Ihr ganz ergebener
+          
+          
+            H. Schuchardt
+          
+        
+        
+          Gegen lu = le habe ich an sich ja Nichts (obwohl ich luturghi = liturghi nicht citiren würde); aber was haben Sie gegen luò : luà = ploò : ploà
+            ?
+          
+            + Und sollte unbetontes 
+i vor Vokal zu u geworden sein. Aus acquiere war doch ačere zu erwarten, wie aus quietus: (in)cet
+            .
+        
+      """^^xsd:string .
+case:representation-letter p6:preferredLabel "representation-letter"^^xsd:string .
+case:representation-letter p6:responsibleAgent case:importer .
+case:representation-letter rdf:type p6:RepresentationRecord .
+case:representation-letter v:projection "ElementTree XML character data in document order, retaining parsed XML whitespace and child tails; note subtrees excluded from letter, each separately projected; no separators inserted for markup. XML line-end normalization differs from archival bytes."^^xsd:string .
+case:representation-letter v:sourceSnapshot case:source-snapshot .
+case:representation-note-01 p6:content "V. lettera precedente del Hasdeu (XXXV)."^^xsd:string .
+case:representation-note-01 p6:preferredLabel "representation-note-01"^^xsd:string .
+case:representation-note-01 p6:responsibleAgent case:importer .
+case:representation-note-01 rdf:type p6:RepresentationRecord .
+case:representation-note-01 v:projection "ElementTree XML character data in document order, retaining parsed XML whitespace and child tails; note subtrees excluded from letter, each separately projected; no separators inserted for markup. XML line-end normalization differs from archival bytes."^^xsd:string .
+case:representation-note-01 v:sourceSnapshot case:source-snapshot .
+case:representation-note-02 p6:content "Lo Schuchardt si riferisce alle lettere qui numerate XXXII e XXXIII."^^xsd:string .
+case:representation-note-02 p6:preferredLabel "representation-note-02"^^xsd:string .
+case:representation-note-02 p6:responsibleAgent case:importer .
+case:representation-note-02 rdf:type p6:RepresentationRecord .
+case:representation-note-02 v:projection "ElementTree XML character data in document order, retaining parsed XML whitespace and child tails; note subtrees excluded from letter, each separately projected; no separators inserted for markup. XML line-end normalization differs from archival bytes."^^xsd:string .
+case:representation-note-02 v:sourceSnapshot case:source-snapshot .
+case:representation-note-03 p6:content """Lo Schuchardt risponde qui alle riserve avanzate dal Hasdeu nella lettera precedente. Sul problema cf. 
+              
+                CdB S
+              , pp. xxxvi-xxxix, e v. XXXII, n. 28."""^^xsd:string .
+case:representation-note-03 p6:preferredLabel "representation-note-03"^^xsd:string .
+case:representation-note-03 p6:responsibleAgent case:importer .
+case:representation-note-03 rdf:type p6:RepresentationRecord .
+case:representation-note-03 v:projection "ElementTree XML character data in document order, retaining parsed XML whitespace and child tails; note subtrees excluded from letter, each separately projected; no separators inserted for markup. XML line-end normalization differs from archival bytes."^^xsd:string .
+case:representation-note-03 v:sourceSnapshot case:source-snapshot .
+case:representation-note-04 p6:content "V. XXXV e n. 8."^^xsd:string .
+case:representation-note-04 p6:preferredLabel "representation-note-04"^^xsd:string .
+case:representation-note-04 p6:responsibleAgent case:importer .
+case:representation-note-04 rdf:type p6:RepresentationRecord .
+case:representation-note-04 v:projection "ElementTree XML character data in document order, retaining parsed XML whitespace and child tails; note subtrees excluded from letter, each separately projected; no separators inserted for markup. XML line-end normalization differs from archival bytes."^^xsd:string .
+case:representation-note-04 v:sourceSnapshot case:source-snapshot .
+case:representation-note-05 p6:content "V. XXXVIII e n. 40."^^xsd:string .
+case:representation-note-05 p6:preferredLabel "representation-note-05"^^xsd:string .
+case:representation-note-05 p6:responsibleAgent case:importer .
+case:representation-note-05 rdf:type p6:RepresentationRecord .
+case:representation-note-05 v:projection "ElementTree XML character data in document order, retaining parsed XML whitespace and child tails; note subtrees excluded from letter, each separately projected; no separators inserted for markup. XML line-end normalization differs from archival bytes."^^xsd:string .
+case:representation-note-05 v:sourceSnapshot case:source-snapshot .
+case:representation-note-06 p6:content "V. lettera XXXVIII."^^xsd:string .
+case:representation-note-06 p6:preferredLabel "representation-note-06"^^xsd:string .
+case:representation-note-06 p6:responsibleAgent case:importer .
+case:representation-note-06 rdf:type p6:RepresentationRecord .
+case:representation-note-06 v:projection "ElementTree XML character data in document order, retaining parsed XML whitespace and child tails; note subtrees excluded from letter, each separately projected; no separators inserted for markup. XML line-end normalization differs from archival bytes."^^xsd:string .
+case:representation-note-06 v:sourceSnapshot case:source-snapshot .
+case:representation-note-07 p6:content "V. XXXII, n. 37."^^xsd:string .
+case:representation-note-07 p6:preferredLabel "representation-note-07"^^xsd:string .
+case:representation-note-07 p6:responsibleAgent case:importer .
+case:representation-note-07 rdf:type p6:RepresentationRecord .
+case:representation-note-07 v:projection "ElementTree XML character data in document order, retaining parsed XML whitespace and child tails; note subtrees excluded from letter, each separately projected; no separators inserted for markup. XML line-end normalization differs from archival bytes."^^xsd:string .
+case:representation-note-07 v:sourceSnapshot case:source-snapshot .
+case:representation-note-08 p6:content """
+            G.L. Frollo: v. 
+XXXV e n. 5; 
+XXXVIII e n. 2."""^^xsd:string .
+case:representation-note-08 p6:preferredLabel "representation-note-08"^^xsd:string .
+case:representation-note-08 p6:responsibleAgent case:importer .
+case:representation-note-08 rdf:type p6:RepresentationRecord .
+case:representation-note-08 v:projection "ElementTree XML character data in document order, retaining parsed XML whitespace and child tails; note subtrees excluded from letter, each separately projected; no separators inserted for markup. XML line-end normalization differs from archival bytes."^^xsd:string .
+case:representation-note-08 v:sourceSnapshot case:source-snapshot .
+case:representation-note-09 p6:content "V. lettera del Hasdeu immediatamente precedente (XXXV)."^^xsd:string .
+case:representation-note-09 p6:preferredLabel "representation-note-09"^^xsd:string .
+case:representation-note-09 p6:responsibleAgent case:importer .
+case:representation-note-09 rdf:type p6:RepresentationRecord .
+case:representation-note-09 v:projection "ElementTree XML character data in document order, retaining parsed XML whitespace and child tails; note subtrees excluded from letter, each separately projected; no separators inserted for markup. XML line-end normalization differs from archival bytes."^^xsd:string .
+case:representation-note-09 v:sourceSnapshot case:source-snapshot .
+case:representation-note-10 p6:content """Cf. quanto scriverà lo Schuchardt in 
+                
+                  CdB S
+                , p. xxxv e n. 9 (e v. XXX, n. 24)."""^^xsd:string .
+case:representation-note-10 p6:preferredLabel "representation-note-10"^^xsd:string .
+case:representation-note-10 p6:responsibleAgent case:importer .
+case:representation-note-10 rdf:type p6:RepresentationRecord .
+case:representation-note-10 v:projection "ElementTree XML character data in document order, retaining parsed XML whitespace and child tails; note subtrees excluded from letter, each separately projected; no separators inserted for markup. XML line-end normalization differs from archival bytes."^^xsd:string .
+case:representation-note-10 v:sourceSnapshot case:source-snapshot .
+case:representation-note-11 p6:content "V. supra, n. 5."^^xsd:string .
+case:representation-note-11 p6:preferredLabel "representation-note-11"^^xsd:string .
+case:representation-note-11 p6:responsibleAgent case:importer .
+case:representation-note-11 rdf:type p6:RepresentationRecord .
+case:representation-note-11 v:projection "ElementTree XML character data in document order, retaining parsed XML whitespace and child tails; note subtrees excluded from letter, each separately projected; no separators inserted for markup. XML line-end normalization differs from archival bytes."^^xsd:string .
+case:representation-note-11 v:sourceSnapshot case:source-snapshot .
+case:selection-mention-diez p6:end "2630"^^xsd:nonNegativeInteger .
+case:selection-mention-diez p6:quote """
+Diez"""^^xsd:string .
+case:selection-mention-diez p6:representation case:representation-letter .
+case:selection-mention-diez p6:responsibleAgent case:importer .
+case:selection-mention-diez p6:start "2625"^^xsd:nonNegativeInteger .
+case:selection-mention-diez rdf:type p6:TextRangeSelectionRecord .
+case:selection-mention-frollo p6:end "3789"^^xsd:nonNegativeInteger .
+case:selection-mention-frollo p6:quote "Frollo"^^xsd:string .
+case:selection-mention-frollo p6:representation case:representation-letter .
+case:selection-mention-frollo p6:responsibleAgent case:importer .
+case:selection-mention-frollo p6:start "3783"^^xsd:nonNegativeInteger .
+case:selection-mention-frollo rdf:type p6:TextRangeSelectionRecord .
+case:selection-mention-frollo-note p6:end "24"^^xsd:nonNegativeInteger .
+case:selection-mention-frollo-note p6:quote "G.L. Frollo"^^xsd:string .
+case:selection-mention-frollo-note p6:representation case:representation-note-08 .
+case:selection-mention-frollo-note p6:responsibleAgent case:importer .
+case:selection-mention-frollo-note p6:start "13"^^xsd:nonNegativeInteger .
+case:selection-mention-frollo-note rdf:type p6:TextRangeSelectionRecord .
+case:selection-mention-signature p6:end "4055"^^xsd:nonNegativeInteger .
+case:selection-mention-signature p6:quote "H. Schuchardt"^^xsd:string .
+case:selection-mention-signature p6:representation case:representation-letter .
+case:selection-mention-signature p6:responsibleAgent case:importer .
+case:selection-mention-signature p6:start "4042"^^xsd:nonNegativeInteger .
+case:selection-mention-signature rdf:type p6:TextRangeSelectionRecord .
+case:selection-note-insertion-01 p6:end "170"^^xsd:nonNegativeInteger .
+case:selection-note-insertion-01 p6:quote ""^^xsd:string .
+case:selection-note-insertion-01 p6:representation case:representation-letter .
+case:selection-note-insertion-01 p6:responsibleAgent case:importer .
+case:selection-note-insertion-01 p6:start "170"^^xsd:nonNegativeInteger .
+case:selection-note-insertion-01 rdf:type p6:TextRangeSelectionRecord .
+case:selection-note-insertion-02 p6:end "249"^^xsd:nonNegativeInteger .
+case:selection-note-insertion-02 p6:quote ""^^xsd:string .
+case:selection-note-insertion-02 p6:representation case:representation-letter .
+case:selection-note-insertion-02 p6:responsibleAgent case:importer .
+case:selection-note-insertion-02 p6:start "249"^^xsd:nonNegativeInteger .
+case:selection-note-insertion-02 rdf:type p6:TextRangeSelectionRecord .
+case:selection-note-insertion-03 p6:end "1641"^^xsd:nonNegativeInteger .
+case:selection-note-insertion-03 p6:quote ""^^xsd:string .
+case:selection-note-insertion-03 p6:representation case:representation-letter .
+case:selection-note-insertion-03 p6:responsibleAgent case:importer .
+case:selection-note-insertion-03 p6:start "1641"^^xsd:nonNegativeInteger .
+case:selection-note-insertion-03 rdf:type p6:TextRangeSelectionRecord .
+case:selection-note-insertion-04 p6:end "2509"^^xsd:nonNegativeInteger .
+case:selection-note-insertion-04 p6:quote ""^^xsd:string .
+case:selection-note-insertion-04 p6:representation case:representation-letter .
+case:selection-note-insertion-04 p6:responsibleAgent case:importer .
+case:selection-note-insertion-04 p6:start "2509"^^xsd:nonNegativeInteger .
+case:selection-note-insertion-04 rdf:type p6:TextRangeSelectionRecord .
+case:selection-note-insertion-05 p6:end "2849"^^xsd:nonNegativeInteger .
+case:selection-note-insertion-05 p6:quote ""^^xsd:string .
+case:selection-note-insertion-05 p6:representation case:representation-letter .
+case:selection-note-insertion-05 p6:responsibleAgent case:importer .
+case:selection-note-insertion-05 p6:start "2849"^^xsd:nonNegativeInteger .
+case:selection-note-insertion-05 rdf:type p6:TextRangeSelectionRecord .
+case:selection-note-insertion-06 p6:end "3076"^^xsd:nonNegativeInteger .
+case:selection-note-insertion-06 p6:quote ""^^xsd:string .
+case:selection-note-insertion-06 p6:representation case:representation-letter .
+case:selection-note-insertion-06 p6:responsibleAgent case:importer .
+case:selection-note-insertion-06 p6:start "3076"^^xsd:nonNegativeInteger .
+case:selection-note-insertion-06 rdf:type p6:TextRangeSelectionRecord .
+case:selection-note-insertion-07 p6:end "3336"^^xsd:nonNegativeInteger .
+case:selection-note-insertion-07 p6:quote ""^^xsd:string .
+case:selection-note-insertion-07 p6:representation case:representation-letter .
+case:selection-note-insertion-07 p6:responsibleAgent case:importer .
+case:selection-note-insertion-07 p6:start "3336"^^xsd:nonNegativeInteger .
+case:selection-note-insertion-07 rdf:type p6:TextRangeSelectionRecord .
+case:selection-note-insertion-08 p6:end "3853"^^xsd:nonNegativeInteger .
+case:selection-note-insertion-08 p6:quote ""^^xsd:string .
+case:selection-note-insertion-08 p6:representation case:representation-letter .
+case:selection-note-insertion-08 p6:responsibleAgent case:importer .
+case:selection-note-insertion-08 p6:start "3853"^^xsd:nonNegativeInteger .
+case:selection-note-insertion-08 rdf:type p6:TextRangeSelectionRecord .
+case:selection-note-insertion-09 p6:end "4188"^^xsd:nonNegativeInteger .
+case:selection-note-insertion-09 p6:quote ""^^xsd:string .
+case:selection-note-insertion-09 p6:representation case:representation-letter .
+case:selection-note-insertion-09 p6:responsibleAgent case:importer .
+case:selection-note-insertion-09 p6:start "4188"^^xsd:nonNegativeInteger .
+case:selection-note-insertion-09 rdf:type p6:TextRangeSelectionRecord .
+case:selection-note-insertion-10 p6:end "4251"^^xsd:nonNegativeInteger .
+case:selection-note-insertion-10 p6:quote ""^^xsd:string .
+case:selection-note-insertion-10 p6:representation case:representation-letter .
+case:selection-note-insertion-10 p6:responsibleAgent case:importer .
+case:selection-note-insertion-10 p6:start "4251"^^xsd:nonNegativeInteger .
+case:selection-note-insertion-10 rdf:type p6:TextRangeSelectionRecord .
+case:selection-note-insertion-11 p6:end "4411"^^xsd:nonNegativeInteger .
+case:selection-note-insertion-11 p6:quote ""^^xsd:string .
+case:selection-note-insertion-11 p6:representation case:representation-letter .
+case:selection-note-insertion-11 p6:responsibleAgent case:importer .
+case:selection-note-insertion-11 p6:start "4411"^^xsd:nonNegativeInteger .
+case:selection-note-insertion-11 rdf:type p6:TextRangeSelectionRecord .
+case:source-location-066c93f71aaddb20 p6:preferredLabel "Checked source location"^^xsd:string .
+case:source-location-066c93f71aaddb20 p6:responsibleAgent case:importer .
+case:source-location-066c93f71aaddb20 rdf:type p6:Record .
+case:source-location-066c93f71aaddb20 v:sourceSnapshot case:source-snapshot .
+case:source-location-066c93f71aaddb20 v:sourceXPath "/tei:TEI[1]/tei:teiHeader[1]/tei:profileDesc[1]/tei:textClass[1]/tei:keywords[1]/tei:list[1]/tei:item[1]/tei:placeName[1]/tei:location[1]/tei:geo[1]"^^xsd:string .
+case:source-location-0d7f9513fa446b6b p6:preferredLabel "Checked source location"^^xsd:string .
+case:source-location-0d7f9513fa446b6b p6:responsibleAgent case:importer .
+case:source-location-0d7f9513fa446b6b rdf:type p6:Record .
+case:source-location-0d7f9513fa446b6b v:sourceSnapshot case:source-snapshot .
+case:source-location-0d7f9513fa446b6b v:sourceXPath "/tei:TEI[1]/tei:teiHeader[1]/tei:fileDesc[1]/tei:sourceDesc[1]/tei:msDesc[1]/tei:physDesc[1]/tei:objectDesc[1]/tei:supportDesc[1]/tei:support[1]/tei:material[1]"^^xsd:string .
+case:source-location-0e71020d6f5e7c67 p6:preferredLabel "Checked source location"^^xsd:string .
+case:source-location-0e71020d6f5e7c67 p6:responsibleAgent case:importer .
+case:source-location-0e71020d6f5e7c67 rdf:type p6:Record .
+case:source-location-0e71020d6f5e7c67 v:sourceSnapshot case:source-snapshot .
+case:source-location-0e71020d6f5e7c67 v:sourceXPath "/tei:TEI[1]/tei:teiHeader[1]/tei:fileDesc[1]/tei:publicationStmt[1]/tei:date[1]/@when"^^xsd:string .
+case:source-location-0ea869afb66e7f28 p6:preferredLabel "Checked source location"^^xsd:string .
+case:source-location-0ea869afb66e7f28 p6:responsibleAgent case:importer .
+case:source-location-0ea869afb66e7f28 rdf:type p6:Record .
+case:source-location-0ea869afb66e7f28 v:sourceSnapshot case:source-snapshot .
+case:source-location-0ea869afb66e7f28 v:sourceXPath "/tei:TEI[1]/tei:teiHeader[1]/tei:fileDesc[1]/tei:sourceDesc[1]/tei:msDesc[1]/tei:history[1]/tei:origin[1]/tei:origDate[1]/@when"^^xsd:string .
+case:source-location-0eba4d42fbac41d0 p6:preferredLabel "Checked source location"^^xsd:string .
+case:source-location-0eba4d42fbac41d0 p6:responsibleAgent case:importer .
+case:source-location-0eba4d42fbac41d0 rdf:type p6:Record .
+case:source-location-0eba4d42fbac41d0 v:sourceSnapshot case:source-snapshot .
+case:source-location-0eba4d42fbac41d0 v:sourceXPath "/tei:TEI[1]/tei:teiHeader[1]/tei:profileDesc[1]/tei:correspDesc[1]/tei:correspAction[1]/tei:placeName[1]"^^xsd:string .
+case:source-location-1fb2513682d00de5 p6:preferredLabel "Checked source location"^^xsd:string .
+case:source-location-1fb2513682d00de5 p6:responsibleAgent case:importer .
+case:source-location-1fb2513682d00de5 rdf:type p6:Record .
+case:source-location-1fb2513682d00de5 v:sourceSnapshot case:source-snapshot .
+case:source-location-1fb2513682d00de5 v:sourceXPath "/tei:TEI[1]/tei:teiHeader[1]/tei:fileDesc[1]/tei:sourceDesc[1]/tei:msDesc[1]/tei:history[1]/tei:origin[1]"^^xsd:string .
+case:source-location-24e8905c6183b66a p6:preferredLabel "Checked source location"^^xsd:string .
+case:source-location-24e8905c6183b66a p6:responsibleAgent case:importer .
+case:source-location-24e8905c6183b66a rdf:type p6:Record .
+case:source-location-24e8905c6183b66a v:sourceSnapshot case:source-snapshot .
+case:source-location-24e8905c6183b66a v:sourceXPath "/tei:TEI[1]/tei:text[1]/tei:body[1]/tei:div[1]/tei:closer[1]/tei:signed[1]/tei:persName[1]"^^xsd:string .
+case:source-location-27ad4b89d10cb4d3 p6:preferredLabel "Checked source location"^^xsd:string .
+case:source-location-27ad4b89d10cb4d3 p6:responsibleAgent case:importer .
+case:source-location-27ad4b89d10cb4d3 rdf:type p6:Record .
+case:source-location-27ad4b89d10cb4d3 v:sourceSnapshot case:source-snapshot .
+case:source-location-27ad4b89d10cb4d3 v:sourceXPath "/tei:TEI[1]/tei:teiHeader[1]/tei:fileDesc[1]/tei:sourceDesc[1]/tei:msDesc[1]/tei:msIdentifier[1]/tei:repository[1]"^^xsd:string .
+case:source-location-2c218523d4a3658b p6:preferredLabel "Checked source location"^^xsd:string .
+case:source-location-2c218523d4a3658b p6:responsibleAgent case:importer .
+case:source-location-2c218523d4a3658b rdf:type p6:Record .
+case:source-location-2c218523d4a3658b v:sourceSnapshot case:source-snapshot .
+case:source-location-2c218523d4a3658b v:sourceXPath "/tei:TEI[1]/tei:text[1]/tei:body[1]/tei:div[1]/tei:p[5]/tei:note[1]"^^xsd:string .
+case:source-location-2e1d536cc5a210a6 p6:preferredLabel "Checked source location"^^xsd:string .
+case:source-location-2e1d536cc5a210a6 p6:responsibleAgent case:importer .
+case:source-location-2e1d536cc5a210a6 rdf:type p6:Record .
+case:source-location-2e1d536cc5a210a6 v:sourceSnapshot case:source-snapshot .
+case:source-location-2e1d536cc5a210a6 v:sourceXPath "/tei:TEI[1]/tei:text[1]/tei:body[1]/tei:div[1]/tei:p[3]/tei:note[1]"^^xsd:string .
+case:source-location-2f59188d69770ec7 p6:preferredLabel "Checked source location"^^xsd:string .
+case:source-location-2f59188d69770ec7 p6:responsibleAgent case:importer .
+case:source-location-2f59188d69770ec7 rdf:type p6:Record .
+case:source-location-2f59188d69770ec7 v:sourceSnapshot case:source-snapshot .
+case:source-location-2f59188d69770ec7 v:sourceXPath "/tei:TEI[1]/tei:text[1]/tei:body[1]/tei:div[1]/tei:dateline[1]"^^xsd:string .
+case:source-location-30be50261d67e809 p6:preferredLabel "Checked source location"^^xsd:string .
+case:source-location-30be50261d67e809 p6:responsibleAgent case:importer .
+case:source-location-30be50261d67e809 rdf:type p6:Record .
+case:source-location-30be50261d67e809 v:sourceSnapshot case:source-snapshot .
+case:source-location-30be50261d67e809 v:sourceXPath "/tei:TEI[1]/tei:text[1]/tei:body[1]/tei:div[1]/tei:postscript[1]/tei:p[1]/tei:note[2]"^^xsd:string .
+case:source-location-3a5ab3446617c12d p6:preferredLabel "Checked source location"^^xsd:string .
+case:source-location-3a5ab3446617c12d p6:responsibleAgent case:importer .
+case:source-location-3a5ab3446617c12d rdf:type p6:Record .
+case:source-location-3a5ab3446617c12d v:sourceSnapshot case:source-snapshot .
+case:source-location-3a5ab3446617c12d v:sourceXPath "/tei:TEI[1]/tei:teiHeader[1]/tei:profileDesc[1]/tei:correspDesc[1]/tei:correspAction[2]/tei:persName[1]/@corresp"^^xsd:string .
+case:source-location-3bbe1ff4e394c1aa p6:preferredLabel "Checked source location"^^xsd:string .
+case:source-location-3bbe1ff4e394c1aa p6:responsibleAgent case:importer .
+case:source-location-3bbe1ff4e394c1aa rdf:type p6:Record .
+case:source-location-3bbe1ff4e394c1aa v:sourceSnapshot case:source-snapshot .
+case:source-location-3bbe1ff4e394c1aa v:sourceXPath "/tei:TEI[1]/tei:text[1]/tei:body[1]/tei:div[1]/tei:p[5]/tei:persName[1]/@ref"^^xsd:string .
+case:source-location-3f07faa1a1fee660 p6:preferredLabel "Checked source location"^^xsd:string .
+case:source-location-3f07faa1a1fee660 p6:responsibleAgent case:importer .
+case:source-location-3f07faa1a1fee660 rdf:type p6:Record .
+case:source-location-3f07faa1a1fee660 v:sourceSnapshot case:source-snapshot .
+case:source-location-3f07faa1a1fee660 v:sourceXPath "/tei:TEI[1]/tei:text[1]/tei:body[1]/tei:div[1]/tei:p[3]/tei:persName[1]"^^xsd:string .
+case:source-location-40db9b98239ce112 p6:preferredLabel "Checked source location"^^xsd:string .
+case:source-location-40db9b98239ce112 p6:responsibleAgent case:importer .
+case:source-location-40db9b98239ce112 rdf:type p6:Record .
+case:source-location-40db9b98239ce112 v:sourceSnapshot case:source-snapshot .
+case:source-location-40db9b98239ce112 v:sourceXPath "/tei:TEI[1]/tei:teiHeader[1]/tei:fileDesc[1]/tei:sourceDesc[1]/tei:msDesc[1]/tei:msIdentifier[1]/tei:idno[1]"^^xsd:string .
+case:source-location-4293da327e111c73 p6:preferredLabel "Checked source location"^^xsd:string .
+case:source-location-4293da327e111c73 p6:responsibleAgent case:importer .
+case:source-location-4293da327e111c73 rdf:type p6:Record .
+case:source-location-4293da327e111c73 v:sourceSnapshot case:source-snapshot .
+case:source-location-4293da327e111c73 v:sourceXPath "/tei:TEI[1]/tei:text[1]/tei:body[1]/tei:div[1]/tei:closer[1]/tei:signed[1]/tei:persName[1]/@ref"^^xsd:string .
+case:source-location-5620d7057a950a75 p6:preferredLabel "Checked source location"^^xsd:string .
+case:source-location-5620d7057a950a75 p6:responsibleAgent case:importer .
+case:source-location-5620d7057a950a75 rdf:type p6:Record .
+case:source-location-5620d7057a950a75 v:sourceSnapshot case:source-snapshot .
+case:source-location-5620d7057a950a75 v:sourceXPath "/tei:TEI[1]/tei:teiHeader[1]/tei:profileDesc[1]/tei:correspDesc[1]/tei:correspAction[1]/tei:persName[1]/@corresp"^^xsd:string .
+case:source-location-58923ad3d6bfac9a p6:preferredLabel "Checked source location"^^xsd:string .
+case:source-location-58923ad3d6bfac9a p6:responsibleAgent case:importer .
+case:source-location-58923ad3d6bfac9a rdf:type p6:Record .
+case:source-location-58923ad3d6bfac9a v:sourceSnapshot case:source-snapshot .
+case:source-location-58923ad3d6bfac9a v:sourceXPath "/tei:TEI[1]/tei:teiHeader[1]/tei:profileDesc[1]/tei:correspDesc[1]/tei:correspAction[1]/tei:persName[1]"^^xsd:string .
+case:source-location-67326d3d963a262d p6:preferredLabel "Checked source location"^^xsd:string .
+case:source-location-67326d3d963a262d p6:responsibleAgent case:importer .
+case:source-location-67326d3d963a262d rdf:type p6:Record .
+case:source-location-67326d3d963a262d v:sourceSnapshot case:source-snapshot .
+case:source-location-67326d3d963a262d v:sourceXPath "/tei:TEI[1]/tei:teiHeader[1]/tei:fileDesc[1]/tei:sourceDesc[1]/tei:msDesc[1]/tei:history[1]/tei:origin[1]/tei:origPlace[1]/@ref"^^xsd:string .
+case:source-location-67a23c0c8dc26683 p6:preferredLabel "Checked source location"^^xsd:string .
+case:source-location-67a23c0c8dc26683 p6:responsibleAgent case:importer .
+case:source-location-67a23c0c8dc26683 rdf:type p6:Record .
+case:source-location-67a23c0c8dc26683 v:sourceSnapshot case:source-snapshot .
+case:source-location-67a23c0c8dc26683 v:sourceXPath "/tei:TEI[1]/tei:teiHeader[1]/tei:profileDesc[1]/tei:correspDesc[1]/tei:correspAction[1]/tei:placeName[1]/@ref"^^xsd:string .
+case:source-location-68190ae3756461c7 p6:preferredLabel "Checked source location"^^xsd:string .
+case:source-location-68190ae3756461c7 p6:responsibleAgent case:importer .
+case:source-location-68190ae3756461c7 rdf:type p6:Record .
+case:source-location-68190ae3756461c7 v:sourceSnapshot case:source-snapshot .
+case:source-location-68190ae3756461c7 v:sourceXPath "/tei:TEI[1]/tei:text[1]/tei:body[1]/tei:div[1]/tei:p[4]/tei:note[1]"^^xsd:string .
+case:source-location-6caedde52bf635fb p6:preferredLabel "Checked source location"^^xsd:string .
+case:source-location-6caedde52bf635fb p6:responsibleAgent case:importer .
+case:source-location-6caedde52bf635fb rdf:type p6:Record .
+case:source-location-6caedde52bf635fb v:sourceSnapshot case:source-snapshot .
+case:source-location-6caedde52bf635fb v:sourceXPath "/tei:TEI[1]/tei:text[1]/tei:body[1]/tei:div[1]/tei:p[3]/tei:persName[1]/@ref"^^xsd:string .
+case:source-location-716fe562476ee93b p6:preferredLabel "Checked source location"^^xsd:string .
+case:source-location-716fe562476ee93b p6:responsibleAgent case:importer .
+case:source-location-716fe562476ee93b rdf:type p6:Record .
+case:source-location-716fe562476ee93b v:sourceSnapshot case:source-snapshot .
+case:source-location-716fe562476ee93b v:sourceXPath "/tei:TEI[1]/tei:teiHeader[1]/tei:profileDesc[1]/tei:correspDesc[1]/tei:correspAction[1]"^^xsd:string .
+case:source-location-717bf8de60922c23 p6:preferredLabel "Checked source location"^^xsd:string .
+case:source-location-717bf8de60922c23 p6:responsibleAgent case:importer .
+case:source-location-717bf8de60922c23 rdf:type p6:Record .
+case:source-location-717bf8de60922c23 v:sourceSnapshot case:source-snapshot .
+case:source-location-717bf8de60922c23 v:sourceXPath "/tei:TEI[1]/tei:teiHeader[1]/tei:fileDesc[1]/tei:sourceDesc[1]/tei:msDesc[1]/tei:history[1]/tei:origin[1]/tei:origPlace[1]"^^xsd:string .
+case:source-location-76deffd4dda2fce4 p6:preferredLabel "Checked source location"^^xsd:string .
+case:source-location-76deffd4dda2fce4 p6:responsibleAgent case:importer .
+case:source-location-76deffd4dda2fce4 rdf:type p6:Record .
+case:source-location-76deffd4dda2fce4 v:sourceSnapshot case:source-snapshot .
+case:source-location-76deffd4dda2fce4 v:sourceXPath "/tei:TEI[1]/tei:text[1]/tei:body[1]/tei:div[1]/tei:p[5]/tei:persName[1]"^^xsd:string .
+case:source-location-780387c636c4c516 p6:preferredLabel "Checked source location"^^xsd:string .
+case:source-location-780387c636c4c516 p6:responsibleAgent case:importer .
+case:source-location-780387c636c4c516 rdf:type p6:Record .
+case:source-location-780387c636c4c516 v:sourceSnapshot case:source-snapshot .
+case:source-location-780387c636c4c516 v:sourceXPath "/tei:TEI[1]/tei:teiHeader[1]/tei:profileDesc[1]/tei:correspDesc[1]/tei:correspAction[1]/tei:placeName[1]/@corresp"^^xsd:string .
+case:source-location-9f5390547f3e2a82 p6:preferredLabel "Checked source location"^^xsd:string .
+case:source-location-9f5390547f3e2a82 p6:responsibleAgent case:importer .
+case:source-location-9f5390547f3e2a82 rdf:type p6:Record .
+case:source-location-9f5390547f3e2a82 v:sourceSnapshot case:source-snapshot .
+case:source-location-9f5390547f3e2a82 v:sourceXPath "/tei:TEI[1]/tei:text[1]/tei:body[1]/tei:div[1]/tei:p[1]/tei:note[1]"^^xsd:string .
+case:source-location-a0978affd822896b p6:preferredLabel "Checked source location"^^xsd:string .
+case:source-location-a0978affd822896b p6:responsibleAgent case:importer .
+case:source-location-a0978affd822896b rdf:type p6:Record .
+case:source-location-a0978affd822896b v:sourceSnapshot case:source-snapshot .
+case:source-location-a0978affd822896b v:sourceXPath "/tei:TEI[1]/tei:text[1]/tei:body[1]/tei:div[1]"^^xsd:string .
+case:source-location-a72a1550972add93 p6:preferredLabel "Checked source location"^^xsd:string .
+case:source-location-a72a1550972add93 p6:responsibleAgent case:importer .
+case:source-location-a72a1550972add93 rdf:type p6:Record .
+case:source-location-a72a1550972add93 v:sourceSnapshot case:source-snapshot .
+case:source-location-a72a1550972add93 v:sourceXPath "/tei:TEI[1]/tei:teiHeader[1]/tei:fileDesc[1]/tei:sourceDesc[1]/tei:msDesc[1]"^^xsd:string .
+case:source-location-aed6ee601718ab0e p6:preferredLabel "Checked source location"^^xsd:string .
+case:source-location-aed6ee601718ab0e p6:responsibleAgent case:importer .
+case:source-location-aed6ee601718ab0e rdf:type p6:Record .
+case:source-location-aed6ee601718ab0e v:sourceSnapshot case:source-snapshot .
+case:source-location-aed6ee601718ab0e v:sourceXPath "/tei:TEI[1]/tei:teiHeader[1]/tei:fileDesc[1]/tei:publicationStmt[1]/tei:idno[1]"^^xsd:string .
+case:source-location-b2f008319fe9f70a p6:preferredLabel "Checked source location"^^xsd:string .
+case:source-location-b2f008319fe9f70a p6:responsibleAgent case:importer .
+case:source-location-b2f008319fe9f70a rdf:type p6:Record .
+case:source-location-b2f008319fe9f70a v:sourceSnapshot case:source-snapshot .
+case:source-location-b2f008319fe9f70a v:sourceXPath "/tei:TEI[1]/tei:teiHeader[1]/tei:profileDesc[1]/tei:correspDesc[1]/tei:correspAction[1]/tei:date[1]/@when"^^xsd:string .
+case:source-location-b5fdb45e81716582 p6:preferredLabel "Checked source location"^^xsd:string .
+case:source-location-b5fdb45e81716582 p6:responsibleAgent case:importer .
+case:source-location-b5fdb45e81716582 rdf:type p6:Record .
+case:source-location-b5fdb45e81716582 v:sourceSnapshot case:source-snapshot .
+case:source-location-b5fdb45e81716582 v:sourceXPath "/tei:TEI[1]/tei:text[1]/tei:body[1]/tei:div[1]/tei:p[5]/tei:note[1]/tei:persName[1]"^^xsd:string .
+case:source-location-bb1625ba4d405667 p6:preferredLabel "Checked source location"^^xsd:string .
+case:source-location-bb1625ba4d405667 p6:responsibleAgent case:importer .
+case:source-location-bb1625ba4d405667 rdf:type p6:Record .
+case:source-location-bb1625ba4d405667 v:sourceSnapshot case:source-snapshot .
+case:source-location-bb1625ba4d405667 v:sourceXPath "/tei:TEI[1]/tei:text[1]/tei:body[1]/tei:div[1]/tei:p[4]/tei:note[2]"^^xsd:string .
+case:source-location-bf067cce11214383 p6:preferredLabel "Checked source location"^^xsd:string .
+case:source-location-bf067cce11214383 p6:responsibleAgent case:importer .
+case:source-location-bf067cce11214383 rdf:type p6:Record .
+case:source-location-bf067cce11214383 v:sourceSnapshot case:source-snapshot .
+case:source-location-bf067cce11214383 v:sourceXPath "/tei:TEI[1]/tei:text[1]/tei:body[1]/tei:div[1]/tei:postscript[1]/tei:p[2]/tei:note[1]"^^xsd:string .
+case:source-location-bf072a77c76980ac p6:preferredLabel "Checked source location"^^xsd:string .
+case:source-location-bf072a77c76980ac p6:responsibleAgent case:importer .
+case:source-location-bf072a77c76980ac rdf:type p6:Record .
+case:source-location-bf072a77c76980ac v:sourceSnapshot case:source-snapshot .
+case:source-location-bf072a77c76980ac v:sourceXPath "/tei:TEI[1]/tei:text[1]/tei:body[1]/tei:div[1]/tei:p[2]/tei:note[1]"^^xsd:string .
+case:source-location-c5c4145f495e44e8 p6:preferredLabel "Checked source location"^^xsd:string .
+case:source-location-c5c4145f495e44e8 p6:responsibleAgent case:importer .
+case:source-location-c5c4145f495e44e8 rdf:type p6:Record .
+case:source-location-c5c4145f495e44e8 v:sourceSnapshot case:source-snapshot .
+case:source-location-c5c4145f495e44e8 v:sourceXPath "/tei:TEI[1]/tei:teiHeader[1]/tei:fileDesc[1]/tei:titleStmt[1]/tei:author[1]/tei:persName[1]"^^xsd:string .
+case:source-location-ca8b555bbb1d6586 p6:preferredLabel "Checked source location"^^xsd:string .
+case:source-location-ca8b555bbb1d6586 p6:responsibleAgent case:importer .
+case:source-location-ca8b555bbb1d6586 rdf:type p6:Record .
+case:source-location-ca8b555bbb1d6586 v:sourceSnapshot case:source-snapshot .
+case:source-location-ca8b555bbb1d6586 v:sourceXPath "/tei:TEI[1]/tei:text[1]/tei:body[1]/tei:div[1]/tei:p[5]/tei:note[1]/tei:persName[1]/@ref"^^xsd:string .
+case:source-location-d34b9806fe8a7258 p6:preferredLabel "Checked source location"^^xsd:string .
+case:source-location-d34b9806fe8a7258 p6:responsibleAgent case:importer .
+case:source-location-d34b9806fe8a7258 rdf:type p6:Record .
+case:source-location-d34b9806fe8a7258 v:sourceSnapshot case:source-snapshot .
+case:source-location-d34b9806fe8a7258 v:sourceXPath "/tei:TEI[1]/tei:text[1]/tei:body[1]/tei:div[1]/@xml:id"^^xsd:string .
+case:source-location-d8133af46553dc91 p6:preferredLabel "Checked source location"^^xsd:string .
+case:source-location-d8133af46553dc91 p6:responsibleAgent case:importer .
+case:source-location-d8133af46553dc91 rdf:type p6:Record .
+case:source-location-d8133af46553dc91 v:sourceSnapshot case:source-snapshot .
+case:source-location-d8133af46553dc91 v:sourceXPath "/tei:TEI[1]/tei:teiHeader[1]/tei:profileDesc[1]/tei:correspDesc[1]/tei:correspAction[2]/tei:persName[1]"^^xsd:string .
+case:source-location-de8b5f45aaaa001e p6:preferredLabel "Checked source location"^^xsd:string .
+case:source-location-de8b5f45aaaa001e p6:responsibleAgent case:importer .
+case:source-location-de8b5f45aaaa001e rdf:type p6:Record .
+case:source-location-de8b5f45aaaa001e v:sourceSnapshot case:source-snapshot .
+case:source-location-de8b5f45aaaa001e v:sourceXPath "/tei:TEI[1]/tei:text[1]/tei:body[1]/tei:div[1]/tei:p[1]/tei:note[2]"^^xsd:string .
+case:source-location-dff6bafb2a3b4a13 p6:preferredLabel "Checked source location"^^xsd:string .
+case:source-location-dff6bafb2a3b4a13 p6:responsibleAgent case:importer .
+case:source-location-dff6bafb2a3b4a13 rdf:type p6:Record .
+case:source-location-dff6bafb2a3b4a13 v:sourceSnapshot case:source-snapshot .
+case:source-location-dff6bafb2a3b4a13 v:sourceXPath "/tei:TEI[1]/tei:teiHeader[1]/tei:profileDesc[1]/tei:correspDesc[1]/tei:correspAction[1]/tei:persName[1]/@ref"^^xsd:string .
+case:source-location-eca2d672afc40c0f p6:preferredLabel "Checked source location"^^xsd:string .
+case:source-location-eca2d672afc40c0f p6:responsibleAgent case:importer .
+case:source-location-eca2d672afc40c0f rdf:type p6:Record .
+case:source-location-eca2d672afc40c0f v:sourceSnapshot case:source-snapshot .
+case:source-location-eca2d672afc40c0f v:sourceXPath "/tei:TEI[1]/tei:text[1]/tei:body[1]/tei:div[1]/tei:p[3]/tei:note[2]"^^xsd:string .
+case:source-location-ed9403bddb18f915 p6:preferredLabel "Checked source location"^^xsd:string .
+case:source-location-ed9403bddb18f915 p6:responsibleAgent case:importer .
+case:source-location-ed9403bddb18f915 rdf:type p6:Record .
+case:source-location-ed9403bddb18f915 v:sourceSnapshot case:source-snapshot .
+case:source-location-ed9403bddb18f915 v:sourceXPath "/tei:TEI[1]/tei:teiHeader[1]/tei:profileDesc[1]/tei:correspDesc[1]/tei:correspAction[2]/tei:persName[1]/@ref"^^xsd:string .
+case:source-location-f263e2ec5e44226f p6:preferredLabel "Checked source location"^^xsd:string .
+case:source-location-f263e2ec5e44226f p6:responsibleAgent case:importer .
+case:source-location-f263e2ec5e44226f rdf:type p6:Record .
+case:source-location-f263e2ec5e44226f v:sourceSnapshot case:source-snapshot .
+case:source-location-f263e2ec5e44226f v:sourceXPath "/tei:TEI[1]/tei:teiHeader[1]/tei:fileDesc[1]/tei:titleStmt[1]/tei:author[1]/tei:persName[1]/@ref"^^xsd:string .
+case:source-location-f91db689995985b4 p6:preferredLabel "Checked source location"^^xsd:string .
+case:source-location-f91db689995985b4 p6:responsibleAgent case:importer .
+case:source-location-f91db689995985b4 rdf:type p6:Record .
+case:source-location-f91db689995985b4 v:sourceSnapshot case:source-snapshot .
+case:source-location-f91db689995985b4 v:sourceXPath "/tei:TEI[1]/tei:text[1]/tei:body[1]/tei:div[1]/tei:postscript[1]/tei:p[1]/tei:note[1]"^^xsd:string .
+case:source-location-fd1201196f5be770 p6:preferredLabel "Checked source location"^^xsd:string .
+case:source-location-fd1201196f5be770 p6:responsibleAgent case:importer .
+case:source-location-fd1201196f5be770 rdf:type p6:Record .
+case:source-location-fd1201196f5be770 v:sourceSnapshot case:source-snapshot .
+case:source-location-fd1201196f5be770 v:sourceXPath "/tei:TEI[1]/tei:teiHeader[1]/tei:fileDesc[1]/tei:sourceDesc[1]/tei:msDesc[1]/tei:history[1]/tei:origin[1]/tei:origPlace[1]/@corresp"^^xsd:string .
+case:source-snapshot p6:preferredLabel "Admitted HSA 4493 XML snapshot"^^xsd:string .
+case:source-snapshot p6:responsibleAgent case:importer .
+case:source-snapshot rdf:type p6:Record .
+case:source-snapshot v:sha256 "f37ff85df57405753aa0b6d1db63f3a24fcbd33ab1ef7fb54b68844e556e2438"^^xsd:string .
+case:source-snapshot v:sourceURL "https://gams.uni-graz.at/o:hsa.letter.4493/TEI_SOURCE"^^xsd:anyURI .
+case:text-letter p6:identityCriteria "The linguistic content attributed to this single letter, delimited by the source's original-letter div and excluding separately encoded editorial note subtrees. The criterion retains opener, dateline, signature and postscript; shared wording in another letter would not establish identity."^^xsd:string .
+case:text-letter p6:preferredLabel "Linguistic content of the letter in the admitted HSA source"^^xsd:string .
+case:text-letter p6:responsibleAgent case:importer .
+case:text-letter rdf:type p6:TextRecord .

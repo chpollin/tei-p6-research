@@ -1,0 +1,84 @@
+@prefix case: <https://example.org/tei-p6-research/case/hsa-4493/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix p6: <https://example.org/tei-p6-research/ontology/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix v: <https://example.org/tei-p6-research/case-vocabulary/hsa-4493/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+v:attribution rdf:type owl:DatatypeProperty .
+v:attribution rdfs:comment "Attribution for source text; does not attribute every imported claim to a source editor."@en .
+v:attribution rdfs:label "attribution"@en .
+v:attribution rdfs:range xsd:string .
+v:construction rdf:type owl:DatatypeProperty .
+v:construction rdfs:comment "Explicit deterministic construction or scoping decision made by this importer."@en .
+v:construction rdfs:label "construction"@en .
+v:construction rdfs:range xsd:string .
+v:license rdf:type owl:DatatypeProperty .
+v:license rdfs:comment "Licence applying to copied and derived source text."@en .
+v:license rdfs:label "license"@en .
+v:license rdfs:range xsd:anyURI .
+v:parent rdf:type owl:ObjectProperty .
+v:parent rdfs:comment "Parent in the preserved source body tree, or its structural reading root."@en .
+v:parent rdfs:label "parent"@en .
+v:parent rdfs:range p6:StructureRecord .
+v:position rdf:type owl:DatatypeProperty .
+v:position rdfs:comment "Zero-based element-child position within the preserved source parent."@en .
+v:position rdfs:label "position"@en .
+v:position rdfs:range xsd:nonNegativeInteger .
+v:preservationRole rdf:type owl:DatatypeProperty .
+v:preservationRole rdfs:comment "Marks preservation-only source tree records; their retained markup is not assigned an expanded semantic interpretation."@en .
+v:preservationRole rdfs:label "preservationRole"@en .
+v:preservationRole rdfs:range xsd:string .
+v:profile rdf:type owl:DatatypeProperty .
+v:profile rdfs:comment "Fixed semantic profile identifier, distinct from the binding version; no model 0.3 conformance is claimed."@en .
+v:profile rdfs:label "profile"@en .
+v:profile rdfs:range xsd:anyURI .
+v:projection rdf:type owl:DatatypeProperty .
+v:projection rdfs:comment "Reproducible character-data projection policy; no silent whitespace normalization."@en .
+v:projection rdfs:label "projection"@en .
+v:projection rdfs:range xsd:string .
+v:selection rdf:type owl:ObjectProperty .
+v:selection rdfs:comment "Projected character span associated with a preserved source node."@en .
+v:selection rdfs:label "selection"@en .
+v:selection rdfs:range p6:SelectionRecord .
+v:sha256 rdf:type owl:DatatypeProperty .
+v:sha256 rdfs:comment "SHA-256 of the exact archived UTF-8 XML bytes."@en .
+v:sha256 rdfs:label "sha256"@en .
+v:sha256 rdfs:range xsd:string .
+v:sourceLocation rdf:type owl:ObjectProperty .
+v:sourceLocation rdfs:comment "References an indexed source location supporting an import report. This is a bounded import support relation, not a universal evidence model."@en .
+v:sourceLocation rdfs:label "sourceLocation"@en .
+v:sourceLocation rdfs:range p6:Record .
+v:sourceSnapshot rdf:type owl:ObjectProperty .
+v:sourceSnapshot rdfs:comment "References the documentary record of the fixed source snapshot."@en .
+v:sourceSnapshot rdfs:label "sourceSnapshot"@en .
+v:sourceSnapshot rdfs:range p6:Record .
+v:sourceURL rdf:type owl:DatatypeProperty .
+v:sourceURL rdfs:comment "Source URI recorded as a value; no world identity or automatic dereference is asserted."@en .
+v:sourceURL rdfs:label "sourceURL"@en .
+v:sourceURL rdfs:range xsd:anyURI .
+v:sourceValue rdf:type owl:DatatypeProperty .
+v:sourceValue rdfs:comment "Checked element character data or attribute value at the recorded XPath, after XML parser line-end normalization."@en .
+v:sourceValue rdfs:label "sourceValue"@en .
+v:sourceValue rdfs:range xsd:string .
+v:sourceXPath rdf:type owl:DatatypeProperty .
+v:sourceXPath rdfs:comment "Absolute indexed tei:-prefixed element XPath, optionally ending in a named attribute; tei denotes the TEI namespace."@en .
+v:sourceXPath rdfs:label "sourceXPath"@en .
+v:sourceXPath rdfs:range xsd:string .
+v:xmlAttributes rdf:type owl:DatatypeProperty .
+v:xmlAttributes rdfs:comment "All source element attributes as a JSON object of expanded names to exact parsed values."@en .
+v:xmlAttributes rdfs:label "xmlAttributes"@en .
+v:xmlAttributes rdfs:range rdf:JSON .
+v:xmlName rdf:type owl:DatatypeProperty .
+v:xmlName rdfs:comment "Preserved expanded XML element name in Clark notation."@en .
+v:xmlName rdfs:label "xmlName"@en .
+v:xmlName rdfs:range xsd:string .
+v:xmlTail rdf:type owl:DatatypeProperty .
+v:xmlTail rdfs:comment "Parsed XML character data after the element, or the empty string when absent; note tails belong to the letter projection."@en .
+v:xmlTail rdfs:label "xmlTail"@en .
+v:xmlTail rdfs:range xsd:string .
+v:xmlText rdf:type owl:DatatypeProperty .
+v:xmlText rdfs:comment "Parsed XML character data immediately inside the element, or the empty string when absent."@en .
+v:xmlText rdfs:label "xmlText"@en .
+v:xmlText rdfs:range xsd:string .

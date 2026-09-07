@@ -1,0 +1,24 @@
+---
+type: assertion
+topics: ["[[Text and Document Structures]]"]
+status: grounded
+checked: {}
+grounding:
+  - "[[20_distillates/documents/tei-p5-div-4.12.0#^s4]]"
+created: 2026-09-07
+updated: 2026-09-07
+---
+
+# The P5 4.12.0 div-in-ab-or-p Schematron rule reports a div with a p or ab ancestor when it has no floatingText ancestor.
+
+## Statement
+
+The P5 4.12.0 div-in-ab-or-p Schematron rule reports a div with a p or ab ancestor when it has no floatingText ancestor.
+
+## Support
+
+- [[20_distillates/documents/tei-p5-div-4.12.0#^s4]] supplies the source-specific statement used here. The assertion retains its stated source and scope.
+
+## Related
+
+- [[30_assertions/MOC-Text and Document Structures]]

@@ -23,6 +23,7 @@ INPUTS = (
     "tools/pilots/text_identity.py",
 )
 REPORT = "experiments/text_identity/report.json"
+CONTRACT_HEADING = "## Text identity and annotation pilot"
 DIAGNOSTICS = {
     "E_SHAPE", "E_ID", "E_DUPLICATE_ID", "E_REFERENCE", "E_OWNERSHIP",
     "E_HASH", "E_CYCLE", "E_SELECTOR", "E_BOUNDS", "E_QUOTE",
@@ -251,6 +252,21 @@ def evaluate_case(case: dict) -> dict:
     return {"id": case["id"], "passed": passed, "actual": actual, "details": result["diagnostics"]}
 
 
+def input_fingerprints(root: Path) -> dict[str, str]:
+    fingerprints = {}
+    for name in INPUTS:
+        content = (root / name).read_bytes()
+        if name == "knowledge/experiments.md":
+            text = content.decode("utf-8").replace("\r\n", "\n")
+            marker = "\n" + CONTRACT_HEADING + "\n"
+            if text.count(marker) != 1:
+                raise ValueError("text identity contract heading missing or ambiguous")
+            section = text.split(marker, 1)[1].split("\n## ", 1)[0]
+            content = (CONTRACT_HEADING + "\n" + section.rstrip() + "\n").encode("utf-8")
+        fingerprints[name] = hashlib.sha256(content).hexdigest()
+    return fingerprints
+
+
 def build_report(root: Path = ROOT) -> dict:
     spec = json.loads((root / INPUTS[1]).read_text(encoding="utf-8"))
     cases = json.loads((root / INPUTS[2]).read_text(encoding="utf-8"))
@@ -267,7 +283,8 @@ def build_report(root: Path = ROOT) -> dict:
     return {
         "format_version": 1,
         "scope": "Synthetic finite modeling experiment; not P5 conversion or ontological evidence.",
-        "inputs": {name: hashlib.sha256((root / name).read_bytes()).hexdigest() for name in INPUTS},
+        "inputs": input_fingerprints(root),
+        "input_scopes": {"knowledge/experiments.md": CONTRACT_HEADING},
         "summary": {"cases": len(results), "passed": sum(row["passed"] for row in results)},
         "cases": results,
     }

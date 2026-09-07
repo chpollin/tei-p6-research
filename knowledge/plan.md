@@ -37,6 +37,13 @@ track. Milestone 1 prepared both tracks, milestones 2 and 9 belong to both,
 milestones 3, 4 and 6 to the evidence track and milestones 5, 7 and 8 to the
 model track.
 
+The model track takes its proposed semantic distinctions from
+[[knowledge/model-design]] and its executed baseline from [[knowledge/text-model]].
+Each proposed extension is challenged against the relevant P5 capability matrix
+and concrete edition, corpus and catalogue tasks. XML, JSON and RDF views must
+account for the same instance and explicit unsupported features under
+[[knowledge/p6-evaluation]]. A walkthrough adds no executed coverage by itself.
+
 ## Milestones
 
 | Milestone | Exit condition | Success criterion served | Check |
@@ -47,7 +54,7 @@ model track.
 | 4. Foundation closed | the exhaustive TEIC/TEI work-item collection has run under the authenticated session including the GraphQL relations stage, the SourceForge trackers are re-run under adapter version 2 against tracker-reported counts, TEI-L is registered and acquired under its three-part boundary, the archive and website snapshots are reconciled, and a sampling protocol for real P5 documents and customizations is recorded | the GitHub snapshot is `observable-complete` and reconciled, governance, history and literature collections state boundaries, rights, dispositions and gaps, and at least one real-use corpus has a sampling and rights protocol | `python -m tools.corpus.validate_control_plane .` and the collector status lines with exit code 0 |
 | 5. Claim pattern and IRI policy | the model states who asserts what about which object with what support as one claim pattern, and every model object, version, selector and reading carries an identifier under a recorded IRI policy, executable in `tools/models/` with cases that pass | the abstract text model is an executable contract with independently authored cases and a reproducible report | `python tools/check_abstract_text_v01.py --check`, `python -m pytest tests/models` |
 | 6. Entity run and topic cycles | Metadata and Entities is the first selection-driven vertical cycle, with sources selected from projections, admitted, distilled, synthesized into validated assertions and written into a grounded chapter, and the remaining topics follow in the order set by the posits of chapter 12. The selection procedure of a topic run and the next two runs are fixed under Topic runs below | every central P5 problem claim has evidence, counterevidence or an explicit open-evidence status, and three vertical pilots traverse the full chain under independent review | `python tools/validate.py . --chapter 40_output/<slug>` per chapter and the review-only checks |
-| 7. Model extended phenomenon by phenomenon | a coverage matrix relates phenomena to the pinned P5 modules and their effective ODD semantics, each phenomenon has independent synthetic cases and real cases from distinct editorial contexts, and an RDF binding preserves the model instance under a tested contract | P6 alternatives are compared against the same dimensions and representative use cases | `python tools/check_abstract_text_v01.py --check`, `python tools/check_editorial_cases.py --check` |
+| 7. Model extended phenomenon by phenomenon | a coverage matrix relates phenomena to the pinned P5 modules and their effective ODD semantics, each phenomenon has independent synthetic cases and real cases from the declared edition, corpus and catalogue contexts, and an RDF binding preserves the model instance under a tested contract | P6 alternatives are compared against the same dimensions and representative use cases | `python tools/check_abstract_text_v01.py --check`, `python tools/check_editorial_cases.py --check` |
 | 8. Proposal from assertions | every premise of the proposal is `validated`, a counter-reader review of the argument is recorded, the alternatives are compared under [[knowledge/p6-evaluation]], a migration prototype has run on representative P5 documents with loss, ambiguity, intervention and tooling impact reported, and the official P6 process is compared with a dated record | a migration prototype tests representative documents, alternatives are compared, and premises rest on validated assertions | `python tools/validate.py . --chapter 40_output/12-p6-design.md`, `python tools/check_wave1_sources.py . --review-only` |
 | 9. Publication | the human verification sample per chapter is recorded with its quota, the site is rebuilt from the released revision, and the owner has cleared the release | no machine process assigns human verification and generated artifacts reproduce | the completion gate in [[knowledge/testing]] |
 
@@ -72,7 +79,8 @@ indexes, is milestones 3 and 6. P6 design, meaning principles, core-model
 alternatives, blueprints, serializations, constraints, examples and
 governance, is milestones 5, 7 and 8. Text concepts and practice, meaning
 independently sourced definitions, explicit identity assumptions, bounded
-case selection and editorial task expectations, feeds milestones 6 and 7.
+case selection and task expectations across the declared application contexts,
+feeds milestones 6 and 7.
 Conformance and migration, meaning validators, converters, roundtrip
 comparison, loss reports, compatibility matrices and implementation studies,
 is the binding work of milestone 7 and the migration prototype of milestone
@@ -96,8 +104,8 @@ gaps to report under the work-package shape in [[knowledge/governance]].
   observations. The executed text identity pilot compared two selectors
   inside one object model, which the acceptance criterion excludes, so the
   package stays open.
-- **B. Real editorial cases.** Three bounded case packages from distinct
-  editorial contexts cover hierarchy, overlap, and customization or
+- **B. Real application cases.** Bounded case packages from edition, corpus
+  and catalogue contexts cover hierarchy, overlap, and customization or
   contextual interpretation, with selection unit, inclusion and exclusion
   rules, source versions, rights, authority, ODD and tool context and known
   sampling bias recorded, required observations stated before encoding, and
@@ -126,7 +134,7 @@ The following decisions belong to the owner and are recorded in
 
 - Accept, revise or defer each model document and each acceptance item in
   [[knowledge/experiments]].
-- Select the foreign editions that supply the real cases of package B and
+- Select the external editions, corpora and catalogues that supply package B and
   milestone 7.
 - Authorize the exhaustive authenticated GitHub collection run of milestone 4.
 - Rank the architecture options after milestone 8.
@@ -403,7 +411,7 @@ remains an operator decision.
 
 ### Run 1 of Text and Document Structures
 
-The second topic is Text and Document Structures. In the order of the posits
+The second topic is Text and Document Structures. At selection time, in the order of the posits
 of chapter 12, the first open evidence questions that no admitted source
 addresses are those of the projection posit, the objects posit and the
 readings posit, and all three ask how P5 encodes structure, the reading of
@@ -412,8 +420,8 @@ a containment model for crossing or noncontiguous structures. The selection
 posit, whose question the topic Annotation and Overlap serves, comes later in
 that order and already rests on three admitted specifications, three
 admitted publications and the grounded chapter
-`40_output/06-annotation-and-overlap.md`. The structure topic has no admitted
-P5 specification at all, its map holds two diary assertions, and the single
+`40_output/06-annotation-and-overlap.md`. At that selection boundary the structure topic had no admitted
+P5 specification, its map held two diary assertions, and the single
 recorded failure of the candidate, the refused page and foliation holdout in
 [[knowledge/experiments]], is a structure phenomenon. Overlap is the bridge
 between the two topics, and the run admits P5's own chapter on it; the
@@ -438,3 +446,9 @@ are `NH-Non-hierarchical.xml`, `DS-DefaultTextStructure.xml`,
 `milestone.xml`, `pb.xml`, `div.xml`, `note.xml`, `P5/Test/testoverlap.xml`,
 GitHub issues 1505 and 1400. The raw snapshots of both threads are present
 in the checkout of 2026-09-06.
+
+The subsequent intake and processing state is recorded in [[knowledge/state]].
+The section audit and prepared source-support pairs are in
+`workbench/reviews/2026-09-07-text-structures-run1/`. A chapter draft in that
+directory remains outside `40_output/` until the underlying assertions pass
+the review required by [[knowledge/verification]].

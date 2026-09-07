@@ -24,7 +24,8 @@ documents, the milestones in [[knowledge/plan]] and open handoff points in
 
 | Area | State | Evidence |
 |---|---|---|
-| English Guidelines reference | bounded source intake complete on 2026-09-07; systematic distillation open | `sources/manifests/2026-09-07-guidelines-4.12.0-admission.yaml` records 888 immutable XML representations, 20 reused and 868 new, including all 24 main chapters and 846 specifications; 883 local XML XIncludes resolve within the intake and 59 graphic references match the pinned Git inventory. The generated coverage maps all 40 published contents entries to sources and confirms their filenames in the recorded release ZIP inventory. Expected HTML pages for `re.xml` and `teidata.key.xml` are absent from that inventory and remain explicit mismatches. Twenty sources in this baseline have existing distillates; no new distillates, assertions, section-level scholarly reviews or human verification were created. Reproduction with `--check` passed. The public HTML/source semantic reconciliation remains open. |
+| Repository version 0.1.0 | lokaler Forschungsstand für den kontrollierten Sessionabschluss | [[knowledge/releases]] definiert Inhalt, Versionsgrenzen und bekannte Einschränkungen. Commit und annotierter Tag `v0.1.0` sichern den zusammengehörigen Stand aus Modellarbeit, Ontologie, HSA-Fall und vorbereiteter P5-Strukturstudie. Ein Push oder eine neue Veröffentlichung ist nicht Teil dieses Abschlusses. Die vollständige Testsuite bestand in dieser Session mit 1.620 Tests; nach den letzten HSA-Beschriftungen bestanden zusätzlich 102 HSA- und Seitenprüfungen. Der nächste fachliche Arbeitspunkt steht in [[knowledge/handoff]] unter den Revisionsabhängigkeiten von Modell 0.2. |
+| English Guidelines reference | bounded source intake complete on 2026-09-07; systematic distillation open | The admission manifest records 888 immutable XML representations, including all 24 main chapters and 846 specifications. Coverage maps all 40 published contents entries; 883 XML XIncludes resolve and 59 graphic references match the pinned Git inventory. Expected HTML pages for `re.xml` and `teidata.key.xml` remain explicit inventory mismatches. Twenty-nine baseline sources now have distillates. Two chapter section audits are authored records; independent source-support review of the new structure run and human verification remain open. |
 | Local repository | ready | branch `main`; scaffold, collector, workbench and repair commits exist |
 | GitHub remote | ready | public `chpollin/tei-p6-research` repository configured as `origin` |
 | Guidelines handover | source basis pushed on 2026-09-07 | Commit `ebe6c63cc6cfe7ce9e744b7adf33d6bcfb6d7161` publishes the 888-source intake. A fresh clone from GitHub passed the Guidelines reconciliation and schema validation without ignored originals or a Git mirror. The Knowledge navigation now uses an explicit filename order to avoid the Windows/Linux difference observed in the preceding GitHub checks. Workflow results and the Pages deployment log identify the remotely validated and published revision; source availability leaves systematic distillation and human verification open. |
@@ -40,8 +41,8 @@ documents, the milestones in [[knowledge/plan]] and open handoff points in
 | Legacy SourceForge | partial | tracker API boundary `observable-complete` on 2026-09-06 under adapter version 2: the 1,349 tickets and 8,880 discussion posts of the 2026-09-05 run reconcile against the tracker-reported counts (774 bugs, 567 feature requests, 8 support requests) in `sources/manifests/2026-09-06-tei-legacy-sourceforge-r4.yaml`; the raw responses of the earlier runs are not in this checkout; release-file and legacy version-control interfaces remain unreconciled |
 | Literature corpus | partial | a bounded first reading records four candidates; W3C REC2017, Piez2014 and Renear/Wickett2010 have citation-only admissions; the Renear/Mylonas/Durand author-version full text returned HTTP 403; Zotero/JTEI and full seed census remain open |
 | Official P6 process | partial | public `TEIC/timeForP6` history acquired; relevant Council records inventoried; reported `TEIC/p6-sandbox` remains non-public or absent |
-| Independent P6 design knowledge | bounded Abstract Text Model 0.1 implemented, human acceptance pending | Ten record kinds with formal constraints and five reference operations. JSON, XML and YAML bindings preserve the same model instance. Two real diary fragments have bounded mappings. Full TEI domain coverage, RDF and whole-document P5 conversion remain open. |
-| Grounded knowledge | four bounded chapters; entity runs reviewed | Twenty-three document sources and seven citation-only sources have distillates. Seventy-seven assertions carry passing recorded machine reviews; seventy-one are `validated` and six remain `contested`. Chapter 08 cites sixty-six assertions and records eleven posits. The four output chapters are `grounded`. The full Guidelines intake adds source availability only; comprehensive source interpretation and human verification remain open. |
+| Independent P6 design knowledge | bounded models 0.1 and 0.2 implemented; standalone model proposal expanded | Chapter 02 defines and argues the declared scope, with nine validated source premises and twenty-five explicit posits. Model 0.1 has JSON/XML/YAML roundtrips; model 0.2 has JSON packages and a one-way RDF export with declared omissions. The documentary ontology and HSA case have separate contracts. Human acceptance, full TEI domain coverage and general whole-document P5 conversion remain open. |
+| Grounded knowledge | four bounded output chapters; structure and identity studies await review | Forty-four distillates cover thirty-five document sources and nine citation-only sources. Of 107 assertions, seventy-seven retain their earlier passing machine reviews (seventy-one `validated`, six `contested`); the twenty-four structure assertions and six identity/evidence assertions remain `grounded`. Their fourteen distillates also remain `grounded`. The draft for chapter 05 stays under the run's review directory until source-support review permits synthesis. |
 | Text identity pilot acceptance | awaiting owner review | nine support pairs passed independent fresh-context review on 2026-09-05 after source-context correction; same-model-family limitation remains; human decisions use the five items in `knowledge/experiments.md` |
 | Text identity pilot technical gate | passed on 2026-09-05 | 238 tests passed after first-wave integration; 38 synthetic cases reproduced; full-vault and chapter validation had no errors or warnings; source admission, control-plane integrity and current review hashes passed; generated HTML reproduced byte-for-byte |
 | Entity extension 0.2 | drafted and implemented, human acceptance pending | section 14 of the text model defines entity, name, denotation, statement and alignment records on the claim pattern; the validator, two reference operations and a deterministic runner pass all fifty-eight independently authored cases and thirty-three canonical checks; four readings the text left open were settled and written back; a one-way RDF export in `tools/models/rdf_binding.py` preserves every record and reference edge under the identifier policy and is documented in `knowledge/text-model-bindings.md` § RDF export; five owner-review items stand in section 14.6 |
@@ -50,12 +51,33 @@ documents, the milestones in [[knowledge/plan]] and open handoff points in
 | Project text and argument review | integrated on 2026-09-05 | three GPT-6 review packages covered the model dossier, pilot argument, and research programme; final readback found no material contradictions in the reviewed model and method texts; these editorial reviews do not establish source support, ontological adequacy, or human acceptance |
 | P5 specification atlas | bounded declaration navigation implemented | `corpus/projections/p5-specs-4.12.0.json` inventories 846 specification files, 546 local attributes and 131 local constraints; 57 named-datatype references remain outside declaration lookup; inheritance, Guidelines interpretation and effective ODD compilation remain open |
 | First research wave | bounded integration and technical checks complete | four citation-only sources have checked quotations and validated distillates; four validated assertions feed `40_output/06-annotation-and-overlap.md`; eight source-support pairs passed fresh-context review after narrowing one heading; atlas reproduction, quotation checks, chapter and full-vault validation, control-plane checks and 238 tests passed; human verification remains open |
-| Proposal for TEI P6 | continuous technical argument integrated | `40_output/12-p6-design.md` links nine grounded premises to thirteen explicit posits and seven comparative examples. Architecture ranking and adoption evidence remain open. |
+| Proposal for TEI P6 | model definition and architecture argument have separate output roles | `40_output/02-abstract-model.md` supplies the definition and rationale for 0.1, 0.2 and the optional source profile. `40_output/12-p6-design.md` retains nine source premises, thirteen posits and seven comparative examples with explicit 0.1 scope. The output roles in `knowledge/p6-architecture.md` place baseline synthesis in 01 and migration/interoperability in 11. Architecture ranking and adoption evidence remain open. |
 | Editorial comparison | bounded execution complete | three fragments of one pinned Humboldt diary; two development mappings preserve the declared observations; the frozen candidate refuses the page/foliation holdout and the baseline projection also misses its required prose result; 18 independent synthetic provenance-profile cases pass; CC BY-SA 4.0 attribution and source hashes reconcile; full RNG/ODD conformance and media alignment remain untested |
 | Research frontend | implemented and locally checked | The canonical proposal is `docs/index.html`. Model, Materials, Knowledge and About use the same layout and the same local and published routes. No decorative horizontal rules. The model reference derives its ten classes and seventeen reference fields from the existing contract. Published revisions are identified by the Pages deployment log. |
-| Integrated release gate | passed locally on 2026-09-07 | 1,377 tests pass; ruff has no findings; full-vault validation has no errors or warnings; the source control plane reconciles. The Guidelines check reproduces 888 immutable source admissions and both coverage projections, including a tested clean checkout without ignored data. The 20 previously admitted baseline representations are byte-identical to HEAD. All five public pages reproduce from their recorded build dates. Desktop browser checks covered the Guidelines contents table and navigation to an expanded XML source passage. Systematic scholarly interpretation, human verification and publication of this working-tree change remain open. |
-| Knowledge navigation | implemented; complete Guidelines reference admitted | The actual vault contains 891 source representations, thirty distillates, seventy-seven assertions and four grounded chapters after the 2026-09-07 intake. The generated coverage separates imported sources from existing distillates. Passage links and backreferences follow the immediate-layer chain. Citation-only admissions end at their checked quotation and citation. |
+| Integrated release gate | previous gate passed; current extension under integration | The preceding source-intake gate passed on 2026-09-07. The current export, navigation and structure-reading extension is being checked against the actual combined file state. Research review and human verification have separate acceptance boundaries. |
+| Knowledge navigation | topic and declaration navigation implemented | The actual vault contains 894 source representations, forty-four distillates, 107 assertions and four output chapters. The Guidelines navigation projection joins all 888 sources to the 846-entry declaration atlas, with 4,657 resolved declaration edges and 57 unresolved references. Of the edges, 4,513 link to existing source blocks and 144 explicitly fall back to the complete source. Topic assignments are rule-based suggestions; ten support sources remain explicitly unclassified. The earlier browser checks covered combined topic/module/type filtering, an empty result and a cross-filter link that reveals its target. |
 | Materials navigation | implemented | Seventeen primary source families and a separate literature view describe locked holdings and gaps. The Guidelines coverage section maps all 40 published contents entries to the admitted sources and distinguishes import from actual distillate presence. Raw-object acquisition and scholarly completeness retain their separate boundaries. |
+| Identity and evidence profile | implemented; technical completion gate passed on 2026-09-07 | The user-delegated decisions in `knowledge/identity-evidence.md` distinguish work assignments, artifacts and transcription identity. Two XML snapshots, five exact fragments, seven source-report views and four explicitly synthetic identity cases reproduce offline. The full suite passed 1,439 tests with one platform-dependent symlink test skipped; the final focused run passed all 28 profile and intake-navigation tests, including the additional entity-kind revision check. Lint, schema validation without warnings, source-control reconciliation and report reproduction pass. Two distillates and six assertions remain `grounded`; independent source-support review, domain acceptance and full-edition migration are open. |
+| Model revision limits | reproduced and documented on 2026-09-07; model corrections open | The integrator repeated the GPT-6 counterexamples. The 0.2 revision check accepts an entity-kind change and movement of an unchanged alignment to another carrier. The source profile accepts a selection redirected to an identical passage in another catalogue entry. A locally redefined mention-concept ID prevents universal additive 0.1-to-0.2 upgrade. These limits are explicit in chapter 02 and the model contracts, with revision work in `knowledge/handoff.md`. |
+| Initial Abstract Model proposal integration | initial technical gate passed on 2026-09-07; scholarly acceptance open | The first expansion of chapter 02 had fourteen sections, nine validated source premises and eighteen posits. GPT-6 completed implementation-consistency review and GPT-5.6 Sol assessed the output functions. Both changed chapters and the full vault validated without errors or warnings. That full suite passed 1,441 tests with one platform-dependent symlink skip, including page reproduction and the bounded pilot-audit regression checks. Lint, source-control reconciliation and the 0.1, 0.2, source-profile, text-identity and navigation reports passed. The old nine-pair pilot audit remains unchanged in scope. Independent review of the expanded chapter, human acceptance, revision-dependency enforcement and representative migration remain open. |
+| Previous model knowledge consolidation | design integrated and full test suite passed on 2026-09-07; scholarly acceptance open | `knowledge/model-design.md` consolidated the proposed application-neutral text, names, mentions, classifications and contextual place descriptions. `knowledge/model-examples.md` held four complete illustrative XML/JSON/RDF cases. The integrator parsed all twelve serializations and compared 60 resources, 21 claims, six selections and 465 RDF triples, including references and scope. That chapter revision had nine validated premises and twenty-three posits. The full suite passed 1,441 tests with one platform-dependent symlink skip; lint, full-vault and both chapter validations had no errors or warnings. Source-control reconciliation and the affected experiment reports pass. The implementation remains 0.1/0.2; XML/JSON/YAML codecs accept only 0.1, while 0.2 has JSON packages and one-way RDF export. No new source admission, full P5 mapping, 0.2 cross-binding roundtrip or human acceptance is established by this consolidation. |
+| Critical model and ontology review | revised design and full test suite passed on 2026-09-07; scholarly acceptance open | The design separates name forms from use, text identity from grouping, proposition content from stance, and records from intended referents. Six XML/JSON/RDF cases contain 86 resources, 30 propositions, 32 claims and eight selections; their 875 RDF triples agree with the record views. The documentary ontology has 21 classes and 28 properties in a 224-triple core, with fourteen non-entailing external comparison records. The locked-environment suite passed 1,522 tests with one platform-dependent symlink skip. Ten warnings originate in RDFLib JSON-LD parsing and were investigated; explicit graph equality passes. The suite includes thirty ontology tests, fifty-one example tests and four workflow tests. Chapter 02 has nine validated premises and twenty-five posits. Separate claim-level evidence, nested source reports, full ontology reasoning, P5 migration and human acceptance remain open; the existing 0.2 revision and RDF mapping limits remain explicit. |
+| Complete HSA letter case | Refactoring und technischer Gesamtabschluss am 2026-09-07 bestanden | Der gepflegte Vertrag liegt in [[knowledge/hsa-profile]]. Quellenauswertung, deklarative Zuordnungen, Bindings und Validierung sind getrennt; die Prüfung umfasst auch Absender, Prädikat, Datentyp, Belegumleitung, Haltung, Kontext, Namensform und Typerwartung. Mehrdeutige oder unbekannte JSON-/XML-Felder werden zurückgewiesen. Binding 2 trennt 1.856 semantische Tripel vom ergänzenden Erhaltungsteil; die Vereinigung erhält unverändert 4.266 Tripel. Beide Teile zusammen sind in JSON 37,1 % und in XML 39,8 % kleiner als die bisherigen vollständigen Dateien. Binding 1 bleibt lesbar. Die zentrale Gesamtsuite lief einmal und bestand mit 1.620 Tests, einem plattformabhängigen Skip und zehn bekannten RDFLib-Warnungen. Der begrenzte Textidentitätsprüfer besteht ohne eingebetteten Gesamttest; seine 38 Ergebnisse bleiben unverändert. Ruff, Quellen-/Graphreproduktion und Vault-Validierung ohne Fehler oder Warnungen bestanden. HSA-ODD-Konformität, allgemeine P5-Migration, Registerauflösung, OWL-Reasoning und fachliche Abnahme bleiben offen. |
+
+### Three-area extension
+
+The XML handover reconstructs all 888 exact files in their upstream layout
+from tracked representations. Its inventory identifies release, commit,
+hashes and rights. Conflicting files and unsafe paths fail before publication.
+Graphics, schemas and rendered Guidelines HTML are outside this export.
+
+The Text and Document Structures run has twelve source-specific distillates
+and twenty-four atomic assertions. The test XML and five short issue
+quotations have separate admission records; quotation fidelity passed against
+local raw snapshots on 2026-09-07. The review directory holds two chapter
+section audits, 143 enriched source pairs and 25 assertion pairs. New machine
+review and human verification remain open. The requested exception for a
+different review model remains unresolved.
 
 ## Milestones
 
@@ -83,6 +105,8 @@ replaces the region between the markers with the actual file state.
 | Source | Type | Channel | Markdown representation | Distillate | Status |
 |---|---|---|---|---|---|
 | edition humboldt digital: England travel diary H0017682 | document | collection | [[10_markdown/documents/humboldt-h0017682-7d174637]] | [[20_distillates/documents/humboldt-h0017682-7d174637]] | distilled |
+| Hugo Schuchardt Archiv: Brief 4493 | document | collection | [[10_markdown/documents/hsa-letter-4493-2026-09-07]] | [[20_distillates/documents/hsa-letter-4493-2026-09-07]] | distilled |
+| Stefan Zweig Digital: Werke | document | collection | [[10_markdown/documents/szd-werke-2026-09-07]] | [[20_distillates/documents/szd-werke-2026-09-07]] | distilled |
 | TEI P5 4.12.0 A Gentle Introduction to XML | document | collection | [[10_markdown/documents/tei-p5-guidelines-sg-gentleintroduction-4.12.0]] | — | ingested |
 | TEI P5 4.12.0 ab | document | collection | [[10_markdown/documents/tei-p5-ab-4.12.0]] | — | ingested |
 | TEI P5 4.12.0 abbr | document | collection | [[10_markdown/documents/tei-p5-abbr-4.12.0]] | — | ingested |
@@ -151,13 +175,13 @@ replaces the region between the markers with the actual file state.
 | TEI P5 4.12.0 att.enjamb | document | collection | [[10_markdown/documents/tei-p5-att.enjamb-4.12.0]] | — | ingested |
 | TEI P5 4.12.0 att.entryLike | document | collection | [[10_markdown/documents/tei-p5-att.entrylike-4.12.0]] | — | ingested |
 | TEI P5 4.12.0 att.formula | document | collection | [[10_markdown/documents/tei-p5-att.formula-4.12.0]] | — | ingested |
-| TEI P5 4.12.0 att.fragmentable | document | collection | [[10_markdown/documents/tei-p5-att.fragmentable-4.12.0]] | — | ingested |
+| TEI P5 4.12.0 att.fragmentable | document | collection | [[10_markdown/documents/tei-p5-att.fragmentable-4.12.0]] | [[20_distillates/documents/tei-p5-att.fragmentable-4.12.0]] | distilled |
 | TEI P5 4.12.0 att.gaijiProp | document | collection | [[10_markdown/documents/tei-p5-att.gaijiprop-4.12.0]] | — | ingested |
 | TEI P5 4.12.0 att.global | document | collection | [[10_markdown/documents/tei-p5-att.global-4.12.0]] | — | ingested |
 | TEI P5 4.12.0 att.global.analytic | document | collection | [[10_markdown/documents/tei-p5-att.global.analytic-4.12.0]] | — | ingested |
 | TEI P5 4.12.0 att.global.change | document | collection | [[10_markdown/documents/tei-p5-att.global.change-4.12.0]] | — | ingested |
 | TEI P5 4.12.0 att.global.facs | document | collection | [[10_markdown/documents/tei-p5-att.global.facs-4.12.0]] | — | ingested |
-| TEI P5 4.12.0 att.global.linking | document | collection | [[10_markdown/documents/tei-p5-att.global.linking-4.12.0]] | — | ingested |
+| TEI P5 4.12.0 att.global.linking | document | collection | [[10_markdown/documents/tei-p5-att.global.linking-4.12.0]] | [[20_distillates/documents/tei-p5-att.global.linking-4.12.0]] | distilled |
 | TEI P5 4.12.0 att.global.rendition | document | collection | [[10_markdown/documents/tei-p5-att.global.rendition-4.12.0]] | — | ingested |
 | TEI P5 4.12.0 att.global.responsibility specification | document | collection | [[10_markdown/documents/tei-p5-att.global.responsibility-4.12.0]] | [[20_distillates/documents/tei-p5-att.global.responsibility-4.12.0]] | distilled |
 | TEI P5 4.12.0 att.global.source specification | document | collection | [[10_markdown/documents/tei-p5-att.global.source-4.12.0]] | [[20_distillates/documents/tei-p5-att.global.source-4.12.0]] | distilled |
@@ -306,7 +330,7 @@ replaces the region between the markers with the actual file state.
 | TEI P5 4.12.0 Dedication | document | collection | [[10_markdown/documents/tei-p5-guidelines-dedication-4.12.0]] | — | ingested |
 | TEI P5 4.12.0 def | document | collection | [[10_markdown/documents/tei-p5-def-4.12.0]] | — | ingested |
 | TEI P5 4.12.0 default | document | collection | [[10_markdown/documents/tei-p5-default-4.12.0]] | — | ingested |
-| TEI P5 4.12.0 Default Text Structure | document | collection | [[10_markdown/documents/tei-p5-guidelines-ds-defaulttextstructure-4.12.0]] | — | ingested |
+| TEI P5 4.12.0 Default Text Structure | document | collection | [[10_markdown/documents/tei-p5-guidelines-ds-defaulttextstructure-4.12.0]] | [[20_distillates/documents/tei-p5-guidelines-ds-defaulttextstructure-4.12.0]] | distilled |
 | TEI P5 4.12.0 defaultVal | document | collection | [[10_markdown/documents/tei-p5-defaultval-4.12.0]] | — | ingested |
 | TEI P5 4.12.0 del | document | collection | [[10_markdown/documents/tei-p5-del-4.12.0]] | — | ingested |
 | TEI P5 4.12.0 delSpan | document | collection | [[10_markdown/documents/tei-p5-delspan-4.12.0]] | — | ingested |
@@ -321,7 +345,7 @@ replaces the region between the markers with the actual file state.
 | TEI P5 4.12.0 distinct | document | collection | [[10_markdown/documents/tei-p5-distinct-4.12.0]] | — | ingested |
 | TEI P5 4.12.0 distributor | document | collection | [[10_markdown/documents/tei-p5-distributor-4.12.0]] | — | ingested |
 | TEI P5 4.12.0 district | document | collection | [[10_markdown/documents/tei-p5-district-4.12.0]] | — | ingested |
-| TEI P5 4.12.0 div | document | collection | [[10_markdown/documents/tei-p5-div-4.12.0]] | — | ingested |
+| TEI P5 4.12.0 div | document | collection | [[10_markdown/documents/tei-p5-div-4.12.0]] | [[20_distillates/documents/tei-p5-div-4.12.0]] | distilled |
 | TEI P5 4.12.0 div1 | document | collection | [[10_markdown/documents/tei-p5-div1-4.12.0]] | — | ingested |
 | TEI P5 4.12.0 div2 | document | collection | [[10_markdown/documents/tei-p5-div2-4.12.0]] | — | ingested |
 | TEI P5 4.12.0 div3 | document | collection | [[10_markdown/documents/tei-p5-div3-4.12.0]] | — | ingested |
@@ -453,7 +477,7 @@ replaces the region between the markers with the actual file state.
 | TEI P5 4.12.0 interpretation | document | collection | [[10_markdown/documents/tei-p5-interpretation-4.12.0]] | — | ingested |
 | TEI P5 4.12.0 item | document | collection | [[10_markdown/documents/tei-p5-item-4.12.0]] | — | ingested |
 | TEI P5 4.12.0 iType | document | collection | [[10_markdown/documents/tei-p5-itype-4.12.0]] | — | ingested |
-| TEI P5 4.12.0 join | document | collection | [[10_markdown/documents/tei-p5-join-4.12.0]] | — | ingested |
+| TEI P5 4.12.0 join | document | collection | [[10_markdown/documents/tei-p5-join-4.12.0]] | [[20_distillates/documents/tei-p5-join-4.12.0]] | distilled |
 | TEI P5 4.12.0 joinGrp | document | collection | [[10_markdown/documents/tei-p5-joingrp-4.12.0]] | — | ingested |
 | TEI P5 4.12.0 keywords | document | collection | [[10_markdown/documents/tei-p5-keywords-4.12.0]] | — | ingested |
 | TEI P5 4.12.0 kinesic | document | collection | [[10_markdown/documents/tei-p5-kinesic-4.12.0]] | — | ingested |
@@ -525,7 +549,7 @@ replaces the region between the markers with the actual file state.
 | TEI P5 4.12.0 metamark | document | collection | [[10_markdown/documents/tei-p5-metamark-4.12.0]] | — | ingested |
 | TEI P5 4.12.0 metDecl | document | collection | [[10_markdown/documents/tei-p5-metdecl-4.12.0]] | — | ingested |
 | TEI P5 4.12.0 metSym | document | collection | [[10_markdown/documents/tei-p5-metsym-4.12.0]] | — | ingested |
-| TEI P5 4.12.0 milestone | document | collection | [[10_markdown/documents/tei-p5-milestone-4.12.0]] | — | ingested |
+| TEI P5 4.12.0 milestone | document | collection | [[10_markdown/documents/tei-p5-milestone-4.12.0]] | [[20_distillates/documents/tei-p5-milestone-4.12.0]] | distilled |
 | TEI P5 4.12.0 mod | document | collection | [[10_markdown/documents/tei-p5-mod-4.12.0]] | — | ingested |
 | TEI P5 4.12.0 model | document | collection | [[10_markdown/documents/tei-p5-model-4.12.0]] | — | ingested |
 | TEI P5 4.12.0 Model Classes | document | collection | [[10_markdown/documents/tei-p5-guidelines-ref-classes-model-4.12.0]] | — | ingested |
@@ -677,10 +701,10 @@ replaces the region between the markers with the actual file state.
 | TEI P5 4.12.0 namespace | document | collection | [[10_markdown/documents/tei-p5-namespace-4.12.0]] | — | ingested |
 | TEI P5 4.12.0 nationality | document | collection | [[10_markdown/documents/tei-p5-nationality-4.12.0]] | — | ingested |
 | TEI P5 4.12.0 node | document | collection | [[10_markdown/documents/tei-p5-node-4.12.0]] | — | ingested |
-| TEI P5 4.12.0 Non-hierarchical Structures | document | collection | [[10_markdown/documents/tei-p5-guidelines-nh-non-hierarchical-4.12.0]] | — | ingested |
+| TEI P5 4.12.0 Non-hierarchical Structures | document | collection | [[10_markdown/documents/tei-p5-guidelines-nh-non-hierarchical-4.12.0]] | [[20_distillates/documents/tei-p5-guidelines-nh-non-hierarchical-4.12.0]] | distilled |
 | TEI P5 4.12.0 normalization | document | collection | [[10_markdown/documents/tei-p5-normalization-4.12.0]] | — | ingested |
 | TEI P5 4.12.0 notatedMusic | document | collection | [[10_markdown/documents/tei-p5-notatedmusic-4.12.0]] | — | ingested |
-| TEI P5 4.12.0 note | document | collection | [[10_markdown/documents/tei-p5-note-4.12.0]] | — | ingested |
+| TEI P5 4.12.0 note | document | collection | [[10_markdown/documents/tei-p5-note-4.12.0]] | [[20_distillates/documents/tei-p5-note-4.12.0]] | distilled |
 | TEI P5 4.12.0 noteGrp | document | collection | [[10_markdown/documents/tei-p5-notegrp-4.12.0]] | — | ingested |
 | TEI P5 4.12.0 notesStmt | document | collection | [[10_markdown/documents/tei-p5-notesstmt-4.12.0]] | — | ingested |
 | TEI P5 4.12.0 num | document | collection | [[10_markdown/documents/tei-p5-num-4.12.0]] | — | ingested |
@@ -704,6 +728,7 @@ replaces the region between the markers with the actual file state.
 | TEI P5 4.12.0 origPlace | document | collection | [[10_markdown/documents/tei-p5-origplace-4.12.0]] | — | ingested |
 | TEI P5 4.12.0 orth | document | collection | [[10_markdown/documents/tei-p5-orth-4.12.0]] | — | ingested |
 | TEI P5 4.12.0 outputRendition | document | collection | [[10_markdown/documents/tei-p5-outputrendition-4.12.0]] | — | ingested |
+| TEI P5 4.12.0 overlap test document | document | collection | [[10_markdown/documents/tei-p5-test-testoverlap-4.12.0]] | [[20_distillates/documents/tei-p5-test-testoverlap-4.12.0]] | distilled |
 | TEI P5 4.12.0 p | document | collection | [[10_markdown/documents/tei-p5-p-4.12.0]] | — | ingested |
 | TEI P5 4.12.0 param | document | collection | [[10_markdown/documents/tei-p5-param-4.12.0]] | — | ingested |
 | TEI P5 4.12.0 paramList | document | collection | [[10_markdown/documents/tei-p5-paramlist-4.12.0]] | — | ingested |
@@ -711,7 +736,7 @@ replaces the region between the markers with the actual file state.
 | TEI P5 4.12.0 particDesc | document | collection | [[10_markdown/documents/tei-p5-particdesc-4.12.0]] | — | ingested |
 | TEI P5 4.12.0 path | document | collection | [[10_markdown/documents/tei-p5-path-4.12.0]] | — | ingested |
 | TEI P5 4.12.0 pause | document | collection | [[10_markdown/documents/tei-p5-pause-4.12.0]] | — | ingested |
-| TEI P5 4.12.0 pb | document | collection | [[10_markdown/documents/tei-p5-pb-4.12.0]] | — | ingested |
+| TEI P5 4.12.0 pb | document | collection | [[10_markdown/documents/tei-p5-pb-4.12.0]] | [[20_distillates/documents/tei-p5-pb-4.12.0]] | distilled |
 | TEI P5 4.12.0 pc | document | collection | [[10_markdown/documents/tei-p5-pc-4.12.0]] | — | ingested |
 | TEI P5 4.12.0 per | document | collection | [[10_markdown/documents/tei-p5-per-4.12.0]] | — | ingested |
 | TEI P5 4.12.0 performance | document | collection | [[10_markdown/documents/tei-p5-performance-4.12.0]] | — | ingested |
@@ -977,19 +1002,24 @@ replaces the region between the markers with the actual file state.
 | att.personal, att.naming, and att.canonical: Error in ODD? | publication | import | — | [[20_distillates/publications/teic-tei-issue-2739]] | distilled |
 | Hierarchies within range space: From LMNL to OHCO | publication | import | — | [[20_distillates/publications/piez2014range]] | distilled |
 | ogrophy elements should be in att.canonical | publication | import | — | [[20_distillates/publications/teic-tei-issue-1414]] | distilled |
+| Remove numbered divisions | publication | import | — | [[20_distillates/publications/teic-tei-issue-1400]] | distilled |
 | soft deprecation of @key | publication | import | — | [[20_distillates/publications/teic-tei-issue-337]] | distilled |
 | There are No Documents | publication | import | — | [[20_distillates/publications/renear-wickett2010documents]] | distilled |
+| Use of `@next/@prev` versus `<join>` with `@scope/@result` and `@exclude` needs clarification | publication | import | — | [[20_distillates/publications/teic-tei-issue-1505]] | distilled |
 | Web Annotation Data Model | publication | import | — | [[20_distillates/publications/w3c-web-annotation-20170223]] | distilled |
 <!-- inventory:end -->
 
 ## Chapter register
 
-One row per chapter of the output. Writing status mirrors the chapter's frontmatter.
+The register lists existing chapters and reserved topic routes. Writing status
+mirrors each existing chapter's frontmatter. Planned topic routes become
+standalone chapters when their evidence and reader-facing function justify
+the split, under [[knowledge/p6-architecture]].
 
 | Chapter | File | Status | Notes |
 |---|---|---|---|
 | P5 Architecture | `40_output/01-p5-architecture.md` | planned | Scope topic: P5 Architecture. |
-| Abstract Model | `40_output/02-abstract-model.md` | grounded | Bounded text identity and annotation pilot; four grounded P5 statements and four explicit model posits; human acceptance pending. |
+| Abstract Model | `40_output/02-abstract-model.md` | grounded | Standalone definition and rationale for 0.1, entity extension 0.2 and the optional source-attribution profile, with explicitly proposed extensions for edition, corpus and catalogue tasks. Nine validated premises and twenty-five posits. Documentary hierarchy, proposition/stance separation and critical GPT-6 review integrated; independent chapter review and human acceptance remain open. |
 | ODD and Customization | `40_output/03-odd-and-customization.md` | planned | Scope topic: ODD and Customization. |
 | Elements and Classes | `40_output/04-elements-and-classes.md` | planned | Scope topic: Elements and Classes. |
 | Text and Document Structures | `40_output/05-text-and-document-structures.md` | planned | Scope topic: Text and Document Structures. |
@@ -999,7 +1029,7 @@ One row per chapter of the output. Writing status mirrors the chapter's frontmat
 | History and Governance | `40_output/09-history-and-governance.md` | planned | Scope topic: History and Governance. |
 | Issues and Decisions | `40_output/10-issues-and-decisions.md` | planned | Scope topic: Issues and Decisions. |
 | Interoperability and Processing | `40_output/11-interoperability-and-processing.md` | planned | Scope topic: Interoperability and Processing. |
-| P6 Design | `40_output/12-p6-design.md` | grounded | Bounded Abstract Text Model 0.1 proposal with nine grounded premises and thirteen explicit posits. Validated structurally on 2026-09-05. Architecture and adoption verdicts remain open. |
+| P6 Design | `40_output/12-p6-design.md` | grounded | Architecture argument with nine source premises, thirteen posits and comparisons retaining their 0.1 scope. Chapter 02 supplies the broader model definition. Architecture and adoption verdicts remain open. |
 
 ## Open work
 
@@ -1033,7 +1063,7 @@ One row per chapter of the output. Writing status mirrors the chapter's frontmat
   success is not proof of ontological adequacy, real-world usability, or P5
   migratability.
 - Extend the three-fragment, single-diary comparison in
-  `knowledge/experiments.md` with independently selected editions and
+  `knowledge/experiments.md` with independently selected edition, corpus and catalogue cases and
   domain reviewers. Test annotation review after actual editing and measure
   preservation, authoring, query, and teaching costs on comparable tasks.
 - Review Abstract Text Model 0.1 using the five accept/revise/defer items in

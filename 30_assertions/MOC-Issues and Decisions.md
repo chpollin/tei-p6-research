@@ -14,6 +14,7 @@ documented decision histories, without reading a closed item as a resolved matte
 
 <!-- distillates:begin -->
 - [[20_distillates/publications/tei-sourceforge-fr363]]
+- [[20_distillates/publications/teic-tei-issue-1505]]
 <!-- distillates:end -->
 
 ## Assertions

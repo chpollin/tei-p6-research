@@ -9,8 +9,8 @@ method:
 status: draft
 language: en
 created: "2026-09-06"
-updated: "2026-09-06"
-related: [specification, p6-architecture, text-model, experiments, plan, state]
+updated: "2026-09-07"
+related: [specification, p6-architecture, model-design, text-model, experiments, plan, state]
 ---
 
 # P6 Evaluation
@@ -110,6 +110,12 @@ equivalence is tested. The binding rule in
 ninth [acceptance criterion](#acceptance-of-the-synthesis) apply this
 principle.
 
+Every worked case supplies XML, JSON and RDF views of one canonical case, with
+RDF optionally represented as Turtle. The views use the same IDs, scope and
+meaning. Their `implemented`, `proposed` or `unsupported` status and their
+preservation results are reported separately. A displayed projection supplies
+no roundtrip evidence until its binding is implemented and tested.
+
 ### Prefer progressive complexity
 
 Evaluate complexity with named authoring and processing tasks. For an
@@ -118,12 +124,39 @@ they must supply, steps needed to diagnose an error, and dependencies a
 receiving tool must obtain. Generated or inherited declarations reduce effort
 only when their effective values remain inspectable and reproducible.
 
+Simple inline annotation and explicit model authoring are separate interfaces
+to the same semantics. Test whether an author can complete the simple task
+without constructing every claim record by hand, then inspect the deterministic
+expansion into model objects and claims. The expansion may apply declared
+defaults and mappings. It may not invent a referent, certainty, provenance or
+normalization that the input and its declared context do not establish.
+
 Add an advanced feature to the same example, such as a second annotation of a
 paragraph, and record what changes in the document, explanation, and processor.
 Reduced markup is useful only when it preserves necessary distinctions and
 does not move unexplained complexity into tools or implicit conventions.
 [Adequacy and practical use](#adequacy-and-practical-use) applies this
 principle.
+
+Classification also requires a progressive-complexity test. A repeatable typed
+property can express an open classification without fixing a closed class tree.
+A subclass is justified when it carries distinct identity criteria, constraints
+or valid inferences. Compare both representations against multiple concurrent
+classifications and changes over time.
+
+### Compare ontologies by function
+
+An external ontology enters the comparison for a named function, such as
+document identity, events, provenance, annotations, organizations, places or
+lexical forms. Evaluate its identity commitments, domain and range, contextual
+and temporal expressivity, formal consequences, version, extension model and
+fit with the selected cases. Similar class labels provide no equivalence test.
+
+The comparison may justify reuse, specialization, a qualified mapping or a
+local construct. Each outcome records semantic mismatches and adoption costs.
+It does not turn the compared ontologies into one combined upper model. The
+design distinctions and current comparison targets are maintained in
+[[knowledge/model-design]].
 
 ### Treat migration as part of the design
 
@@ -341,8 +374,10 @@ grounding of its own.
 | 9. Recommendation and open decisions | What should be advanced, retained, revised, or deferred? | Benefits and costs, alternatives, remaining gaps, and explicit conditions that would reverse each recommendation. |
 
 The bounded [P6 Design proposal](../40_output/12-p6-design.md) assembles the
-first model argument, and the [[knowledge/text-model|Abstract Text Model 0.1]]
-defines its executable scope. These provide an initial contribution to parts
+architecture argument. The [Abstract Model proposal](../40_output/02-abstract-model.md)
+provides its independently readable model definition and rationale, while
+[[knowledge/text-model]] supplies the detailed 0.1 and 0.2 contracts.
+These provide an initial contribution to parts
 4–6 and a provisional recommendation, with a conceptual alternative and
 explicit mapping questions. They do not complete the real-case, migration, or
 adoption evidence required by the full structure. The coverage method behind
@@ -357,12 +392,12 @@ replacing the argument. Its record separates the phenomenon and task, P5
 variants, the candidate model, supported serializations, formal constraints,
 and results. Closing a comparison returns to the originating paragraph.
 
-The same instance must underlie its XML, JSON, or other supported binding views.
-A proposed binding with no decoder and checked contract is identified as a
-proposal. Type diagrams show object kinds and relation cardinalities. Instance
-diagrams show the actual IDs in the case. Diagrams, highlighted text, and code
-must refer to those same records. They are explanations of the declared model,
-not additional evidence for its adequacy. These rules apply
+The same canonical case must underlie its XML, JSON and RDF views and any other
+supported binding view. A proposed binding with no decoder and checked contract
+is identified as a proposal. Type diagrams show object kinds and relation
+cardinalities. Instance diagrams show the actual IDs in the case. Diagrams,
+highlighted text and code must refer to those same records. They explain the
+declared model and supply no additional evidence for its adequacy. These rules apply
 [model before serialization](#model-before-serialization) and
 [define interoperability as a contract](#define-interoperability-as-a-contract).
 
@@ -379,11 +414,18 @@ questions.
 - Every proposed requirement and design choice is identifiable as the project's judgment.
 - A reader can follow a requirement to its source context, example, alternatives, formal description, and evaluation.
 - Every pinned P5 module has a visible inventory disposition. Interpretation and model coverage are reported separately from declaration counts.
+- P5 functional coverage includes inherited attributes and classes, effective constraints, Guidelines prose, ODD customization and bounded real cases for the pinned 4.12.0 baseline.
 - Document types, media, and cross-cutting phenomena are not silently equated with modules or proposed model classes.
 - Historical complaints are checked against the declared current baseline.
 - Formal conformance, conceptual adequacy, and practical usefulness have separate evidence.
 - Preservation, losses, costs, uncertainties, and reversal conditions accompany recommendations.
+- Unchanged-input acceptance, semantic preservation, P5 reverse mapping, lexical identity, byte identity and named legacy-processor behavior have separate results.
+- Mappings retain source ambiguity and absent information unless a separately evidenced enrichment supplies a claim.
+- Simple inline authoring and its explicit model expansion are tested together, and generated claims remain inspectable and reproducible.
+- External ontology reuse and every subclass are justified by semantic or formal fit rather than label similarity.
 - Supported serialization views derive from the same model instance and name the comparison relation their checks actually test.
+- Every worked case exposes XML, JSON and RDF views with one canonical case identity and explicit scope; implementation status and preservation are stated per view.
+- Roundtrip validation is claimed only for implemented bindings. An RDF export alone establishes neither losslessness nor reversibility, and the existing bounded YAML contract remains represented.
 - The title and text consistently distinguish the independent proposal from official TEI decisions.
 
 Research packages and open questions are in [[knowledge/plan]]. Progress

@@ -9,7 +9,7 @@ method:
 status: draft
 language: en
 created: "2026-09-04"
-updated: "2026-09-06"
+updated: "2026-09-07"
 related: [project, specification, data, architecture, design, schema, operations, verification, testing, governance, plan, handoff, journal, state]
 ---
 
@@ -53,11 +53,17 @@ its reason matters.
 | [[knowledge/handoff]] | process inbox | Which open handoff points await the next session? |
 | [[knowledge/journal]] | provenance of decisions | Why was a choice made, and what did it replace? |
 | [[knowledge/state]] | current reality | What exists now, what passed which check, and what is open? |
+| [[knowledge/releases]] | named research baselines and their boundaries | Which results and known limits belong to a repository version? |
 | [[knowledge/text-model]] | formal definition of the abstract text model and its conformance rules | What exactly does the candidate model define, and when does an instance conform? |
+| [[knowledge/model-design]] | proposed development beyond the executable model, including ontology comparison | How should text identity, names, classifications and contextual place descriptions work across editions, corpora and catalogues? |
+| [[knowledge/model-examples]] | worked design examples with complete XML, JSON and RDF views | How do the proposed distinctions describe the same concrete case in each syntax? |
+| [[knowledge/ontology]] | documentary ontology, mapping policy and generation contract | Which record classes are formalized, how are external comparisons kept distinct from axioms, and what do the checks establish? |
+| [[knowledge/hsa-profile]] | fixed-source HSA mapping, strict bindings and preservation components | Which source-to-claim mappings and input rules define the executable HSA letter case? |
 | [[knowledge/text-model-bindings]] | the JSON, XML and YAML bindings that preserve one model instance, and the one-way RDF export in its own section | How is one model instance written in each supported syntax without changing it, how does one package reach RDF, and what does the export drop? |
 | [[knowledge/p6-architecture]] | the candidate architecture beyond the text model, customization, versioning, migration, and the argument structure of the proposal | How do customization, versioning and migration surround the model, and how is the proposal argued? |
 | [[knowledge/p6-evaluation]] | design principles, evaluation dimensions, comparison protocol and acceptance criteria for P6 options | How are P6 options compared without presuming the answer? |
 | [[knowledge/experiments]] | experiment contracts, acceptance items and evidence entry points of the executed pilots | What did each executed pilot test, how is it reproduced, and what remains for human acceptance? |
+| [[knowledge/identity-evidence]] | identity decisions and an executable source-attribution profile on model 0.2 | How do catalogue objects, work assignments, transcription versions and source-qualified claims remain distinct? |
 
 A document is split only when its routing questions or update cycles differ.
 Length alone never splits a document. Redundancy between documents is

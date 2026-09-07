@@ -12,6 +12,19 @@ from tools.sitegen.markup import doc_id
 ROOT = Path(__file__).parents[1]
 
 
+def test_guidelines_filters_and_declared_links_in_real_page():
+    page = Page(build_page(ROOT, '2026-09-07'))
+    assert {'knowledge-topic', 'knowledge-module', 'knowledge-source-kind'} <= set(page.ids)
+    ids = set(page.ids)
+    assert all(href[1:] in ids for href in page.links if href.startswith('#'))
+    sources = [attrs for tag, attrs in page.tags if tag == 'details' and attrs.get('data-source-kind')]
+    assert len(sources) == 888
+    app = next(attrs for attrs in sources if attrs['id'] == doc_id('10_markdown/documents/tei-p5-app-4.12.0.md'))
+    assert app['data-module'] == 'textcrit'
+    assert app['data-source-kind'] == 'elementSpec'
+    assert 'Critical Apparatus' in json.loads(app['data-topics'])
+
+
 def test_navigation_order_is_independent_of_platform_path_order(vault):
     write(vault, 'knowledge/INDEX.md', '# Index\n')
     write(vault, 'knowledge/architecture.md', '# Architecture\n')

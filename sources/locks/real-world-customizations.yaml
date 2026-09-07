@@ -1,7 +1,7 @@
 schema_version: 1
 lock_id: tei-real-world-customizations-sample
 source_id: tei-real-world-customizations
-as_of: "2026-09-05"
+as_of: "2026-09-07"
 retrieval_status: partial
 
 scope:
@@ -29,6 +29,11 @@ records:
     dataset_version: 11.0.1
     boundary: Three fragments in one England travel diary, with four pinned source/context responses; not the edition corpus.
     rights: CC-BY-SA-4.0
+  - kind: purposive-identity-evidence-study
+    manifest: sources/manifests/2026-09-07-identity-evidence.yaml
+    protocol: experiments/identity_evidence/protocol.json
+    boundary: Two user-nominated XML sources; two Zweig catalogue records and three contexts of HSA letter 4493. No edition-wide coverage.
+    rights: CC-BY-NC-4.0
 counts:
   official_index_pages_retrieved: 2
   external_artifact_links_inventoried: 122

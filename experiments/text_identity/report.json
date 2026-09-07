@@ -724,13 +724,16 @@
     }
   ],
   "format_version": 1,
+  "input_scopes": {
+    "knowledge/experiments.md": "## Text identity and annotation pilot"
+  },
   "inputs": {
     "experiments/text_identity/cases.json": "a507ae84efdfcad8eb6ee791e001c37d5ed57b6e380b07e65453b99caebcbe4b",
     "experiments/text_identity/spec.json": "1b6b15c7d8a081fb4215be08f7b85b27ad7fb036f1aa2e4a43f661839efcb597",
-    "knowledge/experiments.md": "c6a8e18ce14808d6a41e7cc63a2e541768ef0bede89329f2cd32cec6cdce031f",
+    "knowledge/experiments.md": "7dacf71c4c2ec351e355757a928ba128f20165239fe616a72a4e29e0a4a5be48",
     "tools/__init__.py": "bfbe55a00528e6b1bfa94096c8eb7f6dee8bca831778732f8980475b94ce96b4",
     "tools/pilots/__init__.py": "4da824874df48464d31f4cd941d7b95d45446e3dea8fde213cc486795532d69f",
-    "tools/pilots/text_identity.py": "ef38bf3c1934538a9ba8adca760229419ede2c5403932d91241c56a67b47cba8"
+    "tools/pilots/text_identity.py": "28004f735fa98cd029f7ba9e39bb1868ab0f4bdea6553d34906436b242c4f34f"
   },
   "scope": "Synthetic finite modeling experiment; not P5 conversion or ontological evidence.",
   "summary": {

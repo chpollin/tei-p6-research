@@ -244,7 +244,28 @@ def build_view(root: Path, date: str, repository_base: str | None = None) -> dic
             meta, body = read_document(root, path)
             navigation.append({"path": path, "title": _title(meta, body, path), "kind": label})
     ordered = sorted(entries.values(), key=lambda e: (list(LAYERS).index(e["kind"]), e["title"].casefold(), e["path"]))
+    guideline_path = root / "corpus/projections/guidelines-navigation-4.12.0.json"
+    guideline_navigation = json.loads(guideline_path.read_text(encoding="utf-8")) if guideline_path.exists() else None
+    if guideline_navigation:
+        if guideline_navigation.get("use") != "navigation-only; never grounding":
+            raise ValueError("Guidelines navigation must not carry evidence status")
+        for row in guideline_navigation["sources"]:
+            entry = entries.get(row["representation"])
+            if not entry or entry["kind"] != "representation":
+                raise ValueError("Guidelines navigation source missing from Knowledge")
+            for relation in row["references"]:
+                if relation.get("anchor") and relation["anchor"] not in entry["blocks"]:
+                    raise ValueError("Guidelines navigation source anchor missing")
+                destination = relation.get("target_representation")
+                if destination and destination not in entries:
+                    raise ValueError("Guidelines navigation target missing")
+            for relation in row["referenced_by"]:
+                destination = entries.get(relation["representation"])
+                if not destination or (relation.get("anchor") and relation["anchor"] not in destination["blocks"]):
+                    raise ValueError("Guidelines reverse reference target missing")
+            entry["guidelines"] = row
     for entry in ordered:
         entry.pop("body")
     return {"date": date, "base": repository_base, "entries": ordered, "navigation": navigation,
+            "guidelines_navigation": guideline_navigation,
             "counts": {kind: sum(e["kind"] == kind for e in ordered) for kind in LAYERS}}

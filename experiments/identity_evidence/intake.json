@@ -1,0 +1,98 @@
+{
+  "format_version": 1,
+  "protocol_sha256": "cc32da76fddc816c1bfb8a049319ddc7279650b74864f01448504c5c6efee5bc",
+  "finished_at": "2026-09-07T10:17:48Z",
+  "sources": [
+    {
+      "id": "szd-werke-2026-09-07",
+      "url": "https://stefanzweig.digital/o:szd.werke/TEI_SOURCE",
+      "title": "Stefan Zweig Digital: Werke",
+      "creator": "Literaturarchiv Salzburg; Zentrum für Informationsmodellierung, Universität Graz",
+      "fragments": [
+        {
+          "id": "szd-record-3",
+          "tag": "biblFull",
+          "xml_id": "SZDMSK.3",
+          "xpath": "//tei:biblFull[@xml:id='SZDMSK.3']",
+          "start_byte": 10089,
+          "end_byte": 15086,
+          "sha256": "2b15cb711973860c4697b6da207de9d08aa09b56328ca0e15260e26563ad6656",
+          "xml": "<biblFull ana=\"01_Rausch\" xml:id=\"SZDMSK.3\">\n          <fileDesc>\n            <titleStmt>\n              <title ana=\"supplied/verified\" ref=\"http://d-nb.info/gnd/7756961-1\">Rausch der Verwandlung</title>\n              <title type=\"Einheitssachtitel\">Rausch der Verwandlung</title>\n              <title type=\"Gesamttitel\">Stefan Zweig - Archiv Atrium Press</title>\n              <author ref=\"#SZDPER.1560\">\n                <persName ref=\"http://d-nb.info/gnd/118637479\">\n                  <surname>Zweig</surname>\n                  <forename>Stefan</forename>\n                </persName>\n              </author>\n              <editor ref=\"#SZDPER.1555\" role=\"contributor\">\n                <persName ref=\"http://d-nb.info/gnd/116001151\">\n                  <surname>Zweig</surname>\n                  <forename>Lotte</forename>\n                </persName>\n              </editor>\n            </titleStmt>\n            <publicationStmt>\n              <ab>Archivmaterial</ab>\n            </publicationStmt>\n            <sourceDesc>\n              <msDesc>\n                <msIdentifier>\n                  <country>Österreich</country>\n                  <settlement>Salzburg</settlement>\n                  <repository ref=\"http://d-nb.info/gnd/1047605287\">Literaturarchiv Salzburg</repository>\n                  <idno type=\"signature\">SZ-AAP/W2.1</idno>\n                  <altIdentifier>\n                    <idno type=\"PID\">o:szd.268</idno>\n                  </altIdentifier>\n                </msIdentifier>\n                <msContents>\n                  <textLang>\n                    <lang xml:lang=\"ger\">Deutsch</lang>\n                  </textLang>\n                  <msItem>\n                    <incipit>„Ein Dorfpostamt in Oesterreich unterscheidet sich\n                                            wenig vom andern: Wer eines gesehen, …“</incipit>\n                  </msItem>\n                </msContents>\n                <physDesc>\n                  <objectDesc>\n                    <supportDesc>\n                      <support>\n                        <material ana=\"szdg:WritingInstrument\" xml:lang=\"de\">Schwarze Tinte, blauer Buntstift</material>\n                        <material ana=\"szdg:WritingInstrument\" xml:lang=\"en\">Black ink, blue pencil</material>                \n      </support>\n                      <extent>\n                        <span xml:lang=\"de\">\n                          <term type=\"objecttyp\">Typoskriptdurchschlag</term>, <measure ana=\"corrected\" type=\"leaf\">159 Blatt, korrigiert;\n                                                  1 Deckblatt</measure>\n                        </span>\n                        <span xml:lang=\"en\">\n                          <term type=\"objecttyp\">Typescript (carbon\n                                                  copy)</term>, <measure ana=\"corrected\" type=\"leaf\">159 leaves, corrected; 1 cover sheet</measure>\n                        </span>\n                        <measure type=\"format\">34x21 cm</measure>\n                      </extent>\n                    </supportDesc>\n                  </objectDesc>\n                  <handDesc>\n                    <ab xml:lang=\"de\">Lotte Zweig (?)</ab>\n                    <ab xml:lang=\"en\">Lotte Zweig (?)</ab>\n                  </handDesc>\n                  <accMat>\n                    <list>\n                      <item ana=\"szdg:Enclosures\">\n                        <desc xml:lang=\"de\">Deckblatt mit Aufschrift „Roman\n                                                  I Teil“ von Lotte Zweigs Hand in blauem\n                                                  Buntstift</desc>\n                        <desc xml:lang=\"en\">Cover sheet inscribed „Roman I\n                                                  Teil“ in Lotte Zweig&apos;s hand in blue pencil</desc>\n                        <measure type=\"format\">31x19 cm</measure>\n                      </item>\n                    </list>\n                  </accMat>\n                </physDesc>\n                <history>\n                  <provenance>\n                    <ab xml:lang=\"de\">Archiv Atrium Press</ab>\n                    <ab xml:lang=\"en\">Atrium Press</ab>\n                  </provenance>\n                  <acquisition>\n                    <ab xml:lang=\"de\">Ankauf Christie&apos;s London\n                                            2014</ab>\n                    <ab xml:lang=\"en\">Acquisition from Christie&apos;s London\n                                            2014</ab>\n                  </acquisition>\n                </history>\n              </msDesc>\n            </sourceDesc>\n          </fileDesc>\n          <profileDesc>\n            <textClass>\n              <keywords>\n                <term type=\"classification\" xml:lang=\"de\">Romane/Erzählungen</term>\n                <term type=\"classification\" xml:lang=\"en\">Novels/Stories</term>\n                <term ref=\"#SZDWRK.2\" type=\"work\">Rausch der Verwandlung</term>\n              </keywords>\n            </textClass>\n          </profileDesc>\n        </biblFull>"
+        },
+        {
+          "id": "szd-record-4",
+          "tag": "biblFull",
+          "xml_id": "SZDMSK.4",
+          "xpath": "//tei:biblFull[@xml:id='SZDMSK.4']",
+          "start_byte": 15095,
+          "end_byte": 20397,
+          "sha256": "68771b574a5d0d72ab75532749f2fa0f13789ec0d2a923c7ea915ff8e3d1fd4d",
+          "xml": "<biblFull ana=\"02_Rausch\" xml:id=\"SZDMSK.4\">\n          <fileDesc>\n            <titleStmt>\n              <title ana=\"supplied/verified\" ref=\"http://d-nb.info/gnd/7756961-1\">Rausch der Verwandlung</title>\n              <title type=\"Einheitssachtitel\">Rausch der Verwandlung</title>\n              <title type=\"Gesamttitel\">Stefan Zweig - Archiv Atrium Press</title>\n              <author ref=\"#SZDPER.1560\">\n                <persName ref=\"http://d-nb.info/gnd/118637479\">\n                  <surname>Zweig</surname>\n                  <forename>Stefan</forename>\n                </persName>\n              </author>\n            </titleStmt>\n            <publicationStmt>\n              <ab>Archivmaterial</ab>\n            </publicationStmt>\n            <notesStmt>\n              <note xml:lang=\"de\">1 Blatt mit Anmerkungen in Bleistift auf der\n                                Rückseite, Seite 117 doppelt</note>\n              <note xml:lang=\"en\">1 leaf has pencil annotations on verso, page 117 in\n                                duplicate</note>\n            </notesStmt>\n            <sourceDesc>\n              <msDesc>\n                <msIdentifier>\n                  <country>Österreich</country>\n                  <settlement>Salzburg</settlement>\n                  <repository ref=\"http://d-nb.info/gnd/1047605287\">Literaturarchiv Salzburg</repository>\n                  <idno type=\"signature\">SZ-AAP/W2.2</idno>\n                  <altIdentifier>\n                    <idno type=\"PID\">o:szd.948</idno>\n                  </altIdentifier>\n                </msIdentifier>\n                <msContents>\n                  <textLang>\n                    <lang xml:lang=\"ger\">Deutsch</lang>\n                  </textLang>\n                  <msItem>\n                    <incipit>„Vier Wochen lang erträgt Christine diesen\n                                            grausamen, krankhaft überreizten Zustand gewaltsamer\n                                            Einsamkeit …“</incipit>\n                    <docEdition ana=\"szdg:IdentifyingInscription\" xml:lang=\"de\">„II Teil noch nicht copiert“ eigenhändig</docEdition>\n                    <docEdition ana=\"szdg:IdentifyingInscription\" xml:lang=\"en\">„II Teil noch nicht copiert“ holograph</docEdition>\n                  </msItem>\n                </msContents>\n                <physDesc>\n                  <objectDesc>\n                    <supportDesc>\n                      <support>\n                        <material ana=\"szdg:WritingMaterial\" xml:lang=\"de\">Überwiegend Doppelbögen</material>\n                        <material ana=\"szdg:WritingMaterial\" xml:lang=\"en\">Mainly bifolia</material>\n                        <material ana=\"szdg:WritingInstrument\" xml:lang=\"de\">Violettes Farbband, violette und schwarze Tinte,\n                                                  Bleistift, blauer Kugelschreiber</material>\n                        <material ana=\"szdg:WritingInstrument\" xml:lang=\"en\">Purple ribbon, purple and black ink, pencil, blue\n                                                  ballpoint</material>\n                      </support>\n                      <extent>\n                        <span xml:lang=\"de\">\n                          <term type=\"objecttyp\">Typoskript</term>, <measure ana=\"corrected\" type=\"leaf\">87 Blatt,\n                                                  korrigiert</measure>\n                        </span>\n                        <span xml:lang=\"en\">\n                          <term type=\"objecttyp\">Typescript</term>, <measure ana=\"corrected\" type=\"leaf\">87 leaves,\n                                                  corrected</measure>\n                        </span>\n                        <measure type=\"format\">42x26 cm</measure>\n                      </extent>\n                      <foliation>\n                        <ab xml:lang=\"de\">durchgehend paginiert</ab>\n                        <ab xml:lang=\"en\">paginated throughout</ab>\n                      </foliation>\n                    </supportDesc>\n                  </objectDesc>\n                  <handDesc>\n                    <ab xml:lang=\"de\">Stefan Zweig, fremde Hand</ab>\n                    <ab xml:lang=\"en\">Stefan Zweig, unidentified hand</ab>\n                  </handDesc>\n                </physDesc>\n                <history>\n                  <provenance>\n                    <ab xml:lang=\"de\">Archiv Atrium Press</ab>\n                    <ab xml:lang=\"en\">Atrium Press</ab>\n                  </provenance>\n                  <acquisition>\n                    <ab xml:lang=\"de\">Ankauf Christie&apos;s London\n                                            2014</ab>\n                    <ab xml:lang=\"en\">Acquisition from Christie&apos;s London\n                                            2014</ab>\n                  </acquisition>\n                </history>\n              </msDesc>\n            </sourceDesc>\n          </fileDesc>\n          <profileDesc>\n            <textClass>\n              <keywords>\n                <term type=\"classification\" xml:lang=\"de\">Romane/Erzählungen</term>\n                <term type=\"classification\" xml:lang=\"en\">Novels/Stories</term>\n                <term ref=\"#SZDWRK.2\" type=\"work\">Rausch der Verwandlung</term>\n              </keywords>\n            </textClass>\n          </profileDesc>\n        </biblFull>"
+        }
+      ],
+      "requested_url": "https://stefanzweig.digital/o:szd.werke/TEI_SOURCE",
+      "canonical_url": "https://stefanzweig.digital/o:szd.werke/TEI_SOURCE",
+      "final_url": "https://stefanzweig.digital/o:szd.werke/TEI_SOURCE",
+      "observed_at": "2026-09-07T10:17:48Z",
+      "status": 200,
+      "media_type": "text/xml",
+      "byte_count": 1641144,
+      "sha256": "d8c4860957d71e0a2ea0a455a53fb3c68a942099f408c5c87997d91c0e0bc5ec",
+      "raw_path": "sha256/d8/c4860957d71e0a2ea0a455a53fb3c68a942099f408c5c87997d91c0e0bc5ec",
+      "headers": {
+        "date": "Mon, 07 Sep 2026 10:17:45 GMT",
+        "content-type": "text/xml"
+      },
+      "license": "CC-BY-NC-4.0"
+    },
+    {
+      "id": "hsa-letter-4493-2026-09-07",
+      "url": "https://gams.uni-graz.at/o:hsa.letter.4493/TEI_SOURCE",
+      "title": "Hugo Schuchardt Archiv: Brief 4493",
+      "creator": "Hugo Schuchardt Archiv, Universität Graz",
+      "fragments": [
+        {
+          "id": "hsa-source-description",
+          "tag": "sourceDesc",
+          "xpath": "//tei:teiHeader/tei:fileDesc/tei:sourceDesc",
+          "start_byte": 2342,
+          "end_byte": 4194,
+          "sha256": "b9354f254dcef40780e7bb2ee48907191aeec2409ef8a1f49d65afdd462697b6",
+          "xml": "<sourceDesc>\n        <msDesc>\n          <msIdentifier>\n            <repository>Unbekannt</repository>\n            <idno type=\"shelfmark\">1179</idno>\n          </msIdentifier>\n          <msContents>\n            <textLang mainLang=\"de\"/>\n            <msItem>\n              <author ref=\"https://gams.uni-graz.at/o:hsa.persons#P.109\">\n                <forename>Hugo</forename>\n                <surname>Schuchardt</surname>\n              </author>\n            </msItem>\n          </msContents>\n          <physDesc>\n            <objectDesc>\n              <supportDesc>\n                <support>\n                  <material ref=\"http://vocab.getty.edu/aat/300014109\">Papier</material>\n                  <objectType>Brief</objectType>\n                </support>\n              </supportDesc>\n            </objectDesc>\n          </physDesc>\n          <history>\n            <origin>\n              <origPlace ana=\"marcrelator:prp\" corresp=\"https://gams.uni-graz.at/o:hsa.places#PL.6\" ref=\"http://sws.geonames.org/2778067\">Graz</origPlace>\n              <origDate ana=\"dcterms:created\" when=\"1878-04-17\">1878-04-17</origDate>\n            </origin>\n          </history>\n        </msDesc>\n        <bibl type=\"online\">\n          <author ana=\"marcrelator:aut\">\n            <persName>\n              <forename>Bruno</forename>\n              <surname>Mazzoni</surname>\n            </persName>\n          </author>\n          <date when=\"2016\">2016</date>\n          <title>Die Korrespondenz zwischen Hugo Schuchardt und Bogdan Petriceicu Hasdeu</title>\n          <series>\n            <title>Hugo Schuchardt Archiv</title>\n            <editor>\n              <forename>Bernhard</forename>\n              <surname>Hurch</surname>\n            </editor>\n          </series>\n          <ref target=\"http://schuchardt.uni-graz.at/id/letters/1720\"/>\n        </bibl>\n      </sourceDesc>"
+        },
+        {
+          "id": "hsa-correspondence",
+          "tag": "correspDesc",
+          "xpath": "//tei:correspDesc",
+          "start_byte": 6035,
+          "end_byte": 6879,
+          "sha256": "4a131550d9fd453501bfd789b110d027403762c5b2d129f556bef120c2e8a371",
+          "xml": "<correspDesc ref=\"https://gams.uni-graz.at/o:hsa.letter.4493\">\n        <correspAction type=\"sent\">\n          <persName corresp=\"https://gams.uni-graz.at/o:hsa.persons#P.109\" ref=\"https://viaf.org/viaf/261931943\">\n            <forename>Hugo</forename>\n            <surname>Schuchardt</surname>\n          </persName>\n          <placeName corresp=\"https://gams.uni-graz.at/o:hsa.places#PL.6\" key=\"#GID.1\" ref=\"http://sws.geonames.org/2778067\">Graz</placeName>\n          <date when=\"1878-04-17\">1878-04-17</date>\n        </correspAction>\n        <correspAction type=\"received\">\n          <persName corresp=\"https://gams.uni-graz.at/o:hsa.persons#P.1720\" ref=\"https://viaf.org/viaf/65406496\">\n            <forename>Bogdan Petriceicu</forename>\n            <surname>Hasdeu</surname>\n          </persName>\n        </correspAction>\n      </correspDesc>"
+        },
+        {
+          "id": "hsa-dateline",
+          "tag": "dateline",
+          "xpath": "//tei:body//tei:dateline",
+          "start_byte": 9062,
+          "end_byte": 9100,
+          "sha256": "9829b241b4d8e54639eebd47778a7d30da366558c231404274ad92cef55cb741",
+          "xml": "<dateline> Graz 17. 4. 78. </dateline>"
+        }
+      ],
+      "requested_url": "https://gams.uni-graz.at/o:hsa.letter.4493/TEI_SOURCE",
+      "canonical_url": "https://gams.uni-graz.at/o:hsa.letter.4493/TEI_SOURCE",
+      "final_url": "https://gams.uni-graz.at/o:hsa.letter.4493/TEI_SOURCE",
+      "observed_at": "2026-09-07T10:17:48Z",
+      "status": 200,
+      "media_type": "text/xml",
+      "byte_count": 20184,
+      "sha256": "f37ff85df57405753aa0b6d1db63f3a24fcbd33ab1ef7fb54b68844e556e2438",
+      "raw_path": "sha256/f3/7ff85df57405753aa0b6d1db63f3a24fcbd33ab1ef7fb54b68844e556e2438",
+      "headers": {
+        "date": "Mon, 07 Sep 2026 10:17:46 GMT",
+        "content-type": "text/xml; charset=utf-8"
+      },
+      "license": "CC-BY-NC-4.0"
+    }
+  ]
+}

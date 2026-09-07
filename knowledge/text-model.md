@@ -9,8 +9,8 @@ method:
 status: draft
 language: en
 created: "2026-09-06"
-updated: "2026-09-06"
-related: [text-model-bindings, p6-architecture, p6-evaluation, experiments, specification, state]
+updated: "2026-09-07"
+related: [text-model-bindings, model-design, p6-architecture, p6-evaluation, experiments, specification, state]
 ---
 
 # Text Model
@@ -26,13 +26,24 @@ programme draws requirements from P5, discussion records, literature, and
 editorial practice. This version sets an experimental scope for that work.
 
 The definition in sections 1 to 9 is the contract that the case runner
-fingerprints and that the public model reference renders in full. The wider
-core-model sketch in sections 10 and 11 and the serialization and conformance
-contract in section 12 frame that bounded candidate. Neither is an
-implementation inventory. Section 13 fixes the claim pattern and the
-identifier policy that every later domain extension of the model follows.
-Section 14 drafts the first such extension, for entities, names, denotations
-and statements, as a candidate for version 0.2.
+fingerprints and that the public model reference renders in full. Sections 10
+and 11 route to [[knowledge/model-design]], which owns proposed semantic
+extensions and the wider structural requirements. Section 12 retains the
+serialization and conformance proposal. Section 13 fixes the claim pattern and
+identifier policy; section 14 defines the implemented experimental entity
+extension 0.2. Its human acceptance remains open. The new design proposals do
+not change these bounded contracts.
+
+The optional [[knowledge/identity-evidence]] profile applies existing 0.2
+records to source-attributed catalogue and correspondence claims. It defines
+separate source qualification and assessment, with executable snapshot checks,
+without changing the core record shapes or asserting human acceptance.
+
+The independently readable definition and rationale are in the
+[Abstract Model proposal](../40_output/02-abstract-model.md). This document
+retains the detailed implementation contract. [[knowledge/model-design]] and
+the serialization proposal in section 12 extend the research scope beyond the
+implemented record sets.
 
 ## 1. What the objects mean
 
@@ -402,211 +413,31 @@ real cases before extending the model or recommending an architecture for TEI P6
 
 ## 10. Terms of the wider sketch
 
-The core-model sketch in section 11 predates the executable candidate and uses
-its own primitive vocabulary. The mapping below reads the two definition tables
-against each other. It names the nearest v0.1 record kind for each sketch
-primitive and records where the two differ. A correspondence does not claim
-that the record implements the primitive in full.
+The proposed domain distinctions and wider structural requirements are
+maintained in [[knowledge/model-design]]. That design consolidates the earlier
+primitive vocabulary and maps it to the bounded implementation. It adds
+application-neutral text identity, independent name forms, open
+classifications, and context-qualified descriptions of places as proposals.
 
-| Sketch primitive | Nearest v0.1 record kind | Difference |
-|---|---|---|
-| concept | Concept | A v0.1 concept has exactly one role, `node` or `relation`, and a local definition string. The sketch's versioned applicable definition has no v0.1 counterpart. |
-| node | Reading node | A v0.1 node is an occurrence in exactly one attributed reading, with one concept and one contiguous extent. The sketch admits an instance of several compatible concepts. |
-| text segment | Version | A version is an identified fixed Unicode sequence with hashed content and declared technical parents. |
-| hierarchy | Reading | A reading is one attributed containment forest over one version. Several readings may cross without a preferred one. |
-| relation | Relation | A v0.1 relation is directed, typed and attributed. The sketch also admits undirected associations. |
-| span | Selection | A selection is version-bound and distinct from its resolution. Beyond the sketch's contiguous region it admits a point, a discontinuous region and plural quotation targets. |
-| declaration | package `model_version` | Only the model version is declared in a package. The XML binding adds its own `binding_version`. Blueprint, language and binding context have no v0.1 counterpart. |
-| property | none | Every v0.1 field is fixed by the record contract. There are no typed values attached to nodes or relations beyond those fields. |
-| content sequence | none | Order in v0.1 is the code point order of a version. Sibling order in a reading is derived from selected positions and is never recorded. |
-| constraint | none | Rules R01 to R13 and their diagnostics are fixed in the implementation. Instances carry no constraint records. |
-
-Agent, Text, Continuity claim and Annotation have no primitive of their own in
-the sketch. The sketch treats attribution and the distinction between an
-object, its description and a claim about it as a composition question for
-experiments.
+Sections 1 to 9 and 13 to 14 here retain their executable 0.1 and 0.2 meanings.
+In particular, the current Text is an editorial grouping, a 0.2 name is a
+bearer-dependent claim, and no independent Name or PlaceReferent record is
+introduced by the design document.
 
 ## 11. The wider sketch
 
-The sketch is an independent modeling hypothesis, subject to evidence and
-prototyping. It defines questions for comparing a serialization-independent
-core with alternative models. It does not specify an implementation or
-establish that its primitives are necessary or sufficient. Generic domain
-entities, properties, customization, and the complete metamodel below remain
-outside the v0.1 implementation.
+The wider sketch is maintained in
+[Model Design](model-design.md#structural-and-conformance-requirements), together
+with its retained requirements for order, containment, identity, properties,
+constraints, and reference resolution. Its
+[modeling levels](model-design.md#modeling-levels) connect to the architecture's
+customization proposal. Compare the candidate graph and sequence structures
+with a primary tree plus references and annotations under
+[[knowledge/p6-evaluation]].
 
-### Modeling target
-
-The core must represent textual documents that combine ordered content,
-structural containment, metadata, annotation, references, overlapping regions,
-and graph relations. It must also support domain-specific restrictions and
-extensions without making a particular serialization normative.
-
-The comparison requires explicit representations of order, containment,
-overlap, and stand-off annotation. These requirements do not by themselves
-select one data structure. A typed, attributed graph with ordered sequences and
-named hierarchies is one candidate. A primary tree with separately modeled
-references and annotations is another. Compare their preservation of the same
-distinctions, authoring and processing costs, and migration behavior before
-preferring either.
-
-### Four modeling levels
-
-The candidate separates four modeling levels for evaluation. The candidate
-layers of the [P6 architecture](p6-architecture.md#candidate-layers) name the
-same stack and add a project customization step between blueprint and
-instance.
-
-| Level | Role | Example responsibility |
-|---|---|---|
-| metamodel | defines what a P6 model may express | concept, property, relation, sequence, constraint |
-| domain model | defines shared TEI concepts | paragraph, person, witness, reading, annotation |
-| blueprint | selects and constrains a coherent usage contract | scholarly text, dictionary, manuscript description |
-| instance | records a particular encoded object | nodes, text, values, links, spans, declarations |
-
-A customization derives from a declared domain model or blueprint and records
-every restriction, extension, alias, and conflict resolution. It does not
-silently modify the meaning of a shared concept.
-
-### Candidate primitives
-
-These primitives are proposed for comparison.
-
-| Primitive | Meaning |
-|---|---|
-| concept | an identified semantic type whose applicable definition is versioned |
-| node | an instance of one or more compatible concepts |
-| property | a typed value attached to a node or relation |
-| text segment | an immutable or versioned sequence of textual units |
-| content sequence | an ordered list of occurrences of text items, nodes, or references |
-| hierarchy | a named, directed containment view over nodes and sequences |
-| relation | a typed directed or undirected association between identified objects |
-| span | a contiguous region addressed by a selector within a declared sequence or version |
-| constraint | a named rule with scope, severity, and test semantics |
-| declaration | the blueprint, language, version, and binding context of an instance |
-
-This candidate separates text, containment, and other relations. Experiments
-must test which distinctions require separate primitives and which can be
-expressed adequately through composition or a domain-specific profile.
-
-Distinguish an encoding object, the object it describes, and an attributed claim
-about that object when a use case requires it. A record describing a person is
-not identical to that person. Two annotations of one region need not make the
-same claim. Compare direct properties with independently addressable statements
-using conflicting attributions, separate responsibility, and revision of one
-claim. An extra statement object must
-serve a demonstrated need for addressing, provenance, or interpretation.
-
-### Abstract structure
-
-A candidate instance has the following proposed components.
-
-```text
-I = (D, N, X, Q, H, R, S, V)
-
-D  declaration and version context
-N  identified typed nodes
-X  text segments
-Q  ordered content sequences
-H  named containment hierarchies
-R  typed relations
-S  anchored spans
-V  property values and datatypes
-```
-
-This notation does not decide an implementation language. Its value is that a
-binding can state how every component is represented and whether reconstruction
-is exact.
-
-### Order and mixed content
-
-Order is semantic only where the model declares an ordered sequence. Object
-member order in JSON, triple order in RDF, attribute order in XML, and map order
-in YAML must not acquire meaning accidentally.
-
-A content sequence records ordered occurrences of text segments, nodes, or
-references. The formalization must state whether repeated references denote
-distinct occurrences and how an anchor identifies the intended occurrence.
-Sequence membership and hierarchical containment need an explicit consistency
-rule. Neither may silently override the other. Converting contained annotation
-to a separate region claim requires a mapping of target, scope, and
-interpretation. Proper nesting alone does not establish equivalence.
-
-The model must define policies for line endings, Unicode, and whitespace.
-It must classify lexical distinctions such as entity references as semantic,
-binding-specific, or preservation metadata.
-
-### Hierarchy, overlap, and stand-off annotation
-
-Each hierarchy is named and has its own parent/child relation. A blueprint may
-declare one hierarchy as the preferred serialization tree without implying that
-other hierarchies are less meaningful. Nodes may participate in more than one
-hierarchy when the relevant constraints allow it.
-
-A region selector is evaluated against a declared sequence or text version.
-A contiguous interval and a discontinuous selection require distinguishable
-selection structures. Neither implies that the selected material remains the
-same after editing. Experiments must state how versions, boundaries, and
-repeated occurrences are identified and whether cross-version correspondence
-is asserted, computed, or unresolved. The region record of the bounded
-[text identity pilot](experiments.md#text-identity-and-annotation-pilot) is
-one experimental representation, not a definition imposed on this general
-model.
-
-### Identity and references
-
-Every addressable model object has an identity distinct from its display label,
-serialization-local key, file path, or namespace prefix. Bindings may use XML
-IDs, JSON keys, IRIs, blank nodes, or external indexes, but their mapping
-contract must state how canonical identity is preserved.
-
-References resolve within a declared dataset or package context. Distinguish
-known missing or incompatible targets from targets that cannot yet be checked.
-Cycles violate a rule only where the relevant relation or processing contract
-prohibits them. Diagnostics name the condition and the rule being evaluated.
-
-### Properties and datatypes
-
-Property definitions declare domain, range, cardinality, ordering where
-relevant, default behavior, and whether values are literals, identifiers,
-references, or structured values. Language-tagged strings, dates, measures,
-uncertain values, and controlled vocabularies require model-level semantics
-rather than serialization-specific conventions.
-
-Values inferred from a blueprint and values explicitly recorded by an encoder
-must remain distinguishable whenever that affects validation,
-roundtripping, or interpretation.
-
-### Constraints
-
-Every constraint has a stable identifier, human-readable rationale, formal or
-executable condition where possible, scope, severity, and diagnostic template.
-Constraints may apply to the metamodel, domain model, blueprint, instance, or
-binding. Context-sensitive constraints name the relevant hierarchy, ancestor,
-neighbor, declaration, or relation instead of relying on an implicit processor
-context.
-
-Constraints should distinguish at least violations, warnings, and informative
-normalizations. A binding-specific limitation is reported by the binding and
-does not silently weaken the core model.
-
-A formalization must check unique identity, complete declarations, reference
-resolution, deterministic order, and the graph and value rules defined above.
-Version and customization dependencies must be explicit. A blueprint cannot
-weaken a core rule designated as non-overridable.
-
-Bindings must identify their normalizations and losses and preserve an
-independently specified comparison relation, as section 12 states for the
-serialization contract. These proposed obligations require evaluation against
-P5 cases and counterexamples before adoption.
-
-### What remains deliberately undecided
-
-For this broader model, formal language, position units, identity rules,
-defaults, hierarchy composition, ontology connections, and customization
-algebra remain research questions. Version 0.1 fixes a subset for its bounded
-contract. The [plan](plan.md) defines the comparisons needed to assess
-extensions.
+These sections preserve their entry points for existing references. The
+serialization and conformance proposal remains in section 12; moving the wider
+design changes no model record, rule, or binding.
 
 ## 12. Serialization and conformance
 
@@ -885,8 +716,9 @@ package field `base`, next to `model_version`, and every record IRI is the
 base followed by the record's local ID. The local ID stays the canonical
 identifier; the base is a publication fact about the package. The field
 enters the package contract with the first extension that is exchanged,
-together with `former_bases` below, and the reference bindings carry both
-under their existing preservation laws.
+together with `former_bases` below. Version 0.2 JSON packages and the separate
+RDF export carry these fields. Extending the 0.1 reference codecs to carry them
+under a package-preservation law remains proposed work.
 
 ```text
 base    IRI under RFC 3987 with a scheme, without query component,
@@ -1287,9 +1119,12 @@ resource outside any TEI document (`[^ref]`, `[^refvalue]`,
 
 **Changes to version 0.1 by change class.** Measured against the
 [change classes](p6-architecture.md#change-classes) of the architecture,
-version 0.2 makes the following changes. Each additive change leaves every
-valid 0.1 package valid once it declares `model_version: "0.2"` and the four
-new collections as empty arrays, without a change to any record.
+version 0.2 makes the following changes. A 0.1 package can retain its records
+when it declares `model_version: "0.2"` and adds the four new collections as
+empty arrays, provided it has no incompatible use of the newly reserved
+mention-concept IDs. A valid 0.1 package can define `en-proper-noun` locally
+with another meaning. The 0.2 validator rejects that collision, so universal
+additive compatibility is not established.
 
 - Additive are the collections `entities`, `names`, `denotations` and
   `statements`, the optional `alignments` field on `concepts`, `agents` and
@@ -1297,8 +1132,8 @@ new collections as empty arrays, without a change to any record.
   fields as optional fields of the four v0.1 claim kinds, where an absent
   field reads as section 13 states, the optional `concept` field of
   annotations, and the concept role `statement`.
-- Binding-only are the collection and array names of the XML binding and
-  its `binding_version`.
+- Binding-only proposals are the collection and array names of a future XML
+  binding and its `binding_version`; no 0.2 XML codec is implemented.
 - The classes editorial, restrictive, semantic, structural and removal stay
   unused, and no v0.1 identifier changes its meaning.
 
@@ -1433,6 +1268,15 @@ field stays distinct from a present one; and every string compares exactly.
 The append-only claim check of section 13 generalizes the profile's
 `E_CLAIM_REWRITE` to every claim kind of the extension.
 
+The implemented revision check compares claim records without freezing all
+referenced definitions. In particular, it does not reject a changed selection
+under a retained ID, a changed entity kind, or an unchanged nested alignment
+moved to another carrier. The latter changes the alignment's subject despite
+preserving its record fields. These are limits of enforcement. The proposed
+same-subject and identity rules require an additional dependency-preservation
+contract. General 0.2 reanchoring is also outside the implemented operations.
+The base `propose_reanchor` accepts 0.1 packages only.
+
 The extension needs the following diagnostics, the first five for the
 pattern fields of section 13 and the rest for its own record kinds.
 
@@ -1477,12 +1321,14 @@ form and no authority. Both operations are the first two views a task needs
 over coexisting claims; a filter by agent or status is a caller's
 composition over the same package.
 
-The reference bindings receive the new collections under the preservation
-laws of the bindings document, with the XML record names `entity`, `name`,
-`denotation` and `statement`, the array children `alignment`, `participant`
-and `part`, and `binding_version` `0.2`. Every valid 0.2 fixture passes all
-three bindings and every binding change. The implementation lives beside
-the existing modules, as a proposal for the integrator, in
+Extending the reference bindings to the new collections remains a proposal.
+Candidate XML record names are `entity`, `name`, `denotation` and `statement`,
+with array children `alignment`, `participant` and `part`, and a new binding
+version. The implemented JSON/XML/YAML codecs accept only 0.1 packages;
+no 0.2 cross-binding roundtrip has been implemented or tested. Version 0.2
+has JSON packages, validation, canonical comparison and the separate one-way
+RDF export defined in [[knowledge/text-model-bindings]]. The entity
+implementation lives in
 `tools/models/entities.py`, its case suite in `experiments/entities_v02/`
 with its own specification, cases and deterministic report, and its tests in
 `tests/models/test_entities.py`.

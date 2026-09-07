@@ -1,0 +1,44 @@
+{
+  "profile": "identity-evidence-0.1",
+  "model_version": "0.2",
+  "selection": "User-nominated projects; two known Zweig catalogue records and the Schuchardt letter linked from the correspondence landing page. Cases were inspected before implementation; no holdout or independent selection is claimed.",
+  "authority": "Bounded source observations and project-authored model choices; no human verification or complete edition migration.",
+  "sources": [
+    {
+      "id": "szd-werke-2026-09-07",
+      "url": "https://stefanzweig.digital/o:szd.werke/TEI_SOURCE",
+      "title": "Stefan Zweig Digital: Werke",
+      "creator": "Literaturarchiv Salzburg; Zentrum für Informationsmodellierung, Universität Graz",
+      "fragments": [
+        {"id": "szd-record-3", "tag": "biblFull", "xml_id": "SZDMSK.3", "xpath": "//tei:biblFull[@xml:id='SZDMSK.3']"},
+        {"id": "szd-record-4", "tag": "biblFull", "xml_id": "SZDMSK.4", "xpath": "//tei:biblFull[@xml:id='SZDMSK.4']"}
+      ]
+    },
+    {
+      "id": "hsa-letter-4493-2026-09-07",
+      "url": "https://gams.uni-graz.at/o:hsa.letter.4493/TEI_SOURCE",
+      "title": "Hugo Schuchardt Archiv: Brief 4493",
+      "creator": "Hugo Schuchardt Archiv, Universität Graz",
+      "fragments": [
+        {"id": "hsa-source-description", "tag": "sourceDesc", "xpath": "//tei:teiHeader/tei:fileDesc/tei:sourceDesc"},
+        {"id": "hsa-correspondence", "tag": "correspDesc", "xpath": "//tei:correspDesc"},
+        {"id": "hsa-dateline", "tag": "dateline", "xpath": "//tei:body//tei:dateline"}
+      ]
+    }
+  ],
+  "required_observations": [
+    "Two distinct catalogue records and shelfmarks retain their common work reference without inferring equal text, versions, or physical objects.",
+    "The uncertain hand attribution retains its question mark and does not assign an ordinal certainty on import.",
+    "The independently encoded contributor role does not remove the hand attribution's uncertainty.",
+    "The dateline, origin date, and sent-action date retain separate locators and scopes; no postal event is inferred.",
+    "Import responsibility does not impersonate the unidentified author of an individual source attribution.",
+    "Exact quotation and source integrity are checked independently of semantic support and scholarly truth.",
+    "Synthetic revision and transcription examples remain explicitly distinct from the acquired edition records."
+  ],
+  "limits": [
+    "No images, external registers, complete ODD, or full correspondence corpus acquired.",
+    "The paired catalogue records do not establish a textual version relationship.",
+    "No manuscript hand comparison or actual mailing date established.",
+    "Both sources retain CC BY-NC 4.0 as declared in their XML headers; project licences do not replace source licences."
+  ]
+}

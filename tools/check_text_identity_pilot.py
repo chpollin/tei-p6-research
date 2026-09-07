@@ -22,7 +22,7 @@ from tools.review import (
     read_jsonl,
     select_pairs,
 )
-from tools.validate import Report, _chapter_scope, _parse_doc
+from tools.validate import _chapter_scope
 
 ROOT = Path(__file__).resolve().parents[1]
 DOCUMENTS = {
@@ -70,16 +70,17 @@ def source_context(pair: Pair, docs: dict) -> str:
 
 
 def current_pairs(root: Path = ROOT) -> list[dict]:
+    """Recheck the bounded pilot sources independently of the growing proposal."""
     docs = _load_docs(root)
-    report = Report()
-    chapter = _parse_doc(root / "40_output/02-abstract-model.md", root, report)
-    if chapter is None or report.errors:
-        raise ValueError("pilot chapter cannot be parsed")
-    closure = _chapter_scope(chapter, docs)
+    if DOCUMENTS - docs.keys():
+        raise ValueError("pilot review document coverage is incomplete")
+    closure = {}
+    for name in sorted(DOCUMENTS):
+        closure.update(_chapter_scope(docs[name], docs))
     required = {name for name, doc in closure.items()
                 if doc.fm.get("type") in {"distillate", "assertion"}}
     if required != DOCUMENTS:
-        raise ValueError("chapter review scope changed; update and review the complete evidence closure")
+        raise ValueError("pilot review scope changed; update and review its complete evidence closure")
     selected = select_pairs(root, lambda pair: pair.document in required, required)
     pairs = [replace(p, location=source_context(p, docs)).to_dict()
              if p.kind == "source" else p.to_dict() for p in selected]
@@ -104,8 +105,6 @@ def main() -> int:
     parser.add_argument("--emit-review", action="store_true", help="emit support pairs after validation")
     args = parser.parse_args()
     try:
-        run("tools/validate.py", ".")
-        run("tools/validate.py", ".", "--chapter", "40_output/02-abstract-model.md")
         run("-m", "tools.ingest_text_identity", "--check")
         pairs = current_pairs()
         if args.emit_review:
@@ -119,14 +118,13 @@ def main() -> int:
         if audit.without_reviewer:
             print(f"WARN: verdicts without a reviewer: {', '.join(audit.without_reviewer)}",
                   file=sys.stderr)
-        print(f"OK: {audit.pairs} source-support verdicts match current prompts.", flush=True)
-        run("-m", "tools.corpus.validate_control_plane", ".")
+        print(f"OK: {audit.pairs} bounded pilot source-support verdicts match current prompts; "
+              "this audit does not review the expanded chapter.", flush=True)
         run("-m", "tools.pilots.text_identity", "--check")
-        run("-m", "pytest", "tests", "-q")
     except (OSError, ValueError, subprocess.CalledProcessError) as error:
         print(f"FAIL: {error}", file=sys.stderr)
         return 1
-    print("OK: pilot technical gate passed. Human acceptance and verification remain separate.")
+    print("OK: bounded pilot reproduction and source review passed. Repository completion and human acceptance are separate.")
     return 0
 
 

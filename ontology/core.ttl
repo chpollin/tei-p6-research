@@ -1,0 +1,160 @@
+@prefix : <https://example.org/tei-p6-research/ontology/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+: a owl:Ontology ;
+    owl:versionIRI <https://example.org/tei-p6-research/ontology/2026-09-07> ;
+    owl:versionInfo "2026-09-07 draft" ;
+    rdfs:label "Experimental documentary vocabulary"@en ;
+    rdfs:comment "Independent research draft for documentary records. The namespace is provisional. Structured proposition content and recorded stances license no world-fact materialization. This graph defines no exchange-package validation profile."@en .
+
+:Record a owl:Class ;
+    rdfs:label "Record"@en ;
+    rdfs:comment "An identified documentary description whose identity is assigned and maintained by a describing practice. Its identifier denotes this record; references to a described object require an explicit interpretation."@en .
+:ReferentRecord a owl:Class ; rdfs:subClassOf :Record ;
+    rdfs:label "Referent record"@en ;
+    rdfs:comment "A documentary handle for a referential intention, which may concern a historical, uncertain or fictional object. Identity follows that intention within the description; an expected referent type is revisable and does not classify the handle as a world entity."@en .
+:TextRecord a owl:Class ; rdfs:subClassOf :Record ;
+    rdfs:label "Text record"@en ;
+    rdfs:comment "A documentary description of linguistic content under an explicit identity and delimitation criterion adopted for an edition, corpus or catalogue. An assignment of a representation to this text is a descriptive assertion governed by that criterion. Merely grouping representations supplies no text-identity criterion."@en .
+:RepresentationRecord a owl:Class ; rdfs:subClassOf :Record ;
+    rdfs:label "Representation record"@en ;
+    rdfs:comment "A description of one fixed textual content used as a coordinate basis. A changed content requires a distinct representation identity before existing selections can be reused."@en .
+:NameFormRecord a owl:Class ; rdfs:subClassOf :Record ;
+    rdfs:label "Name form record"@en ;
+    rdfs:comment "A description of a name form with its adopted spelling and language criteria. The same form can occur in several name assignments; its identity alone identifies no bearer."@en .
+:SelectionRecord a owl:Class ; rdfs:subClassOf :Record ;
+    rdfs:label "Selection record"@en ;
+    rdfs:comment "An identified documentary selection under an explicitly stated selector contract. Its scope can include continuous, discontinuous, point-like or ambiguous selections. This general class supplies no single coordinate or ambiguity-resolution contract."@en .
+:TextRangeSelectionRecord a owl:Class ; rdfs:subClassOf :SelectionRecord ;
+    rdfs:label "Text range selection record"@en ;
+    rdfs:comment "A selection of one contiguous Unicode code-point interval in a fixed representation, with zero-based inclusive start and exclusive end. Equal boundaries select a point. A quote can witness the interval; this subtype specifies no discontinuous or ambiguous selector."@en .
+:AnnotationRecord a owl:Class ; rdfs:subClassOf :Record ;
+    rdfs:label "Annotation record"@en ;
+    rdfs:comment "An identified association of a selection with documentary body content or a claim. Identity belongs to the association and its responsibility context, rather than to the selected characters."@en .
+:MentionRecord a owl:Class ; rdfs:subClassOf :AnnotationRecord ;
+    rdfs:label "Mention record"@en ;
+    rdfs:comment "An annotation interpreting selected text as a mention. A referential assignment is expressed through its body or claim and may remain questioned or unresolved."@en .
+:PropositionRecord a owl:Class ; rdfs:subClassOf :Record ;
+    rdfs:label "Proposition record"@en ;
+    rdfs:comment "An identified structured content with subject, predicate, object and interpretation context. Reuse shares this explicitly recorded content; it establishes neither semantic equivalence with another formulation nor truth."@en .
+:ClaimRecord a owl:Class ; rdfs:subClassOf :Record ;
+    rdfs:label "Claim record"@en ;
+    rdfs:comment "An identified attribution of an agent's stance toward a proposition. Separate claims can assert, report, question or deny the same recorded content. Withdrawal changes claim lifecycle and does not deny the content."@en .
+:ContextRecord a owl:Class ; rdfs:subClassOf :Record ;
+    rdfs:label "Context record"@en ;
+    rdfs:comment "A documented interpretation frame, such as a narrative or catalogue perspective, with explicitly stated scope. Its identity separates contextual readings without asserting that any described world exists."@en .
+:AgentRecord a owl:Class ; rdfs:subClassOf :Record ;
+    rdfs:label "Agent record"@en ;
+    rdfs:comment "A documentary responsibility handle for an attributed person, organization or process. Its record identity does not establish a world agent's identity or equate it with a provenance ontology's Agent class."@en .
+:VocabularyRecord a owl:Class ; rdfs:subClassOf :Record ;
+    rdfs:label "Vocabulary record"@en ;
+    rdfs:comment "An identified vocabulary entry whose scope and definition are maintained by a named descriptive practice. A matching label alone does not establish identical meaning."@en .
+:ConceptRecord a owl:Class ; rdfs:subClassOf :VocabularyRecord ;
+    rdfs:label "Concept record"@en ;
+    rdfs:comment "A documentary vocabulary entry describing a classification value. Its definition governs use; the entry is not automatically an OWL class or a SKOS concept."@en .
+:PredicateRecord a owl:Class ; rdfs:subClassOf :VocabularyRecord ;
+    rdfs:label "Predicate record"@en ;
+    rdfs:comment "A documentary definition of a relation used inside propositions, including subject and object interpretation modes. The record is not itself an RDF predicate and authorizes no unqualified external triple."@en .
+:StructureRecord a owl:Class ; rdfs:subClassOf :Record ;
+    rdfs:label "Structure record"@en ;
+    rdfs:comment "A documentary account of an adopted text organization. Its identity belongs to the structural description and its explicit scope."@en .
+:StructuralReadingRecord a owl:Class ; rdfs:subClassOf :StructureRecord ;
+    rdfs:label "Structural reading record"@en ;
+    rdfs:comment "An identified structural interpretation of a text or representation, such as an editorial segmentation. Several readings can coexist with independently stated organization criteria."@en .
+:StructuralNodeRecord a owl:Class ; rdfs:subClassOf :StructureRecord ;
+    rdfs:label "Structural node record"@en ;
+    rdfs:comment "An identified component within a structural reading, scoped by that reading's node-identity criteria. Its identifier does not independently identify a universal textual unit."@en .
+:CollectionRecord a owl:Class ; rdfs:subClassOf :Record ;
+    rdfs:label "Collection record"@en ;
+    rdfs:comment "A description of a corpus or another collection under stated membership criteria. Its documentary identity can persist across exchange packages that describe it."@en .
+:Package a owl:Class ;
+    rdfs:label "Package"@en ;
+    rdfs:comment "An identified exchange grouping of documentary records. Package membership states inclusion in this exchange and has no implication for membership in a corpus described by a collection record."@en .
+
+:member a owl:ObjectProperty ; rdfs:domain :Package ; rdfs:range :Record ;
+    rdfs:label "member"@en ;
+    rdfs:comment "Includes a documentary record in an exchange package. This property expresses package inclusion only."@en .
+:responsibleAgent a owl:ObjectProperty ; rdfs:range :AgentRecord ;
+    rdfs:label "responsible agent"@en ;
+    rdfs:comment "References the documentary responsibility handle for a record or package. The domain is intentionally open so using this property does not classify a package as a record."@en .
+:representation a owl:ObjectProperty ; rdfs:range :RepresentationRecord ;
+    rdfs:label "representation"@en ;
+    rdfs:comment "References a fixed representation, from a text description or selection. The source remains explicitly typed; this property imposes no shared domain on those distinct record kinds."@en .
+:targetSelection a owl:ObjectProperty ; rdfs:domain :AnnotationRecord ; rdfs:range :SelectionRecord ;
+    rdfs:label "target selection"@en ;
+    rdfs:comment "References the documentary selection targeted by an annotation; its selector contract is determined by the selection's explicitly stated kind."@en .
+:annotationBody a owl:ObjectProperty ; rdfs:domain :AnnotationRecord ; rdfs:range :Record ;
+    rdfs:label "annotation body"@en ;
+    rdfs:comment "References a documentary body record, including a proposition, concept or referent handle. A literal body requires its own content-bearing record."@en .
+:annotationClaim a owl:ObjectProperty ; rdfs:domain :AnnotationRecord ; rdfs:range :ClaimRecord ;
+    rdfs:label "annotation claim"@en ;
+    rdfs:comment "References a separately identified attributed stance relevant to the annotation."@en .
+:claimContent a owl:ObjectProperty ; rdfs:domain :ClaimRecord ; rdfs:range :PropositionRecord ;
+    rdfs:label "claim content"@en ;
+    rdfs:comment "References the proposition toward which this claim records a stance."@en .
+:claimAgent a owl:ObjectProperty ; rdfs:domain :ClaimRecord ; rdfs:range :AgentRecord ;
+    rdfs:label "claim agent"@en ;
+    rdfs:comment "References the documentary agent handle to which the stance is attributed. This may differ from the agent responsible for encoding the claim."@en .
+:stance a owl:DatatypeProperty ; rdfs:domain :ClaimRecord ; rdfs:range xsd:string ;
+    rdfs:label "stance"@en ;
+    rdfs:comment "Documentary controlled value: assert, report, question or deny. A value records an attributed attitude and triggers no materialization of the proposition as a world fact. This vocabulary does not enforce value or presence constraints."@en .
+:propositionSubject a owl:ObjectProperty ; rdfs:domain :PropositionRecord ; rdfs:range :Record ;
+    rdfs:label "proposition subject"@en ;
+    rdfs:comment "References the subject handle. The predicate record's subject interpretation determines whether the handle is read as a record, its referent, a concept or a proposition."@en .
+:propositionPredicate a owl:ObjectProperty ; rdfs:domain :PropositionRecord ; rdfs:range :PredicateRecord ;
+    rdfs:label "proposition predicate"@en ;
+    rdfs:comment "References a documentary predicate definition that determines how subject and object are interpreted. It does not use that record as an RDF property."@en .
+:propositionObjectReference a owl:ObjectProperty ; rdfs:domain :PropositionRecord ; rdfs:range :Record ;
+    rdfs:label "proposition object reference"@en ;
+    rdfs:comment "References an object handle, interpreted by the predicate definition. Literal objects use proposition object literal; no identity between a literal and a referenced record is inferred."@en .
+:propositionObjectLiteral a owl:DatatypeProperty ; rdfs:domain :PropositionRecord ; rdfs:range rdfs:Literal ;
+    rdfs:label "proposition object literal"@en ;
+    rdfs:comment "Stores a literal object with its RDF datatype or language tag preserved. Interpretation as a value follows the predicate definition. References use proposition object reference."@en .
+:context a owl:ObjectProperty ; rdfs:range :ContextRecord ;
+    rdfs:label "context"@en ;
+    rdfs:comment "References a documented interpretation frame. Proposition interpretation and the context of an agent's claim remain separately attachable to their respective records."@en .
+:scope a owl:DatatypeProperty ; rdfs:domain :ContextRecord ; rdfs:range xsd:string ;
+    rdfs:label "scope"@en ;
+    rdfs:comment "Records the interpretation scope using a documented open controlled vocabulary, with values such as narrative, tradition-report, assessment or geographic-hypothesis. The adopting profile defines each value and any extension. This ontology supplies no OWL value or presence validation and derives no world facts from a scope."@en .
+:definition a owl:DatatypeProperty ; rdfs:domain :VocabularyRecord ; rdfs:range rdfs:Literal ;
+    rdfs:label "definition"@en ;
+    rdfs:comment "Records the entry's explicit meaning and usage boundary, with a language tag where supplied."@en .
+:preferredLabel a owl:DatatypeProperty ; rdfs:domain :Record ; rdfs:range rdfs:Literal ;
+    rdfs:label "preferred label"@en ;
+    rdfs:comment "Records a display label for the documentary record. Label identity is not an identity criterion for its referent."@en .
+:content a owl:DatatypeProperty ; rdfs:domain :RepresentationRecord ; rdfs:range xsd:string ;
+    rdfs:label "content"@en ;
+    rdfs:comment "Records the fixed Unicode text whose code-point positions are addressed by selections. RDF string parsing preserves the value; source byte identity requires a separate source record."@en .
+:form a owl:DatatypeProperty ; rdfs:domain :NameFormRecord ; rdfs:range rdfs:Literal ;
+    rdfs:label "form"@en ;
+    rdfs:comment "Records the spelling or verbal form described by a name-form record, retaining a supplied language tag."@en .
+:language a owl:DatatypeProperty ; rdfs:domain :Record ; rdfs:range xsd:string ;
+    rdfs:label "language"@en ;
+    rdfs:comment "Records a language identifier relevant to the description. The describing profile must state the identifier scheme and its scope."@en .
+:identityCriteria a owl:DatatypeProperty ; rdfs:domain :Record ; rdfs:range rdfs:Literal ;
+    rdfs:label "identity criteria"@en ;
+    rdfs:comment "Documents the criteria used to preserve or distinguish this record's identity. This explanatory text introduces no OWL key."@en .
+:start a owl:DatatypeProperty ; rdfs:domain :TextRangeSelectionRecord ; rdfs:range xsd:nonNegativeInteger ;
+    rdfs:label "start"@en ;
+    rdfs:comment "Records the zero-based inclusive Unicode code-point boundary in the referenced representation. This ontology performs no bounds or interval-order validation."@en .
+:end a owl:DatatypeProperty ; rdfs:domain :TextRangeSelectionRecord ; rdfs:range xsd:nonNegativeInteger ;
+    rdfs:label "end"@en ;
+    rdfs:comment "Records the zero-based exclusive Unicode code-point boundary in the referenced representation. Equality with start describes an empty interval."@en .
+:quote a owl:DatatypeProperty ; rdfs:domain :TextRangeSelectionRecord ; rdfs:range xsd:string ;
+    rdfs:label "quote"@en ;
+    rdfs:comment "Records text expected at the selected interval. Consistency with content and coordinates requires a separate data check."@en .
+:subjectInterpretation a owl:DatatypeProperty ; rdfs:domain :PredicateRecord ; rdfs:range xsd:string ;
+    rdfs:label "subject interpretation"@en ;
+    rdfs:comment "Documents how a subject reference is read: record for the handle, referent for the described object, concept for a vocabulary value, or proposition for recorded content. An unfamiliar predicate has no licensed interpretation."@en .
+:objectInterpretation a owl:DatatypeProperty ; rdfs:domain :PredicateRecord ; rdfs:range xsd:string ;
+    rdfs:label "object interpretation"@en ;
+    rdfs:comment "Documents how an object reference is read using record, referent, concept or proposition. For proposition object literal, the literal is read as its typed or language-tagged value under the predicate definition; reference modes do not dereference literals."@en .
+:lifecycle a owl:DatatypeProperty ; rdfs:domain :Record ; rdfs:range xsd:string ;
+    rdfs:label "lifecycle"@en ;
+    rdfs:comment "Documentary controlled value: active or withdrawn. Withdrawal marks the record's lifecycle; a withdrawn claim's stance and content remain separately recorded."@en .
+:expectedReferentType a owl:ObjectProperty ; rdfs:domain :ReferentRecord ; rdfs:range :ConceptRecord ;
+    rdfs:label "expected referent type"@en ;
+    rdfs:comment "References a revisable concept entry describing the expected kind of referent. It introduces no rdf:type assertion about the record's referent and no foreign class membership for the record."@en .

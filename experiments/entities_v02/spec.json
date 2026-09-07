@@ -3,7 +3,7 @@
   "model_version": "0.2",
   "authority": "Independent experimental extension; section 14 of knowledge/text-model.md is a project posit and a contract for the prototype, not an official TEI standard or an adopted decision.",
   "input": {
-    "package": "Exactly model_version='0.2', the nine v0.1 collections and the four collections below, all arrays and possibly empty, plus the optional package fields base and former_bases. No unknown fields. Every valid 0.1 package is valid at 0.2 once it declares the version and the four empty arrays.",
+    "package": "Exactly model_version='0.2', the nine v0.1 collections and the four collections below, all arrays and possibly empty, plus the optional package fields base and former_bases. No unknown fields. Upgrading a valid 0.1 package additionally requires checking for incompatible definitions of the three reserved mention-concept IDs; changing the version and adding four empty arrays does not make every 0.1 package valid at 0.2.",
     "id": "Package-local identifier matching [A-Za-z][A-Za-z0-9._:-]*; unique across the package, nested alignment claims and reading nodes included. Parts and participants carry no ID.",
     "string": "Nonempty UTF-8-encodable Unicode string unless explicitly stated otherwise.",
     "claim": {
@@ -86,7 +86,7 @@
     "No inference: an exact alignment merges nothing, an entity's alignments propagate to no mention, and no external resource is retrieved or checked.",
     "Uncovered by construction: a name without bearer, feature structures for complex names, the kind of a name form, evidence and source of a statement, notBefore/notAfter/when, a reference to an element in another document, the reason two things count as one entity, a negative denotation claim, and a second agent's certainty about a claim.",
     "Validity bounds are proleptic Gregorian dates from year 0001; a year 0000 fails the calendar check.",
-    "No P5 mapping, RDF binding or loss report is implemented here; sections 14.5 and the ledger cases 8 and 9 remain open.",
+    "No P5 converter, loss report or XML/YAML codec for 0.2 is implemented. The general JSON/XML/YAML binding API accepts only 0.1. Version 0.2 uses JSON packages and its entity API; a separate one-way RDF export is implemented under knowledge/text-model-bindings.md, without a decoder or model-lossless roundtrip.",
     "Finite synthetic packages demonstrate the rules on supplied instances and establish no adequacy for the named-entity practice of any edition."
   ]
 }

@@ -12,26 +12,35 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - run: pip install pyyaml pytest ruff
+      - run: pip install uv
+      - run: uv sync --locked
       - name: Lint with the configured rule set
-        run: python -m ruff check .
+        run: uv run --locked python -m ruff check .
       - name: Validate the vault
-        run: python tools/validate.py .
+        run: uv run --locked python tools/validate.py .
       - name: Validate the corpus control plane
-        run: python -m tools.corpus.validate_control_plane .
+        run: uv run --locked python -m tools.corpus.validate_control_plane .
       - name: Reconcile the complete Guidelines reference and processing coverage
-        run: python -m tools.ingest_guidelines --check
+        run: uv run --locked python -m tools.ingest_guidelines --check
+      - name: Reproduce Guidelines navigation and text structures admission
+        run: |
+          uv run --locked python -m tools.build_guidelines_navigation --check
+          uv run --locked python -m tools.ingest_text_structures --check
+      - name: Export and verify all admitted Guidelines XML
+        run: |
+          uv run --locked python -m tools.export_guidelines --output "${RUNNER_TEMP}/guidelines-xml"
+          uv run --locked python -m tools.export_guidelines --output "${RUNNER_TEMP}/guidelines-xml" --check
       - name: Check current first-wave source-support review
-        run: python tools/check_wave1_sources.py . --review-only
+        run: uv run --locked python tools/check_wave1_sources.py . --review-only
       - name: Reproduce Abstract Text Model 0.1
-        run: python tools/check_abstract_text_v01.py --check
+        run: uv run --locked python tools/check_abstract_text_v01.py --check
       - name: Reproduce entity extension 0.2
-        run: python tools/check_entities_v02.py --check
+        run: uv run --locked python tools/check_entities_v02.py --check
       - name: Reproduce editorial cases and current source review
         run: |
-          python tools/ingest_editorial_cases.py --check
-          python tools/check_editorial_cases.py --check
+          uv run --locked python tools/ingest_editorial_cases.py --check
+          uv run --locked python tools/check_editorial_cases.py --check
       - name: Run the test suite
-        run: python -m pytest tests -q
+        run: uv run --locked python -m pytest tests -q
       - name: Check the bounded text identity and annotation pilot
-        run: python tools/check_text_identity_pilot.py
+        run: uv run --locked python tools/check_text_identity_pilot.py

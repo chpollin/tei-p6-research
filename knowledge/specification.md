@@ -12,8 +12,8 @@ profile:
 status: draft
 language: en
 created: "2026-09-04"
-updated: "2026-09-06"
-related: [INDEX, project, data, governance, design, schema, operations, verification, testing, plan, state, journal]
+updated: "2026-09-07"
+related: [INDEX, project, data, governance, design, schema, operations, verification, testing, model-design, p6-evaluation, p6-architecture, plan, state, journal]
 ---
 
 # Specification
@@ -64,10 +64,29 @@ dimensions are in [[knowledge/p6-evaluation]].
   require evidence and explicit compatibility analysis.
 - Existing TEI documents, ODDs, schemas, processors, teaching material and
   institutional practices are migration subjects.
+- Functional coverage is assessed against the pinned P5 4.12.0 baseline. It
+  includes direct and inherited attributes and classes, effective constraints,
+  Guidelines prose, ODD customization and documented cases from practice.
+  Mappings preserve source ambiguity and absence rather than inventing facts.
 - Formal simplification must not silently collapse conceptually necessary
   distinctions.
-- Backward compatibility is a design variable that is evaluated with its
-  costs made explicit.
+- Compatibility tests distinguish acceptance of unchanged P5 input, semantic
+  preservation, reverse mapping to P5, lexical or byte identity and behavior
+  in existing processors. Candidate-only features have an explicit reverse
+  mapping boundary. Costs and unsupported cases remain visible.
+- Simple annotations remain available through compact inline authoring. The
+  same architecture supports explicit objects and claims when identity,
+  provenance, uncertainty or context requires them. Repeatable classification
+  properties remain extensible; a subclass requires distinct identity criteria
+  or enforceable rules. [[knowledge/model-design]] defines these model choices.
+- External ontologies are compared for the functions and distinctions they can
+  supply. Adoption requires an explicit mapping and semantic fit; shared labels
+  alone establish no equivalence.
+- Every worked example provides XML, JSON and RDF comparison views of the same
+  canonical case. Each view states whether it is implemented, proposed or
+  unsupported and reports preservation separately. Roundtrip claims require an
+  implemented binding. Existing YAML support remains part of its declared
+  bounded contract.
 - Private or inaccessible material cannot be used as if publicly auditable.
 - Public availability does not imply permission to redistribute full text.
   The rights rule is in [[knowledge/data]].
@@ -84,9 +103,9 @@ dimensions are in [[knowledge/p6-evaluation]].
 | P5 formal object graph | generated corpus projections | byte-reproducible from pinned ODD sources |
 | grounded topic knowledge | `10_markdown/` through `30_assertions/` | every assertion resolves to source-faithful statements |
 | P5 architecture synthesis | `40_output/` | grounded factual premises and explicit posits |
-| abstract text model and bindings | [[knowledge/text-model]], [[knowledge/text-model-bindings]], `experiments/` | executable contract, independently authored cases, reproducible report |
-| P6 option matrix | `40_output/` | alternatives compared across the declared dimensions |
-| migration dossier | `40_output/` | mappings, affected artifacts, costs, gaps and test results explicit |
+| abstract model proposal and executable contracts | `40_output/02-abstract-model.md`, [[knowledge/text-model]], [[knowledge/text-model-bindings]], `experiments/` | independently readable definition and rationale, executable contract, independently authored cases, reproducible report |
+| P6 option matrix | `40_output/12-p6-design.md` | alternatives compared across the declared dimensions |
+| migration and interoperability dossier | `40_output/11-interoperability-and-processing.md` | mappings, affected artifacts, binding preservation, costs, gaps and test results explicit |
 | Proposal for TEI P6 | `40_output/12-p6-design.md` | premises rest on `validated` assertions, posits explicit, alternatives and reversal conditions named |
 | research workbench | `docs/` | generated from declared inputs, with provenance, rights and independent status preserved |
 

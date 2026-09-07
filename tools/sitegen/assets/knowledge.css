@@ -31,6 +31,12 @@
 .artifact-metadata dt { color: #56616e; }
 .artifact-metadata dd { margin: 0; overflow-wrap: anywhere; }
 .document-navigation { margin-top: 3.5rem; }
+.guidelines-navigation { margin: 1.2rem 0; font-size: .875rem; }
+.guidelines-navigation h3 { font-size: 1rem; }
+.spec-relations { margin: .6rem 0; }
+.spec-relations summary { cursor: pointer; }
+.spec-relations li { margin: .5rem 0; overflow-wrap: anywhere; }
+.spec-relations code { font-size: .75rem; }
 .document-columns { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.5rem 3rem; }
 .document-columns h3 { font-size: .95rem; }
 .document-columns li { padding: .15rem 0; font-size: .875rem; }
