@@ -49,15 +49,17 @@
     "diagnostics": "sorted unique {code,path} objects",
     "resolutions": "selection ID -> resolution as in v0.1; suppressed on any error"
   },
-  "diagnostics": ["E_ALIGNMENT", "E_BASE", "E_BOUNDS", "E_CLAIM_CYCLE", "E_CLAIM_FIELD", "E_CLAIM_REWRITE", "E_CLAIM_SUPERSESSION", "E_CONTAINMENT", "E_CONTINUITY", "E_DUPLICATE_ID", "E_ENTITY_KIND", "E_HASH", "E_ID", "E_LANGUAGE", "E_MENTION", "E_NAME_PART", "E_PARTICIPANTS", "E_QUOTE", "E_READING_CYCLE", "E_READING_PARENT", "E_READING_TARGET", "E_REFERENCE", "E_SELECTOR", "E_SHAPE", "E_SIBLING_OVERLAP", "E_STATEMENT_KIND", "E_TYPE", "E_VERSION_CYCLE", "E_VERSION_REWRITE", "W_ABSENT", "W_AMBIGUOUS", "W_UNDENOTED"],
+  "diagnostics": ["E_ALIGNMENT", "E_BASE", "E_BOUNDS", "E_CLAIM_CYCLE", "E_CLAIM_FIELD", "E_CLAIM_REWRITE", "E_CLAIM_SUPERSESSION", "E_CONTAINMENT", "E_CONTINUITY", "E_DUPLICATE_ID", "E_ENTITY_KIND", "E_ENTITY_REWRITE", "E_HASH", "E_ID", "E_LANGUAGE", "E_MENTION", "E_NAME_PART", "E_PARTICIPANTS", "E_QUOTE", "E_READING_CYCLE", "E_READING_PARENT", "E_READING_TARGET", "E_REFERENCE", "E_SELECTION_REWRITE", "E_SELECTOR", "E_SHAPE", "E_SIBLING_OVERLAP", "E_STATEMENT_KIND", "E_TYPE", "E_VERSION_CYCLE", "E_VERSION_REWRITE", "W_ABSENT", "W_AMBIGUOUS", "W_UNDENOTED"],
   "extension_diagnostics": {
     "E_CLAIM_FIELD": "A pattern field fails its lexical form, its closed set or the order of validity bounds",
     "E_CLAIM_SUPERSESSION": "supersedes names a claim of another kind, agent or subject, or a withdrawn claim supersedes nothing",
     "E_CLAIM_CYCLE": "Supersession is cyclic; reported at the container of the claims involved",
-    "E_CLAIM_REWRITE": "A claim of a valid earlier package is missing or changed in the later package; check_claim_revision only",
+    "E_CLAIM_REWRITE": "A claim of a valid earlier package is missing, duplicated or changed in the later package, including its collection and the carrier of a nested alignment; check_claim_revision only",
     "E_BASE": "base or a former base fails its grammar",
     "E_ALIGNMENT": "An alignment iri or relation fails its form or set",
     "E_ENTITY_KIND": "An entity kind is outside its closed set",
+    "E_ENTITY_REWRITE": "A reused entity ID changes its kind between two valid packages; check_claim_revision only",
+    "E_SELECTION_REWRITE": "A selection referenced by the valid earlier package changes its version or selector under its ID; check_claim_revision only",
     "E_STATEMENT_KIND": "A statement kind is outside its closed set",
     "E_NAME_PART": "A name part kind is outside its closed set, or a part is malformed",
     "E_LANGUAGE": "A name claim's language tag fails its lexical form",
@@ -73,7 +75,7 @@
     "validate_extension": "package -> validation_result; runs the v0.1 validator over the base projection of the package, then the section 14 checks",
     "canonical_bytes": "valid package -> deterministic UTF-8 JSON bytes; new collections and nested alignments sort by ID, participants sort as a set by entity and role, parts keep their order, supersedes compares as a set, an absent optional field stays distinct from a present one",
     "equivalent": "two valid packages -> bool under R11",
-    "check_claim_revision": "two packages in a caller-declared shared ID scope -> {valid,diagnostics}; a claim of a valid earlier package that is missing or changed later gives E_CLAIM_REWRITE, a rewritten version record E_VERSION_REWRITE",
+    "check_claim_revision": "two packages in a caller-declared shared ID scope -> {valid,diagnostics}; missing, changed or moved earlier claims give E_CLAIM_REWRITE, including the collection and carrier of nested alignments; between valid packages, reused version data gives E_VERSION_REWRITE on change, reused entity kind E_ENTITY_REWRITE, and a changed version or selector of an earlier referenced selection E_SELECTION_REWRITE; labels, non-reserved concept definitions and unreferenced selections remain mutable",
     "denotations_of": "package, mention ID, include_withdrawn=False -> {diagnostics,denotations}; deep copies of the current denotation claims of the mention, each extended with the label and kind of its entity, ordered by agent ID and then by claim ID; withdrawn claims only on request; E_MENTION at /operation/mention for an ID that is no mention; an invalid package returns its diagnostics and no list",
     "names_of": "package, entity ID, include_withdrawn=False -> {diagnostics,names}; deep copies of the current name claims of the entity, claims without valid first, then ascending by from with an absent from first, then ascending by until with an absent until last, then by claim ID; dates compare as strings; E_REFERENCE at /operation/entity for an ID that is no entity"
   },

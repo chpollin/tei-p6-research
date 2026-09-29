@@ -23,6 +23,20 @@ def test_overview_accepts_only_the_declared_identity_intake() -> None:
             allowed_control_path(unexpected)
 
 
+def test_private_originals_are_described_without_public_file_links() -> None:
+    from tools.sitegen.materials_view import material_records
+
+    rows = material_records([{"objects": [
+        {"kind": "restored-original", "path": "00_sources/restored.md"},
+        {"kind": "raw-response", "path": "corpus/raw/response.json"},
+        {"kind": "metadata", "path": "corpus/normalized/record.json"},
+    ]}], ["sources/manifests/restore.yaml"])
+
+    assert [row["path"] for row in rows] == ["", "", "corpus/normalized/record.json"]
+    assert "retained locally" in rows[0]["description"]
+    assert all(row["manifest_ref"] == "sources/manifests/restore.yaml" for row in rows)
+
+
 def test_overview_uses_one_table_row_pair_per_primary_source_family() -> None:
     page = build_page(REPO, "2026-09-05")
 

@@ -15,9 +15,9 @@ the `span` element attaches an interpretative annotation to the span it addresse
 ## Examples
 
 <!-- examples:begin -->
-- [[30_assertions/p5-span-associates-interpretation-with-text]] — In TEI P5 4.12.0, span associates an interpretative annotation with a span of text
+- [[30_assertions/p5-span-associates-interpretation-with-text]] — In TEI P5 4.12.0, span directly associates an interpretative annotation with a span of text
   - [[20_distillates/documents/tei-p5-span-4.12.0#^s1]]
-- [[30_assertions/p5-span-from-identifies-start-or-whole-node]] — In TEI P5 4.12.0, span from identifies the starting node or, without to, the entire annotated node
+- [[30_assertions/p5-span-from-identifies-start-or-whole-node]] — In TEI P5 4.12.0, span from identifies the starting node of the annotated span or, without to, the node for the entire annotated span
   - [[20_distillates/documents/tei-p5-span-4.12.0#^s2]]
 - [[30_assertions/tei-fr363-proposes-target-on-span]] — TEI feature request 363 proposes target on span
   - [[20_distillates/publications/tei-sourceforge-fr363#^s1]]

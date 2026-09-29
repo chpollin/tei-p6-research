@@ -3,6 +3,10 @@ name: checks
 on:
   push:
   pull_request:
+  workflow_call:
+
+permissions:
+  contents: read
 
 jobs:
   validate-and-test:
@@ -32,6 +36,8 @@ jobs:
           uv run --locked python -m tools.export_guidelines --output "${RUNNER_TEMP}/guidelines-xml" --check
       - name: Check current first-wave source-support review
         run: uv run --locked python tools/check_wave1_sources.py . --review-only
+      - name: Check complete current knowledge review and blind second sample
+        run: uv run --locked python -m tools.current_review .
       - name: Reproduce Abstract Text Model 0.1
         run: uv run --locked python tools/check_abstract_text_v01.py --check
       - name: Reproduce entity extension 0.2

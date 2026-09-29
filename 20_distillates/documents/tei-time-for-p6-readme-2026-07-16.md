@@ -3,17 +3,16 @@ type: distillate
 source-type: document
 representation: "[[10_markdown/documents/tei-time-for-p6-readme-2026-07-16]]"
 topics: ["[[P6 Design]]", "[[History and Governance]]"]
-status: validated
+status: grounded
 checked:
-  validation: 2026-09-05
-  machine-review: 2026-09-05
+  validation: 2026-09-11
 created: 2026-09-05
-updated: 2026-09-05
+updated: 2026-09-11
 ---
 
 # Distillate: timeForP6 repository README
 
-The repository README records the stated purpose and technical organization of the public timeForP6 presentation repository at the pinned commit.
+The repository README describes the purpose and technical organization of the timeForP6 presentation repository.
 
 ## Core statements
 
@@ -34,7 +33,7 @@ The repository README records the stated purpose and technical organization of t
 
 ## Appraisal
 
-This is a self-description of a public TEIC repository. It is useful for identifying an official-process artifact and its internal organization, but it cannot by itself establish a Council decision, merged change to P5, or released normative effect.
+This README describes a presentation repository and its contribution workflow. A Council decision, a merged P5 change or a released normative effect requires a separate source capable of establishing it.
 
 ## Related
 

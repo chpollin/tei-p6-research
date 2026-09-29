@@ -1,0 +1,10 @@
+schema_version: 1
+lock_id: fixture-release-9.9.0
+source_id: fixture-release-9.9.0
+retrieval_status: partial
+release:
+  version: "9.9.0"
+  resolved_full_commit_sha: "9999999999999999999999999999999999999999"
+manifests:
+  - sources/manifests/2026-01-01-fixture-release-admission.yaml
+  - sources/manifests/2026-01-02-fixture-release-readmission.yaml

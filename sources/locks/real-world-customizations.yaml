@@ -1,7 +1,7 @@
 schema_version: 1
 lock_id: tei-real-world-customizations-sample
 source_id: tei-real-world-customizations
-as_of: "2026-09-07"
+as_of: "2026-09-11"
 retrieval_status: partial
 
 scope:
@@ -37,9 +37,23 @@ records:
 counts:
   official_index_pages_retrieved: 2
   external_artifact_links_inventoried: 122
+  selected_odd_processing_cases: 3
+  selected_odd_processing_sources: 9
+  selected_odd_processing_context_observations: 17
+odd_processing_sample:
+  manifest: sources/manifests/2026-09-11-practice-v1-admission.yaml
+  selection: workbench/selections/2026-09-11-odd-practice.md
+  boundary: Three community-published customizations (DraCor, EpiDoc with I.Sicily, CMIF with correspSearch), each with one ODD, one processing context and one real input at pinned commits; no family or catalogue coverage.
+  rights: Per-file licences and exceptions in the admission manifest; the EpiDoc licence declarations differ and both are preserved.
 gaps:
   - code: sampling-protocol-not-yet-approved
     status: blocks-bounded-complete
     detail: The family-wide customization census protocol remains open; the separately authorized three-fragment Humboldt study has its own bounded protocol and does not complete this family.
   - code: legacy-lite-customization-url-returns-404
     status: open
+  - code: odd-practice-effective-schemas-not-reproduced
+    status: open
+    detail: ODD compilation and processor behavior were not executed; observed source configuration does not establish effective schemas or input validity.
+  - code: odd-practice-no-catalogue-case
+    status: open
+    detail: CMIF is correspondence metadata interchange. None of these three samples represents a catalogue customization.

@@ -1,0 +1,2966 @@
+{
+  "record_type": "bounded-review-inventory",
+  "as_of": "2026-09-11",
+  "base_commit": "7d7b7e47ce3eacf605a19ca4dd711d016c2655a0",
+  "working_tree": "includes the uncommitted refactor and current audit; file and prompt hashes define this scope",
+  "use": "review navigation; never grounding",
+  "new_semantic_verdicts": 0,
+  "counts": {
+    "documents": 151,
+    "types": {
+      "distillate": 44,
+      "assertion": 107
+    },
+    "pairs": 523,
+    "pair_kinds": {
+      "source": 411,
+      "assertion": 112
+    },
+    "chapters_for_use_review": 4
+  },
+  "pairs_sha256": "40bd2570246ed54961680db7b3ffba6cc7e68ba3e56e0d37b4f91ef5f95dd5b3",
+  "inputs": {
+    "tools/review.py": "0add7dfea7917e2e5195512670de735aa82f1d373fa436b510542921411cb661",
+    "tools/validate.py": "24849e4b8426c64c8c11b8d3623cc862f910f7df22d2a0efd54c0e1780ad3726",
+    "knowledge/schema.md": "28cae48b45f0f3c370817266f598d70c8057bd6e467eee5d6ea7b92f6db8586e",
+    "knowledge/verification.md": "37303284e5ea94ed6069243c827ac40f33dc4a720589cb35237473b1d4281f72",
+    "workbench/reviews/2026-09-11-data-and-verification/holdings-brief-v1.md": "85465415c16718b4b6b83d65d6f6f1597d3ec9833d9ad34669d7629f9699bc5b",
+    "workbench/reviews/2026-09-11-data-and-verification/literature-brief-v1.md": "9f0c5eba2ebeb6a94d93440bb7bdf0144599df97274bffdc19428b8cc4b109f2",
+    "workbench/reviews/2026-09-11-data-and-verification/verification-brief-v1.md": "6ca547bdd574de0f6ac20cf6c39fd0ece019ff15682a5756a02be3181b03bc99"
+  },
+  "artifacts": [
+    {
+      "path": "20_distillates/documents/hsa-letter-4493-2026-09-07.md",
+      "sha256": "b2b26712ca20cfa66763e85fe9af202e6ca2f90183dfe6143f5ea8ae734db574",
+      "type": "distillate",
+      "status": "grounded",
+      "checked": {
+        "validation": "2026-09-07"
+      },
+      "pairs": 3,
+      "pair_ids": [
+        "20_distillates/documents/hsa-letter-4493-2026-09-07#^s1",
+        "20_distillates/documents/hsa-letter-4493-2026-09-07#^s2",
+        "20_distillates/documents/hsa-letter-4493-2026-09-07#^s3"
+      ]
+    },
+    {
+      "path": "20_distillates/documents/humboldt-h0017682-7d174637.md",
+      "sha256": "f7f42f31b49e9fdf69287c9800a151ab3a0b9ce1d1b1a7846ce7c39bd28a4a5b",
+      "type": "distillate",
+      "status": "validated",
+      "checked": {
+        "validation": "2026-09-05",
+        "machine-review": "2026-09-05"
+      },
+      "pairs": 3,
+      "pair_ids": [
+        "20_distillates/documents/humboldt-h0017682-7d174637#^s1",
+        "20_distillates/documents/humboldt-h0017682-7d174637#^s2",
+        "20_distillates/documents/humboldt-h0017682-7d174637#^s3"
+      ]
+    },
+    {
+      "path": "20_distillates/documents/szd-werke-2026-09-07.md",
+      "sha256": "9185c362022dc52e5e273e63001a18183bfa0ac99fbff69690f42f70289116d4",
+      "type": "distillate",
+      "status": "grounded",
+      "checked": {
+        "validation": "2026-09-07"
+      },
+      "pairs": 6,
+      "pair_ids": [
+        "20_distillates/documents/szd-werke-2026-09-07#^s1",
+        "20_distillates/documents/szd-werke-2026-09-07#^s2",
+        "20_distillates/documents/szd-werke-2026-09-07#^s3",
+        "20_distillates/documents/szd-werke-2026-09-07#^s4",
+        "20_distillates/documents/szd-werke-2026-09-07#^s5",
+        "20_distillates/documents/szd-werke-2026-09-07#^s6"
+      ]
+    },
+    {
+      "path": "20_distillates/documents/tei-p5-anchor-4.12.0.md",
+      "sha256": "741d05f7fb16d86bf79dcf5920e800ab8110dde4fd82a7b72c8759fee14dc304",
+      "type": "distillate",
+      "status": "validated",
+      "checked": {
+        "validation": "2026-09-05",
+        "machine-review": "2026-09-05"
+      },
+      "pairs": 2,
+      "pair_ids": [
+        "20_distillates/documents/tei-p5-anchor-4.12.0#^s1",
+        "20_distillates/documents/tei-p5-anchor-4.12.0#^s2"
+      ]
+    },
+    {
+      "path": "20_distillates/documents/tei-p5-annotation-4.12.0.md",
+      "sha256": "c5ca39d13792dc8aa59511ede73313fa65b55e204327807caab867f04cbef6d4",
+      "type": "distillate",
+      "status": "validated",
+      "checked": {
+        "validation": "2026-09-05",
+        "machine-review": "2026-09-05"
+      },
+      "pairs": 1,
+      "pair_ids": [
+        "20_distillates/documents/tei-p5-annotation-4.12.0#^s1"
+      ]
+    },
+    {
+      "path": "20_distillates/documents/tei-p5-att.canonical-4.12.0.md",
+      "sha256": "aee2dcd11b57a823f3faefde8c7c8ebddbcc059429e6c4c30ae8cb196f543aaa",
+      "type": "distillate",
+      "status": "validated",
+      "checked": {
+        "machine-review": "2026-09-06",
+        "validation": "2026-09-06"
+      },
+      "pairs": 11,
+      "pair_ids": [
+        "20_distillates/documents/tei-p5-att.canonical-4.12.0#^s1",
+        "20_distillates/documents/tei-p5-att.canonical-4.12.0#^s2",
+        "20_distillates/documents/tei-p5-att.canonical-4.12.0#^s3",
+        "20_distillates/documents/tei-p5-att.canonical-4.12.0#^s4",
+        "20_distillates/documents/tei-p5-att.canonical-4.12.0#^s5",
+        "20_distillates/documents/tei-p5-att.canonical-4.12.0#^s6",
+        "20_distillates/documents/tei-p5-att.canonical-4.12.0#^s7",
+        "20_distillates/documents/tei-p5-att.canonical-4.12.0#^s8",
+        "20_distillates/documents/tei-p5-att.canonical-4.12.0#^s9",
+        "20_distillates/documents/tei-p5-att.canonical-4.12.0#^s10",
+        "20_distillates/documents/tei-p5-att.canonical-4.12.0#^s11"
+      ]
+    },
+    {
+      "path": "20_distillates/documents/tei-p5-att.datable-4.12.0.md",
+      "sha256": "5c6abf71a23ed341347ba858a80a652359412c975fad70c60da67809870218e1",
+      "type": "distillate",
+      "status": "validated",
+      "checked": {
+        "machine-review": "2026-09-06",
+        "validation": "2026-09-06"
+      },
+      "pairs": 8,
+      "pair_ids": [
+        "20_distillates/documents/tei-p5-att.datable-4.12.0#^s1",
+        "20_distillates/documents/tei-p5-att.datable-4.12.0#^s2",
+        "20_distillates/documents/tei-p5-att.datable-4.12.0#^s3",
+        "20_distillates/documents/tei-p5-att.datable-4.12.0#^s4",
+        "20_distillates/documents/tei-p5-att.datable-4.12.0#^s5",
+        "20_distillates/documents/tei-p5-att.datable-4.12.0#^s6",
+        "20_distillates/documents/tei-p5-att.datable-4.12.0#^s7",
+        "20_distillates/documents/tei-p5-att.datable-4.12.0#^s8"
+      ]
+    },
+    {
+      "path": "20_distillates/documents/tei-p5-att.editlike-4.12.0.md",
+      "sha256": "8bfbb49ed7c06b7c4f69b90bf78c2e15a48c5be1e9486b7a268d69eb3d190e01",
+      "type": "distillate",
+      "status": "validated",
+      "checked": {
+        "machine-review": "2026-09-06",
+        "validation": "2026-09-06"
+      },
+      "pairs": 9,
+      "pair_ids": [
+        "20_distillates/documents/tei-p5-att.editlike-4.12.0#^s1",
+        "20_distillates/documents/tei-p5-att.editlike-4.12.0#^s2",
+        "20_distillates/documents/tei-p5-att.editlike-4.12.0#^s3",
+        "20_distillates/documents/tei-p5-att.editlike-4.12.0#^s4",
+        "20_distillates/documents/tei-p5-att.editlike-4.12.0#^s5",
+        "20_distillates/documents/tei-p5-att.editlike-4.12.0#^s6",
+        "20_distillates/documents/tei-p5-att.editlike-4.12.0#^s7",
+        "20_distillates/documents/tei-p5-att.editlike-4.12.0#^s8",
+        "20_distillates/documents/tei-p5-att.editlike-4.12.0#^s9"
+      ]
+    },
+    {
+      "path": "20_distillates/documents/tei-p5-att.fragmentable-4.12.0.md",
+      "sha256": "3cd6fec9bc9db5596a94863b7d9ddac05115f31422e7358954de548c49298394",
+      "type": "distillate",
+      "status": "grounded",
+      "checked": {},
+      "pairs": 6,
+      "pair_ids": [
+        "20_distillates/documents/tei-p5-att.fragmentable-4.12.0#^s1",
+        "20_distillates/documents/tei-p5-att.fragmentable-4.12.0#^s2",
+        "20_distillates/documents/tei-p5-att.fragmentable-4.12.0#^s3",
+        "20_distillates/documents/tei-p5-att.fragmentable-4.12.0#^s4",
+        "20_distillates/documents/tei-p5-att.fragmentable-4.12.0#^s5",
+        "20_distillates/documents/tei-p5-att.fragmentable-4.12.0#^s6"
+      ]
+    },
+    {
+      "path": "20_distillates/documents/tei-p5-att.global.linking-4.12.0.md",
+      "sha256": "e3d8111cc4dd7c478d6d03673d66988315a4fca9c5f9b2c586d8fa1e3c135397",
+      "type": "distillate",
+      "status": "grounded",
+      "checked": {},
+      "pairs": 14,
+      "pair_ids": [
+        "20_distillates/documents/tei-p5-att.global.linking-4.12.0#^s1",
+        "20_distillates/documents/tei-p5-att.global.linking-4.12.0#^s2",
+        "20_distillates/documents/tei-p5-att.global.linking-4.12.0#^s3",
+        "20_distillates/documents/tei-p5-att.global.linking-4.12.0#^s4",
+        "20_distillates/documents/tei-p5-att.global.linking-4.12.0#^s5",
+        "20_distillates/documents/tei-p5-att.global.linking-4.12.0#^s6",
+        "20_distillates/documents/tei-p5-att.global.linking-4.12.0#^s7",
+        "20_distillates/documents/tei-p5-att.global.linking-4.12.0#^s8",
+        "20_distillates/documents/tei-p5-att.global.linking-4.12.0#^s9",
+        "20_distillates/documents/tei-p5-att.global.linking-4.12.0#^s10",
+        "20_distillates/documents/tei-p5-att.global.linking-4.12.0#^s11",
+        "20_distillates/documents/tei-p5-att.global.linking-4.12.0#^s12",
+        "20_distillates/documents/tei-p5-att.global.linking-4.12.0#^s13",
+        "20_distillates/documents/tei-p5-att.global.linking-4.12.0#^s14"
+      ]
+    },
+    {
+      "path": "20_distillates/documents/tei-p5-att.global.responsibility-4.12.0.md",
+      "sha256": "32656eddba4c2741adb92975e3c42c4eea0c2726bc8f40136184f5f379f6386c",
+      "type": "distillate",
+      "status": "validated",
+      "checked": {
+        "machine-review": "2026-09-06",
+        "validation": "2026-09-06"
+      },
+      "pairs": 8,
+      "pair_ids": [
+        "20_distillates/documents/tei-p5-att.global.responsibility-4.12.0#^s1",
+        "20_distillates/documents/tei-p5-att.global.responsibility-4.12.0#^s2",
+        "20_distillates/documents/tei-p5-att.global.responsibility-4.12.0#^s3",
+        "20_distillates/documents/tei-p5-att.global.responsibility-4.12.0#^s4",
+        "20_distillates/documents/tei-p5-att.global.responsibility-4.12.0#^s5",
+        "20_distillates/documents/tei-p5-att.global.responsibility-4.12.0#^s6",
+        "20_distillates/documents/tei-p5-att.global.responsibility-4.12.0#^s7",
+        "20_distillates/documents/tei-p5-att.global.responsibility-4.12.0#^s8"
+      ]
+    },
+    {
+      "path": "20_distillates/documents/tei-p5-att.global.source-4.12.0.md",
+      "sha256": "4452923c88d63bb2053883d89269ed295b6ff685afa05b706933eccda2846e10",
+      "type": "distillate",
+      "status": "validated",
+      "checked": {
+        "machine-review": "2026-09-06",
+        "validation": "2026-09-06"
+      },
+      "pairs": 9,
+      "pair_ids": [
+        "20_distillates/documents/tei-p5-att.global.source-4.12.0#^s1",
+        "20_distillates/documents/tei-p5-att.global.source-4.12.0#^s2",
+        "20_distillates/documents/tei-p5-att.global.source-4.12.0#^s3",
+        "20_distillates/documents/tei-p5-att.global.source-4.12.0#^s4",
+        "20_distillates/documents/tei-p5-att.global.source-4.12.0#^s5",
+        "20_distillates/documents/tei-p5-att.global.source-4.12.0#^s6",
+        "20_distillates/documents/tei-p5-att.global.source-4.12.0#^s7",
+        "20_distillates/documents/tei-p5-att.global.source-4.12.0#^s8",
+        "20_distillates/documents/tei-p5-att.global.source-4.12.0#^s9"
+      ]
+    },
+    {
+      "path": "20_distillates/documents/tei-p5-att.naming-4.12.0.md",
+      "sha256": "821d94f209c76e445c5700babcbfad909009aca80faab60430b80c80cfd8143e",
+      "type": "distillate",
+      "status": "validated",
+      "checked": {
+        "machine-review": "2026-09-06",
+        "validation": "2026-09-06"
+      },
+      "pairs": 4,
+      "pair_ids": [
+        "20_distillates/documents/tei-p5-att.naming-4.12.0#^s1",
+        "20_distillates/documents/tei-p5-att.naming-4.12.0#^s2",
+        "20_distillates/documents/tei-p5-att.naming-4.12.0#^s3",
+        "20_distillates/documents/tei-p5-att.naming-4.12.0#^s4"
+      ]
+    },
+    {
+      "path": "20_distillates/documents/tei-p5-att.personal-4.12.0.md",
+      "sha256": "48415d5782ba9c2478ce02ff60f25d0abc49f2608c93ee04b29a0d3b3167474b",
+      "type": "distillate",
+      "status": "validated",
+      "checked": {
+        "machine-review": "2026-09-06",
+        "validation": "2026-09-06"
+      },
+      "pairs": 7,
+      "pair_ids": [
+        "20_distillates/documents/tei-p5-att.personal-4.12.0#^s1",
+        "20_distillates/documents/tei-p5-att.personal-4.12.0#^s2",
+        "20_distillates/documents/tei-p5-att.personal-4.12.0#^s3",
+        "20_distillates/documents/tei-p5-att.personal-4.12.0#^s4",
+        "20_distillates/documents/tei-p5-att.personal-4.12.0#^s5",
+        "20_distillates/documents/tei-p5-att.personal-4.12.0#^s6",
+        "20_distillates/documents/tei-p5-att.personal-4.12.0#^s7"
+      ]
+    },
+    {
+      "path": "20_distillates/documents/tei-p5-div-4.12.0.md",
+      "sha256": "80a3420d6eaf906d72f8b021ba846044404c6b49199db57e2c6f62d680b3f011",
+      "type": "distillate",
+      "status": "grounded",
+      "checked": {},
+      "pairs": 6,
+      "pair_ids": [
+        "20_distillates/documents/tei-p5-div-4.12.0#^s1",
+        "20_distillates/documents/tei-p5-div-4.12.0#^s2",
+        "20_distillates/documents/tei-p5-div-4.12.0#^s3",
+        "20_distillates/documents/tei-p5-div-4.12.0#^s4",
+        "20_distillates/documents/tei-p5-div-4.12.0#^s5",
+        "20_distillates/documents/tei-p5-div-4.12.0#^s6"
+      ]
+    },
+    {
+      "path": "20_distillates/documents/tei-p5-guidelines-ds-defaulttextstructure-4.12.0.md",
+      "sha256": "6752550b7f61a764f0d6cf8280a00184eb08f7c8c3d0cd9dcb101a3f7ee46846",
+      "type": "distillate",
+      "status": "grounded",
+      "checked": {},
+      "pairs": 48,
+      "pair_ids": [
+        "20_distillates/documents/tei-p5-guidelines-ds-defaulttextstructure-4.12.0#^s1",
+        "20_distillates/documents/tei-p5-guidelines-ds-defaulttextstructure-4.12.0#^s2",
+        "20_distillates/documents/tei-p5-guidelines-ds-defaulttextstructure-4.12.0#^s3",
+        "20_distillates/documents/tei-p5-guidelines-ds-defaulttextstructure-4.12.0#^s4",
+        "20_distillates/documents/tei-p5-guidelines-ds-defaulttextstructure-4.12.0#^s5",
+        "20_distillates/documents/tei-p5-guidelines-ds-defaulttextstructure-4.12.0#^s6",
+        "20_distillates/documents/tei-p5-guidelines-ds-defaulttextstructure-4.12.0#^s7",
+        "20_distillates/documents/tei-p5-guidelines-ds-defaulttextstructure-4.12.0#^s8",
+        "20_distillates/documents/tei-p5-guidelines-ds-defaulttextstructure-4.12.0#^s9",
+        "20_distillates/documents/tei-p5-guidelines-ds-defaulttextstructure-4.12.0#^s10",
+        "20_distillates/documents/tei-p5-guidelines-ds-defaulttextstructure-4.12.0#^s11",
+        "20_distillates/documents/tei-p5-guidelines-ds-defaulttextstructure-4.12.0#^s12",
+        "20_distillates/documents/tei-p5-guidelines-ds-defaulttextstructure-4.12.0#^s13",
+        "20_distillates/documents/tei-p5-guidelines-ds-defaulttextstructure-4.12.0#^s14",
+        "20_distillates/documents/tei-p5-guidelines-ds-defaulttextstructure-4.12.0#^s15",
+        "20_distillates/documents/tei-p5-guidelines-ds-defaulttextstructure-4.12.0#^s16",
+        "20_distillates/documents/tei-p5-guidelines-ds-defaulttextstructure-4.12.0#^s17",
+        "20_distillates/documents/tei-p5-guidelines-ds-defaulttextstructure-4.12.0#^s18",
+        "20_distillates/documents/tei-p5-guidelines-ds-defaulttextstructure-4.12.0#^s19",
+        "20_distillates/documents/tei-p5-guidelines-ds-defaulttextstructure-4.12.0#^s20",
+        "20_distillates/documents/tei-p5-guidelines-ds-defaulttextstructure-4.12.0#^s21",
+        "20_distillates/documents/tei-p5-guidelines-ds-defaulttextstructure-4.12.0#^s22",
+        "20_distillates/documents/tei-p5-guidelines-ds-defaulttextstructure-4.12.0#^s23",
+        "20_distillates/documents/tei-p5-guidelines-ds-defaulttextstructure-4.12.0#^s24",
+        "20_distillates/documents/tei-p5-guidelines-ds-defaulttextstructure-4.12.0#^s25",
+        "20_distillates/documents/tei-p5-guidelines-ds-defaulttextstructure-4.12.0#^s26",
+        "20_distillates/documents/tei-p5-guidelines-ds-defaulttextstructure-4.12.0#^s27",
+        "20_distillates/documents/tei-p5-guidelines-ds-defaulttextstructure-4.12.0#^s28",
+        "20_distillates/documents/tei-p5-guidelines-ds-defaulttextstructure-4.12.0#^s29",
+        "20_distillates/documents/tei-p5-guidelines-ds-defaulttextstructure-4.12.0#^s30",
+        "20_distillates/documents/tei-p5-guidelines-ds-defaulttextstructure-4.12.0#^s31",
+        "20_distillates/documents/tei-p5-guidelines-ds-defaulttextstructure-4.12.0#^s32",
+        "20_distillates/documents/tei-p5-guidelines-ds-defaulttextstructure-4.12.0#^s33",
+        "20_distillates/documents/tei-p5-guidelines-ds-defaulttextstructure-4.12.0#^s34",
+        "20_distillates/documents/tei-p5-guidelines-ds-defaulttextstructure-4.12.0#^s35",
+        "20_distillates/documents/tei-p5-guidelines-ds-defaulttextstructure-4.12.0#^s36",
+        "20_distillates/documents/tei-p5-guidelines-ds-defaulttextstructure-4.12.0#^s37",
+        "20_distillates/documents/tei-p5-guidelines-ds-defaulttextstructure-4.12.0#^s38",
+        "20_distillates/documents/tei-p5-guidelines-ds-defaulttextstructure-4.12.0#^s39",
+        "20_distillates/documents/tei-p5-guidelines-ds-defaulttextstructure-4.12.0#^s40",
+        "20_distillates/documents/tei-p5-guidelines-ds-defaulttextstructure-4.12.0#^s41",
+        "20_distillates/documents/tei-p5-guidelines-ds-defaulttextstructure-4.12.0#^s42",
+        "20_distillates/documents/tei-p5-guidelines-ds-defaulttextstructure-4.12.0#^s43",
+        "20_distillates/documents/tei-p5-guidelines-ds-defaulttextstructure-4.12.0#^s44",
+        "20_distillates/documents/tei-p5-guidelines-ds-defaulttextstructure-4.12.0#^s45",
+        "20_distillates/documents/tei-p5-guidelines-ds-defaulttextstructure-4.12.0#^s46",
+        "20_distillates/documents/tei-p5-guidelines-ds-defaulttextstructure-4.12.0#^s47",
+        "20_distillates/documents/tei-p5-guidelines-ds-defaulttextstructure-4.12.0#^s48"
+      ]
+    },
+    {
+      "path": "20_distillates/documents/tei-p5-guidelines-nd-4.12.0.md",
+      "sha256": "642a0a82f27f15bb90630b60e701feb78be4c149239f236334e2f77e2e638f6d",
+      "type": "distillate",
+      "status": "validated",
+      "checked": {
+        "machine-review": "2026-09-06",
+        "validation": "2026-09-06"
+      },
+      "pairs": 59,
+      "pair_ids": [
+        "20_distillates/documents/tei-p5-guidelines-nd-4.12.0#^s1",
+        "20_distillates/documents/tei-p5-guidelines-nd-4.12.0#^s2",
+        "20_distillates/documents/tei-p5-guidelines-nd-4.12.0#^s3",
+        "20_distillates/documents/tei-p5-guidelines-nd-4.12.0#^s4",
+        "20_distillates/documents/tei-p5-guidelines-nd-4.12.0#^s5",
+        "20_distillates/documents/tei-p5-guidelines-nd-4.12.0#^s6",
+        "20_distillates/documents/tei-p5-guidelines-nd-4.12.0#^s7",
+        "20_distillates/documents/tei-p5-guidelines-nd-4.12.0#^s8",
+        "20_distillates/documents/tei-p5-guidelines-nd-4.12.0#^s9",
+        "20_distillates/documents/tei-p5-guidelines-nd-4.12.0#^s10",
+        "20_distillates/documents/tei-p5-guidelines-nd-4.12.0#^s11",
+        "20_distillates/documents/tei-p5-guidelines-nd-4.12.0#^s12",
+        "20_distillates/documents/tei-p5-guidelines-nd-4.12.0#^s13",
+        "20_distillates/documents/tei-p5-guidelines-nd-4.12.0#^s14",
+        "20_distillates/documents/tei-p5-guidelines-nd-4.12.0#^s15",
+        "20_distillates/documents/tei-p5-guidelines-nd-4.12.0#^s16",
+        "20_distillates/documents/tei-p5-guidelines-nd-4.12.0#^s17",
+        "20_distillates/documents/tei-p5-guidelines-nd-4.12.0#^s18",
+        "20_distillates/documents/tei-p5-guidelines-nd-4.12.0#^s19",
+        "20_distillates/documents/tei-p5-guidelines-nd-4.12.0#^s20",
+        "20_distillates/documents/tei-p5-guidelines-nd-4.12.0#^s21",
+        "20_distillates/documents/tei-p5-guidelines-nd-4.12.0#^s22",
+        "20_distillates/documents/tei-p5-guidelines-nd-4.12.0#^s23",
+        "20_distillates/documents/tei-p5-guidelines-nd-4.12.0#^s24",
+        "20_distillates/documents/tei-p5-guidelines-nd-4.12.0#^s25",
+        "20_distillates/documents/tei-p5-guidelines-nd-4.12.0#^s26",
+        "20_distillates/documents/tei-p5-guidelines-nd-4.12.0#^s27",
+        "20_distillates/documents/tei-p5-guidelines-nd-4.12.0#^s28",
+        "20_distillates/documents/tei-p5-guidelines-nd-4.12.0#^s29",
+        "20_distillates/documents/tei-p5-guidelines-nd-4.12.0#^s30",
+        "20_distillates/documents/tei-p5-guidelines-nd-4.12.0#^s31",
+        "20_distillates/documents/tei-p5-guidelines-nd-4.12.0#^s32",
+        "20_distillates/documents/tei-p5-guidelines-nd-4.12.0#^s33",
+        "20_distillates/documents/tei-p5-guidelines-nd-4.12.0#^s34",
+        "20_distillates/documents/tei-p5-guidelines-nd-4.12.0#^s35",
+        "20_distillates/documents/tei-p5-guidelines-nd-4.12.0#^s36",
+        "20_distillates/documents/tei-p5-guidelines-nd-4.12.0#^s37",
+        "20_distillates/documents/tei-p5-guidelines-nd-4.12.0#^s38",
+        "20_distillates/documents/tei-p5-guidelines-nd-4.12.0#^s39",
+        "20_distillates/documents/tei-p5-guidelines-nd-4.12.0#^s40",
+        "20_distillates/documents/tei-p5-guidelines-nd-4.12.0#^s41",
+        "20_distillates/documents/tei-p5-guidelines-nd-4.12.0#^s42",
+        "20_distillates/documents/tei-p5-guidelines-nd-4.12.0#^s43",
+        "20_distillates/documents/tei-p5-guidelines-nd-4.12.0#^s44",
+        "20_distillates/documents/tei-p5-guidelines-nd-4.12.0#^s45",
+        "20_distillates/documents/tei-p5-guidelines-nd-4.12.0#^s46",
+        "20_distillates/documents/tei-p5-guidelines-nd-4.12.0#^s47",
+        "20_distillates/documents/tei-p5-guidelines-nd-4.12.0#^s48",
+        "20_distillates/documents/tei-p5-guidelines-nd-4.12.0#^s49",
+        "20_distillates/documents/tei-p5-guidelines-nd-4.12.0#^s50",
+        "20_distillates/documents/tei-p5-guidelines-nd-4.12.0#^s51",
+        "20_distillates/documents/tei-p5-guidelines-nd-4.12.0#^s52",
+        "20_distillates/documents/tei-p5-guidelines-nd-4.12.0#^s53",
+        "20_distillates/documents/tei-p5-guidelines-nd-4.12.0#^s54",
+        "20_distillates/documents/tei-p5-guidelines-nd-4.12.0#^s55",
+        "20_distillates/documents/tei-p5-guidelines-nd-4.12.0#^s56",
+        "20_distillates/documents/tei-p5-guidelines-nd-4.12.0#^s57",
+        "20_distillates/documents/tei-p5-guidelines-nd-4.12.0#^s58",
+        "20_distillates/documents/tei-p5-guidelines-nd-4.12.0#^s59"
+      ]
+    },
+    {
+      "path": "20_distillates/documents/tei-p5-guidelines-nh-non-hierarchical-4.12.0.md",
+      "sha256": "a48d22966833f07d670e28f191527f539fc91511fbdf67249f0d0d9af4121fff",
+      "type": "distillate",
+      "status": "grounded",
+      "checked": {},
+      "pairs": 31,
+      "pair_ids": [
+        "20_distillates/documents/tei-p5-guidelines-nh-non-hierarchical-4.12.0#^s1",
+        "20_distillates/documents/tei-p5-guidelines-nh-non-hierarchical-4.12.0#^s2",
+        "20_distillates/documents/tei-p5-guidelines-nh-non-hierarchical-4.12.0#^s3",
+        "20_distillates/documents/tei-p5-guidelines-nh-non-hierarchical-4.12.0#^s4",
+        "20_distillates/documents/tei-p5-guidelines-nh-non-hierarchical-4.12.0#^s5",
+        "20_distillates/documents/tei-p5-guidelines-nh-non-hierarchical-4.12.0#^s6",
+        "20_distillates/documents/tei-p5-guidelines-nh-non-hierarchical-4.12.0#^s7",
+        "20_distillates/documents/tei-p5-guidelines-nh-non-hierarchical-4.12.0#^s8",
+        "20_distillates/documents/tei-p5-guidelines-nh-non-hierarchical-4.12.0#^s9",
+        "20_distillates/documents/tei-p5-guidelines-nh-non-hierarchical-4.12.0#^s10",
+        "20_distillates/documents/tei-p5-guidelines-nh-non-hierarchical-4.12.0#^s11",
+        "20_distillates/documents/tei-p5-guidelines-nh-non-hierarchical-4.12.0#^s12",
+        "20_distillates/documents/tei-p5-guidelines-nh-non-hierarchical-4.12.0#^s13",
+        "20_distillates/documents/tei-p5-guidelines-nh-non-hierarchical-4.12.0#^s14",
+        "20_distillates/documents/tei-p5-guidelines-nh-non-hierarchical-4.12.0#^s15",
+        "20_distillates/documents/tei-p5-guidelines-nh-non-hierarchical-4.12.0#^s16",
+        "20_distillates/documents/tei-p5-guidelines-nh-non-hierarchical-4.12.0#^s17",
+        "20_distillates/documents/tei-p5-guidelines-nh-non-hierarchical-4.12.0#^s18",
+        "20_distillates/documents/tei-p5-guidelines-nh-non-hierarchical-4.12.0#^s19",
+        "20_distillates/documents/tei-p5-guidelines-nh-non-hierarchical-4.12.0#^s20",
+        "20_distillates/documents/tei-p5-guidelines-nh-non-hierarchical-4.12.0#^s21",
+        "20_distillates/documents/tei-p5-guidelines-nh-non-hierarchical-4.12.0#^s22",
+        "20_distillates/documents/tei-p5-guidelines-nh-non-hierarchical-4.12.0#^s23",
+        "20_distillates/documents/tei-p5-guidelines-nh-non-hierarchical-4.12.0#^s24",
+        "20_distillates/documents/tei-p5-guidelines-nh-non-hierarchical-4.12.0#^s25",
+        "20_distillates/documents/tei-p5-guidelines-nh-non-hierarchical-4.12.0#^s26",
+        "20_distillates/documents/tei-p5-guidelines-nh-non-hierarchical-4.12.0#^s27",
+        "20_distillates/documents/tei-p5-guidelines-nh-non-hierarchical-4.12.0#^s28",
+        "20_distillates/documents/tei-p5-guidelines-nh-non-hierarchical-4.12.0#^s29",
+        "20_distillates/documents/tei-p5-guidelines-nh-non-hierarchical-4.12.0#^s30",
+        "20_distillates/documents/tei-p5-guidelines-nh-non-hierarchical-4.12.0#^s31"
+      ]
+    },
+    {
+      "path": "20_distillates/documents/tei-p5-idno-4.12.0.md",
+      "sha256": "dd3be61577b372d231b6bc75c88f9898851cc4c808da99221e18ffe25453544a",
+      "type": "distillate",
+      "status": "validated",
+      "checked": {
+        "machine-review": "2026-09-06",
+        "validation": "2026-09-06"
+      },
+      "pairs": 13,
+      "pair_ids": [
+        "20_distillates/documents/tei-p5-idno-4.12.0#^s1",
+        "20_distillates/documents/tei-p5-idno-4.12.0#^s2",
+        "20_distillates/documents/tei-p5-idno-4.12.0#^s3",
+        "20_distillates/documents/tei-p5-idno-4.12.0#^s4",
+        "20_distillates/documents/tei-p5-idno-4.12.0#^s5",
+        "20_distillates/documents/tei-p5-idno-4.12.0#^s6",
+        "20_distillates/documents/tei-p5-idno-4.12.0#^s7",
+        "20_distillates/documents/tei-p5-idno-4.12.0#^s8",
+        "20_distillates/documents/tei-p5-idno-4.12.0#^s9",
+        "20_distillates/documents/tei-p5-idno-4.12.0#^s10",
+        "20_distillates/documents/tei-p5-idno-4.12.0#^s11",
+        "20_distillates/documents/tei-p5-idno-4.12.0#^s12",
+        "20_distillates/documents/tei-p5-idno-4.12.0#^s13"
+      ]
+    },
+    {
+      "path": "20_distillates/documents/tei-p5-join-4.12.0.md",
+      "sha256": "415dbea87ccf9e46fa15143d40906629afc0024679d551bacc4eacd6fd507e5c",
+      "type": "distillate",
+      "status": "grounded",
+      "checked": {},
+      "pairs": 10,
+      "pair_ids": [
+        "20_distillates/documents/tei-p5-join-4.12.0#^s1",
+        "20_distillates/documents/tei-p5-join-4.12.0#^s2",
+        "20_distillates/documents/tei-p5-join-4.12.0#^s3",
+        "20_distillates/documents/tei-p5-join-4.12.0#^s4",
+        "20_distillates/documents/tei-p5-join-4.12.0#^s5",
+        "20_distillates/documents/tei-p5-join-4.12.0#^s6",
+        "20_distillates/documents/tei-p5-join-4.12.0#^s7",
+        "20_distillates/documents/tei-p5-join-4.12.0#^s8",
+        "20_distillates/documents/tei-p5-join-4.12.0#^s9",
+        "20_distillates/documents/tei-p5-join-4.12.0#^s10"
+      ]
+    },
+    {
+      "path": "20_distillates/documents/tei-p5-milestone-4.12.0.md",
+      "sha256": "e21e78b7dca94798eecbf29ec96f50c6b20c578ed759a5dfa914f5b66f8306e6",
+      "type": "distillate",
+      "status": "grounded",
+      "checked": {},
+      "pairs": 5,
+      "pair_ids": [
+        "20_distillates/documents/tei-p5-milestone-4.12.0#^s1",
+        "20_distillates/documents/tei-p5-milestone-4.12.0#^s2",
+        "20_distillates/documents/tei-p5-milestone-4.12.0#^s3",
+        "20_distillates/documents/tei-p5-milestone-4.12.0#^s4",
+        "20_distillates/documents/tei-p5-milestone-4.12.0#^s5"
+      ]
+    },
+    {
+      "path": "20_distillates/documents/tei-p5-name-4.12.0.md",
+      "sha256": "53774f240bdc75eaf655b180ec03b7d0bff71308f52500d2d66b8dfdce620eea",
+      "type": "distillate",
+      "status": "validated",
+      "checked": {
+        "machine-review": "2026-09-06",
+        "validation": "2026-09-06"
+      },
+      "pairs": 2,
+      "pair_ids": [
+        "20_distillates/documents/tei-p5-name-4.12.0#^s1",
+        "20_distillates/documents/tei-p5-name-4.12.0#^s2"
+      ]
+    },
+    {
+      "path": "20_distillates/documents/tei-p5-note-4.12.0.md",
+      "sha256": "891bbffe8b498f650ee3d2451c834291cf30f5eb3129452925291517feffa61b",
+      "type": "distillate",
+      "status": "grounded",
+      "checked": {},
+      "pairs": 7,
+      "pair_ids": [
+        "20_distillates/documents/tei-p5-note-4.12.0#^s1",
+        "20_distillates/documents/tei-p5-note-4.12.0#^s2",
+        "20_distillates/documents/tei-p5-note-4.12.0#^s3",
+        "20_distillates/documents/tei-p5-note-4.12.0#^s4",
+        "20_distillates/documents/tei-p5-note-4.12.0#^s5",
+        "20_distillates/documents/tei-p5-note-4.12.0#^s6",
+        "20_distillates/documents/tei-p5-note-4.12.0#^s7"
+      ]
+    },
+    {
+      "path": "20_distillates/documents/tei-p5-nym-4.12.0.md",
+      "sha256": "5de7e360b15f275ad4d86dd3d0255c1b819104d3cd0b6946c9bcfa63e3529ece",
+      "type": "distillate",
+      "status": "validated",
+      "checked": {
+        "machine-review": "2026-09-06",
+        "validation": "2026-09-06"
+      },
+      "pairs": 2,
+      "pair_ids": [
+        "20_distillates/documents/tei-p5-nym-4.12.0#^s1",
+        "20_distillates/documents/tei-p5-nym-4.12.0#^s2"
+      ]
+    },
+    {
+      "path": "20_distillates/documents/tei-p5-pb-4.12.0.md",
+      "sha256": "3804ea28befc8a4af3b7a1d234abebbeabdcac28a6b3d05054188a960d84e867",
+      "type": "distillate",
+      "status": "grounded",
+      "checked": {},
+      "pairs": 7,
+      "pair_ids": [
+        "20_distillates/documents/tei-p5-pb-4.12.0#^s1",
+        "20_distillates/documents/tei-p5-pb-4.12.0#^s2",
+        "20_distillates/documents/tei-p5-pb-4.12.0#^s3",
+        "20_distillates/documents/tei-p5-pb-4.12.0#^s4",
+        "20_distillates/documents/tei-p5-pb-4.12.0#^s5",
+        "20_distillates/documents/tei-p5-pb-4.12.0#^s6",
+        "20_distillates/documents/tei-p5-pb-4.12.0#^s7"
+      ]
+    },
+    {
+      "path": "20_distillates/documents/tei-p5-persname-4.12.0.md",
+      "sha256": "4e614b1d99690fb359fd2a303d52bd1cb20817f90f382a46314546c131d94a65",
+      "type": "distillate",
+      "status": "validated",
+      "checked": {
+        "machine-review": "2026-09-06",
+        "validation": "2026-09-06"
+      },
+      "pairs": 2,
+      "pair_ids": [
+        "20_distillates/documents/tei-p5-persname-4.12.0#^s1",
+        "20_distillates/documents/tei-p5-persname-4.12.0#^s2"
+      ]
+    },
+    {
+      "path": "20_distillates/documents/tei-p5-person-4.12.0.md",
+      "sha256": "b1db788f4b5f9dbf51b39021c16d6a62fb28906e5bdc7d164c13af56a498cf66",
+      "type": "distillate",
+      "status": "validated",
+      "checked": {
+        "machine-review": "2026-09-06",
+        "validation": "2026-09-06"
+      },
+      "pairs": 10,
+      "pair_ids": [
+        "20_distillates/documents/tei-p5-person-4.12.0#^s1",
+        "20_distillates/documents/tei-p5-person-4.12.0#^s2",
+        "20_distillates/documents/tei-p5-person-4.12.0#^s3",
+        "20_distillates/documents/tei-p5-person-4.12.0#^s4",
+        "20_distillates/documents/tei-p5-person-4.12.0#^s5",
+        "20_distillates/documents/tei-p5-person-4.12.0#^s6",
+        "20_distillates/documents/tei-p5-person-4.12.0#^s7",
+        "20_distillates/documents/tei-p5-person-4.12.0#^s8",
+        "20_distillates/documents/tei-p5-person-4.12.0#^s9",
+        "20_distillates/documents/tei-p5-person-4.12.0#^s10"
+      ]
+    },
+    {
+      "path": "20_distillates/documents/tei-p5-place-4.12.0.md",
+      "sha256": "e16104603c09b006e3d00f7a36832a260cd114a255fb58c2893761c543b6ad85",
+      "type": "distillate",
+      "status": "validated",
+      "checked": {
+        "machine-review": "2026-09-06",
+        "validation": "2026-09-06"
+      },
+      "pairs": 1,
+      "pair_ids": [
+        "20_distillates/documents/tei-p5-place-4.12.0#^s1"
+      ]
+    },
+    {
+      "path": "20_distillates/documents/tei-p5-relation-4.12.0.md",
+      "sha256": "1b0369c9540fab45a80a594c1ae643a3fd739a99503c6f0bb87f6db310ec600a",
+      "type": "distillate",
+      "status": "validated",
+      "checked": {
+        "machine-review": "2026-09-06",
+        "validation": "2026-09-06"
+      },
+      "pairs": 10,
+      "pair_ids": [
+        "20_distillates/documents/tei-p5-relation-4.12.0#^s1",
+        "20_distillates/documents/tei-p5-relation-4.12.0#^s2",
+        "20_distillates/documents/tei-p5-relation-4.12.0#^s3",
+        "20_distillates/documents/tei-p5-relation-4.12.0#^s4",
+        "20_distillates/documents/tei-p5-relation-4.12.0#^s5",
+        "20_distillates/documents/tei-p5-relation-4.12.0#^s6",
+        "20_distillates/documents/tei-p5-relation-4.12.0#^s7",
+        "20_distillates/documents/tei-p5-relation-4.12.0#^s8",
+        "20_distillates/documents/tei-p5-relation-4.12.0#^s9",
+        "20_distillates/documents/tei-p5-relation-4.12.0#^s10"
+      ]
+    },
+    {
+      "path": "20_distillates/documents/tei-p5-rs-4.12.0.md",
+      "sha256": "900fc9014367def0c5c9b54fecba16a7db220d3375364314f2da90cb33629635",
+      "type": "distillate",
+      "status": "validated",
+      "checked": {
+        "machine-review": "2026-09-06",
+        "validation": "2026-09-06"
+      },
+      "pairs": 1,
+      "pair_ids": [
+        "20_distillates/documents/tei-p5-rs-4.12.0#^s1"
+      ]
+    },
+    {
+      "path": "20_distillates/documents/tei-p5-span-4.12.0.md",
+      "sha256": "e993cdcc7c4e079ad754484e54d9e2fb5e8131cd9e8fb73fb2f381733e778cd7",
+      "type": "distillate",
+      "status": "validated",
+      "checked": {
+        "validation": "2026-09-05",
+        "machine-review": "2026-09-05"
+      },
+      "pairs": 2,
+      "pair_ids": [
+        "20_distillates/documents/tei-p5-span-4.12.0#^s1",
+        "20_distillates/documents/tei-p5-span-4.12.0#^s2"
+      ]
+    },
+    {
+      "path": "20_distillates/documents/tei-p5-state-4.12.0.md",
+      "sha256": "92ac20630b5217c9134ddef29e868008d60213bffb1fdae932045c0da4aac940",
+      "type": "distillate",
+      "status": "validated",
+      "checked": {
+        "machine-review": "2026-09-06",
+        "validation": "2026-09-06"
+      },
+      "pairs": 8,
+      "pair_ids": [
+        "20_distillates/documents/tei-p5-state-4.12.0#^s1",
+        "20_distillates/documents/tei-p5-state-4.12.0#^s2",
+        "20_distillates/documents/tei-p5-state-4.12.0#^s3",
+        "20_distillates/documents/tei-p5-state-4.12.0#^s4",
+        "20_distillates/documents/tei-p5-state-4.12.0#^s5",
+        "20_distillates/documents/tei-p5-state-4.12.0#^s6",
+        "20_distillates/documents/tei-p5-state-4.12.0#^s7",
+        "20_distillates/documents/tei-p5-state-4.12.0#^s8"
+      ]
+    },
+    {
+      "path": "20_distillates/documents/tei-p5-test-testnames-4.12.0.md",
+      "sha256": "c486f45f9a2ae091cf3db648a70a1eacdfc6e89e68b58d1c42f2ac8dd2d751fc",
+      "type": "distillate",
+      "status": "validated",
+      "checked": {
+        "machine-review": "2026-09-06",
+        "validation": "2026-09-06"
+      },
+      "pairs": 20,
+      "pair_ids": [
+        "20_distillates/documents/tei-p5-test-testnames-4.12.0#^s1",
+        "20_distillates/documents/tei-p5-test-testnames-4.12.0#^s2",
+        "20_distillates/documents/tei-p5-test-testnames-4.12.0#^s3",
+        "20_distillates/documents/tei-p5-test-testnames-4.12.0#^s4",
+        "20_distillates/documents/tei-p5-test-testnames-4.12.0#^s5",
+        "20_distillates/documents/tei-p5-test-testnames-4.12.0#^s6",
+        "20_distillates/documents/tei-p5-test-testnames-4.12.0#^s7",
+        "20_distillates/documents/tei-p5-test-testnames-4.12.0#^s8",
+        "20_distillates/documents/tei-p5-test-testnames-4.12.0#^s9",
+        "20_distillates/documents/tei-p5-test-testnames-4.12.0#^s10",
+        "20_distillates/documents/tei-p5-test-testnames-4.12.0#^s11",
+        "20_distillates/documents/tei-p5-test-testnames-4.12.0#^s12",
+        "20_distillates/documents/tei-p5-test-testnames-4.12.0#^s13",
+        "20_distillates/documents/tei-p5-test-testnames-4.12.0#^s14",
+        "20_distillates/documents/tei-p5-test-testnames-4.12.0#^s15",
+        "20_distillates/documents/tei-p5-test-testnames-4.12.0#^s16",
+        "20_distillates/documents/tei-p5-test-testnames-4.12.0#^s17",
+        "20_distillates/documents/tei-p5-test-testnames-4.12.0#^s18",
+        "20_distillates/documents/tei-p5-test-testnames-4.12.0#^s19",
+        "20_distillates/documents/tei-p5-test-testnames-4.12.0#^s20"
+      ]
+    },
+    {
+      "path": "20_distillates/documents/tei-p5-test-testoverlap-4.12.0.md",
+      "sha256": "9564764a33ab47f5093def4c2f9ac285ebea959ede253e039f1a3f980fd63fd2",
+      "type": "distillate",
+      "status": "grounded",
+      "checked": {},
+      "pairs": 4,
+      "pair_ids": [
+        "20_distillates/documents/tei-p5-test-testoverlap-4.12.0#^s1",
+        "20_distillates/documents/tei-p5-test-testoverlap-4.12.0#^s2",
+        "20_distillates/documents/tei-p5-test-testoverlap-4.12.0#^s3",
+        "20_distillates/documents/tei-p5-test-testoverlap-4.12.0#^s4"
+      ]
+    },
+    {
+      "path": "20_distillates/documents/tei-time-for-p6-readme-2026-07-16.md",
+      "sha256": "cacf735efd07a26cd5913e2bf0faedd72aaee37cdac2214bce9b77e337e153b7",
+      "type": "distillate",
+      "status": "validated",
+      "checked": {
+        "validation": "2026-09-05",
+        "machine-review": "2026-09-05"
+      },
+      "pairs": 5,
+      "pair_ids": [
+        "20_distillates/documents/tei-time-for-p6-readme-2026-07-16#^s1",
+        "20_distillates/documents/tei-time-for-p6-readme-2026-07-16#^s2",
+        "20_distillates/documents/tei-time-for-p6-readme-2026-07-16#^s3",
+        "20_distillates/documents/tei-time-for-p6-readme-2026-07-16#^s4",
+        "20_distillates/documents/tei-time-for-p6-readme-2026-07-16#^s5"
+      ]
+    },
+    {
+      "path": "20_distillates/publications/piez2014range.md",
+      "sha256": "bf04f0d04303eba415bfbd5fed3ea4096fb397de2a6b9bb54d3913d329f2020f",
+      "type": "distillate",
+      "status": "validated",
+      "checked": {
+        "quote": "2026-09-05",
+        "validation": "2026-09-05",
+        "machine-review": "2026-09-05"
+      },
+      "pairs": 1,
+      "pair_ids": [
+        "20_distillates/publications/piez2014range#^s1"
+      ]
+    },
+    {
+      "path": "20_distillates/publications/renear-wickett2010documents.md",
+      "sha256": "5b5a1495a32ecb44ba43c79439451428377910d0865b3dc3fe7513529a01fdb0",
+      "type": "distillate",
+      "status": "validated",
+      "checked": {
+        "quote": "2026-09-05",
+        "validation": "2026-09-05",
+        "machine-review": "2026-09-05"
+      },
+      "pairs": 1,
+      "pair_ids": [
+        "20_distillates/publications/renear-wickett2010documents#^s1"
+      ]
+    },
+    {
+      "path": "20_distillates/publications/tei-sourceforge-fr363.md",
+      "sha256": "4ee407108f2e419f1e505e9083094d5d022afdbab7a6d9ff7917594cabac37ef",
+      "type": "distillate",
+      "status": "validated",
+      "checked": {
+        "quote": "2026-09-05",
+        "validation": "2026-09-05",
+        "machine-review": "2026-09-05"
+      },
+      "pairs": 1,
+      "pair_ids": [
+        "20_distillates/publications/tei-sourceforge-fr363#^s1"
+      ]
+    },
+    {
+      "path": "20_distillates/publications/teic-tei-issue-1400.md",
+      "sha256": "1978ca4bfb1595ae11e1777a5e71185874f659a834554a58e7e3b12c9df9ee6c",
+      "type": "distillate",
+      "status": "grounded",
+      "checked": {
+        "quote": "2026-09-07"
+      },
+      "pairs": 3,
+      "pair_ids": [
+        "20_distillates/publications/teic-tei-issue-1400#^s1",
+        "20_distillates/publications/teic-tei-issue-1400#^s2",
+        "20_distillates/publications/teic-tei-issue-1400#^s3"
+      ]
+    },
+    {
+      "path": "20_distillates/publications/teic-tei-issue-1414.md",
+      "sha256": "3fd59f35939f1534fe981f120a9b3c8fa6a59e1d59c60e37da8e0ca5e48ead2b",
+      "type": "distillate",
+      "status": "validated",
+      "checked": {
+        "machine-review": "2026-09-06",
+        "validation": "2026-09-06",
+        "quote": "2026-09-06"
+      },
+      "pairs": 17,
+      "pair_ids": [
+        "20_distillates/publications/teic-tei-issue-1414#^s1",
+        "20_distillates/publications/teic-tei-issue-1414#^s2",
+        "20_distillates/publications/teic-tei-issue-1414#^s3",
+        "20_distillates/publications/teic-tei-issue-1414#^s4",
+        "20_distillates/publications/teic-tei-issue-1414#^s5",
+        "20_distillates/publications/teic-tei-issue-1414#^s6",
+        "20_distillates/publications/teic-tei-issue-1414#^s7",
+        "20_distillates/publications/teic-tei-issue-1414#^s8",
+        "20_distillates/publications/teic-tei-issue-1414#^s9",
+        "20_distillates/publications/teic-tei-issue-1414#^s10",
+        "20_distillates/publications/teic-tei-issue-1414#^s11",
+        "20_distillates/publications/teic-tei-issue-1414#^s12",
+        "20_distillates/publications/teic-tei-issue-1414#^s13",
+        "20_distillates/publications/teic-tei-issue-1414#^s14",
+        "20_distillates/publications/teic-tei-issue-1414#^s15",
+        "20_distillates/publications/teic-tei-issue-1414#^s16",
+        "20_distillates/publications/teic-tei-issue-1414#^s17"
+      ]
+    },
+    {
+      "path": "20_distillates/publications/teic-tei-issue-1505.md",
+      "sha256": "50a77672ba18bc0e831174d75131c2123ed40c6f546afbb34d29ae06dd224d13",
+      "type": "distillate",
+      "status": "grounded",
+      "checked": {
+        "quote": "2026-09-07"
+      },
+      "pairs": 2,
+      "pair_ids": [
+        "20_distillates/publications/teic-tei-issue-1505#^s1",
+        "20_distillates/publications/teic-tei-issue-1505#^s2"
+      ]
+    },
+    {
+      "path": "20_distillates/publications/teic-tei-issue-2739.md",
+      "sha256": "1af7dc7be40e4f8d77e2d2e477751768624402e6406e265066b1d85aeb6bd65b",
+      "type": "distillate",
+      "status": "validated",
+      "checked": {
+        "machine-review": "2026-09-06",
+        "validation": "2026-09-06",
+        "quote": "2026-09-06"
+      },
+      "pairs": 16,
+      "pair_ids": [
+        "20_distillates/publications/teic-tei-issue-2739#^s1",
+        "20_distillates/publications/teic-tei-issue-2739#^s2",
+        "20_distillates/publications/teic-tei-issue-2739#^s3",
+        "20_distillates/publications/teic-tei-issue-2739#^s4",
+        "20_distillates/publications/teic-tei-issue-2739#^s5",
+        "20_distillates/publications/teic-tei-issue-2739#^s6",
+        "20_distillates/publications/teic-tei-issue-2739#^s7",
+        "20_distillates/publications/teic-tei-issue-2739#^s8",
+        "20_distillates/publications/teic-tei-issue-2739#^s9",
+        "20_distillates/publications/teic-tei-issue-2739#^s10",
+        "20_distillates/publications/teic-tei-issue-2739#^s11",
+        "20_distillates/publications/teic-tei-issue-2739#^s12",
+        "20_distillates/publications/teic-tei-issue-2739#^s13",
+        "20_distillates/publications/teic-tei-issue-2739#^s14",
+        "20_distillates/publications/teic-tei-issue-2739#^s15",
+        "20_distillates/publications/teic-tei-issue-2739#^s16"
+      ]
+    },
+    {
+      "path": "20_distillates/publications/teic-tei-issue-337.md",
+      "sha256": "9ce26053a5a7f044b369acf6ff7c1c315c313705b08b57b30a1847c92794d862",
+      "type": "distillate",
+      "status": "validated",
+      "checked": {
+        "machine-review": "2026-09-06",
+        "validation": "2026-09-06",
+        "quote": "2026-09-06"
+      },
+      "pairs": 25,
+      "pair_ids": [
+        "20_distillates/publications/teic-tei-issue-337#^s1",
+        "20_distillates/publications/teic-tei-issue-337#^s2",
+        "20_distillates/publications/teic-tei-issue-337#^s3",
+        "20_distillates/publications/teic-tei-issue-337#^s4",
+        "20_distillates/publications/teic-tei-issue-337#^s5",
+        "20_distillates/publications/teic-tei-issue-337#^s6",
+        "20_distillates/publications/teic-tei-issue-337#^s7",
+        "20_distillates/publications/teic-tei-issue-337#^s8",
+        "20_distillates/publications/teic-tei-issue-337#^s10",
+        "20_distillates/publications/teic-tei-issue-337#^s11",
+        "20_distillates/publications/teic-tei-issue-337#^s12",
+        "20_distillates/publications/teic-tei-issue-337#^s13",
+        "20_distillates/publications/teic-tei-issue-337#^s14",
+        "20_distillates/publications/teic-tei-issue-337#^s15",
+        "20_distillates/publications/teic-tei-issue-337#^s16",
+        "20_distillates/publications/teic-tei-issue-337#^s17",
+        "20_distillates/publications/teic-tei-issue-337#^s18",
+        "20_distillates/publications/teic-tei-issue-337#^s19",
+        "20_distillates/publications/teic-tei-issue-337#^s20",
+        "20_distillates/publications/teic-tei-issue-337#^s21",
+        "20_distillates/publications/teic-tei-issue-337#^s22",
+        "20_distillates/publications/teic-tei-issue-337#^s23",
+        "20_distillates/publications/teic-tei-issue-337#^s24",
+        "20_distillates/publications/teic-tei-issue-337#^s25",
+        "20_distillates/publications/teic-tei-issue-337#^s26"
+      ]
+    },
+    {
+      "path": "20_distillates/publications/w3c-web-annotation-20170223.md",
+      "sha256": "626a295c869c3fb33c7ae5144f6813e42832d98548c1622173cd08b270734b11",
+      "type": "distillate",
+      "status": "validated",
+      "checked": {
+        "quote": "2026-09-05",
+        "validation": "2026-09-05",
+        "machine-review": "2026-09-05"
+      },
+      "pairs": 1,
+      "pair_ids": [
+        "20_distillates/publications/w3c-web-annotation-20170223#^s1"
+      ]
+    },
+    {
+      "path": "30_assertions/hsa-dateline-retains-short-year.md",
+      "sha256": "7dcb25b11df0a6cfa7de1362e87aebeebf0cb2eeb745de1b9a075a6107fd7680",
+      "type": "assertion",
+      "status": "grounded",
+      "checked": {
+        "validation": "2026-09-07"
+      },
+      "pairs": 1,
+      "pair_ids": [
+        "30_assertions/hsa-dateline-retains-short-year<-20_distillates/documents/hsa-letter-4493-2026-09-07#^s1"
+      ]
+    },
+    {
+      "path": "30_assertions/hsa-origin-and-sent-dates-have-distinct-contexts.md",
+      "sha256": "af2158403ece1fbf98fefa871073d5121044209e8b42de2d4f670d303114fd1d",
+      "type": "assertion",
+      "status": "grounded",
+      "checked": {
+        "validation": "2026-09-07"
+      },
+      "pairs": 2,
+      "pair_ids": [
+        "30_assertions/hsa-origin-and-sent-dates-have-distinct-contexts<-20_distillates/documents/hsa-letter-4493-2026-09-07#^s2",
+        "30_assertions/hsa-origin-and-sent-dates-have-distinct-contexts<-20_distillates/documents/hsa-letter-4493-2026-09-07#^s3"
+      ]
+    },
+    {
+      "path": "30_assertions/humboldt-diary-encodes-a-dated-nested-heading.md",
+      "sha256": "b7c96d5cda7b53db1a8406033265f1f0162da7087a2babd5a580b48953651358",
+      "type": "assertion",
+      "status": "validated",
+      "checked": {
+        "validation": "2026-09-05",
+        "machine-review": "2026-09-05"
+      },
+      "pairs": 1,
+      "pair_ids": [
+        "30_assertions/humboldt-diary-encodes-a-dated-nested-heading<-20_distillates/documents/humboldt-h0017682-7d174637#^s1"
+      ]
+    },
+    {
+      "path": "30_assertions/humboldt-diary-encodes-a-page-pointer-and-separate-foliation.md",
+      "sha256": "7841a93299e0f58b5d528a4ca38cc14a487e5d328b10cc8d520233a49bf0ad1f",
+      "type": "assertion",
+      "status": "validated",
+      "checked": {
+        "validation": "2026-09-05",
+        "machine-review": "2026-09-05"
+      },
+      "pairs": 1,
+      "pair_ids": [
+        "30_assertions/humboldt-diary-encodes-a-page-pointer-and-separate-foliation<-20_distillates/documents/humboldt-h0017682-7d174637#^s3"
+      ]
+    },
+    {
+      "path": "30_assertions/humboldt-diary-separates-an-unknown-hand-note-and-editorial-explanation.md",
+      "sha256": "01bbe28cd7c495ac09d076ffdc223960153290cd247143f8b1c9d5330ad78a8f",
+      "type": "assertion",
+      "status": "validated",
+      "checked": {
+        "validation": "2026-09-05",
+        "machine-review": "2026-09-05"
+      },
+      "pairs": 1,
+      "pair_ids": [
+        "30_assertions/humboldt-diary-separates-an-unknown-hand-note-and-editorial-explanation<-20_distillates/documents/humboldt-h0017682-7d174637#^s2"
+      ]
+    },
+    {
+      "path": "30_assertions/p5-anchor-identifies-a-textual-point.md",
+      "sha256": "1a980b1cee5212846cd1d42a89618a03a143981d59644abc37e696d54f3068ef",
+      "type": "assertion",
+      "status": "validated",
+      "checked": {
+        "validation": "2026-09-05",
+        "machine-review": "2026-09-05"
+      },
+      "pairs": 1,
+      "pair_ids": [
+        "30_assertions/p5-anchor-identifies-a-textual-point<-20_distillates/documents/tei-p5-anchor-4.12.0#^s1"
+      ]
+    },
+    {
+      "path": "30_assertions/p5-annotation-refers-to-web-annotation-model.md",
+      "sha256": "be1769547547d5fe633ae751b7691526f73ee77256d76e2cb514232fda7009e8",
+      "type": "assertion",
+      "status": "validated",
+      "checked": {
+        "validation": "2026-09-05",
+        "machine-review": "2026-09-05"
+      },
+      "pairs": 1,
+      "pair_ids": [
+        "30_assertions/p5-annotation-refers-to-web-annotation-model<-20_distillates/documents/tei-p5-annotation-4.12.0#^s1"
+      ]
+    },
+    {
+      "path": "30_assertions/p5-att-canonical-associates-a-name-with-canonical-information-about-its-object.md",
+      "sha256": "24c770969cb8f5f4435f53e164535ef1d1319f7104374d272b5eb905f0f3f3c3",
+      "type": "assertion",
+      "status": "validated",
+      "checked": {
+        "machine-review": "2026-09-06",
+        "validation": "2026-09-06"
+      },
+      "pairs": 1,
+      "pair_ids": [
+        "30_assertions/p5-att-canonical-associates-a-name-with-canonical-information-about-its-object<-20_distillates/documents/tei-p5-att.canonical-4.12.0#^s1"
+      ]
+    },
+    {
+      "path": "30_assertions/p5-att-canonical-gives-no-precedence-when-key-and-ref-co-occur.md",
+      "sha256": "a993484da02d282b9e5a1ad8a151e4517b9c8cc2e85a87196464bfc8f1c85e93",
+      "type": "assertion",
+      "status": "validated",
+      "checked": {
+        "machine-review": "2026-09-06",
+        "validation": "2026-09-06"
+      },
+      "pairs": 1,
+      "pair_ids": [
+        "30_assertions/p5-att-canonical-gives-no-precedence-when-key-and-ref-co-occur<-20_distillates/documents/tei-p5-att.canonical-4.12.0#^s10"
+      ]
+    },
+    {
+      "path": "30_assertions/p5-att-datable-provides-attributes-for-normalization-of-elements-that-contain-dates-times-or-datable-events.md",
+      "sha256": "2d2d4109de2bc4aa0f18215aba360cef57616bb5beea840c03bad81619db28cc",
+      "type": "assertion",
+      "status": "validated",
+      "checked": {
+        "machine-review": "2026-09-06",
+        "validation": "2026-09-06"
+      },
+      "pairs": 1,
+      "pair_ids": [
+        "30_assertions/p5-att-datable-provides-attributes-for-normalization-of-elements-that-contain-dates-times-or-datable-events<-20_distillates/documents/tei-p5-att.datable-4.12.0#^s1"
+      ]
+    },
+    {
+      "path": "30_assertions/p5-att-global-responsibility-indicates-the-agent-responsible-for-something-asserted-by-the-markup.md",
+      "sha256": "75541cd6943e1e3f64ec7bf6d949536af6d52360b653527b98afb4d2cba1e4b2",
+      "type": "assertion",
+      "status": "validated",
+      "checked": {
+        "machine-review": "2026-09-06",
+        "validation": "2026-09-06"
+      },
+      "pairs": 1,
+      "pair_ids": [
+        "30_assertions/p5-att-global-responsibility-indicates-the-agent-responsible-for-something-asserted-by-the-markup<-20_distillates/documents/tei-p5-att.global.responsibility-4.12.0#^s1"
+      ]
+    },
+    {
+      "path": "30_assertions/p5-att-naming-describes-nymref-through-the-object-named.md",
+      "sha256": "2ae2e4156704e17b981c764fb382ccbd370bb245e30b7e4ced30da9ab687a696",
+      "type": "assertion",
+      "status": "contested",
+      "checked": {
+        "machine-review": "2026-09-06",
+        "validation": "2026-09-06"
+      },
+      "pairs": 1,
+      "pair_ids": [
+        "30_assertions/p5-att-naming-describes-nymref-through-the-object-named<-20_distillates/documents/tei-p5-att.naming-4.12.0#^s3"
+      ]
+    },
+    {
+      "path": "30_assertions/p5-att-naming-inherits-key-and-ref-and-prefers-a-direct-link.md",
+      "sha256": "d9779d0a5e5224e0fa11af0d8f7b488aa483ff5947a8f16076e4e959bf4a16da",
+      "type": "assertion",
+      "status": "validated",
+      "checked": {
+        "machine-review": "2026-09-06",
+        "validation": "2026-09-06"
+      },
+      "pairs": 1,
+      "pair_ids": [
+        "30_assertions/p5-att-naming-inherits-key-and-ref-and-prefers-a-direct-link<-20_distillates/documents/tei-p5-guidelines-nd-4.12.0#^s3"
+      ]
+    },
+    {
+      "path": "30_assertions/p5-att-personal-provides-common-attributes-for-elements-forming-part-of-a-name.md",
+      "sha256": "2c28e1fa3b8151be777793682456c04ad05b48240019372e5c99cdb8c643830f",
+      "type": "assertion",
+      "status": "validated",
+      "checked": {
+        "machine-review": "2026-09-06",
+        "validation": "2026-09-06"
+      },
+      "pairs": 1,
+      "pair_ids": [
+        "30_assertions/p5-att-personal-provides-common-attributes-for-elements-forming-part-of-a-name<-20_distillates/documents/tei-p5-att.personal-4.12.0#^s1"
+      ]
+    },
+    {
+      "path": "30_assertions/p5-core-elements-state-the-kind-of-referent-only-through-type.md",
+      "sha256": "58e478e71fdcc50dfbcb69db2689ee4299387ac21e3ba7353e60277f1d63240a",
+      "type": "assertion",
+      "status": "validated",
+      "checked": {
+        "machine-review": "2026-09-06",
+        "validation": "2026-09-06"
+      },
+      "pairs": 1,
+      "pair_ids": [
+        "30_assertions/p5-core-elements-state-the-kind-of-referent-only-through-type<-20_distillates/documents/tei-p5-guidelines-nd-4.12.0#^s1"
+      ]
+    },
+    {
+      "path": "30_assertions/p5-each-statement-about-a-life-must-be-documentable-and-time-framed.md",
+      "sha256": "eb73b8a10e84f0cf3dfdbfa436979e29ba6603dc53b5bf158d41b77a778c64b2",
+      "type": "assertion",
+      "status": "validated",
+      "checked": {
+        "machine-review": "2026-09-06",
+        "validation": "2026-09-06"
+      },
+      "pairs": 1,
+      "pair_ids": [
+        "30_assertions/p5-each-statement-about-a-life-must-be-documentable-and-time-framed<-20_distillates/documents/tei-p5-guidelines-nd-4.12.0#^s24"
+      ]
+    },
+    {
+      "path": "30_assertions/p5-entity-information-comprises-statements-about-traits-states-and-events.md",
+      "sha256": "0f94fc2e1540142e0663c4d1d894e160d48b647a037bf2f88901bbfa3a963b47",
+      "type": "assertion",
+      "status": "validated",
+      "checked": {
+        "machine-review": "2026-09-06",
+        "validation": "2026-09-06"
+      },
+      "pairs": 1,
+      "pair_ids": [
+        "30_assertions/p5-entity-information-comprises-statements-about-traits-states-and-events<-20_distillates/documents/tei-p5-guidelines-nd-4.12.0#^s21"
+      ]
+    },
+    {
+      "path": "30_assertions/p5-evidence-indicates-the-nature-of-the-evidence-supporting-an-intervention-or-interpretation.md",
+      "sha256": "61cf92f418747cd7168a0c20491d99d8c606c068672300ca3abcc4718cd502a0",
+      "type": "assertion",
+      "status": "validated",
+      "checked": {
+        "machine-review": "2026-09-06",
+        "validation": "2026-09-06"
+      },
+      "pairs": 1,
+      "pair_ids": [
+        "30_assertions/p5-evidence-indicates-the-nature-of-the-evidence-supporting-an-intervention-or-interpretation<-20_distillates/documents/tei-p5-att.editlike-4.12.0#^s2"
+      ]
+    },
+    {
+      "path": "30_assertions/p5-generic-description-elements-carry-certainty-and-responsibility.md",
+      "sha256": "6217feabc3e74f842da8837178cf9791ba14633d795e834fb31c31e55e352c2c",
+      "type": "assertion",
+      "status": "validated",
+      "checked": {
+        "machine-review": "2026-09-06",
+        "validation": "2026-09-06"
+      },
+      "pairs": 1,
+      "pair_ids": [
+        "30_assertions/p5-generic-description-elements-carry-certainty-and-responsibility<-20_distillates/documents/tei-p5-guidelines-nd-4.12.0#^s37"
+      ]
+    },
+    {
+      "path": "30_assertions/p5-guidelines-admit-persons-places-and-organizations-as-relationship-participants.md",
+      "sha256": "f8942c00e3bc43102c23cf932a574ed03b9ac7cc59bd7421859fb4469ad0c012",
+      "type": "assertion",
+      "status": "contested",
+      "checked": {
+        "machine-review": "2026-09-06",
+        "validation": "2026-09-06"
+      },
+      "pairs": 2,
+      "pair_ids": [
+        "30_assertions/p5-guidelines-admit-persons-places-and-organizations-as-relationship-participants<-20_distillates/documents/tei-p5-guidelines-nd-4.12.0#^s38",
+        "30_assertions/p5-guidelines-admit-persons-places-and-organizations-as-relationship-participants<-20_distillates/documents/tei-p5-guidelines-nd-4.12.0#^s39"
+      ]
+    },
+    {
+      "path": "30_assertions/p5-guidelines-detach-the-nymref-association-from-the-entity-named.md",
+      "sha256": "6f359820e732afacc98bfdbbf7429675c9095f8a87e97f8933fe3ebda5a1ff1c",
+      "type": "assertion",
+      "status": "contested",
+      "checked": {
+        "machine-review": "2026-09-06",
+        "validation": "2026-09-06"
+      },
+      "pairs": 1,
+      "pair_ids": [
+        "30_assertions/p5-guidelines-detach-the-nymref-association-from-the-entity-named<-20_distillates/documents/tei-p5-guidelines-nd-4.12.0#^s56"
+      ]
+    },
+    {
+      "path": "30_assertions/p5-guidelines-distinguish-names-for-places-from-other-data-about-places-as-they-do-for-people.md",
+      "sha256": "9dbe2efe78f9a8fc42813699866bcf1b932627d568c62ba826607b30313ac022",
+      "type": "assertion",
+      "status": "validated",
+      "checked": {
+        "machine-review": "2026-09-06",
+        "validation": "2026-09-06"
+      },
+      "pairs": 1,
+      "pair_ids": [
+        "30_assertions/p5-guidelines-distinguish-names-for-places-from-other-data-about-places-as-they-do-for-people<-20_distillates/documents/tei-p5-guidelines-nd-4.12.0#^s42"
+      ]
+    },
+    {
+      "path": "30_assertions/p5-guidelines-distinguish-resolving-a-name-from-treating-it-as-an-object.md",
+      "sha256": "677c5344a7db59ccc9c7708bb12f85fe8da312140b4b56e57bf5b6ab684ab61c",
+      "type": "assertion",
+      "status": "validated",
+      "checked": {
+        "machine-review": "2026-09-06",
+        "validation": "2026-09-06"
+      },
+      "pairs": 1,
+      "pair_ids": [
+        "30_assertions/p5-guidelines-distinguish-resolving-a-name-from-treating-it-as-an-object<-20_distillates/documents/tei-p5-guidelines-nd-4.12.0#^s55"
+      ]
+    },
+    {
+      "path": "30_assertions/p5-guidelines-group-information-about-a-person-as-distinct-from-references-to-a-person-within-person.md",
+      "sha256": "bb177f9d7ae01ea7611fc9c0f00ae2084892bea691ff3939fc64c457b46e9773",
+      "type": "assertion",
+      "status": "validated",
+      "checked": {
+        "machine-review": "2026-09-06",
+        "validation": "2026-09-06"
+      },
+      "pairs": 1,
+      "pair_ids": [
+        "30_assertions/p5-guidelines-group-information-about-a-person-as-distinct-from-references-to-a-person-within-person<-20_distillates/documents/tei-p5-guidelines-nd-4.12.0#^s26"
+      ]
+    },
+    {
+      "path": "30_assertions/p5-guidelines-let-an-encoder-regard-a-city-and-its-predecessor-as-one-place.md",
+      "sha256": "d85db6302aabed1c1ca60892968e579a4a56ea8b93dd738d9905f70cf891696c",
+      "type": "assertion",
+      "status": "validated",
+      "checked": {
+        "machine-review": "2026-09-06",
+        "validation": "2026-09-06"
+      },
+      "pairs": 1,
+      "pair_ids": [
+        "30_assertions/p5-guidelines-let-an-encoder-regard-a-city-and-its-predecessor-as-one-place<-20_distillates/documents/tei-p5-guidelines-nd-4.12.0#^s43"
+      ]
+    },
+    {
+      "path": "30_assertions/p5-guidelines-present-three-encodings-of-a-nationality-as-the-same-information.md",
+      "sha256": "6e77d5083680fd973bcbecf458055b36b98de4822b6a45129bf22661606ddc0d",
+      "type": "assertion",
+      "status": "validated",
+      "checked": {
+        "machine-review": "2026-09-06",
+        "validation": "2026-09-06"
+      },
+      "pairs": 1,
+      "pair_ids": [
+        "30_assertions/p5-guidelines-present-three-encodings-of-a-nationality-as-the-same-information<-20_distillates/documents/tei-p5-guidelines-nd-4.12.0#^s33"
+      ]
+    },
+    {
+      "path": "30_assertions/p5-guidelines-separate-the-entity-record-from-references-to-the-entity.md",
+      "sha256": "eec3eb123c884490f014f21202cefc7d4f6f0d1029f02d5a74c046fc30291a27",
+      "type": "assertion",
+      "status": "validated",
+      "checked": {
+        "machine-review": "2026-09-06",
+        "validation": "2026-09-06"
+      },
+      "pairs": 1,
+      "pair_ids": [
+        "30_assertions/p5-guidelines-separate-the-entity-record-from-references-to-the-entity<-20_distillates/documents/tei-p5-guidelines-nd-4.12.0#^s40"
+      ]
+    },
+    {
+      "path": "30_assertions/p5-guidelines-state-that-interchange-is-improved-by-tag-uris-in-ref-instead-of-key.md",
+      "sha256": "106bb02f97ea31061596ad8d98bab11cd8f27238d822e504a70ae4bbf2f09449",
+      "type": "assertion",
+      "status": "validated",
+      "checked": {
+        "machine-review": "2026-09-06",
+        "validation": "2026-09-06"
+      },
+      "pairs": 1,
+      "pair_ids": [
+        "30_assertions/p5-guidelines-state-that-interchange-is-improved-by-tag-uris-in-ref-instead-of-key<-20_distillates/documents/tei-p5-guidelines-nd-4.12.0#^s5"
+      ]
+    },
+    {
+      "path": "30_assertions/p5-guidelines-use-generic-state-trait-and-event-customized-through-type-for-information-about-a-place.md",
+      "sha256": "3d9cab75bec102d3f9f12ed50e74057c85ccdeebe0306d795ea3487ecc5153ed",
+      "type": "assertion",
+      "status": "validated",
+      "checked": {
+        "machine-review": "2026-09-06",
+        "validation": "2026-09-06"
+      },
+      "pairs": 1,
+      "pair_ids": [
+        "30_assertions/p5-guidelines-use-generic-state-trait-and-event-customized-through-type-for-information-about-a-place<-20_distillates/documents/tei-p5-guidelines-nd-4.12.0#^s49"
+      ]
+    },
+    {
+      "path": "30_assertions/p5-idno-serves-labels-that-identify-an-object-or-concept-in-a-cataloguing-system-or-a-distributed-system.md",
+      "sha256": "e00fbc60a6a3a5c845df62d7e11b39418decf364358c0e7d1952a01c04067333",
+      "type": "assertion",
+      "status": "validated",
+      "checked": {
+        "machine-review": "2026-09-06",
+        "validation": "2026-09-06"
+      },
+      "pairs": 1,
+      "pair_ids": [
+        "30_assertions/p5-idno-serves-labels-that-identify-an-object-or-concept-in-a-cataloguing-system-or-a-distributed-system<-20_distillates/documents/tei-p5-idno-4.12.0#^s12"
+      ]
+    },
+    {
+      "path": "30_assertions/p5-idno-supplies-any-form-of-identifier-used-to-identify-some-object-in-a-standardized-way.md",
+      "sha256": "f728cd9f13d34cbf8dd42f08d51fb3fcc04b31bfc76444341fb7ba578187bba6",
+      "type": "assertion",
+      "status": "validated",
+      "checked": {
+        "machine-review": "2026-09-06",
+        "validation": "2026-09-06"
+      },
+      "pairs": 1,
+      "pair_ids": [
+        "30_assertions/p5-idno-supplies-any-form-of-identifier-used-to-identify-some-object-in-a-standardized-way<-20_distillates/documents/tei-p5-idno-4.12.0#^s1"
+      ]
+    },
+    {
+      "path": "30_assertions/p5-key-identifies-the-entity-named-through-an-externally-defined-coded-value.md",
+      "sha256": "1a2e41e3935e8f79af49fc586787471e21b72b2648e43399d707597526b00317",
+      "type": "assertion",
+      "status": "validated",
+      "checked": {
+        "machine-review": "2026-09-06",
+        "validation": "2026-09-06"
+      },
+      "pairs": 1,
+      "pair_ids": [
+        "30_assertions/p5-key-identifies-the-entity-named-through-an-externally-defined-coded-value<-20_distillates/documents/tei-p5-att.canonical-4.12.0#^s2"
+      ]
+    },
+    {
+      "path": "30_assertions/p5-key-remarks-propose-no-particular-syntax-because-its-form-depends-on-project-practice.md",
+      "sha256": "496d872128a0af01e4f3e851b7220b850765c83f704a7bb000ddf4e6eccd3b35",
+      "type": "assertion",
+      "status": "contested",
+      "checked": {
+        "machine-review": "2026-09-06",
+        "validation": "2026-09-06"
+      },
+      "pairs": 1,
+      "pair_ids": [
+        "30_assertions/p5-key-remarks-propose-no-particular-syntax-because-its-form-depends-on-project-practice<-20_distillates/documents/tei-p5-att.canonical-4.12.0#^s4"
+      ]
+    },
+    {
+      "path": "30_assertions/p5-key-requires-resolution-documentation-for-interchange.md",
+      "sha256": "a72a6a124f63f452f5d16723219145568c0daa9273a18266733ef66cb3b50f38",
+      "type": "assertion",
+      "status": "validated",
+      "checked": {
+        "machine-review": "2026-09-06",
+        "validation": "2026-09-06"
+      },
+      "pairs": 1,
+      "pair_ids": [
+        "30_assertions/p5-key-requires-resolution-documentation-for-interchange<-20_distillates/documents/tei-p5-att.canonical-4.12.0#^s8"
+      ]
+    },
+    {
+      "path": "30_assertions/p5-key-serves-cases-where-no-direct-link-is-required.md",
+      "sha256": "67a6bc7aea78ec9d97176071815ba18121afe916ec48478827371df749824c4a",
+      "type": "assertion",
+      "status": "validated",
+      "checked": {
+        "machine-review": "2026-09-06",
+        "validation": "2026-09-06"
+      },
+      "pairs": 1,
+      "pair_ids": [
+        "30_assertions/p5-key-serves-cases-where-no-direct-link-is-required<-20_distillates/documents/tei-p5-guidelines-nd-4.12.0#^s4"
+      ]
+    },
+    {
+      "path": "30_assertions/p5-name-component-markup-does-not-cover-every-name.md",
+      "sha256": "29eb028a13d84aa486362bd41b54c9a466e0b4cbe0772cf73f02f50b86d3966f",
+      "type": "assertion",
+      "status": "validated",
+      "checked": {
+        "machine-review": "2026-09-06",
+        "validation": "2026-09-06"
+      },
+      "pairs": 1,
+      "pair_ids": [
+        "30_assertions/p5-name-component-markup-does-not-cover-every-name<-20_distillates/documents/tei-p5-guidelines-nd-4.12.0#^s12"
+      ]
+    },
+    {
+      "path": "30_assertions/p5-namesdates-represents-the-referent-and-the-name-independently.md",
+      "sha256": "bc15c14ae532ce81f9bc3303422e79f298fd122aa0451cc5fdddc69946a5b2d4",
+      "type": "assertion",
+      "status": "validated",
+      "checked": {
+        "machine-review": "2026-09-06",
+        "validation": "2026-09-06"
+      },
+      "pairs": 1,
+      "pair_ids": [
+        "30_assertions/p5-namesdates-represents-the-referent-and-the-name-independently<-20_distillates/documents/tei-p5-guidelines-nd-4.12.0#^s2"
+      ]
+    },
+    {
+      "path": "30_assertions/p5-nested-description-elements-inherit-type-and-responsibility-and-may-date-more-precisely.md",
+      "sha256": "a313bc166835f6e62791f2a2527ec6c0905916f5c9d120f381cd11d23efcbff7",
+      "type": "assertion",
+      "status": "validated",
+      "checked": {
+        "machine-review": "2026-09-06",
+        "validation": "2026-09-06"
+      },
+      "pairs": 1,
+      "pair_ids": [
+        "30_assertions/p5-nested-description-elements-inherit-type-and-responsibility-and-may-date-more-precisely<-20_distillates/documents/tei-p5-guidelines-nd-4.12.0#^s50"
+      ]
+    },
+    {
+      "path": "30_assertions/p5-nym-contains-the-definition-of-a-canonical-name-or-name-component.md",
+      "sha256": "ebf723b64217cf9b51af8c924f967f216e50cd4b2bb7232e14e0dee409eeefc3",
+      "type": "assertion",
+      "status": "validated",
+      "checked": {
+        "machine-review": "2026-09-06",
+        "validation": "2026-09-06"
+      },
+      "pairs": 1,
+      "pair_ids": [
+        "30_assertions/p5-nym-contains-the-definition-of-a-canonical-name-or-name-component<-20_distillates/documents/tei-p5-nym-4.12.0#^s1"
+      ]
+    },
+    {
+      "path": "30_assertions/p5-persname-contains-a-proper-noun-referring-to-a-person.md",
+      "sha256": "6efd208417fa7d78c8df85bcaf7f1a8683198a6f6f3dd07ad83a3aff74805591",
+      "type": "assertion",
+      "status": "validated",
+      "checked": {
+        "machine-review": "2026-09-06",
+        "validation": "2026-09-06"
+      },
+      "pairs": 1,
+      "pair_ids": [
+        "30_assertions/p5-persname-contains-a-proper-noun-referring-to-a-person<-20_distillates/documents/tei-p5-persname-4.12.0#^s1"
+      ]
+    },
+    {
+      "path": "30_assertions/p5-persname-is-synonymous-with-name-of-type-person.md",
+      "sha256": "bcb9abb4f357168d266857b0a7c327f110694bd41e0328cbbeaf7dde9aa1644b",
+      "type": "assertion",
+      "status": "validated",
+      "checked": {
+        "machine-review": "2026-09-06",
+        "validation": "2026-09-06"
+      },
+      "pairs": 1,
+      "pair_ids": [
+        "30_assertions/p5-persname-is-synonymous-with-name-of-type-person<-20_distillates/documents/tei-p5-guidelines-nd-4.12.0#^s8"
+      ]
+    },
+    {
+      "path": "30_assertions/p5-person-description-elements-are-datable.md",
+      "sha256": "65a4fd46bcf2612c35ffdb9bdb9942a29af7b996ecf4eb8f88d208fbb07714a0",
+      "type": "assertion",
+      "status": "validated",
+      "checked": {
+        "machine-review": "2026-09-06",
+        "validation": "2026-09-06"
+      },
+      "pairs": 1,
+      "pair_ids": [
+        "30_assertions/p5-person-description-elements-are-datable<-20_distillates/documents/tei-p5-guidelines-nd-4.12.0#^s36"
+      ]
+    },
+    {
+      "path": "30_assertions/p5-person-holds-variant-name-forms-without-prioritization.md",
+      "sha256": "544287ce715df464f0e1aa0961bcd28d00d6fdd856d4c9b9df5472d03b4f08aa",
+      "type": "assertion",
+      "status": "validated",
+      "checked": {
+        "machine-review": "2026-09-06",
+        "validation": "2026-09-06"
+      },
+      "pairs": 1,
+      "pair_ids": [
+        "30_assertions/p5-person-holds-variant-name-forms-without-prioritization<-20_distillates/documents/tei-p5-guidelines-nd-4.12.0#^s32"
+      ]
+    },
+    {
+      "path": "30_assertions/p5-person-provides-information-about-an-identifiable-individual.md",
+      "sha256": "1a7648a14f59e0d03feb14b256289778fba2efc8b10f1e7662efd17d298ea9a8",
+      "type": "assertion",
+      "status": "validated",
+      "checked": {
+        "machine-review": "2026-09-06",
+        "validation": "2026-09-06"
+      },
+      "pairs": 1,
+      "pair_ids": [
+        "30_assertions/p5-person-provides-information-about-an-identifiable-individual<-20_distillates/documents/tei-p5-person-4.12.0#^s1"
+      ]
+    },
+    {
+      "path": "30_assertions/p5-place-contains-data-about-a-geographic-location.md",
+      "sha256": "3aa56f98ef29d7e06a6110010984e1fe7f595c43ea3cfb8aff3bdd6c1b639115",
+      "type": "assertion",
+      "status": "validated",
+      "checked": {
+        "machine-review": "2026-09-06",
+        "validation": "2026-09-06"
+      },
+      "pairs": 1,
+      "pair_ids": [
+        "30_assertions/p5-place-contains-data-about-a-geographic-location<-20_distillates/documents/tei-p5-place-4.12.0#^s1"
+      ]
+    },
+    {
+      "path": "30_assertions/p5-placename-abbreviates-typed-name-or-rs-at-the-cost-of-their-distinction.md",
+      "sha256": "919fb44b6236e0e21cef301e95a23709c20338eb49d858cde58a1a469e0c2470",
+      "type": "assertion",
+      "status": "validated",
+      "checked": {
+        "machine-review": "2026-09-06",
+        "validation": "2026-09-06"
+      },
+      "pairs": 1,
+      "pair_ids": [
+        "30_assertions/p5-placename-abbreviates-typed-name-or-rs-at-the-cost-of-their-distinction<-20_distillates/documents/tei-p5-guidelines-nd-4.12.0#^s18"
+      ]
+    },
+    {
+      "path": "30_assertions/p5-prosopography-records-refer-to-external-authorities-through-idno.md",
+      "sha256": "8e9b806be8db4feec49429eff36ff700b967f8fb4cd5088b84d90f259eb2cfa4",
+      "type": "assertion",
+      "status": "validated",
+      "checked": {
+        "machine-review": "2026-09-06",
+        "validation": "2026-09-06"
+      },
+      "pairs": 1,
+      "pair_ids": [
+        "30_assertions/p5-prosopography-records-refer-to-external-authorities-through-idno<-20_distillates/documents/tei-p5-guidelines-nd-4.12.0#^s25"
+      ]
+    },
+    {
+      "path": "30_assertions/p5-ref-locates-a-definition-or-identity-for-the-entity-named-by-uris.md",
+      "sha256": "0e205cf5503a3877cdc04777ed08d26525b52175b9c1b7a27f9f3b1c878d0ade",
+      "type": "assertion",
+      "status": "validated",
+      "checked": {
+        "machine-review": "2026-09-06",
+        "validation": "2026-09-06"
+      },
+      "pairs": 1,
+      "pair_ids": [
+        "30_assertions/p5-ref-locates-a-definition-or-identity-for-the-entity-named-by-uris<-20_distillates/documents/tei-p5-att.canonical-4.12.0#^s5"
+      ]
+    },
+    {
+      "path": "30_assertions/p5-ref-points-directly-to-xml-elements-or-other-resources.md",
+      "sha256": "847bbf238b408bf1a13837a7d035aac7d223471dfd09847ef52dd9f638836f2e",
+      "type": "assertion",
+      "status": "validated",
+      "checked": {
+        "machine-review": "2026-09-06",
+        "validation": "2026-09-06"
+      },
+      "pairs": 1,
+      "pair_ids": [
+        "30_assertions/p5-ref-points-directly-to-xml-elements-or-other-resources<-20_distillates/documents/tei-p5-att.canonical-4.12.0#^s6"
+      ]
+    },
+    {
+      "path": "30_assertions/p5-relation-describes-a-relationship-amongst-places-events-persons-or-objects.md",
+      "sha256": "74cbc1e390b6907273818f68a401656bfdd4b0cf850060035406d2d719c2deb2",
+      "type": "assertion",
+      "status": "contested",
+      "checked": {
+        "machine-review": "2026-09-06",
+        "validation": "2026-09-06"
+      },
+      "pairs": 1,
+      "pair_ids": [
+        "30_assertions/p5-relation-describes-a-relationship-amongst-places-events-persons-or-objects<-20_distillates/documents/tei-p5-relation-4.12.0#^s2"
+      ]
+    },
+    {
+      "path": "30_assertions/p5-resp-should-point-to-an-element-that-clarifies-the-agents-role-rather-than-to-a-person-or-org.md",
+      "sha256": "8d434a8087fb2cf6d7c9f3e963ff6a1353f68f30cfb107b012178106f1d5aec3",
+      "type": "assertion",
+      "status": "validated",
+      "checked": {
+        "machine-review": "2026-09-06",
+        "validation": "2026-09-06"
+      },
+      "pairs": 1,
+      "pair_ids": [
+        "30_assertions/p5-resp-should-point-to-an-element-that-clarifies-the-agents-role-rather-than-to-a-person-or-org<-20_distillates/documents/tei-p5-att.global.responsibility-4.12.0#^s7"
+      ]
+    },
+    {
+      "path": "30_assertions/p5-role-on-a-naming-element-carries-information-about-the-entity-referenced.md",
+      "sha256": "7e2a27ea385b0ccc79575e31bc30e3018d128fdb7ee6cd21b591fb03ac7b4070",
+      "type": "assertion",
+      "status": "validated",
+      "checked": {
+        "machine-review": "2026-09-06",
+        "validation": "2026-09-06"
+      },
+      "pairs": 1,
+      "pair_ids": [
+        "30_assertions/p5-role-on-a-naming-element-carries-information-about-the-entity-referenced<-20_distillates/documents/tei-p5-att.naming-4.12.0#^s2"
+      ]
+    },
+    {
+      "path": "30_assertions/p5-rolename-excludes-the-role-a-person-has-in-a-context.md",
+      "sha256": "8fc08fc724bccd127039d90261c2ab9642338f3d8681df6175c2110547f67023",
+      "type": "assertion",
+      "status": "validated",
+      "checked": {
+        "machine-review": "2026-09-06",
+        "validation": "2026-09-06"
+      },
+      "pairs": 1,
+      "pair_ids": [
+        "30_assertions/p5-rolename-excludes-the-role-a-person-has-in-a-context<-20_distillates/documents/tei-p5-guidelines-nd-4.12.0#^s11"
+      ]
+    },
+    {
+      "path": "30_assertions/p5-rs-and-name-cannot-mark-the-components-of-a-name.md",
+      "sha256": "7926e29445416d721cde0d8b706eb02926734b4e0901f09a1b7c837416485a4f",
+      "type": "assertion",
+      "status": "validated",
+      "checked": {
+        "machine-review": "2026-09-06",
+        "validation": "2026-09-06"
+      },
+      "pairs": 1,
+      "pair_ids": [
+        "30_assertions/p5-rs-and-name-cannot-mark-the-components-of-a-name<-20_distillates/documents/tei-p5-guidelines-nd-4.12.0#^s7"
+      ]
+    },
+    {
+      "path": "30_assertions/p5-rs-contains-a-general-purpose-name-or-referring-string.md",
+      "sha256": "9ff4c52e8943094ccf57fc5de0462855c67084680f898f2d841137c764ece052",
+      "type": "assertion",
+      "status": "validated",
+      "checked": {
+        "machine-review": "2026-09-06",
+        "validation": "2026-09-06"
+      },
+      "pairs": 1,
+      "pair_ids": [
+        "30_assertions/p5-rs-contains-a-general-purpose-name-or-referring-string<-20_distillates/documents/tei-p5-rs-4.12.0#^s1"
+      ]
+    },
+    {
+      "path": "30_assertions/p5-simultaneous-key-and-ref-are-not-recommended-without-documentation.md",
+      "sha256": "29ac9f86df5d4a031ab8850736cf148de4f32a70478b4bdc82e4df5717cfcf2b",
+      "type": "assertion",
+      "status": "validated",
+      "checked": {
+        "machine-review": "2026-09-06",
+        "validation": "2026-09-06"
+      },
+      "pairs": 1,
+      "pair_ids": [
+        "30_assertions/p5-simultaneous-key-and-ref-are-not-recommended-without-documentation<-20_distillates/documents/tei-p5-att.canonical-4.12.0#^s11"
+      ]
+    },
+    {
+      "path": "30_assertions/p5-source-specifies-the-source-from-which-some-aspect-of-an-element-is-drawn.md",
+      "sha256": "5b83c641c77f908ab8fb3e5cfeca0bddf2518f6e93b7662a35c5f34a209e1b45",
+      "type": "assertion",
+      "status": "validated",
+      "checked": {
+        "machine-review": "2026-09-06",
+        "validation": "2026-09-06"
+      },
+      "pairs": 1,
+      "pair_ids": [
+        "30_assertions/p5-source-specifies-the-source-from-which-some-aspect-of-an-element-is-drawn<-20_distillates/documents/tei-p5-att.global.source-4.12.0#^s2"
+      ]
+    },
+    {
+      "path": "30_assertions/p5-span-associates-interpretation-with-text.md",
+      "sha256": "1acd8ace8c1effe3a73c91787605203d11db1c8580cfa0e90f929641cb5c8afa",
+      "type": "assertion",
+      "status": "validated",
+      "checked": {
+        "validation": "2026-09-05",
+        "machine-review": "2026-09-05"
+      },
+      "pairs": 1,
+      "pair_ids": [
+        "30_assertions/p5-span-associates-interpretation-with-text<-20_distillates/documents/tei-p5-span-4.12.0#^s1"
+      ]
+    },
+    {
+      "path": "30_assertions/p5-span-from-identifies-start-or-whole-node.md",
+      "sha256": "53b10723c75fd8e389d451785c2168be9838c212a26f154287330aef9c933c31",
+      "type": "assertion",
+      "status": "validated",
+      "checked": {
+        "validation": "2026-09-05",
+        "machine-review": "2026-09-05"
+      },
+      "pairs": 1,
+      "pair_ids": [
+        "30_assertions/p5-span-from-identifies-start-or-whole-node<-20_distillates/documents/tei-p5-span-4.12.0#^s2"
+      ]
+    },
+    {
+      "path": "30_assertions/p5-state-attributes-a-status-or-quality-often-at-a-specific-time-or-for-a-date-range.md",
+      "sha256": "31791f0b750fb523951a09ff3ffe62ea48d67cdff88b564e8cbcecce0bd5d64d",
+      "type": "assertion",
+      "status": "validated",
+      "checked": {
+        "machine-review": "2026-09-06",
+        "validation": "2026-09-06"
+      },
+      "pairs": 1,
+      "pair_ids": [
+        "30_assertions/p5-state-attributes-a-status-or-quality-often-at-a-specific-time-or-for-a-date-range<-20_distillates/documents/tei-p5-state-4.12.0#^s3"
+      ]
+    },
+    {
+      "path": "30_assertions/p5-state-describes-a-status-or-quality-attributed-to-a-person-place-or-organization.md",
+      "sha256": "af186e589dade04784a88589993a690fc2e30c6cfe4d97abb0883bd285013d94",
+      "type": "assertion",
+      "status": "validated",
+      "checked": {
+        "machine-review": "2026-09-06",
+        "validation": "2026-09-06"
+      },
+      "pairs": 1,
+      "pair_ids": [
+        "30_assertions/p5-state-describes-a-status-or-quality-attributed-to-a-person-place-or-organization<-20_distillates/documents/tei-p5-state-4.12.0#^s2"
+      ]
+    },
+    {
+      "path": "30_assertions/p5-testnames-change-of-place-is-a-sequence-of-dated-residence-states-without-an-event.md",
+      "sha256": "c927e0e0ea86b5aa97496f8b66364534fa435a59bf304387fe48de87b5f6b30a",
+      "type": "assertion",
+      "status": "validated",
+      "checked": {
+        "machine-review": "2026-09-06",
+        "validation": "2026-09-06"
+      },
+      "pairs": 1,
+      "pair_ids": [
+        "30_assertions/p5-testnames-change-of-place-is-a-sequence-of-dated-residence-states-without-an-event<-20_distillates/documents/tei-p5-test-testnames-4.12.0#^s12"
+      ]
+    },
+    {
+      "path": "30_assertions/p5-testnames-name-of-type-person-in-a-note-carries-a-key-and-no-ref.md",
+      "sha256": "aa6703941321d014029bcce58065dd2629997c16b201428b82f01439396f4b83",
+      "type": "assertion",
+      "status": "validated",
+      "checked": {
+        "machine-review": "2026-09-06",
+        "validation": "2026-09-06"
+      },
+      "pairs": 1,
+      "pair_ids": [
+        "30_assertions/p5-testnames-name-of-type-person-in-a-note-carries-a-key-and-no-ref<-20_distillates/documents/tei-p5-test-testnames-4.12.0#^s6"
+      ]
+    },
+    {
+      "path": "30_assertions/p5-testnames-person-name-form-and-place-carry-three-separate-identifying-values.md",
+      "sha256": "9ad0876cf5862ad6d5724af5868b0cbdf7593eb74b5ed338295d5eb8c9781a0c",
+      "type": "assertion",
+      "status": "validated",
+      "checked": {
+        "machine-review": "2026-09-06",
+        "validation": "2026-09-06"
+      },
+      "pairs": 1,
+      "pair_ids": [
+        "30_assertions/p5-testnames-person-name-form-and-place-carry-three-separate-identifying-values<-20_distillates/documents/tei-p5-test-testnames-4.12.0#^s14"
+      ]
+    },
+    {
+      "path": "30_assertions/p5-testnames-person-record-carries-id-sex-and-role-while-its-persname-carries-only-a-language.md",
+      "sha256": "3ddc2e8e959745a4593babc868ef0cb0e172e201151691a8c8911295ae27c063",
+      "type": "assertion",
+      "status": "validated",
+      "checked": {
+        "machine-review": "2026-09-06",
+        "validation": "2026-09-06"
+      },
+      "pairs": 1,
+      "pair_ids": [
+        "30_assertions/p5-testnames-person-record-carries-id-sex-and-role-while-its-persname-carries-only-a-language<-20_distillates/documents/tei-p5-test-testnames-4.12.0#^s7"
+      ]
+    },
+    {
+      "path": "30_assertions/p5-testnames-places-in-birth-and-death-are-named-without-identification-while-a-nationality-is-identified-by-key.md",
+      "sha256": "0e5195182cfa3d805fee859f940e9e6dbec4de6b3e45b003e28be48c5ed9dea4",
+      "type": "assertion",
+      "status": "validated",
+      "checked": {
+        "machine-review": "2026-09-06",
+        "validation": "2026-09-06"
+      },
+      "pairs": 1,
+      "pair_ids": [
+        "30_assertions/p5-testnames-places-in-birth-and-death-are-named-without-identification-while-a-nationality-is-identified-by-key<-20_distillates/documents/tei-p5-test-testnames-4.12.0#^s18"
+      ]
+    },
+    {
+      "path": "30_assertions/p5-testnames-relation-to-another-person-is-a-state-with-a-ref-to-a-relationship-and-no-relation-element.md",
+      "sha256": "68d1d7c099da2e61dc8119d9e2c6f55a5b3399cc25b9b5763e28f1bbc588287a",
+      "type": "assertion",
+      "status": "validated",
+      "checked": {
+        "machine-review": "2026-09-06",
+        "validation": "2026-09-06"
+      },
+      "pairs": 1,
+      "pair_ids": [
+        "30_assertions/p5-testnames-relation-to-another-person-is-a-state-with-a-ref-to-a-relationship-and-no-relation-element<-20_distillates/documents/tei-p5-test-testnames-4.12.0#^s16"
+      ]
+    },
+    {
+      "path": "30_assertions/piez-treats-optional-hierarchy-as-object-of-study.md",
+      "sha256": "847a5d07aed4783322957013b8325f15c74302477e8eaf5274d3922b16f798fa",
+      "type": "assertion",
+      "status": "validated",
+      "checked": {
+        "validation": "2026-09-05",
+        "machine-review": "2026-09-05"
+      },
+      "pairs": 1,
+      "pair_ids": [
+        "30_assertions/piez-treats-optional-hierarchy-as-object-of-study<-20_distillates/publications/piez2014range#^s1"
+      ]
+    },
+    {
+      "path": "30_assertions/renear-wickett-distinguish-string-mapping-from-persistent-identity.md",
+      "sha256": "4f142d0ab36e23ed1a7b3f7f8a42499350a90d97e241a11235fa87e0475b47cf",
+      "type": "assertion",
+      "status": "validated",
+      "checked": {
+        "validation": "2026-09-05",
+        "machine-review": "2026-09-05"
+      },
+      "pairs": 1,
+      "pair_ids": [
+        "30_assertions/renear-wickett-distinguish-string-mapping-from-persistent-identity<-20_distillates/publications/renear-wickett2010documents#^s1"
+      ]
+    },
+    {
+      "path": "30_assertions/structure-issue1505-recommendation-self-report.md",
+      "sha256": "4bd022f7f2b39ccadabbab84776adb4a066955d761b4bdd8f155d01225ca6086",
+      "type": "assertion",
+      "status": "grounded",
+      "checked": {},
+      "pairs": 1,
+      "pair_ids": [
+        "30_assertions/structure-issue1505-recommendation-self-report<-20_distillates/publications/teic-tei-issue-1505#^s2"
+      ]
+    },
+    {
+      "path": "30_assertions/structure-p5-boundary-range-validation.md",
+      "sha256": "b859d3f592ee484b523cfbc169d7972f6e7b973843dc2a1ac2aaedd186f2dfb0",
+      "type": "assertion",
+      "status": "grounded",
+      "checked": {},
+      "pairs": 1,
+      "pair_ids": [
+        "30_assertions/structure-p5-boundary-range-validation<-20_distillates/documents/tei-p5-guidelines-nh-non-hierarchical-4.12.0#^s16"
+      ]
+    },
+    {
+      "path": "30_assertions/structure-p5-composite-stories-have-flexible-order.md",
+      "sha256": "ab2c50779b28495d8f2e7b3be2c5bb88922e436c82df5e6124a1a857c97cfd57",
+      "type": "assertion",
+      "status": "grounded",
+      "checked": {},
+      "pairs": 1,
+      "pair_ids": [
+        "30_assertions/structure-p5-composite-stories-have-flexible-order<-20_distillates/documents/tei-p5-guidelines-ds-defaulttextstructure-4.12.0#^s18"
+      ]
+    },
+    {
+      "path": "30_assertions/structure-p5-div-in-line-needs-floatingtext.md",
+      "sha256": "512251d4500e9675c394296b0e4a367d3dcb474e243ca54dee76b573b5540499",
+      "type": "assertion",
+      "status": "grounded",
+      "checked": {},
+      "pairs": 1,
+      "pair_ids": [
+        "30_assertions/structure-p5-div-in-line-needs-floatingtext<-20_distillates/documents/tei-p5-div-4.12.0#^s3"
+      ]
+    },
+    {
+      "path": "30_assertions/structure-p5-div-in-paragraph-needs-floatingtext.md",
+      "sha256": "87a4f4b4ef5d6ae4751e83fe2f190e60c8b96e25913239a94302ae0db8d93802",
+      "type": "assertion",
+      "status": "grounded",
+      "checked": {},
+      "pairs": 1,
+      "pair_ids": [
+        "30_assertions/structure-p5-div-in-paragraph-needs-floatingtext<-20_distillates/documents/tei-p5-div-4.12.0#^s4"
+      ]
+    },
+    {
+      "path": "30_assertions/structure-p5-divgen-processing-is-application-defined.md",
+      "sha256": "1ddf61f557fcfd97400c4152f69ea0aafdacfa063634569608087d02a96df95b",
+      "type": "assertion",
+      "status": "grounded",
+      "checked": {},
+      "pairs": 1,
+      "pair_ids": [
+        "30_assertions/structure-p5-divgen-processing-is-application-defined<-20_distillates/documents/tei-p5-guidelines-ds-defaulttextstructure-4.12.0#^s39"
+      ]
+    },
+    {
+      "path": "30_assertions/structure-p5-division-type-is-independent-of-depth.md",
+      "sha256": "ea5320fb77fc456177d6bc6863deb8c97e101576af0148440dab166e008f0459",
+      "type": "assertion",
+      "status": "grounded",
+      "checked": {},
+      "pairs": 1,
+      "pair_ids": [
+        "30_assertions/structure-p5-division-type-is-independent-of-depth<-20_distillates/documents/tei-p5-guidelines-ds-defaulttextstructure-4.12.0#^s9"
+      ]
+    },
+    {
+      "path": "30_assertions/structure-p5-floatingtext-does-not-imply-external-origin.md",
+      "sha256": "bf4cbbd0bbb3810a2c9d90ac3b3d471dc5d0dc9e3842793fc65e0fae3b497ccf",
+      "type": "assertion",
+      "status": "grounded",
+      "checked": {},
+      "pairs": 1,
+      "pair_ids": [
+        "30_assertions/structure-p5-floatingtext-does-not-imply-external-origin<-20_distillates/documents/tei-p5-guidelines-ds-defaulttextstructure-4.12.0#^s37"
+      ]
+    },
+    {
+      "path": "30_assertions/structure-p5-floatingtext-interrupts-resumable-text.md",
+      "sha256": "a518da5e4e382f76ee04320b81cf3c322a1f44e6c950b676c5f9b463793a2275",
+      "type": "assertion",
+      "status": "grounded",
+      "checked": {},
+      "pairs": 1,
+      "pair_ids": [
+        "30_assertions/structure-p5-floatingtext-interrupts-resumable-text<-20_distillates/documents/tei-p5-guidelines-ds-defaulttextstructure-4.12.0#^s30"
+      ]
+    },
+    {
+      "path": "30_assertions/structure-p5-has-several-nonhierarchical-methods.md",
+      "sha256": "496d7984392bc08db3cc936f52ba488b2bbb9eda5f56b6f95da2566cf8c3b58b",
+      "type": "assertion",
+      "status": "grounded",
+      "checked": {},
+      "pairs": 1,
+      "pair_ids": [
+        "30_assertions/structure-p5-has-several-nonhierarchical-methods<-20_distillates/documents/tei-p5-guidelines-nh-non-hierarchical-4.12.0#^s3"
+      ]
+    },
+    {
+      "path": "30_assertions/structure-p5-join-combines-virtual-elements.md",
+      "sha256": "01f1bfa6513d4e60d1047fac0ce429f91671b4d6f29c534e1fb6e80b62c04a20",
+      "type": "assertion",
+      "status": "grounded",
+      "checked": {},
+      "pairs": 2,
+      "pair_ids": [
+        "30_assertions/structure-p5-join-combines-virtual-elements<-20_distillates/documents/tei-p5-guidelines-nh-non-hierarchical-4.12.0#^s23",
+        "30_assertions/structure-p5-join-combines-virtual-elements<-20_distillates/documents/tei-p5-join-4.12.0#^s5"
+      ]
+    },
+    {
+      "path": "30_assertions/structure-p5-multiple-encoding-maintenance-cost.md",
+      "sha256": "a288f7641a7c82940b6cd2a07c1336f3525acfb63bd4e8a7e5c52528c3f16d92",
+      "type": "assertion",
+      "status": "grounded",
+      "checked": {},
+      "pairs": 1,
+      "pair_ids": [
+        "30_assertions/structure-p5-multiple-encoding-maintenance-cost<-20_distillates/documents/tei-p5-guidelines-nh-non-hierarchical-4.12.0#^s6"
+      ]
+    },
+    {
+      "path": "30_assertions/structure-p5-next-same-type-recommendation.md",
+      "sha256": "5347bcaf3a8bfd9fad958db5717b9da14dd9859b11a9081f585292c1cff64da8",
+      "type": "assertion",
+      "status": "grounded",
+      "checked": {},
+      "pairs": 1,
+      "pair_ids": [
+        "30_assertions/structure-p5-next-same-type-recommendation<-20_distillates/documents/tei-p5-att.global.linking-4.12.0#^s10"
+      ]
+    },
+    {
+      "path": "30_assertions/structure-p5-note-number-omission-is-conditional.md",
+      "sha256": "3444b57aa2e411ca4a5417ca6e70499b880ec17c23631d773f1cd3afb1421dab",
+      "type": "assertion",
+      "status": "grounded",
+      "checked": {},
+      "pairs": 1,
+      "pair_ids": [
+        "30_assertions/structure-p5-note-number-omission-is-conditional<-20_distillates/documents/tei-p5-note-4.12.0#^s7"
+      ]
+    },
+    {
+      "path": "30_assertions/structure-p5-note-responsibility-code-needs-definition.md",
+      "sha256": "71cd0cf349bcc840d977436ff28d4230a57b71b7276904d13842d63f96cbcae6",
+      "type": "assertion",
+      "status": "grounded",
+      "checked": {},
+      "pairs": 1,
+      "pair_ids": [
+        "30_assertions/structure-p5-note-responsibility-code-needs-definition<-20_distillates/documents/tei-p5-note-4.12.0#^s5"
+      ]
+    },
+    {
+      "path": "30_assertions/structure-p5-part-locates-omissions-in-ds.md",
+      "sha256": "518b3fae015c55e9320b111437455c0d1f656fe9412255d563f5c1fa2b7e6bc4",
+      "type": "assertion",
+      "status": "grounded",
+      "checked": {},
+      "pairs": 1,
+      "pair_ids": [
+        "30_assertions/structure-p5-part-locates-omissions-in-ds<-20_distillates/documents/tei-p5-guidelines-ds-defaulttextstructure-4.12.0#^s17"
+      ]
+    },
+    {
+      "path": "30_assertions/structure-p5-part-positions-fragments.md",
+      "sha256": "b0ff609d93929390aed283ec8490a99a5df7efd3f596b38382313cb066b6e681",
+      "type": "assertion",
+      "status": "grounded",
+      "checked": {},
+      "pairs": 1,
+      "pair_ids": [
+        "30_assertions/structure-p5-part-positions-fragments<-20_distillates/documents/tei-p5-att.fragmentable-4.12.0#^s4"
+      ]
+    },
+    {
+      "path": "30_assertions/structure-p5-part-reconstitution-ambiguity.md",
+      "sha256": "9ca0e9a3f1b9081262f3c35713c243902f895d91b249fda01d6f204ecceb777e",
+      "type": "assertion",
+      "status": "grounded",
+      "checked": {},
+      "pairs": 1,
+      "pair_ids": [
+        "30_assertions/structure-p5-part-reconstitution-ambiguity<-20_distillates/documents/tei-p5-guidelines-nh-non-hierarchical-4.12.0#^s22"
+      ]
+    },
+    {
+      "path": "30_assertions/structure-p5-pb-associates-page-image.md",
+      "sha256": "be71397860737170015f0ed1aa265ba077bbc6408c8e4c73b4e1c3c6b0ae8fed",
+      "type": "assertion",
+      "status": "grounded",
+      "checked": {},
+      "pairs": 1,
+      "pair_ids": [
+        "30_assertions/structure-p5-pb-associates-page-image<-20_distillates/documents/tei-p5-pb-4.12.0#^s4"
+      ]
+    },
+    {
+      "path": "30_assertions/structure-p5-pb-number-and-sequence.md",
+      "sha256": "f32031b40fc1e5f4d793edfeb3c2b4a9ee49120403eb7702645a27faa42110f7",
+      "type": "assertion",
+      "status": "grounded",
+      "checked": {},
+      "pairs": 1,
+      "pair_ids": [
+        "30_assertions/structure-p5-pb-number-and-sequence<-20_distillates/documents/tei-p5-pb-4.12.0#^s6"
+      ]
+    },
+    {
+      "path": "30_assertions/structure-p5-prev-same-type-recommendation.md",
+      "sha256": "0944ce44f499bb4d842bd19937748c771c3fbbc6fc703bf9e817a89b326d997e",
+      "type": "assertion",
+      "status": "grounded",
+      "checked": {},
+      "pairs": 1,
+      "pair_ids": [
+        "30_assertions/structure-p5-prev-same-type-recommendation<-20_distillates/documents/tei-p5-att.global.linking-4.12.0#^s11"
+      ]
+    },
+    {
+      "path": "30_assertions/structure-p5-stand-off-discontinuous-annotation.md",
+      "sha256": "fc4460073dc0fd061260a75a944f5bc4ad8e484bd6a4f46b5134ff50acb3b7f7",
+      "type": "assertion",
+      "status": "grounded",
+      "checked": {},
+      "pairs": 1,
+      "pair_ids": [
+        "30_assertions/structure-p5-stand-off-discontinuous-annotation<-20_distillates/documents/tei-p5-guidelines-nh-non-hierarchical-4.12.0#^s27"
+      ]
+    },
+    {
+      "path": "30_assertions/structure-p5-test-page-marker-inside-paragraph.md",
+      "sha256": "be9f1a9b68e8ed3a773353bc4c57196dfe31a30a9d0e8751ab8e65ce279501ca",
+      "type": "assertion",
+      "status": "grounded",
+      "checked": {},
+      "pairs": 1,
+      "pair_ids": [
+        "30_assertions/structure-p5-test-page-marker-inside-paragraph<-20_distillates/documents/tei-p5-test-testoverlap-4.12.0#^s2"
+      ]
+    },
+    {
+      "path": "30_assertions/structure-p6-numbered-divisions-reconsideration-label.md",
+      "sha256": "a67adac0223eec2729c1d9dd583db896bfc39571bacba4cf52156c5c253c03e4",
+      "type": "assertion",
+      "status": "grounded",
+      "checked": {},
+      "pairs": 1,
+      "pair_ids": [
+        "30_assertions/structure-p6-numbered-divisions-reconsideration-label<-20_distillates/publications/teic-tei-issue-1400#^s3"
+      ]
+    },
+    {
+      "path": "30_assertions/szd-contributor-and-hand-description-are-distinct.md",
+      "sha256": "2f43c6647fdd7c19aa24a303d79a51f59ad49204957970a72daca0658a6c752a",
+      "type": "assertion",
+      "status": "grounded",
+      "checked": {
+        "validation": "2026-09-07"
+      },
+      "pairs": 1,
+      "pair_ids": [
+        "30_assertions/szd-contributor-and-hand-description-are-distinct<-20_distillates/documents/szd-werke-2026-09-07#^s4"
+      ]
+    },
+    {
+      "path": "30_assertions/szd-hand-attribution-retains-question-mark.md",
+      "sha256": "6bbf6597eca63b0d342b2a2b239a3e4acfdb9cd81b64cef59dba6767fe324e0d",
+      "type": "assertion",
+      "status": "grounded",
+      "checked": {
+        "validation": "2026-09-07"
+      },
+      "pairs": 1,
+      "pair_ids": [
+        "30_assertions/szd-hand-attribution-retains-question-mark<-20_distillates/documents/szd-werke-2026-09-07#^s3"
+      ]
+    },
+    {
+      "path": "30_assertions/szd-records-have-distinct-shelfmarks.md",
+      "sha256": "d6c1d2ec95404a3c66403e7acaef766060b74ed0fc1447b5887d6e9d15ab5df6",
+      "type": "assertion",
+      "status": "grounded",
+      "checked": {
+        "validation": "2026-09-07"
+      },
+      "pairs": 2,
+      "pair_ids": [
+        "30_assertions/szd-records-have-distinct-shelfmarks<-20_distillates/documents/szd-werke-2026-09-07#^s2",
+        "30_assertions/szd-records-have-distinct-shelfmarks<-20_distillates/documents/szd-werke-2026-09-07#^s6"
+      ]
+    },
+    {
+      "path": "30_assertions/szd-records-share-work-reference.md",
+      "sha256": "08426d3d32dd29062e288c6d3b617e40d6613e0a9c488747c871def030d3c49d",
+      "type": "assertion",
+      "status": "grounded",
+      "checked": {
+        "validation": "2026-09-07"
+      },
+      "pairs": 2,
+      "pair_ids": [
+        "30_assertions/szd-records-share-work-reference<-20_distillates/documents/szd-werke-2026-09-07#^s1",
+        "30_assertions/szd-records-share-work-reference<-20_distillates/documents/szd-werke-2026-09-07#^s5"
+      ]
+    },
+    {
+      "path": "30_assertions/tei-fr363-proposes-target-on-span.md",
+      "sha256": "d3d1cca116f2135aca07ac6a269d557889eccc02e9023b9ce1832c20937f79d0",
+      "type": "assertion",
+      "status": "validated",
+      "checked": {
+        "validation": "2026-09-05",
+        "machine-review": "2026-09-05"
+      },
+      "pairs": 1,
+      "pair_ids": [
+        "30_assertions/tei-fr363-proposes-target-on-span<-20_distillates/publications/tei-sourceforge-fr363#^s1"
+      ]
+    },
+    {
+      "path": "30_assertions/teic-tei-issue-1414-author-proposes-ref-and-key-on-person-and-place.md",
+      "sha256": "492fe63fe2d11bad083b7e3f2db3c7a12f2f299121cb3c02adcb889d7d4ee89e",
+      "type": "assertion",
+      "status": "validated",
+      "checked": {
+        "machine-review": "2026-09-06",
+        "validation": "2026-09-06"
+      },
+      "pairs": 1,
+      "pair_ids": [
+        "30_assertions/teic-tei-issue-1414-author-proposes-ref-and-key-on-person-and-place<-20_distillates/publications/teic-tei-issue-1414#^s3"
+      ]
+    },
+    {
+      "path": "30_assertions/teic-tei-issue-1414-author-proposes-that-a-record-entry-refer-through-ref-or-key-to-further-information-about-the-same-entity.md",
+      "sha256": "09d49c1f0f19e58a11439df564bad1c5422a91b6ed4a3689066d3c9ff1f4527a",
+      "type": "assertion",
+      "status": "validated",
+      "checked": {
+        "machine-review": "2026-09-06",
+        "validation": "2026-09-06"
+      },
+      "pairs": 1,
+      "pair_ids": [
+        "30_assertions/teic-tei-issue-1414-author-proposes-that-a-record-entry-refer-through-ref-or-key-to-further-information-about-the-same-entity<-20_distillates/publications/teic-tei-issue-1414#^s1"
+      ]
+    },
+    {
+      "path": "30_assertions/teic-tei-issue-1414-comment-of-2019-reports-that-person-place-org-and-bibl-allow-idno-while-event-and-nym-do-not.md",
+      "sha256": "a85510405543e4954a0578102ce35cacbaed82caf8f8f8a7372e480789207880",
+      "type": "assertion",
+      "status": "validated",
+      "checked": {
+        "machine-review": "2026-09-06",
+        "validation": "2026-09-06"
+      },
+      "pairs": 1,
+      "pair_ids": [
+        "30_assertions/teic-tei-issue-1414-comment-of-2019-reports-that-person-place-org-and-bibl-allow-idno-while-event-and-nym-do-not<-20_distillates/publications/teic-tei-issue-1414#^s15"
+      ]
+    },
+    {
+      "path": "30_assertions/teic-tei-issue-1414-commenter-summarizes-idno-as-a-first-child-of-the-record-elements-as-the-short-term-solution.md",
+      "sha256": "ba45174b54a99886ba0aa2ee7a22334d4031fa1f4596feb6749f518924e6ac12",
+      "type": "assertion",
+      "status": "validated",
+      "checked": {
+        "machine-review": "2026-09-06",
+        "validation": "2026-09-06"
+      },
+      "pairs": 1,
+      "pair_ids": [
+        "30_assertions/teic-tei-issue-1414-commenter-summarizes-idno-as-a-first-child-of-the-record-elements-as-the-short-term-solution<-20_distillates/publications/teic-tei-issue-1414#^s14"
+      ]
+    },
+    {
+      "path": "30_assertions/teic-tei-issue-2739-commenter-states-att-personal-is-a-member-of-att-naming-and-att-naming-of-att-canonical.md",
+      "sha256": "eef7b4564daae29f22b62968729c2119255f87d4441551c6ffe632e84c29f33e",
+      "type": "assertion",
+      "status": "validated",
+      "checked": {
+        "machine-review": "2026-09-06",
+        "validation": "2026-09-06"
+      },
+      "pairs": 1,
+      "pair_ids": [
+        "30_assertions/teic-tei-issue-2739-commenter-states-att-personal-is-a-member-of-att-naming-and-att-naming-of-att-canonical<-20_distillates/publications/teic-tei-issue-2739#^s4"
+      ]
+    },
+    {
+      "path": "30_assertions/teic-tei-issue-337-author-announces-an-interim-guidelines-change-telling-people-to-switch-to-ref.md",
+      "sha256": "ac261fccdb9440b86a9024fdb7ea80dbe794eedead611ee00d727b61843f5c74",
+      "type": "assertion",
+      "status": "validated",
+      "checked": {
+        "machine-review": "2026-09-06",
+        "validation": "2026-09-06"
+      },
+      "pairs": 1,
+      "pair_ids": [
+        "30_assertions/teic-tei-issue-337-author-announces-an-interim-guidelines-change-telling-people-to-switch-to-ref<-20_distillates/publications/teic-tei-issue-337#^s5"
+      ]
+    },
+    {
+      "path": "30_assertions/teic-tei-issue-337-author-reports-a-wish-to-deprecate-key-held-back-by-its-wide-use.md",
+      "sha256": "3f18eeb1a84e6f39df44b138369da4748d1629fbd3f30a7e57e770287bc638ca",
+      "type": "assertion",
+      "status": "contested",
+      "checked": {
+        "machine-review": "2026-09-06",
+        "validation": "2026-09-06"
+      },
+      "pairs": 1,
+      "pair_ids": [
+        "30_assertions/teic-tei-issue-337-author-reports-a-wish-to-deprecate-key-held-back-by-its-wide-use<-20_distillates/publications/teic-tei-issue-337#^s4"
+      ]
+    },
+    {
+      "path": "30_assertions/teic-tei-issue-337-commenter-excepts-values-that-already-refer-to-an-external-vocabulary.md",
+      "sha256": "54c980332357ca730ce4641319e598e0acca3ea932c977954aa07b86eae4ee8e",
+      "type": "assertion",
+      "status": "validated",
+      "checked": {
+        "machine-review": "2026-09-06",
+        "validation": "2026-09-06"
+      },
+      "pairs": 1,
+      "pair_ids": [
+        "30_assertions/teic-tei-issue-337-commenter-excepts-values-that-already-refer-to-an-external-vocabulary<-20_distillates/publications/teic-tei-issue-337#^s21"
+      ]
+    },
+    {
+      "path": "30_assertions/w3c-quote-selection-can-match-multiple-sequences.md",
+      "sha256": "83914414d85973f80a2472ca4539e771953ccf8a8794322fb8358ab2a7595f6c",
+      "type": "assertion",
+      "status": "validated",
+      "checked": {
+        "validation": "2026-09-05",
+        "machine-review": "2026-09-05"
+      },
+      "pairs": 1,
+      "pair_ids": [
+        "30_assertions/w3c-quote-selection-can-match-multiple-sequences<-20_distillates/publications/w3c-web-annotation-20170223#^s1"
+      ]
+    }
+  ],
+  "prompt_sha256": {
+    "20_distillates/documents/hsa-letter-4493-2026-09-07#^s1": "f5447397f8c3fece50617cd15953609825c512ed184cba6fe05517ed55eebb5c",
+    "20_distillates/documents/hsa-letter-4493-2026-09-07#^s2": "67d4b4c43c5f726a473ecb8ab80d4fd4cbd7b5683b7cde402fa9ad56f5f72367",
+    "20_distillates/documents/hsa-letter-4493-2026-09-07#^s3": "473a5030711c2a4b54fb369aab6141b3a7ccb92f418dd48044ac6405a3335f1a",
+    "20_distillates/documents/humboldt-h0017682-7d174637#^s1": "5237037e6185b87078a972a48fef14570aa55319b61898d20e9f228dd772d4cf",
+    "20_distillates/documents/humboldt-h0017682-7d174637#^s2": "d1021b5dbe577ae7f56bebe459f4e1846ae4b7bceefdc73d06006790b7248920",
+    "20_distillates/documents/humboldt-h0017682-7d174637#^s3": "a2d4937ebae1a143c1a2048452382925815c8981a1bc8817ae5157256523d2f6",
+    "20_distillates/documents/szd-werke-2026-09-07#^s1": "5b9716dfe886a61dd081144550db3ad3684c4aaf735ec18000acfbb8182d8b48",
+    "20_distillates/documents/szd-werke-2026-09-07#^s2": "62d84fe2b1640a7c5235f0ab92475fbe21e8556aa1649c1d54f2a1439b1c48d8",
+    "20_distillates/documents/szd-werke-2026-09-07#^s3": "30ffdc1610656e4da19a64d0d1f7343da43ece6b5616d92ba3823d6233cd090f",
+    "20_distillates/documents/szd-werke-2026-09-07#^s4": "6c351bf98e3231ea84400a2052b4e83a67f60dd37c779e62585eea6ff0d513d2",
+    "20_distillates/documents/szd-werke-2026-09-07#^s5": "2639ca8c163ec2c442803d67aa1f73dde9d54dcd69add91b465f65664cf73368",
+    "20_distillates/documents/szd-werke-2026-09-07#^s6": "d5207812291ca675d49e21d1f6f04d5407aa584a97c0b5b7cba5bc9296a77c4d",
+    "20_distillates/documents/tei-p5-anchor-4.12.0#^s1": "922499ae970a4f8acbd0b8ea1fb388fa757d20926fec4021228956184dd6dd8e",
+    "20_distillates/documents/tei-p5-anchor-4.12.0#^s2": "0bdf3a8563fb67939915234d089a7d80e18f125d2a6fb137078735d534b46b87",
+    "20_distillates/documents/tei-p5-annotation-4.12.0#^s1": "f45b841adabfe35bf1e6d2e3209e823fa04aa18e10d79ff3e6d414a2eff9b484",
+    "20_distillates/documents/tei-p5-att.canonical-4.12.0#^s1": "fb9501be229b96d0078d0ee04e8dd1f0056895ff27efbbea1dfd69ff8bade7ef",
+    "20_distillates/documents/tei-p5-att.canonical-4.12.0#^s2": "78ac3a73c6b467ff3c4915da77ea44f23427aff06faa0534981add9771c103ef",
+    "20_distillates/documents/tei-p5-att.canonical-4.12.0#^s3": "6c092ee6d2b6f1b909cadc280973d091b98120e5eeec34a7be231ab62a3bd490",
+    "20_distillates/documents/tei-p5-att.canonical-4.12.0#^s4": "b28928df1e057b00ad4168b67f5a48c982f59cd4b61674487a235d9c49eeb65d",
+    "20_distillates/documents/tei-p5-att.canonical-4.12.0#^s5": "904120f5b6b616dcb87a224d3b1116a0f45741567be146b01166f8655d3deaff",
+    "20_distillates/documents/tei-p5-att.canonical-4.12.0#^s6": "513568bbba95590897a5dbb5cef3c32c676a165c0abb175828690e8d39c35158",
+    "20_distillates/documents/tei-p5-att.canonical-4.12.0#^s7": "fc0dd72d9eaa3ef48b4b2d5ccc44a057d8e40eb6dc451371775946c1bd9fb28d",
+    "20_distillates/documents/tei-p5-att.canonical-4.12.0#^s8": "c28591d5da15fa08c500b6eb34e1ccc549dea84302f3bf245414744870427b9f",
+    "20_distillates/documents/tei-p5-att.canonical-4.12.0#^s9": "70ea50bbf7dc0c165b6bc953bf9d6475eb07230ec1c0d15b0f02862b0bd84d0c",
+    "20_distillates/documents/tei-p5-att.canonical-4.12.0#^s10": "3ca0171e9aa22d6167861130ce1feedeac1a1c4220c8f1460edd5ae2230c6f45",
+    "20_distillates/documents/tei-p5-att.canonical-4.12.0#^s11": "0f2c420a6980bb586a14d61fba869062b6e9aaafacd7d78f9502c99ddde82d01",
+    "20_distillates/documents/tei-p5-att.datable-4.12.0#^s1": "7817758b29e325dc761d428f8b6159e9d2df060b3151b159a20e722c5af0ab68",
+    "20_distillates/documents/tei-p5-att.datable-4.12.0#^s2": "4586ca635d0e3c6e2914a63e98b538ddb567b978c074d15d9db0ae706ac49193",
+    "20_distillates/documents/tei-p5-att.datable-4.12.0#^s3": "1c6fd061884e516616e28a059919956021b9c8d6d1b745629d36d1529b8288a2",
+    "20_distillates/documents/tei-p5-att.datable-4.12.0#^s4": "86ca54ad5bde51b8b1fb11f12531a53c0ddbae4ef5bf59c878217ef3070490c3",
+    "20_distillates/documents/tei-p5-att.datable-4.12.0#^s5": "08054dd6fef0c850c7b69278ce70671fe5ff2ec401d1c738ec2dd05e33d77e6b",
+    "20_distillates/documents/tei-p5-att.datable-4.12.0#^s6": "b88b8d2364b1021309bcd285e9046ba70be90a079910ebb216b1d32a989b1ac0",
+    "20_distillates/documents/tei-p5-att.datable-4.12.0#^s7": "e9f5eeabe02f10d878a23aa3279421cf7ec808006d24caae64b2a7fc92976868",
+    "20_distillates/documents/tei-p5-att.datable-4.12.0#^s8": "d3f09f496ecd948edf5ecd8d48ab3028bc572967ba36e032eeebbdda576c1d99",
+    "20_distillates/documents/tei-p5-att.editlike-4.12.0#^s1": "9c370b9497ada97e0e266cc5119412d83ca6deb4614b288fc91400f44da6b3b6",
+    "20_distillates/documents/tei-p5-att.editlike-4.12.0#^s2": "13148ad975d9c061d703187c41f0e8e1ac6c9049fd6eee0586cd59e85b47f63c",
+    "20_distillates/documents/tei-p5-att.editlike-4.12.0#^s3": "9ae7238d3b0ae053941ba97779ff32b85cfd03da37826f5539f531b3b9475ed6",
+    "20_distillates/documents/tei-p5-att.editlike-4.12.0#^s4": "ec57ba5d9337b7288f6b673780cf1cff3889628c70cd91205e87ebae98421074",
+    "20_distillates/documents/tei-p5-att.editlike-4.12.0#^s5": "c8589059559d45450d145d30509f64358ffb6f69911de58d219f4fec9cb63f4b",
+    "20_distillates/documents/tei-p5-att.editlike-4.12.0#^s6": "95374ba323fe0e38c472f12ea95d2cd6a3344db88cc5ab343397bf07d2aa189c",
+    "20_distillates/documents/tei-p5-att.editlike-4.12.0#^s7": "7566df5eaea7260e3721567c82ca6f965b252d5afe72bdd412e27356963c4dd9",
+    "20_distillates/documents/tei-p5-att.editlike-4.12.0#^s8": "fe78d4d3d010d89bd6429377d16b7c1574464cc04ea6b4a0febf5a814de40a5c",
+    "20_distillates/documents/tei-p5-att.editlike-4.12.0#^s9": "b3edbb2169ef20008efac5aa563578e83545e95777269eb756f63169e26ea9fe",
+    "20_distillates/documents/tei-p5-att.fragmentable-4.12.0#^s1": "b5ff498d1c7a82a9c5aa8b5c099377be276b3ca738c16578f11ecdb8c0b4fd43",
+    "20_distillates/documents/tei-p5-att.fragmentable-4.12.0#^s2": "d0d7cafab75c532d5a4bac03342267aba4d449557d3cd709241fff1a45fdac40",
+    "20_distillates/documents/tei-p5-att.fragmentable-4.12.0#^s3": "aa8244ad04cc5a82b5a7bbefdc9eed6f32636a78c966a74e93530f8f78a338e7",
+    "20_distillates/documents/tei-p5-att.fragmentable-4.12.0#^s4": "6e8d3aaee499737101d6bd6ab0aca37941c353c40c3f52ef39c8efd11f86fd49",
+    "20_distillates/documents/tei-p5-att.fragmentable-4.12.0#^s5": "33611f85dd79f8328caf2e53f4c01f4a6bcd3432194526d092940953422cc890",
+    "20_distillates/documents/tei-p5-att.fragmentable-4.12.0#^s6": "07f532f21ac1b15d38f82afe07b4698ee26032577ffd5f6349443eb788275329",
+    "20_distillates/documents/tei-p5-att.global.linking-4.12.0#^s1": "0fcd78c730cd0c02999db02ec390f4453cce297d1d504b1bb2b7e14e34fc4f3e",
+    "20_distillates/documents/tei-p5-att.global.linking-4.12.0#^s2": "b67ce8ee17d3b0c37e94b18b38aada891104fd5773350f4f566e66eb5bdfad83",
+    "20_distillates/documents/tei-p5-att.global.linking-4.12.0#^s3": "fa6846572e6d8839db3fe47d97560db32d440d55ea0191444af94112fcc19520",
+    "20_distillates/documents/tei-p5-att.global.linking-4.12.0#^s4": "ca70d3122b5ceaea7fc94983ede88eb1600fd31183c1ab4b941d0a45de669b39",
+    "20_distillates/documents/tei-p5-att.global.linking-4.12.0#^s5": "0aed9b0cbeeeb1d8b9b02b0be4b35bba84f3888c9f4dc583a6bea820ef8373c9",
+    "20_distillates/documents/tei-p5-att.global.linking-4.12.0#^s6": "03fed54756fb8095bb6e80e620e15b9996c0be4cf84358087696676f73ff23d7",
+    "20_distillates/documents/tei-p5-att.global.linking-4.12.0#^s7": "35bcf754d9b9691e6d1061a61d67f197e60a5a7fc9be0434e825708ec2c24015",
+    "20_distillates/documents/tei-p5-att.global.linking-4.12.0#^s8": "54739bfeab3cf1b911edf5d1ce4398843778eda419e99381191b616c73b11a59",
+    "20_distillates/documents/tei-p5-att.global.linking-4.12.0#^s9": "d6d43e7037a389317bb3dc78b269956719f8c04319ffcf69e4097c7182010246",
+    "20_distillates/documents/tei-p5-att.global.linking-4.12.0#^s10": "147d295f5decb26b8a6897e6c7130ff8b439b2aab94783c23999d587e478aeba",
+    "20_distillates/documents/tei-p5-att.global.linking-4.12.0#^s11": "311014c4829abfd810d614a0a9a626e41cf93c29fd73c7c02cb9aa04d35487eb",
+    "20_distillates/documents/tei-p5-att.global.linking-4.12.0#^s12": "38dbb5103a0aaa09c44388d74d3d75fe3bd3912e26bd5d549b9a9874b1b3d2d2",
+    "20_distillates/documents/tei-p5-att.global.linking-4.12.0#^s13": "10b6936214000c0718e6010cd0adde4a75e84647d29fa1d318042c80613a0854",
+    "20_distillates/documents/tei-p5-att.global.linking-4.12.0#^s14": "eaa9e1e34071ce47f5b8d9ac9ac27542118fab6639f40dd4e1a101e469708f28",
+    "20_distillates/documents/tei-p5-att.global.responsibility-4.12.0#^s1": "d869a6a8590ed8f0c523c3efa2db1fd370211959fd78350d02293df4d1ae01aa",
+    "20_distillates/documents/tei-p5-att.global.responsibility-4.12.0#^s2": "3fbe92742500acb02109bd6f874b24e337e1b49f734f029cee00cc4e4f03b1fc",
+    "20_distillates/documents/tei-p5-att.global.responsibility-4.12.0#^s3": "8f5a66be9f0da46971a1bd961eed7d4fa42a741acf2d35e6c9c03dc9369f0107",
+    "20_distillates/documents/tei-p5-att.global.responsibility-4.12.0#^s4": "2f64523dccf3e875ca006ba4ba868def6139b307b51649c8b5bf9ab1185958f1",
+    "20_distillates/documents/tei-p5-att.global.responsibility-4.12.0#^s5": "76f5526d6c56dd27b07e129a2c218b9e167ff5250ee2e8f6b0dab038a6160544",
+    "20_distillates/documents/tei-p5-att.global.responsibility-4.12.0#^s6": "efe341cccb9a55e8dd42e3c095c9f26fd1fb1a7f9ff7ad3b33bbddc5ef7f62ce",
+    "20_distillates/documents/tei-p5-att.global.responsibility-4.12.0#^s7": "455168632f11fd65d8c91ae856a559133182e6c0b7d09ca5156d0f26fbaf1adb",
+    "20_distillates/documents/tei-p5-att.global.responsibility-4.12.0#^s8": "9caeb053964d4d42c99060b11aa9eae98db27ce7cc0062484679470043a3d1a3",
+    "20_distillates/documents/tei-p5-att.global.source-4.12.0#^s1": "52148c4683afc1c136cbcbbb6cbf19754e7bb03f511a38c05ad2c308fa1e91b1",
+    "20_distillates/documents/tei-p5-att.global.source-4.12.0#^s2": "7ae6fee145c9957cccbcc3a98af2e710d0da5550c9b74d202c77eb6f29d03ac2",
+    "20_distillates/documents/tei-p5-att.global.source-4.12.0#^s3": "2b385933bb4b5b1dd60c4ae7028d2ca12bfc6eb730e7741356fdc2dcbab6dbb4",
+    "20_distillates/documents/tei-p5-att.global.source-4.12.0#^s4": "14c517bbdfc6a76ea4369f880a6f90fa220868e05ae9cbbbddff9613798950b7",
+    "20_distillates/documents/tei-p5-att.global.source-4.12.0#^s5": "6ebbe1bbab9552ce5fa2cf954f91f47c99633e6d0f82b869a617f403acabf7cc",
+    "20_distillates/documents/tei-p5-att.global.source-4.12.0#^s6": "b4f9b624c74a826f905df38dfcdb87c02d143b063cacf68b92636bbe0a7881df",
+    "20_distillates/documents/tei-p5-att.global.source-4.12.0#^s7": "2a9f40ee0bb2efbf439077f3af9d2599af10f6b6d796ad592ff3110cd924d60f",
+    "20_distillates/documents/tei-p5-att.global.source-4.12.0#^s8": "8f728f10485049a16aeed72445713246179f69b3294bdeda0f5d6a911a1fe14b",
+    "20_distillates/documents/tei-p5-att.global.source-4.12.0#^s9": "ea90b58e7dfecb388d8da0a8adf52344f6eae80a47d24865d97645ed929968de",
+    "20_distillates/documents/tei-p5-att.naming-4.12.0#^s1": "b6affce1e1e39e79b3266097248eed083394be5e93c6e6d9e27399226f1a1666",
+    "20_distillates/documents/tei-p5-att.naming-4.12.0#^s2": "b7b6215bd41edef5618325070f0a841dc1c4a52519e5545f12c28352cf21ebf5",
+    "20_distillates/documents/tei-p5-att.naming-4.12.0#^s3": "7cbaeec524f8d91a1d79b628f41c12116705f614e44f254473b42233a72e7c65",
+    "20_distillates/documents/tei-p5-att.naming-4.12.0#^s4": "c1af150808072e3b29fa4abadb57a1c3050cdbd5989dfc8e86986326f71ae586",
+    "20_distillates/documents/tei-p5-att.personal-4.12.0#^s1": "0222bab0ab13382ac674a3816b17dca2a63027f0c97d497d9c5485ca4be50616",
+    "20_distillates/documents/tei-p5-att.personal-4.12.0#^s2": "8d78bc0cfeae7a69ca9789fe9d0c3eef8f90b06432667bf565f52b9508be845f",
+    "20_distillates/documents/tei-p5-att.personal-4.12.0#^s3": "911d4a39cf5731f30683a1c583c42e2211ffcf1b11444c1b772623b451ddb95b",
+    "20_distillates/documents/tei-p5-att.personal-4.12.0#^s4": "d2d340b494d4c27089e9df13314a9743b01a35666f985afae2f4245fa988b722",
+    "20_distillates/documents/tei-p5-att.personal-4.12.0#^s5": "7da94b313545726d15076ce71584fc3b310efbbb69c1c4c4be08f1c311a6e55c",
+    "20_distillates/documents/tei-p5-att.personal-4.12.0#^s6": "d013abb0857a28b76802826702d5ad56642a315caa820f82312ad8aa0cf4c5a9",
+    "20_distillates/documents/tei-p5-att.personal-4.12.0#^s7": "ef11dcb02e3a82d09b4dcea58e22c070e089bfa22bfcf54ebbccbd3c1a011d16",
+    "20_distillates/documents/tei-p5-div-4.12.0#^s1": "ef0f7056a8112254500bbef64e3e22a230dbdc6f4cf6439e2ee8c8de40a3621c",
+    "20_distillates/documents/tei-p5-div-4.12.0#^s2": "41f1f77e7830eb1e81320e9f01b346773b4ed390232b25754f172d303df83198",
+    "20_distillates/documents/tei-p5-div-4.12.0#^s3": "f5673c01d43cc8ed0c130e25194b120a4ea6b265e6234e0ccd29386a353a799f",
+    "20_distillates/documents/tei-p5-div-4.12.0#^s4": "4241abf0796baa535f26d7e4493e15d3a7948bc3553fc7d3b29091391756a1ce",
+    "20_distillates/documents/tei-p5-div-4.12.0#^s5": "0b1194e25909c7fbb41f89eb3f86feaab28d0218dff35dff89c3a2c9e7077ea6",
+    "20_distillates/documents/tei-p5-div-4.12.0#^s6": "240c8be9eb7a8d0d827aaac37a137f33050d94b0748a28091c55480b7445159a",
+    "20_distillates/documents/tei-p5-guidelines-ds-defaulttextstructure-4.12.0#^s1": "502ecf22ca0ea0af39d9c84379c8fe3fe3d3ab410a6d7c4f4b54e87a4e87f552",
+    "20_distillates/documents/tei-p5-guidelines-ds-defaulttextstructure-4.12.0#^s2": "18d9bfaf4fef5fa96cb09b6d59440365a2aafa7a2f2923505b1a683f98d7d03d",
+    "20_distillates/documents/tei-p5-guidelines-ds-defaulttextstructure-4.12.0#^s3": "5fee6e881ef64e6fadaea1db38dd491b9048fc61dd6d646ec0d2efa49d409b9c",
+    "20_distillates/documents/tei-p5-guidelines-ds-defaulttextstructure-4.12.0#^s4": "867b47e2c697040972db2b175f8964802a39bbcb44d7868b38b4ddeb9c920456",
+    "20_distillates/documents/tei-p5-guidelines-ds-defaulttextstructure-4.12.0#^s5": "6d6047574a90ca4a8a8843b476e3ebc929ad29685730d0436cbd4645b2c9dcc0",
+    "20_distillates/documents/tei-p5-guidelines-ds-defaulttextstructure-4.12.0#^s6": "aec038ed8fe8cca9b6f7590521c22ab626b883966978658146226ef752f0048f",
+    "20_distillates/documents/tei-p5-guidelines-ds-defaulttextstructure-4.12.0#^s7": "7067faa0118ea83b51bd9c9ec095527d24fa75985fb930e1a3105c12606bcef0",
+    "20_distillates/documents/tei-p5-guidelines-ds-defaulttextstructure-4.12.0#^s8": "a9635169ef2d4ef97a9ba3e235ad28c71ab8179a352677821d2e55a04f120935",
+    "20_distillates/documents/tei-p5-guidelines-ds-defaulttextstructure-4.12.0#^s9": "f546b5b63d0e7cc083a5c57c6f49477b1fff4f911cfdd00773b1baee18b53f06",
+    "20_distillates/documents/tei-p5-guidelines-ds-defaulttextstructure-4.12.0#^s10": "20c484a129779082660c4796b0c4e4ac3194f2c8882bd0e16b0914b869fa5db6",
+    "20_distillates/documents/tei-p5-guidelines-ds-defaulttextstructure-4.12.0#^s11": "8c802774a2d5dab304cab0acefb83751201d481cd210b72c5af224d17d6fd837",
+    "20_distillates/documents/tei-p5-guidelines-ds-defaulttextstructure-4.12.0#^s12": "56e6b16eeaf5fd618b7777a8430ecd49e010d6f783b6e6b1de78aea1ab9ac081",
+    "20_distillates/documents/tei-p5-guidelines-ds-defaulttextstructure-4.12.0#^s13": "d77e9900756198e22a2dafb83552b3d19253caecfe8e682fc9c1bc4fa062f4df",
+    "20_distillates/documents/tei-p5-guidelines-ds-defaulttextstructure-4.12.0#^s14": "f5bb59e36099a82924c48c5728456b70f1d79d751a913291043959208ed26816",
+    "20_distillates/documents/tei-p5-guidelines-ds-defaulttextstructure-4.12.0#^s15": "628d5bc6aab2050b12eb1c21c9fed2ccdd00c32b817932e236c3fb34b7a175a9",
+    "20_distillates/documents/tei-p5-guidelines-ds-defaulttextstructure-4.12.0#^s16": "c5a3446548f4568af74c39ed7629850c8147760f7ec2e616797216fd0ce4f81a",
+    "20_distillates/documents/tei-p5-guidelines-ds-defaulttextstructure-4.12.0#^s17": "cb96faf59b4bc5630c6189f66e337da6c796c9a465146589b0e701fcd668d022",
+    "20_distillates/documents/tei-p5-guidelines-ds-defaulttextstructure-4.12.0#^s18": "4b9930ff976e2002265b12d7f8c598d17ea82c21525decf6fbcd9e1b530168bc",
+    "20_distillates/documents/tei-p5-guidelines-ds-defaulttextstructure-4.12.0#^s19": "7dedc258bf8ed9012ee58b0ce9448418d40cbd6c5cae9413b3e31d37acec3172",
+    "20_distillates/documents/tei-p5-guidelines-ds-defaulttextstructure-4.12.0#^s20": "93f2ff5dcd7b3311e05441679d223d3b017277c39c61481d408b5528db5b5d4b",
+    "20_distillates/documents/tei-p5-guidelines-ds-defaulttextstructure-4.12.0#^s21": "706f507c4e6d35d1d504e4f72f623ec95ff40826e1e2453471283bfbea872f22",
+    "20_distillates/documents/tei-p5-guidelines-ds-defaulttextstructure-4.12.0#^s22": "a30595aeb8024b571b79b7a77f171a0543b6283f91f5a3ab33e496719343d6cf",
+    "20_distillates/documents/tei-p5-guidelines-ds-defaulttextstructure-4.12.0#^s23": "a0a4c1145c8f93f21fcbcb3d732119dc1030c7681c4b9da70a39b76bbb138f24",
+    "20_distillates/documents/tei-p5-guidelines-ds-defaulttextstructure-4.12.0#^s24": "71bc719a25436a6f922614737cda6949d0b843bb4afd117837e63770e62d14b1",
+    "20_distillates/documents/tei-p5-guidelines-ds-defaulttextstructure-4.12.0#^s25": "9d9f2212c5a2817ba74ca6671d3bc494499b618ca210e72b71dd850f138ca49a",
+    "20_distillates/documents/tei-p5-guidelines-ds-defaulttextstructure-4.12.0#^s26": "fe7ca2b3e929d8a9fa1de74b16322d7d2cd8eeb6556f126847af5ea8cf4e5b24",
+    "20_distillates/documents/tei-p5-guidelines-ds-defaulttextstructure-4.12.0#^s27": "9d314c9a1e012b0a15c2e4ce4df52e9181496721c01cf11609baf0877d4be209",
+    "20_distillates/documents/tei-p5-guidelines-ds-defaulttextstructure-4.12.0#^s28": "dee594ba6fb2f777322b759cb407362c37f797e1dc3289598262f459ec56f65a",
+    "20_distillates/documents/tei-p5-guidelines-ds-defaulttextstructure-4.12.0#^s29": "dd3f6ad0d24a12090dd91e870b61fa91cd8cce18e99644dc749ca39c80b8cc0c",
+    "20_distillates/documents/tei-p5-guidelines-ds-defaulttextstructure-4.12.0#^s30": "2c1b365e7cb6b0efbba1f286c1221674fdfe5904d167c751293ab55a37cf6c12",
+    "20_distillates/documents/tei-p5-guidelines-ds-defaulttextstructure-4.12.0#^s31": "91b10619139c830650e772272ebe64de29a44d582c4c16fcce43ebc4292f1bef",
+    "20_distillates/documents/tei-p5-guidelines-ds-defaulttextstructure-4.12.0#^s32": "15aa367d1cc856d7c000c589d8aa1cf10dcc818ec778309672c03df28ae7e272",
+    "20_distillates/documents/tei-p5-guidelines-ds-defaulttextstructure-4.12.0#^s33": "8835075a01339b821c6dcb09e64084f6b9a6220db486d92c65285ee0067a6209",
+    "20_distillates/documents/tei-p5-guidelines-ds-defaulttextstructure-4.12.0#^s34": "b3e86c3ee24ba650b85df634b7b40cbd7d916115db8a3f9b491dac96b274f1f0",
+    "20_distillates/documents/tei-p5-guidelines-ds-defaulttextstructure-4.12.0#^s35": "47c0edc35539290e77f479c981a978efb40c0c063c626171241da65a00bda892",
+    "20_distillates/documents/tei-p5-guidelines-ds-defaulttextstructure-4.12.0#^s36": "014f0c6882843a13ff4d4d40cda37c57e66651deb79a411d9d5cfd29d6db607e",
+    "20_distillates/documents/tei-p5-guidelines-ds-defaulttextstructure-4.12.0#^s37": "b74b2ea1e2ddf9024dc7c22b0c40f6e8fe6dcd6393ac0c8fd139c26ef2641e97",
+    "20_distillates/documents/tei-p5-guidelines-ds-defaulttextstructure-4.12.0#^s38": "4d97d36b956e14d06b053acba2909faf134347d93be016927cf5c89d717d2acf",
+    "20_distillates/documents/tei-p5-guidelines-ds-defaulttextstructure-4.12.0#^s39": "1c1fa090a9640ea61904ef7e0cfead83b338b81a3b21e14cdb034b45c8037edf",
+    "20_distillates/documents/tei-p5-guidelines-ds-defaulttextstructure-4.12.0#^s40": "550c16b852fabd6055a5b5051f7bab1ba0e7075c7114d9f0404ff18a8927915c",
+    "20_distillates/documents/tei-p5-guidelines-ds-defaulttextstructure-4.12.0#^s41": "542ab519be349e8f67cddbc95645c372ac0d303a689251fc80bfdede52e23291",
+    "20_distillates/documents/tei-p5-guidelines-ds-defaulttextstructure-4.12.0#^s42": "a5ff10ad27001bb619c1ec78e94a8ee69407dfb9f7581a5f84b5f5db1d045187",
+    "20_distillates/documents/tei-p5-guidelines-ds-defaulttextstructure-4.12.0#^s43": "33bdf9c29ca26071d866df03004953532baca77e3aaadcbb2443d9b2f873208c",
+    "20_distillates/documents/tei-p5-guidelines-ds-defaulttextstructure-4.12.0#^s44": "26419104d25fdd7428ab0c2101d88e5a1d096239b90a531315cb1071af2ba6b3",
+    "20_distillates/documents/tei-p5-guidelines-ds-defaulttextstructure-4.12.0#^s45": "404ecf1287c91f31423e74bd765e2abe33aeb8dbc493ce3e8ff77701c4cf0cad",
+    "20_distillates/documents/tei-p5-guidelines-ds-defaulttextstructure-4.12.0#^s46": "6eb05643cfaebf22eb078e863704e545ad8c7c154566695601c0f9cb012afa11",
+    "20_distillates/documents/tei-p5-guidelines-ds-defaulttextstructure-4.12.0#^s47": "76a6d88217f9bd8703ce726220a313895d3b958f6b3e99bc999fbd0220a2d71f",
+    "20_distillates/documents/tei-p5-guidelines-ds-defaulttextstructure-4.12.0#^s48": "bad1d8f5e442f7209681234c3b60c3d01cde2d11d1b3ec2fe2150e9f78ff2dfb",
+    "20_distillates/documents/tei-p5-guidelines-nd-4.12.0#^s1": "b7a06795b716fafdde2404742b51fae42e3c6187683927022aec5d8252e8bab2",
+    "20_distillates/documents/tei-p5-guidelines-nd-4.12.0#^s2": "dd4e838cd8007a846f1b47211a835583b2848bc530944080e55733bf6ddb6b96",
+    "20_distillates/documents/tei-p5-guidelines-nd-4.12.0#^s3": "cb1a1d629b09abcd5992ee9b396ff33a931d47db2dfb27423878e31afdc51714",
+    "20_distillates/documents/tei-p5-guidelines-nd-4.12.0#^s4": "a3618dfae46c4602d6ca36f2dccf981fda42cb8077f3345e3f6004ede897ad3b",
+    "20_distillates/documents/tei-p5-guidelines-nd-4.12.0#^s5": "1588a406e8f2cbb1b3a72e6b23cba37d19c26ae25615d8722025d48d3b9aa0cb",
+    "20_distillates/documents/tei-p5-guidelines-nd-4.12.0#^s6": "2487e5fc15f7594a04e891b38a4792af8d53521f74f807a940956932657165aa",
+    "20_distillates/documents/tei-p5-guidelines-nd-4.12.0#^s7": "4d14908b63717888f47869dd699ea751a88a791862089c3801d2649568eca8a1",
+    "20_distillates/documents/tei-p5-guidelines-nd-4.12.0#^s8": "2860980cc95daeca8222073d708990cedf8a85641d7a97b075ee436485829c60",
+    "20_distillates/documents/tei-p5-guidelines-nd-4.12.0#^s9": "fbd210c97712fb073db7fff562c880e3127c369ec17db9bef172b2be7966cc5c",
+    "20_distillates/documents/tei-p5-guidelines-nd-4.12.0#^s10": "a63218742c1f1758cdcdf7e79537a8b43207fdcb4dafc7d9c81ceada579d691e",
+    "20_distillates/documents/tei-p5-guidelines-nd-4.12.0#^s11": "90ad74af14fd0e5d20d8dc1e8ba857a9074c8d881b0ee65d41b271c883e59b88",
+    "20_distillates/documents/tei-p5-guidelines-nd-4.12.0#^s12": "aa981fe31326bc8a3b4b660d52b159e29ad0c3510063bb1d1cf2559e118feadb",
+    "20_distillates/documents/tei-p5-guidelines-nd-4.12.0#^s13": "d65458c35c89c11900b74b7ba35745fcf90218c74bc1c803057019bb6daaae1d",
+    "20_distillates/documents/tei-p5-guidelines-nd-4.12.0#^s14": "9c22a1744dbfdf100986c1b894b1fd0d77012bd166586fc16838632f6e6274bc",
+    "20_distillates/documents/tei-p5-guidelines-nd-4.12.0#^s15": "7728a8ac452032c40de33a89448276ea9b46c82a15e38be32fa25df1c3a26b69",
+    "20_distillates/documents/tei-p5-guidelines-nd-4.12.0#^s16": "5100ff8d6ce7d481fb881a49877836bd2527a6d801fd637e18b672bd27fe1500",
+    "20_distillates/documents/tei-p5-guidelines-nd-4.12.0#^s17": "9e320d56572d29fe5264e75210d48b6fc8c364ec88781b622ef8b45631d3a9ab",
+    "20_distillates/documents/tei-p5-guidelines-nd-4.12.0#^s18": "52c122fa2018c0c12f8086967aed1169a5d8ae20e1aea48f939f7918725e6fb0",
+    "20_distillates/documents/tei-p5-guidelines-nd-4.12.0#^s19": "19a9f11f99d8e6c1f503e7c2b026653bcc4a45e61e883ddf24769100ae203513",
+    "20_distillates/documents/tei-p5-guidelines-nd-4.12.0#^s20": "c68613308edd0b126c0979d8636d50b08faa932e5ce6d9a300ec8eacc117e8f7",
+    "20_distillates/documents/tei-p5-guidelines-nd-4.12.0#^s21": "3ccd980a7591d0727dc033fe84f41b32e20e73271b50cd205bc4a5f843d54ed5",
+    "20_distillates/documents/tei-p5-guidelines-nd-4.12.0#^s22": "bea88d7d11afa9d924124cfe685b9cf09a550b40b7b6578b53b79b569f38b639",
+    "20_distillates/documents/tei-p5-guidelines-nd-4.12.0#^s23": "a8fd08de60a94748b41154e2da56f42d7517567d0418a4610016d8e49b832169",
+    "20_distillates/documents/tei-p5-guidelines-nd-4.12.0#^s24": "052a305725850c26c32c5ee069492fe9d5b8c59392c855a2de1e9f983fccdd3d",
+    "20_distillates/documents/tei-p5-guidelines-nd-4.12.0#^s25": "6098f2ca46191010b9a36d1079f730924f5d61c07c5a413264ddca9612a14b21",
+    "20_distillates/documents/tei-p5-guidelines-nd-4.12.0#^s26": "72c59d18e54df02a46c45a95dff54c261f5f25c58bebe17caaa5988482a84c29",
+    "20_distillates/documents/tei-p5-guidelines-nd-4.12.0#^s27": "1ee3510386b625271506d94bb32ca3488c60952a83fc57601ab775fab0f2241d",
+    "20_distillates/documents/tei-p5-guidelines-nd-4.12.0#^s28": "4eaf8fb77c21f85a232135cd183d989ce0199f6dbd269d566666d92c0d81bb73",
+    "20_distillates/documents/tei-p5-guidelines-nd-4.12.0#^s29": "b64b696fb597d79287c9fe0c4b465d9be5c1f2cdcdd21ac97885963317977a57",
+    "20_distillates/documents/tei-p5-guidelines-nd-4.12.0#^s30": "32e4d8bd569446e57d52c83576c34ad92e2ff3485ea80784fb89aa7323dbd7f8",
+    "20_distillates/documents/tei-p5-guidelines-nd-4.12.0#^s31": "b581814508047a3caa7027800335082bf7e9f937bf4b61344923565246a6de6f",
+    "20_distillates/documents/tei-p5-guidelines-nd-4.12.0#^s32": "d38af810fe70df6937fda5efef25b04af4387e5a3d5b27001d86bf7715f43702",
+    "20_distillates/documents/tei-p5-guidelines-nd-4.12.0#^s33": "d38d03c5be50aeceb26a190f18e5becaddd22ff84cc9b2b4123ac2c2c46c40f0",
+    "20_distillates/documents/tei-p5-guidelines-nd-4.12.0#^s34": "2c084f29da5d651d8b62f8c7b29e8ee30986acd88162a8f51b91a0d1a66aea15",
+    "20_distillates/documents/tei-p5-guidelines-nd-4.12.0#^s35": "b59300f5de70578aa09296e0e6eda0a7fd4d2a243bc72c8444ae0cdc500a531d",
+    "20_distillates/documents/tei-p5-guidelines-nd-4.12.0#^s36": "7866f6d530c290ecee168fd84b75e30046c05dfc1ecc945be6cc7c672a60373f",
+    "20_distillates/documents/tei-p5-guidelines-nd-4.12.0#^s37": "596f40e5fed00ab0a57383f8a9719231b10588c95e2a618fe0902379b1d9f9e3",
+    "20_distillates/documents/tei-p5-guidelines-nd-4.12.0#^s38": "3a763a6e2f083ada3966698aa90c1eb4910b3484eae3bf815d45c0c70daef280",
+    "20_distillates/documents/tei-p5-guidelines-nd-4.12.0#^s39": "cf06f7477e5cbcc6310e1057da5c33af5736a711040cf1aabb6741f6a4f63111",
+    "20_distillates/documents/tei-p5-guidelines-nd-4.12.0#^s40": "0cd7663fd0c4679c4dd3b6166f05e6aaf7244a16ceaf467e8ef800a8c28312b1",
+    "20_distillates/documents/tei-p5-guidelines-nd-4.12.0#^s41": "53aa33bde69531a71326d780474776ba114cbbe590e2076e3156b88cfaa7a60e",
+    "20_distillates/documents/tei-p5-guidelines-nd-4.12.0#^s42": "5cba50399d46f5dcee4e509b38c7ceb96c3db8fcd224036534cd0cb3e9a6e08d",
+    "20_distillates/documents/tei-p5-guidelines-nd-4.12.0#^s43": "7886db6aeddec39834d3b15551702366544c67f184398bead7f3ac689d3e00ae",
+    "20_distillates/documents/tei-p5-guidelines-nd-4.12.0#^s44": "d1d5e3524cd84db7eb13b5dd2f00698f0b15753a33440f5d567e3b31994520de",
+    "20_distillates/documents/tei-p5-guidelines-nd-4.12.0#^s45": "8676abbc07a21836af7661e6c26c92b9cd4afa4da90557f3cf5ba3de185969cd",
+    "20_distillates/documents/tei-p5-guidelines-nd-4.12.0#^s46": "ec680b1131f7ee9480af5da590331efb7c7d298e84669cf9ad813c1cc9286320",
+    "20_distillates/documents/tei-p5-guidelines-nd-4.12.0#^s47": "57b27d7924fb029129e776a7ab4aa35916d01a051111f43c6e95151b63bb62a6",
+    "20_distillates/documents/tei-p5-guidelines-nd-4.12.0#^s48": "907ba30eeb2101422c390a4d913d0885f4070a87eed1cc9115ffaf75c74d2ae7",
+    "20_distillates/documents/tei-p5-guidelines-nd-4.12.0#^s49": "6fa579f989aa1d87bef0845f12d23d425ae55386dfcfbb631a183957439feada",
+    "20_distillates/documents/tei-p5-guidelines-nd-4.12.0#^s50": "08989bb461e9beac4a4d2a6a8bc25e3cf3b8af92a1d069e70a1a01559a79cc6d",
+    "20_distillates/documents/tei-p5-guidelines-nd-4.12.0#^s51": "7fdccef36c906ae6c72351c402bb007dc4844f7e5a12b521933cd34730b8de7c",
+    "20_distillates/documents/tei-p5-guidelines-nd-4.12.0#^s52": "a065b665d0e96f5b706a5d43b861f260b988ae82a7d7ebfed8b83f08eab5eb4e",
+    "20_distillates/documents/tei-p5-guidelines-nd-4.12.0#^s53": "97b4fe8687d05856ee686e5ba354abd83a84e517b960df3ff315528b60da1692",
+    "20_distillates/documents/tei-p5-guidelines-nd-4.12.0#^s54": "1220acf7c72d189bb2cf12b0b0b1a973922cd917a3c61f0f52b405f8661b99a4",
+    "20_distillates/documents/tei-p5-guidelines-nd-4.12.0#^s55": "c3a5b1f7e009aa5703d577cd58d997b3e116fd52cf85567c8f571160ef15a68e",
+    "20_distillates/documents/tei-p5-guidelines-nd-4.12.0#^s56": "7064690888176a84112bde43aaf1bcc0c9e3684302f218a43dc69f5220643d79",
+    "20_distillates/documents/tei-p5-guidelines-nd-4.12.0#^s57": "4f5101b384a64f18fee49d6440c9a66a886d27e186e9bb89e8c89466daea4d33",
+    "20_distillates/documents/tei-p5-guidelines-nd-4.12.0#^s58": "323bf9375ca2f3a39e829998e01b46793027f0b469ebe98e8b2b83e0e1b69334",
+    "20_distillates/documents/tei-p5-guidelines-nd-4.12.0#^s59": "e2a134f40ace067f21a295df427d2b454f0fd17d3df8fe6cb2fe0ab86ec5e711",
+    "20_distillates/documents/tei-p5-guidelines-nh-non-hierarchical-4.12.0#^s1": "41c291b8bd96f4ef2ec48a4043a4e70e333a586848521fd0e38fb239ea1f097d",
+    "20_distillates/documents/tei-p5-guidelines-nh-non-hierarchical-4.12.0#^s2": "bc9eefeaa2d58e34ba7dfb7abbe58a8ee5cf9b5860f1a9627c60230b213a3fd0",
+    "20_distillates/documents/tei-p5-guidelines-nh-non-hierarchical-4.12.0#^s3": "f037b62f5b597d3bbf1d5790b21fc2d6c89daf61295e5c718d62397eb598a6c6",
+    "20_distillates/documents/tei-p5-guidelines-nh-non-hierarchical-4.12.0#^s4": "5430b7ddf27da8c719eb876c8326d88fdd6b29337dbfb850490a2f6751911d84",
+    "20_distillates/documents/tei-p5-guidelines-nh-non-hierarchical-4.12.0#^s5": "fded6c616c16bbc620c6d1742932a7a9369a7c67c041a583a5e034d7c3ed87d7",
+    "20_distillates/documents/tei-p5-guidelines-nh-non-hierarchical-4.12.0#^s6": "beac21fb6030e94202af6f87289b43badf6664bb00abb9957eef35d432f0a7fe",
+    "20_distillates/documents/tei-p5-guidelines-nh-non-hierarchical-4.12.0#^s7": "c6788f0eb0414a7f3116a01ed36383d4ea14d6a3c785e3a3f5c8ce9dfadf0da6",
+    "20_distillates/documents/tei-p5-guidelines-nh-non-hierarchical-4.12.0#^s8": "d4e6f0946abf31677371f02fb5cec14db6488b1e6b10a02f68b73ecbd8094c28",
+    "20_distillates/documents/tei-p5-guidelines-nh-non-hierarchical-4.12.0#^s9": "e6cf20c14a906500c9080445e67c2f4f84f47e0f5f987aca6b744b9f3f62f329",
+    "20_distillates/documents/tei-p5-guidelines-nh-non-hierarchical-4.12.0#^s10": "f886787011932a8051e23df9d18fb54af71166500fe0458643d3680a2527565a",
+    "20_distillates/documents/tei-p5-guidelines-nh-non-hierarchical-4.12.0#^s11": "10abf7f2359179ed542c07b3e73c283177f15dc7302319cadb3864f94616d948",
+    "20_distillates/documents/tei-p5-guidelines-nh-non-hierarchical-4.12.0#^s12": "6a17086dcad87f79e04b3f233c32f62b4177ca16f18ba1e67d214d6f386eca1c",
+    "20_distillates/documents/tei-p5-guidelines-nh-non-hierarchical-4.12.0#^s13": "a1936462ecf647f01443b4d756470b7348121215a6477aaacafced93052b2fa6",
+    "20_distillates/documents/tei-p5-guidelines-nh-non-hierarchical-4.12.0#^s14": "d092d02e0f3d2f4e7e05e4ffdb8b700668931a72233704027ea49fea09516e66",
+    "20_distillates/documents/tei-p5-guidelines-nh-non-hierarchical-4.12.0#^s15": "7a8696361fbce689a236eabc98d84b867e173e5cf0947f98e432c68229cddbb5",
+    "20_distillates/documents/tei-p5-guidelines-nh-non-hierarchical-4.12.0#^s16": "657bb79015f539b94a9506ac4a2ed9698804a1f5dd2ba6ccb1c70d74b8dbacf6",
+    "20_distillates/documents/tei-p5-guidelines-nh-non-hierarchical-4.12.0#^s17": "5293af969b82fbad2ae5472da2712322bf51f5a062c05e48036f612af4421613",
+    "20_distillates/documents/tei-p5-guidelines-nh-non-hierarchical-4.12.0#^s18": "20da501b152ecf4bf5120e882cf1fa97a1c415c705cffae58017b78bbaff6cb3",
+    "20_distillates/documents/tei-p5-guidelines-nh-non-hierarchical-4.12.0#^s19": "7bcdea517f0aeb0b2c412c5d346a8fb3247782dfc838041615570f3cf2ca4cb5",
+    "20_distillates/documents/tei-p5-guidelines-nh-non-hierarchical-4.12.0#^s20": "12f66948c27ff75f6695758afd012d57b4232d4bac28424ce2d01bd2cb6457da",
+    "20_distillates/documents/tei-p5-guidelines-nh-non-hierarchical-4.12.0#^s21": "b0925f3d9fc97b05e27d1807e8a9b8cb91bd3c153126af837526762d9b898573",
+    "20_distillates/documents/tei-p5-guidelines-nh-non-hierarchical-4.12.0#^s22": "985128a25f46497e7c4c2e87123b15a1820fe311b8dab225aeaf7430a4e68d79",
+    "20_distillates/documents/tei-p5-guidelines-nh-non-hierarchical-4.12.0#^s23": "f4ebdd7f82b8ad9ff72f9cb7e6b00b04e24424df1afbc701ceaea4a6d93293b7",
+    "20_distillates/documents/tei-p5-guidelines-nh-non-hierarchical-4.12.0#^s24": "f85ad2d405def35223e3021c0fc80ee567d1b69f97186d7c0a9af0836bd55780",
+    "20_distillates/documents/tei-p5-guidelines-nh-non-hierarchical-4.12.0#^s25": "dd03bcaf22867dc0805b3dcd72ddc9fcc4084e4511429051d6d1363302cdab54",
+    "20_distillates/documents/tei-p5-guidelines-nh-non-hierarchical-4.12.0#^s26": "181dfe95c6222260f7c4c01dd23b1dd3a06c4fc8ecc11fa168a6fdc1d45cc084",
+    "20_distillates/documents/tei-p5-guidelines-nh-non-hierarchical-4.12.0#^s27": "fc27bb90a663f82a0e2e80dbf8d4ade7860fbf885ba1e1aee533e41226106995",
+    "20_distillates/documents/tei-p5-guidelines-nh-non-hierarchical-4.12.0#^s28": "a51269acfcb637599a095551f86c2e85cd48692751b0a10723f1c59a3d2b19c4",
+    "20_distillates/documents/tei-p5-guidelines-nh-non-hierarchical-4.12.0#^s29": "f14d7c7becafb7ba3981dd4a5009d0b2b88ec1e00817bfe91b6003cd0dc522e4",
+    "20_distillates/documents/tei-p5-guidelines-nh-non-hierarchical-4.12.0#^s30": "a8f2aef04879a02c8f29efea0672ed207cbd0dc1900827941d5770c92abd9a4f",
+    "20_distillates/documents/tei-p5-guidelines-nh-non-hierarchical-4.12.0#^s31": "97eae7cc1a1c348b27ea6ed2348e809ade87676a27e6aa7bd41f854edbdd6b02",
+    "20_distillates/documents/tei-p5-idno-4.12.0#^s1": "e882f32d738482e4eea732aa567c2589993c1ec974d8bed885c559b76c3e708c",
+    "20_distillates/documents/tei-p5-idno-4.12.0#^s2": "1e817d01ac33167c7ec202d4e0e4a720958bd84d1ba7cd9cd6b2c43f4d942136",
+    "20_distillates/documents/tei-p5-idno-4.12.0#^s3": "63cecc35dfc914474bb0867c56c1daeab0d4bdf2f35738d5b8cbbbf728aa89af",
+    "20_distillates/documents/tei-p5-idno-4.12.0#^s4": "ea0e32809450eb9420c905608a54e44c1ce5b8f6f6e65d389448f7247aa914b7",
+    "20_distillates/documents/tei-p5-idno-4.12.0#^s5": "afa89e3d33b6139e5222f9126e0847cd63cbe50ff7c59ed28a61290670a97396",
+    "20_distillates/documents/tei-p5-idno-4.12.0#^s6": "8f4569e07faf77837177de33e11e0eb5e8f32d874203559ebff73e55b85679c8",
+    "20_distillates/documents/tei-p5-idno-4.12.0#^s7": "240f323ec179f45f3e92d560423eadd383d0a605c4b1a0aaa762290a68f0fdb4",
+    "20_distillates/documents/tei-p5-idno-4.12.0#^s8": "fb0e63738c6ef2c1feffa4975fecd990f05e5bfee409391baec44bb88c781ffd",
+    "20_distillates/documents/tei-p5-idno-4.12.0#^s9": "904bac01caba4533a8bace34720445d2184008036c525c9371579e55618c2f64",
+    "20_distillates/documents/tei-p5-idno-4.12.0#^s10": "841790208469b5d4a3174322910c4c21ea1207e5431729bc9345e695a2f66d33",
+    "20_distillates/documents/tei-p5-idno-4.12.0#^s11": "dce996e5940fec6c1ca97924867d73cc01284a9cb9dfa307870a37082905daf9",
+    "20_distillates/documents/tei-p5-idno-4.12.0#^s12": "3b9999f82acd97da18272cfe3a2f6e8cca3248b89a561c02fac52ad8e428651c",
+    "20_distillates/documents/tei-p5-idno-4.12.0#^s13": "c93610ae28d7fae2c9570505f8ce679545b680436fd2dd6f89b546e5511e8ec0",
+    "20_distillates/documents/tei-p5-join-4.12.0#^s1": "2b11d71a3a9781a0a8073b6d2d9c35ff2ca09abdf32d30f5cb8530515c63787b",
+    "20_distillates/documents/tei-p5-join-4.12.0#^s2": "ea9fce431a47dbc4bce1b261746a54505c0f8c0b481df96404652a4115d0227b",
+    "20_distillates/documents/tei-p5-join-4.12.0#^s3": "08b7c16b58b351d7f4b350e2af46d8cc674e219db7ef6c32126c6d08ab9fc728",
+    "20_distillates/documents/tei-p5-join-4.12.0#^s4": "7c276759932a46bd6c4e7612bd7374c5a810823dd088018d1005832efd6267a5",
+    "20_distillates/documents/tei-p5-join-4.12.0#^s5": "9283e02720763530778cc7a5b43fc48ee1fcff48c479edf040e781f10a5a3573",
+    "20_distillates/documents/tei-p5-join-4.12.0#^s6": "2c22a524867a37d2bc71702fbe9dc88be0d27a3c748b648db9a83aa2b2840deb",
+    "20_distillates/documents/tei-p5-join-4.12.0#^s7": "b1e0c800892df623a71382564965adf7ea30c56c21c3acd220ced840dff3b553",
+    "20_distillates/documents/tei-p5-join-4.12.0#^s8": "4611cea049253aebf9df49027931d95e4ca0becc9e20a4c7fa79f12a939af259",
+    "20_distillates/documents/tei-p5-join-4.12.0#^s9": "6768ce67a21d9d3e44120b758bd47c6f3cf4969338159dfb94648177146a494e",
+    "20_distillates/documents/tei-p5-join-4.12.0#^s10": "76c18365f209c07624ae06ace64850286c995b91ec78487b8ede444006bf8120",
+    "20_distillates/documents/tei-p5-milestone-4.12.0#^s1": "8e6730b69fe34eac0a5cffeb96be0fc278e1d6997af4c7c9a1dc32a01f2c8b89",
+    "20_distillates/documents/tei-p5-milestone-4.12.0#^s2": "de12bf42a9f556c4a73c2ef6f4434302c03eb6c0b364d16db958faa121c837f0",
+    "20_distillates/documents/tei-p5-milestone-4.12.0#^s3": "ad6e7de390b1f32535243e8054d28e6d42c738b360930b51a2ef079ce26ac890",
+    "20_distillates/documents/tei-p5-milestone-4.12.0#^s4": "e0a9fcd935632a5524603da29a99a19dc9ab801a3c455191258453ca21d9c0c8",
+    "20_distillates/documents/tei-p5-milestone-4.12.0#^s5": "5fc6e79b0d19056dc9a049132e1d6d9ea676eac3c1e00dbf4a5b75dcc9250791",
+    "20_distillates/documents/tei-p5-name-4.12.0#^s1": "80088eefad5d27f9fe5da71274d0cc4e6dbac0067ba6ec12d5d7414c8c9a24d6",
+    "20_distillates/documents/tei-p5-name-4.12.0#^s2": "ca760f8b30bb7fcf51367e90b1a335f68be380559be06b5ebe8af2c12f3d2ce6",
+    "20_distillates/documents/tei-p5-note-4.12.0#^s1": "d02b46e455db54e476ca35b7f7caa5089e142696731913198b392f1ef006bdc5",
+    "20_distillates/documents/tei-p5-note-4.12.0#^s2": "d36a9e80358a5f507a32176dc070de015dbb181d35528b36f21ebafb29409d46",
+    "20_distillates/documents/tei-p5-note-4.12.0#^s3": "d6aae8535f5a6ea03c26b23310e5ea1bdca210df93991223d6bddfa5074d0b01",
+    "20_distillates/documents/tei-p5-note-4.12.0#^s4": "866427136826a98db9602bee2789628431c7555d92f495bf13abe1e4d082cc0a",
+    "20_distillates/documents/tei-p5-note-4.12.0#^s5": "68c1c15ee272768c0d61582f261994658b5292158fcceb4d5cb3d3185c21926e",
+    "20_distillates/documents/tei-p5-note-4.12.0#^s6": "bf4c5b442e7cb6e80ef5958c4e494b088448b3bac8adb0d906b961d87bcead51",
+    "20_distillates/documents/tei-p5-note-4.12.0#^s7": "449f2435bd3d940df61e278be6d9a2b9024ad7e2114b226e4608ffa0e42697a6",
+    "20_distillates/documents/tei-p5-nym-4.12.0#^s1": "8a5411b594181b75d9fcb50f07245df680bc9ae209ee4abd86b68a3a5c33a5b8",
+    "20_distillates/documents/tei-p5-nym-4.12.0#^s2": "4dcfc9dfec7c16503a3861f59433f8af100f8f23c5410a9f4a2cf6501c732c1c",
+    "20_distillates/documents/tei-p5-pb-4.12.0#^s1": "201f5bba00875301402413daf4bfb694f6c09cd6bc5b3df5b0cdad1eb362d9ac",
+    "20_distillates/documents/tei-p5-pb-4.12.0#^s2": "b199482eeb7010c059872c21aa96bb22b29edd500e9738209c4b47540919a9cb",
+    "20_distillates/documents/tei-p5-pb-4.12.0#^s3": "e62814ab320e8c89405242b672f38d9d23b2a08c15dd7edc16f12068027f60b9",
+    "20_distillates/documents/tei-p5-pb-4.12.0#^s4": "91318e28035e47ff36858e01b84f1c0fe99885081765e66021cc03f80bd5dd36",
+    "20_distillates/documents/tei-p5-pb-4.12.0#^s5": "d9b69f905608a4cfd6a11424cbbb6ea45d2d6740aa3b22c195e43f098a20e810",
+    "20_distillates/documents/tei-p5-pb-4.12.0#^s6": "4be497674166a665457b4f3a030e23f5a4e00a8f92c2d6a1f25d505080d858b8",
+    "20_distillates/documents/tei-p5-pb-4.12.0#^s7": "15e13f3a5011794ab9581b66c4dd83a7483c49b7c7471813644648a4ac9bdc0a",
+    "20_distillates/documents/tei-p5-persname-4.12.0#^s1": "67e6baba9be170267f00e32201158e659aac441df987bfc9112c6ad8634be20d",
+    "20_distillates/documents/tei-p5-persname-4.12.0#^s2": "fea9a3b40e6dbad78ff88368c91127bd1b00763aae1e3d26c29ad6556abe1d3c",
+    "20_distillates/documents/tei-p5-person-4.12.0#^s1": "39690b2fd94597ae0da28e4758c8a1b47ceff5632ae1b195bb8faa6affdb050d",
+    "20_distillates/documents/tei-p5-person-4.12.0#^s2": "164302240e21e47295ce01b69504aa3f31a22bc01b8da996f6361c33ef296f16",
+    "20_distillates/documents/tei-p5-person-4.12.0#^s3": "473d126a41556447c4fd1d92946c608bd7d3c35fe8879faf1d0d500a5c2bf690",
+    "20_distillates/documents/tei-p5-person-4.12.0#^s4": "91fefb577b70dbb20355d90a2256c8b48317e06ee5e68d244670347774d309e3",
+    "20_distillates/documents/tei-p5-person-4.12.0#^s5": "ef9dd79d0dbc308931f948374173f295b6c3e5dc6c1f2882d7ad2a2ab65d4359",
+    "20_distillates/documents/tei-p5-person-4.12.0#^s6": "6b03835eb3c8c516e55a6f250e68f497f9339718481ac8f068357524f0bd9223",
+    "20_distillates/documents/tei-p5-person-4.12.0#^s7": "9d7379298b469ec51b2ea517406f711eb8c4f0d27b80aee63065465b183b0151",
+    "20_distillates/documents/tei-p5-person-4.12.0#^s8": "a7c8f571980372cc8b650f88c2b3e8e6c1394833e684bac69b3af9ff41323956",
+    "20_distillates/documents/tei-p5-person-4.12.0#^s9": "bfb97fddfe778c9b48b640e5bde7069223d6dde934e08e58dbcae213db477bb1",
+    "20_distillates/documents/tei-p5-person-4.12.0#^s10": "237843b52ce05f93564b758c2323b8bb8576ecc4ea961894e43d71c030253332",
+    "20_distillates/documents/tei-p5-place-4.12.0#^s1": "5531dc7737f2ce9a9b83c6e03b1db7815499f98d6945a001225d429d26fa4a69",
+    "20_distillates/documents/tei-p5-relation-4.12.0#^s1": "b119b37dc3fc94446c37c0eb1a4672b6d3f95ef05ee14868fa88e87875e7b3fe",
+    "20_distillates/documents/tei-p5-relation-4.12.0#^s2": "0ea3318bb9b95a14e07454558b3fb40e6c87ff92da4a08f28bb12c638e813956",
+    "20_distillates/documents/tei-p5-relation-4.12.0#^s3": "ce56b57a24b91df38c344cc1417e90250d2aca0a7fdeec66af0de9d44bceaad6",
+    "20_distillates/documents/tei-p5-relation-4.12.0#^s4": "caefabfc9103673c7f7939aecb4cb836ba91ce0ca10d92f6ea6f7181e4bffd6d",
+    "20_distillates/documents/tei-p5-relation-4.12.0#^s5": "922899788868465f4648813e003db9a310938eb0320c5737536fbfe5c6447768",
+    "20_distillates/documents/tei-p5-relation-4.12.0#^s6": "9f435f1b41c3d02d63dc8128c89e9a95491e2d88042cc49c8bdb8c315cc46170",
+    "20_distillates/documents/tei-p5-relation-4.12.0#^s7": "a63bb4ca95ae2be64a9cff6e4fe01bb16a85021115644502763a23de14ada866",
+    "20_distillates/documents/tei-p5-relation-4.12.0#^s8": "9bd5d07f706c4d7f6115bd88a569c1bd060794dff8f92618d7f466fdd79b6966",
+    "20_distillates/documents/tei-p5-relation-4.12.0#^s9": "5a07b8e2ea18241f183e2e4daf357be68a7c225c5183b2d669acf68ace1daee3",
+    "20_distillates/documents/tei-p5-relation-4.12.0#^s10": "03bef003bed25e0e892f15ae2ce1c62acb4fedbf9c67eb58cab616c2069daafb",
+    "20_distillates/documents/tei-p5-rs-4.12.0#^s1": "b5f8b9ead6c362c8870bf95b3b68fdbe13078ead01a2ba12f23e4fdac7f73af6",
+    "20_distillates/documents/tei-p5-span-4.12.0#^s1": "558e1a84b8ce1ea5c0250dfb0e3beb1da3d3d1dcc1c6a7837340bc8edbfa1127",
+    "20_distillates/documents/tei-p5-span-4.12.0#^s2": "0708a63ee18d410e2fbf4c74d9665bd06daf2cb4494d0a30f4fad971886a4343",
+    "20_distillates/documents/tei-p5-state-4.12.0#^s1": "b94c9aee1326a362abff2e381e34c5aaaa541e2fe9511675ae00147d407804a1",
+    "20_distillates/documents/tei-p5-state-4.12.0#^s2": "b57c5491080780727829dfeb3b63ca8588797d1d992b4f698d92b7a6e6e40b16",
+    "20_distillates/documents/tei-p5-state-4.12.0#^s3": "c0f15974ff47453673b9de8a2c82adc7d25880e0f0616b1250a418c0897770b2",
+    "20_distillates/documents/tei-p5-state-4.12.0#^s4": "93ad727af174ce4fe721e90b55d2c5f2c7360dba35357755485564738af5df76",
+    "20_distillates/documents/tei-p5-state-4.12.0#^s5": "60bed26334b8db745f14fe5a2e0886a429e62ead96d1bf8089074c5771add2be",
+    "20_distillates/documents/tei-p5-state-4.12.0#^s6": "2e5dbd1471ff22a1bc18817d02c2bd67beaca88c5270b13a2d901173cbf3b437",
+    "20_distillates/documents/tei-p5-state-4.12.0#^s7": "2830c8717718c3506e68dd95ea33bc8337ad09de287e14fc4f9aa7bdb8046987",
+    "20_distillates/documents/tei-p5-state-4.12.0#^s8": "e57deb6ee674234389021018fca09c201514dab5b5be3392cc6cefd457d69ae3",
+    "20_distillates/documents/tei-p5-test-testnames-4.12.0#^s1": "c95d9e3a59095a6252fdded4a0cf9000748b35a65585d15786ba7efbf57776bf",
+    "20_distillates/documents/tei-p5-test-testnames-4.12.0#^s2": "16d73634b061b76d8a9722a6ac39593d893a7d8252dcb7f8dd30a219fc4015e6",
+    "20_distillates/documents/tei-p5-test-testnames-4.12.0#^s3": "da7b7216b6699ccdf4d7e510690a9249fee17764cfdeb675a3d7ae7af152ff75",
+    "20_distillates/documents/tei-p5-test-testnames-4.12.0#^s4": "8da1772e297b11d4cd455019ac9d98201c5b92009c5e71bc03c0aa6aac2f7e6d",
+    "20_distillates/documents/tei-p5-test-testnames-4.12.0#^s5": "0241f5b75488651fef3159e9c18ab4639bcaa0a588703fac9634744da4081000",
+    "20_distillates/documents/tei-p5-test-testnames-4.12.0#^s6": "5a208b5ab442c9d4d91ef4b4e5274968476ddb1aff6a1887ad8c4c19402aacb7",
+    "20_distillates/documents/tei-p5-test-testnames-4.12.0#^s7": "ad8d6f5011393f40d3175c2e903f6530f3c39b64cd49637e6a6ee546e434562a",
+    "20_distillates/documents/tei-p5-test-testnames-4.12.0#^s8": "04b00f602d41158fff40f5ebf35cfc679352b3b3b112fad4ecd138888e7d6a5d",
+    "20_distillates/documents/tei-p5-test-testnames-4.12.0#^s9": "4aedb580cda20419dba6740d98515e554c218381410039e1316626980e425f02",
+    "20_distillates/documents/tei-p5-test-testnames-4.12.0#^s10": "fcdb28001625c994ac1bb31d8ef79d9f489f7e23230a09e81898bfa3d0504ae3",
+    "20_distillates/documents/tei-p5-test-testnames-4.12.0#^s11": "722c1dc4eca104528a349b51121a6b6f4b2c02d491b2ec575726da3b848d5fd3",
+    "20_distillates/documents/tei-p5-test-testnames-4.12.0#^s12": "1b73993bb48fb4d9b19e5ec1a1583f1f67a507a4e782cca0148fd457e2da3fbe",
+    "20_distillates/documents/tei-p5-test-testnames-4.12.0#^s13": "cf398d34d7d5d111f5494d0caa39f4917cbee4b9e81255d296f330a197d87f36",
+    "20_distillates/documents/tei-p5-test-testnames-4.12.0#^s14": "e0fda016aa7cf0d291ceb19742e9ebf9956b46395ce2a55baa18ec166383e3ba",
+    "20_distillates/documents/tei-p5-test-testnames-4.12.0#^s15": "2bb3447e9b0c6416fd22cf13bd18bf298f9bd257b070887ae086c94dc6762aa7",
+    "20_distillates/documents/tei-p5-test-testnames-4.12.0#^s16": "5b7c1c9b5512a1c1cde136d04271faed6984ce762b6cf26a2f96d85d4647f6d2",
+    "20_distillates/documents/tei-p5-test-testnames-4.12.0#^s17": "d936622613464b2e244ae3722f1140d764ff5f890964c7c664f704dfc901ca1c",
+    "20_distillates/documents/tei-p5-test-testnames-4.12.0#^s18": "d39c46454cb6a699e927f449433b0545a415c6b89df4febfbfd2d9b9e59d794c",
+    "20_distillates/documents/tei-p5-test-testnames-4.12.0#^s19": "b40f5c13fccc83e6431e4060cb986f315b9d9e7feefd98e95cace97cd586e07b",
+    "20_distillates/documents/tei-p5-test-testnames-4.12.0#^s20": "b0d8eabf777d6b77a2d7aeab9a2fd1f507d0e89a76a5e5ff974d554e8f011d11",
+    "20_distillates/documents/tei-p5-test-testoverlap-4.12.0#^s1": "7c09ba89a20665da2c1c3079eab00bda3a48c13d854df8c50bbba878ff9db484",
+    "20_distillates/documents/tei-p5-test-testoverlap-4.12.0#^s2": "17f77c9fa60b490ccf7557b4c2a00f9cc57dd8e428cadd928bdea2615e49b58e",
+    "20_distillates/documents/tei-p5-test-testoverlap-4.12.0#^s3": "50eaffc2095e6baf5ced4ca28a5755af51e5a0dba4a00ebd12895c4b01ea991c",
+    "20_distillates/documents/tei-p5-test-testoverlap-4.12.0#^s4": "0e22dab7ee65d3de9dd5efdd461bf47b37095dac756c9f36336afcf01ff8e5cc",
+    "20_distillates/documents/tei-time-for-p6-readme-2026-07-16#^s1": "2cc9f131a1afe2286afa9b813d57705e786bd3f380c48c59df00fde88d668300",
+    "20_distillates/documents/tei-time-for-p6-readme-2026-07-16#^s2": "6a453d1ba338290550f243d822ebb5d97e3a2c81099dd9b7e8480b1c030a2266",
+    "20_distillates/documents/tei-time-for-p6-readme-2026-07-16#^s3": "0eb30888bc4bf2ee9b7c8cc413d50cc2523ccae6dd20a54438bc944d24fc1067",
+    "20_distillates/documents/tei-time-for-p6-readme-2026-07-16#^s4": "4df1aa03000565722234edbd64b55c43aed02ce10248fa382bbae87e00151620",
+    "20_distillates/documents/tei-time-for-p6-readme-2026-07-16#^s5": "97f5264b9771a79520279cd22ece79ab34bdc9014e66f65beacc98829bf26536",
+    "20_distillates/publications/piez2014range#^s1": "42d2305292709f224a21f14c49da069125cadeb04d98517bbe6b0929ab089583",
+    "20_distillates/publications/renear-wickett2010documents#^s1": "032325ad3c430035a13c084d3ef9bf30d14b94de2a81bdc9be4a81c58f321bc8",
+    "20_distillates/publications/tei-sourceforge-fr363#^s1": "2b5b3bc3dbfffd90bb674106b61bbb6c91adb8af6742532663234837b3b2c5c1",
+    "20_distillates/publications/teic-tei-issue-1400#^s1": "4eafebcdc3ceac8d8101788688939b1bcba26bb768fa883eaf265cd925b4b9ae",
+    "20_distillates/publications/teic-tei-issue-1400#^s2": "76a4e0e5dbd61c5706fc5acfb793b70f5781f866319151a8313b05aff471dfd9",
+    "20_distillates/publications/teic-tei-issue-1400#^s3": "044e2451e46cbce9781727fa230371c0799312e9f80fc31a80aa391a4e3e5d63",
+    "20_distillates/publications/teic-tei-issue-1414#^s1": "d28e384c17c338e576928c1db8df58f7fc7089dca39d299b3ca227e5bfa13f48",
+    "20_distillates/publications/teic-tei-issue-1414#^s2": "cc7486cb987824ce2c462de82c487279d706eb1b85b81e2ed3e698bc83d53d5a",
+    "20_distillates/publications/teic-tei-issue-1414#^s3": "6ea76c77f7873e987fdab71305036fdea894643805bc3807a5bd1e68774d1088",
+    "20_distillates/publications/teic-tei-issue-1414#^s4": "af7e2c55a6dfa4aaba6cc2143cf883ed2376b3b9c9afb5065469eb892dc1a637",
+    "20_distillates/publications/teic-tei-issue-1414#^s5": "cd1d48ef8ecd611cd072c9fa7da01c3f49fd742158dbe01f1821d863682e4645",
+    "20_distillates/publications/teic-tei-issue-1414#^s6": "87363fa8db4889179e763bd64d84d25ab3f6861f376d61bf2d4118cbf61884d9",
+    "20_distillates/publications/teic-tei-issue-1414#^s7": "708d04be9ca50b3cbbd94ddc094baf4551d16950a570e4dac11a17dcbfcd1616",
+    "20_distillates/publications/teic-tei-issue-1414#^s8": "95702c0897eaedf357223f3f10a03899cbb5ec3c7a64ef371140559ef08f4896",
+    "20_distillates/publications/teic-tei-issue-1414#^s9": "602f10d709ff0acd4aa705951f818e03504fb741492260054c60e1ff4d0366fe",
+    "20_distillates/publications/teic-tei-issue-1414#^s10": "82259fd11971ec35daeb651f09673e959f5d8d1359968beb2721461c6f007fa0",
+    "20_distillates/publications/teic-tei-issue-1414#^s11": "d4c7c1bd3df531f7735cd66951177de42bdbe83ca63ab575b0d3ad2f64233306",
+    "20_distillates/publications/teic-tei-issue-1414#^s12": "cca41126fddb1a92bb941ebeefada32be76884a5777e71561eafbf49349d6326",
+    "20_distillates/publications/teic-tei-issue-1414#^s13": "149b11e0f063c7522fad3433e5d8f705c0cd3bc0ceb8ead0294bbfb803199053",
+    "20_distillates/publications/teic-tei-issue-1414#^s14": "28e28bb1bb34aba746d74a1af5c0916f2258c1977e05a8d9021df6691f7c6c0d",
+    "20_distillates/publications/teic-tei-issue-1414#^s15": "b95aa8de4947a40b73f9b4899419017522862d9b66f1817abedcc43e467eaaa6",
+    "20_distillates/publications/teic-tei-issue-1414#^s16": "97f5dd8e8dbdd35abaa69a9eadd818108237ffb214fd60e9ea32d5e2fc1430a4",
+    "20_distillates/publications/teic-tei-issue-1414#^s17": "9b89f0919b66e9d69e6ba111db0828ac12c4b1acde5d3ad7a7d77f821a7d3161",
+    "20_distillates/publications/teic-tei-issue-1505#^s1": "bd8913a0d45fc07aa392fd604ae759d74be2a59ccdfd02001f04486d1bef9ed2",
+    "20_distillates/publications/teic-tei-issue-1505#^s2": "45426a4c84f4b57218d24e4b1facc7d029f26652f5a72f4da51dff615311575d",
+    "20_distillates/publications/teic-tei-issue-2739#^s1": "5b26a79b09638f04fa1d80e5a3705d09d397c98604dd1e8db1102ccd22a6fc3f",
+    "20_distillates/publications/teic-tei-issue-2739#^s2": "237321b975af6924736f977f84759a129d77166c858edc3ec769a5a6b9c718fd",
+    "20_distillates/publications/teic-tei-issue-2739#^s3": "14824f7c7e0f24dbaa41f69281166acb2e93d03bb04d0473a7c08fa0b9101d8c",
+    "20_distillates/publications/teic-tei-issue-2739#^s4": "261f99c38c7a54fa5d463e33f99a9009c4a70e5130498737bdc91c2bd21658e3",
+    "20_distillates/publications/teic-tei-issue-2739#^s5": "40a9aa9cf48c318d84a6b16f787cb66a1265c6d5b5f862e012ad66c0171a8099",
+    "20_distillates/publications/teic-tei-issue-2739#^s6": "af1e29d4a56be2ae0286dafeeef803b4c1501d4489a691bc4f06f4d90d8e2794",
+    "20_distillates/publications/teic-tei-issue-2739#^s7": "5e19dd0d9f564a65e98dcaa03a8d2445c4d3cc63f086353dfec2b703b9429b9f",
+    "20_distillates/publications/teic-tei-issue-2739#^s8": "4d330cf9be11aff14972b3e1935394c4fea30549ec54e27646a8a17804d515f9",
+    "20_distillates/publications/teic-tei-issue-2739#^s9": "99cddec5adc0ef8d969194e1c1295b40ebdbb0a2558a579651a5aa0814232372",
+    "20_distillates/publications/teic-tei-issue-2739#^s10": "0bfe5c5177496ea12b6fc25890645a6bf536230a0d9573f55ced916a4e193cfd",
+    "20_distillates/publications/teic-tei-issue-2739#^s11": "21dc60522a0dbff125e9193c23e60470a1bf25bec85615940d04322fca5ca1f4",
+    "20_distillates/publications/teic-tei-issue-2739#^s12": "05a48e4dee35f54bd6037a48c3b969535f83f8e015450aff8f75d61bd2a6f0ef",
+    "20_distillates/publications/teic-tei-issue-2739#^s13": "db796035e3620de5662a4252ca6eeb77714c1ab18401b48e6e7e070a9673e674",
+    "20_distillates/publications/teic-tei-issue-2739#^s14": "4b986c96f913d34268459ea7452d21b4f6bc8f3e5472d354f77145b8437674b9",
+    "20_distillates/publications/teic-tei-issue-2739#^s15": "1ff0c8c5419ec311ea9a88fc910733b74a7caa2d8e97dc5a142c36350751c2e3",
+    "20_distillates/publications/teic-tei-issue-2739#^s16": "1ee2bb61f2cd8e67bb1196845a3c2fd18c89d20f8bca239953377ae19e6566fa",
+    "20_distillates/publications/teic-tei-issue-337#^s1": "838d913b8d302ed0e2f4c9a339da7f2b985fe8ac13b5fa8a3e8018ab3d2f0e4d",
+    "20_distillates/publications/teic-tei-issue-337#^s2": "0da90b3751373ca2391cb55be73ee77dadb1bc889845a91b2abf199a2a38b934",
+    "20_distillates/publications/teic-tei-issue-337#^s3": "b894c3daad3d530f96cc56c71d8860bee11529b193a712a7b25729f56e3171aa",
+    "20_distillates/publications/teic-tei-issue-337#^s4": "ff3382e52e75cf8973f2f8181366a6946fa5b8c5fa3172a8d7f3598f63efb9cd",
+    "20_distillates/publications/teic-tei-issue-337#^s5": "f18a81dca7a1dcb42c36747a7385a2b5eb84e0271fcd892831048fe08cd604c8",
+    "20_distillates/publications/teic-tei-issue-337#^s6": "3f9e424636a829272c9b753478a7d4a58956cbd26e2d4ce303c30694de676736",
+    "20_distillates/publications/teic-tei-issue-337#^s7": "3e4b9babb23e3f16e8a8b0ee4ba77bf11d34a54089a4a6cecf74c9fd69d5ed27",
+    "20_distillates/publications/teic-tei-issue-337#^s8": "d44df4257605221d1912fd02f0672e0076e2cb0b8b9632e832f4b7ff0629d905",
+    "20_distillates/publications/teic-tei-issue-337#^s10": "33778a4f18dc67db7402199839167a379124ec2e30b6742f62f2e9b42f9757bf",
+    "20_distillates/publications/teic-tei-issue-337#^s11": "0024d20893401e756ef38264f70cffa4403467bb08ac16624a4e213a447000fb",
+    "20_distillates/publications/teic-tei-issue-337#^s12": "094eacf1640900991a4aab847d53d4346d60a9d1c441de98d463530f8c898e68",
+    "20_distillates/publications/teic-tei-issue-337#^s13": "044635e4c64a45e96becacbafab337c6834abb54be27a716f032670df56e6d95",
+    "20_distillates/publications/teic-tei-issue-337#^s14": "02ea7aad4a4a7471de00b108db8569fe82341567e8046ea9caf126d475f192da",
+    "20_distillates/publications/teic-tei-issue-337#^s15": "289030de725d35f419b62e4a9c88725777defdac02716167f89b1801104d7891",
+    "20_distillates/publications/teic-tei-issue-337#^s16": "c7f0b3e9ffb7da4bf493cf229b07d0fa238ad882b9850ec281305053d554d315",
+    "20_distillates/publications/teic-tei-issue-337#^s17": "bdb92850da01f363c15a384c03e0585f38b0de7757f79d480e23291c24fee6e4",
+    "20_distillates/publications/teic-tei-issue-337#^s18": "89b936577913e9271f5ae05d38427921849791b1c17596d1ac3ce6c209bd9040",
+    "20_distillates/publications/teic-tei-issue-337#^s19": "78bf991d5c68de7e4ffcff95f9f51813eaec06e9eb60895d5a5dc1cdecafd28d",
+    "20_distillates/publications/teic-tei-issue-337#^s20": "b01dc276e0212aafbe19d07cd7050efd8003380a337f4195e13b33ec35f56a18",
+    "20_distillates/publications/teic-tei-issue-337#^s21": "ea153a6e26de5f2cbc28f8b2588faec44b068178ea651fb6de5ab2f000135035",
+    "20_distillates/publications/teic-tei-issue-337#^s22": "449a919c3687c5c6022c000c90f23e2f3ecb44083c04f3d3056d988c98579019",
+    "20_distillates/publications/teic-tei-issue-337#^s23": "62ad5545049c5750697ea73ace9dcda39d6e915951789d9ebdaa780fedb8120f",
+    "20_distillates/publications/teic-tei-issue-337#^s24": "c631c077f38f8eae60a577e56019492a73b54975e1c4604119a6db4545539f74",
+    "20_distillates/publications/teic-tei-issue-337#^s25": "67ee72e008d2120d32f42cb0281f9bb15c503b931953fd497c72bff748397d01",
+    "20_distillates/publications/teic-tei-issue-337#^s26": "47f535c71e091e5b2b4dbf11ddfb8dafdcf431a38e508c34f37f06b5ca697920",
+    "20_distillates/publications/w3c-web-annotation-20170223#^s1": "19a08ab5fd090c6ba13c1c96622b4e967c97c6d3b83d2b65439a1f3244fc864c",
+    "30_assertions/hsa-dateline-retains-short-year<-20_distillates/documents/hsa-letter-4493-2026-09-07#^s1": "7291c643c48b740ab95013b8fb17911caf80a72a319e4a12a12c843dbb58b014",
+    "30_assertions/hsa-origin-and-sent-dates-have-distinct-contexts<-20_distillates/documents/hsa-letter-4493-2026-09-07#^s2": "4dca92b473420368eb885a28ccc6ee85a0e598a95187273181050354d4ef4423",
+    "30_assertions/hsa-origin-and-sent-dates-have-distinct-contexts<-20_distillates/documents/hsa-letter-4493-2026-09-07#^s3": "76e2af02571246504358cac73ca380862161f61178b6a4c2f009edb7ac6dd0e6",
+    "30_assertions/humboldt-diary-encodes-a-dated-nested-heading<-20_distillates/documents/humboldt-h0017682-7d174637#^s1": "0217a6188a7c0c6ad3f01a10547b2fea2b897b61fcaec8797f899b8106ebcdcf",
+    "30_assertions/humboldt-diary-encodes-a-page-pointer-and-separate-foliation<-20_distillates/documents/humboldt-h0017682-7d174637#^s3": "71841eae8fe2871004573f42c1a18a708ecc7c1935d0287bbe946b77baeadd20",
+    "30_assertions/humboldt-diary-separates-an-unknown-hand-note-and-editorial-explanation<-20_distillates/documents/humboldt-h0017682-7d174637#^s2": "2fc966ebf633687edc1cd2e7e092e1c1d2eeabcd0b768f9dcc8477688d8d2474",
+    "30_assertions/p5-anchor-identifies-a-textual-point<-20_distillates/documents/tei-p5-anchor-4.12.0#^s1": "ea4a5e1e534311e3f333e5dd4af19ff1c08ce0239f1b41cd9701b31c8f40452e",
+    "30_assertions/p5-annotation-refers-to-web-annotation-model<-20_distillates/documents/tei-p5-annotation-4.12.0#^s1": "7450543709508b72530a8cd7b559a0bebcb0a53f8ec69a1ac692db65a09024b8",
+    "30_assertions/p5-att-canonical-associates-a-name-with-canonical-information-about-its-object<-20_distillates/documents/tei-p5-att.canonical-4.12.0#^s1": "d909310e77837e2a826a61d82bb915d9842c87d3ce1f5042ae33bb1fb923762c",
+    "30_assertions/p5-att-canonical-gives-no-precedence-when-key-and-ref-co-occur<-20_distillates/documents/tei-p5-att.canonical-4.12.0#^s10": "2889858fe8ed0953ac6cc7f4cda07520832af3b83c259ac0f07177d291d96b56",
+    "30_assertions/p5-att-datable-provides-attributes-for-normalization-of-elements-that-contain-dates-times-or-datable-events<-20_distillates/documents/tei-p5-att.datable-4.12.0#^s1": "ec3c81c5c21294d409c12f633e566899ea81e56f8164eaff63b1805b37f8dce2",
+    "30_assertions/p5-att-global-responsibility-indicates-the-agent-responsible-for-something-asserted-by-the-markup<-20_distillates/documents/tei-p5-att.global.responsibility-4.12.0#^s1": "eb8aa2acd29ad30397e6b29a2d2da3da6a00c0f1606448c1ba2e1cc80bb70597",
+    "30_assertions/p5-att-naming-describes-nymref-through-the-object-named<-20_distillates/documents/tei-p5-att.naming-4.12.0#^s3": "e983078ce3f719876dc2be43cb7b8fd45536834313eb8a5fcf12f72a9b8571b4",
+    "30_assertions/p5-att-naming-inherits-key-and-ref-and-prefers-a-direct-link<-20_distillates/documents/tei-p5-guidelines-nd-4.12.0#^s3": "d428589c948c198845eac1cb8f3df334297f48c72f1c434ca8fc3546933f7326",
+    "30_assertions/p5-att-personal-provides-common-attributes-for-elements-forming-part-of-a-name<-20_distillates/documents/tei-p5-att.personal-4.12.0#^s1": "2d3517b6a7d1c608b1d30a6d84c46f73eb0d73c401d16d9e07188d0ccf73b27b",
+    "30_assertions/p5-core-elements-state-the-kind-of-referent-only-through-type<-20_distillates/documents/tei-p5-guidelines-nd-4.12.0#^s1": "9d45540724351f07ffc0a3bfa0e08389e1d9b58343f0ea4dc94d766637c65eab",
+    "30_assertions/p5-each-statement-about-a-life-must-be-documentable-and-time-framed<-20_distillates/documents/tei-p5-guidelines-nd-4.12.0#^s24": "a64f0e6ad5babce0575c5dfc33f08fa1984f44a8c7f9b502209608c939a50156",
+    "30_assertions/p5-entity-information-comprises-statements-about-traits-states-and-events<-20_distillates/documents/tei-p5-guidelines-nd-4.12.0#^s21": "bbe48c7e133b24b10c24b4157aaa38cc62f32120711db8e8869947c8c5eae80e",
+    "30_assertions/p5-evidence-indicates-the-nature-of-the-evidence-supporting-an-intervention-or-interpretation<-20_distillates/documents/tei-p5-att.editlike-4.12.0#^s2": "a4cb981284d5ca1241f46196c17365caa3aee6b5dbb7ad13bbf99e39b7d9256f",
+    "30_assertions/p5-generic-description-elements-carry-certainty-and-responsibility<-20_distillates/documents/tei-p5-guidelines-nd-4.12.0#^s37": "23846c3fde884268a18313467c260d262e2bc154772dd3814e60d4e4fac4e8a0",
+    "30_assertions/p5-guidelines-admit-persons-places-and-organizations-as-relationship-participants<-20_distillates/documents/tei-p5-guidelines-nd-4.12.0#^s38": "2e63903ebdcf991319d10d67ec820e03b7bc1b92f78552ba099bd06f7b0aeac1",
+    "30_assertions/p5-guidelines-admit-persons-places-and-organizations-as-relationship-participants<-20_distillates/documents/tei-p5-guidelines-nd-4.12.0#^s39": "3c24fbc98c020d77043637f25075f93d5c54d10bc13bebebbf665bbb017ceaf0",
+    "30_assertions/p5-guidelines-detach-the-nymref-association-from-the-entity-named<-20_distillates/documents/tei-p5-guidelines-nd-4.12.0#^s56": "54660cdfcc592096736369e7dcc0901a4e5b20e7574d3944d16fdc8a9438d086",
+    "30_assertions/p5-guidelines-distinguish-names-for-places-from-other-data-about-places-as-they-do-for-people<-20_distillates/documents/tei-p5-guidelines-nd-4.12.0#^s42": "abef7fef2845685daf62506f1f832dde3795435bab89567460e25cdbd8e5f063",
+    "30_assertions/p5-guidelines-distinguish-resolving-a-name-from-treating-it-as-an-object<-20_distillates/documents/tei-p5-guidelines-nd-4.12.0#^s55": "de0c98fef23d77d72c5941c372b08bc6e9a1a50ffc93181ffc04bb081300ac9d",
+    "30_assertions/p5-guidelines-group-information-about-a-person-as-distinct-from-references-to-a-person-within-person<-20_distillates/documents/tei-p5-guidelines-nd-4.12.0#^s26": "5397ba537ede1bccaadd3b0cb27a5c648987b91e0ab23c5e95b29e6d0cc996b6",
+    "30_assertions/p5-guidelines-let-an-encoder-regard-a-city-and-its-predecessor-as-one-place<-20_distillates/documents/tei-p5-guidelines-nd-4.12.0#^s43": "da3b4ea7a8818342c45d1e877fe43769b34d81b5bf9bc1e08ffd903eecabbb7d",
+    "30_assertions/p5-guidelines-present-three-encodings-of-a-nationality-as-the-same-information<-20_distillates/documents/tei-p5-guidelines-nd-4.12.0#^s33": "ced46d666a963842764a92eb954790fe1fb0f19b3242a3576ab17ba08c5b4e5a",
+    "30_assertions/p5-guidelines-separate-the-entity-record-from-references-to-the-entity<-20_distillates/documents/tei-p5-guidelines-nd-4.12.0#^s40": "614ffec77969b84fd67d48bbe1261b071f684b6675824475b0d665d1dfea191e",
+    "30_assertions/p5-guidelines-state-that-interchange-is-improved-by-tag-uris-in-ref-instead-of-key<-20_distillates/documents/tei-p5-guidelines-nd-4.12.0#^s5": "f8d2fa69b9fc542857a1fb65ce285e437919c18cb3fcb3fbd7bc641c4e128b90",
+    "30_assertions/p5-guidelines-use-generic-state-trait-and-event-customized-through-type-for-information-about-a-place<-20_distillates/documents/tei-p5-guidelines-nd-4.12.0#^s49": "b7af79c98ba4e269ae159c3fb294effeff9940a66bb921e2f249a54f223a8878",
+    "30_assertions/p5-idno-serves-labels-that-identify-an-object-or-concept-in-a-cataloguing-system-or-a-distributed-system<-20_distillates/documents/tei-p5-idno-4.12.0#^s12": "6bc4de86dd485c58995231322eced50e84b9a20905e275e3761d1d83bdfe8d22",
+    "30_assertions/p5-idno-supplies-any-form-of-identifier-used-to-identify-some-object-in-a-standardized-way<-20_distillates/documents/tei-p5-idno-4.12.0#^s1": "7b2768031ae459df942dcf1e02cbcc591cd44a5a64ebbf54f8807e615617dfa8",
+    "30_assertions/p5-key-identifies-the-entity-named-through-an-externally-defined-coded-value<-20_distillates/documents/tei-p5-att.canonical-4.12.0#^s2": "56b2b5b973094ef044db9dc6cc23f26f72c164cbc2e9b24ff285e729580a85cc",
+    "30_assertions/p5-key-remarks-propose-no-particular-syntax-because-its-form-depends-on-project-practice<-20_distillates/documents/tei-p5-att.canonical-4.12.0#^s4": "bdb8cf6b61d2fb0a6481bbd156ff0f79a2514487e444f377b14f4df58a270b2f",
+    "30_assertions/p5-key-requires-resolution-documentation-for-interchange<-20_distillates/documents/tei-p5-att.canonical-4.12.0#^s8": "ae07b8f40d0a4a83e5bdc46a96694ea762774f7f3067a6ced5ec1abaee900376",
+    "30_assertions/p5-key-serves-cases-where-no-direct-link-is-required<-20_distillates/documents/tei-p5-guidelines-nd-4.12.0#^s4": "177cc39b451130a5824401e0182443d830f5d912799bc5c052fbd4b458cc9ee5",
+    "30_assertions/p5-name-component-markup-does-not-cover-every-name<-20_distillates/documents/tei-p5-guidelines-nd-4.12.0#^s12": "284a2fe910d5984c0ce5d33eeff8693f1ae1701e63f7a591d817083cbc9d7381",
+    "30_assertions/p5-namesdates-represents-the-referent-and-the-name-independently<-20_distillates/documents/tei-p5-guidelines-nd-4.12.0#^s2": "9dbc3141a19351d297e6ea4ae602d464f1ffd60b52577c040701fe63a59ce041",
+    "30_assertions/p5-nested-description-elements-inherit-type-and-responsibility-and-may-date-more-precisely<-20_distillates/documents/tei-p5-guidelines-nd-4.12.0#^s50": "c35873e4bd5688ed57305fb68cce40cb8ac38752183548f10bc3cc1ee2ec6a35",
+    "30_assertions/p5-nym-contains-the-definition-of-a-canonical-name-or-name-component<-20_distillates/documents/tei-p5-nym-4.12.0#^s1": "6b5c73b57eebcb3afee2b89bd264c3609291f4f1396af89f7faafd12408e35a8",
+    "30_assertions/p5-persname-contains-a-proper-noun-referring-to-a-person<-20_distillates/documents/tei-p5-persname-4.12.0#^s1": "8944af0e9e432af5ed3b42b87c9e26b4b8d4d3605a1a7a8ad31948967a806296",
+    "30_assertions/p5-persname-is-synonymous-with-name-of-type-person<-20_distillates/documents/tei-p5-guidelines-nd-4.12.0#^s8": "eeb9c06a3955629ca5a0d9c5c915eab3be0d8a0f6e1c9bce5ab771c8780ce18e",
+    "30_assertions/p5-person-description-elements-are-datable<-20_distillates/documents/tei-p5-guidelines-nd-4.12.0#^s36": "724dc7bd9b3dd70f505b98d09e1896999e46d5561fdce42ebb405727459b5415",
+    "30_assertions/p5-person-holds-variant-name-forms-without-prioritization<-20_distillates/documents/tei-p5-guidelines-nd-4.12.0#^s32": "34216f7944d35ecd5c0b5aa2247c6da936bae32c3aa4019e594481e8ba1e6793",
+    "30_assertions/p5-person-provides-information-about-an-identifiable-individual<-20_distillates/documents/tei-p5-person-4.12.0#^s1": "b6c2901ccc262dc2b49ba1f910cc064537a4fbd8876fd385e061dc1f38518ba9",
+    "30_assertions/p5-place-contains-data-about-a-geographic-location<-20_distillates/documents/tei-p5-place-4.12.0#^s1": "38c4a7207df7f8752ab67afae385953befc5364a775af16399838f6837877986",
+    "30_assertions/p5-placename-abbreviates-typed-name-or-rs-at-the-cost-of-their-distinction<-20_distillates/documents/tei-p5-guidelines-nd-4.12.0#^s18": "0e63a7e9e15cab414e335254cf86de5d00533a25d3b8f93952cb3e82b2840353",
+    "30_assertions/p5-prosopography-records-refer-to-external-authorities-through-idno<-20_distillates/documents/tei-p5-guidelines-nd-4.12.0#^s25": "5fa4f7a10c8dd6afd9cf3b5adbf187994af6a572d6a1ebd5ef941a730f03c414",
+    "30_assertions/p5-ref-locates-a-definition-or-identity-for-the-entity-named-by-uris<-20_distillates/documents/tei-p5-att.canonical-4.12.0#^s5": "d2a69ea36a703f7e284d278160ffa215bb7376d3fdd5aa7beb1694a61f797414",
+    "30_assertions/p5-ref-points-directly-to-xml-elements-or-other-resources<-20_distillates/documents/tei-p5-att.canonical-4.12.0#^s6": "166aa56ede9f514de23858ebc749c9cb23b76ebf36576e689fef431ed89e1d15",
+    "30_assertions/p5-relation-describes-a-relationship-amongst-places-events-persons-or-objects<-20_distillates/documents/tei-p5-relation-4.12.0#^s2": "fe16adf364bac521fe4dd2344cf2b640f12436be9e106ea2c7cd147f0cd0aede",
+    "30_assertions/p5-resp-should-point-to-an-element-that-clarifies-the-agents-role-rather-than-to-a-person-or-org<-20_distillates/documents/tei-p5-att.global.responsibility-4.12.0#^s7": "2f3cf4c0d2abf233c61c22e6bc3f26c253f27ab56163b3f2eb73b52268b80061",
+    "30_assertions/p5-role-on-a-naming-element-carries-information-about-the-entity-referenced<-20_distillates/documents/tei-p5-att.naming-4.12.0#^s2": "0929b9dd659c1a6b4a12020ed52a55e548cefb478296a71e7e8d2fe5fab60b4c",
+    "30_assertions/p5-rolename-excludes-the-role-a-person-has-in-a-context<-20_distillates/documents/tei-p5-guidelines-nd-4.12.0#^s11": "c98be222f273047753d2a3be4d0f672cb6cc8ae616ea4a5864bfd4618e1968f3",
+    "30_assertions/p5-rs-and-name-cannot-mark-the-components-of-a-name<-20_distillates/documents/tei-p5-guidelines-nd-4.12.0#^s7": "85ca868ca653ac603155647417489628963562135690bf377164b8604e179d23",
+    "30_assertions/p5-rs-contains-a-general-purpose-name-or-referring-string<-20_distillates/documents/tei-p5-rs-4.12.0#^s1": "d7e0ac6763d456a7dae1bac1d7d848df5355da146b3975b17a463d05c3ba4da9",
+    "30_assertions/p5-simultaneous-key-and-ref-are-not-recommended-without-documentation<-20_distillates/documents/tei-p5-att.canonical-4.12.0#^s11": "a90e8943de0b5887d9ac4bc3658c625527717a8b6e83e3292cdab02e6eda3e7a",
+    "30_assertions/p5-source-specifies-the-source-from-which-some-aspect-of-an-element-is-drawn<-20_distillates/documents/tei-p5-att.global.source-4.12.0#^s2": "570cfc44fcd0260649a53c4b37a9c613565ead57a3440b60fbce5ad9f98c8c6a",
+    "30_assertions/p5-span-associates-interpretation-with-text<-20_distillates/documents/tei-p5-span-4.12.0#^s1": "371e8510e4592960622e38afb55cec60de983f6e36292a68dca4dcf6653f40a6",
+    "30_assertions/p5-span-from-identifies-start-or-whole-node<-20_distillates/documents/tei-p5-span-4.12.0#^s2": "4e728a1288c6f1be45fd4588f2d9b5e2aafd81cd6e4c0313dd9586437b8f5fba",
+    "30_assertions/p5-state-attributes-a-status-or-quality-often-at-a-specific-time-or-for-a-date-range<-20_distillates/documents/tei-p5-state-4.12.0#^s3": "a4bf9c64d46e7d3a67b2b5d52462573717c10c4baeffc442fcbfb17f14d3e761",
+    "30_assertions/p5-state-describes-a-status-or-quality-attributed-to-a-person-place-or-organization<-20_distillates/documents/tei-p5-state-4.12.0#^s2": "6689ead49d51ea755c54a5a6b454430902434e4637010ef853ffa6c535c7150a",
+    "30_assertions/p5-testnames-change-of-place-is-a-sequence-of-dated-residence-states-without-an-event<-20_distillates/documents/tei-p5-test-testnames-4.12.0#^s12": "4c33dda540468f15f3156802f9cfc1b9437782674bbc6513f9b4f40026776000",
+    "30_assertions/p5-testnames-name-of-type-person-in-a-note-carries-a-key-and-no-ref<-20_distillates/documents/tei-p5-test-testnames-4.12.0#^s6": "2709190d71a8a8ba8e09e90bbd05f2e20d900739fff7c15e1834d402a177f80a",
+    "30_assertions/p5-testnames-person-name-form-and-place-carry-three-separate-identifying-values<-20_distillates/documents/tei-p5-test-testnames-4.12.0#^s14": "d28594e887ab0c64a01b89d651f743c853443ccc3d0090ba9efc452f3c61e594",
+    "30_assertions/p5-testnames-person-record-carries-id-sex-and-role-while-its-persname-carries-only-a-language<-20_distillates/documents/tei-p5-test-testnames-4.12.0#^s7": "752c944040e8f4f589c0a960221363b1cd6babd8d446e9ff23ddaf21383a8456",
+    "30_assertions/p5-testnames-places-in-birth-and-death-are-named-without-identification-while-a-nationality-is-identified-by-key<-20_distillates/documents/tei-p5-test-testnames-4.12.0#^s18": "30234df73158ab1aa796067e26fae3fb2f837951208adaa1688bf9262a5fcb54",
+    "30_assertions/p5-testnames-relation-to-another-person-is-a-state-with-a-ref-to-a-relationship-and-no-relation-element<-20_distillates/documents/tei-p5-test-testnames-4.12.0#^s16": "1d1a6c650df0c31a1c263ae8ef811756549dba0cfc1fe2b0018f5c25c879d484",
+    "30_assertions/piez-treats-optional-hierarchy-as-object-of-study<-20_distillates/publications/piez2014range#^s1": "d39e510af15d2e3f3c5bab8a35b0778b96bf2ed347cd4547225392866bf92394",
+    "30_assertions/renear-wickett-distinguish-string-mapping-from-persistent-identity<-20_distillates/publications/renear-wickett2010documents#^s1": "3c30afc5ffe12eb3d1118e346a7397005f15288fa83d80c4bbcfaf61e1b3da39",
+    "30_assertions/structure-issue1505-recommendation-self-report<-20_distillates/publications/teic-tei-issue-1505#^s2": "17686c2ac813b3dd3fba732b7db9e409af3d1d093ca5807ad0e5fb1a24ded78a",
+    "30_assertions/structure-p5-boundary-range-validation<-20_distillates/documents/tei-p5-guidelines-nh-non-hierarchical-4.12.0#^s16": "3e9406bc7db86cee0cc0c983cc2c1a1f03ceead4be776a13dddc7756aeaf7df6",
+    "30_assertions/structure-p5-composite-stories-have-flexible-order<-20_distillates/documents/tei-p5-guidelines-ds-defaulttextstructure-4.12.0#^s18": "9dd736293034215dd6d971fb64b3e43f1f9adab46e3e2edb33f6c307840c8d68",
+    "30_assertions/structure-p5-div-in-line-needs-floatingtext<-20_distillates/documents/tei-p5-div-4.12.0#^s3": "39f8233a087c5c5a6e7ec46df83c2a4a7a922dd6bf0e63afee0e24daee669d8a",
+    "30_assertions/structure-p5-div-in-paragraph-needs-floatingtext<-20_distillates/documents/tei-p5-div-4.12.0#^s4": "76628b9e30949f38b3a64e4fb4910ca70d03121a6a7de1cb14cb9a48a25bd27d",
+    "30_assertions/structure-p5-divgen-processing-is-application-defined<-20_distillates/documents/tei-p5-guidelines-ds-defaulttextstructure-4.12.0#^s39": "addf201c078a6c49bf50ff912e211a80d048128bbe56c824d4351250f353303f",
+    "30_assertions/structure-p5-division-type-is-independent-of-depth<-20_distillates/documents/tei-p5-guidelines-ds-defaulttextstructure-4.12.0#^s9": "552e0262868665f12f57b75a74ed041e4358a6f67c826bf0b3d603e866cee00f",
+    "30_assertions/structure-p5-floatingtext-does-not-imply-external-origin<-20_distillates/documents/tei-p5-guidelines-ds-defaulttextstructure-4.12.0#^s37": "b8cf523966f080b1fc812c127aab281d54b254ee3e47d70f5514ff6d1570546e",
+    "30_assertions/structure-p5-floatingtext-interrupts-resumable-text<-20_distillates/documents/tei-p5-guidelines-ds-defaulttextstructure-4.12.0#^s30": "28b79814ea02963c6c60edd9fe0af1aae501c1686b2de5ee9a70cd0ecfde41d9",
+    "30_assertions/structure-p5-has-several-nonhierarchical-methods<-20_distillates/documents/tei-p5-guidelines-nh-non-hierarchical-4.12.0#^s3": "39fc6ce80da895028c860787d23bf970b1b9892c8b3b30e59152ca1f5661a8fe",
+    "30_assertions/structure-p5-join-combines-virtual-elements<-20_distillates/documents/tei-p5-guidelines-nh-non-hierarchical-4.12.0#^s23": "32d6289c651d1af1812775751323f42db014683b1f604f49daec55d6adfc919c",
+    "30_assertions/structure-p5-join-combines-virtual-elements<-20_distillates/documents/tei-p5-join-4.12.0#^s5": "a951c7e9e93c302802fb801900b5f87dae5ac10a4eb8a90f7471017d953d91f6",
+    "30_assertions/structure-p5-multiple-encoding-maintenance-cost<-20_distillates/documents/tei-p5-guidelines-nh-non-hierarchical-4.12.0#^s6": "be4c901c2726b6005d2f01860e6eb67ea2a28c2a015b6b376b66af102819a91f",
+    "30_assertions/structure-p5-next-same-type-recommendation<-20_distillates/documents/tei-p5-att.global.linking-4.12.0#^s10": "9eb83248e1e961897fea3cab9d3931ba6086c483658e13a9d60148ee97f59bcb",
+    "30_assertions/structure-p5-note-number-omission-is-conditional<-20_distillates/documents/tei-p5-note-4.12.0#^s7": "543f57a2d5875b34da367565ba370f8e844036174638597fd48d8fd33b63a9b1",
+    "30_assertions/structure-p5-note-responsibility-code-needs-definition<-20_distillates/documents/tei-p5-note-4.12.0#^s5": "8d288880ad447b409bd1176c52c463ad255acdf8018688be689887450adf2b22",
+    "30_assertions/structure-p5-part-locates-omissions-in-ds<-20_distillates/documents/tei-p5-guidelines-ds-defaulttextstructure-4.12.0#^s17": "41e6dfd28990dc3a9758713d6b31f542dbdfbe6341ed9905bd94479795aa9909",
+    "30_assertions/structure-p5-part-positions-fragments<-20_distillates/documents/tei-p5-att.fragmentable-4.12.0#^s4": "6c5759e37b7fd390754f9a8c1a52d2a64f98af260a92bf6d407ca9857cf9920e",
+    "30_assertions/structure-p5-part-reconstitution-ambiguity<-20_distillates/documents/tei-p5-guidelines-nh-non-hierarchical-4.12.0#^s22": "77af2f3eba7791309d01981382608d9a507ce7a8edfb6d52d3cfd4729809a7dc",
+    "30_assertions/structure-p5-pb-associates-page-image<-20_distillates/documents/tei-p5-pb-4.12.0#^s4": "f9da598aa970a010b26c57d484ad818e90219355c56e4dcf41d152e427fae028",
+    "30_assertions/structure-p5-pb-number-and-sequence<-20_distillates/documents/tei-p5-pb-4.12.0#^s6": "ff60c9cfc48ba37312fd5b2a1967a197ca73dc9a9a5b010380faf055a081f36e",
+    "30_assertions/structure-p5-prev-same-type-recommendation<-20_distillates/documents/tei-p5-att.global.linking-4.12.0#^s11": "5e99581f7a2657a19ff75852d182b13240785ada39294af442d817ff0fdb1432",
+    "30_assertions/structure-p5-stand-off-discontinuous-annotation<-20_distillates/documents/tei-p5-guidelines-nh-non-hierarchical-4.12.0#^s27": "ba11d4bedbd5ca45ed12d0c34ea24f49e9b872a6459ffcd89aef0763bdd40baa",
+    "30_assertions/structure-p5-test-page-marker-inside-paragraph<-20_distillates/documents/tei-p5-test-testoverlap-4.12.0#^s2": "3577ab9a668b3ad67cecd7e0c7badda9becd3dec02dd268c064359a7a7add905",
+    "30_assertions/structure-p6-numbered-divisions-reconsideration-label<-20_distillates/publications/teic-tei-issue-1400#^s3": "c5650bbad0fd6e8ea7f2be4232fb4cd01ee2c4119472e224512b6e0003c3caca",
+    "30_assertions/szd-contributor-and-hand-description-are-distinct<-20_distillates/documents/szd-werke-2026-09-07#^s4": "fbb8d361442e7ebf1b3dea303e9f0436919eed1c4f2042806fa7cc5c7c15013e",
+    "30_assertions/szd-hand-attribution-retains-question-mark<-20_distillates/documents/szd-werke-2026-09-07#^s3": "98c23348ae6795abf36bd36735da27089dff7126a26e79b29e0d5e6e353cfe60",
+    "30_assertions/szd-records-have-distinct-shelfmarks<-20_distillates/documents/szd-werke-2026-09-07#^s2": "3474a576a2662001e1362a26862aa015014056e025493ae72360f9f49f3801a0",
+    "30_assertions/szd-records-have-distinct-shelfmarks<-20_distillates/documents/szd-werke-2026-09-07#^s6": "377b3e21ebca32bebadaea794cd46ecf21d78229b4b26c3595d3f5010d706785",
+    "30_assertions/szd-records-share-work-reference<-20_distillates/documents/szd-werke-2026-09-07#^s1": "6abd5d43afb19aa0967d160df91aedc211b20f3d8f3c3f4cc24303fe41f46fca",
+    "30_assertions/szd-records-share-work-reference<-20_distillates/documents/szd-werke-2026-09-07#^s5": "cb1e6fff22eab5b35f655073718f5bbb6b0e2bd1f31df120c78e17efe6a9220a",
+    "30_assertions/tei-fr363-proposes-target-on-span<-20_distillates/publications/tei-sourceforge-fr363#^s1": "97c3d81fb0b1f4b567ed7a9e20147fced9520cefaf9aa1717d28b3c2347ebfc0",
+    "30_assertions/teic-tei-issue-1414-author-proposes-ref-and-key-on-person-and-place<-20_distillates/publications/teic-tei-issue-1414#^s3": "5778f2d0b45ea7330f4d127faee53f1c261b942229bc420a7e5e8f54fd8a333d",
+    "30_assertions/teic-tei-issue-1414-author-proposes-that-a-record-entry-refer-through-ref-or-key-to-further-information-about-the-same-entity<-20_distillates/publications/teic-tei-issue-1414#^s1": "df2ca96d78c3a176b6aef4743e75b457b314ed3b6ad69f0876ff4ae311e6cacc",
+    "30_assertions/teic-tei-issue-1414-comment-of-2019-reports-that-person-place-org-and-bibl-allow-idno-while-event-and-nym-do-not<-20_distillates/publications/teic-tei-issue-1414#^s15": "347961aea69df7057322cbf4ef00501a5aa7f623db4d74ab0fd4c13011c53e65",
+    "30_assertions/teic-tei-issue-1414-commenter-summarizes-idno-as-a-first-child-of-the-record-elements-as-the-short-term-solution<-20_distillates/publications/teic-tei-issue-1414#^s14": "ddeb88e70ddf5f7c1ca9f9e2a35f45d94630e746e65f0814e5b15fcfe0c05796",
+    "30_assertions/teic-tei-issue-2739-commenter-states-att-personal-is-a-member-of-att-naming-and-att-naming-of-att-canonical<-20_distillates/publications/teic-tei-issue-2739#^s4": "dd92bd2427a56a64f7e624b07cb9eff775d6ddefe77384c952014392f6f4c874",
+    "30_assertions/teic-tei-issue-337-author-announces-an-interim-guidelines-change-telling-people-to-switch-to-ref<-20_distillates/publications/teic-tei-issue-337#^s5": "8d08114cff8f6caa87eb7d5e11dec868121b357d6843a9f5104ebdc154cf3303",
+    "30_assertions/teic-tei-issue-337-author-reports-a-wish-to-deprecate-key-held-back-by-its-wide-use<-20_distillates/publications/teic-tei-issue-337#^s4": "8f160eb63aeaddbeb04844d98406173e21a77cb19eca29aeaecb93a6c730992c",
+    "30_assertions/teic-tei-issue-337-commenter-excepts-values-that-already-refer-to-an-external-vocabulary<-20_distillates/publications/teic-tei-issue-337#^s21": "61240ea99b9919c85900932337fbb1889b60473d1db01f91115d56f508a39383",
+    "30_assertions/w3c-quote-selection-can-match-multiple-sequences<-20_distillates/publications/w3c-web-annotation-20170223#^s1": "5550dae4ed92b5f5f62bdea29dcf160669d6c63e3bfaae37e425912eea787bc1"
+  },
+  "supplementary_artifacts": [
+    {
+      "path": "40_output/02-abstract-model.md",
+      "sha256": "96b319a353b4332f0dfd7b31a58f27d4521e63a1a963be9d0a1c217e691edcd2",
+      "type": "chapter",
+      "review_scope": "source-related factual prose and use of assertions; no new semantic verdicts"
+    },
+    {
+      "path": "40_output/06-annotation-and-overlap.md",
+      "sha256": "0d4a21cc0ae6a7e8646bd939453a19e1924dc27a082f2c46654f44afbe07e584",
+      "type": "chapter",
+      "review_scope": "source-related factual prose and use of assertions; no new semantic verdicts"
+    },
+    {
+      "path": "40_output/08-metadata-and-entities.md",
+      "sha256": "c5a98be8cfb8795ce8cfdcf40959b8c4c0568ad74d02d3794b992125ddbdbda6",
+      "type": "chapter",
+      "review_scope": "source-related factual prose and use of assertions; no new semantic verdicts"
+    },
+    {
+      "path": "40_output/12-p6-design.md",
+      "sha256": "e6f1c0beb3cfe6ab2885c3c8fe987ae1975ceb62613e7edf7bcbc24a1e868b45",
+      "type": "chapter",
+      "review_scope": "source-related factual prose and use of assertions; no new semantic verdicts"
+    }
+  ],
+  "coverage_limit": "The 523 baseline pairs cover Core statements and assertion H1s. Additional context, full Statement sections, other factual prose, joint inferences and chapter-use pairs remain to be prepared under knowledge/verification.md."
+}

@@ -9,15 +9,15 @@ created: 2026-09-07
 updated: 2026-09-07
 ---
 
-# P5 4.12.0 identifies repeated textual content and absent explicit relations between views as disadvantages of the multiple-encoding method.
+# P5 4.12.0 identifies maintenance of repeated textual content and absent explicit relations between views as disadvantages of the multiple-encoding method.
 
 ## Statement
 
-P5 4.12.0 identifies repeated textual content and absent explicit relations between views as disadvantages of the multiple-encoding method.
+P5 4.12.0 identifies maintenance of repeated textual content and absent explicit relations between views as disadvantages of the multiple-encoding method.
 
 ## Support
 
-- [[20_distillates/documents/tei-p5-guidelines-nh-non-hierarchical-4.12.0#^s6]] supplies the source-specific statement used here. The assertion retains its stated source and scope.
+- [[20_distillates/documents/tei-p5-guidelines-nh-non-hierarchical-4.12.0#^s6]]
 
 ## Related
 

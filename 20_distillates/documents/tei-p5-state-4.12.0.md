@@ -3,12 +3,10 @@ type: distillate
 source-type: document
 representation: "[[10_markdown/documents/tei-p5-state-4.12.0]]"
 topics: ["[[Metadata and Entities]]"]
-status: validated
-checked:
-  machine-review: 2026-09-06
-  validation: 2026-09-06
+status: grounded
+checked: {}
 created: 2026-09-06
-updated: 2026-09-06
+updated: 2026-09-11
 ---
 
 # Distillate: TEI P5 4.12.0 state specification
@@ -29,7 +27,7 @@ This distillate reports the English element description and the English remarks 
 ## Terms
 
 - **state**: the element described as containing a description of some status or quality attributed to a person, place, or organization, often at some specific time or for a specific date range. [[10_markdown/documents/tei-p5-state-4.12.0#^r1]]
-- **trait**: the element the remarks hold available for the more static characteristics, used to record characteristics, such as eye-colour, which are less subject to change. [[10_markdown/documents/tei-p5-state-4.12.0#^r2]]
+- **trait**: the element the remarks hold available for the more static characteristics if a distinction between time-bound states and fixed traits is wished, used to record characteristics, such as eye-colour, which are less subject to change. [[10_markdown/documents/tei-p5-state-4.12.0#^r2]]
 
 ## Open questions
 
@@ -44,11 +42,11 @@ This distillate reports the English element description and the English remarks 
 - Which source establishes whether a `state` must be time-bounded at all, given that the description states the attribution happens often at some specific time or for a specific date range and the remarks state that the encoded characteristics are sometimes assumed to change?
 - How do the "status or quality" of the description and the "characteristics" of the remarks relate, and who is the "holder" whose volition or action the remarks name in their closing sentence, given that this specification introduces the three terms without connecting them?
 - Which Guidelines sections do the `listRef` pointers `#NDPERSbp` and `#NDPERSEpc` resolve to, and what do the further XML declarations of this specification contribute, meaning `module="namesdates"`, `xml:id="gi-state"`, `ident="state"` and the English gloss "state", given that no English reading block carries them?
-- What do the non-English descriptions of this specification state, and how is it to be read that its Spanish and Italian descriptions describe a component of a canonical reference defined by the milestone method rather than a status or quality, given that the reading blocks reproduce the English text alone?
+- What do the non-English descriptions of this specification state, and how is it to be read that its Spanish, Italian and Chinese (zh-TW) descriptions describe a component of a canonical reference defined by the milestone method rather than a status or quality, given that the reading blocks reproduce the English text alone?
 
 ## Appraisal
 
-The English text of this specification settles what a `state` is for and how it is delimited against `trait`, and it does so twice over, once as the description of the element and once as guidance in the remarks. The temporal qualification stays soft in both places, worded as "often" and "sometimes", so the source supports the intention of a time-bounded description while leaving open whether an untimed `state` is defective. Everything that would make that intention executable lives in the XML declarations, meaning the datable attributes, the naming attributes, the recursive content model and the three model classes that decide where the element may stand, and none of it is reachable through the English reading projection. The remarks are the only place in the source where the boundary against `trait` is drawn, and the criterion they use is how far a characteristic is perceived to change.
+The English text of this specification settles what a `state` is for, and its remarks delimit it against `trait`. The temporal qualification stays soft, worded as "often" in the description and as "sometimes" and "often" in the remarks, so the source supports a description that is often but not necessarily time-bound, and the remarks direct that `state` be used even for unchanging characteristics where there is confusion with `trait`. The memberships in `att.datable` and `att.naming`, the recursive content model and the three model classes that decide where the element may stand are declared in the XML alone, the attributes those classes supply are defined elsewhere, and none of it is reachable through the English reading projection. The remarks are the only place in the source where the boundary against `trait` is drawn, and they draw it by how far a characteristic is perceived or assumed to change and by the typical, but not necessary, independence of traits from the volition or action of the holder.
 
 ## Related
 

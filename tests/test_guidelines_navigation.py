@@ -59,6 +59,15 @@ def test_tracked_only_reproduction(tmp_path: Path, navigation: dict) -> None:
     assert not (tmp_path / "00_sources").exists()
     assert not (tmp_path / "corpus/raw").exists()
     assert serialized(build(tmp_path)) == serialized(navigation)
+    distillate = tmp_path / "20_distillates/documents/tei-p5-att.fragmentable-4.12.0.md"
+    original = distillate.read_text(encoding="utf-8")
+    distillate.write_text(original.replace("[[Annotation and Overlap]]", "[[Absent Topic]]"), encoding="utf-8", newline="\n")
+    with pytest.raises(ValueError, match="absent MOC"):
+        build(tmp_path)
+    distillate.write_text(original.replace("att.fragmentable-4.12.0]]", "att.canonical-4.12.0]]", 1), encoding="utf-8", newline="\n")
+    with pytest.raises(ValueError, match="does not distill"):
+        build(tmp_path)
+    distillate.write_text(original, encoding="utf-8", newline="\n")
     assert (ROOT / OUTPUT).read_bytes() == serialized(navigation).encode("utf-8")
     coverage = json.loads((tmp_path / COVERAGE).read_text(encoding="utf-8"))
     coverage["commit"] = "0" * 40
@@ -83,3 +92,29 @@ def test_known_classification_is_attributed(navigation: dict) -> None:
     assert {s["rule"] for s in app["topic_suggestions"]} == {"spec-category:elementSpec", "declared-module:textcrit"}
     chapter = rows["P5/Source/Guidelines/en/TC-CriticalApparatus.xml"]
     assert chapter["topic_suggestions"][0]["rule"] == "chapter-module-map:textcrit"
+
+
+def keys(value: object) -> set[str]:
+    if isinstance(value, dict):
+        return set(value).union(*(keys(item) for item in value.values()))
+    if isinstance(value, list):
+        return set().union(*(keys(item) for item in value))
+    return set()
+
+
+def test_curated_topics_stay_apart_from_rule_suggestions(navigation: dict) -> None:
+    rows = {r["source"]: r for r in navigation["sources"]}
+    expected = ["Text and Document Structures", "Annotation and Overlap"]
+    fragmentable = rows["P5/Source/Specs/att.fragmentable.xml"]
+    chapter = rows["P5/Source/Guidelines/en/NH-Non-hierarchical.xml"]
+    assert [t["topic"] for t in fragmentable["curated_topics"]] == expected
+    assert [t["topic"] for t in chapter["curated_topics"]] == expected
+    assert fragmentable["curated_topics"][0] == {"topic": expected[0], "moc": navigation["topics"][expected[0]],
+                                                  "distillate": "20_distillates/documents/tei-p5-att.fragmentable-4.12.0.md"}
+    # Rule suggestions keep their attributed meaning and never absorb curated topics.
+    assert {s["rule"] for s in fragmentable["topic_suggestions"]} == {"spec-category:classSpec", "declared-module:tei"}
+    assert [s["rule"] for s in chapter["topic_suggestions"]] == ["chapter-module-map:linking"]
+    assert fragmentable["attributes"] == ["part"] and chapter["attributes"] == []
+    coverage = json.loads((ROOT / COVERAGE).read_text(encoding="utf-8"))
+    assert navigation["counts"]["curated"] == sum(bool(s["distillate"]) for s in coverage["sources"])
+    assert not {"status", "distillate_status", "checked", "grounding"} & keys(navigation)

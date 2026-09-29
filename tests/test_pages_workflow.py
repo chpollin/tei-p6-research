@@ -2,6 +2,8 @@
 
 from pathlib import Path
 
+import yaml
+
 REPO = Path(__file__).parents[1]
 WORKFLOWS = REPO / ".github" / "workflows"
 
@@ -12,10 +14,15 @@ def read(name: str) -> str:
 
 def test_pages_workflow_validates_before_it_regenerates_every_page() -> None:
     workflow = read("pages.yml")
-
-    assert "python tools/validate.py ." in workflow
-    assert "python -m tools.corpus.validate_control_plane ." in workflow
-    assert "python -m pytest tests -q" in workflow
+    config = yaml.load(workflow, Loader=yaml.BaseLoader)
+    checks = yaml.load(read("checks.yml"), Loader=yaml.BaseLoader)
+    assert "workflow_call" in checks["on"]
+    assert config["jobs"]["checks"]["uses"] == "./.github/workflows/checks.yml"
+    assert config["jobs"]["build"]["needs"] == "checks"
+    assert config["jobs"]["deploy"]["needs"] == "build"
+    assert "python -m pytest tests -q" not in workflow
+    assert not config["jobs"]["build"].get("if")
+    assert not config["jobs"]["checks"].get("continue-on-error")
     for builder in (
         "python tools/build_docs.py",
         "python tools/build_corpus_overview.py",
@@ -51,16 +58,19 @@ def test_checks_workflow_lints_validates_and_runs_the_suite() -> None:
 
 
 def test_offline_handover_checks_precede_publication_and_preserve_review_boundary() -> None:
+    workflow = read("checks.yml")
+    for command in (
+        "python -m tools.build_guidelines_navigation --check",
+        "python -m tools.ingest_text_structures --check",
+        'python -m tools.export_guidelines --output "${RUNNER_TEMP}/guidelines-xml"',
+        "python tools/check_wave1_sources.py . --review-only",
+        "python -m tools.current_review .",
+        "python tools/check_abstract_text_v01.py --check",
+        "python tools/check_entities_v02.py --check",
+        "python tools/check_text_identity_pilot.py",
+    ):
+        assert command in workflow
+    assert '"${RUNNER_TEMP}/guidelines-xml" --check' in workflow
     for name in ("checks.yml", "pages.yml"):
-        workflow = read(name)
-        for command in (
-            "python -m tools.build_guidelines_navigation --check",
-            "python -m tools.ingest_text_structures --check",
-            'python -m tools.export_guidelines --output "${RUNNER_TEMP}/guidelines-xml"',
-        ):
-            assert command in workflow
-        assert '"${RUNNER_TEMP}/guidelines-xml" --check' in workflow
-        assert "tools.check_text_structures" not in workflow
-        assert "tools/check_text_structures.py" not in workflow
-        if name == "pages.yml":
-            assert workflow.index("tools.export_guidelines") < workflow.index("tools/build_docs.py")
+        assert "tools.check_text_structures" not in read(name)
+        assert "tools/check_text_structures.py" not in read(name)

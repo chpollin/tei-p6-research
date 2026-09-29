@@ -2,7 +2,7 @@
 type: chapter
 status: grounded
 checked:
-  validation: 2026-09-07
+  validation: 2026-09-11
 assertions:
   - "[[30_assertions/p5-anchor-identifies-a-textual-point]]"
   - "[[30_assertions/p5-span-associates-interpretation-with-text]]"
@@ -15,7 +15,7 @@ assertions:
   - "[[30_assertions/humboldt-diary-encodes-a-page-pointer-and-separate-foliation]]"
 posits: 13
 created: 2026-09-05
-updated: 2026-09-07
+updated: 2026-09-11
 ---
 
 # A possible TEI P6 architecture and its evaluation
@@ -35,8 +35,10 @@ editorial preservation, and practical usability require separate evaluation.[^sc
 
 ## 1. Scope and coverage method
 
-The investigation covers every module in the pinned P5 4.12.0 baseline,
-discussion records, literature, and documented practice. Modules organize
+The intended investigation covers every module in the pinned P5 4.12.0 baseline,
+discussion records, literature, and documented practice. Actual interpretation
+and case coverage remain bounded by the recorded admissions and checks in
+[the current project state](../knowledge/state.md). Modules organize
 source retrieval. The conceptual analysis distinguishes document types such
 as letters and charters, media forms such as manuscripts and recorded speech,
 and phenomena such as correction and uncertainty. One case can combine these
@@ -59,23 +61,24 @@ only for its declared task and distinctions.[^coverage]
 
 ## 2. Text projections and occurrence identity
 
-A heading in Humboldt's England diary H0017682 contains a note marked
-`hand="#unknown"`, the reference text “6255”, and a nested editorial note with
+A heading in diary H0017682 contains a note marked
+`hand="#unknown"`. That note contains the reference text “6255” and a nested editorial note with
 `resp="#CT #DE"`.[^notesource]
 
-Consider the task of reading the heading as “Reise. 1790. England.” while
+Consider the task of reading the heading with its note excluded while
 inspecting the handwritten number and the editorial explanation separately.
 The proposed representation retains all three with their relationships and
 attribution. Excluding the notes from this reading sequence is an editorial
 projection. Another task could select a different sequence. The mapping
 contract must therefore declare its reading policy and retain the source.[^projection]
 
-In another heading of the diary, “Bäder in Derbyshire” appears inside a date
+In a heading of the diary, “Bäder in Derbyshire” appears inside a date
 element with `when="1790-06-15"`, with nested highlighting around the place name.[^headsource]
 
-The heading, date, and outer highlighting remain distinct occurrences
-even when they cover the same characters. Preserving only their extents would
-lose their roles and nesting. A version supplies the character sequence.
+The proposed representation retains the heading, date and highlighting as
+distinct occurrences with their roles and nesting. It also allows equal
+extents, a case tested separately in the constructed example below.
+A version supplies the character sequence.
 Identified nodes describe a structural reading, selections connect nodes to
 positions, and annotations retain further interpretation. The
 [equal-extents example](#example=equal-extents) and
@@ -112,15 +115,16 @@ nested relationships, and responsibility markers requires an explicit mapping
 contract beyond the core's generic annotation body. That contract must
 declare how to decode these records and validate their connections. Retaining
 `#CT #DE` as a value does not resolve or authenticate
-the people it refers to.[^binding]
+its referents.[^binding]
 
 ## 4. Selection and unresolved targets
 
 TEI P5 4.12.0 defines `anchor` as attaching an identifier to a point within a
 text.[^point] It defines `span` as associating an interpretative annotation
-directly with a span of text.[^span] The W3C 2017 Web Annotation Data Model
-recommends treating multiple Text Quote Selector matches as matching all the
-discovered sequences.[^pluralsource]
+directly with a span of text.[^span] When multiple text sequences remain after
+processing the prefix, exact text and suffix, the W3C 2017 Web Annotation Data
+Model recommends treating a Text Quote Selector as matching all those
+sequences.[^pluralsource]
 
 The candidate distinguishes a point, one region with several ordered
 components, and several independently selected regions. It also
@@ -144,6 +148,7 @@ the version 0.1 reading rules.[^selection]
 
 ## 5. Version identity and revision of claims
 
+When recapitulating their earlier argument about document modifiability,
 Renear and Wickett describe editing strings as mapping between strings rather
 than modifying a persistent underlying entity.[^stringsource]
 

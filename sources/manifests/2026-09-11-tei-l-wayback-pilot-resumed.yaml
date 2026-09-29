@@ -1,0 +1,70 @@
+schema_version: 1
+run_id: 2026-09-11-tei-l-wayback-pilot-resumed
+source_id: tei-l-archive
+started_at: '2026-09-11T14:07:42Z'
+finished_at: '2026-09-11T14:10:15Z'
+status: partial
+adapter:
+  name: tools.corpus.listserv_snapshot
+  version: 2
+requests:
+  coverage_input: corpus/normalized/mail/tei-l-wayback-coverage.jsonl
+  cdx_endpoint: https://web.archive.org/cdx/search/cdx
+  wayback_prefix: https://web.archive.org/web
+  months:
+  - '0001'
+  month_filter:
+  - '0001'
+  delay_seconds: 0.5
+  max_messages: 3
+  checkpoint: corpus/raw/checkpoints/2026-09-11-tei-l-wayback-pilot
+  resume_from: corpus/raw/checkpoints/2026-09-11-tei-l-wayback-pilot
+objects:
+- kind: tei-l-wayback-message-metadata
+  path: corpus/normalized/mail/tei-l-wayback-pilot-resumed-2026-09-11.jsonl
+  sha256: 855f38a7b3e4bd0cfc4ede3a8e027a373304e16f84b86586f67da7eb10a58981
+counts:
+  months_requested: 1
+  months_indexed: 1
+  messages_listed: 19
+  messages: 3
+  messages_missing: 3
+  messages_index_only: 0
+  http_responses: 4
+  gaps: 4
+scope:
+  boundary: captured-brown-months-served-through-the-wayback-machine
+  status_applies_to: requests.months
+  completion_rule: Every message the captured month indexes list, retrieved from a
+    capture or recorded as a gap.
+resume:
+  invocations:
+  - '2026-09-11T14:07:42Z'
+  - '2026-09-11T14:10:15Z'
+  months_reused: 1
+gaps:
+- code: max-messages-limit
+  max_messages: 3
+  messages_listed: 19
+  messages_not_fetched: 16
+- capture_timestamp: '20190916224549'
+  code: wayback-message-missing
+  message_id: P10762.0001
+  month: '0001'
+  url: https://web.archive.org/web/20190916224549id_/https://listserv.brown.edu/cgi-bin/wa?A2=ind0001&L=TEI-L&P=10762
+- capture_timestamp: '20190917064729'
+  code: wayback-message-missing
+  message_id: P10962.0001
+  month: '0001'
+  url: https://web.archive.org/web/20190917064729id_/https://listserv.brown.edu/cgi-bin/wa?A2=ind0001&L=TEI-L&P=10962
+- capture_timestamp: '20190918094436'
+  code: wayback-message-missing
+  message_id: P11150.0001
+  month: '0001'
+  url: https://web.archive.org/web/20190918094436id_/https://listserv.brown.edu/cgi-bin/wa?A2=ind0001&L=TEI-L&P=11150
+rights_exceptions:
+- Message bodies and sender identity remain in local content-addressed raw storage.
+- The normalized stream carries list, month, message identity, subject, date, thread
+  pointers, and raw pointers only.
+- TEI-L posts are user-generated content; redistribution stays metadata and links
+  until per-item rights review.

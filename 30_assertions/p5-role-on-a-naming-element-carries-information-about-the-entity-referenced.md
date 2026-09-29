@@ -3,14 +3,12 @@ type: assertion
 topics: ["[[Metadata and Entities]]", "[[Elements and Classes]]"]
 phenomena: ["[[glossary/mention-of-an-entity]]", "[[glossary/statement-about-an-entity]]"]
 related: ["[[40_output/12-p6-design]]", "[[30_assertions/p5-rolename-excludes-the-role-a-person-has-in-a-context]]", "[[30_assertions/p5-testnames-person-record-carries-id-sex-and-role-while-its-persname-carries-only-a-language]]"]
-status: validated
-checked:
-  machine-review: 2026-09-06
-  validation: 2026-09-06
+status: grounded
+checked: {}
 grounding:
   - "[[20_distillates/documents/tei-p5-att.naming-4.12.0#^s2]]"
 created: 2026-09-06
-updated: 2026-09-06
+updated: 2026-09-11
 ---
 
 # In TEI P5 4.12.0, the role attribute of att.naming may specify further information about the entity referenced by the name, such as the occupation of a person or the status of a place
@@ -21,7 +19,7 @@ In TEI P5 4.12.0, the description of the role attribute in att.naming states tha
 
 ## Support
 
-- [[20_distillates/documents/tei-p5-att.naming-4.12.0#^s2]] — The attribute description. It establishes that a naming element carries information about the referent on the mention itself, and the class specification names no element that is a member.
+- [[20_distillates/documents/tei-p5-att.naming-4.12.0#^s2]]
 
 ## Related
 

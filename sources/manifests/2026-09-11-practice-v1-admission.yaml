@@ -1,0 +1,433 @@
+schema_version: 1
+run_id: 2026-09-11-practice-v1-admission
+source_id: tei-real-world-customizations
+started_at: '2026-09-11T12:19:26Z'
+finished_at: '2026-09-11T12:19:36Z'
+status: bounded-complete
+lock_file: sources/locks/real-world-customizations.yaml
+scope:
+  boundary: 'Exactly the declared request list at pinned commits: nine admitted files
+    for three cases and seventeen context observations; no family, corpus or project
+    completeness'
+  status_applies_to: declared pinned request list of this purposive sample
+  selection: workbench/selections/2026-09-11-odd-practice.md
+adapter:
+  name: tools.ingest_practice_v1
+  version: 1
+requests:
+- requested_url: https://raw.githubusercontent.com/dracor-org/dracor-schema/c2f9e8140bf413cb3bce44abc818d563ddc92d88/dracor.odd
+  final_url: https://raw.githubusercontent.com/dracor-org/dracor-schema/c2f9e8140bf413cb3bce44abc818d563ddc92d88/dracor.odd
+  observed_at: '2026-09-11T12:19:26Z'
+  status: 200
+  media_type: text/plain
+  byte_count: 338297
+  sha256: 0e32d7e9a884daecaafd8e043d25ce8dc7f1332906668251e42b0eb8f6b56298
+  raw_path: sha256/0e/32d7e9a884daecaafd8e043d25ce8dc7f1332906668251e42b0eb8f6b56298
+- requested_url: https://raw.githubusercontent.com/dracor-org/dracor-schema/c2f9e8140bf413cb3bce44abc818d563ddc92d88/build
+  final_url: https://raw.githubusercontent.com/dracor-org/dracor-schema/c2f9e8140bf413cb3bce44abc818d563ddc92d88/build
+  observed_at: '2026-09-11T12:19:26Z'
+  status: 200
+  media_type: text/plain
+  byte_count: 1158
+  sha256: 74a305786a26a2f617fa38550fb93ff24677693e2e31487a9e992e1138805b14
+  raw_path: sha256/74/a305786a26a2f617fa38550fb93ff24677693e2e31487a9e992e1138805b14
+- requested_url: https://raw.githubusercontent.com/dracor-org/gerdracor/43fe19012bae4784689ce7ad5855dfdd643364e5/tei/leisewitz-die-pfandung.xml
+  final_url: https://raw.githubusercontent.com/dracor-org/gerdracor/43fe19012bae4784689ce7ad5855dfdd643364e5/tei/leisewitz-die-pfandung.xml
+  observed_at: '2026-09-11T12:19:27Z'
+  status: 200
+  media_type: text/plain
+  byte_count: 7607
+  sha256: 8de253b51577965f68bde96715c53552d9564ea04d1a103617350b98cfea1f9d
+  raw_path: sha256/8d/e253b51577965f68bde96715c53552d9564ea04d1a103617350b98cfea1f9d
+- requested_url: https://raw.githubusercontent.com/EpiDoc/Source/e5b68eb8627ac1bc55a4f9f2bec94d8276ff74b3/schema/tei-epidoc.xml
+  final_url: https://raw.githubusercontent.com/EpiDoc/Source/e5b68eb8627ac1bc55a4f9f2bec94d8276ff74b3/schema/tei-epidoc.xml
+  observed_at: '2026-09-11T12:19:27Z'
+  status: 200
+  media_type: text/plain
+  byte_count: 49176
+  sha256: 3db7bc2675440b81cf26898e2884f2948f1fafa7444316ea06c8f5d1797a9398
+  raw_path: sha256/3d/b7bc2675440b81cf26898e2884f2948f1fafa7444316ea06c8f5d1797a9398
+- requested_url: https://raw.githubusercontent.com/EpiDoc/Source/e5b68eb8627ac1bc55a4f9f2bec94d8276ff74b3/schema/README.txt
+  final_url: https://raw.githubusercontent.com/EpiDoc/Source/e5b68eb8627ac1bc55a4f9f2bec94d8276ff74b3/schema/README.txt
+  observed_at: '2026-09-11T12:19:27Z'
+  status: 200
+  media_type: text/plain
+  byte_count: 3728
+  sha256: b3fc307a2bb30a59a19a9151139476b972d9f1ee110b3410a7cd450dd3b71a48
+  raw_path: sha256/b3/fc307a2bb30a59a19a9151139476b972d9f1ee110b3410a7cd450dd3b71a48
+- requested_url: https://raw.githubusercontent.com/ISicily/ISicily/262784ad8b4d4ee5a203abc0a772ae3eea289997/inscriptions/ISic000156.xml
+  final_url: https://raw.githubusercontent.com/ISicily/ISicily/262784ad8b4d4ee5a203abc0a772ae3eea289997/inscriptions/ISic000156.xml
+  observed_at: '2026-09-11T12:19:28Z'
+  status: 200
+  media_type: text/plain
+  byte_count: 13766
+  sha256: e70909d4b869dc2c3b340c6d4564c510bfd8c555d2f883df9007c9aedcc09a48
+  raw_path: sha256/e7/0909d4b869dc2c3b340c6d4564c510bfd8c555d2f883df9007c9aedcc09a48
+- requested_url: https://raw.githubusercontent.com/TEI-Correspondence-SIG/CMIF/d171133e2ca7a0b987ba0564577ec79077b8d908/odd/cmi-customization.odd
+  final_url: https://raw.githubusercontent.com/TEI-Correspondence-SIG/CMIF/d171133e2ca7a0b987ba0564577ec79077b8d908/odd/cmi-customization.odd
+  observed_at: '2026-09-11T12:19:28Z'
+  status: 200
+  media_type: text/plain
+  byte_count: 12964
+  sha256: 768f145ea785f53aa1753e8477ff8434dceee5c7570ed2daf4dd0abdd4de6890
+  raw_path: sha256/76/8f145ea785f53aa1753e8477ff8434dceee5c7570ed2daf4dd0abdd4de6890
+- requested_url: https://raw.githubusercontent.com/correspSearch/csAPI/566b2d29233e3be332dc749266558cb7383cd31d/api/v2.0/services/check/index.xql
+  final_url: https://raw.githubusercontent.com/correspSearch/csAPI/566b2d29233e3be332dc749266558cb7383cd31d/api/v2.0/services/check/index.xql
+  observed_at: '2026-09-11T12:19:28Z'
+  status: 200
+  media_type: text/plain
+  byte_count: 867
+  sha256: 6fad8c20890525f3febba7586e58f19aa39a9b2b6c8fb9b963740eca3f19c4bf
+  raw_path: sha256/6f/ad8c20890525f3febba7586e58f19aa39a9b2b6c8fb9b963740eca3f19c4bf
+- requested_url: https://raw.githubusercontent.com/correspSearch/csStorage/9a7ebe3b68bb464be64d6e08fe1ed8672f90c00d/freieisen-stoeber.xml
+  final_url: https://raw.githubusercontent.com/correspSearch/csStorage/9a7ebe3b68bb464be64d6e08fe1ed8672f90c00d/freieisen-stoeber.xml
+  observed_at: '2026-09-11T12:19:29Z'
+  status: 200
+  media_type: text/plain
+  byte_count: 2305
+  sha256: bba0af2b8befbb89494bcb836f05a481d4901ea3a2dc0683ff999d29d58bfdef
+  raw_path: sha256/bb/a0af2b8befbb89494bcb836f05a481d4901ea3a2dc0683ff999d29d58bfdef
+- requested_url: https://raw.githubusercontent.com/dracor-org/dracor-schema/c2f9e8140bf413cb3bce44abc818d563ddc92d88/LICENSE
+  final_url: https://raw.githubusercontent.com/dracor-org/dracor-schema/c2f9e8140bf413cb3bce44abc818d563ddc92d88/LICENSE
+  observed_at: '2026-09-11T12:19:29Z'
+  status: 200
+  media_type: text/plain
+  byte_count: 18657
+  sha256: 9ba9550ad48438d0836ddab3da480b3b69ffa0aac7b7878b5a0039e7ab429411
+  raw_path: sha256/9b/a9550ad48438d0836ddab3da480b3b69ffa0aac7b7878b5a0039e7ab429411
+- requested_url: https://raw.githubusercontent.com/dracor-org/dracor-schema/c2f9e8140bf413cb3bce44abc818d563ddc92d88/README.md
+  final_url: https://raw.githubusercontent.com/dracor-org/dracor-schema/c2f9e8140bf413cb3bce44abc818d563ddc92d88/README.md
+  observed_at: '2026-09-11T12:19:29Z'
+  status: 200
+  media_type: text/plain
+  byte_count: 1371
+  sha256: 99d91ca693ff64765a200b966e56fc1af9da2458d3931a649480608dc9b022d4
+  raw_path: sha256/99/d91ca693ff64765a200b966e56fc1af9da2458d3931a649480608dc9b022d4
+- requested_url: https://raw.githubusercontent.com/dracor-org/dracor-schema/c2f9e8140bf413cb3bce44abc818d563ddc92d88/.github/workflows/test.yml
+  final_url: https://raw.githubusercontent.com/dracor-org/dracor-schema/c2f9e8140bf413cb3bce44abc818d563ddc92d88/.github/workflows/test.yml
+  observed_at: '2026-09-11T12:19:30Z'
+  status: 200
+  media_type: text/plain
+  byte_count: 1013
+  sha256: 3b71681348b27f489d48b2f13e871edf338634de403d7c4ea77bdeb00378452c
+  raw_path: sha256/3b/71681348b27f489d48b2f13e871edf338634de403d7c4ea77bdeb00378452c
+- requested_url: https://raw.githubusercontent.com/dracor-org/gerdracor/43fe19012bae4784689ce7ad5855dfdd643364e5/README.md
+  final_url: https://raw.githubusercontent.com/dracor-org/gerdracor/43fe19012bae4784689ce7ad5855dfdd643364e5/README.md
+  observed_at: '2026-09-11T12:19:30Z'
+  status: 200
+  media_type: text/plain
+  byte_count: 6638
+  sha256: 67e2e5a83f978d9b1bc503f9dfe6adb47d6b101e52a147989384766de4a984a1
+  raw_path: sha256/67/e2e5a83f978d9b1bc503f9dfe6adb47d6b101e52a147989384766de4a984a1
+- requested_url: https://raw.githubusercontent.com/dracor-org/gerdracor/43fe19012bae4784689ce7ad5855dfdd643364e5/.github/workflows/validation.yml
+  final_url: https://raw.githubusercontent.com/dracor-org/gerdracor/43fe19012bae4784689ce7ad5855dfdd643364e5/.github/workflows/validation.yml
+  observed_at: '2026-09-11T12:19:30Z'
+  status: 200
+  media_type: text/plain
+  byte_count: 1837
+  sha256: 9c1f6fc28fbcdd9edadc7856ad622ba8ea181972bd29a070d241cf0f823b6873
+  raw_path: sha256/9c/1f6fc28fbcdd9edadc7856ad622ba8ea181972bd29a070d241cf0f823b6873
+- requested_url: https://raw.githubusercontent.com/EpiDoc/Source/e5b68eb8627ac1bc55a4f9f2bec94d8276ff74b3/schema/LICENSE.txt
+  final_url: https://raw.githubusercontent.com/EpiDoc/Source/e5b68eb8627ac1bc55a4f9f2bec94d8276ff74b3/schema/LICENSE.txt
+  observed_at: '2026-09-11T12:19:31Z'
+  status: 200
+  media_type: text/plain
+  byte_count: 861
+  sha256: 2d0f618016d7835833229650ec290e6ffcd18d64aa4f17721dc8e1ae15187ffc
+  raw_path: sha256/2d/0f618016d7835833229650ec290e6ffcd18d64aa4f17721dc8e1ae15187ffc
+- requested_url: https://raw.githubusercontent.com/EpiDoc/Source/e5b68eb8627ac1bc55a4f9f2bec94d8276ff74b3/.github/workflows/build-dev-schema.yml
+  final_url: https://raw.githubusercontent.com/EpiDoc/Source/e5b68eb8627ac1bc55a4f9f2bec94d8276ff74b3/.github/workflows/build-dev-schema.yml
+  observed_at: '2026-09-11T12:19:31Z'
+  status: 200
+  media_type: text/plain
+  byte_count: 1371
+  sha256: 22370b089006aab47a02f08aaff598f68e17f20b6fa586b7b34f623a02208542
+  raw_path: sha256/22/370b089006aab47a02f08aaff598f68e17f20b6fa586b7b34f623a02208542
+- requested_url: https://raw.githubusercontent.com/EpiDoc/Source/e5b68eb8627ac1bc55a4f9f2bec94d8276ff74b3/schema/schematron/ircyr-checking.sch
+  final_url: https://raw.githubusercontent.com/EpiDoc/Source/e5b68eb8627ac1bc55a4f9f2bec94d8276ff74b3/schema/schematron/ircyr-checking.sch
+  observed_at: '2026-09-11T12:19:31Z'
+  status: 200
+  media_type: text/plain
+  byte_count: 4915
+  sha256: da746c54862dddabc193d283231baa0cebe8da5ee018303e9f5a4cff92a11667
+  raw_path: sha256/da/746c54862dddabc193d283231baa0cebe8da5ee018303e9f5a4cff92a11667
+- requested_url: https://raw.githubusercontent.com/ISicily/ISicily/262784ad8b4d4ee5a203abc0a772ae3eea289997/licence.txt
+  final_url: https://raw.githubusercontent.com/ISicily/ISicily/262784ad8b4d4ee5a203abc0a772ae3eea289997/licence.txt
+  observed_at: '2026-09-11T12:19:32Z'
+  status: 200
+  media_type: application/octet-stream
+  byte_count: 18645
+  sha256: 782fc4e8e0473f8bf7410cf43dbf7c24047ad04661ccfd2319861b9ba922f763
+  raw_path: sha256/78/2fc4e8e0473f8bf7410cf43dbf7c24047ad04661ccfd2319861b9ba922f763
+- requested_url: https://raw.githubusercontent.com/ISicily/ISicily/262784ad8b4d4ee5a203abc0a772ae3eea289997/schematron/ircyr-checking.sch
+  final_url: https://raw.githubusercontent.com/ISicily/ISicily/262784ad8b4d4ee5a203abc0a772ae3eea289997/schematron/ircyr-checking.sch
+  observed_at: '2026-09-11T12:19:32Z'
+  status: 200
+  media_type: text/plain
+  byte_count: 6016
+  sha256: c0022f2372ea97e2c643a191b79f13e641bbdd7fe55a0ad4d150ca6e9c6ec5fd
+  raw_path: sha256/c0/022f2372ea97e2c643a191b79f13e641bbdd7fe55a0ad4d150ca6e9c6ec5fd
+- requested_url: https://raw.githubusercontent.com/TEI-Correspondence-SIG/CMIF/d171133e2ca7a0b987ba0564577ec79077b8d908/README.md
+  final_url: https://raw.githubusercontent.com/TEI-Correspondence-SIG/CMIF/d171133e2ca7a0b987ba0564577ec79077b8d908/README.md
+  observed_at: '2026-09-11T12:19:33Z'
+  status: 200
+  media_type: text/plain
+  byte_count: 5705
+  sha256: 4de7fcbafe4ccf14e47801d2dc585be645a33be6aaf910359d6d5552b305d961
+  raw_path: sha256/4d/e7fcbafe4ccf14e47801d2dc585be645a33be6aaf910359d6d5552b305d961
+- requested_url: https://raw.githubusercontent.com/TEI-Correspondence-SIG/CMIF/d171133e2ca7a0b987ba0564577ec79077b8d908/LICENSE%20CC-BY
+  final_url: https://raw.githubusercontent.com/TEI-Correspondence-SIG/CMIF/d171133e2ca7a0b987ba0564577ec79077b8d908/LICENSE%20CC-BY
+  observed_at: '2026-09-11T12:19:33Z'
+  status: 200
+  media_type: text/plain
+  byte_count: 332
+  sha256: 3c6a0a735172f80f777a40dee390ee77a597a380d03d75ddbb5d939e75760107
+  raw_path: sha256/3c/6a0a735172f80f777a40dee390ee77a597a380d03d75ddbb5d939e75760107
+- requested_url: https://raw.githubusercontent.com/TEI-Correspondence-SIG/CMIF/d171133e2ca7a0b987ba0564577ec79077b8d908/schema/cmi-customization.rng
+  final_url: https://raw.githubusercontent.com/TEI-Correspondence-SIG/CMIF/d171133e2ca7a0b987ba0564577ec79077b8d908/schema/cmi-customization.rng
+  observed_at: '2026-09-11T12:19:33Z'
+  status: 200
+  media_type: text/plain
+  byte_count: 112569
+  sha256: f2847266dcad9884c80b9f52fb430033566ea7306a0a453c246d6932094abf5f
+  raw_path: sha256/f2/847266dcad9884c80b9f52fb430033566ea7306a0a453c246d6932094abf5f
+- requested_url: https://raw.githubusercontent.com/TEI-Correspondence-SIG/CMIF/d171133e2ca7a0b987ba0564577ec79077b8d908/odd/cmif.sch
+  final_url: https://raw.githubusercontent.com/TEI-Correspondence-SIG/CMIF/d171133e2ca7a0b987ba0564577ec79077b8d908/odd/cmif.sch
+  observed_at: '2026-09-11T12:19:34Z'
+  status: 200
+  media_type: text/plain
+  byte_count: 1963
+  sha256: 7c6eb9674e77564b7a02e0a2788c608d22b83c283ec6ed02fba6fd2b54854b29
+  raw_path: sha256/7c/6eb9674e77564b7a02e0a2788c608d22b83c283ec6ed02fba6fd2b54854b29
+- requested_url: https://raw.githubusercontent.com/correspSearch/csAPI/566b2d29233e3be332dc749266558cb7383cd31d/README.md
+  final_url: https://raw.githubusercontent.com/correspSearch/csAPI/566b2d29233e3be332dc749266558cb7383cd31d/README.md
+  observed_at: '2026-09-11T12:19:34Z'
+  status: 200
+  media_type: text/plain
+  byte_count: 1295
+  sha256: 01574a0eadb371f3fe339291e3dbb870bd140c013e9199b01ed0fb5d744a31d6
+  raw_path: sha256/01/574a0eadb371f3fe339291e3dbb870bd140c013e9199b01ed0fb5d744a31d6
+- requested_url: https://raw.githubusercontent.com/correspSearch/csAPI/566b2d29233e3be332dc749266558cb7383cd31d/api/v2.0/services/check/cmi-customization.rng
+  final_url: https://raw.githubusercontent.com/correspSearch/csAPI/566b2d29233e3be332dc749266558cb7383cd31d/api/v2.0/services/check/cmi-customization.rng
+  observed_at: '2026-09-11T12:19:35Z'
+  status: 200
+  media_type: text/plain
+  byte_count: 104178
+  sha256: 9b5040743bc4a38dbfa58baa4cd7f489a7d7b0c767bf572d1f1f7ed7f83c8245
+  raw_path: sha256/9b/5040743bc4a38dbfa58baa4cd7f489a7d7b0c767bf572d1f1f7ed7f83c8245
+- requested_url: https://raw.githubusercontent.com/correspSearch/csAPI/566b2d29233e3be332dc749266558cb7383cd31d/api/v2.0/services/check/cmif.sch
+  final_url: https://raw.githubusercontent.com/correspSearch/csAPI/566b2d29233e3be332dc749266558cb7383cd31d/api/v2.0/services/check/cmif.sch
+  observed_at: '2026-09-11T12:19:35Z'
+  status: 200
+  media_type: text/plain
+  byte_count: 5220
+  sha256: d8496d9d48d1a5326058763cf00d0304c3baff66a04f00bbf90087b8f0b31c19
+  raw_path: sha256/d8/496d9d48d1a5326058763cf00d0304c3baff66a04f00bbf90087b8f0b31c19
+objects:
+- path: 10_markdown/documents/practice-v1-dracor-odd-c2f9e814.md
+  sha256: 828bf6624fd538c30a6deef3d1ed660b96718f596f07856aadcd2f69ddee8629
+- path: 10_markdown/documents/practice-v1-dracor-build-c2f9e814.md
+  sha256: 42aa35b48d74112cdf5493687769c02c6f530e5f2a894f0a46def576f17241ea
+- path: 10_markdown/documents/practice-v1-gerdracor-ger000260-43fe1901.md
+  sha256: 4166bf9b2d488abd424c56446f5ceb8946ed21240b7fb28917f758c61e4520c8
+- path: 10_markdown/documents/practice-v1-epidoc-odd-e5b68eb8.md
+  sha256: 5a6b3643a02b5f839256c4ac3bd7be53fe8f4275aab135bd6507c16283d19e36
+- path: 10_markdown/documents/practice-v1-epidoc-schema-readme-e5b68eb8.md
+  sha256: e403119855896eceabf824bae428cf4202eca6295461e21d38e401e3cb6f9b28
+- path: 10_markdown/documents/practice-v1-isicily-isic000156-262784ad.md
+  sha256: dd4e1256854768c49f142d81fa511bcbc563371f524021f3afd729c415af4a86
+- path: 10_markdown/documents/practice-v1-cmif-odd-d171133e.md
+  sha256: ce1ce592fa77574a3cf710c028f15d85f68adc8b513e5cd678678f86262d0550
+- path: 10_markdown/documents/practice-v1-correspsearch-check-566b2d29.md
+  sha256: 2279502a8055ba4c15b2ddd8d9371d6242685fabf742bd5c6f62ce434c9547f7
+- path: 10_markdown/documents/practice-v1-cmif-freieisen-stoeber-9a7ebe3b.md
+  sha256: 96a42f945e0585f83b697a6340546f599bfee254583adbe38ce3357e00c66627
+- path: corpus/normalized/practice-v1/admission-2026-09-11.json
+  sha256: ded42587a7fae2fe7386e1380da09f59b8345edb4e9aa6adb7afcc0a437fb646
+counts:
+  requests: 26
+  admitted_sources: 9
+  context_observations: 17
+  reading_blocks: 39
+rights:
+- representation_path: 10_markdown/documents/practice-v1-dracor-odd-c2f9e814.md
+  license: CC-BY-4.0
+  license_evidence:
+  - LICENSE and README.md section License at the pinned commit
+  attribution: DraCor Schema, dracor.org, CC BY 4.0; ODD authors and guideline contributors
+    are named in the source header.
+- representation_path: 10_markdown/documents/practice-v1-dracor-build-c2f9e814.md
+  license: CC-BY-4.0
+  license_evidence:
+  - repository LICENSE at the pinned commit; README.md scopes CC BY 4.0 to the DraCor
+    Schema
+  attribution: DraCor Schema repository, dracor.org, CC BY 4.0.
+- representation_path: 10_markdown/documents/practice-v1-gerdracor-ger000260-43fe1901.md
+  license: CC0-1.0
+  license_evidence:
+  - README.md and CITATION.cff at the pinned commit
+  - publicationStmt/availability/licence in the file
+  attribution: German Drama Corpus (GerDraCor), CC0 1.0; the file names its digital
+    source and original print source.
+- representation_path: 10_markdown/documents/practice-v1-epidoc-odd-e5b68eb8.md
+  license: GPL-2.0-or-later (file header); schema/LICENSE.txt states GPL-3.0-or-later
+  license_evidence:
+  - license comment at the start of the file
+  - schema/LICENSE.txt and schema/README.txt at the pinned commit
+  attribution: EpiDoc Schema, contributors listed in the source titleStmt and revisionDesc;
+    GPL.
+- representation_path: 10_markdown/documents/practice-v1-epidoc-schema-readme-e5b68eb8.md
+  license: GPL-3.0-or-later
+  license_evidence:
+  - schema/LICENSE.txt, which the README names for license details
+  attribution: EpiDoc Schema documentation, EpiDoc/Source; GPL.
+- representation_path: 10_markdown/documents/practice-v1-isicily-isic000156-262784ad.md
+  license: CC-BY-4.0
+  license_evidence:
+  - licence.txt at the pinned commit
+  - publicationStmt/availability/licence in the file
+  attribution: I.Sicily, CC BY 4.0; editors and contributors are named in the source
+    titleStmt.
+- representation_path: 10_markdown/documents/practice-v1-cmif-odd-d171133e.md
+  license: CC-BY-4.0 OR BSD-2-Clause
+  license_evidence:
+  - LICENSE CC-BY, LICENSE BSD 2-Clause, README.md and CITATION.cff at the pinned
+    commit
+  attribution: Correspondence Metadata Interchange Format (CMIF) 1.1, TEI Correspondence
+    SIG 2015-2025, CC BY 4.0 or BSD-2-Clause.
+- representation_path: 10_markdown/documents/practice-v1-correspsearch-check-566b2d29.md
+  license: LGPL-3.0-or-later
+  license_evidence:
+  - LICENSE, README.md section License and CITATION.cff at the pinned commit
+  attribution: csAPI, correspSearch, Berlin-Brandenburg Academy of Sciences and Humanities
+    2024, LGPL-3.0-or-later.
+- representation_path: 10_markdown/documents/practice-v1-cmif-freieisen-stoeber-9a7ebe3b.md
+  license: CC-BY-4.0
+  license_evidence:
+  - publicationStmt/availability/licence in the file; the repository has no license
+    file
+  attribution: CMIF file freieisen-stoeber.xml, correspSearch storage, CC BY 4.0;
+    publisher and cited print source are named in the source header.
+content_authority: sampled-practice-record
+instruction_trust: none
+gaps: []
+rights_exceptions:
+- 'dracor-org/gerdracor/.github/workflows/validation.yml: unclear: no repository license
+  file; README declares CC0 for the corpus; raw body local only'
+- 'EpiDoc/Source/.github/workflows/build-dev-schema.yml: unclear: no repository-wide
+  license file; raw body local only'
+known_limits:
+- Purposive contrast sample of three community-published customizations reused by
+  many projects; no single-project local ODD, no statistical representativeness and
+  no family completeness.
+- No catalogue case was examined; CMIF is a correspondence metadata interchange profile
+  and is not treated as a catalogue.
+- 'No ODD compilation, RELAX NG or Schematron validation was executed: TEI Stylesheets,
+  Java, Jing, SchXslt and lxml are absent from the project environment. Validity of
+  the three input documents is unknown.'
+- Observed pipeline configuration (build script, workflows, service code) is source
+  text. This run executed only fetching, hashing, XML well-formedness parsing, a deterministic
+  element inventory and byte comparisons.
+- Schema locations named by the input documents were not fetched; the schema a processor
+  applies to them at a given date is not established.
+- Release assets, project websites, Docker images and the TEI Stylesheets submodule
+  were not acquired.
+- Workflow files of repositories without a repository-wide license are local context
+  observations only.
+- The EpiDoc ODD header states GPL-2.0-or-later while schema/LICENSE.txt states GPL-3.0-or-later;
+  both are recorded without legal determination.
+- Pinned states are development heads of 2026-09-11 except CMIF, whose head equals
+  tag v1.1.0.
+- Domain acceptance by drama, epigraphy and correspondence-edition experts has not
+  taken place.
+admissions:
+- source_type: document
+  case: dracor
+  role: odd
+  original_path: 00_sources/documents/practice-v1-dracor-odd-c2f9e814.odd
+  representation_path: 10_markdown/documents/practice-v1-dracor-odd-c2f9e814.md
+  original_sha256: 0e32d7e9a884daecaafd8e043d25ce8dc7f1332906668251e42b0eb8f6b56298
+  repository: dracor-org/dracor-schema
+  commit: c2f9e8140bf413cb3bce44abc818d563ddc92d88
+  source_path: dracor.odd
+  license: CC-BY-4.0
+- source_type: document
+  case: dracor
+  role: processing
+  original_path: 00_sources/documents/practice-v1-dracor-build-c2f9e814.txt
+  representation_path: 10_markdown/documents/practice-v1-dracor-build-c2f9e814.md
+  original_sha256: 74a305786a26a2f617fa38550fb93ff24677693e2e31487a9e992e1138805b14
+  repository: dracor-org/dracor-schema
+  commit: c2f9e8140bf413cb3bce44abc818d563ddc92d88
+  source_path: build
+  license: CC-BY-4.0
+- source_type: document
+  case: dracor
+  role: input
+  original_path: 00_sources/documents/practice-v1-gerdracor-ger000260-43fe1901.xml
+  representation_path: 10_markdown/documents/practice-v1-gerdracor-ger000260-43fe1901.md
+  original_sha256: 8de253b51577965f68bde96715c53552d9564ea04d1a103617350b98cfea1f9d
+  repository: dracor-org/gerdracor
+  commit: 43fe19012bae4784689ce7ad5855dfdd643364e5
+  source_path: tei/leisewitz-die-pfandung.xml
+  license: CC0-1.0
+- source_type: document
+  case: epidoc
+  role: odd
+  original_path: 00_sources/documents/practice-v1-epidoc-odd-e5b68eb8.xml
+  representation_path: 10_markdown/documents/practice-v1-epidoc-odd-e5b68eb8.md
+  original_sha256: 3db7bc2675440b81cf26898e2884f2948f1fafa7444316ea06c8f5d1797a9398
+  repository: EpiDoc/Source
+  commit: e5b68eb8627ac1bc55a4f9f2bec94d8276ff74b3
+  source_path: schema/tei-epidoc.xml
+  license: GPL-2.0-or-later (file header); schema/LICENSE.txt states GPL-3.0-or-later
+- source_type: document
+  case: epidoc
+  role: processing
+  original_path: 00_sources/documents/practice-v1-epidoc-schema-readme-e5b68eb8.txt
+  representation_path: 10_markdown/documents/practice-v1-epidoc-schema-readme-e5b68eb8.md
+  original_sha256: b3fc307a2bb30a59a19a9151139476b972d9f1ee110b3410a7cd450dd3b71a48
+  repository: EpiDoc/Source
+  commit: e5b68eb8627ac1bc55a4f9f2bec94d8276ff74b3
+  source_path: schema/README.txt
+  license: GPL-3.0-or-later
+- source_type: document
+  case: epidoc
+  role: input
+  original_path: 00_sources/documents/practice-v1-isicily-isic000156-262784ad.xml
+  representation_path: 10_markdown/documents/practice-v1-isicily-isic000156-262784ad.md
+  original_sha256: e70909d4b869dc2c3b340c6d4564c510bfd8c555d2f883df9007c9aedcc09a48
+  repository: ISicily/ISicily
+  commit: 262784ad8b4d4ee5a203abc0a772ae3eea289997
+  source_path: inscriptions/ISic000156.xml
+  license: CC-BY-4.0
+- source_type: document
+  case: cmif
+  role: odd
+  original_path: 00_sources/documents/practice-v1-cmif-odd-d171133e.odd
+  representation_path: 10_markdown/documents/practice-v1-cmif-odd-d171133e.md
+  original_sha256: 768f145ea785f53aa1753e8477ff8434dceee5c7570ed2daf4dd0abdd4de6890
+  repository: TEI-Correspondence-SIG/CMIF
+  commit: d171133e2ca7a0b987ba0564577ec79077b8d908
+  source_path: odd/cmi-customization.odd
+  license: CC-BY-4.0 OR BSD-2-Clause
+- source_type: document
+  case: cmif
+  role: processing
+  original_path: 00_sources/documents/practice-v1-correspsearch-check-566b2d29.xql
+  representation_path: 10_markdown/documents/practice-v1-correspsearch-check-566b2d29.md
+  original_sha256: 6fad8c20890525f3febba7586e58f19aa39a9b2b6c8fb9b963740eca3f19c4bf
+  repository: correspSearch/csAPI
+  commit: 566b2d29233e3be332dc749266558cb7383cd31d
+  source_path: api/v2.0/services/check/index.xql
+  license: LGPL-3.0-or-later
+- source_type: document
+  case: cmif
+  role: input
+  original_path: 00_sources/documents/practice-v1-cmif-freieisen-stoeber-9a7ebe3b.xml
+  representation_path: 10_markdown/documents/practice-v1-cmif-freieisen-stoeber-9a7ebe3b.md
+  original_sha256: bba0af2b8befbb89494bcb836f05a481d4901ea3a2dc0683ff999d29d58bfdef
+  repository: correspSearch/csStorage
+  commit: 9a7ebe3b68bb464be64d6e08fe1ed8672f90c00d
+  source_path: freieisen-stoeber.xml
+  license: CC-BY-4.0

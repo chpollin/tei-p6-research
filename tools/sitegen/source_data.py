@@ -8,6 +8,11 @@ from typing import Any
 
 import yaml
 
+from tools.corpus.manifest import (
+    MANIFEST_DIRECTORY,
+    lock_manifest_references,
+    repository_path,
+)
 from tools.sitegen.markup import repository_link
 
 _ALLOWED_OVERVIEW_PATHS = (
@@ -24,22 +29,6 @@ def load_yaml(path: Path) -> dict[str, Any]:
     if not isinstance(value, dict):
         raise ValueError(f"expected mapping in {path}")
     return value
-
-
-def manifest_references(lock: dict[str, Any]) -> list[str]:
-    references: list[str] = []
-    single = lock.get("manifest")
-    if isinstance(single, str):
-        references.append(single)
-    many = lock.get("manifests")
-    if isinstance(many, list):
-        references.extend(item for item in many if isinstance(item, str))
-    records = lock.get("records")
-    if isinstance(records, list):
-        for record in records:
-            if isinstance(record, dict) and isinstance(record.get("manifest"), str):
-                references.append(record["manifest"])
-    return list(dict.fromkeys(references))
 
 
 def allowed_control_path(path: str) -> PurePosixPath:
@@ -108,11 +97,11 @@ def load_source_records(root: Path) -> list[dict[str, Any]]:
         if registry_status != lock_status:
             raise ValueError(f"retrieval_status mismatch for {source_id}")
 
-        manifest_refs = manifest_references(lock)
+        manifest_refs = lock_manifest_references(lock)
         missing_manifests = [
             reference
             for reference in manifest_refs
-            if not (root / reference).resolve().is_file()
+            if not repository_path(root, reference, prefix=MANIFEST_DIRECTORY).is_file()
         ]
         if missing_manifests:
             raise FileNotFoundError(

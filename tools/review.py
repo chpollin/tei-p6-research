@@ -45,7 +45,6 @@ import datetime
 import hashlib
 import json
 import re
-import shutil
 import subprocess
 import sys
 from collections.abc import Callable
@@ -55,6 +54,7 @@ from pathlib import Path
 if __package__ in (None, ""):  # run as a script, so the package root is not on the path
     sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
+from tools.review_execution import isolated_command, isolated_workdir, resolve_claude
 from tools.validate import (
     BLOCK_ID,
     COMPUTATION,
@@ -592,32 +592,34 @@ def run_claude(
     The prompt goes in on stdin; a command line caps out around 32k characters on
     Windows, and a quotation with its heading path can pass that.
     """
-    executable = shutil.which("claude")
-    if not executable:
-        raise RuntimeError("claude executable not found on PATH")
+    executable = resolve_claude()
     records: list[dict[str, str]] = []
     for pair in pairs:
-        command = [executable, "-p"]
-        if model:
-            command += ["--model", model]
         try:
-            result = subprocess.run(
-                command,
-                input=pair.prompt,
-                capture_output=True,
-                text=True,
-                encoding="utf-8",
-                errors="replace",
-                timeout=timeout,
-                check=False,
-            )
+            with isolated_workdir() as workdir:
+                command = isolated_command(executable, model, workdir.mcp_config)
+                result = subprocess.run(
+                    command,
+                    input=pair.prompt,
+                    capture_output=True,
+                    text=True,
+                    encoding="utf-8",
+                    errors="replace",
+                    cwd=workdir.cwd,
+                    timeout=timeout,
+                    check=False,
+                )
         except subprocess.TimeoutExpired:
             problems.append(f"{pair.id}: judging timed out after {timeout}s")
             continue
         if result.returncode != 0:
             problems.append(f"{pair.id}: claude failed: {result.stderr.strip()[:120]}")
             continue
+        if workdir.empty_after is not True:
+            problems.append(f"{pair.id}: review working directory did not remain empty")
+            continue
         record = audit_record(pair, result.stdout.strip(), model)
+        record["isolation"] = json.dumps(workdir.conditions(), sort_keys=True)
         if "verdict" not in record:
             problems.append(f"{pair.id}: no verdict found in the response")
         records.append(record)

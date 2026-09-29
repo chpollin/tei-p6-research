@@ -964,3 +964,148 @@ progress counts belong in [[knowledge/state]] and in the Git history.
   Stand. [[knowledge/state]] hält den Abschluss und [[knowledge/handoff]]
   nur die konkreten Fortsetzungspunkte. Eine Veröffentlichung oder ein
   Push wird durch die lokale Sicherung nicht vorgenommen.
+
+## 2026-09-11 — Arbeitswege und Quellenzugriff konsolidieren
+
+- **Decision.** Der Nutzer beauftragt die direkte Umsetzung der belegten
+  Refactoring-Befunde. Der aktuelle Stand wird von Inventar und historischen
+  Integrationsständen getrennt. Quellenwahl und Retrieval erhalten einen
+  ausführbaren, offline prüfbaren Weg. Die Suchansichten bleiben generierte
+  Navigation über bestehenden Quellen, Assertions und Projektverträgen.
+  Sie vergeben keinen Forschungsstatus und bilden keine neue Grounding-Schicht.
+  Das vollständige Quelleninventar wird als bestehender Projektionstyp unter
+  `corpus/projections/source-inventory.md` geführt. Alte Quellenidentitäten,
+  Anker, Manifeststände und begrenzte Experimentfragen bleiben erhalten.
+- **Why.** Der Audit vom 11. September zeigte widersprüchliche aktuelle
+  Abrufangaben, verstreute Auswahlverfahren, unspezifische Volltexttreffer,
+  unterschiedliche Prüfungen vor Veröffentlichung und drei reproduzierbare
+  Änderungen der Claim-Bedeutung trotz erfolgreicher Revisionsprüfung.
+  Die technische Baseline bestand 1.620 Tests. Die Befunde begründen gezielte
+  Änderungen an den bestehenden Arbeitswegen.
+- **Carried by.** [[knowledge/operations]], [[knowledge/architecture]],
+  [[knowledge/design]], [[knowledge/testing]], [[knowledge/plan]] und die
+  verantwortlichen Werkzeuge. Die Modellkorrektur erhält explizite
+  Revisionsregeln und Gegenfälle. Fachliche Abnahme, Quellenbewertung und
+  eine spätere Veröffentlichung bleiben gesondert zu belegende Ergebnisse.
+
+## 2026-09-11 — Bedeutung bestehender Claims bei Revision schützen
+
+- **Decision.** Die Revisionsprüfung von 0.2 bindet bestehende Claims an
+  Collection und ursprünglichen Träger. Wiederverwendete Entitäts-IDs
+  behalten ihre konstitutive Art. Bereits referenzierte Selektionen behalten
+  Version und exakten Selektor. Neue Records und explizite Supersession
+  bleiben zulässig. Veränderlich bleiben Labels, nicht reservierte
+  Konzeptdefinitionen und unreferenzierte Selektionen nach dem begrenzten
+  Vertrag in [[knowledge/text-model]] 14.4.
+- **Why.** Die drei früheren Gegenfälle verschoben die Bedeutung oder den
+  Beleg einer unveränderten Aussage. Direkte Referenzen auf Selektionen aus
+  Annotationen, Lesungsknoten und Relationsendpunkten decken den begrenzten
+  Abhängigkeitsraum ab; ein zusätzlicher allgemeiner Graphdienst ist dafür
+  nicht erforderlich. Fachliche Revision und menschliche Abnahme bleiben
+  außerhalb dieser Record-Prüfung.
+- **Carried by.** `tools/models/entities.py`, das Quellenprofil,
+  `experiments/entities_v02/spec.json`, die Modellverträge und Kapitel 02.
+  Die Regressionen stehen in den Modelltests; historische Fallinputs und
+  frühere Gegenfallberichte bleiben erhalten. Der Integrator hat nach der
+  Berichtsregeneration 209 gezielte Modell- und Reproduktionstests bestanden.
+
+## 2026-09-11 — Vollprüfung des Wissensstands beauftragt
+
+- **Decision.** Der Nutzer beauftragt einen eigenen Meilenstein für die vollständige Prüfung aller Destillate und Claims mit mehreren Subagents. Der Umfang wird durch Dokumentliste, Datei- und Prompthashes festgehalten. Bereits vergebene Maschinenstatus bleiben Gegenstand der Prüfung. Die Quellenübersicht bewertet die Eignung pro Frage; eine breite Literaturerweiterung und das Entfernen bestehender Literatur sind dadurch nicht beschlossen.
+- **Why.** Die vorhandenen Prüfläufe decken begrenzte Ausschnitte ab. Der bisherige Cutter prüft Assertion-Überschriften, aber nicht automatisch den gesamten Statement-Abschnitt oder die Kapitelverwendung. Kontextbedingungen, fehlende Prüfnachweise und familiengleiche Reviews benötigen einen eigenen Durchgang.
+- **Carried by.** [[knowledge/plan]] benennt Meilenstein V1; [[knowledge/verification]] definiert Vollprüfung und Blindheitsgrenze. Der datierte Prüflauf unter `workbench/reviews/2026-09-11-data-and-verification/` hält den Umfang und die Befunde fest. [[knowledge/state]] unterscheidet die abgeschlossene Bestandsaufnahme von der noch ausstehenden Vollprüfung.
+
+## 2026-09-11 — Vollprüfung V1 ausführen und Quellenlücken bearbeiten
+
+- **Decision.** Der Nutzer beauftragt die Umsetzung der nach dem Sessionabschluss benannten offenen Arbeiten. V1 erhält ein versioniertes Prüfinstrument für die bestehenden Belegpaare, vollständige Aussageabschnitte, weitere Tatsachenbehauptungen und Kapitelverwendung. Die ergänzenden Prüfeinheiten sind Auditrecords außerhalb der Wissenskette; sie führen keinen neuen Quellen-, Wissens- oder Status-Typ ein. Kontext wird mit Herkunft und Prüfsumme gespeichert. Ein Originalzugang oder ein unauflösbarer Widerspruch bleibt eine explizite Grenze, bis er tatsächlich geprüft werden kann.
+- **Why.** Der bisherige Cutter lässt Kontext und vollständige Assertion-Texte teilweise aus. Neue Urteile benötigen eine nachweisbar abgeschirmte Ausführung, vollständige Abdeckung und eine erneute Prüfung nach jeder inhaltlichen Änderung. Die installierte Claude-CLI unterstützt dafür Safe Mode ohne geladene Projektinstruktionen und eine leere Werkzeugliste in einem getrennten Arbeitsverzeichnis.
+- **Carried by.** Der neue Lauf unter `workbench/reviews/2026-09-11-v1/` ergänzt die historischen Auditrecords. Quellenarbeit zum offiziellen P6-Prozess und eine begründete ODD-Kontraststichprobe erhalten getrennte Aufnahme- und Auswahlrecords. Die W3C-Präzisierung, fehlende P6-README-Prüfnachweise und auffällige Claims werden darin nachgearbeitet. Menschliches `verified`, fachliche Modellabnahme und globale Vollständigkeit werden durch diese Ausführung nicht vergeben.
+
+## 2026-09-11 — Prüfkontext und fachliche Korrektur unterscheiden
+
+- **Decision.** V1 übernimmt die Identität einer Repräsentation aus deren gebuchten Metadaten und Präambel. Bei Assertion-Prüfungen begleitet der Titel des unmittelbar darunterliegenden Destillats den zitierten Core-Satz. Der Titel identifiziert die Quelle; Begründungsprosa und frühere Urteile bleiben ausgeschlossen. Bei großen Repräsentationen werden auch die ausdrücklich in Terms, Fragen oder Appraisal zitierten Blöcke mit ihrem Kontext geliefert. XML-Ausschnitte erhalten ihre aus dem unveränderten Original berechneten Vorfahren und Attribute. Die vollständigen P6-Seitentexte ersetzen zu eng zugeschnittene Abschnitte.
+- **Why.** Der Vorlauf fand sowohl verlorene Bedingungen als auch fehlende Datums-, Rollen- und Attributkontexte im Prüfprompt. Diese Ursachen verlangen verschiedene Korrekturen. Quellenidentität ist Teil der nachvollziehbaren Belegzuordnung; sie darf keine zusätzliche Sachbehauptung oder Interpretation begründen. Die frühere Prüfung bleibt als diagnostischer Vorlauf erhalten.
+- **Carried by.** Das Instrument wird als v1.4 neu gebunden. Wiederverwendung setzt unveränderte vollständige Prompts einschließlich Systemanweisung, Materialprüfsummen, Urteilsformat und Ausführungsgrenze voraus und wird protokolliert. Geänderte Belegpakete erhalten neue Urteile. Die vorab festgelegte blinde Zweitprüfung bleibt verbindlich.
+
+Die Nachprüfung der Praxisfälle zeigte zusätzlich eine Grenze der JSON-kodierten
+Byteausschnitte: Eine ModuleRef-Liste ohne Ende des schemaSpec beweist keine
+Gesamtzahl, und ein einzelnes change-Element zeigt seinen Elternknoten nicht.
+V1.5 liefert für diese neun endlichen Praxisquellen die vollständige unveränderte
+Repräsentation auch im Einzelclaim-Review. So bleiben wahre Aussagen erhalten,
+während ihre Prüfung den erforderlichen Originalkontext erhält. Alle anderen
+Prompts bleiben unverändert und werden nur nach dem oben festgelegten
+Äquivalenzabgleich übernommen.
+
+V1.6 ergänzt im Assertion-Review die bereits gebuchte Zitatidentität des
+Destillats (URL, Kommentarnummer, Datum oder Seitenlocator). Der Originalwortlaut
+des Zitats wird dabei nicht als zusätzlicher Assertion-Beleg geliefert. Diese
+Angaben gehören zur Quellenidentität, waren im historischen Cutter aber von
+der Aufzählungszeile getrennt. Der aktuelle vollständige Primärlauf wird auf
+diese Instrumentfassung gebunden; frühere Runden bleiben Vorläufe.
+
+## 2026-09-11 — Aktuelle Vollprüfung von historischen Prüfpaaren trennen
+
+Die ursprünglichen Entitätenreviews behalten ihre damaligen Prompts und Urteile.
+Ihre Tests prüfen weiterhin diese historischen Bindungen. Ein zusätzlicher
+verbindlicher Test und CI-Schritt verlangen für den aktuellen Gesamtbestand den
+V1-Erstlauf und die vorab bestimmte, separat ausgeführte blinde Zweitstichprobe.
+Aktuelle Materialänderungen, ausgelassene Einheiten und nicht bestandene Urteile
+sperren dieses Gate. Ein früheres H1-Urteil ersetzt dadurch keine Prüfung eines
+geänderten vollständigen Statements. Die begrenzten Erstwellen- und Pilotchecks
+bleiben zusätzlich bestehen und bekommen für geänderte Prompts eigene neue
+Urteile; deren historische Runden bleiben erhalten.
+
+V1.7 ergänzt die gespeicherte Quellenidentität auch vor vollständigen
+Repräsentationen. In V1.6 fehlte sie in diesem Zweig; dadurch beanstandete das
+Modell die Releasezuordnung, obwohl sie im unveränderten Frontmatter steht.
+Der Gesamttextauftrag folgt jetzt ausdrücklich dem bestehenden Schema:
+Destillate wählen Quelleninhalt aus, Terms dürfen belegte Begriffe außerhalb
+der Core statements definieren, und Appraisal bewertet Relevanz und Grenzen.
+Eine Auslassung ist nur dann ein Fehler, wenn eine Aussage dadurch irreführt.
+Unbelegte Tatsachen und unzutreffende Vollständigkeitsbehauptungen bleiben
+Prüffehler. Alle Gesamttextprompts werden neu geprüft; identische Einzelpaare
+können ausschließlich über den protokollierten Äquivalenzabgleich übernommen
+werden.
+
+## 2026-09-11 — Historische LISTSERV-Nachrichten mit Abstandszellen
+
+Der erste begrenzte Brown-Produktionslauf fand Nachrichtencaptures, deren
+LISTSERV-16.5-Kopftabelle zwischen Beschriftung und Wert eine leere Bildzelle
+enthält. Der Parser las nur die unmittelbar zweite Zelle und stufte diese
+Antworten deshalb als fehlend ein. Die Nacharbeit liest die erste nichtleere
+Wertzelle derselben Zeile; die erlaubten Headerfelder bleiben unverändert.
+Neue Checkpoints erhalten eine neue Parser-/Checkpointversion, damit frühere
+Fehlklassifikationen nicht als erledigte Monate übernommen werden. Die beiden
+bereits abgeschlossenen Pilotmanifeste bleiben als tatsächliche Vorläufe
+erhalten. Neue Abrufe und Wiederaufnahme erhalten eigene Ausgabepfade.
+
+## 2026-09-11 — Quellengebundene Aussagen bis in die Kapitel nachziehen
+
+Die V1-Gesamttextprüfung erfasst auch Überschriften, Erläuterungen und
+Quellengebrauch in Kapiteln. Korrekturen an einem Core statement werden deshalb
+bis zu seinen abhängigen Assertions und Kapiteln nachgezogen. Ein dort
+fehlendes Datum darf nicht aus der ursprünglichen Quelle an der direkten
+Belegschicht vorbei ergänzt werden. Verlorene Bedingungen und Modalitäten
+werden wiederhergestellt; unbelegte Erläuterungen entfallen oder werden als
+prüfbare Modellannahmen ausgewiesen. Quellenrollen bleiben erkennbar: Die
+Rekapitulation eines Arguments, eine berichtete Position, eine vorläufige
+Übereinstimmung und ein Beispiel tragen jeweils einen eigenen Aussageumfang.
+
+Die drei als `contested` geführten Paare werden auf getreue Wiedergabe ihrer
+beiden Quellen geprüft. Unterschiedliche Ebenen, offene Aufzählungen oder
+verschiedene Datierungen ergeben nicht automatisch einen logischen
+Widerspruch. Ihr wissenschaftlicher Status bleibt der bezeichneten
+menschlichen Rolle vorbehalten. Fehlende aktuelle Prüfungen werden durch
+einen unvollständigen Zwischenstand ausgewiesen; es werden keine
+Abschlusssiegel aus älteren oder nur teilweise passenden Urteilen erzeugt.
+
+## 2026-09-11 — Neue Aufnahmeformen in Suche und Webansichten
+
+Die Praxisaufnahme hält Rechte pro Repräsentation fest. Die Wissensansicht
+ordnet diese Einträge über den jeweiligen Repräsentationspfad zu und weist
+mehrdeutige Zuordnungen zurück. Restaurierte Originale bleiben lokale
+Quelldateien; die Materialübersicht verweist auf ihren Aufnahmebeleg und
+erzeugt keinen öffentlichen Rohdateilink. Bei ausdrücklich als Git-Blob
+aufgenommenen Publikationen übernehmen Suche und Wissensansicht den gepinnten
+Commit aus dem Quelleneintrag. Ein Commit der letzten Dateiänderung ist
+keine alternative Versionsidentität des aufgenommenen Baums.

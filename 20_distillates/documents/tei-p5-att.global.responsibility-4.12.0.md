@@ -3,12 +3,10 @@ type: distillate
 source-type: document
 representation: "[[10_markdown/documents/tei-p5-att.global.responsibility-4.12.0]]"
 topics: ["[[Metadata and Entities]]", "[[Elements and Classes]]"]
-status: validated
-checked:
-  machine-review: 2026-09-06
-  validation: 2026-09-06
+status: grounded
+checked: {}
 created: 2026-09-06
-updated: 2026-09-06
+updated: 2026-09-11
 ---
 
 # Distillate: TEI P5 4.12.0 att.global.responsibility specification
@@ -31,7 +29,7 @@ This distillate reports the English class description, the two English attribute
 - **att.global.responsibility**: the class described as providing attributes indicating the agent responsible for some aspect of the text, the markup or something asserted by the markup, and the degree of certainty associated with it. [[10_markdown/documents/tei-p5-att.global.responsibility-4.12.0#^r1]]
 - **cert**: the attribute described as signifying the degree of certainty associated with the intervention or interpretation. [[10_markdown/documents/tei-p5-att.global.responsibility-4.12.0#^r2]]
 - **resp**: the attribute described as indicating the agency responsible for the intervention or interpretation, for example an editor or transcriber. [[10_markdown/documents/tei-p5-att.global.responsibility-4.12.0#^r3]]
-- **agent**: in the English remarks on `resp`, a `person` or an `org`, held apart from the `respStmt`, `author`, `editor` or similar element which clarifies the exact role played by the agent. [[10_markdown/documents/tei-p5-att.global.responsibility-4.12.0#^r4]]
+- **agent**: in the English remarks on `resp`, the party to which `resp` is recommended not to point directly, glossed there by the parenthesis "person or org" and held apart from the `respStmt`, `author`, `editor` or similar element which clarifies the exact role played by the agent. [[10_markdown/documents/tei-p5-att.global.responsibility-4.12.0#^r4]]
 
 ## Open questions
 
@@ -46,7 +44,7 @@ This distillate reports the English class description, the two English attribute
 
 ## Appraisal
 
-The source is the complete class specification at a pinned release commit, so its English text establishes what the Guidelines say about the agency responsible for an intervention or interpretation and about the degree of certainty attached to it, together with the recommendation that a `resp` value point to an element which clarifies the agent's role. Which elements carry the two attributes stays open, and so do the value ranges of both, because the declarations that would settle them survive only in the XML of this source and in no English reading block.
+The source is the complete class specification at a pinned release commit, so its English text establishes what the Guidelines say about the agency responsible for an intervention or interpretation and about the degree of certainty attached to it, together with the recommendation that a `resp` value point to an element which clarifies the agent's role. Which elements carry the two attributes stays open, because this specification declares no class membership and no English reading block names a member, and so do the value ranges of both, because the XML refers them to the datatypes `teidata.probCert` and `teidata.pointer`, which this source does not define.
 
 ## Related
 

@@ -216,7 +216,13 @@ def inspect_claim(dossier: dict, claim_id: str, snapshots: dict[str, bytes]) -> 
 
 
 def check_profile_revision(before: dict, after: dict, snapshots: dict[str, bytes]) -> dict:
-    """The caller declares a shared ID scope; original source descriptors are frozen."""
+    """Compare two dossiers in a caller-declared shared ID scope.
+
+    The core claim revision check keeps earlier claims, alignment carriers, entity
+    kinds and the selections of passages and qualifications. The profile also freezes
+    earlier source descriptors and keeps every earlier entity ID with its kind, so a
+    changed kind reports both E_ENTITY_REWRITE and E_IDENTITY_REWRITE.
+    """
     diagnostics = []
     for name, dossier in (("before", before), ("after", after)):
         result = validate_profile(dossier, snapshots)

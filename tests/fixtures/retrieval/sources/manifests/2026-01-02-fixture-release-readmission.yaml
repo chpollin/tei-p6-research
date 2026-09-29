@@ -1,0 +1,27 @@
+schema_version: 1
+run_id: 2026-01-02-fixture-release-readmission
+source_id: fixture-release-9.9.0
+status: bounded-complete
+lock_file: sources/locks/fixture-release-9.9.0.yaml
+admissions:
+  - source_type: document
+    git_path: Test/fragment-test.xml
+    commit: "9999999999999999999999999999999999999999"
+    original_path: 00_sources/fixture-test-document-9.9.0.xml
+    original_sha256: "2222222222222222222222222222222222222222222222222222222222222222"
+    representation_path: 10_markdown/documents/fixture-test-document-9.9.0.md
+    representation_sha256: "f9b484742726acb9b0c7a18c5dbe3323f002cb97945aba88b22eca9b37df9951"
+    reused_admission: null
+    content_authority: test document of the fictional 9.9.0 release; encoded practice, not a normative specification
+    instruction_trust: none
+reused_admissions:
+  - source_type: document
+    git_path: Specs/att.fragment.xml
+    commit: "9999999999999999999999999999999999999999"
+    original_path: 00_sources/fixture-att.fragment-9.9.0.xml
+    original_sha256: "1111111111111111111111111111111111111111111111111111111111111111"
+    representation_path: 10_markdown/documents/fixture-att.fragment-9.9.0.md
+    representation_sha256: "82fed004f7e0899e150278dcb0bf08294659b6ea59c404e6eed18990bea0aea6"
+    reused_admission: sources/manifests/2026-01-01-fixture-release-admission.yaml
+    content_authority: normative specification source of the fictional 9.9.0 release
+    instruction_trust: none

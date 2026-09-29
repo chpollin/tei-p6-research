@@ -6,12 +6,12 @@ topics: ["[[Text and Document Structures]]", "[[Annotation and Overlap]]"]
 status: grounded
 checked: {}
 created: 2026-09-07
-updated: 2026-09-07
+updated: 2026-09-11
 ---
 
 # Distillate: TEI P5 4.12.0 join
 
-This distillate extracts the English descriptions, local declarations and selected examples of the pinned join specification.
+This distillate extracts the English descriptions, selected declarations and selected examples of the pinned join specification.
 
 ## Core statements
 
@@ -37,7 +37,7 @@ This distillate extracts the English descriptions, local declarations and select
 
 ## Appraisal
 
-The extraction distinguishes declared rules from observed processor behavior. Examples establish the encodings presented by the specification. Other-language translations and effective schema compilation remain outside this extraction. The section audit records the examined units and exclusions.
+The extraction reports declared rules and examples and records no processor behavior. Examples establish the encodings presented by the specification. Other-language translations and effective schema compilation remain outside this extraction. The section audit records the examined units and exclusions.
 
 ## Related
 

@@ -3,12 +3,10 @@ type: distillate
 source-type: document
 representation: "[[10_markdown/documents/tei-p5-att.global.source-4.12.0]]"
 topics: ["[[Metadata and Entities]]", "[[Elements and Classes]]"]
-status: validated
-checked:
-  machine-review: 2026-09-06
-  validation: 2026-09-06
+status: grounded
+checked: {}
 created: 2026-09-06
-updated: 2026-09-06
+updated: 2026-09-11
 ---
 
 # Distillate: TEI P5 4.12.0 att.global.source specification
@@ -29,7 +27,7 @@ This distillate reports the English class description, the English description o
 
 ## Terms
 
-- **att.global.source**: the specification that provides attributes used by elements to point to an external source. [[10_markdown/documents/tei-p5-att.global.source-4.12.0#^r1]]
+- **att.global.source**: the class described as providing attributes used by elements to point to an external source. [[10_markdown/documents/tei-p5-att.global.source-4.12.0#^r1]]
 - **source**: the attribute described as specifying the source from which some aspect of this element is drawn. [[10_markdown/documents/tei-p5-att.global.source-4.12.0#^r2]]
 - **element describing a schema component**: `classRef`, `dataRef`, `elementRef`, `macroRef`, `moduleRef` or `schemaSpec`, on which the attribute identifies the source from which declarations for the components should be obtained. [[10_markdown/documents/tei-p5-att.global.source-4.12.0#^r3]]
 - **bibliographical source**: on elements other than those describing a schema component, the source from which a quotation or citation is drawn and to which the attribute provides a pointer. [[10_markdown/documents/tei-p5-att.global.source-4.12.0#^r4]]
@@ -49,7 +47,7 @@ This distillate reports the English class description, the English description o
 
 ## Appraisal
 
-The source is the complete class specification at a pinned release commit, so its English text establishes that one attribute serves two distinct pointing tasks, obtaining declarations for schema components and citing the bibliographical source of a quotation or citation, and that the Guidelines set the value form as any URI including a private scheme with a release-version convention. It establishes nothing about which elements the class reaches and nothing about the datatype behind the value form. Where multiple values are permitted, it leaves open how they combine. The Schematron constraint, the examples and the non-English text stay outside the core statements until a reading block or another admitted source carries them.
+The source is the complete class specification at a pinned release commit, so its English text establishes that one attribute serves two distinct pointing tasks, obtaining declarations for schema components and citing the bibliographical source of a quotation or citation, and that its English remarks allow the location to be given by any form of URI, including a private scheme with a release-version convention. Its English text names the six elements describing a schema component on which the attribute is used, but no member of the class, and it states no datatype behind the value form, which only the XML declares. Where multiple values are permitted, the English text leaves open how they combine. The Schematron constraint, the examples and the non-English text stay outside the core statements until a reading block or another admitted source carries them.
 
 ## Related
 

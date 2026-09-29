@@ -3,17 +3,15 @@ type: assertion
 topics: ["[[Metadata and Entities]]", "[[Elements and Classes]]"]
 phenomena: ["[[glossary/entity-identification]]"]
 related: ["[[30_assertions/p5-att-naming-inherits-key-and-ref-and-prefers-a-direct-link]]", "[[30_assertions/p5-key-identifies-the-entity-named-through-an-externally-defined-coded-value]]", "[[30_assertions/p5-ref-locates-a-definition-or-identity-for-the-entity-named-by-uris]]"]
-status: validated
-checked:
-  machine-review: 2026-09-06
-  validation: 2026-09-06
+status: grounded
+checked: {}
 grounding:
   - "[[20_distillates/documents/tei-p5-att.canonical-4.12.0#^s1]]"
 created: 2026-09-06
-updated: 2026-09-06
+updated: 2026-09-11
 ---
 
-# In TEI P5 4.12.0, att.canonical associates a representation such as a name or title with canonical information about the object being named or referenced
+# In TEI P5 4.12.0, att.canonical provides attributes that can be used to associate a representation such as a name or title with canonical information about the object being named or referenced
 
 ## Statement
 
@@ -21,7 +19,7 @@ In TEI P5 4.12.0, the attribute class att.canonical provides attributes that can
 
 ## Support
 
-- [[20_distillates/documents/tei-p5-att.canonical-4.12.0#^s1]] — The class description. It establishes that the identifying attributes attach to the representation of the object, and it names no member element or class.
+- [[20_distillates/documents/tei-p5-att.canonical-4.12.0#^s1]] — The class description. It states what the attributes can be used for and names no attribute, member element or class.
 
 ## Related
 

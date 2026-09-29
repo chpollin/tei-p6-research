@@ -6,7 +6,7 @@ checked: {}
 grounding:
   - "[[20_distillates/documents/tei-p5-div-4.12.0#^s4]]"
 created: 2026-09-07
-updated: 2026-09-07
+updated: 2026-09-11
 ---
 
 # The P5 4.12.0 div-in-ab-or-p Schematron rule reports a div with a p or ab ancestor when it has no floatingText ancestor.
@@ -17,7 +17,7 @@ The P5 4.12.0 div-in-ab-or-p Schematron rule reports a div with a p or ab ancest
 
 ## Support
 
-- [[20_distillates/documents/tei-p5-div-4.12.0#^s4]] supplies the source-specific statement used here. The assertion retains its stated source and scope.
+- [[20_distillates/documents/tei-p5-div-4.12.0#^s4]]
 
 ## Related
 

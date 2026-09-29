@@ -2,6 +2,9 @@
 
 Run ``python -m tools.build_guidelines_navigation [--check]``. The contract in
 knowledge/architecture.md keeps rule-based topic suggestions outside grounding.
+Curated topics repeat the ``topics`` of the one distillate the coverage
+projection names for a source; they stay a separate list from the rule-based
+suggestions, and no distillate status is copied.
 No original, Git mirror, network access or source mutation is involved.
 """
 from __future__ import annotations
@@ -12,7 +15,7 @@ import re
 from hashlib import sha256
 from pathlib import Path
 
-from tools.sitegen.documents import read_document
+from tools.sitegen.documents import WIKI, read_document
 
 OUTPUT = "corpus/projections/guidelines-navigation-4.12.0.json"
 COVERAGE = "corpus/projections/guidelines-4.12.0.json"
@@ -59,6 +62,23 @@ def locate(locator: str, locations: dict[str, str]) -> dict:
     return {"anchor": None, "anchor_reason": "No existing block covers this XML location; open the complete representation."}
 
 
+def curated_topics(root: Path, distillate: str | None, representation: str, topics: dict[str, str]) -> list[dict]:
+    """Topics declared by the source's own distillate, without its status."""
+    if not distillate:
+        return []
+    meta, _ = read_document(root, distillate)
+    link = WIKI.fullmatch(str(meta.get("representation", "")))
+    if meta.get("type") != "distillate" or not link or f"{link[1]}.md" != representation:
+        raise ValueError(f"Distillate does not distill its coverage source: {distillate}")
+    result = []
+    for value in meta.get("topics") or []:
+        match = WIKI.fullmatch(str(value))
+        if not match or match[1] not in topics:
+            raise ValueError(f"Distillate topic names absent MOC: {distillate}")
+        result.append({"topic": match[1], "moc": topics[match[1]], "distillate": distillate})
+    return result
+
+
 def build(root: Path) -> dict:
     root = Path(root)
     inputs = {}
@@ -92,6 +112,12 @@ def build(root: Path) -> dict:
         if meta.get("type") != "representation" or meta.get("metadata", {}).get("confidential"):
             raise ValueError(f"Invalid public representation: {representation}")
         locations[path] = passage_locations(body)
+        distillate = source.get("distillate")
+        if distillate:
+            if not distillate.startswith("20_distillates/documents/") or ".." in Path(distillate).parts:
+                raise ValueError(f"Invalid distillate path: {distillate}")
+            read(distillate)
+        curated = curated_topics(root, distillate, representation, topics)
         spec = specs.get(path)
         prefix = Path(path).stem.split("-")[0]
         module = spec["module_declared"] if spec else CHAPTER_MODULES.get(prefix)
@@ -115,7 +141,9 @@ def build(root: Path) -> dict:
             "source": path, "representation": representation,
             "representation_sha256": inputs[representation], "title": source["title"],
             "kind": category, "module": module, "module_basis": "declared" if spec else "chapter-map",
-            "ident": spec["ident"] if spec else None, "topic_suggestions": suggestions,
+            "ident": spec["ident"] if spec else None,
+            "attributes": sorted({a["ident"] for a in spec["local_attributes"]}) if spec else [],
+            "topic_suggestions": suggestions, "curated_topics": curated,
             "unclassified_reason": None if suggestions else "No topic rule for this support source; scholarly classification remains open.",
             "references": [], "referenced_by": [],
         }
@@ -141,11 +169,13 @@ def build(root: Path) -> dict:
                 destination["referenced_by"].append({"ident": row["ident"], "representation": row["representation"],
                                                      "relation": edge["relation"], "xml_location": edge["xml_location"],
                                                      **locate(ref["locator"], locations[path])})
-    return {"schema_version": 1, "generated": True, "generator": "tools.build_guidelines_navigation v1",
-            "use": "navigation-only; never grounding", "classification": "rule-based topic suggestions; not scholarly assessment",
+    return {"schema_version": 2, "generated": True, "generator": "tools.build_guidelines_navigation v2",
+            "use": "navigation-only; never grounding",
+            "classification": "rule-based topic suggestions and curated distillate topics, kept apart; neither is scholarly assessment or research status",
             "instruction_trust": "none", "release": coverage["release"], "commit": coverage["commit"],
             "inputs": dict(sorted(inputs.items())), "topics": topics,
             "counts": {"sources": len(rows), "specifications": len(specs),
+                       "curated": sum(bool(r["curated_topics"]) for r in rows.values()),
                        "unclassified": sum(not r["topic_suggestions"] for r in rows.values())},
             "sources": [rows[p] for p in sorted(rows)]}
 

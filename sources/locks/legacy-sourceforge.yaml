@@ -1,7 +1,7 @@
 schema_version: 1
 lock_id: tei-legacy-sourceforge-observable-corpus
 source_id: tei-legacy-sourceforge
-as_of: "2026-09-05"
+as_of: "2026-09-11"
 retrieval_status: partial
 
 scope:
@@ -29,9 +29,10 @@ counts:
 coverage:
   tracker_api:
     retrieval_status: observable-complete
-    as_of: "2026-09-05"
-    manifest: sources/manifests/2026-09-05-tei-legacy-sourceforge-r3.yaml
+    as_of: "2026-09-06"
+    manifest: sources/manifests/2026-09-06-tei-legacy-sourceforge-r4.yaml
     boundary: Every ticket exposed by the bugs, feature-requests, and support-requests REST interfaces, together with its observable discussion pages.
+    reuse_note: Adapter version 2 reused all 1349 tickets from r3 without refetching their bodies. This is a historical interface inventory; local raw availability is a separate check.
   release_files_and_version_control:
     retrieval_status: partial
     boundary: SourceForge release-file and legacy version-control interfaces registered for this family.
@@ -43,6 +44,8 @@ manifests:
   - sources/manifests/2026-09-04-tei-legacy-sourceforge.yaml
   - sources/manifests/2026-09-04-tei-legacy-sourceforge-r2.yaml
   - sources/manifests/2026-09-05-tei-legacy-sourceforge-r3.yaml
+  - sources/manifests/2026-09-06-tei-legacy-sourceforge-r4.yaml
+  - sources/manifests/2026-09-11-v1-review-context-recovery.yaml
 
 bounded_readings:
   - run_id: W1-ISSUES

@@ -3,14 +3,12 @@ type: assertion
 topics: ["[[Metadata and Entities]]", "[[Abstract Model]]"]
 phenomena: ["[[glossary/entity-record]]", "[[glossary/mention-of-an-entity]]"]
 related: ["[[30_assertions/p5-guidelines-separate-the-entity-record-from-references-to-the-entity]]", "[[30_assertions/p5-person-provides-information-about-an-identifiable-individual]]", "[[30_assertions/p5-guidelines-distinguish-names-for-places-from-other-data-about-places-as-they-do-for-people]]"]
-status: validated
-checked:
-  machine-review: 2026-09-06
-  validation: 2026-09-06
+status: grounded
+checked: {}
 grounding:
   - "[[20_distillates/documents/tei-p5-guidelines-nd-4.12.0#^s26]]"
 created: 2026-09-06
-updated: 2026-09-06
+updated: 2026-09-11
 ---
 
 # In TEI P5 4.12.0, the Guidelines group information about a person, as distinct from references to a person such as by name, within a person element
@@ -21,7 +19,7 @@ In TEI P5 4.12.0, the Guidelines group information about a person, as distinct f
 
 ## Support
 
-- [[20_distillates/documents/tei-p5-guidelines-nd-4.12.0#^s26]] — The opening of the chapter's section on person records. It states the separation of the record from references to the person for the person element itself, in the chapter's own words, and it states nothing about how a reference reaches the record or about the place record.
+- [[20_distillates/documents/tei-p5-guidelines-nd-4.12.0#^s26]]
 
 ## Related
 

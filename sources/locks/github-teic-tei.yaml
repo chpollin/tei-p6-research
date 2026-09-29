@@ -1,7 +1,7 @@
 schema_version: 1
 lock_id: github-teic-tei-observable-history
 source_id: github-teic-tei-work-items
-as_of: "2026-09-04"
+as_of: "2026-09-11"
 retrieval_status: partial
 
 repository:
@@ -11,7 +11,7 @@ repository:
   api_base: https://api.github.com/repos/TEIC/TEI
 
 snapshot:
-  observed_at: "2026-09-04"
+  observed_at: "2026-09-06"
   api_version: "2022-11-28"
   api_version_rule: Pin the supported GitHub API version in the first run manifest; never change it silently during a run.
   authentication: read-only-token-from-secret-store
@@ -53,5 +53,20 @@ manifests:
   - sources/manifests/2026-09-06-github-teic-tei-work-items.yaml
   - sources/manifests/2026-09-06-github-teic-tei-relations.yaml
   - sources/manifests/2026-09-07-text-structures-citations.yaml
-counts: {}
+  - sources/manifests/2026-09-06-entities-run2-citations.yaml
+  - sources/manifests/2026-09-11-v1-review-context-recovery.yaml
+  - sources/manifests/2026-09-11-wontfix-context.yaml
+counts:
+  issues: 2476
+  pull_requests: 455
+  work_item_details: 2931
+  issue_comments: 19565
+  timeline_events: 74981
+  graphql_relations: 16003
+  review_threads: 674
+counts_scope: The 2026-09-06 REST and GraphQL observations; later bounded citation-context recovery is counted only in its own manifest.
 gaps:
+  - code: historical-rest-relations-gap-superseded-by-graphql-run
+    status: resolved-in-bounded-run
+    manifest: sources/manifests/2026-09-06-github-teic-tei-relations.yaml
+    detail: The original REST manifest retains its historical gap; the later GraphQL run resolves its 2931 requested work items. This does not assert a fresh family-wide census on 2026-09-11.

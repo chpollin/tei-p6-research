@@ -4,7 +4,7 @@ from __future__ import annotations
 import re
 from pathlib import Path
 
-import yaml
+from tools.vault_documents import parse_frontmatter
 
 WIKI = re.compile(r"\[\[([^\]|]+)(?:\|([^\]]+))?\]\]")
 
@@ -16,16 +16,11 @@ def read_document(root: Path, path: str) -> tuple[dict, str]:
         raise ValueError(f"Document escapes repository: {path}")
     if not file.is_file():
         raise FileNotFoundError(f"Missing document: {path}")
-    text = file.read_text(encoding="utf-8")
-    if not text.startswith("---\n"):
-        return {}, text.strip()
-    pieces = text.split("---\n", 2)
-    if len(pieces) != 3:
-        raise ValueError(f"Incomplete frontmatter: {path}")
-    meta = yaml.safe_load(pieces[1]) or {}
-    if not isinstance(meta, dict):
-        raise ValueError(f"Invalid frontmatter: {path}")
-    return meta, pieces[2].strip()
+    parsed = parse_frontmatter(file.read_text(encoding="utf-8"))
+    if parsed.has_frontmatter and parsed.error:
+        label = "Incomplete" if parsed.error == "unterminated frontmatter" else "Invalid"
+        raise ValueError(f"{label} frontmatter: {path}: {parsed.error}")
+    return parsed.metadata, parsed.body.strip()
 
 
 def first_table_rows(text: str) -> list[list[str]]:

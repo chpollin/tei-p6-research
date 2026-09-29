@@ -9,7 +9,7 @@ method:
 status: draft
 language: en
 created: "2026-09-04"
-updated: "2026-09-07"
+updated: "2026-09-11"
 related: [INDEX, schema, data, verification, testing, governance, state, journal]
 ---
 
@@ -31,10 +31,12 @@ acquisition or repository administration is required. Install with `uv`:
 uv sync
 ```
 
-Without `uv`:
+Without `uv`, use a Python virtual environment and install the declared tools.
+This fallback does not reproduce the full transitive lock; `uv sync --locked`
+is the reproducible setup:
 
 ```powershell
-python -m pip install pyyaml pytest ruff
+python -m pip install pyyaml pytest==8.4.2 ruff==0.15.21 rdflib==7.6.0
 ```
 
 Verify the checkout:
@@ -268,7 +270,34 @@ text is committed only after per-item rights review under the rule in
 - A post-merge failure is undone with `git revert`, which keeps the history
   intact.
 
+#### Wayback checkpoint and resume
+
+`wayback-fetch` sichert jeden abgeschlossenen Monat im lokalen Rohdatenspeicher.
+Der Checkpoint enthält die Identität der Coverage-Eingabe, die gewählten Monate,
+das Nachrichtenlimit und versiegelte Monatsblöcke mit Metadaten und Rohdatenhashes.
+Vor Wiederverwendung werden Eingabeidentität, Optionen und referenzierte Bytes
+geprüft. Fertige Monate benötigen keine neue HTTP-Anfrage; abgebrochene oder
+vorübergehend fehlgeschlagene Monate werden erneut versucht.
+
+Checkpointversion 2 berücksichtigt leere Abstandszellen in historischen
+LISTSERV-Kopftabellen. Ältere Checkpoints werden zurückgewiesen, damit deren
+Nachrichtenklassifikation nach einer Parserkorrektur neu geprüft wird.
+
+```powershell
+python -m tools.corpus.listserv_snapshot wayback-fetch --coverage-input corpus/normalized/mail/tei-l-wayback-coverage.jsonl --checkpoint corpus/raw/checkpoints/<run-id> --delay-seconds 0.5 --normalized-output corpus/normalized/mail/<run-id>.jsonl --manifest-output sources/manifests/<run-id>.yaml
+python -m tools.corpus.listserv_snapshot wayback-fetch --coverage-input corpus/normalized/mail/tei-l-wayback-coverage.jsonl --resume-from corpus/raw/checkpoints/<run-id> --delay-seconds 0.5 --normalized-output corpus/normalized/mail/<continued-run-id>.jsonl --manifest-output sources/manifests/<continued-run-id>.yaml
+```
+
+Die Wiederaufnahme verwendet dieselbe Monatenauswahl und dasselbe
+`--max-messages` wie der Ursprungslauf. Für bereits abgeschlossene partielle
+Läufe werden neue Ausgabe- und Manifestpfade gewählt, damit historische
+Prüfsummen gültig bleiben. Checkpoints sind lokale Prozessartefakte. Sie
+begründen weder eine Quellenaufnahme noch einen neuen Evidenzstatus.
+Lose Rohdateien eines alten Laufs ohne Checkpoint sind nicht allein anhand
+ihres Inhalts sicher einem Monat oder einer Anfrage zuzuordnen.
+
 ### Deep research prompt skeleton
+
 
 > Research the topic **{topic from the controlled topic set}** for the project **{project}**.
 > Search broadly, then prioritize: peer-reviewed and official sources first;
@@ -317,8 +346,8 @@ quotations checked against the raw snapshot at intake and recorded as
 uses. A generated metadata index of threads is a navigation projection and
 never grounding.
 
-After a representation change, regenerate the source inventory in
-[[knowledge/state]] from the files and revalidate:
+After a representation change, regenerate
+[[corpus/projections/source-inventory]] from the files and revalidate:
 
 ```powershell
 python tools/inventory.py . --write
@@ -628,11 +657,256 @@ attributed source's proposal, a preferred design is never encoded as a TEI
 assertion, and claims about existing P5 behavior become assertions only
 through the normal source, distillate and assertion chain.
 
+## Select
+
+Diese Prozedur wählt Quellen für eine begrenzte Forschungsfrage. Der vorhandene Referenzbestand bleibt erhalten; eine Auswahl bestimmt seine Verwendung in einem Forschungslauf. Die historischen Fragen der ersten Themenläufe stehen im [Auswahlkontext](../workbench/selections/2026-09-06-topic-run-context.md).
+
+`tools.select_sources` führt die deklarierte Auswahl offline aus. Die Ausgabe enthält die Suchausdrücke, Trefferidentitäten, Snapshot- und Manifestprüfsummen sowie Abdeckungslücken. Eine Aufnahme oder Forschungsbewertung erfolgt anschließend nach dieser Prozedur.
+
+```powershell
+python -m tools.select_sources --github-label "Status: Reconsider for P6" --github-label "Status: Wontfix"
+python -m tools.select_sources --atlas-member att.fragmentable --atlas-attribute part
+python -m tools.select_sources --queries workbench/selections/<declared-query-file>.yaml --output workbench/selections/<new-run>.json
+```
+
+Eine Abfragedatei enthält eine Liste unter `queries`, mit je `id`, `stream` und beispielsweise `pattern` oder `label`. Die zulässigen Formen stehen in `python -m tools.select_sources --help` und im Modulvertrag. Der [Abgleich der Gegenbelegsuche vom 2026-09-11](../workbench/selections/2026-09-11-counterevidence-reconciliation.md) hält die fehlende Wontfix-Abfrage der ersten beiden Läufe und ihre 32 Kandidaten fest. Die anschließende [Einzelprüfung der Beschreibungen und Kommentare](../workbench/selections/2026-09-11-wontfix-context.md) ergänzt diese historischen Auswahlprotokolle mit begründeten Auswahlen und Korrekturen; eine empfohlene Aufnahme ist weiterhin kein eingelesener Beleg.
+
+### Selection procedure
+
+#### 1. Evidence questions
+
+A run takes its questions from four places in this order. First come the
+posits of `40_output/12-p6-design.md` whose open evidence question names a
+construct or a phenomenon of the topic. Second come the posits of the topic's
+own chapter, where one exists. Third come the open questions of the topic map
+`30_assertions/MOC-<Topic>.md`. Fourth come the gaps named under Open work in
+[[knowledge/state]]. Each question receives an identifier and one of two
+kinds. A coverage question asks which source states, declares or encodes
+something. A problem claim holds that P5 folds two things into one construct,
+lacks a construct or leaves a rule unstated, and every problem claim receives
+a counterevidence query under step 4. The list of questions is closed before
+the first query runs, and a question that arises later belongs to the next
+run of the topic.
+
+#### 2. Declared queries
+
+From the questions the run derives, before any query runs, one finite list
+of terms per family and records it with the run. Specification idents, class
+names and attribute names come from the questions and from the glossary
+entries of the topic. Guidelines chapters are named by file. Title and
+subject terms are regular expressions matched without regard to case. An
+ident that is also an ordinary word, such as name, key, ref, state, event,
+part, line, head, note or place, is queried in a marked form, as `@key`,
+`<name>` or `att.naming`, because the bare word returns homonyms that would
+have to be rejected one by one; where a bare form is declared anyway, the
+declaration says so and the homonyms are booked as rejections. Two GitHub
+labels are queried in every run, `Status: Reconsider for P6` because it is
+the official process's own marker of P6 relevance, and `Status: Wontfix`
+because it is a counter-signal for the dispositions.
+
+#### 3. Family queries
+
+Each family is queried with its declared terms against a named snapshot, and
+the query, the snapshot and the hit count go into the run's table.
+
+- P5 specifications. The atlas `corpus/projections/p5-specs-4.12.0.json` is
+  read through its `records` list with three lookups, an ident lookup on
+  `ident`, a membership lookup that returns every record whose
+  `classes_declared` names the class, and an attribute lookup that returns
+  every record whose `local_attributes` declares the attribute. A hit is the
+  file `P5/Source/Specs/<ident>.xml` at the pinned commit
+  `113e933e21f016e2655518321e9d10214b8d9fcb`. The atlas is a navigation aid,
+  the admitted object is the Git blob, and membership means declared
+  membership only, because the atlas does not expand inheritance; a class
+  reached through another class is followed by hand and the chain is written
+  into the table.
+- Guidelines chapters. `git ls-tree` of `P5/Source/Guidelines/en/` at the
+  pinned commit lists the chapter files. A chapter is a hit when it documents
+  the module of a hit specification or the phenomenon of a question. Chapters
+  are admitted whole with their XInclude references unresolved, as in the
+  entity run, so that every specification a chapter pulls in is a separate
+  admission.
+- Encoded practice at the pinned release. The test documents under `P5/Test/`
+  at the pinned commit are queried by file name and characterized by a
+  deterministic count of the elements and attributes the questions name; the
+  count goes into the table. The `exemplum` blocks of a specification travel
+  with that specification. Real editorial documents enter only through the
+  sampling protocol of research package B in [[knowledge/plan]]; a run may reuse a document
+  the vault has already admitted by extending its distillate, which cuts new
+  pairs for review and leaves the reviewed pairs untouched.
+- GitHub work items. The stream `corpus/normalized/github/teic-tei-work-items.jsonl`
+  is read once per record with `kind` `work-item-detail`, matched on
+  `title` and filtered by `labels`. Companion `issue` and `pull-request-summary`
+  records identify the work-item kind without creating additional hits.
+  A hit is listed with number, kind, state,
+  creation and closing dates, comment count and labels, and the table names
+  the manifest of the stream it read. Bodies stay in the private raw store,
+  and a thread is admitted only when its raw snapshot is present in the
+  checkout that ingests it.
+- SourceForge tickets. The stream `corpus/normalized/sourceforge/tei-legacy-trackers-r4.jsonl`
+  is read for records with `object_type` `ticket`, matched on `summary` and
+  listed with tracker, number and status. The migration copied the ticket
+  titles into GitHub issues that carry the label `sf-automigrated`. Matching
+  titles and dates identify candidates for reconciliation. A migration relation
+  requires an explicit upstream pointer or separately documented source review;
+  until then it remains unknown. The records retain their upstream identities.
+  When migration is established, admit the fuller manifestation and name the
+  related record in the same row. The SourceForge status vocabulary, `closed-fixed`,
+  `closed-accepted`, `closed-rejected`, `closed-wont-fix` and
+  `open-accepted`, is the first outcome signal, because the GitHub copy of a
+  migrated ticket carries `closed` and nothing more.
+- TEI-L threads. The stream `corpus/normalized/mail/tei-l-psu.jsonl` is
+  matched on `subject` and grouped by subject without reply prefixes; each
+  group records its months and message count. A subject group is a reading lead.
+  Thread identity requires the message and reply references.
+  The stream covers the Penn State months only and carries no sender fields,
+  so a thread hit stays a lead until the Brown months are fetched and the
+  rights review of the thread has run.
+- Literature seeds. The lock `sources/locks/literature.yaml` supplies the
+  seed sets and the disposition of every record already discovered. The
+  pinned bibliography `P5/Source/Guidelines/en/BIB-Bibliography.xml` is
+  queried by the chapter prefix of each entry's `xml:id`, which tags the
+  entry with the chapter that cites it, and by title terms. The Journal of
+  the TEI and the Zotero seeds are not acquired and stay a recorded gap in
+  every run until their census has run. A discovered record receives a
+  disposition in the lock's vocabulary and enters the vault only through the
+  literature protocol of [[knowledge/operations]].
+
+#### 4. Counterevidence queries
+
+For every problem claim the run declares, before the claim can support a
+requirement, one query that would find P5 handling the case; such a query
+and its hits are marked `C` in the table. Three kinds of source answer it:
+
+- closed work items with the claim's terms whose outcome was a merged and
+  released change, checked against the declaration in the atlas at the
+  pinned commit;
+- items labelled `Wontfix`, `closed-rejected` or `closed-wont-fix`, whose
+  descriptions and complete discussion must be read to establish the outcome.
+  A label alone does not establish rejection: the thread may report a duplicate,
+  a move to another repository, a withdrawn proposal, a completed change or a
+  decision to retain existing behaviour. Attribute a reported decision to its
+  speaker and seek the decision record before treating it as Council policy;
+- the remarks of the admitted specifications and the Guidelines sections the
+  chapter cites.
+
+A hit that contradicts the claim
+yields a second assertion and a contested pair, and a query without a
+finding is entered with its date under the open questions of the topic map,
+as [[knowledge/verification]] requires. Closure is booked as closure only;
+the step to a released effect is traced through the pinned declaration or
+the release notes.
+
+#### 5. Dispositions
+
+Every hit receives exactly one disposition, `admit`, `defer` or `reject`,
+with a reason from a fixed list. The rejection reasons are these:
+
+- homonym, where the term names something else;
+- outside the topic;
+- duplicate manifestation;
+- tooling or typography, which covers stylesheet defects, typos and
+  translations;
+- example repair without semantic content.
+
+The deferral reasons are these:
+
+- budget, for a relevant source that waits for the next run of the topic;
+- another topic's run;
+- prerequisite missing, which covers a raw body absent from the checkout, a
+  pending rights review, a missing sampling protocol and an unacquired seed;
+- lead, where the title suggests relevance and the body has not been
+  checked.
+
+Hits that share one disposition and one reason may
+stand in one row by number. The selection is `bounded-complete` in the
+vocabulary of [[knowledge/data]] when every declared query ran against the
+named snapshot and every hit carries a disposition; the label says nothing
+about the completeness of a family, which its manifests hold.
+
+#### 6. Admission budget
+
+The following budget governs scholarly topic runs, including their
+distillation and source-support reviews. The full deterministic Guidelines
+reference intake has the separate finite boundary in [[knowledge/data]] and
+does not consume this budget or assign reviewed status. Sources already
+admitted by that intake are reused in a topic run with their existing
+representations and anchors. Every Guidelines chapter and specification
+remains in scope for systematic source-specific distillation; the generated
+[coverage](../corpus/projections/guidelines-4.12.0.md) identifies the actual
+processing position. Source availability does not close a topic cycle.
+
+A run admits at most twelve sources, among them at most two Guidelines
+chapters and at most four threads. The entity run of 2026-09-06 admitted nine
+sources, and its review cut 101 source pairs, 59 of them from the one
+Guidelines chapter, each pair judged in a fresh context
+(`workbench/reviews/2026-09-06-entities`). Reformulation rounds, assertion
+pairs and the human sample scale with that count, and twelve sources with two
+chapters keep a run near the size that stayed checkable. Sources beyond the
+budget are deferred with the reason budget to a further run of the same
+topic. A topic may have any number of runs, and a run is identified as
+`<date>-<topic slug>-<n>` when its admission manifest is written.
+
+#### 7. Order of steps
+
+1. Ingest. An admission manifest `sources/manifests/<date>-<topic slug>-admission.yaml`
+   names commit, blob, path, hash and rights of every admitted object.
+   Document sources receive an immutable representation under the current
+   converter version, threads a citation-only record in `references/` with
+   their locators, while the raw snapshot stays local.
+2. Distill. One source per agent in a fresh context with the canonical
+   extraction prompt, followed by the fidelity check and, for threads, the
+   quotation check against the raw snapshot.
+3. Review the distillates in fresh contexts with a reviewer from a different
+   model family than the producer or, where one family is available, with a
+   different model of that family and the limitation recorded in the run's
+   README.
+4. Synthesize assertions through the topic map, one atomic assertion per
+   group and a contested pair for each disagreement, and record the result
+   of the counterevidence query before any assertion supports a requirement.
+5. Review the assertion pairs as in step 3.
+6. Narrow. Reformulate every failed pair to what its statement carries and
+   review the changed pair again; earlier rounds stay in the run directory.
+7. Write or extend the topic's chapter with grounded and posit footnotes,
+   mirror the assertions and the posit count, and update the chapter
+   register.
+8. Draw the human sample after its strata and quota have been recorded in
+   [[knowledge/journal]].
+
+#### 8. The record a run leaves
+
+`workbench/selections/` holds the dated snapshot and selection tables of a
+run in one record, written once when the selection is made. The chapter
+register row of the chapter the run serves names the run, the count of
+admitted sources and the selection record that selected them, and the checkpoint row of
+[[knowledge/state]] carries the executed state with its dates and the gaps
+left under Open work. The admission manifest is the audit record of
+ingestion. `workbench/reviews/<run-id>/` holds `pairs.jsonl`,
+`verdicts.jsonl` and a README naming scope and model pairing. The topic map
+carries the dated counterevidence entries, and durable decisions go to the
+journal.
+
 ## Query
 
-Enter through topic maps and follow assertions to distillate statements.
-Consult source passages where exact wording matters. Cite assertions by
-wikilink. Record unanswered questions in the topic map.
+Die lokale Suche liefert vorhandene Artefakte und passende Passagen. Sie erzeugt keine Antworten und vergibt keinen Prüfstatus. Vor der Suche wird bestimmt, ob die Frage eine P5-Quelle, eine bereits geprüfte Aussage, einen offiziellen Diskussionsstand oder einen Projektvertrag betrifft.
+
+```powershell
+python -m tools.retrieval "att.canonical" --layer representation --limit 5 --json
+python -m tools.retrieval "key ref precedence" --layer assertion --status validated --limit 5 --json
+python -m tools.retrieval "revision" --layer knowledge --limit 5 --json
+```
+
+Exakte TEI-Kennungen und markierte Attributnamen begrenzen die Suche besser als allgemeine Wörter. Eine breite Suche kann anschließend mit Schicht, Status, Quellenautorität, Version und Thema eingeschränkt werden. Die Kriterien `authority` und `version` beschreiben die belegte Quellenherkunft des Ergebnisses; unbekannte Metadaten bleiben unbekannt.
+
+Die lokale Suche gewichtet lexikalische Treffer und weist pro Ergebnis `matched_terms` und `missing_terms` aus. Teilergebnisse bleiben als solche sichtbar; sie beantworten keine fehlenden Suchbegriffe. Die Quellenautorität einer Familie kann verschiedene Textarten umfassen: Beispielsweise gehört ein P5-Testdokument zur Familie `primary-normative`, hat aber laut `admission_authority` die Rolle eines Beispiels. Für eine normative Aussage ist die konkrete Guidelines-Passage zu lesen. Die Websuche verlangt dagegen alle eingegebenen Wörter und öffnet die passende Passage oder das vollständige Artefakt.
+
+1. Trefferpfad und gegebenenfalls Blockanker öffnen. Ein Ausschnitt genügt zur Orientierung; der unmittelbar verlinkte Kontext entscheidet über seine Verwendung.
+2. Bei Assertions die Grounding-Kette zu Destillat und Quellpassage verfolgen. Bei einer `contested`-Aussage die bezeichnete Gegenposition ebenfalls lesen.
+3. Prüfdatum und Quellenversion festhalten. Ein `validated`-Filter enthält genau diesen Status; er schließt `grounded`, `contested` und `verified` aus.
+4. Die Autorität auf die Frage beziehen. Ein Releasebeleg, ein Diskussionsbeitrag und ein Projektvorschlag beantworten unterschiedliche Fragen. Ein Projektvertrag wird niemals als offizieller TEI-Befund zitiert.
+5. Bei fehlendem Beleg die Suche in den benannten Quellen-Snapshots nach Select erweitern. Ein leerer Treffer erlaubt keine Aussage, dass P5 eine Fähigkeit nicht besitzt. Offene Sachfragen gehören in die entsprechende Themenkarte.
+
+Die Suche verwendet lexikalische Treffer und explizite Metadaten. Sie garantiert weder semantische Vollständigkeit noch wissenschaftliche Eignung. Der Webbrowser bietet zusätzlich eine geordnete Trefferliste, einen Prüfstatusfilter und unveränderte Quellenanker. Die Projektionen und Suchergebnisse bleiben außerhalb von `grounding`.
 
 ## Check
 
@@ -661,7 +935,7 @@ walk follows only immediate-layer anchors. Other branches and vault-wide
 warnings are excluded, and the closing output names the excluded checks.
 Any warning or error within chapter scope fails the run.
 
-`tools/inventory.py` builds the source inventory in [[knowledge/state]], the
+`tools/inventory.py` builds [[corpus/projections/source-inventory]], the
 two lists of every topic map and the example list of every glossary entry from
 the files themselves. Validation compares each of these regions against that
 result and raises `E-GENERATED` for a region whose content differs and for one

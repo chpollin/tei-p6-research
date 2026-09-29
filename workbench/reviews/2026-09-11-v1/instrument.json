@@ -1,0 +1,34 @@
+{
+  "instrument": "v1.2",
+  "instrument_files": {
+    "tools/full_review.py": "58829ee82a73eb2cca9d7484ce0e1f62bce97a5cd9d84193760f70be293f9ed2",
+    "tools/review_execution.py": "ebf0615ba14fa14009482699f3d99fb87a6533ebfd034f8a3c6f7f58e83a630e",
+    "tools/review.py": "401192a6c29d133229a0e42654fcfc799c44d204d534720ec5810618870716ea",
+    "tools/validate.py": "24849e4b8426c64c8c11b8d3623cc862f910f7df22d2a0efd54c0e1780ad3726",
+    "tools/vault_documents.py": "c8d126f0b0855dfc273aab4995e075671fde05751fd2772501ec3036eaae63a9"
+  },
+  "counts": {
+    "source": 497,
+    "assertion": 149,
+    "distillate-complete": 61,
+    "assertion-complete": 120,
+    "chapter-complete": 4,
+    "contested": 3
+  },
+  "unit_count": 834,
+  "boundary": {
+    "distillate-complete::20_distillates/documents/practice-v1-dracor-odd-c2f9e814": "preamble and all cited windows; complete representation not supplied",
+    "distillate-complete::20_distillates/documents/szd-werke-2026-09-07": "preamble and all cited windows; complete representation not supplied",
+    "distillate-complete::20_distillates/documents/tei-p5-guidelines-nd-4.12.0": "preamble and all cited windows; complete representation not supplied"
+  },
+  "partition_sizes": [
+    325,
+    270,
+    239
+  ],
+  "partition_rule": "Assign intact deterministic batches greedily to the least-loaded of three groups before primary judgments.",
+  "source_pair_task": "Original-context support",
+  "assertion_pair_task": "Ground contribution to the complete assertion; joint support tested separately",
+  "legacy_smoke": "v1.1 execution probe confirmed actual claude-opus-5 and CLI 2.1.263; not reused as a v1.2 judgment",
+  "superseded": "v1.1 primary run stopped before any batch completed to correct the contribution-vs-joint-support distinction before assertion review. Its files are retained locally."
+}

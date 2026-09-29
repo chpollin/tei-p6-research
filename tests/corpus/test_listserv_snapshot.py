@@ -12,7 +12,8 @@ import json
 
 import pytest
 
-from tools.corpus import listserv_snapshot
+from tools.corpus import http_store, listserv_snapshot
+from tools.corpus.http_store import canonical_url
 from tools.corpus.listserv_snapshot import (
     BROWN_ARCHIVE,
     PSU_ARCHIVE,
@@ -182,6 +183,16 @@ def test_message_parsing_reports_no_thread_pointers_for_a_standalone_message() -
     parsed = parse_message(message_page(*MESSAGES[0]))
 
     assert parsed["thread_position"] == {}
+
+
+def test_legacy_header_spacer_cells_preserve_metadata_and_exclude_sender() -> None:
+    page = message_page(*MESSAGES[1], in_thread=True)
+    spaced = page.replace(b"</b></td><td>", b'</b></td><td><img alt="" src="blank.gif"></td><td>')
+    expected = parse_message(page)
+    actual = parse_message(spaced)
+    assert actual == expected
+    assert actual["headers"]["content_type"] == "text/plain"
+    assert SENDER not in json.dumps(actual)
 
 
 def test_a_clean_bounded_run_is_bounded_complete(tmp_path, fake_http) -> None:
@@ -699,3 +710,344 @@ def test_the_cli_rejects_an_impossible_boundary(tmp_path, argv, message) -> None
 
     with pytest.raises(SystemExit, match=message):
         listserv_snapshot.main(arguments)
+
+
+FIXED_TIME = "2026-09-11T08:00:00Z"
+TWO_MONTHS = {BROWN_MONTH: "20191209195430", "2505": "20250512120000"}
+LATER_MESSAGES = [("eeee0001.2505", "Archived thread", "Thu, 1 May 2025 10:00:00 +0000")]
+
+
+class Interrupted(BaseException):
+    """Stands in for a crash that no handler in the collector may absorb."""
+
+
+@pytest.fixture
+def fixed_clock(monkeypatch) -> None:
+    """Pin every timestamp so that two runs compare byte for byte."""
+
+    monkeypatch.setattr(http_store, "utc_now", lambda: FIXED_TIME)
+    monkeypatch.setattr(listserv_snapshot, "utc_now", lambda: FIXED_TIME)
+
+
+def write_coverage(path, captures: dict[str, str]) -> None:
+    """Write the captured rows a coverage run leaves, without running one."""
+
+    rows = [
+        {
+            "schema_version": 1,
+            "source_id": "tei-l-archive",
+            "object_type": "wayback-month-coverage",
+            "list": LIST,
+            "month": month,
+            "queried_urls": [brown_index(month)],
+            "captured": True,
+            "capture_count": 1,
+            "latest_capture": timestamp,
+            "latest_capture_original": brown_index(month),
+            "latest_capture_status": "200",
+        }
+        for month, timestamp in captures.items()
+    ]
+    path.write_text("".join(json.dumps(row) + "\n" for row in rows), encoding="utf-8")
+
+
+def serve_two_months(fake_http) -> None:
+    """Serve an older month with a fetched, a placeholder and an index-only message.
+
+    A later month in the Penn State link form follows with one fetched message.
+    """
+
+    fetched, placeholder, index_only = BROWN_MESSAGES
+    serve_brown_month(fake_http, BROWN_MONTH, TWO_MONTHS[BROWN_MONTH], BROWN_MESSAGES)
+    serve_brown_message(
+        fake_http,
+        BROWN_MONTH,
+        fetched[0],
+        "20191210120000",
+        message_page(f"P{fetched[0]}.{BROWN_MONTH}", fetched[1], fetched[2], in_thread=True),
+    )
+    serve_brown_message(
+        fake_http, BROWN_MONTH, placeholder[0], "20191210130000", WAYBACK_PLACEHOLDER
+    )
+    for target in message_url_variants(brown_message_url(BROWN_MONTH, index_only[0])):
+        fake_http.serve_json(cdx_url(target), [])
+    serve_wayback_month(fake_http, "2505", TWO_MONTHS["2505"], LATER_MESSAGES)
+    serve_wayback_message(fake_http, *LATER_MESSAGES[0], "20250601090000")
+
+
+def crash_at(monkeypatch, fake_http, url: str) -> None:
+    """Route every request to the fake archive except ``url``, which crashes the run."""
+
+    target = canonical_url(url)
+
+    def open_or_crash(request, timeout=None):
+        if canonical_url(request.full_url) == target:
+            raise Interrupted
+        return fake_http.open(request, timeout)
+
+    monkeypatch.setattr(http_store.urllib.request, "urlopen", open_or_crash)
+
+
+def fetch_run(tmp_path, name: str, **overrides) -> dict:
+    """Run a wayback fetch whose raw store, outputs and default checkpoint carry ``name``."""
+
+    return run_wayback(
+        tmp_path,
+        **(
+            {
+                "raw_root": tmp_path / f"raw-{name}",
+                "normalized_output": tmp_path / f"{name}.jsonl",
+                "manifest_output": tmp_path / f"{name}.yaml",
+            }
+            | overrides
+        ),
+    )
+
+
+def default_checkpoint(tmp_path, name: str):
+    return tmp_path / f"raw-{name}" / "checkpoints" / name
+
+
+def sealed_months(checkpoint) -> list[str]:
+    return sorted(path.stem for path in (checkpoint / "months").glob("*.json"))
+
+
+def provenance(manifest: dict) -> dict:
+    """Return a manifest without the fields that name its invocation or its paths."""
+
+    kept = {
+        key: value for key, value in manifest.items() if key not in {"run_id", "objects", "resume"}
+    }
+    kept["requests"] = {
+        key: value
+        for key, value in manifest["requests"].items()
+        if key not in {"checkpoint", "resume_from"}
+    }
+    kept["objects"] = [
+        {"kind": item["kind"], "sha256": item["sha256"]} for item in manifest["objects"]
+    ]
+    return kept
+
+
+@pytest.mark.parametrize("bound", [None, 2])
+def test_an_interrupted_fetch_resumes_to_the_uninterrupted_result(
+    tmp_path, fake_http, fixed_clock, monkeypatch, bound
+) -> None:
+    """A crash inside the second month loses only that month.
+
+    The resumed run reuses the sealed first month without a request and writes
+    the bytes and provenance of a run that was never interrupted, with the
+    placeholder, the index-only row and the message bound intact.
+    """
+
+    write_coverage(tmp_path / "coverage.jsonl", TWO_MONTHS)
+    serve_two_months(fake_http)
+    straight = fetch_run(tmp_path, "straight", max_messages=bound)
+
+    crash_at(monkeypatch, fake_http, wayback_url(TWO_MONTHS["2505"], brown_index("2505")))
+    with pytest.raises(Interrupted):
+        fetch_run(tmp_path, "resumed", max_messages=bound)
+    checkpoint = default_checkpoint(tmp_path, "resumed")
+    assert sealed_months(checkpoint) == [BROWN_MONTH]
+    assert not (tmp_path / "resumed.jsonl").exists()
+
+    monkeypatch.setattr(http_store.urllib.request, "urlopen", fake_http.open)
+    fake_http.requested.clear()
+    resumed = fetch_run(tmp_path, "resumed", max_messages=bound, resume_from=checkpoint)
+
+    assert fake_http.requested
+    assert not any(f"ind{BROWN_MONTH}" in url for url in fake_http.requested)
+    assert (tmp_path / "resumed.jsonl").read_bytes() == (tmp_path / "straight.jsonl").read_bytes()
+    assert provenance(resumed) == provenance(straight)
+    assert resumed["resume"] == {"invocations": [FIXED_TIME, FIXED_TIME], "months_reused": 1}
+    assert "resume" not in straight
+    assert sealed_months(checkpoint) == [BROWN_MONTH, "2505"]
+    rows = records(tmp_path / "resumed.jsonl")
+    if bound is None:
+        assert [row["via"] for row in rows] == ["wayback", "wayback", "wayback-index", "wayback"]
+        assert [gap["code"] for gap in resumed["gaps"]] == ["wayback-message-missing"] * 2
+    else:
+        assert [row["via"] for row in rows] == ["wayback", "wayback"]
+        assert [gap["code"] for gap in resumed["gaps"]] == [
+            "max-messages-limit",
+            "wayback-message-missing",
+        ]
+    assert resumed["status"] == "partial"
+
+
+def test_resuming_a_finished_checkpoint_rebuilds_the_output_without_a_request(
+    tmp_path, fake_http, fixed_clock
+) -> None:
+    write_coverage(tmp_path / "coverage.jsonl", TWO_MONTHS)
+    serve_two_months(fake_http)
+    first = fetch_run(tmp_path, "first")
+    fake_http.requested.clear()
+
+    again = fetch_run(
+        tmp_path,
+        "again",
+        raw_root=tmp_path / "raw-first",
+        resume_from=default_checkpoint(tmp_path, "first"),
+    )
+
+    assert fake_http.requested == []
+    assert (tmp_path / "again.jsonl").read_bytes() == (tmp_path / "first.jsonl").read_bytes()
+    assert provenance(again) == provenance(first)
+    assert again["resume"]["months_reused"] == 2
+
+
+@pytest.mark.parametrize("existing_suffix", [".jsonl", ".yaml"])
+def test_fetch_preserves_existing_run_outputs(tmp_path, fake_http, existing_suffix) -> None:
+    write_coverage(tmp_path / "coverage.jsonl", TWO_MONTHS)
+    output = tmp_path / f"existing{existing_suffix}"
+    output.write_bytes(b"preserved run artifact\n")
+    with pytest.raises(ValueError, match="already exists; use new output paths"):
+        fetch_run(tmp_path, "existing")
+    assert output.read_bytes() == b"preserved run artifact\n"
+    assert fake_http.requested == []
+    assert not default_checkpoint(tmp_path, "existing").exists()
+
+
+@pytest.mark.parametrize("failure", ["month-index", "message-cdx"])
+def test_a_failed_month_is_not_sealed_and_is_asked_again(tmp_path, fake_http, failure) -> None:
+    """A failure that asking again may cure never becomes a reusable result."""
+
+    write_coverage(tmp_path / "coverage.jsonl", TWO_MONTHS)
+    position, subject, date, _size = BROWN_MESSAGES[0]
+    serve_brown_month(fake_http, BROWN_MONTH, TWO_MONTHS[BROWN_MONTH], BROWN_MESSAGES[:1])
+    serve_brown_message(
+        fake_http,
+        BROWN_MONTH,
+        position,
+        "20191210120000",
+        message_page(f"P{position}.{BROWN_MONTH}", subject, date),
+    )
+    if failure == "month-index":
+        fake_http.serve(wayback_url(TWO_MONTHS["2505"], brown_index("2505")), b"", status=503)
+    else:
+        serve_wayback_month(fake_http, "2505", TWO_MONTHS["2505"], LATER_MESSAGES)
+        for target in message_url_variants(message_href(BROWN_ARCHIVE, LATER_MESSAGES[0][0])):
+            fake_http.serve(cdx_url(target), b"", status=503)
+
+    first = fetch_run(tmp_path, "run")
+    checkpoint = default_checkpoint(tmp_path, "run")
+
+    assert first["status"] == "partial"
+    assert [gap["code"] for gap in first["gaps"]] == (
+        ["month-index-failed"] if failure == "month-index" else ["wayback-message-missing"]
+    )
+    assert sealed_months(checkpoint) == [BROWN_MONTH]
+
+    serve_wayback_month(fake_http, "2505", TWO_MONTHS["2505"], LATER_MESSAGES)
+    serve_wayback_message(fake_http, *LATER_MESSAGES[0], "20250601090000")
+    fake_http.requested.clear()
+    resumed = fetch_run(
+        tmp_path, "run-resumed", raw_root=tmp_path / "raw-run", resume_from=checkpoint
+    )
+
+    assert resumed["status"] == "bounded-complete"
+    assert resumed["gaps"] == []
+    assert resumed["counts"]["months_indexed"] == 2
+    assert resumed["resume"]["months_reused"] == 1
+    assert not any(f"ind{BROWN_MONTH}" in url for url in fake_http.requested)
+    assert sealed_months(checkpoint) == [BROWN_MONTH, "2505"]
+
+
+@pytest.mark.parametrize(
+    ("change", "message"),
+    [
+        ("coverage", "different coverage_input_sha256"),
+        ("month-filter", "different month_filter"),
+        ("bound", "different max_messages"),
+        ("raw-changed", "raw bytes"),
+        ("raw-missing", "raw bytes"),
+        ("block-edited", "does not match its seal"),
+        ("foreign", "is not a tei-l-archive wayback-fetch checkpoint"),
+        ("older-parser", "is not a tei-l-archive wayback-fetch checkpoint"),
+    ],
+)
+def test_a_resume_rejects_a_checkpoint_that_no_longer_matches(
+    tmp_path, fake_http, change, message
+) -> None:
+    coverage = tmp_path / "coverage.jsonl"
+    write_coverage(coverage, TWO_MONTHS)
+    serve_two_months(fake_http)
+    fetch_run(tmp_path, "run")
+    checkpoint = default_checkpoint(tmp_path, "run")
+    month_file = checkpoint / "months" / f"{BROWN_MONTH}.json"
+    block = json.loads(month_file.read_text(encoding="utf-8"))
+    raw = tmp_path / "raw-run" / block["responses"][0]["raw_path"]
+    overrides = {}
+    if change == "coverage":
+        write_coverage(coverage, {**TWO_MONTHS, "2505": "20250513120000"})
+    elif change == "month-filter":
+        overrides["months"] = [BROWN_MONTH]
+    elif change == "bound":
+        overrides["max_messages"] = 1
+    elif change == "raw-changed":
+        raw.write_bytes(raw.read_bytes() + b" ")
+    elif change == "raw-missing":
+        raw.unlink()
+    elif change == "block-edited":
+        block["records"][0]["subject"] = "Edited after sealing"
+        month_file.write_text(json.dumps(block), encoding="utf-8")
+    else:
+        state_file = checkpoint / "checkpoint.json"
+        state = json.loads(state_file.read_text(encoding="utf-8"))
+        if change == "older-parser":
+            state["schema_version"] = 1
+        else:
+            state["source_id"] = "other-source"
+        state_file.write_text(json.dumps(state), encoding="utf-8")
+    fake_http.requested.clear()
+
+    with pytest.raises(ValueError, match=message):
+        fetch_run(
+            tmp_path, "resumed", raw_root=tmp_path / "raw-run", resume_from=checkpoint, **overrides
+        )
+    assert fake_http.requested == []
+    assert not (tmp_path / "resumed.jsonl").exists()
+
+
+def test_a_new_run_never_writes_into_an_existing_checkpoint(tmp_path, fake_http) -> None:
+    write_coverage(tmp_path / "coverage.jsonl", TWO_MONTHS)
+    serve_two_months(fake_http)
+    fetch_run(tmp_path, "run")
+    fake_http.requested.clear()
+
+    with pytest.raises(ValueError, match="already exists"):
+        fetch_run(tmp_path, "run")
+    assert fake_http.requested == []
+
+
+def test_the_fetch_cli_offers_resume_and_rejects_an_unusable_checkpoint(tmp_path, capsys) -> None:
+    with pytest.raises(SystemExit):
+        listserv_snapshot.parse_args(["wayback-fetch", "--help"])
+    output = capsys.readouterr().out
+    assert "--resume-from" in output
+    assert "--checkpoint" in output
+
+    write_coverage(tmp_path / "coverage.jsonl", TWO_MONTHS)
+    outputs = [
+        "--coverage-input",
+        str(tmp_path / "coverage.jsonl"),
+        "--normalized-output",
+        str(tmp_path / "messages.jsonl"),
+        "--manifest-output",
+        str(tmp_path / "run.yaml"),
+        "--raw-root",
+        str(tmp_path / "raw"),
+    ]
+    with pytest.raises(SystemExit, match="different directories"):
+        listserv_snapshot.main(
+            [
+                "wayback-fetch",
+                *outputs,
+                "--checkpoint",
+                str(tmp_path / "a"),
+                "--resume-from",
+                str(tmp_path / "b"),
+            ]
+        )
+    with pytest.raises(SystemExit, match="no checkpoint to resume"):
+        listserv_snapshot.main(["wayback-fetch", *outputs, "--resume-from", str(tmp_path / "absent")])

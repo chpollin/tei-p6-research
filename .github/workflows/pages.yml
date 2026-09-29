@@ -11,7 +11,13 @@ permissions:
   id-token: write
 
 jobs:
+  checks:
+    uses: ./.github/workflows/checks.yml
+    permissions:
+      contents: read
+
   build:
+    needs: checks
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -20,20 +26,6 @@ jobs:
           python-version: "3.12"
       - run: pip install uv
       - run: uv sync --locked
-      - name: Validate research data and frontend
-        run: |
-          uv run --locked python tools/validate.py .
-          uv run --locked python -m tools.corpus.validate_control_plane .
-          uv run --locked python -m tools.ingest_guidelines --check
-          uv run --locked python -m pytest tests -q
-      - name: Reproduce Guidelines navigation and text structures admission
-        run: |
-          uv run --locked python -m tools.build_guidelines_navigation --check
-          uv run --locked python -m tools.ingest_text_structures --check
-      - name: Export and verify all admitted Guidelines XML
-        run: |
-          uv run --locked python -m tools.export_guidelines --output "${RUNNER_TEMP}/guidelines-xml"
-          uv run --locked python -m tools.export_guidelines --output "${RUNNER_TEMP}/guidelines-xml" --check
       - name: Generate the public static site
         run: |
           BUILD_DATE="$(date -u +%F)"

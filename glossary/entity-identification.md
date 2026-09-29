@@ -16,13 +16,13 @@ string.
 ## Examples
 
 <!-- examples:begin -->
-- [[30_assertions/p5-att-canonical-associates-a-name-with-canonical-information-about-its-object]] — In TEI P5 4.12.0, att.canonical associates a representation such as a name or title with canonical information about the object being named or referenced
+- [[30_assertions/p5-att-canonical-associates-a-name-with-canonical-information-about-its-object]] — In TEI P5 4.12.0, att.canonical provides attributes that can be used to associate a representation such as a name or title with canonical information about the object being named or referenced
   - [[20_distillates/documents/tei-p5-att.canonical-4.12.0#^s1]]
-- [[30_assertions/p5-att-canonical-gives-no-precedence-when-key-and-ref-co-occur]] — In TEI P5 4.12.0, att.canonical provides no semantic basis and suggests no precedence when both key and ref are supplied
+- [[30_assertions/p5-att-canonical-gives-no-precedence-when-key-and-ref-co-occur]] — In TEI P5 4.12.0, the English remarks on att.canonical state that the Guidelines provide no semantic basis and no suggested precedence when both key and ref are provided
   - [[20_distillates/documents/tei-p5-att.canonical-4.12.0#^s10]]
 - [[30_assertions/p5-att-naming-describes-nymref-through-the-object-named]] — In TEI P5 4.12.0, att.naming describes nymRef as locating the canonical form of the names associated with the object named by the element bearing it
   - [[20_distillates/documents/tei-p5-att.naming-4.12.0#^s3]]
-- [[30_assertions/p5-att-naming-inherits-key-and-ref-and-prefers-a-direct-link]] — In TEI P5 4.12.0, att.naming inherits key and ref from att.canonical as two ways of associating a name with its referent, and ref is to be used wherever a direct link to canonical information about the referent can be supplied
+- [[30_assertions/p5-att-naming-inherits-key-and-ref-and-prefers-a-direct-link]] — The P5 4.12.0 Guidelines describe att.naming as inheriting key and ref and recommend ref wherever a direct link can be supplied
   - [[20_distillates/documents/tei-p5-guidelines-nd-4.12.0#^s3]]
 - [[30_assertions/p5-guidelines-detach-the-nymref-association-from-the-entity-named]] — In TEI P5 4.12.0, the Guidelines state that the association nymRef makes with a nym has nothing to do with any individual who might use the name
   - [[20_distillates/documents/tei-p5-guidelines-nd-4.12.0#^s56]]
@@ -42,9 +42,9 @@ string.
   - [[20_distillates/documents/tei-p5-att.canonical-4.12.0#^s4]]
 - [[30_assertions/p5-key-requires-resolution-documentation-for-interchange]] — In TEI P5 4.12.0, the use of key in interchange requires that documentation about how the key is to be resolved be sent to the recipient
   - [[20_distillates/documents/tei-p5-att.canonical-4.12.0#^s8]]
-- [[30_assertions/p5-key-serves-cases-where-no-direct-link-is-required]] — In TEI P5 4.12.0, key serves cases where no direct link is required, because a local convention resolves the reference or because the encoder judges that no resolution is necessary
+- [[30_assertions/p5-key-serves-cases-where-no-direct-link-is-required]] — P5 4.12.0 gives examples of cases where key serves without a direct link
   - [[20_distillates/documents/tei-p5-guidelines-nd-4.12.0#^s4]]
-- [[30_assertions/p5-persname-is-synonymous-with-name-of-type-person]] — In TEI P5 4.12.0, the Guidelines hold persName synonymous with name of type person apart from its own type attribute and treat encodings of one name with rs, name or persName under the same ref as equivalent
+- [[30_assertions/p5-persname-is-synonymous-with-name-of-type-person]] — The P5 4.12.0 Guidelines describe persName as synonymous with name of type person, with an exception for its own type attribute
   - [[20_distillates/documents/tei-p5-guidelines-nd-4.12.0#^s8]]
 - [[30_assertions/p5-prosopography-records-refer-to-external-authorities-through-idno]] — In TEI P5 4.12.0, the Guidelines state that a prosopography record of a named entity commonly refers explicitly to other resources such as name authority files, a gazetteer or a printed book, and follow that statement with a specList naming idno with its type attribute
   - [[20_distillates/documents/tei-p5-guidelines-nd-4.12.0#^s25]]
@@ -70,10 +70,13 @@ string.
   - [[20_distillates/publications/teic-tei-issue-1414#^s14]]
 - [[30_assertions/teic-tei-issue-2739-commenter-states-att-personal-is-a-member-of-att-naming-and-att-naming-of-att-canonical]] — In TEIC/TEI issue 2739, a commenter stated that att.personal is a member of att.naming and that att.naming is a member of att.canonical
   - [[20_distillates/publications/teic-tei-issue-2739#^s4]]
+  - [[20_distillates/publications/teic-tei-issue-2739#^s5]]
+  - [[20_distillates/publications/teic-tei-issue-2739#^s6]]
 - [[30_assertions/teic-tei-issue-337-author-announces-an-interim-guidelines-change-telling-people-to-switch-to-ref]] — In TEIC/TEI issue 337, the issue author wrote that as an interim measure the Guidelines would be modified to make the point that people should switch to ref wherever key is mentioned
   - [[20_distillates/publications/teic-tei-issue-337#^s5]]
-- [[30_assertions/teic-tei-issue-337-author-reports-a-wish-to-deprecate-key-held-back-by-its-wide-use]] — In TEIC/TEI issue 337, the issue author reported a wish to deprecate key some day, held back by how widely the attribute was used at the time of writing
+- [[30_assertions/teic-tei-issue-337-author-reports-a-wish-to-deprecate-key-held-back-by-its-wide-use]] — In TEIC/TEI issue 337, the issue author reported a Council vision of eventually deprecating key, deferred because of its wide use
   - [[20_distillates/publications/teic-tei-issue-337#^s4]]
-- [[30_assertions/teic-tei-issue-337-commenter-excepts-values-that-already-refer-to-an-external-vocabulary]] — In TEIC/TEI issue 337, a commenter excepted those like a country element with key FR, which already refer to a particular external vocabulary
+- [[30_assertions/teic-tei-issue-337-commenter-excepts-values-that-already-refer-to-an-external-vocabulary]] — In TEIC/TEI issue 337, a commenter excepted those like a country element with key FR, which already refer to a particular external vocabulary, from their announced change of the key uses in the Guidelines' examples
+  - [[20_distillates/publications/teic-tei-issue-337#^s20]]
   - [[20_distillates/publications/teic-tei-issue-337#^s21]]
 <!-- examples:end -->

@@ -2,7 +2,7 @@
 type: chapter
 status: grounded
 checked:
-  validation: 2026-09-07
+  validation: 2026-09-11
 assertions:
   - "[[30_assertions/p5-anchor-identifies-a-textual-point]]"
   - "[[30_assertions/p5-span-associates-interpretation-with-text]]"
@@ -15,7 +15,7 @@ assertions:
   - "[[30_assertions/p5-each-statement-about-a-life-must-be-documentable-and-time-framed]]"
 posits: 25
 created: 2026-09-05
-updated: 2026-09-07
+updated: 2026-09-11
 ---
 
 # An abstract text model for a possible TEI P6
@@ -67,28 +67,30 @@ no replacement validation contract for the executable models.[^documentary]
 
 ## 2. Source distinctions that motivate the proposal
 
-TEI P5 4.12.0 defines `anchor` as identifying a point within a text, including
-points without a corresponding textual element.[^anchor] It defines `span`
-as associating an interpretative annotation with a span of text.[^span] The
-description of `span/@from` identifies the starting node or, when `@to` is
-absent, the node of the entire annotated span.[^from] P5 also describes
-`annotation` as following the Web Annotation Data Model.[^annotationsource]
+TEI P5 4.12.0 describes `anchor` as attaching an identifier to a point within
+a text, whether or not it corresponds to a textual element.[^anchor] It defines `span`
+as directly associating an interpretative annotation with a span of text.[^span] The
+description of `span/@from` identifies the starting node of the annotated span or,
+when `@to` is absent, the node for the entire annotated span.[^from] P5 also describes
+`annotation` as representing an annotation following the Web Annotation Data Model.[^annotationsource]
 
-The selected document-theory discussion describes string editing as a mapping
+When recapitulating their earlier argument about document modifiability,
+Renear and Wickett describe string editing as a mapping
 between strings rather than the modification of a persistent underlying
 entity.[^stringsource] The selected discussion of optional hierarchy argues
 that allowing any hierarchy or none makes hierarchy itself available for
 study.[^hierarchysource]
 
-The P5 Names, Dates, People, and Places chapter describes an organization
-record as a wrapper for information about an entity, distinct from textual
+The P5 Guidelines describe an organization
+record as a unique wrapper for information about an entity, distinct from textual
 references to that entity, and presents an analogy with person and place
-records.[^recordsource] It frames information about people, places,
+records.[^recordsource] The Guidelines frame information about people, places,
 organizations, and events as statements concerning traits, states, events,
 and external resources.[^statementsource] For statements about changes of
-state in a person's life, it requires that they be documentable, situated
-in a time frame, and relatable to other statements because their sources
-may be multiple or contradictory.[^documentablesource]
+state in a person's life, they consider dating, relationships with other
+characteristics and sources that may be multiple or contradictory. They then
+require each statement to be documentable, situated in a time frame and
+relatable to other statements.[^documentablesource]
 
 These findings motivate explicit distinctions among location, interpretation,
 continuity, and statements about referents. They do not entail a unique
@@ -371,16 +373,20 @@ of earlier claim records. Such comparisons require the caller to establish
 a shared ID scope. They provide neither a persistent history service nor
 authentication of an editorial event.[^revision]
 
-The implementation does not yet protect every dependency that gives a claim
-meaning. A retained selection ID can receive a different selector while
-its annotation stays unchanged. The general 0.2 revision check also permits
-an entity-kind change and relocation of an unchanged nested alignment to
-another carrier. The source-attribution profile protects entity kinds and
-source descriptors, but does not freeze selections. An exact repeated
-passage can consequently acquire another source location while its annotation
-record remains unchanged. Complete historical integrity requires a contract
-for preserving or explicitly revising those dependencies. The current checks
-establish only their stated record-level guarantees.[^revision]
+The 0.2 revision check preserves each earlier claim in its collection and,
+for a nested alignment, on its original carrier. Reused entity IDs retain
+their kind. A selection referenced by the earlier package retains its version
+and exact selector, including its matching policy. An unchanged annotation
+therefore cannot silently point to another occurrence of identical wording.
+New claims, supersession and new selections remain available for explicit
+revision. The source-attribution profile additionally preserves earlier
+source descriptors and entity IDs.[^revision]
+
+These guarantees are bounded by the contract in [[knowledge/text-model]]
+section 14.4. Labels, non-reserved concept definitions and unreferenced
+selections remain mutable. Changing them can affect how a reader understands
+a retained claim. The checks do not establish universal package immutability,
+a persistent history service or editorial acceptance.[^revision]
 
 ## 11. Source attribution and assessment
 
@@ -477,7 +483,7 @@ ranking.[^alternatives]
 | Separate Selection and resolution. | Preserve addressing intentions through ambiguity or absence. | Consumers must handle unresolved states and different target structures.[^selection] |
 | Admit several attributed readings. | Preserve competing structures without selecting a global primary tree. | Cross-reading identity requires links, and discontinuous nodes remain excluded.[^structure] |
 | Separate entity, name, and denotation. | Revise identification without overwriting a mention or other entity claims. | More records are required, and bearer-independent names remain unsupported.[^entity] |
-| Make claims addressable. | Inspect attribution, disagreement, and particular revisions. | Encoding obligations increase, and dependency preservation remains incomplete.[^revision] |
+| Make claims addressable. | Inspect attribution, disagreement, and particular revisions. | Encoding obligations increase; the declared dependency contract still leaves labels and non-reserved concept definitions mutable.[^revision] |
 | Define equivalence before bindings. | Test preservation across syntaxes. | Every binding needs a maintained mapping and failure cases.[^exchange] |
 
 A primary tree with separately attributed stand-off structures remains a
@@ -796,7 +802,7 @@ those conditions.[^acceptance]
 [^denotation]: Posit: denotation and alignment express separate identification decisions without automatic merging. Open evidence question: which consumers require further alignment relations or governed inference?
 [^statement]: Posit: participant-based statements share attribution and revision rules while preserving declared kinds and roles. Open evidence question: which cases require typed values, addressable roles, or different subject rules?
 [^claim]: Posit: one claim pattern distinguishes responsibility, record time, validity, and the agent's own qualification. Open evidence question: which workflows require richer temporal semantics or independently evolving assessments?
-[^revision]: Posit: revision should preserve both earlier claims and the dependencies determining their meaning. The checks in `tools/models/entities.py` and `tools/models/identity_evidence.py` currently enforce the limited guarantees stated in section 10. Open evidence question: which dependency-preservation contract prevents silent changes of subject or evidence while permitting useful revision?
+[^revision]: Posit: revision should preserve both earlier claims and the dependencies determining their meaning. The checks in `tools/models/entities.py` and `tools/models/identity_evidence.py` enforce the bounded guarantees stated in section 10. Open evidence question: which editorial tasks require labels or concept definitions to enter the preserved dependency scope, and how should those records then be revised?
 [^evidence]: Posit: the optional [[knowledge/identity-evidence]] profile keeps source wording, inherited qualification, transfer responsibility, and assessment separately inspectable. Open evidence question: which independently reviewed editorial cases require richer evidence semantics or invalidate its current location and revision rules?
 [^exchange]: Posit: explicit package equivalence separates binding preservation from byte identity and P5 migration. Open evidence question: which required distinctions fail in further bindings or realistic source-to-model mappings?
 [^alternatives]: Posit: benefits must be compared with P5 repair, compatible evolution, another explicit architecture, and deferral under the same tasks. Open evidence question: which measured editorial and migration outcomes justify preferring an option?

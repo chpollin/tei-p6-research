@@ -3,29 +3,27 @@ type: distillate
 source-type: document
 representation: "[[10_markdown/documents/tei-p5-test-testnames-4.12.0]]"
 topics: ["[[Metadata and Entities]]"]
-status: validated
-checked:
-  machine-review: 2026-09-06
-  validation: 2026-09-06
+status: grounded
+checked: {}
 created: 2026-09-06
-updated: 2026-09-06
+updated: 2026-09-11
 ---
 
 # Distillate: TEI P5 4.12.0 test document testnames.xml
 
-This distillate reports how the release's own test document for names and dates encodes person records, name forms, nym records, places, dates and relations at the pinned TEI P5 4.12.0 release commit, with every statement anchored to the single encoded record or body unit that exhibits the pattern.
+This distillate reports how the release's test document testnames.xml encodes person records, name forms, nym records, places, dates and relations at the pinned TEI P5 4.12.0 release commit, with every statement anchored to the single encoded block that exhibits the pattern.
 
 ## Core statements
 
-- In the TEI P5 4.12.0 test document testnames.xml, the `title` of the file description at block 1 reads "The title", a generic phrase standing where a name for the document would stand. [[10_markdown/documents/tei-p5-test-testnames-4.12.0#^b1]] ^s1
+- In the TEI P5 4.12.0 test document testnames.xml, the `title` of the file description at block 1 reads "The title". [[10_markdown/documents/tei-p5-test-testnames-4.12.0#^b1]] ^s1
 - In the TEI P5 4.12.0 test document testnames.xml, the `nym` record at block 4 carries an `xml:id` and no other attribute and holds four `form` children whose only attribute is `xml:lang`, three of those tags being private-use extensions of the fourth, so the four written forms of one name are distinguished by language tag alone. [[10_markdown/documents/tei-p5-test-testnames-4.12.0#^b4]] ^s2
 - In the TEI P5 4.12.0 test document testnames.xml, the residence of the record at block 19 names a place by a `placeName` holding a `settlement`, two `region` elements and a `country` in that order, where the `settlement` and both `region` elements carry a `type` naming the kind of unit while only the `country` carries a `key`. [[10_markdown/documents/tei-p5-test-testnames-4.12.0#^b19]] ^s3
-- In the TEI P5 4.12.0 test document testnames.xml, the `country` element in the residence of the record at block 30 carries the one-letter `key` value `D` while its text content gives the country name in English, so the country is identified by a code and named by the element text independently of it. [[10_markdown/documents/tei-p5-test-testnames-4.12.0#^b30]] ^s4
-- In the TEI P5 4.12.0 test document testnames.xml, the person record at block 34 carries `rend="nolist"` on the `person` element beside `xml:id`, `sex` and `role`, so an instruction about the presentation of the record is attached to the record element, while the `persName` it contains carries only `xml:lang`. [[10_markdown/documents/tei-p5-test-testnames-4.12.0#^b34]] ^s5
+- In the TEI P5 4.12.0 test document testnames.xml, the `country` element in the residence of the record at block 30 carries the one-letter `key` value `D` while its text content reads "Germany". [[10_markdown/documents/tei-p5-test-testnames-4.12.0#^b30]] ^s4
+- In the TEI P5 4.12.0 test document testnames.xml, the person record at block 34 carries `rend="nolist"` on the `person` element beside `xml:id`, `sex` and `role`, so a `rend` value is attached to the record element, while the `persName` it contains carries only `xml:lang`. [[10_markdown/documents/tei-p5-test-testnames-4.12.0#^b34]] ^s5
 - In the TEI P5 4.12.0 test document testnames.xml, the record at block 84 states a relation to another person inside a `note`, marking that other person with a `name` element that carries `type="person"` and a `key` holding an identifier while carrying no `ref`, so the kind of referent is given by `type` and the identification of the referent by `key`. [[10_markdown/documents/tei-p5-test-testnames-4.12.0#^b84]] ^s6
 - In the TEI P5 4.12.0 test document testnames.xml, the person record at block 93 identifies the person by an `xml:id` on the `person` element and carries `sex` and `role` there as well, while its single `persName` child carries only `xml:lang` and no attribute that identifies the person the name stands for. [[10_markdown/documents/tei-p5-test-testnames-4.12.0#^b93]] ^s7
 - In the TEI P5 4.12.0 test document testnames.xml, the record at block 101 carries two `persName` children with the same `xml:lang` value and no further attribute, one of them written in inverted order with a comma, so neither form is marked as preferred and the markup states nothing about how the two forms relate. [[10_markdown/documents/tei-p5-test-testnames-4.12.0#^b101]] ^s8
-- In the TEI P5 4.12.0 test document testnames.xml, the record at block 108 gives a bibliographic reference as a `bibl` in which a `ref` carries a `target` holding a bare token rather than a URI, with the volume and page numbers standing as plain text beside the `ref`. [[10_markdown/documents/tei-p5-test-testnames-4.12.0#^b108]] ^s9
+- In the TEI P5 4.12.0 test document testnames.xml, the record at block 108 gives a bibliographic reference as a `bibl` in which a `ref` carries the `target` value `IsAev`, with the volume and page numbers standing as plain text beside the `ref`. [[10_markdown/documents/tei-p5-test-testnames-4.12.0#^b108]] ^s9
 - In the TEI P5 4.12.0 test document testnames.xml, the `role` attribute of the person record at block 110 holds five whitespace-separated tokens, so one record carries several role values at once on the record element. [[10_markdown/documents/tei-p5-test-testnames-4.12.0#^b110]] ^s10
 - In the TEI P5 4.12.0 test document testnames.xml, the record at block 120 dates the birth by a `notBefore` and `notAfter` pair twenty years apart whose element content marks the year as approximate, and dates the death by the same attribute pair with two identical values, so a range and a point in time are expressed through one mechanism. [[10_markdown/documents/tei-p5-test-testnames-4.12.0#^b120]] ^s11
 - In the TEI P5 4.12.0 test document testnames.xml, the record at block 123 holds two successive `residence` elements, each containing a `date` with `from` and `to` and a `placeName`, so a change of place is recorded as a sequence of dated states inside the person record, and the record holds no `event` element. [[10_markdown/documents/tei-p5-test-testnames-4.12.0#^b123]] ^s12
@@ -44,7 +42,7 @@ No term definition is extracted. The source is an encoded test file whose blocks
 
 ## Open questions
 
-- The `key` values in the blocks read here differ in kind, a country code on `country`, a two-letter code on `nationality`, a name form on `persName`, a place name repeated on `placeName` and a person identifier on `name`. Which of these are meant to resolve against an external authority and which only inside the file?
+- The `key` values in the blocks read here differ in kind, a one-letter value on `country`, a two-letter value on `nationality`, a name form on `persName`, a place name repeated on `placeName` and a person identifier on `name`. Which of these are meant to resolve against an external authority and which only inside the file?
 - Nothing in the records declares the vocabulary of the `role` tokens, the `sex` values or the `type` values on `settlement` and `region`. Where would a consumer of this document find that vocabulary?
 - Some person records identify the person by `xml:id` while others carry no identifier at all. Does the document treat the identifier as optional for a person record, or do the several lists serve different tests?
 - The relation at block 134 points by `ref` to a fragment identifier, and no block read here declares the target of that pointer. Where is the relationship type meant to be declared?
@@ -54,7 +52,7 @@ No term definition is extracted. The source is an encoded test file whose blocks
 
 ## Appraisal
 
-This source is the release's own test document at the pinned commit, so it establishes how a file the project maintains actually encodes person records, name forms, places, dates and relations, and which attribute carries the identifier at each of those points. It cannot establish what the Guidelines recommend, how often these patterns occur in edited corpora, or whether a construct absent from it was left out deliberately, because a test file is written to exercise a schema and its content therefore does not sample encoding practice.
+This source is the release's own test document at the pinned commit, so it establishes how a file carried by the release actually encodes person records, name forms, places, dates and relations, and which attributes carry identifying values at each of those points, where any are present. It cannot establish what the Guidelines recommend, how often these patterns occur in edited corpora, or whether a construct absent from it was left out deliberately, because nothing in the blocks read here presents the file as a sample of encoding practice.
 
 ## Related
 

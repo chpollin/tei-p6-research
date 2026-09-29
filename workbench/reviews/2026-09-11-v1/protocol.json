@@ -1,0 +1,22 @@
+{
+  "run_id": "2026-09-11-v1",
+  "base_commit": "7d7b7e47ce3eacf605a19ca4dd711d016c2655a0",
+  "authority": "User requested execution of the outstanding verification and source work on 2026-09-11.",
+  "scope": "All current distillates and assertions including previous validations and contested records, full statement and auxiliary factual prose, and source-related use in all four existing output chapters. Newly admitted P6 and practice sources receive the same review before status promotion.",
+  "instrument": "tools/full_review.py, version and exact inputs recorded at emission",
+  "source_integrity": "Use immutable representations and completed admissions; recover original citation snapshots by SHA-256. Quotation matching and contextual support are separate checks.",
+  "primary_review": "Every emitted unit in a fresh context with tool access and automatic project context disabled. Explicit Opus model; concrete resolved model recorded from execution.",
+  "second_review": {
+    "declared_before_primary_verdicts": true,
+    "scope": "Every non-passing primary unit plus a fixed stratified sample of primary fully-supports units.",
+    "strata": "Review level or kind as emitted by the instrument.",
+    "quota": "Ceiling of 10 percent of passing units in each stratum, minimum two or the whole stratum when smaller.",
+    "selection": "Sort IDs by SHA-256 of the UTF-8 string 20260911-v1-second-review followed by a newline and the unit ID; choose the first quota items in each stratum.",
+    "blindness": "A separate fresh context sees the unchanged passage and statement only, without the first verdict or author rationale. Consistency units explicitly judge the supplied complete document as their subject.",
+    "escalation": "On a systematic error, repeat every unit of the affected statement type after correction. Preserve previous prompts and judgments."
+  },
+  "correction": "Narrow or correct the actual source-bound claim, preserve immutable representations, re-emit changed prompts and review them afresh. No reuse of a verdict with a changed hash.",
+  "publication": "Full third-party source context and prompts containing it remain in ignored local raw storage. Public audit material carries input identities and hashes, coverage and attributed judgments; it does not redistribute private-context bodies.",
+  "independence": "Opus-only subagents share model-family limitations. Unknown historical producers receive no independence claim. Human verification and domain/model acceptance remain separate.",
+  "completion": "Every scoped unit has a current attributed judgment; deviations are corrected and rechecked or explicitly excluded from approved factual premises with their unresolved boundary visible. A green technical gate does not assert absolute truth or global corpus completeness."
+}

@@ -6,7 +6,7 @@ checked: {}
 grounding:
   - "[[20_distillates/documents/tei-p5-att.fragmentable-4.12.0#^s4]]"
 created: 2026-09-07
-updated: 2026-09-07
+updated: 2026-09-11
 ---
 
 # The P5 4.12.0 att.fragmentable value list defines I, M and F as the initial, medial and final parts of a fragmented element.
@@ -17,7 +17,7 @@ The P5 4.12.0 att.fragmentable value list defines I, M and F as the initial, med
 
 ## Support
 
-- [[20_distillates/documents/tei-p5-att.fragmentable-4.12.0#^s4]] supplies the source-specific statement used here. The assertion retains its stated source and scope.
+- [[20_distillates/documents/tei-p5-att.fragmentable-4.12.0#^s4]]
 
 ## Related
 

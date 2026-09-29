@@ -1,0 +1,33 @@
+schema_version: 1
+run_id: 2026-09-11-p6-readme-restored
+source_id: tei-official-p6-process
+started_at: '2026-09-11T12:25:28Z'
+finished_at: '2026-09-11T12:25:28Z'
+status: bounded-complete
+scope:
+  boundary: Restoration of the single declared README original from the recovered
+    pinned Git response; no new source or representation version.
+adapter:
+  name: byte copy after SHA-256, Git blob identity and representation containment
+    checks
+  version: 1
+upstream_manifests:
+- sources/manifests/2026-09-11-p6-time-for-p6-readme-provenance.yaml
+objects:
+- kind: restored-original
+  path: 00_sources/tei-time-for-p6-readme-2026-07-16.md
+  sha256: ea5e6c104132575686320e7f731b9f0433915ec76062769c1b84005c357193ed
+  git_blob: bd4ad0759be99e8f8d8f8281ece6749c09dde9ab
+  byte_count: 3736
+counts:
+  restored_originals: 1
+checks:
+  original_sha256: true
+  git_blob_identity: true
+  representation_contains_original_without_added_anchors: true
+  representation_unchanged_sha256: 55440fd25a84e1c2bb92c305de3a3278f205feed1ecd372b15affb34bcff9ee1
+rights_exceptions:
+- Original stays git-ignored; existing representation and its AGPL-3.0-only declaration
+  remain unchanged. LICENSE and package.json differ as documented in the upstream
+  provenance manifest.
+gaps: []

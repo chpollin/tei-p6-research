@@ -3,14 +3,12 @@ type: assertion
 topics: ["[[Metadata and Entities]]", "[[Elements and Classes]]"]
 phenomena: ["[[glossary/entity-identification]]"]
 related: ["[[30_assertions/p5-simultaneous-key-and-ref-are-not-recommended-without-documentation]]", "[[30_assertions/p5-key-identifies-the-entity-named-through-an-externally-defined-coded-value]]"]
-status: validated
-checked:
-  machine-review: 2026-09-06
-  validation: 2026-09-06
+status: grounded
+checked: {}
 grounding:
   - "[[20_distillates/documents/tei-p5-att.canonical-4.12.0#^s8]]"
 created: 2026-09-06
-updated: 2026-09-06
+updated: 2026-09-11
 ---
 
 # In TEI P5 4.12.0, the use of key in interchange requires that documentation about how the key is to be resolved be sent to the recipient

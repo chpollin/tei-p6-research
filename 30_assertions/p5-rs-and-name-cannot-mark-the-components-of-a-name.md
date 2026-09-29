@@ -3,14 +3,12 @@ type: assertion
 topics: ["[[Metadata and Entities]]"]
 phenomena: ["[[glossary/mention-of-an-entity]]", "[[glossary/name-as-an-object]]"]
 related: ["[[30_assertions/p5-core-elements-state-the-kind-of-referent-only-through-type]]", "[[30_assertions/p5-name-component-markup-does-not-cover-every-name]]"]
-status: validated
-checked:
-  machine-review: 2026-09-06
-  validation: 2026-09-06
+status: grounded
+checked: {}
 grounding:
   - "[[20_distillates/documents/tei-p5-guidelines-nd-4.12.0#^s7]]"
 created: 2026-09-06
-updated: 2026-09-06
+updated: 2026-09-11
 ---
 
 # In TEI P5 4.12.0, the Guidelines state that rs and name are insufficiently powerful to mark the internal components or structure of names and provide persName, surname, forename, roleName, addName, nameLink and genName for these and related purposes

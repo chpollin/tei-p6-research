@@ -1,8 +1,11 @@
-"""The recorded entity-topic review binds the current pairs of its scope."""
+"""Historical entity reviews retain their exact original prompts and judgments.
+
+Current whole-document coverage is required by test_current_repository_review.
+"""
 
 from pathlib import Path
 
-from tools.review import Pair, check_support_review
+from tools.review import Pair, check_review_records, read_jsonl
 
 ROOT = Path(__file__).resolve().parents[1]
 AUDIT = Path("workbench/reviews/2026-09-06-entities")
@@ -24,8 +27,9 @@ def in_scope(pair: Pair) -> bool:
     )
 
 
-def test_the_recorded_entity_review_binds_the_current_pairs():
-    audit = check_support_review(ROOT, ROOT / AUDIT, in_scope)
+def test_the_historical_entity_review_retains_its_prompt_bindings():
+    pairs = read_jsonl(ROOT / AUDIT / "pairs.jsonl")
+    audit = check_review_records(pairs, pairs, read_jsonl(ROOT / AUDIT / "verdicts.jsonl"))
     assert audit.pairs == 137
     assert audit.without_reviewer == ()
 
@@ -89,7 +93,8 @@ def in_run2_scope(pair: Pair) -> bool:
     return pair.kind == "assertion" and pair.document.removeprefix("30_assertions/") in RUN2_ASSERTIONS
 
 
-def test_the_recorded_run2_review_binds_the_current_pairs():
-    audit = check_support_review(ROOT, ROOT / RUN2, in_run2_scope)
+def test_the_historical_run2_review_retains_its_prompt_bindings():
+    pairs = read_jsonl(ROOT / RUN2 / "pairs.jsonl")
+    audit = check_review_records(pairs, pairs, read_jsonl(ROOT / RUN2 / "verdicts.jsonl"))
     assert audit.pairs == 172
     assert audit.without_reviewer == ()

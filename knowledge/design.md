@@ -9,7 +9,7 @@ method:
 status: draft
 language: en
 created: "2026-09-05"
-updated: "2026-09-07"
+updated: "2026-09-11"
 related: [INDEX, specification, data, schema, operations, testing, state, journal]
 ---
 
@@ -158,6 +158,16 @@ Search and projections aid retrieval without becoming grounding targets.
 Neither a resolved link nor publication establishes human verification.
 Comparison views and model diagrams also remain outside the evidence chain.
 
+Die Suche hält jede angezeigte Quellpassage genau einmal im HTML. Der Browser
+bildet seinen lokalen Wortindex aus diesen Passagen und kompakten Metadaten.
+Exakte TEI-Kennungen, Titelwörter und gemeinsam in einer Passage vorkommende
+Suchwörter bestimmen die geordnete Trefferliste. Der Prüfstatusfilter ist
+exakt. Die vollständige Schichtansicht und jeder bestehende Blockanker bleiben
+auch ohne JavaScript erreichbar. Fachlich zugeordnete Themen aus vorhandenen
+Destillaten werden zusätzlich zu regelbasierten Vorschlägen ausgewiesen.
+Die agentische CLI-Suche und ihre Herkunftsfilter sind in [[knowledge/operations]]
+unter Query beschrieben.
+
 ## Implementation architecture
 
 The workbench is static and framework-free. All generators use
@@ -202,7 +212,7 @@ The Knowledge page also consumes
 `corpus/projections/guidelines-navigation-4.12.0.json`. After coverage,
 declaration-atlas or topic-routing inputs change, regenerate it with
 `python -m tools.build_guidelines_navigation`, then run the same command with
-`--check` before rebuilding Knowledge. The projection supplies rule-based
+`--check` before rebuilding Knowledge. The projection keeps existing distillate topics separate from rule-based
 topic suggestions and declaration links; it supplies no grounding or review
 status. Both modes read tracked inputs and need no Git mirror.
 

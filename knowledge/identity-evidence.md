@@ -9,7 +9,7 @@ method:
 status: draft
 language: de
 created: "2026-09-07"
-updated: "2026-09-07"
+updated: "2026-09-11"
 related: [text-model, model-design, model-examples, experiments, schema, verification, state]
 ---
 
@@ -177,20 +177,34 @@ Position, ohne die Bedeutung des Fragezeichens zu automatisieren.
 `validate_profile(dossier, snapshots)` prüft die Kernmodellregeln und die
 beschriebenen Herkunfts- und Belegbedingungen. `inspect_claim` liefert den
 Quellenbericht, seine Verantwortung, aufgelöste Belegstellen, Qualifikationen
-und separate Bewertungen. `check_profile_revision` verlangt zusätzlich zur
-Revisionsprüfung des Entitätenmodells die unveränderte Erhaltung älterer
-Herkunftseinträge. Vorhandene Entitäts-IDs und ihre konstitutive `kind` bleiben
-ebenfalls erhalten, damit unveränderte Aussagen nicht nachträglich einen
-anderen Gegenstandstyp adressieren. Die Operationen verändern ihre Eingaben nicht.
+und separate Bewertungen.
 
-Der Revisionsschutz erfasst die Selektionen und ihre Referenzauflösung bisher
-nicht. Ein unveränderter Belegbody kann bei identischem Wortlaut durch eine
-geänderte Selektion auf einen anderen Katalogeintrag zeigen. Der vollständige
-Erhalt einer Beleggeschichte ist damit offen. Ebenso filtert `inspect_claim`
-seine Belege und Bewertungen nicht automatisch nach Supersession oder
-Withdrawal. Diese Grenzen sind in der
+`check_profile_revision` vergleicht zwei Dossiers in einem vom Aufrufer
+erklärten gemeinsamen ID-Raum und übernimmt die Revisionsprüfung des
+Entitätenmodells nach [[knowledge/text-model]] Abschnitt 14.4. Frühere
+Aussagen bleiben unter ihrer ID unverändert, verschachtelte Alignments auf
+ihrem Träger. Eine wiederverwendete Entitäts-ID behält ihre `kind`
+(`E_ENTITY_REWRITE`), und jede Selektion, auf die das frühere Paket verweist,
+behält `version` und `selector` (`E_SELECTION_REWRITE`). Ein unveränderter
+Beleg- oder Qualifikationsbody kann deshalb bei gleichem Wortlaut nicht mehr
+unbemerkt auf einen anderen Katalogeintrag oder eine andere Position zeigen.
+Das Profil friert zusätzlich ältere Herkunftseinträge ein
+(`E_SOURCE_REWRITE`). Anders als das Kernmodell verlangt es außerdem, dass
+jede frühere Entitäts-ID mit ihrer `kind` erhalten bleibt
+(`E_IDENTITY_REWRITE`); eine geänderte `kind` meldet daher beide Codes. Die
+Operationen verändern ihre Eingaben nicht.
+
+Zulässig bleiben neue Aussagen, ersetzende Berichte mit `supersedes`,
+zusätzliche Belege, Qualifikationen und Bewertungen sowie neue Versionen mit
+ihren Herkunftseinträgen. Bewusst veränderlich bleiben Labels, die
+Definitionen nicht reservierter Konzepte und Selektionen, auf die das frühere
+Paket nicht verweist. Die Prüfung begründet weder eine allgemeine
+Unveränderlichkeit des Dossiers noch eine fachliche Abnahme einer Revision.
+`inspect_claim` filtert seine Belege und Bewertungen weiterhin nicht
+automatisch nach Supersession oder Withdrawal. Die Record-Garantien und ihre
+Grenzen ordnet die
 [Modell-Proposal](../40_output/02-abstract-model.md#10-revision-and-historical-integrity)
-von den tatsächlich geprüften Record-Garantien getrennt.
+ein.
 
 Eine erfolgreiche Prüfung stellt keine semantische Unterstützung durch den
 Beleg fest. Ein exaktes Zitat kann eine unzutreffende Behauptung begleiten.

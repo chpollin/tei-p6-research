@@ -3,12 +3,10 @@ type: distillate
 source-type: document
 representation: "[[10_markdown/documents/tei-p5-att.datable-4.12.0]]"
 topics: ["[[Metadata and Entities]]", "[[Elements and Classes]]"]
-status: validated
-checked:
-  machine-review: 2026-09-06
-  validation: 2026-09-06
+status: grounded
+checked: {}
 created: 2026-09-06
-updated: 2026-09-06
+updated: 2026-09-11
 ---
 
 # Distillate: TEI P5 4.12.0 att.datable specification
@@ -37,7 +35,7 @@ This distillate reports the English class description, the English description o
 - Which source establishes the class memberships that only the XML of this specification declares, meaning the `memberOf` declarations for `att.datable.custom`, `att.datable.iso` and `att.datable.w3c`, given that no English reading block states a membership?
 - Which source would establish the optionality and the value space of `period`, declared in this XML as `usage="opt"` with one to unbounded `teidata.pointer` values and covered by no English reading block?
 - Which source would establish what the further XML-only declarations of this specification contribute, meaning the identifier `DATABLE`, the class type `atts`, the module `tei`, the version dates recorded on descriptions and remarks and the `listRef` pointers `#CONADA` and `#NDDATE`?
-- Which source would establish which attributes actually carry the normalized temporal values, for instance a `calendar` attribute, given that this specification defines `period` as its only attribute and that no English reading block names any attribute of the three classes it draws on?
+- Which source would establish which attributes actually carry the normalized temporal values, given that this specification defines `period` as its only attribute and that no English reading block names any attribute of the three classes it draws on?
 - Which normalized values may such an attribute take, given that the English text names the W3C datatypes and the ISO 8601 standard without naming a single value form?
 - Which module is "the module for names & dates" that the English remarks make the condition for the additional attributes, given that no reading block names a module identifier?
 - Which elements are members of `att.datable` at this release, given that this specification names no member element?
@@ -46,7 +44,7 @@ This distillate reports the English class description, the English description o
 
 ## Appraisal
 
-The source is the complete class specification at a pinned release commit, so its English text establishes how the Guidelines position one dating superclass, meaning that it normalizes temporal information, that the W3C attributes come by default, and that the ISO and custom attributes depend on loading the module for names and dates. The English text names no attribute of those three classes and states no value form, so everything an encoder would write into a normalized date stays outside this source. The comparison of the W3C and ISO datatypes is stated as a general tendency together with an unsourced claim about software support, so it records a position of the Guidelines and leaves the underlying facts to be established elsewhere. The declarations preserved in the XML stay outside the core statements until a reading block or another admitted source carries them.
+The source is the complete class specification at a pinned release commit, so its English text establishes how the Guidelines position one dating superclass, meaning that it provides attributes that can be used to provide normalized values of temporal information, that the W3C attributes come by default, and that the ISO and custom attributes depend on loading the module for names and dates. The English text names no attribute of those three classes and states no value form, so everything an encoder would write into a normalized date stays outside this source. The comparison of the W3C and ISO datatypes is stated as a general tendency together with an unsourced claim about software support, so it records a position of the Guidelines and leaves the underlying facts to be established elsewhere. The declarations preserved in the XML stay outside the core statements until a reading block or another admitted source carries them.
 
 ## Related
 

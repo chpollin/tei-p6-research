@@ -6,7 +6,7 @@ topics: ["[[Text and Document Structures]]", "[[Annotation and Overlap]]"]
 status: grounded
 checked: {}
 created: 2026-09-07
-updated: 2026-09-07
+updated: 2026-09-11
 ---
 
 # Distillate: TEI P5 4.12.0 overlap test document
@@ -31,7 +31,7 @@ No additional term definition is extracted from this test instance.
 
 ## Appraisal
 
-The instance demonstrates page markers inside paragraph content. It supplies no processing result, editor observation or representative sample of external editions. Its header carries placeholder metadata.
+The instance places one page marker directly within the division and three inside paragraph content. It supplies no processing result, editor observation or representative sample of external editions. Its header metadata lies outside the core statements.
 
 ## Related
 

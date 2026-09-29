@@ -1,0 +1,496 @@
+[
+ {
+  "requested_url": "https://www.tei-c.org/activities/council/meetings/",
+  "canonical_url": "https://www.tei-c.org/activities/council/meetings/",
+  "final_url": "https://www.tei-c.org/activities/council/meetings/",
+  "observed_at": "2026-09-11T11:36:19Z",
+  "status": 200,
+  "media_type": "text/html",
+  "byte_count": 42041,
+  "sha256": "700414d5ed3887f54188549ab3a9ba1a0e572aa6bf0b96288a035f23b5981961",
+  "raw_path": "sha256/70/0414d5ed3887f54188549ab3a9ba1a0e572aa6bf0b96288a035f23b5981961",
+  "headers": {
+   "date": "Fri, 11 Sep 2026 11:36:28 GMT",
+   "content-type": "text/html",
+   "content-length": "42041",
+   "last-modified": "Fri, 11 Sep 2026 06:18:09 GMT",
+   "etag": "\"a439-65b2f0c58ca40\""
+  },
+  "census_2026_09_04_sha256": "700414d5ed3887f54188549ab3a9ba1a0e572aa6bf0b96288a035f23b5981961"
+ },
+ {
+  "requested_url": "https://www.tei-c.org/activities/council/meetings/tei-technical-coucil-p5-teleconference_2026-05-06/",
+  "canonical_url": "https://www.tei-c.org/activities/council/meetings/tei-technical-coucil-p5-teleconference_2026-05-06/",
+  "final_url": "https://www.tei-c.org/activities/council/meetings/tei-technical-coucil-p5-teleconference_2026-05-06/",
+  "observed_at": "2026-09-11T11:36:19Z",
+  "status": 200,
+  "media_type": "text/html",
+  "byte_count": 16949,
+  "sha256": "2e0a466e6d989b4840c6e5da2e4da5d9244fd283c7174bd38677875f7abb1ba1",
+  "raw_path": "sha256/2e/0a466e6d989b4840c6e5da2e4da5d9244fd283c7174bd38677875f7abb1ba1",
+  "headers": {
+   "date": "Fri, 11 Sep 2026 11:36:28 GMT",
+   "content-type": "text/html",
+   "content-length": "16949",
+   "last-modified": "Fri, 11 Sep 2026 06:18:09 GMT",
+   "etag": "\"4235-65b2f0c58ca40\""
+  },
+  "census_2026_09_04_sha256": "2e0a466e6d989b4840c6e5da2e4da5d9244fd283c7174bd38677875f7abb1ba1"
+ },
+ {
+  "requested_url": "https://www.tei-c.org/activities/council/meetings/tei-technical-council-f2f-meeting-in-Krakow-14-16-sept-2025/",
+  "canonical_url": "https://www.tei-c.org/activities/council/meetings/tei-technical-council-f2f-meeting-in-Krakow-14-16-sept-2025/",
+  "final_url": "https://www.tei-c.org/activities/council/meetings/tei-technical-council-f2f-meeting-in-Krakow-14-16-sept-2025/",
+  "observed_at": "2026-09-11T11:36:19Z",
+  "status": 200,
+  "media_type": "text/html",
+  "byte_count": 68881,
+  "sha256": "163811297f646604aa722470f9a20125d350335f98327aef00d378cdaa489e13",
+  "raw_path": "sha256/16/3811297f646604aa722470f9a20125d350335f98327aef00d378cdaa489e13",
+  "headers": {
+   "date": "Fri, 11 Sep 2026 11:36:28 GMT",
+   "content-type": "text/html",
+   "content-length": "68881",
+   "last-modified": "Fri, 11 Sep 2026 06:18:09 GMT",
+   "etag": "\"10d11-65b2f0c58ca40\""
+  },
+  "census_2026_09_04_sha256": "163811297f646604aa722470f9a20125d350335f98327aef00d378cdaa489e13"
+ },
+ {
+  "requested_url": "https://www.tei-c.org/activities/council/meetings/tei-technical-council-f2f-meeting-wurzburg-2026-03-10-13/",
+  "canonical_url": "https://www.tei-c.org/activities/council/meetings/tei-technical-council-f2f-meeting-wurzburg-2026-03-10-13/",
+  "final_url": "https://www.tei-c.org/activities/council/meetings/tei-technical-council-f2f-meeting-wurzburg-2026-03-10-13/",
+  "observed_at": "2026-09-11T11:36:20Z",
+  "status": 200,
+  "media_type": "text/html",
+  "byte_count": 120192,
+  "sha256": "0baa751e656b773808115c29c427787e352d65dafb41c83f36633d552fac8e11",
+  "raw_path": "sha256/0b/aa751e656b773808115c29c427787e352d65dafb41c83f36633d552fac8e11",
+  "headers": {
+   "date": "Fri, 11 Sep 2026 11:36:29 GMT",
+   "content-type": "text/html",
+   "content-length": "120192",
+   "last-modified": "Fri, 11 Sep 2026 06:18:09 GMT",
+   "etag": "\"1d580-65b2f0c58ca40\""
+  },
+  "census_2026_09_04_sha256": "0baa751e656b773808115c29c427787e352d65dafb41c83f36633d552fac8e11"
+ },
+ {
+  "requested_url": "https://www.tei-c.org/activities/council/meetings/tei-technical-council-p5-teleconference-2026-07-14/",
+  "canonical_url": "https://www.tei-c.org/activities/council/meetings/tei-technical-council-p5-teleconference-2026-07-14/",
+  "final_url": "https://www.tei-c.org/activities/council/meetings/tei-technical-council-p5-teleconference-2026-07-14/",
+  "observed_at": "2026-09-11T11:36:20Z",
+  "status": 200,
+  "media_type": "text/html",
+  "byte_count": 18874,
+  "sha256": "1fc3d70af2d9047f044fdbf3bfda4753a18d62150a2fc4a361ac35da9e8e93b4",
+  "raw_path": "sha256/1f/c3d70af2d9047f044fdbf3bfda4753a18d62150a2fc4a361ac35da9e8e93b4",
+  "headers": {
+   "date": "Fri, 11 Sep 2026 11:36:29 GMT",
+   "content-type": "text/html",
+   "content-length": "18874",
+   "last-modified": "Fri, 11 Sep 2026 06:18:09 GMT",
+   "etag": "\"49ba-65b2f0c58ca40\""
+  },
+  "census_2026_09_04_sha256": "1fc3d70af2d9047f044fdbf3bfda4753a18d62150a2fc4a361ac35da9e8e93b4"
+ },
+ {
+  "requested_url": "https://www.tei-c.org/activities/council/meetings/tei-technical-council-p5-teleconference_2026-06-22/",
+  "canonical_url": "https://www.tei-c.org/activities/council/meetings/tei-technical-council-p5-teleconference_2026-06-22/",
+  "final_url": "https://www.tei-c.org/activities/council/meetings/tei-technical-council-p5-teleconference_2026-06-22/",
+  "observed_at": "2026-09-11T11:36:20Z",
+  "status": 200,
+  "media_type": "text/html",
+  "byte_count": 16322,
+  "sha256": "693b31b8280964b1c6d5177cf5dddb5a5aa94cbcb3c388b874407a0aaeab6596",
+  "raw_path": "sha256/69/3b31b8280964b1c6d5177cf5dddb5a5aa94cbcb3c388b874407a0aaeab6596",
+  "headers": {
+   "date": "Fri, 11 Sep 2026 11:36:29 GMT",
+   "content-type": "text/html",
+   "content-length": "16322",
+   "last-modified": "Fri, 11 Sep 2026 06:18:09 GMT",
+   "etag": "\"3fc2-65b2f0c58ca40\""
+  },
+  "census_2026_09_04_sha256": "693b31b8280964b1c6d5177cf5dddb5a5aa94cbcb3c388b874407a0aaeab6596"
+ },
+ {
+  "requested_url": "https://www.tei-c.org/activities/council/meetings/tei-technical-council-p6-teleconference-2026-05-20/",
+  "canonical_url": "https://www.tei-c.org/activities/council/meetings/tei-technical-council-p6-teleconference-2026-05-20/",
+  "final_url": "https://www.tei-c.org/activities/council/meetings/tei-technical-council-p6-teleconference-2026-05-20/",
+  "observed_at": "2026-09-11T11:36:20Z",
+  "status": 200,
+  "media_type": "text/html",
+  "byte_count": 16957,
+  "sha256": "3fa84af579066aea42788c70cf731773730ff35395f496873048df695db1706c",
+  "raw_path": "sha256/3f/a84af579066aea42788c70cf731773730ff35395f496873048df695db1706c",
+  "headers": {
+   "date": "Fri, 11 Sep 2026 11:36:29 GMT",
+   "content-type": "text/html",
+   "content-length": "16957",
+   "last-modified": "Fri, 11 Sep 2026 06:18:09 GMT",
+   "etag": "\"423d-65b2f0c58ca40\""
+  },
+  "census_2026_09_04_sha256": "3fa84af579066aea42788c70cf731773730ff35395f496873048df695db1706c"
+ },
+ {
+  "requested_url": "https://www.tei-c.org/activities/council/meetings/tei-technical-council-p6-teleconference-2026-07-16/",
+  "canonical_url": "https://www.tei-c.org/activities/council/meetings/tei-technical-council-p6-teleconference-2026-07-16/",
+  "final_url": "https://www.tei-c.org/activities/council/meetings/tei-technical-council-p6-teleconference-2026-07-16/",
+  "observed_at": "2026-09-11T11:36:21Z",
+  "status": 200,
+  "media_type": "text/html",
+  "byte_count": 29916,
+  "sha256": "9983a27ccd01472252fc98f7f31ac94f3729832d2a7bbcfdd5dbea780a4fb553",
+  "raw_path": "sha256/99/83a27ccd01472252fc98f7f31ac94f3729832d2a7bbcfdd5dbea780a4fb553",
+  "headers": {
+   "date": "Fri, 11 Sep 2026 11:36:30 GMT",
+   "content-type": "text/html",
+   "content-length": "29916",
+   "last-modified": "Fri, 11 Sep 2026 06:18:09 GMT",
+   "etag": "\"74dc-65b2f0c58ca40\""
+  },
+  "census_2026_09_04_sha256": "9983a27ccd01472252fc98f7f31ac94f3729832d2a7bbcfdd5dbea780a4fb553"
+ },
+ {
+  "requested_url": "https://www.tei-c.org/activities/council/meetings/tei-technical-council-p6-teleconference_2026-06-24/",
+  "canonical_url": "https://www.tei-c.org/activities/council/meetings/tei-technical-council-p6-teleconference_2026-06-24/",
+  "final_url": "https://www.tei-c.org/activities/council/meetings/tei-technical-council-p6-teleconference_2026-06-24/",
+  "observed_at": "2026-09-11T11:36:21Z",
+  "status": 200,
+  "media_type": "text/html",
+  "byte_count": 15870,
+  "sha256": "a10e2289aaebabcb560ff090f5f928e7a5c20eeef43a3888da3ac0102f14eb41",
+  "raw_path": "sha256/a1/0e2289aaebabcb560ff090f5f928e7a5c20eeef43a3888da3ac0102f14eb41",
+  "headers": {
+   "date": "Fri, 11 Sep 2026 11:36:30 GMT",
+   "content-type": "text/html",
+   "content-length": "15870",
+   "last-modified": "Fri, 11 Sep 2026 06:18:09 GMT",
+   "etag": "\"3dfe-65b2f0c58ca40\""
+  },
+  "census_2026_09_04_sha256": "a10e2289aaebabcb560ff090f5f928e7a5c20eeef43a3888da3ac0102f14eb41"
+ },
+ {
+  "requested_url": "https://www.tei-c.org/activities/council/meetings/tei-technical-council-short-vf2f-meeting-18-19-may-2025/",
+  "canonical_url": "https://www.tei-c.org/activities/council/meetings/tei-technical-council-short-vf2f-meeting-18-19-may-2025/",
+  "final_url": "https://www.tei-c.org/activities/council/meetings/tei-technical-council-short-vf2f-meeting-18-19-may-2025/",
+  "observed_at": "2026-09-11T11:36:21Z",
+  "status": 200,
+  "media_type": "text/html",
+  "byte_count": 28201,
+  "sha256": "469cbab15872aeb65d5746c17621e63ec0e2df9a48b53462a529744c03e3fafd",
+  "raw_path": "sha256/46/9cbab15872aeb65d5746c17621e63ec0e2df9a48b53462a529744c03e3fafd",
+  "headers": {
+   "date": "Fri, 11 Sep 2026 11:36:30 GMT",
+   "content-type": "text/html",
+   "content-length": "28201",
+   "last-modified": "Fri, 11 Sep 2026 06:18:09 GMT",
+   "etag": "\"6e29-65b2f0c58ca40\""
+  },
+  "census_2026_09_04_sha256": "469cbab15872aeb65d5746c17621e63ec0e2df9a48b53462a529744c03e3fafd"
+ },
+ {
+  "requested_url": "https://www.tei-c.org/activities/council/meetings/tei-technical-council-teleconference-2025-01-14/",
+  "canonical_url": "https://www.tei-c.org/activities/council/meetings/tei-technical-council-teleconference-2025-01-14/",
+  "final_url": "https://www.tei-c.org/activities/council/meetings/tei-technical-council-teleconference-2025-01-14/",
+  "observed_at": "2026-09-11T11:36:21Z",
+  "status": 200,
+  "media_type": "text/html",
+  "byte_count": 19225,
+  "sha256": "5d684c784eb94abe30bb264f0ffac591daa0f6ef214247278b29558d9b19e32c",
+  "raw_path": "sha256/5d/684c784eb94abe30bb264f0ffac591daa0f6ef214247278b29558d9b19e32c",
+  "headers": {
+   "date": "Fri, 11 Sep 2026 11:36:30 GMT",
+   "content-type": "text/html",
+   "content-length": "19225",
+   "last-modified": "Fri, 11 Sep 2026 06:18:09 GMT",
+   "etag": "\"4b19-65b2f0c58ca40\""
+  },
+  "census_2026_09_04_sha256": "5d684c784eb94abe30bb264f0ffac591daa0f6ef214247278b29558d9b19e32c"
+ },
+ {
+  "requested_url": "https://www.tei-c.org/activities/council/meetings/tei-technical-council-teleconference-2025-02-11/",
+  "canonical_url": "https://www.tei-c.org/activities/council/meetings/tei-technical-council-teleconference-2025-02-11/",
+  "final_url": "https://www.tei-c.org/activities/council/meetings/tei-technical-council-teleconference-2025-02-11/",
+  "observed_at": "2026-09-11T11:36:22Z",
+  "status": 200,
+  "media_type": "text/html",
+  "byte_count": 17170,
+  "sha256": "550f22f61261d579ec77043b219f345a2bf3f9cfdefa418428113c759f231611",
+  "raw_path": "sha256/55/0f22f61261d579ec77043b219f345a2bf3f9cfdefa418428113c759f231611",
+  "headers": {
+   "date": "Fri, 11 Sep 2026 11:36:30 GMT",
+   "content-type": "text/html",
+   "content-length": "17170",
+   "last-modified": "Fri, 11 Sep 2026 06:18:09 GMT",
+   "etag": "\"4312-65b2f0c58ca40\""
+  },
+  "census_2026_09_04_sha256": "550f22f61261d579ec77043b219f345a2bf3f9cfdefa418428113c759f231611"
+ },
+ {
+  "requested_url": "https://www.tei-c.org/activities/council/meetings/tei-technical-council-teleconference-2025-03-18/",
+  "canonical_url": "https://www.tei-c.org/activities/council/meetings/tei-technical-council-teleconference-2025-03-18/",
+  "final_url": "https://www.tei-c.org/activities/council/meetings/tei-technical-council-teleconference-2025-03-18/",
+  "observed_at": "2026-09-11T11:36:22Z",
+  "status": 200,
+  "media_type": "text/html",
+  "byte_count": 20438,
+  "sha256": "20c8f51e74964db13c04fe5c66bf7dbd0ad00418daf47e00038cfbeeeff1ce46",
+  "raw_path": "sha256/20/c8f51e74964db13c04fe5c66bf7dbd0ad00418daf47e00038cfbeeeff1ce46",
+  "headers": {
+   "date": "Fri, 11 Sep 2026 11:36:31 GMT",
+   "content-type": "text/html",
+   "content-length": "20438",
+   "last-modified": "Fri, 11 Sep 2026 06:18:09 GMT",
+   "etag": "\"4fd6-65b2f0c58ca40\""
+  },
+  "census_2026_09_04_sha256": "20c8f51e74964db13c04fe5c66bf7dbd0ad00418daf47e00038cfbeeeff1ce46"
+ },
+ {
+  "requested_url": "https://www.tei-c.org/activities/council/meetings/tei-technical-council-teleconference-2025-04-08/",
+  "canonical_url": "https://www.tei-c.org/activities/council/meetings/tei-technical-council-teleconference-2025-04-08/",
+  "final_url": "https://www.tei-c.org/activities/council/meetings/tei-technical-council-teleconference-2025-04-08/",
+  "observed_at": "2026-09-11T11:36:22Z",
+  "status": 200,
+  "media_type": "text/html",
+  "byte_count": 18485,
+  "sha256": "9b523ff7de8d3fbcb670c516a1af7581caf770c910bff817814d8320dcc64713",
+  "raw_path": "sha256/9b/523ff7de8d3fbcb670c516a1af7581caf770c910bff817814d8320dcc64713",
+  "headers": {
+   "date": "Fri, 11 Sep 2026 11:36:31 GMT",
+   "content-type": "text/html",
+   "content-length": "18485",
+   "last-modified": "Fri, 11 Sep 2026 06:18:09 GMT",
+   "etag": "\"4835-65b2f0c58ca40\""
+  },
+  "census_2026_09_04_sha256": "9b523ff7de8d3fbcb670c516a1af7581caf770c910bff817814d8320dcc64713"
+ },
+ {
+  "requested_url": "https://www.tei-c.org/activities/council/meetings/tei-technical-council-teleconference-2025-06-10/",
+  "canonical_url": "https://www.tei-c.org/activities/council/meetings/tei-technical-council-teleconference-2025-06-10/",
+  "final_url": "https://www.tei-c.org/activities/council/meetings/tei-technical-council-teleconference-2025-06-10/",
+  "observed_at": "2026-09-11T11:36:22Z",
+  "status": 200,
+  "media_type": "text/html",
+  "byte_count": 16198,
+  "sha256": "b4e355e0412082db3d781f67f2ab3b6adc96057d6d4890118bf0246765ac20c0",
+  "raw_path": "sha256/b4/e355e0412082db3d781f67f2ab3b6adc96057d6d4890118bf0246765ac20c0",
+  "headers": {
+   "date": "Fri, 11 Sep 2026 11:36:31 GMT",
+   "content-type": "text/html",
+   "content-length": "16198",
+   "last-modified": "Fri, 11 Sep 2026 06:18:09 GMT",
+   "etag": "\"3f46-65b2f0c58ca40\""
+  },
+  "census_2026_09_04_sha256": "b4e355e0412082db3d781f67f2ab3b6adc96057d6d4890118bf0246765ac20c0"
+ },
+ {
+  "requested_url": "https://www.tei-c.org/activities/council/meetings/tei-technical-council-teleconference-2025-07-08/",
+  "canonical_url": "https://www.tei-c.org/activities/council/meetings/tei-technical-council-teleconference-2025-07-08/",
+  "final_url": "https://www.tei-c.org/activities/council/meetings/tei-technical-council-teleconference-2025-07-08/",
+  "observed_at": "2026-09-11T11:36:23Z",
+  "status": 200,
+  "media_type": "text/html",
+  "byte_count": 15386,
+  "sha256": "6fe824d68efc86e1676d89e705de815af32ff5a0ef0dcc5702c3d8058aa55571",
+  "raw_path": "sha256/6f/e824d68efc86e1676d89e705de815af32ff5a0ef0dcc5702c3d8058aa55571",
+  "headers": {
+   "date": "Fri, 11 Sep 2026 11:36:31 GMT",
+   "content-type": "text/html",
+   "content-length": "15386",
+   "last-modified": "Fri, 11 Sep 2026 06:18:09 GMT",
+   "etag": "\"3c1a-65b2f0c58ca40\""
+  },
+  "census_2026_09_04_sha256": "6fe824d68efc86e1676d89e705de815af32ff5a0ef0dcc5702c3d8058aa55571"
+ },
+ {
+  "requested_url": "https://www.tei-c.org/activities/council/meetings/tei-technical-council-teleconference-2025-08-12/",
+  "canonical_url": "https://www.tei-c.org/activities/council/meetings/tei-technical-council-teleconference-2025-08-12/",
+  "final_url": "https://www.tei-c.org/activities/council/meetings/tei-technical-council-teleconference-2025-08-12/",
+  "observed_at": "2026-09-11T11:36:23Z",
+  "status": 200,
+  "media_type": "text/html",
+  "byte_count": 14935,
+  "sha256": "666653f480f49b51ba9e5d6f11150cb2ab3631d7b07c39b754e60953c983c42b",
+  "raw_path": "sha256/66/6653f480f49b51ba9e5d6f11150cb2ab3631d7b07c39b754e60953c983c42b",
+  "headers": {
+   "date": "Fri, 11 Sep 2026 11:36:32 GMT",
+   "content-type": "text/html",
+   "content-length": "14935",
+   "last-modified": "Fri, 11 Sep 2026 06:18:09 GMT",
+   "etag": "\"3a57-65b2f0c58ca40\""
+  },
+  "census_2026_09_04_sha256": "666653f480f49b51ba9e5d6f11150cb2ab3631d7b07c39b754e60953c983c42b"
+ },
+ {
+  "requested_url": "https://www.tei-c.org/activities/council/meetings/tei-technical-council-teleconference-2025-10-07/",
+  "canonical_url": "https://www.tei-c.org/activities/council/meetings/tei-technical-council-teleconference-2025-10-07/",
+  "final_url": "https://www.tei-c.org/activities/council/meetings/tei-technical-council-teleconference-2025-10-07/",
+  "observed_at": "2026-09-11T11:36:23Z",
+  "status": 200,
+  "media_type": "text/html",
+  "byte_count": 18037,
+  "sha256": "3ff668cc05bc74a9ef582b638f50a09cd92de2101e68b696beaf60c41bcb3ced",
+  "raw_path": "sha256/3f/f668cc05bc74a9ef582b638f50a09cd92de2101e68b696beaf60c41bcb3ced",
+  "headers": {
+   "date": "Fri, 11 Sep 2026 11:36:32 GMT",
+   "content-type": "text/html",
+   "content-length": "18037",
+   "last-modified": "Fri, 11 Sep 2026 06:18:09 GMT",
+   "etag": "\"4675-65b2f0c58ca40\""
+  },
+  "census_2026_09_04_sha256": "3ff668cc05bc74a9ef582b638f50a09cd92de2101e68b696beaf60c41bcb3ced"
+ },
+ {
+  "requested_url": "https://www.tei-c.org/activities/council/meetings/tei-technical-council-teleconference-2025-11-11/",
+  "canonical_url": "https://www.tei-c.org/activities/council/meetings/tei-technical-council-teleconference-2025-11-11/",
+  "final_url": "https://www.tei-c.org/activities/council/meetings/tei-technical-council-teleconference-2025-11-11/",
+  "observed_at": "2026-09-11T11:36:23Z",
+  "status": 200,
+  "media_type": "text/html",
+  "byte_count": 19678,
+  "sha256": "b94c88a11e180acd31905ad38d48661b5fd45517c3edeb688b3af2e3472ebd5b",
+  "raw_path": "sha256/b9/4c88a11e180acd31905ad38d48661b5fd45517c3edeb688b3af2e3472ebd5b",
+  "headers": {
+   "date": "Fri, 11 Sep 2026 11:36:32 GMT",
+   "content-type": "text/html",
+   "content-length": "19678",
+   "last-modified": "Fri, 11 Sep 2026 06:18:09 GMT",
+   "etag": "\"4cde-65b2f0c58ca40\""
+  },
+  "census_2026_09_04_sha256": "b94c88a11e180acd31905ad38d48661b5fd45517c3edeb688b3af2e3472ebd5b"
+ },
+ {
+  "requested_url": "https://www.tei-c.org/activities/council/meetings/tei-technical-council-teleconference-2025-12-18/",
+  "canonical_url": "https://www.tei-c.org/activities/council/meetings/tei-technical-council-teleconference-2025-12-18/",
+  "final_url": "https://www.tei-c.org/activities/council/meetings/tei-technical-council-teleconference-2025-12-18/",
+  "observed_at": "2026-09-11T11:36:24Z",
+  "status": 200,
+  "media_type": "text/html",
+  "byte_count": 18498,
+  "sha256": "3772efb11ac1d172073a227889e5643bef270eda61c2baafd9ab0d670358e187",
+  "raw_path": "sha256/37/72efb11ac1d172073a227889e5643bef270eda61c2baafd9ab0d670358e187",
+  "headers": {
+   "date": "Fri, 11 Sep 2026 11:36:32 GMT",
+   "content-type": "text/html",
+   "content-length": "18498",
+   "last-modified": "Fri, 11 Sep 2026 06:18:09 GMT",
+   "etag": "\"4842-65b2f0c58ca40\""
+  },
+  "census_2026_09_04_sha256": "3772efb11ac1d172073a227889e5643bef270eda61c2baafd9ab0d670358e187"
+ },
+ {
+  "requested_url": "https://www.tei-c.org/activities/council/meetings/tei-technical-council-teleconference-2026-01-14/",
+  "canonical_url": "https://www.tei-c.org/activities/council/meetings/tei-technical-council-teleconference-2026-01-14/",
+  "final_url": "https://www.tei-c.org/activities/council/meetings/tei-technical-council-teleconference-2026-01-14/",
+  "observed_at": "2026-09-11T11:36:24Z",
+  "status": 200,
+  "media_type": "text/html",
+  "byte_count": 17162,
+  "sha256": "0784e606cc690be99542b2f90732d82e8e7e54b3b58e7047ddf4fb97473cb9e1",
+  "raw_path": "sha256/07/84e606cc690be99542b2f90732d82e8e7e54b3b58e7047ddf4fb97473cb9e1",
+  "headers": {
+   "date": "Fri, 11 Sep 2026 11:36:33 GMT",
+   "content-type": "text/html",
+   "content-length": "17162",
+   "last-modified": "Fri, 11 Sep 2026 06:18:09 GMT",
+   "etag": "\"430a-65b2f0c58ca40\""
+  },
+  "census_2026_09_04_sha256": "0784e606cc690be99542b2f90732d82e8e7e54b3b58e7047ddf4fb97473cb9e1"
+ },
+ {
+  "requested_url": "https://www.tei-c.org/activities/council/meetings/tei-technical-council-teleconference-2026-04-10/",
+  "canonical_url": "https://www.tei-c.org/activities/council/meetings/tei-technical-council-teleconference-2026-04-10/",
+  "final_url": "https://www.tei-c.org/activities/council/meetings/tei-technical-council-teleconference-2026-04-10/",
+  "observed_at": "2026-09-11T11:36:24Z",
+  "status": 200,
+  "media_type": "text/html",
+  "byte_count": 18536,
+  "sha256": "010e4a4a85be0e106f5bb76059d5a1f0d86e72d284b58d83192d96a09df0919e",
+  "raw_path": "sha256/01/0e4a4a85be0e106f5bb76059d5a1f0d86e72d284b58d83192d96a09df0919e",
+  "headers": {
+   "date": "Fri, 11 Sep 2026 11:36:33 GMT",
+   "content-type": "text/html",
+   "content-length": "18536",
+   "last-modified": "Fri, 11 Sep 2026 06:18:09 GMT",
+   "etag": "\"4868-65b2f0c58ca40\""
+  },
+  "census_2026_09_04_sha256": "010e4a4a85be0e106f5bb76059d5a1f0d86e72d284b58d83192d96a09df0919e"
+ },
+ {
+  "requested_url": "https://www.tei-c.org/activities/council/meetings/tei-technical-council-teleconference_2026-02-09/",
+  "canonical_url": "https://www.tei-c.org/activities/council/meetings/tei-technical-council-teleconference_2026-02-09/",
+  "final_url": "https://www.tei-c.org/activities/council/meetings/tei-technical-council-teleconference_2026-02-09/",
+  "observed_at": "2026-09-11T11:36:24Z",
+  "status": 200,
+  "media_type": "text/html",
+  "byte_count": 17573,
+  "sha256": "d7e55c88939fd1bc390643e8a12759f2900123c72094cb3c48482525f7816ff9",
+  "raw_path": "sha256/d7/e55c88939fd1bc390643e8a12759f2900123c72094cb3c48482525f7816ff9",
+  "headers": {
+   "date": "Fri, 11 Sep 2026 11:36:33 GMT",
+   "content-type": "text/html",
+   "content-length": "17573",
+   "last-modified": "Fri, 11 Sep 2026 06:18:09 GMT",
+   "etag": "\"44a5-65b2f0c58ca40\""
+  },
+  "census_2026_09_04_sha256": "d7e55c88939fd1bc390643e8a12759f2900123c72094cb3c48482525f7816ff9"
+ },
+ {
+  "requested_url": "https://www.tei-c.org/activities/council/meetings/tei-technical-council-teleconference_2026-04-24/",
+  "canonical_url": "https://www.tei-c.org/activities/council/meetings/tei-technical-council-teleconference_2026-04-24/",
+  "final_url": "https://www.tei-c.org/activities/council/meetings/tei-technical-council-teleconference_2026-04-24/",
+  "observed_at": "2026-09-11T11:36:25Z",
+  "status": 200,
+  "media_type": "text/html",
+  "byte_count": 24829,
+  "sha256": "4dd80d8287b51b3fe94321f104d388f034f4093352bd661fa427e556534555d8",
+  "raw_path": "sha256/4d/d80d8287b51b3fe94321f104d388f034f4093352bd661fa427e556534555d8",
+  "headers": {
+   "date": "Fri, 11 Sep 2026 11:36:33 GMT",
+   "content-type": "text/html",
+   "content-length": "24829",
+   "last-modified": "Fri, 11 Sep 2026 06:18:09 GMT",
+   "etag": "\"60fd-65b2f0c58ca40\""
+  },
+  "census_2026_09_04_sha256": "4dd80d8287b51b3fe94321f104d388f034f4093352bd661fa427e556534555d8"
+ },
+ {
+  "requested_url": "https://api.github.com/repos/TEIC/p6-sandbox",
+  "canonical_url": "https://api.github.com/repos/TEIC/p6-sandbox",
+  "final_url": "https://api.github.com/repos/TEIC/p6-sandbox",
+  "observed_at": "2026-09-11T11:36:25Z",
+  "status": 404,
+  "media_type": "application/json",
+  "byte_count": 118,
+  "sha256": "4f50e254a719a6b1b06b529bdaa08980e4acf0878aad0090cba7771f6ebdf0b9",
+  "raw_path": "sha256/4f/50e254a719a6b1b06b529bdaa08980e4acf0878aad0090cba7771f6ebdf0b9",
+  "headers": {
+   "date": "Fri, 11 Sep 2026 11:36:23 GMT",
+   "content-type": "application/json; charset=utf-8",
+   "x-github-api-version-selected": "2022-11-28",
+   "x-ratelimit-limit": "60",
+   "x-ratelimit-remaining": "59",
+   "x-ratelimit-resource": "core",
+   "x-ratelimit-reset": "1789130183",
+   "content-length": "118"
+  },
+  "census_2026_09_04_sha256": null
+ },
+ {
+  "requested_url": "https://github.com/TEIC/p6-sandbox",
+  "canonical_url": "https://github.com/TEIC/p6-sandbox",
+  "final_url": "https://github.com/TEIC/p6-sandbox",
+  "observed_at": "2026-09-11T11:36:25Z",
+  "status": 404,
+  "media_type": "text/html",
+  "byte_count": 266544,
+  "sha256": "c453984cff4e46f33409f77584a94938cbeb74611d460e2a26ae52d13d69484d",
+  "raw_path": "sha256/c4/53984cff4e46f33409f77584a94938cbeb74611d460e2a26ae52d13d69484d",
+  "headers": {
+   "date": "Fri, 11 Sep 2026 11:36:24 GMT",
+   "content-type": "text/html; charset=utf-8"
+  },
+  "census_2026_09_04_sha256": null
+ }
+]

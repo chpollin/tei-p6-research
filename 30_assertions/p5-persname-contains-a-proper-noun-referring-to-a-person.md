@@ -3,14 +3,12 @@ type: assertion
 topics: ["[[Metadata and Entities]]"]
 phenomena: ["[[glossary/mention-of-an-entity]]"]
 related: ["[[30_assertions/p5-persname-is-synonymous-with-name-of-type-person]]", "[[30_assertions/p5-person-provides-information-about-an-identifiable-individual]]"]
-status: validated
-checked:
-  machine-review: 2026-09-06
-  validation: 2026-09-06
+status: grounded
+checked: {}
 grounding:
   - "[[20_distillates/documents/tei-p5-persname-4.12.0#^s1]]"
 created: 2026-09-06
-updated: 2026-09-06
+updated: 2026-09-11
 ---
 
 # In TEI P5 4.12.0, the English description of persName states that the element contains a proper noun or proper-noun phrase referring to a person

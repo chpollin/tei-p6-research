@@ -1,0 +1,18 @@
+{
+  "instrument": "v1.4",
+  "emitted_at": "2026-09-11T13:13:38+00:00",
+  "instrument_files": {
+    "tools/full_review.py": "2d460fbb4083a9c1cefe1823c61944afd23c1e942e6c4d0fdf9c2d7ce0ec7dab",
+    "tools/review_execution.py": "ebf0615ba14fa14009482699f3d99fb87a6533ebfd034f8a3c6f7f58e83a630e",
+    "tools/review.py": "401192a6c29d133229a0e42654fcfc799c44d204d534720ec5810618870716ea",
+    "tools/validate.py": "24849e4b8426c64c8c11b8d3623cc862f910f7df22d2a0efd54c0e1780ad3726",
+    "tools/vault_documents.py": "c8d126f0b0855dfc273aab4995e075671fde05751fd2772501ec3036eaae63a9",
+    "tools/check_text_structures.py": "e9042b68d8e7ae01ad270ffdce04503b64ea26f59f539a6fde35c33a36053e0f",
+    "tools/ingest_guidelines.py": "024af7c1fa01a0ba70401f464c68c8110fe97cb570d66d550dbd218adacbad32"
+  },
+  "preliminary_rounds": [
+    "v1.1",
+    "v1.2"
+  ],
+  "context_corrections": "XML ancestors and attributes; source identities; explicitly cited Terms and Appraisal blocks; full P6 page contexts. Previous judgments are diagnostic records."
+}

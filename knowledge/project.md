@@ -12,7 +12,7 @@ profile:
 status: draft
 language: en
 created: "2026-09-06"
-updated: "2026-09-07"
+updated: "2026-09-11"
 related: [INDEX, specification, data, governance, plan, state, journal]
 ---
 
@@ -38,7 +38,7 @@ The project is unofficial and has no standing within the TEI Consortium.
 Official TEI P6 records are research sources for it, and the proposals
 developed here are its own recommendations. The requirements that bind the
 work are in [[knowledge/specification]], the material in [[knowledge/data]],
-the remaining milestones in [[knowledge/plan]] and the current holdings in
+the remaining research objectives in [[knowledge/plan]] and the current holdings in
 [[knowledge/state]].
 
 ## Project proposition

@@ -1,0 +1,14 @@
+{
+  "instrument": "v1.5",
+  "emitted_at": "2026-09-11T13:26:19+00:00",
+  "instrument_files": {
+    "tools/full_review.py": "3e9cace70e4fc050d2c1dcc5e438185027691eed75d68de33181bbb70847c967",
+    "tools/review_execution.py": "ebf0615ba14fa14009482699f3d99fb87a6533ebfd034f8a3c6f7f58e83a630e",
+    "tools/review.py": "401192a6c29d133229a0e42654fcfc799c44d204d534720ec5810618870716ea",
+    "tools/validate.py": "24849e4b8426c64c8c11b8d3623cc862f910f7df22d2a0efd54c0e1780ad3726",
+    "tools/vault_documents.py": "c8d126f0b0855dfc273aab4995e075671fde05751fd2772501ec3036eaae63a9",
+    "tools/check_text_structures.py": "e9042b68d8e7ae01ad270ffdce04503b64ea26f59f539a6fde35c33a36053e0f",
+    "tools/ingest_guidelines.py": "024af7c1fa01a0ba70401f464c68c8110fe97cb570d66d550dbd218adacbad32"
+  },
+  "context_change": "Complete immutable representations for the nine practice sources; unchanged other prompts can only be reused after exact package equivalence."
+}

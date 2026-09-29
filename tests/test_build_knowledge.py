@@ -12,6 +12,30 @@ from tools.sitegen.markup import doc_id
 ROOT = Path(__file__).parents[1]
 
 
+def test_manifest_rights_are_matched_to_each_admission(tmp_path):
+    from tools.sitegen.knowledge_view import _admissions
+
+    write(tmp_path, 'sources/manifests/test.yaml', '''admissions:
+  - representation_path: 10_markdown/documents/a.md
+  - representation_path: 10_markdown/documents/b.md
+  - representation_path: 10_markdown/documents/c.md
+    record:
+      kind: git-blob
+      commit: aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+      last_changing_commit: bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+rights:
+  - representation_path: 10_markdown/documents/b.md
+    attribution: B attribution
+  - representation_path: 10_markdown/documents/a.md
+    attribution: A attribution
+''')
+    records = _admissions(tmp_path)
+    assert records['10_markdown/documents/a.md']['rights'] == 'A attribution'
+    assert records['10_markdown/documents/b.md']['rights'] == 'B attribution'
+    assert records['10_markdown/documents/c.md']['rights'] is None
+    assert records['10_markdown/documents/c.md']['version'] == 'a' * 40
+
+
 def test_guidelines_filters_and_declared_links_in_real_page():
     page = Page(build_page(ROOT, '2026-09-07'))
     assert {'knowledge-topic', 'knowledge-module', 'knowledge-source-kind'} <= set(page.ids)
@@ -251,6 +275,20 @@ def test_no_js_accessibility_contract(vault):
     assert all(tag == 'details' and 'hidden' not in attrs for tag, attrs in artifacts)
     assert len([tag for tag, _ in page.tags if tag == 'summary']) == 4
     assert ('a', {'class': 'skip-link', 'href': '#main'}) in page.tags
+
+
+def test_search_keeps_passages_once_and_exposes_exact_status(vault):
+    html = build_page(vault, '2026-09-11')
+    page = Page(html)
+    source = next(attrs for tag, attrs in page.tags
+                  if tag == 'details' and attrs.get('data-kind') == 'representation')
+    assert 'Exact source' not in source['data-search']
+    assert html.count('Exact source &lt;script&gt;alert(1)&lt;/script&gt; text.') == 1
+    assert source['data-status'] == ''
+    assertion = next(attrs for tag, attrs in page.tags
+                     if tag == 'details' and attrs.get('data-kind') == 'assertion')
+    assert assertion['data-status'] == 'grounded'
+    assert {'knowledge-status', 'knowledge-ranked', 'knowledge-hits'} <= set(page.ids)
 
 
 def test_block_parser_refuses_duplicate_anchors_and_ignores_code():

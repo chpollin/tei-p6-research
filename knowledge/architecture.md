@@ -9,7 +9,7 @@ method:
 status: draft
 language: en
 created: "2026-09-04"
-updated: "2026-09-07"
+updated: "2026-09-11"
 related: [INDEX, design, schema, operations, data, governance, testing, specification, state]
 ---
 
@@ -56,7 +56,7 @@ The rule families and their homes are these.
 | documentary ontology, external comparison register and generated class hierarchy | [[knowledge/ontology]] |
 | source-specific HSA instance profile, bindings and semantic coverage boundary | [[knowledge/hsa-profile]]; the case README explains the editorial comparison |
 | P5 preservation and pragmatic acceptance criteria | [[knowledge/p6-evaluation]] |
-| milestones, research packages, operator decisions | [[knowledge/plan]] |
+| research objectives, research packages, operator decisions | [[knowledge/plan]] |
 | method rationale | [[knowledge/schema]] § Rationale |
 
 Git history records what changed. [[knowledge/state]] records what is true
@@ -212,7 +212,7 @@ evidence layer, raises no status and serves no ignored raw body.
 | `docs/corpus.html` | `tools/build_corpus_overview.py` | registry, locks, selected manifests |
 | `docs/knowledge.html` | `tools/build_knowledge.py` | actual vault artifacts and their provenance metadata |
 | `docs/project.html` | `tools/build_docs.py` | `README.md` and the knowledge documents |
-| the inventory region of `knowledge/state.md` | `tools/inventory.py --write` | the files of `10_markdown/` and `20_distillates/` |
+| `corpus/projections/source-inventory.md` | `tools/inventory.py --write` | the files of `10_markdown/` and `20_distillates/` |
 | `corpus/projections/p5-specs-4.12.0.json` | `tools.tei.build_atlas` | the locked P5 Git mirror |
 | `experiments/*/report.json` | the experiment runners | specifications, cases and examples of the experiment |
 | review pairs under `workbench/reviews/<run-id>/` | `tools/review.py`, the pilot runner | the artifacts in review scope |
@@ -222,6 +222,18 @@ accepted inputs. Everything else is curated by hand under the contracts of
 [[knowledge/schema]] and this knowledge base. All pages share the
 navigation, footer and base styles in `tools/sitegen/chrome.py` and
 `tools/sitegen/assets/workbench.css`.
+
+Die gemeinsamen Markdown-Leseregeln liegen in `tools/vault_documents.py`.
+Validator, Inventar und Seitenleser verwenden dieselbe Frontmatter-Grenze;
+ihre aufgabenspezifischen Fehlerreaktionen bleiben beim jeweiligen Aufrufer.
+Die Quellenrepräsentationen werden dadurch weder verändert noch neu konvertiert.
+
+`tools/retrieval.py` baut eine lokale, abgeleitete Suchansicht mit kanonischen
+Pfaden, Passagen und Herkunftsgrenzen. `tools/select_sources.py` führt deklarierte
+Abfragen auf vorhandenen normalisierten Snapshots und dem Deklarationsatlas aus.
+Beide Werkzeuge arbeiten ohne Aufnahme neuer Quellen. Ihre Ergebnisse sind
+Navigation und benötigen bei einer fachlichen Verwendung den direkten
+Rückweg zur Evidenzkette. Die Prozeduren stehen in [[knowledge/operations]].
 
 ## Authority boundaries
 
@@ -239,7 +251,7 @@ becoming evidence.
 ## Stable and volatile information
 
 Architecture, rules and durable decisions belong in `knowledge/`. Corpus
-counts, acquisition progress, active blockers and milestone status belong
+counts, acquisition progress and active blockers belong
 only in [[knowledge/state]] and run manifests. Public entry points link to
 that state instead of repeating values that will drift.
 

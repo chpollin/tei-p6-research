@@ -3,12 +3,10 @@ type: distillate
 source-type: document
 representation: "[[10_markdown/documents/tei-p5-att.canonical-4.12.0]]"
 topics: ["[[Metadata and Entities]]", "[[Elements and Classes]]"]
-status: validated
-checked:
-  machine-review: 2026-09-06
-  validation: 2026-09-06
+status: grounded
+checked: {}
 created: 2026-09-06
-updated: 2026-09-06
+updated: 2026-09-11
 ---
 
 # Distillate: TEI P5 4.12.0 att.canonical specification
@@ -31,7 +29,7 @@ This distillate reports the English descriptions and the English remarks of the 
 
 ## Terms
 
-- **att.canonical**: the specification that provides attributes which can be used to associate a representation such as a name or title with canonical information about the object being named or referenced. [[10_markdown/documents/tei-p5-att.canonical-4.12.0#^r1]]
+- **att.canonical**: the class described as providing attributes that can be used to associate a representation such as a name or title with canonical information about the object being named or referenced. [[10_markdown/documents/tei-p5-att.canonical-4.12.0#^r1]]
 - **key**: the attribute that provides an externally-defined means of identifying the entity or entities being named, using a coded value of some kind. [[10_markdown/documents/tei-p5-att.canonical-4.12.0#^r2]]
 - **ref**: the attribute that provides an explicit means of locating a full definition or identity for the entity being named by means of one or more URIs. [[10_markdown/documents/tei-p5-att.canonical-4.12.0#^r4]]
 
@@ -40,14 +38,14 @@ This distillate reports the English descriptions and the English remarks of the 
 - Which source establishes which elements and which classes are members of `att.canonical` at this release, given that this specification names no member and no English reading block of it carries a membership statement?
 - Which source would establish what the XML-only declarations of this specification contribute, meaning the datatype `teidata.text` for `key`, the one to unbounded `teidata.pointer` values for `ref`, the optional usage of both attributes, the identifier `class-attr-canonical`, the module the specification names and its `listRef` pointer, given that no English reading block covers them?
 - What would establish which usage the three English examples of this specification demonstrate, meaning the one example under `key`, the one example under `ref` and the contrived example in which a canonical reference to the same organisation is provided in four different ways, given that the prose explaining the last of them lies outside the English reading blocks?
-- Within which scope must a `key` value be unique, given that the English remarks say only that the value may be a unique identifier from a database or any other externally-defined string identifying the referent?
+- Does a `key` value have to be unique, and if so within which scope, given that the English remarks say only that the value may be a unique identifier from a database or any other externally-defined string identifying the referent?
 - Which source would establish how a processor is expected to behave when `key` and `ref` appear together, given that this specification states no semantic basis and no precedence for that case?
-- Which record would establish when the English passage now held as an inert XML comment inside the class remarks, which mentions data interchange and a tag URI as defined in RFC 4151, left the remarks text, given that only the XML of this source carries it?
+- Which record would establish whether and when the English passage held as an inert XML comment inside the class remarks, which mentions data interchange and a tag URI as defined in RFC 4151, formed part of the remarks text, given that only the XML of this source carries it?
 - Which source would establish what the non-English descriptions and remarks of this specification state, given that the reading blocks reproduce the English text alone?
 
 ## Appraisal
 
-The source is the complete class specification at a pinned release commit, so its English text establishes what the Guidelines say about identifying an entity through a coded key or through a URI, and about the documentation each of the two places on a recipient in interchange. It establishes nothing about which elements carry these attributes and nothing about whether a key resolves outside the project that minted it. The declarations preserved in the XML and the prose explaining the examples stay outside the core statements until a reading block or another admitted source carries them.
+The source is the complete class specification at a pinned release commit, so its English text establishes what the Guidelines say about identifying an entity through a coded key or through a URI, and about the documentation each of the two places on a recipient in interchange. Its examples show `key` and `ref` on `name`; a complete list of elements that carry these attributes requires membership declarations from other specifications. For resolving a key in interchange, its English remarks require only that documentation about the resolution be sent to the recipient, while the prose of its contrived example, outside the reading blocks, adds that the form using `key` requires an entire external system for key resolution. The declarations preserved in the XML and the prose explaining the examples stay outside the core statements until a reading block or another admitted source carries them.
 
 ## Related
 

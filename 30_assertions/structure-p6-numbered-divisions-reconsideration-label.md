@@ -6,7 +6,7 @@ checked: {}
 grounding:
   - "[[20_distillates/publications/teic-tei-issue-1400#^s3]]"
 created: 2026-09-07
-updated: 2026-09-07
+updated: 2026-09-11
 ---
 
 # At the recorded 2026-09-06 snapshot, TEIC/TEI issue 1400 carried a label marking reconsideration for P6.
@@ -17,7 +17,7 @@ At the recorded 2026-09-06 snapshot, TEIC/TEI issue 1400 carried a label marking
 
 ## Support
 
-- [[20_distillates/publications/teic-tei-issue-1400#^s3]] supplies the source-specific statement used here. The assertion retains its stated source and scope.
+- [[20_distillates/publications/teic-tei-issue-1400#^s3]]
 
 ## Related
 

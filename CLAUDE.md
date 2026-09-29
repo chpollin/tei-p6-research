@@ -30,7 +30,7 @@ Read only what the task needs:
 
 1. Read `knowledge/INDEX.md` for vocabulary, the document table and the
    folder map.
-2. Read `knowledge/state.md` for the current milestone, data reality and
+2. Read `knowledge/state.md` for current holdings, data reality and
    blockers, and `knowledge/handoff.md` for open handoff points.
 3. For a research-content task, load only the named knowledge documents and
    evidence paths of the route. Do not bulk-load the corpus.
@@ -43,6 +43,8 @@ Read only what the task needs:
 | Report project status | `knowledge/state.md` plus actual files, locks and manifests |
 | Maintain repository documentation or structure | actual tree, `knowledge/architecture.md`, `README.md`, then the affected document |
 | Build or change the research workbench | `knowledge/design.md`, the relevant generator and `.github/workflows/pages.yml` |
+| Find an existing claim or source passage | `knowledge/operations.md` § Query; use `python -m tools.retrieval` and inspect the returned canonical paths |
+| Select sources for a research question | `knowledge/operations.md` § Select; declare snapshot queries before admission |
 | Acquire or ingest a source | `knowledge/data.md`, then `knowledge/operations.md` § Acquire and § Ingest |
 | Distill, synthesize, write or query | matching section of `knowledge/operations.md` and `knowledge/schema.md` |
 | Analyze an element, module, decision or release | matching procedure in `knowledge/operations.md` § Analyze |

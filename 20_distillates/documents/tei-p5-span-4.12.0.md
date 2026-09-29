@@ -3,12 +3,10 @@ type: distillate
 source-type: document
 representation: "[[10_markdown/documents/tei-p5-span-4.12.0]]"
 topics: ["[[Text and Document Structures]]", "[[Annotation and Overlap]]"]
-status: validated
-checked:
-  validation: 2026-09-05
-  machine-review: 2026-09-05
+status: grounded
+checked: {}
 created: 2026-09-05
-updated: 2026-09-05
+updated: 2026-09-11
 ---
 
 # Distillate: TEI P5 4.12.0 span specification
@@ -28,10 +26,11 @@ This distillate reports the English definition and `from` description in the com
 
 - What further sources would establish a mapping from these node identifiers to a particular character-offset convention?
 - What evidence would support preserving an annotation's interpretation when the annotated text changes?
+- How far do the English description of `to` and the Schematron constraints in the XML, which report `from` or `to` combined with `target`, `to` without `from`, and more than one value in either attribute, bound the use of `from` described above, given that this distillate reports neither?
 
 ## Appraisal
 
-The inspected descriptions concern a release-specific annotation mechanism. They are not an endorsement of the pilot's half-open Unicode-code-point ranges, immutable text-version model, or reanchoring policy. Those remain independent proposals.
+The inspected descriptions are those the specification carries at the pinned release. They are not an endorsement of the pilot's half-open Unicode-code-point ranges, immutable text-version model, or reanchoring policy. Those remain independent proposals.
 
 ## Related
 

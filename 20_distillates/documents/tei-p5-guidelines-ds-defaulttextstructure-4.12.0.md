@@ -6,7 +6,7 @@ topics: ["[[Text and Document Structures]]", "[[Annotation and Overlap]]"]
 status: grounded
 checked: {}
 created: 2026-09-07
-updated: 2026-09-07
+updated: 2026-09-11
 ---
 
 # Distillate: TEI P5 4.12.0 Default Text Structure
@@ -37,23 +37,23 @@ This distillate reports the pinned English Default Text Structure chapter, with 
 - The chapter states that the immediate parent of head implies its type or level and permits extending model.headLike with additional elements. [[10_markdown/documents/tei-p5-guidelines-ds-defaulttextstructure-4.12.0#^b45]] ^s20
 - For heading-like material in the middle of text, the chapter leaves the decision about starting a new division to the encoder and suggests quote, q or cit for inserted or superimposed material. [[10_markdown/documents/tei-p5-guidelines-ds-defaulttextstructure-4.12.0#^b48]] ^s21
 - The chapter reserves trailer for a heading-like feature at the end of a division. [[10_markdown/documents/tei-p5-guidelines-ds-defaulttextstructure-4.12.0#^b49]] ^s22
-- The chapter uses byline and dateline for headings identifying authorship and provenance and explicitly extends their use beyond newspaper texts. [[10_markdown/documents/tei-p5-guidelines-ds-defaulttextstructure-4.12.0#^b52]] ^s23
+- The chapter uses byline and dateline for headings identifying authorship and provenance and states that, although the terminology derives from newspaper usage, there is no implication that these elements apply only to newspaper texts. [[10_markdown/documents/tei-p5-guidelines-ds-defaulttextstructure-4.12.0#^b52]] ^s23
 - The chapter demonstrates opener and closer as grouping elements for sequences at the beginning or end of a division. [[10_markdown/documents/tei-p5-guidelines-ds-defaulttextstructure-4.12.0#^b53]] ^s24
 - The chapter presents a prefatory argument encoded as a paragraph or a list as equally valid encodings of the same argument. [[10_markdown/documents/tei-p5-guidelines-ds-defaulttextstructure-4.12.0#^b56]] ^s25
 - For an epigraph quotation with a bibliographic reference, the chapter recommends grouping quotation and source with cit. [[10_markdown/documents/tei-p5-guidelines-ds-defaulttextstructure-4.12.0#^b57]] ^s26
 - The chapter defines a postscript as a passage added after a letter signature or, less frequently, after the main body of a book, article or essay. [[10_markdown/documents/tei-p5-guidelines-ds-defaulttextstructure-4.12.0#^b59]] ^s27
-- The chapter makes the component-level elements available within divisions dependent on the modules in use. [[10_markdown/documents/tei-p5-guidelines-ds-defaulttextstructure-4.12.0#^b61]] ^s28
-- The chapter states that low-level elements from different modules need not be kept together. [[10_markdown/documents/tei-p5-guidelines-ds-defaulttextstructure-4.12.0#^b62]] ^s29
-- The chapter distinguishes group for independent texts regarded as one processing unit from floatingText for an independent text after which the containing text resumes. [[10_markdown/documents/tei-p5-guidelines-ds-defaulttextstructure-4.12.0#^b65]] ^s30
+- The chapter states that the actual elements available within a textual division will depend on the modules in use, and that in all cases at least the component-level structural elements defined in the core will be available. [[10_markdown/documents/tei-p5-guidelines-ds-defaulttextstructure-4.12.0#^b61]] ^s28
+- The chapter states that where a text contains low-level elements from more than one module these may appear at any point, and that there is no requirement that elements from the same module be kept together. [[10_markdown/documents/tei-p5-guidelines-ds-defaulttextstructure-4.12.0#^b62]] ^s29
+- The chapter states that group should be used to represent a collection of independent texts which is to be regarded as a single unit for processing or other purposes, and floatingText to represent an independent text which interrupts the text containing it at any point but after which the surrounding text resumes. [[10_markdown/documents/tei-p5-guidelines-ds-defaulttextstructure-4.12.0#^b65]] ^s30
 - The chapter states that a text belonging to a group may itself contain groups. [[10_markdown/documents/tei-p5-guidelines-ds-defaulttextstructure-4.12.0#^b69]] ^s31
 - The chapter presents editorial introductory essays as either independent texts or front matter to embedded texts and deliberately shows both treatments for comparison. [[10_markdown/documents/tei-p5-guidelines-ds-defaulttextstructure-4.12.0#^b74]] ^s32
-- The chapter suggests quotation or cit encoding as an alternative to treating short extracts in an anthology as texts in their own right. [[10_markdown/documents/tei-p5-guidelines-ds-defaulttextstructure-4.12.0#^b77]] ^s33
+- For anthologies of short extracts such as commonplace books, the chapter states that it may often be preferable to regard each extract not as a text in its own right but simply as a quotation or cit element. [[10_markdown/documents/tei-p5-guidelines-ds-defaulttextstructure-4.12.0#^b77]] ^s33
 - The chapter describes a floating text A as contained in B with part of B preceding A and part following it, so that the whole of B cannot be tessellated in the described way. [[10_markdown/documents/tei-p5-guidelines-ds-defaulttextstructure-4.12.0#^b79]] ^s34
 - The chapter states that floatingText belongs to model.divPart and can appear within a division-level element in the same way as a paragraph. [[10_markdown/documents/tei-p5-guidelines-ds-defaulttextstructure-4.12.0#^b80]] ^s35
 - The chapter permits treating fragments of framing narrative as front or back matter where the nested tales have greater significance. [[10_markdown/documents/tei-p5-guidelines-ds-defaulttextstructure-4.12.0#^b83]] ^s36
 - The chapter distinguishes the external-source implication of quote from floatingText, which carries no such implication and supplies a richer content model for a discrete inclusion. [[10_markdown/documents/tei-p5-guidelines-ds-defaulttextstructure-4.12.0#^b84]] ^s37
 - The chapter permits floatingText within quote and quoted sections within floatingText. [[10_markdown/documents/tei-p5-guidelines-ds-defaulttextstructure-4.12.0#^b85]] ^s38
-- The chapter assigns the processing of divGen to the application or stylesheet; the markup identifies the location and kind of the division to generate. [[10_markdown/documents/tei-p5-guidelines-ds-defaulttextstructure-4.12.0#^b89]] ^s39
+- The chapter states that the processing to be carried out when a divGen element is rendered will be determined by the application program or stylesheet in use, and that the function of the TEI markup is simply to identify the location at which the virtual division is to be generated and to provide some information about the kind of division to be generated. [[10_markdown/documents/tei-p5-guidelines-ds-defaulttextstructure-4.12.0#^b89]] ^s39
 - The chapter distinguishes front matter of the encoded text from the TEI header of the computer file. [[10_markdown/documents/tei-p5-guidelines-ds-defaulttextstructure-4.12.0#^b91]] ^s40
 - The chapter permits excluding front matter and recommends recording that decision in samplingDecl. [[10_markdown/documents/tei-p5-guidelines-ds-defaulttextstructure-4.12.0#^b92]] ^s41
 - The chapter illustrates table-of-contents links targeting either chapter divisions or identified page beginnings. [[10_markdown/documents/tei-p5-guidelines-ds-defaulttextstructure-4.12.0#^b94]] ^s42
@@ -62,7 +62,7 @@ This distillate reports the pinned English Default Text Structure chapter, with 
 - For title-page rendition, the chapter presents segmentation with seg and rend or a module specialized for typographic entities as possible approaches. [[10_markdown/documents/tei-p5-guidelines-ds-defaulttextstructure-4.12.0#^b105]] ^s45
 - The chapter states that front and back have identical content models because conventions differ about the placement of material. [[10_markdown/documents/tei-p5-guidelines-ds-defaulttextstructure-4.12.0#^b108]] ^s46
 - The chapter illustrates index references linked to identified pb elements when the original pagination is encoded. [[10_markdown/documents/tei-p5-guidelines-ds-defaulttextstructure-4.12.0#^b110]] ^s47
-- The chapter identifies its module as textstructure and refers schema selection and module combination to the infrastructure discussion. [[10_markdown/documents/tei-p5-guidelines-ds-defaulttextstructure-4.12.0#^b115]] ^s48
+- The chapter identifies its module as textstructure and states that the selection and combination of modules to form a TEI schema is described in the section it points to as STIN. [[10_markdown/documents/tei-p5-guidelines-ds-defaulttextstructure-4.12.0#^b115]] ^s48
 
 ## Terms
 
@@ -75,7 +75,7 @@ This distillate reports the pinned English Default Text Structure chapter, with 
 
 ## Appraisal
 
-The chapter is a release-specific normative source with illustrative examples. Reported processing advantages and difficulties remain attributed to the chapter. This extraction supplies no independent measurements of implementations or editorial practice. Examples and exceptions inform the account, while source dependencies and the finite section boundary remain visible in the audit.
+The chapter is Guidelines prose at the pinned release with illustrative examples, and much of its guidance is worded as recommendation or permission. Reported processing advantages and difficulties remain attributed to the chapter. This extraction supplies no independent measurements of implementations or editorial practice. Examples and exceptions inform the account, while source dependencies and the finite section boundary remain visible in the audit.
 
 ## Related
 

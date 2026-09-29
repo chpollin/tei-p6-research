@@ -1,0 +1,108 @@
+schema_version: 1
+run_id: 2026-09-11-p6-time-for-p6-readme-provenance
+source_id: tei-official-p6-process
+started_at: '2026-09-11T11:36:11Z'
+finished_at: '2026-09-11T12:10:00Z'
+status: partial
+scope:
+  boundary: Provenance of the existing Markdown representation 10_markdown/documents/tei-time-for-p6-readme-2026-07-16.md
+    against README.md at TEIC/timeForP6 commit eb924226d12d22599bae9dad4fc53bc748b3f121.
+  status_applies_to: this one representation, its declared original and three recorded identities (Git blob, raw
+    web response, representation bytes); the representation, its distillate and every review status stay unchanged.
+adapter:
+  name: git cat-file, rev-parse and hash-object on the local mirror; byte comparison against the raw store
+  version: 1
+lock_file: sources/locks/tei-p6-process.yaml
+upstream_manifests:
+- sources/manifests/2026-09-04-teic-time-for-p6.yaml
+- sources/manifests/2026-09-11-p6-time-for-p6-git.yaml
+observation_records:
+- path: corpus/normalized/p6-v1/fetch-git-2026-09-11.json
+  note: raw responses for README.md, index.html and LICENSE at the pinned commit and the repository API records
+requests:
+- requested_url: https://raw.githubusercontent.com/TEIC/timeForP6/eb924226d12d22599bae9dad4fc53bc748b3f121/README.md
+  canonical_url: https://raw.githubusercontent.com/TEIC/timeForP6/eb924226d12d22599bae9dad4fc53bc748b3f121/README.md
+  final_url: https://raw.githubusercontent.com/TEIC/timeForP6/eb924226d12d22599bae9dad4fc53bc748b3f121/README.md
+  observed_at: '2026-09-11T11:37:47Z'
+  status: 200
+  media_type: text/plain
+  byte_count: 3736
+  sha256: ea5e6c104132575686320e7f731b9f0433915ec76062769c1b84005c357193ed
+  raw_path: sha256/ea/5e6c104132575686320e7f731b9f0433915ec76062769c1b84005c357193ed
+- requested_url: https://raw.githubusercontent.com/TEIC/timeForP6/eb924226d12d22599bae9dad4fc53bc748b3f121/LICENSE
+  canonical_url: https://raw.githubusercontent.com/TEIC/timeForP6/eb924226d12d22599bae9dad4fc53bc748b3f121/LICENSE
+  final_url: https://raw.githubusercontent.com/TEIC/timeForP6/eb924226d12d22599bae9dad4fc53bc748b3f121/LICENSE
+  observed_at: '2026-09-11T11:37:48Z'
+  status: 200
+  media_type: text/plain
+  byte_count: 34523
+  sha256: 8486a10c4393cee1c25392769ddd3b2d6c242d6ec7928e1414efff7dfb2f07ef
+  raw_path: sha256/84/86a10c4393cee1c25392769ddd3b2d6c242d6ec7928e1414efff7dfb2f07ef
+objects:
+- kind: markdown-representation
+  path: 10_markdown/documents/tei-time-for-p6-readme-2026-07-16.md
+  sha256: 55440fd25a84e1c2bb92c305de3a3278f205feed1ecd372b15affb34bcff9ee1
+  byte_count: 4311
+  declared_source: 00_sources/tei-time-for-p6-readme-2026-07-16.md
+  declared_identifier: https://github.com/TEIC/timeForP6/blob/eb924226d12d22599bae9dad4fc53bc748b3f121/README.md
+  declared_date: '2026-07-16'
+  declared_license: AGPL-3.0-only
+- kind: git-tree-inventory
+  path: corpus/normalized/p6-v1/teic-time-for-p6-2026-09-11.json
+  sha256: a7b90faa4f2568a283dd4a8a3df7c680584bbbd0409cafcd25f02e803ee9f658
+  root_tree: 69d333e13da7b641d1c38bdca10768d6c3f64c5f
+identities:
+- kind: git-blob
+  repository: https://github.com/TEIC/timeForP6
+  commit: eb924226d12d22599bae9dad4fc53bc748b3f121
+  root_tree: 69d333e13da7b641d1c38bdca10768d6c3f64c5f
+  repository_path: README.md
+  blob: bd4ad0759be99e8f8d8f8281ece6749c09dde9ab
+  last_changing_commit: 320aaf8a51f60450b5cf856a94a05973c726e5e1
+  last_change_author_date: '2026-07-16T07:52:00-04:00'
+  materialization: corpus/raw/git/TEIC-timeForP6.git
+- kind: raw-response
+  raw_path: sha256/ea/5e6c104132575686320e7f731b9f0433915ec76062769c1b84005c357193ed
+  sha256: ea5e6c104132575686320e7f731b9f0433915ec76062769c1b84005c357193ed
+  byte_count: 3736
+  git_hash_object: bd4ad0759be99e8f8d8f8281ece6749c09dde9ab
+  matches_blob: true
+- kind: git-blob
+  repository: https://github.com/TEIC/timeForP6
+  commit: eb924226d12d22599bae9dad4fc53bc748b3f121
+  repository_path: LICENSE
+  blob: 0ad25db4bd1d86c452db3f9602ccdbe172438f52
+  raw_sha256: 8486a10c4393cee1c25392769ddd3b2d6c242d6ec7928e1414efff7dfb2f07ef
+  observed_text: GNU Affero General Public License, Version 3, 19 November 2007
+comparison:
+  method: Take the representation text after its closing frontmatter line and remove the five inserted block anchors
+    matching the regular expression ' \^p6r\d+'.
+  result: The remaining text equals one leading newline, the exact UTF-8 bytes of the raw README response, and two
+    trailing newlines.
+  anchors:
+  - p6r1
+  - p6r2
+  - p6r3
+  - p6r4
+  - p6r5
+  observations:
+  - The fifth anchor is inserted before the trailing space of the last README line; the upstream file ends without
+    a newline.
+  - The declared date 2026-07-16 matches the author date of the last commit changing README.md in the pinned history.
+  - The declared AGPL-3.0-only licence matches the LICENSE blob; package.json at the same commit declares ISC.
+  verdict: The representation text derives from Git blob bd4ad0759be99e8f8d8f8281ece6749c09dde9ab at the pinned commit
+    without content deviation.
+counts:
+  compared_representations: 1
+  inserted_anchors: 5
+gaps:
+- code: declared-original-missing-from-00_sources
+  detail: 00_sources/tei-time-for-p6-readme-2026-07-16.md is absent from this checkout. Identical bytes are available
+    at corpus/raw/sha256/ea/5e6c104132575686320e7f731b9f0433915ec76062769c1b84005c357193ed and as Git blob
+    bd4ad0759be99e8f8d8f8281ece6749c09dde9ab in the local mirror. Restoring the declared original lies outside this
+    work package.
+  status: open
+rights_exceptions:
+- The Git mirror, raw responses and the local original are not committed; redistribution follows the upstream licence
+  record, whose AGPL-3.0 LICENSE and ISC package.json declarations disagree.
+instruction_trust: none

@@ -48,12 +48,11 @@ from dataclasses import dataclass, field
 from datetime import date
 from pathlib import Path
 
-import yaml
-
 if __package__ in (None, ""):  # run as a script, so the package root is off the path
     sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
 from tools.inventory import drift, regions
+from tools.vault_documents import parse_frontmatter
 
 CONTENT_FOLDERS = (
     "10_markdown",
@@ -206,30 +205,11 @@ class Report:
 
 def _parse_doc(path: Path, root: Path, report: Report) -> Doc | None:
     rel = path.relative_to(root).with_suffix("").as_posix()
-    text = path.read_text(encoding="utf-8")
-    if not text.startswith("---\n"):
-        report.error("E-FRONTMATTER", rel, "missing frontmatter")
+    parsed = parse_frontmatter(path.read_text(encoding="utf-8"))
+    if parsed.error:
+        report.error("E-FRONTMATTER", rel, parsed.error)
         return None
-    end = text.find("\n---", 4)
-    if end < 0:
-        report.error("E-FRONTMATTER", rel, "unterminated frontmatter")
-        return None
-    try:
-        loaded = yaml.safe_load(text[4:end])
-    except yaml.YAMLError as exc:
-        report.error("E-FRONTMATTER", rel, f"frontmatter is not valid YAML: {exc}")
-        return None
-    if loaded is None:
-        loaded = {}
-    if not isinstance(loaded, dict):
-        report.error(
-            "E-FRONTMATTER",
-            rel,
-            f"frontmatter is a {type(loaded).__name__}, not a map of fields",
-        )
-        return None
-    fm = loaded
-    body = text[end + 4 :]
+    fm, body = parsed.metadata, parsed.body
     blocks = [m.group(1) for line in body.splitlines() if (m := BLOCK_ID.search(line))]
     return Doc(path=path, rel=rel, fm=fm, body=body, blocks=blocks)
 

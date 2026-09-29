@@ -5,10 +5,13 @@ from __future__ import annotations
 import hashlib
 import json
 import tempfile
-from pathlib import Path
+from pathlib import Path, PurePosixPath, PureWindowsPath
 from typing import Any
 
 import yaml
+
+LOCK_DIRECTORY = ("sources", "locks")
+MANIFEST_DIRECTORY = ("sources", "manifests")
 
 
 def sha256_bytes(data: bytes) -> str:
@@ -141,3 +144,61 @@ def report_status(manifest: dict[str, Any], detail: str) -> int:
 
     print(f"{manifest['status']}: {manifest['source_id']} -> {detail}")
     return 0 if manifest["status"] == "observable-complete" else 2
+
+
+def lock_manifest_references(lock: dict[str, Any]) -> list[str]:
+    """Return every run manifest a lock names, in first-seen order without repeats.
+
+    A lock names runs in three forms: one ``manifest``, a ``manifests`` list, and
+    ``records[].manifest`` for per-record runs. A malformed entry raises
+    ``ValueError`` instead of being skipped, so a lock cannot hide a run
+    reference from the validator or the workbench.
+    """
+
+    references: list[str] = []
+    single = lock.get("manifest")
+    if single is not None:
+        if not isinstance(single, str) or not single:
+            raise ValueError("lock manifest must be a path string")
+        references.append(single)
+    many = lock.get("manifests")
+    if many is not None:
+        if not isinstance(many, list) or not all(isinstance(item, str) and item for item in many):
+            raise ValueError("lock manifests must be a list of path strings")
+        references.extend(many)
+    records = lock.get("records")
+    if records is not None:
+        if not isinstance(records, list):
+            raise ValueError("lock records must be a list")
+        for position, record in enumerate(records):
+            if not isinstance(record, dict):
+                raise ValueError(f"lock records[{position}] must be a mapping")
+            value = record.get("manifest")
+            if value is None:
+                continue
+            if not isinstance(value, str) or not value:
+                raise ValueError(f"lock records[{position}].manifest must be a path string")
+            references.append(value)
+    return list(dict.fromkeys(references))
+
+
+def repository_path(root: Path, reference: object, *, prefix: tuple[str, ...] = ()) -> Path:
+    """Resolve a repository-relative POSIX reference that cannot leave ``root``.
+
+    The reference must be relative, use forward slashes, contain no ``..`` and,
+    when ``prefix`` is given, lie below that directory. Existence is left to the
+    caller, so a missing file and an unsafe reference stay distinct findings.
+    """
+
+    if not isinstance(reference, str) or not reference or "\\" in reference:
+        raise ValueError(f"unsafe repository reference {reference!r}")
+    pure = PurePosixPath(reference)
+    if pure.is_absolute() or PureWindowsPath(reference).drive or ".." in pure.parts:
+        raise ValueError(f"unsafe repository reference {reference!r}")
+    if prefix and (len(pure.parts) <= len(prefix) or pure.parts[: len(prefix)] != prefix):
+        raise ValueError(f"reference {reference!r} lies outside {'/'.join(prefix)}/")
+    resolved_root = root.resolve()
+    candidate = (resolved_root / Path(*pure.parts)).resolve()
+    if not candidate.is_relative_to(resolved_root):
+        raise ValueError(f"unsafe repository reference {reference!r}")
+    return candidate

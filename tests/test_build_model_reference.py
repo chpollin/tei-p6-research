@@ -64,6 +64,15 @@ def test_all_ten_record_kinds_and_fields_are_present():
     assert len([tag for tag, attrs in page.tags if tag == "section" and attrs.get("data-kind")]) == 10
 
 
+def test_model_reference_discloses_versions_and_proposal_boundary(fixture_root):
+    text = ' '.join(Inspect(build_page(fixture_root, '2026-09-11')).data)
+    assert 'Version and implementation scope' in text
+    assert 'Model 0.2 adds entity and claim records' in text
+    assert 'one-way RDF export' in text
+    assert 'Proposed extensions' in text
+    assert 'Model 0.1: classes and references' in text
+
+
 def test_cardinalities_distinguish_positive_claims_and_nested_nodes():
     refs = {(source, field): (target, count, extra) for source, field, target, count, extra in REFERENCES}
     assert refs["Continuity", "versions"][:2] == ("Version", "1..n")

@@ -3,12 +3,10 @@ type: distillate
 source-type: document
 representation: "[[10_markdown/documents/tei-p5-name-4.12.0]]"
 topics: ["[[Metadata and Entities]]"]
-status: validated
-checked:
-  machine-review: 2026-09-06
-  validation: 2026-09-06
+status: grounded
+checked: {}
 created: 2026-09-06
-updated: 2026-09-06
+updated: 2026-09-11
 ---
 
 # Distillate: TEI P5 4.12.0 name specification
@@ -33,7 +31,7 @@ This distillate reports the English description and the English remarks in the c
 
 ## Appraisal
 
-The English text of this specification is one description sentence and one remarks paragraph, so the source carries the definition of `name` and the pointer to the more specific name elements. Attribute semantics, class behavior, and the content model would need the class and macro specifications as separately admitted sources.
+The English reading blocks of this specification are one description sentence and one remarks paragraph, so they carry the definition of `name` and the pointer to the more specific name elements. The XML also holds the English gloss "name, proper noun", which no reading block covers. Attribute semantics, class behavior, and the content model would need the class and macro specifications as separately admitted sources.
 
 ## Related
 

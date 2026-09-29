@@ -1,0 +1,32 @@
+[
+  {
+    "id": "20_distillates/publications/piez2014range#^s1",
+    "origin": "workbench\\reviews\\2026-09-05-wave1",
+    "prompt_sha256": "42d2305292709f224a21f14c49da069125cadeb04d98517bbe6b0929ab089583"
+  },
+  {
+    "id": "20_distillates/publications/renear-wickett2010documents#^s1",
+    "origin": "workbench\\reviews\\2026-09-05-wave1",
+    "prompt_sha256": "032325ad3c430035a13c084d3ef9bf30d14b94de2a81bdc9be4a81c58f321bc8"
+  },
+  {
+    "id": "20_distillates/publications/tei-sourceforge-fr363#^s1",
+    "origin": "workbench\\reviews\\2026-09-05-wave1",
+    "prompt_sha256": "2b5b3bc3dbfffd90bb674106b61bbb6c91adb8af6742532663234837b3b2c5c1"
+  },
+  {
+    "id": "30_assertions/piez-treats-optional-hierarchy-as-object-of-study<-20_distillates/publications/piez2014range#^s1",
+    "origin": "workbench\\reviews\\2026-09-05-wave1",
+    "prompt_sha256": "d39e510af15d2e3f3c5bab8a35b0778b96bf2ed347cd4547225392866bf92394"
+  },
+  {
+    "id": "30_assertions/renear-wickett-distinguish-string-mapping-from-persistent-identity<-20_distillates/publications/renear-wickett2010documents#^s1",
+    "origin": "workbench\\reviews\\2026-09-05-wave1",
+    "prompt_sha256": "3c30afc5ffe12eb3d1118e346a7397005f15288fa83d80c4bbcfaf61e1b3da39"
+  },
+  {
+    "id": "30_assertions/tei-fr363-proposes-target-on-span<-20_distillates/publications/tei-sourceforge-fr363#^s1",
+    "origin": "workbench\\reviews\\2026-09-05-wave1",
+    "prompt_sha256": "97c3d81fb0b1f4b567ed7a9e20147fced9520cefaf9aa1717d28b3c2347ebfc0"
+  }
+]

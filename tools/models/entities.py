@@ -11,6 +11,11 @@ that hides every additive field, then checks the extension itself, so one
 implementation of the v0.1 contract serves both versions. Diagnostics
 establish structural consistency only, never editorial truth; an alignment or
 a denotation entails nothing. Every public operation is nonmutating.
+
+Revision checking keeps each earlier claim with its collection and carrier and
+the constitutive data that an unchanged claim relies on: version information,
+entity kind and the version and selector of referenced selections. Labels,
+concept definitions and unreferenced selections stay revisable (section 14.4).
 """
 
 from __future__ import annotations
@@ -77,8 +82,8 @@ FIELDS = {
 }
 EXTENSION_DIAGNOSTICS = (
     "E_ALIGNMENT", "E_BASE", "E_CLAIM_CYCLE", "E_CLAIM_FIELD", "E_CLAIM_REWRITE",
-    "E_CLAIM_SUPERSESSION", "E_ENTITY_KIND", "E_LANGUAGE", "E_MENTION", "E_NAME_PART",
-    "E_PARTICIPANTS", "E_STATEMENT_KIND", "W_UNDENOTED",
+    "E_CLAIM_SUPERSESSION", "E_ENTITY_KIND", "E_ENTITY_REWRITE", "E_LANGUAGE", "E_MENTION",
+    "E_NAME_PART", "E_PARTICIPANTS", "E_SELECTION_REWRITE", "E_STATEMENT_KIND", "W_UNDENOTED",
 )
 DIAGNOSTICS = tuple(sorted({
     "E_SHAPE", "E_ID", "E_DUPLICATE_ID", "E_REFERENCE", "E_TYPE", "E_HASH", "E_VERSION_CYCLE",
@@ -174,7 +179,11 @@ def _records(package: Any, kind: str) -> list:
 
 
 def _claim_records(package: Any):
-    """Yield (kind, path, carrier, record) for every claim record of a 0.2 package."""
+    """Yield (kind, path, carrier, record) for every claim record of a 0.2 package.
+
+    The carrier of a nested alignment is the pair of carrier collection and carrier
+    ID, the implicit subject of the claim; a top-level claim has carrier None.
+    """
     for kind in (*V01_CLAIM_COLLECTIONS, "names", "denotations", "statements", "former_bases"):
         for i, record in enumerate(_records(package, kind)):
             if type(record) is dict:
@@ -185,7 +194,8 @@ def _claim_records(package: Any):
                 continue
             for j, record in enumerate(holder["alignments"]):
                 if type(record) is dict:
-                    yield "alignments", f"/{carrier}/{i}/alignments/{j}", holder.get("id"), record
+                    yield ("alignments", f"/{carrier}/{i}/alignments/{j}",
+                           (carrier, holder.get("id")), record)
 
 
 def _extension_ids(package: Any) -> set[str]:
@@ -412,7 +422,8 @@ class _Extension:
                 self.error("E_SHAPE", path + "/label")
             if not _one_of(record["kind"], ENTITY_KINDS):
                 self.error("E_ENTITY_KIND", path + "/kind")
-            self.entities[record["id"]] = record
+            if type(record["id"]) is str:  # an unhashable ID has already failed E_ID
+                self.entities[record["id"]] = record
             return
         self.reference(record, "agent", self.agents, path)
         self.pattern(record, path)
@@ -462,14 +473,15 @@ class _Extension:
                 self.record(kind, record, f"/{kind}/{i}")
         for carrier in CARRIERS:
             for i, holder in enumerate(self.package[carrier]):
-                if "alignments" not in holder:
+                # A malformed entity has already failed its shape check.
+                if type(holder) is not dict or "alignments" not in holder:
                     continue
                 path = f"/{carrier}/{i}/alignments"
                 if type(holder["alignments"]) is not list:
                     self.error("E_SHAPE", path)
                     continue
                 for j, record in enumerate(holder["alignments"]):
-                    self.record("alignments", record, f"{path}/{j}", holder["id"])
+                    self.record("alignments", record, f"{path}/{j}", holder.get("id"))
         for i, record in enumerate(self.package.get("former_bases", [])):
             self.record("former_bases", record, f"/former_bases/{i}")
 
@@ -601,12 +613,53 @@ def equivalent(left: Any, right: Any) -> bool:
     return canonical_bytes(left) == canonical_bytes(right)
 
 
+def _selection_dependencies(package: dict) -> set[str]:
+    """Selection IDs on which the claims of a valid package depend.
+
+    Only an annotation, a reading node or a relation endpoint names a selection, and
+    each belongs to a claim. Every longer path ends in one of these fields, a
+    denotation through its mention and a relation through an annotation or node
+    endpoint, so the direct references close the set without walking the possibly
+    cyclic relation graph.
+    """
+    selections = {record["id"] for record in package["selections"]}
+    found = {record["selection"] for record in package["annotations"]}
+    found.update(node["selection"] for reading in package["readings"] for node in reading["nodes"])
+    found.update(endpoint for record in package["relations"]
+                 for endpoint in (record["source"], record["target"]) if endpoint in selections)
+    return found
+
+
+def _dependency_rewrites(before: dict, after: dict) -> list[dict]:
+    """Reused IDs of two valid packages whose constitutive data changed.
+
+    An entity keeps its kind whether or not a claim names it, because a change of
+    kind is a new entity. A selection keeps its version and selector only when the
+    earlier package references it; an unreferenced selection carries no claim.
+    """
+    diagnostics = []
+    kinds = {record["id"]: record["kind"] for record in before["entities"]}
+    for i, record in enumerate(after["entities"]):
+        if record["id"] in kinds and kinds[record["id"]] != record["kind"]:
+            diagnostics.append({"code": "E_ENTITY_REWRITE", "path": f"/after/entities/{i}/kind"})
+    dependencies = _selection_dependencies(before)
+    frozen = {record["id"]: (record["version"], record["selector"])
+              for record in before["selections"] if record["id"] in dependencies}
+    for i, record in enumerate(after["selections"]):
+        if record["id"] in frozen and frozen[record["id"]] != (record["version"], record["selector"]):
+            diagnostics.append({"code": "E_SELECTION_REWRITE", "path": f"/after/selections/{i}"})
+    return diagnostics
+
+
 def check_claim_revision(before: Any, after: Any) -> dict:
     """Check two packages in a caller-declared shared ID scope for rewritten records.
 
-    A claim of a valid earlier package must survive unchanged under its ID, and a
-    reused version ID keeps its frozen v0.1 information. Callers must not infer a
-    rewrite from coincidental local IDs of independent packages.
+    A claim of a valid earlier package must survive unchanged under its ID, in its
+    collection and, for a nested alignment, on its carrier. When both packages are
+    valid, a reused version ID keeps its frozen v0.1 information, a reused entity ID
+    its kind, and a selection the earlier package references its version and
+    selector. Callers must not infer a rewrite from coincidental local IDs of
+    independent packages.
     """
     diagnostics: list[dict] = []
     results = [validate_extension(package) for package in (before, after)]
@@ -616,13 +669,15 @@ def check_claim_revision(before: Any, after: Any) -> dict:
     if all(result["valid"] for result in results):
         diagnostics.extend(item for item in check_revision(_projection(before), _projection(after))
                            ["diagnostics"] if item["code"] == "E_VERSION_REWRITE")
+        diagnostics.extend(_dependency_rewrites(before, after))
     if results[0]["valid"]:
-        later: dict[str, list[dict]] = {}
-        for _, _, _, record in _claim_records(after):
+        # The later package is read defensively, so lost history shows even when it is invalid.
+        later: dict[str, list[tuple]] = {}
+        for kind, _, carrier, record in _claim_records(after):
             if type(record.get("id")) is str:
-                later.setdefault(record["id"], []).append(record)
-        for _, path, _, record in _claim_records(before):
-            if later.get(record["id"]) != [record]:
+                later.setdefault(record["id"], []).append((kind, carrier, record))
+        for kind, path, carrier, record in _claim_records(before):
+            if later.get(record["id"]) != [(kind, carrier, record)]:
                 diagnostics.append({"code": "E_CLAIM_REWRITE", "path": "/before" + path})
     return {"valid": not _has_errors(diagnostics), "diagnostics": _ordered(diagnostics)}
 

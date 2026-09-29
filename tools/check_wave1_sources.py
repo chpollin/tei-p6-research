@@ -40,7 +40,7 @@ DEFAULT_REFERENCES = "references/research-wave-1.json"
 # whole page of comment bodies instead of one body per declared path.
 EVERY = "*"
 BODY_SEPARATOR = "\n\n"
-REVIEW_DIRECTORY = "workbench/reviews/2026-09-05-wave1"
+REVIEW_DIRECTORY = "workbench/reviews/2026-09-11-v1/legacy-wave1"
 REVIEW_CHAPTER = "40_output/06-annotation-and-overlap.md"
 
 

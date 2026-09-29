@@ -15,6 +15,6 @@ TEI P5 4.12.0 the `anchor` element serves this purpose.
 ## Examples
 
 <!-- examples:begin -->
-- [[30_assertions/p5-anchor-identifies-a-textual-point]] — In TEI P5 4.12.0, anchor identifies a point within a text
+- [[30_assertions/p5-anchor-identifies-a-textual-point]] — In TEI P5 4.12.0, anchor attaches an identifier to a point whether or not it corresponds to a textual element
   - [[20_distillates/documents/tei-p5-anchor-4.12.0#^s1]]
 <!-- examples:end -->

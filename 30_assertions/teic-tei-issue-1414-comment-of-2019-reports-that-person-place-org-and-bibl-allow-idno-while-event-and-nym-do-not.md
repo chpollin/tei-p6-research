@@ -3,14 +3,12 @@ type: assertion
 topics: ["[[Metadata and Entities]]"]
 phenomena: ["[[glossary/entity-record]]", "[[glossary/entity-identification]]"]
 related: ["[[30_assertions/teic-tei-issue-1414-commenter-summarizes-idno-as-a-first-child-of-the-record-elements-as-the-short-term-solution]]", "[[30_assertions/p5-idno-supplies-any-form-of-identifier-used-to-identify-some-object-in-a-standardized-way]]", "[[30_assertions/p5-nym-contains-the-definition-of-a-canonical-name-or-name-component]]"]
-status: validated
-checked:
-  machine-review: 2026-09-06
-  validation: 2026-09-06
+status: grounded
+checked: {}
 grounding:
   - "[[20_distillates/publications/teic-tei-issue-1414#^s15]]"
 created: 2026-09-06
-updated: 2026-09-06
+updated: 2026-09-11
 ---
 
 # In TEIC/TEI issue 1414, a comment of 2019-05-07 stated that person, place, org and bibl allowed idno at that time and that event and nym did not

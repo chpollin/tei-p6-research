@@ -2,7 +2,7 @@
 type: chapter
 status: grounded
 checked:
-  validation: 2026-09-05
+  validation: 2026-09-11
 assertions:
   - "[[30_assertions/p5-span-associates-interpretation-with-text]]"
   - "[[30_assertions/w3c-quote-selection-can-match-multiple-sequences]]"
@@ -11,7 +11,7 @@ assertions:
   - "[[30_assertions/renear-wickett-distinguish-string-mapping-from-persistent-identity]]"
 posits: 4
 created: 2026-09-05
-updated: 2026-09-05
+updated: 2026-09-11
 ---
 
 # Selection, hierarchy, and identity: requirements to test
@@ -19,9 +19,9 @@ updated: 2026-09-05
 ## From target selection to interpretation
 
 TEI P5 4.12.0 defines `span` as associating an interpretative annotation directly
-with a span of text.[^p5] The W3C 2017 Web Annotation Data Model recommends
-treating multiple Text Quote Selector matches as matching all the discovered
-sequences.[^matches]
+with a span of text.[^p5] When multiple text sequences remain after processing
+the prefix, exact text and suffix, the W3C 2017 Web Annotation Data Model
+recommends treating a Text Quote Selector as matching all those sequences.[^matches]
 
 A candidate text model should distinguish an intended plural target from
 uncertainty about which single target was intended. The pilot's unique-only
@@ -57,6 +57,7 @@ architecture.[^structure]
 
 ## String transformation and editorial continuity
 
+When recapitulating their earlier argument about document modifiability,
 Renear and Wickett describe editing strings as mapping between strings rather
 than modifying a persistent underlying entity.[^strings]
 

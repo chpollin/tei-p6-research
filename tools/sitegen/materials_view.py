@@ -129,6 +129,10 @@ ADAPTER_DESCRIPTIONS = {
 }
 
 GAP_LABELS = {
+    "wayback-captured-months-not-fetched": "Captured Brown months await a completed fetch run",
+    "wayback-months-without-capture": "Some Brown months have no recorded archive capture",
+    "psu-months-before-2512-not-requested": "Penn State months before December 2025 were not requested",
+    "consortium-export-not-requested": "A consortium archive export has not been requested",
     "published-html-release-asset-reconciliation-not-explicit": "Reconciliation between the published Guidelines and the release archive is pending",
     "authenticated-github-api-session-unavailable": "GitHub acquisition is waiting for authenticated read access",
     "linked-attachments-and-external-working-documents-not-yet-reconciled": "Linked attachments and external working documents have not yet been reconciled",
@@ -306,13 +310,15 @@ def material_records(
                 label = OBJECT_KIND_LABELS.get(
                     kind, kind.replace("-", " ").capitalize() or "Data holding"
                 )
+                path = str(item.get("path") or "")
+                local_original = path.startswith(("00_sources/", "corpus/raw/"))
                 manifest_records.append(
                     {
                         "label": label,
-                        "description": OBJECT_KIND_DESCRIPTIONS.get(
+                        "description": "Original retained locally; its byte identity is recorded in the run manifest." if local_original else OBJECT_KIND_DESCRIPTIONS.get(
                             kind, "Normalized holding from this acquisition run."
                         ),
-                        "path": str(item.get("path") or ""),
+                        "path": "" if local_original else path,
                         "status": str(manifest.get("status") or ""),
                         "manifest_ref": manifest_ref,
                         "kind": kind,

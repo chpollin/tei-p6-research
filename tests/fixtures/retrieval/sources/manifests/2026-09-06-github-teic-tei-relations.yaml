@@ -1,0 +1,7 @@
+schema_version: 1
+run_id: 2026-09-06-github-teic-tei-relations
+source_id: fixture-work-items
+started_at: "2026-01-01T00:20:00Z"
+finished_at: "2026-01-01T00:30:00Z"
+status: observable-complete
+gaps: []

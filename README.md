@@ -84,6 +84,22 @@ source, or test a mapping. Begin with a concrete encoding or research question a
 relevant evidence or example. [CONTRIBUTING.md](CONTRIBUTING.md) explains
 where the resulting work belongs and which checks apply.
 
+### Find a claim or source
+
+Use exact TEI identifiers and the local search before reading large source files:
+
+```powershell
+uv run python -m tools.retrieval "att.canonical" --layer representation --limit 5
+uv run python -m tools.retrieval "key ref precedence" --layer assertion --status validated --limit 5 --json
+```
+
+Results point to canonical files and passages, with recorded status and source
+provenance. Read the indicated context and contested counterparts before using
+a result. The [Query procedure](knowledge/operations.md#query) explains the
+filters and limits; [Select](knowledge/operations.md#select) governs new source
+selection. The [generated source inventory](corpus/projections/source-inventory.md)
+lists holdings and processing state.
+
 ### Work with an AI harness
 
 Use the repository root as the harness's working directory. The agent should

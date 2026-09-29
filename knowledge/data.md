@@ -167,11 +167,22 @@ message bodies and sender identity kept in the local raw store.
 ### Secondary and interpretive sources
 
 Journal articles, books, dissertations, tutorials, retrospective essays and
-research reports are essential to the project and are normally secondary
-sources. They are collected through the bounded literature protocol in
-[[knowledge/operations]]. An article may contain primary empirical material,
-and its role is declared for the specific claim rather than inferred from
-the publication venue.
+research reports enter through a named research question and the bounded
+literature protocol in [[knowledge/operations]]. Admission requires an
+identifiable conceptual alternative, relevant empirical observations or
+counterevidence for a claim under examination. A general mention of TEI,
+XML or digital humanities is insufficient. A candidate without an identified
+use remains in the selection record and does not enter a question's default
+agent context.
+
+These sources are normally secondary. An article may contain primary
+empirical material; its role is declared for the specific claim rather than
+inferred from the publication venue. An attributed argument remains an
+argument. Evidence about current TEI behavior and official P6 decisions must
+come from a source capable of establishing that behavior or decision.
+Comparative standards retain their own authority and version. Superseded,
+duplicate and inaccessible candidates retain a reasoned disposition rather
+than becoming evidence through their bibliographic presence.
 
 ### Acquisition tiers
 

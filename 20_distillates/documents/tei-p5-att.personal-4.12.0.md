@@ -3,12 +3,10 @@ type: distillate
 source-type: document
 representation: "[[10_markdown/documents/tei-p5-att.personal-4.12.0]]"
 topics: ["[[Metadata and Entities]]", "[[Elements and Classes]]"]
-status: validated
-checked:
-  machine-review: 2026-09-06
-  validation: 2026-09-06
+status: grounded
+checked: {}
 created: 2026-09-06
-updated: 2026-09-06
+updated: 2026-09-11
 ---
 
 # Distillate: TEI P5 4.12.0 att.personal specification
@@ -42,13 +40,13 @@ This distillate reports the English class description together with the English 
 - Which source would establish what the class-level XML declarations of this specification contribute, meaning `module="tei"`, `type="atts"` and `ident="att.personal"`, and which Guidelines chapter the `listRef` pointer `#NDPER` resolves to?
 - What do the English glosses of this specification contribute, meaning the class gloss "attributes for components of names usually, but not necessarily, personal names", the gloss "sort" on the `sort` attribute and the value glosses "yes", "abbreviated" and "initial letter", given that the reading blocks reproduce descriptions and remarks alone?
 - Which source would establish what the non-English glosses and descriptions of this specification state, given that the reading blocks reproduce the English text alone?
-- What counts as a "name component", and which elements realize one, given that the English text of this specification uses the term in every description without defining it?
+- What counts as a "name component", and which elements realize one, given that the English text of this specification uses the term in every attribute and value description without defining it?
 - How is a `sort` value to be read, meaning from which end of the name the order is counted and whether the values of the components of one name must be contiguous, given that the English text states only that the attribute specifies the sort order of the name component in relation to others within the name?
-- Which source carries remarks on `att.personal`, given that this specification holds no remarks element and its English text consists of the class description, the two attribute descriptions and the three value descriptions?
+- Which source carries remarks on `att.personal`, given that this specification holds no remarks element and its English reading blocks reproduce the class description, the two attribute descriptions and the three value descriptions alone?
 
 ## Appraisal
 
-The source is the complete class specification at a pinned release commit, so its English text establishes what the Guidelines say about the two attributes a name part may carry, the form in which that part is given and its position in the sort order of the name. The membership that makes this class the route from a name-part element to `att.naming` lives in the XML alone, so no English reading block of this source can carry it, and the elements at the other end of that route are named nowhere in the specification. Everything the specification fixes about optionality, datatypes, the default value and the closed value list stays outside the core statements until a reading block or another admitted source carries it.
+The source is the complete class specification at a pinned release commit, so its English text establishes what the Guidelines say about the attributes `full` and `sort`, meaning the form in which a name component is given and its sort order in relation to the other components within the name. The declaration `memberOf key="att.naming"` lives in the XML alone, so no English reading block of this source can carry it or state its effect, and the specification names no member element of the class. Everything the specification fixes about optionality, datatypes, the default value and the closed value list stays outside the core statements until a reading block or another admitted source carries it.
 
 ## Related
 

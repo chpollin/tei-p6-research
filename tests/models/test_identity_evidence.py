@@ -159,4 +159,37 @@ def test_revision_cannot_change_the_kind_of_an_unchanged_claim_subject(sample):
     assert profile.validate_profile(after, originals)["valid"]
     result = profile.check_profile_revision(before, after, originals)
     assert not result["valid"]
-    assert "E_IDENTITY_REWRITE" in {item["code"] for item in result["diagnostics"]}
+    assert {"E_ENTITY_REWRITE", "E_IDENTITY_REWRITE"} <= {item["code"] for item in result["diagnostics"]}
+
+
+def test_revision_cannot_move_unchanged_evidence_to_another_record(sample):
+    """Replay the recorded dossier counterexample: an equal quote from another catalogue record."""
+    before, originals = sample
+    after = copy.deepcopy(before)
+    selections = {item["id"]: item for item in after["package"]["selections"]}
+    donor = selections["selection-passage-szd-work-4"]
+    selections["selection-passage-szd-work-3"].update(version=donor["version"],
+                                                      selector=copy.deepcopy(donor["selector"]))
+    assert profile.validate_profile(after, originals)["valid"]
+    index = list(selections).index("selection-passage-szd-work-3")
+    assert profile.check_profile_revision(before, after, originals) == {
+        "valid": False, "diagnostics": [{"code": "E_SELECTION_REWRITE", "path": f"/after/selections/{index}"}]}
+
+
+def test_revision_may_supersede_a_report_that_keeps_its_evidence(sample):
+    before, originals = sample
+    after = copy.deepcopy(before)
+    package = after["package"]
+    report = next(item for item in package["statements"] if item["id"] == "szd-hand")
+    link = next(item for item in package["relations"] if item["id"] == "support-szd-hand")
+    package["statements"].append({**report, "id": "szd-hand-revised", "supersedes": ["szd-hand"],
+                                  "value": "Revised report wording"})
+    package["relations"].append({**link, "id": "support-szd-hand-revised", "source": "szd-hand-revised"})
+    assert profile.check_profile_revision(before, after, originals) == {"valid": True, "diagnostics": []}
+
+
+@pytest.mark.parametrize("malformed", [None, {}, {"profile": profile.PROFILE, "package": None, "sources": []}])
+def test_revision_rejects_a_malformed_dossier_without_raising(sample, malformed):
+    dossier, originals = sample
+    for pair in ((dossier, malformed), (malformed, dossier)):
+        assert not profile.check_profile_revision(*pair, originals)["valid"]

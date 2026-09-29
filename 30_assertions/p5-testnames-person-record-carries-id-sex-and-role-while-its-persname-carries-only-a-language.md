@@ -3,14 +3,12 @@ type: assertion
 topics: ["[[Metadata and Entities]]"]
 phenomena: ["[[glossary/entity-record]]", "[[glossary/mention-of-an-entity]]"]
 related: ["[[30_assertions/p5-role-on-a-naming-element-carries-information-about-the-entity-referenced]]", "[[30_assertions/p5-rolename-excludes-the-role-a-person-has-in-a-context]]", "[[30_assertions/p5-person-provides-information-about-an-identifiable-individual]]", "[[30_assertions/p5-testnames-person-name-form-and-place-carry-three-separate-identifying-values]]"]
-status: validated
-checked:
-  machine-review: 2026-09-06
-  validation: 2026-09-06
+status: grounded
+checked: {}
 grounding:
   - "[[20_distillates/documents/tei-p5-test-testnames-4.12.0#^s7]]"
 created: 2026-09-06
-updated: 2026-09-06
+updated: 2026-09-11
 ---
 
 # In the TEI P5 4.12.0 test document testnames.xml, a person record identifies the person by an xml:id on the person element and carries sex and role there, while its single persName child carries only xml:lang and no identifying attribute

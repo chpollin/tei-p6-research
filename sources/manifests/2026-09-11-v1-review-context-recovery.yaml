@@ -1,0 +1,344 @@
+schema_version: 1
+run_id: 2026-09-11-v1-review-context-recovery
+source_id: tei-p5-literature
+source_ids:
+- tei-p5-literature
+- github-teic-tei-work-items
+- tei-legacy-sourceforge
+started_at: '2026-09-11T11:36:53Z'
+finished_at: '2026-09-11T11:37:04Z'
+status: bounded-complete
+scope:
+  boundary: Nine existing citation-only sources, retrieved for source-context review
+  status_applies_to: these URLs only; historical byte identity is checked separately
+adapter:
+  name: tools.corpus.http_store.HttpStore and tools.check_wave1_sources.extract_text
+  version: 1
+objects: []
+responses:
+- requested_url: https://www.w3.org/TR/2017/REC-annotation-model-20170223/
+  canonical_url: https://www.w3.org/TR/2017/REC-annotation-model-20170223/
+  final_url: https://www.w3.org/TR/2017/REC-annotation-model-20170223/
+  observed_at: '2026-09-11T11:36:53Z'
+  status: 200
+  media_type: text/html
+  byte_count: 284185
+  sha256: a7513e022f56c0a6f4e99ac11aec03f3451d1ff1ce14054780b3ccfb38fa7980
+  raw_path: sha256/a7/513e022f56c0a6f4e99ac11aec03f3451d1ff1ce14054780b3ccfb38fa7980
+  headers:
+    date: Fri, 11 Sep 2026 11:36:51 GMT
+    content-type: text/html; charset=utf-8
+    last-modified: Wed, 22 Feb 2017 08:03:33 GMT
+    link: <https://www.w3.org/TR/annotation-model/>;rel="canonical"
+- requested_url: https://www.balisage.net/Proceedings/vol13/html/Piez01/BalisageVol13-Piez01.html
+  canonical_url: https://www.balisage.net/Proceedings/vol13/html/Piez01/BalisageVol13-Piez01.html
+  final_url: https://www.balisage.net/Proceedings/vol13/html/Piez01/BalisageVol13-Piez01.html
+  observed_at: '2026-09-11T11:36:53Z'
+  status: 200
+  media_type: text/html
+  byte_count: 105694
+  sha256: 4c1a45a70165010f72a5d47848f0bf04b6a3f0394af5b2155fe411efcce5bbf0
+  raw_path: sha256/4c/1a45a70165010f72a5d47848f0bf04b6a3f0394af5b2155fe411efcce5bbf0
+  headers:
+    date: Fri, 11 Sep 2026 11:36:52 GMT
+    last-modified: Thu, 20 Feb 2025 09:41:42 GMT
+    content-length: '105694'
+    content-type: text/html
+- requested_url: https://www.balisage.net/Proceedings/vol5/html/Renear01/BalisageVol5-Renear01.html
+  canonical_url: https://www.balisage.net/Proceedings/vol5/html/Renear01/BalisageVol5-Renear01.html
+  final_url: https://www.balisage.net/Proceedings/vol5/html/Renear01/BalisageVol5-Renear01.html
+  observed_at: '2026-09-11T11:36:55Z'
+  status: 200
+  media_type: text/html
+  byte_count: 101834
+  sha256: 07afcd383aa4874d5f4c4d4f7c4e1c3fbc1a615a2063774357dbb2dd14d5da1b
+  raw_path: sha256/07/afcd383aa4874d5f4c4d4f7c4e1c3fbc1a615a2063774357dbb2dd14d5da1b
+  headers:
+    date: Fri, 11 Sep 2026 11:36:53 GMT
+    last-modified: Thu, 20 Feb 2025 10:23:02 GMT
+    content-length: '101834'
+    content-type: text/html
+- requested_url: https://sourceforge.net/rest/p/tei/feature-requests/363
+  canonical_url: https://sourceforge.net/rest/p/tei/feature-requests/363
+  final_url: https://sourceforge.net/rest/p/tei/feature-requests/363
+  observed_at: '2026-09-11T11:36:56Z'
+  status: 200
+  media_type: application/json
+  byte_count: 7792
+  sha256: a2b5dda4296137cc63046f1edbd01014b0112697b38e3b657a8e62e6ab3ccbec
+  raw_path: sha256/a2/b5dda4296137cc63046f1edbd01014b0112697b38e3b657a8e62e6ab3ccbec
+  headers:
+    date: Fri, 11 Sep 2026 11:36:55 GMT
+    content-type: application/json; charset=utf-8
+    content-length: '7792'
+- requested_url: https://api.github.com/repos/TEIC/TEI/issues/337
+  canonical_url: https://api.github.com/repos/TEIC/TEI/issues/337
+  final_url: https://api.github.com/repos/TEIC/TEI/issues/337
+  observed_at: '2026-09-11T11:36:57Z'
+  status: 200
+  media_type: application/json
+  byte_count: 6409
+  sha256: 9c93e3a034c3c6872974e31178994edb83c7906544b9e0477e112aa71364c7a2
+  raw_path: sha256/9c/93e3a034c3c6872974e31178994edb83c7906544b9e0477e112aa71364c7a2
+  headers:
+    date: Fri, 11 Sep 2026 11:36:55 GMT
+    content-type: application/json; charset=utf-8
+    etag: W/"1e02fec98af1f6e4498399e3d379cda74c7d2ccd390fa6182db5dd9424ab5645"
+    last-modified: Thu, 03 Sep 2026 08:15:46 GMT
+    x-github-api-version-selected: '2022-11-28'
+    x-ratelimit-limit: '60'
+    x-ratelimit-remaining: '58'
+    x-ratelimit-resource: core
+    x-ratelimit-reset: '1789130183'
+    content-length: '6409'
+- requested_url: https://api.github.com/repos/TEIC/TEI/issues/337/comments?per_page=100
+  canonical_url: https://api.github.com/repos/TEIC/TEI/issues/337/comments?per_page=100
+  final_url: https://api.github.com/repos/TEIC/TEI/issues/337/comments?per_page=100
+  observed_at: '2026-09-11T11:36:58Z'
+  status: 200
+  media_type: application/json
+  byte_count: 41330
+  sha256: 769961e6f0ed0a375f43523346c10ee8a4530decc810bbfc6d63f874ef7b60a1
+  raw_path: sha256/76/9961e6f0ed0a375f43523346c10ee8a4530decc810bbfc6d63f874ef7b60a1
+  headers:
+    date: Fri, 11 Sep 2026 11:36:56 GMT
+    content-type: application/json; charset=utf-8
+    etag: W/"51f57d6a90a12c46efbdffc546583ea139882e542a2cc50cfe0f0f45b584be10"
+    x-github-api-version-selected: '2022-11-28'
+    x-ratelimit-limit: '60'
+    x-ratelimit-remaining: '57'
+    x-ratelimit-resource: core
+    x-ratelimit-reset: '1789130183'
+- requested_url: https://api.github.com/repos/TEIC/TEI/issues/1400
+  canonical_url: https://api.github.com/repos/TEIC/TEI/issues/1400
+  final_url: https://api.github.com/repos/TEIC/TEI/issues/1400
+  observed_at: '2026-09-11T11:36:58Z'
+  status: 200
+  media_type: application/json
+  byte_count: 5650
+  sha256: 709a304213a1d99ebc2c40f0f88f12fbcf1def6c5d51bcbe864b3da391166706
+  raw_path: sha256/70/9a304213a1d99ebc2c40f0f88f12fbcf1def6c5d51bcbe864b3da391166706
+  headers:
+    date: Fri, 11 Sep 2026 11:36:57 GMT
+    content-type: application/json; charset=utf-8
+    etag: W/"48a0326aa6c04e9e613277c0f37da141880356637c2197278e14cbbb5e635681"
+    last-modified: Thu, 10 Sep 2026 14:49:11 GMT
+    x-github-api-version-selected: '2022-11-28'
+    x-ratelimit-limit: '60'
+    x-ratelimit-remaining: '56'
+    x-ratelimit-resource: core
+    x-ratelimit-reset: '1789130183'
+    content-length: '5650'
+- requested_url: https://api.github.com/repos/TEIC/TEI/issues/1400/comments?per_page=100
+  canonical_url: https://api.github.com/repos/TEIC/TEI/issues/1400/comments?per_page=100
+  final_url: https://api.github.com/repos/TEIC/TEI/issues/1400/comments?per_page=100
+  observed_at: '2026-09-11T11:36:59Z'
+  status: 200
+  media_type: application/json
+  byte_count: 43795
+  sha256: 353f14b878797d99214dc96697bd164ee766c02b2274ce91ccf585b2f89becea
+  raw_path: sha256/35/3f14b878797d99214dc96697bd164ee766c02b2274ce91ccf585b2f89becea
+  headers:
+    date: Fri, 11 Sep 2026 11:36:57 GMT
+    content-type: application/json; charset=utf-8
+    etag: W/"4b4565622c971d05cd9aaa2c0bb3eb20feac1e8e0d1ce1994520ebf4f917b6ec"
+    x-github-api-version-selected: '2022-11-28'
+    x-ratelimit-limit: '60'
+    x-ratelimit-remaining: '55'
+    x-ratelimit-resource: core
+    x-ratelimit-reset: '1789130183'
+- requested_url: https://api.github.com/repos/TEIC/TEI/issues/1414
+  canonical_url: https://api.github.com/repos/TEIC/TEI/issues/1414
+  final_url: https://api.github.com/repos/TEIC/TEI/issues/1414
+  observed_at: '2026-09-11T11:37:00Z'
+  status: 200
+  media_type: application/json
+  byte_count: 8856
+  sha256: 930a6828c96ecf1137ab2c51af2ae0ddf0706785e2c331390fd7c0235b19fa31
+  raw_path: sha256/93/0a6828c96ecf1137ab2c51af2ae0ddf0706785e2c331390fd7c0235b19fa31
+  headers:
+    date: Fri, 11 Sep 2026 11:36:58 GMT
+    content-type: application/json; charset=utf-8
+    etag: W/"3b22dc01f9a3e4d49418c091980f051b148b7fda5ce7e67d80d8c0364d8651ac"
+    last-modified: Fri, 04 Sep 2026 14:58:29 GMT
+    x-github-api-version-selected: '2022-11-28'
+    x-ratelimit-limit: '60'
+    x-ratelimit-remaining: '54'
+    x-ratelimit-resource: core
+    x-ratelimit-reset: '1789130183'
+    content-length: '8856'
+- requested_url: https://api.github.com/repos/TEIC/TEI/issues/1414/comments?per_page=100
+  canonical_url: https://api.github.com/repos/TEIC/TEI/issues/1414/comments?per_page=100
+  final_url: https://api.github.com/repos/TEIC/TEI/issues/1414/comments?per_page=100
+  observed_at: '2026-09-11T11:37:00Z'
+  status: 200
+  media_type: application/json
+  byte_count: 29182
+  sha256: 5cb84f327bd936e18a5673b7ca612f4128d1024350ee53c2b3878f8b1114b259
+  raw_path: sha256/5c/b84f327bd936e18a5673b7ca612f4128d1024350ee53c2b3878f8b1114b259
+  headers:
+    date: Fri, 11 Sep 2026 11:36:59 GMT
+    content-type: application/json; charset=utf-8
+    etag: W/"6b9fde64d423622a4c521989ffb11b5ebeb80c97d3d734f0e67fe90fa80bc5fc"
+    x-github-api-version-selected: '2022-11-28'
+    x-ratelimit-limit: '60'
+    x-ratelimit-remaining: '53'
+    x-ratelimit-resource: core
+    x-ratelimit-reset: '1789130183'
+- requested_url: https://api.github.com/repos/TEIC/TEI/issues/1505
+  canonical_url: https://api.github.com/repos/TEIC/TEI/issues/1505
+  final_url: https://api.github.com/repos/TEIC/TEI/issues/1505
+  observed_at: '2026-09-11T11:37:01Z'
+  status: 200
+  media_type: application/json
+  byte_count: 8229
+  sha256: 8d022744959aa659ab5728500e55b0a758a15dc0a38d553a3167c97cf648f643
+  raw_path: sha256/8d/022744959aa659ab5728500e55b0a758a15dc0a38d553a3167c97cf648f643
+  headers:
+    date: Fri, 11 Sep 2026 11:37:00 GMT
+    content-type: application/json; charset=utf-8
+    etag: W/"26a8958e59a42101e845fe944b979f2c1f2a1b67dd07a5f29ff2d9378b244ef0"
+    last-modified: Thu, 03 Sep 2026 08:15:46 GMT
+    x-github-api-version-selected: '2022-11-28'
+    x-ratelimit-limit: '60'
+    x-ratelimit-remaining: '52'
+    x-ratelimit-resource: core
+    x-ratelimit-reset: '1789130183'
+    content-length: '8229'
+- requested_url: https://api.github.com/repos/TEIC/TEI/issues/1505/comments?per_page=100
+  canonical_url: https://api.github.com/repos/TEIC/TEI/issues/1505/comments?per_page=100
+  final_url: https://api.github.com/repos/TEIC/TEI/issues/1505/comments?per_page=100
+  observed_at: '2026-09-11T11:37:02Z'
+  status: 200
+  media_type: application/json
+  byte_count: 28589
+  sha256: 2687ed9729186eb5de58681ddcbb283797959861e26203c1c71951b1b07a1aa2
+  raw_path: sha256/26/87ed9729186eb5de58681ddcbb283797959861e26203c1c71951b1b07a1aa2
+  headers:
+    date: Fri, 11 Sep 2026 11:37:00 GMT
+    content-type: application/json; charset=utf-8
+    etag: W/"79292c84625ed3bedceaeafc53d3b47fca235aa6d6489c4e97ea17f9ae81e670"
+    x-github-api-version-selected: '2022-11-28'
+    x-ratelimit-limit: '60'
+    x-ratelimit-remaining: '51'
+    x-ratelimit-resource: core
+    x-ratelimit-reset: '1789130183'
+- requested_url: https://api.github.com/repos/TEIC/TEI/issues/2739
+  canonical_url: https://api.github.com/repos/TEIC/TEI/issues/2739
+  final_url: https://api.github.com/repos/TEIC/TEI/issues/2739
+  observed_at: '2026-09-11T11:37:03Z'
+  status: 200
+  media_type: application/json
+  byte_count: 3463
+  sha256: 2974c8b06cbd0ee47783b9589daa8f459fbc2a70d80f52f0e8afd55122c0424e
+  raw_path: sha256/29/74c8b06cbd0ee47783b9589daa8f459fbc2a70d80f52f0e8afd55122c0424e
+  headers:
+    date: Fri, 11 Sep 2026 11:37:01 GMT
+    content-type: application/json; charset=utf-8
+    etag: W/"af6204d4069c4fdcb23e58441b61c66bdfd0a6cfa0c52c663ca82773e83f4044"
+    last-modified: Fri, 03 Jul 2026 11:15:55 GMT
+    x-github-api-version-selected: '2022-11-28'
+    x-ratelimit-limit: '60'
+    x-ratelimit-remaining: '50'
+    x-ratelimit-resource: core
+    x-ratelimit-reset: '1789130183'
+    content-length: '3463'
+- requested_url: https://api.github.com/repos/TEIC/TEI/issues/2739/comments?per_page=100
+  canonical_url: https://api.github.com/repos/TEIC/TEI/issues/2739/comments?per_page=100
+  final_url: https://api.github.com/repos/TEIC/TEI/issues/2739/comments?per_page=100
+  observed_at: '2026-09-11T11:37:03Z'
+  status: 200
+  media_type: application/json
+  byte_count: 8084
+  sha256: 770e68eb73f5d0e651103e51c4cc51e37aa789ce61132c96b4d2a607af421ce8
+  raw_path: sha256/77/0e68eb73f5d0e651103e51c4cc51e37aa789ce61132c96b4d2a607af421ce8
+  headers:
+    date: Fri, 11 Sep 2026 11:37:02 GMT
+    content-type: application/json; charset=utf-8
+    etag: W/"ff84236f1b04f70af6592918e66b19516eb5564739fd72372e5395f47db0ed94"
+    x-github-api-version-selected: '2022-11-28'
+    x-ratelimit-limit: '60'
+    x-ratelimit-remaining: '49'
+    x-ratelimit-resource: core
+    x-ratelimit-reset: '1789130183'
+    content-length: '8084'
+counts:
+  sources: 9
+  responses: 14
+rights_exceptions:
+- Full source bodies and review context stay in ignored local raw storage; no new
+  redistribution permission is inferred.
+gaps: []
+historical_byte_identity:
+- reference: w3c-web-annotation-20170223
+  original_manifest: sources/manifests/2026-09-05-research-wave-1-citations.yaml
+  raw_sha256: a7513e022f56c0a6f4e99ac11aec03f3451d1ff1ce14054780b3ccfb38fa7980
+  byte_identity: true
+- reference: tei-sourceforge-fr363
+  original_manifest: sources/manifests/2026-09-05-research-wave-1-citations.yaml
+  raw_sha256: a2b5dda4296137cc63046f1edbd01014b0112697b38e3b657a8e62e6ab3ccbec
+  byte_identity: true
+- reference: piez2014range
+  original_manifest: sources/manifests/2026-09-05-research-wave-1-citations.yaml
+  raw_sha256: 4c1a45a70165010f72a5d47848f0bf04b6a3f0394af5b2155fe411efcce5bbf0
+  byte_identity: true
+- reference: renear-wickett2010documents
+  original_manifest: sources/manifests/2026-09-05-research-wave-1-citations.yaml
+  raw_sha256: 07afcd383aa4874d5f4c4d4f7c4e1c3fbc1a615a2063774357dbb2dd14d5da1b
+  byte_identity: true
+- reference: teic-tei-issue-337
+  original_manifest: sources/manifests/2026-09-06-entities-run2-citations.yaml
+  raw_sha256: 9c93e3a034c3c6872974e31178994edb83c7906544b9e0477e112aa71364c7a2
+  byte_identity: true
+- reference: teic-tei-issue-337
+  original_manifest: sources/manifests/2026-09-06-entities-run2-citations.yaml
+  raw_sha256: 769961e6f0ed0a375f43523346c10ee8a4530decc810bbfc6d63f874ef7b60a1
+  byte_identity: true
+- reference: teic-tei-issue-2739
+  original_manifest: sources/manifests/2026-09-06-entities-run2-citations.yaml
+  raw_sha256: 2974c8b06cbd0ee47783b9589daa8f459fbc2a70d80f52f0e8afd55122c0424e
+  byte_identity: true
+- reference: teic-tei-issue-2739
+  original_manifest: sources/manifests/2026-09-06-entities-run2-citations.yaml
+  raw_sha256: 770e68eb73f5d0e651103e51c4cc51e37aa789ce61132c96b4d2a607af421ce8
+  byte_identity: true
+- reference: teic-tei-issue-1414
+  original_manifest: sources/manifests/2026-09-06-entities-run2-citations.yaml
+  raw_sha256: 930a6828c96ecf1137ab2c51af2ae0ddf0706785e2c331390fd7c0235b19fa31
+  byte_identity: true
+- reference: teic-tei-issue-1414
+  original_manifest: sources/manifests/2026-09-06-entities-run2-citations.yaml
+  raw_sha256: 5cb84f327bd936e18a5673b7ca612f4128d1024350ee53c2b3878f8b1114b259
+  byte_identity: true
+- reference: teic-tei-issue-1400
+  original_manifest: sources/manifests/2026-09-07-text-structures-citations.yaml
+  raw_sha256: 709a304213a1d99ebc2c40f0f88f12fbcf1def6c5d51bcbe864b3da391166706
+  byte_identity: true
+- reference: teic-tei-issue-1400
+  original_manifest: sources/manifests/2026-09-07-text-structures-citations.yaml
+  raw_sha256: 353f14b878797d99214dc96697bd164ee766c02b2274ce91ccf585b2f89becea
+  byte_identity: true
+- reference: teic-tei-issue-1400
+  original_manifest: sources/manifests/2026-09-07-text-structures-citations.yaml
+  raw_sha256: 709a304213a1d99ebc2c40f0f88f12fbcf1def6c5d51bcbe864b3da391166706
+  byte_identity: true
+- reference: teic-tei-issue-1505
+  original_manifest: sources/manifests/2026-09-07-text-structures-citations.yaml
+  raw_sha256: 8d022744959aa659ab5728500e55b0a758a15dc0a38d553a3167c97cf648f643
+  byte_identity: true
+- reference: teic-tei-issue-1505
+  original_manifest: sources/manifests/2026-09-07-text-structures-citations.yaml
+  raw_sha256: 2687ed9729186eb5de58681ddcbb283797959861e26203c1c71951b1b07a1aa2
+  byte_identity: true
+- reference: teic-tei-issue-1505
+  original_manifest: sources/manifests/2026-09-07-text-structures-citations.yaml
+  raw_sha256: 8d022744959aa659ab5728500e55b0a758a15dc0a38d553a3167c97cf648f643
+  byte_identity: true
+quote_check:
+  date: '2026-09-11'
+  runner: tools.check_wave1_sources.check
+  sources: 9
+  quotes: 67
+  result: passed
+  boundary: previously admitted quotations; the corrected complete W3C sentence also
+    matches the restored original

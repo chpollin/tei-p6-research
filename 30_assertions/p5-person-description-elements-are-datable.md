@@ -3,14 +3,12 @@ type: assertion
 topics: ["[[Metadata and Entities]]"]
 phenomena: ["[[glossary/statement-about-an-entity]]", "[[glossary/name-as-an-object]]"]
 related: ["[[30_assertions/p5-person-holds-variant-name-forms-without-prioritization]]", "[[30_assertions/p5-each-statement-about-a-life-must-be-documentable-and-time-framed]]", "[[30_assertions/p5-att-datable-provides-attributes-for-normalization-of-elements-that-contain-dates-times-or-datable-events]]"]
-status: validated
-checked:
-  machine-review: 2026-09-06
-  validation: 2026-09-06
+status: grounded
+checked: {}
 grounding:
   - "[[20_distillates/documents/tei-p5-guidelines-nd-4.12.0#^s36]]"
 created: 2026-09-06
-updated: 2026-09-06
+updated: 2026-09-11
 ---
 
 # In TEI P5 4.12.0, the Guidelines state that all the specific and generic elements under discussion are members of att.datable and can therefore be limited in terms of time

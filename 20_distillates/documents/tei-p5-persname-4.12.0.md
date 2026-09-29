@@ -3,12 +3,10 @@ type: distillate
 source-type: document
 representation: "[[10_markdown/documents/tei-p5-persname-4.12.0]]"
 topics: ["[[Metadata and Entities]]"]
-status: validated
-checked:
-  machine-review: 2026-09-06
-  validation: 2026-09-06
+status: grounded
+checked: {}
 created: 2026-09-06
-updated: 2026-09-06
+updated: 2026-09-11
 ---
 
 # Distillate: TEI P5 4.12.0 persName specification
@@ -33,7 +31,7 @@ This distillate reports the English description carried by the complete `persNam
 
 ## Appraisal
 
-The English reading projection of this specification reduces to a single description sentence, so the source supports what the element is stated to contain and offers no anchorable evidence about its formal model. Class membership, content model and the attributes reaching `persName` require the specifications of those classes and macros as separately admitted sources, and joining them to this element belongs to the assertion layer.
+The English reading projection of this specification reduces to a single description sentence, so its reading blocks support what the element is stated to contain. The XML of the source also declares the module, the class memberships and a content model referencing `macro.phraseSeq`, and holds the English gloss "personal name", none of which a reading block reproduces. The attributes those classes contribute and the expansion of the macro require the specifications of those classes and macros as separately admitted sources, and joining them to this element belongs to the assertion layer.
 
 ## Related
 

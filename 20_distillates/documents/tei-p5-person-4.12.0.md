@@ -3,12 +3,10 @@ type: distillate
 source-type: document
 representation: "[[10_markdown/documents/tei-p5-person-4.12.0]]"
 topics: ["[[Metadata and Entities]]", "[[Elements and Classes]]"]
-status: validated
-checked:
-  machine-review: 2026-09-06
-  validation: 2026-09-06
+status: grounded
+checked: {}
 created: 2026-09-06
-updated: 2026-09-06
+updated: 2026-09-11
 ---
 
 # Distillate: TEI P5 4.12.0 person specification
@@ -38,14 +36,14 @@ This distillate reports the English definition, the four attribute descriptions 
 - Which source establishes where a `person` element belongs, given that no reading block of this specification names `listPerson`, `particDesc` or any other container and the XML carries only two untranslated pointers into Guidelines sections?
 - Which source admits the class memberships that the XML declares for `person`, namely `att.global`, `att.datable`, `att.editLike`, `att.sortable` and `model.personLike`, since no reading block reproduces that declaration?
 - Which specific elements does `model.personPart` hold, since the reading blocks name the class without listing its members and elements such as birth and death occur only inside the XML examples?
-- Which source states how a `person` record is referenced from a name occurrence in running text, given that `xml:id` appears only inside the XML examples and in no reading block?
+- Which source states how a `person` record is referenced from a name occurrence in running text, given that no reading block names `xml:id` or any other identifier attribute?
 - Which source draws the distinction between the record that describes a person and the occurrences of that person's name in a text, a distinction no reading block of this specification makes?
-- Which source states whether the identifiable individual of the definition may be fictional as well as real, since no reading block addresses that question?
-- What would admit the explanatory prose of the two English exempla as anchorable source locations, meaning the adaptation of the vCard standard for an unknown gender and the use of a `ref` element with a private URI scheme declared through `prefixDef`, given that the reading blocks reproduce only descriptions and remarks?
+- Which source states whether the identifiable individual of the definition may be fictional as well as real, since no reading block addresses that question while the English prose of the vCard example speaks of a fictional character?
+- What would admit the explanatory prose of the two English exempla as anchorable source locations, meaning the adaptation of the vCard standard for an unknown gender and the use of a `ref` element with a private URI scheme that the example prose says is presumably declared in the `teiHeader` with a `prefixDef`, given that the reading blocks reproduce only descriptions and remarks?
 
 ## Appraisal
 
-The English text of this specification carries the definition of the element, four attribute descriptions with their remarks and one content remark, so the source grounds the stated semantics of `person` and its four attributes at the pinned release. Class membership, the containers that may hold a `person` record and the identifier practice visible in the examples remain in XML declarations and example prose that the reading blocks do not reproduce, which bounds what this distillate can support.
+The English reading blocks of this specification carry the definition of the element, four attribute descriptions with their remarks and one content remark, so they ground the stated semantics of `person` and its four attributes at the pinned release. The XML also holds the English gloss "person", the declared content model and English examples, two of them with explanatory prose, which no reading block reproduces. Class membership, including `model.personLike`, remains in XML declarations, the identifier practice is visible only in the example markup, and the specification names no container for a `person` record, which bounds what this distillate can support.
 
 ## Related
 

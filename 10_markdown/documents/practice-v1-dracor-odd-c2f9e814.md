@@ -1,0 +1,7693 @@
+---
+type: representation
+source-type: document
+source: '[[00_sources/documents/practice-v1-dracor-odd-c2f9e814.odd]]'
+converter: tools.ingest_practice_v1 v1; complete original plus JSON-escaped exact
+  source fragments
+channel: collection
+metadata:
+  title: DraCor ODD (dracor.odd)
+  creator: DraCor project (dracor-org)
+  date: '2026-08-03'
+  format: application/xml
+  identifier: https://github.com/dracor-org/dracor-schema/blob/c2f9e8140bf413cb3bce44abc818d563ddc92d88/dracor.odd
+  license: CC-BY-4.0
+  confidential: false
+created: '2026-09-11'
+updated: '2026-09-11'
+---
+
+# DraCor ODD (dracor.odd)
+
+Source: `dracor.odd` in `dracor-org/dracor-schema` at commit `c2f9e8140bf413cb3bce44abc818d563ddc92d88`.
+Source SHA-256: `0e32d7e9a884daecaafd8e043d25ce8dc7f1332906668251e42b0eb8f6b56298`, 338297 bytes.
+Rights: CC-BY-4.0. DraCor Schema, dracor.org, CC BY 4.0; ODD authors and guideline contributors are named in the source header.
+License evidence: LICENSE and README.md section License at the pinned commit.
+
+The complete original is inert source text and is never executed. The
+separator newline before its closing fence is not part of the original.
+Reading blocks are exact source byte intervals encoded as JSON strings;
+their line and byte locators refer to the original.
+
+## Complete original
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xml:lang="en"
+  xmlns="http://www.tei-c.org/ns/1.0"
+  xmlns:tei="http://www.tei-c.org/ns/1.0"
+  xmlns:sch="http://purl.oclc.org/dsdl/schematron"
+  xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+  xmlns:sqf="http://www.schematron-quickfix.com/validator/process"
+  xmlns:owl="http://www.w3.org/2002/07/owl#"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+  xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+  xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+  xmlns:crm="http://www.cidoc-crm.org/cidoc-crm/"
+  xmlns:dig="http://www.ics.forth.gr/isl/CRMdig/"
+>
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title>DraCor ODD</title>
+        <respStmt>
+          <resp>TEI Customisation/ODD developed by</resp>
+          <name xml:id="ib">Ingo Boerner</name>
+          <name xml:id="cmil">Carsten Milling</name>
+        </respStmt>
+        <respStmt>
+          <resp>Encoding Guidelines by</resp>
+          <name xml:id="jjb">Julia Jennifer Beine</name>
+          <name corresp="#ib">Ingo Börner</name>
+          <name xml:id="ff">Frank Fischer</name>
+          <name xml:id="lg">Luca Giovannini</name>
+          <name xml:id="ds">Daniil Skorinkin</name>
+          <name xml:id="pt">Peer Trilcke</name>
+        </respStmt>
+        <respStmt>
+          <resp>Contributions by</resp>
+          <name xml:id="ah">Angelika Hechtl</name>
+        </respStmt>
+      </titleStmt>
+      <publicationStmt>
+        <publisher>dracor.org</publisher>
+        <availability status="free">
+          <licence target="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</licence>
+        </availability>
+      </publicationStmt>
+      <sourceDesc>
+        <p>born digital</p>
+      </sourceDesc>
+    </fileDesc>
+    <revisionDesc>
+      <change who="#jjb" when="2026-02-06">
+        revise sourceDesc</change>
+      <change who="#ib" when="2024-10-23">
+        incorporate "API features" described in the CLS D7.1 'Report on
+        Programmable Corpora'; Schematron rules to check for features</change>
+      <change who="#ib" when="2024-06-01">
+        Started to substantially rework ODD and base it on the tei-drama
+        customization
+      </change>
+      <change who="#ib">
+        added documentation based on Luca Giovannini's Quick-Start Tutorial and
+        CLS D7.1 'Report on Programmable Corpora'
+      </change>
+      <change who="#ib" when="2022-06-10">
+        add standOff, restructure sourceDesc; explicitly include elements in
+        schemaSpec
+      </change>
+      <change who="#ib" when="2019-12-10">
+        add relations
+      </change>
+      <change who="#ib" when="2019-09-05">
+        reworked for new encoding of DraCor corpora
+      </change>
+      <change who="#ib" when="2018-12">
+        finished at the Hackathon in Potsdam
+      </change>
+      <change who="#ah #ib" when="2018-04-02">
+        created using ROMA and extended manually in Oxygen
+      </change>
+    </revisionDesc>
+  </teiHeader>
+  <text>
+    <front>
+      <titlePage>
+        <titlePart type="main">Drama Corpora | dracor.org</titlePart>
+        <titlePart type="sub">TEI Customisation and Documentation</titlePart>
+        <byline>
+          By
+          <docAuthor>Julia Jennifer Beine</docAuthor>
+          <docAuthor>Ingo Börner</docAuthor>
+          <docAuthor>Frank Fischer</docAuthor>
+          <docAuthor>Luca Giovannini</docAuthor>
+          <docAuthor>Carsten Milling</docAuthor>
+          <docAuthor>Daniil Skorinkin</docAuthor>
+          <docAuthor>Peer Trilcke</docAuthor>
+        </byline>
+        <byline>With contributions by <docAuthor>Angelika Hechtl</docAuthor></byline>
+        <docDate>2026</docDate>
+      </titlePage>
+      <divGen type="toc"/>
+    </front>
+    <body>
+      <head>TEI Customisation for Drama Corpora (dracor.org)</head>
+
+      <div xml:id="section-intro">
+        <head>Introduction</head>
+        <p>
+          We are building drama corpora with files encoded following the
+          guidelines of the
+          <ref target="https://tei-c.org/release/doc/tei-p5-doc/en/html/index.html">Text
+          Encoding Initiative (TEI P5)</ref>, especially the module
+          <ref target="https://tei-c.org/release/doc/tei-p5-doc/en/html/DR.html">Performance
+          Texts</ref>. The encoded plays are suitable for the field of digital
+          drama analysis, which manifests itself in a growing
+          <ref target="https://dracor.org/doc/research">list of research</ref>
+          done based on DraCor corpora and is especially facilitated by also
+          hosting the corpora on <ref target="https://github.com/dracor-org">GitHub</ref>
+          with an open licence that allows for extensive re-use.
+        </p>
+        <p>
+          The encoded texts are the basis for
+          <ref target="https://dracor.org">DraCor</ref> (Drama Corpora
+          Platform). It is a multi-component system which realises the concept
+          of “Programmable Corpora” (<ref target="#fischer_et_al_2019">Fischer
+          et al. 2019</ref>), understood as corpora that expose an open,
+          transparently documented and (at least partly) research-driven API to
+          make texts machine-actionable. (cf.
+          <ref target="#boerner_trilcke_2023">Börner and Trilcke 2023</ref>).
+          The documentation of the DraCor API can be accessed at
+          <ref target="https://dracor.org/doc/api">https://dracor.org/doc/api</ref>.
+          For additional information on the API and a documentation of the
+          attributes returned in the JSON responses, see section
+          <ref target="#section-dracor-api">API</ref>.
+        </p>
+        <p>
+          This customisation restricts the use of the TEI Guidelines to allow a
+          smooth integration into the DraCor system. It is originally based on
+          the
+          <ref target="https://tei-c.org/release/xml/tei/custom/odd/tei_drama.odd">TEI
+          ODD for Drama</ref>. Using the TEI Stylesheets, a RelaxNG schema
+          (<ref target="https://dracor.org/schema.rng">https://dracor.org/schema.rng</ref>)
+          with embedded Schematron rules can be generated, that can be used to
+          validate the encoding of the DraCor files.
+        </p>
+        <p>
+          Although the corpora in DraCor have different sources, they are
+          largely homogeneous both structurally and in terms of metadata. This
+          homogeneity makes it possible, for example, to perform comparative
+          research on the corpora or to perform processing operations (such as
+          extracting information or counting) in a comparable way on the
+          corpora. However, homogeneity is something that has to be created
+          first, because even if corpora are available in the target format TEI,
+          they often differ in the way TEI is applied.
+        </p>
+        <p>
+          The literary texts in the DraCor corpora have a basic structural
+          markup and are ready for further analysis by various methods of
+          Computational Literary Studies (CLS). They have been additionally
+          enriched with a research-driven markup for the application of a
+          specific method, the <hi rend="bold">network analysis of literary
+          texts</hi> (<ref target="#trilcke_2013">Trilcke 2013</ref>).
+          Therefore, the encoding is tailored to allow for the extraction of
+          co-presence networks relying on structural segmentation of a given
+          play into acts and scenes and having uniquely identifiable speaking
+          and acting characters (cf.
+          <ref target="#section-network-data">Encoding for Network
+          Analysis</ref>).
+        </p>
+      </div>
+
+      <div xml:id="section-corpus-structure">
+        <head>Corpus Structure and Metadata</head>
+        <p>
+          To work seamlessly with the DraCor API, a DraCor corpus should be
+          implemented as a public Git repository. This repository, as a bare
+          minimum, should have a <code>corpus.xml</code> at its root describing
+          the corpus and a sub directory <code>tei/</code> holding the actual
+          TEI files of individual plays.
+        </p>
+        <p>
+          As best practice, the repository should also provide a
+          <code>README.md</code> with general information about the repository
+          and a <code>LICENCE</code> file detailing it licensing terms.
+        </p>
+        <p>
+          When creating a new corpus repository on GitHub the
+          <ref target="https://github.com/dracor-org/newdracor">dracor-org/newdracor</ref>
+          template can be used to set up those files initially. By default it
+          comes with a
+          <ref target="https://creativecommons.org/share-your-work/public-domain/cc0/">Creative
+          Commons Zero v1.0 Universal</ref> Corpus maintainers may change this
+          to a licence more appropriate for their project. The template also
+          sets up a validation workflow using the
+          <ref target="https://github.com/dracor-org/dracor-validate-action">DraCor
+          Validate Action</ref>.
+        </p>
+
+        <div xml:id="section-corpus-xml">
+          <head>The <code>corpus.xml</code> File</head>
+          <p>
+            The <code>corpus.xml</code> file stores the metadata of a DraCor
+            corpus including the corpus name or identifier, the title and the
+            URL of the repository.
+          </p>
+          <p>
+            It uses the custom <gi>dracorCorpus</gi> as its root element which
+            contains a standard <gi>teiHeader</gi> element as its only
+            descendant.
+          </p>
+          <p>
+            As an example, here is a slightly simplified version of the
+            GerDraCor <code>corpus.xml</code>:
+          </p>
+          <egXML xmlns="http://www.tei-c.org/ns/Examples">
+            <dracorCorpus>
+              <teiHeader>
+                <fileDesc>
+                  <titleStmt>
+                    <title>German Drama Corpus</title>
+                    <editor ref="https://orcid.org/0000-0003-2419-6629">Frank Fischer</editor>
+                    <editor ref="https://orcid.org/0000-0002-1421-4320">Peer Trilcke</editor>
+                  </titleStmt>
+                  <publicationStmt>
+                    <publisher>DraCor Project</publisher>
+                    <idno>ger</idno>
+                    <ref type="repo" target="https://github.com/dracor-org/gerdracor"/>
+                    <availability>
+                      <licence target="https://creativecommons.org/share-your-work/public-domain/cc0/">CC0</licence>
+                    </availability>
+                  </publicationStmt>
+                  <sourceDesc>
+                    <p>
+                      The corpus has extracted plays from various sources
+                      including the TextGrid Repository (TGRep), Deutsches
+                      Textarchiv, Project Gutenberg, Projekt Gutenberg-DE,
+                      Wikisource, or Google Books. See the source descriptions
+                      of individual TEI files for Details.
+                    </p>
+                  </sourceDesc>
+                </fileDesc>
+                <encodingDesc>
+                  <projectDesc>
+                    <p>
+                      Edited by Frank Fischer and Peer Trilcke. Features more
+                      than 750 German-language plays from the 1500s to the
+                      1940s.
+                    </p>
+                  </projectDesc>
+                </encodingDesc>
+              </teiHeader>
+            </dracorCorpus>
+          </egXML>
+          <p>
+            The DraCor Schema implements several constraints to ensure that the
+            <code>corpus.xml</code> can be processed properly by the DraCor API.
+            The most important one of these is the constraint on the corpus
+            name. It must be encoded inside the <gi>publicationStmt</gi> as an
+            <gi>idno</gi> element without a <att>type</att> and can consist of
+            lower-case letter from the ASCII range only.
+          </p>
+          <egXML xmlns="http://www.tei-c.org/ns/Examples">
+            <publicationStmt>
+              <publisher>DraCor Project</publisher>
+              <idno>neolat</idno>
+              <!-- ... -->
+            </publicationStmt>
+          </egXML>
+          <p>
+            The TEI schema requires the <gi>fileDesc</gi> to contain a
+            <gi>sourceDesc</gi> element. For most corpora it may be sufficient
+            to simply refer to the individual TEI files without duplicating
+            information:
+          </p>
+          <egXML xmlns="http://www.tei-c.org/ns/Examples">
+            <sourceDesc>
+              <p>See source information in individual TEI files.</p>
+            </sourceDesc>
+          </egXML>
+        </div>
+        <div xml:id="section-corpus-status">
+          <head>Corpus Status</head>
+          <p>
+            Corpora can be in different states of progression. The overall
+            status of a DraCor corpus can be documented using the
+            <att>status</att> attribute in the <gi>revisionDesc</gi> element of
+            the <code>corpus.xml</code> file.
+          </p>
+          <p>
+            We distinguish three different states:
+            <list>
+              <item>
+                <term>proposed</term>: The corpus is planned or in very early
+                development. The repository may or may not be publicly
+                available.
+              </item>
+              <item>
+                <term>draft</term>: The corpus is currently under development
+                and can be previewed on
+                <ref target="https://staging.dracor.org">staging.dracor.org</ref>.
+                Its Git repository must be publicly available.
+              </item>
+              <item>
+                <term>published</term>: The corpus is considered stable, its Git
+                repository is publicly available and the corpus has been
+                published on <ref target="https://dracor.org">dracor.org</ref>.
+              </item>
+            </list>
+          </p>
+          <p>
+            Documenting the status in <code>corpus.xml</code> allows the
+            corpus to be tracked by the
+            <ref target="https://github.com/dracor-org/dracor-registry">DraCor
+            Registry</ref> and to be listed on the
+            <ref target="https://dracor.org/doc/corpora">DraCor Corpora</ref>
+            list.
+          </p>
+          <p>
+            Here is how the <gi>revisionDesc</gi> of a fully published corpus
+            may look like, with its status changes meticulously recorded in
+            individual <gi>change</gi> elements:
+          </p>
+          <egXML xmlns="http://www.tei-c.org/ns/Examples">
+            <revisionDesc>
+              <change when="2018-12-12" status="proposed"/>
+              <change when="2020-07-17" status="draft"/>
+              <change when="2024-12-24" status="published"/>
+            </revisionDesc>
+          </egXML>
+          <p>
+            The current status can also be set by the <att>status</att> of
+            the <gi>revisionDesc</gi> itself in which case it overrides any
+            <att>status</att> in <gi>change</gi> elements:
+          </p>
+          <egXML xmlns="http://www.tei-c.org/ns/Examples">
+            <revisionDesc status="draft">
+              <change when="2025-10-05" status="proposed"/>
+            </revisionDesc>
+          </egXML>
+        </div>
+      </div>
+
+      <div xml:id="section-encoding-guidelines">
+        <head>Encoding Guidelines</head>
+        <p>
+          This section describes how to encode a play and make it DraCor-ready.
+        </p>
+        <div xml:id="section-file-formats">
+          <head>File Formats and Copyright Issues</head>
+          <p>
+            Depending on the source’s original format, you may follow one of
+            these pipelines:
+            <list>
+              <item>
+                If your text is already encoded in XML, it may be possible to
+                write an XSLT or a Python script to adapt it to the DraCor
+                format.
+              </item>
+              <item>
+                If that is not possible, or your text is available in some other
+                digital format (e.g. .txt, .csv, .docx), you’ll have to apply
+                the markup yourself. If you’re working with OCR outputs, please
+                remember, we try to remain as close to the source as possible
+                (i.e. reproducing the text as it is on the physical copy,
+                including misprints).
+              </item>
+            </list>
+          </p>
+          <p rend="hint">
+            It is possible to convert a .txt file encoded in UTF-8 to a basic
+            DraCor format through the experimental
+            <ref target="https://github.com/dracor-org/ezdrama">EzDrama</ref>
+            <!-- TODO: add citation here; maybe Daniil’s TEI paper -->
+            conversion tool (Python script).
+          </p>
+          <p>
+            Please note that DraCor considers for publication only works which
+            are either in the <hi rend="bold">public domain (CC BY 0)</hi> or
+            released under an open <hi rend="bold">Creative Commons Attribution
+            Licence (e.g. CC BY 3.0)</hi>. According to German law, works become
+            public domain after 70 years from their author’s death. Even though
+            it is possible to build copyright-protected corpora, they could be
+            run only on a local DraCor instance built through Docker. Fort hints
+            on how to do this, see the
+            <ref target="https://clsinfra.io">CLS INFRA</ref> Report
+            <ref target="https://versioning-living-corpora.clsinfra.io/4_dockerizing_dracor.html">On
+            Versioning Living and Programmable Corpora</ref>
+            (<ref target="#boerner_trilcke_2024">Boerner/Trilcke 2024</ref>).
+          </p>
+        </div>
+
+        <div xml:id="section-filenames-identifiers">
+          <head>Filenames and Identifiers</head>
+          <p>
+            Names and identifiers in the DraCor platform, as in other computer
+            systems, play an important role in navigating to and accessing individual
+            resources. They are used in URLs and in data structures of API
+            responses. For reasons of consistency, interoperability and ease of
+            use, we therefore strongly recommend the following general rules when
+            creating filenames or identifiers such as character IDs:
+          </p>
+          <list>
+            <item>
+              <p>
+                use only digits and letters from the
+                <ref target="https://en.wikipedia.org/wiki/ASCII">ASCII</ref>
+                repertoire
+              </p>
+            </item>
+            <item>
+              <p>use only lowercase letters</p>
+            </item>
+            <item>
+              <p>
+                separate words by dashes (“-”), not underscores (“_”) or space
+                characters (“ ”)
+              </p>
+            </item>
+            <item>
+              <p>
+                do not include any punctuation characters (except for the file
+                extension “.xml”)
+              </p>
+            </item>
+            <item>
+              <p>
+                consider that brevity can be an advantage for readability when
+                a name or identifier is used in a URL
+              </p>
+            </item>
+          </list>
+
+          <div xml:id="section-tei-filenames">
+            <head>TEI Filenames</head>
+            <p>
+              For naming TEI files, in addition to the above rules, the
+              following recommendations should be followed:
+            </p>
+            <list>
+              <item>
+                <p>
+                  TEI filenames must use the “.xml” extension.
+                </p>
+              </item>
+              <item>
+                <p>
+                  The filename should start with the surname of the author,
+                  followed by the title of the play (e.g.
+                  “lessing-emilia-galotti.xml”).
+                </p>
+              </item>
+              <item>
+                <p>
+                  If there are multiple authors with the same surname within the
+                  same corpus, first name initials can be included after the
+                  surname. <!-- TODO: add example -->
+                </p>
+              </item>
+              <item>
+                <p>In single author corpora, the author’s name can be omitted.</p>
+              </item>
+              <item>
+                <p>
+                  Subtitles should not be included unless necessary for
+                  disambiguation.
+                </p>
+              </item>
+            </list>
+          </div>
+
+          <div xml:id="section-identifiers">
+            <head>Identifiers</head>
+            <p>
+              Identifiers are mostly used in <att>xml:id</att> attributes, for
+              example to uniquely <ref target="#section-character-id">identify
+              the characters</ref> in a play.
+            </p>
+            <p>
+              On a technical level, the values of the
+              <att>xml:id</att> attribute need to be a so-called
+              <soCalled><ref target="https://www.w3.org/TR/xml-id/#processing">NCName</ref></soCalled>
+              which, among other restrictions, cannot start with a digit and
+              must not contain space characters. <note place="bottom">For exact
+              details see
+              <ref target="https://www.w3.org/TR/REC-xml-names/#NT-NCName">https://www.w3.org/TR/REC-xml-names/#NT-NCName</ref>.</note>
+            </p>
+            <p>
+              Although the XML recommendation allows identifiers to consist of
+              characters beyond the ASCII range, for the DraCor platform, the
+              stricter <ref target="#section-filenames-identifiers">general
+              rules above</ref> apply.
+              <note place="bottom">Cf. this
+              <ref target="https://github.com/dracor-org/georgdracor/issues/1">GitHub
+              issue</ref> for a practical reason for these rules.</note>
+            </p>
+          </div>
+        </div>
+
+        <div xml:id="section-overview">
+          <head>Basic Structure</head>
+          <p>
+            The basic structure of a DraCor file requires a <gi>TEI</gi> root
+            element providing the DraCor ID and language of the play, a
+            <gi>teiHeader</gi>, containing metadata on the play, and a
+            <gi>text</gi> with the actual text. The structure of the final XML
+            file should therefore look like this:
+            <egXML xmlns="http://www.tei-c.org/ns/Examples">
+              <TEI xml:id="..." xml:lang="..">
+                <teiHeader>
+                  <!-- contains metadata -->
+                </teiHeader>
+                <text>
+                  <!--
+                    the ‘actual’ text: mandatory, if there is no <facsimile>
+                    and/or <sourceDoc>
+                  -->
+                </text>
+              </TEI>
+            </egXML>
+          </p>
+          <p>
+            You can apply markup to your plays simply by putting tags,
+            consisting of the name of the tag in angle brackets around parts of
+            the text. To do so, open your XML file with an XML editor. There are
+            several options for efficient and non-cumbersome manual work with
+            these files, but we recommend the
+            <ref target="https://www.oxygenxml.com">Oxygen XML Editor</ref>,
+            which has rich functionality and an author mode which minimises the
+            risk of breaking the markup structure. Oxygen is also a TEI-aware
+            editor. You can get a 30-day trial licence
+            <ref target="https://www.oxygenxml.com/xml_editor/register.html">here</ref>.
+            A good free-source alternative is Notepad++ (which now supports a
+            <ref target="https://github.com/dracor-org/ezdrama/blob/main/Npp_ezdrama-UDL.xml">user-defined
+            EzDrama language</ref>!).
+          </p>
+          <p rend="hint">
+            If you are using the Oxygen editor, you can install the
+            <ref target="https://github.com/dracor-org/dracor-oxygen-framework?tab=readme-ov-file#usage">DraCor
+            Oxygen Framework</ref>. It will help you by checking many kinds of
+            inconsistencies in the markup and validating your file against the
+            DraCor schema.
+          </p>
+          <p>
+            We recommend explicitly referencing the DraCor schema in an
+            <code>xml-model</code> processing instruction like this:
+            <!-- escaping the processing instruction in the example to avoid
+                 messing up vscode’s validation and losing it in the HTML
+                 rendering -->
+            <egXML xmlns="http://www.tei-c.org/ns/Examples">&lt;?xml-model href="https://dracor.org/schema.rng" schematypens="http://relaxng.org/ns/structure/1.0" type="application/xml" ?&gt;
+              <TEI>
+                <!-- ... -->
+              </TEI>
+            </egXML>
+          </p>
+          <p>
+            If, for some reason, you prefer not to use a processing instruction, a
+            <att>type</att> attribute with the value <val>dracor</val> can be
+            used to associate the document with the DraCor schema in Oxygen
+            (with the DraCor framework installed):
+            <egXML xmlns="http://www.tei-c.org/ns/Examples">
+              <TEI type="dracor">
+                <!-- ... -->
+              </TEI>
+            </egXML>
+          </p>
+        </div>
+
+        <div xml:id="section-root-element">
+          <head>Root Element</head>
+          <p>
+            The root TEI element, apart from declaring the namespace, must
+            provide the following basic information for the encoded play:
+            <list>
+              <item>
+                <label>DraCor ID (<att>xml:id</att>)</label>:
+                <gloss>
+                  This ID needs to be unique throughout the DraCor ecosystem and
+                  should consist of the corpus name followed by a six-digit
+                  zero-padded number, e.g. <val>ita000056</val>.
+                </gloss>
+              </item>
+              <item>
+                <label>Language (<att>xml:lang</att>)</label>:
+                <gloss>
+                  The language of the play should be specified as the
+                  <ref target="https://tools.ietf.org/html/bcp47">BCP 47</ref>
+                  compliant “language tag” which is basically the shortest
+                  ISO-639 code, i.e. usually the 2-letter code, or, where none
+                  has been assigned, the appropriate 3-letter one.
+                  <note place="bottom">
+                    Also see the section
+                    <ref target="https://www.tei-c.org/release/doc/tei-p5-doc/de/html/CH.html#CHSH">Language
+                    identification</ref> of the TEI Guidelines.
+                  </note>
+                </gloss>
+              </item>
+            </list>
+            <egXML xmlns="http://www.tei-c.org/ns/Examples">
+              <TEI xml:id="ger0000001" xml:lang="de">
+                <!-- ... -->
+              </TEI>
+            </egXML>
+            <egXML xmlns="http://www.tei-c.org/ns/Examples">
+              <TEI xml:id="als000023" xml:lang="gsw">
+                <!-- ... -->
+              </TEI>
+            </egXML>
+          </p>
+        </div>
+
+        <div xml:id="section-encoding-header">
+          <head>Metadata in the <gi>teiHeader</gi></head>
+          <p>
+            The header is composed of several sections: <gi>fileDesc</gi>,
+            <gi>profileDesc</gi> and <gi>revisionDesc</gi>.
+          </p>
+          <p>
+            <egXML xmlns="http://www.tei-c.org/ns/Examples">
+              <teiHeader>
+                <fileDesc>
+                  <titleStmt>
+                    <!-- ... -->
+                  </titleStmt>
+                  <publicationStmt>
+                    <!-- ... -->
+                  </publicationStmt>
+                  <sourceDesc>
+                    <!-- ... -->
+                  </sourceDesc>
+                </fileDesc>
+                <profileDesc>
+                  <!-- ... -->
+                </profileDesc>
+                <revisionDesc>
+                  <!-- ... -->
+                </revisionDesc>
+              </teiHeader>
+            </egXML>
+          </p>
+
+          <div xml:id="section-bibliographic_metadata">
+            <head>Bibliographic Metadata of a Play</head>
+            <p>
+              The basic metadata on the digital file are included in the
+              <gi>fileDesc</gi>. It contains a title statement
+              (<gi>titleStmt</gi>), a publication statement
+              (<gi>publicationStmt</gi>) and a description of the digital and
+              original sources (<gi>sourceDesc</gi>).
+            </p>
+            <p>
+              <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                <fileDesc>
+                  <titleStmt>
+                    <!-- ... -->
+                  </titleStmt>
+                  <publicationStmt>
+                    <!-- ... -->
+                  </publicationStmt>
+                  <sourceDesc>
+                    <!-- ... -->
+                  </sourceDesc>
+                </fileDesc>
+              </egXML>
+            </p>
+            <p>
+              In the following sections, we will discuss those parts in which
+              important information is encoded. However, we do not strictly
+              follow the hierarchy of the elements in the teiHeader. It is
+              therefore important to observe the structure given in the example
+              above.
+            </p>
+
+            <div xml:id="section-title">
+              <head>Title</head>
+              <p>
+                The title is encoded using the element <gi>title</gi> in
+                <gi>titleStmt</gi>. Multiple <gi>title</gi> elements can be used
+                to distinguish the main title and subtitle. The subtitle should be marked
+                with a <att>type</att> <val>sub</val>:
+                <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                  <title>Des Meeres und der Liebe Wellen</title>
+                  <title type="sub">Trauerspiel in fünf Aufzügen</title>
+                </egXML>
+              </p>
+              <p>
+                For plays written in less commonly known scripts, you may want to
+                provide alternative titles in English using the
+                <att>xml:lang</att> attribute:
+                <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                  <title>Ревизор</title>
+                  <title xml:lang="en">The Government Inspector</title>
+                  <title type="sub">Комедия в пяти действиях</title>
+                  <title type="sub" xml:lang="en">A Comedy in Five Acts</title>
+                </egXML>
+              </p>
+              <p>
+                If provided, the English titles will be made available by the
+                DraCor API as properties
+                <ref target="#play_title_en">titleEn</ref> and
+                <ref target="#play_subtitle_en">subtitleEn</ref> of a play
+                object.
+              </p>
+            </div>
+
+            <div xml:id="section-author-information">
+              <head>Author(s)</head>
+              <p>
+                An author of a play is encoded using the element
+                <gi>author</gi> in <gi>titleStmt</gi>. If there are multiple
+                authors of a play add and element <gi>author</gi> for each of
+                them.
+              </p>
+              <p>
+                <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                  <author>
+                    <persName>
+                      <forename>Gotthold</forename>
+                      <forename>Ephraim</forename>
+                      <surname>Lessing</surname>
+                    </persName>
+                    <idno type="wikidata">Q34628</idno>
+                    <idno type="pnd">118572121</idno>
+                  </author>
+                </egXML>
+              </p>
+              <div xml:id="section-author-name">
+                <head>Author Name(s)</head>
+                <p>
+                  The author’s name is enclosed in the element <gi>persName</gi>
+                  and can be additionally structured using the designated
+                  elements <gi>forename</gi> and <gi>surname</gi>.
+                </p>
+                <p>
+                  The element <gi>nameLink</gi> can be used to mark-up
+                  connecting phrases in a name, like such as <q>van der</q> or
+                  <q>of</q>.
+                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                    <persName>
+                      <forename>Achim</forename>
+                      <nameLink>von</nameLink>
+                      <surname>Arnim</surname>
+                    </persName>
+                  </egXML>
+                </p>
+                <p>
+                  Other special elements for marking up name constituents are
+                  available in the TEI Guidelines, but bear in mind that not
+                  everything available is actually supported by the
+                  DraCor API.
+                </p>
+                <p>
+                  In some cases, it makes sense to include only the literal
+                  string value of the name as <gi>persName</gi>.
+                </p>
+                <p>
+                  It is possible to include multiple names for an author, e.g. a
+                  pen name or a (English) transliteration of an author’s name in
+                  a corpus with non-Latin script.
+                </p>
+                <p>
+                  There are some special types of <soCalled>names</soCalled>
+                  that are supported and marked by using the attribute
+                  <att>type</att>.
+                </p>
+                <p>
+                  For additional examples on encoding names, see the
+                  documentation of the element <gi>persName</gi>. There are also
+                  some GitHub issues in which the encoding of names was
+                  discussed, e.g.
+                  <ref target="https://github.com/dracor-org/dracor-api/issues/119">Refactor
+                  author information</ref>. If you encounter issues with how
+                  names are displayed on DraCor or have questions regarding edge
+                  cases, please open an issue on
+                  <ref target="https://github.com/dracor-org/dracor-api/issues">GitHub</ref>.
+                </p>
+              </div>
+
+              <div xml:id="section-author-external-id">
+                <head>IDs in External Reference Resources</head>
+                <p>
+                  Authors should be linked to external reference resources, e.g.
+                  <ref target="https://www.wikidata.org">Wikidata</ref>. This,
+                  for example, allows to fetch additional data about a person not
+                  explicitly included in the TEI file and display it on the
+                  frontend: If a Wikidata Identifier (QID) is provided,
+                  information about the date and place of birth and death of an
+                  author and a picture will be displayed.
+                </p>
+                <p>
+                  To record an external ID, use the element <gi>idno</gi> and
+                  provide the type of identifier in the attribute
+                  <att>type</att>:
+                </p>
+                <p>
+                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                    <idno type="wikidata">Q692</idno>
+                  </egXML>
+                </p>
+                <p>
+                  The URI of the author in the example above can be constructed
+                  by prepending the base-URI of Wikidata
+                  <val>http://www.wikidata.org/entity/</val> to the QID
+                  resulting in
+                  <ref target="http://www.wikidata.org/entity/Q692">http://www.wikidata.org/entity/Q692</ref>.
+                </p>
+                <p>
+                  There are other types of eternal identifiers available. Please
+                  refer to the documentation of the element <gi>idno</gi> for
+                  supported type values and additional examples.
+                </p>
+              </div>
+
+              <div xml:id="section-contributor-roles">
+                <head>Additional Contributors</head>
+                <div xml:id="section-translators">
+                  <head>Translators</head>
+                  <p>
+                    Translators of a play are encoded using the element
+                    <gi>editor</gi> in <gi>titleStmt</gi> with the attribute
+                    <att>role</att> set to <val>translator</val>. As with
+                    authors, the translator’s name is enclosed in
+                    <gi>persName</gi> and can be further structured using
+                    <gi>forename</gi> and <gi>surname</gi>. External
+                    identifiers (e.g. Wikidata, GND) are added as
+                    <gi>idno</gi> children – see
+                    <ref target="#section-author-external-id">IDs in External
+                    Reference Resources</ref>.
+                  </p>
+                  <p>
+                    The following example from the
+                    <ref target="https://dracor.org/id/gersh000014">German
+                    Shakespeare Corpus</ref> shows Shakespeare’s
+                    <title>Hamlet</title> in the translation by August Wilhelm
+                    Schlegel:
+                  </p>
+                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                    <titleStmt>
+                      <title>Hamlet. Prinz von Dänemark</title>
+                      <author>
+                        <persName>
+                          <forename>William</forename>
+                          <surname>Shakespeare</surname>
+                        </persName>
+                        <idno type="wikidata">Q692</idno>
+                        <idno type="pnd">118613723</idno>
+                      </author>
+                      <editor role="translator">
+                        <persName>
+                          <forename>August</forename>
+                          <forename>Wilhelm</forename>
+                          <surname>Schlegel</surname>
+                        </persName>
+                        <idno type="wikidata">Q57281</idno>
+                        <idno type="pnd">118607960</idno>
+                      </editor>
+                      <respStmt>
+                        <resp when="2021-10-21">This digital edition was prepared by</resp>
+                        <persName ref="https://orcid.org/0000-0003-2419-6629">Frank Fischer</persName>
+                      </respStmt>
+                    </titleStmt>
+                  </egXML>
+                  <p>
+                    Add one <gi>editor</gi> element per translator if a play
+                    has been translated by more than one person.
+                  </p>
+                </div>
+                <div xml:id="section-other-editor-roles">
+                  <head>Other Editor Roles</head>
+                  <p>
+                    Corpus maintainers are free to encode other editor roles
+                    by choosing an appropriate value for the <att>role</att>
+                    attribute on <gi>editor</gi>. For the time being,
+                    however, only <val>translator</val> will be picked up and
+                    displayed by the DraCor frontend.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div xml:id="section-sources">
+            <head>Sources</head>
+            <p>
+              The <gi>sourceDesc</gi> inside the <gi>fileDesc</gi>
+              element documents the sources used to create the DraCor TEI file.
+              In the DraCor context, we are particularly interested in two kinds of
+              source information. In most cases, our DraCor TEI file is directly
+              based on a prior digital file or resource.
+              This is what we call the <ref target="#section-digital-source">digital
+              source</ref>. In turn, this file is usually based on a printed edition
+              or, in some cases, a manuscript of a play which we refer to as the
+              <ref target="#section-original-source">original source</ref>.
+            </p>
+            <p>
+              The DraCor API uses these two kinds of source data to provide the
+              <ref target="#play_digital_source_name">digitalSource.name</ref> and
+              <ref target="#play_digital_source_url">digitalSource.url</ref>
+              properties as well as the <code>originalSource...</code> group of
+              properties (see
+              <ref target="#play_original_source_full_citation">Play Original Source
+              Full Citation</ref> ff).
+            </p>
+            <p>
+              The two source types should be encoded as separate <gi>bibl</gi>
+              elements distinguished by their <att>type</att> attributes:
+            </p>
+            <egXML xmlns="http://www.tei-c.org/ns/Examples">
+              <sourceDesc>
+                <bibl type="digitalSource"> ... </bibl>
+                <bibl type="originalSource"> ... </bibl>
+              </sourceDesc>
+            </egXML>
+            <egXML xmlns="http://www.tei-c.org/ns/Examples">
+              <sourceDesc>
+                <bibl type="digitalSource">
+                  <ref target="https://resolver.staatsbibliothek-berlin.de/SBB0003354000000000">
+                    Berlin State Library
+                  </ref>
+                  <availability status="free">
+                    <p>In the public domain.</p>
+                  </availability>
+                </bibl>
+                <bibl type="originalSource">
+                  <author>G. Conrad</author> [= Georg von Preußen]: <title>Sappho. Drama in einem
+                    Aufzuge</title>. <pubPlace>Berlin</pubPlace>: <publisher>Voß</publisher>
+                  <date>1887</date>. (S. <biblScope unit="page" from="1" to="41">1–41</biblScope>.)
+                </bibl>
+              </sourceDesc>
+            </egXML>
+            <p>
+              While this should cover the majority of cases, we are aware that
+              some projects may require a more detailed documentation of their
+              sources. These projects are free to use additional <gi>bibl</gi> or
+              <gi>biblStruct</gi> elements, e.g. for documenting intermediary
+              sources between the <ref target="#section-digital-source">digital
+              source</ref> and the <ref target="#section-original-source">original
+              source</ref>. Corpus maintainers may also consider including more
+              detailed explanations in a <gi>notesStmt</gi> element.
+              <note place="bottom">
+                For an exemplary analysis of sources of a corpus, see chapter
+                <ref target="https://versioning-living-corpora.clsinfra.io/3-2_gerdracor_corpus_archeology.html#a-living-corpus-growing">An
+                Algorithmic Archaeology of a Living Corpus: GerDraCor as a
+                Dynamic Epistemic Object</ref> in the report "On Versioning
+                Living and Programmable Corpora"
+                (<ref target="#boerner_trilcke_2024">Boerner/Trilcke 2024</ref>)
+              </note>
+            </p>
+            <div xml:id="section-digital-source">
+              <head>Digital Source</head>
+              <p>
+                Typical digital sources are individual resources in online text
+                repositories such as <ref target="https://textgrid.de">TextGrid</ref>,
+                <ref target="https://www.projekt-gutenberg.org/">Projekt
+                Gutenberg</ref>, or
+                <ref target="https://www.let.leidenuniv.nl/Dutch/Ceneton/">CENETON</ref>.
+                Another class of digital sources are digitisations of printed
+                texts or manuscripts published with an identifier and/or under a certain
+                licence, e.g. those by
+                <ref target="https://books.google.com/">Google Books</ref> or the
+                <ref target="https://www.digitale-sammlungen.de/">Munich
+                Digitization Center (MDZ)</ref>.
+              </p>
+              <p>
+                The digital source information is encoded as a <gi>bibl</gi>
+                element with <att>type</att> <val>digitalSource</val>. It is
+                expected to contain a <gi>ref</gi> with the title of the
+                resource or the online collection as its content and a
+                <att>target</att> attribute providing a URL. This URL should
+                point to the digital document used as the source for the DraCor
+                file. In case of a multi-part resource, the URL should refer to
+                first page of the individual resource, not just the homepage of
+                the collection.
+              </p>
+              <p>
+                Whenever possible, information about the licence under which
+                the digital source is distributed should be included in an
+                <gi>availability</gi> element.
+              </p>
+              <p>
+                The below examples are from
+                <ref target="https://dracor.org/id/ger000001">Goethe: Iphigenie auf Tauris</ref>:
+              </p>
+              <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                <bibl type="digitalSource">
+                  <ref target="http://www.textgridrep.org/textgrid:11f78.0">TextGrid Repository</ref>
+                  <availability>
+                    <licence target="http://creativecommons.org/licenses/by/3.0/de/legalcode">CC-BY-3.0</licence>
+                  </availability>
+                </bibl>
+              </egXML>
+              <p>
+                and <ref target="https://dracor.org/id/ger000764">Pfeffel: Der
+                Einsiedler</ref>:
+              </p>
+              <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                <bibl type="digitalSource">
+                  <ref target="http://resolver.sub.uni-goettingen.de/purl?PPN870045725">Göttingen State and University Library</ref>
+                  <availability>
+                    <licence target="https://creativecommons.org/publicdomain/zero/1.0/">CC0 1.0</licence>
+                  </availability>
+                </bibl>
+              </egXML>
+              <p>
+                If the digital source is not published under a specific licence
+                you can link to, licensing information may also be provided as
+                free text as in this example from
+                <ref target="https://dracor.org/id/neolat000001">Macropedius:
+                Hecastus</ref>:
+              </p>
+              <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                <bibl type="digitalSource">
+                  <ref target="https://www.let.leidenuniv.nl/Dutch/Ceneton/MacropediusHecastus1552.html">
+                    Census Nederlands Toneel (Ceneton)
+                  </ref>
+                  <availability status="free">
+                    <p>
+                      The editions on the website edited by Antonius Harmsen
+                      (Leiden University) are public domain. See
+                      https://www.let.leidenuniv.nl/Dutch/Canonisations.html
+                    </p>
+                  </availability>
+                </bibl>
+              </egXML>
+              <p>
+                Note that the DraCor API currently recognises only a single
+                digital source. Any additional <gi>bibl</gi> with <att>type</att>
+                <val>digitalSource</val> will be ignored.
+              </p>
+              <p>
+                The digital source information is not considered mandatory by the
+                DraCor schema. However, it should always be provided unless the
+                DraCor TEI file was directly derived from a print or manuscript
+                source.
+              </p>
+            </div>
+            <div xml:id="section-original-source">
+              <head>Original Source</head>
+              <p>
+                The <soCalled>original source</soCalled> is the bibliographic
+                reference to the print publication or manuscript that has
+                provided the copy-text for the digital source or, in rarer
+                cases of direct transcription, for the DraCor TEI file itself.
+              </p>
+              <p>
+                The original source information is considered mandatory by
+                the DraCor schema.
+              </p>
+              <p>
+                It is encoded in a <gi>bibl</gi> element with <att>type</att>
+                <val>originalSource</val>. The normalised text content of this
+                element is exposed in the
+                <ref target="#play_original_source_full_citation">originalSource</ref>
+                property of the DraCor API.
+              </p>
+              <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                <bibl type="originalSource">
+                  Goethes Werke. Hamburger Ausgabe in 14 Bänden.
+                  Textkritisch durchgesehen und mit Anmerkungen versehen von
+                  Erich Trunz, Hamburg: Christian Wegener, 1948 ff.
+                  [Seitenkonkordanz zu einer Mischauflage aus den Jahren 1959
+                  und 1960.]
+                </bibl>
+              </egXML>
+              <p>
+                By explicitly marking up the parts of the bibliographic reference,
+                additional properties can be exposed via the DraCor API:
+              </p>
+              <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                <bibl type="originalSource">
+                  <author>Jakob Ayrer</author>: <title level="a">Tragedia
+                  Thesei, des zehenten Königs zu Athen, von den vierzehen
+                  Tributkindern, mit 41 Personen, hat 8 Actus</title>. In:
+                  <title level="s">Ayrers Dramen</title>. Herausgegeben von
+                  <editor>Adelbert von Keller</editor>.
+                  <biblScope unit="volume">Zweiter</biblScope> Band.
+                  <pubPlace>Stuttgart</pubPlace>: <publisher>Litterarischer
+                  Verein</publisher> <date>1865</date>, S.
+                  <biblScope unit="page" from="1207" to="1303">1207–1303</biblScope>.
+                </bibl>
+              </egXML>
+              <p>
+                The above example would make the following API properties available:
+                <ref target="#play_original_source_num_of_pages">originalSourceNumberOfPages</ref>,
+                <ref target="#play_original_source_publication_place">originalSourcePubPlace</ref>,
+                <ref target="#play_original_source_publisher">originalSourcePublisher</ref>,
+                <ref target="#play_original_source_publication_year">originalSourceYear</ref>.
+                They are also the basis for downloading the metadata via the
+                DraCor Frontend.
+              </p>
+            </div>
+          </div>
+
+          <div xml:id="section-additional-metadata">
+            <head>Additional Metadata</head>
+            <p>
+              For pragmatic reasons the <gi>sourceDesc</gi> is also used to
+              encode additional metadata.<note place="bottom">Before schema
+              version 1.4.0 the <gi>standOff</gi> element was used to encode
+              additional metadata. See the
+              <ref target="https://github.com/dracor-org/dracor-schema/issues/133">Github
+              issue 133</ref> on why this has changed.</note>
+            </p>
+            <div xml:id="section-play-wikidata">
+              <head>Wikidata QID of a Play</head>
+              <p>
+                For the purpose of linking a play to its corresponding entry in
+                Wikidata, DraCor uses a <gi>bibl</gi> element with
+                <att>type</att> <val>wikidata</val> inside <gi>sourceDesc</gi>
+                to encode the
+                <ref target="https://www.wikidata.org/wiki/Q43649390">Wikidata Q
+                identifier</ref> for the work. The ID must be wrapped in an
+                <gi>idno</gi> element:
+              </p>
+              <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                <sourceDesc>
+                  <!-- ... -->
+                  <bibl type="wikidata"><idno>Q41567</idno></bibl>
+                </sourceDesc>
+              </egXML>
+            </div>
+            <div xml:id="section-play-meta-dates">
+              <head>Dates</head>
+              <p>
+                Last but not least, DraCor uses a <gi>listEvent</gi> inside
+                <gi>sourceDesc</gi> to record various key dates related to the
+                play. The following event types are recognized by the DraCor
+                API:
+              </p>
+              <list>
+                <item>
+                  <label><term>written</term></label>
+                  <gloss>year the play was written</gloss>
+                </item>
+                <item>
+                  <label><term>premiere</term></label>
+                  <gloss>year or exact date the play was first performed</gloss>
+                </item>
+                <item>
+                  <label><term>print</term></label>
+                  <gloss>year the play was first printed</gloss>
+                </item>
+              </list>
+              <p>
+                This example from
+                <ref target="https://dracor.org/id/ger000472">Brawe: Brutus</ref>
+                demonstrates how dates can be specified either as a year, an
+                exact day, or as a range of years:
+              </p>
+              <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                <listEvent>
+                  <event type="print" when="1768">
+                    <desc/>
+                  </event>
+                  <event type="premiere" when="1770-08-20">
+                    <desc/>
+                  </event>
+                  <event type="written" notBefore="1757" notAfter="1758">
+                    <desc/>
+                  </event>
+                </listEvent>
+              </egXML>
+              <p>
+                Note that the TEI schema does not allow <gi>event</gi> elements
+                to be empty which is why in the above example they contain empty
+                <gi>desc</gi> elements. The <gi>desc</gi> element can actually
+                be used to provide more information, as in this example from
+                <ref target="https://dracor.org/id/ger000407">von Arnim: Das
+                Loch</ref>:
+              </p>
+              <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                <listEvent>
+                  <event type="print" when="1813">
+                    <desc/>
+                  </event>
+                  <event type="premiere" when="1811">
+                    <desc/>
+                  </event>
+                  <event type="written" when="1811">
+                    <desc>wahrscheinlich im Winter 1811</desc>
+                  </event>
+                </listEvent>
+              </egXML>
+            </div>
+          </div>
+
+          <div xml:id="section-analytic-header-data">
+            <head>Analytic or Research-driven Data in the <gi>teiHeader</gi></head>
+            <p>
+              There is analytic or research-driven data in the
+              <gi>profileDesc</gi> of the <gi>teiHeader</gi>: Information on the
+              characters in the <gi>particDesc</gi> and the (sub-)genre of a
+              play in <gi>textClass</gi>.
+            </p>
+            <p>
+              <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                <profileDesc>
+                  <particDesc>
+                    <!-- ... -->
+                  </particDesc>
+                  <textClass>
+                    <!-- ... -->
+                  </textClass>
+                </profileDesc>
+              </egXML>
+            </p>
+
+            <div xml:id="section-characters">
+              <head>Characters</head>
+              <p>
+                Information on the characters of a play is included in a
+                <gi>listPerson</gi> in the <gi>particDesc</gi>. Fill this
+                section after annotating the text proper of the play (see also
+                section on <ref target="#section-network-data">Encoding for
+                Network Analysis</ref>).
+              </p>
+              <p>
+                The <gi>listPerson</gi> includes the characters speaking in the
+                text proper as elements <gi>person</gi> or <gi>personGrp</gi>.
+                Each element is assigned a unique identifier as the value of
+                the attribute <att>xml:id</att>. Additional information on a
+                character can be recorded in attributes, e.g. the attributes
+                <att>sex</att> and <att>gender</att> allow to encode the sex
+                and/or gender of a character.
+              </p>
+              <p>
+                Individuals are to be marked with <gi>person</gi>, groups (e.g.
+                “Chorus”, “Soldiers”) with <gi>personGrp</gi>.
+              </p>
+              <p>
+                The following example shows the encoding of a single female
+                character called "Eleonora":
+              </p>
+              <p>
+                <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                  <person xml:id="eleonora" sex="FEMALE">
+                    <persName>Eleonora</persName>
+                  </person>
+                </egXML>
+              </p>
+              <p>
+                A group of three supposedly male devils ("Drei Teufel") is
+                encoded as follows:
+                <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                  <personGrp xml:id="drei_teufel" sex="MALE">
+                    <name>Drei Teufel</name>
+                  </personGrp>
+                </egXML>
+              </p>
+              <div xml:id="section-character-name">
+                <head>Character Name</head>
+                <p>
+                  Use <gi>persName</gi> to provide the character name. In the
+                  case of a group of characters use the element <gi>name</gi>
+                  instead.
+                </p>
+                <p>
+                  The values will appear in the network rendering in the
+                  frontend as the labels of the nodes. For the sake of
+                  visualisation, try to stick to name or name+surname, avoiding
+                  too much extra information, which will clutter the network. For
+                  example: “Henry”, “King Henry” or “Henry VII Tudor” are fine,
+                  “Henry, brother to the King of England” is not.
+                </p>
+              </div>
+              <div xml:id="section-character-id">
+                <head>Character Identifier</head>
+                <p>
+                  Each item must have a unique identifier in the attribute
+                  <att>xml:id</att>. They are expected to follow the
+                  <ref target="#section-identifiers">general rules for
+                  identifiers</ref> in DraCor. If your play is written in a
+                  non-Latin script, use a transliteration of the character name
+                  as the identifier.
+                </p>
+                <p>
+                  For characters defined by numerals (“First Soldier, Second
+                  Soldier”), please include the values of the attribute
+                  <att>xml:id</att> as follows: <code>xml:id="soldier_1"</code>.
+                </p>
+              </div>
+
+              <div xml:id="section-character-sex-gender">
+                <head>Sex and Gender of Characters</head>
+                <p>
+                  The DraCor schema supports the attribution of both biological
+                  sex and gender roles to the characters of a play, using the
+                  <att>sex</att> and <att>gender</att> attributes respectively.
+                </p>
+                <p>
+                  For the <att>sex</att> attribute the DraCor API expects the
+                  values <val>FEMALE</val>, <val>MALE</val> or
+                  <val>UNKNOWN</val>. The encoding of the sex of a character
+                  should be guided by the following rules:
+                </p>
+                <list>
+                  <item>
+                    <p>
+                      Please use the <att>sex</att> attribute only for
+                      characters which unequivocally appear as of a certain sex
+                      in the text. If they don’t have a proper name, but are
+                      defined by their profession, consider the play’s context
+                      (e.g. “soldier” will be surely <val>MALE</val> in a
+                      Renaissance play).
+                    </p>
+                  </item>
+                  <item>
+                    <p>
+                      The same applies to groups (“soldiers”, “weavers”). If the
+                      sex is uncertain or no hints are provided, mark them as
+                      <val>UNKNOWN</val> (“nobles”, “citizens”, “servants”).
+                      <!-- Technically, we could also mark such groups as
+                      sex="FEMALE MALE" -->
+                    </p>
+                  </item>
+                  <item>
+                    <p>
+                      Abstract entities (“Time”, “Fame”, “Death”, etc.) should
+                      be marked as <val>UNKNOWN</val>. If they are clearly
+                      gendered in the text, you may consider using an appropriate
+                      <att>gender</att> attribute.
+                    </p>
+                  </item>
+                </list>
+                <p>
+                  For the <att>gender</att> attribute the DraCor API currently
+                  does not expect any particular value. It is up to the corpus
+                  maintainers to use a consistent scheme, possibly documented
+                  in an <gi>encodingDesc</gi>.
+                </p>
+                <p>
+                  For more background on sex and gender in the TEI, see
+                  <ref target="#beshero-bondar_2024">Beshero-Bondar et al.
+                  (2024)</ref>. For its history in DraCor, see the GitHub
+                  <ref target="https://github.com/dracor-org/dracor-schema/issues/46">issue #46</ref>.
+                </p>
+              </div>
+
+              <div xml:id="section-character-relations">
+                <head>Relations Between Characters</head>
+                <p>
+                  DraCor supports the encoding of relationships between
+                  characters using the <gi>listPerson</gi> element inside the
+                  <gi>particDesc</gi>.
+                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                    <particDesc>
+                      <listPerson>
+                        <person xml:id="character1">
+                          <persName>First Character</persName>
+                        </person>
+                        <!-- ... -->
+                        <personGrp xml:id="group99">
+                          <name>A Group of Characters</name>
+                        </personGrp>
+                        <!-- after the last character item include: -->
+                        <listRelation>
+                          <!-- Character relations go here -->
+                        </listRelation>
+                      </listPerson>
+                    </particDesc>
+                  </egXML>
+                </p>
+                <p>
+                  Relations among characters are encoded using <gi>relation</gi>
+                  elements in a <gi>listRelation</gi>. Here is an example from
+                  <ref target="https://dracor.org/id/ger000088"><title>Emilia
+                  Galotti</title></ref>:
+                  <egXML xmlns="http://www.tei-c.org/ns/Examples" source="#ger000088">
+                    <listRelation type="personal">
+                      <relation name="parent_of" active="#odoardo #claudia" passive="#emilia"/>
+                      <relation name="associated_with" active="#marinelli" passive="#der_prinz"/>
+                      <relation name="associated_with" active="#camillo_rota" passive="#der_prinz"/>
+                    </listRelation>
+                  </egXML>
+                </p>
+                <p>
+                  It is strongly recommended
+                  to include only such relations that are based on textual
+                  evidence, e.g. notes on the relation of characters in the list of the
+                  dramatis personae included in the text proper as
+                  <gi>castList</gi>. In the <gi>castList</gi> of the play used
+                  as an example above, the characters “Odoardo” and “Claudia”
+                  are marked as a group with a curly bracket and it is noted
+                  that they are the parents of the character “Emilia” (“Eltern
+                  der Emilia”) (in the example see element <gi>roleDesc</gi>):
+                </p>
+                <p>
+                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                    <castList>
+                      <castItem>
+                        <role>Emilia Galotti.</role>
+                      </castItem>
+                      <castGroup rend="braced">
+                        <castItem>
+                          <role>Odoardo,</role>
+                        </castItem>
+                        <castItem>
+                          <role>Claudia Galotti,</role>
+                        </castItem>
+                        <roleDesc>Eltern der Emilia.</roleDesc>
+                      </castGroup>
+                      <!-- ... -->
+                    </castList>
+                  </egXML>
+                </p>
+                <p>
+                  This textual finding results in the following encoding of the
+                  character relation <q>parent_of</q>:
+                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                    <relation name="parent_of" active="#odoardo #claudia" passive="#emilia"/>
+                  </egXML>
+                </p>
+                <p>
+                  In this case, being a parent of someone is a directed
+                  relationship. Therefore the <gi>relation</gi> with the value
+                  <val>parent_of</val> of the attribute <att>name</att> has two
+                  additional attributes that denote the source
+                  (<att>active</att>) and the target (<att>passive</att>) of the
+                  relation. The values of these attributes are pointers (hence
+                  starting with “#”) which must refer to a <gi>person</gi>
+                  element inside the <gi>particDesc</gi> that has an
+                  <att>xml:id</att> with a corresponding value.
+                </p>
+                <p>
+                  Which relations to encode and how to name them in the
+                  <att>name</att> attribute is up to the corpus maintainers. We
+                  recommend following a consistent classification that is
+                  documented in the corpus README. As an example, the German
+                  Drama Corpus adopted the method of identifying character
+                  relationships developed by <ref target="#wiedmer_2020">Wiedmer
+                  et al. (2020)</ref>.
+                </p>
+              </div>
+
+              <div xml:id="section-character-concept-realizations">
+                <head>Characters as Realisations of Concepts</head>
+                <p>
+                  If a character in a play is an actualisation of a character
+                  archetype, e.g. a mythological figure or a historical person,
+                  it is possible to provide a link to the entity on Wikidata. 
+                  The Wikidata QID is encoded as an <gi>idno</gi> element with
+                  <att>type</att> <val>wikidata</val> inside the <gi>person</gi>
+                  or <gi>personGrp</gi> element.
+                </p>
+                <p>
+                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                    <person xml:id="medea" sex="FEMALE">
+                      <persName>Medea</persName>
+                      <idno type="wikidata">Q174278</idno>
+                    </person>
+                  </egXML>
+                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                    <person xml:id="napoleon" sex="MALE">
+                      <persName>Napoleon</persName>
+                      <idno type="wikidata">Q517</idno>
+                    </person>
+                  </egXML>
+                </p>
+                <p>
+                  The use of the <att>ana</att> attribute with a full Wikidata
+                  URI (e.g. <val>http://www.wikidata.org/entity/Q174278</val>)
+                  is deprecated. Use the migration stylesheet
+                  <code>007-ana-to-idno.xsl</code> to update existing files.
+                </p>
+              </div>
+            </div>
+
+            <div xml:id="section-genre">
+              <head>Genre</head>
+              <p>
+                Within <gi>textClass</gi> in the <gi>profileDesc</gi> the genre
+                of the drama can be specified.
+              </p>
+              <p>
+                <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                  <textClass>
+                    <keywords>
+                      <term type="genreTitle">Tragedy</term>
+                    </keywords>
+                    <classCode scheme="http://www.wikidata.org/entity/">Q80930</classCode>
+                  </textClass>
+                </egXML>
+              </p>
+              <p>
+                The content of the element <gi>term</gi> in the section
+                <gi>keywords</gi> is considered the human-readable label for the
+                classification contained in <gi>classCode</gi>. The value should
+                be the QID of the respective concept on Wikidata. The following
+                values are supported by the API (See also
+                <ref target="https://github.com/dracor-org/dracor-api/blob/9df15f727a210b9ff80bf32aaf3523926b3e8c8e/modules/config.xqm#L77-L83">Source
+                Code</ref>):
+                <list>
+                  <item>
+                    <label>
+                      <ref target="http://www.wikidata.org/entity/Q40831">Q40831</ref>
+                    </label>:
+                    <gloss>Comedy</gloss>
+                  </item>
+                  <item>
+                    <label>
+                      <ref target="http://www.wikidata.org/entity/Q80930">Q80930</ref>
+                    </label>:
+                    <gloss>Tragedy</gloss>
+                  </item>
+                  <item>
+                    <label>
+                      <ref target="http://www.wikidata.org/entity/Q131084">Q131084</ref>
+                    </label>:
+                    <gloss>Libretto</gloss>
+                  </item>
+                  <item>
+                    <label>
+                      <ref target="http://www.wikidata.org/entity/Q192881">Q192881</ref>
+                    </label>:
+                    <gloss>Tragicomedy</gloss>
+                  </item>
+                  <item>
+                    <label>
+                      <ref target="http://www.wikidata.org/entity/Q1050848">Q1050848</ref>
+                    </label>:
+                    <gloss>Satyr play</gloss>
+                  </item>
+                </list>
+              </p>
+              <p>
+                Genre information should only be supplied if there are some
+                indicators that a certain genre is applicable, e.g. a genre
+                term in the subtitle or some other text on the title page in the
+                source. See also the discussion in this
+                <ref target="https://github.com/dracor-org/dracor-schema/issues/74">issue</ref>
+                on GitHub.
+              </p>
+            </div>
+            <!-- Genre -->
+          </div>
+
+          <div xml:id="section-revisionDesc">
+            <head><gi>revisionDesc</gi></head>
+            <p>
+              Lists revisions and revisers of the file. Update it after each
+              editing.
+            </p>
+          </div>
+        </div>
+
+        <div xml:id="section-standOff">
+          <head>
+            <emph>DEPRECATED:</emph> Encoding Additional Metadata in the
+            <gi>standOff</gi> Element
+          </head>
+          <p>
+            As of DraCor Schema version 1.4.0, the use of the <gi>standOff</gi>
+            element is deprecated. See section
+            <ref target="#section-additional-metadata">Additional Metadata</ref>
+            instead on how to encode Wikidata ID and key dates.
+          </p>
+        </div>
+
+        <div xml:id="section-drama-text-proper">
+          <head>Encoding the Text (<gi>text</gi>)</head>
+          <p>
+            The text of the play is usually composed of some paratextual
+            elements (title page, dedication, preface, list of the dramatis personae, etc.)
+            and of the body of the text. Enclose the first with the
+            <gi>front</gi> tag and the second with the <gi>body</gi> tag.
+          </p>
+          <p>
+            Most examples (with some adjustments) are taken from Mary Pix’ drama
+            <title>The Spanish Wives</title>
+            (<ref target="https://dracor.org/id/eng000530">eng000530</ref>).
+          </p>
+          <div xml:id="section-paratexts">
+            <head>Paratexts (<gi>front</gi>)</head>
+            <p>
+              Paratexts may be encoded with successive layers of complexity.
+              Dedicated elements like <gi>titlePage</gi>, <gi>prologue</gi>, or
+              <gi>argument</gi> should be used where appropriate. Only when no
+              suitable element is available <gi>div</gi> elements with an
+              attribute <att>type</att> may be used. Prose text should be
+              enclosed in paragraphs with <gi>p</gi>, lines of verse with
+              <gi>l</gi>. In-text titles of sections may be marked with
+              <gi>head</gi>.
+            </p>
+            <p>
+              The list of the dramatis personae can be encoded using the element
+              <gi>castList</gi>.
+            </p>
+            <p>
+              For details, see the TEI Guidelines sections on
+              <ref target="https://tei-c.org/release/doc/tei-p5-doc/en/html/DR.html#DRFAB">Front
+              and Back Matter</ref> and
+              <ref target="https://www.tei-c.org/release/doc/tei-p5-doc/de/html/DS.html#DSTITL">Title Pages</ref>.
+            </p>
+            <p>
+              An example from
+              <ref target="https://dracor.org/id/ger000088"><title>Emilia
+              Galotti</title></ref>:
+              <egXML xmlns="http://www.tei-c.org/ns/Examples" source="#ger000088">
+                <front>
+                  <titlePage>
+                    <docAuthor>Gotthold Ephraim Lessing</docAuthor>
+                    <docTitle>
+                      <titlePart type="main">Emilia Galotti</titlePart>
+                      <titlePart type="sub">Ein Trauerspiel in fünf Aufzügen</titlePart>
+                    </docTitle>
+                  </titlePage>
+                  <pb n="128"/>
+                  <castList>
+                    <head>Personen.</head>
+                    <castItem>
+                      <role>Emilia Galotti.</role>
+                    </castItem>
+                    <!-- ... -->
+                  </castList>
+                </front>
+              </egXML>
+
+            </p>
+          </div>
+        </div>
+
+        <div xml:id="section-body-elements">
+          <head><gi>text</gi></head>
+          <p>
+            Mark the main elements in the play’s body <gi>body</gi> as follows:
+          </p>
+          <div xml:id="section-segments">
+            <head>Segments (Acts, Scenes, etc.)</head>
+            <p>
+              Use the element <gi>div</gi> to encode segments of a dramatic
+              text. The type of the segment ("act", "scene") should be given in
+              the attribute <att>type</att>:
+              <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                <div type="act">
+                  <head>ACT I</head>
+                  <div type="scene">
+                    <head>SCENE I.</head>
+                    <!-- ... -->
+                  </div>
+                </div>
+              </egXML>
+            </p>
+            <div xml:id="section-segments-refsdecl">
+              <head>Declaring the Segmentation</head>
+              <p>
+                By default, the DraCor API identifies the scene-level segments
+                of a play – the units used to compute co-occurrence networks
+                and metrics – with a built-in heuristic that looks at
+                <gi>div</gi> elements carrying <att>type</att>
+                <val>scene</val> or a small list of legacy variants. In corpora
+                where <gi>div</gi> is used more broadly, or where scenes are
+                marked by a different combination of <att>type</att> and
+                <att>subtype</att>, the segmentation can be declared
+                explicitly using a <gi>citeStructure</gi> in a <gi>refsDecl</gi>
+                inside <gi>encodingDesc</gi>.<note place="bottom">Support for
+                <gi>refsDecl</gi>/<gi>citeStructure</gi> was introduced in
+                <ref target="https://github.com/dracor-org/dracor-api/releases/tag/1.4.0">DraCor
+                API 1.4.0</ref>; see
+                <ref target="https://github.com/dracor-org/dracor-api/pull/378">PR #378</ref>
+                for the implementation.</note>
+              </p>
+              <p>
+                The API interprets the <gi>citeStructure</gi> whose
+                <att>unit</att> is <val>scene</val>: the XPath expression in
+                <att>match</att> selects the elements to be treated as
+                segments.
+              </p>
+              <p>
+                A minimal declaration selecting all <gi>div</gi> elements
+                explicitly typed as scenes:
+                <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                  <encodingDesc>
+                    <refsDecl>
+                      <citeStructure
+                        unit="scene"
+                        match="/tei:TEI//tei:body//tei:div[@type='scene']"
+                        use="@n"/>
+                    </refsDecl>
+                  </encodingDesc>
+                </egXML>
+              </p>
+              <p>
+                The declaration can be placed either in an individual play’s
+                <gi>teiHeader</gi> or in the corpus’ <code>corpus.xml</code>,
+                where it applies to every play in the corpus. When both are
+                present, the play-level declaration wins; if neither is given,
+                the built-in heuristic is used.
+              </p>
+              <p>
+                The following example from the
+                <ref target="https://github.com/dracor-org/greekdracor">GreekDraCor</ref>
+                <code>corpus.xml</code> declares that scenes are those
+                <gi>div</gi> elements of <att>type</att>
+                <val>textpart</val> with certain <att>subtype</att> values used
+                by its source project 
+                <ref target="https://github.com/PerseusDL">Perseus Digital Library</ref>:
+                <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                  <encodingDesc>
+                    <refsDecl>
+                      <citeStructure
+                        unit="scene"
+                        match="/tei:TEI//tei:body//tei:div[@type='textpart' and @subtype =('choral', 'episode', 'Agon', 'Choral', 'Episode', 'Exodus', 'Lyric-Scene', 'Parabasis', 'Parodos', 'Prologue')]"
+                        use="position()"/>
+                    </refsDecl>
+                  </encodingDesc>
+                </egXML>
+              </p>
+              <p>
+                For security reasons, the XPath in <att>match</att> is
+                restricted to plain node-selection constructs; function calls
+                like <code>doc()</code> or <code>util:*</code> are rejected.
+              </p>
+              <p>
+                Note that the <att>use</att> attribute is not yet interpreted
+                by the DraCor API.
+              </p>
+            </div>
+          </div>
+
+          <div xml:id="section-stage-directions">
+            <head>Stage Directions (Non-Diegetic Elements)</head>
+            <p>
+              Use the element <gi>stage</gi> to mark stage directions:
+              <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                <stage>Enter the Governour of Barcellona, and the Marquess of Moncada.</stage>
+                <stage>(taking the Stick, and putting on his Spectacles to view it)</stage>
+              </egXML>
+            </p>
+            <p>
+              Stage directions could be nested into speech acts!
+              <egXML xmlns="http://www.tei-c.org/ns/Examples" source="#eng000530">
+                <sp who="#eng000530-camillus">
+                  <speaker>Cam. </speaker>
+                  <p>
+                    Tell him, I am,-- and long to kiss his Hands.-- I like that
+                    Gentleman, he appears brave <stage>Exit Servus.</stage> And
+                    bold-- shou'd our Designs grow desperate: I dare believe he
+                    would not scruple his Assistance.
+                  </p>
+                </sp>
+              </egXML>
+            </p>
+          </div>
+
+          <div xml:id="section-speech-acts">
+            <head>Speakers and Speech Acts</head>
+            <list>
+              <item>
+                <p>
+                  Mark the speech act by enclosing it with the element
+                  <gi>sp</gi>.
+                </p>
+              </item>
+              <item>
+                <p>
+                  Indicate which character listed in the <gi>particDesc</gi>
+                  is speaking by including a reference to the character’s
+                  <att>xml:id</att> prefixed with a hash (#) in the
+                  <att>who</att> attribute of the <gi>sp</gi> element:
+                  <code>who="#id-of-the-speaker"</code>. Always use the same
+                  who-tag, even if the in-text name of the speaker is
+                  abbreviated or there are some aliases.
+                </p>
+              </item>
+              <item>
+                <p>
+                  Enclose the in-text name of the speaker with the element
+                  <gi>speaker</gi>.
+                </p>
+              </item>
+              <item>
+                <p>
+                  Again, verse lines should be marked with <gi>l</gi>. Prose
+                  text should be marked with the paragraph element <gi>p</gi>.
+                </p>
+              </item>
+            </list>
+            <p>
+              <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                <sp who="#eleonora">
+                  <speaker>Elen.</speaker>
+                  <p>
+                    Now my Desires are so near fulfilling, I begin to fear 'em--
+                    yet I know Camillus is Honourable.
+                  </p>
+                </sp>
+              </egXML>
+            </p>
+            <p>
+              <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                <sp who="#camillus">
+                  <speaker>Cam.</speaker>
+                  <l>Greatness was the Attendant of my Birth; </l>
+                  <l>But Love gives me Heaven upon Earth. </l>
+                  <l>These Comforts my Elenora does impart: </l>
+                  <l>Joy to my Eyes, sweet Raptures to my Heart. </l>
+                </sp>
+              </egXML>
+            </p>
+            <div xml:id="section-special-cases">
+              <head>Special Cases</head>
+              <div>
+                <head>No Explicit Speaker in Text</head>
+                <p>
+                  If the speaker’s name is not explicitly given in-text, while
+                  e.g. being wrapped into a stage direction, just create a
+                  normal <gi>sp</gi> block and omit the <gi>speaker</gi> tag
+                  (don’t forget the <att>who</att> attribute though).
+                  <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                    <sp who="#governor">
+                      <stage>Enter the Governor singing.</stage>
+                      <l>If an old man has a beauteous Treasure,</l>
+                      <l>Let her sing, and dance, and laugh without measure,</l>
+                      <l>And then she'l think of no other Pleasure.</l>
+                    </sp>
+                  </egXML>
+                </p>
+              </div>
+              <!--
+                for unknown speakers, see
+                https://github.com/dracor-org/dracor-schema/issues/106
+              -->
+            </div>
+          </div>
+        </div>
+
+        <div xml:id="section-list-used-elems">
+          <head>Elements Used in DraCor Files</head>
+          <p>
+            Only a small subset of the elements available in the TEI Drama
+            Customisation is actually used in the DraCor corpora. The elements
+            included in the following list are relevant. In the documentation
+            below (section “Schema”), you can find additional information on the
+            elements and examples of their use in DraCor files. If you are using
+            additional elements that are valid in the TEI Drama Customisation,
+            bear in mind that there can be unexpected results when using the API
+            (e.g. counting of word tokens, extraction of metadata values, ...)
+            or issues when displaying your files in the frontend (e.g. text not
+            being displayed, ...). If you think that a certain element should be
+            included in the core elements below and, thus, be better supported by
+            the DraCor system, please open an
+            <ref target="https://github.com/dracor-org/dracor-schema/issues">issue</ref>
+            in the <ref target="https://github.com/dracor-org/dracor-schema">dracor-schema
+            repository</ref> on GitHub and describe your use case.
+          </p>
+          <list xml:id="dracor-tei-elements">
+            <item>
+              <gi>TEI</gi>
+            </item>
+            <item>
+              <gi>ab</gi>
+            </item>
+            <item>
+              <gi>actor</gi>
+            </item>
+            <item>
+              <gi>argument</gi>
+            </item>
+            <item>
+              <gi>author</gi>
+            </item>
+            <item>
+              <gi>availability</gi>
+            </item>
+            <item>
+              <gi>back</gi>
+            </item>
+            <item>
+              <gi>bibl</gi>
+            </item>
+            <item>
+              <gi>body</gi>
+            </item>
+            <item>
+              <gi>castGroup</gi>
+            </item>
+            <item>
+              <gi>castItem</gi>
+            </item>
+            <item>
+              <gi>castList</gi>
+            </item>
+            <item>
+              <gi>change</gi>
+            </item>
+            <item>
+              <gi>cit</gi>
+            </item>
+            <item>
+              <gi>classCode</gi>
+            </item>
+            <item>
+              <gi>dateline</gi>
+            </item>
+            <item>
+              <gi>desc</gi>
+            </item>
+            <item>
+              <gi>div</gi>
+            </item>
+            <item>
+              <gi>docAuthor</gi>
+            </item>
+            <item>
+              <gi>docTitle</gi>
+            </item>
+            <item>
+              <gi>dracorCorpus</gi>
+            </item>
+            <item>
+              <gi>editor</gi>
+            </item>
+            <item>
+              <gi>emph</gi>
+            </item>
+            <item>
+              <gi>epigraph</gi>
+            </item>
+            <item>
+              <gi>event</gi>
+            </item>
+            <item>
+              <gi>figure</gi>
+            </item>
+            <item>
+              <gi>fileDesc</gi>
+            </item>
+            <item>
+              <gi>foreign</gi>
+            </item>
+            <item>
+              <gi>forename</gi>
+            </item>
+            <item>
+              <gi>front</gi>
+            </item>
+            <item>
+              <gi>genName</gi>
+            </item>
+            <item>
+              <gi>graphic</gi>
+            </item>
+            <item>
+              <gi>head</gi>
+            </item>
+            <item>
+              <gi>idno</gi>
+            </item>
+            <item>
+              <gi>keywords</gi>
+            </item>
+            <item>
+              <gi>l</gi>
+            </item>
+            <item>
+              <gi>label</gi>
+            </item>
+            <item>
+              <gi>lb</gi>
+            </item>
+            <item>
+              <gi>lg</gi>
+            </item>
+            <item>
+              <gi>licence</gi>
+            </item>
+            <item>
+              <gi>listChange</gi>
+            </item>
+            <item>
+              <gi>listEvent</gi>
+            </item>
+            <item>
+              <gi>listPerson</gi>
+            </item>
+            <item>
+              <gi>listRelation</gi>
+            </item>
+            <item>
+              <gi>name</gi>
+            </item>
+            <item>
+              <gi>nameLink</gi>
+            </item>
+            <item>
+              <gi>note</gi>
+            </item>
+            <item>
+              <gi>p</gi>
+            </item>
+            <item>
+              <gi>particDesc</gi>
+            </item>
+            <item>
+              <gi>pb</gi>
+            </item>
+            <item>
+              <gi>performance</gi>
+            </item>
+            <item>
+              <gi>persName</gi>
+            </item>
+            <item>
+              <gi>person</gi>
+            </item>
+            <item>
+              <gi>personGrp</gi>
+            </item>
+            <item>
+              <gi>profileDesc</gi>
+            </item>
+            <item>
+              <gi>publicationStmt</gi>
+            </item>
+            <item>
+              <gi>publisher</gi>
+            </item>
+            <item>
+              <gi>quote</gi>
+            </item>
+            <item>
+              <gi>ref</gi>
+            </item>
+            <item>
+              <gi>relation</gi>
+            </item>
+            <item>
+              <gi>resp</gi>
+            </item>
+            <item>
+              <gi>respStmt</gi>
+            </item>
+            <item>
+              <gi>revisionDesc</gi>
+            </item>
+            <item>
+              <gi>role</gi>
+            </item>
+            <item>
+              <gi>roleDesc</gi>
+            </item>
+            <item>
+              <gi>set</gi>
+            </item>
+            <item>
+              <gi>signed</gi>
+            </item>
+            <item>
+              <gi>sourceDesc</gi>
+            </item>
+            <item>
+              <gi>sp</gi>
+            </item>
+            <item>
+              <gi>spGrp</gi>
+            </item>
+            <item>
+              <gi>speaker</gi>
+            </item>
+            <item>
+              <gi>stage</gi>
+            </item>
+            <item>
+              <gi>standOff</gi>
+            </item>
+            <item>
+              <gi>surname</gi>
+            </item>
+            <item>
+              <gi>teiHeader</gi>
+            </item>
+            <item>
+              <gi>term</gi>
+            </item>
+            <item>
+              <gi>text</gi>
+            </item>
+            <item>
+              <gi>textClass</gi>
+            </item>
+            <item>
+              <gi>title</gi>
+            </item>
+            <item>
+              <gi>titlePage</gi>
+            </item>
+            <item>
+              <gi>titlePart</gi>
+            </item>
+            <item>
+              <gi>titleStmt</gi>
+            </item>
+            <item>
+              <gi>trailer</gi>
+            </item>
+          </list>
+        </div>
+      </div>
+
+      <div xml:id="section-network-data">
+        <!-- see https://github.com/dracor-org/dracor-schema/issues/105 -->
+        <head>Encoding for Network Analysis</head>
+        <p>
+          The literary texts in the DraCor corpora are enriched with a
+          research-driven markup for the application of a specific method, the
+          network analysis of literary texts
+          (<ref target="#trilcke_2013">Trilcke 2013</ref>). Therefore, the
+          encoding is tailored to allow for the extraction of
+          <soCalled>co-presence networks</soCalled> relying on structural
+          segmentation of a given play into acts and scenes and having uniquely
+          identifiable speaking and acting characters. The cast lists (encoded
+          as <gi>castList</gi>) or lists of the dramatis personae that are contained in most
+          dramatic texts are an insufficient source in this regard, because they
+          tend to be incomplete. Speaker labels (encoded as <gi>speaker</gi>)
+          contained in the proper text are also often misleading, because they
+          are often not stable enough to serve as an identifier. Therefore, the
+          plays encoded for the DraCor platform have an additional section in
+          their metadata in the <gi>teiHeader</gi> that lists all characters as
+          <gi>person</gi> or <gi>personGrp</gi> elements in a
+          <gi>listPerson</gi> and assigns them a unique identifier (attribute
+          <att>xml:id</att>), that is then used in the attribute <att>who</att>
+          to link the individual speech acts <gi>sp</gi> with their respective
+          speakers.
+        </p>
+        <p>
+          While each distinct speaker represents a <soCalled>node</soCalled> in
+          a network, a relation (<soCalled>edge</soCalled>) is established if
+          the speeches <gi>sp</gi> of two or more speakers appear in the same
+          segment <gi>div</gi> (normally, a “scene” classified by the attribute
+          <att>type</att>).
+        </p>
+        <p>
+          The co-presence network can then be extracted by a designated
+          algorithm which is implemented in XQuery: The function of the DraCor
+          API <name type="api-function">metrics:get-network-metrics</name>
+          extracts the segments (element <gi>div</gi>) of a given TEI file using
+          the function <name type="api-function">dutil:get-segments</name> and,
+          for each of these segments, gets the distinct speakers with the function
+          <name type="api-function">dutil:distinct-speakers</name>. The network
+          metrics are calculated based on these extracted features with the
+          “DraCor Metrics Service” using the Python package
+          <name type="package">networkx</name>.
+        </p>
+        <p>
+          The schema derived from this ODD includes some schematron rules that
+          allow for checking if networks can be extracted from the TEI files:
+          <list xml:id="check-network-extraction">
+            <item>
+              The text of the play in <gi>body</gi> is structured into segments
+              (<gi>div</gi>);
+            </item>
+            <item>
+              The TEI file includes a <gi>particDesc</gi> containing
+              <gi>person</gi> and/or <gi>personGrp</gi> elements.
+            </item>
+            <item>
+              Each speech act <gi>sp</gi> is linked via the <att>who</att>
+              attribute to at least one <gi>person</gi> or <gi>personGrp</gi>
+              inside the <gi>particDesc</gi>.
+            </item>
+          </list>
+        </p>
+      </div>
+
+      <div xml:id="section-dracor-api">
+        <head>DraCor API</head>
+        <p>
+          The DraCor API is at the core of the whole DraCor system. It is
+          designed with a domain model of digital drama analysis in mind and
+          thus organises the API functionality around the two core entities
+          “corpus” and theatre “play”, thus following the assumption already
+          mentioned above that corpora are the central epistemic objects of
+          Computational Literary Studies
+          (cf. <ref target="#gavin_2023">Gavin 2023: 4</ref>).
+        </p>
+        <p>
+          The machine-readable documentation of the DraCor-API in the OpenAPI
+          format can be accessed at
+          <ref target="https://dracor.org/doc/api">https://dracor.org/doc/api</ref>.
+          It defines the available API endpoints and the schemas of the
+          respective response objects. The following section accompanies this
+          specification and provides additional documentation of the attributes
+          in the return JSON objects. The following “features” also form the
+          basis of the DraCor API Ontology, which – at a later stage – will be
+          automatically generated from this ODD.
+        </p>
+        <!-- https://github.com/dracor-org/dracor-schema/issues/99 -->
+
+        <div xml:id="section-api-features">
+          <head>API Features</head>
+          <p>
+            The following sections list the <soCalled>features</soCalled>. The
+            tables in the annex provide an overview of how these features are
+            dispersed over the response objects of the various endpoints.
+          </p>
+          <div xml:id="section-corpus-features">
+            <head>Corpus Features</head>
+            <div xml:id="corpus_name">
+              <head>Corpus Name</head>
+              <p>
+                Feature <idno type="feature-no">C1</idno>
+                <idno type="feature-id">corpus_name</idno>:
+                Identifier "name" or "corpusname" of a corpus, e.g. "ger" for
+                the "German Drama Corpus".
+              </p>
+              <p>
+                Normally, this identifier is used as a path parameter in requests
+                to the DraCor API.
+              </p>
+            </div>
+            <div xml:id="corpus_uri">
+              <head>Corpus URI</head>
+              <p>
+                Feature <idno type="feature-no">C2</idno>
+                <idno type="feature-id">corpus_uri</idno>:
+                Identifier "uri" of a corpus. It is equal to the full URL of
+                the /corpora/{corpusname} endpoint.
+              </p>
+            </div>
+            <div xml:id="corpus_title">
+              <head>Corpus Title</head>
+              <p>
+                Feature <idno type="feature-no">C3</idno>
+                <idno type="feature-id">corpus_title</idno>:
+                Full title of a corpus, e.g. "Ukrainian Drama Corpus".
+              </p>
+            </div>
+            <div xml:id="corpus_acronym">
+              <head>Corpus Acronym</head>
+              <p>
+                Feature <idno type="feature-no">C4</idno>
+                <idno type="feature-id">corpus_acronym</idno>:
+                Acronym of a corpus. Normally, it is the identifier
+                "name"/"corpusname" (see "corpus_name", but starting with a
+                capital letter) followed by the string "DraCor", e.g.
+                "TatDraCor".
+              </p>
+              <p>
+                In the TEI source data, the corpus acronym can be explicitly set
+                by including an element <gi>title</gi>; with the value
+                <val>acronym</val> of the attribute <att>type</att> in in the
+                metadata file of a corpus ("corpus.xml").
+              </p>
+              <p>
+                If this element is missing, the value of the element
+                <gi>idno</gi> with with the attribute <att>type</att> value of
+                <val>URI</val> from the "corpus.xml" is extracted and prepended
+                with "DraCor".
+              </p>
+            </div>
+            <div xml:id="corpus_description">
+              <head>Corpus Description</head>
+              <p>
+                Feature <idno type="feature-no">C5</idno>
+                <idno type="feature-id">corpus_description</idno>:
+                Description of a corpus. In the TEI source data, this information
+                is contained in the element <gi>projectDesc</gi> in the
+                "corpus.xml" file.
+              </p>
+              <p>
+                The value returned can be formatted using Markdown. The
+                transformation of TEI into Markdown is handled by the function
+                'local:to-markdown' in 'util.xqm' which transforms TEI elements
+                <gi>hi</gi> and <gi>ref</gi> for hyperlinks.
+              </p>
+            </div>
+            <div xml:id="corpus_repository">
+              <head>Corpus Repository</head>
+              <p>
+                Feature <idno type="feature-no">C6</idno>
+                <idno type="feature-id">corpus_repository</idno>:
+                URL of the (GitHub) repository that contains the TEI source
+                data. The information is extracted from the element
+                <gi>idno</gi> with the value <val>repo</val> of the attribute
+                <att>type</att> in a "corpus.xml" file.
+              </p>
+            </div>
+            <div xml:id="corpus_licence">
+              <head>Corpus Licence</head>
+              <p>
+                Feature <idno type="feature-no">C7</idno>
+                <idno type="feature-id">corpus_licence</idno>:
+                Licence information of a corpus. The value is a string
+                identifying the licence, e.g. <val>CC0</val>. The information is
+                extracted from the corpus metadata in "corpus.xml". It is the
+                text content of the element <gi>licence</gi>.
+              </p>
+            </div>
+            <div xml:id="corpus_licence_url">
+              <head>Corpus Licence URL</head>
+              <p>
+                Feature <idno type="feature-no">C8</idno>
+                <idno type="feature-id">corpus_licence_url</idno>:
+                Identifier/URL of a licence. The value is extracted from the
+                attribute <att>target</att> of the element <gi>licence</gi> in
+                the "corpus.xml" file.
+              </p>
+            </div>
+            <div xml:id="corpus_num_of_plays">
+              <head>Number of Plays in a Corpus</head>
+              <p>
+                Feature <idno type="feature-no">C9</idno>
+                <idno type="feature-id">corpus_num_of_plays</idno>:
+                Number of plays in a corpus. The value is the number of
+                <gi>TEI</gi> elements (should be equal to files) in a given
+                corpus collection in the underlying eXist-DB database.
+              </p>
+            </div>
+            <div xml:id="corpus_num_of_characters">
+              <head>Number of Characters in a Corpus</head>
+              <p>
+                Feature <idno type="feature-no">C10</idno>
+                <idno type="feature-id">corpus_num_of_characters</idno>:
+                Number of characters in a corpus. The value is the number of all
+                <gi>person</gi> and <gi>personGrp</gi> elements in all
+                <gi>listPerson</gi> elements in a given collection representing
+                a corpus in the underlying eXist-DB database.
+              </p>
+            </div>
+            <div xml:id="corpus_num_of_characters_male">
+              <head>Number of Male Characters in a Corpus</head>
+              <p>
+                Feature <idno type="feature-no">C11</idno>
+                <idno type="feature-id">corpus_num_of_characters_male</idno>:
+                Number of male characters in a corpus. The value is the number
+                of all elements <gi>person</gi> and <gi>personGrp</gi> that are
+                classified with the value <val>MALE</val> in the attribute
+                <att>sex</att> in all <gi>listPerson</gi> elements in a given
+                collection representing a corpus in the underlying eXist-DB
+                database.
+              </p>
+            </div>
+            <div xml:id="corpus_num_of_characters_female">
+              <head>Number of Female Characters in a Corpus</head>
+              <p>
+                Feature <idno type="feature-no">C12</idno>
+                <idno type="feature-id">corpus_num_of_characters_female</idno>:
+                Number of female characters in a corpus. The value is the number
+                of all <gi>person</gi> and <gi>personGrp</gi> that are
+                classified with the value <val>FEMALE</val> in the attribute
+                <att>sex</att> in all <gi>listPerson</gi> l elements in a given
+                collection representing a corpus in the underlying eXist
+                database.
+              </p>
+            </div>
+            <div xml:id="corpus_num_of_tei_text_elements">
+              <head>Number of Text Elements in a Corpus</head>
+              <p>
+                Feature <idno type="feature-no">C13</idno>
+                <idno>corpus_num_of_tei_text_elements</idno>:
+                Number of <gi>text</gi> elements in a corpus. The value is the
+                number of <gi>text</gi> elements in all TEI files in a
+                collection representing a corpus in the underlying eXist-DB
+                database.
+              </p>
+              <p>
+                In earlier versions of DraCor files, a TEI file can contain
+                multiple <gi>tei:text</gi> elements, e.g. when there are
+                multiple one-act plays published together.
+              </p>
+              <p>
+                Since this iteration of the schema, the content model of
+                <gi>TEI</gi> is adapted to allow only a single element
+                <gi>text</gi>, therefore the value of this feature should match
+                feature <name>corpus_num_of_plays</name>.
+              </p>
+            </div>
+            <div xml:id="corpus_num_of_sp">
+              <head>Number of Speech Acts in a Corpus</head>
+              <p>
+                Feature <idno type="feature-no">C14</idno>
+                <idno type="feature-id">corpus_num_of_sp</idno>:
+                Number of speech acts in a corpus.
+              </p>
+              <p>
+                The value is the number of <gi>sp</gi> elements in a collection
+                representing a corpus in the underlying eXist-DB database.
+              </p>
+            </div>
+            <div xml:id="corpus_num_of_stage">
+              <head>Number of Stage Directions in a Corpus</head>
+              <p>
+                Feature <idno type="feature-no">C15</idno>
+                <idno type="feature-id">corpus_num_of_stage</idno>:
+                Number of stage directions in a corpus.
+              </p>
+              <p>
+                The value is the number of <gi>stage</gi> elements in a
+                collection representing a corpus in the underlying eXist-DB
+                database.
+              </p>
+            </div>
+            <div xml:id="corpus_num_of_word_tokens_in_text_elements">
+              <head>Number of Word Tokens in Text Elements in a Corpus</head>
+              <p>
+                Feature <idno type="feature-no">C16</idno>
+                <idno type="feature-id">corpus_num_of_word_tokens_in_text_elements</idno>:
+                Number of word tokens in <gi>text</gi> elements in the corpus.
+              </p>
+              <p>
+                The number of tokens for each TEI file is pre-calculated upon
+                ingest into the eXist-DB database by tokenising the contents of
+                the elements <gi>text</gi> with the the built-in xPath function
+                <name>tokenize()</name>. The regular expression “\W+” is used as
+                separator. The values of all documents in a corpus collection
+                are summed up.
+              </p>
+            </div>
+            <div xml:id="corpus_num_of_word_tokens_in_sp">
+              <head>Number of Word Tokens in Speech Acts in a Corpus</head>
+              <p>
+                Feature <idno type="feature-no">C17</idno>
+                <idno type="feature-id">corpus_num_of_word_tokens_in_sp</idno>:
+                Number of word tokens in <gi>sp</gi> elements in the corpus.
+              </p>
+              <p>
+                The number of tokens for each TEI file is pre-calculated upon
+                ingest into the eXist-DB database by tokenising the contents of
+                the elements <gi>sp</gi> with the built-in xPath function
+                <name>tokenize()</name>. The regular expression “\W+” is used as
+                separator. The values of all documents in a corpus collection
+                are summed up.
+              </p>
+            </div>
+            <div xml:id="corpus_num_of_word_tokens_in_stage">
+              <head>Number of Word Tokens in Stage Directions in a Corpus</head>
+              <p>
+                Feature <idno type="feature-no">C18</idno>
+                <idno type="feature-id">corpus_num_of_word_tokens_in_stage</idno>:
+                Number of word tokens in &lt;tei:stage&gt; elements in the
+                corpus. The number of tokens for each TEI file is pre-calculated
+                upon ingestion into the eXist database by tokenising the contents
+                of the elements tei:sp with the built-in xPath function
+                “tokenize()”. The regular expression “\W+” is used as
+                separator. The values of all documents in a corpus collection
+                are summed up.
+              </p>
+            </div>
+            <div xml:id="corpus_metrics_date_updated">
+              <head>Date Updated of Corpus Metrics</head>
+              <p>
+                Feature <idno type="feature-no">C19</idno>
+                <idno type="feature-id">corpus_metrics_date_updated</idno>:
+                The most recent date and time at which the metrics of a document in a
+                collection in the eXist database representing a corpus were
+                updated. The function retrieves the update date/time values
+                (attribute @updated) of all metrics files in a collection and
+                takes the maximum value using the built-in function “max”.
+              </p>
+            </div>
+          </div>
+
+          <div xml:id="section-play-features">
+            <head>Play Features</head>
+            <div xml:id="play_corpus_name">
+              <head>Name of the Corpus a Play Is Part Of</head>
+              <p>
+                Feature <idno type="feature-no">P1</idno>
+                <idno type="feature-id">play_corpus_name</idno>:
+                Name/Identifier “corpusname” (Feature C1) of the corpus the play
+                is contained in.
+              </p>
+            </div>
+            <!-- see https://github.com/dracor-org/dracor-schema/issues/98 -->
+            <div xml:id="play_id">
+              <head>Play ID</head>
+              <p rend="feature_name">
+                Feature <idno type="feature-no">P2</idno>
+                <idno type="feature-id">play_id</idno>:
+              </p>
+              <p rend="description">
+                <soCalled>DraCor ID</soCalled> of the play, e.g.
+                <val>ger000171</val>.
+              </p>
+              <p rend="description">
+                In the TEI source file, the <name>DraCor ID</name> is contained
+                in the attribute <att>xml:id</att> on the root element
+                <gi>TEI</gi>.
+              </p>
+              <p rend="description">
+                The identifier should match the Regular Expression
+                <val>^[a-z]+[0-9]{6}$</val>.
+              </p>
+              <p rend="implementation">
+                The value is retrieved by the XQuery function
+                <name type="api_function">dutil:get-dracor-id</name> in the
+                module <name type="api_module">util.xqm</name>
+                [<ref type="code" target="https://github.com/dracor-org/dracor-api/blob/665ea3f07c3f0ab83566440436691ed73957b263/modules/util.xqm#L93-L100">Code</ref>].
+              </p>
+            </div>
+            <!-- https://github.com/dracor-org/dracor-schema/issues/101 -->
+            <div xml:id="play_uri">
+              <head>Play URI</head>
+              <p>
+                Feature <idno type="feature-no">P65</idno>
+                <idno type="feature-id">play_uri</idno>:
+                URI of the play. It is equal to the full URL of the
+                /corpora/{corpusname}/plays/{playname} endpoint.
+              </p>
+            </div>
+            <div xml:id="play_name">
+              <head>Play Name</head>
+              <p>
+                Feature <idno type="feature-no">P3</idno>
+                <idno type="feature-id">play_name</idno>: Identifier "playname".
+                Normally, a combination of the name of the author and the title
+                of the play, e.g. <val>lessing-emilia-galotti</val>.
+              </p>
+              <p>
+                It must be unique across a single corpus. This identifier is
+                normally used as path parameters in requests to the DraCor API.
+              </p>
+              <p>
+                It is recommended that the file name of a document should be
+                equal to the play name identifier.
+              </p>
+            </div>
+            <div xml:id="play_wikidata_id">
+              <head>Play Wikidata Identifier</head>
+              <p>
+                Feature <idno type="feature-no">P4</idno>
+                <idno type="feature-id">play_wikidata_id</idno>:
+                Wikidata ID of the play. The value is the "Q-Number" of the item
+                on Wikidata, e.g. <val>Q466333</val>.
+              </p>
+              <p>
+                In the TEI source document, the information is encoded in the
+                <gi>sourceDesc</gi> as a <gi>bibl</gi> element of
+                <att>type</att> <val>wikidata</val> containing the ID in an
+                <gi>idno</gi> element. See section
+                <ref target="#section-play-wikidata">Wikidata QID of a Play</ref>.
+              </p>
+            </div>
+            <div xml:id="play_title">
+              <head>Play Title</head>
+              <p>
+                Feature <idno type="feature-no">P5</idno>
+                <idno type="feature-id">play_title</idno>:
+                (Main) title of the play. Normally, the title is in the language
+                of the corpus. The respective function extracts the text of the
+                first element <gi>title</gi> in the <gi>titleStmt</gi> in the
+                <gi>teiHeader</gi>.
+              </p>
+            </div>
+            <div xml:id="play_subtitle">
+              <head>Play Subtitle</head>
+              <p>
+                Feature <idno type="feature-no">P6</idno>
+                <idno type="feature-id">play_subtitle</idno>:
+                Subtitle of the play.
+              </p>
+              <p>
+                Normally, the subtitle is in the language of the corpus. The
+                respective function extracts the text of the first element
+                <gi>title</gi> in <gi>titleStmt</gi> in the <gi>teiHeader</gi>
+                that carries an attribute <att>type</att> with the value
+                <val>sub</val>.
+              </p>
+            </div>
+            <div xml:id="play_title_en">
+              <head>Play English Title</head>
+              <p>
+                Feature <idno type="feature-no">P7</idno>
+                <idno type="feature-id">play_title_en</idno>:
+                English translation of the original main title of the play.
+              </p>
+              <p>
+                The respective function extracts the text of the element
+                <gi>title</gi> with <val>eng</val> as the attribute’s
+                <att>xml:lang</att> value.
+              </p>
+            </div>
+            <div xml:id="play_subtitle_en">
+              <head>Play English Subtitle</head>
+              <p>
+                Feature <idno type="feature-no">P8</idno>
+                <idno type="feature-id">play_subtitle_en</idno>:
+                English translation of the original subtitle of the play.
+              </p>
+              <p>
+                The respective function extracts the text of the element
+                <gi>title</gi> with the value of the attribute <att>type</att>
+                being <val>sub</val> and <val>eng</val> as the attribute’s
+                <att>xml:lang</att> value.
+              </p>
+            </div>
+            <div xml:id="play_author_name">
+              <head>Play Author Name</head>
+              <p>
+                Feature <idno type="feature-no">P9</idno>
+                <idno type="feature-id">play_author_name</idno>:
+                Name of the author of the play in the format “{surname},
+                {forename}”, e.g. “Shakespeare, William”, “Гоголь, Николай
+                Васильевич”.
+              </p>
+              <p>
+                The value can be used for sorting. The respective function takes
+                the contents of the elements <gi>persName</gi> or <gi>name</gi>
+                from the element <gi>author</gi> in the <gi>titleStmt</gi> and
+                applies some processing logic: If the constituents are marked up
+                with the special elements <gi>surname</gi> and <gi>forename</gi>,
+                they are arranged in the order “surname, forename”. The optional
+                attribute <att>sort</att> on the element <gi>surname</gi> is
+                evaluated as well to distinguish the order of <gi>surname</gi>
+                elements. If no additional markup is present, the contents of
+                the <gi>name</gi> or <gi>persName</gi> element is used.
+              </p>
+            </div>
+            <div xml:id="play_author_name_en">
+              <head>Play English Transliteration/Translation of Author Name</head>
+              <p>
+                Feature <idno type="feature-no">P10</idno>
+                <idno type="feature-id">play_author_name_en</idno>: English name
+                of the author of a play in the format “{surname}, {forename}”,
+                e.g. “Gogol, Nikolai” (in this case, the value of “author_name”
+                is “Гоголь, Николай Васильевич” including the patronym).
+              </p>
+            </div>
+            <div xml:id="play_author_fullname">
+              <head>Play Author Full Name</head>
+              <p>
+                Feature <idno type="feature-no">P11</idno>
+                <idno type="feature-id">play_author_fullname</idno>: Full name
+                of the author of the play, including patronyms and other name
+                constituents, as encoded in the TEI source file in the element
+                <gi>persName</gi> or <gi>name</gi> in <gi>author</gi> author.
+                E.g. “Николай Васильевич Гоголь”, “William Shakespeare”.
+              </p>
+            </div>
+            <div xml:id="play_author_fullname_en">
+              <head>
+                Play English Transliteration/Translation of the Author’s Full Name
+              </head>
+              <p>
+                Feature <idno type="feature-no">P12</idno>
+                <idno type="feature-id">play_author_fullname_en</idno>:
+                Full English name of the author of the play, e.g. “Nikolai
+                Gogol”.
+              </p>
+            </div>
+            <div xml:id="play_author_shortname">
+              <head>Play Author Shortname</head>
+              <p>
+                Feature <idno type="feature-no">P13</idno>
+                <idno type="feature-id">play_author_shortname</idno>:
+                Short name of the author of a play.
+              </p>
+              <p>
+                Normally, the value is the author’s surname only, e.g.
+                “Shakespeare”, “Гоголь”.
+              </p>
+            </div>
+            <div xml:id="play_author_shortname_en">
+              <head>
+                Play English Transliteration/Translation of the Author Shortname
+              </head>
+              <p>
+                Feature <idno type="feature-no">P14</idno>
+                <idno type="feature-id">play_author_shortname_en</idno>:
+                English short name of the author of a play.
+              </p>
+              <p>
+                Normally, it is the value of the author’s surname only, e.g.
+                “Gogol”.
+              </p>
+            </div>
+            <div xml:id="play_first_author_shortname">
+              <head>Play Shortname of First Author</head>
+              <p>
+                Feature <idno type="feature-no">P16</idno>
+                <idno type="feature-id">play_first_author_shortname</idno>:
+                Short name of the first author of a play.
+              </p>
+            </div>
+            <div xml:id="play_author_also_known_as">
+              <head>Play Author Also Known As</head>
+              <p>
+                Feature <idno type="feature-no">P18</idno>
+                <idno type="feature-id">play_author_also_known_as</idno>:
+                Alternative name of the author of a play, e.g. “Titus Maccius
+                Plautus” in case of the author “Plautus”.
+              </p>
+              <p>
+                In the source TEI file, alternative names are encoded as
+                additional elements <gi>persName</gi>.
+              </p>
+            </div>
+            <div xml:id="play_author_ref_external_id">
+              <head>Play Author ID in External Reference Resource</head>
+              <p>
+                Feature <idno type="feature-no">P19</idno>
+                <idno type="feature-id">play_author_ref_external_id</idno>:
+                ID of the author in an external reference resource.
+              </p>
+              <p>
+                For example, this can be the “Q-Number” of Wikidata.
+              </p>
+            </div>
+            <div xml:id="play_author_ref_type">
+              <head>Play Author Type of ID in External Reference Resource</head>
+              <p>
+                Feature <idno type="feature-no">P20</idno>
+                <idno type="feature-id">play_author_ref_type</idno>: Type of
+                the ID of the author in an external reference resource, e.g.
+                <val>wikidata</val>.
+              </p>
+            </div>
+            <div xml:id="play_num_of_co_authors">
+              <head>Play Number of Co-Authors</head>
+              <p>
+                Feature <idno type="feature-no">P21</idno>
+                <idno type="feature-id">play_num_of_co_authors</idno>:
+                Number of co-authors of a play. The value is the number of all
+                authors of a play minus one.
+              </p>
+            </div>
+            <div xml:id="play_genre_normalized">
+              <head>Play Genre Normalised</head>
+              <p>
+                Feature <idno type="feature-no">P22</idno>
+                <idno type="feature-id">play_genre_normalized</idno>:
+                Normalised genre of a play.
+              </p>
+              <p>
+                The function performs a lookup using a Wikidata identifier
+                provided in the element <gi>classCode</gi> in
+                <gi>textClass</gi>. The normalised values can be <val>Comedy</val>,
+                <val>Tragedy</val>,<val>Tragicomedy</val>,<val>Satyr play</val>.
+              </p>
+            </div>
+            <div xml:id="play_is_libretto">
+              <head>Play is Libretto</head>
+              <p>
+                Feature <idno type="feature-no">P23</idno>
+                <idno type="feature-id">play_is_libretto</idno>:
+                Indicates if a play is a libretto.
+              </p>
+              <p>
+                The function performs a lookup using a Wikidata identifier
+                provided in the element <gi>classCode</gi> in
+                <gi>textClass</gi>. If the returned value is <val>Libretto</val>
+                the value of this property is <val>true</val>, otherwise
+                <val>false</val>.
+              </p>
+            </div>
+            <div xml:id="play_year_written">
+              <head>Play Year Written</head>
+              <p>
+                Feature <idno type="feature-no">P24</idno>
+                <idno type="feature-id">play_year_written</idno>:
+                Year of the creation of the play/year when the play was
+                written.
+              </p>
+            </div>
+            <div xml:id="play_year_printed">
+              <head>Play Year Printed</head>
+              <p>
+                Feature <idno type="feature-no">P25</idno>
+                <idno type="feature-id">play_year_printed</idno>:
+                Year the play was published / year of first printing.
+              </p>
+            </div>
+            <div xml:id="play_year_premiered">
+              <head>Play Year Premiered</head>
+              <p>
+                Feature <idno type="feature-no">P26</idno>
+                <idno type="feature-id">play_year_premiered</idno>:
+                Year the Play was premiered
+              </p>
+            </div>
+            <div xml:id="play_date_premiered">
+              <head>Play Date Premiered</head>
+              <p>
+                Feature <idno type="feature-no">P66</idno>
+                <idno type="feature-id">play_date_premiered</idno>:
+                Date the play was premiered. This is only available when the
+                exact date of the premiere in ISO format (YYYY-MM-DD) is
+                specified in the <gi>sourceDesc</gi> element.
+              </p>
+              <p>
+                This feature was added later and is not included in the
+                “Report on Programmable Corpora”.
+              </p>
+            </div>
+            <div xml:id="play_year_normalized">
+              <head>Play Year Normalised</head>
+              <p>
+                Feature <idno type="feature-no">P27</idno>
+                <idno type="feature-id">play_year_normalized</idno>:
+                We collect three temporal statements for each play, if
+                available: the year(s) of creation (when a play was written),
+                the year of first printing, and the year of first performance.
+                To easily sort plays chronologically, e.g. for a corpus
+                overview or diagrams, we also calculate a “Normalised Year”.
+                This year is usually the earlier year of the year of first
+                printing and the year of first performance. However, if a work
+                was published or performed much later (more than 10 years)
+                after its creation, the year of its creation is taken as
+                “Normalised Year” (if it is a range of years, the last of them
+                is taken). The reasoning behind this is that in a simple
+                chronological classification, the context of origin is
+                important, for example, when trying to describe literary
+                evolution.
+                An example: Goethe’s [“Urfaust”](https://dracor.org/id/ger000539)
+                was written between 1772 and 1775, but not printed until 1887
+                and first performed only in 1918. The “Normalised Year” for this
+                play would thus be 1775.
+              </p>
+            </div>
+            <div xml:id="play_digital_source_name">
+              <head>Play Digital Source Name</head>
+              <p>
+                Feature <idno type="feature-no">P28</idno>
+                <idno type="feature-id">play_digital_source_name</idno>:
+                Name of the digital source of a play. Normally, it is the name
+                of the repository or project that provides a digital version of
+                the play, e.g. <val>Google Books</val>, <val>Wikisource</val>,
+                <val>TextGrid Repository</val>.
+              </p>
+            </div>
+            <div xml:id="play_digital_source_url">
+              <head>Play Digital Source URL</head>
+              <p>
+                Feature <idno type="feature-no">P29</idno>
+                <idno type="feature-id">play_digital_source_url</idno>:
+                URL of the digital source of a play.
+              </p>
+            </div>
+            <div xml:id="play_original_source_full_citation">
+              <head>Play Original Source Full Citation</head>
+              <p>
+                Feature <idno type="feature-no">P30</idno>
+                <idno type="feature-id">play_original_source_full_citation</idno>:
+                Full citation of the play’s original (print publication) source.
+              </p>
+              <p>
+                In the TEI file, the citation is contained in the element
+                <gi>bibl</gi> with the value <val>originalSource</val> of the
+                attribute <att>type</att> inside the <gi>sourceDesc</gi>.
+              </p>
+            </div>
+            <div xml:id="play_original_source_publisher">
+              <head>Play Original Source Publisher</head>
+              <p>
+                Feature <idno type="feature-no">P31</idno>
+                <idno type="feature-id">play_original_source_publisher</idno>:
+                Publisher of the print publication that was used as the original
+                source.
+              </p>
+              <p>
+                From the TEI data, the content of the element <gi>publisher</gi>
+                in the <gi>bibl</gi> representing the original source is
+                extracted.
+              </p>
+            </div>
+            <div xml:id="play_original_source_publication_place">
+              <head>Play Original Source Publication Place</head>
+              <p>
+                Feature <idno type="feature-no">P32</idno>
+                <idno type="feature-id">play_original_source_publication_place</idno>:
+                Place of publication of the print publication that was used as
+                the original source.
+              </p>
+              <p>
+                In the TEI data, the content of the element <gi>pubPlace</gi> in
+                the <gi>bibl</gi> representing the original source is extracted.
+                If there are multiple places annotated, they are joined to a
+                single string separated by “,”.
+              </p>
+            </div>
+            <div xml:id="play_original_source_publication_year">
+              <head>Play Original Source Publication Year</head>
+              <p>
+                Feature <idno type="feature-no">P33</idno>
+                <idno type="feature-id">play_original_source_publication_year</idno>:
+                Year of publication of the print publication that was used as
+                the original source.
+              </p>
+            </div>
+            <div xml:id="play_original_source_num_of_pages">
+              <head>Play Original Source Number of Pages</head>
+              <p>
+                Feature <idno type="feature-no">P34</idno>
+                <idno type="feature-id">play_original_source_num_of_pages</idno>:
+                Extent of the original source in the number of pages derived from
+                the bibliographic reference.
+              </p>
+              <p>
+                In the TEI file, the element <gi>biblScope</gi> holds a page
+                range encoded in the attribute <att>from</att> and
+                <att>to</att>. The value is calculated by taking the value of
+                <att>to</att> and subtracting the value of <att>from</att> and
+                adding 1.
+              </p>
+            </div>
+            <div xml:id="play_num_of_wikipedia_links">
+              <head>Play Number of Wikipedia Links</head>
+              <p>
+                Feature <idno type="feature-no">P35</idno>
+                <idno type="feature-id">play_num_of_wikipedia_links</idno>:
+                Number of Wikipedia links of a play.
+              </p>
+              <p>
+                The links are counted in regular intervals
+                <!-- Clarify: CRON Job runs daily? -->
+                using the Wikidata Query Service. The query looks for
+                connections based on the property 'schema:about' (?sitelink
+                schema:about wd:' || $id || ' .) and filters the results with
+                the regular expression '[.]wikipedia[.]org'.
+              </p>
+            </div>
+            <div xml:id="play_num_of_segments">
+              <head>Play Number of Segments</head>
+              <p>
+                Feature <idno type="feature-no">P37</idno>
+                <idno type="feature-id">play_num_of_segments</idno>:
+                Number of segments (e.g. scenes) of a play.
+              </p>
+              <p>
+                Usually <gi>div</gi> elements inside <gi>body</gi> are
+                considered a segment if they contain a speech marked up by an
+                element <gi>sp</gi>.
+              </p>
+              <p>
+                However, also "empty scenes" with no speaking characters are
+                considered a segment, e.g. elements <gi>div</gi> that consist
+                of stage directions (<gi>stage</gi>) only.
+              </p>
+            </div>
+            <div xml:id="play_num_of_acts">
+              <head>Play Number of Acts</head>
+              <p>
+                Feature <idno type="feature-no">P38</idno>
+                <idno type="feature-id">play_num_of_acts</idno>:
+                Number of acts of a play.
+              </p>
+              <p>
+                In the TEI file, acts are elements <gi>div</gi> with an attribute
+                <att>type</att> value of <val>act</val>. The function extracting
+                the information returns the number of such <gi>div</gi>
+                elements.
+              </p>
+            </div>
+            <div xml:id="play_num_of_paragraphs">
+              <head>Play Number of Paragraphs</head>
+              <p>
+                Feature <idno type="feature-no">P39</idno>
+                <idno type="feature-id">play_num_of_paragraphs</idno>:
+              </p>
+            </div>
+            <div xml:id="play_num_of_verse_lines">
+              <head>Play Number of Verse Lines</head>
+              <p>
+                Feature <idno type="feature-no">P40</idno>
+                <idno type="feature-id">play_num_of_verse_lines</idno>:
+              </p>
+            </div>
+            <div xml:id="play_num_of_word_tokens_in_text_elements">
+              <head>Play Number of Word Tokens in Text Elements</head>
+              <p>
+                Feature <idno type="feature-no">P41</idno>
+                <idno type="feature-id">play_num_of_word_tokens_in_text_elements</idno>:
+              </p>
+            </div>
+            <div xml:id="play_num_of_word_tokens_in_sp">
+              <head>Play Number of Word Tokens in Speech Acts</head>
+              <p>
+                Feature <idno type="feature-no">P42</idno>
+                <idno type="feature-id">play_num_of_word_tokens_in_sp</idno>:
+              </p>
+            </div>
+            <div xml:id="play_num_of_word_tokens_in_stage">
+              <head>Play Number of Word Tokens in Stage Directions</head>
+              <p>
+                Feature <idno type="feature-no">P43</idno>
+                <idno type="feature-id">play_num_of_word_tokens_in_stage</idno>:
+              </p>
+            </div>
+            <div xml:id="play_num_of_speakers">
+              <head>Play Number of Speaking Characters</head>
+              <p>
+                Feature <idno type="feature-no">P45</idno>
+                <idno type="feature-id">play_num_of_speakers</idno>:
+                Number of Speakers of a Play
+              </p>
+            </div>
+            <div xml:id="play_num_of_speakers_sex_female">
+              <head>Play Number of Speaking Female Characters</head>
+              <p>
+                Feature <idno type="feature-no">P46</idno>
+                <idno type="feature-id">play_num_of_speakers_sex_female</idno>:
+              </p>
+            </div>
+            <div xml:id="play_num_of_speakers_sex_male">
+              <head>Play Number of Speaking Male Characters</head>
+              <p>
+                Feature <idno type="feature-no">P47</idno>
+                <idno type="feature-id">play_num_of_speakers_sex_male</idno>:
+              </p>
+            </div>
+            <div xml:id="play_num_of_speakers_sex_unknown">
+              <head>Play Number of Speaking Characters with Unknown Gender</head>
+              <p>
+                Feature <idno type="feature-no">P48</idno>
+                <idno type="feature-id">play_num_of_speakers_sex_unknown</idno>:
+              </p>
+            </div>
+            <div xml:id="play_num_of_person_groups">
+              <head>Play Number of Person Groups</head>
+              <p>
+                Feature <idno type="feature-no">P49</idno>
+                <idno type="feature-id">play_num_of_person_groups</idno>:
+              </p>
+            </div>
+            <div xml:id="play_all_in_segment">
+              <head>Play All In Segment</head>
+              <p>
+                Feature <idno type="feature-no">P50</idno>
+                <idno type="feature-id">play_all_in_segment</idno>:
+              </p>
+            </div>
+            <div xml:id="play_all_in_index">
+              <head>Play All In Index</head>
+              <p>
+                Feature <idno type="feature-no">P51</idno>
+                <idno type="feature-id">play_all_in_index</idno>:
+              </p>
+            </div>
+            <div xml:id="play_character_relations">
+              <head>Play Character Relations</head>
+              <p>
+                Feature <idno type="feature-no">P52</idno>
+                <idno type="feature-id">play_character_relations</idno>:
+              </p>
+            </div>
+            <div xml:id="play_network_data_csv_url">
+              <head>Play Network Data CSV URL</head>
+              <p>
+                Feature <idno type="feature-no">P53</idno>
+                <idno type="feature-id">play_network_data_csv_url</idno>:
+              </p>
+            </div>
+            <div xml:id="play_network_size">
+              <head>Play Network Size</head>
+              <p>
+                Feature <idno type="feature-no">P55</idno>
+                <idno type="feature-id">play_network_size</idno>:
+              </p>
+            </div>
+            <div xml:id="play_network_num_edges">
+              <head>Play Number of Edges in the Network</head>
+              <p>
+                Feature <idno type="feature-no">P56</idno>
+                <idno type="feature-id">play_network_num_edges</idno>:
+              </p>
+            </div>
+            <div xml:id="play_network_average_degree">
+              <head>Play Average Degree of the Network</head>
+              <p>
+                Feature <idno type="feature-no">P57</idno>
+                <idno type="feature-id">play_network_average_degree</idno>:
+                Average Degree of the Network representing a Play
+              </p>
+            </div>
+            <div xml:id="play_network_density">
+              <head>Play Density of the Network</head>
+              <p>
+                Feature <idno type="feature-no">P58</idno>
+                <idno type="feature-id">play_network_density</idno>:
+                Density of a Network representing a Play
+              </p>
+            </div>
+            <div xml:id="play_network_diameter">
+              <head>Play Diameter of the Network</head>
+              <p>
+                Feature <idno type="feature-no">P59</idno>
+                <idno type="feature-id">play_network_diameter</idno>:
+              </p>
+            </div>
+            <div xml:id="play_network_average_path_length">
+              <head>Play Average Path Length of the Network</head>
+              <p>
+                Feature <idno type="feature-no">P60</idno>
+                <idno type="feature-id">play_network_average_path_length</idno>:
+                Average Path Length of a Network representing a Play
+              </p>
+            </div>
+            <div xml:id="play_network_average_clustering">
+              <head>Play Average Clustering Coefficient of the Network</head>
+              <p>
+                Feature <idno type="feature-no">P61</idno>
+                <idno type="feature-id">play_network_average_clustering</idno>:
+              </p>
+            </div>
+            <div xml:id="play_network_num_connected_components">
+              <head>Play Number of Connected Components of the Network</head>
+              <p>
+                Feature <idno type="feature-no">P62</idno>
+                <idno type="feature-id">play_network_num_connected_components</idno>:
+              </p>
+            </div>
+            <div xml:id="play_network_max_degree">
+              <head>Play Maximum Degree of the Network</head>
+              <p>
+                Feature <idno type="feature-no">P63</idno>
+                <idno type="feature-id">play_network_max_degree</idno>:
+              </p>
+            </div>
+            <div xml:id="play_network_max_degree_character_id">
+              <head>
+                Play IDs of the Character with the Maximum Degree in the Network
+              </head>
+              <p>
+                Feature <idno type="feature-no"/><idno type="feature-id"/>:
+                ID of the character with the highest degree value in a network
+                representing a play. In the report “On programmable corpora”, the
+                corresponding feature is “P64”.
+              </p>
+            </div>
+          </div>
+
+          <div xml:id="section-segment-features">
+            <head>Segment Features</head>
+            <div xml:id="segment_type">
+              <head>Segment Type</head>
+              <p>
+                Feature <idno type="feature-no">S1</idno>
+                <idno type="feature-id">segment_type</idno>:
+              </p>
+            </div>
+            <div xml:id="segment_number">
+              <head>Segment Number</head>
+              <p>
+                Feature <idno type="feature-no">S2</idno>
+                <idno type="feature-id">segment_number</idno>:
+              </p>
+            </div>
+            <div xml:id="segment_title">
+              <head>Segment Title</head>
+              <p>
+                Feature <idno type="feature-no">S3</idno>
+                <idno type="feature-id">segment_title</idno>:
+              </p>
+            </div>
+            <div xml:id="segment_speaking_characters">
+              <head>Segment Speaking Characters</head>
+              <p>
+                Feature <idno type="feature-no">S4</idno>
+                <idno type="feature-id">segment_speaking_characters</idno>:
+              </p>
+            </div>
+          </div>
+
+          <div xml:id="section-character-features">
+            <head>Character Features</head>
+            <div xml:id="character_id">
+              <head>Character ID</head>
+              <p>
+                Feature <idno type="feature-no">Ch1</idno>
+                <idno type="feature-id">character_id</idno>:
+              </p>
+            </div>
+            <div xml:id="character_name">
+              <head>Character Name</head>
+              <p>
+                Feature <idno type="feature-no">Ch2</idno>
+                <idno type="feature-id">character_name</idno>:
+              </p>
+            </div>
+            <div xml:id="character_is_group">
+              <head>Character Is Group</head>
+              <p>
+                Feature <idno type="feature-no">Ch3</idno>
+                <idno type="feature-id">character_is_group</idno>:
+              </p>
+            </div>
+            <div xml:id="character_sex">
+              <head>Character Sex</head>
+              <p>
+                Feature <idno type="feature-no">Ch4</idno>
+                <idno type="feature-id">character_sex</idno>:
+              </p>
+            </div>
+            <div xml:id="character_wikidata_id">
+              <head>Character Wikidata ID</head>
+              <p>
+                Feature <idno type="feature-no">Ch5</idno>
+                <idno type="feature-id">character_wikidata_id</idno>:
+                Wikidata QID of the real-world entity (e.g. a mythological
+                figure or historical person) that a character represents.
+                Encoded as <gi>idno</gi> with <att>type</att>
+                <val>wikidata</val> inside the <gi>person</gi> or
+                <gi>personGrp</gi> element (see
+                <ref target="#section-character-concept-realizations">Characters
+                as Realisations of Concepts</ref>).
+              </p>
+            </div>
+            <div xml:id="character_node_betweenness">
+              <head>Character Node Betweenness</head>
+              <p>
+                Feature <idno type="feature-no">Ch6</idno>
+                <idno type="feature-id">character_node_betweenness</idno>:
+              </p>
+            </div>
+            <div xml:id="character_node_degree">
+              <head>Character Node Degree</head>
+              <p>
+                Feature <idno type="feature-no">Ch7</idno>
+                <idno type="feature-id">character_node_degree</idno>:
+              </p>
+            </div>
+            <div xml:id="character_node_closeness">
+              <head>Character Node Closeness</head>
+              <p>
+                Feature <idno type="feature-no">Ch8</idno>
+                <idno type="feature-id">character_node_closeness</idno>:
+              </p>
+            </div>
+            <div xml:id="character_node_eigenvector">
+              <head>Character Node Eigenvector</head>
+              <p>
+                Feature <idno type="feature-no">Ch9</idno>
+                <idno type="feature-id">character_node_eigenvector</idno>:
+              </p>
+            </div>
+            <div xml:id="character_node_weighted_degree">
+              <head>Character Node Weighted Degree</head>
+              <p>
+                Feature <idno type="feature-no">Ch10</idno>
+                <idno type="feature-id">character_node_weighted_degree</idno>:
+              </p>
+            </div>
+            <div xml:id="character_num_of_segments">
+              <head>Character Number of Segments</head>
+              <p>
+                Feature <idno type="feature-no">Ch11</idno>
+                <idno type="feature-id">character_num_of_segments</idno>:
+                Number of Segments a Character appears in
+              </p>
+            </div>
+            <div xml:id="character_num_of_sp">
+              <head>Character Number of Speech Acts</head>
+              <p>
+                Feature <idno type="feature-no">Ch12</idno>
+                <idno type="feature-id">character_num_of_sp</idno>:
+              </p>
+            </div>
+            <div xml:id="character_num_of_word_tokens">
+              <head>Character Number of Word Tokens</head>
+              <p>
+                Feature <idno type="feature-no">Ch13</idno>
+                <idno type="feature-id">character_num_of_word_tokens</idno>:
+              </p>
+            </div>
+            <div xml:id="character_role">
+              <head>Character Role</head>
+              <p>
+                Feature <idno type="feature-no"/><idno type="feature-id"/>:
+                Character Roles. Feature “Ch14” in the report “On Programmable
+                Corpora”.
+              </p>
+            </div>
+            <div xml:id="character_spoken_text">
+              <head>Character Spoken Text</head>
+              <p>
+                Feature <idno type="feature-no">Ch15</idno>
+                <idno type="feature-id">character_spoken_text</idno>:
+              </p>
+            </div>
+          </div>
+          <div xml:id="section-character-relation-features">
+            <head>Character Relation Features</head>
+            <div xml:id="character_relation_is_directed">
+              <head>Character Relation Is Directed</head>
+              <p>
+                Feature <idno type="feature-no"/>
+                <idno type="feature-id">character_relation_is_directed</idno>:
+                Indicates if a relation is directed (true).
+              </p>
+            </div>
+            <div xml:id="character_relation_type">
+              <head>Character Relation Type</head>
+              <p>
+                Feature <idno type="feature-no"/>
+                <idno type="feature-id">character_relation_type</idno>:
+                Type of relation between characters, e.g. “parent_of”,
+                “lover_of”, “related_with”, “associated_with”, “siblings”,
+                “spouses”, “friends”.
+              </p>
+            </div>
+            <div xml:id="character_relation_from">
+              <head>Character Relation From</head>
+              <p>
+                Feature <idno type="feature-no"/>
+                <idno type="feature-id">character_relation_from</idno>:
+                Contains the ID/name of a character that is the ‘source’ of the
+                relation.
+              </p>
+            </div>
+            <div xml:id="character_relation_to">
+              <head>Character Relation To</head>
+              <p>
+                Feature <idno type="feature-no"/>
+                <idno type="feature-id">character_relation_to</idno>:
+                Contains the ID/name of a character that is the ‘target’ of the
+                relation.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div xml:id="schema">
+        <head>Schema</head>
+        <schemaSpec ident="dracor"
+          docLang="en"
+          prefix="tei_"
+          xml:lang="en"
+          start="TEI teiCorpus dracorCorpus"
+          source="tei:4.12.0"
+        >
+          <desc>DraCor Schema</desc>
+          <moduleRef key="header"/>
+          <moduleRef key="core"/>
+          <moduleRef key="tei"/>
+          <moduleRef key="textstructure" except="div1 div2 div3 div4 div5 div6 div7"/>
+          <moduleRef key="linking"/>
+          <moduleRef key="drama"/>
+          <moduleRef key="verse"/>
+          <moduleRef key="namesdates"/>
+          <moduleRef key="corpus" include="particDesc"/>
+          <moduleRef key="figures" include="figure figDesc table row cell"/>
+          <moduleRef key="analysis"/>
+          <!-- members of model.global.edit; <gap> is already available via
+               the core module.  <app> and <witDetail> are intentionally
+               excluded as critical apparatus features not needed by DraCor. -->
+          <moduleRef key="transcr" include="addSpan damageSpan delSpan ellipsis space"/>
+          <classSpec module="tei" xml:id="GLOBAL" type="atts" ident="att.global" mode="change">
+            <desc xml:lang="en">
+              provides a set of attributes common to all elements in the
+              <name>DraCor</name> customisation of the TEI encoding scheme.
+            </desc>
+            <classes>
+              <memberOf key="att.global.linking"/>
+              <memberOf key="att.global.analytic"/>
+              <memberOf key="att.global.rendition"/>
+              <memberOf key="att.global.responsibility"/>
+              <memberOf key="att.global.source"/>
+            </classes>
+          </classSpec>
+          <!-- delete "att.datable.custom" and "att.datable.iso" attributes (on
+               module core) -->
+          <!-- this will only leave (att.datable.w3c (@when, @notBefore,
+               @notAfter, @from, @to) to record dates -->
+          <classSpec module="core" type="atts" ident="att.datable.custom" mode="delete"/>
+          <classSpec module="core" type="atts" ident="att.datable.iso" mode="delete"/>
+          <!-- Elements like add, del, ... and the like are very unlikely to be
+               used, I leave the elements in but kick the attribute classes out
+               to have less attributes to worry about-->
+          <!-- delete the attributes used in manuscript, e.g. @hand -->
+          <classSpec type="atts" ident="att.written" mode="delete"/>
+          <classSpec type="atts" ident="att.transcriptional" mode="delete"/>
+          <classSpec type="atts" ident="att.editLike" mode="delete"/>
+          <!-- other attribute classes removed -->
+          <classSpec type="atts" ident="att.declaring" mode="delete"/>
+          <classSpec type="atts" ident="att.declarable" mode="delete"/>
+          <!-- remove @rendition and @style from att.global.rendition to leave
+               only @rend -->
+          <classSpec type="atts" ident="att.global.rendition" mode="change">
+            <attList>
+              <attDef ident="rendition" mode="delete"/>
+              <attDef ident="style" mode="delete"/>
+            </attList>
+          </classSpec>
+
+          <!-- The following list should include all elements that are added
+               because the customisation is based on TEI drama. Normally, we
+               leave elements as they are, but do not display them on the frontend
+               if they are not used in DraCor files. We link to the TEI-all
+               documentation instead. If an element is used in a more
+               restricted way than the TEI Drama Customisation allows, we
+               add a constraint with a schematron rule that displays warnings to
+               alert encoders that they are using an element in a way that
+               it might not be processed by the API in the expected way. An
+               encoder may still ignore the warning.-->
+
+          <!-- ##### -->
+          <!--   A   -->
+          <!-- ##### -->
+
+          <!-- ab  -->
+          <!-- abbr -->
+          <!-- abstract -->
+          <!-- actor -->
+          <!-- add -->
+          <!-- addrLine -->
+          <!-- address -->
+          <!-- alt -->
+          <!-- altGrp -->
+          <!-- analytic -->
+          <!-- anchor -->
+          <!-- annotation -->
+          <!-- appInfo -->
+          <!-- application -->
+
+          <!-- argument -->
+          <elementSpec ident="argument" module="textstructure" mode="change">
+            <exemplum source="https://dracor.org/id/ger000546">
+              <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                <argument>
+                  <head>Inhalt des trauer-spiels.</head>
+                  <p>
+                    Michael Balbus, käyser Leonis Armenii oberster
+                    feldhauptmann, nach dem er zu unterschiedenen mahlen wegen
+                    seiner untreu und verleumbdungen angeklaget, verschweret
+                    sich wider den käyser, welcher ihn durch Exabolium, seinen
+                    geheimesten rath, offt von seiner leichtfertigkeit
+                    abzustehen ermahnet. Weil aber Michael auf seinem vorsatz
+                    verharret, wird er unversehens gefangen und von dem rath, in
+                    welchem der käyser selbst kläger und richter, zu dem feuer
+                    verdammet.
+                    <!-- ... -->
+                  </p>
+                  <p>
+                    Dieses trauerspiel beginnet den mittag vor dem heiligen
+                    christtage, wehret durch die nacht und endet sich vor
+                    auffgang der sonnen.
+                  </p>
+                  <p>
+                    Der schauplatz ist Constantinopel und vornehmlich die
+                    käyserliche burg.
+                  </p>
+                </argument>
+              </egXML>
+              <ab>
+                <ref target="https://dracor.org/id/ger000546">Andreas Gryphius:
+                Leo Armenius oder Fürsten-Mord</ref>
+              </ab>
+            </exemplum>
+          </elementSpec>
+
+          <!-- author -->
+          <elementSpec ident="author" module="core" mode="change">
+            <exemplum source="https://dracor.org/id/ger000546">
+              <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                <author>
+                  <persName>
+                    <forename>Andreas</forename>
+                    <surname>Gryphius</surname>
+                  </persName>
+                  <idno type="wikidata">Q77214</idno>
+                  <idno type="pnd">118543032</idno>
+                </author>
+              </egXML>
+              <ab>
+                Encoding of the author "Andreas Gryphius" of the play
+                <ref target="https://dracor.org/id/ger000546">Leo Armenius oder
+                Fürsten-Mord</ref>.
+              </ab>
+            </exemplum>
+            <exemplum source="https://dracor.org/id/rus000205">
+              <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                <author>
+                  <persName>
+                    <forename>Владимир</forename>
+                    <forename type="patronym">Иванович</forename>
+                    <surname>Бельский</surname>
+                  </persName>
+                  <persName xml:lang="en">
+                    <forename>Vladimir</forename>
+                    <surname>Belsky</surname>
+                  </persName>
+                  <idno type="wikidata">Q1259652</idno>
+                </author>
+              </egXML>
+              <ab>
+                Encoding of the author "Владимир Иванович Бельский" of the play
+                <ref target="https://dracor.org/id/rus000205">Сказание о
+                невидимом граде Китеже и деве Февронии</ref>.
+              </ab>
+            </exemplum>
+            <remarks>
+              <ab>
+                For additional information on the encoding of author names and
+                the rationale, also see the following GitHub issues:
+                <list>
+                  <item>
+                    <ref type="githubissue" target="https://github.com/dracor-org/dracor-api/issues/119">https://github.com/dracor-org/dracor-api/issues/119</ref>
+                  </item>
+                  <item>
+                    <ref type="githubissue" target="https://github.com/dracor-org/dracor-schema/issues/21">https://github.com/dracor-org/dracor-schema/issues/21</ref>
+                  </item>
+                </list>
+              </ab>
+            </remarks>
+          </elementSpec>
+
+          <!-- authority -->
+
+          <!-- availability -->
+          <elementSpec ident="availability" module="header" mode="change">
+            <exemplum source="https://dracor.org/id/ger000480">
+              <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                <availability status="free">
+                  <p>
+                    In the public domain.
+                  </p>
+                </availability>
+              </egXML>
+              <ab>
+                Copyright status of the digital source of
+                <ref target="https://dracor.org/id/ger000480">Karl Kraus: Die
+                letzten Tage der Menschheit</ref>.
+              </ab>
+            </exemplum>
+            <exemplum>
+              <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                <availability>
+                  <licence target="http://creativecommons.org/licenses/by/3.0/de/legalcode">CC-BY-3.0</licence>
+                </availability>
+              </egXML>
+            </exemplum>
+          </elementSpec>
+
+          <!-- ##### -->
+          <!--   B   -->
+          <!-- ##### -->
+
+          <!-- back -->
+          <elementSpec ident="back" module="textstructure" mode="change">
+            <exemplum source="https://dracor.org/id/ger000428">
+              <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                <back>
+                  <div type="notes">
+                    <head>[Anmerkung]</head>
+                    <p>
+                      Dem zu Beginn des <emph>Actus quintus</emph> in freier
+                      Weise verwendeten Zitate aus den Selbstbetrachtungen des
+                      Marc Aurel liegt ein griechischer und lateinischer Text
+                      des achtzehnten Jahrhunderts zugrunde. Bei der Übersetzung
+                      ins Deutsche diente in einzelnen Wendungen die Übersetzung
+                      von Otto Kiefer (Eugen Diederichs, Jena 1906) zum
+                      Vorbilde.
+                    </p>
+                  </div>
+                </back>
+              </egXML>
+              <ab>
+                A note in the <gi>back</gi> of the play
+                <ref target="https://dracor.org/id/ger000428">Anton Wildgans:
+                Dies irae</ref>. Should maybe wrapped with a <gi>note</gi>
+                element.
+              </ab>
+            </exemplum>
+          </elementSpec>
+
+          <!-- bibl -->
+          <elementSpec ident="bibl" module="core" mode="change">
+            <attList>
+            <!-- this used to be a closed list, made it an open list with two
+                recommended values; this way it can be used somewhere else in
+                the document as well, not only in the header to define the
+                sources. Because the usage is now more flexible, we need to
+                check if the header includes the digital and original sources
+                as expected-->
+              <attDef ident="type" mode="change" usage="opt">
+                <valList type="open" mode="replace">
+                  <valItem ident="digitalSource">
+                    <gloss>Digital Source</gloss>
+                    <desc>Digitised version of the print publication</desc>
+                  </valItem>
+                  <valItem ident="originalSource">
+                    <gloss>Original Source</gloss>
+                    <desc>
+                      Bibliographic citation of the original print publication
+                      the digital text is derived from
+                    </desc>
+                  </valItem>
+                </valList>
+              </attDef>
+            </attList>
+            <exemplum source="https://dracor.org/id/ger000054">
+              <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                <bibl type="digitalSource">
+                  <ref target="http://www.textgridrep.org/textgrid:jn65.0">
+                    TextGrid Repository
+                  </ref>
+                  <availability>
+                    <licence target="http://creativecommons.org/licenses/by/3.0/de/legalcode">CC-BY-3.0</licence>
+                  </availability>
+                  <bibl type="originalSource">
+                    <title>Ludwig Anzengruber: Der Meineidbauer. Herausgegeben
+                    und eingeleitet von Wilhelm Zentner, Stuttgart: Reclam, 1959
+                    [Universal-Bibliothek, Band 133].</title>
+                  </bibl>
+                </bibl>
+              </egXML>
+              <ab>
+                The element <gi>bibl</gi> is used to encode the sources of the
+                play <ref target="https://dracor.org/id/ger000054">Ludwig
+                Anzengruber: Der Meineidbauer</ref>. The <gi>bibl</gi> of
+                <soCalled>original source</soCalled> – marked with a
+                <att>type</att> value of <val>originalSource</val> – is nested
+                into the element <gi>bibl</gi> of the
+                <soCalled>digital source</soCalled> – marked with the attribute
+                value <val>digitalSource</val> of <att>type</att>.</ab>
+            </exemplum>
+            <exemplum source="https://dracor.org/id/ger000675">
+              <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                <bibl type="digitalSource">
+                  <ref target="https://books.google.com/books?id=NbpIAQAAMAAJ&amp;printsec=frontcover">
+                    Google Books
+                  </ref>
+                  <availability status="free">
+                    <p>
+                      In the public domain.
+                    </p>
+                  </availability>
+                  <bibl type="originalSource">
+                    <author>Joseph von Auffenberg</author>: <title>Der Löwe von
+                    Kurdistan. Ein romantisches Schauspiel in fünf Acten. Nach
+                      W. Scott's Talisman bearbeitet</title>.
+                    <pubPlace>Würzburg</pubPlace>:
+                    <publisher>Etlinger</publisher> <date>1827</date>, S.
+                    <biblScope unit="page" from="1" to="155">1–155</biblScope>.
+                  </bibl>
+                </bibl>
+              </egXML>
+              <ab>
+                The <soCalled>original source</soCalled> contained in the inner
+                <gi>bibl</gi> in the <gi>teiHeader</gi> of the play
+                <ref target="https://dracor.org/id/ger000675">Joseph von
+                Auffenberg: Der Löwe von Kurdistan</ref> uses additional
+                elements <gi>author</gi>, <gi>title</gi>, <gi>pubPlace</gi>,
+                <gi>publisher</gi>, <gi>date</gi>, <gi>biblScope</gi> to o
+                explicitly mark the components of the bibliographic reference.
+              </ab>
+            </exemplum>
+          </elementSpec>
+
+          <!-- biblScope -->
+          <elementSpec ident="biblScope" module="core" mode="change">
+            <attList>
+              <attDef ident="type" mode="replace" usage="rec">
+                <datatype>
+                  <dataRef key="teidata.enumerated"/>
+                </datatype>
+                <valList type="semi">
+                  <valItem ident="volume">
+                    <gloss>Volume</gloss>
+                    <desc>Volume containing a play</desc>
+                  </valItem>
+                  <valItem ident="page">
+                    <gloss>Page</gloss>
+                    <desc>Page range of a play in the print publication</desc>
+                  </valItem>
+                </valList>
+                <remarks>
+                  <p>
+                    The values above are evaluated by the DraCor-API. The TEI
+                    Guidelines suggest additional values; see also the
+                    documentation of the attribute in the attribute class
+                    <ref target="#TEI.att.citing">att.citing</ref>.
+                  </p>
+                </remarks>
+                <!-- maybe could highlight from and to as well -->
+              </attDef>
+            </attList>
+            <!-- https://github.com/dracor-org/dracor-schema/issues/100 -->
+          </elementSpec>
+
+          <!-- body -->
+          <elementSpec ident="body" module="textstructure" mode="change">
+            <!-- to be able to extract networks, the DraCor API needs structure in the body element -->
+            <!-- can be tested with:
+                  - tst000005: WRONG - There is nothing in the body at all
+            -->
+            <constraintSpec ident="network_check_basic_play_structure_div"
+                            scheme="schematron" corresp="#section-network-data">
+              <desc>
+                A network can only be extracted from a play if there is some
+                basic structure. The API expects that there is at least a
+                single <gi>div</gi> present.
+              </desc>
+              <constraint>
+                <sch:rule context="tei:body" role="warning">
+                  <sch:assert test="tei:div">
+                    A play should at least have one structural division 'div'
+                    for the API to be able to extract a network.
+                  </sch:assert>
+                </sch:rule>
+              </constraint>
+            </constraintSpec>
+            <!-- There should be <sp> elements to be able to extract networks
+                 can be tested with:
+                  - tst000009: WRONG - There are no <sp> elements
+            -->
+            <constraintSpec ident="network_check_basic_play_structure_sp"
+                            scheme="schematron" corresp="#section-network-data">
+              <desc>
+                The network is extracted based on speech acts which should be
+                encoded using the element <gi>sp</gi>.
+              </desc>
+              <constraint>
+                <sch:rule context="tei:body" role="warning">
+                  <sch:assert test=".//tei:sp">
+                    A play should be structured in speech-acts using the element
+                    'sp' for the API to be able to extract a network.
+                  </sch:assert>
+                </sch:rule>
+              </constraint>
+            </constraintSpec>
+            <!-- special case: no speaking characters, e.g. in a pantomime -->
+            <!-- to test this:
+                  - tst000010: There is only the Warning about the missing <sp>
+                    elements.
+            -->
+            <constraintSpec ident="network_play_without_speaking_characters"
+                            scheme="schematron" corresp="#section-network-data">
+              <desc>
+                In the edge case of a play without speaking characters and no
+                speech acts <gi>sp</gi> it is expected that there is at least a
+                single stage direction <gi>stage</gi>.
+              </desc>
+              <constraint>
+                <sch:rule context="tei:body[not(.//tei:sp)]" role="warning">
+                  <sch:assert test=".//tei:stage" role="warning">
+                    A drama that does not contain a speech-act 'sp', should at
+                    least contain a stage direction 'stage'.
+                  </sch:assert>
+                </sch:rule>
+              </constraint>
+            </constraintSpec>
+            <exemplum source="https://dracor.org/id/ger000289">
+              <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                <body>
+                  <div type="act">
+                    <head>Erster Akt.</head>
+                    <stage>Scene: Elegantes Zimmer in Gustav's Hause.</stage>
+                    <div type="scene">
+                      <head>Erster Auftritt.</head>
+                      <stage>Durch die Mittelthür kommen: Ehrenthal und Dörthe.</stage>
+                      <!-- ... -->
+                    </div>
+                  </div>
+                  <!-- ... -->
+                </body>
+              </egXML>
+              <ab>
+                Common structure of the <gi>body</gi> element of a play. Example
+                is taken from <ref target="https://dracor.org/id/ger000289">Karl
+                von Holtei: Ein Trauerspiel in Berlin</ref>.
+              </ab>
+            </exemplum>
+          </elementSpec>
+
+          <!-- ##### -->
+          <!--   C   -->
+          <!-- ##### -->
+
+          <!-- castGroup -->
+          <elementSpec ident="castGroup" module="drama" mode="change">
+            <attList>
+            <!-- to test:
+              - tst000011 - CORRECT encoding
+              - tst000012 - WRONG encoding
+            -->
+              <attDef ident="rend" mode="change">
+                <valList mode="add" type="semi">
+                  <valItem ident="braced">
+                    <gloss>marked with a bracket</gloss>
+                    <desc>
+                      Indicates that a group of characters is visually marked as
+                      belonging to a group by means of a bracket. This rendering
+                      is supported by the DraCor frontend.
+                    </desc>
+                  </valItem>
+                </valList>
+              </attDef>
+              <!-- see issue https://github.com/dracor-org/dracor-schema/issues/34 -->
+              <attDef ident="corresp" mode="change">
+                <datatype>
+                  <dataRef key="teidata.pointer"/>
+                </datatype>
+                <remarks>
+                  <p>
+                    Used to link a character in the list of the dramatis personae to the
+                    corresponding <!-- person/group? --> element in the
+                    <gi>particDesc</gi>
+                  </p>
+                </remarks>
+              </attDef>
+            </attList>
+            <exemplum source="https://dracor.org/id/ger000442">
+              <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                <castGroup>
+                  <castItem>Silva,</castItem>
+                  <castItem>Gomez,</castItem>
+                  <roleDesc>unter Alba dienend</roleDesc>
+                </castGroup>
+              </egXML>
+              <ab>
+                The characters are grouped and given a role in the
+                list of the dramatis personae in the play
+                <ref target="https://dracor.org/id/ger000442">Goethe:
+                Egmont</ref>.
+              </ab>
+            </exemplum>
+            <exemplum source="https://dracor.org/id/ger000139">
+              <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                <castGroup rend="braced">
+                  <castItem>Balthasar</castItem>
+                  <castItem>Caspar</castItem>
+                  <roleDesc>Jäger</roleDesc>
+                </castGroup>
+              </egXML>
+              <ab>
+                A group of characters in
+                <ref target="https://dracor.org/id/ger000139">Genoveva</ref>.
+                In the source, they are marked with a curly bracket.
+              </ab>
+            </exemplum>
+            <exemplum source="#ger000575">
+              <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                <castGroup>
+                  <castItem>
+                    <role>Elpore,</role>
+                  </castItem>
+                  <castItem>
+                    <role>Epimeleia,</role>
+                  </castItem>
+                  <roleDesc>Epimetheus' Töchter</roleDesc>
+                </castGroup>
+              </egXML>
+              <ab>
+                A group of characters with explicitly marked-up roles in
+                <ref target="https://dracor.org/id/ger000575">Goethe:
+                Pandora</ref>.
+              </ab>
+            </exemplum>
+            <exemplum source="https://dracor.org/id/ger000572">
+              <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                <castGroup>
+                  <castItem>
+                    <role>Magdalene,</role>
+                    <roleDesc>Behrings Braut, 20 Jahre alt,</roleDesc>
+                  </castItem>
+                  <castItem>
+                    <role>Fritz,</role>
+                    <roleDesc>12 Jahre alt,</roleDesc>
+                  </castItem>
+                  <roleDesc>beider Kinder.</roleDesc>
+                </castGroup>
+              </egXML>
+              <ab>
+                Example taken from
+                <ref target="https://dracor.org/id/ger000572">Otto Ernst: Die
+                größte Sünde</ref>.
+              </ab>
+            </exemplum>
+          </elementSpec>
+
+          <!-- castItem -->
+          <elementSpec ident="castItem" module="drama" mode="change">
+            <attList>
+              <!-- IB: Don't know if we already agreed on this encoding. But sounds good to me -->
+              <!-- see issue https://github.com/dracor-org/dracor-schema/issues/34 -->
+              <attDef ident="corresp" mode="change">
+                <datatype>
+                  <dataRef key="teidata.pointer"/>
+                </datatype>
+                <remarks>
+                  <p>
+                    Used to link a character in the list of the dramatis personae to the
+                    corresponding <!-- person/group? --> element in the
+                    <gi>particDesc</gi>
+                  </p>
+                </remarks>
+              </attDef>
+            </attList>
+            <exemplum source="https://dracor.org/id/ger000088">
+              <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                <castItem>Marinelli, Kammerherr des Prinzen.</castItem>
+              </egXML>
+              <ab>
+                A character in the play
+                <ref target="https://dracor.org/id/ger000088">Lessing: Emilia
+                Galotti</ref>.
+              </ab>
+            </exemplum>
+            <exemplum source="https://dracor.org/id/ger000546">
+              <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                <castItem>
+                  <role>Leo Armenius,</role>
+                  <roleDesc>käyser von Constantinopel.</roleDesc>
+                </castItem>
+              </egXML>
+              <ab>
+                A <gi>castItem</gi> in the play
+                <ref target="https://dracor.org/id/ger000546">Gryphius: Leo
+                Armenius</ref>. The name of the role and its description have
+                been explicitly marked-up.
+              </ab>
+            </exemplum>
+            <exemplum source="https://dracor.org/id/ger000575">
+              <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                <castItem>
+                  <role>Dämonen</role>
+                </castItem>
+              </egXML>
+              <ab>
+                Example taken from
+                <ref target="https://dracor.org/id/ger000575">Goethe:
+                Pandora</ref>.
+              </ab>
+            </exemplum>
+            <exemplum source="https://dracor.org/id/ger000451">
+              <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                <castItem>
+                  Andreas Doria, Doge von Genua <roleDesc>Ehrwürdiger Greis von
+                  achtzig Jahren, Spuren von Feuer. Ein Hauptzug: Gewicht und
+                  strenge befehlende Kürze</roleDesc>
+                </castItem>
+              </egXML>
+              <ab>
+                Example taken from
+                <ref target="https://dracor.org/id/ger000451">Schiller: Die
+                Verschwörung des Fiesco zu Genua</ref>.
+              </ab>
+            </exemplum>
+          </elementSpec>
+
+          <!-- castList -->
+          <elementSpec ident="castList" module="drama" mode="change">
+            <exemplum source="https://dracor.org/id/ger000575">
+              <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                <castList>
+                  <head> Personen.</head>
+                  <castGroup>
+                    <castItem>
+                      <role>Prometheus,</role>
+                    </castItem>
+                    <castItem>
+                      <role>Epimetheus,</role>
+                    </castItem>
+                    <roleDesc>Japetiden</roleDesc>
+                  </castGroup>
+                  <castItem>
+                    <role>Phileros,</role>
+                    <roleDesc>Prometheus' Sohn</roleDesc>
+                  </castItem>
+                  <!-- ... -->
+                  <castItem>
+                    <role>Dämonen</role>
+                  </castItem>
+                  <castItem>
+                    <role>Helios</role>
+                  </castItem>
+                  <castItem>
+                    <role>Schmiede</role>
+                  </castItem>
+                  <castItem>
+                    <role>Hirten</role>
+                  </castItem>
+                  <!-- ... -->
+                </castList>
+              </egXML>
+              <ab>
+                Example taken from
+                <ref target="https://dracor.org/id/ger000575">Goethe:
+                Pandora</ref>.
+              </ab>
+            </exemplum>
+            <exemplum>
+              <p>
+                Probably not the best example...
+              </p>
+              <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                <castList>
+                  <head>ЛИЦА:</head>
+                  <castItem>
+                    Раиса Павловна Гурмыжская, вдова, лет 50-ти с небольшим,
+                    очень богатая помещица, одевается скромно, почти в трауре,
+                    постоянно с рабочим ящиком на руке.
+                  </castItem>
+                  <castItem>
+                    Аксинья Даниловна (Аксюша), ее дальняя родственница, бедная
+                    девушка лет 20-ти, одета чисто, но бедно, немного лучше
+                    горничной.
+                  </castItem>
+                  <castGroup>
+                    <castItem>
+                      Евгений Аполлоныч Милонов, лет 45-ти, гладко причесан,
+                      одет изысканно, в розовом галстуке.
+                    </castItem>
+                    <castItem>
+                      Уар Кирилыч Бодаев, лет 60-ти, отставной кавалерист,
+                      седой, гладко стриженный, с большими усами и бакенбардами,
+                      в черном сюртуке, наглухо застегнутом, с крестами и
+                      медалями по-солдатски, с костылем в руке, немного глух.
+                    </castItem>
+                    <roleDesc>Богатые соседи Гурмыжской.</roleDesc>
+                  </castGroup>
+                  <castItem>
+                    Иван Петров Восмибратов, купец, торгующий лесом.
+                  </castItem>
+                  <!-- ... -->
+                </castList>
+              </egXML>
+            </exemplum>
+          </elementSpec>
+
+          <!-- change -->
+          <elementSpec ident="change" module="header" mode="change">
+            <attList>
+              <attDef ident="when" mode="change">
+              <!-- we could use @when-iso, because we enforce iso-compliant anyway -->
+                <desc>
+                  When was the change made. Should be an iso-conformant
+                  date-time
+                </desc>
+                <datatype>
+                  <dataRef key="teidata.temporal.iso"/>
+                </datatype>
+              </attDef>
+              <!-- maybe use this: -->
+            </attList>
+            <exemplum source="https://dracor.org/id/ger000030">
+              <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                <revisionDesc>
+                  <listChange>
+                    <change when="2017-01-06">(dlina) file conversion from source</change>
+                    <change when="2017-08-04">(ff) structural cleanup</change>
+                    <change when="2018-12-23">(ff) formalities</change>
+                  </listChange>
+                </revisionDesc>
+              </egXML>
+              <ab>
+                <gi>revisionDesc</gi> with <gi>change</gi> elements of the play
+                <ref target="https://dracor.org/id/ger000030">Scheerbart: Der
+                alte Petrus</ref>.
+              </ab>
+            </exemplum>
+            <exemplum source="https://dracor.org/id/rus000016">
+              <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                <revisionDesc>
+                  <listChange>
+                    <change when="2017-05-23">(ds) convert from source</change>
+                    <change when="2017-05-23">(ff) add metadata, insert configuration changes</change>
+                    <change when="2017-06-01">(zh) add dates, ids</change>
+                    <change when="2017-06-03">(gg) gender info</change>
+                    <change when="2017-12-03">(ff) formalities; delete duplicate of poem; work on IDs</change>
+                    <change when="2018-04-07">(zh) group tag</change>
+                  </listChange>
+                </revisionDesc>
+              </egXML>
+              <ab>
+                Record of the changes in the file of the play
+                <ref target="https://dracor.org/id/rus000016">Александр
+                Сергеевич Пушкин: Сцены из рыцарских времен</ref>.
+              </ab>
+            </exemplum>
+          </elementSpec>
+
+          <!-- cit -->
+          <elementSpec ident="cit" module="core" mode="change">
+            <exemplum source="https://dracor.org/id/ger000371">
+              <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                <epigraph>
+                  <cit>
+                    <quote>
+                      <l>Wie ist mir eine Stimme doch erklungen</l>
+                      <l>Im tiefsten Innern,</l>
+                      <l>Und hat mit einem Male mir verschlungen</l>
+                      <l>All mein Erinnern.</l>
+                    </quote>
+                    <bibl>
+                      Adalbert von Chamisso
+                    </bibl>
+                  </cit>
+                </epigraph>
+              </egXML>
+              <ab>
+                A citation in the epigraph to the play
+                <ref target="https://dracor.org/id/ger000371">Büchner: Leonce
+                und Lena</ref>.
+              </ab>
+            </exemplum>
+            <exemplum source="https://dracor.org/id/rus000021">
+              <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                <epigraph>
+                  <cit>
+                    <quote>
+                      <lg>
+                        <l>Leporello. O statua gentilissima</l>
+                        <l>Del gran' Commendatore!..</l>
+                        <l>...Ah, Padrone!</l>
+                      </lg>
+                    </quote>
+                  </cit>
+                  <bibl>
+                    Don Giovanni.
+                  </bibl>
+                </epigraph>
+                <ab>
+                  Citation in the play
+                  <ref target="https://dracor.org/id/rus000021">Пушкин: Каменный
+                  гость</ref>
+                </ab>
+              </egXML>
+            </exemplum>
+            <exemplum source="https://dracor.org/id/ger000369">
+              <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                <div type="epigraph">
+                  <head>[Motto]</head>
+                  <cit>
+                    <quote>
+                      <p>Introite, nam et heic Dii sunt!</p>
+                    </quote>
+                    <bibl>APUD GELLIUM</bibl>
+                  </cit>
+                  <pb n="206"/>
+                </div>
+              </egXML>
+              <ab>
+                Only one other example discovered using
+                <code>//cit[not(parent::epigraph)]</code>, but this is due to
+                encoding – it's actually kind of an epigraph in the play
+                <ref target="https://dracor.org/id/ger000369">Lessing: Nathan
+                der Weise</ref>
+              </ab>
+            </exemplum>
+            <remarks>
+              <p>
+                In DraCor mostly used to mark citation in epigraphs, see
+                examples.
+              </p>
+            </remarks>
+          </elementSpec>
+
+          <!-- classCode  -->
+          <elementSpec ident="classCode" module="header" mode="change">
+            <content>
+              <textNode/>
+            </content>
+            <attList>
+              <!-- I set the usage of @scheme to required but leave the options open  -->
+              <attDef ident="scheme" mode="change" usage="req">
+                <valList type="semi" mode="add">
+                  <valItem ident="http://www.wikidata.org/entity/">
+                    <gloss>Wikidata</gloss>
+                    <desc>Base-URI of an entity on Wikidata.</desc>
+                  </valItem>
+                </valList>
+                <remarks>
+                  <p>
+                    Specify the scheme/taxonomy the classification code is
+                    coming from.
+                  </p>
+                </remarks>
+              </attDef>
+            </attList>
+            <exemplum source="https://dracor.org/id/ger000442">
+              <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                <textClass>
+                  <keywords>
+                    <term type="genreTitle">Tragedy</term>
+                  </keywords>
+                  <classCode scheme="http://www.wikidata.org/entity/">Q80930</classCode>
+                </textClass>
+              </egXML>
+              <ab>
+                Genre classification of the play
+                <ref target="https://dracor.org/id/ger000442">Goethe:
+                Egmont</ref>.
+              </ab>
+            </exemplum>
+            <exemplum source="https://dracor.org/id/ger000150">
+              <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                <classCode scheme="http://www.wikidata.org/entity/">Q40831</classCode>
+              </egXML>
+              <ab>
+                The play
+                <ref target="https://dracor.org/id/ger000150">Schnitzler:
+                Komtesse Mizzi</ref> is classified as a "comedy".
+              </ab>
+            </exemplum>
+            <exemplum source="https://dracor.org/id/ger000175">
+              <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                <classCode scheme="http://www.wikidata.org/entity/">Q131084</classCode>
+              </egXML>
+              <ab>
+                The "libretto" to the opera
+                <ref target="https://dracor.org/id/ger000175">Wagner:
+                Lohengrin</ref>.
+              </ab>
+            </exemplum>
+            <remarks>
+              <p>
+                Classification of the genre of the play is done by re-using
+                Wikidata entities.
+              </p>
+            </remarks>
+          </elementSpec>
+
+          <!-- ##### -->
+          <!--   D   -->
+          <!-- ##### -->
+
+          <!-- date -->
+          <!-- dateline -->
+          <elementSpec ident="dateline" module="textstructure" mode="change">
+            <exemplum source="https://dracor.org/id/ger000525">
+              <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                <dateline>Offenbach am Mayn, gedruckt bey Ulrich Weiß, 1765.</dateline>
+              </egXML>
+              <ab>
+                Example taken from
+                <ref target="https://dracor.org/id/ger000525">André: Der
+                Comödienfeind</ref>.
+              </ab>
+            </exemplum>
+            <exemplum source="https://dracor.org/id/ger000523">
+              <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                <dateline>Am verhängnißvollen 24sten Februar.</dateline>
+              </egXML>
+              <ab>
+                Example taken from
+                <ref target="https://dracor.org/id/ger000523">Castelli: Der
+                Schicksalsstrumpf</ref>.
+              </ab>
+            </exemplum>
+            <exemplum source="https://dracor.org/id/ger000008">
+              <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                <dateline>Geschrieben in der Ostermesse. 1781.</dateline>
+              </egXML>
+              <ab>
+                Example taken from
+                <ref target="https://dracor.org/id/ger000008">Schiller: Die
+                Räuber</ref>
+              </ab>
+            </exemplum>
+            <exemplum source="https://dracor.org/id/rus000036">
+              <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                <dateline>Между декабрем 1750 и ноябрем 1751</dateline>
+              </egXML>
+              <ab>
+                Example taken from
+                <ref target="https://dracor.org/id/rus000036">Ломоносов:
+                Демофонт</ref>
+              </ab>
+            </exemplum>
+          </elementSpec>
+
+          <!-- desc -->
+          <elementSpec ident="desc" module="core" mode="change">
+            <exemplum source="https://dracor.org/id/ger000124">
+              <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                <listEvent>
+                  <event type="print" when="1745">
+                    <desc/>
+                  </event>
+                  <event type="premiere" when="1745">
+                    <desc/>
+                  </event>
+                </listEvent>
+              </egXML>
+              <ab>
+                Empty <gi>desc</gi> elements in the <gi>sourceDesc</gi>
+                container of the play
+                <ref target="https://dracor.org/id/ger000124">Gellert: Die
+                Betschwester</ref>. The dates of publication and the premiere
+                are extracted from the <att>when</att> of the corresponding
+                <gi>event</gi>. If there is no more information available, the
+                <gi>desc</gi> can be used as an empty element, but has to be
+                included due to the default TEI content model of the parent
+                element.
+              </ab>
+            </exemplum>
+            <exemplum source="https://dracor.org/id/ger000480">
+              <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                <listEvent>
+                  <event type="print" when="1919">
+                    <desc>
+                      "Erscheinen konnte das Werk erst nach Aufhebung der
+                      Zensur. Noch am 13. Dezember 1918 erschien der Epilog als
+                      Sonderheft der Fackel, weitere Teile (mit jeweils zwei
+                      Akten) folgten im April, August und (wahrscheinlich)
+                      September 1919." (Wikipedia)
+                    </desc>
+                  </event>
+                  <event type="premiere" when="1964">
+                    <desc>
+                      "1964: Wiener Festwochen im Theater an der Wien (Regie:
+                      Leopold Lindtberg). Erste szenische Aufführung mit 42
+                      Szenen des Dramas, nach einer Bühnenfassung von Heinrich
+                      Fischer." (Wikipedia)
+                    </desc>
+                  </event>
+                  <event type="written" notBefore="1915" notAfter="1922">
+                    <desc>"in den Jahren 1915–1922 entstanden" (Wikipedia)</desc>
+                  </event>
+                </listEvent>
+              </egXML>
+              <ab>
+                Descriptions of events in the <gi>sourceDesc</gi> container of
+                the play <ref target="https://dracor.org/id/ger000480">Kraus:
+                Die Letzten Tage der Menschheit</ref>.
+              </ab>
+            </exemplum>
+          </elementSpec>
+
+          <!-- div -->
+          <elementSpec ident="div" module="textstructure" mode="change">
+            <attList>
+              <!-- https://github.com/dracor-org/dracor-schema/issues/85 -->
+              <attDef ident="type" mode="replace" usage="rec">
+                <desc>Classifies the segment</desc>
+                <datatype>
+                  <dataRef key="teidata.text"/>
+                </datatype>
+                <valList type="semi">
+                  <valItem ident="act">
+                    <gloss>Act</gloss>
+                    <desc>
+                      Top-level structural division of a play, also "Aufzug",
+                      "Auftritt" in German
+                    </desc>
+                  </valItem>
+                  <valItem ident="scene">
+                    <gloss>Scene</gloss>
+                    <desc> Lower-level structural division of a play</desc>
+                  </valItem>
+                </valList>
+                <remarks>
+                  <p>
+                    Although the global usage of values of this attribute is not
+                    restricted, the API evaluates the values <val>act</val> and
+                    <val>scene</val> on the <gi>div</gi> elements in the text
+                    proper. If applicable, these attribute values should be used
+                    to classify the segments.
+                  </p>
+                  <p>
+                    Other values of <att>type</att> that are used (in GerDraCor
+                    and RusDraCor) to classify non-act or non-scene divisions are:
+                    <list>
+                      <item>
+                        <label>appendix</label>:
+                        <gloss>Appendix</gloss>
+                      </item>
+                      <item>
+                        <label>configuration</label>:
+                        <p>
+                          Change of character constellation, which is not marked
+                          as scene change
+                        </p>
+                      </item>
+                      <item>
+                        <label>dedication</label>:
+                        <gloss>Dedication</gloss>
+                      </item>
+                      <item>
+                        <label>dictionary</label>
+                        <p>Was in use at some point in time, but not anymore</p>
+                      </item>
+                      <item>
+                        <label>entracte</label>
+                      </item>
+                      <item>
+                        <label>epigraph</label>
+                      </item>
+                      <item>
+                        <label>epilogue</label>
+                      </item>
+                      <item>
+                        <label>interlude</label>: auch
+                        <gloss>Zwischenspiel</gloss>
+                      </item>
+                      <item>
+                        <label>location</label>:
+                        <gloss>Location change</gloss>
+                      </item>
+                      <item>
+                        <label>notes</label>
+                      </item>
+                      <item>
+                        <label>ouverture</label>
+                      </item>
+                      <item>
+                        <label>part</label>
+                      </item>
+                      <item>
+                        <label>postface</label>
+                      </item>
+                      <item>
+                        <label>preface</label>
+                      </item>
+                      <item>
+                        <label>prologue</label>
+                      </item>
+                      <item>
+                        <label>review</label>
+                      </item>
+                      <item>
+                        <label>set</label>:
+                        <gloss>Setting</gloss>.
+                        Could use the designated element <gi>set</gi> instead.
+                      </item>
+                      <item>
+                        <label>subscene</label>: <gloss>Subscene</gloss>
+                      </item>
+                      <item>
+                        <label>tableau</label>:
+                        Tableau, auch: Kartina
+                      </item>
+                      <item>
+                        <label>variant</label>
+                      </item>
+                    </list>
+                    There are some values that are used in some plays of Johann
+                    Nestroy exclusively:
+                    <list>
+                      <item>unten</item>
+                      <item>oben</item>
+                      <item>cholerisch</item>
+                      <item>phlegmatisch</item>
+                      <item>melancholisch</item>
+                      <item>sanguinisch</item>
+                    </list>
+                    In general, it is recommended that encoders document the
+                    additional values used for <att>type</att> on <gi>div</gi>
+                    in an <gi>encodingDesc</gi> in the corpus.xml.
+                  </p>
+                </remarks>
+              </attDef>
+              <attDef ident="n" mode="change">
+                <desc>Number of act or scene</desc>
+                <!--
+                <datatype>
+                  <dataRef key="teidata.text"/>
+                </datatype>
+                -->
+              </attDef>
+            </attList>
+            <exemplum source="https://dracor.org/id/ger000253">
+              <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                <div type="scene">
+                  <head>Fünfte Szene</head>
+                  <sp who="#poniatowsky">
+                    <speaker>PONIATOWSKY.</speaker>
+                    <lg>
+                      <l>Der alte Woiwode predigt gut,</l>
+                      <l>Doch seine Weisheit kommt von seinen Haaren,</l>
+                      <l>Ich lobe den, der aus der Kirche läuft.</l>
+                    </lg>
+                  </sp>
+                </div>
+              </egXML>
+              <ab>
+                A short "scene" in the play
+                <ref target="https://dracor.org/id/ger000253">Hebbel:
+                Demetrius</ref>.
+              </ab>
+            </exemplum>
+            <exemplum source="https://dracor.org/id/rus000109">
+              <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                <div type="scene">
+                  <head>Явление 13</head>
+                  <sp who="#zdravomyslov">
+                    <speaker>Г. Здравомыслов.</speaker>
+                    <p>
+                      Что это значит? Прогневать я не мог, я ни в чем не
+                      проступился; но докучать не надо, ее нрав более умягчается
+                      повиновением. На прекрасную ее племянницу надежду свою
+                      полагаю; пойду, однако ж, постараюсь узнать причину
+                      холодного сего приема.
+                    </p>
+                  </sp>
+                  <trailer>Конец четвертого действия.</trailer>
+                </div>
+              </egXML>
+              <ab>
+                The last "scene" of the fourth act of the play
+                <ref target="https://dracor.org/id/rus000109">Дашкова:
+                Тоисиоков</ref>.
+              </ab>
+            </exemplum>
+          </elementSpec>
+
+          <!-- docAuthor -->
+          <elementSpec ident="docAuthor" module="textstructure" mode="change">
+            <exemplum source="https://dracor.org/id/ger000088">
+              <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                <front>
+                  <docAuthor>Gotthold Ephraim Lessing</docAuthor>
+                  <docTitle>
+                    <titlePart type="main">Emilia Galotti</titlePart>
+                    <titlePart type="sub">Ein Trauerspiel in fünf Aufzügen</titlePart>
+                    <pb n="128"/>
+                  </docTitle>
+                  <!-- ... -->
+                </front>
+              </egXML>
+              <ab>
+                Used in <ref target="https://dracor.org/id/ger000088">Lessing:
+                Emilia Galotti</ref>
+              </ab>
+            </exemplum>
+            <remarks>
+              <p>
+                Used inconsistently throughout the corpora. Needs to be revised!
+              </p>
+            </remarks>
+          </elementSpec>
+
+          <!-- docImprint -->
+          <!-- docTitle -->
+          <elementSpec ident="docTitle" module="textstructure" mode="change">
+            <exemplum source="https://dracor.org/id/ger000482">
+              <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                <front>
+                  <docTitle>
+                    <titlePart type="main">Die beiden Billets.</titlePart>
+                    <titlePart type="sub">Ein Lustspiel in einem Akt nach Florian von Anton-Wall.</titlePart>
+                  </docTitle>
+                  <!-- ... -->
+                </front>
+              </egXML>
+              <ab>
+                Example taken from
+                <ref target="https://dracor.org/id/ger000482">Heyne: Die beiden
+                Billets</ref>
+              </ab>
+            </exemplum>
+          </elementSpec>
+
+          <!-- ##### -->
+          <!--   E   -->
+          <!-- ##### -->
+
+          <!-- editor -->
+          <elementSpec ident="editor" module="core" mode="change">
+            <exemplum>
+              <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                <bibl type="originalSource">
+                  <author>William Shakespeare</author>:
+                  <title level="a">Romeo und Julia</title>. In:
+                  <title level="s">Sämtliche Werke in vier Bänden</title>.
+                  Herausgegeben von <editor>Anselm Schlösser</editor>. Band
+                  <biblScope unit="volume">4</biblScope>.
+                  <pubPlace>Berlin</pubPlace>:
+                  <publisher>Aufbau</publisher> <date>1975</date>, S.
+                  <biblScope unit="page" from="83" to="178">83–178</biblScope>.
+                </bibl>
+              </egXML>
+              <ab>Example from GerShDraCor</ab>
+            </exemplum>
+          </elementSpec>
+
+          <!-- emph -->
+          <elementSpec ident="emph" module="core" mode="change">
+            <exemplum source="https://dracor.org/id/ger000083">
+              <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                <sp who="#titus">
+                  <speaker>TITUS.</speaker>
+                  <p>
+                    Oh, der Anzug hat nur zu viel Gärtnerartiges, er is übersä't
+                    mit Fleck, er is <emph>aufgegangen</emph> bei die Ellbögen
+                    und an verschiedenen Orten; weil ich nie ein Paraplü trag',
+                    wird er auch häufig <emph>begossen</emph>, und wie er noch
+                    in der Blüte war, hab' ich ihn oft wie eine Pflanze
+                    <emph>versetzt</emph>.
+                  </p>
+                </sp>
+              </egXML>
+              <ab>
+                Example taken from
+                <ref target="https://dracor.org/id/ger000083">Nestroy: Der
+                Talisman</ref>.
+              </ab>
+            </exemplum>
+          </elementSpec>
+
+          <!-- epigraph -->
+          <elementSpec ident="epigraph" module="textstructure" mode="change">
+            <exemplum source="https://dracor.org/id/ger000522">
+              <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                <epigraph>
+                  <p>
+                    Nichts gibt so sehr das Gefühl der Unendlichkeit als wie die
+                    Dummheit.
+                  </p>
+                </epigraph>
+              </egXML>
+              <ab>
+                Epigraph of
+                <ref target="https://dracor.org/id/ger000522">Horvath:
+                Geschichten aus dem Wiener Wald</ref>
+              </ab>
+            </exemplum>
+            <exemplum source="https://dracor.org/id/ger000314">
+              <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                <epigraph xml:lang="la">
+                  <cit>
+                    <quote>
+                      <l>Flectere si nequeo superos, acheronta movebo.</l>
+                    </quote>
+                  </cit>
+                </epigraph>
+              </egXML>
+              <ab>
+                Example taken from
+                <ref target="https://dracor.org/id/ger000314">Benkowitz: Die
+                Jubelfeier der Hölle, oder Faust der jüngere</ref>.
+              </ab>
+            </exemplum>
+          </elementSpec>
+
+          <!-- event -->
+          <elementSpec ident="event" module="namesdates" mode="change">
+            <attList>
+              <attDef ident="when" mode="change" usage="opt">
+                <remarks>
+                  <p>
+                    The value of this attribute can be evaluated by the DraCor
+                    API. Use it to indicate the date the event took place. The value
+                    can be a year only.
+                  </p>
+                </remarks>
+              </attDef>
+              <attDef ident="notBefore" mode="change" usage="opt">
+                <remarks>
+                  <p>
+                    The value of this attribute can be evaluated by the DraCor
+                    API. Use it to indicate the earliest possible date the event
+                    took place. The value can be a year only.
+                  </p>
+                </remarks>
+              </attDef>
+              <attDef ident="notAfter" mode="change" usage="opt">
+                <remarks>
+                  <p>
+                    The value of this attribute can be evaluated by the DraCor
+                    API. Use it to indicate the latest possible date the event
+                    took place. The value can be a year only.
+                  </p>
+                </remarks>
+              </attDef>
+              <attDef ident="type" mode="change" usage="rec">
+                <valList type="semi" mode="replace">
+                  <valItem ident="print">
+                    <gloss>Date printed</gloss>
+                    <desc>
+                      Date of the print publication as stated in the imprint
+                    </desc>
+                  </valItem>
+                  <valItem ident="premiere">
+                    <gloss>Date premiered</gloss>
+                    <desc>Date of debut performance</desc>
+                  </valItem>
+                  <valItem ident="written">
+                    <gloss>Date written</gloss>
+                    <desc>Date of writing</desc>
+                  </valItem>
+                </valList>
+                <remarks>
+                  <p>
+                    The above mentioned values are supported by the DraCor API
+                    to encode the dates a play was written, first printed, and
+                    performed for the first time. Other values are allowed, but
+                    not evaluated by the API.
+                  </p>
+                </remarks>
+              </attDef>
+            </attList>
+            <exemplum>
+              <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                <event type="written" when="1811">
+                  <desc>geschrieben wahrscheinlich im Winter 1811</desc>
+                </event>
+              </egXML>
+              <ab>
+                Example see
+                <ref target="https://github.com/dracor-org/dracor-schema/issues/38">Github
+                Issue</ref>.
+              </ab>
+            </exemplum>
+            <exemplum source="https://dracor.org/id/ger000564">
+              <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                <event type="written" notBefore="1836" notAfter="1837">
+                  <label>1836–1837</label>
+                </event>
+              </egXML>
+              <ab>
+                Written date of the play
+                <ref target="https://dracor.org/id/ger000564">Büchner:
+                Woyzeck</ref>.
+              </ab>
+            </exemplum>
+          </elementSpec>
+
+          <!-- ##### -->
+          <!--   F   -->
+          <!-- ##### -->
+
+          <!-- figure -->
+          <elementSpec ident="figure" module="figures" mode="change">
+            <exemplum source="https://dracor.org/id/ger000104">
+              <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                <figure>
+                  <graphic url="http://images.zeno.org/Literatur/I/big/haup0031.jpg"/>
+                  <ab>Glumms große Kretschamstube.</ab>
+                </figure>
+              </egXML>
+              <ab>
+                A figure in
+                <ref target="https://dracor.org/id/ger000104">Hauptmann:
+                Ephraims Breite</ref>
+              </ab>
+            </exemplum>
+            <exemplum source="https://dracor.org/id/ger000191">
+              <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                <figure>
+                  <graphic url="https://textgridlab.org/1.0/tgcrud/rest/textgrid:x3gp.0/data"/>
+                </figure>
+              </egXML>
+              <ab>
+                An image in
+                <ref target="https://dracor.org/id/ger000191">Wedekind: König
+                Nicolo oder So ist das Leben</ref>
+              </ab>
+            </exemplum>
+          </elementSpec>
+
+          <!-- fileDesc -->
+          <elementSpec ident="fileDesc" module="header" mode="change">
+            <exemplum source="https://dracor.org/id/ger000442">
+              <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                <fileDesc>
+                  <titleStmt>
+                    <title>Egmont</title>
+                    <!-- ... -->
+                  </titleStmt>
+                  <publicationStmt>
+                    <publisher xml:id="dracor">DraCor</publisher>
+                    <!-- ... -->
+                  </publicationStmt>
+                  <sourceDesc>
+                    <bibl type="digitalSource">
+                      <name>TextGrid Repository</name>
+                      <!-- ... -->
+                      <bibl type="originalSource">
+                        <title>
+                          Goethes Werke.
+                          <!-- ... -->
+                        </title>
+                      </bibl>
+                    </bibl>
+                  </sourceDesc>
+                </fileDesc>
+              </egXML>
+              <ab>
+                Example taken and adapted from
+                <ref target="https://dracor.org/id/ger000442">Goethe: Egmont</ref>.
+              </ab>
+            </exemplum>
+          </elementSpec>
+
+          <!-- foreign -->
+          <elementSpec ident="foreign" module="core" mode="change">
+            <exemplum source="https://dracor.org/id/ger000581">
+              <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                <sp who="#baronesse_von_ehegestern">
+                  <speaker>B. v. Ehegestern</speaker>
+                  <stage>(für sich.)</stage>
+                  <p>
+                    <foreign xml:lang="fr">Mais, mon Dieu, qu'elle
+                    confidence!</foreign> <stage>(laut:)</stage> Nun es kann
+                    nicht lange <foreign xml:lang="fr">Mystère</foreign>
+                    bleiben. <foreign xml:lang="fr">Voilà une lettre.</foreign>
+                    Der Doktor hat ihn abgegeben.
+                  </p>
+                </sp>
+              </egXML>
+              <ab>
+                <ref target="https://dracor.org/id/ger000581">Rambach: Die
+                Kuhpocken</ref>
+              </ab>
+            </exemplum>
+          </elementSpec>
+
+          <!-- forename -->
+          <elementSpec ident="forename" module="namesdates" mode="change">
+            <attList>
+              <attDef ident="type" mode="change">
+                <valList mode="replace" type="semi">
+                  <valItem ident="patronym">
+                    <gloss>Patronym</gloss>
+                    <desc>
+                      Father-derived middle name. Used for example in
+                      RusDraCor.
+                    </desc>
+                  </valItem>
+                </valList>
+              </attDef>
+            </attList>
+            <exemplum source="https://dracor.org/id/ger000565">
+              <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                <persName>
+                  <forename>Hermann</forename>
+                  <surname>Bahr</surname>
+                </persName>
+              </egXML>
+            </exemplum>
+            <exemplum source="https://dracor.org/id/ger000124">
+              <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                <persName>
+                  <forename>Christian</forename>
+                  <forename>Fürchtegott</forename>
+                  <surname>Gellert</surname>
+                </persName>
+              </egXML>
+            </exemplum>
+            <exemplum source="https://dracor.org/id/rus000142">
+              <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                <persName>
+                  <forename>Евдокия</forename>
+                  <forename type="patronym">Петровна</forename>
+                  <surname>Ростопчина</surname>
+                </persName>
+              </egXML>
+            </exemplum>
+          </elementSpec>
+
+          <!-- front -->
+          <elementSpec ident="front" module="textstructure" mode="change">
+            <exemplum>
+              <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                <front>
+                  <titlePage>
+                    <docAuthor>Gotthold Ephraim Lessing</docAuthor>
+                    <docTitle>
+                      <titlePart type="main">Emilia Galotti</titlePart>
+                      <titlePart type="sub">Ein Trauerspiel in fünf Aufzügen</titlePart>
+                    </docTitle>
+                  </titlePage>
+                  <pb n="128"/>
+                  <castList>
+                    <head>Personen.</head>
+                    <castItem>
+                      <role>Emilia Galotti.</role>
+                    </castItem>
+                    <castGroup rend="braced">
+                      <castItem>
+                        <role>Odoardo,</role>
+                      </castItem>
+                      <castItem>
+                        <role>Claudia Galotti,</role>
+                      </castItem>
+                      <roleDesc>Eltern der Emilia.</roleDesc>
+                    </castGroup>
+                    <castItem>
+                      <role>Hettore Gonzaga,</role>
+                      <roleDesc>Prinz von Guastalla.</roleDesc>
+                    </castItem>
+                    <castItem>
+                      <role>Marinelli,</role>
+                      <roleDesc>Kammerherr des Prinzen.</roleDesc>
+                    </castItem>
+                    <castItem>
+                      <role>Camillo Rota,</role>
+                      <roleDesc>einer von des Prinzen Räten.</roleDesc>
+                    </castItem>
+                    <castItem>
+                      <role>Conti,</role>
+                      <roleDesc>Maler.</roleDesc>
+                    </castItem>
+                    <castItem>
+                      <role>Graf Appiani.</role>
+                    </castItem>
+                    <castItem>
+                      <role>Gräfin Orsina.</role>
+                    </castItem>
+                    <castItem>
+                      <role>Angelo,</role> und <role>einige Bediente.</role>
+                    </castItem>
+                    <pb n="128"/>
+                  </castList>
+                </front>
+              </egXML>
+            </exemplum>
+            <exemplum>
+              <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                <front>
+                  <div type="front">
+                    <head>Johann Nestroy</head>
+                    <head>Der Talisman</head>
+                    <head>Posse mit Gesang in drei Aufzügen</head>
+                    <pb n="244"/>
+                  </div>
+                  <castList>
+                    <head>Personen.</head>
+                    <castItem>Titus Feuerfuchs, ein vazierender Barbiergeselle.</castItem>
+                    <castItem>Frau von Cypressenburg, Witwe.</castItem>
+                    <castItem>Emma, ihre Tochter.</castItem>
+                    <!-- ... -->
+                  </castList>
+                  <set>
+                    <p>
+                      Die Handlung spielt auf dem Gute der Frau von
+                      Cypressenburg, nahe bei einer großen Stadt.
+                    </p>
+                  </set>
+                </front>
+              </egXML>
+              <ab>
+                The frontmatter of the play
+                <ref target="https://dracor.org/id/ger000083">Nestroy: Der
+                Talisman</ref>.
+                <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                  <div type="front">
+                    <head>Johann Nestroy</head>
+                    <head>Der Talisman</head>
+                    <head>Posse mit Gesang in drei Aufzügen</head>
+                    <pb n="244"/>
+                  </div>
+                </egXML>
+                will be deprecated though and replaced with <gi>titlePage</gi>.
+              </ab>
+            </exemplum>
+          </elementSpec>
+
+          <!-- ##### -->
+          <!--   G   -->
+          <!-- ##### -->
+
+          <!-- genName -->
+          <elementSpec ident="genName" mode="change" module="namesdates">
+            <exemplum source="https://dracor.org/id/rus000209">
+              <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                <author>
+                  <persName type="nobility">
+                    <forename>Екатерина</forename>
+                    <genName>II</genName>
+                  </persName>
+                  <persName>
+                    <forename>София</forename>
+                    <forename>Августа</forename>
+                    <forename>Фредерика</forename>
+                    <surname>Ангальт-Цербстская</surname>
+                  </persName>
+                  <persName xml:lang="en">
+                    <forename>Catherine</forename>
+                    <genName>II</genName>
+                  </persName>
+                  <idno type="wikidata">Q36450</idno>
+                </author>
+              </egXML>
+              <ab>
+                Encoding of the name of the author “Catherine II” of the play
+                <ref target="https://dracor.org/id/rus000209">Расстроенная семья
+                острожками и подозрениями</ref>.
+              </ab>
+            </exemplum>
+          </elementSpec>
+
+          <!-- graphic -->
+          <elementSpec ident="graphic" module="core" mode="change">
+            <exemplum source="https://dracor.org/id/ger000104">
+              <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                <figure>
+                  <graphic url="http://images.zeno.org/Literatur/I/big/haup0031.jpg"/>
+                  <ab>Glumms große Kretschamstube.</ab>
+                </figure>
+              </egXML>
+              <ab>
+                A figure in
+                <ref target="https://dracor.org/id/ger000104">Hauptmann:
+                Ephraims Breite</ref>
+              </ab>
+            </exemplum>
+          </elementSpec>
+
+          <!-- ##### -->
+          <!--   H   -->
+          <!-- ##### -->
+
+          <!-- head -->
+          <elementSpec ident="head" module="core" mode="change">
+            <exemplum source="https://dracor.org/id/ger000083">
+              <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                <div type="act">
+                  <head>Erster Aufzug</head>
+                  <stage>
+                    Die Bühne stellt einen Dorfplatz vor. In der Mitte gegen den
+                    Hintergrund ein Brunnen, links eine Gartenmauer mit einer
+                    kleinen, offenstehenden Tür, welche in den Herrschaftsgarten
+                    führt.
+                  </stage>
+                  <div type="scene">
+                    <head>Erster Auftritt</head>
+                    <stage>
+                      Bauernmädchen, darunter Hannerl, treten während dem
+                      Ritornell des folgenden Chores aus dem Hintergrunde links
+                      auf.
+                    </stage>
+                    <stage>Chor.</stage>
+                  </div>
+                </div>
+              </egXML>
+              <ab>
+                Headings of an act and a scene in
+                <ref target="https://dracor.org/id/ger000083">Nestroy: Der
+                Talisman</ref>.
+              </ab>
+            </exemplum>
+            <exemplum source="https://dracor.org/id/ger000546">
+              <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                <argument>
+                  <head>Inhalt des trauer-spiels.</head>
+                  <p>
+                    Michael Balbus, käyser Leonis Armenii oberster
+                    feldhauptmann, nach dem er zu unterschiedenen mahlen wegen
+                    seiner untreu und verleumbdungen angeklaget, verschweret
+                    sich wider den käyser, welcher ihn durch Exabolium, seinen
+                    geheimesten rath, offt von seiner leichtfertigkeit
+                    abzustehen ermahnet.
+                    <!-- ... -->
+                  </p>
+                </argument>
+              </egXML>
+              <ab>
+                <ref target="https://dracor.org/id/ger000546">Gryphius: Leo
+                Armenius oder Fürsten-Mord</ref>
+              </ab>
+            </exemplum>
+            <exemplum source="https://dracor.org/id/ger000562">
+              <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                <castList>
+                  <head>In stummen Rollen</head>
+                  <castGroup>
+                    <castItem>Kardinal Dupin, Erzbischof von Paris</castItem>
+                    <castItem>Minister</castItem>
+                    <!-- ... -->
+                  </castGroup>
+                </castList>
+              </egXML>
+            </exemplum>
+          </elementSpec>
+
+          <!-- ##### -->
+          <!--   I   -->
+          <!-- ##### -->
+
+          <!-- idno -->
+          <elementSpec ident="idno" module="header" mode="change">
+            <constraintSpec ident="idno_wikidata_qid" scheme="schematron" mode="add">
+              <desc>
+                The content of an <gi>idno</gi> with <att>type</att>
+                <val>wikidata</val> must be a Wikidata QID (e.g.
+                <val>Q42</val>), not a full URL.
+              </desc>
+              <constraint>
+                <sch:rule context="tei:idno[@type eq 'wikidata']">
+                  <sch:assert test="matches(normalize-space(.), '^Q[1-9]\d*$')">
+                    The content of an &lt;idno type="wikidata"&gt; must be a
+                    Wikidata QID, e.g. "Q42", not a full URL.
+                  </sch:assert>
+                </sch:rule>
+              </constraint>
+            </constraintSpec>
+            <attList>
+              <attDef ident="xml:base" mode="change" usage="opt">
+                <desc>
+                  provides a base URI reference with which applications can
+                  resolve relative URI references into absolute URI references.
+                </desc>
+                <datatype>
+                  <dataRef key="teidata.pointer"/>
+                </datatype>
+                <remarks>
+                  <p>
+                    In DraCor, this is only used on the element <gi>idno</gi>
+                    that contains the
+                    <ref target="#corpus_name">corpus name</ref> in the
+                    corpus.xml.
+                  </p>
+                </remarks>
+              </attDef>
+              <attDef ident="type" mode="change" usage="opt">
+                <desc>Classifies the identifier</desc>
+                <valList type="semi" mode="replace">
+                  <valItem ident="URL">
+                    <desc>URL</desc>
+                  </valItem>
+                  <valItem ident="wikidata">
+                    <desc>wikidata</desc>
+                  </valItem>
+                  <valItem ident="pnd">
+                    <desc>GND</desc>
+                  </valItem>
+                  <valItem ident="URI">
+                    <desc>URI</desc>
+                  </valItem>
+                  <valItem ident="repo">
+                    <gloss>Repository URL</gloss>
+                    <desc>URL of the (GitHub) Repository of a Corpus</desc>
+                  </valItem>
+                </valList>
+              </attDef>
+            </attList>
+            <exemplum source="https://dracor.org/id/ger000416">
+              <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                <author>
+                  <persName>
+                    <forename>Ferdinand</forename>
+                    <surname>Raimund</surname>
+                  </persName>
+                  <idno type="wikidata">Q45025</idno>
+                  <idno type="pnd">118597914</idno>
+                </author>
+              </egXML>
+              <ab>
+                Identifiers of the author of the play
+                <ref target="https://dracor.org/id/ger000416">Raimund: Die
+                gefesselte Phantasie</ref>
+              </ab>
+            </exemplum>
+            <exemplum source="https://dracor.org/id/ger000416">
+              <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                <publicationStmt>
+                  <publisher xml:id="dracor">DraCor</publisher>
+                  <idno type="URL">https://dracor.org</idno>
+                  <availability>
+                    <licence target="https://creativecommons.org/publicdomain/zero/1.0">CC0 1.0</licence>
+                  </availability>
+                </publicationStmt>
+              </egXML>
+              <ab>Provide an identifier for DraCor (use the URL)</ab>
+            </exemplum>
+            <exemplum source="https://dracor.org/id/ger000416">
+              <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                <bibl type="digitalSource">
+                  <ref target="http://www.textgridrep.org/textgrid:t97f.0">
+                    TextGrid Repository
+                  </ref>
+                  <!-- ... -->
+                </bibl>
+              </egXML>
+              <ab>
+                URL as an identifier of the digital source of the play
+                <ref target="https://dracor.org/id/ger000416">Raimund: Die
+                gefesselte Phantasie</ref>
+              </ab>
+            </exemplum>
+            <exemplum source="https://dracor.org/id/rus000117">
+              <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                <sourceDesc>
+                  <bibl type="digitalSource">
+                    <ref target="http://az.lib.ru/p/plawilxshikow_p_a/text_0040.shtml">
+                      Библиотека Максима Мошкова (lib.ru)
+                    </ref>
+                    <availability status="free">
+                      <p>
+                        In the public domain.
+                      </p>
+                    </availability>
+                    <bibl type="originalSource">
+                      <title>Русская драматургия XVIII века. – М.: Современник,
+                      1986. – С. 445–460.</title>
+                    </bibl>
+                  </bibl>
+                </sourceDesc>
+              </egXML>
+              <ab>
+                <ref target="https://dracor.org/id/rus000117">Плавильщиков:
+                Ермак, покоритель Сибири</ref>
+              </ab>
+            </exemplum>
+          </elementSpec>
+
+          <!-- ##### -->
+          <!--   K   -->
+          <!-- ##### -->
+
+          <!-- keywords -->
+          <elementSpec ident="keywords" module="header" mode="change">
+            <exemplum source="https://dracor.org/id/ger000389">
+              <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                <keywords>
+                  <term type="genreTitle">Tragedy</term>
+                </keywords>
+              </egXML>
+              <ab>
+                Keywords used to classify the genre of the play
+                <ref target="https://dracor.org/id/ger000389">Laube:
+                Struensee</ref>.
+              </ab>
+            </exemplum>
+          </elementSpec>
+
+          <!-- ##### -->
+          <!--   L   -->
+          <!-- ##### -->
+
+          <!-- l -->
+          <elementSpec ident="l" module="core" mode="change">
+            <constraintSpec ident="antilabe-part-sequence" scheme="schematron">
+              <desc>
+                Consecutive verse lines encoded with <att>part</att> represent
+                an antilabe, i.e. a verse line shared between speakers. The
+                values must form a valid sequence: <val>I</val> is followed by
+                <val>M</val> or <val>F</val>; <val>M</val> is preceded by
+                <val>I</val> or <val>M</val> and followed by <val>M</val> or
+                <val>F</val>; <val>F</val> is preceded by <val>I</val> or
+                <val>M</val>.
+              </desc>
+              <constraint>
+                <sch:rule context="tei:l[@part='I']" role="warning">
+                  <sch:assert test="following::tei:l[1]/@part = ('M', 'F')">
+                    A verse line with part="I" (initial part of an antilabe)
+                    must be followed by a verse line with part="M" or part="F".
+                  </sch:assert>
+                </sch:rule>
+                <sch:rule context="tei:l[@part='M']" role="warning">
+                  <sch:assert test="preceding::tei:l[1]/@part = ('I', 'M')">
+                    A verse line with part="M" (medial part of an antilabe)
+                    must be preceded by a verse line with part="I" or part="M".
+                  </sch:assert>
+                  <sch:assert test="following::tei:l[1]/@part = ('M', 'F')">
+                    A verse line with part="M" (medial part of an antilabe)
+                    must be followed by a verse line with part="M" or part="F".
+                  </sch:assert>
+                </sch:rule>
+                <sch:rule context="tei:l[@part='F']" role="warning">
+                  <sch:assert test="preceding::tei:l[1]/@part = ('I', 'M')">
+                    A verse line with part="F" (final part of an antilabe)
+                    must be preceded by a verse line with part="I" or part="M".
+                  </sch:assert>
+                </sch:rule>
+              </constraint>
+            </constraintSpec>
+            <attList>
+              <attDef ident="rend" mode="change" usage="opt">
+                <valList type="semi" mode="replace">
+                  <valItem ident="indent">
+                    <gloss>Indented</gloss>
+                    <desc>Indicates whether or not a verse line is indented</desc>
+                  </valItem>
+                </valList>
+              </attDef>
+              <attDef ident="part" mode="change" usage="opt">
+                <!-- it might also be possible to leave this at "closed"
+                     because in att.fragmentable there is a closed value list
+                     not sure how the API will handle this encoding but it is
+                     used in GerDraCor and RusDraCor -->
+                <!-- also see https://github.com/dracor-org/dracor-api/issues/318 -->
+                <valList type="semi" mode="replace">
+                  <valItem ident="F">
+                    <gloss>Final</gloss>
+                    <desc>
+                      Final part of an interrupted or fragmented verse line
+                    </desc>
+                  </valItem>
+                  <valItem ident="I">
+                    <gloss>Initial</gloss>
+                    <desc>
+                      Initial part of an interrupted or fragmented verse line
+                    </desc>
+                  </valItem>
+                  <valItem ident="M">
+                    <gloss>Medial</gloss>
+                    <desc>
+                      Middle part of an interrupted or fragmented verse line
+                    </desc>
+                  </valItem>
+                </valList>
+                <remarks>
+                  <p>
+                    Consecutive verse lines that carry this attribute should be
+                    considered as a single unit. On the use of <att>part</att>
+                    in dramatic texts, see also
+                    <ref target="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/CO.html#COVE">TEI
+                    Guidelines</ref>. See also this
+                    <ref target="https://github.com/dracor-org/dracor-schema/issues/75">issue</ref>
+                    on GitHub.
+                  </p>
+                </remarks>
+              </attDef>
+            </attList>
+            <exemplum source="https://dracor.org/id/ger000083">
+              <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                <sp who="#chor_2-23">
+                  <speaker>CHOR.</speaker>
+                  <lg>
+                    <l>'s ist nirgends so wie in dem Haus amüsant,</l>
+                    <l>Denn hier sind die Karten und Würfel verbannt,</l>
+                    <l>Bei Frau Von Cypressenburg in Soiree,</l>
+                    <l>Da huldigt den Musen man nur und dem Tee.</l>
+                  </lg>
+                  <stage>
+                    Während dem Chor haben Bediente einen großen gedeckten
+                    Teetisch gebracht und die Stühle gesetzt.
+                  </stage>
+                </sp>
+              </egXML>
+              <ab>
+                <ref target="https://dracor.org/id/ger000083">Nestroy: Der
+                Talisman</ref>
+              </ab>
+            </exemplum>
+            <exemplum source="https://dracor.org/id/rus000022">
+              <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                <sp who="#TretijMistik">
+                  <speaker>Третий мистик</speaker>
+                  <l part="F">Наступит событие.</l>
+                </sp>
+                <sp who="#Pero">
+                  <speaker>Пьеро</speaker>
+                  <l>О, вечный ужас, вечный мрак!</l>
+                </sp>
+                <sp who="#PervyjMistik">
+                  <speaker>Первый мистик</speaker>
+                  <l part="I">Ты ждешь?</l>
+                </sp>
+                <sp who="#VtorojMistik">
+                  <speaker>Второй мистик</speaker>
+                  <l part="M">Я жду.</l>
+                </sp>
+                <sp who="#TretijMistik">
+                  <speaker>Третий мистик</speaker>
+                  <l part="F">Уж близко прибытие:</l>
+                  <l>За окном нам ветер подал знак.</l>
+                </sp>
+              </egXML>
+              <ab>
+                <ref target="https://dracor.org/id/rus000022">Блок:
+                Балаганчик</ref> to illustrate usage of <att>part</att>; would
+                need the source as well.
+              </ab>
+            </exemplum>
+            <exemplum source="https://dracor.org/id/rus000018">
+              <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                <sp who="#rusalki">
+                  <speaker>Русалки</speaker>
+                  <lg>
+                    <l rend="indent">Веселой толпою</l>
+                    <l rend="indent">С глубокого дна</l>
+                    <l rend="indent">Мы ночью всплываем,</l>
+                    <l rend="indent">Нас греет луна.</l>
+                    <l>Любо нам порой ночною</l>
+                    <l>Дно речное покидать,</l>
+                    <l>Любо вольной головою</l>
+                    <l>Высь речную разрезать,</l>
+                    <l>Подавать друг дружке голос,</l>
+                    <l>Воздух звонкий раздражать,</l>
+                    <l>И зеленый, влажный волос</l>
+                    <l>В нем сушить и отряхать.</l>
+                  </lg>
+                </sp>
+              </egXML>
+              <ab>
+                Indented lines in the play
+                <ref target="https://dracor.org/id/rus000018">Пушкин:
+                Русалка</ref>.
+              </ab>
+            </exemplum>
+          </elementSpec>
+
+          <!-- label -->
+          <elementSpec ident="label" module="core" mode="change">
+            <exemplum source="https://dracor.org/id/ger000549">
+              <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                <event type="written" notBefore="1647" notAfter="1650">
+                  <label>1647–1650</label>
+                </event>
+              </egXML>
+              <ab>
+                Encoding of the written date of
+                <ref target="https://dracor.org/id/ger000549">Gryphius:
+                Horribilicribrifax Teutsch</ref>.
+              </ab>
+            </exemplum>
+            <remarks>
+              <p>
+                In DraCor <gi>label</gi> is typically used to add a non-iso date
+                or date string to an event.
+              </p>
+            </remarks>
+          </elementSpec>
+
+          <!-- lb -->
+          <!-- lg -->
+          <elementSpec ident="lg" module="core" mode="change">
+            <exemplum source="https://dracor.org/id/ger000083">
+              <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                <sp who="#flora #salome">
+                  <speaker>FLORA, SALOME.</speaker>
+                  <lg>
+                    <l>'s laßt sich drüber nix sag'n</l>
+                    <l>Mit ein'm orndlichen Mag'n.</l>
+                    <pb n="312"/>
+                  </lg>
+                </sp>
+              </egXML>
+              <ab>
+                Grouping of lines in
+                <ref target="https://dracor.org/id/ger000083">Nestroy: Der
+                  Talisman</ref>.
+              </ab>
+            </exemplum>
+          </elementSpec>
+
+          <!-- licence -->
+          <elementSpec ident="licence" module="header" mode="change">
+            <constraintSpec ident="licence_target_url" scheme="schematron">
+              <desc>
+                Licence information should refer to a licence document with the
+                providing the full licence text.
+              </desc>
+              <constraint>
+                <sch:rule context="tei:licence" role="warning">
+                  <sch:assert test="@target">
+                    Consider providing the URL to the full licence text in a
+                    @target attribute.
+                  </sch:assert>
+                </sch:rule>
+              </constraint>
+            </constraintSpec>
+            <exemplum source="https://dracor.org/id/ger000010">
+              <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                <publicationStmt>
+                  <publisher xml:id="dracor">DraCor</publisher>
+                  <idno type="URL">https://dracor.org</idno>
+                  <availability>
+                    <licence target="https://creativecommons.org/publicdomain/zero/1.0">CC0 1.0</licence>
+                  </availability>
+                </publicationStmt>
+                <!-- ... -->
+                <sourceDesc>
+                  <bibl type="digitalSource">
+                    <ref target="http://www.textgridrep.org/textgrid:npsg.0">
+                      TextGrid Repository
+                    </ref>
+                    <availability>
+                      <licence target="http://creativecommons.org/licenses/by/3.0/de/legalcode">CC-BY-3.0</licence>
+                    </availability>
+                    <bibl type="originalSource">
+                      <title>Franz Grillparzer: Sämtliche Werke. Ausgewählte
+                      Briefe, Gespräche, Berichte. Herausgegeben von Peter Frank
+                      und Karl Pörnbacher, München: Hanser, [1960–1965].</title>
+                    </bibl>
+                  </bibl>
+                </sourceDesc>
+              </egXML>
+              <ab>
+                The text of the play
+                <ref target="https://dracor.org/id/ger000010">Grillparzer: Des
+                Meeres und der Liebe Wellen</ref> is in the public domain and
+                thus licensed under a CC0 licence, as is the encoding by DraCor.
+                The digital source is also contained in TextGrid and was
+                licensed under a CC BY 3.0 licence.
+              </ab>
+            </exemplum>
+            <exemplum source="#ger000082">
+              <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                <licence target="http://creativecommons.org/licenses/by/3.0/de/legalcode">CC-BY-3.0</licence>
+              </egXML>
+              <ab>
+                The digital source of the play
+                <ref target="https://dracor.org/id/ger000082">Goethe: Torquato
+                Tasso</ref> distributed by TextGrid is licensed under a CC-BY
+                3.0 licence.
+              </ab>
+            </exemplum>
+            <exemplum source="https://dracor.org/id/ger000485">
+              <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                <licence target="http://creativecommons.org/licenses/by-nc/3.0/de/">CC BY-NC 3.0</licence>
+              </egXML>
+              <ab>
+                The digital source of the play
+                <ref target="https://dracor.org/id/ger000485">Kotzebue: Der
+                Schutzgeist</ref> distributed by the DTA is licensed under a
+                CC-BY-NC 3.0 licence.
+              </ab>
+            </exemplum>
+            <exemplum source="https://dracor.org/id/rus000042">
+              <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                <licence target="https://creativecommons.org/licenses/by-sa/3.0/deed.ru">CC BY-SA 3.0</licence>
+              </egXML>
+              <ab>
+                The digital source of the play
+                <ref target="https://dracor.org/id/rus000042">Pushkin: Boris
+                Godunov</ref> is licensed by Wikisource under a CC BY-SA 3.0
+                licence.
+              </ab>
+            </exemplum>
+            <remarks>
+              <!-- overwrite the default tei's remarks -->
+              <ab/>
+            </remarks>
+          </elementSpec>
+
+          <!-- listChange -->
+          <elementSpec ident="listChange" module="header" mode="change">
+            <content>
+              <elementRef key="change" minOccurs="1" maxOccurs="unbounded"/>
+            </content>
+            <exemplum source="https://dracor.org/id/ger000262">
+              <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                <revisionDesc>
+                  <listChange>
+                    <change when="2017-01-06">(dlina) file conversion from source</change>
+                    <change when="2017-08-04">(ff) structural cleanup</change>
+                    <change when="2018-09-25">(ff) formalities, IDs</change>
+                  </listChange>
+                </revisionDesc>
+              </egXML>
+              <ab>
+                List of changes in the <gi>revisionDesc</gi> of the play
+                <ref target="https://dracor.org/id/ger000262">Engel: Eid und
+                Pflicht</ref>.
+              </ab>
+            </exemplum>
+          </elementSpec>
+
+          <!-- listEvent! -->
+          <elementSpec ident="listEvent" module="namesdates" mode="change">
+            <exemplum>
+              <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                <listEvent>
+                  <event type="print" when="1813">
+                    <desc/>
+                  </event>
+                  <event type="premiere" when="1811">
+                    <desc/>
+                  </event>
+                  <event type="written" when="1811">
+                    <desc>geschrieben wahrscheinlich im Winter 1811</desc>
+                  </event>
+                </listEvent>
+              </egXML>
+            </exemplum>
+          </elementSpec>
+
+          <!-- listPerson -->
+          <elementSpec ident="listPerson" module="namesdates" mode="change">
+            <exemplum source="https://dracor.org/id/ger000304">
+              <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                <profileDesc>
+                  <particDesc>
+                    <listPerson>
+                      <person xml:id="michl" sex="MALE">
+                        <persName>Michl</persName>
+                      </person>
+                      <person xml:id="loisl" sex="MALE">
+                        <persName>Loisl</persName>
+                      </person>
+                      <person xml:id="veit" sex="MALE">
+                        <persName>Veit</persName>
+                      </person>
+                      <person xml:id="martin" sex="MALE">
+                        <persName>Martin</persName>
+                      </person>
+                      <personGrp xml:id="die_bursche" sex="MALE">
+                        <name>Die Bursche</name>
+                        <name type="variant">Alle Bursche</name>
+                      </personGrp>
+                      <!-- ... -->
+                    </listPerson>
+                  </particDesc>
+                </profileDesc>
+              </egXML>
+              <ab>
+                Characters listed in the <gi>particDesc</gi> of the play
+                <ref target="https://dracor.org/id/ger000304">Anzengruber: Die
+                Kreuzelschreiber</ref>.
+              </ab>
+            </exemplum>
+            <remarks>
+              <p>See also <ref target="https://github.com/dracor-org/dracor-schema/issues/104">issue 104</ref>.</p>
+            </remarks>
+          </elementSpec>
+
+          <!-- listRelation -->
+          <elementSpec ident="listRelation" module="namesdates" mode="change">
+            <exemplum>
+              <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                <listRelation>
+                  <relation name="spouses" mutual="#contessa #conte"/>
+                  <relation name="spouses" mutual="#susanna #figaro"/>
+                  <relation name="parent_of" active="#antonio" passive="#barbarina"/>
+                  <relation name="related_with" active="#antonio" passive="#susanna"/>
+                </listRelation>
+              </egXML>
+              <ab>
+                Character relations in
+                <ref target="https://dracor.org/id/ita000056"><title>Le nozze di
+                Figaro</title></ref>
+              </ab>
+            </exemplum>
+            <remarks>
+              <p>
+                The DraCor API
+                <ref target="#play_character_relations">supports</ref> the
+                <gi>listRelation</gi> element inside a <gi>particDesc</gi> for
+                encoding <ref target="#section-character-relations">relations
+                between characters</ref>.
+              </p>
+            </remarks>
+          </elementSpec>
+
+          <!-- ##### -->
+          <!--   M   -->
+          <!-- ##### -->
+
+          <!-- move -->
+
+          <!-- ##### -->
+          <!--   N   -->
+          <!-- ##### -->
+
+          <!-- name -->
+          <elementSpec ident="name" module="core" mode="change">
+            <attList>
+              <attDef ident="type" mode="change" usage="opt">
+                <valList type="semi" mode="replace">
+                  <valItem ident="variant">
+                    <gloss>variant name</gloss>
+                    <desc>Alternative name</desc>
+                  </valItem>
+                </valList>
+              </attDef>
+            </attList>
+            <exemplum source="https://dracor.org/id/ger000304">
+              <p>
+                Use <gi>name</gi> if encoding a group of characters with
+                <gi>personGrp</gi>. <att>type</att> can be used, if more variants
+                are present:
+              </p>
+              <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                <personGrp xml:id="die_bursche" sex="MALE">
+                  <name>Die Bursche</name>
+                  <name type="variant">Alle Bursche</name>
+                </personGrp>
+              </egXML>
+              <ab>
+                Encoding of the name of a group of characters in the play
+                <ref target="https://dracor.org/id/ger000304">Anzengruber: Die
+                Kreuzelschreiber</ref>.
+              </ab>
+            </exemplum>
+            <exemplum source="https://dracor.org/id/ger000526">
+              <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                <bibl type="digitalSource">
+                  <ref target="https://books.google.com/books?id=q1PDO0ko1mcC&amp;pg=PA51">
+                    Google Books
+                  </ref>
+                  <!-- ... -->
+                </bibl>
+              </egXML>
+              <ab>
+                Encoding of the name of the digital source of the play
+                <ref target="https://dracor.org/id/ger000526">Solbrig: Die
+                Dorfschule</ref>.
+              </ab>
+            </exemplum>
+            <exemplum source="https://dracor.org/id/ger000258">
+              <egXML xmlns="http://www.tei-c.org/ns/Examples" valid="false">
+                <person xml:id="fausts_vater" sex="MALE">
+                  <persName>Fausts Vater</persName>
+                  <name type="variant">Vater</name>
+                </person>
+              </egXML>
+              <ab>
+                This might be unintentional/an error in
+                <ref target="https://dracor.org/id/ger000258">Voss: Faust</ref>.
+                Element <gi>name</gi> should not appear in a <gi>person</gi>.
+              </ab>
+            </exemplum>
+            <remarks>
+              <p>
+                Think about, why there is a need for <gi>persName</gi> and
+                <gi>name</gi>.
+              </p>
+            </remarks>
+          </elementSpec>
+
+          <!-- nameLink -->
+
+          <!-- note -->
+          <elementSpec ident="note" module="core" mode="change">
+            <exemplum source="https://dracor.org/id/ger000069">
+              <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                <stage>
+                  Hinter der Szene lautes Schreien und Rufen; Gäste, Herren, und
+                  Damen kommen lebhaft miteinander sprechend auf die
+                  <pb n="62"/> Bühne, indem sie sich ängstlich umblicken, hinter
+                  ihnen Bernhardy mit zwei jungen Leoparden,<note place="foot">Ausgestopften
+                  natürlich.</note> die er, in jeder Hand einen, im Genick hält.
+                </stage>
+              </egXML>
+              <ab>
+                A footnote in a stage direction in the play
+                <ref target="https://dracor.org/id/ger000069">Carl Laufs u.
+                Wilhelm Jacoby: Pension Schöller</ref>.
+              </ab>
+            </exemplum>
+            <exemplum source="https://dracor.org/id/ger000039">
+              <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                <sp who="#thomas">
+                  <speaker>THOMAS.</speaker>
+                  <p>
+                    <!-- ... --> Na<note place="foot">Na = nein.</note>! Gelten
+                    S'! – Kommen S', Frau Schwägerin!
+                  </p>
+                  <stage>
+                    Während er Herminen den Arm reicht, fällt der
+                    Zwischenvorhang.
+                  </stage>
+                </sp>
+              </egXML>
+              <ab>
+                A note in
+                <ref target="https://dracor.org/id/ger000039">Ludwig
+                Anzengruber: Heimg'funden</ref> that is rendered as a footnote
+                in the source.
+              </ab>
+            </exemplum>
+          </elementSpec>
+
+          <!-- ##### -->
+          <!--   P   -->
+          <!-- ##### -->
+
+          <!-- p -->
+          <elementSpec ident="p" module="core" mode="change">
+            <exemplum>
+              <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                <sp who="#flora">
+                  <speaker>FLORA.</speaker>
+                  <p>
+                    Schad', daß du mit deiner Langsamkeit kein Stellwag'n worden
+                    bist.
+                  </p>
+                </sp>
+                <sp who="#plutzerkern">
+                  <speaker>PLUTZERKERN.</speaker>
+                  <p>
+                    Dazu fehlet mir die Pfiffigkeit. Ein Stellwagen is das
+                    pfiffigste Wesen auf der Welt, weil er ohne Unterschied des
+                    Standes jeden Menschen aufsitzen laßt.
+                  </p>
+                </sp>
+              </egXML>
+            </exemplum>
+          </elementSpec>
+
+          <!-- particDesc -->
+          <elementSpec ident="particDesc" module="corpus" mode="change">
+            <constraintSpec ident="particdesc_person_id" scheme="schematron" mode="add">
+              <constraint>
+                <sch:rule context="tei:particDesc/tei:listPerson/tei:person | tei:particDesc/tei:listPerson/tei:personGrp" role="error" see="https://dracor.org/doc/odd#section-characters">
+                  <sch:assert test="@xml:id">
+                    Each &lt;person&gt; or &lt;personGrp&gt; element in 
+                    &lt;particDesc&gt; must provide an @xml:id attribute.
+                  </sch:assert>
+                </sch:rule>
+              </constraint>
+            </constraintSpec>
+            <constraintSpec ident="particdesc_person_id_format" scheme="schematron" mode="add"  type="encoding-hint">
+              <constraint>
+                <sch:rule context="tei:particDesc/tei:listPerson/tei:*[@xml:id]" role="warning" see="https://dracor.org/doc/odd#section-identifiers">
+                  <sch:assert test="matches(@xml:id, '^[a-z]([-_a-z0-9]*[a-z0-9])?$')">
+                    The @xml:id in &lt;particDesc&gt; should follow
+                    the DraCor rules for identifiers. See section
+                    "Identifiers" of the guidelines.
+                  </sch:assert>
+                </sch:rule>
+              </constraint>
+            </constraintSpec>
+            <exemplum>
+              <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                <profileDesc>
+                  <particDesc>
+                    <listPerson>
+                      <person xml:id="michl" sex="MALE">
+                        <persName>Michl</persName>
+                      </person>
+                      <person xml:id="loisl" sex="MALE">
+                        <persName>Loisl</persName>
+                      </person>
+                      <person xml:id="veit" sex="MALE">
+                        <persName>Veit</persName>
+                      </person>
+                      <person xml:id="martin" sex="MALE">
+                        <persName>Martin</persName>
+                      </person>
+                      <personGrp xml:id="die_bursche" sex="MALE">
+                        <name>Die Bursche</name>
+                        <name type="variant">Alle Bursche</name>
+                      </personGrp>
+                      <person xml:id="steinklopferhanns" sex="MALE">
+                        <persName>Steinklopferhanns</persName>
+                      </person>
+                      <person xml:id="sepp" sex="MALE">
+                        <persName>Sepp</persName>
+                      </person>
+                      <person xml:id="marthe" sex="FEMALE">
+                        <persName>Marthe</persName>
+                      </person>
+                      <person xml:id="anton" sex="MALE">
+                        <persName>Anton</persName>
+                      </person>
+                      <person xml:id="liesel" sex="FEMALE">
+                        <persName>Liesel</persName>
+                      </person>
+                    </listPerson>
+                  </particDesc>
+                </profileDesc>
+              </egXML>
+            </exemplum>
+            <remarks>
+              <p>
+                Explain, why we need <gi>particDesc</gi> and <gi>castList</gi>
+              </p>
+            </remarks>
+          </elementSpec>
+
+          <!-- pb -->
+          <elementSpec ident="pb" module="core" mode="change">
+            <attList>
+              <attDef ident="facs" usage="opt">
+                <desc>Links this page break to a facsimile image.</desc>
+                <datatype>
+                  <dataRef key="anyURI"/>
+                </datatype>
+              </attDef>
+            </attList>
+            <exemplum>
+              <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                <sp who="#anton">
+                  <speaker>ANTON</speaker>
+                  <stage>
+                    <hi>steht gleichfalls auf.</hi>
+                  </stage>
+                  <p>
+                    Vor einer Stund habn s' 'n tot ausn Wildbach zogn. Weißt ja,
+                    er hat gestern noch nach Grundldorf wolln; nachm Ort schon
+                    zu, bei der Wegbeug, wo 's Ufer so hoch ansteigt und schroff
+                    gegen 's Wasser abfallt, dort habn s' 'n gfunden.
+                    <hi>Gewichtig.</hi> Du warst dabei, du mußt's wissen.
+                    Steinklopfer, wie der alte Mon gestern gredt hat, ich hab
+                    mer's nur verzähln lassen. – Er hat nit viel gtrunken und is
+                    noch rüstig ausgschritten, und a Nacht <pb n="54"/>war auch,
+                    so klar, daß man jed Blattel auf die Bäum hätt zähln können
+                    – fehltreten is er nit! Er wird halt 'n Steig zwischen die
+                    Büsch fortgangen sein – und wer weiß, wie ihm dabei ums Herz
+                    war –, bis er auf einmal dort in die Lichtung treten is,
+                    dort steht mer eh knapp am Rand – unten rauscht 's Wasser,
+                    und gradüber am entern Ufer liegt unser Dörfel und nah, mir
+                    meint, mer könnt's greifen, 's letzte Häusel davon, 'm
+                    Brenninger seins. Dort hat er halt 'm Weg a End gmacht!
+                  </p>
+                </sp>
+              </egXML>
+            </exemplum>
+          </elementSpec>
+
+          <!-- performance -->
+          <!-- persName -->
+          <elementSpec ident="persName" module="namesdates" mode="change">
+            <attList>
+              <attDef ident="type" mode="change" usage="opt">
+                <valList type="semi" mode="replace">
+                  <valItem ident="variant">
+                    <gloss>Name variant</gloss>
+                    <desc>Alternative to the name of a person</desc>
+                  </valItem>
+                  <valItem ident="pen">
+                    <gloss>Pen Name</gloss>
+                    <desc>Pseudonym used by writers or authors</desc>
+                  </valItem>
+                  <valItem ident="nobility">
+                    <gloss>Noble Name <!-- maybe better Regnal Name --></gloss>
+                    <!-- https://github.com/dracor-org/dracor-schema/issues/109 -->
+                    <desc>
+                      This refers to the official name adopted by royalty or
+                      other high-ranking individuals, often with an ordinal
+                      (like "Catherine the Great" or "Louis XIV") to denote
+                      their position in a lineage. OR: Dynastic Name: This
+                      refers more to a family or house name, like "Habsburg" or
+                      "Windsor," often indicating the royal house or lineage.
+                    </desc>
+                  </valItem>
+                  <valItem ident="pseudo">
+                    <gloss>Pseudonym</gloss>
+                    <desc>
+                      Fictitious name used by a person, often an author or
+                      artist, to conceal their identity.
+                    </desc>
+                  </valItem>
+                </valList>
+                <remarks>
+                  <p>
+                    See also this
+                    <ref target="https://github.com/dracor-org/dracor-schema/issues/76">issue</ref>
+                    on GitHub.
+                  </p>
+                </remarks>
+              </attDef>
+            </attList>
+            <exemplum>
+              <p>
+                Use <gi>name</gi> if encoding a group of characters with
+                <gi>personGrp</gi>. <att>type</att> can be used, if more variants
+                are present:
+              </p>
+              <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                <listPerson>
+                  <person xml:id="Vorotynskij" sex="MALE">
+                    <persName>Воротынский</persName>
+                    <persName xml:lang="de">Vorotynskij</persName>
+                  </person>
+                  <person xml:id="Shujskij" sex="MALE">
+                    <persName>Шуйский</persName>
+                    <persName xml:lang="de">Šujskij</persName>
+                  </person>
+                  <person xml:id="OdinIzNaroda_1" sex="MALE">
+                    <persName>Один (Красная площадь)</persName>
+                    <persName xml:lang="de">Einer (Roter Platz)</persName>
+                  </person>
+                  <!-- ... -->
+                </listPerson>
+              </egXML>
+            </exemplum>
+            <exemplum source="https://dracor.org/id/ger000451">
+              <egXML xmlns="http://www.tei-c.org/ns/Examples" valid="false">
+                <personGrp xml:id="verschworene" sex="MALE">
+                  <name>Verschworene</name>
+                  <persName type="variant">Alle</persName>
+                  <persName type="variant">Einige Verschworene</persName>
+                </personGrp>
+              </egXML>
+              <ab>
+                Wrong usage of <gi>persName</gi> in a <gi>personGrp</gi> in the
+                play <ref target="https://dracor.org/id/ger000451">Schiller:
+                Die Verschwörung des Fiesco zu Genua</ref>.
+              </ab>
+            </exemplum>
+            <remarks>
+              <p>
+                Think about, why there is a need for <gi>persName</gi> and
+                <gi>name</gi>.
+              </p>
+            </remarks>
+          </elementSpec>
+
+          <!-- person -->
+          <elementSpec ident="person" module="core" mode="change">
+            <constraintSpec ident="person_ana_wikidata_deprecation" scheme="schematron" mode="add">
+              <desc>
+                Deprecation: use <gi>idno</gi> with <att>type</att>
+                <val>wikidata</val> instead of <att>ana</att> for Wikidata
+                links on <gi>person</gi>.
+              </desc>
+              <constraint>
+                <sch:rule
+                  context="tei:particDesc//tei:person[@ana]"
+                  see="https://dracor.org/doc/odd#section-character-concept-realizations"
+                  role="warning"
+                >
+                  <sch:report test="matches(@ana, 'wikidata\.org/(entity|wiki)/Q\d+$')">
+                    Using @ana for Wikidata links on &lt;person&gt; is
+                    deprecated. Use &lt;idno type="wikidata"&gt;Q…&lt;/idno&gt;
+                    instead. Apply migration 007-ana-to-idno.xsl to update.
+                  </sch:report>
+                </sch:rule>
+              </constraint>
+            </constraintSpec>
+            <constraintSpec ident="person_sex" scheme="schematron" mode="add"  type="encoding-hint">
+              <constraint>
+                <sch:rule context="tei:person[@sex]" role="warning" see="https://dracor.org/doc/odd#section-character-sex-gender">
+                  <sch:assert test="@sex = ('FEMALE', 'MALE', 'UNKNOWN')">
+                    The values for person/@sex supported by the DraCor API are
+                    "FEMALE", "MALE" and "UNKNOWN".
+                  </sch:assert>
+                </sch:rule>
+              </constraint>
+            </constraintSpec>
+            <attList>
+              <!-- need to globally define -->
+              <attDef ident="sex" mode="change" usage="rec">
+                <valList type="semi" mode="add">
+                  <valItem ident="FEMALE">
+                    <gloss>female</gloss>
+                  </valItem>
+                  <valItem ident="MALE">
+                    <gloss>male</gloss>
+                  </valItem>
+                  <valItem ident="UNKNOWN">
+                    <gloss>unknown</gloss>
+                  </valItem>
+                </valList>
+                <remarks>
+                  <p>
+                    Only the values <val>FEMALE</val>, <val>MALE</val>,
+                    <val>UNKNOWN</val> are supported by the DraCor-API. See also
+                    this
+                    <ref target="https://github.com/dracor-org/dracor-schema/issues/46">issue</ref>
+                    on GitHub.
+                  </p>
+                </remarks>
+              </attDef>
+            </attList>
+            <exemplum>
+              <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                <person xml:id="sepp" sex="MALE">
+                  <persName>Sepp</persName>
+                </person>
+                <person xml:id="marthe" sex="FEMALE">
+                  <persName>Marthe</persName>
+                </person>
+                <person xml:id="anton" sex="MALE">
+                  <persName>Anton</persName>
+                </person>
+                <person xml:id="liesel" sex="FEMALE">
+                  <persName>Liesel</persName>
+                </person>
+              </egXML>
+            </exemplum>
+          </elementSpec>
+
+          <!-- personGrp -->
+          <elementSpec ident="personGrp" module="namesdates" mode="change">
+            <constraintSpec ident="personGrp_ana_wikidata_deprecation" scheme="schematron" mode="add">
+              <desc>
+                Deprecation: use <gi>idno</gi> with <att>type</att>
+                <val>wikidata</val> instead of <att>ana</att> for Wikidata
+                links on <gi>personGrp</gi>.
+              </desc>
+              <constraint>
+                <sch:rule
+                  context="tei:particDesc//tei:personGrp[@ana]"
+                  see="https://dracor.org/doc/odd#section-character-concept-realizations"
+                  role="warning"
+                >
+                  <sch:report test="matches(@ana, 'wikidata\.org/(entity|wiki)/Q\d+$')">
+                    Using @ana for Wikidata links on &lt;personGrp&gt; is
+                    deprecated. Use &lt;idno type="wikidata"&gt;Q…&lt;/idno&gt;
+                    instead. Apply migration 007-ana-to-idno.xsl to update.
+                  </sch:report>
+                </sch:rule>
+              </constraint>
+            </constraintSpec>
+            <constraintSpec ident="personGrp_sex" scheme="schematron" mode="add"  type="encoding-hint">
+              <constraint>
+                <sch:rule context="tei:personGrp[@sex]" role="warning" see="https://dracor.org/doc/odd#section-character-sex-gender">
+                  <sch:assert test="every $t in tokenize(@sex) satisfies $t = ('FEMALE', 'MALE', 'UNKNOWN')">
+                    The values for personGrp/@sex supported by the DraCor API
+                    are "FEMALE", "MALE" and "UNKNOWN".
+                  </sch:assert>
+                </sch:rule>
+              </constraint>
+            </constraintSpec>
+            <attList>
+              <!-- need to globally define -->
+              <attDef ident="sex" mode="change">
+                <valList type="semi" mode="add">
+                  <valItem ident="FEMALE">
+                    <gloss>female</gloss>
+                  </valItem>
+                  <valItem ident="MALE">
+                    <gloss>male</gloss>
+                  </valItem>
+                  <valItem ident="UNKNOWN">
+                    <gloss>unknown</gloss>
+                  </valItem>
+                </valList>
+                <remarks>
+                  <p>
+                    Only the values <val>FEMALE</val>, <val>MALE</val>,
+                    <val>UNKNOWN</val> are supported by the DraCor-API. See also
+                    this
+                    <ref target="https://github.com/dracor-org/dracor-schema/issues/46">issue</ref>
+                    on GitHub.
+                  </p>
+                </remarks>
+              </attDef>
+            </attList>
+          </elementSpec>
+
+          <!-- profileDesc -->
+
+          <!-- publicationStmt -->
+          <elementSpec ident="publicationStmt" module="header" mode="change">
+            <constraintSpec ident="corpus_xml_corpus_name"
+              scheme="schematron" mode="add" corresp="#corpus_name">
+              <desc>
+                The identifier 'corpus name' (see Feature
+                <ref target="#corpus_name">corpus_name</ref>) must be included
+                in corpus.xml in a simple <gi>idno</gi> without any
+                <att>type</att> inside <gi>publicationStmt</gi>.
+              </desc>
+              <constraint>
+                <!-- DEPRECATED: support for teiCorpus -->
+                <sch:rule
+                  context="/(tei:teiCorpus|tei:dracorCorpus)/tei:teiHeader/tei:fileDesc/tei:publicationStmt"
+                  see="https://dracor.org/doc/odd#section-corpus-xml"
+                  role="critical"
+                >
+                  <!-- DEPRECATED: support for type="URI" -->
+                  <sch:assert test="tei:idno[not(@type) or (@type eq 'URI' and @xml:base='https://dracor.org/')]">
+                    The corpus.xml must define the corpus name in an
+                    &lt;idno&gt; with no @type attribute, e.g.
+                    &lt;idno&gt;ger&lt;/idno&gt;.
+                  </sch:assert>
+                </sch:rule>
+              </constraint>
+            </constraintSpec>
+            <constraintSpec ident="corpus_xml_corpus_name_syntax"
+              scheme="schematron" mode="add" corresp="#corpus_name">
+              <constraint>
+                <!-- DEPRECATED: support for teiCorpus and for <idno type="URI"> -->
+                <sch:rule
+                  context="/(tei:teiCorpus|tei:dracorCorpus)/tei:teiHeader/tei:fileDesc/tei:publicationStmt/tei:idno[not(@type) or (@type eq 'URI' and @xml:base='https://dracor.org/')]"
+                  see="https://dracor.org/doc/odd#section-corpus-xml"
+                  role="critical"
+                >
+                  <sch:assert test="matches(., '^[a-z]+$')">
+                    The corpus name must consist of lowercase ASCII characters
+                    only.
+                  </sch:assert>
+                </sch:rule>
+              </constraint>
+            </constraintSpec>
+            <constraintSpec ident="corpus_xml_repository_url"
+              scheme="schematron" mode="add" corresp="#corpus_repository">
+              <desc>
+                The URL of the corpus repository (see Feature
+                <ref target="#corpus_repository">corpus_repository</ref>) needs
+                to be specified in corpus.xml in the <att>target</att> of a <gi>ref</gi>
+                element with <att>type</att> <val>repo</val> for the API to
+                be able to load and update the corpus data from the repository.
+              </desc>
+              <constraint>
+                <sch:rule
+                  context="/(tei:teiCorpus|tei:dracorCorpus)/tei:teiHeader/tei:fileDesc/tei:publicationStmt"
+                  see="https://dracor.org/doc/odd#section-corpus-xml"
+                  role="warning"
+                >
+                  <sch:assert test="tei:ref[@type eq 'repo']/@target or tei:idno[@type eq 'repo']">
+                    The corpus.xml should specify the GitHub repository of the
+                    corpus in the @target attribute of a &lt;ref&gt; element of
+                    @type "repo".
+                  </sch:assert>
+                </sch:rule>
+              </constraint>
+            </constraintSpec>
+            <constraintSpec ident="corpus_xml_deprecation" scheme="schematron" mode="add">
+              <constraint>
+                <sch:rule
+                  context="/(tei:teiCorpus|tei:dracorCorpus)/tei:teiHeader/tei:fileDesc/tei:publicationStmt/tei:idno"
+                  see="https://dracor.org/doc/odd#section-corpus-xml"
+                  role="warning"
+                >
+                  <sch:report test="@type eq 'repo'">
+                    The use of &lt;idno&gt; to specify the corpus repository is
+                    deprecated. Use a &lt;ref&gt; element with @type "repo"
+                    instead.
+                  </sch:report>
+                  <sch:report test="@type eq 'URI' and @xml:base='https://dracor.org/'">
+                    The use of an &lt;idno&gt; with @type eq "URI" and @xml:base
+                    to specify the corpus name is deprecated. Use an
+                    &lt;idno&gt; with no attributes instead.
+                  </sch:report>
+                </sch:rule>
+              </constraint>
+            </constraintSpec>
+          </elementSpec>
+
+          <!-- publisher -->
+
+          <!-- ##### -->
+          <!--   Q   -->
+          <!-- ##### -->
+
+          <!-- quote -->
+
+          <!-- ##### -->
+          <!--   R   -->
+          <!-- ##### -->
+
+          <!-- ref -->
+
+          <!-- relation -->
+          <elementSpec ident="relation" module="namesdates" mode="change">
+            <attList>
+              <attDef ident="name" mode="change">
+                <valList mode="replace" type="semi">
+                  <valItem ident="parent_of">
+                    <gloss>is parent of</gloss>
+                    <desc>
+                      A character whose ID is included in the <att>active</att>
+                      attribute is the parent of the character whose ID is
+                      listed in the <att>passive</att> attribute.
+                    </desc>
+                  </valItem>
+                  <valItem ident="lover_of">
+                    <gloss>is lover of</gloss>
+                    <desc>
+                      A character whose ID is included in the <att>active</att>
+                      attribute is the lover of the character whose ID is listed
+                      in the <att>passive</att> attribute.
+                    </desc>
+                  </valItem>
+                  <valItem ident="related_with">
+                    <gloss>is related with</gloss>
+                    <desc>Other family relations (e.g. uncles)</desc>
+                  </valItem>
+                  <valItem ident="associated_with">
+                    <gloss>is associated with</gloss>
+                    <desc>For clearly associated characters (e.g.
+                                            butlers)</desc>
+                  </valItem>
+                  <valItem ident="siblings">
+                    <gloss>are siblings</gloss>
+                    <desc>
+                      Characters whose IDs are included in <att>mutual</att>
+                      have at least one parent in common
+                    </desc>
+                  </valItem>
+                  <valItem ident="spouses">
+                    <gloss>are spouses</gloss>
+                    <desc>
+                      Characters whose IDs are included in <att>mutual</att> are
+                      married (or engaged)
+                    </desc>
+                  </valItem>
+                  <valItem ident="friends">
+                    <gloss>are friends</gloss>
+                    <desc>
+                      Characters whose IDs are included in <att>mutual</att> are
+                      marked as being friend
+                    </desc>
+                  </valItem>
+                </valList>
+              </attDef>
+            </attList>
+          </elementSpec>
+
+          <!-- respStmt -->
+          <!-- resp -->
+          <!-- revisionDesc -->
+          <!-- roleDesc -->
+          <!-- role -->
+          <elementSpec ident="role" module="drama" mode="change">
+            <exemplum>
+              <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                <role>Marinelli</role>
+                <roleDesc>Kammerherr des Prinzen</roleDesc>
+              </egXML>
+            </exemplum>
+            <remarks>
+              <p>
+                In DraCor do not link <att>who</att> attributes to <gi>role</gi>
+                elements but to <gi>person</gi> or <gi>personGrp</gi> elements
+                in the <gi>particDesc</gi>. See
+                <ref target="#section-characters">Characters</ref>.
+              </p>
+            </remarks>
+          </elementSpec>
+
+          <!-- ##### -->
+          <!--   S   -->
+          <!-- ##### -->
+
+          <!-- set -->
+          <!-- signed -->
+          <!-- sourceDesc -->
+          <elementSpec ident="sourceDesc" module="header" mode="change">
+            <constraintSpec ident="digital_original_source_in_sourceDesc" scheme="schematron" mode="add">
+              <desc>
+                Checks if a digital and/or original source are present in the
+                <gi>sourceDesc</gi>
+              </desc>
+              <constraint>
+                <sch:rule context="tei:TEI/tei:teiHeader/tei:fileDesc/tei:sourceDesc" see="https://dracor.org/doc/odd#section-sources">
+                  <!-- Deprecated: nesting of original in digital source -->
+                  <sch:assert test="tei:bibl[@type eq 'originalSource'] or tei:bibl[@type eq 'digitalSource']/tei:bibl[@type eq 'originalSource']">
+                    A bibliographic reference to the original source is
+                    required. Use a &lt;bibl&gt; element of @type
+                    "originalSource".
+                  </sch:assert>
+                </sch:rule>
+              </constraint>
+            </constraintSpec>
+            <constraintSpec ident="sources_count_and_nesting" scheme="schematron" mode="add">
+              <desc>
+                Checks nesting and cardinality of digital/original sources
+              </desc>
+              <constraint>
+                <sch:rule context="tei:TEI/tei:teiHeader/tei:fileDesc/tei:sourceDesc[tei:bibl]" role="warning" see="https://dracor.org/doc/odd#section-sources">
+                  <sch:assert test="not(tei:bibl[@type eq 'digitalSource']/tei:bibl[@type eq 'originalSource'])">
+                    Nesting digital and original source is deprecated. The
+                    &lt;bibl&gt; elements should be siblings.
+                  </sch:assert>
+                  <sch:assert test="count(.//tei:bibl[@type eq 'digitalSource']) &lt; 2">
+                    There is more than one digital source. The DraCor API will
+                    ignore any other than the first one.
+                  </sch:assert>
+                  <sch:assert test="count(.//tei:bibl[@type eq 'originalSource']) &lt; 2">
+                    There is more than one original source. The DraCor API will
+                    ignore any other than the first one.
+                  </sch:assert>
+                </sch:rule>
+              </constraint>
+            </constraintSpec>
+            <constraintSpec ident="digital_source_use_ref" scheme="schematron" mode="add">
+              <desc>
+                Check that a <gi>bibl</gi> of <att>type</att>
+                <val>digitalSource</val> uses <gi>ref</gi> instead of
+                <gi>idno</gi>.
+              </desc>
+              <constraint>
+                <sch:rule context="tei:TEI/tei:teiHeader/tei:fileDesc/tei:sourceDesc/tei:bibl[@type eq 'digitalSource']" role="warning" see="https://dracor.org/doc/odd#section-sources">
+                  <sch:assert test="tei:ref[@target]">
+                    The digital source should use a &lt;ref&gt; element with a
+                    @target attribute to specify the digital source.
+                  </sch:assert>
+                  <sch:assert test="not(tei:name and tei:idno[@type eq 'URL'])">
+                    The use of &lt;idno&gt; with @type "URL" to specify the digital
+                    source is deprecated. Use a &lt;ref&gt; element instead.
+                  </sch:assert>
+                </sch:rule>
+              </constraint>
+            </constraintSpec>
+            <constraintSpec ident="digital_source_availability" scheme="schematron" mode="add">
+              <desc>
+                Check that a <gi>bibl</gi> of <att>type</att>
+                <val>digitalSource</val> provides <gi>availability</gi>
+                information.
+              </desc>
+              <constraint>
+                <sch:rule context="tei:TEI/tei:teiHeader/tei:fileDesc/tei:sourceDesc/tei:bibl[@type eq 'digitalSource']" role="warning" see="https://dracor.org/doc/odd#section-sources">
+                  <sch:assert test="tei:availability">
+                    The digital source should provide an &lt;availability&gt;
+                    element documenting its licensing and/or copyright status.
+                  </sch:assert>
+                </sch:rule>
+              </constraint>
+            </constraintSpec>
+          </elementSpec>
+
+          <!-- sp -->
+          <elementSpec ident="sp" module="core" mode="change">
+            <constraintSpec ident="network_sp_with_who_attr" scheme="schematron"
+              corresp="#section-network-data">
+              <desc>
+                Only speech acts <gi>sp</gi> with <att>who</att> attributes are
+                used when extracting a network.
+              </desc>
+              <constraint>
+                <sch:rule context="tei:sp" role="warning">
+                  <sch:assert test="@who">
+                    A speech 'sp' without an attribute '@who' is not used when
+                    extracting the network. Consider linking the speech act to a
+                    speaking character ('person') in the 'particDesc'.
+                  </sch:assert>
+                </sch:rule>
+              </constraint>
+            </constraintSpec>
+            <constraintSpec ident="network_unlinked_sp" scheme="schematron"
+              corresp="#section-network-data">
+              <desc>
+                Speech acts <gi>sp</gi> should be linked to characters
+                (<gi>person</gi> or <gi>personGrp</gi> elements in
+                <gi>particDesc</gi>) by supplying the character’s identifier in
+                the attribute <att>who</att> as a pointer. A pointer is
+                constructed by prepending the character ID with a hash “#”.
+              </desc>
+              <constraint>
+                <sch:rule context="tei:sp[@who]">
+                  <sch:let name="refs" value="tokenize(normalize-space(@who), '\s+')" />
+
+                  <sch:assert test="every $r in $refs satisfies starts-with($r, '#')">
+                    References in @who must start with "#".
+                  </sch:assert>
+
+                  <sch:let name="local-ids"
+                    value="for $r in $refs return replace($r,'#','')" />
+
+                  <sch:let name="valid-ids"
+                    value="ancestor::tei:TEI//tei:particDesc//(tei:person|tei:personGrp)[@xml:id]/@xml:id" />
+
+                  <sch:let name="missing"
+                    value="distinct-values($local-ids[not(. = $valid-ids)])" />
+
+                  <sch:assert test="empty($missing)" role="warning">
+                    One or more @who values do not refer to valid IDs in
+                    particDesc: <sch:value-of select="$missing"/>
+                  </sch:assert>
+                </sch:rule>
+              </constraint>
+            </constraintSpec>
+          </elementSpec>
+
+          <!-- speaker -->
+          <!-- spGrp -->
+          <!-- stage -->
+
+          <!-- standOff -->
+          <elementSpec ident="standOff" module="linking" mode="change">
+            <constraintSpec ident="deprecate-standoff-wikidata" scheme="schematron" mode="add">
+              <constraint>
+                <sch:rule context="tei:standOff/tei:listRelation" role="warning" see="https://dracor.org/doc/odd#section-play-wikidata">
+                  <sch:report test="./tei:relation[@name eq 'wikidata']">
+                    The use of standOff/listRelation/relation to encode the
+                    Wikidata ID is deprecated. Use a &lt;bibl type="wikidata"&gt;
+                    inside &lt;sourceDesc&gt; instead.
+                  </sch:report>
+                </sch:rule>
+              </constraint>
+            </constraintSpec>
+            <constraintSpec ident="deprecate-standoff-events" scheme="schematron" mode="add">
+              <constraint>
+                <sch:rule context="tei:standOff/tei:listEvent" role="warning" see="https://dracor.org/doc/odd#section-play-meta-dates">
+                  <sch:report test="./tei:event[@type = ('premiere', 'print', 'written')]">
+                    The use of standOff/listEvent to encode the dates meta data
+                    is deprecated. Use a &lt;listEvent&gt; inside
+                    &lt;sourceDesc&gt; instead.
+                  </sch:report>
+                </sch:rule>
+              </constraint>
+            </constraintSpec>
+            <exemplum>
+              <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                <standOff>
+                  <!-- DEPRECATED! DON'T DO THIS! -->
+                  <listEvent>
+                    <event type="print" when="1813">
+                      <desc/>
+                    </event>
+                    <event type="premiere" when="1811">
+                      <desc/>
+                    </event>
+                    <event type="written" when="1811">
+                      <desc>geschrieben wahrscheinlich im Winter 1811</desc>
+                    </event>
+                  </listEvent>
+                  <listRelation>
+                    <relation active="https://dracor.org/entity/ger000171"
+                      passive="http://www.wikidata.org/entity/Q42187688"
+                      name="wikidata"/>
+                  </listRelation>
+                </standOff>
+              </egXML>
+              <ab>
+                <emph>This is deprecated!</emph> See section
+                <ref target="#section-additional-metadata">Additional
+                Metadata</ref> on how to encode Wikidata QID and dates instead.
+                For background see
+                <ref target="https://github.com/dracor-org/dracor-schema/issues/133">https://github.com/dracor-org/dracor-schema/issues/133</ref>.
+
+              </ab>
+            </exemplum>
+          </elementSpec>
+
+          <!-- surname -->
+          <elementSpec ident="surname" module="namesdates" mode="change">
+            <attList>
+              <attDef ident="sort" mode="change" usage="opt">
+                <remarks>
+                  <p>
+                    Set value of this <val>1</val> to indicate on which
+                    <gi>surname</gi> to sort.
+                  </p>
+                </remarks>
+              </attDef>
+            </attList>
+          </elementSpec>
+
+          <!-- ##### -->
+          <!--   T   -->
+          <!-- ##### -->
+
+          <!-- TEI -->
+          <elementSpec ident="TEI" module="textstructure" mode="change">
+            <!--
+              The API expects a structure of text/body/... only accepts a single
+              text element, tei_all would allow multiple. The only other element
+              that is allowed is standOff
+            -->
+            <content>
+              <sequence minOccurs="1" maxOccurs="1">
+                <elementRef key="teiHeader" minOccurs="1" maxOccurs="1"/>
+                <elementRef key="standOff" minOccurs="0" maxOccurs="1"/>
+                <!-- this makes sure that there is a text included -->
+                <elementRef key="text" minOccurs="1" maxOccurs="1"/>
+              </sequence>
+            </content>
+            <constraintSpec ident="xml_model_or_type_dracor_on_root_tei_element"
+              scheme="schematron" mode="add">
+              <desc>
+                DraCor TEI documents should either reference the DraCor Schema
+                in an <code>&lt;?xml-model ... ?&gt;</code> processing
+                instruction or add a <att>type</att> <val>dracor</val> to their
+                root element.
+              </desc>
+              <constraint>
+                <sch:rule context="/tei:TEI" role="warning">
+                  <sch:assert test="@type = 'dracor' or /processing-instruction('xml-model')">
+                    The root <sch:name/> element should have a @type="dracor"
+                    attribute if the schema is not reference in an xml-model PI.
+                  </sch:assert>
+                  <sch:assert
+                    test="not(/processing-instruction('xml-model')) or (some $pi in /processing-instruction('xml-model')
+                          satisfies matches($pi, 'href\s*=\s*[&quot;'']https://dracor\.org/schema\.rng[&quot;'']'))">
+                    The DraCor schema should be refrerenced as
+                    "https://dracor.org/schema.rng" when using a xml-model PI.
+                  </sch:assert>
+                </sch:rule>
+              </constraint>
+            </constraintSpec>
+            <constraintSpec ident="valid_dracor_ids_on_root_tei_element"
+              scheme="schematron" mode="add" corresp="#play_id">
+              <desc>
+                DraCor identifiers should consist of lower case letters followed
+                by a six-digit number. The value is returned as feature
+                <ref target="#play_id">play_id</ref> in the API response object.
+              </desc>
+              <constraint>
+                <sch:rule context="tei:TEI" role="warning">
+                  <sch:assert test="matches(./@xml:id,'^[a-z]+[0-9]{6}$')">
+                    For DraCor IDs we recommend the pattern ^[a-z]+[0-9]{6}$
+                  </sch:assert>
+                </sch:rule>
+              </constraint>
+            </constraintSpec>
+            <!--
+              Empty content-bearing elements (e.g. <title/>, <name/>,
+              <idno type="URL"/>) carry no information and should be
+              discouraged.  Structural containers (body, div, sp, castList, …)
+              are excluded because their content models already forbid empty
+              content.  The elements <p> and <l> are intentionally skipped for
+              now to avoid noise from milestone-only lines; they may be added
+              later.  <gi>desc</gi> is also excluded because it is required
+              inside <gi>event</gi> where an empty value is acceptable.
+            -->
+            <constraintSpec ident="no_empty_content_bearing_elements"
+                            scheme="schematron" mode="add" type="encoding-hint">
+              <desc>
+                Content-bearing elements such as <gi>title</gi>,
+                <gi>name</gi> or <gi>idno</gi> should not be left empty.
+              </desc>
+              <constraint>
+                <sch:rule context="tei:title | tei:titlePart | tei:name
+                                 | tei:persName | tei:forename | tei:surname
+                                 | tei:addName | tei:genName | tei:roleName
+                                 | tei:author | tei:editor | tei:docAuthor
+                                 | tei:docTitle | tei:publisher | tei:pubPlace
+                                 | tei:speaker | tei:head | tei:role
+                                 | tei:roleDesc | tei:castItem | tei:rs
+                                 | tei:note | tei:keywords | tei:emph
+                                 | tei:foreign | tei:argument | tei:epigraph
+                                 | tei:dateline | tei:change | tei:edition
+                                 | tei:stage | tei:idno | tei:bibl"
+                          role="warning">
+                  <sch:report test="not(normalize-space(.)) and not(*)">
+                    Element &lt;<sch:name/>&gt; should not be empty.
+                  </sch:report>
+                </sch:rule>
+                <sch:rule context="tei:ref" role="warning">
+                  <sch:report test="not(normalize-space(.)) and not(*) and not(@target)">
+                    Empty &lt;ref&gt; has no @target and no anchor text.
+                  </sch:report>
+                </sch:rule>
+                <sch:rule context="tei:date" role="warning">
+                  <sch:report test="not(normalize-space(.)) and not(*)
+                                    and not(@when|@from|@to|@notBefore|@notAfter)">
+                    Empty &lt;date&gt; should at least carry a date attribute
+                    (@when, @from, @to, @notBefore or @notAfter).
+                  </sch:report>
+                </sch:rule>
+              </constraint>
+            </constraintSpec>
+            <attList>
+              <attDef ident="xml:id" mode="change" usage="req">
+                <datatype>
+                  <dataRef key="ID"/>
+                </datatype>
+                <remarks>
+                  <ab>
+                    Should contain the ID of the DraCor play, e.g.
+                    <val>ger000171</val>
+                  </ab>
+                </remarks>
+              </attDef>
+              <attDef ident="xml:lang" mode="change" usage="opt">
+                <remarks>
+                  <ab>
+                    Can encode the language of a corpus. Not the best idea in
+                    the world, but this is the way it is done.
+                  </ab>
+                </remarks>
+              </attDef>
+            </attList>
+            <exemplum source="https://dracor.org/id/ger000171">
+              <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                <TEI type="dracor" xml:id="ger000171" xml:lang="de">
+                  <!-- ... -->
+                </TEI>
+              </egXML>
+              <ab>
+                The TEI namespace <val>http://www.tei-c.org/ns/1.0</val> should
+                also be added to the root TEI element in the attribute
+                <att>xmlns</att>.
+              </ab>
+            </exemplum>
+          </elementSpec>
+
+          <!-- teiHeader -->
+          <!-- term -->
+
+          <!-- text -->
+          <elementSpec ident="text" module="textstructure" mode="change">
+            <content>
+              <sequence>
+                <classRef key="model.global" minOccurs="0" maxOccurs="unbounded"/>
+                <sequence minOccurs="0">
+                  <elementRef key="front"/>
+                  <classRef key="model.global" minOccurs="0" maxOccurs="unbounded"/>
+                </sequence>
+                <!-- We only allow a single element <body> -->
+                <elementRef key="body" minOccurs="1" maxOccurs="1"/>
+                <classRef key="model.global" minOccurs="0" maxOccurs="unbounded"/>
+                <sequence minOccurs="0">
+                  <elementRef key="back"/>
+                  <classRef key="model.global" minOccurs="0" maxOccurs="unbounded"/>
+                </sequence>
+              </sequence>
+            </content>
+          </elementSpec>
+
+          <!-- textClass -->
+
+          <!-- title -->
+          <elementSpec ident="title" module="core" mode="change">
+            <attList>
+              <attDef ident="type" mode="change">
+                <valList mode="replace" type="semi">
+                  <valItem ident="main">
+                    <gloss>Main Title</gloss>
+                  </valItem>
+                  <valItem ident="sub">
+                    <gloss>Subtitle</gloss>
+                  </valItem>
+                </valList>
+                <remarks>
+                  <p>
+                    The DraCor API supports the values <val>main</val> and
+                    <val>sub</val> to classify the title of a play (see also
+                    section on <ref target="#section-title">Encoding the title
+                    of a Play</ref>).
+                  </p>
+                </remarks>
+              </attDef>
+            </attList>
+            <exemplum source="https://dracor.org/id/ger000010">
+              <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                <title>Des Meeres und der Liebe Wellen</title>
+              </egXML>
+              <ab>
+                Main title of the play
+                <ref target="https://dracor.org/id/ger000010">Grillparzer: "Des
+                Meeres und der Liebe Wellen"</ref>.
+              </ab>
+            </exemplum>
+            <exemplum source="https://dracor.org/id/ger000010">
+              <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                <title type="sub">Trauerspiel in fünf Aufzügen</title>
+              </egXML>
+              <ab>
+                Subtitle of the play
+                <ref target="https://dracor.org/id/ger000010">Grillparzer: "Des
+                Meeres und der Liebe Wellen"</ref>.
+              </ab>
+            </exemplum>
+            <exemplum source="https://dracor.org/id/rus000054">
+              <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                <title>Ревизор</title>
+                <title xml:lang="en">The Government Inspector</title>
+                <title type="sub">Комедия в пяти действиях</title>
+                <title type="sub" xml:lang="en">A Comedy in Five Acts</title>
+              </egXML>
+              <ab>
+                Main and subtitle of
+                <ref target="https://dracor.org/id/rus000054">Gogol':
+                Revisor</ref> in the original (Russian) and English languages.
+              </ab>
+            </exemplum>
+          </elementSpec>
+
+          <!-- titlePage -->
+
+          <!-- titlePart -->
+          <elementSpec ident="titlePart" module="textstructure" mode="change">
+            <attList>
+              <attDef ident="type" mode="change">
+                <valList type="semi" mode="replace">
+                  <valItem ident="main">
+                    <gloss>Main title</gloss>
+                  </valItem>
+                  <valItem ident="sub">
+                    <gloss>Subtitle</gloss>
+                  </valItem>
+                </valList>
+              </attDef>
+            </attList>
+            <exemplum source="https://dracor.org/id/ger000304">
+              <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                <titlePage>
+                  <docAuthor>Ludwig Anzengruber</docAuthor>
+                  <docTitle>
+                    <titlePart type="main">Die Kreuzelschreiber</titlePart>
+                    <titlePart type="sub">Bauernkomödie mit Gesang in drei Akten</titlePart>
+                  </docTitle>
+                </titlePage>
+              </egXML>
+              <ab>
+                Encoding of the title page of the play
+                <ref target="https://dracor.org/id/ger000304">Anzengruber: Die
+                Kreuzelschreiber</ref>.
+              </ab>
+            </exemplum>
+          </elementSpec>
+
+          <!-- titleStmt -->
+          <elementSpec ident="titleStmt" module="header" mode="change">
+            <constraintSpec ident="play_sub_title" scheme="schematron" corresp="#play_title">
+              <desc>
+                The main title of the play (see Feature
+                <ref target="#play_title">play_title</ref>) is retrieved from
+                the first element <gi>title</gi>. A subtitle should be marked
+                with the <att>type</att> <val>sub</val>
+              </desc>
+              <constraint>
+                <sch:rule context="tei:titleStmt[count(tei:title[not(@xml:lang or @type)]) > 1]" role="warning">
+                  <sch:assert test="tei:title[not(@xml:lang) and @type = 'sub']">
+                    When using multiple &lt;title&gt; elements consider marking
+                    subtitles with a @type "sub".
+                  </sch:assert>
+                </sch:rule>
+              </constraint>
+            </constraintSpec>
+            <exemplum source="https://dracor.org/id/ger000010">
+              <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                <titleStmt>
+                  <title>Des Meeres und der Liebe Wellen</title>
+                  <title type="sub">Trauerspiel in fünf Aufzügen</title>
+                  <author>
+                    <persName>
+                      <forename>Franz</forename>
+                      <surname>Grillparzer</surname>
+                    </persName>
+                    <idno type="wikidata">Q154438</idno>
+                    <idno type="pnd">118542192</idno>
+                  </author>
+                </titleStmt>
+              </egXML>
+              <ab>
+                <gi>titleStmt</gi> of the play
+                <ref target="https://dracor.org/id/ger000010">"Des Meeres und
+                der Liebe Wellen"</ref> by Franz Grillparzer. The author has an
+                entry on Wikidata which is identified by the URI
+                <ref target="http://www.wikidata.org/entity/Q154438">http://www.wikidata.org/entity/Q154438</ref>.
+                In the “Gemeinsame Normdatei” (GND), the author is identified by
+                the URI <ref target="https://d-nb.info/gnd/11854219">https://d-nb.info/gnd/11854219</ref>.
+                The identifiers are included in the <gi>idno</gi> elements.
+              </ab>
+            </exemplum>
+            <exemplum source="https://dracor.org/id/rus000054">
+              <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                <titleStmt>
+                  <title>Ревизор</title>
+                  <title xml:lang="en">The Government Inspector</title>
+                  <title type="sub">Комедия в пяти действиях</title>
+                  <title type="sub" xml:lang="en">A Comedy in Five Acts</title>
+                  <author>
+                    <persName>
+                      <forename>Николай</forename>
+                      <forename type="patronym">Васильевич</forename>
+                      <surname>Гоголь</surname>
+                    </persName>
+                    <persName xml:lang="en">
+                      <forename>Nikolai</forename>
+                      <surname>Gogol</surname>
+                    </persName>
+                    <idno type="wikidata">Q43718</idno>
+                  </author>
+                </titleStmt>
+              </egXML>
+              <ab>
+                <gi>titleStmt</gi> of
+                <ref target="https://dracor.org/id/rus000054">Gogol:
+                Revizor</ref>. Titles and author names are given both in Russian
+                and English.
+              </ab>
+            </exemplum>
+          </elementSpec>
+
+          <elementSpec ident="dracorCorpus" mode="add">
+            <gloss>DraCor Corpus</gloss>
+            <desc>
+              Root element for a DraCor corpus.xml descriptor document.
+              Contains exactly one teiHeader with corpus-level metadata.
+            </desc>
+            <classes>
+              <memberOf key="att.global"/>
+            </classes>
+            <content>
+              <elementRef key="teiHeader" minOccurs="1" maxOccurs="1"/>
+            </content>
+            <exemplum>
+              <egXML xmlns="http://www.tei-c.org/ns/Examples">
+                <dracorCorpus>
+                  <teiHeader>
+                    <!-- ... -->
+                  </teiHeader>
+                </dracorCorpus>
+              </egXML>
+            </exemplum>
+          </elementSpec>
+
+          <!-- trailer -->
+
+          <!-- SCHEMATRON RULES THAT EXPLICITLY REPORT IMPLEMENTED API FEATURES -->
+          <!-- Feature Checks: Corpus Features  -->
+
+          <!-- Corpus Features -->
+          <!-- C1  corpus_name -->
+          <!-- C2  corpus_uri -->
+          <!-- C3  corpus_title -->
+          <!-- C4  corpus_acronym -->
+          <!-- C5  corpus_description -->
+          <!-- C6  corpus_repository -->
+          <!-- C7  corpus_licence -->
+          <!-- C8  corpus_licence_url -->
+          <!-- C9  corpus_num_of_plays -->
+          <!-- C10  corpus_num_of_characters -->
+          <!-- C11  corpus_num_of_characters_male -->
+          <!-- C12  corpus_num_of_characters_female -->
+          <!-- C13  corpus_num_of_tei_text_elements -->
+          <!-- C14  corpus_num_of_sp -->
+          <!-- C15  corpus_num_of_stage -->
+          <!-- C16  corpus_num_of_word_tokens_in_text_elements -->
+          <!-- C17  corpus_num_of_word_tokens_in_sp -->
+          <!-- C18  corpus_num_of_word_tokens_in_stage -->
+          <!-- C19  corpus_metrics_date_updated -->
+          <!-- C20  corpus_play_objects -->
+
+          <!-- Feature Checks: Play Features -->
+          <!-- P1  play_corpus_name -->
+          <!-- P2  play_id -->
+
+          <constraintSpec ident="play_id" scheme="schematron" type="api_feature_check" corresp="#play_id">
+            <desc>
+              Feature-Check:
+              <name type="api_feature">
+                <ref target="#play_id">P2 play_id</ref>
+              </name>
+            </desc>
+            <constraint>
+              <sch:rule context="/" role="information" see="https://dracor.org/doc/odd#play_id">
+                <sch:let name="play_id" value="/tei:TEI/@xml:id/string()"/>
+                <sch:report test="/tei:TEI/@xml:id">
+                  Supported API feature: play_id [value:
+                  <sch:value-of select="$play_id"/>]</sch:report>
+              </sch:rule>
+            </constraint>
+          </constraintSpec>
+
+          <!-- P3  play_name -->
+
+          <!-- P4  play_wikidata_id -->
+          <constraintSpec ident="play_wikidata_id" scheme="schematron"
+            type="api_feature_check" corresp="#play_wikidata_id">
+            <desc>
+              Feature-Check:
+              <name type="api_feature">
+                <ref target="#play_wikidata_id">P4 play_wikidata_id</ref>
+              </name>
+            </desc>
+            <constraint>
+              <sch:rule context="/" role="information" see="https://dracor.org/doc/odd#play_wikidata_id">
+                <sch:let name="play_wikidata"
+                  value="/tei:TEI/tei:teiHeader/tei:fileDesc/tei:sourceDesc/tei:bibl[@type eq 'wikidata']/tei:idno[1]/text()"/>
+                <sch:report test="/tei:TEI/tei:teiHeader/tei:fileDesc/tei:sourceDesc/tei:bibl[@type eq 'wikidata']/tei:idno[matches(normalize-space(.), '^Q[1-9]\d*$')]">
+                  Supported API feature: play_wikidata_id [value:
+                  <sch:value-of select="$play_wikidata" />]
+                </sch:report>
+              </sch:rule>
+            </constraint>
+          </constraintSpec>
+
+          <!-- P5  play_title -->
+          <constraintSpec ident="play_title" scheme="schematron" type="api_feature_check" corresp="#play_title">
+            <desc>
+              Feature-Check:
+              <name type="api_feature">
+                <ref target="#play_title">P5 play_title</ref>
+              </name>
+            </desc>
+            <constraint>
+              <sch:rule context="/" role="information" see="https://dracor.org/doc/odd#play_title">
+                <sch:let name="play_title"
+                  value="/tei:TEI/tei:teiHeader/tei:fileDesc/tei:titleStmt/tei:title[not(@type = 'sub') and not(@xml:lang or ./ancestor::tei:TEI/@xml:lang = @xml:lang)]/normalize-space()"/>
+                <sch:report test="/tei:TEI/tei:teiHeader/tei:fileDesc/tei:titleStmt/tei:title[not(@type = 'sub') and not(@xml:lang or ./ancestor::tei:TEI/@xml:lang = @xml:lang)]">
+                  Supported API feature: play_title [value:
+                  <sch:value-of select="$play_title"/>]
+                </sch:report>
+              </sch:rule>
+            </constraint>
+          </constraintSpec>
+
+          <!-- P6  play_subtitle -->
+          <constraintSpec ident="play_subtitle" scheme="schematron"
+            type="api_feature_check" corresp="#play_subtitle">
+            <desc>
+              Feature-Check:
+              <name type="api_feature">
+                <ref target="#play_subtitle">P6 play_subtitle</ref>
+              </name>
+            </desc>
+            <constraint>
+              <sch:rule context="/" role="information" see="https://dracor.org/doc/odd#play_subtitle">
+                <sch:let name="play_subtitle" value="/tei:TEI/tei:teiHeader/tei:fileDesc/tei:titleStmt/tei:title[@type = 'sub' and not(@xml:lang or ./ancestor::tei:TEI/@xml:lang = @xml:lang)]/normalize-space()"/>
+                <sch:report test="tei:TEI/tei:teiHeader/tei:fileDesc/tei:titleStmt/tei:title[@type='sub']">
+                  Supported API feature: play_subtitle [value:
+                  <sch:value-of select="$play_subtitle"/>]
+                </sch:report>
+              </sch:rule>
+            </constraint>
+          </constraintSpec>
+
+          <!-- P7  play_title_en -->
+          <!-- P8  play_subtitle_en -->
+          <!-- P9  play_author_name -->
+          <!-- P10  play_author_name_en -->
+          <!-- P11  play_author_fullname -->
+          <!-- P12  play_author_fullname_en -->
+          <!-- P13  play_author_shortname -->
+          <!-- P14  play_author_shortname_en -->
+          <!-- P15  play_first_author_name -->
+          <!-- P16  play_first_author_shortname -->
+          <!-- P17  play_first_author_deprecation_warning -->
+          <!-- P18  play_author_also_known_as -->
+          <!-- P19  play_author_ref_external_id -->
+          <!-- P20  play_author_ref_type -->
+          <!-- P21  play_num_of_co_authors -->
+          <!-- P22  play_genre_normalized -->
+          <!-- P23  play_is_libretto -->
+          <!-- P24  play_year_written -->
+          <constraintSpec ident="play_year_written" scheme="schematron"
+            type="api_feature_check" corresp="#play_year_written">
+            <desc>
+              Feature-Check:
+              <name type="api_feature">
+                <ref target="#play_year_written">P24 play_year_written</ref>
+              </name>
+            </desc>
+            <constraint>
+              <sch:rule context="/" role="information" see="https://dracor.org/doc/odd#play_year_written">
+                <sch:let name="play_year_written" value="/tei:TEI/tei:teiHeader/tei:fileDesc/tei:sourceDesc/tei:listEvent/tei:event[@type eq 'written']/@when/string()"/>
+                <sch:report test="/tei:TEI/tei:teiHeader/tei:fileDesc/tei:sourceDesc/tei:listEvent/tei:event[@type eq 'written']/@when">
+                  Supported API feature: play_year_written [value:
+                  <sch:value-of select="$play_year_written"/>]
+                </sch:report>
+              </sch:rule>
+            </constraint>
+          </constraintSpec>
+
+          <!-- P25  play_year_printed -->
+          <constraintSpec ident="play_year_printed" scheme="schematron"
+            type="api_feature_check" corresp="#play_year_printed">
+            <desc>
+              Feature-Check:
+              <name type="api_feature">
+                <ref target="#play_year_printed">P25 play_year_printed</ref>
+              </name>
+            </desc>
+            <constraint>
+              <sch:rule context="/" role="information" see="https://dracor.org/doc/odd#play_year_printed">
+                <sch:let name="play_year_printed" value="/tei:TEI/tei:teiHeader/tei:fileDesc/tei:sourceDesc/tei:listEvent/tei:event[@type eq 'print']/@when/string()"/>
+                <sch:report test="/tei:TEI/tei:teiHeader/tei:fileDesc/tei:sourceDesc/tei:listEvent/tei:event[@type eq 'print']/@when">
+                  Supported API feature: play_year_printed [value:
+                  <sch:value-of select="$play_year_printed"/>]
+                </sch:report>
+              </sch:rule>
+            </constraint>
+          </constraintSpec>
+
+          <!-- P26  play_year_premiered -->
+          <!-- P27  play_year_normalized -->
+          <!-- P28  play_digital_source_name -->
+          <!-- P29  play_digital_source_url -->
+          <!-- P30  play_original_source_full_citation -->
+          <!-- P31  play_original_source_publisher -->
+          <!-- P32  play_original_source_publication_place -->
+          <!-- P33  play_original_source_publication_year -->
+          <!-- P34  play_original_source_num_of_pages -->
+          <!-- P35  play_num_of_wikipedia_links -->
+          <!-- P36  play_segments -->
+          <!-- P37  play_num_of_segments -->
+          <!-- P38  play_num_of_acts -->
+          <!--P39  play_num_of_paragraphs-->
+          <!--P40  play_num_of_verse_lines-->
+          <!--P41  play_num_of_word_tokens_in_text_elements-->
+          <!--P42  play_num_of_word_tokens_in_sp-->
+          <!--P43  play_num_of_word_tokens_in_stage-->
+          <!--P44  play_characters-->
+          <!--P45  play_num_of_speakers-->
+          <!--P46  play_num_of_speakers_sex_female-->
+          <!--P47  play_num_of_speakers_sex_male-->
+          <!--P48  play_num_of_speakers_sex_unknown-->
+          <!--P49  play_num_of_person_groups-->
+          <!--P50  play_all_in_segment-->
+          <!--P51  play_all_in_index-->
+          <!--P52  play_character_relations-->
+          <!--P53  play_network_data_csv_url-->
+          <!--P54  play_network_nodes-->
+          <!--P55  play_network_size-->
+          <!--P56  play_network_num_edges-->
+          <!--P57  play_network_average_degree-->
+          <!--P58  play_network_density-->
+          <!--P59  play_network_diameter-->
+          <!--P60  play_network_average_path_length-->
+          <!--P61  play_network_average_clustering-->
+          <!--P62  play_network_num_connected_components-->
+          <!--P63  play_network_max_degree-->
+          <!--P64  play_network_max_degree_character_ids-->
+
+          <!-- Encoding hints -->
+          <!-- Here follows constraints that support the editing of DraCor files
+               These are mainly "Warning": We understand these as hints on how
+               to improve the files, but the things checked here should not be
+               critical, meaning that the DraCor system would not work, or
+               produce an error when processing a file
+          -->
+
+          <!-- There is an issue with organising this ODD, because some of the
+               encoding hints are directly included with some elements
+
+               If they apply to a single element, it might make sense to put them
+               there, but there are some checks that could be helpful that have
+               to look at several parts of a file;
+
+               Because it is not so easy to decide where to put it, I put them here.
+          -->
+
+          <!-- The constraint "P4 play_wikidata_id" already checks if a Wikidata
+               ID provided can be processed, but there are still some mistakes
+               when adding the ID because the encoding (using relation and
+               @active and @passive is overly complex
+          -->
+          <constraintSpec ident="encoding-hint_play_wikidata_id" scheme="schematron" type="encoding-hint">
+            <desc>
+              Encoding Hint: <name>Wikidata Identifier</name>
+              See <ref target="#section-play-wikidata">Wikidata QID of a
+              play</ref> for details on how to correctly assign a Wikidata
+              Identifier (QID). The equivalent API Feature that relies on the
+              correct encoding is
+              <ref target="#play_wikidata_id">play_wikidata_id</ref>.
+            </desc>
+            <constraint>
+              <sch:rule context="tei:TEI/tei:teiHeader/tei:fileDesc/tei:sourceDesc/tei:bibl[@type eq 'wikidata']"
+                role="warning"
+                see="https://dracor.org/doc/odd#section-play-wikidata">
+                <sch:assert test="./tei:idno[matches(normalize-space(.), '^Q[1-9]\d*$')]">
+                  The Wikidata ID is expected to be wrapped in an &lt;idno&gt;
+                  element and must match the regular expression "Q[1-9]\d*".
+                </sch:assert>
+              </sch:rule>
+            </constraint>
+          </constraintSpec>
+
+          <!-- Feature Checks: Character Features -->
+          <!-- Ch5  character_wikidata_id -->
+          <constraintSpec ident="character_wikidata_id" scheme="schematron"
+            type="api_feature_check" corresp="#character_wikidata_id">
+            <desc>
+              Feature-Check:
+              <name type="api_feature">
+                <ref target="#character_wikidata_id">Ch5 character_wikidata_id</ref>
+              </name>
+            </desc>
+            <constraint>
+              <sch:rule context="/" role="information" see="https://dracor.org/doc/odd#character_wikidata_id">
+                <sch:report
+                  test="//tei:particDesc//(tei:person|tei:personGrp)/tei:idno[@type eq 'wikidata'][matches(normalize-space(.), '^Q[1-9]\d*$')]">
+                  Supported API feature: character_wikidata_id
+                </sch:report>
+              </sch:rule>
+            </constraint>
+          </constraintSpec>
+        </schemaSpec>
+      </div>
+    </body>
+
+    <back>
+      <div xml:id="section-d71-feature-tables">
+        <head>Feature Tables</head>
+        <p>
+          In the <title>Report on Programmable Corpora</title>
+          (<ref target="https://zenodo.org/records/7664964">https://zenodo.org/records/7664964</ref>)
+          we identified <soCalled>features</soCalled> that are returned by the
+          DraCor API. We include the adapted tables here for reference.
+        </p>
+        <div xml:id="section-corpus-feature-table">
+          <head>Corpus Features</head>
+          <table>
+            <row>
+              <cell>C1</cell>
+              <cell>corpus_name</cell>
+            </row>
+            <row>
+              <cell>C2</cell>
+              <cell>corpus_uri</cell>
+            </row>
+            <row>
+              <cell>C3</cell>
+              <cell>corpus_title</cell>
+            </row>
+            <row>
+              <cell>C4</cell>
+              <cell>corpus_acronym</cell>
+            </row>
+            <row>
+              <cell>C5</cell>
+              <cell>corpus_description</cell>
+            </row>
+            <row>
+              <cell>C6</cell>
+              <cell>corpus_repository</cell>
+            </row>
+            <row>
+              <cell>C7</cell>
+              <cell>corpus_licence</cell>
+            </row>
+            <row>
+              <cell>C8</cell>
+              <cell>corpus_licence_url</cell>
+            </row>
+            <row>
+              <cell>C9</cell>
+              <cell>corpus_num_of_plays</cell>
+            </row>
+            <row>
+              <cell>C10</cell>
+              <cell>corpus_num_of_characters</cell>
+            </row>
+            <row>
+              <cell>C11</cell>
+              <cell>corpus_num_of_characters_male</cell>
+            </row>
+            <row>
+              <cell>C12</cell>
+              <cell>corpus_num_of_characters_female</cell>
+            </row>
+            <row>
+              <cell>C13</cell>
+              <cell>corpus_num_of_tei_text_elements</cell>
+            </row>
+            <row>
+              <cell>C14</cell>
+              <cell>corpus_num_of_sp</cell>
+            </row>
+            <row>
+              <cell>C15</cell>
+              <cell>corpus_num_of_stage</cell>
+            </row>
+            <row>
+              <cell>C16</cell>
+              <cell>corpus_num_of_word_tokens_in_text_elements</cell>
+            </row>
+            <row>
+              <cell>C17</cell>
+              <cell>corpus_num_of_word_tokens_in_sp</cell>
+            </row>
+            <row>
+              <cell>C18</cell>
+              <cell>corpus_num_of_word_tokens_in_stage</cell>
+            </row>
+            <row>
+              <cell>C19</cell>
+              <cell>corpus_metrics_date_updated</cell>
+            </row>
+            <row>
+              <cell>C20</cell>
+              <cell>corpus_play_objects</cell>
+            </row>
+          </table>
+        </div>
+        <div xml:id="section-play-feature-table">
+          <head>Play Features</head>
+          <table>
+            <row>
+              <cell>P1</cell>
+              <cell>play_corpus_name</cell>
+            </row>
+            <row>
+              <cell>P2</cell>
+              <cell>play_id</cell>
+            </row>
+            <row>
+              <cell>P3</cell>
+              <cell>play_name</cell>
+            </row>
+            <row>
+              <cell>P4</cell>
+              <cell>play_wikidata_id</cell>
+            </row>
+            <row>
+              <cell>P5</cell>
+              <cell>play_title</cell>
+            </row>
+            <row>
+              <cell>P6</cell>
+              <cell>play_subtitle</cell>
+            </row>
+            <row>
+              <cell>P7</cell>
+              <cell>play_title_en</cell>
+            </row>
+            <row>
+              <cell>P8</cell>
+              <cell>play_subtitle_en</cell>
+            </row>
+            <row>
+              <cell>P9</cell>
+              <cell>play_author_name</cell>
+            </row>
+            <row>
+              <cell>P10</cell>
+              <cell>play_author_name_en</cell>
+            </row>
+            <row>
+              <cell>P11</cell>
+              <cell>play_author_fullname</cell>
+            </row>
+            <row>
+              <cell>P12</cell>
+              <cell>play_author_fullname_en</cell>
+            </row>
+            <row>
+              <cell>P13</cell>
+              <cell>play_author_shortname</cell>
+            </row>
+            <row>
+              <cell>P14</cell>
+              <cell>play_author_shortname_en</cell>
+            </row>
+            <row>
+              <cell>P15</cell>
+              <cell>play_first_author_name</cell>
+            </row>
+            <row>
+              <cell>P16</cell>
+              <cell>play_first_author_shortname</cell>
+            </row>
+            <row>
+              <cell>P17</cell>
+              <cell>play_first_author_deprecation_warning</cell>
+            </row>
+            <row>
+              <cell>P18</cell>
+              <cell>play_author_also_known_as</cell>
+            </row>
+            <row>
+              <cell>P19</cell>
+              <cell>play_author_ref_external_id</cell>
+            </row>
+            <row>
+              <cell>P20</cell>
+              <cell>play_author_ref_type</cell>
+            </row>
+            <row>
+              <cell>P21</cell>
+              <cell>play_num_of_co_authors</cell>
+            </row>
+            <row>
+              <cell>P22</cell>
+              <cell>play_genre_normalized</cell>
+            </row>
+            <row>
+              <cell>P23</cell>
+              <cell>play_is_libretto</cell>
+            </row>
+            <row>
+              <cell>P24</cell>
+              <cell>play_year_written</cell>
+            </row>
+            <row>
+              <cell>P25</cell>
+              <cell>play_year_printed</cell>
+            </row>
+            <row>
+              <cell>P26</cell>
+              <cell>play_year_premiered</cell>
+            </row>
+            <row>
+              <cell>P27</cell>
+              <cell>play_year_normalized</cell>
+            </row>
+            <row>
+              <cell>P28</cell>
+              <cell>play_digital_source_name</cell>
+            </row>
+            <row>
+              <cell>P29</cell>
+              <cell>play_digital_source_url</cell>
+            </row>
+            <row>
+              <cell>P30</cell>
+              <cell>play_original_source_full_citation</cell>
+            </row>
+            <row>
+              <cell>P31</cell>
+              <cell>play_original_source_publisher</cell>
+            </row>
+            <row>
+              <cell>P32</cell>
+              <cell>play_original_source_publication_place</cell>
+            </row>
+            <row>
+              <cell>P33</cell>
+              <cell>play_original_source_publication_year</cell>
+            </row>
+            <row>
+              <cell>P34</cell>
+              <cell>play_original_source_num_of_pages</cell>
+            </row>
+            <row>
+              <cell>P35</cell>
+              <cell>play_num_of_wikipedia_links</cell>
+            </row>
+            <row>
+              <cell>P36</cell>
+              <cell>play_segments</cell>
+            </row>
+            <row>
+              <cell>P37</cell>
+              <cell>play_num_of_segments</cell>
+            </row>
+            <row>
+              <cell>P38</cell>
+              <cell>play_num_of_acts</cell>
+            </row>
+            <row>
+              <cell>P39</cell>
+              <cell>play_num_of_paragraphs</cell>
+            </row>
+            <row>
+              <cell>P40</cell>
+              <cell>play_num_of_verse_lines</cell>
+            </row>
+            <row>
+              <cell>P41</cell>
+              <cell>play_num_of_word_tokens_in_text_elements</cell>
+            </row>
+            <row>
+              <cell>P42</cell>
+              <cell>play_num_of_word_tokens_in_sp</cell>
+            </row>
+            <row>
+              <cell>P43</cell>
+              <cell>play_num_of_word_tokens_in_stage</cell>
+            </row>
+            <row>
+              <cell>P44</cell>
+              <cell>play_characters</cell>
+            </row>
+            <row>
+              <cell>P45</cell>
+              <cell>play_num_of_speakers</cell>
+            </row>
+            <row>
+              <cell>P46</cell>
+              <cell>play_num_of_speakers_sex_female</cell>
+            </row>
+            <row>
+              <cell>P47</cell>
+              <cell>play_num_of_speakers_sex_male</cell>
+            </row>
+            <row>
+              <cell>P48</cell>
+              <cell>play_num_of_speakers_sex_unknown</cell>
+            </row>
+            <row>
+              <cell>P49</cell>
+              <cell>play_num_of_person_groups</cell>
+            </row>
+            <row>
+              <cell>P50</cell>
+              <cell>play_all_in_segment</cell>
+            </row>
+            <row>
+              <cell>P51</cell>
+              <cell>play_all_in_index</cell>
+            </row>
+            <row>
+              <cell>P52</cell>
+              <cell>play_character_relations</cell>
+            </row>
+            <row>
+              <cell>P53</cell>
+              <cell>play_network_data_csv_url</cell>
+            </row>
+            <row>
+              <cell>P54</cell>
+              <cell>play_network_nodes</cell>
+            </row>
+            <row>
+              <cell>P55</cell>
+              <cell>play_network_size</cell>
+            </row>
+            <row>
+              <cell>P56</cell>
+              <cell>play_network_num_edges</cell>
+            </row>
+            <row>
+              <cell>P57</cell>
+              <cell>play_network_average_degree</cell>
+            </row>
+            <row>
+              <cell>P58</cell>
+              <cell>play_network_density</cell>
+            </row>
+            <row>
+              <cell>P59</cell>
+              <cell>play_network_diameter</cell>
+            </row>
+            <row>
+              <cell>P60</cell>
+              <cell>play_network_average_path_length</cell>
+            </row>
+            <row>
+              <cell>P61</cell>
+              <cell>play_network_average_clustering</cell>
+            </row>
+            <row>
+              <cell>P62</cell>
+              <cell>play_network_num_connected_components</cell>
+            </row>
+            <row>
+              <cell>P63</cell>
+              <cell>play_network_max_degree</cell>
+            </row>
+            <row>
+              <cell>P64</cell>
+              <cell>play_network_max_degree_character_ids</cell>
+            </row>
+          </table>
+        </div>
+        <div xml:id="section-segment-feature-table">
+          <head>Segment Features</head>
+          <table>
+            <row>
+              <cell>S1</cell>
+              <cell>segment_type</cell>
+            </row>
+            <row>
+              <cell>S2</cell>
+              <cell>segment_number</cell>
+            </row>
+            <row>
+              <cell>S3</cell>
+              <cell>segment_title</cell>
+            </row>
+            <row>
+              <cell>S4</cell>
+              <cell>segment_speaking_characters</cell>
+            </row>
+          </table>
+        </div>
+        <div xml:id="section-character-feature-table">
+          <head>Character Features</head>
+          <table>
+            <row>
+              <cell>Ch1</cell>
+              <cell>character_id</cell>
+            </row>
+            <row>
+              <cell>Ch2</cell>
+              <cell>character_name</cell>
+            </row>
+            <row>
+              <cell>Ch3</cell>
+              <cell>character_is_group</cell>
+            </row>
+            <row>
+              <cell>Ch4</cell>
+              <cell>character_sex</cell>
+            </row>
+            <row>
+              <cell>Ch5</cell>
+              <cell>character_wikidata_id</cell>
+            </row>
+            <row>
+              <cell>Ch6</cell>
+              <cell>character_node_betweenness</cell>
+            </row>
+            <row>
+              <cell>Ch7</cell>
+              <cell>character_node_degree</cell>
+            </row>
+            <row>
+              <cell>Ch8</cell>
+              <cell>character_node_closeness</cell>
+            </row>
+            <row>
+              <cell>Ch9</cell>
+              <cell>character_node_eigenvector</cell>
+            </row>
+            <row>
+              <cell>Ch10</cell>
+              <cell>character_node_weighted_degree</cell>
+            </row>
+            <row>
+              <cell>Ch11</cell>
+              <cell>character_num_of_segments</cell>
+            </row>
+            <row>
+              <cell>Ch12</cell>
+              <cell>character_num_of_sp</cell>
+            </row>
+            <row>
+              <cell>Ch13</cell>
+              <cell>character_num_of_word_tokens</cell>
+            </row>
+            <row>
+              <cell>Ch14</cell>
+              <cell>character_roles</cell>
+            </row>
+            <row>
+              <cell>Ch15</cell>
+              <cell>character_spoken_text</cell>
+            </row>
+          </table>
+        </div>
+      </div>
+
+      <div xml:id="section-other-encoding-guides">
+        <head>Additional Resources on Encoding of DraCor files</head>
+        <p>
+          Use these materials with care. The proposed solutions on how to encode
+          might be outdated.
+        </p>
+        <listBibl>
+          <bibl>
+            <ref target="https://github.com/dracor-org/dracor-schema/issues">Issues</ref>
+            in the <ref target="https://github.com/dracor-org/dracor-schema">dracor-schema</ref>
+            repository
+          </bibl>
+          <bibl>
+            Beine, J. J. (2025). FAQs on Encoding Plays for NeoLatDraCor in TEI. In: NeoLatDraCor Wiki.
+            <ref target="https://github.com/dracor-org/neolatdracor/wiki/FAQs-on-Encoding-Plays-for-NeoLatDraCor-in-TEI">https://github.com/dracor-org/neolatdracor/wiki/FAQs-on-Encoding-Plays-for-NeoLatDraCor-in-TEI</ref>
+          </bibl>
+          <bibl>
+            Fischer, F. (2019). RusDraCor Wiki.
+            <ref target="https://github.com/dracor-org/rusdracor/wiki">https://github.com/dracor-org/rusdracor/wiki</ref>
+          </bibl>
+          <bibl>
+            Fischer, F. (2023). GerDraCor Wiki.
+            <ref target="https://github.com/dracor-org/gerdracor/wiki">https://github.com/dracor-org/gerdracor/wiki</ref>
+          </bibl>
+          <bibl>
+            Giovannini, L. (2022). DraCor Quick-start Tutorial.
+            <ref target="https://docs.google.com/document/d/1oZDa5ofvAUZSca9FwQ3vXuYIRkel3QGqbaUq88auS9E">https://docs.google.com/document/d/1oZDa5ofvAUZSca9FwQ3vXuYIRkel3QGqbaUq88auS9E</ref>
+          </bibl>
+        </listBibl>
+      </div>
+
+      <div xml:id="bibliography">
+        <head>Bibliography</head>
+        <listBibl>
+          <bibl xml:id="beshero-bondar_2024">
+            Beshero-Bondar, E. E., Viglianti, R., Bermúdez-Sabel, H., &amp;
+            Jenstad, J., (2024) "Revising sex and gender in the TEI Guidelines",
+            Journal of the Text Encoding Initiative [Online], Issue 17 | 2024.
+            <ref target="https://doi.org/10.4000/13utq">doi:10.4000/13utq</ref>
+          </bibl>
+          <bibl xml:id="boerner_trilcke_2023">
+            Börner, I., &amp; Trilcke, P. (2023). CLS INFRA D7.1 On Programmable
+            Corpora.
+            <ref target="https://doi.org/10.5281/zenodo.7664964">doi: 10.5281/zenodo.7664964</ref>
+          </bibl>
+          <bibl xml:id="boerner_trilcke_2024">
+            Börner, I., &amp; Trilcke, P. (2024) CLS INFRA D7.3 On Versioning
+            Living and Programmable Corpora: (Executable) Report and Prototypes
+            for Reproducible Research.
+            <ref target="https://doi.org/10.5281/ZENODO.11081934">doi:10.5281/ZENODO.11081934</ref>.
+          </bibl>
+          <bibl xml:id="fischer_et_al_2019">
+            Fischer, F., Börner, I., Göbel, M., Hechtl, A., Kittel, C., Milling,
+            C., &amp; Trilcke, P. (2019). Programmable Corpora: Introducing
+            DraCor, an Infrastructure for the Research on European Drama.
+            DH2019: “Complexities”. 9–12 July 2019. Book of Abstracts.
+            DH2019 “Complexities”, Utrecht.
+            <ref target="https://doi.org/10.5281/ZENODO.4284002">doi: 10.5281/ZENODO.4284002</ref>
+          </bibl>
+          <bibl xml:id="gavin_2023">
+            Gavin, M. (2023) Literary mathematics. Quantitative theory for
+            textual studies. Stanford text technologies. Stanford, California:
+            Stanford University Press
+          </bibl>
+          <bibl xml:id="trilcke_2013">
+            Trilcke, P. (2013). Social Network Analysis (SNA) als Methode einer
+            textempirischen Literaturwissenschaft. In P. Ajouri, K. Mellmann,
+            &amp; C. Rauen (Eds.), Empirie in der Literaturwissenschaft (S.
+            201–247). Mentis
+          </bibl>
+          <bibl xml:id="wiedmer_2020">
+            Wiedmer, N., Pagel J., Reiter, N. (2020). "Romeo, Freund Des
+            Mercutio: Semi- Automatische Extraktion von Beziehungen zwischen
+            Dramatischen Figuren." DHd2020. Book of Abstracts. Paderborn, p.
+            194–200.
+            <ref target="https://doi.org/10.5281/zenodo.4621778">doi:10.5281/zenodo.4621778</ref>.
+          </bibl>
+        </listBibl>
+      </div>
+    </back>
+  </text>
+</TEI>
+
+```
+
+## Selected source reading blocks
+
+### r1 schemaSpec start and module selection
+
+Locator: lines 3311-3333, bytes 150710-151757, interval, occurrence 1 of 1 of the start marker.
+
+Exact source fragment as a JSON string: "<schemaSpec ident=\"dracor\"\n          docLang=\"en\"\n          prefix=\"tei_\"\n          xml:lang=\"en\"\n          start=\"TEI teiCorpus dracorCorpus\"\n          source=\"tei:4.12.0\"\n        >\n          <desc>DraCor Schema</desc>\n          <moduleRef key=\"header\"/>\n          <moduleRef key=\"core\"/>\n          <moduleRef key=\"tei\"/>\n          <moduleRef key=\"textstructure\" except=\"div1 div2 div3 div4 div5 div6 div7\"/>\n          <moduleRef key=\"linking\"/>\n          <moduleRef key=\"drama\"/>\n          <moduleRef key=\"verse\"/>\n          <moduleRef key=\"namesdates\"/>\n          <moduleRef key=\"corpus\" include=\"particDesc\"/>\n          <moduleRef key=\"figures\" include=\"figure figDesc table row cell\"/>\n          <moduleRef key=\"analysis\"/>\n          <!-- members of model.global.edit; <gap> is already available via\n               the core module.  <app> and <witDetail> are intentionally\n               excluded as critical apparatus features not needed by DraCor. -->\n          <moduleRef key=\"transcr\" include=\"addSpan damageSpan delSpan ellipsis space\"/>" ^r1
+
+### r2 deleted attribute classes
+
+Locator: lines 3351-3362, bytes 152641-153506, interval, occurrence 1 of 1 of the start marker.
+
+Exact source fragment as a JSON string: "<classSpec module=\"core\" type=\"atts\" ident=\"att.datable.custom\" mode=\"delete\"/>\n          <classSpec module=\"core\" type=\"atts\" ident=\"att.datable.iso\" mode=\"delete\"/>\n          <!-- Elements like add, del, ... and the like are very unlikely to be\n               used, I leave the elements in but kick the attribute classes out\n               to have less attributes to worry about-->\n          <!-- delete the attributes used in manuscript, e.g. @hand -->\n          <classSpec type=\"atts\" ident=\"att.written\" mode=\"delete\"/>\n          <classSpec type=\"atts\" ident=\"att.transcriptional\" mode=\"delete\"/>\n          <classSpec type=\"atts\" ident=\"att.editLike\" mode=\"delete\"/>\n          <!-- other attribute classes removed -->\n          <classSpec type=\"atts\" ident=\"att.declaring\" mode=\"delete\"/>\n          <classSpec type=\"atts\" ident=\"att.declarable\" mode=\"delete\"/>" ^r2
+
+### r3 Schematron constraint on schema association
+
+Locator: lines 6498-6520, bytes 291843-293163, element, occurrence 1 of 1 of the start marker.
+
+Exact source fragment as a JSON string: "<constraintSpec ident=\"xml_model_or_type_dracor_on_root_tei_element\"\n              scheme=\"schematron\" mode=\"add\">\n              <desc>\n                DraCor TEI documents should either reference the DraCor Schema\n                in an <code>&lt;?xml-model ... ?&gt;</code> processing\n                instruction or add a <att>type</att> <val>dracor</val> to their\n                root element.\n              </desc>\n              <constraint>\n                <sch:rule context=\"/tei:TEI\" role=\"warning\">\n                  <sch:assert test=\"@type = 'dracor' or /processing-instruction('xml-model')\">\n                    The root <sch:name/> element should have a @type=\"dracor\"\n                    attribute if the schema is not reference in an xml-model PI.\n                  </sch:assert>\n                  <sch:assert\n                    test=\"not(/processing-instruction('xml-model')) or (some $pi in /processing-instruction('xml-model')\n                          satisfies matches($pi, 'href\\s*=\\s*[&quot;'']https://dracor\\.org/schema\\.rng[&quot;'']'))\">\n                    The DraCor schema should be refrerenced as\n                    \"https://dracor.org/schema.rng\" when using a xml-model PI.\n                  </sch:assert>\n                </sch:rule>\n              </constraint>\n            </constraintSpec>" ^r3
+
+### r4 added corpus root element
+
+Locator: lines 6808-6829, bytes 306599-307389, element, occurrence 1 of 1 of the start marker.
+
+Exact source fragment as a JSON string: "<elementSpec ident=\"dracorCorpus\" mode=\"add\">\n            <gloss>DraCor Corpus</gloss>\n            <desc>\n              Root element for a DraCor corpus.xml descriptor document.\n              Contains exactly one teiHeader with corpus-level metadata.\n            </desc>\n            <classes>\n              <memberOf key=\"att.global\"/>\n            </classes>\n            <content>\n              <elementRef key=\"teiHeader\" minOccurs=\"1\" maxOccurs=\"1\"/>\n            </content>\n            <exemplum>\n              <egXML xmlns=\"http://www.tei-c.org/ns/Examples\">\n                <dracorCorpus>\n                  <teiHeader>\n                    <!-- ... -->\n                  </teiHeader>\n                </dracorCorpus>\n              </egXML>\n            </exemplum>\n          </elementSpec>" ^r4
+

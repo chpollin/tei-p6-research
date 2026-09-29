@@ -3,12 +3,10 @@ type: distillate
 source-type: document
 representation: "[[10_markdown/documents/tei-p5-idno-4.12.0]]"
 topics: ["[[Metadata and Entities]]"]
-status: validated
-checked:
-  machine-review: 2026-09-06
-  validation: 2026-09-06
+status: grounded
+checked: {}
 created: 2026-09-06
-updated: 2026-09-06
+updated: 2026-09-11
 ---
 
 # Distillate: TEI P5 4.12.0 idno specification
@@ -55,7 +53,7 @@ This distillate reports the English description, the English descriptions of the
 
 ## Appraisal
 
-The source is the complete element specification at a pinned release commit, so its English text establishes what the Guidelines say about carrying a standardized identifier, about the kinds of object such an identifier may name, and about seven identifier schemes documented as values of `type` together with the value form each of them takes. It establishes nothing about where `idno` may occur in a record, because every membership and the module stay in the XML, and nothing about how a stated identifier is resolved to its object. The two levels the source keeps apart, the categorization of an identifier through `type` and the description of the scheme behind each documented value, are separately anchorable and should stay separate until the assertion layer joins them.
+The source is the complete element specification at a pinned release commit, so its English text establishes what the Guidelines say about carrying a standardized identifier, about the kinds of object such an identifier may name, and about seven identifier schemes documented as values of `type` together with the value form each of them takes. Its English reading blocks say nothing about where `idno` may occur in a record. The XML declares the class memberships and the module that bear on placement, while the containers that reference those classes are specified elsewhere. The English text also says nothing about how a stated identifier is resolved to its object. The two levels the source keeps apart, the categorization of an identifier through `type` and the description of the scheme behind each documented value, are separately anchorable and should stay separate until the assertion layer joins them.
 
 ## Related
 

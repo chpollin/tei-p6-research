@@ -3,13 +3,11 @@ type: distillate
 source-type: publication
 reference: piez2014range
 topics: ["[[Abstract Model]]", "[[Annotation and Overlap]]"]
-status: validated
+status: grounded
 checked:
-  quote: 2026-09-05
-  validation: 2026-09-05
-  machine-review: 2026-09-05
+  quote: 2026-09-11
 created: 2026-09-05
-updated: 2026-09-05
+updated: 2026-09-11
 ---
 
 # Distillate: Hierarchies within range space
@@ -35,8 +33,7 @@ No additional term definition is extracted in this bounded intake.
 The passage is a scholarly argument for a way to investigate hierarchy. It is
 not a proof of a universal range-based ontology or a comparative usability
 result. The author's model involvement and worked examples should inform the
-evaluation, while independent sources test its generality. Full text is not
-redistributed because publisher permission does not establish a reusable licence.
+evaluation, while independent sources test its generality.
 
 ## Related
 

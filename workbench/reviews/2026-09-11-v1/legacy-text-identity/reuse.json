@@ -1,0 +1,42 @@
+[
+  {
+    "id": "20_distillates/documents/tei-p5-anchor-4.12.0#^s1",
+    "origin": "workbench\\reviews\\2026-09-05-text-identity",
+    "prompt_sha256": "090d3fbe36300cbb102e9312f5f15d7ee2cfd97e1d53e8262fe206817dc31e4e"
+  },
+  {
+    "id": "20_distillates/documents/tei-p5-annotation-4.12.0#^s1",
+    "origin": "workbench\\reviews\\2026-09-05-text-identity",
+    "prompt_sha256": "de2d99cdfa28fe2bd2789680809d637c66b27a40448c3cfdc1ca68b5e4dfeeb1"
+  },
+  {
+    "id": "20_distillates/documents/tei-p5-span-4.12.0#^s1",
+    "origin": "workbench\\reviews\\2026-09-05-text-identity",
+    "prompt_sha256": "754768f31e0a91944a842ea352d00c9ee246df71143893a17fbfd294a392e84f"
+  },
+  {
+    "id": "20_distillates/documents/tei-p5-span-4.12.0#^s2",
+    "origin": "workbench\\reviews\\2026-09-05-text-identity",
+    "prompt_sha256": "143d534cf20685638574600bfe945da922f98b73a7a2c0810a70a224633e40b0"
+  },
+  {
+    "id": "30_assertions/p5-anchor-identifies-a-textual-point<-20_distillates/documents/tei-p5-anchor-4.12.0#^s1",
+    "origin": "workbench\\reviews\\2026-09-05-text-identity",
+    "prompt_sha256": "ea4a5e1e534311e3f333e5dd4af19ff1c08ce0239f1b41cd9701b31c8f40452e"
+  },
+  {
+    "id": "30_assertions/p5-annotation-refers-to-web-annotation-model<-20_distillates/documents/tei-p5-annotation-4.12.0#^s1",
+    "origin": "workbench\\reviews\\2026-09-05-text-identity",
+    "prompt_sha256": "7450543709508b72530a8cd7b559a0bebcb0a53f8ec69a1ac692db65a09024b8"
+  },
+  {
+    "id": "30_assertions/p5-span-associates-interpretation-with-text<-20_distillates/documents/tei-p5-span-4.12.0#^s1",
+    "origin": "workbench\\reviews\\2026-09-05-text-identity",
+    "prompt_sha256": "371e8510e4592960622e38afb55cec60de983f6e36292a68dca4dcf6653f40a6"
+  },
+  {
+    "id": "30_assertions/p5-span-from-identifies-start-or-whole-node<-20_distillates/documents/tei-p5-span-4.12.0#^s2",
+    "origin": "workbench\\reviews\\2026-09-05-text-identity",
+    "prompt_sha256": "4e728a1288c6f1be45fd4588f2d9b5e2aafd81cd6e4c0313dd9586437b8f5fba"
+  }
+]

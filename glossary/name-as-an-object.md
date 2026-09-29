@@ -24,11 +24,11 @@ name regarded in this way.
   - [[20_distillates/documents/tei-p5-guidelines-nd-4.12.0#^s56]]
 - [[30_assertions/p5-guidelines-distinguish-resolving-a-name-from-treating-it-as-an-object]] — In TEI P5 4.12.0, the Guidelines distinguish the resolution of a name or referring string to its referent through key or ref from the treatment of names as objects in their own right, for whose canonical or normalized form they use the term nym
   - [[20_distillates/documents/tei-p5-guidelines-nd-4.12.0#^s55]]
-- [[30_assertions/p5-guidelines-let-an-encoder-regard-a-city-and-its-predecessor-as-one-place]] — In TEI P5 4.12.0, the Guidelines give the modern city of Lyon and the Roman Lugdunum, which overlap significantly without being physically co-extensive, as an example of what an encoder may wish to regard as the same place while supplying both names with the period during which each was current
+- [[30_assertions/p5-guidelines-let-an-encoder-regard-a-city-and-its-predecessor-as-one-place]] — In TEI P5 4.12.0, the Guidelines relate the suggestion to regard Lyon and Lugdunum as the same place to their significant overlapping areas
   - [[20_distillates/documents/tei-p5-guidelines-nd-4.12.0#^s43]]
 - [[30_assertions/p5-name-component-markup-does-not-cover-every-name]] — In TEI P5 4.12.0, the Guidelines state that their mechanisms for marking personal name components will not cater for every personal name or every processing need, and recommend feature structures where the structure is highly complex or the components particularly ambiguous
   - [[20_distillates/documents/tei-p5-guidelines-nd-4.12.0#^s12]]
-- [[30_assertions/p5-namesdates-represents-the-referent-and-the-name-independently]] — In TEI P5 4.12.0, the Guidelines state that the module provides elements to represent the person, place or organization a name refers to and the name itself independently of its application, so that it can represent a personal name, the person being named and the canonical name being used
+- [[30_assertions/p5-namesdates-represents-the-referent-and-the-name-independently]] — In TEI P5 4.12.0, the Guidelines state that the module provides elements to represent information about the person, place or organization to which a given name is understood to refer and to represent the name itself independently of its application, so that it can represent a personal name, the person being named and the canonical name being used
   - [[20_distillates/documents/tei-p5-guidelines-nd-4.12.0#^s2]]
 - [[30_assertions/p5-nym-contains-the-definition-of-a-canonical-name-or-name-component]] — In TEI P5 4.12.0, nym contains the definition for a canonical name or name component of any kind
   - [[20_distillates/documents/tei-p5-nym-4.12.0#^s1]]

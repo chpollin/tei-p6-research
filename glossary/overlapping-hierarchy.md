@@ -15,6 +15,6 @@ at all is part of the same situation.
 ## Examples
 
 <!-- examples:begin -->
-- [[30_assertions/piez-treats-optional-hierarchy-as-object-of-study]] — Piez treats optional hierarchy as an object of study
+- [[30_assertions/piez-treats-optional-hierarchy-as-object-of-study]] — Piez argues that permitting any hierarchy or none makes hierarchy itself open to study
   - [[20_distillates/publications/piez2014range#^s1]]
 <!-- examples:end -->

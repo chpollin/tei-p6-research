@@ -12,7 +12,7 @@ profile:
 status: draft
 language: en
 created: "2026-09-04"
-updated: "2026-09-07"
+updated: "2026-09-11"
 related: [INDEX, project, data, governance, design, schema, operations, verification, testing, model-design, p6-evaluation, p6-architecture, plan, state, journal]
 ---
 
@@ -135,7 +135,7 @@ Research readiness requires the following results.
 The project reaches design-candidate readiness only after the P5 atlas,
 demonstrated-problem corpus, option matrix and migration evidence all satisfy
 their acceptance conditions. A polished proposal without those prerequisites
-remains a hypothesis. The milestones that close these criteria are in
+remains a hypothesis. The research objectives that close these criteria are in
 [[knowledge/plan]].
 
 ## Parameters

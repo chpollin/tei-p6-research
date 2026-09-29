@@ -3,12 +3,10 @@ type: distillate
 source-type: document
 representation: "[[10_markdown/documents/tei-p5-nym-4.12.0]]"
 topics: ["[[Metadata and Entities]]"]
-status: validated
-checked:
-  machine-review: 2026-09-06
-  validation: 2026-09-06
+status: grounded
+checked: {}
 created: 2026-09-06
-updated: 2026-09-06
+updated: 2026-09-11
 ---
 
 # Distillate: TEI P5 4.12.0 nym specification
@@ -35,7 +33,7 @@ This distillate reports the English element description and the English descript
 
 ## Appraisal
 
-This specification carries two English descriptions and nothing else in prose. They establish the intended meaning of the element and of its `parts` attribute. Everything about how a name occurrence in a text reaches a canonical name form, and about the list structure that holds one, requires the Guidelines chapter that the XML `listRef` points to.
+The English reading blocks of this specification are two descriptions, which state what the element contains and what its `parts` attribute points to. The XML also holds the English gloss "canonical name". This specification does not state how a name occurrence in a text reaches a canonical name form or which structure holds a `nym`, and its only pointer beyond itself is the XML `listRef` to the Guidelines division `#NDNYM`.
 
 ## Related
 

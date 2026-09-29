@@ -6,7 +6,7 @@ checked: {}
 grounding:
   - "[[20_distillates/documents/tei-p5-att.global.linking-4.12.0#^s10]]"
 created: 2026-09-07
-updated: 2026-09-07
+updated: 2026-09-11
 ---
 
 # P5 4.12.0 recommends that next point to an element of the same type as the element bearing the attribute.
@@ -17,7 +17,7 @@ P5 4.12.0 recommends that next point to an element of the same type as the eleme
 
 ## Support
 
-- [[20_distillates/documents/tei-p5-att.global.linking-4.12.0#^s10]] supplies the source-specific statement used here. The assertion retains its stated source and scope.
+- [[20_distillates/documents/tei-p5-att.global.linking-4.12.0#^s10]]
 
 ## Related
 

@@ -68,6 +68,9 @@ def _guidelines(row: dict, base: str | None) -> str:
         return ''
     suggestions = ', '.join(link(repository_link(s['moc'], base), s['topic']) + ' (' + esc(s['rule']) + ')' for s in row['topic_suggestions'])
     result = '<section class="guidelines-navigation"><h3>Guidelines navigation</h3><p>Topic suggestions: ' + (suggestions or esc(row['unclassified_reason'])) + '.</p><p class="muted">Rule-based navigation; no scholarly classification or research status is assigned. Relations describe direct declarations only.</p>'
+    curated = [item['topic'] if isinstance(item, dict) else item for item in row.get('curated_topics', [])]
+    if curated:
+        result += '<p>Existing topic assignments: ' + esc(', '.join(curated)) + '. From distillate metadata; no new source review is implied.</p>'
     result += '<p>Source kind: ' + esc(row['kind']) + '. Module: ' + esc(row.get('module') or 'not assigned') + ' (' + esc(row['module_basis']) + ').</p>'
     for key, label in (('references', 'Declared references'), ('referenced_by', 'Referenced by declarations')):
         items = []
@@ -91,9 +94,10 @@ def _guidelines(row: dict, base: str | None) -> str:
 def render_entry(entry: dict, base: str | None) -> str:
     kind, path = entry['kind'], entry['path']
     status = entry['status'] or 'No research status assigned'
-    search = ' '.join((entry['title'], path, status, str(entry['metadata'].get('topics', [])), entry['excerpt'], ' '.join(entry['blocks'].values())))
+    search = ' '.join((entry['title'], path, status, str(entry['metadata'].get('topics', []))))
     guidelines = entry.get('guidelines', {})
     topics = [s['topic'] for s in guidelines.get('topic_suggestions', [])]
+    topics += [s['topic'] if isinstance(s, dict) else s for s in guidelines.get('curated_topics', [])]
     topics += [value.removeprefix('[[').removesuffix(']]').split('/')[-1].removeprefix('MOC-') for value in entry['metadata'].get('topics', [])]
     if guidelines and not topics:
         topics = ['Unclassified']
@@ -113,7 +117,7 @@ def render_entry(entry: dict, base: str | None) -> str:
     posit = ''
     if kind == 'chapter':
         posit = '<p class="muted">The chapter records ' + esc(entry['metadata'].get('posits', 'an unspecified number of')) + ' explicit project posits. These express authorial proposals.</p>'
-    return f'''<details class="artifact" id="{esc(entry['id'])}" data-kind="{esc(kind)}" data-topics="{esc(json.dumps(topics))}" data-module="{esc(guidelines.get('module') or '')}" data-source-kind="{esc(guidelines.get('kind') or '')}" data-search="{literal(search)}">
+    return f'''<details class="artifact" id="{esc(entry['id'])}" data-kind="{esc(kind)}" data-status="{esc(entry['status'] or '')}" data-ident="{esc(guidelines.get('ident') or '')}" data-topics="{esc(json.dumps(topics))}" data-module="{esc(guidelines.get('module') or '')}" data-source-kind="{esc(guidelines.get('kind') or '')}" data-search="{literal(search)}">
 <summary><span class="artifact-title">{esc(entry['title'])}</span><span class="artifact-state">{esc(status)}</span></summary>
 <div class="artifact-content"><p class="artifact-path"><code>{esc(path)}</code> · {canonical}</p>{excerpt}{posit}{_guidelines(guidelines, base)}{_edges(direct, 'Grounding')}{''.join(blocks)}{_metadata(entry, base)}{_edges(entry['backlinks'], 'Used by')}</div></details>'''
 
@@ -145,7 +149,7 @@ def render_page(view: dict) -> str:
 <p>Actual source representations, distillates, assertions, and output chapters in this repository. Follow a claim to its exact source passage, or inspect where a passage is used.</p>
 <p class="muted">Browse admitted sources, distillates, assertions and output. <a href="corpus.html">Materials</a> records the broader acquired and planned holdings. Citation-only admissions end at a checked quotation and citation. Grounded means traceable. Validated records machine checks. Verified requires recorded human verification.</p></header>
 <nav class="layer-navigation" aria-label="Vault layers">{''.join(link('#group-' + kind, label + ' (' + str(view['counts'][kind]) + ')') for kind, label in LAYERS.items())}{link('#documents', 'Project documents')}</nav>
-<form class="knowledge-filters" role="search"><label>Search the vault<input id="knowledge-search" type="search" placeholder="Title, statement, topic, or path" autocomplete="off"></label><label>Layer<select id="knowledge-layer"><option value="">All layers</option>{options}</select></label>{guideline_filters}<button type="reset">Clear filters</button><output id="knowledge-results" aria-live="polite">{len(view['entries'])} artifacts</output></form>
-<p id="knowledge-empty" hidden>No artifacts match these filters.</p>{''.join(groups)}
+<form class="knowledge-filters" role="search"><label>Search the vault<input id="knowledge-search" type="search" placeholder="Title, statement, topic, or path" autocomplete="off"></label><label>Layer<select id="knowledge-layer"><option value="">All layers</option>{options}</select></label><label>Research status<select id="knowledge-status"><option value="">All statuses</option><option value="validated">Validated</option><option value="grounded">Grounded</option><option value="contested">Contested</option><option value="verified">Human verified</option><option value="unassigned">No research status</option></select></label>{guideline_filters}<button type="reset">Clear filters</button><output id="knowledge-results" aria-live="polite">{len(view['entries'])} artifacts</output></form>
+<section id="knowledge-ranked" class="ranked-results" hidden aria-labelledby="ranked-heading"><h2 id="ranked-heading">Best matching artifacts</h2><p class="muted">Exact identifiers and matching titles rank first. Open a passage to inspect its context and provenance.</p><ol id="knowledge-hits"></ol></section><p id="knowledge-empty" hidden>No artifacts match these filters.</p>{''.join(groups)}
 <section id="documents" class="document-navigation"><h2>Project documents</h2><p class="muted">Control contracts, topic maps, and provisional design documents are navigation and project reasoning. They are not substitutes for the evidence chain.</p><div class="document-columns">{''.join(nav)}</div></section>
 </main>{render_footer(view['date'])}<script>{js}</script></body></html>'''

@@ -9,7 +9,7 @@ method:
 status: draft
 language: en
 created: "2026-09-06"
-updated: "2026-09-07"
+updated: "2026-09-11"
 related: [text-model-bindings, model-design, p6-architecture, p6-evaluation, experiments, specification, state]
 ---
 
@@ -1185,8 +1185,10 @@ A    alignment claims nested in entities, concepts and agents, as in section 13
 8. Withdrawal and supersession follow section 13 for every claim kind of the
    extension. Supersession stays within one kind, one agent and one subject
    and is acyclic; a `withdrawn` claim supersedes at least one claim; a
-   claim of an earlier package that is missing or changed in a later package
-   is a rewrite.
+   claim of an earlier package that is missing, changed or moved to another
+   carrier in a later package is a rewrite. In the same revision scope a
+   reused entity ID keeps its kind and a referenced selection keeps its
+   version and selector, as 14.4 defines.
 9. No inference follows from alignments or denotations. Two entities aligned
    `exact` to one IRI stay two entities, an entity's alignments propagate to
    none of its mentions, an `exact` alignment states nothing about identity
@@ -1268,25 +1270,76 @@ field stays distinct from a present one; and every string compares exactly.
 The append-only claim check of section 13 generalizes the profile's
 `E_CLAIM_REWRITE` to every claim kind of the extension.
 
-The implemented revision check compares claim records without freezing all
-referenced definitions. In particular, it does not reject a changed selection
-under a retained ID, a changed entity kind, or an unchanged nested alignment
-moved to another carrier. The latter changes the alignment's subject despite
-preserving its record fields. These are limits of enforcement. The proposed
-same-subject and identity rules require an additional dependency-preservation
-contract. General 0.2 reanchoring is also outside the implemented operations.
+`check_claim_revision(before, after)` compares two packages that the caller
+declares to share one ID scope; coincidentally equal local IDs of independent
+packages are no evidence of a rewrite. It reports the validation diagnostics
+of both packages and applies four preservation rules.
+
+1. Every claim of a valid earlier package, superseded, withdrawn and nested
+   claims included, occurs exactly once in the later package under its ID,
+   with an equal record, in the same collection and, for a nested
+   alignment, on the carrier of the same collection and ID, which is the
+   subject of the alignment. A missing, duplicated, changed or moved claim
+   gives `E_CLAIM_REWRITE` at its earlier path. This rule reads the later
+   package defensively, so lost history is reported even when that package
+   is invalid.
+2. A reused version ID keeps content, hash and parent set, as section 4
+   defines, and otherwise gives `E_VERSION_REWRITE`.
+3. A reused entity ID keeps its `kind`, whether or not a claim references
+   the entity, because a change of kind is a new entity under 14.1. A
+   change gives `E_ENTITY_REWRITE` at the kind of the later record.
+4. A selection that the earlier package references keeps its `version` and
+   its `selector`, compared as exact values including selector kind, match
+   policy, context, segmentation and quotes. A change gives
+   `E_SELECTION_REWRITE` at the later selection. Equal resolved targets do
+   not suffice, because R11 keeps selector policies apart.
+
+Rules 2 to 4 run only when both packages are valid, so no dependency rewrite
+is inferred from a malformed package, whose own diagnostics already make the
+result invalid. Three fields close the dependency scope of rule 4. Only an
+annotation, a reading node or a relation endpoint names a selection, and each
+belongs to a claim. Every longer reference path ends in one of them: a
+denotation reaches a selection through its mention, a relation through an
+annotation or node endpoint. Statements, names, denotations and alignments
+reach entities, whose kind rule 3 keeps. Rule 1 freezes the claims and the
+reading nodes inside them, so an unchanged earlier claim keeps the extent it
+selects, the version of that extent and the kind of every entity it names,
+without a traversal of the possibly cyclic relation graph.
+
+The rules leave legitimate revision open. A later package may append claims,
+among them superseding and withdrawing claims under section 13, and new
+entities, selections, versions and alignments, and it may reorder every
+registry and the alignments of a carrier. An array inside a claim record,
+such as the nodes of a reading, the participants of a statement or
+`supersedes`, belongs to the exact record that section 13 preserves, so
+reordering it is a rewrite even though R11 ignores that order. Removing a
+record rewrites none, but every earlier claim must survive and the later
+package must validate, so a record that an earlier claim references stays.
+Deliberately mutable remain the labels of agents, texts and entities; the
+label and definition of every concept except
+the reserved concepts, whose exact records validation fixes; a selection that
+no record of the earlier package references; and an ID whose earlier record
+no claim referenced and that the later package reuses for a record of another
+category. Such changes can shift how a reader understands an unchanged claim,
+for instance through a redefined statement type, and freezing them requires a
+separate decision. The check therefore establishes no universal immutability
+of a package, no persistent history service and no human acceptance of a
+revision. General 0.2 reanchoring is also outside the implemented operations.
 The base `propose_reanchor` accepts 0.1 packages only.
 
-The extension needs the following diagnostics, the first five for the
-pattern fields of section 13 and the rest for its own record kinds.
+The extension needs the following diagnostics. The first five rows serve the
+pattern fields and identifiers of section 13, the next two the revision rules
+above, and the rest its own record kinds.
 
 | Diagnostics | Meaning |
 |---|---|
 | `E_CLAIM_FIELD` | A pattern field fails its lexical form, its closed set or the order of validity bounds |
 | `E_CLAIM_SUPERSESSION` | `supersedes` names a claim of another kind, agent or subject, or a `withdrawn` claim supersedes nothing |
 | `E_CLAIM_CYCLE` | Supersession is cyclic |
-| `E_CLAIM_REWRITE` | A claim of a valid earlier package is missing or changed in the later package |
+| `E_CLAIM_REWRITE` | A claim of a valid earlier package is missing, duplicated or changed in the later package, including its collection and the carrier of a nested alignment |
 | `E_BASE`, `E_ALIGNMENT` | `base` or a former base fails its grammar; an alignment `iri` or `relation` fails its form or set |
+| `E_ENTITY_REWRITE` | A reused entity ID changes its kind between two valid packages of one revision scope |
+| `E_SELECTION_REWRITE` | A selection referenced by the valid earlier package changes its version or selector under its ID |
 | `E_ENTITY_KIND`, `E_STATEMENT_KIND`, `E_NAME_PART` | A kind of an entity, a statement or a name part is outside its closed set, or a part is malformed |
 | `E_LANGUAGE` | A name claim's language tag fails its lexical form |
 | `E_MENTION` | A denotation subject is no mention, or a reserved mention concept deviates from its exact record |
@@ -1467,6 +1520,14 @@ the v0.1 runner does.
    agent and instant of every alignment, the `base`, and the `und`
    language tag. The P5 fragment returned reproduces every `ref` URI in its
    order and every `resp` pointer (R11, R19).
+
+Revision regressions in `tests/models/test_entities.py` and
+`tests/models/test_identity_evidence.py` additionally test the preservation
+rules of section 14.4. They reject moved alignment carriers, reused entity
+kinds and redirected referenced selections, including identical wording at
+another catalogue location. Supersession, withdrawal and additive records
+remain positive cases. The separate frozen case suite and its report retain
+their original scope; the repository test suite runs the revision checks.
 
 Finite synthetic cases and one mapped fragment demonstrate these rules on
 supplied instances. They do not establish that the extension is adequate for

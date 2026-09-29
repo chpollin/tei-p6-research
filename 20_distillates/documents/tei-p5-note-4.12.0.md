@@ -6,7 +6,7 @@ topics: ["[[Text and Document Structures]]", "[[Annotation and Overlap]]"]
 status: grounded
 checked: {}
 created: 2026-09-07
-updated: 2026-09-07
+updated: 2026-09-11
 ---
 
 # Distillate: TEI P5 4.12.0 note
@@ -21,7 +21,7 @@ This distillate extracts the English descriptions, local declarations and select
 - The English translator-note example embeds a note within a sentence and gives it place bottom, type gloss and a resp pointer to a responsibility statement. [[10_markdown/documents/tei-p5-note-4.12.0#^b12]] ^s4
 - The English translator-note example requires the code used by its resp pointer to be defined elsewhere, for example in a responsibility statement in the associated TEI header. [[10_markdown/documents/tei-p5-note-4.12.0#^b12]] ^s5
 - The note example explains that n can supply the symbol or number marking the attachment point in the source text. [[10_markdown/documents/tei-p5-note-4.12.0#^b17]] ^s6
-- The note example permits omission of sequential note numbers when processing software can reconstruct them automatically. [[10_markdown/documents/tei-p5-note-4.12.0#^b17]] ^s7
+- The English note example adds that if notes are numbered in sequence and their numbering can be reconstructed automatically by processing software, it may well be considered unnecessary to record the note numbers. [[10_markdown/documents/tei-p5-note-4.12.0#^b17]] ^s7
 
 ## Terms
 
@@ -30,11 +30,11 @@ This distillate extracts the English descriptions, local declarations and select
 ## Open questions
 
 - Which reading and placement rules govern nested notes and stand-off notes in a particular editorial task?
-- Which effective inherited rules apply when the referenced classes and datatypes are compiled in a particular customization?
+- Which effective inherited rules apply when the declared classes and the referenced `macro.specialPara` are compiled in a particular customization?
 
 ## Appraisal
 
-The extraction distinguishes declared rules from observed processor behavior. Examples establish the encodings presented by the specification. Other-language translations and effective schema compilation remain outside this extraction. The section audit records the examined units and exclusions.
+The extraction reports declared rules and examples and records no processor behavior. Examples establish the encodings presented by the specification. Other-language translations and effective schema compilation remain outside this extraction. The section audit records the examined units and exclusions.
 
 ## Related
 

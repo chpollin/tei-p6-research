@@ -29,6 +29,7 @@ from tools.review import (
     select_pairs,
     set_checked_date,
 )
+from tools.review_execution import ISOLATION_FLAGS
 from tools.validate import Doc
 
 REPO = Path(__file__).parents[1]
@@ -268,14 +269,21 @@ class _Result:
 
 
 def test_run_claude_passes_the_prompt_on_stdin(monkeypatch, pairs) -> None:
-    """Windows caps a command line at ~32k characters, so no prompt goes into argv."""
+    """Windows caps a command line at ~32k characters, so no prompt goes into argv.
+
+    The call also runs inside the isolation boundary of tools/review_execution.py:
+    an empty working directory outside the repository and the isolation flags.
+    """
     calls = []
 
     def fake_run(command, **kwargs):
+        cwd = Path(kwargs["cwd"])
+        assert cwd.is_dir() and not any(cwd.iterdir())
+        assert REPO.resolve() not in cwd.resolve().parents
         calls.append((command, kwargs))
         return _Result()
 
-    monkeypatch.setattr("tools.review.shutil.which", lambda name: "claude")
+    monkeypatch.setattr("tools.review.resolve_claude", lambda: "claude")
     monkeypatch.setattr("tools.review.subprocess.run", fake_run)
 
     long_pair = pairs[0].__class__(
@@ -295,6 +303,12 @@ def test_run_claude_passes_the_prompt_on_stdin(monkeypatch, pairs) -> None:
     assert all(long_pair.prompt not in part for part in command)
     assert max(len(part) for part in command) < 4096
     assert kwargs["input"] == long_pair.prompt
+    start = command.index("--safe-mode")
+    assert command[start:start + len(ISOLATION_FLAGS)] == list(ISOLATION_FLAGS)
+    assert command[:4] == ["claude", "-p", "--model", "sonnet"]
+    assert not Path(kwargs["cwd"]).exists()
+    isolation = json.loads(records[0]["isolation"])
+    assert isolation["cwd_empty_before"] and isolation["cwd_outside_repository"]
 
 
 def test_booked_vault_still_validates(tmp_path) -> None:

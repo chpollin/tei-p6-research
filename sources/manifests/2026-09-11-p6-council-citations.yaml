@@ -1,0 +1,458 @@
+schema_version: 1
+run_id: 2026-09-11-p6-council-citations
+source_id: tei-official-p6-process
+source_ids:
+- tei-official-p6-process
+- tei-council-minutes
+status: bounded-complete
+started_at: '2026-09-11T11:36:19Z'
+finished_at: '2026-09-11T12:18:24Z'
+scope:
+  boundary: 'Eight citation-only admissions selected in workbench/selections/2026-09-11-p6-process.md: seven official Council meeting pages among the 23 meeting pages dated 2025-01-01 to 2026-09-04 that the official Council index linked when observed on 2026-09-11, and index.html of TEIC/timeForP6 at commit eb924226d12d22599bae9dad4fc53bc748b3f121.'
+  status_applies_to: the eight admissions, their eight raw responses and their quotations only; neither family completeness nor any review status
+adapter:
+  name: curated citation intake (knowledge/operations.md Acquire, small curated import) with tools.check_wave1_sources quotation check
+  version: 1
+references_path: references/p6-v1.json
+lock_file: sources/locks/tei-p6-process.yaml
+selection_record: workbench/selections/2026-09-11-p6-process.md
+upstream_manifests:
+- sources/manifests/2026-09-04-tei-council-minutes-r2.yaml
+- sources/manifests/2026-09-04-teic-time-for-p6.yaml
+- sources/manifests/2026-09-11-p6-time-for-p6-git.yaml
+observation_records:
+- path: corpus/normalized/p6-v1/fetch-2026-09-11.json
+  sha256: 1973c3ef95d823bcc6fea03f4ab2e1d20904ad992bfe3b5be143829d295043fb
+- path: corpus/normalized/p6-v1/fetch-git-2026-09-11.json
+  sha256: 89fb20d79fc8ac75a11e1c71de011f43d4bfc1fee5b10adf3b0374a75e26e6b5
+objects:
+- kind: csl-json-bibliography
+  path: references/p6-v1.json
+  sha256: 2bcbdd6e909996d11cad51680f5a3d14b3b08f5745d8b85c97207af6e8779f36
+admissions:
+- reference_id: p6-v1-council-f2f-2025-09-krakow
+  source_type: publication
+  source_id: tei-official-p6-process
+  lock_file: sources/locks/tei-p6-process.yaml
+  record:
+    kind: council-meeting-page
+    title: TEI Technical Council F2F Meeting in Kraków, 14–16 September 2025
+    meeting_dates:
+    - '2025-09-14'
+    - '2025-09-16'
+    canonical_url: https://www.tei-c.org/activities/council/meetings/tei-technical-council-f2f-meeting-in-Krakow-14-16-sept-2025/
+    census_manifest: sources/manifests/2026-09-04-tei-council-minutes-r2.yaml
+    census_2026_09_04_sha256: 163811297f646604aa722470f9a20125d350335f98327aef00d378cdaa489e13
+  snapshots:
+  - part: page
+    response: &id001
+      requested_url: https://www.tei-c.org/activities/council/meetings/tei-technical-council-f2f-meeting-in-Krakow-14-16-sept-2025/
+      canonical_url: https://www.tei-c.org/activities/council/meetings/tei-technical-council-f2f-meeting-in-Krakow-14-16-sept-2025/
+      final_url: https://www.tei-c.org/activities/council/meetings/tei-technical-council-f2f-meeting-in-Krakow-14-16-sept-2025/
+      observed_at: '2026-09-11T11:36:19Z'
+      status: 200
+      media_type: text/html
+      byte_count: 68881
+      sha256: 163811297f646604aa722470f9a20125d350335f98327aef00d378cdaa489e13
+      raw_path: sha256/16/3811297f646604aa722470f9a20125d350335f98327aef00d378cdaa489e13
+      headers:
+        date: Fri, 11 Sep 2026 11:36:28 GMT
+        content-type: text/html
+        content-length: '68881'
+        last-modified: Fri, 11 Sep 2026 06:18:09 GMT
+        etag: '"10d11-65b2f0c58ca40"'
+    extraction:
+      kind: html-visible-text
+  rights: No redistribution licence for the page text is established; citation and checked short quotation only. The page body, including participant names, stays in ignored raw storage.
+  authority: Primary Council meeting record of discussion, plans and explicitly labelled decisions at the meeting date; establishes neither implementation nor released effect.
+  instruction_trust: none
+  quotes:
+  - text: Council feels that the XML technology still holds really well, but the class system doesn’t
+    locator: TEI Technical Council F2F Meeting in Kraków, 14–16 September 2025, Discussion of Council’s readiness to move from P5 to P6
+  - text: Council would like to start in Spring 2026 to prioritize P6 development, and begin to shift to maintenance-only support of P5
+    locator: TEI Technical Council F2F Meeting in Kraków, 14–16 September 2025, Discussion of Council’s readiness to move from P5 to P6
+  - text: We should aim to deliver a presentation about P6 at the 2026 TEI conference.
+    locator: TEI Technical Council F2F Meeting in Kraków, 14–16 September 2025, Discussion of Council’s readiness to move from P5 to P6
+  - text: P6 to continue with XML but change the architecture / schemas.
+    locator: TEI Technical Council F2F Meeting in Kraków, 14–16 September 2025, Discussion of Council’s readiness to move from P5 to P6
+  distillate_path: 20_distillates/publications/p6-v1-council-f2f-2025-09-krakow.md
+- reference_id: p6-v1-council-2025-10-07
+  source_type: publication
+  source_id: tei-official-p6-process
+  lock_file: sources/locks/tei-p6-process.yaml
+  record:
+    kind: council-meeting-page
+    title: TEI Technical Council Teleconference, 2025-10-07
+    meeting_dates:
+    - '2025-10-07'
+    canonical_url: https://www.tei-c.org/activities/council/meetings/tei-technical-council-teleconference-2025-10-07/
+    census_manifest: sources/manifests/2026-09-04-tei-council-minutes-r2.yaml
+    census_2026_09_04_sha256: 3ff668cc05bc74a9ef582b638f50a09cd92de2101e68b696beaf60c41bcb3ced
+  snapshots:
+  - part: page
+    response: &id002
+      requested_url: https://www.tei-c.org/activities/council/meetings/tei-technical-council-teleconference-2025-10-07/
+      canonical_url: https://www.tei-c.org/activities/council/meetings/tei-technical-council-teleconference-2025-10-07/
+      final_url: https://www.tei-c.org/activities/council/meetings/tei-technical-council-teleconference-2025-10-07/
+      observed_at: '2026-09-11T11:36:23Z'
+      status: 200
+      media_type: text/html
+      byte_count: 18037
+      sha256: 3ff668cc05bc74a9ef582b638f50a09cd92de2101e68b696beaf60c41bcb3ced
+      raw_path: sha256/3f/f668cc05bc74a9ef582b638f50a09cd92de2101e68b696beaf60c41bcb3ced
+      headers:
+        date: Fri, 11 Sep 2026 11:36:32 GMT
+        content-type: text/html
+        content-length: '18037'
+        last-modified: Fri, 11 Sep 2026 06:18:09 GMT
+        etag: '"4675-65b2f0c58ca40"'
+    extraction:
+      kind: html-visible-text
+  rights: No redistribution licence for the page text is established; citation and checked short quotation only. The page body, including participant names, stays in ignored raw storage.
+  authority: Primary Council meeting record of discussion, plans and explicitly labelled decisions at the meeting date; establishes neither implementation nor released effect.
+  instruction_trust: none
+  quotes:
+  - text: What do we need to begin work?
+    locator: TEI Technical Council Teleconference, 2025-10-07, 2026 => P6
+  - text: 'We need some planning now: Which tickets are for P5 vs. P6?'
+    locator: TEI Technical Council Teleconference, 2025-10-07, 2026 => P6, Discussion
+  - text: 'Roadmap document by Council: perhaps use next F2F meeting to put that together instead of working on P5 or schedule a separate (funded) event'
+    locator: TEI Technical Council Teleconference, 2025-10-07, 2026 => P6, Discussion
+  - text: 'Council decision: For now, let''s continue with feature requests in P5, until we''ve had the proposed discussion.'
+    locator: TEI Technical Council Teleconference, 2025-10-07, 2026 => P6, closing line
+  distillate_path: 20_distillates/publications/p6-v1-council-2025-10-07.md
+- reference_id: p6-v1-council-f2f-2026-03-wurzburg
+  source_type: publication
+  source_id: tei-official-p6-process
+  lock_file: sources/locks/tei-p6-process.yaml
+  record:
+    kind: council-meeting-page
+    title: TEI Technical Council F2F Meeting in Würzburg
+    meeting_dates:
+    - '2026-03-10'
+    - '2026-03-13'
+    canonical_url: https://www.tei-c.org/activities/council/meetings/tei-technical-council-f2f-meeting-wurzburg-2026-03-10-13/
+    census_manifest: sources/manifests/2026-09-04-tei-council-minutes-r2.yaml
+    census_2026_09_04_sha256: 0baa751e656b773808115c29c427787e352d65dafb41c83f36633d552fac8e11
+  snapshots:
+  - part: page
+    response: &id003
+      requested_url: https://www.tei-c.org/activities/council/meetings/tei-technical-council-f2f-meeting-wurzburg-2026-03-10-13/
+      canonical_url: https://www.tei-c.org/activities/council/meetings/tei-technical-council-f2f-meeting-wurzburg-2026-03-10-13/
+      final_url: https://www.tei-c.org/activities/council/meetings/tei-technical-council-f2f-meeting-wurzburg-2026-03-10-13/
+      observed_at: '2026-09-11T11:36:20Z'
+      status: 200
+      media_type: text/html
+      byte_count: 120192
+      sha256: 0baa751e656b773808115c29c427787e352d65dafb41c83f36633d552fac8e11
+      raw_path: sha256/0b/aa751e656b773808115c29c427787e352d65dafb41c83f36633d552fac8e11
+      headers:
+        date: Fri, 11 Sep 2026 11:36:29 GMT
+        content-type: text/html
+        content-length: '120192'
+        last-modified: Fri, 11 Sep 2026 06:18:09 GMT
+        etag: '"1d580-65b2f0c58ca40"'
+    extraction:
+      kind: html-visible-text
+  rights: No redistribution licence for the page text is established; citation and checked short quotation only. The page body, including participant names, stays in ignored raw storage.
+  authority: Primary Council meeting record of discussion, plans and explicitly labelled decisions at the meeting date; establishes neither implementation nor released effect.
+  instruction_trust: none
+  quotes:
+  - text: A shared understanding of what P6 means.
+    locator: TEI Technical Council F2F Meeting in Würzburg, 10–13 March 2026, Objectives
+  - text: We aren't breaking from XML but the abstract model we develop will make alternative serializations (RDF, graph models) possible.
+    locator: TEI Technical Council F2F Meeting in Würzburg, 10–13 March 2026, Friday 3/13, Planning our next steps, Engage the TEI community
+  - text: Our main goal is to formalize the abstract model.
+    locator: TEI Technical Council F2F Meeting in Würzburg, 10–13 March 2026, Friday 3/13, Planning our next steps, Continued support of P5 while developing P6, question on parallel serializations alongside XML
+  - text: Create Sandbox repository
+    locator: TEI Technical Council F2F Meeting in Würzburg, 10–13 March 2026, Friday 3/13, Planning our next steps, Establish a workspace
+  - text: Council decides to make the repo private for now and reevaluate at F2F at Vancouver.
+    locator: TEI Technical Council F2F Meeting in Würzburg, 10–13 March 2026, Friday 3/13, Planning our next steps, Establish a workspace
+  - text: Toy sandbox research phase for now.
+    locator: TEI Technical Council F2F Meeting in Würzburg, 10–13 March 2026, Friday 3/13, Planning our next steps, Continued support of P5 while developing P6, question where and how P6 is being developed
+  - text: We will REDUCE the number elements in P6.
+    locator: TEI Technical Council F2F Meeting in Würzburg, 10–13 March 2026, Friday 3/13, Planning our next steps, Continued support of P5 while developing P6, question on the number of elements
+  - text: Announce at Annual Members' Meeting that we're stopping new features until we start P6.
+    locator: TEI Technical Council F2F Meeting in Würzburg, 10–13 March 2026, Friday 3/13, Planning our next steps, Continued support of P5 while developing P6
+  - text: We will begin hosting two meetings per month to support P6 development now while continuing work requested on P5.
+    locator: TEI Technical Council F2F Meeting in Würzburg, 10–13 March 2026, Friday 3/13, Planning our next steps, Continued support of P5 while developing P6, question where and how P6 is being developed
+  distillate_path: 20_distillates/publications/p6-v1-council-f2f-2026-03-wurzburg.md
+- reference_id: p6-v1-council-2026-04-10
+  source_type: publication
+  source_id: tei-official-p6-process
+  lock_file: sources/locks/tei-p6-process.yaml
+  record:
+    kind: council-meeting-page
+    title: TEI Technical Council Teleconference, 2026-04-10
+    meeting_dates:
+    - '2026-04-10'
+    canonical_url: https://www.tei-c.org/activities/council/meetings/tei-technical-council-teleconference-2026-04-10/
+    census_manifest: sources/manifests/2026-09-04-tei-council-minutes-r2.yaml
+    census_2026_09_04_sha256: 010e4a4a85be0e106f5bb76059d5a1f0d86e72d284b58d83192d96a09df0919e
+  snapshots:
+  - part: page
+    response: &id004
+      requested_url: https://www.tei-c.org/activities/council/meetings/tei-technical-council-teleconference-2026-04-10/
+      canonical_url: https://www.tei-c.org/activities/council/meetings/tei-technical-council-teleconference-2026-04-10/
+      final_url: https://www.tei-c.org/activities/council/meetings/tei-technical-council-teleconference-2026-04-10/
+      observed_at: '2026-09-11T11:36:24Z'
+      status: 200
+      media_type: text/html
+      byte_count: 18536
+      sha256: 010e4a4a85be0e106f5bb76059d5a1f0d86e72d284b58d83192d96a09df0919e
+      raw_path: sha256/01/0e4a4a85be0e106f5bb76059d5a1f0d86e72d284b58d83192d96a09df0919e
+      headers:
+        date: Fri, 11 Sep 2026 11:36:33 GMT
+        content-type: text/html
+        content-length: '18536'
+        last-modified: Fri, 11 Sep 2026 06:18:09 GMT
+        etag: '"4868-65b2f0c58ca40"'
+    extraction:
+      kind: html-visible-text
+  rights: No redistribution licence for the page text is established; citation and checked short quotation only. The page body, including participant names, stays in ignored raw storage.
+  authority: Primary Council meeting record of discussion, plans and explicitly labelled decisions at the meeting date; establishes neither implementation nor released effect.
+  instruction_trust: none
+  quotes:
+  - text: Council agrees to plan alternating P5 and P6 meetings.
+    locator: TEI Technical Council Teleconference, 2026-04-10, Next meetings
+  - text: General agreement that the term "maintenance mode" does not apply until we are ready to release P6.
+    locator: TEI Technical Council Teleconference, 2026-04-10, P5 to P6
+  - text: Council should start applying a label marking tickets for P5 -> P6.
+    locator: TEI Technical Council Teleconference, 2026-04-10, P5 to P6
+  distillate_path: 20_distillates/publications/p6-v1-council-2026-04-10.md
+- reference_id: p6-v1-council-2026-04-24
+  source_type: publication
+  source_id: tei-official-p6-process
+  lock_file: sources/locks/tei-p6-process.yaml
+  record:
+    kind: council-meeting-page
+    title: TEI Technical Council Teleconference, 2026-04-24
+    meeting_dates:
+    - '2026-04-24'
+    canonical_url: https://www.tei-c.org/activities/council/meetings/tei-technical-council-teleconference_2026-04-24/
+    census_manifest: sources/manifests/2026-09-04-tei-council-minutes-r2.yaml
+    census_2026_09_04_sha256: 4dd80d8287b51b3fe94321f104d388f034f4093352bd661fa427e556534555d8
+  snapshots:
+  - part: page
+    response: &id005
+      requested_url: https://www.tei-c.org/activities/council/meetings/tei-technical-council-teleconference_2026-04-24/
+      canonical_url: https://www.tei-c.org/activities/council/meetings/tei-technical-council-teleconference_2026-04-24/
+      final_url: https://www.tei-c.org/activities/council/meetings/tei-technical-council-teleconference_2026-04-24/
+      observed_at: '2026-09-11T11:36:25Z'
+      status: 200
+      media_type: text/html
+      byte_count: 24829
+      sha256: 4dd80d8287b51b3fe94321f104d388f034f4093352bd661fa427e556534555d8
+      raw_path: sha256/4d/d80d8287b51b3fe94321f104d388f034f4093352bd661fa427e556534555d8
+      headers:
+        date: Fri, 11 Sep 2026 11:36:33 GMT
+        content-type: text/html
+        content-length: '24829'
+        last-modified: Fri, 11 Sep 2026 06:18:09 GMT
+        etag: '"60fd-65b2f0c58ca40"'
+    extraction:
+      kind: html-visible-text
+  rights: No redistribution licence for the page text is established; citation and checked short quotation only. The page body, including participant names, stays in ignored raw storage.
+  authority: Primary Council meeting record of discussion, plans and explicitly labelled decisions at the meeting date; establishes neither implementation nor released effect.
+  instruction_trust: none
+  quotes:
+  - text: This meeting initiates Council's new bimonthly agenda to alternate working P5 and P6.
+    locator: 'TEI Technical Council Teleconference, 2026-04-24, Schedule change: Alternating P5 and P6 meetings'
+  - text: 'Discussion w/ Board: very supportive for making sure we have time / space to work on P6.'
+    locator: TEI Technical Council Teleconference, 2026-04-24, P6 work in progress
+  - text: Work proceeding in https://github.com/TEIC/p6-sandbox and P6-dev Slack channel
+    locator: TEI Technical Council Teleconference, 2026-04-24, P6 work in progress
+  - text: What should the P6 abstract model represent? Or what is an abstract model?
+    locator: TEI Technical Council Teleconference, 2026-04-24, P6 work in progress, Discussion of class hierarchy and P6
+  distillate_path: 20_distillates/publications/p6-v1-council-2026-04-24.md
+- reference_id: p6-v1-council-p6-2026-05-20
+  source_type: publication
+  source_id: tei-official-p6-process
+  lock_file: sources/locks/tei-p6-process.yaml
+  record:
+    kind: council-meeting-page
+    title: TEI Technical Council P6 Teleconference, 2026-05-20
+    meeting_dates:
+    - '2026-05-20'
+    canonical_url: https://www.tei-c.org/activities/council/meetings/tei-technical-council-p6-teleconference-2026-05-20/
+    census_manifest: sources/manifests/2026-09-04-tei-council-minutes-r2.yaml
+    census_2026_09_04_sha256: 3fa84af579066aea42788c70cf731773730ff35395f496873048df695db1706c
+  snapshots:
+  - part: page
+    response: &id006
+      requested_url: https://www.tei-c.org/activities/council/meetings/tei-technical-council-p6-teleconference-2026-05-20/
+      canonical_url: https://www.tei-c.org/activities/council/meetings/tei-technical-council-p6-teleconference-2026-05-20/
+      final_url: https://www.tei-c.org/activities/council/meetings/tei-technical-council-p6-teleconference-2026-05-20/
+      observed_at: '2026-09-11T11:36:20Z'
+      status: 200
+      media_type: text/html
+      byte_count: 16957
+      sha256: 3fa84af579066aea42788c70cf731773730ff35395f496873048df695db1706c
+      raw_path: sha256/3f/a84af579066aea42788c70cf731773730ff35395f496873048df695db1706c
+      headers:
+        date: Fri, 11 Sep 2026 11:36:29 GMT
+        content-type: text/html
+        content-length: '16957'
+        last-modified: Fri, 11 Sep 2026 06:18:09 GMT
+        etag: '"423d-65b2f0c58ca40"'
+    extraction:
+      kind: html-visible-text
+  rights: No redistribution licence for the page text is established; citation and checked short quotation only. The page body, including participant names, stays in ignored raw storage.
+  authority: Primary Council meeting record of discussion, plans and explicitly labelled decisions at the meeting date; establishes neither implementation nor released effect.
+  instruction_trust: none
+  quotes:
+  - text: 'P6 Sandbox repo: when should we make it public?'
+    locator: TEI Technical Council P6 Teleconference, 2026-05-20, P6 Sandbox Experiments
+  - text: For now, we'll keep it private but link to it from our minutes.
+    locator: TEI Technical Council P6 Teleconference, 2026-05-20, P6 Sandbox Experiments, Council discussion
+  - text: Eventually we will make it public, ideally by the TEI 2026 conference when we are sharing our work with the community.
+    locator: TEI Technical Council P6 Teleconference, 2026-05-20, P6 Sandbox Experiments, Council discussion
+  distillate_path: 20_distillates/publications/p6-v1-council-p6-2026-05-20.md
+- reference_id: p6-v1-council-p6-2026-07-16
+  source_type: publication
+  source_id: tei-official-p6-process
+  lock_file: sources/locks/tei-p6-process.yaml
+  record:
+    kind: council-meeting-page
+    title: TEI Technical Council P6 Teleconference, 2026-07-16
+    meeting_dates:
+    - '2026-07-16'
+    canonical_url: https://www.tei-c.org/activities/council/meetings/tei-technical-council-p6-teleconference-2026-07-16/
+    census_manifest: sources/manifests/2026-09-04-tei-council-minutes-r2.yaml
+    census_2026_09_04_sha256: 9983a27ccd01472252fc98f7f31ac94f3729832d2a7bbcfdd5dbea780a4fb553
+  snapshots:
+  - part: page
+    response: &id007
+      requested_url: https://www.tei-c.org/activities/council/meetings/tei-technical-council-p6-teleconference-2026-07-16/
+      canonical_url: https://www.tei-c.org/activities/council/meetings/tei-technical-council-p6-teleconference-2026-07-16/
+      final_url: https://www.tei-c.org/activities/council/meetings/tei-technical-council-p6-teleconference-2026-07-16/
+      observed_at: '2026-09-11T11:36:21Z'
+      status: 200
+      media_type: text/html
+      byte_count: 29916
+      sha256: 9983a27ccd01472252fc98f7f31ac94f3729832d2a7bbcfdd5dbea780a4fb553
+      raw_path: sha256/99/83a27ccd01472252fc98f7f31ac94f3729832d2a7bbcfdd5dbea780a4fb553
+      headers:
+        date: Fri, 11 Sep 2026 11:36:30 GMT
+        content-type: text/html
+        content-length: '29916'
+        last-modified: Fri, 11 Sep 2026 06:18:09 GMT
+        etag: '"74dc-65b2f0c58ca40"'
+    extraction:
+      kind: html-visible-text
+  rights: No redistribution licence for the page text is established; citation and checked short quotation only. The page body, including participant names, stays in ignored raw storage.
+  authority: Primary Council meeting record of discussion, plans and explicitly labelled decisions at the meeting date; establishes neither implementation nor released effect.
+  instruction_trust: none
+  quotes:
+  - text: P6 should separate concept from serialization.
+    locator: TEI Technical Council P6 Teleconference, 2026-07-16, review of the Council's main points of agreement about P6 so far
+  - text: XML stays the primary format, but the abstract model should be expressible in graph forms (e.g. JSONLD)
+    locator: TEI Technical Council P6 Teleconference, 2026-07-16, review of the Council's main points of agreement about P6 so far
+  - text: 'P6 should provide a layered architecture: abstract model -> blueprints -> customizations (or chained blueprints)'
+    locator: TEI Technical Council P6 Teleconference, 2026-07-16, review of the Council's main points of agreement about P6 so far
+  - text: ODD processing must be replaced or radically simplified; above all, it must be clearly specified.
+    locator: TEI Technical Council P6 Teleconference, 2026-07-16, review of the Council's main points of agreement about P6 so far
+  - text: Review of Council's main points of disagreement about P6 so far
+    locator: TEI Technical Council P6 Teleconference, 2026-07-16, section heading
+  - text: Whether P5 can be expressed entirely in P6 (as opposed to a P5 schema can be created from scratch using P6 specification mechanisms)
+    locator: TEI Technical Council P6 Teleconference, 2026-07-16, review of the Council's main points of disagreement about P6 so far
+  - text: The speed of updates to P5 may decrease as we devote energy to P6.
+    locator: TEI Technical Council P6 Teleconference, 2026-07-16, review of the Council's main points of agreement about P6 so far
+  - text: has launched a repo in TEIC space for the slide deck via reveal.js + gh-pages
+    locator: TEI Technical Council P6 Teleconference, 2026-07-16, Slide prep subgroup
+  distillate_path: 20_distillates/publications/p6-v1-council-p6-2026-07-16.md
+- reference_id: p6-v1-time-for-p6-slides-eb924226
+  source_type: publication
+  source_id: tei-official-p6-process
+  lock_file: sources/locks/tei-p6-process.yaml
+  record:
+    kind: git-blob
+    repository: https://github.com/TEIC/timeForP6
+    commit: eb924226d12d22599bae9dad4fc53bc748b3f121
+    root_tree: 69d333e13da7b641d1c38bdca10768d6c3f64c5f
+    path: index.html
+    blob: 09dfa583120a80d5ccf071d75386cd437528ae44
+    last_changing_commit: 7c63307ececfe8d4eca543604de15fd902ceedec
+    last_change_author_date: '2026-08-13T20:07:11+02:00'
+  snapshots:
+  - part: blob
+    response: &id008
+      requested_url: https://raw.githubusercontent.com/TEIC/timeForP6/eb924226d12d22599bae9dad4fc53bc748b3f121/index.html
+      canonical_url: https://raw.githubusercontent.com/TEIC/timeForP6/eb924226d12d22599bae9dad4fc53bc748b3f121/index.html
+      final_url: https://raw.githubusercontent.com/TEIC/timeForP6/eb924226d12d22599bae9dad4fc53bc748b3f121/index.html
+      observed_at: '2026-09-11T11:37:47Z'
+      status: 200
+      media_type: text/plain
+      byte_count: 19219
+      sha256: d0382f5a749119cfa993a45562a20547adb9dcf82a588d5a5239276d6fea9a8c
+      raw_path: sha256/d0/382f5a749119cfa993a45562a20547adb9dcf82a588d5a5239276d6fea9a8c
+      headers:
+        content-length: '19219'
+        content-type: text/plain; charset=utf-8
+        etag: '"25797f82f5434cebd8900f74333571f4c4710427c10e65539fd03245c89c5bd9"'
+        date: Fri, 11 Sep 2026 11:37:46 GMT
+    extraction:
+      kind: html-visible-text
+  rights: The repository LICENSE file at the pinned commit is AGPL-3.0 while package.json declares ISC, and the tree holds third-party images; admitted citation-only with checked short quotations. The slide source stays in the local Git mirror and raw store.
+  authority: Official presentation artifact of the Technical Council; presented positions and open questions, not a governance decision, specification, implementation or release.
+  instruction_trust: none
+  quotes:
+  - text: 'TEI 2026: Thurs. 13 August @ 1pm, Vancouver, BC'
+    locator: title slide
+  - text: We will still encode in XML, but TEI should also be readily expressible in other formats (e.g. graph models).
+    locator: slide What we want for P6
+  - text: Blueprints instantiate the abstract model into multiple concrete representations for specific use cases and serialization targets.
+    locator: slide A possible path for P6, About Blueprints
+  - text: TEI Council would maintain a number of official blueprints.
+    locator: slide A possible path for P6, About Blueprints
+  - text: P5 can continue to develop (including adding new features) while P6 is being designed.
+    locator: slide Is this P6 worth the trouble?
+  - text: We don’t yet agree on how to move forward.
+    locator: slide Experiments
+  - text: We feel the need to check in with the community before spending more time and resources.
+    locator: slide Experiments
+  distillate_path: 20_distillates/publications/p6-v1-time-for-p6-slides-eb924226.md
+requests:
+- *id001
+- *id002
+- *id003
+- *id004
+- *id005
+- *id006
+- *id007
+- *id008
+p6_sandbox_observation:
+  responses:
+  - requested_url: https://api.github.com/repos/TEIC/p6-sandbox
+    canonical_url: https://api.github.com/repos/TEIC/p6-sandbox
+    final_url: https://api.github.com/repos/TEIC/p6-sandbox
+    observed_at: '2026-09-11T11:36:25Z'
+    status: 404
+    media_type: application/json
+    byte_count: 118
+    sha256: 4f50e254a719a6b1b06b529bdaa08980e4acf0878aad0090cba7771f6ebdf0b9
+    raw_path: sha256/4f/50e254a719a6b1b06b529bdaa08980e4acf0878aad0090cba7771f6ebdf0b9
+    headers:
+      date: Fri, 11 Sep 2026 11:36:23 GMT
+      content-type: application/json; charset=utf-8
+      content-length: '118'
+  - requested_url: https://github.com/TEIC/p6-sandbox
+    canonical_url: https://github.com/TEIC/p6-sandbox
+    final_url: https://github.com/TEIC/p6-sandbox
+    observed_at: '2026-09-11T11:36:25Z'
+    status: 404
+    media_type: text/html
+    byte_count: 266544
+    sha256: c453984cff4e46f33409f77584a94938cbeb74611d460e2a26ae52d13d69484d
+    raw_path: sha256/c4/53984cff4e46f33409f77584a94938cbeb74611d460e2a26ae52d13d69484d
+    headers:
+      date: Fri, 11 Sep 2026 11:36:24 GMT
+      content-type: text/html; charset=utf-8
+  interpretation: Unauthenticated HTTP 404 for API and web URLs; not evidence of absence or of privacy. Official minutes of 2026-04-24, 2026-05-20 and 2026-06-24 link into the repository, and the 2026-03 and 2026-05 minutes record keeping it private for now.
+counts:
+  admitted_sources: 8
+  raw_snapshots: 8
+  checked_quotes: 42
+gaps: []
+rights_exceptions: []
+instruction_trust: none

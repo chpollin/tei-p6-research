@@ -18,7 +18,9 @@ import pytest
 from tools.inventory import (
     BEGIN,
     END,
+    INVENTORY_PATH,
     Region,
+    migrate_inventory,
     outdated,
     regenerate,
     regions,
@@ -35,6 +37,43 @@ ASSERTION_TITLE = (
 )
 GLOSSARY_ENTRY = "glossary/metering.md"
 TOPIC_MAP = "30_assertions/MOC-Water.md"
+
+
+def test_inventory_migration_preserves_state_and_remains_reproducible(tmp_path: Path) -> None:
+    root = tmp_path / "vault"
+    shutil.copytree(MINIMAL, root)
+    state = root / "knowledge/state.md"
+    state.parent.mkdir(exist_ok=True)
+    state.write_text(STATE + "\nA pending human decision.\n", encoding="utf-8")
+    migrate_inventory(root)
+    after = state.read_text(encoding="utf-8")
+    assert "A pending human decision." in after
+    assert BEGIN not in after
+    assert "corpus/projections/source-inventory" in after
+    target = root / INVENTORY_PATH
+    assert render(rows(root)) in target.read_text(encoding="utf-8")
+    assert target in regions(root)
+    assert state not in regions(root)
+    migrate_inventory(root)
+    assert state.read_text(encoding="utf-8") == after
+    assert not outdated(root)
+    target.write_text(target.read_text(encoding="utf-8").replace("Annual Water Report", "Changed"), encoding="utf-8")
+    assert any(path == INVENTORY_PATH for path, _ in outdated(root))
+
+
+def test_inventory_migration_refuses_conflicting_destination(tmp_path: Path) -> None:
+    root = tmp_path / "vault"
+    shutil.copytree(MINIMAL, root)
+    state = root / "knowledge/state.md"
+    state.parent.mkdir(exist_ok=True)
+    state.write_text(STATE, encoding="utf-8")
+    target = root / INVENTORY_PATH
+    target.parent.mkdir(parents=True)
+    target.write_text("Hand-written content", encoding="utf-8")
+    with pytest.raises(ValueError, match="Existing inventory differs"):
+        migrate_inventory(root)
+    assert state.read_text(encoding="utf-8") == STATE
+    assert target.read_text(encoding="utf-8") == "Hand-written content"
 
 STATE = f"""---
 title: State

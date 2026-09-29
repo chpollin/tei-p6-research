@@ -3,12 +3,10 @@ type: distillate
 source-type: document
 representation: "[[10_markdown/documents/tei-p5-place-4.12.0]]"
 topics: ["[[Metadata and Entities]]"]
-status: validated
-checked:
-  machine-review: 2026-09-06
-  validation: 2026-09-06
+status: grounded
+checked: {}
 created: 2026-09-06
-updated: 2026-09-06
+updated: 2026-09-11
 ---
 
 # Distillate: TEI P5 4.12.0 place specification
@@ -36,7 +34,7 @@ This distillate reports the English definition in the complete `place.xml` speci
 
 ## Appraisal
 
-The English reading projection of this source carries one description, so the distillate rests on a single statement and reaches no further. The complete XML preserved in the representation declares class memberships and a structured content model that the reading text does not state, and those declarations stay outside the core statements until a reading block or another admitted source carries them. Typing, containment and the relation between a place record and references to it therefore need the class specifications and the geographic names chapter of the Guidelines as sources of their own.
+The English reading projection of this source carries one description, so the distillate rests on a single statement and reaches no further. The complete XML preserved in the representation declares class memberships and a structured content model that the reading text does not state, and those declarations stay outside the core statements until a reading block or another admitted source carries them. Typing, containment and the relation between a place record and references to it therefore need the class specifications and the Guidelines section addressed by the pointer `#NDGEOG` as sources of their own.
 
 ## Related
 

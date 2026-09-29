@@ -4,8 +4,7 @@ The inventory used to be kept by hand and checked by the validator, which made
 it a second record of what the vault holds and let it drift away from the files.
 The files are the record; this script reads them and writes the generated blocks.
 
-The source inventory carries one row per source, in the shape
-`knowledge/state.md` declares:
+The source inventory carries one row per source in a generated projection:
 Source | Type | Channel | Markdown representation | Distillate | Status.
 The processing status follows from what is present: an original without a
 Markdown representation is `new`, a representation without a distillate is
@@ -27,7 +26,7 @@ there, so an original that has not been ingested yet shows up as a `new` row, an
 skipped when it is not, in which case that state is simply invisible.
 
 Usage:
-    python tools/inventory.py <vault-root> [--write | --check]
+    python tools/inventory.py <vault-root> [--write | --check | --migrate-inventory]
 
 Without a flag the table goes to stdout, followed by the regions that would
 change. `--write` writes every generated region, `--check` exits non-zero when
@@ -43,9 +42,13 @@ import sys
 from dataclasses import dataclass
 from pathlib import Path
 
-import yaml
+if __package__ in (None, ""):
+    sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+
+from tools.vault_documents import parse_frontmatter
 
 STATE = "knowledge/state.md"
+INVENTORY_PATH = "corpus/projections/source-inventory.md"
 
 INVENTORY = "inventory"
 DISTILLATES = "distillates"
@@ -141,17 +144,8 @@ class Assertion:
 
 def _read(path: Path) -> tuple[dict, str]:
     """The YAML block and the body of a Markdown file, an empty map without one."""
-    text = path.read_text(encoding="utf-8")
-    if not text.startswith("---\n"):
-        return {}, text
-    stop = text.find("\n---", 4)
-    if stop < 0:
-        return {}, text
-    try:
-        loaded = yaml.safe_load(text[4:stop])
-    except yaml.YAMLError:
-        return {}, text[stop + 4 :]
-    return (loaded if isinstance(loaded, dict) else {}), text[stop + 4 :]
+    parsed = parse_frontmatter(path.read_text(encoding="utf-8"))
+    return parsed.metadata, parsed.body
 
 
 def _frontmatter(path: Path) -> dict:
@@ -434,8 +428,11 @@ def regions(root: Path) -> dict[Path, tuple[Region, ...]]:
         if fm.get("type") == "distillate"
     ]
     found: dict[Path, tuple[Region, ...]] = {}
-    if (state := root / STATE).is_file():
-        found[state] = (Region(INVENTORY, render(rows(root))),)
+    inventory = root / INVENTORY_PATH
+    if not inventory.is_file():
+        inventory = root / STATE
+    if inventory.is_file():
+        found[inventory] = (Region(INVENTORY, render(rows(root))),)
     for path, fm, _ in notes:
         if fm.get("type") == "moc":
             found[path] = _topic_regions(
@@ -514,15 +511,49 @@ def _rewrite(path: Path, rel: str, wanted: tuple[Region, ...]) -> bool:
 
 
 def _state(root: Path) -> Path:
-    path = root / STATE
+    path = root / INVENTORY_PATH
+    if not path.is_file():
+        path = root / STATE
     if not path.is_file():
         raise SystemExit(f"no {STATE} to write into: {path}")
     return path
 
 
 def write(root: Path, table: str) -> None:
-    """Replace the source inventory in the state document."""
-    _rewrite(_state(root), STATE, (Region(INVENTORY, table),))
+    """Replace the inventory, retaining legacy fixture-vault support."""
+    path = _state(root)
+    _rewrite(path, path.relative_to(root).as_posix(), (Region(INVENTORY, table),))
+
+
+def migrate_inventory(root: Path) -> None:
+    """Move the generated inventory and preserve all hand-written state text."""
+    state = root / STATE
+    text = state.read_text(encoding="utf-8")
+    destination = root / INVENTORY_PATH
+    if not destination.resolve().is_relative_to(root.resolve()):
+        raise ValueError("Inventory destination escapes the vault")
+    start, stop = text.find(BEGIN), text.find(END)
+    if start < 0 or stop < start:
+        if destination.is_file() and INVENTORY_PATH.removesuffix('.md') in text:
+            write(root, render(rows(root)))
+            return
+        raise ValueError("State carries no complete inventory to migrate")
+    table = render(rows(root))
+    content = (
+        "# Source inventory\n\n"
+        "Generated from the actual source representations, distillates and "
+        "bibliographic records by `python tools/inventory.py . --write`.\n"
+        "This projection is navigation and never a grounding target. "
+        "Current research limits remain in [[knowledge/state]].\n\n"
+        f"{BEGIN}\n{table}\n{END}\n"
+    )
+    if destination.exists() and destination.read_text(encoding="utf-8") != content:
+        raise ValueError("Existing inventory differs; reconcile it before migration")
+    destination.parent.mkdir(parents=True, exist_ok=True)
+    destination.write_text(content, encoding="utf-8", newline="\n")
+    replacement = f"[[{INVENTORY_PATH.removesuffix('.md')}|Complete generated source inventory]]"
+    updated = text[:start] + replacement + text[stop + len(END):]
+    state.write_text(updated, encoding="utf-8", newline="\n")
 
 
 def regenerate(root: Path) -> list[str]:
@@ -569,9 +600,17 @@ def main() -> None:
         action="store_true",
         help="exit non-zero when a generated region is out of date",
     )
+    mode.add_argument(
+        "--migrate-inventory", action="store_true",
+        help="move the legacy state inventory to its generated projection",
+    )
     args = parser.parse_args()
 
     root = args.root.resolve()
+    if args.migrate_inventory:
+        migrate_inventory(root)
+        print(f"Inventory available at {INVENTORY_PATH}")
+        return
     if args.write:
         changed = regenerate(root)
         for rel in changed:

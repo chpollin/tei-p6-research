@@ -3,25 +3,23 @@ type: assertion
 topics: ["[[Metadata and Entities]]"]
 phenomena: ["[[glossary/statement-about-an-entity]]", "[[glossary/entity-record]]"]
 related: ["[[30_assertions/p5-entity-information-comprises-statements-about-traits-states-and-events]]", "[[30_assertions/p5-state-describes-a-status-or-quality-attributed-to-a-person-place-or-organization]]", "[[30_assertions/p5-nested-description-elements-inherit-type-and-responsibility-and-may-date-more-precisely]]", "[[30_assertions/p5-place-contains-data-about-a-geographic-location]]"]
-status: validated
-checked:
-  machine-review: 2026-09-06
-  validation: 2026-09-06
+status: grounded
+checked: {}
 grounding:
   - "[[20_distillates/documents/tei-p5-guidelines-nd-4.12.0#^s49]]"
 created: 2026-09-06
-updated: 2026-09-06
+updated: 2026-09-11
 ---
 
-# In TEI P5 4.12.0, the Guidelines state that the kinds of information worth recording for a place beyond its name and location are likely to be very project-specific, that the generic state, trait and event elements customized through their type attribute should be used instead, and that these are complemented by the predefined elements population, climate and terrain
+# P5 4.12.0 recommends generic state, trait and event for places and permits customization through type
 
 ## Statement
 
-In TEI P5 4.12.0, the Guidelines state that the kinds of information worth recording for a place beyond its name and location are likely to be very project-specific, that they therefore make no claim to comprehensiveness for places any more than for persons, that the generic state, trait and event elements customized through their type attribute should be used instead, and that these are complemented by the predefined elements population, climate and terrain.
+In TEI P5 4.12.0, the Guidelines state that there are many different kinds of information which it might be considered useful to record for a place in addition to its name and location and that the categories selected are likely to be very project-specific, that as with persons they therefore make no claim to comprehensiveness in this context, that instead the generic `state`, `trait` and `event` elements defined by the module should be used, each of which may be customized for particular needs by means of its `type` attribute, and that these are complemented by a small number of predefined elements of general utility, `population`, `climate` and `terrain`.
 
 ## Support
 
-- [[20_distillates/documents/tei-p5-guidelines-nd-4.12.0#^s49]] — The chapter's statement in its section on places. It establishes that the statement elements introduced for persons serve places as well, and it states nothing about dating, documentation or responsibility for such statements about a place.
+- [[20_distillates/documents/tei-p5-guidelines-nd-4.12.0#^s49]]
 
 ## Related
 

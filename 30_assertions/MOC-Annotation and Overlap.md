@@ -36,11 +36,11 @@ in the pinned P5 baseline. Independent definitions remain design hypotheses.
 
 <!-- assertions:begin -->
 - [[30_assertions/humboldt-diary-separates-an-unknown-hand-note-and-editorial-explanation]] — Humboldt diary H0017682 encodes an unknown-hand note and a nested editorial note
-- [[30_assertions/p5-anchor-identifies-a-textual-point]] — In TEI P5 4.12.0, anchor identifies a point within a text
-- [[30_assertions/p5-annotation-refers-to-web-annotation-model]] — TEI P5 4.12.0 describes annotation as following the Web Annotation Data Model
-- [[30_assertions/p5-span-associates-interpretation-with-text]] — In TEI P5 4.12.0, span associates an interpretative annotation with a span of text
-- [[30_assertions/p5-span-from-identifies-start-or-whole-node]] — In TEI P5 4.12.0, span from identifies the starting node or, without to, the entire annotated node
-- [[30_assertions/piez-treats-optional-hierarchy-as-object-of-study]] — Piez treats optional hierarchy as an object of study
+- [[30_assertions/p5-anchor-identifies-a-textual-point]] — In TEI P5 4.12.0, anchor attaches an identifier to a point whether or not it corresponds to a textual element
+- [[30_assertions/p5-annotation-refers-to-web-annotation-model]] — TEI P5 4.12.0 describes annotation as representing an annotation following the Web Annotation Data Model
+- [[30_assertions/p5-span-associates-interpretation-with-text]] — In TEI P5 4.12.0, span directly associates an interpretative annotation with a span of text
+- [[30_assertions/p5-span-from-identifies-start-or-whole-node]] — In TEI P5 4.12.0, span from identifies the starting node of the annotated span or, without to, the node for the entire annotated span
+- [[30_assertions/piez-treats-optional-hierarchy-as-object-of-study]] — Piez argues that permitting any hierarchy or none makes hierarchy itself open to study
 - [[30_assertions/tei-fr363-proposes-target-on-span]] — TEI feature request 363 proposes target on span
 - [[30_assertions/w3c-quote-selection-can-match-multiple-sequences]] — W3C quote selection can match multiple sequences
 <!-- assertions:end -->

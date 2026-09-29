@@ -15,6 +15,6 @@ are distinct criteria.
 ## Examples
 
 <!-- examples:begin -->
-- [[30_assertions/renear-wickett-distinguish-string-mapping-from-persistent-identity]] — Renear and Wickett describe editing strings as mapping rather than modifying a persistent entity
+- [[30_assertions/renear-wickett-distinguish-string-mapping-from-persistent-identity]] — Renear and Wickett’s restated modifiability argument treats editing strings as mapping
   - [[20_distillates/publications/renear-wickett2010documents#^s1]]
 <!-- examples:end -->

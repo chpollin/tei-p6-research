@@ -8,6 +8,10 @@
 .knowledge-filters input { min-width: min(22rem, 75vw); }
 .knowledge-filters output { padding-bottom: .55rem; color: #56616e; font-size: .875rem; }
 .knowledge-group { margin: 2.5rem 0; scroll-margin-top: 5rem; }
+.ranked-results { max-width: 90ch; margin: 1.5rem 0 2.5rem; }
+.ranked-results h2 { font-size: 1.1rem; }
+.ranked-results li { margin: 1rem 0; }
+.ranked-results p { font-size: .875rem; line-height: 1.5; overflow-wrap: anywhere; }
 .knowledge-group h2, .document-navigation h2 { font-size: 1.1rem; font-weight: 650; margin: 0 0 .7rem; }
 .count { font-size: .85rem; margin-left: .5rem; font-weight: normal; }
 .artifact { padding: .15rem 0; margin: .15rem 0; scroll-margin-top: 5rem; }

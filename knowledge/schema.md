@@ -12,7 +12,7 @@ profile:
 status: draft
 language: en
 created: "2026-09-04"
-updated: "2026-09-06"
+updated: "2026-09-11"
 related: [INDEX, specification, design, operations, verification, experiments, architecture, state]
 ---
 
@@ -83,7 +83,7 @@ research conclusions continue through the layers below.
 | Assertions | `30_assertions/` | atomic cross-source statements, topic maps | grounding anchors into distillate statements |
 | Output | `40_output/` | one file per chapter | footnote anchors into assertions, posits marked |
 
-Generate the source inventory in [[knowledge/state]] with
+Generate [[corpus/projections/source-inventory]], linked from [[knowledge/state]], with
 `python tools/inventory.py . --write`. It lists every representation and
 distillate from actual files and must not be maintained by hand.
 

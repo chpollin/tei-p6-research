@@ -1,28 +1,35 @@
 schema_version: 1
 lock_id: tei-l-archive-three-part-boundary
 source_id: tei-l-archive
-as_of: "2026-09-06"
+as_of: "2026-09-11"
 retrieval_status: partial
 
 scope:
   list: TEI-L
   rule: No single interface holds the history of this list. Each part declares its own month interval, a month counts as covered only when one part retrieved it, and the family stays bounded-complete at best.
+  status_rule: A part status holds only for that part's declared interval at its observation time. A completed run changes neither another part nor the family, which stays partial while any part remains open.
   adapter: tools.corpus.listserv_snapshot
   parts:
     psu_archive:
       order: 1
-      status: planned
+      status: bounded-complete
+      run_id: 2026-09-06-tei-l-psu
+      status_applies_to: months 2512 to 2609 as the Penn State month indexes listed them on 2026-09-06
       command: psu
       archive_index: https://lists.psu.edu/cgi-bin/wa?A0=TEI-L
       month_index: https://lists.psu.edu/cgi-bin/wa?A1=ind<yymm>&L=TEI-L
       message: https://lists.psu.edu/cgi-bin/wa?A2=TEI-L;<hex-id>.<yymm>
       from_month: "2512"
       to_month: snapshot-month
+      observed_to_month: "2609"
       completion_target: bounded-complete
-      note: The Penn State archive was observed on 2026-09-06 to show messages from December 2025 onward. The first covered month is confirmed by the run rather than by this note.
+      note: The run indexed every requested month and fetched every listed message without a gap. Messages posted to month 2609 after the run lie outside it, and the run requested no month before 2512.
     wayback_brown_archive:
       order: 2
-      status: planned
+      status: partial
+      coverage_run_id: 2026-09-06-tei-l-wayback-coverage
+      fetch_run_id: 2026-09-11-tei-l-wayback-0001-v2
+      status_applies_to: The capture measurement of months 9001 to 2512 is bounded-complete. January 2000 alone has a bounded-complete fetch with all 19 listed messages and a byte-identical checkpoint resume; the other 367 captured months remain unfetched by a completed run.
       command: wayback-coverage, then wayback-fetch
       retired_archive_index: https://listserv.brown.edu/cgi-bin/wa?A0=TEI-L
       retired_month_index: https://listserv.brown.edu/cgi-bin/wa?A1=ind<yymm>&L=TEI-L
@@ -31,7 +38,7 @@ scope:
       from_month: "9001"
       to_month: "2512"
       completion_target: bounded-complete
-      note: The Brown University LISTSERV service is retired and its archive is offline. A capture of the archive index from 2025-05-12 is known to exist. Coverage is a measurement per month; a month without a capture is a recorded result of that measurement.
+      note: The Brown University LISTSERV service is retired and its archive is offline. Coverage is a measurement per month, and a month without a capture is a recorded result of that measurement. A measured capture is not a retrieved month; only wayback-fetch retrieves a month index and its messages.
     consortium_export:
       order: 3
       status: planned
@@ -48,17 +55,31 @@ rights:
   sender_identity: raw-only
   rule: Message bodies and sender identity stay in the local raw store. The normalized stream carries list, month, message identity, subject, the date the archive shows, thread pointers, and raw pointers. Threads are admitted as citation-only publication sources.
 
-counts: {}
+counts:
+  psu_months_indexed: 10
+  psu_messages: 267
+  wayback_months_measured: 432
+  wayback_months_captured: 368
+  wayback_months_without_capture: 64
+  wayback_months_fetched: 1
+  wayback_messages: 19
 gaps:
-  - code: no-retrieval-run-yet
+  - code: wayback-captured-months-not-fetched
     status: blocks-bounded-complete
-    detail: The collector is implemented and offline-tested; no live run has been recorded for any part.
-  - code: brown-archive-months-before-first-capture-unknown
+    detail: Completed run 2026-09-11-tei-l-wayback-0001-v2 accounts for January 2000 and its 19 messages; 367 other captured months remain outside completed fetch runs. The abandoned 2026-09-06 run produced no final manifest. The first 2026-09-11 three-message pilot and its resume preserved a header-parsing failure; their records are diagnostic history and are superseded for January 2000 by the complete v2 run.
+  - code: wayback-months-without-capture
     status: open
-    detail: Whether the Wayback Machine holds any capture of a given retired month is unknown until the coverage run measures it.
+    detail: Run 2026-09-06-tei-l-wayback-coverage found no capture of the retired month index for 64 months of 9001 to 2512. The Penn State part retrieved 2512; the other 63 months are left to the consortium export.
+  - code: psu-months-before-2512-not-requested
+    status: open
+    detail: The Penn State run began at 2512, so whether that archive also serves earlier months has not been measured.
   - code: consortium-export-not-requested
     status: open
     detail: The third part has no retrieval interface and waits on an operator request.
 manifests:
   - sources/manifests/2026-09-06-tei-l-psu.yaml
   - sources/manifests/2026-09-06-tei-l-wayback-coverage.yaml
+  - sources/manifests/2026-09-11-tei-l-wayback-pilot.yaml
+  - sources/manifests/2026-09-11-tei-l-wayback-pilot-resumed.yaml
+  - sources/manifests/2026-09-11-tei-l-wayback-0001-v2.yaml
+  - sources/manifests/2026-09-11-tei-l-wayback-0001-v2-resumed.yaml

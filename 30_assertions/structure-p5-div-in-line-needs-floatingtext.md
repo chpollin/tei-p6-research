@@ -6,7 +6,7 @@ checked: {}
 grounding:
   - "[[20_distillates/documents/tei-p5-div-4.12.0#^s3]]"
 created: 2026-09-07
-updated: 2026-09-07
+updated: 2026-09-11
 ---
 
 # The P5 4.12.0 div-in-l Schematron rule requires a div descendant of l to have a floatingText ancestor.
@@ -17,7 +17,7 @@ The P5 4.12.0 div-in-l Schematron rule requires a div descendant of l to have a 
 
 ## Support
 
-- [[20_distillates/documents/tei-p5-div-4.12.0#^s3]] supplies the source-specific statement used here. The assertion retains its stated source and scope.
+- [[20_distillates/documents/tei-p5-div-4.12.0#^s3]]
 
 ## Related
 

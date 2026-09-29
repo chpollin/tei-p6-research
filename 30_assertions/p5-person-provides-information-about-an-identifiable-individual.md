@@ -3,14 +3,12 @@ type: assertion
 topics: ["[[Metadata and Entities]]"]
 phenomena: ["[[glossary/entity-record]]"]
 related: ["[[30_assertions/p5-guidelines-separate-the-entity-record-from-references-to-the-entity]]", "[[30_assertions/p5-persname-contains-a-proper-noun-referring-to-a-person]]", "[[30_assertions/p5-guidelines-group-information-about-a-person-as-distinct-from-references-to-a-person-within-person]]", "[[30_assertions/p5-place-contains-data-about-a-geographic-location]]"]
-status: validated
-checked:
-  machine-review: 2026-09-06
-  validation: 2026-09-06
+status: grounded
+checked: {}
 grounding:
   - "[[20_distillates/documents/tei-p5-person-4.12.0#^s1]]"
 created: 2026-09-06
-updated: 2026-09-06
+updated: 2026-09-11
 ---
 
 # In TEI P5 4.12.0, person provides information about an identifiable individual

@@ -5,8 +5,7 @@ phenomena: ["[[glossary/statement-about-an-entity]]"]
 related: ["[[30_assertions/p5-entity-information-comprises-statements-about-traits-states-and-events]]"]
 status: contested
 checked:
-  machine-review: 2026-09-06
-  validation: 2026-09-06
+  validation: 2026-09-11
 grounding:
   - "[[20_distillates/documents/tei-p5-guidelines-nd-4.12.0#^s38]]"
   - "[[20_distillates/documents/tei-p5-guidelines-nd-4.12.0#^s39]]"
@@ -24,7 +23,7 @@ In TEI P5 4.12.0, the Guidelines state that when the module of the chapter is in
 ## Support
 
 - [[20_distillates/documents/tei-p5-guidelines-nd-4.12.0#^s38]] — The use the chapter states for the two elements, with persons, places and organizations as the parties amongst whom relationships are documented. It neither includes nor excludes further kinds of participant.
-- [[20_distillates/documents/tei-p5-guidelines-nd-4.12.0#^s39]] — The chapter's definition of a relationship, whose participants might be a person, a place or an organization. Events and objects, which the element description recorded in [[30_assertions/p5-relation-describes-a-relationship-amongst-places-events-persons-or-objects]] names, do not appear in it.
+- [[20_distillates/documents/tei-p5-guidelines-nd-4.12.0#^s39]] — The chapter's definition of a relationship, whose participants might be a person, a place or an organization.
 
 ## Related
 

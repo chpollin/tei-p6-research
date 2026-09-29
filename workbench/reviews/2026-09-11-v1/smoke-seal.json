@@ -1,0 +1,53 @@
+{
+  "instrument": "v1.1",
+  "emitted_at": "2026-09-11T12:29:32+00:00",
+  "scope_ids": [
+    "source::20_distillates/documents/tei-time-for-p6-readme-2026-07-16#^s1"
+  ],
+  "units_sha256": "f38ae330875f85c84ea4d8a197c36be7b49fc5dbde6bf21b1849c3a4eee2e4be",
+  "context_sha256": "eb5e3d6009b417f4bf4e939e15d3e263c28c20c18e8f91c8ec2555edb8a9c25f",
+  "material_hashes": {
+    "10_markdown/documents/tei-time-for-p6-readme-2026-07-16": "7f9dd3e352c8b1dbb03e47bec789b3b7ac33ccbc61514e134524ff4f4924ee7d",
+    "20_distillates/documents/tei-time-for-p6-readme-2026-07-16": "e3580ed9b3ae3355c0bba8141f7ebfcf759412b92301cb67c2d5a1b65d9766c9"
+  },
+  "counts": {
+    "source": 1
+  },
+  "unit_hashes": {
+    "source::20_distillates/documents/tei-time-for-p6-readme-2026-07-16#^s1": "e6476371eab1969d49058d67ebcd5fbf7a02beadf18e4ff8c1c0e8ec4fc85ccb"
+  },
+  "gaps": {},
+  "bounded_contexts": {},
+  "instrument_files": {
+    "tools/full_review.py": "5a4355540e0f15d56a9c563f14d7b6b056434a1d3174ab87bcfe9da3f9be879f",
+    "tools/review_execution.py": "ebf0615ba14fa14009482699f3d99fb87a6533ebfd034f8a3c6f7f58e83a630e",
+    "tools/review.py": "401192a6c29d133229a0e42654fcfc799c44d204d534720ec5810618870716ea",
+    "tools/validate.py": "24849e4b8426c64c8c11b8d3623cc862f910f7df22d2a0efd54c0e1780ad3726",
+    "tools/vault_documents.py": "c8d126f0b0855dfc273aab4995e075671fde05751fd2772501ec3036eaae63a9"
+  },
+  "document_independence": {
+    "20_distillates/documents/tei-time-for-p6-readme-2026-07-16": {
+      "reviewer_models": [
+        "claude-opus-5"
+      ],
+      "producer_model": "not established by this instrument",
+      "limitation": "Opus-family review; unknown producer identity establishes no family independence; human verification remains separate"
+    }
+  },
+  "verdicts": [
+    {
+      "id": "source::20_distillates/documents/tei-time-for-p6-readme-2026-07-16#^s1",
+      "verdict": "fully supports",
+      "reason": "The README heading at pinned commit eb924226 says: \"\\\"Time for P6\\\" conference panel preparation for 2026 TEI Conference\". The statement restates this as preparing for a panel at the 2026 TEI Conference, which keeps the same meaning. It is correctly attributed to the README and adds no conditions, dates or claims that go beyond the source.",
+      "model": "claude-opus-5",
+      "reviewer": "claude-opus-5; isolated fresh context",
+      "checked_at": "2026-09-11T12:29:38+00:00",
+      "prompt_sha256": "e6476371eab1969d49058d67ebcd5fbf7a02beadf18e4ff8c1c0e8ec4fc85ccb",
+      "requested_model": "opus",
+      "outcome_sha256": "731acb010c02cd66d078063500fc3d9588e7e703b92cc43276a74568c75fed06",
+      "package_sha256": "4a40f518180d2e7a1ed825ae1d5a53696dfaaaba4b39c72f3f0a5b232fe5f148"
+    }
+  ],
+  "human_verified": false,
+  "note": "Metadata-only audit seal. Original contexts and exact prompts are local-only; reasons are reviewer-authored."
+}

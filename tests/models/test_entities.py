@@ -3,6 +3,7 @@
 import copy
 import hashlib
 import json
+from pathlib import Path
 
 import pytest
 
@@ -29,6 +30,7 @@ from tools.models.entities import (
 
 CONTENT = "Ada met Bea in Lyon"
 INSTANT = "2026-09-06T10:00:00Z"
+EXAMPLE = Path(__file__).resolve().parents[2] / "experiments/entities_v02/examples/statements-and-revision.json"
 
 
 def version(identifier="v1", content=CONTENT, parents=None):
@@ -240,7 +242,8 @@ def test_one_malformed_record_yields_exactly_its_diagnostic(name):
 
 def test_every_declared_diagnostic_is_reachable_from_the_table_or_the_revision_check():
     covered = {code for name in MUTATIONS for code, _ in expectation(name)}
-    assert covered | {"E_CLAIM_REWRITE"} >= set(EXTENSION_DIAGNOSTICS)
+    revised = {code for name in REVISIONS for code, _ in REVISIONS[name][2]}
+    assert covered | revised >= set(EXTENSION_DIAGNOSTICS)
     assert set(EXTENSION_DIAGNOSTICS) < set(DIAGNOSTICS)
 
 
@@ -526,7 +529,9 @@ def test_claim_revision_keeps_the_v01_version_rewrite_check_and_reports_both_pac
     after["versions"][0] = version(content="Ada met Bea in Paris")
     assert codes(check_claim_revision(before, after)) == {"E_QUOTE"}
     after["selections"][2]["selector"]["segments"][0]["quote"] = "Pari"
-    assert codes(check_claim_revision(before, after)) == {"E_VERSION_REWRITE"}
+    # The quote of the selection under a reading node changed together with the content.
+    assert diagnostics(check_claim_revision(before, after)) == {
+        ("E_VERSION_REWRITE", "/after/versions/0"), ("E_SELECTION_REWRITE", "/after/selections/2")}
     assert check_claim_revision(before, before)["valid"]
     assert not check_claim_revision(before, None)["valid"]
 
@@ -542,3 +547,206 @@ def test_public_operations_leave_their_inputs_unchanged():
     denotations_of(model, "m-ada")
     names_of(model, "e-ada")
     assert model == before and other == before
+
+
+def test_review_counterexamples_on_the_published_example_are_rejected():
+    """Replay the recorded entity counterexamples of the 2026-09-07 review on the committed example."""
+    before = json.loads(EXAMPLE.read_text(encoding="utf-8"))
+    kind = copy.deepcopy(before)
+    kind["entities"][0]["kind"] = "other"
+    moved = copy.deepcopy(before)
+    source = next(i for i, item in enumerate(moved["concepts"]) if "alignments" in item)
+    target = next(i for i, item in enumerate(moved["concepts"]) if i > source and "alignments" not in item)
+    moved["concepts"][target]["alignments"] = moved["concepts"][source].pop("alignments")
+    for after, expected in (
+            (kind, {"code": "E_ENTITY_REWRITE", "path": "/after/entities/0/kind"}),
+            (moved, {"code": "E_CLAIM_REWRITE", "path": f"/before/concepts/{source}/alignments/0"})):
+        assert validate_extension(after)["valid"]
+        assert check_claim_revision(before, after) == {"valid": False, "diagnostics": [expected]}
+    assert check_claim_revision(before, copy.deepcopy(before)) == {"valid": True, "diagnostics": []}
+
+
+def keep(model):
+    return model
+
+
+def free(model):
+    """Add a selection that no record references."""
+    model["selections"].append(selection("s-free", 4, 7))
+    return model
+
+
+def annotated(model):
+    """Let an annotation claim select the added selection."""
+    free(model)
+    model["annotations"].append({"id": "an", "agent": "a", "selection": "s-free", "body": "Note"})
+    return model
+
+
+def cited(model):
+    """Let a relation claim name the added selection directly as its endpoint."""
+    free(model)
+    model["concepts"].append({"id": "cites", "label": "Cites", "applies_to": "relation",
+                              "definition": "The source claim cites the target selection."})
+    model["relations"].append({"id": "rel", "agent": "a", "type": "cites",
+                               "source": "st-residence", "target": "s-free"})
+    return model
+
+
+def carrying_spare(model):
+    """Add an unreferenced entity that carries one alignment claim."""
+    return spare(model, alignments=[claim(id="al-spare", iri="https://example.org/spare", relation="close")])
+
+
+def moved_alignment(collection, index):
+    """Move the alignment of Ada, record unchanged, onto another carrier."""
+    def mutate(model):
+        model[collection][index].setdefault("alignments", []).extend(model["entities"][0].pop("alignments"))
+        return model
+    return mutate
+
+
+def recarried(model):
+    """Replace the spare entity by a concept of the same ID carrying the same alignment."""
+    entity = model["entities"].pop(3)
+    model["concepts"].append({"id": entity["id"], "label": "Spare", "applies_to": "node",
+                              "definition": "A spare concept.", "alignments": entity["alignments"]})
+    return model
+
+
+def extent(identifier, start, end):
+    """Give a selection another range whose quote matches."""
+    def mutate(model):
+        record = next(item for item in model["selections"] if item["id"] == identifier)
+        record["selector"] = selection(identifier, start, end)["selector"]
+        return model
+    return mutate
+
+
+def requoted(model):
+    """Select the same extent through a quotation policy instead of a range."""
+    model["selections"][0]["selector"] = {"kind": "quote", "exact": "Ada", "match": "one"}
+    return model
+
+
+def equal_content_version(model):
+    """Point the selection at an equal-content version under another ID, as in the dossier counterexample."""
+    model["versions"].append(version("v2"))
+    model["selections"][3]["version"] = "v2"
+    return model
+
+
+def two_alignments(model):
+    model["entities"][0]["alignments"].append(
+        claim(id="al-ada-2", iri="https://example.org/ada2", relation="close"))
+    return model
+
+
+def reordered(model):
+    """Registry order and alignment order within a carrier carry no identity."""
+    for collection in ("entities", "selections", "denotations"):
+        model[collection].reverse()
+    model["entities"][-1]["alignments"].reverse()
+    return model
+
+
+def nodes_reordered(model):
+    """Node order inside a reading belongs to the exact claim record, although R11 ignores it."""
+    model["readings"][0]["nodes"].reverse()
+    return model
+
+
+def extended(model):
+    """Supersede, withdraw and add claims and records without touching earlier ones."""
+    model["denotations"].append(claim(id="d-ada-2", mention="m-ada", entity="e-bea", supersedes=["d-ada"]))
+    model["names"].append(claim(id="n-ada-2", entity="e-ada", form="Ada", language="en",
+                                status="withdrawn", supersedes=["n-ada"]))
+    two_alignments(model)
+    model["entities"].append({"id": "e-meeting", "label": "Meeting", "kind": "event"})
+    model["selections"].append(selection("s-met", 4, 7))
+    model["annotations"].append({"id": "an-met", "agent": "b", "selection": "s-met", "body": "Event",
+                                 "concept": "en-referring-string"})
+    model["denotations"].append(claim(id="d-met", agent="b", mention="an-met", entity="e-meeting"))
+    return model
+
+
+def relabeled(model):
+    """Labels and local concept definitions stay deliberately revisable."""
+    model["entities"][0]["label"] = "Ada Lovelace"
+    model["agents"][0]["label"] = "Editor A."
+    model["concepts"][3].update(label="Dwelling", definition="Where an entity dwells.")
+    return model
+
+
+MOVED_ALIGNMENT = {("E_CLAIM_REWRITE", "/before/entities/0/alignments/0")}
+REVISIONS = {
+    "alignment-to-another-entity": (keep, moved_alignment("entities", 1), MOVED_ALIGNMENT),
+    "alignment-to-a-concept": (keep, moved_alignment("concepts", 3), MOVED_ALIGNMENT),
+    "alignment-to-an-agent": (keep, moved_alignment("agents", 0), MOVED_ALIGNMENT),
+    "alignment-carrier-collection": (carrying_spare, recarried,
+                                     {("E_CLAIM_REWRITE", "/before/entities/3/alignments/0")}),
+    "entity-kind-referenced": (keep, lambda m: assign(m, ("entities", 0, "kind"), "group"),
+                               {("E_ENTITY_REWRITE", "/after/entities/0/kind")}),
+    "entity-kind-unreferenced": (spare, lambda m: assign(m, ("entities", 3, "kind"), "place"),
+                                 {("E_ENTITY_REWRITE", "/after/entities/3/kind")}),
+    "node-selection-extent": (keep, extent("s-ada", 0, 2), {("E_SELECTION_REWRITE", "/after/selections/0")}),
+    "node-selection-policy": (keep, requoted, {("E_SELECTION_REWRITE", "/after/selections/0")}),
+    "annotation-selection": (annotated, extent("s-free", 8, 11),
+                             {("E_SELECTION_REWRITE", "/after/selections/3")}),
+    "relation-selection-version": (cited, equal_content_version,
+                                   {("E_SELECTION_REWRITE", "/after/selections/3")}),
+    "unreferenced-selection-revised": (free, extent("s-free", 8, 11), set()),
+    "unreferenced-selection-removed": (free, lambda m: assign(m, ("selections",), m["selections"][:3]), set()),
+    "unreferenced-entity-removed": (spare, lambda m: assign(m, ("entities",), m["entities"][:3]), set()),
+    "reordered-records": (two_alignments, reordered, set()),
+    "node-order-inside-a-reading": (keep, nodes_reordered, {("E_CLAIM_REWRITE", "/before/readings/0")}),
+    "supersession-and-additions": (keep, extended, set()),
+    "labels-and-definitions": (keep, relabeled, set()),
+}
+
+
+@pytest.mark.parametrize("name", sorted(REVISIONS))
+def test_claim_revision_keeps_what_earlier_claims_depend_on(name):
+    prepare, mutate, expected = REVISIONS[name]
+    before = prepare(package())
+    after = mutate(copy.deepcopy(before))
+    assert validate_extension(before)["valid"] and validate_extension(after)["valid"]
+    frozen = copy.deepcopy([before, after])
+    result = check_claim_revision(before, after)
+    assert diagnostics(result) == expected
+    assert result["valid"] == (not expected)
+    assert [before, after] == frozen
+
+
+def anonymous(model):
+    del model["entities"][0]["id"]
+    return model
+
+
+DAMAGED = {
+    "none": lambda m: None,
+    "list": lambda m: [],
+    "empty": lambda m: {},
+    "entities-not-list": lambda m: assign(m, ("entities",), 5),
+    "entity-not-record": lambda m: assign(m, ("entities", 0), 5),
+    "entity-without-id": anonymous,
+    "entity-id-unhashable": lambda m: assign(m, ("entities", 0, "id"), ["e-ada"]),
+    "alignments-not-list": lambda m: assign(m, ("entities", 0, "alignments"), "al-ada"),
+    "alignment-id-unhashable": lambda m: assign(m, ("entities", 0, "alignments", 0, "id"), ["al-ada"]),
+    "selector-missing": lambda m: assign(m, ("selections", 0, "selector"), None),
+    "nodes-missing": lambda m: assign(m, ("readings", 0, "nodes"), None),
+}
+
+
+@pytest.mark.parametrize("side", ["before", "after"])
+@pytest.mark.parametrize("name", sorted(DAMAGED))
+def test_claim_revision_fails_safely_on_a_malformed_package(name, side):
+    """Nothing raises, and no dependency rewrite is inferred from an invalid package."""
+    damaged = DAMAGED[name](package())
+    frozen = copy.deepcopy(damaged)
+    result = check_claim_revision(*((damaged, package()) if side == "before" else (package(), damaged)))
+    assert not result["valid"]
+    assert all(item["path"].startswith(("/before", "/after")) for item in result["diagnostics"])
+    assert {code for code in codes(result) if code.endswith("_REWRITE")} <= (
+        {"E_CLAIM_REWRITE"} if side == "after" else set())
+    assert damaged == frozen

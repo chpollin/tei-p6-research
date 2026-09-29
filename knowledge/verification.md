@@ -9,7 +9,7 @@ method:
 status: draft
 language: en
 created: "2026-09-06"
-updated: "2026-09-06"
+updated: "2026-09-11"
 related: [INDEX, operations, schema, testing, governance, state, journal]
 ---
 
@@ -136,6 +136,55 @@ session, the producer and the reviewer are different models of that family
 (the entity run of 2026-09-06 paired Opus authors with a Fable reviewer and a
 Fable author with an Opus reviewer), the pairing is named in the verdict record
 itself, and the same-family limitation is recorded as above.
+
+## Vollprüfung
+
+Diese Methode gilt für den eigens beauftragten Meilenstein in [[knowledge/plan]]. Sie erweitert die bisherigen begrenzten Prüfläufe um eine vollständige Bestandsprüfung. Der Integrator friert die Dateien, ihre Prüfsummen, den Stand des Prüfinstruments und die vollständige Dokumentliste ein. Ein uncommitteter Stand wird durch seine Datei- und Prompthashes bezeichnet; ein Commit ist keine Voraussetzung für die Prüfung.
+
+Die Arbeit wird auf getrennte Reviewer verteilt:
+
+| Prüfauftrag | Vollständiger Umfang und Frage |
+|---|---|
+| Original und Kontext | Für jedes Destillat Identität, Version und Quellenrolle prüfen; XML/Markdown-Treue oder Zitat gegen das Original prüfen. Den umgebenden Abschnitt auf Bedingungen, Gegenbeispiele und Sprecherzuordnung lesen. Fehlende Originale ausdrücklich als nicht erneut geprüfte Zitattreue führen. |
+| Destillierte Aussagen | Jede Core statement gegen ihren Beleg und den gesondert bereitgestellten Quellenkontext beurteilen. Tatsachenbehauptungen in Terms und Appraisal zusätzlich erfassen; Fragen und Wertungen als solche ausweisen. |
+| Assertions | Jede Grounding-Beziehung beurteilen und den vollständigen Statement-Abschnitt gegen alle angegebenen Belege prüfen. H1, Statement und Support müssen denselben Geltungsbereich haben. Mehrere Anker erhalten zusätzlich ein Urteil über ihren gemeinsamen Schluss. |
+| Widerspruch und Verwendung | Beide Positionen jedes `contested`-Paars mit ihren Quellen und Geltungsbereichen vergleichen. Alle quellenbezogenen Kapitelaussagen gegen ihre Assertions prüfen; Posits, Fremdaussagen und eigene Vorschläge auseinanderhalten. |
+| Zweitprüfung | Sämtliche Abweichungen und Konflikte von einem anderen Reviewer beurteilen lassen. Eine vorab festgelegte Stichprobe bestandener Urteile kontrolliert systematische Fehler; bei einem systematischen Befund den betroffenen Aussagentyp vollständig erneut prüfen. |
+
+Die Blindprüfung erhält keine Produzentenbegründung, keine bisherigen Urteile und keinen Zugriff auf den übrigen Projektbestand. Ein frischer Modellaufruf allein belegt diese Grenze nicht. `tools/review_execution.py` erzeugt dafür ein leeres temporäres Arbeitsverzeichnis außerhalb des Repositorys und sperrt Projektinstruktionen, Werkzeuge, Plugins, Browser und externe Kontextdienste durch die protokollierten CLI-Flags und eine explizit leere MCP-Konfiguration. `tools/full_review.py` und der historische Einzelpaar-Runner verwenden diese gemeinsame Ausführungsgrenze. Alte Reviews erwerben dadurch keine nachträgliche Isolation.
+
+Das ergänzende Instrument `tools/full_review.py` erzeugt Quellenpaare mit benachbartem Kontext, Assertion-Paare mit vollständigem Statement sowie eigene Gesamttext-, Kapitel- und Konfliktprüfungen. Quellen- und Assertion-Paare werden getrennt von Gesamttextprüfungen gebündelt; dadurch gelangen Support-Begründungen aus einem Konsistenzpaket nicht in einen Belegdurchgang. Bei Dokumentrepräsentationen über 240.000 Zeichen erhält die Gesamttextprüfung den Vorspann und sämtliche zitierten Kontextfenster. Diese Auswahlgrenze steht im Prompt. Für Aussagen, die weitere Passagen benötigen, muss der Reviewer eine Lücke melden. Publikationskontexte werden mit URL, Version, Locator und Texthash explizit zugeliefert; fehlender Kontext und nicht darin enthaltene Zitate sperren den Gesamt-Pass.
+
+Bei einer Assertion mit mehreren Quellen prüft jedes Einzelpaar den Beitrag seines Belegs zum vollständigen Statement. Der gesonderte Gesamtdurchgang prüft, ob alle Belege gemeinsam den Schluss tragen. Das verlangt eine erkennbare Zuschreibung der Teilbefunde; eine Quelle muss nicht zusätzlich die ausdrücklich einer anderen Quelle zugeschriebenen Beobachtungen belegen. Maschinenlesbare Kontextgrenzen benennen ausgewählte Passagen. Ein Pass gilt für die geprüften Behauptungen innerhalb dieses Kontexts und behauptet keine Lektüre des gesamten Quellendokuments.
+
+`emit` schreibt einen unveränderlichen Prüfauftrag; `run --model opus` führt ihn aus. `check` gleicht den aktuellen Inhalt, sämtliche Prompthashes, die Instrumentfassung, Abdeckung und protokollierte Isolation ab. Der Materialhash bindet Text und beweisrelevante Metadaten; die spätere Buchung eines tatsächlich durchgeführten Checks verändert ihn nicht. `sample` zieht nach vollständiger Erstprüfung die vorab definierte Zweitstichprobe. `emit --ids` kennzeichnet einen eingeschränkten Prüfauftrag ausdrücklich. `reuse` übernimmt vollständig passende, isoliert erzeugte Pakete. Nach einer Instrumentänderung verlangt `--equivalent-prompts` identische vollständige Pakete einschließlich Systemanweisung, Einheiten, Materialhashes, JSON-Urteilsformat und Ausführungsgrenze; die Herkunft wird protokolliert. Geänderte Prompts werden nie übernommen. `run --retry-failed` erhält fehlgeschlagene Versuche in eindeutig benannten Verzeichnissen und versucht ausschließlich offene Einheiten erneut. Vollständige Drittquellenkontexte und Prompts bleiben im ignorierten Rohbereich; `seal` exportiert Prüfsummen, Einheiten, Reviewerzuordnung und Urteile ohne Quellenkörper. Keines dieser Kommandos vergibt einen wissenschaftlichen Status.
+
+Die Quellenidentität aus Metadaten, Präambel, Destillattitel und Zitatlocator
+begleitet den Beleg, ohne eine zusätzliche Interpretation zu begründen. Der
+Originalwortlaut einer Publikationsquote wird der Assertion-Prüfung dabei
+nicht als weiterer Beleg geliefert. XML-Leseblöcke erhalten ihre Vorfahren
+und Attribute aus dem unveränderten Original. Bei großen Repräsentationen
+werden auch die ausdrücklich außerhalb der Core statements zitierten Blöcke
+geliefert. Für die neun mit `tools.ingest_practice_v1` aufgenommenen Dokumente
+erhält auch die Einzelclaim-Prüfung die vollständige Repräsentation:
+Gesamtzahlen und Elementzuordnungen brauchen den Zusammenhang über einzelne
+Byteintervalle hinaus. P6-Kontexte umfassen den extrahierten Seitentext.
+
+`python -m tools.current_review .` ist der zusätzliche aktuelle Gesamtcheck.
+Er verlangt einen Erstlauf über sämtliche Wissensdokumente und exakt die
+prospektiv bestimmte Zweitstichprobe. Zweiturteile müssen dieselben Prompts
+prüfen, separat erzeugte Antworten haben und ohne Wiederverwendung entstanden
+sein. Beide Siegel müssen vollständig bestehen. Die öffentlichen Siegel
+erlauben einen Abgleich von Material, Instrument, Abdeckung und Urteilsbindung;
+die Originalantworten und privaten Kontexte prüft der lokale `check`-Lauf.
+
+Der bestehende Cutter liefert Quellenpaare aus Core statements und Assertion-Paare aus deren H1. Er erfasst weder den gesamten Statement-Abschnitt noch jede Tatsachenbehauptung in den übrigen Abschnitten oder den Kapiteln. Die Vollprüfung braucht deshalb ergänzende, gespeicherte Kontext- und Gesamttextpaare. Diese erhalten eine eigene Instrumentfassung und Prompthashes; die bisherigen Prompts bleiben erhalten. Alle Reviewer sehen den Wortlaut der zu prüfenden Aussage, während die Bewertungsbegründung des Produzenten ausschließlich Gegenstand des gesonderten Konsistenzdurchgangs ist.
+
+Für jedes Urteil werden ID, Prompthash, Reviewer, konkretes Modell, Prüftag, festes Verdict und Begründung erfasst. Auftragsbrief, Antwort und Prüfumgebung bleiben zuordenbar. Die Abdeckung wird für jede Prüfebene separat gezählt; hundert Prozent beim bisherigen Cutter decken dessen ausgelassene Abschnitte nicht ab. Historische Sonderprompts des Piloten werden durch dessen eigenen Checker geprüft und gelten nicht automatisch für neu erzeugte Prompts.
+
+Die Opus-Vorgabe für Subagents bleibt bestehen. Mehrere Opus-Kontexte teilen Fehlermöglichkeiten ihrer Modellfamilie. Für von derselben Familie produzierte Aussagen wird diese Einschränkung pro Dokument ausgewiesen; familienfremde oder menschliche Gegenprüfung bleibt gesondert zu belegen. Eine unbekannte Produzentenzuordnung begründet keinen Unabhängigkeitsanspruch.
+
+Ein Pass setzt vollständige Abdeckung des eingefrorenen Umfangs, passende Hashes, eindeutige Reviewerzuordnung und abgeschlossene Behandlung aller Abweichungen voraus. Ein offener Quellenzugang, ein ungeklärter Konflikt oder eine nicht gestützte Aussage bleibt sichtbar und trägt keine freigegebene Schlussfolgerung. Nacharbeit verändert niemals die unveränderliche Quellenrepräsentation. Geänderte Destillate und Assertions benötigen neue Paare und neue Urteile; alte Reviews bleiben nachvollziehbar. Die Vollprüfung verleiht kein menschliches `verified` und keine Zusicherung absoluter Wahrheit.
 
 ## Human verification
 

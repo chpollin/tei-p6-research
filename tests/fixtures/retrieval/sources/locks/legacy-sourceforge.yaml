@@ -1,0 +1,10 @@
+schema_version: 1
+lock_id: fixture-sourceforge
+source_id: fixture-sourceforge
+retrieval_status: partial
+coverage:
+  tracker_api:
+    retrieval_status: observable-complete
+    manifest: sources/manifests/2026-09-05-tei-legacy-sourceforge-r3.yaml
+manifests:
+  - sources/manifests/2026-09-05-tei-legacy-sourceforge-r3.yaml

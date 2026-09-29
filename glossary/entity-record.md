@@ -15,21 +15,21 @@ the elements `person`, `place` and `org` serve as such records.
 ## Examples
 
 <!-- examples:begin -->
-- [[30_assertions/p5-guidelines-distinguish-names-for-places-from-other-data-about-places-as-they-do-for-people]] — In TEI P5 4.12.0, the Guidelines distinguish the encoding of names for places from the encoding of other data about places in the same way as for people, and present the place elements as a structured record of data about any place that might be named or referenced within a text
+- [[30_assertions/p5-guidelines-distinguish-names-for-places-from-other-data-about-places-as-they-do-for-people]] — In TEI P5 4.12.0, the Guidelines distinguish the encoding of names for places from the encoding of other data about places in much the same way as for people, and present elements which may be used to record in a structured way data about places of any kind which might be named or referenced within a text
   - [[20_distillates/documents/tei-p5-guidelines-nd-4.12.0#^s42]]
 - [[30_assertions/p5-guidelines-group-information-about-a-person-as-distinct-from-references-to-a-person-within-person]] — In TEI P5 4.12.0, the Guidelines group information about a person, as distinct from references to a person such as by name, within a person element
   - [[20_distillates/documents/tei-p5-guidelines-nd-4.12.0#^s26]]
-- [[30_assertions/p5-guidelines-let-an-encoder-regard-a-city-and-its-predecessor-as-one-place]] — In TEI P5 4.12.0, the Guidelines give the modern city of Lyon and the Roman Lugdunum, which overlap significantly without being physically co-extensive, as an example of what an encoder may wish to regard as the same place while supplying both names with the period during which each was current
+- [[30_assertions/p5-guidelines-let-an-encoder-regard-a-city-and-its-predecessor-as-one-place]] — In TEI P5 4.12.0, the Guidelines relate the suggestion to regard Lyon and Lugdunum as the same place to their significant overlapping areas
   - [[20_distillates/documents/tei-p5-guidelines-nd-4.12.0#^s43]]
 - [[30_assertions/p5-guidelines-separate-the-entity-record-from-references-to-the-entity]] — In TEI P5 4.12.0, the Guidelines describe org, in a way analogous to place and person, as a unique wrapper for information about an entity distinct from the references to that entity, which a naming element typically encodes
   - [[20_distillates/documents/tei-p5-guidelines-nd-4.12.0#^s40]]
-- [[30_assertions/p5-guidelines-use-generic-state-trait-and-event-customized-through-type-for-information-about-a-place]] — In TEI P5 4.12.0, the Guidelines state that the kinds of information worth recording for a place beyond its name and location are likely to be very project-specific, that the generic state, trait and event elements customized through their type attribute should be used instead, and that these are complemented by the predefined elements population, climate and terrain
+- [[30_assertions/p5-guidelines-use-generic-state-trait-and-event-customized-through-type-for-information-about-a-place]] — P5 4.12.0 recommends generic state, trait and event for places and permits customization through type
   - [[20_distillates/documents/tei-p5-guidelines-nd-4.12.0#^s49]]
 - [[30_assertions/p5-idno-serves-labels-that-identify-an-object-or-concept-in-a-cataloguing-system-or-a-distributed-system]] — In TEI P5 4.12.0, the English remarks on idno state that the element should be used for labels which identify an object or concept in a formal cataloguing system such as a database or an RDF store, or in a distributed system such as the World Wide Web
   - [[20_distillates/documents/tei-p5-idno-4.12.0#^s12]]
 - [[30_assertions/p5-idno-supplies-any-form-of-identifier-used-to-identify-some-object-in-a-standardized-way]] — In TEI P5 4.12.0, the English description of idno states that the element supplies any form of identifier used to identify some object in a standardized way
   - [[20_distillates/documents/tei-p5-idno-4.12.0#^s1]]
-- [[30_assertions/p5-namesdates-represents-the-referent-and-the-name-independently]] — In TEI P5 4.12.0, the Guidelines state that the module provides elements to represent the person, place or organization a name refers to and the name itself independently of its application, so that it can represent a personal name, the person being named and the canonical name being used
+- [[30_assertions/p5-namesdates-represents-the-referent-and-the-name-independently]] — In TEI P5 4.12.0, the Guidelines state that the module provides elements to represent information about the person, place or organization to which a given name is understood to refer and to represent the name itself independently of its application, so that it can represent a personal name, the person being named and the canonical name being used
   - [[20_distillates/documents/tei-p5-guidelines-nd-4.12.0#^s2]]
 - [[30_assertions/p5-person-holds-variant-name-forms-without-prioritization]] — In TEI P5 4.12.0, the Guidelines allow any number of variant name forms within person, each with its language and kind, with no prioritization among them
   - [[20_distillates/documents/tei-p5-guidelines-nd-4.12.0#^s32]]

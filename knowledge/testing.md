@@ -9,7 +9,7 @@ method:
 status: draft
 language: en
 created: "2026-09-06"
-updated: "2026-09-07"
+updated: "2026-09-11"
 related: [INDEX, operations, verification, architecture, design, governance, state]
 ---
 
@@ -40,6 +40,12 @@ the repository root.
    Document Structures source admission, run
    `python -m tools.ingest_text_structures --check`. Export changes require
    a complete export to a temporary directory followed by its `--check`.
+   Current research-content acceptance additionally requires
+   `python -m tools.current_review .`: complete current V1 coverage and the
+   separately executed blind second sample. The local `tools.full_review check`
+   also checks the private prompts and response records before public seals
+   are issued. Practice admissions require
+   `python -m tools.ingest_practice_v1 --check`.
 5. `python -m pytest tests -q` when shared behavior, tools, schemas or
    fixtures changed, otherwise the focused tests of the changed module.
 6. The reproduction checks below for every experiment and page the change
@@ -84,6 +90,7 @@ gate on the real file state.
 | experiment reproduction | reports and cases reproduce byte for byte from declared inputs | ontological adequacy, usability, P5 migratability |
 | page reproduction | every committed page rebuilds from its recorded build date | design quality beyond the acceptance checklist in [[knowledge/design]] |
 | review-only checks | the recorded review prompts are unmodified and every verdict hash passes | human verification |
+| current V1 review | all current distillates, assertions, chapter use and contested pairs have bound judgments; the prescribed blind second sample has separate responses | absolute truth, model-family independence and human verification |
 | chapter validation | the chapter and the chain it rests on carry no error and no warning | truth of the assertions |
 
 `grounded` means structurally traceable. A green gate establishes
@@ -94,7 +101,7 @@ procedures in [[knowledge/verification]] and the acceptance items in
 
 ## Continuous integration
 
-Both workflows install the declared development dependencies from `uv.lock`
+The shared checks and the page build install the declared development dependencies from `uv.lock`
 and run project commands through `uv run --locked`. RDFLib is pinned for the
 ontology and example graph checks. These checks compare explicit graphs and
 structural policy; they do not perform OWL reasoning. The RDFLib 7.6 JSON-LD
@@ -103,7 +110,7 @@ changing the compared graph.
 
 `.github/workflows/checks.yml` runs on every push and pull request. It lints
 with the configured rule set, validates the vault and the corpus control
-plane, runs the wave-one review-only check, reproduces Abstract Text Model
+plane, runs the wave-one review-only check and the current V1 gate, reproduces Abstract Text Model
 0.1 and the editorial cases with their current source review, runs the test
 suite and closes with the text identity pilot gate.
 
@@ -114,16 +121,19 @@ pytest nor repository-wide validation. Those checks belong to the completion
 gate above. The pilot report fingerprints its own contract section; changes
 to unrelated experiments do not invalidate it.
 
-Both workflows also reproduce the Guidelines navigation and the Text and
+The shared check workflow also reproduces the Guidelines navigation and the Text and
 Document Structures admission, then export all 888 admitted Guidelines XML
 sources into the runner's temporary directory and verify the result. These
 checks need only tracked files and perform no acquisition. The temporary
-export remains outside the published Pages artifact. The structure research
-review checker is separate: its required independent verdicts remain open,
-so it is not a mandatory CI gate and no passing review is implied.
+export remains outside the published Pages artifact. The original structure
+research pairs remain a separate historical preparation. They receive no
+verdict by transfer from another prompt format. Current structure distillates
+and assertions belong to the mandatory V1 scope, which includes complete
+statements and document prose beyond the historical cutter.
 
-`.github/workflows/pages.yml` runs on `main` and on manual dispatch. It
-validates the vault and the control plane, runs the test suite, regenerates
+`.github/workflows/pages.yml` runs on `main` and on manual dispatch. It first
+calls `checks.yml` through `workflow_call`; the build depends on that completed
+job. A failed shared check prevents publication. The Pages build then regenerates
 all five pages with the build date and the exact commit for source links,
 and publishes `docs/` to GitHub Pages at the routes declared in
 [[knowledge/design]]. Internal control and normalized data links resolve to
@@ -191,6 +201,8 @@ python tools/ingest_editorial_cases.py --check
 python tools/check_editorial_cases.py --check
 python tools/check_text_identity_pilot.py
 python tools/check_wave1_sources.py . --review-only
+python -m tools.current_review .
+python -m tools.ingest_practice_v1 --check
 ```
 
 `python tools/check_wave1_sources.py .` without `--review-only` additionally
@@ -217,6 +229,17 @@ build date in its own footer and compares it with the committed file, so a
 documented regeneration on another day stays reproducible. After changing
 `README.md` or any knowledge document, regenerate `docs/project.html` with
 `python tools/build_docs.py --date YYYY-MM-DD` before the test can pass.
+
+## Retrieval and repository structure
+
+Die lokale Suche und Quellenauswahl werden an festen Offline-Fixtures geprüft.
+Die Tests kontrollieren exakte Identifikatoren, Schicht-, Status- und Versionsfilter,
+Gegenpositionen sowie die Unterscheidung von offiziellen Quellen und Projektverträgen.
+Ein begrenzter Test am realen Bestand kontrolliert bekannte Zielpfade. Er bewertet
+Auffindbarkeit; fachliche Eignung und Vollständigkeit benötigen weiterhin die
+Auswahl- und Prüfverfahren. Das generierte Inventar liegt in
+`corpus/projections/source-inventory.md` und wird mit
+`python tools/inventory.py . --check` abgeglichen.
 
 ## Test layout
 

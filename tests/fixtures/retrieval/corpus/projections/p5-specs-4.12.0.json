@@ -1,0 +1,12 @@
+{
+  "artifact": "fixture-atlas",
+  "generated": true,
+  "instruction_trust": "none",
+  "records": [
+    {"category": "classSpec", "classes_declared": [], "ident": "att.fragment", "local_attributes": [{"ident": "part", "locator": "/classSpec[1]/attList[1]/attDef[1]"}], "module_declared": "fixture", "source": {"commit": "9999999999999999999999999999999999999999", "path": "Specs/att.fragment.xml", "sha256": "1111111111111111111111111111111111111111111111111111111111111111"}},
+    {"category": "elementSpec", "classes_declared": [{"key": "att.fragment"}], "ident": "p", "local_attributes": [], "module_declared": "fixture", "source": {"commit": "9999999999999999999999999999999999999999", "path": "Specs/p.xml", "sha256": "4444444444444444444444444444444444444444444444444444444444444444"}},
+    {"category": "elementSpec", "classes_declared": [{"key": "att.fragment"}, {"key": "p"}], "ident": "ab", "local_attributes": [{"ident": "type", "locator": "/elementSpec[1]/attList[1]/attDef[1]"}], "module_declared": "fixture", "source": {"commit": "9999999999999999999999999999999999999999", "path": "Specs/ab.xml", "sha256": "5555555555555555555555555555555555555555555555555555555555555555"}}
+  ],
+  "source": {"commit": "9999999999999999999999999999999999999999", "manifest": "sources/manifests/2026-01-01-fixture-release-admission.yaml", "manifest_sha256": "96c625a6a9f7e9146ac8d8fa617307c715ac38b4584890b17148f904f1965b4d", "source_id": "fixture-release-9.9.0", "version": "9.9.0"},
+  "use": "navigation-only; never grounding"
+}

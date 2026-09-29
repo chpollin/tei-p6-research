@@ -37,6 +37,19 @@ rights:
   license_granularity: per-item
   full_text_commit_requires_verified_license: true
 
+admission_policy:
+  adopted: "2026-09-11"
+  scope: Prospective question-specific admission; not evidence of an executed global search.
+  inclusion:
+    - An explicit conceptual alternative relevant to a named research question.
+    - Empirical observations with identifiable materials and methods relevant to a current claim.
+    - Counterevidence to a current premise or proposed architectural requirement.
+  exclusion:
+    - Generic TEI or XML mentions without a concrete use in the current question.
+    - Duplicate versions without a relevant substantive difference.
+    - Unavailable full context where a quotation or abstract cannot establish the claim.
+  retrieval_rule: Candidate-only records are selection aids; use admitted sources through their actual evidence role, version and reviewed claims.
+
 authority_policy: The registry classifies this holding as a literature family; each record states its actual authority, including comparative technical standards. No literature claim inherits TEI normative authority.
 
 records:
@@ -70,6 +83,9 @@ counts:
   wave1_candidates: 4
   wave1_admitted_publications: 3
   wave1_unavailable: 1
+manifests:
+  - sources/manifests/2026-09-05-research-wave-1-citations.yaml
+  - sources/manifests/2026-09-11-v1-review-context-recovery.yaml
 bounded_runs:
   - run_id: W1-LITERATURE
     manifest: sources/manifests/2026-09-05-research-wave-1-citations.yaml

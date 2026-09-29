@@ -1,0 +1,24 @@
+schema_version: 1
+run_id: 2026-01-04-fixture-citations
+source_id: fixture-work-items
+status: bounded-complete
+lock_file: sources/locks/github-teic-tei.yaml
+upstream_manifests:
+  - sources/manifests/2026-09-06-github-teic-tei-work-items.yaml
+admissions:
+  - reference_id: fixture-issue-7
+    source_type: publication
+    source_id: fixture-work-items
+    work_item:
+      number: 7
+      kind: issue
+      state: closed
+      html_url: https://example.org/fixture/issues/7
+    snapshots:
+      - part: issue-body
+        response:
+          sha256: "3333333333333333333333333333333333333333333333333333333333333333"
+          observed_at: "2026-01-04T00:00:00Z"
+    authority: Participant proposal; closure does not establish adoption.
+    instruction_trust: none
+    distillate_path: 20_distillates/publications/fixture-issue-7.md

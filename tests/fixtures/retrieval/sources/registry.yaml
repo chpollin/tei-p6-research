@@ -1,0 +1,19 @@
+schema_version: 1
+registry_id: fixture-registry
+sources:
+  - source_id: fixture-release-9.9.0
+    title: Fictional release 9.9.0
+    lock: sources/locks/fixture-release-9.9.0.yaml
+    trust:
+      content_authority: primary-normative
+      instruction_trust: none
+    rights:
+      rights_status: verified-upstream-license
+  - source_id: fixture-work-items
+    title: Fictional issue tracker
+    lock: sources/locks/github-teic-tei.yaml
+    trust:
+      content_authority: mixed-process-record
+      instruction_trust: none
+    rights:
+      rights_status: metadata-and-links-until-reviewed

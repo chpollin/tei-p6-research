@@ -3,17 +3,15 @@ type: assertion
 topics: ["[[Metadata and Entities]]", "[[Abstract Model]]"]
 phenomena: ["[[glossary/statement-about-an-entity]]"]
 related: ["[[40_output/12-p6-design]]", "[[30_assertions/p5-each-statement-about-a-life-must-be-documentable-and-time-framed]]", "[[30_assertions/p5-att-global-responsibility-indicates-the-agent-responsible-for-something-asserted-by-the-markup]]", "[[30_assertions/p5-nested-description-elements-inherit-type-and-responsibility-and-may-date-more-precisely]]"]
-status: validated
-checked:
-  machine-review: 2026-09-06
-  validation: 2026-09-06
+status: grounded
+checked: {}
 grounding:
   - "[[20_distillates/documents/tei-p5-guidelines-nd-4.12.0#^s37]]"
 created: 2026-09-06
-updated: 2026-09-06
+updated: 2026-09-11
 ---
 
-# In TEI P5 4.12.0, the generic description elements carry cert, resp, evidence and source through att.global.responsibility and att.editLike, so that conflicting sources can yield more than one view of what happened
+# The P5 4.12.0 Guidelines describe generic elements as providing certainty, responsibility, evidence and source attributes for conflicting views
 
 ## Statement
 
@@ -21,7 +19,7 @@ In TEI P5 4.12.0, the Guidelines state that the generic elements are members of 
 
 ## Support
 
-- [[20_distillates/documents/tei-p5-guidelines-nd-4.12.0#^s37]] — The attribution attributes as the chapter presents them and the coexistence of conflicting statements in its example. The class specifications are not among the sources, and the statement says nothing about withdrawing a statement or about relating two conflicting ones to each other.
+- [[20_distillates/documents/tei-p5-guidelines-nd-4.12.0#^s37]] — The attribution attributes as the chapter presents them and the coexistence of conflicting statements in its example.
 
 ## Related
 

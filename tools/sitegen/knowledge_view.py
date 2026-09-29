@@ -113,8 +113,19 @@ def _admissions(root: Path) -> dict[str, dict]:
             if key in result:
                 raise ValueError(f"Ambiguous source admission: {key}")
             rights = manifest.get("rights", {})
+            if isinstance(rights, list):
+                matches = [item for item in rights if isinstance(item, dict)
+                           and (item.get("representation_path") or item.get("distillate_path")) == key]
+                if len(matches) > 1:
+                    raise ValueError(f"Ambiguous admission rights: {key}")
+                rights = matches[0] if matches else {}
+            elif not isinstance(rights, dict):
+                raise ValueError(f"Invalid admission rights in {file}")
+            git_record = admission.get("record") or {}
+            if git_record.get("kind") != "git-blob":
+                git_record = {}
             result[key] = {"authority": admission.get("content_authority") or admission.get("authority") or manifest.get("content_authority"),
-                           "version": admission.get("commit"), "observed": admission.get("response", {}).get("observed_at") or manifest.get("finished_at"),
+                           "version": admission.get("commit") or git_record.get("commit"), "observed": admission.get("response", {}).get("observed_at") or manifest.get("finished_at"),
                            "rights": admission.get("rights") or rights.get("attribution"),
                            "sha256": admission.get("original_sha256") or admission.get("response", {}).get("sha256"),
                            "manifest": file.relative_to(root).as_posix()}
@@ -238,7 +249,7 @@ def build_view(root: Path, date: str, repository_base: str | None = None) -> dic
                 if commit:
                     source["version"] = commit.group(1)
             entry["source"] = source
-    for directory, label in (("knowledge", "Project contract"), ("glossary", "Glossary")):
+    for directory, label in (("knowledge", "Project contracts and proposals"), ("glossary", "Glossary")):
         for file in sorted((root / directory).glob("*.md"), key=lambda p: (p.name.casefold(), p.name)):
             path = file.relative_to(root).as_posix()
             meta, body = read_document(root, path)

@@ -3,12 +3,10 @@ type: distillate
 source-type: document
 representation: "[[10_markdown/documents/tei-p5-anchor-4.12.0]]"
 topics: ["[[Text and Document Structures]]", "[[Annotation and Overlap]]"]
-status: validated
-checked:
-  validation: 2026-09-05
-  machine-review: 2026-09-05
+status: grounded
+checked: {}
 created: 2026-09-05
-updated: 2026-09-05
+updated: 2026-09-11
 ---
 
 # Distillate: TEI P5 4.12.0 anchor specification
@@ -18,7 +16,7 @@ This distillate reports the English definition and identifier requirement in the
 ## Core statements
 
 - In TEI P5 4.12.0, `anchor` attaches an identifier to a point in a text, whether or not that point corresponds to a textual element. [[10_markdown/documents/tei-p5-anchor-4.12.0#^r1]] ^s1
-- The English remarks for `anchor` in TEI P5 4.12.0 require an `xml:id` identifying the point where the element occurs. [[10_markdown/documents/tei-p5-anchor-4.12.0#^r2]] ^s2
+- The English remarks for `anchor` in TEI P5 4.12.0 state that the global `xml:id` attribute must be supplied to specify an identifier for the point at which the element occurs within a document, and that its value may be chosen freely provided that it is unique within the document and is a syntactically valid name. [[10_markdown/documents/tei-p5-anchor-4.12.0#^r2]] ^s2
 
 ## Terms
 

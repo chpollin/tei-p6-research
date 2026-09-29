@@ -21,6 +21,16 @@ implements the two that are machine-retrievable:
     200 rather than as a status. A message the Wayback index does not hold at all
     still leaves the row the month index observed, marked ``wayback-index``.
 
+    The fetch runs month by month and seals each finished month into a
+    checkpoint directory, ``<raw-root>/checkpoints/<manifest stem>`` unless
+    ``--checkpoint`` names another. ``checkpoint.json`` holds the coverage
+    identity and the options, ``months/<yymm>.json`` the month's response
+    records with their raw hashes, its normalized rows and its gaps.
+    ``--resume-from`` continues such a directory after checking the identity,
+    every seal and every raw byte, and skips the sealed months without a
+    request. A month whose index, message fetch or CDX query failed is never
+    sealed, so a resumed run asks for it again.
+
 The third lock part, a consortium export for the months neither archive holds,
 is an operator action with no interface to call.
 
@@ -39,12 +49,18 @@ Usage:
     python -m tools.corpus.listserv_snapshot psu --from-month 2512 --to-month 2609 \
         --normalized-output corpus/normalized/mail/tei-l-psu.jsonl \
         --manifest-output sources/manifests/YYYY-MM-DD-tei-l-psu.yaml
+    python -m tools.corpus.listserv_snapshot wayback-fetch \
+        --coverage-input corpus/normalized/mail/tei-l-wayback-coverage.jsonl \
+        --normalized-output corpus/normalized/mail/tei-l-wayback.jsonl \
+        --manifest-output sources/manifests/YYYY-MM-DD-tei-l-wayback.yaml \
+        [--resume-from corpus/raw/checkpoints/YYYY-MM-DD-tei-l-wayback]
 """
 
 from __future__ import annotations
 
 import argparse
 import html
+import json
 import re
 import time
 import urllib.parse
@@ -58,8 +74,10 @@ from tools.corpus.manifest import (
     build_manifest,
     read_jsonl,
     report_status,
+    sha256_bytes,
     sha256_file,
     status_from,
+    write_json,
     write_jsonl,
     write_yaml,
 )
@@ -124,6 +142,13 @@ FETCH_FIELDS = (
 
 TITLE_TAG = re.compile(r"(?is)<title[^>]*>(.*?)</title>")
 WAYBACK_PLACEHOLDER_TITLE = "wayback machine"
+
+# A wayback fetch seals every finished month into a checkpoint directory.
+CHECKPOINT_KIND = "tei-l-wayback-fetch-checkpoint"
+CHECKPOINT_VERSION = 2
+CHECKPOINT_STATE = "checkpoint.json"
+CHECKPOINT_MONTHS = "months"
+SHA256_HEX = re.compile(r"[0-9a-f]{64}")
 
 
 def month_ordinal(month: str) -> int:
@@ -453,11 +478,14 @@ def parse_message(body: bytes) -> dict[str, Any]:
         if len(row) < 2:
             continue
         label = row[0].text.rstrip(":").strip().lower()
+        value = next((cell for cell in row[1:] if cell.text or cell.links), None)
+        if value is None:
+            continue
         field = RETAINED_HEADERS.get(label)
-        if field and row[1].text:
-            headers.setdefault(field, row[1].text)
+        if field and value.text:
+            headers.setdefault(field, value.text)
         if label == "topic":
-            thread.update(_navigation(row[1]))
+            thread.update(_navigation(value))
     return {"headers": headers, "thread_position": thread}
 
 
@@ -488,12 +516,18 @@ def cdx_url(target: str) -> str:
 
 
 def cdx_captures(
-    store: HttpStore, target: str, delay_seconds: float
+    store: HttpStore,
+    target: str,
+    delay_seconds: float,
+    journal: list[dict[str, object]] | None = None,
 ) -> tuple[list[dict[str, str]], str | None]:
-    """Return the captures the Wayback CDX index reports for one URL."""
+    """Return the captures the Wayback CDX index reports for one URL.
+
+    ``journal`` receives the response record, a failed answer included.
+    """
 
     try:
-        payload, _record = store.fetch_json(cdx_url(target))
+        payload, _record = store.fetch_json(cdx_url(target), journal)
     except RuntimeError as error:
         return [], str(error)
     finally:
@@ -509,7 +543,10 @@ def cdx_captures(
 
 
 def first_captures(
-    store: HttpStore, targets: list[str], delay_seconds: float
+    store: HttpStore,
+    targets: list[str],
+    delay_seconds: float,
+    journal: list[dict[str, object]] | None = None,
 ) -> tuple[list[dict[str, str]], list[str], str | None]:
     """Query each URL spelling in turn and return the first non-empty capture list."""
 
@@ -517,7 +554,7 @@ def first_captures(
     tried: list[str] = []
     for target in targets:
         tried.append(target)
-        captures, error = cdx_captures(store, target, delay_seconds)
+        captures, error = cdx_captures(store, target, delay_seconds, journal)
         if error is not None:
             failure = error
             continue
@@ -847,68 +884,196 @@ def measure_wayback_coverage(
     return manifest
 
 
-def snapshot_wayback(
-    *,
+def checkpoint_identity(
     coverage_input: Path,
-    months: list[str],
-    delay_seconds: float,
+    coverage: list[dict[str, Any]],
+    month_filter: list[str],
     max_messages: int | None,
-    raw_root: Path,
-    normalized_output: Path,
-    manifest_output: Path,
 ) -> dict[str, Any]:
-    """Fetch the captured months of the retired archive through the Wayback Machine."""
+    """Return what a checkpoint must share with a run before its months are reused.
 
-    started_at = utc_now()
-    store = HttpStore(raw_root)
-    coverage = [row for row in read_jsonl(coverage_input) if row.get("captured")]
-    if months:
-        selected = set(months)
-        coverage = [row for row in coverage if str(row["month"]) in selected]
-    coverage.sort(key=lambda row: str(row["month"]))
-    gaps: list[dict[str, Any]] = []
-    listed: list[dict[str, str]] = []
-    records: list[dict[str, Any]] = []
-    responses = 0
-    indexed_months = 0
-    missing_messages = 0
-    index_only_messages = 0
+    The coverage file counts by its bytes, the selection by the months and
+    captures it yields, and the options by those that change rows or gaps. The
+    delay and the output paths change neither and stay outside.
+    """
 
-    for row in coverage:
-        month = str(row["month"])
-        timestamp = str(row["latest_capture"])
-        original = str(row["latest_capture_original"])
-        index_url = wayback_url(timestamp, original)
-        result, body, failure = fetch_page(store, index_url, delay_seconds)
-        if result is not None:
-            responses += 1
-        if failure is not None:
-            gaps.append(
-                {
-                    "code": "month-index-failed",
-                    "month": month,
-                    "url": canonical_url(index_url),
-                    "capture_timestamp": timestamp,
-                    "detail": failure,
-                }
+    return {
+        "coverage_input_sha256": sha256_file(coverage_input),
+        "month_filter": sorted(set(month_filter)),
+        "max_messages": max_messages,
+        "cdx_endpoint": CDX_ENDPOINT,
+        "wayback_prefix": WAYBACK_PREFIX,
+        "months": [
+            {
+                "month": str(row["month"]),
+                "capture_timestamp": str(row["latest_capture"]),
+                "capture_original": str(row["latest_capture_original"]),
+            }
+            for row in coverage
+        ],
+    }
+
+
+def block_digest(block: dict[str, Any]) -> str:
+    """Return the seal of a month block, taken over its canonical JSON form."""
+
+    payload = {key: value for key, value in block.items() if key != "block_sha256"}
+    return sha256_bytes(json.dumps(payload, ensure_ascii=False, sort_keys=True).encode("utf-8"))
+
+
+def verify_raw_response(raw_root: Path, response: dict[str, Any], label: str) -> None:
+    """Require the raw bytes a response record names to be present and unchanged."""
+
+    digest = response.get("sha256")
+    if not isinstance(digest, str) or not SHA256_HEX.fullmatch(digest):
+        raise ValueError(f"{label}: malformed raw hash {digest!r}")
+    if response.get("raw_path") != f"sha256/{digest[:2]}/{digest[2:]}":
+        raise ValueError(f"{label}: malformed raw pointer {response.get('raw_path')!r}")
+    path = raw_root / "sha256" / digest[:2] / digest[2:]
+    if (
+        not path.is_file()
+        or path.stat().st_size != response.get("byte_count")
+        or sha256_file(path) != digest
+    ):
+        raise ValueError(
+            f"{label}: raw bytes of {response.get('canonical_url')} are missing or changed "
+            f"under {raw_root}"
+        )
+
+
+def load_checkpoint(
+    directory: Path, identity: dict[str, Any], raw_root: Path
+) -> tuple[dict[str, Any], dict[str, dict[str, Any]]]:
+    """Return the state and the sealed months of a checkpoint a run may continue.
+
+    Any mismatch rejects the whole resume rather than one month: it means the
+    checkpoint belongs to another selection or changed after sealing, and
+    neither may mix silently into a manifest.
+    """
+
+    state_path = directory / CHECKPOINT_STATE
+    if not state_path.is_file():
+        raise ValueError(f"no checkpoint to resume at {directory}")
+    state = json.loads(state_path.read_text(encoding="utf-8"))
+    if (
+        not isinstance(state, dict)
+        or state.get("checkpoint_kind") != CHECKPOINT_KIND
+        or state.get("schema_version") != CHECKPOINT_VERSION
+        or state.get("source_id") != SOURCE_ID
+        or not isinstance(state.get("started_at"), str)
+        or not isinstance(state.get("invocations"), list)
+        or not isinstance(state.get("identity"), dict)
+    ):
+        raise ValueError(f"{state_path} is not a {SOURCE_ID} wayback-fetch checkpoint")
+    for key, expected in identity.items():
+        if state["identity"].get(key) != expected:
+            raise ValueError(
+                f"checkpoint {directory} was written for a different {key}; "
+                "start a new run instead of resuming"
             )
-            continue
-        indexed_months += 1
-        for entry in parse_month_index(body, month, original):
-            entry["month_capture_timestamp"] = timestamp
-            listed.append(entry)
 
-    for entry in bound_messages(listed, max_messages, gaps):
+    captures = {entry["month"]: entry for entry in identity["months"]}
+    months_directory = directory / CHECKPOINT_MONTHS
+    blocks: dict[str, dict[str, Any]] = {}
+    paths = sorted(months_directory.glob("*.json")) if months_directory.is_dir() else []
+    for path in paths:
+        label = f"checkpoint month {path.name}"
+        block = json.loads(path.read_text(encoding="utf-8"))
+        if not isinstance(block, dict) or block.get("block_sha256") != block_digest(block):
+            raise ValueError(f"{label} does not match its seal")
+        capture = captures.get(path.stem)
+        if capture is None or [
+            block.get("month"),
+            block.get("capture_timestamp"),
+            block.get("capture_original"),
+        ] != [path.stem, capture["capture_timestamp"], capture["capture_original"]]:
+            raise ValueError(f"{label} does not belong to the resumed month selection")
+        if block.get("retryable") or not block.get("indexed"):
+            raise ValueError(f"{label} records an unfinished month")
+        for response in [*block["responses"], *block["cdx_responses"]]:
+            verify_raw_response(raw_root, response, label)
+        fetched = {response["sha256"] for response in block["responses"]}
+        for record in block["records"]:
+            if (
+                record.get("source_id") != SOURCE_ID
+                or record.get("month") != path.stem
+                or (record.get("raw_sha256") is not None and record["raw_sha256"] not in fetched)
+            ):
+                raise ValueError(f"{label} holds a row its responses do not support")
+        blocks[path.stem] = block
+    return state, blocks
+
+
+def fetch_wayback_month(
+    store: HttpStore, row: dict[str, Any], budget: int | None, delay_seconds: float
+) -> dict[str, Any]:
+    """Fetch one captured month and return it as a checkpoint block.
+
+    ``budget`` is how many messages the smoke-run bound still allows, or None.
+    The block keeps every response record the month rests on, CDX answers
+    included, because the hash-addressed raw store cannot tell which URL a body
+    answered. ``retryable`` marks a failure that asking again may cure: a failed
+    index or message fetch, or a CDX query that failed before any spelling
+    yielded a capture. A measured absence is not such a failure.
+    """
+
+    month = str(row["month"])
+    timestamp = str(row["latest_capture"])
+    original = str(row["latest_capture_original"])
+    block: dict[str, Any] = {
+        "month": month,
+        "capture_timestamp": timestamp,
+        "capture_original": original,
+        "budget_before": budget,
+        "indexed": False,
+        "retryable": False,
+        "messages_listed": 0,
+        "messages_taken": 0,
+        "messages_missing": 0,
+        "messages_index_only": 0,
+        "responses": [],
+        "cdx_responses": [],
+        "index_gaps": [],
+        "message_gaps": [],
+        "records": [],
+    }
+    index_url = wayback_url(timestamp, original)
+    result, body, failure = fetch_page(store, index_url, delay_seconds)
+    if result is not None:
+        block["responses"].append(result.as_record())
+    if failure is not None:
+        block["retryable"] = True
+        block["index_gaps"].append(
+            {
+                "code": "month-index-failed",
+                "month": month,
+                "url": canonical_url(index_url),
+                "capture_timestamp": timestamp,
+                "detail": failure,
+            }
+        )
+        return block
+    block["indexed"] = True
+    listed = parse_month_index(body, month, original)
+    taken = listed if budget is None else listed[:budget]
+    block["messages_listed"] = len(listed)
+    block["messages_taken"] = len(taken)
+
+    for entry in taken:
+        entry["month_capture_timestamp"] = timestamp
         targets = message_url_variants(entry["url"])
-        captures, tried, failure = first_captures(store, targets, delay_seconds)
+        captures, tried, failure = first_captures(
+            store, targets, delay_seconds, journal=block["cdx_responses"]
+        )
         newest = preferred_capture(captures)
         if newest is None:
             # The Wayback index holds the month but not this message. What the
             # month index observed is the whole record then, so the row states
             # the observation and its null response fields state the absence.
-            missing_messages += 1
-            index_only_messages += 1
-            gaps.append(
+            block["retryable"] = block["retryable"] or failure is not None
+            block["messages_missing"] += 1
+            block["messages_index_only"] += 1
+            block["message_gaps"].append(
                 {
                     "code": "wayback-message-missing",
                     "month": entry["month"],
@@ -917,7 +1082,7 @@ def snapshot_wayback(
                     "detail": failure,
                 }
             )
-            records.append(
+            block["records"].append(
                 message_record(
                     entry,
                     {"headers": {}, "thread_position": {}},
@@ -930,9 +1095,10 @@ def snapshot_wayback(
         message_capture = wayback_url(newest["timestamp"], newest["original"])
         result, body, fetch_failure = fetch_page(store, message_capture, delay_seconds)
         if result is not None:
-            responses += 1
+            block["responses"].append(result.as_record())
         if fetch_failure is not None:
-            gaps.append(
+            block["retryable"] = True
+            block["message_gaps"].append(
                 {
                     "code": "message-fetch-failed",
                     "month": entry["month"],
@@ -951,8 +1117,8 @@ def snapshot_wayback(
             # contributes nothing to the row, which keeps the index observation
             # and the status of the attempt.
             parsed = {"headers": {}, "thread_position": {}}
-            missing_messages += 1
-            gaps.append(
+            block["messages_missing"] += 1
+            block["message_gaps"].append(
                 {
                     "code": "wayback-message-missing",
                     "month": entry["month"],
@@ -961,7 +1127,7 @@ def snapshot_wayback(
                     "capture_timestamp": newest["timestamp"],
                 }
             )
-        records.append(
+        block["records"].append(
             message_record(
                 entry,
                 parsed,
@@ -974,9 +1140,125 @@ def snapshot_wayback(
                 ),
             )
         )
+    return block
 
-    records.sort(key=lambda row: (str(row["month"]), str(row["message_id"])))
+
+def snapshot_wayback(
+    *,
+    coverage_input: Path,
+    months: list[str],
+    delay_seconds: float,
+    max_messages: int | None,
+    raw_root: Path,
+    normalized_output: Path,
+    manifest_output: Path,
+    checkpoint: Path | None = None,
+    resume_from: Path | None = None,
+) -> dict[str, Any]:
+    """Fetch the captured months of the retired archive through the Wayback Machine.
+
+    Months run in order, and each finished month is sealed into the checkpoint
+    before the next starts, so a crash loses at most the month in progress.
+    Rows, gaps and counts are assembled once from reused and fetched months
+    alike, so a resumed run writes what an uninterrupted run writes. A sealed
+    month is reused only when the message bound leaves it the budget it had.
+    """
+
+    for output in (normalized_output, manifest_output):
+        if output.exists():
+            raise ValueError(f"output {output} already exists; use new output paths to preserve the completed run")
+    if (
+        checkpoint is not None
+        and resume_from is not None
+        and checkpoint.resolve() != resume_from.resolve()
+    ):
+        raise ValueError("--checkpoint and --resume-from name different directories")
+    now = utc_now()
+    store = HttpStore(raw_root)
+    coverage = [row for row in read_jsonl(coverage_input) if row.get("captured")]
+    if months:
+        selected = set(months)
+        coverage = [row for row in coverage if str(row["month"]) in selected]
+    coverage.sort(key=lambda row: str(row["month"]))
+    identity = checkpoint_identity(coverage_input, coverage, months, max_messages)
+
+    reusable: dict[str, dict[str, Any]] = {}
+    if resume_from is not None:
+        directory = resume_from
+        state, reusable = load_checkpoint(directory, identity, raw_root)
+        started_at = state["started_at"]
+        invocations = [*state["invocations"], now]
+    else:
+        directory = checkpoint or raw_root / "checkpoints" / manifest_output.stem
+        if directory.exists() and any(directory.iterdir()):
+            raise ValueError(
+                f"checkpoint {directory} already exists; continue it with --resume-from "
+                "or remove it"
+            )
+        started_at = now
+        invocations = [now]
+    write_json(
+        directory / CHECKPOINT_STATE,
+        {
+            "checkpoint_kind": CHECKPOINT_KIND,
+            "schema_version": CHECKPOINT_VERSION,
+            "source_id": SOURCE_ID,
+            "adapter": ADAPTER,
+            "started_at": started_at,
+            "invocations": invocations,
+            "identity": identity,
+        },
+    )
+
+    blocks: list[dict[str, Any]] = []
+    budget = max_messages
+    reused = 0
+    for row in coverage:
+        month = str(row["month"])
+        block = reusable.get(month)
+        if block is not None and block["budget_before"] == budget:
+            reused += 1
+        else:
+            block = fetch_wayback_month(store, row, budget, delay_seconds)
+            month_path = directory / CHECKPOINT_MONTHS / f"{month}.json"
+            if block["retryable"]:
+                month_path.unlink(missing_ok=True)
+            else:
+                block["block_sha256"] = block_digest(block)
+                write_json(month_path, block)
+        blocks.append(block)
+        if budget is not None:
+            budget -= block["messages_taken"]
+
+    listed = sum(block["messages_listed"] for block in blocks)
+    gaps = [gap for block in blocks for gap in block["index_gaps"]]
+    if max_messages is not None and listed > max_messages:
+        gaps.append(
+            {
+                "code": "max-messages-limit",
+                "max_messages": max_messages,
+                "messages_listed": listed,
+                "messages_not_fetched": listed - max_messages,
+            }
+        )
+    gaps.extend(gap for block in blocks for gap in block["message_gaps"])
+    records = sorted(
+        (record for block in blocks for record in block["records"]),
+        key=lambda row: (str(row["month"]), str(row["message_id"])),
+    )
     write_jsonl(normalized_output, records)
+    extra: dict[str, Any] = {
+        "scope": {
+            "boundary": "captured-brown-months-served-through-the-wayback-machine",
+            "status_applies_to": "requests.months",
+            "completion_rule": (
+                "Every message the captured month indexes list, retrieved from a "
+                "capture or recorded as a gap."
+            ),
+        }
+    }
+    if resume_from is not None:
+        extra["resume"] = {"invocations": invocations, "months_reused": reused}
     manifest = build_manifest(
         run_id=manifest_output.stem,
         source_id=SOURCE_ID,
@@ -992,6 +1274,8 @@ def snapshot_wayback(
             "month_filter": months,
             "delay_seconds": delay_seconds,
             "max_messages": max_messages,
+            "checkpoint": directory.as_posix(),
+            "resume_from": resume_from.as_posix() if resume_from else None,
         },
         objects=[
             {
@@ -1002,26 +1286,17 @@ def snapshot_wayback(
         ],
         counts={
             "months_requested": len(coverage),
-            "months_indexed": indexed_months,
-            "messages_listed": len(listed),
+            "months_indexed": sum(1 for block in blocks if block["indexed"]),
+            "messages_listed": listed,
             "messages": len(records),
-            "messages_missing": missing_messages,
-            "messages_index_only": index_only_messages,
-            "http_responses": responses,
+            "messages_missing": sum(block["messages_missing"] for block in blocks),
+            "messages_index_only": sum(block["messages_index_only"] for block in blocks),
+            "http_responses": sum(len(block["responses"]) for block in blocks),
             "gaps": len(gaps),
         },
         gaps=gaps,
         rights_exceptions=RIGHTS_EXCEPTIONS,
-        extra={
-            "scope": {
-                "boundary": "captured-brown-months-served-through-the-wayback-machine",
-                "status_applies_to": "requests.months",
-                "completion_rule": (
-                    "Every message the captured month indexes list, retrieved from a "
-                    "capture or recorded as a gap."
-                ),
-            }
-        },
+        extra=extra,
     )
     write_yaml(manifest_output, manifest)
     return manifest
@@ -1064,6 +1339,14 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
     fetch.add_argument("--coverage-input", type=Path, required=True)
     fetch.add_argument("--month", action="append", default=[], dest="months")
     fetch.add_argument("--max-messages", type=int)
+    fetch.add_argument(
+        "--checkpoint",
+        type=Path,
+        help="checkpoint directory (default: <raw-root>/checkpoints/<manifest stem>)",
+    )
+    fetch.add_argument(
+        "--resume-from", type=Path, help="continue the run sealed in this checkpoint directory"
+    )
     add_output_arguments(fetch)
 
     return parser.parse_args(argv)
@@ -1113,11 +1396,15 @@ def main(argv: list[str] | None = None) -> int:
                 raw_root=args.raw_root,
                 normalized_output=args.normalized_output,
                 manifest_output=args.manifest_output,
+                checkpoint=args.checkpoint,
+                resume_from=args.resume_from,
             )
             detail = (
                 f"{manifest['counts']['messages']} messages, "
-                f"{manifest['counts']['messages_missing']} without a capture"
+                f"{manifest['counts']['messages_missing']} without usable message headers"
             )
+            if "resume" in manifest:
+                detail += f", {manifest['resume']['months_reused']} months reused"
     except ValueError as error:
         raise SystemExit(str(error)) from error
     return report_bounded_status(manifest, f"{detail}, {manifest['counts']['gaps']} gaps")

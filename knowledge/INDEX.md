@@ -9,7 +9,7 @@ method:
 status: draft
 language: en
 created: "2026-09-04"
-updated: "2026-09-07"
+updated: "2026-09-11"
 related: [project, specification, data, architecture, design, schema, operations, verification, testing, governance, plan, handoff, journal, state]
 ---
 
@@ -34,6 +34,27 @@ below. [[knowledge/governance]] binds every session, [[knowledge/testing]]
 closes every change, and [[knowledge/journal]] explains a settled choice when
 its reason matters.
 
+## Direkter Arbeitsweg
+
+| Aufgabe | Zuerst lesen | Danach ausführen oder prüfen |
+|---|---|---|
+| Iststand verstehen | [[knowledge/state]] | Genannte Artefakte, Locks und abgeschlossene Manifeste prüfen. |
+| Eine konkrete P5-Aussage finden | [[knowledge/operations]] § Query | Assertions und exakte Quellpassagen öffnen; Prüfstatus und Versionsgrenze beachten. |
+| Geeignete neue Quellen auswählen | [[knowledge/operations]] § Select | Begrenzte Suchfragen und Gegenbelegsuche auf benannten Snapshots ausführen; Treffer begründet disponieren. |
+| Modell verwenden oder ändern | Versionsgrenzen unten, dann [[knowledge/text-model]] | Passenden Vertrag, Implementierung und Gegenfälle gemeinsam lesen. |
+| Einen Entwurf weiterdenken | [[knowledge/model-design]] | Mit [[knowledge/p6-evaluation]] und den vorhandenen P5-Belegen vergleichen. |
+| Repository ändern | [[knowledge/architecture]] | Betroffenes Modul und Tests prüfen; mit [[knowledge/testing]] abschließen. |
+
+## Modellgrenzen
+
+| Dokumentgruppe | Geltungsumfang |
+|---|---|
+| [[knowledge/text-model]], [[knowledge/text-model-bindings]] | Ausführbare Verträge 0.1 und 0.2. Die Diagrammreferenz zeigt 0.1. JSON/XML/YAML-Rundläufe gelten für 0.1; der 0.2-RDF-Export ist gerichtet. |
+| [[knowledge/model-design]], [[knowledge/model-examples]] | Vorgeschlagene semantische Erweiterungen und illustrative Serialisierungen. Ihre Beispiele erklären den Entwurf und sind kein zusätzlicher produktiver Modellvertrag. |
+| [[knowledge/ontology]] | Dokumentarische Ontologie mit eigener Mapping- und Prüfgrenze. |
+| [[knowledge/identity-evidence]], [[knowledge/hsa-profile]] | Gesondert definierte Quellenprofile und konkrete Fallbindungen. |
+| [[knowledge/experiments]], [[knowledge/p6-evaluation]] | Ausgeführte Versuche, Vergleichskriterien und noch erforderliche fachliche Abnahme. |
+
 ## Documents
 
 | Document | Function | Routing question |
@@ -49,7 +70,7 @@ its reason matters.
 | [[knowledge/verification]] | adversarial checking of own claims | How are the project's claims reviewed, by whom, and with what independence? |
 | [[knowledge/testing]] | quality assurance | Which checks close a change, and what does each of them establish? |
 | [[knowledge/governance]] | authority, trust, rights, roles | Who decides, what is trusted, what may be published, and how is work delegated? |
-| [[knowledge/plan]] | forward planning | Which milestones remain, and what closes each of them? |
+| [[knowledge/plan]] | substantive work programme | Which research results are required, and what establishes completion? |
 | [[knowledge/handoff]] | process inbox | Which open handoff points await the next session? |
 | [[knowledge/journal]] | provenance of decisions | Why was a choice made, and what did it replace? |
 | [[knowledge/state]] | current reality | What exists now, what passed which check, and what is open? |

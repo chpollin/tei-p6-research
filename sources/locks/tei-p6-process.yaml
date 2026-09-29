@@ -1,7 +1,7 @@
 schema_version: 1
 lock_id: tei-official-p6-process
 source_id: tei-official-p6-process
-as_of: "2026-09-04"
+as_of: "2026-09-11"
 retrieval_status: partial
 
 scope:
@@ -21,7 +21,7 @@ public_repositories:
 reported_repositories:
   - canonical_url: https://github.com/TEIC/p6-sandbox
     public_api_observation:
-      observed_at: "2026-09-04"
+      observed_at: "2026-09-11T11:36:25Z"
       http_status: 404
       interpretation: not-publicly-observable-or-not-found
     access_required_if_private: true
@@ -38,12 +38,27 @@ counts:
   time_for_p6_tree_entries: 21
   time_for_p6_commits_all_observed_refs: 53
   council_pages_in_shared_census: 206
+  selected_council_publications: 7
+  selected_pinned_slide_sources: 1
+  checked_quotations_in_selected_sources: 42
+selection:
+  protocol: workbench/selections/2026-09-11-p6-process.md
+  boundary: Content-based selection within the declared 2025-01-01 to 2026-09-04 Council frame, plus the pinned panel slide source; not all official P6 material.
+  context_storage: local-only
 gaps:
   - code: reported-p6-sandbox-not-publicly-observable
     status: open
   - code: p6-specific-council-records-not-yet-projected
+    status: resolved-within-declared-selection
+    detail: Seven Council pages and one pinned slide source admitted with 42 checked quotations; deferred pages and unobserved Vancouver records remain explicit in the selection protocol.
+  - code: vancouver-outcomes-not-publicly-evidenced
     status: open
+    detail: The observed index supplied no Vancouver F2F or Annual Members' Meeting minutes establishing the later sandbox or P5 feature-policy outcome.
 
 manifests:
   - sources/manifests/2026-09-04-teic-time-for-p6.yaml
   - sources/manifests/2026-09-04-tei-council-minutes-r2.yaml
+  - sources/manifests/2026-09-11-p6-time-for-p6-git.yaml
+  - sources/manifests/2026-09-11-p6-council-citations.yaml
+  - sources/manifests/2026-09-11-p6-time-for-p6-readme-provenance.yaml
+  - sources/manifests/2026-09-11-p6-readme-restored.yaml

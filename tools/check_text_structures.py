@@ -34,31 +34,39 @@ DOCUMENTS = frozenset(
 )
 
 
-def ancestor_context(payload: bytes, locator: str) -> str:
-    node = parse_xml(payload)
+def ancestor_context(payload: bytes, locator: str, *, include_all_attributes: bool = False) -> str:
+    root = parse_xml(payload)
     segments = locator.strip("/").split("/")
-    labels = []
+    states = [(root, [])]
     for depth, segment in enumerate(segments):
         match = re.fullmatch(r"([A-Za-z0-9_-]+)\[(\d+)\]", segment)
-        if not match:
+        named = re.fullmatch(r"([A-Za-z0-9_-]+)\[@ident='([^']+)'\]", segment) if include_all_attributes else None
+        if not match and not named:
             raise ValueError(f"unsupported source locator: {locator}")
-        tag, number = match[1], int(match[2])
-        if depth == 0:
-            if node.tag.split("}")[-1] != tag or number != 1:
-                raise ValueError(f"root locator mismatch: {locator}")
-        else:
-            children = [child for child in node if child.tag.split("}")[-1] == tag]
-            if number < 1 or number > len(children):
-                raise ValueError(f"source locator does not resolve: {locator}")
-            node = children[number - 1]
-        attrs = {key.split("}")[-1]: value for key, value in node.attrib.items()
-                 if key in {"ident", "key", "type", "n", XML_ID}}
-        label = tag + (" " + json.dumps(attrs, ensure_ascii=False, sort_keys=True) if attrs else "")
-        head = next((child for child in node if child.tag.split("}")[-1] == "head"), None)
-        if head is not None:
-            label += " heading=" + json.dumps(" ".join("".join(head.itertext()).split()), ensure_ascii=False)
-        labels.append(label)
-    return "XML ancestor context (from the unchanged source): " + " > ".join(labels)
+        tag = match[1] if match else named[1]
+        number = int(match[2]) if match else None
+        next_states = []
+        for parent, labels in states:
+            children = [node for node in ([parent] if depth == 0 else list(parent)) if node.tag.split("}")[-1] == tag]
+            if named:
+                children = [child for child in children if child.get("ident") == named[2]]
+            else:
+                children = children[number - 1:number] if number > 0 else []
+            for node in children:
+                attrs = {key.split("}")[-1]: value for key, value in node.attrib.items()
+                         if include_all_attributes or key in {"ident", "key", "type", "n", XML_ID}}
+                label = tag + (" " + json.dumps(attrs, ensure_ascii=False, sort_keys=True) if attrs else "")
+                head = next((child for child in node if child.tag.split("}")[-1] == "head"), None)
+                if head is not None:
+                    label += " heading=" + json.dumps(" ".join("".join(head.itertext()).split()), ensure_ascii=False)
+                next_states.append((node, [*labels, label]))
+        if not next_states:
+            raise ValueError(f"source locator does not resolve: {locator}")
+        if len(next_states) > 64:
+            raise ValueError(f"source locator has too many matches: {locator}")
+        states = next_states
+    result = "\n".join("XML ancestor context (from the unchanged source): " + " > ".join(labels) for _, labels in states)
+    return (f"Locator matches {len(states)} paths; all are supplied.\n" if len(states) > 1 else "") + result
 
 
 def current_pairs(root: Path, scope: str) -> list[dict]:

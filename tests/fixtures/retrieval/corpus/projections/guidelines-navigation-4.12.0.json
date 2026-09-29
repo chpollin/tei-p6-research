@@ -1,0 +1,25 @@
+{
+  "generated": true,
+  "generator": "fixture",
+  "instruction_trust": "none",
+  "schema_version": 2,
+  "sources": [
+    {
+      "attributes": ["part"],
+      "curated_topics": [{"distillate": "20_distillates/documents/fixture-att.fragment-9.9.0.md", "moc": "30_assertions/MOC-Fixture Structures.md", "topic": "Fixture Structures"}],
+      "ident": "att.fragment",
+      "kind": "classSpec",
+      "module": "fixture",
+      "module_basis": "declared",
+      "referenced_by": [],
+      "references": [],
+      "representation": "10_markdown/documents/fixture-att.fragment-9.9.0.md",
+      "source": "Specs/att.fragment.xml",
+      "title": "att.fragment",
+      "topic_suggestions": [{"moc": "30_assertions/MOC-Fixture Issues.md", "rule": "declared-module:fixture", "topic": "Fixture Issues"}],
+      "unclassified_reason": null
+    }
+  ],
+  "topics": {"Fixture Issues": "30_assertions/MOC-Fixture Issues.md", "Fixture Structures": "30_assertions/MOC-Fixture Structures.md"},
+  "use": "navigation-only; never grounding"
+}

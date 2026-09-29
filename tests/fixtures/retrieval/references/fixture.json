@@ -1,0 +1,11 @@
+[
+  {
+    "id": "fixture-issue-7",
+    "type": "post",
+    "title": "Fragment pointers",
+    "number": "7",
+    "container-title": "Fixture issues",
+    "issued": {"date-parts": [[2020, 1, 1]]},
+    "URL": "https://example.org/fixture/issues/7"
+  }
+]

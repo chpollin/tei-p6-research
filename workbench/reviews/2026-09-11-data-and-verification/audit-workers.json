@@ -1,0 +1,47 @@
+{
+  "as_of": "2026-09-11",
+  "mode": "read-only repository audits, no blind semantic verdicts",
+  "runner": "Claude CLI, explicit --model opus, fresh non-persistent sessions",
+  "integration": "Findings checked and qualified in README.md; reviewer responses are not accepted as source evidence. Model metadata includes CLI auxiliary calls.",
+  "workers": [
+    {
+      "task": "holdings",
+      "brief": "workbench/reviews/2026-09-11-data-and-verification/holdings-brief-v1.md",
+      "requested_model": "opus",
+      "models_reported": [
+        "claude-haiku-4-5-20251001",
+        "claude-opus-5"
+      ],
+      "result": "success",
+      "is_error": false,
+      "result_text_sha256": "482ff34e37a3e6ced227de98c7ece219fe54aeca739b94cf5ee3cc140c4c6fc7",
+      "result_file_sha256": "8529a590a0e4364a437c9f19a49d85ede4b805f81d44a473de706c7025893491"
+    },
+    {
+      "task": "literature",
+      "brief": "workbench/reviews/2026-09-11-data-and-verification/literature-brief-v1.md",
+      "requested_model": "opus",
+      "models_reported": [
+        "claude-haiku-4-5-20251001",
+        "claude-opus-5"
+      ],
+      "result": "success",
+      "is_error": false,
+      "result_text_sha256": "43a970fc391604bd9f4d4c8fca7c7d616298d45a24361cdef13447b27ae0dc75",
+      "result_file_sha256": "bed47b26ad1fb666f1d37677e226a931d019719346ec5c158e54c6c035a61c2b"
+    },
+    {
+      "task": "verification",
+      "brief": "workbench/reviews/2026-09-11-data-and-verification/verification-brief-v1.md",
+      "requested_model": "opus",
+      "models_reported": [
+        "claude-haiku-4-5-20251001",
+        "claude-opus-5"
+      ],
+      "result": "success",
+      "is_error": false,
+      "result_text_sha256": "9f33b3442f04cd38119bf1e95f22cd34e66cdafc11102f19036d97c0a03b772c",
+      "result_file_sha256": "4dcba4048782bcb7e122e4458b4124b41d52c7604dd9530bdef838d2caf1343f"
+    }
+  ]
+}
