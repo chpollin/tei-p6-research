@@ -6,6 +6,9 @@
 00_sources/** -text
 00_sources/README.md text eol=lf
 
+# This bibliography is an admitted byte snapshot with a manifest-bound hash.
+references/p6-v1.json -text -whitespace
+
 # Preserve source-faithful whitespace in immutable ingested representations.
 10_markdown/documents/tei-p5-*-4.12.0.md -text -whitespace
 10_markdown/documents/tei-time-for-p6-readme-2026-07-16.md -whitespace

@@ -3,7 +3,10 @@
 The check reconciles control records with each other, never with the network:
 registry and lock identity and ``retrieval_status``, every run manifest a lock
 names through ``manifest``, ``manifests`` or ``records[].manifest``, manifest
-source IDs, and the path and SHA-256 of every declared object. Every reference
+source IDs, and the path and SHA-256 of declared public objects. Restored
+originals under ``00_sources/`` may be absent in a public clone; if present,
+their hashes are always checked. ``--require-local-originals`` also requires
+these private files to exist. Every reference
 must stay inside the repository, locks below ``sources/locks/`` and run
 manifests below ``sources/manifests/``.
 
@@ -104,7 +107,7 @@ def lock_errors(root: Path, source_id: str, lock_value: str, lock: dict[str, Any
     return errors
 
 
-def validate(root: Path) -> list[str]:
+def validate(root: Path, *, require_local_originals: bool = False) -> list[str]:
     errors: list[str] = []
     registry_path = root / "sources" / "registry.yaml"
     registry = load_yaml(registry_path)
@@ -168,7 +171,12 @@ def validate(root: Path) -> list[str]:
                 errors.append(f"{relative}: {error}")
                 continue
             if not object_path.is_file():
-                errors.append(f"{relative}: missing object {object_path_value}")
+                private_original = (
+                    item.get("kind") == "restored-original"
+                    and object_path.is_relative_to(root.resolve() / "00_sources")
+                )
+                if require_local_originals or not private_original or object_path.exists():
+                    errors.append(f"{relative}: missing object {object_path_value}")
             elif expected_hash and sha256_file(object_path) != expected_hash:
                 errors.append(f"{relative}: SHA-256 mismatch for {object_path_value}")
     return errors
@@ -177,17 +185,24 @@ def validate(root: Path) -> list[str]:
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("root", nargs="?", type=Path, default=Path())
+    parser.add_argument(
+        "--require-local-originals", action="store_true",
+        help="also require restored originals under ignored 00_sources/; not all raw responses",
+    )
     return parser.parse_args()
 
 
 def main() -> int:
-    errors = validate(parse_args().root.resolve())
+    args = parse_args()
+    errors = validate(args.root.resolve(), require_local_originals=args.require_local_originals)
     if errors:
         for error in errors:
             print(f"ERROR: {error}")
         print(f"FAILED: {len(errors)} control-plane error(s)")
         return 1
     print("OK: source control plane is internally consistent")
+    if not args.require_local_originals:
+        print("Scope: public objects and present restored originals; missing private originals are not required.")
     return 0
 
 

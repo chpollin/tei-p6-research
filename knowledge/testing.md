@@ -9,7 +9,7 @@ method:
 status: draft
 language: en
 created: "2026-09-06"
-updated: "2026-09-11"
+updated: "2026-10-17"
 related: [INDEX, operations, verification, architecture, design, governance, state]
 ---
 
@@ -75,6 +75,15 @@ support. When a check could not run, the report says so and why. A
 subagent's self-report counts as unverified until the integrator has run the
 gate on the real file state.
 
+The public control-plane check permits an absent `restored-original` only
+under ignored `00_sources/`. A present original with mismatching bytes, a
+directory in its place, or a missing public object still fails. On a local
+research checkout, `python -m tools.corpus.validate_control_plane .
+--require-local-originals` additionally requires those restored originals.
+This checks declared manifest objects, not every raw response in the corpus.
+The admitted bibliography snapshot `references/p6-v1.json` retains its exact
+manifest-bound bytes through the per-file Git attributes rule.
+
 ## What each check establishes
 
 | Check | Establishes | Leaves open |
@@ -82,7 +91,7 @@ gate on the real file state.
 | `git diff --check` | no trailing whitespace, no conflict markers | everything about content |
 | `ruff` | the code conforms to the configured lint rules | correctness |
 | `tools/validate.py` | frontmatter, anchors, statement IDs, quotation checks, computations, topic-map reachability, contested links, chapter mirrors and status discipline conform to [[knowledge/schema]] | whether a passage supports a claim |
-| `tools.corpus.validate_control_plane` | registry-to-lock identity, manifest source IDs, normalized object existence and recorded SHA-256 values reconcile | completeness of a family beyond its recorded gaps |
+| `tools.corpus.validate_control_plane` | registry-to-lock identity, manifest source IDs, public object existence and recorded SHA-256 values reconcile; present restored originals are always checked | completeness of a family and availability of absent private originals |
 | Guidelines navigation reproduction | rule-based topic suggestions and declaration links reproduce from tracked inputs | scholarly classification or source support |
 | Guidelines XML export and verification | every admitted XML byte and its original Git path survive a mirror-free export; the export inventory reconciles | images, generated HTML, schemas and scientific interpretation |
 | Text structures admission check | the admitted overlap test and its representation reproduce without ignored originals | source-support review of the twelve-source research run |

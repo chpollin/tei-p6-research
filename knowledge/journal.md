@@ -1169,3 +1169,28 @@ on it. Private historical contexts remain local and have not been transferred.
 The entry adapters and index now make the handoff conditional on resuming its named inputs, preserving state, authority and test obligations while reducing unrelated startup reading. The public candidate-tree check passed current review bindings, both legacy audits, the identity-evidence example, Guidelines admission and reconstruction/check of the admitted XML without private raw data. Module paths were checked to ensure code came from the candidate tree. The existing dependency environment reconciled with `uv sync --locked --offline`. Both private full-review checks passed locally without new model calls.
 
 The portability observation was performed on an explicit temporary candidate tree using the existing dependency interpreter. It was not a new-machine setup or a clone of a committed October baseline. The owner subsequently explicitly authorized a local commit. The reviewed baseline is secured as `1110961`, including the public review records. No push or publication was authorized or performed.
+
+## 2026-10-17: Close remaining technical handoff checks
+
+The owner requested checking the actual remaining technical work before
+placing the TEI-P6 operator in a waiting state. The existing baseline had no
+documented failing technical gate, but its clone test reused the host's
+dependency interpreter. A new environment created from `uv.lock` in the
+actual clone exposed two control-plane portability defects. Git normalized
+the admitted bibliography's CRLF bytes although its manifest binds those
+exact bytes. A narrow attributes rule now preserves that snapshot. The
+public control check also required a deliberately ignored restored original.
+The check now distinguishes absent private restored originals from missing
+public objects and always checks present originals. Its explicit local mode
+requires the restored originals. Negative tests preserve hash, path and
+public-object checks rather than weakening them.
+
+The completed V1 handoff is integrated into State, Verification, the review
+records and the earlier Journal entries. Its former inbox entry is removed.
+The completed Brown bounded intake and resume result also leaves the inbox:
+`2026-09-11-tei-l-wayback-0001-v2` and
+`2026-09-11-tei-l-wayback-0001-v2-resumed` retain the admitted month and its
+byte-identical metadata reproduction. The original incomplete run supplies
+no extra completed month. Those manifests and the family lock remain the
+source of truth; further admissions are accepted future work in State, not
+an unresolved received handoff. No new retrieval or model review was run.

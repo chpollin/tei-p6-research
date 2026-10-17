@@ -1,6 +1,7 @@
 """Control-plane validation: the live tree and each error branch on fixtures."""
 
 import hashlib
+import subprocess
 from pathlib import Path
 
 import pytest
@@ -250,3 +251,57 @@ def test_a_matching_object_hash_passes(tmp_path) -> None:
     object_path.write_bytes(payload)
 
     assert validate(root) == []
+
+
+def test_private_restored_original_is_optional_but_never_exempt_from_hash_check(tmp_path) -> None:
+    payload = b"original bytes\r\n"
+    name = "00_sources/original.md"
+    root = control_plane(tmp_path, manifests={"2026-09-06-example": {
+        "source_id": "example-source",
+        "objects": [{"kind": "restored-original", "path": name,
+                     "sha256": hashlib.sha256(payload).hexdigest()}],
+    }})
+    missing = [f"sources/manifests/2026-09-06-example.yaml: missing object {name}"]
+    assert validate(root) == []
+    assert validate(root, require_local_originals=True) == missing
+    path = root / name
+    path.parent.mkdir()
+    path.mkdir()
+    assert validate(root) == missing
+    path.rmdir()
+    path.write_bytes(payload)
+    assert validate(root, require_local_originals=True) == []
+    path.write_bytes(payload.replace(b"\r\n", b"\n"))
+    mismatch = [f"sources/manifests/2026-09-06-example.yaml: SHA-256 mismatch for {name}"]
+    assert validate(root) == mismatch
+    assert validate(root, require_local_originals=True) == mismatch
+
+
+@pytest.mark.parametrize("kind, name", [
+    ("normalized-object", "00_sources/absent.json"),
+    ("restored-original", "corpus/normalized/absent.json"),
+])
+def test_private_original_exception_does_not_hide_public_objects(tmp_path, kind, name) -> None:
+    root = control_plane(tmp_path, manifests={"2026-09-06-example": {
+        "source_id": "example-source", "objects": [{"kind": kind, "path": name}],
+    }})
+    assert validate(root) == [f"sources/manifests/2026-09-06-example.yaml: missing object {name}"]
+
+
+def test_manifest_bound_bibliography_keeps_its_admitted_bytes_in_git(tmp_path) -> None:
+    repository = Path(__file__).resolve().parents[2]
+    relative = "references/p6-v1.json"
+    payload = (repository / relative).read_bytes()
+    manifest = yaml.safe_load((repository / "sources/manifests/2026-09-11-p6-council-citations.yaml")
+                              .read_text(encoding="utf-8"))
+    expected = next(item["sha256"] for item in manifest["objects"] if item["path"] == relative)
+    subprocess.run(["git", "init", "--quiet", str(tmp_path)], check=True)
+    (tmp_path / ".gitattributes").write_bytes((repository / ".gitattributes").read_bytes())
+    destination = tmp_path / relative
+    destination.parent.mkdir()
+    destination.write_bytes(payload)
+    subprocess.run(["git", "add", "--", ".gitattributes", relative], cwd=tmp_path, check=True)
+    indexed = subprocess.run(["git", "show", f":{relative}"], cwd=tmp_path,
+                             capture_output=True, check=True).stdout
+    assert indexed == payload
+    assert hashlib.sha256(indexed).hexdigest() == expected

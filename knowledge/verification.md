@@ -211,6 +211,7 @@ publication bodies and complete model responses remain outside Git.
 | `python -m tools.current_review .` | Material, instrument, coverage and saved judgment bindings | None beyond the declared Python dependencies |
 | Wave-one `--review-only` and the text-identity pilot checker | Current public pairs, short contexts, verdicts and bounded examples | None beyond the declared Python dependencies |
 | Guidelines export followed by `--check` | Reconstructs the admitted XML from the tracked representations | A separate writable output directory |
+| Public control-plane check | Public object hashes and present restored originals | `--require-local-originals` additionally requires declared restored originals under `00_sources/`; it does not check all raw responses |
 | Publication quotation and context fidelity | Admission locators and expected snapshot hashes | Exact original snapshot bytes named in the admission manifest |
 | `tools.full_review check` | Instrument and public binding definitions | Complete private run directories and their publication context file |
 | New V1 judgments | Runner and isolation contract | Supported local Claude CLI, authentication, available authorized reviewer and permission for the new calls |
