@@ -82,6 +82,24 @@ the split, under [[knowledge/p6-architecture]].
 | Interoperability and Processing | `40_output/11-interoperability-and-processing.md` | planned | Scope topic: Interoperability and Processing. |
 | P6 Design | `40_output/12-p6-design.md` | grounded | Architecture argument with nine source premises, thirteen posits and comparisons retaining their 0.1 scope. Chapter 02 supplies the broader model definition. Architecture and adoption verdicts remain open. |
 
+## Operator mode
+
+Auf direkten Auftrag vom 17.10.2026 ist der technische Übergabeabschluss
+beendet. Der TEI-P6-Operator wartet auf einen neuen konkreten Auftrag.
+Offene fachliche Entscheidungen, menschliche Verifikation und redaktionelle
+Abnahme bleiben erhalten. Sie lösen im Wartemodus keine automatische
+Recherche, Quellenaufnahme, Modellprüfung oder Änderung aus.
+
+Der zusätzliche Test aus einem tatsächlichen Clone mit eigener neuer
+`uv.lock`-Umgebung bestand nach dem Portabilitätsnachtrag `6e2ca19` mit
+1929 Tests, einem Plattform-Skip und den bekannten RDFLib-Warnungen.
+Öffentliche Gates, vollständiger XML-Export und Byteabgleich bestehen dort.
+Der lokale Kontrollcheck besteht zusätzlich mit
+`--require-local-originals`. Die frühere engere Clone-Prüfung mit vorhandenem
+Interpreter bleibt als historischer Prüfschritt im Journal nachvollziehbar.
+Die Handoff-Inbox enthält keine offenen Eingänge. Die folgenden Punkte sind
+bestehende Forschungs- und Facharbeit für einen künftigen Auftrag.
+
 ## Open work
 
 - Den technisch geprüften integrierten lokalen Stand fachlich beurteilen. Die menschliche Verifikation bleibt offen. Projektcommits unterliegen der spezifischen Regel in AGENTS.md, Push und Veröffentlichung sind nicht beauftragt.

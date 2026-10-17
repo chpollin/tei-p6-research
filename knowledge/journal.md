@@ -1194,3 +1194,18 @@ byte-identical metadata reproduction. The original incomplete run supplies
 no extra completed month. Those manifests and the family lock remain the
 source of truth; further admissions are accepted future work in State, not
 an unresolved received handoff. No new retrieval or model review was run.
+
+
+The initial fresh-environment full run failed only the repository control
+plane, with the two causes described above. After the correction was secured
+as `6e2ca19`, another actual local clone created its own environment through
+`uv sync --locked --offline`. The full suite passed with 1929 tests, one
+platform skip and the existing RDFLib deprecation warnings. Public review,
+source admission, inventory and export checks passed from that environment;
+Git remained clean. The strict restored-original mode reported the one
+intentionally absent private file in the clone, while it passed in the
+local research checkout containing the original. No missing original was
+silently treated as a completed source check. The operator now waits for a
+new concrete assignment at the owner's request. Existing research limits and
+human acceptance remain open; no background work or scheduled checks were
+started.
