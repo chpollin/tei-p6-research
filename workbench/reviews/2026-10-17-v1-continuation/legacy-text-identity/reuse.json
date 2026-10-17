@@ -1,0 +1,27 @@
+[
+  {
+    "id": "20_distillates/documents/tei-p5-anchor-4.12.0#^s1",
+    "origin": "workbench/reviews/2026-09-11-v1/legacy-text-identity",
+    "prompt_sha256": "090d3fbe36300cbb102e9312f5f15d7ee2cfd97e1d53e8262fe206817dc31e4e"
+  },
+  {
+    "id": "20_distillates/documents/tei-p5-anchor-4.12.0#^s2",
+    "origin": "workbench/reviews/2026-09-11-v1/legacy-text-identity",
+    "prompt_sha256": "d1cee22ec6deeaae72a22938db080b0a8df6bde63cb7a66b0c348787331c7c13"
+  },
+  {
+    "id": "20_distillates/documents/tei-p5-annotation-4.12.0#^s1",
+    "origin": "workbench/reviews/2026-09-11-v1/legacy-text-identity",
+    "prompt_sha256": "de2d99cdfa28fe2bd2789680809d637c66b27a40448c3cfdc1ca68b5e4dfeeb1"
+  },
+  {
+    "id": "20_distillates/documents/tei-p5-span-4.12.0#^s1",
+    "origin": "workbench/reviews/2026-09-11-v1/legacy-text-identity",
+    "prompt_sha256": "754768f31e0a91944a842ea352d00c9ee246df71143893a17fbfd294a392e84f"
+  },
+  {
+    "id": "20_distillates/documents/tei-p5-span-4.12.0#^s2",
+    "origin": "workbench/reviews/2026-09-11-v1/legacy-text-identity",
+    "prompt_sha256": "143d534cf20685638574600bfe945da922f98b73a7a2c0810a70a224633e40b0"
+  }
+]

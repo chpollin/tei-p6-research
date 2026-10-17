@@ -3,12 +3,12 @@ type: distillate
 source-type: document
 representation: "[[10_markdown/documents/tei-p5-relation-4.12.0]]"
 topics: ["[[Metadata and Entities]]"]
-status: validated
+status: grounded
 checked:
   machine-review: 2026-09-06
-  validation: 2026-09-06
+  validation: 2026-10-17
 created: 2026-09-06
-updated: 2026-09-06
+updated: 2026-10-17
 ---
 
 # Distillate: TEI P5 4.12.0 relation specification
@@ -20,8 +20,8 @@ This distillate reports the English descriptions and the English remarks paragra
 - In TEI P5 4.12.0, the English description of `relation` states that the element describes any kind of relationship or linkage amongst a specified group of items. [[10_markdown/documents/tei-p5-relation-4.12.0#^r1]] ^s1
 - In TEI P5 4.12.0, the English description of `relation` states that the relationship or linkage the element describes is one amongst a specified group of places, events, persons, objects or other items. [[10_markdown/documents/tei-p5-relation-4.12.0#^r1]] ^s2
 - In TEI P5 4.12.0, the English description of the `name` attribute of `relation` states that it supplies a name for "the kind of relationship of which this is an instance". [[10_markdown/documents/tei-p5-relation-4.12.0#^r2]] ^s3
-- In TEI P5 4.12.0, the English description of the `active` attribute of `relation` states that it identifies the active participants in a non-mutual relationship. [[10_markdown/documents/tei-p5-relation-4.12.0#^r3]] ^s4
-- In TEI P5 4.12.0, the English description of the `active` attribute of `relation` states that it identifies all the participants in a mutual relationship. [[10_markdown/documents/tei-p5-relation-4.12.0#^r3]] ^s5
+- For a non-mutual relationship, the English description of `relation/@active` in TEI P5 4.12.0 states that it identifies the active participants. [[10_markdown/documents/tei-p5-relation-4.12.0#^r3]] ^s4
+- For a mutual relationship, the English description of `relation/@active` in TEI P5 4.12.0 states that it identifies all participants. [[10_markdown/documents/tei-p5-relation-4.12.0#^r3]] ^s5
 - In TEI P5 4.12.0, the English description of the `mutual` attribute of `relation` states that it supplies a list of participants amongst all of whom the relationship holds equally. [[10_markdown/documents/tei-p5-relation-4.12.0#^r4]] ^s6
 - In TEI P5 4.12.0, the English description of the `passive` attribute of `relation` states that it identifies the passive participants in a non-mutual relationship. [[10_markdown/documents/tei-p5-relation-4.12.0#^r5]] ^s7
 - In TEI P5 4.12.0, the English remarks for `relation` state that only one of the attributes `active` and `mutual` may be supplied. [[10_markdown/documents/tei-p5-relation-4.12.0#^r6]] ^s8

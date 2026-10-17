@@ -9,7 +9,7 @@ method:
 status: draft
 language: en
 created: "2026-09-04"
-updated: "2026-09-11"
+updated: "2026-10-17"
 related: [INDEX, schema, data, verification, testing, governance, state, journal]
 ---
 
@@ -23,12 +23,20 @@ the completion gate in [[knowledge/testing]]. Record processing state in
 
 ## Environment
 
+Reading, searching, model checks and public review-seal checks need no model
+account. New V1 reviews use the concrete backend described in
+[[knowledge/governance#Model policy]] and `tools/review_execution.py`; check
+CLI availability, authentication and isolation support before authorized
+execution. Access to a harness alone establishes none of these. Historical
+private review evidence has its own transfer boundary in
+[[knowledge/verification#Portability of review evidence]].
+
 A working checkout needs Git, Python 3.11 or newer, PyYAML, pytest for the
 test suite, ruff for the linter, and the GitHub CLI when authenticated GitHub
 acquisition or repository administration is required. Install with `uv`:
 
 ```powershell
-uv sync
+uv sync --locked
 ```
 
 Without `uv`, use a Python virtual environment and install the declared tools.

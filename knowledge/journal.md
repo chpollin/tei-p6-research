@@ -9,7 +9,7 @@ method:
 status: draft
 language: en
 created: "2026-09-04"
-updated: "2026-09-07"
+updated: "2026-10-17"
 related: [INDEX, specification, plan, state]
 ---
 
@@ -1109,3 +1109,63 @@ erzeugt keinen öffentlichen Rohdateilink. Bei ausdrücklich als Git-Blob
 aufgenommenen Publikationen übernehmen Suche und Wissensansicht den gepinnten
 Commit aus dem Quelleneintrag. Ein Commit der letzten Dateiänderung ist
 keine alternative Versionsidentität des aufgenommenen Baums.
+
+## 2026-10-17 — Context-bound V1 continuation
+
+The owner authorized the missing V1 reviews and the prospectively defined
+blind second review. An isolated availability probe established the current
+`opus` response as `claude-opus-5-5`. Historical responses retain their
+recorded model identity. The V1 instrument and original representations were
+preserved, and changed claims and dependent uses received new prompts and
+responses. Complete unchanged packages retained their original provenance.
+
+Source corrections restored conditions, limited observations of test files
+and separated Council decisions from statements within discussions. The
+metadata chapter now keeps coexistence of conflicting views distinct from
+withdrawal or revision procedures and applies the documentability premise
+to its stated range of life changes and associated characteristics. The
+initial blind sample led to explicit ground attribution for catalogue
+entries and preservation of the URN form and both Schematron alternatives.
+Earlier judgments remain inspectable at the paths recorded in the
+[continuation record](../workbench/reviews/2026-10-17-v1-continuation/).
+
+The legacy quote-only review returned a nonpassing judgment on the
+contextual qualification of a publication statement that the full-context
+V1 review passed. The qualification was retained rather than removed to
+satisfy the shorter excerpt. Both records are kept, and the legacy finding
+remains open. This continuation assigns no human `verified` status and
+authorizes no publication.
+
+## 2026-10-17: Resolve the wave-one context finding and integrate source corrections
+
+The direct follow-up commissioned the remaining legacy context finding and HTML integration. Reading the admitted article confirms that the quoted string-mapping sentence recapitulates the earlier modifiability argument. The wave-one source prompt now includes short original contextual excerpts with source locators and an admitted snapshot binding. A fresh isolated review passes; the earlier partial-support judgment remains preserved. No research statement, immutable source representation or V1 instrument changed. All five pre-existing HTML changes reproduce exactly from HEAD with their recorded build dates, establishing that regeneration through the existing builders preserves their implementation. Their before-state copies and hashes are retained in the session scratchpad. The updated views incorporate the source corrections. Human verification remains separate.
+
+The full technical suite passed with 1925 tests, one platform skip and the existing RDFLib deprecation warnings. All page reproduction checks pass after integration, and both unchanged pages retain their exact pre-integration hashes. The current V1 material bindings also pass.
+
+## 2026-10-17: Prepare a versioned harness handoff
+
+The owner authorized incorporating the supported handoff findings and asked
+for subagents and a results report. Separate read-only audits found an
+obsolete shared-write reservation in the handoff, an overbroad prohibition
+on reused verdicts, model-family assignments that obscured the actual backend
+constraint, and a review overview still describing resolved findings as open.
+These are corrected in their canonical documents. The generic selection
+policy describes capability, availability, authorization and review
+independence. The existing V1 runner's Claude CLI and Opus restriction remain
+explicit implementation constraints, and historical model identities remain.
+The README uses the locked setup command and links the public/private review
+boundary. No new backend or storage mechanism was introduced.
+
+A subagent without the parent conversation followed the repository entry
+route for corrected transcription versus text identity. It found the formal
+definitions, a synthetic executable example, countercases and the open
+negative-identity decision. Its initial process restrictions were resolved
+through an authorized host-level read, where the bounded identity-evidence
+check passed. That observation supports one narrow research-entry path; it
+is not a general usability or scientific acceptance result. The main session
+checks the cited file state and the same executable boundary before relying
+on it. Private historical contexts remain local and have not been transferred.
+
+The entry adapters and index now make the handoff conditional on resuming its named inputs, preserving state, authority and test obligations while reducing unrelated startup reading. The public candidate-tree check passed current review bindings, both legacy audits, the identity-evidence example, Guidelines admission and reconstruction/check of the admitted XML without private raw data. Module paths were checked to ensure code came from the candidate tree. The existing dependency environment reconciled with `uv sync --locked --offline`. Both private full-review checks passed locally without new model calls.
+
+The portability observation was performed on an explicit temporary candidate tree using the existing dependency interpreter. It was not a new-machine setup or a clone of a committed October baseline. Versioning the prepared baseline remains the final handoff step.

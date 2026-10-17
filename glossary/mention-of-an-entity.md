@@ -44,7 +44,7 @@ and states the kind of object referred to only through a `type` value.
   - [[20_distillates/documents/tei-p5-guidelines-nd-4.12.0#^s7]]
 - [[30_assertions/p5-rs-contains-a-general-purpose-name-or-referring-string]] — In TEI P5 4.12.0, rs contains a general purpose name or referring string
   - [[20_distillates/documents/tei-p5-rs-4.12.0#^s1]]
-- [[30_assertions/p5-testnames-name-of-type-person-in-a-note-carries-a-key-and-no-ref]] — In the TEI P5 4.12.0 test document testnames.xml, a record states a relation to another person inside a note and marks that other person with a name element that carries type person and a key holding an identifier and no ref, so the kind of referent is given by type and the identification of the referent by key
+- [[30_assertions/p5-testnames-name-of-type-person-in-a-note-carries-a-key-and-no-ref]] — In the TEI P5 4.12.0 test document testnames.xml, a note states a spouse relation and contains a name with type person and a nonempty key but no ref
   - [[20_distillates/documents/tei-p5-test-testnames-4.12.0#^s6]]
 - [[30_assertions/p5-testnames-person-record-carries-id-sex-and-role-while-its-persname-carries-only-a-language]] — In the TEI P5 4.12.0 test document testnames.xml, a person record identifies the person by an xml:id on the person element and carries sex and role there, while its single persName child carries only xml:lang and no identifying attribute
   - [[20_distillates/documents/tei-p5-test-testnames-4.12.0#^s7]]

@@ -9,7 +9,7 @@ method:
 status: draft
 language: en
 created: "2026-09-06"
-updated: "2026-09-06"
+updated: "2026-10-17"
 related: [INDEX, project, data, operations, verification, testing, plan, journal, state]
 ---
 
@@ -176,14 +176,21 @@ enter `grounding`.
 
 ## Model policy
 
-Opus performs specified implementation and ingestion, meaning work whose
-acceptance criteria are written down before it starts. Fable performs
-judgment tasks, meaning selection of sources and cases, synthesis, ontology
-work, adversarial reading and evaluation. A model name refers to the current
-version of its family. Briefs are versioned files with a recorded SHA-256 so
-that a result can be tied to the exact instruction it followed. Where
-independence of a review is claimed, the reviewer comes from a different
-model family, as [[knowledge/verification]] requires.
+Choose an available model suitable for the commissioned task and use the
+project or session default unless the owner authorizes another selection.
+Check availability, required tools and the authorization for paid calls
+before execution. A harness does not acquire those capabilities by reading
+these instructions. Record the concrete model used, the brief and its
+SHA-256 with the result. Where independence of a review is claimed, the
+reviewer comes from a different model family, as [[knowledge/verification]]
+requires.
+
+The implemented V1 execution path currently uses the local Claude CLI and
+enforces the `opus` family. That is a backend compatibility constraint, not
+a general assignment of research roles to a provider. Another harness can
+read, modify and check the repository without that CLI. New V1 reviews need
+the documented backend or a separately implemented and checked equivalent
+isolation boundary. Historical model identities remain unchanged.
 
 ## Decisions
 

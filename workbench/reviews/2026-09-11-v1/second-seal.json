@@ -1,0 +1,1826 @@
+{
+  "instrument": "v1.7",
+  "emitted_at": "2026-10-17T16:13:05+00:00",
+  "scope_ids": [
+    "assertion-complete::30_assertions/p5-anchor-identifies-a-textual-point",
+    "assertion-complete::30_assertions/p5-generic-description-elements-carry-certainty-and-responsibility",
+    "assertion-complete::30_assertions/p5-guidelines-group-information-about-a-person-as-distinct-from-references-to-a-person-within-person",
+    "assertion-complete::30_assertions/p5-guidelines-use-generic-state-trait-and-event-customized-through-type-for-information-about-a-place",
+    "assertion-complete::30_assertions/p5-key-serves-cases-where-no-direct-link-is-required",
+    "assertion-complete::30_assertions/p5-nym-contains-the-definition-of-a-canonical-name-or-name-component",
+    "assertion-complete::30_assertions/p5-persname-contains-a-proper-noun-referring-to-a-person",
+    "assertion-complete::30_assertions/p5-person-holds-variant-name-forms-without-prioritization",
+    "assertion-complete::30_assertions/p5-person-provides-information-about-an-identifiable-individual",
+    "assertion-complete::30_assertions/p5-testnames-places-in-birth-and-death-are-named-without-identification-while-a-nationality-is-identified-by-key",
+    "assertion-complete::30_assertions/p6-v1-p6-sandbox-repository-kept-private-2026",
+    "assertion-complete::30_assertions/practice-v1-sampled-schematron-sits-in-odds-and-in-a-service",
+    "assertion::30_assertions/p5-guidelines-use-generic-state-trait-and-event-customized-through-type-for-information-about-a-place<-20_distillates/documents/tei-p5-guidelines-nd-4.12.0#^s49",
+    "assertion::30_assertions/p5-source-specifies-the-source-from-which-some-aspect-of-an-element-is-drawn<-20_distillates/documents/tei-p5-att.global.source-4.12.0#^s2",
+    "assertion::30_assertions/p5-state-attributes-a-status-or-quality-often-at-a-specific-time-or-for-a-date-range<-20_distillates/documents/tei-p5-state-4.12.0#^s3",
+    "assertion::30_assertions/p5-testnames-name-of-type-person-in-a-note-carries-a-key-and-no-ref<-20_distillates/documents/tei-p5-test-testnames-4.12.0#^s6",
+    "assertion::30_assertions/p6-v1-p6-sandbox-repository-kept-private-2026<-20_distillates/publications/p6-v1-council-f2f-2026-03-wurzburg#^s5",
+    "assertion::30_assertions/p6-v1-p6-work-located-in-teic-p6-sandbox-2026<-20_distillates/publications/p6-v1-council-f2f-2026-03-wurzburg#^s4",
+    "assertion::30_assertions/p6-v1-recorded-positions-on-new-p5-features-differ-2025-2026<-20_distillates/publications/p6-v1-council-f2f-2026-03-wurzburg#^s8",
+    "assertion::30_assertions/practice-v1-sampled-odds-name-their-tei-source-differently<-20_distillates/documents/practice-v1-cmif-odd-d171133e#^s1",
+    "assertion::30_assertions/structure-p5-has-several-nonhierarchical-methods<-20_distillates/documents/tei-p5-guidelines-nh-non-hierarchical-4.12.0#^s3",
+    "assertion::30_assertions/structure-p5-multiple-encoding-maintenance-cost<-20_distillates/documents/tei-p5-guidelines-nh-non-hierarchical-4.12.0#^s6",
+    "assertion::30_assertions/structure-p5-note-number-omission-is-conditional<-20_distillates/documents/tei-p5-note-4.12.0#^s7",
+    "assertion::30_assertions/structure-p6-numbered-divisions-reconsideration-label<-20_distillates/publications/teic-tei-issue-1400#^s3",
+    "assertion::30_assertions/szd-records-share-work-reference<-20_distillates/documents/szd-werke-2026-09-07#^s1",
+    "assertion::30_assertions/teic-tei-issue-2739-commenter-states-att-personal-is-a-member-of-att-naming-and-att-naming-of-att-canonical<-20_distillates/publications/teic-tei-issue-2739#^s5",
+    "assertion::30_assertions/teic-tei-issue-2739-commenter-states-att-personal-is-a-member-of-att-naming-and-att-naming-of-att-canonical<-20_distillates/publications/teic-tei-issue-2739#^s6",
+    "assertion::30_assertions/teic-tei-issue-337-author-announces-an-interim-guidelines-change-telling-people-to-switch-to-ref<-20_distillates/publications/teic-tei-issue-337#^s5",
+    "chapter-complete::40_output/02-abstract-model",
+    "chapter-complete::40_output/12-p6-design",
+    "contested::30_assertions/p5-guidelines-admit-persons-places-and-organizations-as-relationship-participants<>30_assertions/p5-relation-describes-a-relationship-amongst-places-events-persons-or-objects",
+    "contested::30_assertions/p5-key-remarks-propose-no-particular-syntax-because-its-form-depends-on-project-practice<>30_assertions/teic-tei-issue-337-author-reports-a-wish-to-deprecate-key-held-back-by-its-wide-use",
+    "distillate-complete::20_distillates/documents/practice-v1-cmif-freieisen-stoeber-9a7ebe3b",
+    "distillate-complete::20_distillates/documents/practice-v1-epidoc-schema-readme-e5b68eb8",
+    "distillate-complete::20_distillates/documents/tei-p5-annotation-4.12.0",
+    "distillate-complete::20_distillates/documents/tei-p5-att.editlike-4.12.0",
+    "distillate-complete::20_distillates/documents/tei-p5-persname-4.12.0",
+    "distillate-complete::20_distillates/documents/tei-p5-test-testoverlap-4.12.0",
+    "distillate-complete::20_distillates/publications/p6-v1-council-2026-04-24",
+    "source::20_distillates/documents/hsa-letter-4493-2026-09-07#^s1",
+    "source::20_distillates/documents/practice-v1-cmif-odd-d171133e#^s4",
+    "source::20_distillates/documents/practice-v1-cmif-odd-d171133e#^s6",
+    "source::20_distillates/documents/practice-v1-correspsearch-check-566b2d29#^s1",
+    "source::20_distillates/documents/practice-v1-dracor-odd-c2f9e814#^s2",
+    "source::20_distillates/documents/practice-v1-epidoc-odd-e5b68eb8#^s2",
+    "source::20_distillates/documents/practice-v1-epidoc-schema-readme-e5b68eb8#^s3",
+    "source::20_distillates/documents/practice-v1-isicily-isic000156-262784ad#^s2",
+    "source::20_distillates/documents/practice-v1-isicily-isic000156-262784ad#^s6",
+    "source::20_distillates/documents/tei-p5-att.editlike-4.12.0#^s7",
+    "source::20_distillates/documents/tei-p5-att.editlike-4.12.0#^s9",
+    "source::20_distillates/documents/tei-p5-att.global.linking-4.12.0#^s8",
+    "source::20_distillates/documents/tei-p5-att.global.source-4.12.0#^s9",
+    "source::20_distillates/documents/tei-p5-att.personal-4.12.0#^s2",
+    "source::20_distillates/documents/tei-p5-att.personal-4.12.0#^s3",
+    "source::20_distillates/documents/tei-p5-guidelines-ds-defaulttextstructure-4.12.0#^s19",
+    "source::20_distillates/documents/tei-p5-guidelines-ds-defaulttextstructure-4.12.0#^s20",
+    "source::20_distillates/documents/tei-p5-guidelines-ds-defaulttextstructure-4.12.0#^s3",
+    "source::20_distillates/documents/tei-p5-guidelines-ds-defaulttextstructure-4.12.0#^s37",
+    "source::20_distillates/documents/tei-p5-guidelines-ds-defaulttextstructure-4.12.0#^s44",
+    "source::20_distillates/documents/tei-p5-guidelines-ds-defaulttextstructure-4.12.0#^s45",
+    "source::20_distillates/documents/tei-p5-guidelines-ds-defaulttextstructure-4.12.0#^s7",
+    "source::20_distillates/documents/tei-p5-guidelines-nd-4.12.0#^s11",
+    "source::20_distillates/documents/tei-p5-guidelines-nd-4.12.0#^s15",
+    "source::20_distillates/documents/tei-p5-guidelines-nd-4.12.0#^s27",
+    "source::20_distillates/documents/tei-p5-guidelines-nd-4.12.0#^s43",
+    "source::20_distillates/documents/tei-p5-guidelines-nd-4.12.0#^s7",
+    "source::20_distillates/documents/tei-p5-guidelines-nh-non-hierarchical-4.12.0#^s11",
+    "source::20_distillates/documents/tei-p5-guidelines-nh-non-hierarchical-4.12.0#^s26",
+    "source::20_distillates/documents/tei-p5-guidelines-nh-non-hierarchical-4.12.0#^s4",
+    "source::20_distillates/documents/tei-p5-idno-4.12.0#^s3",
+    "source::20_distillates/documents/tei-p5-milestone-4.12.0#^s1",
+    "source::20_distillates/documents/tei-p5-note-4.12.0#^s6",
+    "source::20_distillates/documents/tei-p5-pb-4.12.0#^s1",
+    "source::20_distillates/documents/tei-p5-pb-4.12.0#^s3",
+    "source::20_distillates/documents/tei-p5-person-4.12.0#^s6",
+    "source::20_distillates/documents/tei-p5-relation-4.12.0#^s3",
+    "source::20_distillates/documents/tei-p5-relation-4.12.0#^s5",
+    "source::20_distillates/documents/tei-p5-relation-4.12.0#^s7",
+    "source::20_distillates/documents/tei-p5-test-testnames-4.12.0#^s11",
+    "source::20_distillates/documents/tei-p5-test-testnames-4.12.0#^s5",
+    "source::20_distillates/publications/p6-v1-council-f2f-2025-09-krakow#^s4",
+    "source::20_distillates/publications/p6-v1-council-p6-2026-05-20#^s1",
+    "source::20_distillates/publications/p6-v1-council-p6-2026-05-20#^s3",
+    "source::20_distillates/publications/p6-v1-time-for-p6-slides-eb924226#^s7",
+    "source::20_distillates/publications/renear-wickett2010documents#^s1",
+    "source::20_distillates/publications/teic-tei-issue-1505#^s1",
+    "source::20_distillates/publications/teic-tei-issue-2739#^s11",
+    "source::20_distillates/publications/teic-tei-issue-337#^s2",
+    "source::20_distillates/publications/teic-tei-issue-337#^s23"
+  ],
+  "units_sha256": "311d873a9a363003b5d930b56be53d414d51b6f92427291504b8427565be3e21",
+  "context_sha256": "aad14e3c92849c73ad12bdbc75cf1d47f686514e91912eaf7b9e5e9e1c967877",
+  "material_hashes": {
+    "10_markdown/documents/hsa-letter-4493-2026-09-07": "a88fa564f2444bc765afd51384eb15f27dda457a71e14a269566ea517ccde5a7",
+    "10_markdown/documents/practice-v1-cmif-freieisen-stoeber-9a7ebe3b": "e2e8e8c903e6e86a9cf6a9f4e8c4456ee270479a1c4e7eab3cda1c3607a9be60",
+    "10_markdown/documents/practice-v1-cmif-odd-d171133e": "9e31f2a632f56d37b70f763ac1ff78dea11dc853d51fc464c169eaca217c32ac",
+    "10_markdown/documents/practice-v1-correspsearch-check-566b2d29": "5311f163754e53a1156ecfdaf358be719f167ee8de3ccd4f0ac215e27203ffc4",
+    "10_markdown/documents/practice-v1-dracor-odd-c2f9e814": "8fe9394017cdcbeb3059c638de0aa91dff3fe5928de0990a880c3c8e9e6b0c18",
+    "10_markdown/documents/practice-v1-epidoc-odd-e5b68eb8": "b0584ec75ab7f81f8d3e8fdcef6ce66e1724751403486313cc8c0dc3eb56143f",
+    "10_markdown/documents/practice-v1-epidoc-schema-readme-e5b68eb8": "d3e116bc6fc3a4e314c38a9995ff89310a9fdbcbfd7880cc2dbd8111de2580e8",
+    "10_markdown/documents/practice-v1-isicily-isic000156-262784ad": "67f871838cdfb0d0be447f452e4e19aafda91e6ba422a4f6f7885d1fac66ed61",
+    "10_markdown/documents/tei-p5-annotation-4.12.0": "c291b10525bdf5ee012764e541bec57fae451ed48071a34bbe500e445c84b45e",
+    "10_markdown/documents/tei-p5-att.editlike-4.12.0": "ffe2eacaf91f1f29728088c0be48bef5eb900f90bae2ae1977d6edf4f30c7955",
+    "10_markdown/documents/tei-p5-att.global.linking-4.12.0": "47b346427489f44bbdbef4f93e7f72eceeffdd9eea1a3c86c3e767cb206b5630",
+    "10_markdown/documents/tei-p5-att.global.source-4.12.0": "39cc4fdeba81a71512e4728d0c9eb2ff852a615918500b3f18962d416d92c8ad",
+    "10_markdown/documents/tei-p5-att.personal-4.12.0": "d99ecd7edb40e576f602d0b84f02db4cd410012314e3318204af332cd6c82a2c",
+    "10_markdown/documents/tei-p5-guidelines-ds-defaulttextstructure-4.12.0": "a5cef7114402b9f2aca936164744db71df524cc983438ffbdb1dfb9d237f7bf9",
+    "10_markdown/documents/tei-p5-guidelines-nd-4.12.0": "3244f389937cd5d43e14855f8430d4a1bc6e93970aabda2811c046ee020ca72c",
+    "10_markdown/documents/tei-p5-guidelines-nh-non-hierarchical-4.12.0": "b750e861970c6e322a361fc612ad4536a4494f0fc5694010bf2ba38c1af8309f",
+    "10_markdown/documents/tei-p5-idno-4.12.0": "1ba6294a63ba5752be41ddfdc633e6563952230f3f06cb53d9c55b2f6bf6f907",
+    "10_markdown/documents/tei-p5-milestone-4.12.0": "d388a3e6bec2472b792bc6875b3f28763eee05698466617e37d2ef40b47a311d",
+    "10_markdown/documents/tei-p5-note-4.12.0": "9b84a660474ee291025b7026e2e21251962085ff6897401b4170d877ed30c69e",
+    "10_markdown/documents/tei-p5-pb-4.12.0": "87031ae26d141f013b24c58acdf481c7b7cfdcfe436f241c4b85724af9376e4e",
+    "10_markdown/documents/tei-p5-persname-4.12.0": "8d4a02c374df7b95c6177f4b4322387b42d37eff010f7ce349dbfdebe7b4f32c",
+    "10_markdown/documents/tei-p5-person-4.12.0": "b21f43704e7df9564b5f7a902fb200a0a9b651840d9f310a5ad04032a5a453f2",
+    "10_markdown/documents/tei-p5-relation-4.12.0": "8af304ae712ce70ef225ce86f548ab0fce9c348b89ee7947506dbec3c95b7598",
+    "10_markdown/documents/tei-p5-test-testnames-4.12.0": "255270bc6ac866903966abb1ddb1dfc007e12ae4a8d6b5bda1afc38370d28969",
+    "10_markdown/documents/tei-p5-test-testoverlap-4.12.0": "e08e212addc1f8092d1c627757321ee6bbd5f907922144bd538828f433e4d1fb",
+    "20_distillates/documents/hsa-letter-4493-2026-09-07": "badf1363493fdf8e7af7819fa5018a1412c44d1698ede1cdf36a3fe52accff0f",
+    "20_distillates/documents/practice-v1-cmif-freieisen-stoeber-9a7ebe3b": "3c0a806424788053cefeddf9100bd550c7093eb67419e5cda55e3a4651b168ed",
+    "20_distillates/documents/practice-v1-cmif-odd-d171133e": "1ae9e2577ff8ae3e157eefc16909b58267e8962ae6b6248e7624c85221464660",
+    "20_distillates/documents/practice-v1-correspsearch-check-566b2d29": "a337fc60846007402d1855e8ad4ae4813164c272c884f148d62e1e2b9028eddf",
+    "20_distillates/documents/practice-v1-dracor-odd-c2f9e814": "a09beb9652272b1e277028c5d2ab38cf566045c288a36d67ff22ca594cfee514",
+    "20_distillates/documents/practice-v1-epidoc-odd-e5b68eb8": "4375c4f5927f2b9a70d390f0a1e44c755a219767746cdad1b76e1633c65cc84c",
+    "20_distillates/documents/practice-v1-epidoc-schema-readme-e5b68eb8": "556c746b40436b0d8a5b389c88c1aa75a9270a56d7e922dc881f951c0721e92b",
+    "20_distillates/documents/practice-v1-isicily-isic000156-262784ad": "8532d3d34305df9f673763b1c011cec23718bc9182b574ab98fdf9ac583dbbc8",
+    "20_distillates/documents/szd-werke-2026-09-07": "3aa1184b4ad24dc286cf05ea579092f3e711bed8f09835497f2df4bdc77e5cc9",
+    "20_distillates/documents/tei-p5-anchor-4.12.0": "729328241d3f5cbaa410453daecb0be1229da9e99f13eddc106f902a745210d6",
+    "20_distillates/documents/tei-p5-annotation-4.12.0": "8dd0752695246a39561af7398f00104e53977436adc093e4e2e25e6ffcf0c7ae",
+    "20_distillates/documents/tei-p5-att.canonical-4.12.0": "ab142c8a0ebf93fbe2c2692b6bb25862178667a6498d4bc0f5a2d13a769357b3",
+    "20_distillates/documents/tei-p5-att.editlike-4.12.0": "37a3e48861092b191fb9959b57561314dd0d25e08686605f8ea9ab247fc0bbff",
+    "20_distillates/documents/tei-p5-att.global.linking-4.12.0": "3e5f3b6699f02e6fe39a0c6f8310fd08f0a59bf61b9d8025011ab074c1e09caf",
+    "20_distillates/documents/tei-p5-att.global.source-4.12.0": "690abcb59d23389cafc5dbf5174033f0f3244b5094a43f1072a676ddda031b06",
+    "20_distillates/documents/tei-p5-att.personal-4.12.0": "07d2406ace6ce96f52ace1f39d00b2961830c7343bdd9114b19a84ee45573000",
+    "20_distillates/documents/tei-p5-guidelines-ds-defaulttextstructure-4.12.0": "6b09122b31b58fb5b70c7ef8e448cc13bb0fb93bdb5661d34571aa582bfd784f",
+    "20_distillates/documents/tei-p5-guidelines-nd-4.12.0": "00b0991e188efd38e873bd604eaa61af2d44984634a02dc47381207e789df3aa",
+    "20_distillates/documents/tei-p5-guidelines-nh-non-hierarchical-4.12.0": "4c38fa7978b9fbf5228eb2e3529d26b664cd6ccf5d9fd311e3947b0558811cb9",
+    "20_distillates/documents/tei-p5-idno-4.12.0": "9280c466124033342e0d8fc2091968d3ffba726ede2bd9bea31108bb2d174932",
+    "20_distillates/documents/tei-p5-milestone-4.12.0": "d2cc2c85308537ebea90eebfa64cc213ddf1ff06437dffa5a5acfb70359b8ea7",
+    "20_distillates/documents/tei-p5-note-4.12.0": "d21553f63622ab944a07ef419c78b2062f990c39c25e0433297fff264fbbc4a4",
+    "20_distillates/documents/tei-p5-nym-4.12.0": "d2b53857064d22e23043072f11236bdac4c2de28880957f905e5949458cc2a50",
+    "20_distillates/documents/tei-p5-pb-4.12.0": "40bda56abb8996f9bab22999a5329a990e6cf43396570372b7813670b65bef13",
+    "20_distillates/documents/tei-p5-persname-4.12.0": "c765f41cf2c70e7a9ba3a50ab1a161d714390489c67abe1b602ab6a6934f37ca",
+    "20_distillates/documents/tei-p5-person-4.12.0": "e9442f6f6179d6533289dd71483292092735a985e17864c1dfd34f27fcd36df9",
+    "20_distillates/documents/tei-p5-relation-4.12.0": "5b50c009651324ca755162d18d01630b5fec87a3db91abc3f6629368aaf0834f",
+    "20_distillates/documents/tei-p5-state-4.12.0": "a001edb71914d34c364c0332fe72c6685af39aa5bbcfb00ce859f8a61135060a",
+    "20_distillates/documents/tei-p5-test-testnames-4.12.0": "2d568061ae6c9242cb272bef2f32679a9a0f2099af0c32d56934372f75afe58e",
+    "20_distillates/documents/tei-p5-test-testoverlap-4.12.0": "90bb550e7b18ef163d72817ac6d9617a3cce9bb38cae35f3ad60a1b33d5178d8",
+    "20_distillates/publications/p6-v1-council-2026-04-24": "61337acc53d51b8b2d6ec74e0d8e17b4ce27ef2f5487cde5f1a0c01c75e866fb",
+    "20_distillates/publications/p6-v1-council-f2f-2025-09-krakow": "19e632cf72a57bb60413b2ff8d17606e9ceb5e805667bfd20aac1a3057d58790",
+    "20_distillates/publications/p6-v1-council-f2f-2026-03-wurzburg": "0c5c78e9fa2410baf0ca6e8ec7e1001afec78937a2deefab9214fa073709d0d2",
+    "20_distillates/publications/p6-v1-council-p6-2026-05-20": "e0103dd1043d127c9bda324fc031e62fd4b316a7b74b1fb631f644df8ef46b8c",
+    "20_distillates/publications/p6-v1-time-for-p6-slides-eb924226": "9b38d6bc933e650ceb111ab1553d41a4078a45030e08163c0d2c6e83c0fb56aa",
+    "20_distillates/publications/renear-wickett2010documents": "22d9dc0aa4df944645766e40a3ac156800d37c56f2022c2e9522c4cc38e61ff1",
+    "20_distillates/publications/teic-tei-issue-1400": "acd6fe0149fc6a1686b9394365dfaa05472734c8b6d5aa5cd74732e21131a36c",
+    "20_distillates/publications/teic-tei-issue-1505": "837ba3b1bd02f57096e1fd91f6b6e70edf51da1007d555be329a2eb9cade406b",
+    "20_distillates/publications/teic-tei-issue-2739": "b96823a160918c9ddf7a01fc11005d3b47649dad7be15b04f8d4e0d7225beaff",
+    "20_distillates/publications/teic-tei-issue-337": "36a2022ca4d4a9c797a8f14ba1be1a96e21fbe82ffcc148c711ef20521445a3d",
+    "30_assertions/humboldt-diary-encodes-a-dated-nested-heading": "daa7c01a2866d1b10a06f01efc438f417764b64e3ca59aee98ccefe19c8ccef2",
+    "30_assertions/humboldt-diary-encodes-a-page-pointer-and-separate-foliation": "b50c93b34d17e26d650c0ac8ebeb6b7b2da1a031a259f6b13f166b0243f35ac6",
+    "30_assertions/humboldt-diary-separates-an-unknown-hand-note-and-editorial-explanation": "f45f424df00708a277fd5576a7144d92bcdd7307ed4d97fc3fa8f4ccac9a3829",
+    "30_assertions/p5-anchor-identifies-a-textual-point": "4231f9faa99757d0c46f0b45d71a413be9acd803186a1537f65125854f20da0a",
+    "30_assertions/p5-annotation-refers-to-web-annotation-model": "f3d402a3b80f84239ff403c7cfd9ee0fe7c7fb5b28eecd230e1683d2900989db",
+    "30_assertions/p5-each-statement-about-a-life-must-be-documentable-and-time-framed": "b35d9da06297df7eac3a3fd5b91f9c14a73b0303782e9866e0bbcbd9eb4ce752",
+    "30_assertions/p5-entity-information-comprises-statements-about-traits-states-and-events": "70042eda50c1798312ef7ad95c0b9a96599ab913b583f7781f2417e437f0d35c",
+    "30_assertions/p5-generic-description-elements-carry-certainty-and-responsibility": "f2266b8f004ac98667e03f8f1725927dd410a0f7bc2290ac727358dc30737281",
+    "30_assertions/p5-guidelines-admit-persons-places-and-organizations-as-relationship-participants": "dd93d08935b4de4c85f62fb0cc2e192434863d1ab97b16b2750c4498548ee488",
+    "30_assertions/p5-guidelines-group-information-about-a-person-as-distinct-from-references-to-a-person-within-person": "4617bc85a8f1122b117a163bbf52f100d2e4454a5d8ee31001cf625db82594de",
+    "30_assertions/p5-guidelines-separate-the-entity-record-from-references-to-the-entity": "ecc26301482787f58f0b4fadb9907505a106c033a933bb5292c643aea4eb3635",
+    "30_assertions/p5-guidelines-use-generic-state-trait-and-event-customized-through-type-for-information-about-a-place": "b2baa6aba5ba8314cf2c54a087981984aa67f7310b37d1f93d7c614154857bd0",
+    "30_assertions/p5-key-remarks-propose-no-particular-syntax-because-its-form-depends-on-project-practice": "8893b0c210d43303827a15c9e414e3734a90852dd6322504857c12b789fa467d",
+    "30_assertions/p5-key-serves-cases-where-no-direct-link-is-required": "0c08c7769aec25a1d576e2232b8224599ecb58ca7dc787a6617cbb72b6d80dbb",
+    "30_assertions/p5-nym-contains-the-definition-of-a-canonical-name-or-name-component": "b1f00f0e6fd26b1a6782059b61decaaf994e5db59aa9ceeae33a742452c01335",
+    "30_assertions/p5-persname-contains-a-proper-noun-referring-to-a-person": "3b0febd50e5e29f7659448f9a614d43dfea0aa4fb3466a3174ae6c6748783206",
+    "30_assertions/p5-person-holds-variant-name-forms-without-prioritization": "255b5ce7a886a39111dde08303b33c2c8808ed2744008bf4f7e7dd2349749ece",
+    "30_assertions/p5-person-provides-information-about-an-identifiable-individual": "d9d4582ca497da014633b48a3d4837a37a1850414e06252f225c575388c8fd9f",
+    "30_assertions/p5-relation-describes-a-relationship-amongst-places-events-persons-or-objects": "332acdc76a018dfe795392e86168ef96e1980d7536dd8450084ae95e944544db",
+    "30_assertions/p5-source-specifies-the-source-from-which-some-aspect-of-an-element-is-drawn": "6509b88680c5bc187bd8fdd6d0ffed0a983dd466e2cc54c09ba8e658cc46bc57",
+    "30_assertions/p5-span-associates-interpretation-with-text": "a4a5fb08ef836916b9650f7f026430a4b489fc1b2203c2c0cc9e038e852dd3a2",
+    "30_assertions/p5-span-from-identifies-start-or-whole-node": "c84cf2c15e9d3c08e0271d5e58b872492c725bec5cb1d07295cffe7cce8d3cd8",
+    "30_assertions/p5-state-attributes-a-status-or-quality-often-at-a-specific-time-or-for-a-date-range": "e272fb4cb35490cbe1196cca0f89972439ce57e682b71417c6001582c7732ebd",
+    "30_assertions/p5-testnames-name-of-type-person-in-a-note-carries-a-key-and-no-ref": "09bc3cae249490c62f26e261e50f428e78c004b69169167418d76c95de0fa7de",
+    "30_assertions/p5-testnames-places-in-birth-and-death-are-named-without-identification-while-a-nationality-is-identified-by-key": "0bb42fda5d212fdf32f32bc683587499d5499e39e1ca164443e4e9074a1e6e45",
+    "30_assertions/p6-v1-p6-sandbox-repository-kept-private-2026": "8d5c896cefd59a59deb05494fa58f611406e1c3c4b095ba91ac850fcf7a1227c",
+    "30_assertions/p6-v1-p6-work-located-in-teic-p6-sandbox-2026": "ff0338a501931a33efb2d1a2d61e204100a0ef35b35b7af8305afbcc7f7e7197",
+    "30_assertions/p6-v1-recorded-positions-on-new-p5-features-differ-2025-2026": "2f8608458854543376af70ed35c59b8d5d6b4ddb3f8e41df733238a63e1b23d3",
+    "30_assertions/piez-treats-optional-hierarchy-as-object-of-study": "19cf91b9416915c3040ef54c4b0a79a29e236a0680d515b639e76c1ad95d766b",
+    "30_assertions/practice-v1-sampled-odds-name-their-tei-source-differently": "850538fa3a297886385980cc9b65aecbd7610c089406042cba90c5b1d9d1cd76",
+    "30_assertions/practice-v1-sampled-schematron-sits-in-odds-and-in-a-service": "12302e9f988e9a48a19c6af72edfa94e8ff7a735f80f841a23fa3e04158a4dcc",
+    "30_assertions/renear-wickett-distinguish-string-mapping-from-persistent-identity": "a1bf29d5c260280c5c096f8f9c8382ffaa5274fa8916d9d3aa19ad397ae51240",
+    "30_assertions/structure-p5-has-several-nonhierarchical-methods": "df4eab3218996632dce4f9e80d6cc888d7f77437f5fa95b8795204aa5872496b",
+    "30_assertions/structure-p5-multiple-encoding-maintenance-cost": "7e93e022f8f683a6c9336a8e9d808ea9774f2086a5a456a3375d7475ecce3487",
+    "30_assertions/structure-p5-note-number-omission-is-conditional": "75ccaddc91f93e2bc011a1991078e2a815e688ff467f6e38c3085a4fc19e693e",
+    "30_assertions/structure-p6-numbered-divisions-reconsideration-label": "af00e07f68cd793d5b171cc170defe9e389f760fd1608911d330e8b5364fc75b",
+    "30_assertions/szd-records-share-work-reference": "7497070dbe7d2979335895eaca9ceb2f4e7523cb92d35715974588674ab86882",
+    "30_assertions/tei-fr363-proposes-target-on-span": "b3c353c097aafad481d04c8aa4f9be69ef00b1a96af8c35c9fe0deb7726701f7",
+    "30_assertions/teic-tei-issue-2739-commenter-states-att-personal-is-a-member-of-att-naming-and-att-naming-of-att-canonical": "de010dc6ea8ba1d5639118f33e273c4cdccd6f784deaac1d9be7ec706d011cc6",
+    "30_assertions/teic-tei-issue-337-author-announces-an-interim-guidelines-change-telling-people-to-switch-to-ref": "e7d3c39ae5772b600e6f923d7d54dda926eb29d200603305324fcb5a221020b7",
+    "30_assertions/teic-tei-issue-337-author-reports-a-wish-to-deprecate-key-held-back-by-its-wide-use": "3b7714a2a8723f6bc879384fe09d0bc80f883afe488c6bb9d46576ebf2e0b9d7",
+    "30_assertions/w3c-quote-selection-can-match-multiple-sequences": "446e6ec0a9ae72d0c0ae7ec1b3814f55d855f27a2e7df186cfc1d9d22d5cd07d",
+    "40_output/02-abstract-model": "2c48a83d0dab2fe2dddf9a96f6fa3ea987e10b224c270468e097642b865bcc3d",
+    "40_output/12-p6-design": "acfdebecf8773f11e11d2a68fa21a53c88678c3189edc43d8a55419ff0b8b672"
+  },
+  "counts": {
+    "source": 50,
+    "assertion": 16,
+    "distillate-complete": 7,
+    "assertion-complete": 12,
+    "chapter-complete": 2,
+    "contested": 2
+  },
+  "unit_hashes": {
+    "source::20_distillates/documents/hsa-letter-4493-2026-09-07#^s1": "56bd49304d17a7562d5e86f2c8435cddf028fc802ab0e56875a478ef5fd2ead7",
+    "source::20_distillates/documents/practice-v1-cmif-odd-d171133e#^s4": "22ef8316f1fa3359074634a24a44ddeea37fef468fcdb4713a31efb21a6eb659",
+    "source::20_distillates/documents/practice-v1-cmif-odd-d171133e#^s6": "0045df24cf1dab1a07a187586c8202c819e0d2a47de8020fea5595df2d326f3e",
+    "source::20_distillates/documents/practice-v1-correspsearch-check-566b2d29#^s1": "f5ff93346317ab97509fbf3e50602f20ee09d9ef47a48b97486bebc113d5cc49",
+    "source::20_distillates/documents/practice-v1-dracor-odd-c2f9e814#^s2": "18bf99fa5d6b171e8021534a931bd6435db15b3bb43c2c5a5aaab40aaf4656b7",
+    "source::20_distillates/documents/practice-v1-epidoc-odd-e5b68eb8#^s2": "c157637ea81ac67612ea29c99e0342389782aa0b06467b955a1a7c0fde6a8a94",
+    "source::20_distillates/documents/practice-v1-epidoc-schema-readme-e5b68eb8#^s3": "67b16916d471f97f47ebd6cbaffe7744ed8cb591a4350615bffbd86b3c8f1fd0",
+    "source::20_distillates/documents/practice-v1-isicily-isic000156-262784ad#^s2": "b8e19cf94f55f8f72258f3122371bf8731bac531e16ef33c36faaae7d765153b",
+    "source::20_distillates/documents/practice-v1-isicily-isic000156-262784ad#^s6": "a08ee80b5a677ef95f8f1cc002cfa39402e04c9296a899b632b7142ce8f7b524",
+    "source::20_distillates/documents/tei-p5-att.editlike-4.12.0#^s7": "f540de588e600dcf1deaf7252374fd2419621138db9f33dd04596ad2f27db396",
+    "source::20_distillates/documents/tei-p5-att.editlike-4.12.0#^s9": "d4c587451945d31ba3a7643e26523aa8e776fde941dc14375610bb1e87888969",
+    "source::20_distillates/documents/tei-p5-att.global.linking-4.12.0#^s8": "fe4caa2af55ed21688b682ef2688dc758ddbc0777fef7002454917eb2ce0e3cd",
+    "source::20_distillates/documents/tei-p5-att.global.source-4.12.0#^s9": "4cffd832437d35c55bcd8974ad0ede9236c044f3160d73e3ab646358f4c17e00",
+    "source::20_distillates/documents/tei-p5-att.personal-4.12.0#^s2": "214b15443deb8df9cf498c9db4fb22716a358324b4f5509ed0de091599ca9d82",
+    "source::20_distillates/documents/tei-p5-att.personal-4.12.0#^s3": "5aeb99c3d53b8dd19fc08a9eaa0a2dddbc0b8ccf2d807d8b5615817dafe6ec59",
+    "source::20_distillates/documents/tei-p5-guidelines-ds-defaulttextstructure-4.12.0#^s3": "465d4a5e72f8f30b05ff5d949874f74473eccecba207965804d373eaf173592e",
+    "source::20_distillates/documents/tei-p5-guidelines-ds-defaulttextstructure-4.12.0#^s7": "2891ee96dacab6c48166af5b7fea7cb93ff5278b709ea23997bc9a240c448f08",
+    "source::20_distillates/documents/tei-p5-guidelines-ds-defaulttextstructure-4.12.0#^s19": "e4b8951c128fb5c6d0472d3ddadbc692d06570a526cd5d54e5182d1a465e88f6",
+    "source::20_distillates/documents/tei-p5-guidelines-ds-defaulttextstructure-4.12.0#^s20": "4afcecbf8d726040dad7c9f222d175537c1f11871ec44342fa37b1a676d4a424",
+    "source::20_distillates/documents/tei-p5-guidelines-ds-defaulttextstructure-4.12.0#^s37": "47d18955fe61c776fb03971633ae63e3cb1641ea67cd3acae70458bfd07641ad",
+    "source::20_distillates/documents/tei-p5-guidelines-ds-defaulttextstructure-4.12.0#^s44": "dad428711701ff4dd5171006d31199fc47166459bca3a2f91154df4ba44f92e8",
+    "source::20_distillates/documents/tei-p5-guidelines-ds-defaulttextstructure-4.12.0#^s45": "d51a409bce78da65ffdb98eef60cac4bf2a1d983101f33ceee3e00d317d4ff9b",
+    "source::20_distillates/documents/tei-p5-guidelines-nd-4.12.0#^s7": "0145c1aaf4995b24d5cbe8db0886a4597fccf6e6cff2a09aaf0ea7f06bc96751",
+    "source::20_distillates/documents/tei-p5-guidelines-nd-4.12.0#^s11": "5ae6c4243c67829006a78d3746d1585fd8f2290045327732e88f4b27628b0092",
+    "source::20_distillates/documents/tei-p5-guidelines-nd-4.12.0#^s15": "01e46278f77a1c1dd11b2b1daaba40e550faa15cf99ffdf7ca0dcf577fd7df89",
+    "source::20_distillates/documents/tei-p5-guidelines-nd-4.12.0#^s27": "525c024dc0a078547b4c9108ddc04fd152c932f55e5c3444ee6c243cc27bb0e5",
+    "source::20_distillates/documents/tei-p5-guidelines-nd-4.12.0#^s43": "a77c4408b81655ea6205a52a1ae3b56f94d77461e1e01982590e9346d692e6ff",
+    "source::20_distillates/documents/tei-p5-guidelines-nh-non-hierarchical-4.12.0#^s4": "464b0b939c9859311aedfe2758c55e9dd5870c468c63fbefbf8ebf82bab4bfb7",
+    "source::20_distillates/documents/tei-p5-guidelines-nh-non-hierarchical-4.12.0#^s11": "c67f49034f0240dc1c7d3a5e0e3267a302b992284eb514976777a7a47f908c3a",
+    "source::20_distillates/documents/tei-p5-guidelines-nh-non-hierarchical-4.12.0#^s26": "c135969d99284b97428b9db5cd7f8b0a5b4bb1143e543566ac8352dbece330c1",
+    "source::20_distillates/documents/tei-p5-idno-4.12.0#^s3": "af59369b3f421a50b345349fe641a4ef193e982d1981c86db156978ad98be416",
+    "source::20_distillates/documents/tei-p5-milestone-4.12.0#^s1": "440feb18c2b92b464f0d872655336d786af4436522cf5f5478287570135c9f58",
+    "source::20_distillates/documents/tei-p5-note-4.12.0#^s6": "7686851786d5dec659478aca0670f97c384811aa4817db95bb3e9b602bc6455a",
+    "source::20_distillates/documents/tei-p5-pb-4.12.0#^s1": "1e36783297168a614ab94f2a5f7b04eb208394e0ab65bbf2280ab929b3909681",
+    "source::20_distillates/documents/tei-p5-pb-4.12.0#^s3": "6011dbfaabd95862cb138284c69aca471ed84364a6bf981d51e247ff2066b9d2",
+    "source::20_distillates/documents/tei-p5-person-4.12.0#^s6": "7525dc19a4b14fe1ddf283db3888164b819da0b0b41fde22424d6ec1f03076e6",
+    "source::20_distillates/documents/tei-p5-relation-4.12.0#^s3": "188d19ba9c5e40718fb14c2a8b89494b29875acfed713fe2e4b2834e6547e333",
+    "source::20_distillates/documents/tei-p5-relation-4.12.0#^s5": "ad9dcef39722a8b45d9cd1c5208db4811ced516859c2793f329bfa8f3d879ff7",
+    "source::20_distillates/documents/tei-p5-relation-4.12.0#^s7": "43a8a80e6a97bc7995666f99c52b4f6c3cc9c4ea76188f79cebf81f4d5f9ea8b",
+    "source::20_distillates/documents/tei-p5-test-testnames-4.12.0#^s5": "78334a71a4edf9a0b1a4101c29417c5213afdd1ba7c29f6240d1e193d704a993",
+    "source::20_distillates/documents/tei-p5-test-testnames-4.12.0#^s11": "506805998d42aa0a2221418c14eb64792d498a82955d821c2f5c0e02ade5145a",
+    "source::20_distillates/publications/p6-v1-council-f2f-2025-09-krakow#^s4": "d8d894b921493163b38dc882cac76213f6231293a9de87656c8f37e881b7b943",
+    "source::20_distillates/publications/p6-v1-council-p6-2026-05-20#^s1": "dee49f44c3f02e2a997285b9361842e1005b3e3db951bc8fd68138d6cad13da6",
+    "source::20_distillates/publications/p6-v1-council-p6-2026-05-20#^s3": "722b3573660cf76658722d35a0f447074e7bf0dfeb10c975a7a9decc576489e1",
+    "source::20_distillates/publications/p6-v1-time-for-p6-slides-eb924226#^s7": "8393cde5064853613c6f38a40678bd3d5b7c18e919c99b1e4befa3dccefb86c7",
+    "source::20_distillates/publications/renear-wickett2010documents#^s1": "98b1f4e19980e1b87ac3764fafb84e16254cccfffccc8c571eaf6b52dbd57b42",
+    "source::20_distillates/publications/teic-tei-issue-1505#^s1": "25b74f3b846e34f3126e5a9800de4c606adc4f951df84639480fe1c3d9b21fd7",
+    "source::20_distillates/publications/teic-tei-issue-2739#^s11": "2fa87420b6a62f84e0d526f4a56ac9722574d54821dd41eeea469276d25c192d",
+    "source::20_distillates/publications/teic-tei-issue-337#^s2": "770eed3e4b77be2eda52a55ed0e306b602be36be888c3b6b0f0e329a1f76c2a0",
+    "source::20_distillates/publications/teic-tei-issue-337#^s23": "bafe570a397476107ff02a4d9139acb5137726723f2f49af5751e38adc32eaab",
+    "assertion::30_assertions/p5-guidelines-use-generic-state-trait-and-event-customized-through-type-for-information-about-a-place<-20_distillates/documents/tei-p5-guidelines-nd-4.12.0#^s49": "e45a7dbeb7ef66ffa64f7bdfb90bdcf0c3b9353eeccc0a47e130862e430559c7",
+    "assertion::30_assertions/p5-source-specifies-the-source-from-which-some-aspect-of-an-element-is-drawn<-20_distillates/documents/tei-p5-att.global.source-4.12.0#^s2": "c73844cacca1d3e869e830dcd023a98bbbf64caa11b37242c1d3230f65030d66",
+    "assertion::30_assertions/p5-state-attributes-a-status-or-quality-often-at-a-specific-time-or-for-a-date-range<-20_distillates/documents/tei-p5-state-4.12.0#^s3": "bb8864abadb00d9c67b489cd694448aa77c45278f258f78b3a083b8335776157",
+    "assertion::30_assertions/p5-testnames-name-of-type-person-in-a-note-carries-a-key-and-no-ref<-20_distillates/documents/tei-p5-test-testnames-4.12.0#^s6": "bc257635d284978695c7b88f0be8f8789db635dc96bf5a2fd8b168065236745b",
+    "assertion::30_assertions/p6-v1-p6-sandbox-repository-kept-private-2026<-20_distillates/publications/p6-v1-council-f2f-2026-03-wurzburg#^s5": "cce9b56883ce68478cb74c4368a9fe80c0158182706146df8b2be8b9bda24a5f",
+    "assertion::30_assertions/p6-v1-p6-work-located-in-teic-p6-sandbox-2026<-20_distillates/publications/p6-v1-council-f2f-2026-03-wurzburg#^s4": "b4407dc5b152fad43d5d505711d1b4a4d60cf9c9c72f6ba1c2b906c0d8b05137",
+    "assertion::30_assertions/p6-v1-recorded-positions-on-new-p5-features-differ-2025-2026<-20_distillates/publications/p6-v1-council-f2f-2026-03-wurzburg#^s8": "dd8f1edfcf3a16db8fedd78675ae3a52b134f77aa2f393eb77839936905d39e3",
+    "assertion::30_assertions/practice-v1-sampled-odds-name-their-tei-source-differently<-20_distillates/documents/practice-v1-cmif-odd-d171133e#^s1": "ab64c01c7b50e1d4db67df4ff84eabf5bb47bff02c7f7388fb9e06b9351d03cc",
+    "assertion::30_assertions/structure-p5-has-several-nonhierarchical-methods<-20_distillates/documents/tei-p5-guidelines-nh-non-hierarchical-4.12.0#^s3": "c05b4da394110065edf91c69f543947f0e483f29db783b6594e09af1bbe5d053",
+    "assertion::30_assertions/structure-p5-multiple-encoding-maintenance-cost<-20_distillates/documents/tei-p5-guidelines-nh-non-hierarchical-4.12.0#^s6": "a4b2a54df01e6ee1d6a499750b1de145c73728a4d81223dc6049b6e81bb30854",
+    "assertion::30_assertions/structure-p5-note-number-omission-is-conditional<-20_distillates/documents/tei-p5-note-4.12.0#^s7": "8c20e21733e82aa906b2364ef48e87005812b3047d2034a16aeb91a94afd4598",
+    "assertion::30_assertions/structure-p6-numbered-divisions-reconsideration-label<-20_distillates/publications/teic-tei-issue-1400#^s3": "df7113417c24f2fce431efcccd9b6e475e4a399b3f1a445ab1d273c5992280b7",
+    "assertion::30_assertions/szd-records-share-work-reference<-20_distillates/documents/szd-werke-2026-09-07#^s1": "1effe497eab8d126fe79d027def2b4ef93626b5492e29ee97dc99d1731a60348",
+    "assertion::30_assertions/teic-tei-issue-2739-commenter-states-att-personal-is-a-member-of-att-naming-and-att-naming-of-att-canonical<-20_distillates/publications/teic-tei-issue-2739#^s5": "d52f931a2c1710072a789159adefaeb0c0ac15eb91d23d23f64580b8571364f6",
+    "assertion::30_assertions/teic-tei-issue-2739-commenter-states-att-personal-is-a-member-of-att-naming-and-att-naming-of-att-canonical<-20_distillates/publications/teic-tei-issue-2739#^s6": "75c974e7d1bbaee16cd05decb73c4e9ca43ea81fc524040ee8c785dd0b4671c0",
+    "assertion::30_assertions/teic-tei-issue-337-author-announces-an-interim-guidelines-change-telling-people-to-switch-to-ref<-20_distillates/publications/teic-tei-issue-337#^s5": "f56cf1299c7b04a510cfbc35bea4315f3de9897de8970a9827c8925ec2361dd2",
+    "distillate-complete::20_distillates/documents/practice-v1-cmif-freieisen-stoeber-9a7ebe3b": "022c14500e1767eb00cd3d9a5da834f9c4265e9faf046bf0acc0479057f4b83c",
+    "distillate-complete::20_distillates/documents/practice-v1-epidoc-schema-readme-e5b68eb8": "2a5cf6f10e78529e6ff9ef2766748107d35479e2fc8fe41d8cd0d5bdbf6a5e9d",
+    "distillate-complete::20_distillates/documents/tei-p5-annotation-4.12.0": "846dbc91c61dcbee7c2a889a1a328aeecce681a84785879838a9c759903287db",
+    "distillate-complete::20_distillates/documents/tei-p5-att.editlike-4.12.0": "d8b3617fb065e1327bf6c2dc52a4557252fc5a3b68a1344e3ad562dd0c90c45c",
+    "distillate-complete::20_distillates/documents/tei-p5-persname-4.12.0": "fc9a270a4d7fde497d03552e6cf51d02c041ac81cdbd16a05bad0f82de26cc3d",
+    "distillate-complete::20_distillates/documents/tei-p5-test-testoverlap-4.12.0": "2d6c9ffcb54f536e2f362056f816b9db623c05fa0c467c814f7c3fbc3854d893",
+    "distillate-complete::20_distillates/publications/p6-v1-council-2026-04-24": "c89baa7266f83441a27480b321a26cdebd12564dba3d65399148cc71749e1d17",
+    "assertion-complete::30_assertions/p5-anchor-identifies-a-textual-point": "187c1f8f3ba32638f1ed234c724673fe465ac4d3dd3d1f4c1e736b692dbcfc95",
+    "assertion-complete::30_assertions/p5-generic-description-elements-carry-certainty-and-responsibility": "935529a3fa1188c474eb02766f53dd2cf3fdde1a2c89cb79fe24986b694345f0",
+    "assertion-complete::30_assertions/p5-guidelines-group-information-about-a-person-as-distinct-from-references-to-a-person-within-person": "707b28b0db3c20eada77c30ed9425131226344f35908781abf5dbee2cb060bc2",
+    "assertion-complete::30_assertions/p5-guidelines-use-generic-state-trait-and-event-customized-through-type-for-information-about-a-place": "5d8d1f6d09a4c72ea61dd1fbeb8f10b048e8f257262dbe6abb6a4ef6fd00c4f7",
+    "assertion-complete::30_assertions/p5-key-serves-cases-where-no-direct-link-is-required": "f7ff3e13420e2701280afe9b040233708b67eacde846a8b0da30667931e5c7fb",
+    "assertion-complete::30_assertions/p5-nym-contains-the-definition-of-a-canonical-name-or-name-component": "1a55f219b9099c93d894820bbf26a6241ebccd4d5630001ba64f079f48b5afbd",
+    "assertion-complete::30_assertions/p5-persname-contains-a-proper-noun-referring-to-a-person": "8b444fc6393e3fca8d04c8d3933090b7ef91fb94fb90bbe6d4937560326e0f8e",
+    "assertion-complete::30_assertions/p5-person-holds-variant-name-forms-without-prioritization": "549b5d4dd34ee138ddefbdfc93b2eb7703e0e294a9180e1099632ee8c38c1212",
+    "assertion-complete::30_assertions/p5-person-provides-information-about-an-identifiable-individual": "3c11460268bbb181cd194deeee75ef468a4ee5374a45e0c55ee6773a0ed82d65",
+    "assertion-complete::30_assertions/p5-testnames-places-in-birth-and-death-are-named-without-identification-while-a-nationality-is-identified-by-key": "4d43a079a958fc2924db810a28a64ac94b0b60ed141064ad7e6740681cec227f",
+    "assertion-complete::30_assertions/p6-v1-p6-sandbox-repository-kept-private-2026": "d3c95daa98df65deda363b64b9597ea6b2b05f4ee49c4d6ad4c040a25a91baf0",
+    "assertion-complete::30_assertions/practice-v1-sampled-schematron-sits-in-odds-and-in-a-service": "67d163e2b296df9709843b16b06976d126c08dd75649850d61d22d67eb99d09b",
+    "chapter-complete::40_output/02-abstract-model": "0dc44f137a3a063f7b9b7062053e44550808b4bae61f1e25856362b75d09af70",
+    "chapter-complete::40_output/12-p6-design": "91fd08a3688f832b7ba7643260fde74343ab15193101217612ac7bb7523af90c",
+    "contested::30_assertions/p5-guidelines-admit-persons-places-and-organizations-as-relationship-participants<>30_assertions/p5-relation-describes-a-relationship-amongst-places-events-persons-or-objects": "f261084a3a7eacf20e1ea68bb4742b62f2c6b9c5e41a02a5e3e14cd23d3535db",
+    "contested::30_assertions/p5-key-remarks-propose-no-particular-syntax-because-its-form-depends-on-project-practice<>30_assertions/teic-tei-issue-337-author-reports-a-wish-to-deprecate-key-held-back-by-its-wide-use": "ec38fd55134e6ed2f75c2fe3a623fcf4b1ff414a49bff82c55b41207e2f0d50a"
+  },
+  "gaps": {},
+  "bounded_contexts": {},
+  "instrument_files": {
+    "tools/full_review.py": "f1c2b82184665ee77117946eea003449498eadfd0075baea15e034a180fde38b",
+    "tools/review_execution.py": "ebf0615ba14fa14009482699f3d99fb87a6533ebfd034f8a3c6f7f58e83a630e",
+    "tools/review.py": "401192a6c29d133229a0e42654fcfc799c44d204d534720ec5810618870716ea",
+    "tools/validate.py": "24849e4b8426c64c8c11b8d3623cc862f910f7df22d2a0efd54c0e1780ad3726",
+    "tools/vault_documents.py": "c8d126f0b0855dfc273aab4995e075671fde05751fd2772501ec3036eaae63a9",
+    "tools/check_text_structures.py": "e9042b68d8e7ae01ad270ffdce04503b64ea26f59f539a6fde35c33a36053e0f",
+    "tools/ingest_guidelines.py": "024af7c1fa01a0ba70401f464c68c8110fe97cb570d66d550dbd218adacbad32"
+  },
+  "document_independence": {
+    "20_distillates/documents/hsa-letter-4493-2026-09-07": {
+      "reviewer_models": [
+        "claude-opus-5-5"
+      ],
+      "producer_model": "not established by this instrument",
+      "limitation": "Opus-family review; unknown producer identity establishes no family independence; human verification remains separate"
+    },
+    "20_distillates/documents/practice-v1-cmif-freieisen-stoeber-9a7ebe3b": {
+      "reviewer_models": [
+        "claude-opus-5-5"
+      ],
+      "producer_model": "not established by this instrument",
+      "limitation": "Opus-family review; unknown producer identity establishes no family independence; human verification remains separate"
+    },
+    "20_distillates/documents/practice-v1-cmif-odd-d171133e": {
+      "reviewer_models": [
+        "claude-opus-5-5"
+      ],
+      "producer_model": "not established by this instrument",
+      "limitation": "Opus-family review; unknown producer identity establishes no family independence; human verification remains separate"
+    },
+    "20_distillates/documents/practice-v1-correspsearch-check-566b2d29": {
+      "reviewer_models": [
+        "claude-opus-5-5"
+      ],
+      "producer_model": "not established by this instrument",
+      "limitation": "Opus-family review; unknown producer identity establishes no family independence; human verification remains separate"
+    },
+    "20_distillates/documents/practice-v1-dracor-odd-c2f9e814": {
+      "reviewer_models": [
+        "claude-opus-5-5"
+      ],
+      "producer_model": "not established by this instrument",
+      "limitation": "Opus-family review; unknown producer identity establishes no family independence; human verification remains separate"
+    },
+    "20_distillates/documents/practice-v1-epidoc-odd-e5b68eb8": {
+      "reviewer_models": [
+        "claude-opus-5-5"
+      ],
+      "producer_model": "not established by this instrument",
+      "limitation": "Opus-family review; unknown producer identity establishes no family independence; human verification remains separate"
+    },
+    "20_distillates/documents/practice-v1-epidoc-schema-readme-e5b68eb8": {
+      "reviewer_models": [
+        "claude-opus-5-5"
+      ],
+      "producer_model": "not established by this instrument",
+      "limitation": "Opus-family review; unknown producer identity establishes no family independence; human verification remains separate"
+    },
+    "20_distillates/documents/practice-v1-isicily-isic000156-262784ad": {
+      "reviewer_models": [
+        "claude-opus-5-5"
+      ],
+      "producer_model": "not established by this instrument",
+      "limitation": "Opus-family review; unknown producer identity establishes no family independence; human verification remains separate"
+    },
+    "20_distillates/documents/tei-p5-annotation-4.12.0": {
+      "reviewer_models": [
+        "claude-opus-5-5"
+      ],
+      "producer_model": "not established by this instrument",
+      "limitation": "Opus-family review; unknown producer identity establishes no family independence; human verification remains separate"
+    },
+    "20_distillates/documents/tei-p5-att.editlike-4.12.0": {
+      "reviewer_models": [
+        "claude-opus-5-5"
+      ],
+      "producer_model": "not established by this instrument",
+      "limitation": "Opus-family review; unknown producer identity establishes no family independence; human verification remains separate"
+    },
+    "20_distillates/documents/tei-p5-att.global.linking-4.12.0": {
+      "reviewer_models": [
+        "claude-opus-5-5"
+      ],
+      "producer_model": "not established by this instrument",
+      "limitation": "Opus-family review; unknown producer identity establishes no family independence; human verification remains separate"
+    },
+    "20_distillates/documents/tei-p5-att.global.source-4.12.0": {
+      "reviewer_models": [
+        "claude-opus-5-5"
+      ],
+      "producer_model": "not established by this instrument",
+      "limitation": "Opus-family review; unknown producer identity establishes no family independence; human verification remains separate"
+    },
+    "20_distillates/documents/tei-p5-att.personal-4.12.0": {
+      "reviewer_models": [
+        "claude-opus-5-5"
+      ],
+      "producer_model": "not established by this instrument",
+      "limitation": "Opus-family review; unknown producer identity establishes no family independence; human verification remains separate"
+    },
+    "20_distillates/documents/tei-p5-guidelines-ds-defaulttextstructure-4.12.0": {
+      "reviewer_models": [
+        "claude-opus-5-5"
+      ],
+      "producer_model": "not established by this instrument",
+      "limitation": "Opus-family review; unknown producer identity establishes no family independence; human verification remains separate"
+    },
+    "20_distillates/documents/tei-p5-guidelines-nd-4.12.0": {
+      "reviewer_models": [
+        "claude-opus-5-5"
+      ],
+      "producer_model": "not established by this instrument",
+      "limitation": "Opus-family review; unknown producer identity establishes no family independence; human verification remains separate"
+    },
+    "20_distillates/documents/tei-p5-guidelines-nh-non-hierarchical-4.12.0": {
+      "reviewer_models": [
+        "claude-opus-5-5"
+      ],
+      "producer_model": "not established by this instrument",
+      "limitation": "Opus-family review; unknown producer identity establishes no family independence; human verification remains separate"
+    },
+    "20_distillates/documents/tei-p5-idno-4.12.0": {
+      "reviewer_models": [
+        "claude-opus-5-5"
+      ],
+      "producer_model": "not established by this instrument",
+      "limitation": "Opus-family review; unknown producer identity establishes no family independence; human verification remains separate"
+    },
+    "20_distillates/documents/tei-p5-milestone-4.12.0": {
+      "reviewer_models": [
+        "claude-opus-5-5"
+      ],
+      "producer_model": "not established by this instrument",
+      "limitation": "Opus-family review; unknown producer identity establishes no family independence; human verification remains separate"
+    },
+    "20_distillates/documents/tei-p5-note-4.12.0": {
+      "reviewer_models": [
+        "claude-opus-5-5"
+      ],
+      "producer_model": "not established by this instrument",
+      "limitation": "Opus-family review; unknown producer identity establishes no family independence; human verification remains separate"
+    },
+    "20_distillates/documents/tei-p5-pb-4.12.0": {
+      "reviewer_models": [
+        "claude-opus-5-5"
+      ],
+      "producer_model": "not established by this instrument",
+      "limitation": "Opus-family review; unknown producer identity establishes no family independence; human verification remains separate"
+    },
+    "20_distillates/documents/tei-p5-persname-4.12.0": {
+      "reviewer_models": [
+        "claude-opus-5-5"
+      ],
+      "producer_model": "not established by this instrument",
+      "limitation": "Opus-family review; unknown producer identity establishes no family independence; human verification remains separate"
+    },
+    "20_distillates/documents/tei-p5-person-4.12.0": {
+      "reviewer_models": [
+        "claude-opus-5-5"
+      ],
+      "producer_model": "not established by this instrument",
+      "limitation": "Opus-family review; unknown producer identity establishes no family independence; human verification remains separate"
+    },
+    "20_distillates/documents/tei-p5-relation-4.12.0": {
+      "reviewer_models": [
+        "claude-opus-5-5"
+      ],
+      "producer_model": "not established by this instrument",
+      "limitation": "Opus-family review; unknown producer identity establishes no family independence; human verification remains separate"
+    },
+    "20_distillates/documents/tei-p5-test-testnames-4.12.0": {
+      "reviewer_models": [
+        "claude-opus-5-5"
+      ],
+      "producer_model": "not established by this instrument",
+      "limitation": "Opus-family review; unknown producer identity establishes no family independence; human verification remains separate"
+    },
+    "20_distillates/documents/tei-p5-test-testoverlap-4.12.0": {
+      "reviewer_models": [
+        "claude-opus-5-5"
+      ],
+      "producer_model": "not established by this instrument",
+      "limitation": "Opus-family review; unknown producer identity establishes no family independence; human verification remains separate"
+    },
+    "20_distillates/publications/p6-v1-council-2026-04-24": {
+      "reviewer_models": [
+        "claude-opus-5-5"
+      ],
+      "producer_model": "not established by this instrument",
+      "limitation": "Opus-family review; unknown producer identity establishes no family independence; human verification remains separate"
+    },
+    "20_distillates/publications/p6-v1-council-f2f-2025-09-krakow": {
+      "reviewer_models": [
+        "claude-opus-5-5"
+      ],
+      "producer_model": "not established by this instrument",
+      "limitation": "Opus-family review; unknown producer identity establishes no family independence; human verification remains separate"
+    },
+    "20_distillates/publications/p6-v1-council-p6-2026-05-20": {
+      "reviewer_models": [
+        "claude-opus-5-5"
+      ],
+      "producer_model": "not established by this instrument",
+      "limitation": "Opus-family review; unknown producer identity establishes no family independence; human verification remains separate"
+    },
+    "20_distillates/publications/p6-v1-time-for-p6-slides-eb924226": {
+      "reviewer_models": [
+        "claude-opus-5-5"
+      ],
+      "producer_model": "not established by this instrument",
+      "limitation": "Opus-family review; unknown producer identity establishes no family independence; human verification remains separate"
+    },
+    "20_distillates/publications/renear-wickett2010documents": {
+      "reviewer_models": [
+        "claude-opus-5-5"
+      ],
+      "producer_model": "not established by this instrument",
+      "limitation": "Opus-family review; unknown producer identity establishes no family independence; human verification remains separate"
+    },
+    "20_distillates/publications/teic-tei-issue-1505": {
+      "reviewer_models": [
+        "claude-opus-5-5"
+      ],
+      "producer_model": "not established by this instrument",
+      "limitation": "Opus-family review; unknown producer identity establishes no family independence; human verification remains separate"
+    },
+    "20_distillates/publications/teic-tei-issue-2739": {
+      "reviewer_models": [
+        "claude-opus-5-5"
+      ],
+      "producer_model": "not established by this instrument",
+      "limitation": "Opus-family review; unknown producer identity establishes no family independence; human verification remains separate"
+    },
+    "20_distillates/publications/teic-tei-issue-337": {
+      "reviewer_models": [
+        "claude-opus-5-5"
+      ],
+      "producer_model": "not established by this instrument",
+      "limitation": "Opus-family review; unknown producer identity establishes no family independence; human verification remains separate"
+    },
+    "30_assertions/p5-anchor-identifies-a-textual-point": {
+      "reviewer_models": [
+        "claude-opus-5-5"
+      ],
+      "producer_model": "not established by this instrument",
+      "limitation": "Opus-family review; unknown producer identity establishes no family independence; human verification remains separate"
+    },
+    "30_assertions/p5-generic-description-elements-carry-certainty-and-responsibility": {
+      "reviewer_models": [
+        "claude-opus-5-5"
+      ],
+      "producer_model": "not established by this instrument",
+      "limitation": "Opus-family review; unknown producer identity establishes no family independence; human verification remains separate"
+    },
+    "30_assertions/p5-guidelines-admit-persons-places-and-organizations-as-relationship-participants": {
+      "reviewer_models": [
+        "claude-opus-5-5"
+      ],
+      "producer_model": "not established by this instrument",
+      "limitation": "Opus-family review; unknown producer identity establishes no family independence; human verification remains separate"
+    },
+    "30_assertions/p5-guidelines-group-information-about-a-person-as-distinct-from-references-to-a-person-within-person": {
+      "reviewer_models": [
+        "claude-opus-5-5"
+      ],
+      "producer_model": "not established by this instrument",
+      "limitation": "Opus-family review; unknown producer identity establishes no family independence; human verification remains separate"
+    },
+    "30_assertions/p5-guidelines-use-generic-state-trait-and-event-customized-through-type-for-information-about-a-place": {
+      "reviewer_models": [
+        "claude-opus-5-5"
+      ],
+      "producer_model": "not established by this instrument",
+      "limitation": "Opus-family review; unknown producer identity establishes no family independence; human verification remains separate"
+    },
+    "30_assertions/p5-key-remarks-propose-no-particular-syntax-because-its-form-depends-on-project-practice": {
+      "reviewer_models": [
+        "claude-opus-5-5"
+      ],
+      "producer_model": "not established by this instrument",
+      "limitation": "Opus-family review; unknown producer identity establishes no family independence; human verification remains separate"
+    },
+    "30_assertions/p5-key-serves-cases-where-no-direct-link-is-required": {
+      "reviewer_models": [
+        "claude-opus-5-5"
+      ],
+      "producer_model": "not established by this instrument",
+      "limitation": "Opus-family review; unknown producer identity establishes no family independence; human verification remains separate"
+    },
+    "30_assertions/p5-nym-contains-the-definition-of-a-canonical-name-or-name-component": {
+      "reviewer_models": [
+        "claude-opus-5-5"
+      ],
+      "producer_model": "not established by this instrument",
+      "limitation": "Opus-family review; unknown producer identity establishes no family independence; human verification remains separate"
+    },
+    "30_assertions/p5-persname-contains-a-proper-noun-referring-to-a-person": {
+      "reviewer_models": [
+        "claude-opus-5-5"
+      ],
+      "producer_model": "not established by this instrument",
+      "limitation": "Opus-family review; unknown producer identity establishes no family independence; human verification remains separate"
+    },
+    "30_assertions/p5-person-holds-variant-name-forms-without-prioritization": {
+      "reviewer_models": [
+        "claude-opus-5-5"
+      ],
+      "producer_model": "not established by this instrument",
+      "limitation": "Opus-family review; unknown producer identity establishes no family independence; human verification remains separate"
+    },
+    "30_assertions/p5-person-provides-information-about-an-identifiable-individual": {
+      "reviewer_models": [
+        "claude-opus-5-5"
+      ],
+      "producer_model": "not established by this instrument",
+      "limitation": "Opus-family review; unknown producer identity establishes no family independence; human verification remains separate"
+    },
+    "30_assertions/p5-source-specifies-the-source-from-which-some-aspect-of-an-element-is-drawn": {
+      "reviewer_models": [
+        "claude-opus-5-5"
+      ],
+      "producer_model": "not established by this instrument",
+      "limitation": "Opus-family review; unknown producer identity establishes no family independence; human verification remains separate"
+    },
+    "30_assertions/p5-state-attributes-a-status-or-quality-often-at-a-specific-time-or-for-a-date-range": {
+      "reviewer_models": [
+        "claude-opus-5-5"
+      ],
+      "producer_model": "not established by this instrument",
+      "limitation": "Opus-family review; unknown producer identity establishes no family independence; human verification remains separate"
+    },
+    "30_assertions/p5-testnames-name-of-type-person-in-a-note-carries-a-key-and-no-ref": {
+      "reviewer_models": [
+        "claude-opus-5-5"
+      ],
+      "producer_model": "not established by this instrument",
+      "limitation": "Opus-family review; unknown producer identity establishes no family independence; human verification remains separate"
+    },
+    "30_assertions/p5-testnames-places-in-birth-and-death-are-named-without-identification-while-a-nationality-is-identified-by-key": {
+      "reviewer_models": [
+        "claude-opus-5-5"
+      ],
+      "producer_model": "not established by this instrument",
+      "limitation": "Opus-family review; unknown producer identity establishes no family independence; human verification remains separate"
+    },
+    "30_assertions/p6-v1-p6-sandbox-repository-kept-private-2026": {
+      "reviewer_models": [
+        "claude-opus-5-5"
+      ],
+      "producer_model": "not established by this instrument",
+      "limitation": "Opus-family review; unknown producer identity establishes no family independence; human verification remains separate"
+    },
+    "30_assertions/p6-v1-p6-work-located-in-teic-p6-sandbox-2026": {
+      "reviewer_models": [
+        "claude-opus-5-5"
+      ],
+      "producer_model": "not established by this instrument",
+      "limitation": "Opus-family review; unknown producer identity establishes no family independence; human verification remains separate"
+    },
+    "30_assertions/p6-v1-recorded-positions-on-new-p5-features-differ-2025-2026": {
+      "reviewer_models": [
+        "claude-opus-5-5"
+      ],
+      "producer_model": "not established by this instrument",
+      "limitation": "Opus-family review; unknown producer identity establishes no family independence; human verification remains separate"
+    },
+    "30_assertions/practice-v1-sampled-odds-name-their-tei-source-differently": {
+      "reviewer_models": [
+        "claude-opus-5-5"
+      ],
+      "producer_model": "not established by this instrument",
+      "limitation": "Opus-family review; unknown producer identity establishes no family independence; human verification remains separate"
+    },
+    "30_assertions/practice-v1-sampled-schematron-sits-in-odds-and-in-a-service": {
+      "reviewer_models": [
+        "claude-opus-5-5"
+      ],
+      "producer_model": "not established by this instrument",
+      "limitation": "Opus-family review; unknown producer identity establishes no family independence; human verification remains separate"
+    },
+    "30_assertions/structure-p5-has-several-nonhierarchical-methods": {
+      "reviewer_models": [
+        "claude-opus-5-5"
+      ],
+      "producer_model": "not established by this instrument",
+      "limitation": "Opus-family review; unknown producer identity establishes no family independence; human verification remains separate"
+    },
+    "30_assertions/structure-p5-multiple-encoding-maintenance-cost": {
+      "reviewer_models": [
+        "claude-opus-5-5"
+      ],
+      "producer_model": "not established by this instrument",
+      "limitation": "Opus-family review; unknown producer identity establishes no family independence; human verification remains separate"
+    },
+    "30_assertions/structure-p5-note-number-omission-is-conditional": {
+      "reviewer_models": [
+        "claude-opus-5-5"
+      ],
+      "producer_model": "not established by this instrument",
+      "limitation": "Opus-family review; unknown producer identity establishes no family independence; human verification remains separate"
+    },
+    "30_assertions/structure-p6-numbered-divisions-reconsideration-label": {
+      "reviewer_models": [
+        "claude-opus-5-5"
+      ],
+      "producer_model": "not established by this instrument",
+      "limitation": "Opus-family review; unknown producer identity establishes no family independence; human verification remains separate"
+    },
+    "30_assertions/szd-records-share-work-reference": {
+      "reviewer_models": [
+        "claude-opus-5-5"
+      ],
+      "producer_model": "not established by this instrument",
+      "limitation": "Opus-family review; unknown producer identity establishes no family independence; human verification remains separate"
+    },
+    "30_assertions/teic-tei-issue-2739-commenter-states-att-personal-is-a-member-of-att-naming-and-att-naming-of-att-canonical": {
+      "reviewer_models": [
+        "claude-opus-5-5"
+      ],
+      "producer_model": "not established by this instrument",
+      "limitation": "Opus-family review; unknown producer identity establishes no family independence; human verification remains separate"
+    },
+    "30_assertions/teic-tei-issue-337-author-announces-an-interim-guidelines-change-telling-people-to-switch-to-ref": {
+      "reviewer_models": [
+        "claude-opus-5-5"
+      ],
+      "producer_model": "not established by this instrument",
+      "limitation": "Opus-family review; unknown producer identity establishes no family independence; human verification remains separate"
+    },
+    "40_output/02-abstract-model": {
+      "reviewer_models": [
+        "claude-opus-5-5"
+      ],
+      "producer_model": "not established by this instrument",
+      "limitation": "Opus-family review; unknown producer identity establishes no family independence; human verification remains separate"
+    },
+    "40_output/12-p6-design": {
+      "reviewer_models": [
+        "claude-opus-5-5"
+      ],
+      "producer_model": "not established by this instrument",
+      "limitation": "Opus-family review; unknown producer identity establishes no family independence; human verification remains separate"
+    }
+  },
+  "verdicts": [
+    {
+      "id": "assertion-complete::30_assertions/p5-anchor-identifies-a-textual-point",
+      "verdict": "fully supports",
+      "reason": "The Heading and Statement match the cited core statement: in TEI P5 4.12.0, anchor attaches an identifier to a point in a text, whether or not that point corresponds to a textual element. \"Within a text\" means the same as \"in a text\". The Support clause \"It does not by itself establish identity across text versions\" states a limitation, not a claimed source fact, so it adds no unsupported claim.",
+      "model": "claude-opus-5-5",
+      "reviewer": "claude-opus-5-5; isolated fresh context",
+      "checked_at": "2026-10-17T16:15:33+00:00",
+      "prompt_sha256": "187c1f8f3ba32638f1ed234c724673fe465ac4d3dd3d1f4c1e736b692dbcfc95",
+      "requested_model": "opus",
+      "outcome_sha256": "066b6ffc4ac100f5bd7913556b7e336624619c4a218625a6099aac07114017a3",
+      "package_sha256": "0422aefbb4cd6ae4e13a8342bf4da67db8fe273af9ca3e40a27db1b3510e90ae"
+    },
+    {
+      "id": "assertion-complete::30_assertions/p5-generic-description-elements-carry-certainty-and-responsibility",
+      "verdict": "fully supports",
+      "reason": "The Statement repeats the core statement word for word. It covers membership in att.global.responsibility and att.editLike, the cert, resp, evidence and source attributes, the purpose of giving more than one view when sources conflict, and the two birth-event example. The Heading's \"for conflicting views\" fairly condenses \"in the case of multiple and conflicting sources more than one view... can be provided\". The Support note only describes the passage and adds no new facts.",
+      "model": "claude-opus-5-5",
+      "reviewer": "claude-opus-5-5; isolated fresh context",
+      "checked_at": "2026-10-17T16:15:33+00:00",
+      "prompt_sha256": "935529a3fa1188c474eb02766f53dd2cf3fdde1a2c89cb79fe24986b694345f0",
+      "requested_model": "opus",
+      "outcome_sha256": "066b6ffc4ac100f5bd7913556b7e336624619c4a218625a6099aac07114017a3",
+      "package_sha256": "0422aefbb4cd6ae4e13a8342bf4da67db8fe273af9ca3e40a27db1b3510e90ae"
+    },
+    {
+      "id": "assertion-complete::30_assertions/p5-guidelines-group-information-about-a-person-as-distinct-from-references-to-a-person-within-person",
+      "verdict": "fully supports",
+      "reason": "The Statement follows the core statement: information about a person, as distinct from references to a person such as by name, is grouped in person. personGrp 'may' be used for a group regarded as a single entity, such as an audience, and org 'should' be used for a group with a distinct identity, such as a named troupe. The modal verbs 'may' and 'should' are kept. The Heading covers only the first part, but it is accurate and does not claim to be complete. The Support entry is a bare citation with no added claims.",
+      "model": "claude-opus-5-5",
+      "reviewer": "claude-opus-5-5; isolated fresh context",
+      "checked_at": "2026-10-17T16:15:33+00:00",
+      "prompt_sha256": "707b28b0db3c20eada77c30ed9425131226344f35908781abf5dbee2cb060bc2",
+      "requested_model": "opus",
+      "outcome_sha256": "066b6ffc4ac100f5bd7913556b7e336624619c4a218625a6099aac07114017a3",
+      "package_sha256": "0422aefbb4cd6ae4e13a8342bf4da67db8fe273af9ca3e40a27db1b3510e90ae"
+    },
+    {
+      "id": "assertion-complete::30_assertions/p5-guidelines-use-generic-state-trait-and-event-customized-through-type-for-information-about-a-place",
+      "verdict": "fully supports",
+      "reason": "The Statement copies the core statement word for word, including the project-specific categories, the parallel with persons, the lack of any claim to comprehensiveness, the instruction that the generic state, trait and event elements 'should be used' and can be customized via type, and the extra elements population, climate and terrain. The Heading's 'recommends' and 'permits customization through type' fairly render 'should be used' and 'may be customized'. The Support entry is a bare citation.",
+      "model": "claude-opus-5-5",
+      "reviewer": "claude-opus-5-5; isolated fresh context",
+      "checked_at": "2026-10-17T16:15:33+00:00",
+      "prompt_sha256": "5d8d1f6d09a4c72ea61dd1fbeb8f10b048e8f257262dbe6abb6a4ef6fd00c4f7",
+      "requested_model": "opus",
+      "outcome_sha256": "066b6ffc4ac100f5bd7913556b7e336624619c4a218625a6099aac07114017a3",
+      "package_sha256": "0422aefbb4cd6ae4e13a8342bf4da67db8fe273af9ca3e40a27db1b3510e90ae"
+    },
+    {
+      "id": "assertion-complete::30_assertions/p5-key-serves-cases-where-no-direct-link-is-required",
+      "verdict": "fully supports",
+      "reason": "The Statement copies the core statement word for word. It covers both reasons for using key without a direct link (a local convention, or the encoder judging that no resolution is needed) and both examples (a local database with project-specific identifiers built from the key value, and country or airport codes). The source's hedges 'might' and 'probably' are kept. The Heading accurately summarizes this. The Support entry is a bare citation.",
+      "model": "claude-opus-5-5",
+      "reviewer": "claude-opus-5-5; isolated fresh context",
+      "checked_at": "2026-10-17T16:15:33+00:00",
+      "prompt_sha256": "f7ff3e13420e2701280afe9b040233708b67eacde846a8b0da30667931e5c7fb",
+      "requested_model": "opus",
+      "outcome_sha256": "066b6ffc4ac100f5bd7913556b7e336624619c4a218625a6099aac07114017a3",
+      "package_sha256": "0422aefbb4cd6ae4e13a8342bf4da67db8fe273af9ca3e40a27db1b3510e90ae"
+    },
+    {
+      "id": "assertion-complete::30_assertions/p5-nym-contains-the-definition-of-a-canonical-name-or-name-component",
+      "verdict": "fully supports",
+      "reason": "The Heading and Statement match the core statement: in TEI P5 4.12.0, nym contains the definition for a canonical name or name component of any kind. The Support note's remark that the definition says nothing about nym's content model, class memberships or containing list element is a limitation, not a source claim, and it is consistent with the definition.",
+      "model": "claude-opus-5-5",
+      "reviewer": "claude-opus-5-5; isolated fresh context",
+      "checked_at": "2026-10-17T16:15:33+00:00",
+      "prompt_sha256": "1a55f219b9099c93d894820bbf26a6241ebccd4d5630001ba64f079f48b5afbd",
+      "requested_model": "opus",
+      "outcome_sha256": "066b6ffc4ac100f5bd7913556b7e336624619c4a218625a6099aac07114017a3",
+      "package_sha256": "0422aefbb4cd6ae4e13a8342bf4da67db8fe273af9ca3e40a27db1b3510e90ae"
+    },
+    {
+      "id": "source::20_distillates/publications/p6-v1-council-p6-2026-05-20#^s3",
+      "verdict": "fully supports",
+      "reason": "Local-only reviewer reason; SHA-256: e0b32a234ba38e469aa52d61005c098fbe79854b19293edb2747f5ba3f2a5d61",
+      "model": "claude-opus-5-5",
+      "reviewer": "claude-opus-5-5; isolated fresh context",
+      "checked_at": "2026-10-17T16:15:03+00:00",
+      "prompt_sha256": "722b3573660cf76658722d35a0f447074e7bf0dfeb10c975a7a9decc576489e1",
+      "requested_model": "opus",
+      "outcome_sha256": "7f6d8339060b982259e103e9e6063375047cb97d2141498542f10fba604c3396",
+      "package_sha256": "059357b5bdccf362e585df118240a327d69ddd38a83108e1f9d498e2f00c2e68"
+    },
+    {
+      "id": "source::20_distillates/publications/p6-v1-time-for-p6-slides-eb924226#^s7",
+      "verdict": "fully supports",
+      "reason": "Local-only reviewer reason; SHA-256: a98d3f7794b67855374bba808e18f5587b5c101ca25b145a4149aea5a5ee3b0a",
+      "model": "claude-opus-5-5",
+      "reviewer": "claude-opus-5-5; isolated fresh context",
+      "checked_at": "2026-10-17T16:15:03+00:00",
+      "prompt_sha256": "8393cde5064853613c6f38a40678bd3d5b7c18e919c99b1e4befa3dccefb86c7",
+      "requested_model": "opus",
+      "outcome_sha256": "7f6d8339060b982259e103e9e6063375047cb97d2141498542f10fba604c3396",
+      "package_sha256": "059357b5bdccf362e585df118240a327d69ddd38a83108e1f9d498e2f00c2e68"
+    },
+    {
+      "id": "source::20_distillates/publications/renear-wickett2010documents#^s1",
+      "verdict": "fully supports",
+      "reason": "Local-only reviewer reason; SHA-256: 7ccea2e6c2d1f86c8498db71b6744868903d94b18661d68d652340aa2532834a",
+      "model": "claude-opus-5-5",
+      "reviewer": "claude-opus-5-5; isolated fresh context",
+      "checked_at": "2026-10-17T16:15:03+00:00",
+      "prompt_sha256": "98b1f4e19980e1b87ac3764fafb84e16254cccfffccc8c571eaf6b52dbd57b42",
+      "requested_model": "opus",
+      "outcome_sha256": "7f6d8339060b982259e103e9e6063375047cb97d2141498542f10fba604c3396",
+      "package_sha256": "059357b5bdccf362e585df118240a327d69ddd38a83108e1f9d498e2f00c2e68"
+    },
+    {
+      "id": "source::20_distillates/publications/teic-tei-issue-1505#^s1",
+      "verdict": "fully supports",
+      "reason": "Local-only reviewer reason; SHA-256: f3642e60874d82e9790241cba40bbb1be85dc2ebb49505ad57428407dd98e672",
+      "model": "claude-opus-5-5",
+      "reviewer": "claude-opus-5-5; isolated fresh context",
+      "checked_at": "2026-10-17T16:15:03+00:00",
+      "prompt_sha256": "25b74f3b846e34f3126e5a9800de4c606adc4f951df84639480fe1c3d9b21fd7",
+      "requested_model": "opus",
+      "outcome_sha256": "7f6d8339060b982259e103e9e6063375047cb97d2141498542f10fba604c3396",
+      "package_sha256": "059357b5bdccf362e585df118240a327d69ddd38a83108e1f9d498e2f00c2e68"
+    },
+    {
+      "id": "source::20_distillates/publications/teic-tei-issue-2739#^s11",
+      "verdict": "fully supports",
+      "reason": "Local-only reviewer reason; SHA-256: 7508e0419eb04adbd714df78b0ab9459bb4771192fd9bab7f807acbfc247971a",
+      "model": "claude-opus-5-5",
+      "reviewer": "claude-opus-5-5; isolated fresh context",
+      "checked_at": "2026-10-17T16:15:03+00:00",
+      "prompt_sha256": "2fa87420b6a62f84e0d526f4a56ac9722574d54821dd41eeea469276d25c192d",
+      "requested_model": "opus",
+      "outcome_sha256": "7f6d8339060b982259e103e9e6063375047cb97d2141498542f10fba604c3396",
+      "package_sha256": "059357b5bdccf362e585df118240a327d69ddd38a83108e1f9d498e2f00c2e68"
+    },
+    {
+      "id": "source::20_distillates/publications/teic-tei-issue-337#^s2",
+      "verdict": "fully supports",
+      "reason": "Local-only reviewer reason; SHA-256: 8e9ed9b929c28cbdc8f563f7a707b2a6991790473f5a56d8e54fb45f4ad8658f",
+      "model": "claude-opus-5-5",
+      "reviewer": "claude-opus-5-5; isolated fresh context",
+      "checked_at": "2026-10-17T16:15:03+00:00",
+      "prompt_sha256": "770eed3e4b77be2eda52a55ed0e306b602be36be888c3b6b0f0e329a1f76c2a0",
+      "requested_model": "opus",
+      "outcome_sha256": "7f6d8339060b982259e103e9e6063375047cb97d2141498542f10fba604c3396",
+      "package_sha256": "059357b5bdccf362e585df118240a327d69ddd38a83108e1f9d498e2f00c2e68"
+    },
+    {
+      "id": "source::20_distillates/documents/practice-v1-dracor-odd-c2f9e814#^s2",
+      "verdict": "fully supports",
+      "reason": "Reading block r1 contains exactly twelve moduleRef elements. Eight have no include or except attribute: header, core, tei, linking, drama, verse, namesdates and analysis. textstructure has except=\"div1 div2 div3 div4 div5 div6 div7\". corpus has include=\"particDesc\", figures has include=\"figure figDesc table row cell\", and transcr has include=\"addSpan damageSpan delSpan ellipsis space\". The count, names and attribute values all match the source exactly.",
+      "model": "claude-opus-5-5",
+      "reviewer": "claude-opus-5-5; isolated fresh context",
+      "checked_at": "2026-10-17T16:13:12+00:00",
+      "prompt_sha256": "18bf99fa5d6b171e8021534a931bd6435db15b3bb43c2c5a5aaab40aaf4656b7",
+      "requested_model": "opus",
+      "outcome_sha256": "d5c11fe177396f23b73c05b025040374f53dc8bda94ddeabee84a48b96a7b7cd",
+      "package_sha256": "23bbc6be9ee18241c3a39e32e83af4c3db1b324c9dd0e45344ea80b002a3f6b0"
+    },
+    {
+      "id": "source::20_distillates/documents/hsa-letter-4493-2026-09-07#^s1",
+      "verdict": "fully supports",
+      "reason": "The hsa-dateline block reproduces `<dateline> Graz 17. 4. 78. </dateline>`. Its wording is \"Graz 17. 4. 78.\", which matches the statement exactly. Only the surrounding whitespace differs.",
+      "model": "claude-opus-5-5",
+      "reviewer": "claude-opus-5-5; isolated fresh context",
+      "checked_at": "2026-10-17T16:14:49+00:00",
+      "prompt_sha256": "56bd49304d17a7562d5e86f2c8435cddf028fc802ab0e56875a478ef5fd2ead7",
+      "requested_model": "opus",
+      "outcome_sha256": "5f324a242acd6f8a72b5e4c942b7e6844e210325f51b3f57e0feadd5d4682b26",
+      "package_sha256": "2ca1af048782358167efa2cc8357026dbdf919ebf6a374eb2d7907d46cca6ac9"
+    },
+    {
+      "id": "source::20_distillates/documents/practice-v1-cmif-odd-d171133e#^s4",
+      "verdict": "fully supports",
+      "reason": "Block r3 shows `elementSpec ident=\"correspAction\" mode=\"change\"`. Its content is `classRef key=\"model.correspActionPart\" minOccurs=\"1\" maxOccurs=\"unbounded\"`, meaning one or more members. It also has `attDef ident=\"type\" mode=\"change\" usage=\"req\"` with `valList mode=\"replace\" type=\"closed\"`, whose only items are `sent` and `received`. Every part of the statement matches.",
+      "model": "claude-opus-5-5",
+      "reviewer": "claude-opus-5-5; isolated fresh context",
+      "checked_at": "2026-10-17T16:14:49+00:00",
+      "prompt_sha256": "22ef8316f1fa3359074634a24a44ddeea37fef468fcdb4713a31efb21a6eb659",
+      "requested_model": "opus",
+      "outcome_sha256": "5f324a242acd6f8a72b5e4c942b7e6844e210325f51b3f57e0feadd5d4682b26",
+      "package_sha256": "2ca1af048782358167efa2cc8357026dbdf919ebf6a374eb2d7907d46cca6ac9"
+    },
+    {
+      "id": "source::20_distillates/documents/practice-v1-cmif-odd-d171133e#^s6",
+      "verdict": "fully supports",
+      "reason": "Block r5 shows `classes mode=\"replace\"` listing exactly model.nameLike.agent, att.canonical, att.editLike and att.global.responsibility. The content is only `<textNode/>`. It also has `attDef ident=\"key\" mode=\"delete\"` and `attDef ident=\"ref\" mode=\"change\" usage=\"rec\"`. All four changes in the statement are present.",
+      "model": "claude-opus-5-5",
+      "reviewer": "claude-opus-5-5; isolated fresh context",
+      "checked_at": "2026-10-17T16:14:49+00:00",
+      "prompt_sha256": "0045df24cf1dab1a07a187586c8202c819e0d2a47de8020fea5595df2d326f3e",
+      "requested_model": "opus",
+      "outcome_sha256": "5f324a242acd6f8a72b5e4c942b7e6844e210325f51b3f57e0feadd5d4682b26",
+      "package_sha256": "2ca1af048782358167efa2cc8357026dbdf919ebf6a374eb2d7907d46cca6ac9"
+    },
+    {
+      "id": "source::20_distillates/documents/practice-v1-correspsearch-check-566b2d29#^s1",
+      "verdict": "fully supports",
+      "reason": "Block r1 contains `import module namespace schxslt = \"https://doi.org/10.5281/zenodo.1495494\";`, which binds the prefix schxslt to that namespace. It also contains `import module namespace cs-check=\"https://correspsearch.net/services/check/geonames\" at \"check-geonames.xql\";`, which imports a geonames module from a relative local file location.",
+      "model": "claude-opus-5-5",
+      "reviewer": "claude-opus-5-5; isolated fresh context",
+      "checked_at": "2026-10-17T16:14:49+00:00",
+      "prompt_sha256": "f5ff93346317ab97509fbf3e50602f20ee09d9ef47a48b97486bebc113d5cc49",
+      "requested_model": "opus",
+      "outcome_sha256": "5f324a242acd6f8a72b5e4c942b7e6844e210325f51b3f57e0feadd5d4682b26",
+      "package_sha256": "2ca1af048782358167efa2cc8357026dbdf919ebf6a374eb2d7907d46cca6ac9"
+    },
+    {
+      "id": "source::20_distillates/documents/tei-p5-guidelines-nh-non-hierarchical-4.12.0#^s26",
+      "verdict": "fully supports",
+      "reason": "Block 42 states: \"Stand-off markup may be used even when the base text being annotated is plain text... the range of text to be marked up is indicated by character offsets\". It also states: \"It is also possible to freely interlink several layers.\" Both parts of the statement are supported in the stand-off section.",
+      "model": "claude-opus-5-5",
+      "reviewer": "claude-opus-5-5; isolated fresh context",
+      "checked_at": "2026-10-17T16:14:49+00:00",
+      "prompt_sha256": "c135969d99284b97428b9db5cd7f8b0a5b4bb1143e543566ac8352dbece330c1",
+      "requested_model": "opus",
+      "outcome_sha256": "5f324a242acd6f8a72b5e4c942b7e6844e210325f51b3f57e0feadd5d4682b26",
+      "package_sha256": "2ca1af048782358167efa2cc8357026dbdf919ebf6a374eb2d7907d46cca6ac9"
+    },
+    {
+      "id": "source::20_distillates/documents/tei-p5-idno-4.12.0#^s3",
+      "verdict": "fully supports",
+      "reason": "Reading 2, at /elementSpec[@ident='idno']/attList[1]/attDef[@ident='type']/desc[1], is the English description in the 4.12.0 specification. It reads \"categorizes the identifier, for example as an ISBN, Social Security number, etc.\"",
+      "model": "claude-opus-5-5",
+      "reviewer": "claude-opus-5-5; isolated fresh context",
+      "checked_at": "2026-10-17T16:14:49+00:00",
+      "prompt_sha256": "af59369b3f421a50b345349fe641a4ef193e982d1981c86db156978ad98be416",
+      "requested_model": "opus",
+      "outcome_sha256": "5f324a242acd6f8a72b5e4c942b7e6844e210325f51b3f57e0feadd5d4682b26",
+      "package_sha256": "2ca1af048782358167efa2cc8357026dbdf919ebf6a374eb2d7907d46cca6ac9"
+    },
+    {
+      "id": "distillate-complete::20_distillates/publications/p6-v1-council-2026-04-24",
+      "verdict": "fully supports",
+      "reason": "Local-only reviewer reason; SHA-256: 3bfd8fc996888326ebbeef05b95e41ce1dbc0718438f33f19a2b7fb021a1c8fa",
+      "model": "claude-opus-5-5",
+      "reviewer": "claude-opus-5-5; isolated fresh context",
+      "checked_at": "2026-10-17T16:15:19+00:00",
+      "prompt_sha256": "c89baa7266f83441a27480b321a26cdebd12564dba3d65399148cc71749e1d17",
+      "requested_model": "opus",
+      "outcome_sha256": "6756bb3d22cd2ca47e021862f5f7b544b29a463e78e27f824afbe71c0c7d210e",
+      "package_sha256": "35f09d577587f31d61f7e96c92539270af18b2f94ba2ec103596bb1c568f7d05"
+    },
+    {
+      "id": "assertion-complete::30_assertions/p5-persname-contains-a-proper-noun-referring-to-a-person",
+      "verdict": "fully supports",
+      "reason": "The Heading and Statement repeat the cited Core statement word for word: in TEI P5 4.12.0 the English description says persName contains a proper noun or proper-noun phrase referring to a person. The Support note only marks what the description leaves out (attributes, content model, other languages). It adds no factual claim that goes beyond the source.",
+      "model": "claude-opus-5-5",
+      "reviewer": "claude-opus-5-5; isolated fresh context",
+      "checked_at": "2026-10-17T16:15:45+00:00",
+      "prompt_sha256": "8b444fc6393e3fca8d04c8d3933090b7ef91fb94fb90bbe6d4937560326e0f8e",
+      "requested_model": "opus",
+      "outcome_sha256": "5a8b2c012de32567d134cc0bba12a6d2e8a000c94a568f3c80e2a47040e3e18d",
+      "package_sha256": "3e6c4bffc8fc0ac130df6e0506990cbe98a9342acd973ad45fa61e896d677cb6"
+    },
+    {
+      "id": "assertion-complete::30_assertions/p5-person-holds-variant-name-forms-without-prioritization",
+      "verdict": "fully supports",
+      "reason": "The Statement keeps every element of the cited Guidelines statement: persName is repeatable within person, xml:lang gives the language and type the kind of name, the library 'base' or 'neutral' authority form is the contrast case, people resist foreign forms for local saints or heroes, any number of variants can be given with no prioritization, and the example uses Icelandic, Danish and Latin forms. Leaving out the Library of Congress example and 'less likelihood of offence' narrows nothing. The Heading's 'each with its language and kind' and the Support's 'decline a base form' are fair paraphrases of how the source describes typed, language-tagged repeats and its rejection of a base form. The Support's disclaimer about nyms adds no claim.",
+      "model": "claude-opus-5-5",
+      "reviewer": "claude-opus-5-5; isolated fresh context",
+      "checked_at": "2026-10-17T16:15:45+00:00",
+      "prompt_sha256": "549b5d4dd34ee138ddefbdfc93b2eb7703e0e294a9180e1099632ee8c38c1212",
+      "requested_model": "opus",
+      "outcome_sha256": "5a8b2c012de32567d134cc0bba12a6d2e8a000c94a568f3c80e2a47040e3e18d",
+      "package_sha256": "3e6c4bffc8fc0ac130df6e0506990cbe98a9342acd973ad45fa61e896d677cb6"
+    },
+    {
+      "id": "assertion-complete::30_assertions/p5-person-provides-information-about-an-identifiable-individual",
+      "verdict": "fully supports",
+      "reason": "The Heading, Statement and cited Core statement all have the same scope: person provides information about an identifiable individual, for example a participant in a language interaction or a person referred to in a historical source. The Support note only lists topics the definition does not cover and adds no unsupported fact.",
+      "model": "claude-opus-5-5",
+      "reviewer": "claude-opus-5-5; isolated fresh context",
+      "checked_at": "2026-10-17T16:15:45+00:00",
+      "prompt_sha256": "3c11460268bbb181cd194deeee75ef468a4ee5374a45e0c55ee6773a0ed82d65",
+      "requested_model": "opus",
+      "outcome_sha256": "5a8b2c012de32567d134cc0bba12a6d2e8a000c94a568f3c80e2a47040e3e18d",
+      "package_sha256": "3e6c4bffc8fc0ac130df6e0506990cbe98a9342acd973ad45fa61e896d677cb6"
+    },
+    {
+      "id": "assertion-complete::30_assertions/p5-testnames-places-in-birth-and-death-are-named-without-identification-while-a-nationality-is-identified-by-key",
+      "verdict": "fully supports",
+      "reason": "The Statement matches the cited Core statement in full: in testnames.xml, the record at block 137 has birth and death places made of settlement and country with neither type nor key, so the places are named but not identified, and an empty nationality element carries a key. The Heading's 'one record' is consistent with 'the record at block 137'. The Support line is only a link and adds no claim.",
+      "model": "claude-opus-5-5",
+      "reviewer": "claude-opus-5-5; isolated fresh context",
+      "checked_at": "2026-10-17T16:15:45+00:00",
+      "prompt_sha256": "4d43a079a958fc2924db810a28a64ac94b0b60ed141064ad7e6740681cec227f",
+      "requested_model": "opus",
+      "outcome_sha256": "5a8b2c012de32567d134cc0bba12a6d2e8a000c94a568f3c80e2a47040e3e18d",
+      "package_sha256": "3e6c4bffc8fc0ac130df6e0506990cbe98a9342acd973ad45fa61e896d677cb6"
+    },
+    {
+      "id": "assertion-complete::30_assertions/p6-v1-p6-sandbox-repository-kept-private-2026",
+      "verdict": "fully supports",
+      "reason": "The March claim (make the repository private for now and reevaluate in Vancouver) matches the Würzburg minutes. 'The repository under discussion' correctly avoids naming it beyond the sandbox-repository item. The May claim (the P6 sandbox repository will be kept private for now while linked from the minutes) matches the 20 May discussion and is correctly placed within the Council discussion. 'Temporary' in the Heading is a fair reading of 'for now'. The assertion explicitly declines to claim the two repositories are the same, that access stayed private in between, or anything about visibility after May, so it makes no unsupported joint inference.",
+      "model": "claude-opus-5-5",
+      "reviewer": "claude-opus-5-5; isolated fresh context",
+      "checked_at": "2026-10-17T16:15:45+00:00",
+      "prompt_sha256": "d3c95daa98df65deda363b64b9597ea6b2b05f4ee49c4d6ad4c040a25a91baf0",
+      "requested_model": "opus",
+      "outcome_sha256": "5a8b2c012de32567d134cc0bba12a6d2e8a000c94a568f3c80e2a47040e3e18d",
+      "package_sha256": "3e6c4bffc8fc0ac130df6e0506990cbe98a9342acd973ad45fa61e896d677cb6"
+    },
+    {
+      "id": "assertion-complete::30_assertions/practice-v1-sampled-schematron-sits-in-odds-and-in-a-service",
+      "verdict": "fully supports",
+      "reason": "The DraCor clause matches the cited constraint, including the root rule, role=\"warning\", the two alternatives and the dracor.org/schema.rng reference. 'Embeds Schematron reports in its change to gap' matches the cited embedded Schematron rule that reports on gap. The correspSearch clause matches the service running schxslt:validate against cmif.sch alongside validation:jing-report against cmi-customization.rng. 'Separately named' only notes that it is a distinct file. Omitting the geonames check and view.xsl narrows nothing. The stated limits on runtime behaviour and on the CMIF ODD avoid overreach.",
+      "model": "claude-opus-5-5",
+      "reviewer": "claude-opus-5-5; isolated fresh context",
+      "checked_at": "2026-10-17T16:15:45+00:00",
+      "prompt_sha256": "67d163e2b296df9709843b16b06976d126c08dd75649850d61d22d67eb99d09b",
+      "requested_model": "opus",
+      "outcome_sha256": "5a8b2c012de32567d134cc0bba12a6d2e8a000c94a568f3c80e2a47040e3e18d",
+      "package_sha256": "3e6c4bffc8fc0ac130df6e0506990cbe98a9342acd973ad45fa61e896d677cb6"
+    },
+    {
+      "id": "assertion::30_assertions/szd-records-share-work-reference<-20_distillates/documents/szd-werke-2026-09-07#^s1",
+      "verdict": "fully supports",
+      "reason": "The ground is cited only for the SZDMSK.3 sentence. It states the same thing: entry SZDMSK.3 has a term with type=\"work\" and ref=\"#SZDWRK.2\". The SZDMSK.4 claim is attributed to ^s5, and the shared-reference heading is a joint inference judged separately.",
+      "model": "claude-opus-5-5",
+      "reviewer": "claude-opus-5-5; isolated fresh context",
+      "checked_at": "2026-10-17T16:15:14+00:00",
+      "prompt_sha256": "1effe497eab8d126fe79d027def2b4ef93626b5492e29ee97dc99d1731a60348",
+      "requested_model": "opus",
+      "outcome_sha256": "ee252dc2976fd2cf2dea012d90b4196c6419260ac35275a1bdcad4cb8d4d6827",
+      "package_sha256": "5131c2343e00fbe9091516e8618fb7094e223c76eed2b216142fb854bd2a61d9"
+    },
+    {
+      "id": "assertion::30_assertions/teic-tei-issue-2739-commenter-states-att-personal-is-a-member-of-att-naming-and-att-naming-of-att-canonical<-20_distillates/publications/teic-tei-issue-2739#^s5",
+      "verdict": "fully supports",
+      "reason": "The sentence attributed to ^s5, \"The commenter wrote that this can be seen from their spec files,\" matches the core statement. It is correctly attributed to a commenter in issue 2739. The membership claims belong to ^s4.",
+      "model": "claude-opus-5-5",
+      "reviewer": "claude-opus-5-5; isolated fresh context",
+      "checked_at": "2026-10-17T16:15:14+00:00",
+      "prompt_sha256": "d52f931a2c1710072a789159adefaeb0c0ac15eb91d23d23f64580b8571364f6",
+      "requested_model": "opus",
+      "outcome_sha256": "ee252dc2976fd2cf2dea012d90b4196c6419260ac35275a1bdcad4cb8d4d6827",
+      "package_sha256": "5131c2343e00fbe9091516e8618fb7094e223c76eed2b216142fb854bd2a61d9"
+    },
+    {
+      "id": "assertion::30_assertions/teic-tei-issue-2739-commenter-states-att-personal-is-a-member-of-att-naming-and-att-naming-of-att-canonical<-20_distillates/publications/teic-tei-issue-2739#^s6",
+      "verdict": "fully supports",
+      "reason": "The sentence attributed to ^s6, \"They gave the URL of the att.personal specification file on the repository's dev branch,\" matches the core statement, including the dev-branch detail. The membership claims are attributed to ^s4.",
+      "model": "claude-opus-5-5",
+      "reviewer": "claude-opus-5-5; isolated fresh context",
+      "checked_at": "2026-10-17T16:15:14+00:00",
+      "prompt_sha256": "75c974e7d1bbaee16cd05decb73c4e9ca43ea81fc524040ee8c785dd0b4671c0",
+      "requested_model": "opus",
+      "outcome_sha256": "ee252dc2976fd2cf2dea012d90b4196c6419260ac35275a1bdcad4cb8d4d6827",
+      "package_sha256": "5131c2343e00fbe9091516e8618fb7094e223c76eed2b216142fb854bd2a61d9"
+    },
+    {
+      "id": "assertion::30_assertions/teic-tei-issue-337-author-announces-an-interim-guidelines-change-telling-people-to-switch-to-ref<-20_distillates/publications/teic-tei-issue-337#^s5",
+      "verdict": "fully supports",
+      "reason": "The statement repeats the core statement almost word for word. It keeps the November 2011 Paris Council framing, the attribution to the issue author, the \"we will modify\" announcement wording, the interim nature of the change and the switch from key to ref. It reports only an announcement, not an actual change to the Guidelines.",
+      "model": "claude-opus-5-5",
+      "reviewer": "claude-opus-5-5; isolated fresh context",
+      "checked_at": "2026-10-17T16:15:14+00:00",
+      "prompt_sha256": "f56cf1299c7b04a510cfbc35bea4315f3de9897de8970a9827c8925ec2361dd2",
+      "requested_model": "opus",
+      "outcome_sha256": "ee252dc2976fd2cf2dea012d90b4196c6419260ac35275a1bdcad4cb8d4d6827",
+      "package_sha256": "5131c2343e00fbe9091516e8618fb7094e223c76eed2b216142fb854bd2a61d9"
+    },
+    {
+      "id": "source::20_distillates/documents/tei-p5-guidelines-ds-defaulttextstructure-4.12.0#^s19",
+      "verdict": "fully supports",
+      "reason": "Block 44 says that head marks \"a heading prefixed to the start of any textual division\" and that \"A given division may contain more than one such element.\" Its Etymology example has two consecutive head elements at the start of a div1.",
+      "model": "claude-opus-5-5",
+      "reviewer": "claude-opus-5-5; isolated fresh context",
+      "checked_at": "2026-10-17T16:13:33+00:00",
+      "prompt_sha256": "e4b8951c128fb5c6d0472d3ddadbc692d06570a526cd5d54e5182d1a465e88f6",
+      "requested_model": "opus",
+      "outcome_sha256": "66b1493a941cce723ccb0d611e6b84a30e1dd625db8092862146bc17f16ed97c",
+      "package_sha256": "57105c3b2ee65fe018d14d890b3f42b6d112359ed9a9d178e89431263e7251bf"
+    },
+    {
+      "id": "source::20_distillates/documents/tei-p5-guidelines-ds-defaulttextstructure-4.12.0#^s20",
+      "verdict": "fully supports",
+      "reason": "Block 45 says that \"the type or level of heading intended is implied by the immediate parent of the head element.\" It also says that \"the encoder may choose to extend the model.headLike class ... to include other such elements if required.\" The statement matches both points.",
+      "model": "claude-opus-5-5",
+      "reviewer": "claude-opus-5-5; isolated fresh context",
+      "checked_at": "2026-10-17T16:13:33+00:00",
+      "prompt_sha256": "4afcecbf8d726040dad7c9f222d175537c1f11871ec44342fa37b1a676d4a424",
+      "requested_model": "opus",
+      "outcome_sha256": "66b1493a941cce723ccb0d611e6b84a30e1dd625db8092862146bc17f16ed97c",
+      "package_sha256": "57105c3b2ee65fe018d14d890b3f42b6d112359ed9a9d178e89431263e7251bf"
+    },
+    {
+      "id": "source::20_distillates/documents/tei-p5-guidelines-ds-defaulttextstructure-4.12.0#^s37",
+      "verdict": "fully supports",
+      "reason": "Block 84 says that quote's semantics \"suggest that its content derives from a source external to the current text.\" It says floatingText \"carries no such implication\" and is used \"whenever the richer content model that it provides is required\" for a part of a text \"presented as a discrete 'inclusion.'\" The statement matches this contrast.",
+      "model": "claude-opus-5-5",
+      "reviewer": "claude-opus-5-5; isolated fresh context",
+      "checked_at": "2026-10-17T16:13:33+00:00",
+      "prompt_sha256": "47d18955fe61c776fb03971633ae63e3cb1641ea67cd3acae70458bfd07641ad",
+      "requested_model": "opus",
+      "outcome_sha256": "66b1493a941cce723ccb0d611e6b84a30e1dd625db8092862146bc17f16ed97c",
+      "package_sha256": "57105c3b2ee65fe018d14d890b3f42b6d112359ed9a9d178e89431263e7251bf"
+    },
+    {
+      "id": "source::20_distillates/documents/tei-p5-guidelines-ds-defaulttextstructure-4.12.0#^s44",
+      "verdict": "fully supports",
+      "reason": "Block 99 says that figure can appear in titlePage along with model.titlepagePart elements. It says figure is included \"to enable encoders to record the presence of complex non-textual material on a title page.\" For \"simple cases such as printers' ornaments or illustrations the graphic element ... should be adequate.\" Calling that a suggestion is a fair paraphrase.",
+      "model": "claude-opus-5-5",
+      "reviewer": "claude-opus-5-5; isolated fresh context",
+      "checked_at": "2026-10-17T16:13:33+00:00",
+      "prompt_sha256": "dad428711701ff4dd5171006d31199fc47166459bca3a2f91154df4ba44f92e8",
+      "requested_model": "opus",
+      "outcome_sha256": "66b1493a941cce723ccb0d611e6b84a30e1dd625db8092862146bc17f16ed97c",
+      "package_sha256": "57105c3b2ee65fe018d14d890b3f42b6d112359ed9a9d178e89431263e7251bf"
+    },
+    {
+      "id": "source::20_distillates/documents/tei-p5-guidelines-ds-defaulttextstructure-4.12.0#^s45",
+      "verdict": "fully supports",
+      "reason": "Block 105 gives two possible approaches to title-page rendition. The first: \"One approach ... would be to use the seg tag ... and then use the global rend attribute.\" The second: \"Another would be to use a module specialized for the description of typographic entities.\" The statement calls these possible approaches, which matches the source's conditional wording (\"would be\").",
+      "model": "claude-opus-5-5",
+      "reviewer": "claude-opus-5-5; isolated fresh context",
+      "checked_at": "2026-10-17T16:13:33+00:00",
+      "prompt_sha256": "d51a409bce78da65ffdb98eef60cac4bf2a1d983101f33ceee3e00d317d4ff9b",
+      "requested_model": "opus",
+      "outcome_sha256": "66b1493a941cce723ccb0d611e6b84a30e1dd625db8092862146bc17f16ed97c",
+      "package_sha256": "57105c3b2ee65fe018d14d890b3f42b6d112359ed9a9d178e89431263e7251bf"
+    },
+    {
+      "id": "source::20_distillates/documents/tei-p5-guidelines-nd-4.12.0#^s7",
+      "verdict": "fully supports",
+      "reason": "Block 26 contains every part of the statement. It says rs and name \"can distinguish names in a text but are insufficiently powerful to mark their internal components or structure.\" It says that for \"nominal record linkage or even to create an alphabetically sorted list of personal names, it is important to distinguish between a family name, a forename and an honorary title.\" Its specList provides persName, surname, forename, roleName, addName, nameLink and genName \"for these and related purposes.\" The version attribution matches the source metadata (4.12.0).",
+      "model": "claude-opus-5-5",
+      "reviewer": "claude-opus-5-5; isolated fresh context",
+      "checked_at": "2026-10-17T16:13:33+00:00",
+      "prompt_sha256": "0145c1aaf4995b24d5cbe8db0886a4597fccf6e6cff2a09aaf0ea7f06bc96751",
+      "requested_model": "opus",
+      "outcome_sha256": "66b1493a941cce723ccb0d611e6b84a30e1dd625db8092862146bc17f16ed97c",
+      "package_sha256": "57105c3b2ee65fe018d14d890b3f42b6d112359ed9a9d178e89431263e7251bf"
+    },
+    {
+      "id": "source::20_distillates/documents/tei-p5-att.global.linking-4.12.0#^s8",
+      "verdict": "fully supports",
+      "reason": "Block 67 (/classSpec/attList/attDef[5]/desc[1]) sits under attDef ident=\"next\" and reads verbatim: \"points to the next element of a virtual aggregate of which the current element is part.\"",
+      "model": "claude-opus-5-5",
+      "reviewer": "claude-opus-5-5; isolated fresh context",
+      "checked_at": "2026-10-17T16:13:26+00:00",
+      "prompt_sha256": "fe4caa2af55ed21688b682ef2688dc758ddbc0777fef7002454917eb2ce0e3cd",
+      "requested_model": "opus",
+      "outcome_sha256": "ea027aeb262e1dc587ee1d9508e56b4b42aef279aae96991bbf0deec0fb1fd25",
+      "package_sha256": "5b9b92e49e91f316303c86ddb7b710eea52450aa2b46cf278db0ec43f4700626"
+    },
+    {
+      "id": "source::20_distillates/documents/tei-p5-att.global.source-4.12.0#^s9",
+      "verdict": "fully supports",
+      "reason": "Reading 6, the English remarks paragraph p[4] on attDef source, states: \"when used on other elements multiple values are permitted.\" The condition is preserved, and the statement makes no claim about the one-value rule for schema components.",
+      "model": "claude-opus-5-5",
+      "reviewer": "claude-opus-5-5; isolated fresh context",
+      "checked_at": "2026-10-17T16:13:26+00:00",
+      "prompt_sha256": "4cffd832437d35c55bcd8974ad0ede9236c044f3160d73e3ab646358f4c17e00",
+      "requested_model": "opus",
+      "outcome_sha256": "ea027aeb262e1dc587ee1d9508e56b4b42aef279aae96991bbf0deec0fb1fd25",
+      "package_sha256": "5b9b92e49e91f316303c86ddb7b710eea52450aa2b46cf278db0ec43f4700626"
+    },
+    {
+      "id": "source::20_distillates/documents/tei-p5-att.personal-4.12.0#^s2",
+      "verdict": "fully supports",
+      "reason": "Reading 1 (classSpec desc[1]) reads: \"common attributes for those elements which form part of a name usually, but not necessarily, a personal name.\" The quoted qualifier matches exactly and applies to the name.",
+      "model": "claude-opus-5-5",
+      "reviewer": "claude-opus-5-5; isolated fresh context",
+      "checked_at": "2026-10-17T16:13:26+00:00",
+      "prompt_sha256": "214b15443deb8df9cf498c9db4fb22716a358324b4f5509ed0de091599ca9d82",
+      "requested_model": "opus",
+      "outcome_sha256": "ea027aeb262e1dc587ee1d9508e56b4b42aef279aae96991bbf0deec0fb1fd25",
+      "package_sha256": "5b9b92e49e91f316303c86ddb7b710eea52450aa2b46cf278db0ec43f4700626"
+    },
+    {
+      "id": "source::20_distillates/documents/tei-p5-att.personal-4.12.0#^s3",
+      "verdict": "fully supports",
+      "reason": "Reading 2 (attDef[@ident='full']/desc[1]) reads verbatim: \"indicates whether the name component is given in full, as an abbreviation or simply as an initial.\"",
+      "model": "claude-opus-5-5",
+      "reviewer": "claude-opus-5-5; isolated fresh context",
+      "checked_at": "2026-10-17T16:13:26+00:00",
+      "prompt_sha256": "5aeb99c3d53b8dd19fc08a9eaa0a2dddbc0b8ccf2d807d8b5615817dafe6ec59",
+      "requested_model": "opus",
+      "outcome_sha256": "ea027aeb262e1dc587ee1d9508e56b4b42aef279aae96991bbf0deec0fb1fd25",
+      "package_sha256": "5b9b92e49e91f316303c86ddb7b710eea52450aa2b46cf278db0ec43f4700626"
+    },
+    {
+      "id": "source::20_distillates/documents/tei-p5-guidelines-ds-defaulttextstructure-4.12.0#^s3",
+      "verdict": "fully supports",
+      "reason": "Block 4 (p[3]) says that because TEI can be a child of itself, an outermost TEI element with a teiHeader holding collection-level metadata contains a complete TEI element for each document. Each of those has its own teiHeader with metadata for that document.",
+      "model": "claude-opus-5-5",
+      "reviewer": "claude-opus-5-5; isolated fresh context",
+      "checked_at": "2026-10-17T16:13:26+00:00",
+      "prompt_sha256": "465d4a5e72f8f30b05ff5d949874f74473eccecba207965804d373eaf173592e",
+      "requested_model": "opus",
+      "outcome_sha256": "ea027aeb262e1dc587ee1d9508e56b4b42aef279aae96991bbf0deec0fb1fd25",
+      "package_sha256": "5b9b92e49e91f316303c86ddb7b710eea52450aa2b46cf278db0ec43f4700626"
+    },
+    {
+      "id": "source::20_distillates/documents/tei-p5-guidelines-ds-defaulttextstructure-4.12.0#^s7",
+      "verdict": "fully supports",
+      "reason": "Block 9 (p[8]) reads: \"In unitary texts, the text body is tagged body; in composite texts, where the text body consists of a series of subordinate texts or groups, it is tagged group.\"",
+      "model": "claude-opus-5-5",
+      "reviewer": "claude-opus-5-5; isolated fresh context",
+      "checked_at": "2026-10-17T16:13:26+00:00",
+      "prompt_sha256": "2891ee96dacab6c48166af5b7fea7cb93ff5278b709ea23997bc9a240c448f08",
+      "requested_model": "opus",
+      "outcome_sha256": "ea027aeb262e1dc587ee1d9508e56b4b42aef279aae96991bbf0deec0fb1fd25",
+      "package_sha256": "5b9b92e49e91f316303c86ddb7b710eea52450aa2b46cf278db0ec43f4700626"
+    },
+    {
+      "id": "assertion::30_assertions/p6-v1-recorded-positions-on-new-p5-features-differ-2025-2026<-20_distillates/publications/p6-v1-council-f2f-2026-03-wurzburg#^s8",
+      "verdict": "fully supports",
+      "reason": "The ground supports the March 2026 clause: the Würzburg minutes, under continued support of P5 while developing P6, list announcing at the Annual Members' Meeting that new features stop until P6 starts. The assertion's label for this record, 'a planned announcement', fits it, and the assertion does not say the announcement was made or carried out. The other dated positions belong to other grounds.",
+      "model": "claude-opus-5-5",
+      "reviewer": "claude-opus-5-5; isolated fresh context",
+      "checked_at": "2026-10-17T16:15:08+00:00",
+      "prompt_sha256": "dd8f1edfcf3a16db8fedd78675ae3a52b134f77aa2f393eb77839936905d39e3",
+      "requested_model": "opus",
+      "outcome_sha256": "d365114e7e8f273b20a682c2392dac67cc59039f165f142d3d7260ffbcdf71d0",
+      "package_sha256": "6454c052c0cc1201e4d0946b8623ba460e4935974574b2254a6bb82fd9407637"
+    },
+    {
+      "id": "assertion::30_assertions/practice-v1-sampled-odds-name-their-tei-source-differently<-20_distillates/documents/practice-v1-cmif-odd-d171133e#^s1",
+      "verdict": "fully supports",
+      "reason": "This ground's part is the CMIF clause, 'the CMIF ODD carries no `source` attribute on its `schemaSpec`'. The distillate says directly that the cmi-customization schemaSpec carries no source attribute. The DraCor and EpiDoc values are attributed to other sources, and the assertion's limitation is about scope, not a claim about the source.",
+      "model": "claude-opus-5-5",
+      "reviewer": "claude-opus-5-5; isolated fresh context",
+      "checked_at": "2026-10-17T16:15:08+00:00",
+      "prompt_sha256": "ab64c01c7b50e1d4db67df4ff84eabf5bb47bff02c7f7388fb9e06b9351d03cc",
+      "requested_model": "opus",
+      "outcome_sha256": "d365114e7e8f273b20a682c2392dac67cc59039f165f142d3d7260ffbcdf71d0",
+      "package_sha256": "6454c052c0cc1201e4d0946b8623ba460e4935974574b2254a6bb82fd9407637"
+    },
+    {
+      "id": "assertion::30_assertions/structure-p5-has-several-nonhierarchical-methods<-20_distillates/documents/tei-p5-guidelines-nh-non-hierarchical-4.12.0#^s3",
+      "verdict": "fully supports",
+      "reason": "All four methods match the distillate. 'Boundary marking' is a faithful paraphrase of 'empty boundary elements', and the version (4.12.0) and purpose (handling non-hierarchical information) are kept.",
+      "model": "claude-opus-5-5",
+      "reviewer": "claude-opus-5-5; isolated fresh context",
+      "checked_at": "2026-10-17T16:15:08+00:00",
+      "prompt_sha256": "c05b4da394110065edf91c69f543947f0e483f29db783b6594e09af1bbe5d053",
+      "requested_model": "opus",
+      "outcome_sha256": "d365114e7e8f273b20a682c2392dac67cc59039f165f142d3d7260ffbcdf71d0",
+      "package_sha256": "6454c052c0cc1201e4d0946b8623ba460e4935974574b2254a6bb82fd9407637"
+    },
+    {
+      "id": "assertion::30_assertions/structure-p5-multiple-encoding-maintenance-cost<-20_distillates/documents/tei-p5-guidelines-nh-non-hierarchical-4.12.0#^s6",
+      "verdict": "fully supports",
+      "reason": "The distillate names maintenance of repeated textual content and the lack of explicit relations between views as disadvantages of multiple encoding in the 4.12.0 chapter. The assertion repeats only those disadvantages and leaves out the advantages without misstating them.",
+      "model": "claude-opus-5-5",
+      "reviewer": "claude-opus-5-5; isolated fresh context",
+      "checked_at": "2026-10-17T16:15:08+00:00",
+      "prompt_sha256": "a4b2a54df01e6ee1d6a499750b1de145c73728a4d81223dc6049b6e81bb30854",
+      "requested_model": "opus",
+      "outcome_sha256": "d365114e7e8f273b20a682c2392dac67cc59039f165f142d3d7260ffbcdf71d0",
+      "package_sha256": "6454c052c0cc1201e4d0946b8623ba460e4935974574b2254a6bb82fd9407637"
+    },
+    {
+      "id": "assertion::30_assertions/structure-p5-note-number-omission-is-conditional<-20_distillates/documents/tei-p5-note-4.12.0#^s7",
+      "verdict": "fully supports",
+      "reason": "The statement repeats the distillate almost word for word and keeps both conditions (numbered in sequence, reconstructable by software) and the hedge 'may well be considered unnecessary'. The heading keeps the conditions too, as 'sequential' and 'when software can reconstruct them'.",
+      "model": "claude-opus-5-5",
+      "reviewer": "claude-opus-5-5; isolated fresh context",
+      "checked_at": "2026-10-17T16:15:08+00:00",
+      "prompt_sha256": "8c20e21733e82aa906b2364ef48e87005812b3047d2034a16aeb91a94afd4598",
+      "requested_model": "opus",
+      "outcome_sha256": "d365114e7e8f273b20a682c2392dac67cc59039f165f142d3d7260ffbcdf71d0",
+      "package_sha256": "6454c052c0cc1201e4d0946b8623ba460e4935974574b2254a6bb82fd9407637"
+    },
+    {
+      "id": "assertion::30_assertions/structure-p6-numbered-divisions-reconsideration-label<-20_distillates/publications/teic-tei-issue-1400#^s3",
+      "verdict": "fully supports",
+      "reason": "The distillate records that issue 1400's labels at the 2026-09-06 snapshot include reconsideration for P6. The assertion is limited to that same snapshot and claims only that the label was present, nothing about the outcome.",
+      "model": "claude-opus-5-5",
+      "reviewer": "claude-opus-5-5; isolated fresh context",
+      "checked_at": "2026-10-17T16:15:08+00:00",
+      "prompt_sha256": "df7113417c24f2fce431efcccd9b6e475e4a399b3f1a445ab1d273c5992280b7",
+      "requested_model": "opus",
+      "outcome_sha256": "d365114e7e8f273b20a682c2392dac67cc59039f165f142d3d7260ffbcdf71d0",
+      "package_sha256": "6454c052c0cc1201e4d0946b8623ba460e4935974574b2254a6bb82fd9407637"
+    },
+    {
+      "id": "source::20_distillates/documents/tei-p5-relation-4.12.0#^s5",
+      "verdict": "fully supports",
+      "reason": "Reading 3 is located at attDef[@ident='active']/desc. It reads: \"identifies the active participants in a non-mutual relationship, or all the participants in a mutual one.\" That matches the statement's condition (a mutual relationship) and its content (identifies all participants), and the source is TEI P5 4.12.0.",
+      "model": "claude-opus-5-5",
+      "reviewer": "claude-opus-5-5; isolated fresh context",
+      "checked_at": "2026-10-17T16:14:47+00:00",
+      "prompt_sha256": "ad9dcef39722a8b45d9cd1c5208db4811ced516859c2793f329bfa8f3d879ff7",
+      "requested_model": "opus",
+      "outcome_sha256": "27faa6606d9609ba8c06485983e2fb4235531ad86f8ede8386261a70625c68e8",
+      "package_sha256": "77c1a3317b9f8f5437c131c7793aefc6f914acd4f6c4439b2fd35afea817a586"
+    },
+    {
+      "id": "source::20_distillates/documents/tei-p5-relation-4.12.0#^s7",
+      "verdict": "fully supports",
+      "reason": "Reading 5 is located at attDef[@ident='passive']/desc, the English description in the relation elementSpec. It reads: \"identifies the passive participants in a non-mutual relationship.\" The statement repeats this wording.",
+      "model": "claude-opus-5-5",
+      "reviewer": "claude-opus-5-5; isolated fresh context",
+      "checked_at": "2026-10-17T16:14:47+00:00",
+      "prompt_sha256": "43a8a80e6a97bc7995666f99c52b4f6c3cc9c4ea76188f79cebf81f4d5f9ea8b",
+      "requested_model": "opus",
+      "outcome_sha256": "27faa6606d9609ba8c06485983e2fb4235531ad86f8ede8386261a70625c68e8",
+      "package_sha256": "77c1a3317b9f8f5437c131c7793aefc6f914acd4f6c4439b2fd35afea817a586"
+    },
+    {
+      "id": "source::20_distillates/documents/tei-p5-test-testnames-4.12.0#^s5",
+      "verdict": "fully supports",
+      "reason": "Block 34 reads: <person xml:id=\"CarLun01\" sex=\"1\" role=\"binder\" rend=\"nolist\"> <persName xml:lang=\"da\">Carl Lund</persName>. So rend sits on the person element alongside xml:id, sex and role, and the contained persName has only xml:lang.",
+      "model": "claude-opus-5-5",
+      "reviewer": "claude-opus-5-5; isolated fresh context",
+      "checked_at": "2026-10-17T16:14:47+00:00",
+      "prompt_sha256": "78334a71a4edf9a0b1a4101c29417c5213afdd1ba7c29f6240d1e193d704a993",
+      "requested_model": "opus",
+      "outcome_sha256": "27faa6606d9609ba8c06485983e2fb4235531ad86f8ede8386261a70625c68e8",
+      "package_sha256": "77c1a3317b9f8f5437c131c7793aefc6f914acd4f6c4439b2fd35afea817a586"
+    },
+    {
+      "id": "source::20_distillates/documents/tei-p5-test-testnames-4.12.0#^s11",
+      "verdict": "fully supports",
+      "reason": "Block 120 has <birth notBefore=\"1651\" notAfter=\"1671\">c. 1661</birth>: the dates are twenty years apart and \"c.\" marks the year as approximate. It also has <death notBefore=\"1742\" notAfter=\"1742\">1742</death>, which uses the same attribute pair with identical values. The claim that one mechanism expresses both a range and a point follows directly from these two encodings.",
+      "model": "claude-opus-5-5",
+      "reviewer": "claude-opus-5-5; isolated fresh context",
+      "checked_at": "2026-10-17T16:14:47+00:00",
+      "prompt_sha256": "506805998d42aa0a2221418c14eb64792d498a82955d821c2f5c0e02ade5145a",
+      "requested_model": "opus",
+      "outcome_sha256": "27faa6606d9609ba8c06485983e2fb4235531ad86f8ede8386261a70625c68e8",
+      "package_sha256": "77c1a3317b9f8f5437c131c7793aefc6f914acd4f6c4439b2fd35afea817a586"
+    },
+    {
+      "id": "source::20_distillates/publications/p6-v1-council-f2f-2025-09-krakow#^s4",
+      "verdict": "fully supports",
+      "reason": "Local-only reviewer reason; SHA-256: a4e4a11cac723ad755ff9ed64be8e1c888b8859c87303f4f4bc35de8758e9b9b",
+      "model": "claude-opus-5-5",
+      "reviewer": "claude-opus-5-5; isolated fresh context",
+      "checked_at": "2026-10-17T16:14:47+00:00",
+      "prompt_sha256": "d8d894b921493163b38dc882cac76213f6231293a9de87656c8f37e881b7b943",
+      "requested_model": "opus",
+      "outcome_sha256": "27faa6606d9609ba8c06485983e2fb4235531ad86f8ede8386261a70625c68e8",
+      "package_sha256": "77c1a3317b9f8f5437c131c7793aefc6f914acd4f6c4439b2fd35afea817a586"
+    },
+    {
+      "id": "source::20_distillates/publications/p6-v1-council-p6-2026-05-20#^s1",
+      "verdict": "fully supports",
+      "reason": "Local-only reviewer reason; SHA-256: 0fb041539b0d71903ecb6e69a1ac7c6dda1a8eba36731659787df7523950b805",
+      "model": "claude-opus-5-5",
+      "reviewer": "claude-opus-5-5; isolated fresh context",
+      "checked_at": "2026-10-17T16:14:47+00:00",
+      "prompt_sha256": "dee49f44c3f02e2a997285b9361842e1005b3e3db951bc8fd68138d6cad13da6",
+      "requested_model": "opus",
+      "outcome_sha256": "27faa6606d9609ba8c06485983e2fb4235531ad86f8ede8386261a70625c68e8",
+      "package_sha256": "77c1a3317b9f8f5437c131c7793aefc6f914acd4f6c4439b2fd35afea817a586"
+    },
+    {
+      "id": "assertion::30_assertions/p5-guidelines-use-generic-state-trait-and-event-customized-through-type-for-information-about-a-place<-20_distillates/documents/tei-p5-guidelines-nd-4.12.0#^s49",
+      "verdict": "fully supports",
+      "reason": "The complete statement matches the cited distillate statement word for word. That includes the project-specific categories, the explicit disclaimer of comprehensiveness, the generic state/trait/event elements that can be customized through @type, and the predefined population, climate and terrain elements. The heading's word \"recommends\" fairly paraphrases \"should be used\", and \"permits customization through type\" matches \"may be customized ... by means of its type attribute\".",
+      "model": "claude-opus-5-5",
+      "reviewer": "claude-opus-5-5; isolated fresh context",
+      "checked_at": "2026-10-17T16:15:05+00:00",
+      "prompt_sha256": "e45a7dbeb7ef66ffa64f7bdfb90bdcf0c3b9353eeccc0a47e130862e430559c7",
+      "requested_model": "opus",
+      "outcome_sha256": "22f66ca744b4ce14d8e6a604b3805cf5fbc740c84652fad5667220cd891d118d",
+      "package_sha256": "8445945e8eb1ae7e92ced2bf40f68ac0c3e26e2a13f6cb54d053d335dba84523"
+    },
+    {
+      "id": "assertion::30_assertions/p5-source-specifies-the-source-from-which-some-aspect-of-an-element-is-drawn<-20_distillates/documents/tei-p5-att.global.source-4.12.0#^s2",
+      "verdict": "fully supports",
+      "reason": "The statement repeats the cited description of @source in att.global.source for version 4.12.0: it specifies the source from which some aspect of this element is drawn. Calling att.global.source an \"attribute class\" adds no new factual claim.",
+      "model": "claude-opus-5-5",
+      "reviewer": "claude-opus-5-5; isolated fresh context",
+      "checked_at": "2026-10-17T16:15:05+00:00",
+      "prompt_sha256": "c73844cacca1d3e869e830dcd023a98bbbf64caa11b37242c1d3230f65030d66",
+      "requested_model": "opus",
+      "outcome_sha256": "22f66ca744b4ce14d8e6a604b3805cf5fbc740c84652fad5667220cd891d118d",
+      "package_sha256": "8445945e8eb1ae7e92ced2bf40f68ac0c3e26e2a13f6cb54d053d335dba84523"
+    },
+    {
+      "id": "assertion::30_assertions/p5-state-attributes-a-status-or-quality-often-at-a-specific-time-or-for-a-date-range<-20_distillates/documents/tei-p5-state-4.12.0#^s3",
+      "verdict": "fully supports",
+      "reason": "The statement repeats the cited English description of state in 4.12.0. It keeps the hedge \"often\" and both conditions, \"at some specific time or for a specific date range\". The added phrase \"it describes\" only restates whose status or quality is meant and does not overreach.",
+      "model": "claude-opus-5-5",
+      "reviewer": "claude-opus-5-5; isolated fresh context",
+      "checked_at": "2026-10-17T16:15:05+00:00",
+      "prompt_sha256": "bb8864abadb00d9c67b489cd694448aa77c45278f258f78b3a083b8335776157",
+      "requested_model": "opus",
+      "outcome_sha256": "22f66ca744b4ce14d8e6a604b3805cf5fbc740c84652fad5667220cd891d118d",
+      "package_sha256": "8445945e8eb1ae7e92ced2bf40f68ac0c3e26e2a13f6cb54d053d335dba84523"
+    },
+    {
+      "id": "assertion::30_assertions/p5-testnames-name-of-type-person-in-a-note-carries-a-key-and-no-ref<-20_distillates/documents/tei-p5-test-testnames-4.12.0#^s6",
+      "verdict": "fully supports",
+      "reason": "The statement matches the cited distillate word for word. It names the same document (testnames.xml), the same location (block 84) and the same details: a note stating a spouse relation, containing a name with type=\"person\", a nonempty key and no ref. The heading leaves out the block number, but it makes no claim the source doesn't support.",
+      "model": "claude-opus-5-5",
+      "reviewer": "claude-opus-5-5; isolated fresh context",
+      "checked_at": "2026-10-17T16:15:05+00:00",
+      "prompt_sha256": "bc257635d284978695c7b88f0be8f8789db635dc96bf5a2fd8b168065236745b",
+      "requested_model": "opus",
+      "outcome_sha256": "22f66ca744b4ce14d8e6a604b3805cf5fbc740c84652fad5667220cd891d118d",
+      "package_sha256": "8445945e8eb1ae7e92ced2bf40f68ac0c3e26e2a13f6cb54d053d335dba84523"
+    },
+    {
+      "id": "assertion::30_assertions/p6-v1-p6-sandbox-repository-kept-private-2026<-20_distillates/publications/p6-v1-council-f2f-2026-03-wurzburg#^s5",
+      "verdict": "fully supports",
+      "reason": "This ground supports the March part of the assertion: the Würzburg minutes record a Council decision to make the repository private \"for now\" and to reevaluate at the Vancouver face-to-face meeting. The assertion keeps both the temporary condition and the reevaluation condition. It calls this simply \"the repository under discussion\" and explicitly declines to identify it with the May P6 sandbox, so this ground isn't stretched. The 20 May claim is attributed to another source.",
+      "model": "claude-opus-5-5",
+      "reviewer": "claude-opus-5-5; isolated fresh context",
+      "checked_at": "2026-10-17T16:15:05+00:00",
+      "prompt_sha256": "cce9b56883ce68478cb74c4368a9fe80c0158182706146df8b2be8b9bda24a5f",
+      "requested_model": "opus",
+      "outcome_sha256": "22f66ca744b4ce14d8e6a604b3805cf5fbc740c84652fad5667220cd891d118d",
+      "package_sha256": "8445945e8eb1ae7e92ced2bf40f68ac0c3e26e2a13f6cb54d053d335dba84523"
+    },
+    {
+      "id": "assertion::30_assertions/p6-v1-p6-work-located-in-teic-p6-sandbox-2026<-20_distillates/publications/p6-v1-council-f2f-2026-03-wurzburg#^s4",
+      "verdict": "fully supports",
+      "reason": "This ground supports the March part of the assertion: under \"establishing a workspace\" in the next-steps planning, the Würzburg minutes list creating a sandbox repository, and the assertion describes that as a listed next step. The claim that work is proceeding in TEIC/p6-sandbox comes from the separately attributed minutes of 24 April 2026. The assertion does not claim that this ground named the repository or that it was created in March.",
+      "model": "claude-opus-5-5",
+      "reviewer": "claude-opus-5-5; isolated fresh context",
+      "checked_at": "2026-10-17T16:15:05+00:00",
+      "prompt_sha256": "b4407dc5b152fad43d5d505711d1b4a4d60cf9c9c72f6ba1c2b906c0d8b05137",
+      "requested_model": "opus",
+      "outcome_sha256": "22f66ca744b4ce14d8e6a604b3805cf5fbc740c84652fad5667220cd891d118d",
+      "package_sha256": "8445945e8eb1ae7e92ced2bf40f68ac0c3e26e2a13f6cb54d053d335dba84523"
+    },
+    {
+      "id": "source::20_distillates/documents/tei-p5-guidelines-nd-4.12.0#^s11",
+      "verdict": "fully supports",
+      "reason": "Block 39 says addName and roleName mark 'all name components other than those already listed'. It says roleName encloses a title 'which exists in some sense independently of its bearer' and that 'The distinction is not always a clear one.' It says contextual roles such as witness or defendant should not use roleName, because roleName marks 'roles which function as part of a person's name'. It also says roles and occupations are encoded within person. Every clause of the statement is covered.",
+      "model": "claude-opus-5-5",
+      "reviewer": "claude-opus-5-5; isolated fresh context",
+      "checked_at": "2026-10-17T16:13:37+00:00",
+      "prompt_sha256": "5ae6c4243c67829006a78d3746d1585fd8f2290045327732e88f4b27628b0092",
+      "requested_model": "opus",
+      "outcome_sha256": "3dfedb24e6e3e55271a75741e6a381ef74645ea600e4b1cb74793eddcabb9b5d",
+      "package_sha256": "9539f5146a01eedea53a972536f0901670050c18f250a1811bf95bdd31ee89ac"
+    },
+    {
+      "id": "source::20_distillates/documents/tei-p5-guidelines-nd-4.12.0#^s15",
+      "verdict": "fully supports",
+      "reason": "Block 47 calls the orgName encoding 'equivalent to, but more specific than, either of the following representations' (rs and name). It describes the key attribute (external identifier such as a database key) and the ref attribute (points to an org element). It says type 'should be used to characterize the name (rather than the organization)', with acronym, phrase and composite examples. The statement matches.",
+      "model": "claude-opus-5-5",
+      "reviewer": "claude-opus-5-5; isolated fresh context",
+      "checked_at": "2026-10-17T16:13:37+00:00",
+      "prompt_sha256": "01e46278f77a1c1dd11b2b1daaba40e550faa15cf99ffdf7ca0dcf577fd7df89",
+      "requested_model": "opus",
+      "outcome_sha256": "3dfedb24e6e3e55271a75741e6a381ef74645ea600e4b1cb74793eddcabb9b5d",
+      "package_sha256": "9539f5146a01eedea53a972536f0901670050c18f250a1811bf95bdd31ee89ac"
+    },
+    {
+      "id": "source::20_distillates/documents/tei-p5-guidelines-nd-4.12.0#^s27",
+      "verdict": "fully supports",
+      "reason": "Block 93 says 'These elements may appear only within a listPerson element, which groups such descriptions together, and optionally also describes relationships amongst the people listed.' Its specList names listPerson and listRelation. Here 'these elements' means person and personGrp from Block 92, so 'these person descriptions' is a fair paraphrase.",
+      "model": "claude-opus-5-5",
+      "reviewer": "claude-opus-5-5; isolated fresh context",
+      "checked_at": "2026-10-17T16:13:37+00:00",
+      "prompt_sha256": "525c024dc0a078547b4c9108ddc04fd152c932f55e5c3444ee6c243cc27bb0e5",
+      "requested_model": "opus",
+      "outcome_sha256": "3dfedb24e6e3e55271a75741e6a381ef74645ea600e4b1cb74793eddcabb9b5d",
+      "package_sha256": "9539f5146a01eedea53a972536f0901670050c18f250a1811bf95bdd31ee89ac"
+    },
+    {
+      "id": "source::20_distillates/documents/tei-p5-guidelines-nd-4.12.0#^s43",
+      "verdict": "fully supports",
+      "reason": "Block 144 says the modern and Roman city 'are not physically co-extensive, they have significant areas which overlap, and we may therefore wish to regard them as the same place, while supplying both names with an indication of the time period during which each was current.' The statement keeps the 'may wish' wording, so the claim is not strengthened.",
+      "model": "claude-opus-5-5",
+      "reviewer": "claude-opus-5-5; isolated fresh context",
+      "checked_at": "2026-10-17T16:13:37+00:00",
+      "prompt_sha256": "a77c4408b81655ea6205a52a1ae3b56f94d77461e1e01982590e9346d692e6ff",
+      "requested_model": "opus",
+      "outcome_sha256": "3dfedb24e6e3e55271a75741e6a381ef74645ea600e4b1cb74793eddcabb9b5d",
+      "package_sha256": "9539f5146a01eedea53a972536f0901670050c18f250a1811bf95bdd31ee89ac"
+    },
+    {
+      "id": "source::20_distillates/documents/tei-p5-guidelines-nh-non-hierarchical-4.12.0#^s4",
+      "verdict": "fully supports",
+      "reason": "Block 5 says that in its examples it restricts itself to 'metrical lines and line groups' for the Metrical View and to 'sentences' for the Grammatical View. For the Dialogic View it will 'only ... distinguish direct quotation from other narration'. The statement accurately reflects this limit, which applies to the worked examples.",
+      "model": "claude-opus-5-5",
+      "reviewer": "claude-opus-5-5; isolated fresh context",
+      "checked_at": "2026-10-17T16:13:37+00:00",
+      "prompt_sha256": "464b0b939c9859311aedfe2758c55e9dd5870c468c63fbefbf8ebf82bab4bfb7",
+      "requested_model": "opus",
+      "outcome_sha256": "3dfedb24e6e3e55271a75741e6a381ef74645ea600e4b1cb74793eddcabb9b5d",
+      "package_sha256": "9539f5146a01eedea53a972536f0901670050c18f250a1811bf95bdd31ee89ac"
+    },
+    {
+      "id": "source::20_distillates/documents/tei-p5-guidelines-nh-non-hierarchical-4.12.0#^s11",
+      "verdict": "fully supports",
+      "reason": "Block 20 says that if the custom elements 'can be replaced by TEI elements and attributes without loss of information, this method is TEI-conformant'. It says that if they 'introduce information or distinctions that cannot be captured using standard TEI elements, the method is an extension.' Both conditions are kept, and Block 19 confirms the method is the custom boundary elements.",
+      "model": "claude-opus-5-5",
+      "reviewer": "claude-opus-5-5; isolated fresh context",
+      "checked_at": "2026-10-17T16:13:37+00:00",
+      "prompt_sha256": "c67f49034f0240dc1c7d3a5e0e3267a302b992284eb514976777a7a47f908c3a",
+      "requested_model": "opus",
+      "outcome_sha256": "3dfedb24e6e3e55271a75741e6a381ef74645ea600e4b1cb74793eddcabb9b5d",
+      "package_sha256": "9539f5146a01eedea53a972536f0901670050c18f250a1811bf95bdd31ee89ac"
+    },
+    {
+      "id": "source::20_distillates/documents/practice-v1-epidoc-odd-e5b68eb8#^s2",
+      "verdict": "fully supports",
+      "reason": "Reading block r2 gives the revisionDesc change exactly: when=\"2026-01-26\" with the text \"release 9.8: Aligned schema with TEI v. 4.10.2\". The date and the wording both match.",
+      "model": "claude-opus-5-5",
+      "reviewer": "claude-opus-5-5; isolated fresh context",
+      "checked_at": "2026-10-17T16:13:19+00:00",
+      "prompt_sha256": "c157637ea81ac67612ea29c99e0342389782aa0b06467b955a1a7c0fde6a8a94",
+      "requested_model": "opus",
+      "outcome_sha256": "90bbdbf059e525632915f1a2f133b8b853e2961fc23b917aec7671fa4f9973db",
+      "package_sha256": "a0a0afe91b9939445d4ff4ec5766e6a7fdc284c6abe121ced94873ef5c41a862"
+    },
+    {
+      "id": "source::20_distillates/documents/practice-v1-epidoc-schema-readme-e5b68eb8#^s3",
+      "verdict": "fully supports",
+      "reason": "Block r4 says \"as a matter of policy the EpiDoc schema should be a conformant subset of the latest TEI schema (only exceptions being when the dev TEI ODD contains changes that will not make it into the TEI release for 1-6 months)\". The statement paraphrases this accurately and keeps both the policy framing and the exception condition.",
+      "model": "claude-opus-5-5",
+      "reviewer": "claude-opus-5-5; isolated fresh context",
+      "checked_at": "2026-10-17T16:13:19+00:00",
+      "prompt_sha256": "67b16916d471f97f47ebd6cbaffe7744ed8cb591a4350615bffbd86b3c8f1fd0",
+      "requested_model": "opus",
+      "outcome_sha256": "90bbdbf059e525632915f1a2f133b8b853e2961fc23b917aec7671fa4f9973db",
+      "package_sha256": "a0a0afe91b9939445d4ff4ec5766e6a7fdc284c6abe121ced94873ef5c41a862"
+    },
+    {
+      "id": "source::20_distillates/documents/practice-v1-isicily-isic000156-262784ad#^s2",
+      "verdict": "fully supports",
+      "reason": "Block r2 shows <licence target=\"http://creativecommons.org/licenses/by/4.0/\">Licensed under a Creative Commons-Attribution 4.0 licence.</licence>. Both the target and the licence text match the statement.",
+      "model": "claude-opus-5-5",
+      "reviewer": "claude-opus-5-5; isolated fresh context",
+      "checked_at": "2026-10-17T16:13:19+00:00",
+      "prompt_sha256": "b8e19cf94f55f8f72258f3122371bf8731bac531e16ef33c36faaae7d765153b",
+      "requested_model": "opus",
+      "outcome_sha256": "90bbdbf059e525632915f1a2f133b8b853e2961fc23b917aec7671fa4f9973db",
+      "package_sha256": "a0a0afe91b9939445d4ff4ec5766e6a7fdc284c6abe121ced94873ef5c41a862"
+    },
+    {
+      "id": "source::20_distillates/documents/practice-v1-isicily-isic000156-262784ad#^s6",
+      "verdict": "fully supports",
+      "reason": "Block r6 is the div with type=\"edition\", subtype=\"primary\" and xml:lang=\"la\". It contains expan/abbr/ex for D(is) and M(anibus), supplied reason=\"lost\", g ref=\"#ivy-leaf\", and gap reason=\"lost\" extent=\"unknown\" unit=\"character\". Every element named in the statement is present.",
+      "model": "claude-opus-5-5",
+      "reviewer": "claude-opus-5-5; isolated fresh context",
+      "checked_at": "2026-10-17T16:13:19+00:00",
+      "prompt_sha256": "a08ee80b5a677ef95f8f1cc002cfa39402e04c9296a899b632b7142ce8f7b524",
+      "requested_model": "opus",
+      "outcome_sha256": "90bbdbf059e525632915f1a2f133b8b853e2961fc23b917aec7671fa4f9973db",
+      "package_sha256": "a0a0afe91b9939445d4ff4ec5766e6a7fdc284c6abe121ced94873ef5c41a862"
+    },
+    {
+      "id": "source::20_distillates/documents/tei-p5-att.editlike-4.12.0#^s7",
+      "verdict": "fully supports",
+      "reason": "Reading 7 is the English remarks paragraph p[1] of the 4.12.0 att.editLike spec. It says members \"are typically used to represent any kind of editorial intervention in a text, for example a correction or interpretation\". The statement drops the trailing \"or to date or localize manuscripts etc.\", but leaving that out does not distort what the paragraph says.",
+      "model": "claude-opus-5-5",
+      "reviewer": "claude-opus-5-5; isolated fresh context",
+      "checked_at": "2026-10-17T16:13:19+00:00",
+      "prompt_sha256": "f540de588e600dcf1deaf7252374fd2419621138db9f33dd04596ad2f27db396",
+      "requested_model": "opus",
+      "outcome_sha256": "90bbdbf059e525632915f1a2f133b8b853e2961fc23b917aec7671fa4f9973db",
+      "package_sha256": "a0a0afe91b9939445d4ff4ec5766e6a7fdc284c6abe121ced94873ef5c41a862"
+    },
+    {
+      "id": "source::20_distillates/documents/tei-p5-att.editlike-4.12.0#^s9",
+      "verdict": "fully supports",
+      "reason": "Reading 8 is the English remarks paragraph p[2] of the 4.12.0 att.editLike spec. Its wording matches the statement, including the \"(if present)\" condition and the examples witness, msDesc and bibl.",
+      "model": "claude-opus-5-5",
+      "reviewer": "claude-opus-5-5; isolated fresh context",
+      "checked_at": "2026-10-17T16:13:19+00:00",
+      "prompt_sha256": "d4c587451945d31ba3a7643e26523aa8e776fde941dc14375610bb1e87888969",
+      "requested_model": "opus",
+      "outcome_sha256": "90bbdbf059e525632915f1a2f133b8b853e2961fc23b917aec7671fa4f9973db",
+      "package_sha256": "a0a0afe91b9939445d4ff4ec5766e6a7fdc284c6abe121ced94873ef5c41a862"
+    },
+    {
+      "id": "contested::30_assertions/p5-guidelines-admit-persons-places-and-organizations-as-relationship-participants<>30_assertions/p5-relation-describes-a-relationship-amongst-places-events-persons-or-objects",
+      "verdict": "fully supports",
+      "reason": "Both claims match their grounds and keep the 4.12.0 version. Claim 1 correctly restates ^s38: when the module is included, listRelation/relation may document relationships 'amongst the persons, places or organizations identified', and name, active, mutual and passive are selected for documentation. It also correctly restates ^s39, where a participant 'might be a person, a place or an organization'. Leaving out the att.typed detail does not distort anything. Claim 2 copies the relation specification's English description (^s2) word for word: 'places, events, persons, objects or other items'. The two claims are about the same version, so the tension is not about dates. It is about levels: the chapter prose about this module's scope lists persons, places and organizations, while the element-level description lists a wider, open-ended set (events, objects, other items) and does not mention organizations. Both claims keep the hedged wording ('might be', 'other items'), so the documented difference is shown faithfully and not resolved.",
+      "model": "claude-opus-5-5",
+      "reviewer": "claude-opus-5-5; isolated fresh context",
+      "checked_at": "2026-10-17T16:15:58+00:00",
+      "prompt_sha256": "f261084a3a7eacf20e1ea68bb4742b62f2c6b9c5e41a02a5e3e14cd23d3535db",
+      "requested_model": "opus",
+      "outcome_sha256": "c3a44050d058ff2282988ddd8b9322fd0e3324409610da63283d7a5db872711f",
+      "package_sha256": "bbadc929ef6282d8131b721357502101100b767b75c9b27324576d6c00d4f5e6"
+    },
+    {
+      "id": "contested::30_assertions/p5-key-remarks-propose-no-particular-syntax-because-its-form-depends-on-project-practice<>30_assertions/teic-tei-issue-337-author-reports-a-wish-to-deprecate-key-held-back-by-its-wide-use",
+      "verdict": "fully supports",
+      "reason": "Claim 1 matches the att.canonical 4.12.0 remarks (^s4) almost word for word: no particular syntax is proposed because the form 'will depend entirely on practice within a given project'. Claim 2 keeps the attribution in ^s4 of the issue distillate: it is the issue author who 'reported as the Council's vision' a wish to deprecate key 'some day', held back by how widely key was used. The past tense and 'at the time of writing' tie it to the 2011-11-13 issue description, so it does not state an actual Council decision or an actual deprecation. The apparent tension is about both dates and levels. One side is normative specification text from the 4.12.0 release. The other is a 2011 issue author's report of a Council wish, which does not show that any deprecation happened. The claims also cover different subjects (value syntax versus future deprecation), so they do not directly contradict each other, and both scopes are preserved.",
+      "model": "claude-opus-5-5",
+      "reviewer": "claude-opus-5-5; isolated fresh context",
+      "checked_at": "2026-10-17T16:15:58+00:00",
+      "prompt_sha256": "ec38fd55134e6ed2f75c2fe3a623fcf4b1ff414a49bff82c55b41207e2f0d50a",
+      "requested_model": "opus",
+      "outcome_sha256": "c3a44050d058ff2282988ddd8b9322fd0e3324409610da63283d7a5db872711f",
+      "package_sha256": "bbadc929ef6282d8131b721357502101100b767b75c9b27324576d6c00d4f5e6"
+    },
+    {
+      "id": "source::20_distillates/publications/teic-tei-issue-337#^s23",
+      "verdict": "fully supports",
+      "reason": "Local-only reviewer reason; SHA-256: 1150d61b395293e6036fc92c2b4929e8c8bda608c96ed92f5eef48891999a06f",
+      "model": "claude-opus-5-5",
+      "reviewer": "claude-opus-5-5; isolated fresh context",
+      "checked_at": "2026-10-17T16:14:53+00:00",
+      "prompt_sha256": "bafe570a397476107ff02a4d9139acb5137726723f2f49af5751e38adc32eaab",
+      "requested_model": "opus",
+      "outcome_sha256": "d1fc9b0687bd5d1695660e04dd46d1c136eb392a7c4ddb82531fce58fefab7db",
+      "package_sha256": "bbdb24963e6b29f3ff730a0ed9f6d3fbd79a1365364b5b6efa314ccd0a021683"
+    },
+    {
+      "id": "distillate-complete::20_distillates/documents/practice-v1-cmif-freieisen-stoeber-9a7ebe3b",
+      "verdict": "fully supports",
+      "reason": "Statement ^s1 matches block r1. That block starts at byte 0 with the start tag <TEI xmlns=\"http://www.tei-c.org/ns/1.0\">, so no XML declaration or processing instruction comes before the root. Statement ^s2 matches the licence target in r2, and the text normalizes to \"CC-BY 4.0\". Statement ^s3 correctly reports both parts of r3. The sent action has GND and GeoNames URIs and date 1839-03-08. The received action's date has evidence=\"conjecture\" and when=\"1839-03-12\". The file has only one correspDesc, so \"single correspondence description\" is accurate. The open questions about schema validity and schema association are framed as questions. The Appraisal claims no representativeness or validation. Its remark that the header holds personal names, a publisher and an email address is true of the source.",
+      "model": "claude-opus-5-5",
+      "reviewer": "claude-opus-5-5; isolated fresh context",
+      "checked_at": "2026-10-17T16:15:51+00:00",
+      "prompt_sha256": "022c14500e1767eb00cd3d9a5da834f9c4265e9faf046bf0acc0479057f4b83c",
+      "requested_model": "opus",
+      "outcome_sha256": "32bbb79398cff82b8eb61d748bef50c767135d637cc4a4805ea9eb51d64c0ba1",
+      "package_sha256": "d801d6a0b228daccf0cbe3f7e47ae08e105c1ba16e8169f87e9e22e9bb6a01a2"
+    },
+    {
+      "id": "distillate-complete::20_distillates/documents/practice-v1-epidoc-schema-readme-e5b68eb8",
+      "verdict": "fully supports",
+      "reason": "Statements ^s1 and ^s2 restate r1 and r3. Statement ^s3 keeps the policy's limited exception: the dev TEI ODD contains changes that will not reach a release for 1-6 months. Statement ^s4 matches the OxGarage steps in r4, including the step to test thoroughly before committing a canonical schema. Statement ^s5 keeps both conditions in r5: complete or static projects, versus active projects whose editors follow changes in the community fora and update their XML. Statement ^s6 keeps the \"to the extent that ... customized and amount to transformative versions\" qualifier. It also names one contributor plus the others listed in tei:revisionDesc, and refers to LICENSE.txt, all as in r2. The Term \"latest release\" matches r5's \"updated whenever a new schema is released\". The open questions are questions, and the Appraisal only states limitations.",
+      "model": "claude-opus-5-5",
+      "reviewer": "claude-opus-5-5; isolated fresh context",
+      "checked_at": "2026-10-17T16:15:51+00:00",
+      "prompt_sha256": "2a5cf6f10e78529e6ff9ef2766748107d35479e2fc8fe41d8cd0d5bdbf6a5e9d",
+      "requested_model": "opus",
+      "outcome_sha256": "32bbb79398cff82b8eb61d748bef50c767135d637cc4a4805ea9eb51d64c0ba1",
+      "package_sha256": "d801d6a0b228daccf0cbe3f7e47ae08e105c1ba16e8169f87e9e22e9bb6a01a2"
+    },
+    {
+      "id": "distillate-complete::20_distillates/documents/tei-p5-annotation-4.12.0",
+      "verdict": "fully supports",
+      "reason": "Statement ^s1 and the Term \"annotation\" both repeat r1: \"represents an annotation following the Web Annotation Data Model.\" The introduction says only the English element description is reported, which is true. Leaving out the motivation values is a selection choice and does not make ^s1 misleading. The open questions about the pilot and its selectors are questions. The Appraisal only states limits: the source does not stand in for a reading of the Web Annotation Data Model, and it does not establish that the prototype conforms to that model.",
+      "model": "claude-opus-5-5",
+      "reviewer": "claude-opus-5-5; isolated fresh context",
+      "checked_at": "2026-10-17T16:15:51+00:00",
+      "prompt_sha256": "846dbc91c61dcbee7c2a889a1a328aeecce681a84785879838a9c759903287db",
+      "requested_model": "opus",
+      "outcome_sha256": "32bbb79398cff82b8eb61d748bef50c767135d637cc4a4805ea9eb51d64c0ba1",
+      "package_sha256": "d801d6a0b228daccf0cbe3f7e47ae08e105c1ba16e8169f87e9e22e9bb6a01a2"
+    },
+    {
+      "id": "distillate-complete::20_distillates/documents/tei-p5-att.editlike-4.12.0",
+      "verdict": "fully supports",
+      "reason": "The introduction counts the content correctly against blocks r1-r8: one class description, two attribute descriptions, three value descriptions and two remarks paragraphs. Statements ^s1-^s6 quote or closely paraphrase r1-r6. Statements ^s7 and ^s8 split r7 but keep the word \"typically\" and the closing \"etc.\". Statement ^s9 keeps \"if present\" and the list of example citation elements from r8. The Terms repeat the same descriptions. In the open questions, the descriptions of XML-only details are accurate: usage=\"opt\", teidata.enumerated with maxOccurs=\"unbounded\", valList type=\"semi\", teidata.xTruthValue, defaultVal false, and the listRef targets. The Appraisal is also accurate. The classSpec declares no members. The only English sentence that mentions members is r7. The source attribute that r8 regulates is not defined in this attList, which declares only evidence and instant.",
+      "model": "claude-opus-5-5",
+      "reviewer": "claude-opus-5-5; isolated fresh context",
+      "checked_at": "2026-10-17T16:15:51+00:00",
+      "prompt_sha256": "d8b3617fb065e1327bf6c2dc52a4557252fc5a3b68a1344e3ad562dd0c90c45c",
+      "requested_model": "opus",
+      "outcome_sha256": "32bbb79398cff82b8eb61d748bef50c767135d637cc4a4805ea9eb51d64c0ba1",
+      "package_sha256": "d801d6a0b228daccf0cbe3f7e47ae08e105c1ba16e8169f87e9e22e9bb6a01a2"
+    },
+    {
+      "id": "distillate-complete::20_distillates/documents/tei-p5-persname-4.12.0",
+      "verdict": "fully supports",
+      "reason": "Statements ^s1 and ^s2 split r1 accurately and keep \"possibly\", \"one or more\" and the open-ended \"etc.\". The Term matches r1. The open questions describe the XML correctly. It declares memberships including att.personal and att.typed but does not state which attributes those classes contribute. Its examples are in en, fr and zh-TW, and there is no English remarks paragraph. The Appraisal is also correct: the XML declares the namesdates module, the class memberships, macro.phraseSeq content and the English gloss \"personal name\". None of these appear in a reading block.",
+      "model": "claude-opus-5-5",
+      "reviewer": "claude-opus-5-5; isolated fresh context",
+      "checked_at": "2026-10-17T16:15:51+00:00",
+      "prompt_sha256": "fc9a270a4d7fde497d03552e6cf51d02c041ac81cdbd16a05bad0f82de26cc3d",
+      "requested_model": "opus",
+      "outcome_sha256": "32bbb79398cff82b8eb61d748bef50c767135d637cc4a4805ea9eb51d64c0ba1",
+      "package_sha256": "d801d6a0b228daccf0cbe3f7e47ae08e105c1ba16e8169f87e9e22e9bb6a01a2"
+    },
+    {
+      "id": "distillate-complete::20_distillates/documents/tei-p5-test-testoverlap-4.12.0",
+      "verdict": "fully supports",
+      "reason": "Statement ^s1 is correct: block b6 shows <pb n=\"1\"/> as a direct child of the div in body. Statement ^s2 is correct: b8 has \"unhallowed <pb n=\"2\"/> hands\". Statement ^s3 is correct: b10 has pb n=\"3\" in the middle of the prose (\"than there <pb n=\"3\"/> would be\"). Statement ^s4 is correct: b12 has \"He <pb n=\"4\"/>\" followed by \"carried\". The Appraisal's count of one marker in the division and three inside paragraphs agrees with this. Its other points only state limitations, and the open questions are questions.",
+      "model": "claude-opus-5-5",
+      "reviewer": "claude-opus-5-5; isolated fresh context",
+      "checked_at": "2026-10-17T16:15:51+00:00",
+      "prompt_sha256": "2d6c9ffcb54f536e2f362056f816b9db623c05fa0c467c814f7c3fbc3854d893",
+      "requested_model": "opus",
+      "outcome_sha256": "32bbb79398cff82b8eb61d748bef50c767135d637cc4a4805ea9eb51d64c0ba1",
+      "package_sha256": "d801d6a0b228daccf0cbe3f7e47ae08e105c1ba16e8169f87e9e22e9bb6a01a2"
+    },
+    {
+      "id": "source::20_distillates/documents/tei-p5-milestone-4.12.0#^s1",
+      "verdict": "fully supports",
+      "reason": "Block 4 (/elementSpec[1]/desc[1], xml:lang=\"en\") repeats the statement word for word: \"marks a boundary point separating any kind of section of a text, typically but not necessarily indicating a point at which some part of a standard reference system changes, where the change is not represented by a structural element.\" The 'typically but not necessarily' condition is kept.",
+      "model": "claude-opus-5-5",
+      "reviewer": "claude-opus-5-5; isolated fresh context",
+      "checked_at": "2026-10-17T16:14:46+00:00",
+      "prompt_sha256": "440feb18c2b92b464f0d872655336d786af4436522cf5f5478287570135c9f58",
+      "requested_model": "opus",
+      "outcome_sha256": "e52f8abae204690f020bbebaafccc7ba15c677f406e27707a1b16775b8680cd3",
+      "package_sha256": "e1564bea1e9fa353bcc31dad3ae0bd2cf8af48df8fdd6ec96e43eed3f63a86b6"
+    },
+    {
+      "id": "source::20_distillates/documents/tei-p5-note-4.12.0#^s6",
+      "verdict": "fully supports",
+      "reason": "The English exemplum (Block 17, /elementSpec[1]/exemplum[6]) says \"The global n attribute may be used to supply the symbol or number used to mark the note's point of attachment in the source text\". The example uses n=\"126\". The statement's 'can supply' keeps the permissive 'may be used'.",
+      "model": "claude-opus-5-5",
+      "reviewer": "claude-opus-5-5; isolated fresh context",
+      "checked_at": "2026-10-17T16:14:46+00:00",
+      "prompt_sha256": "7686851786d5dec659478aca0670f97c384811aa4817db95bb3e9b602bc6455a",
+      "requested_model": "opus",
+      "outcome_sha256": "e52f8abae204690f020bbebaafccc7ba15c677f406e27707a1b16775b8680cd3",
+      "package_sha256": "e1564bea1e9fa353bcc31dad3ae0bd2cf8af48df8fdd6ec96e43eed3f63a86b6"
+    },
+    {
+      "id": "source::20_distillates/documents/tei-p5-pb-4.12.0#^s1",
+      "verdict": "fully supports",
+      "reason": "Block 8 (/elementSpec[1]/desc[1], xml:lang=\"en\", versionDate 2017-06-14) reads \"marks the beginning of a new page in a paginated document.\" This matches the statement for the P5 4.12.0 spec at the cited commit.",
+      "model": "claude-opus-5-5",
+      "reviewer": "claude-opus-5-5; isolated fresh context",
+      "checked_at": "2026-10-17T16:14:46+00:00",
+      "prompt_sha256": "1e36783297168a614ab94f2a5f7b04eb208394e0ab65bbf2280ab929b3909681",
+      "requested_model": "opus",
+      "outcome_sha256": "e52f8abae204690f020bbebaafccc7ba15c677f406e27707a1b16775b8680cd3",
+      "package_sha256": "e1564bea1e9fa353bcc31dad3ae0bd2cf8af48df8fdd6ec96e43eed3f63a86b6"
+    },
+    {
+      "id": "source::20_distillates/documents/tei-p5-pb-4.12.0#^s3",
+      "verdict": "fully supports",
+      "reason": "Block 18 (/elementSpec[1]/exemplum[1], English) says \"Page numbers may vary in different editions of a text\". It encodes <pb n=\"145\" ed=\"ed2\"/> and <pb n=\"283\" ed=\"ed1\"/>, with comments saying each page starts there in its edition. So it gives page numbers and ed values for two editions.",
+      "model": "claude-opus-5-5",
+      "reviewer": "claude-opus-5-5; isolated fresh context",
+      "checked_at": "2026-10-17T16:14:46+00:00",
+      "prompt_sha256": "6011dbfaabd95862cb138284c69aca471ed84364a6bf981d51e247ff2066b9d2",
+      "requested_model": "opus",
+      "outcome_sha256": "e52f8abae204690f020bbebaafccc7ba15c677f406e27707a1b16775b8680cd3",
+      "package_sha256": "e1564bea1e9fa353bcc31dad3ae0bd2cf8af48df8fdd6ec96e43eed3f63a86b6"
+    },
+    {
+      "id": "source::20_distillates/documents/tei-p5-person-4.12.0#^s6",
+      "verdict": "fully supports",
+      "reason": "Reading 5 (attDef[@ident='sex']/remarks[@ident='person-attr.sex-remarks']/p[1]) reads \"Values for this attribute may be defined locally by a project, or they may refer to an external standard.\" The cited ancestor is the English remarks (versionDate 2022-08-27) on person/@sex. Reading 7 has the same wording for @gender, but the statement correctly attributes it to @sex.",
+      "model": "claude-opus-5-5",
+      "reviewer": "claude-opus-5-5; isolated fresh context",
+      "checked_at": "2026-10-17T16:14:46+00:00",
+      "prompt_sha256": "7525dc19a4b14fe1ddf283db3888164b819da0b0b41fde22424d6ec1f03076e6",
+      "requested_model": "opus",
+      "outcome_sha256": "e52f8abae204690f020bbebaafccc7ba15c677f406e27707a1b16775b8680cd3",
+      "package_sha256": "e1564bea1e9fa353bcc31dad3ae0bd2cf8af48df8fdd6ec96e43eed3f63a86b6"
+    },
+    {
+      "id": "source::20_distillates/documents/tei-p5-relation-4.12.0#^s3",
+      "verdict": "fully supports",
+      "reason": "Reading 2 (attDef[@ident='name']/desc[1], lang en, versionDate 2005-10-27) reads \"supplies a name for the kind of relationship of which this is an instance.\" The quoted phrase in the statement matches exactly and is attributed to the correct attribute.",
+      "model": "claude-opus-5-5",
+      "reviewer": "claude-opus-5-5; isolated fresh context",
+      "checked_at": "2026-10-17T16:14:46+00:00",
+      "prompt_sha256": "188d19ba9c5e40718fb14c2a8b89494b29875acfed713fe2e4b2834e6547e333",
+      "requested_model": "opus",
+      "outcome_sha256": "e52f8abae204690f020bbebaafccc7ba15c677f406e27707a1b16775b8680cd3",
+      "package_sha256": "e1564bea1e9fa353bcc31dad3ae0bd2cf8af48df8fdd6ec96e43eed3f63a86b6"
+    },
+    {
+      "id": "chapter-complete::40_output/02-abstract-model",
+      "verdict": "fully supports",
+      "reason": "Every source claim in section 2 matches its cited assertion. These are anchor (an identifier at a point, whether or not it corresponds to an element), span (direct association of an interpretative annotation), span/@from (start node, or the whole span when @to is absent), annotation following the Web Annotation Data Model, Renear and Wickett's recapitulated string-mapping argument, and the claim that optional hierarchy makes hierarchy open to study. The org/listOrg paraphrase is also faithful: a unique wrapper distinct from references, analogous to person and place. So are the traits/states/events/external-resources framing and the documentable, time-framed and relatable requirement. The clause \"For statements about changes of state in a person's life\" narrows the source's \"these aspects of a person's life\" but adds nothing the source lacks. The hierarchy claim is attributed vaguely to \"the selected discussion of optional hierarchy\", but the footnote cites the Piez assertion, so the attribution is not wrong. The chapter says the source findings \"do not entail a unique object model\", which keeps the inference bounded. All other content is marked as posits, proposed definitions, model conventions or limits and is not presented as source fact. Implementation statements, such as the footnote saying that the tools enforce the section 10 guarantees, are project claims that this source set does not cover. They do not misuse any assertion.",
+      "model": "claude-opus-5-5",
+      "reviewer": "claude-opus-5-5; isolated fresh context",
+      "checked_at": "2026-10-17T16:16:10+00:00",
+      "prompt_sha256": "0dc44f137a3a063f7b9b7062053e44550808b4bae61f1e25856362b75d09af70",
+      "requested_model": "opus",
+      "outcome_sha256": "7b5503c9c1caabcaf54ad83bd600e0dce81af43ffe74a5d26366278d49433e2e",
+      "package_sha256": "eb3c47a5ae1a5c0f70d940678d608bb977fe11b5d0c374b8ac23ad330da188c0"
+    },
+    {
+      "id": "chapter-complete::40_output/12-p6-design",
+      "verdict": "fully supports",
+      "reason": "Each grounded source claim matches its assertion. The diary H0017682 note has hand=\"#unknown\", the text \"6255\" and a nested note with resp=\"#CT #DE\". The heading has \"Bäder in Derbyshire\" inside date when=\"1790-06-15\" with nested highlighting. The page break has facs=\"#f0018\" and n=\"[9v]\", followed by foliation \"16.\". The Piez, Renear and Wickett, anchor and span claims match. The W3C recommendation to treat a quote with several remaining matches as matching all of them is stated with its condition. FR 363 is correctly attributed to its author as a proposal. The chapter also avoids overreach. It says equal extents are \"tested separately in the constructed example\" rather than claiming them for the diary. It says historical proposals \"do not establish a present P5 defect\". It calls its selection policies \"not conclusions logically forced by the source definitions\", which matters because the candidate's single-match policy differs from the W3C default. It also says retaining \"#CT #DE\" does not resolve or authenticate its referents. The remaining content consists of marked posits, model conventions and evaluation proposals, and it is consistent with the companion chapter's 0.1 reading and reanchoring rules.",
+      "model": "claude-opus-5-5",
+      "reviewer": "claude-opus-5-5; isolated fresh context",
+      "checked_at": "2026-10-17T16:16:10+00:00",
+      "prompt_sha256": "91fd08a3688f832b7ba7643260fde74343ab15193101217612ac7bb7523af90c",
+      "requested_model": "opus",
+      "outcome_sha256": "7b5503c9c1caabcaf54ad83bd600e0dce81af43ffe74a5d26366278d49433e2e",
+      "package_sha256": "eb3c47a5ae1a5c0f70d940678d608bb977fe11b5d0c374b8ac23ad330da188c0"
+    }
+  ],
+  "human_verified": false,
+  "note": "Metadata-only audit seal. Original contexts and exact prompts are local-only; reasons are reviewer-authored."
+}

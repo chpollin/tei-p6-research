@@ -5,20 +5,21 @@ reference: teic-tei-issue-337
 topics: ["[[Metadata and Entities]]"]
 status: grounded
 checked:
+  validation: 2026-10-17
   quote: 2026-09-11
 created: 2026-09-06
-updated: 2026-09-11
+updated: 2026-10-17
 ---
 
 # Distillate: TEIC/TEI issue 337, soft deprecation of @key
 
-This distillate reports the proposal, the discussion and the recorded outcome of the TEIC/TEI issue thread on a soft deprecation of `key`, as observed in the locked GitHub REST snapshot of 2026-09-06 with the issue page and the single comment page of twenty-one comments.
+This distillate reports the proposal, the discussion and the recorded outcome of the TEIC/TEI issue thread on a soft deprecation of `key`, as observed in the locked GitHub REST snapshot of 2026-09-06 with the issue record and its recorded comments.
 
 ## Core statements
 
 - In TEIC/TEI issue 337, the issue author attributes the proposal to a discussion at a TEI Council meeting of November 2011. ^s1
   > "Per discussion at TEI Council meeting in Paris in November 2011" (https://github.com/TEIC/TEI/issues/337, issue description, 2011-11-13)
-- In TEIC/TEI issue 337, the issue author reports an agreement that all uses of `key` can be handled by `ref`. ^s2
+- In TEIC/TEI issue 337, the issue author reports that the TEI Council discussion in Paris in November 2011 reached agreement that all uses of `key` can be handled by `ref` using a URN value of the form `urn:<NID>:<NSS>`. ^s2
   > "we agreed that uses of `@key` can all be handled by `@ref`" (https://github.com/TEIC/TEI/issues/337, issue description, 2011-11-13)
 - In TEIC/TEI issue 337, the issue author reports as part of that agreement that uses of `key` can all be handled by `ref` using a URN value of the form `urn:<NID>:<NSS>`. ^s3
   > "we agreed that uses of `@key` can all be handled by `@ref`, using ref="urn:&lt;NID&gt;:&lt;NSS&gt;"" (https://github.com/TEIC/TEI/issues/337, issue description, 2011-11-13)
@@ -32,7 +33,7 @@ This distillate reports the proposal, the discussion and the recorded outcome of
   > "Need to find someone who better understands these things to know which is better" (https://github.com/TEIC/TEI/issues/337, comment 3 of 21, 2011-11-13)
 - In TEIC/TEI issue 337, a commenter relays that another participant reported on tei-council on 2011-11-13 that "computer sciency types" at Oxford felt that a URI with a non-registered scheme was slightly less abusive. ^s8
   > "reported on tei-council on 2011-11-13 that "computer sciency types" at Oxford felt that a URI with a non-registered scheme was slightly less abusive." (https://github.com/TEIC/TEI/issues/337, comment 7 of 21, 2011-11-20)
-- In TEIC/TEI issue 337, a commenter relays an email in which an outside expert writes that the people they know who have spoken most eloquently on this topic, namely former colleagues at W3C, would all ask why not an http URL that can be dereferenced for useful information and, if permanence is the concern, why not make it a PURL. ^s10
+- In TEIC/TEI issue 337, a commenter relays an email whose author writes that the people they know who have spoken most eloquently on this topic, namely former colleagues at W3C, would all ask why not an http URL that can be dereferenced for useful information and, if permanence is the concern, why not make it a PURL. ^s10
   > "The people I know who have spoken most eloquently on this topic (namely former colleagues at W3C) would all say "Why on earth not an http URL, so people who need to find out what the thing is can dereference the URI and find some useful information? If you are concerned about permanence, why not make it a PURL?"" (https://github.com/TEIC/TEI/issues/337, comment 9 of 21, 2011-12-04)
 - In TEIC/TEI issue 337, a commenter suggests that this be folded into the subcommittee that another participant proposed in a SourceForge tracker item and on tei-council. ^s11
   > "I suggest that this get folded into the subcommittee proposed by" (https://github.com/TEIC/TEI/issues/337, comment 10 of 21, 2011-12-08)
@@ -46,7 +47,7 @@ This distillate reports the proposal, the discussion and the recorded outcome of
   > "&lt;country key="FR"/&gt; should be left as key because it's not an internal scheme." (https://github.com/TEIC/TEI/issues/337, comment 12 of 21, 2012-04-16)
 - In TEIC/TEI issue 337, a commenter writes that RFC 4395 describes the procedure for registering URI schemes with the IANA and that the bar for such registration is fairly high. ^s16
   > "RFC 4395 describes the procedure for registering schemes with the IANA. However, the bar for registration is fairly high" (https://github.com/TEIC/TEI/issues/337, comment 13 of 21, 2012-05-20)
-- In TEIC/TEI issue 337, a commenter writes that it seems to them that most uses of `key` would not satisfy these. ^s17
+- In TEIC/TEI issue 337, a commenter writes that it seems to them that most uses of `key` would not satisfy the RFC 4395 requirements they cite for registering URI schemes with the IANA. ^s17
   > "It seems to me that most uses of `@key` would not satisfy these." (https://github.com/TEIC/TEI/issues/337, comment 13 of 21, 2012-05-20)
 - In TEIC/TEI issue 337, a commenter writes that RFC 2141 never advanced beyond being a proposed standard. ^s18
   > "RFC 2141 never advanced beyond being a proposed standard" (https://github.com/TEIC/TEI/issues/337, comment 13 of 21, 2012-05-20)
@@ -54,7 +55,7 @@ This distillate reports the proposal, the discussion and the recorded outcome of
   > "IANA-registered "tag" URI scheme (as described in RFC 4151) -- appears to be exactly what we need as a replacement for a deprecated `@key`." (https://github.com/TEIC/TEI/issues/337, comment 13 of 21, 2012-05-20)
 - In TEIC/TEI issue 337, a commenter writes that they will change all uses of `key` in examples in the Guidelines to use the format `ref="tag:example.org,2012:foo"`, except for those like `<country key="FR"/>` which already refer to a particular external vocabulary. ^s20
   > "So I will change all uses of `@key` in examples in the Guidelines to use this format: ref="tag:example.org,2012:foo" except for those like &lt;country key="FR"/&gt; which already refer to a particular external vocabulary." (https://github.com/TEIC/TEI/issues/337, comment 13 of 21, 2012-05-20)
-- In TEIC/TEI issue 337, a commenter excepts those like `<country key="FR"/>` which already refer to a particular external vocabulary. ^s21
+- In TEIC/TEI issue 337, a commenter excludes uses such as `<country key="FR"/>`, which already refer to a particular external vocabulary, from their planned replacement of `key` uses in Guidelines examples with tag URIs in `ref`. ^s21
   > "except for those like &lt;country key="FR"/&gt; which already refer to a particular external vocabulary." (https://github.com/TEIC/TEI/issues/337, comment 13 of 21, 2012-05-20)
 - In TEIC/TEI issue 337, a commenter writes that the use of tag URIs does not prohibit any user of the TEI from using a registered or unregistered scheme on a URN or URI if they prefer. ^s22
   > "Note that use of tag URIs does not prohibit any user of the TEI from using a registered or unregistered scheme on a URN or URI if they prefer." (https://github.com/TEIC/TEI/issues/337, comment 13 of 21, 2012-05-20)
@@ -82,7 +83,7 @@ No additional term definition is extracted in this citation-only intake. The thr
 
 ## Appraisal
 
-The source establishes a participant's report of a Council discussion, agreement and vision, the arguments raised against the proposed value form, and the reported implementation and closure of a work item. It establishes no acceptance by a TEI body and no released effect. The snapshot records the thread as `closed` with the labels `Type: FeatureRequest`, `sf-automigrated` and `Status: Go`, and those labels are repository metadata at the observation date. The recorded GitHub closing timestamp of 2015-10-02 falls on the same day as the migration comment and the `updated_at` value of every comment record, while the thread's own closing statement is dated 2012-06-17, so the two dates stay apart in any citation of this thread. Several comments of the migrated thread record assignment and status transitions, and the reported email of an outside expert reaches the thread through a participant who quotes it. The entity spellings and the nested quotation marks inside the quotations are preserved from the original API fields. Participant identities are absent from this distillate.
+The source establishes a participant's report of a Council discussion, agreement and vision, the arguments raised against the proposed value form, and the reported implementation and closure of a work item. It establishes no acceptance by a TEI body and no released effect. The snapshot records the thread as `closed` with the labels `Type: FeatureRequest`, `sf-automigrated` and `Status: Go`, and those labels are repository metadata at the observation date. The recorded GitHub closing timestamp of 2015-10-02 falls on the same day as the migration comment and the `updated_at` value of every comment record, while the thread's own closing statement is dated 2012-06-17, so the two dates stay apart in any citation of this thread. Several comments of the migrated thread record assignment and status transitions, and the reported email reaches the thread through a participant who quotes it. The entity spellings and the nested quotation marks inside the quotations are preserved from the original API fields. Participant identities are absent from this distillate.
 
 ## Related
 

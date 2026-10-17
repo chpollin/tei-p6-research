@@ -16,6 +16,7 @@ import hashlib
 import json
 import re
 import sys
+from dataclasses import replace
 from html.parser import HTMLParser
 from pathlib import Path
 from typing import ClassVar
@@ -40,7 +41,8 @@ DEFAULT_REFERENCES = "references/research-wave-1.json"
 # whole page of comment bodies instead of one body per declared path.
 EVERY = "*"
 BODY_SEPARATOR = "\n\n"
-REVIEW_DIRECTORY = "workbench/reviews/2026-09-11-v1/legacy-wave1"
+REVIEW_DIRECTORY = "workbench/reviews/2026-10-17-v1-continuation/legacy-wave1-context"
+REVIEW_CONTEXTS = "workbench/reviews/2026-10-17-v1-continuation/legacy-wave1-contexts.json"
 REVIEW_CHAPTER = "40_output/06-annotation-and-overlap.md"
 
 
@@ -192,6 +194,27 @@ def read_distillate(path: Path) -> tuple[dict, str]:
     return metadata, "".join(lines[end + 1:])
 
 
+def review_contexts(root: Path) -> dict:
+    """Short primary excerpts supplement a quote without producer commentary."""
+    path = root / REVIEW_CONTEXTS
+    if not path.exists():
+        return {}
+    records = json.loads(path.read_text(encoding="utf-8"))
+    if not isinstance(records, dict):
+        raise ValueError("review contexts must map source pair IDs to excerpts")
+    for record in records.values():
+        if (not isinstance(record, dict) or not isinstance(record.get("reference_id"), str)
+                or not re.fullmatch(r"[0-9a-f]{64}", str(record.get("response_sha256", "")))
+                or not isinstance(record.get("passages"), list) or not record["passages"]):
+            raise ValueError("invalid review context source binding")
+        for passage in record["passages"]:
+            if (not isinstance(passage, dict)
+                    or any(not isinstance(passage.get(key), str) or not passage[key].strip()
+                           for key in ("locator", "text"))):
+                raise ValueError("review context needs a locator and primary text")
+    return records
+
+
 def check(
     root: Path, manifest: str = DEFAULT_MANIFEST, references: str = DEFAULT_REFERENCES
 ) -> tuple[int, int, tuple[str, ...]]:
@@ -213,6 +236,7 @@ def check(
     seen: set[str] = set()
     pending: list[str] = []
     quotation_count = 0
+    contexts = review_contexts(root)
     for admission in admissions:
         if not isinstance(admission, dict):
             raise ValueError("admission must be a mapping")
@@ -227,6 +251,16 @@ def check(
                 extract_text(read_raw(root, response), extraction)
                 for response, extraction in snapshots(admission)
             ]
+            for context in contexts.values():
+                if context["reference_id"] != identifier:
+                    continue
+                if context["response_sha256"] not in {
+                    response["sha256"] for response, _ in snapshots(admission)
+                }:
+                    raise ValueError("review context snapshot differs from admission")
+                for passage in context["passages"]:
+                    if not any(passage["text"] in text for text in source_texts):
+                        raise ValueError("review context absent from extracted source")
             distillate = admission.get("distillate_path")
             quotes = admission.get("quotes")
             if distillate is None:
@@ -328,7 +362,15 @@ def current_review_pairs(
     if len(selected) != 8 or {pair.id for pair in selected} != expected_ids:
         raise ValueError("wave-one review requires exactly eight canonical pairs")
     result = []
+    contexts = review_contexts(root)
+    source_pairs = {pair.id: sources[pair.document] for pair in selected if pair.kind == "source"}
+    if any(source_pairs.get(key) != value["reference_id"] for key, value in contexts.items()):
+        raise ValueError("review context must name its admitted source pair")
     for pair in selected:
+        if pair.id in contexts:
+            context = contexts[pair.id]
+            excerpts = "\n".join(f"{p['locator']}: {p['text']}" for p in context["passages"])
+            pair = replace(pair, location=f"{pair.location}\nPrimary source context ({context['reference_id']}):\n{excerpts}")
         record = pair.to_dict()
         record["prompt_sha256"] = hashlib.sha256(pair.prompt.encode("utf-8")).hexdigest()
         result.append(record)

@@ -1,0 +1,27 @@
+[
+  {
+    "id": "20_distillates/publications/piez2014range#^s1",
+    "origin": "workbench/reviews/2026-09-11-v1/legacy-wave1",
+    "prompt_sha256": "42d2305292709f224a21f14c49da069125cadeb04d98517bbe6b0929ab089583"
+  },
+  {
+    "id": "20_distillates/publications/tei-sourceforge-fr363#^s1",
+    "origin": "workbench/reviews/2026-09-11-v1/legacy-wave1",
+    "prompt_sha256": "2b5b3bc3dbfffd90bb674106b61bbb6c91adb8af6742532663234837b3b2c5c1"
+  },
+  {
+    "id": "20_distillates/publications/w3c-web-annotation-20170223#^s1",
+    "origin": "workbench/reviews/2026-09-11-v1/legacy-wave1",
+    "prompt_sha256": "b1d1503936f4092cc5505bed3b412071baba0f6057f0118b875ca651c4851ccd"
+  },
+  {
+    "id": "30_assertions/tei-fr363-proposes-target-on-span<-20_distillates/publications/tei-sourceforge-fr363#^s1",
+    "origin": "workbench/reviews/2026-09-11-v1/legacy-wave1",
+    "prompt_sha256": "97c3d81fb0b1f4b567ed7a9e20147fced9520cefaf9aa1717d28b3c2347ebfc0"
+  },
+  {
+    "id": "30_assertions/w3c-quote-selection-can-match-multiple-sequences<-20_distillates/publications/w3c-web-annotation-20170223#^s1",
+    "origin": "workbench/reviews/2026-09-11-v1/legacy-wave1",
+    "prompt_sha256": "2e32d7dfe3e4d027a86e0ad16814f870ee61b809489b95962f423c6d95cdb992"
+  }
+]

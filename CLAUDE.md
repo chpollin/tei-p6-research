@@ -31,7 +31,8 @@ Read only what the task needs:
 1. Read `knowledge/INDEX.md` for vocabulary, the document table and the
    folder map.
 2. Read `knowledge/state.md` for current holdings, data reality and
-   blockers, and `knowledge/handoff.md` for open handoff points.
+   blockers. Read `knowledge/handoff.md` when resuming one of its open
+   received inputs; it is not required for every bounded research question.
 3. For a research-content task, load only the named knowledge documents and
    evidence paths of the route. Do not bulk-load the corpus.
 4. For a maintenance task, inspect the actual files and generated outputs as

@@ -9,7 +9,7 @@ method:
 status: draft
 language: de
 created: "2026-09-06"
-updated: "2026-09-11"
+updated: "2026-10-17"
 related: [INDEX, project, specification, state, handoff, journal, testing, verification, experiments, p6-evaluation]
 ---
 
@@ -37,7 +37,7 @@ Die direkte Deklarationsnavigation der P5-Spezifikationen wird erst dann zu eine
 
 ## Meilenstein V1: Vollprüfung des bestehenden Wissensstands
 
-Der Nutzer beauftragt eine vollständige Prüfung der vorhandenen Destillate und Claims mit mehreren Subagents. Der Meilenstein umfasst auch bereits `validated` und `contested` markierte Artefakte. Der eingefrorene Umfang und die vorläufigen Befunde stehen in [[knowledge/state]] und im [Prüflauf](../workbench/reviews/2026-09-11-data-and-verification/). Die verbindliche Prüfmethode steht in [[knowledge/verification]] unter Vollprüfung.
+Der Nutzer beauftragte die vollständige Prüfung der vorhandenen Destillate und Claims mit mehreren Subagents. Der ausgeführte Abschluss und seine Grenzen stehen in [[knowledge/state]] und den dort verlinkten Reviewrecords. Die folgenden Absätze halten Umfang und Abnahmekriterien dieses Meilensteins fest. Der Meilenstein umfasst auch bereits `validated` und `contested` markierte Artefakte. Der eingefrorene Umfang und die vorläufigen Befunde stehen in [[knowledge/state]] und im [Prüflauf](../workbench/reviews/2026-09-11-data-and-verification/). Die verbindliche Prüfmethode steht in [[knowledge/verification]] unter Vollprüfung.
 
 Das Ergebnis besteht aus einer lückenlosen Zuordnung jedes Dokuments und jeder geprüften Aussage zu Quellenprüfung, Urteil und gegebenenfalls Nacharbeit. Es umfasst die Quellenkontexte, den vollständigen Wortlaut der Assertions, gemeinsame Schlüsse aus mehreren Belegen, die umstrittenen Paare und die Weiterverwendung in den Ausgabekapiteln. Die vorhandenen Prüfpaare bilden den Ausgangsbestand; zusätzliche Tatsachenbehauptungen in Terms, Appraisal und Support werden ausdrücklich erfasst.
 
@@ -89,7 +89,7 @@ gaps to report under the work-package shape in [[knowledge/governance]].
 - Editionen, Korpora und Kataloge für Paket B sowie deren Auswahl- und Ausschlusskriterien bestimmen.
 - Schichtung und Umfang der menschlichen Verifikationsstichprobe festlegen. Die Verifikationsrolle liegt gemäß [[knowledge/governance]] beim Projekteigentümer oder einer ausdrücklich bezeichneten TEI-Fachperson; `verified` folgt erst deren durchgeführter Prüfung.
 - Architekturkriterien anhand der Vergleichsbefunde gewichten und die Empfehlung einschließlich ihrer offenen Grenzen festhalten.
-- Fachliche Empfehlungen nach ihrem tatsächlichen Prüf- und Abnahmestand beurteilen. Die Veröffentlichung des in dieser Sitzung geprüften Repository-Stands ist durch den erneuten Umsetzungsauftrag autorisiert; der technische Abschlusscheck bleibt Voraussetzung.
+- Fachliche Empfehlungen nach ihrem tatsächlichen Prüf- und Abnahmestand beurteilen. Die Veröffentlichungsformulierung aus der Sitzung vom 11.09.2026 gehört zum damaligen Auftrag. Die direkte Fortsetzung vom 17.10.2026 autorisiert die fehlenden Reviews, die blinde Zweitprüfung und lokale Folgekorrekturen. Die beibehaltenen Ausschlüsse für Push, Merge, Tag, Release und Veröffentlichung gelten für diese Fortsetzung. Für Projektcommits gilt die repositoryspezifische Regel in [AGENTS.md](../AGENTS.md).
 
 Die Entscheidungen werden mit ihrer Begründung in [[knowledge/journal]] festgehalten. Bereits ausgeführte Abrufe benötigen keine erneute Autorisierung.
 

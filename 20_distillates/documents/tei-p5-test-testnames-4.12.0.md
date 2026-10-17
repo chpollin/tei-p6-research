@@ -4,14 +4,15 @@ source-type: document
 representation: "[[10_markdown/documents/tei-p5-test-testnames-4.12.0]]"
 topics: ["[[Metadata and Entities]]"]
 status: grounded
-checked: {}
+checked:
+  validation: 2026-10-17
 created: 2026-09-06
-updated: 2026-09-11
+updated: 2026-10-17
 ---
 
 # Distillate: TEI P5 4.12.0 test document testnames.xml
 
-This distillate reports how the release's test document testnames.xml encodes person records, name forms, nym records, places, dates and relations at the pinned TEI P5 4.12.0 release commit, with every statement anchored to the single encoded block that exhibits the pattern.
+This distillate reports selected encodings of person records, name forms, nym records, places, dates and relations in the testnames.xml repository snapshot pinned for TEI P5 4.12.0. Each statement cites a block that exhibits the reported markup.
 
 ## Core statements
 
@@ -20,7 +21,7 @@ This distillate reports how the release's test document testnames.xml encodes pe
 - In the TEI P5 4.12.0 test document testnames.xml, the residence of the record at block 19 names a place by a `placeName` holding a `settlement`, two `region` elements and a `country` in that order, where the `settlement` and both `region` elements carry a `type` naming the kind of unit while only the `country` carries a `key`. [[10_markdown/documents/tei-p5-test-testnames-4.12.0#^b19]] ^s3
 - In the TEI P5 4.12.0 test document testnames.xml, the `country` element in the residence of the record at block 30 carries the one-letter `key` value `D` while its text content reads "Germany". [[10_markdown/documents/tei-p5-test-testnames-4.12.0#^b30]] ^s4
 - In the TEI P5 4.12.0 test document testnames.xml, the person record at block 34 carries `rend="nolist"` on the `person` element beside `xml:id`, `sex` and `role`, so a `rend` value is attached to the record element, while the `persName` it contains carries only `xml:lang`. [[10_markdown/documents/tei-p5-test-testnames-4.12.0#^b34]] ^s5
-- In the TEI P5 4.12.0 test document testnames.xml, the record at block 84 states a relation to another person inside a `note`, marking that other person with a `name` element that carries `type="person"` and a `key` holding an identifier while carrying no `ref`, so the kind of referent is given by `type` and the identification of the referent by `key`. [[10_markdown/documents/tei-p5-test-testnames-4.12.0#^b84]] ^s6
+- In the TEI P5 4.12.0 test document testnames.xml, the record at block 84 contains a `note` that states a spouse relation and contains a `name` element carrying `type="person"` and a nonempty `key`, with no `ref` attribute. [[10_markdown/documents/tei-p5-test-testnames-4.12.0#^b84]] ^s6
 - In the TEI P5 4.12.0 test document testnames.xml, the person record at block 93 identifies the person by an `xml:id` on the `person` element and carries `sex` and `role` there as well, while its single `persName` child carries only `xml:lang` and no attribute that identifies the person the name stands for. [[10_markdown/documents/tei-p5-test-testnames-4.12.0#^b93]] ^s7
 - In the TEI P5 4.12.0 test document testnames.xml, the record at block 101 carries two `persName` children with the same `xml:lang` value and no further attribute, one of them written in inverted order with a comma, so neither form is marked as preferred and the markup states nothing about how the two forms relate. [[10_markdown/documents/tei-p5-test-testnames-4.12.0#^b101]] ^s8
 - In the TEI P5 4.12.0 test document testnames.xml, the record at block 108 gives a bibliographic reference as a `bibl` in which a `ref` carries the `target` value `IsAev`, with the volume and page numbers standing as plain text beside the `ref`. [[10_markdown/documents/tei-p5-test-testnames-4.12.0#^b108]] ^s9
@@ -52,7 +53,7 @@ No term definition is extracted. The source is an encoded test file whose blocks
 
 ## Appraisal
 
-This source is the release's own test document at the pinned commit, so it establishes how a file carried by the release actually encodes person records, name forms, places, dates and relations, and which attributes carry identifying values at each of those points, where any are present. It cannot establish what the Guidelines recommend, how often these patterns occur in edited corpora, or whether a construct absent from it was left out deliberately, because nothing in the blocks read here presents the file as a sample of encoding practice.
+This source is one test document in the pinned repository snapshot. It establishes the markup and attribute values in the cited records. It cannot establish what the Guidelines recommend, how often these patterns occur in edited corpora, or whether a construct absent from it was left out deliberately, because nothing in the blocks read here presents the file as a sample of encoding practice.
 
 ## Related
 

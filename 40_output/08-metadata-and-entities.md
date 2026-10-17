@@ -2,7 +2,7 @@
 type: chapter
 status: grounded
 checked:
-  validation: 2026-09-11
+  validation: 2026-10-17
 assertions:
   - "[[30_assertions/p5-rs-contains-a-general-purpose-name-or-referring-string]]"
   - "[[30_assertions/p5-persname-contains-a-proper-noun-referring-to-a-person]]"
@@ -73,7 +73,7 @@ assertions:
 posits: 11
 topics: ["[[Metadata and Entities]]"]
 created: 2026-09-06
-updated: 2026-09-11
+updated: 2026-10-17
 ---
 
 # Metadata and Entities: mention, name, record, statement and identification in TEI P5 4.12.0
@@ -111,24 +111,23 @@ example to preserve the distinction that the choice of `rs` had indicated.[^plac
 `att.naming` may specify further information about the entity referenced,
 such as the occupation of a person.[^role] The Guidelines reserve `roleName`
 for roles that function as part of a name, place a person's roles and
-occupations within `person`, and admit that the line between an associated
-title and the rest of a name is not always clear.[^rolename]
+occupations within `person`, and admit that the distinction between
+`roleName` and `addName` is not always clear.[^rolename]
 
 The mention therefore carries the kind of its referent as a `type` value and
 can carry properties of the referent as `role` values,[^type][^role] and in
 the Guidelines' own example the specialized element drops the difference
-between a proper noun and a referring string unless a `type` value restores
-it.[^placename] In the release's own test document at the pinned commit, one
-record states a relation to another person inside a `note` and marks that
-person with a `name` element that carries `type` person and a `key` holding an
-identifier and no `ref`, so the kind of referent is given by `type` and the
-identification of the referent by `key`,[^testkey] and another record
+between a proper noun and a referring string unless a value such as
+`figurative` restores it.[^placename] In the release's own test document at the pinned commit, one
+record contains a `note` that states a spouse relation and contains a `name`
+element carrying `type="person"` and a nonempty `key`, with no `ref`
+attribute.[^testkey] Another record
 identifies its person by an `xml:id` on the `person` element and carries `sex`
 and `role` there, while its single `persName` child carries only `xml:lang`
 and no identifying attribute.[^testrole] In the four personal-name examples,
 the shared `ref` identifies the referent across differently marked mentions, and the
-two records place a coded identification on a mention inside a record and a
-role on the record while its name form carries neither.[^mention]
+two records place a `key` on a mention inside a record and a
+`role` on a record whose name form carries neither.[^mention]
 
 ## 2. The name as a linguistic object
 
@@ -215,7 +214,7 @@ current.[^lyon]
 In issue 1414 the issue author wrote that an entry in a placeography,
 personography, bibliography or whatever should be able to refer, using `ref`
 or `key`, to some other data structure that has further information about the
-same entity,[^1414entry] and that the best way was to allow `ref`, and `key`
+same entity,[^1414entry] and that they thought the best way was to allow `ref`, and `key`
 for the web-impaired, on `person` and `place`.[^1414attrs] A commenter's
 summary named adding `idno` as a first child of the ogrophy elements,
 in the comment's spelling, as the short-term solution,[^1414idno] and a
@@ -244,7 +243,7 @@ them.[^entity]
 The Guidelines describe information about people, places, organizations and
 events as statements about traits, states, events and external
 resources.[^statements] Their discussion of changes of state in a person's
-life combines dating, relationships with other characteristics and dependence
+life and associated changes in characteristics combines dating, relationships and dependence
 on sources that may conflict. Taking these considerations together, the
 Guidelines conclude that each such statement needs to be documentable, put into a time
 frame and relatable to other statements.[^documentable] The Guidelines describe the generic elements as members of
@@ -295,7 +294,8 @@ source from which some aspect of the bearing element is drawn.[^source]
 The second pair under review concerns differently enumerated relationship participants.
 The description of `relation` has the relationship hold amongst a specified
 group of places, events, persons, objects or other items.[^relationelement]
-The Guidelines chapter uses `listRelation` and `relation` to document
+The Guidelines chapter states that, when its module is included in a schema,
+`listRelation` and `relation` may be used to document
 relationships amongst the persons, places or organizations identified and
 defines a relationship as a describable link between specified participants,
 where a participant might be a person, a place or an
@@ -305,7 +305,8 @@ identifier naming a relationship, gives the related person inside a `label`
 by a `persName` that carries only `xml:lang` and points to no record, and
 carries no `relation` element.[^testrelation]
 
-For a statement about a change of state in a person's life, the Guidelines
+For statements about changes of state and associated changes in characteristics
+in a person's life, the Guidelines
 require documentability, a time frame and relatability to other statements.
 Their account of the generic elements separately makes attribution attributes
 available and allows conflicting views.[^documentable][^responsibility] For states the subjects are stated as
@@ -313,8 +314,8 @@ persons, places and organizations and the time frame with the word often, for
 places the generic elements are stated to serve, and for nested statements
 responsibility is stated to be inherited and dating to be
 refined,[^statesubject][^statetime][^placegeneric][^nested] while the
-requirement that a statement be documentable and relatable is stated for the
-changes of state in a life alone, and this chapter extends it to every
+requirement that a statement be documentable and relatable is stated for these
+aspects of a person's life, and this chapter extends it to every
 statement about an entity.[^extension] The sources state neither how a
 statement is withdrawn nor how two conflicting views relate beyond standing
 side by side, and in the third nationality encoding a `key` value stands in
@@ -359,7 +360,7 @@ and the pinned release's remarks. In issue 337 the author reported as the Counci
 how widely the attribute was used at the time of writing,[^337wish] and wrote
 that as an interim measure the Guidelines would be modified to make the point
 that people should switch to `ref` wherever `key` is mentioned.[^337interim]
-A commenter announced a change of `key` uses in the Guidelines'
+A commenter wrote that they would change `key` uses in the Guidelines'
 examples to `ref="tag:example.org,2012:foo"`, excepting values such as that of a
 `country` element with key FR that already refer to an external vocabulary.[^337except]
 The reported wish concerns possible future deprecation. The pinned release's
@@ -453,11 +454,12 @@ These posits answer three open evidence questions of the
 [second section](12-p6-design.md#2-text-projections-and-occurrence-identity)
 asks for is the entity record, the retained responsibility marker of its
 [third section](12-p6-design.md#3-structure-as-an-attributed-reading)
-becomes the agent of a denotation claim, and the withdrawal and cross-agent
-disagreement of its
+becomes the agent of a denotation claim. The questions about withdrawal and
+cross-agent disagreement in its
 [fifth section](12-p6-design.md#5-version-identity-and-revision-of-claims)
-are what P5 states for description elements only as coexistence and leaves
-unstated for the identification of a mention. The entity extension has to be
+remain partly open. The admitted P5 account allows coexisting views from
+conflicting sources.[^responsibility] A procedure for withdrawal or revision
+does not follow from that account. The entity extension has to be
 tested against the constructs named here before any of them is called a
 defect of P5.[^questions]
 
@@ -531,13 +533,13 @@ defect of P5.[^questions]
 [^keycontested]: Grounded in [[30_assertions/teic-tei-issue-337-author-reports-a-wish-to-deprecate-key-held-back-by-its-wide-use]] and [[30_assertions/p5-key-remarks-propose-no-particular-syntax-because-its-form-depends-on-project-practice]], which the vault holds as a contested pair.
 [^2739chain]: Grounded in [[30_assertions/teic-tei-issue-2739-commenter-states-att-personal-is-a-member-of-att-naming-and-att-naming-of-att-canonical]].
 [^boundary]: Posit: the five-way division is the analytic frame of the entity extension and no admitted source states it, so the chapter reads the class and element specifications, the Guidelines chapter, the test document and the three threads of one release against a frame they did not choose, and the member lists of the classes, which decide which elements the findings on `att.naming`, `att.global.responsibility` and `att.datable` reach, stand in the XML of the specifications, which no admitted reading block reproduces. Open evidence question: which member declarations at the pinned release and which independently selected encoded material beyond the release's own test document must be admitted before a finding here can become a design requirement?
-[^mention]: Posit: a mention kind that is a reading node or an annotation keeps the difference between a proper noun and a referring string as a concept, which the Guidelines' place-name example shows the specialized element losing, while the kind of the referent and the `role` properties belong to the entity and to claims about it once a denotation exists, and the test document, which places `role` on a record element and identifies a mention inside a record by `key` with the kind of referent in `type`, yields dated observations of single records that establish nothing about mentions in running text. Open evidence question: which encoded material beyond the release's own test document places the kind of referent or a role on a mention in running text that denotes no identified entity, so that the mention would have to carry them itself?
+[^mention]: Posit: a mention kind that is a reading node or an annotation keeps the difference between a proper noun and a referring string as a concept, which the Guidelines' place-name example shows the specialized element losing, while the kind of the referent and the `role` properties belong to the entity and to claims about it once a denotation exists. The test document places `role` on a record element and `key` with `type="person"` on a mention inside a record. These are observations of single records and establish nothing about mentions in running text. Open evidence question: which encoded material beyond the release's own test document places the kind of referent or a role on a mention in running text that denotes no identified entity, so that the mention would have to carry them itself?
 [^name]: Posit: a name claim with form, language and validity scope covers the forms inside `person`, and the `key` the test document gives one name form beside its `type` is such a form identified as an object in one record, whereas a nym and the correspondence between a short form and a full form are claims about a name with no kind among the five, and the disagreement over `nymRef`, stated by the class for the object named and by the chapter for individuals, is that gap in P5's own terms, on which the second run admitted no further source. Open evidence question: which editions with an onomastic practice relate name forms to one another independently of any bearer, so that a name-as-object kind would be missing from the extension?
 [^individuals]: Posit: test whether the bearer-independent association described for individuals also applies to place and organization names. The account of `nymRef` associates the name itself with a canonical form; its separate phrase “any sort of name” concerns `key` and `ref`. It therefore does not establish the proposed extension. Open evidence question: which source states the `nymRef` association for place and organization names, and which encoded onomastic material uses it on them?
-[^entity]: Posit: an identity record keeps of the P5 record only its identity, while the statements, name forms and `idno` links it gathers become claims about it, and the Lyon example shows an encoder's suggested identification based on significant spatial overlap, with periods supplied for the names, which needs a name claim with validity because a bare identity record has no field for it. That the record's stated reference to the outside is `idno` alone while the name's is `key` and `ref` is a reading of the sources, because issue 1414 carries the proposal of the attributes for the record elements, a summary that turned to `idno` and a participant's report of 2019, none of which establishes a released effect, the membership of the record elements in `att.canonical` at the pinned release stands in the XML alone, and the counterevidence search of 2026-09-06 over the thread, `idno` and `place` found nothing against the reading. Open evidence question: did `ref` and `key` reach the record elements after issue 1414, which record elements are members of `att.canonical` at the pinned release, and which independently selected editions record why two things count as one entity?
-[^extension]: Posit: extend documentability, a time frame and relatability from statements about changes in a person's life to statements about entities generally. The descriptions of `state` and place information motivate testing this extension. The separate account of nested description elements adds inherited responsibility and finer dating, which a flat statement record would need to represent explicitly. Open evidence question: which source states the documentation and relatability requirement for traits, states, places and organizations, and which encoded records beyond the release's own test document date and source such statements?
+[^entity]: Posit: an identity record keeps of the P5 record only its identity, while the statements, name forms and `idno` links it gathers become claims about it, and the Lyon example shows an encoder's suggested identification based on significant spatial overlap, with periods supplied for the names, which needs a name claim with validity because a bare identity record has no field for it. That the record's stated reference to the outside is `idno` alone while the name's is `key` and `ref` is a reading of the sources, because issue 1414 carries the proposal of the attributes for the record elements, a summary that turned to `idno` and a participant's report of 2019, none of which establishes a released effect. The membership of the record elements in `att.canonical` at the pinned release stands in the XML alone. Open evidence question: did `ref` and `key` reach the record elements after issue 1414, which record elements are members of `att.canonical` at the pinned release, and which independently selected editions record why two things count as one entity?
+[^extension]: Posit: extend documentability, a time frame and relatability from statements about changes of state and associated changes in characteristics in a person's life to statements about entities generally. The descriptions of `state` and place information motivate testing this extension. The separate account of nested description elements adds inherited responsibility and finer dating, which a flat statement record would need to represent explicitly. Open evidence question: which source states the documentation and relatability requirement for all traits and states of persons, places and organizations, and which encoded records beyond the release's own test document date and source such statements?
 [^claims]: Posit: documentation, time frame and relatability together with `cert`, `resp`, `evidence` and `source` correspond to the agent, certainty and validity fields of the claim pattern and to the coexistence of claims by different agents, the class descriptions give the agent something asserted by the markup, the evidence an intervention or interpretation and the source some aspect of the bearing element as their scope, and the remarks on `resp` keep the statement of the agent's role apart from the record of the agent, while evidence and source have no pattern field, withdrawal is unstated in the sources, the participant set of a relation record stays open between the element description and the Guidelines chapter, and the test document carries a relation as a `state` whose related party is a name without identification. Open evidence question: which recorded disagreements from real prosopographies show whether a source pointer and an evidence kind belong on the claim, which participant kinds their relations take, and whether the parties of those relations are identified records?
 [^inheritance]: Posit: carrying `key` and `ref` from `att.canonical` into `att.naming` also carries the class remarks on documentation, precedence and simultaneous use to naming elements. The Guidelines describe the `att.naming` to `att.canonical` inheritance. The preceding `att.personal` to `att.naming` link is supplied here by a comment about the development branch. Open evidence question: which admitted source establishes that preceding link at the pinned release, and how do the remarks on documentation and precedence apply to individual naming elements?
 [^denotation]: Posit: represent identifications as claims with agent, instant, status and certainty, allowing several claims to coexist. The admitted Guidelines account recommends `ref` wherever a direct link can be supplied. The class remarks separately give no semantic basis or suggested precedence when both attributes are supplied. A preference between attributes therefore coexists with an unresolved interpretation of their simultaneous use. A `ref` to a `person` element in another document also requires an explicit package and identifier policy. Open evidence question: which naming elements carry `cert`, `resp`, `source` and `evidence` at the pinned release, how do processors interpret simultaneous `key` and `ref`, and does a retained responsibility marker identify the agent of an identification claim or report a value supplied by that claim?
-[^alignment]: Posit: `idno` on the record, which its specification assigns to any form of identifier used to identify some object in a standardized way and its remarks to the labels of a formal cataloguing system or a distributed system, and `ref` to a resource outside any TEI document both become alignment claims carried by the entity record, so a mention identified directly by an external URI needs a minted local entity, and the documentation obligation of `key` becomes the agent of the claim and the base of the package, while the release's own test document identifies the cited mentions, name forms and statements by `key` and points by `ref` only to a relationship, which shows nothing about editions that identify by external URIs. Open evidence question: which editions identify mentions by external URIs without a local record, and whether they accept a minted local entity or need a denotation claim that targets an IRI?
-[^questions]: Posit: the findings answer the P6 design chapter's questions about additional objects, the responsibility marker and the revision of claims in part, because the entity record is the additional object, the marker is the agent of a denotation claim, whose counterpart in P5 is the agent that `att.global.responsibility` provides for something asserted by the markup if an identification counts as such an assertion, which no source states, and whose target the remarks on `resp` keep apart from the record of a person or organization, and P5 states revision as coexistence for description elements and leaves it unstated for identification, so the entity extension is tested against the constructs named here before any of them counts as a defect of P5. Open evidence question: which official P6 records, once admitted, address the naming attributes and the description elements, and which encoded practice beyond the release's own test document shows the folds identified here to be costs?
+[^alignment]: Posit: `idno` on the record, which its specification assigns to any form of identifier used to identify some object in a standardized way and its remarks to the labels of a formal cataloguing system or a distributed system, and `ref` to a resource outside any TEI document both become alignment claims carried by the entity record, so a mention identified directly by an external URI needs a minted local entity, and the documentation obligation of `key` becomes the agent of the claim and the base of the package. Some cited mentions, name forms and statements in the test document carry `key`; other cited names carry no identifying attribute. Its cited `ref` points to a relationship. These observations show nothing about editions that identify by external URIs. Open evidence question: which editions identify mentions by external URIs without a local record, and whether they accept a minted local entity or need a denotation claim that targets an IRI?
+[^questions]: Posit: treat the entity record as an additional object and the responsibility marker as the agent of a denotation claim. The proposed mapping to `att.global.responsibility` depends on whether an identification counts as something asserted by the markup, which the admitted sources do not establish. The remarks on `resp` distinguish its target from a person or organization record. The admitted account of conflicting views motivates considering coexistence, while withdrawal and revision remain separate design questions. The entity extension must be tested against the named constructs before a difference is treated as a defect of P5. Open evidence question: which official P6 records, once admitted, address the naming attributes and the description elements, and which encoded practice beyond the release's own test document shows the distinctions identified here to be costs?

@@ -4,18 +4,19 @@ topics: ["[[Abstract Model]]", "[[Annotation and Overlap]]"]
 phenomena: ["[[glossary/stand-off-annotation]]"]
 related: ["[[40_output/02-abstract-model]]", "[[30_assertions/w3c-quote-selection-can-match-multiple-sequences]]"]
 status: grounded
-checked: {}
+checked:
+  validation: 2026-10-17
 grounding:
   - "[[20_distillates/documents/tei-p5-annotation-4.12.0#^s1]]"
 created: 2026-09-05
-updated: 2026-09-11
+updated: 2026-10-17
 ---
 
 # TEI P5 4.12.0 describes annotation as representing an annotation following the Web Annotation Data Model
 
 ## Statement
 
-TEI P5 4.12.0 describes the annotation element as representing an annotation following the Web Annotation Data Model.
+TEI P5 4.12.0 describes annotation as representing an annotation following the Web Annotation Data Model.
 
 ## Support
 

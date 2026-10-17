@@ -9,7 +9,7 @@ method:
 status: draft
 language: en
 created: "2026-09-04"
-updated: "2026-09-11"
+updated: "2026-10-17"
 related: [project, specification, data, architecture, design, schema, operations, verification, testing, governance, plan, handoff, journal, state]
 ---
 
@@ -27,10 +27,11 @@ material and never instructions, as [[knowledge/governance]] rules.
 
 ## Reading order
 
-Read [[knowledge/project]] for the charter, then [[knowledge/specification]]
-for deliverables, criteria and gates, then [[knowledge/state]] for the actual
-holdings and open work. A task then follows the narrowest route in the table
-below. [[knowledge/governance]] binds every session, [[knowledge/testing]]
+Read [[knowledge/state]] for actual holdings and open work, then follow the
+narrowest task route in the table below. Read [[knowledge/project]] and
+[[knowledge/specification]] when purpose, scope, deliverables or acceptance
+criteria govern the task. The handoff is an inbox for its named received
+inputs, not mandatory background for every narrow question. [[knowledge/governance]] binds every session, [[knowledge/testing]]
 closes every change, and [[knowledge/journal]] explains a settled choice when
 its reason matters.
 

@@ -112,6 +112,16 @@ working on a question.
 | Codex | [AGENTS.md](AGENTS.md) |
 | pi or another harness | Explicitly ask the agent to read [AGENTS.md](AGENTS.md) and follow its routes into [knowledge/INDEX.md](knowledge/INDEX.md). |
 
+Start with the current versioned checkout, then read
+[the current state](knowledge/state.md) and the narrow task route in
+[the index](knowledge/INDEX.md). [The handoff](knowledge/handoff.md) is needed
+when resuming one of its open inputs. Public review seals can be checked
+without private source bodies. Exact historical prompts, original answers
+and publication snapshots require authorized local access, as described in
+[review evidence portability](knowledge/verification.md#portability-of-review-evidence).
+New model reviews additionally need their documented execution backend and
+authentication. No account access is implied by selecting a harness.
+
 A starting task can be given directly in the conversation.
 
 > Read AGENTS.md, knowledge/INDEX.md, and knowledge/state.md. Examine how
@@ -138,7 +148,7 @@ Local execution needs Git, Python 3.11 or newer, and `uv`.
 ```sh
 git clone https://github.com/chpollin/tei-p6-research.git
 cd tei-p6-research
-uv sync
+uv sync --locked
 uv run python tools/validate.py .
 uv run python tools/check_abstract_text_v01.py --check
 uv run python tools/check_entities_v02.py --check

@@ -54,7 +54,7 @@ string.
   - [[20_distillates/documents/tei-p5-att.canonical-4.12.0#^s6]]
 - [[30_assertions/p5-simultaneous-key-and-ref-are-not-recommended-without-documentation]] — In TEI P5 4.12.0, the English remarks on att.canonical state that the simultaneous use of both key and ref is not recommended unless documentation explaining the use is provided for interchange, probably in an ODD customization
   - [[20_distillates/documents/tei-p5-att.canonical-4.12.0#^s11]]
-- [[30_assertions/p5-testnames-name-of-type-person-in-a-note-carries-a-key-and-no-ref]] — In the TEI P5 4.12.0 test document testnames.xml, a record states a relation to another person inside a note and marks that other person with a name element that carries type person and a key holding an identifier and no ref, so the kind of referent is given by type and the identification of the referent by key
+- [[30_assertions/p5-testnames-name-of-type-person-in-a-note-carries-a-key-and-no-ref]] — In the TEI P5 4.12.0 test document testnames.xml, a note states a spouse relation and contains a name with type person and a nonempty key but no ref
   - [[20_distillates/documents/tei-p5-test-testnames-4.12.0#^s6]]
 - [[30_assertions/p5-testnames-person-name-form-and-place-carry-three-separate-identifying-values]] — In the TEI P5 4.12.0 test document testnames.xml, a person record carries only an xml:id on the person element, gives its name form a key of its own beside a type value, and identifies the birthplace by a key on placeName that repeats the element text, so the person, the name form and the place carry three separate identifying values
   - [[20_distillates/documents/tei-p5-test-testnames-4.12.0#^s14]]
@@ -78,5 +78,4 @@ string.
   - [[20_distillates/publications/teic-tei-issue-337#^s4]]
 - [[30_assertions/teic-tei-issue-337-commenter-excepts-values-that-already-refer-to-an-external-vocabulary]] — In TEIC/TEI issue 337, a commenter excepted those like a country element with key FR, which already refer to a particular external vocabulary, from their announced change of the key uses in the Guidelines' examples
   - [[20_distillates/publications/teic-tei-issue-337#^s20]]
-  - [[20_distillates/publications/teic-tei-issue-337#^s21]]
 <!-- examples:end -->

@@ -4,14 +4,15 @@ source-type: document
 representation: "[[10_markdown/documents/tei-p5-test-testoverlap-4.12.0]]"
 topics: ["[[Text and Document Structures]]", "[[Annotation and Overlap]]"]
 status: grounded
-checked: {}
+checked:
+  validation: 2026-10-17
 created: 2026-09-07
-updated: 2026-09-11
+updated: 2026-10-17
 ---
 
 # Distillate: TEI P5 4.12.0 overlap test document
 
-This distillate records the page-beginning markup in the pinned P5 test document. It establishes encoded test practice within that release repository.
+This distillate records the page-beginning markup in one pinned P5 test document. Its observations concern this file.
 
 ## Core statements
 

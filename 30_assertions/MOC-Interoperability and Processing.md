@@ -30,7 +30,7 @@ interchange, tool chains and alternative representations.
 - [[30_assertions/practice-v1-epidoc-latest-guidance-and-isicily-reference]] — EpiDoc's schema recommendation distinguishes stable publication from active development with schema updates; the sampled I.Sicily file references a latest path on a different host
 - [[30_assertions/practice-v1-sampled-inputs-associate-schemas-differently]] — Two sampled input documents point to RELAX NG locations without a version number; the sampled CMIF file has no processing instruction before its root
 - [[30_assertions/practice-v1-sampled-schema-generation-paths-differ]] — The DraCor build script derives schemas with command-line converters, while the EpiDoc schema README names the OxGarage tool
-- [[30_assertions/practice-v1-sampled-schematron-sits-in-odds-and-in-a-service]] — In the sample, Schematron rules appear embedded in the DraCor and EpiDoc ODDs and as a separately named file in the correspSearch check service
+- [[30_assertions/practice-v1-sampled-schematron-sits-in-odds-and-in-a-service]] — The sample records a DraCor ODD Schematron constraint, EpiDoc Schematron reports and a separately named correspSearch Schematron file
 <!-- assertions:end -->
 
 ## Open questions

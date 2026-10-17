@@ -31,7 +31,7 @@ rules and limits of TEI-conformant customization.
 - [[30_assertions/practice-v1-sampled-odds-name-their-tei-source-differently]] — The sampled DraCor and EpiDoc schemaSpec declarations carry different source values; the CMIF schemaSpec has no source attribute
 - [[30_assertions/practice-v1-sampled-odds-select-modules-by-contrasting-mechanisms]] — The sampled ODDs select P5 modules with different moduleRef strategies: mostly whole modules, except lists, or include lists
 - [[30_assertions/practice-v1-sampled-schema-generation-paths-differ]] — The DraCor build script derives schemas with command-line converters, while the EpiDoc schema README names the OxGarage tool
-- [[30_assertions/practice-v1-sampled-schematron-sits-in-odds-and-in-a-service]] — In the sample, Schematron rules appear embedded in the DraCor and EpiDoc ODDs and as a separately named file in the correspSearch check service
+- [[30_assertions/practice-v1-sampled-schematron-sits-in-odds-and-in-a-service]] — The sample records a DraCor ODD Schematron constraint, EpiDoc Schematron reports and a separately named correspSearch Schematron file
 <!-- assertions:end -->
 
 ## Open questions

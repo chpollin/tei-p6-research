@@ -1,11 +1,24 @@
 # Vollprüfung V1
 
+## Fortsetzung vom 17. Oktober 2026
+
+Die aktuelle Erstprüfung und die vorab bestimmte blinde Zweitstichprobe sind
+nach quellengebundenen Folgekorrekturen vollständig bestanden. Die
+[aktuellen Siegel](primary-seal.json) und das [Zweitsiegel](second-seal.json)
+binden den jetzigen Bestand. Der [Fortsetzungsbericht](../2026-10-17-v1-continuation/)
+führt Quellenkorrekturen, Reviewgrenzen, den geklärten älteren Kontextbefund
+und die bestandene HTML-Integration. [[knowledge/state]] und
+[[knowledge/handoff]] führen den aktuellen Zustand und die offenen
+fachlichen Beiträge. Die folgenden Abschnitte
+dokumentieren den September-Stand; ihre damaligen Wiederaufnahmeaufrufe
+sind keine aktuellen Ausführungsaufträge oder Veröffentlichungsfreigaben.
+
 Dieser Prüfauftrag setzt die im [Bestandsaudit](../2026-09-11-data-and-verification/) benannten Nacharbeiten um. Der aktuelle Ausführungsstand steht in [knowledge/state.md](../../../knowledge/state.md). Das [vorab festgelegte Protokoll](protocol.json) definiert die Erstprüfung, die geschichtete Zweitstichprobe und die Behandlung von Abweichungen.
 
 Der [Datenüberblick](data-overview.md) erklärt den vorhandenen Bestand,
 seine Verwendung, fehlende Evidenz und die noch erforderlichen fachlichen
 Beiträge. Die Quellenaufnahme und zahlreiche Korrekturen sind ausgeführt;
-V1 ist noch nicht abgeschlossen.
+V1 war in diesem September-Zwischenstand noch nicht abgeschlossen.
 
 Der [technische Gesamtlauf](technical-checkpoint.md) enthält 1.917 bestandene
 Tests und drei wegen ausstehender Reviews fehlgeschlagene Prüfchecks.

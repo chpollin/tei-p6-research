@@ -1,0 +1,15 @@
+{
+  "unchanged_pair_ids": [
+    "20_distillates/publications/piez2014range#^s1",
+    "20_distillates/publications/tei-sourceforge-fr363#^s1",
+    "20_distillates/publications/w3c-web-annotation-20170223#^s1",
+    "30_assertions/piez-treats-optional-hierarchy-as-object-of-study<-20_distillates/publications/piez2014range#^s1",
+    "30_assertions/renear-wickett-distinguish-string-mapping-from-persistent-identity<-20_distillates/publications/renear-wickett2010documents#^s1",
+    "30_assertions/tei-fr363-proposes-target-on-span<-20_distillates/publications/tei-sourceforge-fr363#^s1",
+    "30_assertions/w3c-quote-selection-can-match-multiple-sequences<-20_distillates/publications/w3c-web-annotation-20170223#^s1"
+  ],
+  "fresh_pair_ids": [
+    "20_distillates/publications/renear-wickett2010documents#^s1"
+  ],
+  "previous_directory": "workbench\\reviews\\2026-10-17-v1-continuation\\legacy-wave1"
+}

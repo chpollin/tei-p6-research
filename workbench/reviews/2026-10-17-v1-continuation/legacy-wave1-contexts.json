@@ -1,0 +1,16 @@
+{
+  "20_distillates/publications/renear-wickett2010documents#^s1": {
+    "reference_id": "renear-wickett2010documents",
+    "response_sha256": "07afcd383aa4874d5f4c4d4f7c4e1c3fbc1a615a2063774357dbb2dd14d5da1b",
+    "passages": [
+      {
+        "locator": "Abstract, first sentence",
+        "text": "Last year at Balisage (2009) we considered the claim that documents cannot be modified."
+      },
+      {
+        "locator": "The Arguments, introduction to the recapitulated arguments",
+        "text": "We motivated the claim that documents cannot be modified in several ways:"
+      }
+    ]
+  }
+}

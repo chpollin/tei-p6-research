@@ -8,6 +8,7 @@ import yaml
 
 from tools.check_wave1_sources import (
     REVIEW_CHAPTER,
+    REVIEW_CONTEXTS,
     REVIEW_DIRECTORY,
     check,
     check_review,
@@ -248,6 +249,52 @@ def test_review_only_has_no_raw_prerequisite(tmp_path, capsys):
     assert check_review(tmp_path, "manifest.yaml").pairs == 8
     assert main([str(tmp_path), "--manifest", "manifest.yaml", "--review-only"]) == 0
     assert "8 passing review verdicts" in capsys.readouterr().out
+
+
+def test_primary_context_changes_only_its_source_prompt_and_invalidates_old_review(tmp_path):
+    pairs, _ = review_fixture(tmp_path)
+    source = next(pair for pair in pairs if pair["kind"] == "source")
+    context = {source["id"]: {
+        "reference_id": source["document"].rsplit("/", 1)[-1],
+        "response_sha256": "a" * 64,
+        "passages": [{"locator": "Introduction", "text": "The earlier argument."}],
+    }}
+    (tmp_path / REVIEW_CONTEXTS).write_text(json.dumps(context), encoding="utf-8")
+    current = current_review_pairs(tmp_path, "manifest.yaml")
+    assert [p["id"] for p, old in zip(current, pairs, strict=True)
+            if p["prompt"] != old["prompt"]] == [source["id"]]
+    assert "Introduction: The earlier argument." in next(
+        p["location"] for p in current if p["id"] == source["id"])
+    with pytest.raises(ValueError, match="stale against the current prompts"):
+        check_review(tmp_path, "manifest.yaml")
+    context["unknown pair"] = context.pop(source["id"])
+    (tmp_path / REVIEW_CONTEXTS).write_text(json.dumps(context), encoding="utf-8")
+    with pytest.raises(ValueError, match="must name its admitted source pair"):
+        current_review_pairs(tmp_path, "manifest.yaml")
+
+
+@pytest.mark.parametrize("mutation, message", [
+    ("text", "absent from extracted source"),
+    ("snapshot", "snapshot differs from admission"),
+])
+def test_primary_context_is_checked_against_immutable_source(tmp_path, mutation, message):
+    data = fixture(tmp_path)
+    context = {"sample#^s1": {
+        "reference_id": "sample",
+        "response_sha256": data["admissions"][0]["response"]["sha256"],
+        "passages": [{"locator": "paragraph 1", "text": "A quoted passage & its context."}],
+    }}
+    path = tmp_path / REVIEW_CONTEXTS
+    path.parent.mkdir(parents=True)
+    path.write_text(json.dumps(context), encoding="utf-8")
+    assert check(tmp_path, "manifest.yaml") == (1, 1, ())
+    if mutation == "text":
+        context["sample#^s1"]["passages"][0]["text"] = "Not in the source."
+    else:
+        context["sample#^s1"]["response_sha256"] = "a" * 64
+    path.write_text(json.dumps(context), encoding="utf-8")
+    with pytest.raises(ValueError, match=message):
+        check(tmp_path, "manifest.yaml")
 
 
 @pytest.mark.parametrize("mutation, message", [

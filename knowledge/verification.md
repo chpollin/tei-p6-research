@@ -9,7 +9,7 @@ method:
 status: draft
 language: en
 created: "2026-09-06"
-updated: "2026-09-11"
+updated: "2026-10-17"
 related: [INDEX, operations, schema, testing, governance, state, journal]
 ---
 
@@ -59,6 +59,17 @@ Each is paired only with the statement being judged. `tools/review.py` cuts
 these pairs deterministically and builds one prompt per pair from the
 skeleton below.
 
+The bounded wave-one audit supplements a quotation where its statement also
+attributes the quotation's role in the publication's argument. Its short
+primary excerpts and locators are in
+`workbench/reviews/2026-10-17-v1-continuation/legacy-wave1-contexts.json`.
+The local source check reconciles the excerpts with the admitted snapshot's
+hash and extracted text. The review-only check works from the tracked excerpts,
+binds them into the prompt hash and rejects the superseded quote-only verdict.
+It supplies no producer rationale or earlier review judgment. Historical
+quote-only records remain available. This supplements the source passage and
+does not change the passing verdict requirement or confer human verification.
+
 > You are an adversarial reviewer. Below are a source passage and a statement
 > that claims to be supported by it. Your task is to refute the statement.
 > Judge only whether this passage supports this statement. Answer with exactly
@@ -94,8 +105,11 @@ audit records of one run live under `workbench/reviews/<run-id>/` as
 `pairs.jsonl` and `verdicts.jsonl` with a README that names the scope. They
 are records and never sources or grounding targets.
 
-A changed passage, a changed claim or a reused verdict invalidates the
-review. `check_review_records` in `tools/review.py` holds the stored pairs
+A changed passage, claim or prompt invalidates the corresponding review.
+An old verdict may not be transferred to changed material. The V1 procedure
+below separately permits recorded reuse of complete unchanged isolated
+packages after its exact material, prompt and instrument checks.
+`check_review_records` in `tools/review.py` holds the stored pairs
 against the pairs the vault cuts today and the verdicts against both. An
 acceptance runner rejects changed prompts, incomplete coverage, duplicate or
 unknown verdicts, missing reasoning and any verdict other than *fully
@@ -129,13 +143,13 @@ a different model family than the producer, it works in a fresh context, and
 it has no access to the author's rationale. A review that meets the second
 and third condition with the same model family is recorded as a limitation
 in the run's README and in [[knowledge/state]], because independence of
-context does not imply independence of model errors. [[knowledge/governance]]
-assigns adversarial reading to Fable, and where the producer was Fable the
-reviewer comes from another family. Where only one family is available in a
-session, the producer and the reviewer are different models of that family
-(the entity run of 2026-09-06 paired Opus authors with a Fable reviewer and a
-Fable author with an Opus reviewer), the pairing is named in the verdict record
-itself, and the same-family limitation is recorded as above.
+context does not imply independence of model errors. Model selection follows
+[[knowledge/governance]]. The actual producer/reviewer pairing is recorded
+with the verdict. A same-family check may be executed within its authorized
+scope but never acquires family independence through a fresh context. The
+entity run of 2026-09-06 paired Opus authors with a Fable reviewer and a
+Fable author with an Opus reviewer; that historical pairing remains part of
+its record.
 
 ## Vollprüfung
 
@@ -182,9 +196,49 @@ Der bestehende Cutter liefert Quellenpaare aus Core statements und Assertion-Paa
 
 Für jedes Urteil werden ID, Prompthash, Reviewer, konkretes Modell, Prüftag, festes Verdict und Begründung erfasst. Auftragsbrief, Antwort und Prüfumgebung bleiben zuordenbar. Die Abdeckung wird für jede Prüfebene separat gezählt; hundert Prozent beim bisherigen Cutter decken dessen ausgelassene Abschnitte nicht ab. Historische Sonderprompts des Piloten werden durch dessen eigenen Checker geprüft und gelten nicht automatisch für neu erzeugte Prompts.
 
-Die Opus-Vorgabe für Subagents bleibt bestehen. Mehrere Opus-Kontexte teilen Fehlermöglichkeiten ihrer Modellfamilie. Für von derselben Familie produzierte Aussagen wird diese Einschränkung pro Dokument ausgewiesen; familienfremde oder menschliche Gegenprüfung bleibt gesondert zu belegen. Eine unbekannte Produzentenzuordnung begründet keinen Unabhängigkeitsanspruch.
+Für neue Reviewer gilt die Auswahl nach [[knowledge/governance]] und die belegte Verfügbarkeit im ausführenden Harness. Der bestehende V1-Runner erzwingt als technische Backend-Bedingung die Opus-Familie. Mehrere Kontexte derselben Modellfamilie teilen Fehlermöglichkeiten. Für von derselben Familie produzierte Aussagen wird diese Einschränkung pro Dokument ausgewiesen; familienfremde oder menschliche Gegenprüfung bleibt gesondert zu belegen. Eine unbekannte Produzentenzuordnung begründet keinen Unabhängigkeitsanspruch.
 
 Ein Pass setzt vollständige Abdeckung des eingefrorenen Umfangs, passende Hashes, eindeutige Reviewerzuordnung und abgeschlossene Behandlung aller Abweichungen voraus. Ein offener Quellenzugang, ein ungeklärter Konflikt oder eine nicht gestützte Aussage bleibt sichtbar und trägt keine freigegebene Schlussfolgerung. Nacharbeit verändert niemals die unveränderliche Quellenrepräsentation. Geänderte Destillate und Assertions benötigen neue Paare und neue Urteile; alte Reviews bleiben nachvollziehbar. Die Vollprüfung verleiht kein menschliches `verified` und keine Zusicherung absoluter Wahrheit.
+
+## Portability of review evidence
+
+A versioned checkout carries the research statements, executable examples,
+public seals, short quotations and legacy audit records. The original
+publication bodies and complete model responses remain outside Git.
+
+| Check | Available from the committed checkout | Additional local requirement |
+|---|---|---|
+| `python -m tools.current_review .` | Material, instrument, coverage and saved judgment bindings | None beyond the declared Python dependencies |
+| Wave-one `--review-only` and the text-identity pilot checker | Current public pairs, short contexts, verdicts and bounded examples | None beyond the declared Python dependencies |
+| Guidelines export followed by `--check` | Reconstructs the admitted XML from the tracked representations | A separate writable output directory |
+| Publication quotation and context fidelity | Admission locators and expected snapshot hashes | Exact original snapshot bytes named in the admission manifest |
+| `tools.full_review check` | Instrument and public binding definitions | Complete private run directories and their publication context file |
+| New V1 judgments | Runner and isolation contract | Supported local Claude CLI, authentication, available authorized reviewer and permission for the new calls |
+
+For a historical full-review handoff, identify the exact current run paths
+from [[knowledge/state]]. Preserve complete run directories, including their
+manifests, units, batches, reuse records and failed attempts. The current
+primary and second runs also need the exact publication-context JSON named
+in the handoff. These checks are offline and do not invoke a model:
+
+```powershell
+python -m tools.full_review check corpus/raw/review-contexts/2026-10-17/primary-v17-r11 --root . --publication-context corpus/raw/review-contexts/2026-09-11/all-publication-contexts-v17.json
+python -m tools.full_review check corpus/raw/review-contexts/2026-10-17/second-v17-r2 --root . --publication-context corpus/raw/review-contexts/2026-09-11/all-publication-contexts-v17.json
+```
+
+Transfer exact private artifacts only to an authorized recipient with rights
+to the material, outside Git and without credentials. Compare SHA-256 values
+before and after transfer, keep the destination ignored, and run the checks
+there. The private check binds contexts to the saved prompts and responses.
+Their fidelity to the acquired originals still needs the separate source
+snapshot check. No transfer has been performed merely by documenting this
+procedure.
+
+A new web retrieval may observe changed bytes. A new model call creates a
+new answer. Neither reconstructs a missing historical snapshot or response.
+If the exact artifacts are unavailable, report the missing historical check
+and retain the public seal's narrower scope. Do not present a new review as
+recovery of the old execution.
 
 ## Human verification
 
